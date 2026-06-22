@@ -1,0 +1,30 @@
+{
+  "phase": "v1.0A",
+  "title": "Local Review Console",
+  "version": "v1.0.0-candidate-review-console-a",
+  "status": "OK",
+  "created_at": "2026-06-22T21:45:18+0000",
+  "source_file": "outputs\\scouting\\phase9e_memo_v2_red_flags_export.json",
+  "candidates_loaded": 3,
+  "review_records": 3,
+  "manual_status_allowed_values": [
+    "needs_more_data",
+    "pending_review",
+    "reviewed_reject",
+    "reviewed_watchlist"
+  ],
+  "outputs": {
+    "review_state": "outputs\\scouting\\manual_review\\manual_review_state.json",
+    "console_md": "outputs\\scouting\\manual_review\\local_review_console.md",
+    "notes_md": "outputs\\scouting\\manual_review\\manual_review_notes.md",
+    "index_csv": "outputs\\scouting\\manual_review\\local_review_console_index.csv"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false,
+  "next": "v1.0B — Human Review Layer actions/export"
+}

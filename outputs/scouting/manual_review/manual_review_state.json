@@ -1,0 +1,64 @@
+{
+  "phase": "v1.0A",
+  "title": "Local Review Console",
+  "version": "v1.0.0-candidate-review-console-a",
+  "created_at": "2026-06-22T21:45:17+0000",
+  "updated_at": "2026-06-22T22:31:26+0000",
+  "manual_status_allowed_values": [
+    "needs_more_data",
+    "pending_review",
+    "reviewed_reject",
+    "reviewed_watchlist"
+  ],
+  "records": {
+    "AUPH": {
+      "ticker": "AUPH",
+      "company_name": "Aurinia Pharmaceuticals Inc - Common Shares",
+      "auto_verdict": "NEEDS_MORE_DATA",
+      "red_flag_count": 3,
+      "max_severity": "HIGH",
+      "has_high_or_critical": true,
+      "manual_status": "needs_more_data",
+      "manual_notes": "Revisar caja, deuda, pipeline y próximos catalysts.",
+      "reviewed_at": "2026-06-22T22:31:26+0000",
+      "reviewer": "local_user",
+      "manual_review_required": true,
+      "not_financial_advice": true
+    },
+    "BZ": {
+      "ticker": "BZ",
+      "company_name": "KANZHUN LIMITED - American Depository Shares",
+      "auto_verdict": "NEEDS_MORE_DATA",
+      "red_flag_count": 3,
+      "max_severity": "HIGH",
+      "has_high_or_critical": true,
+      "manual_status": "reviewed_reject",
+      "manual_notes": "Riesgo demasiado alto para seguimiento actual.",
+      "reviewed_at": "2026-06-22T22:31:20+0000",
+      "reviewer": "local_user",
+      "manual_review_required": true,
+      "not_financial_advice": true
+    },
+    "ADBE": {
+      "ticker": "ADBE",
+      "company_name": "Adobe Inc. - Common Stock",
+      "auto_verdict": "NEEDS_MORE_DATA",
+      "red_flag_count": 3,
+      "max_severity": "HIGH",
+      "has_high_or_critical": true,
+      "manual_status": "reviewed_watchlist",
+      "manual_notes": "Empresa sólida. Revisar valoración antes de entrada.",
+      "reviewed_at": "2026-06-22T22:31:16+0000",
+      "reviewer": "local_user",
+      "manual_review_required": true,
+      "not_financial_advice": true
+    }
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false
+}
