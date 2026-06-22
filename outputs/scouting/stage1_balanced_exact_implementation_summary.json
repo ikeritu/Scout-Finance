@@ -1,0 +1,32 @@
+{
+  "phase": "7B.8.1",
+  "status": "OK",
+  "created_at": "2026-06-08T14:41:20+00:00",
+  "backup_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage1_before_phase7b8_1_exact.py",
+  "backup_created": false,
+  "changes": [
+    "ALREADY_APPLIED"
+  ],
+  "stage1_run_ok": true,
+  "stage1_output_tail": "Scout Finance — Phase 5C Stage 1 filter\n====================================================\nInput companies: 500\nPASSED: 182\nWATCHLIST: 84\nREJECTED: 234\nPass rate: 36.40%\nWatchlist rate: 16.80%\nRejection rate: 46.80%\n\nOutput files:\n- passed: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv\n- watchlist: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_watchlist.csv\n- rejected: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejected.csv\n- rejection_log: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejection_log.csv\n- summary: C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_summary.json",
+  "expected": {
+    "passed": 182,
+    "watchlist": 84,
+    "rejected": 234
+  },
+  "actual": {
+    "passed": 182,
+    "watchlist": 84,
+    "rejected": 234
+  },
+  "matches_expected": true,
+  "summary_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_exact_implementation_summary.json",
+  "report_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_exact_implementation_report.md",
+  "comparison_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_exact_implementation_comparison.csv",
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "release_modified": false,
+  "filter_modified": true
+}

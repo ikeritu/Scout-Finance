@@ -1,0 +1,22 @@
+{
+  "phase": "8H",
+  "phase_name": "Prompt Packaging and Dry-run AI Memo Preview",
+  "status": "OK",
+  "default_top_n": 3,
+  "max_top_n": 3,
+  "source": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8e_persisted_equity_research_memos.json",
+  "memos_loaded": 3,
+  "prompt_packages_created": 3,
+  "prompt_dir": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_prompts",
+  "ai_gate_status": "closed",
+  "ai_allowed": false,
+  "estimated_total_cost": 0.0,
+  "next": "8I — Optional AI memo execution sandbox",
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false
+}

@@ -1,0 +1,130 @@
+{
+  "phase": "7B.4",
+  "status": "OK",
+  "created_at": "2026-06-08T10:57:41+00:00",
+  "input_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_real_clean_market_enriched_500.csv",
+  "input_rows": 500,
+  "final_price_rule": {
+    "price_below_min": "REJECTED",
+    "min_to_strong_watch": "WATCHLIST",
+    "strong_watch_to_weak_watch": "WEAK_WARNING_ONLY",
+    "above_weak_watch": "NO_PRICE_WARNING"
+  },
+  "scenario_summaries": [
+    {
+      "scenario": "current_base",
+      "scenario_label": "Actual/base final",
+      "description": "Final aligned approximation of real Stage 1 behavior.",
+      "total": 500,
+      "passed": 226,
+      "watchlist": 66,
+      "rejected": 208,
+      "pass_rate_percent": 45.2,
+      "watchlist_rate_percent": 13.2,
+      "rejection_rate_percent": 41.6,
+      "thresholds": {
+        "label": "Actual/base final",
+        "description": "Final aligned approximation of real Stage 1 behavior.",
+        "min_market_cap": 100000000,
+        "watch_market_cap": 300000000,
+        "min_price": 1.0,
+        "strong_price_watch": 3.0,
+        "weak_price_watch": 5.0,
+        "min_dollar_volume": 500000,
+        "watch_dollar_volume": 2000000
+      }
+    },
+    {
+      "scenario": "conservative",
+      "scenario_label": "Conservador",
+      "description": "Higher quality/liquidity bar; fewer but cleaner candidates.",
+      "total": 500,
+      "passed": 144,
+      "watchlist": 84,
+      "rejected": 272,
+      "pass_rate_percent": 28.8,
+      "watchlist_rate_percent": 16.8,
+      "rejection_rate_percent": 54.4,
+      "thresholds": {
+        "label": "Conservador",
+        "description": "Higher quality/liquidity bar; fewer but cleaner candidates.",
+        "min_market_cap": 300000000,
+        "watch_market_cap": 1000000000,
+        "min_price": 2.0,
+        "strong_price_watch": 4.0,
+        "weak_price_watch": 8.0,
+        "min_dollar_volume": 2000000,
+        "watch_dollar_volume": 10000000
+      }
+    },
+    {
+      "scenario": "balanced",
+      "scenario_label": "Equilibrado",
+      "description": "Professional middle ground; keeps small-cap optionality while improving quality.",
+      "total": 500,
+      "passed": 182,
+      "watchlist": 84,
+      "rejected": 234,
+      "pass_rate_percent": 36.4,
+      "watchlist_rate_percent": 16.8,
+      "rejection_rate_percent": 46.8,
+      "thresholds": {
+        "label": "Equilibrado",
+        "description": "Professional middle ground; keeps small-cap optionality while improving quality.",
+        "min_market_cap": 150000000,
+        "watch_market_cap": 500000000,
+        "min_price": 1.5,
+        "strong_price_watch": 3.0,
+        "weak_price_watch": 5.0,
+        "min_dollar_volume": 1000000,
+        "watch_dollar_volume": 5000000
+      }
+    },
+    {
+      "scenario": "aggressive",
+      "scenario_label": "Agresivo",
+      "description": "More permissive; captures earlier/smaller opportunities with more noise.",
+      "total": 500,
+      "passed": 266,
+      "watchlist": 65,
+      "rejected": 169,
+      "pass_rate_percent": 53.2,
+      "watchlist_rate_percent": 13.0,
+      "rejection_rate_percent": 33.8,
+      "thresholds": {
+        "label": "Agresivo",
+        "description": "More permissive; captures earlier/smaller opportunities with more noise.",
+        "min_market_cap": 50000000,
+        "watch_market_cap": 150000000,
+        "min_price": 0.75,
+        "strong_price_watch": 1.5,
+        "weak_price_watch": 2.0,
+        "min_dollar_volume": 250000,
+        "watch_dollar_volume": 1000000
+      }
+    }
+  ],
+  "alignment": {
+    "available": true,
+    "total_compared": 500,
+    "matched": 500,
+    "mismatched": 0,
+    "match_rate_percent": 100.0,
+    "mismatch_summary": [],
+    "alignment_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_current_base_alignment.csv"
+  },
+  "recommendation": "The simulator is ready as the decision-support baseline for Stage 1 policy selection. Production filters were not changed.",
+  "output_files": {
+    "report_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_report.json",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_report.md",
+    "summary_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_summary.csv",
+    "decisions_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_decisions.csv",
+    "alignment_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_current_base_alignment.csv"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_v0_6_modified": false
+}

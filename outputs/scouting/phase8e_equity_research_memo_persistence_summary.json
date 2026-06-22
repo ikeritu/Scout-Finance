@@ -1,0 +1,33 @@
+{
+  "phase": "8E",
+  "status": "OK",
+  "base_release": "v0.7.0-candidate",
+  "depends_on": [
+    "8B",
+    "8C",
+    "8D"
+  ],
+  "database_path": "D:\\Proyectos\\💰 Scout Finance\\data\\demo\\demo_signals.db",
+  "table_name": "equity_research_memos",
+  "input_memos": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8d_candidate_source_bound_memos.json",
+  "memos_loaded": 3,
+  "memos_persisted": 3,
+  "default_top_n": 3,
+  "run_id": "phase8e_2026-06-17T221355+0000",
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": false
+  },
+  "source_hashes": {
+    "input_memos_sha256": "fc263c270328cbf2b76c0a0729201fc019725a334525c3b3e93ebf7f17b795be",
+    "bound_candidates_sha256": "cf6a44c2591479cfe6b5edd1d599bc620218b176160af262d30fefaef0f2d589",
+    "app_py_sha256": "dc27b9a248f243247155cd17d75fe1a33493d2095f6376e9587bca8996a20e60",
+    "filters_py_sha256": "cfec47448605da16f8db0d9052f44d6b1b957f6d6a290e7b637c517df2a1c5a4"
+  },
+  "next": "8F — Research memo export/report layer or optional AI interpretation gate"
+}

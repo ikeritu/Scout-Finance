@@ -1,0 +1,22 @@
+Clasifica posibles noticias o catalizadores relacionados con una empresa.
+
+Categorías:
+- earnings
+- guidance
+- product_launch
+- regulatory
+- litigation
+- macro
+- mna
+- analyst_rating
+- insider_activity
+- financing_dilution
+- sector_news
+- no_clear_catalyst
+- unknown
+
+Reglas:
+- Si no hay noticia proporcionada, devuelve no_clear_catalyst.
+- No inventes titulares.
+- Distingue hecho confirmado de inferencia.
+- Señala si hace falta verificar fuente.

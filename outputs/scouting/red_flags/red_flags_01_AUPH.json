@@ -1,0 +1,62 @@
+{
+  "ticker": "AUPH",
+  "company_name": "Aurinia Pharmaceuticals Inc - Common Shares",
+  "source_file": "outputs\\scouting\\phase9c_research_memo_v2_contract_export.json",
+  "summary": {
+    "red_flag_count": 3,
+    "by_severity": {
+      "LOW": 0,
+      "MEDIUM": 1,
+      "HIGH": 2,
+      "CRITICAL": 0
+    },
+    "by_category": {
+      "debt": 1,
+      "margins": 1,
+      "source_quality": 1
+    },
+    "max_severity": "HIGH",
+    "has_high_or_critical": true
+  },
+  "red_flags": [
+    {
+      "category": "debt",
+      "severity": "HIGH",
+      "code": "DEBT_REASON_PRESENT",
+      "title": "Debt-related warning detected",
+      "detail": "Reason token `DEBT` found in source row.",
+      "evidence": {
+        "token": "DEBT"
+      },
+      "source": "reason_text"
+    },
+    {
+      "category": "margins",
+      "severity": "HIGH",
+      "code": "OPERATING_MARGIN_REASON_PRESENT",
+      "title": "Operating margin warning detected",
+      "detail": "Reason token `OPERATING_MARGIN` found in source row.",
+      "evidence": {
+        "token": "OPERATING_MARGIN"
+      },
+      "source": "reason_text"
+    },
+    {
+      "category": "source_quality",
+      "severity": "MEDIUM",
+      "code": "MARKET_CAP_REASON_PRESENT",
+      "title": "Market cap warning detected",
+      "detail": "Reason token `MARKET_CAP` found in source row.",
+      "evidence": {
+        "token": "MARKET_CAP"
+      },
+      "source": "reason_text"
+    }
+  ],
+  "safety": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false
+  }
+}

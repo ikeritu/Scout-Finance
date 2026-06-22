@@ -1,0 +1,36 @@
+{
+  "funnel_version": "phase5a_design",
+  "created_at": "",
+  "stages": {
+    "stage0": {
+      "input_companies": null,
+      "valid_companies": null,
+      "duplicated_tickers": null,
+      "missing_market_cap": null
+    },
+    "stage1": {
+      "input_companies": null,
+      "passed_companies": null,
+      "watchlist_companies": null,
+      "rejected_companies": null,
+      "pass_rate": null,
+      "top_rejection_reasons": {}
+    },
+    "stage2": {
+      "input_companies": null,
+      "passed_companies": null,
+      "watchlist_companies": null,
+      "rejected_companies": null,
+      "pass_rate": null,
+      "top_rejection_reasons": {}
+    },
+    "stage3": {
+      "input_companies": null,
+      "passed_companies": null,
+      "watchlist_companies": null,
+      "rejected_companies": null,
+      "target_pass_count": 450,
+      "top_categories": {}
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "phase": "8B",
+  "status": "OK",
+  "created_at": "2026-06-17T14:40:28+00:00",
+  "goal": "ai_equity_research_memo_blueprint",
+  "base_release": "v0.7.0-candidate",
+  "phase7g_frozen": true,
+  "phase8a_valid": true,
+  "validated_funnel": "500 → 182 → 63 → 6",
+  "default_top_n": 3,
+  "memo_schema_version": "0.1",
+  "db_schema_version": "0.1",
+  "modules_count": 8,
+  "table_name": "equity_research_memos",
+  "recommended_next_phase": "8C — Deterministic fundamentals, valuation and risk modules",
+  "outputs": {
+    "summary": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8b_ai_equity_research_memo_blueprint_summary.json",
+    "report": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8b_ai_equity_research_memo_blueprint_report.md",
+    "module_matrix": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8b_ai_equity_research_memo_modules_matrix.csv",
+    "db_schema": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8b_equity_research_memos_table_schema.json",
+    "memo_schema": "D:\\Proyectos\\💰 Scout Finance\\schemas\\equity_research_memo_schema_v0_1.json"
+  },
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "pipeline_recalculated": false,
+    "release_modified": false
+  },
+  "signatures_before": {
+    "app.py": {
+      "exists": true,
+      "size": 185246,
+      "mtime": 1781002719.9663692
+    },
+    "src/filters.py": {
+      "exists": true,
+      "size": 8710,
+      "mtime": 1779969132.3792703
+    }
+  },
+  "signatures_after": {
+    "app.py": {
+      "exists": true,
+      "size": 185246,
+      "mtime": 1781002719.9663692
+    },
+    "src/filters.py": {
+      "exists": true,
+      "size": 8710,
+      "mtime": 1779969132.3792703
+    }
+  }
+}

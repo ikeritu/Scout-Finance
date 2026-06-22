@@ -1,0 +1,4 @@
+ticker,company_name,red_flag_count,max_severity,has_high_or_critical,critical_count,high_count,medium_count,low_count
+AUPH,Aurinia Pharmaceuticals Inc - Common Shares,3,HIGH,True,0,2,1,0
+BZ,KANZHUN LIMITED - American Depository Shares,3,HIGH,True,0,2,1,0
+ADBE,Adobe Inc. - Common Stock,3,HIGH,True,0,2,1,0

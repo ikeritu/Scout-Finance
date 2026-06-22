@@ -1,0 +1,5 @@
+﻿scenario,scenario_label,total,passed,watchlist,rejected,pass_rate_percent,watchlist_rate_percent,rejection_rate_percent,min_market_cap,watch_market_cap,min_price,watch_price,min_dollar_volume,watch_dollar_volume,price_watchlist_is_weak
+current_base,Actual/base alineado,500,231,61,208,46.2,12.2,41.6,100000000,300000000,1.0,5.0,500000,2000000,True
+conservative,Conservador,500,145,83,272,29.0,16.6,54.4,300000000,1000000000,2.0,8.0,2000000,10000000,True
+balanced,Equilibrado,500,185,81,234,37.0,16.2,46.8,150000000,500000000,1.5,5.0,1000000,5000000,True
+aggressive,Agresivo,500,268,63,169,53.6,12.6,33.8,50000000,150000000,0.75,2.0,250000,1000000,True

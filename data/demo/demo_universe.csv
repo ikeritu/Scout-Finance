@@ -1,0 +1,28 @@
+ticker,company_name,exchange,country,currency,sector,industry,asset_type,is_active,source,last_updated
+AAPL,Apple Inc.,NASDAQ,USA,USD,Technology,Consumer Electronics,Equity,1,demo,2026-05-27
+MSFT,Microsoft Corporation,NASDAQ,USA,USD,Technology,Software - Infrastructure,Equity,1,demo,2026-05-27
+NVDA,NVIDIA Corporation,NASDAQ,USA,USD,Technology,Semiconductors,Equity,1,demo,2026-05-27
+AMZN,Amazon.com Inc.,NASDAQ,USA,USD,Consumer Cyclical,Internet Retail,Equity,1,demo,2026-05-27
+GOOGL,Alphabet Inc. Class A,NASDAQ,USA,USD,Communication Services,Internet Content & Information,Equity,1,demo,2026-05-27
+META,Meta Platforms Inc.,NASDAQ,USA,USD,Communication Services,Internet Content & Information,Equity,1,demo,2026-05-27
+TSLA,Tesla Inc.,NASDAQ,USA,USD,Consumer Cyclical,Auto Manufacturers,Equity,1,demo,2026-05-27
+JPM,JPMorgan Chase & Co.,NYSE,USA,USD,Financial Services,Banks - Diversified,Equity,1,demo,2026-05-27
+BAC,Bank of America Corporation,NYSE,USA,USD,Financial Services,Banks - Diversified,Equity,1,demo,2026-05-27
+V,Visa Inc.,NYSE,USA,USD,Financial Services,Credit Services,Equity,1,demo,2026-05-27
+MA,Mastercard Incorporated,NYSE,USA,USD,Financial Services,Credit Services,Equity,1,demo,2026-05-27
+LLY,Eli Lilly and Company,NYSE,USA,USD,Healthcare,Drug Manufacturers - General,Equity,1,demo,2026-05-27
+JNJ,Johnson & Johnson,NYSE,USA,USD,Healthcare,Drug Manufacturers - General,Equity,1,demo,2026-05-27
+UNH,UnitedHealth Group Incorporated,NYSE,USA,USD,Healthcare,Healthcare Plans,Equity,1,demo,2026-05-27
+PFE,Pfizer Inc.,NYSE,USA,USD,Healthcare,Drug Manufacturers - General,Equity,1,demo,2026-05-27
+XOM,Exxon Mobil Corporation,NYSE,USA,USD,Energy,Oil & Gas Integrated,Equity,1,demo,2026-05-27
+CVX,Chevron Corporation,NYSE,USA,USD,Energy,Oil & Gas Integrated,Equity,1,demo,2026-05-27
+NEE,NextEra Energy Inc.,NYSE,USA,USD,Utilities,Utilities - Regulated Electric,Equity,1,demo,2026-05-27
+PG,Procter & Gamble Company,NYSE,USA,USD,Consumer Defensive,Household & Personal Products,Equity,1,demo,2026-05-27
+KO,The Coca-Cola Company,NYSE,USA,USD,Consumer Defensive,Beverages - Non-Alcoholic,Equity,1,demo,2026-05-27
+WMT,Walmart Inc.,NYSE,USA,USD,Consumer Defensive,Discount Stores,Equity,1,demo,2026-05-27
+HD,The Home Depot Inc.,NYSE,USA,USD,Consumer Cyclical,Home Improvement Retail,Equity,1,demo,2026-05-27
+BA,The Boeing Company,NYSE,USA,USD,Industrials,Aerospace & Defense,Equity,1,demo,2026-05-27
+CAT,Caterpillar Inc.,NYSE,USA,USD,Industrials,Farm & Heavy Construction Machinery,Equity,1,demo,2026-05-27
+DIS,The Walt Disney Company,NYSE,USA,USD,Communication Services,Entertainment,Equity,1,demo,2026-05-27
+NFLX,Netflix Inc.,NASDAQ,USA,USD,Communication Services,Entertainment,Equity,1,demo,2026-05-27
+AMD,Advanced Micro Devices Inc.,NASDAQ,USA,USD,Technology,Semiconductors,Equity,1,demo,2026-05-27

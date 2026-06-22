@@ -1,0 +1,87 @@
+{
+  "phase": "7B.5",
+  "status": "OK",
+  "created_at": "2026-06-08T11:07:09+00:00",
+  "source_final_simulation_summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_summary.csv",
+  "source_final_simulation_report": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_report.json",
+  "simulator_alignment": {
+    "available": true,
+    "total_compared": 500,
+    "matched": 500,
+    "mismatched": 0,
+    "match_rate_percent": 100.0,
+    "mismatch_summary": [],
+    "alignment_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_current_base_alignment.csv"
+  },
+  "recommended_policy": "balanced",
+  "recommended_policy_label": "Equilibrado",
+  "decision": "SELECT_FOR_DRY_RUN",
+  "apply_to_production_now": false,
+  "decision_summary": "Select the balanced policy as the Stage 1 candidate for a guarded dry-run. Do not apply it to production yet.",
+  "policy_reviews": [
+    {
+      "scenario": "balanced",
+      "scenario_label": "Equilibrado",
+      "passed": 182,
+      "watchlist": 84,
+      "rejected": 234,
+      "pass_rate_percent": 36.4,
+      "watchlist_rate_percent": 16.8,
+      "rejection_rate_percent": 46.8,
+      "decision_score": 96.44,
+      "recommendation": "CANDIDATE",
+      "rationale": "Best balance between professional quality control and opportunity discovery. Raises discipline compared with current/base without becoming overly restrictive."
+    },
+    {
+      "scenario": "current_base",
+      "scenario_label": "Actual/base final",
+      "passed": 226,
+      "watchlist": 66,
+      "rejected": 208,
+      "pass_rate_percent": 45.2,
+      "watchlist_rate_percent": 13.2,
+      "rejection_rate_percent": 41.6,
+      "decision_score": 81.8,
+      "recommendation": "BASELINE",
+      "rationale": "Current validated behavior. Good for broad scouting, but less selective than balanced."
+    },
+    {
+      "scenario": "conservative",
+      "scenario_label": "Conservador",
+      "passed": 144,
+      "watchlist": 84,
+      "rejected": 272,
+      "pass_rate_percent": 28.8,
+      "watchlist_rate_percent": 16.8,
+      "rejection_rate_percent": 54.4,
+      "decision_score": 81.7,
+      "recommendation": "ALTERNATIVE_STRICT",
+      "rationale": "Useful for institutional-only review, but likely too restrictive for discovery."
+    },
+    {
+      "scenario": "aggressive",
+      "scenario_label": "Agresivo",
+      "passed": 266,
+      "watchlist": 65,
+      "rejected": 169,
+      "pass_rate_percent": 53.2,
+      "watchlist_rate_percent": 13.0,
+      "rejection_rate_percent": 33.8,
+      "decision_score": 65.34,
+      "recommendation": "NOT_RECOMMENDED",
+      "rationale": "Too permissive for a professional first-pass filter; likely increases noise."
+    }
+  ],
+  "output_files": {
+    "report_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_candidate_policy_decision_report.json",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_candidate_policy_decision_report.md",
+    "comparison_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_candidate_policy_comparison.csv",
+    "decision_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_candidate_policy_decision.csv"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false
+}

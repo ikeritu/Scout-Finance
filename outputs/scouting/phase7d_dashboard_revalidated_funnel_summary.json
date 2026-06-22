@@ -1,0 +1,29 @@
+{
+  "phase": "7D",
+  "version": "v2",
+  "status": "OK",
+  "created_at": "2026-06-09T09:46:11+00:00",
+  "backup_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\app_before_phase7d_dashboard_revalidated_funnel.py",
+  "backup_created": true,
+  "changes": [
+    "PHASE7D_HELPERS_APPENDED",
+    "PHASE7D_RENDER_CALL_INSERTED"
+  ],
+  "funnel_path": "500 → 182 → 63 → 6",
+  "active_policies": {
+    "stage1": "Balanced official policy",
+    "stage2": "yfinance-aligned provider-limitation policy",
+    "stage3": "Existing Stage 3 opportunity scoring policy"
+  },
+  "top_candidates_rows": 20,
+  "output_files": {
+    "summary_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7d_dashboard_revalidated_funnel_summary.json",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7d_dashboard_revalidated_funnel_report.md"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": true,
+  "filters_modified": false,
+  "release_modified": false
+}

@@ -1,0 +1,9 @@
+module,purpose,mode,marks_data_insufficient
+src/research_memo.py,Assembles deterministic memo from module outputs,offline,yes
+src/fundamentals.py,Financial-health scoring from available metrics,offline,yes
+src/valuation.py,Valuation scoring from available multiples,offline,yes
+src/risk_analysis.py,Risk scoring from available volatility/liquidity/debt proxies,offline,yes
+src/moat_analysis.py,Moat proxy from profitability/return metrics,offline,yes
+src/growth_analysis.py,Growth scoring from available growth fields,offline,yes
+src/institutional_view.py,Institutional proxy from ownership/coverage fields,offline,yes
+src/earnings_analysis.py,Earnings proxy from available earnings fields,offline,yes

@@ -1,0 +1,56 @@
+{
+  "phase": "7A.3",
+  "status": "OK",
+  "created_at": "2026-06-06T20:00:16+00:00",
+  "input_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_real.csv",
+  "clean_output_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_real_clean.csv",
+  "excluded_output_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_real_excluded.csv",
+  "exclusion_log_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\universe_cleaning_exclusion_log.csv",
+  "input_rows": 7053,
+  "clean_rows": 5617,
+  "excluded_rows": 1436,
+  "clean_rate_percent": 79.64,
+  "excluded_rate_percent": 20.36,
+  "include_spacs": false,
+  "include_reits": true,
+  "include_adrs": true,
+  "instrument_distribution": {
+    "COMMON_STOCK": 5288,
+    "WARRANT": 468,
+    "ADR": 305,
+    "UNIT": 286,
+    "SPAC_OR_BLANK_CHECK": 208,
+    "BOND_OR_NOTE": 159,
+    "PREFERRED": 140,
+    "RIGHT": 126,
+    "CLOSED_END_FUND": 33,
+    "REIT": 24,
+    "ETN": 15,
+    "ETF": 1
+  },
+  "clean_distribution": {
+    "COMMON_STOCK": 5288,
+    "ADR": 305,
+    "REIT": 24
+  },
+  "excluded_distribution": {
+    "WARRANT": 468,
+    "UNIT": 286,
+    "SPAC_OR_BLANK_CHECK": 208,
+    "BOND_OR_NOTE": 159,
+    "PREFERRED": 140,
+    "RIGHT": 126,
+    "CLOSED_END_FUND": 33,
+    "ETN": 15,
+    "ETF": 1
+  },
+  "openai_called": false,
+  "paid_api_called": false,
+  "app_modified": false,
+  "release_v0_6_modified": false,
+  "notes": [
+    "This is a pre-market-data institutional universe cleaning layer.",
+    "Excluded instruments are not financial rejections; they are outside the initial scouting universe.",
+    "REITs and ADRs are kept by default but should later have specific metrics/risk treatment."
+  ]
+}

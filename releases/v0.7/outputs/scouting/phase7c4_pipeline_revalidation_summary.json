@@ -1,0 +1,233 @@
+{
+  "phase": "7C.4",
+  "status": "OK",
+  "created_at": "2026-06-09T09:11:41+00:00",
+  "ready_for_next_phase": true,
+  "recommended_next_phase": "7D — Integrate real revalidated funnel into dashboard/app",
+  "active_policies": {
+    "stage1": "Balanced official policy",
+    "stage2": "yfinance-aligned provider-limitation policy",
+    "stage3": "Existing Stage 3 opportunity scoring policy"
+  },
+  "stage_counts": {
+    "stage1": {
+      "passed": 182,
+      "watchlist": 84,
+      "rejected": 234
+    },
+    "stage2": {
+      "passed": 63,
+      "watchlist": 81,
+      "rejected": 38
+    },
+    "stage3": {
+      "passed": 6,
+      "watchlist": 28,
+      "rejected": 29
+    }
+  },
+  "funnel": {
+    "initial_pilot_universe": 500,
+    "stage1_passed": 182,
+    "stage2_passed": 63,
+    "stage3_passed": 6,
+    "path": "500 → 182 → 63 → 6"
+  },
+  "rates": {
+    "stage1": {
+      "passed_rate": 36.4,
+      "watchlist_rate": 16.8,
+      "rejected_rate": 46.8
+    },
+    "stage2": {
+      "passed_rate": 34.62,
+      "watchlist_rate": 44.51,
+      "rejected_rate": 20.88
+    },
+    "stage3": {
+      "passed_rate": 9.52,
+      "watchlist_rate": 44.44,
+      "rejected_rate": 46.03
+    },
+    "overall_stage3_pass_rate_from_initial": 1.2
+  },
+  "checks": {
+    "counts_match_expected": true,
+    "stage2_policy_ok": true,
+    "stage3_ok": true,
+    "export_ok": true
+  },
+  "stage3_category_distribution": {
+    "🟡 Interesante con condiciones": 33,
+    "🔴 Descartada por scoring": 29,
+    "🟢 Candidata fuerte para scouting": 1
+  },
+  "stage3_reasons": {
+    "LOW_FINAL_SCORE": 29,
+    "FINAL_SCORE_WATCHLIST_RANGE": 28
+  },
+  "top_company": {
+    "ticker": "AUPH",
+    "name": "Aurinia Pharmaceuticals Inc - Common Shares",
+    "final_stage3_score": 70.83,
+    "stage3_category": "🟢 Candidata fuerte para scouting"
+  },
+  "evidence_files": [
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_official_closure_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 2418,
+      "modified_at": "2026-06-08T18:43:18+00:00",
+      "label": "stage1_summary"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 2282,
+      "modified_at": "2026-06-09T08:37:54+00:00",
+      "label": "stage2_summary"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage3_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 2533,
+      "modified_at": "2026-06-09T08:53:00+00:00",
+      "label": "stage3_summary"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_implementation_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 2386,
+      "modified_at": "2026-06-09T08:37:54+00:00",
+      "label": "stage2_implementation_summary"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+      "exists": true,
+      "rows": 182,
+      "size_bytes": 53244,
+      "modified_at": "2026-06-08T18:43:18+00:00",
+      "label": "stage1_passed"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_watchlist.csv",
+      "exists": true,
+      "rows": 84,
+      "size_bytes": 31006,
+      "modified_at": "2026-06-08T18:43:18+00:00",
+      "label": "stage1_watchlist"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejected.csv",
+      "exists": true,
+      "rows": 234,
+      "size_bytes": 86318,
+      "modified_at": "2026-06-08T18:43:18+00:00",
+      "label": "stage1_rejected"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_passed.csv",
+      "exists": true,
+      "rows": 63,
+      "size_bytes": 46336,
+      "modified_at": "2026-06-09T08:37:54+00:00",
+      "label": "stage2_passed"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_watchlist.csv",
+      "exists": true,
+      "rows": 81,
+      "size_bytes": 60097,
+      "modified_at": "2026-06-09T08:37:54+00:00",
+      "label": "stage2_watchlist"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_rejected.csv",
+      "exists": true,
+      "rows": 38,
+      "size_bytes": 29096,
+      "modified_at": "2026-06-09T08:37:54+00:00",
+      "label": "stage2_rejected"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_passed.csv",
+      "exists": true,
+      "rows": 6,
+      "size_bytes": 6101,
+      "modified_at": "2026-06-09T08:53:00+00:00",
+      "label": "stage3_passed"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_watchlist.csv",
+      "exists": true,
+      "rows": 28,
+      "size_bytes": 25801,
+      "modified_at": "2026-06-09T08:53:00+00:00",
+      "label": "stage3_watchlist"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_rejected.csv",
+      "exists": true,
+      "rows": 29,
+      "size_bytes": 25636,
+      "modified_at": "2026-06-09T08:53:00+00:00",
+      "label": "stage3_rejected"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage3_candidates_for_ranking.csv",
+      "exists": true,
+      "rows": 34,
+      "size_bytes": 5660,
+      "modified_at": "2026-06-09T08:53:21+00:00",
+      "label": "exports_stage3_candidates_for_ranking"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_20_deep_research.csv",
+      "exists": true,
+      "rows": 20,
+      "size_bytes": 18316,
+      "modified_at": "2026-06-09T08:53:00+00:00",
+      "label": "exports_top_20_deep_research"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_50_watchlist.csv",
+      "exists": true,
+      "rows": 34,
+      "size_bytes": 30626,
+      "modified_at": "2026-06-09T08:53:00+00:00",
+      "label": "exports_top_50_watchlist"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_100_candidates.csv",
+      "exists": true,
+      "rows": 34,
+      "size_bytes": 30626,
+      "modified_at": "2026-06-09T08:53:00+00:00",
+      "label": "exports_top_100_candidates"
+    },
+    {
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_recoverable_candidates.csv",
+      "exists": true,
+      "rows": 57,
+      "size_bytes": 50161,
+      "modified_at": "2026-06-09T08:53:00+00:00",
+      "label": "exports_top_recoverable_candidates"
+    }
+  ],
+  "output_files": {
+    "summary_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7c4_pipeline_revalidation_summary.json",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7c4_pipeline_revalidation_report.md",
+    "evidence_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7c4_pipeline_revalidation_evidence.csv",
+    "top_candidates_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7c4_pipeline_revalidation_top_candidates.csv",
+    "policy_status_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\active_pipeline_policy_status.json"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "release_modified": false
+}

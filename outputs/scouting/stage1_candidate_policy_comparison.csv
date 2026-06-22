@@ -1,0 +1,5 @@
+﻿scenario,scenario_label,passed,watchlist,rejected,pass_rate_percent,watchlist_rate_percent,rejection_rate_percent,decision_score,recommendation,rationale
+balanced,Equilibrado,182,84,234,36.4,16.8,46.8,96.44,CANDIDATE,Best balance between professional quality control and opportunity discovery. Raises discipline compared with current/base without becoming overly restrictive.
+current_base,Actual/base final,226,66,208,45.2,13.2,41.6,81.8,BASELINE,"Current validated behavior. Good for broad scouting, but less selective than balanced."
+conservative,Conservador,144,84,272,28.8,16.8,54.4,81.7,ALTERNATIVE_STRICT,"Useful for institutional-only review, but likely too restrictive for discovery."
+aggressive,Agresivo,266,65,169,53.2,13.0,33.8,65.34,NOT_RECOMMENDED,Too permissive for a professional first-pass filter; likely increases noise.

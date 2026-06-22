@@ -1,0 +1,59 @@
+{
+  "phase": "7B.6",
+  "status": "OK",
+  "created_at": "2026-06-08T11:20:30+00:00",
+  "candidate_policy": "balanced",
+  "decision_source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_candidate_policy_decision_report.json",
+  "input_companies": 500,
+  "balanced_passed": 182,
+  "balanced_watchlist": 84,
+  "balanced_rejected": 234,
+  "balanced_pass_rate_percent": 36.4,
+  "balanced_watchlist_rate_percent": 16.8,
+  "balanced_rejection_rate_percent": 46.8,
+  "transition_summary": [
+    {
+      "real_decision": "REJECTED",
+      "balanced_decision": "REJECTED",
+      "count": 208
+    },
+    {
+      "real_decision": "PASSED",
+      "balanced_decision": "PASSED",
+      "count": 182
+    },
+    {
+      "real_decision": "PASSED",
+      "balanced_decision": "WATCHLIST",
+      "count": 44
+    },
+    {
+      "real_decision": "WATCHLIST",
+      "balanced_decision": "WATCHLIST",
+      "count": 40
+    },
+    {
+      "real_decision": "WATCHLIST",
+      "balanced_decision": "REJECTED",
+      "count": 26
+    }
+  ],
+  "passed_retained_as_passed": 182,
+  "passed_to_watchlist": 44,
+  "passed_to_rejected": 0,
+  "output_files": {
+    "passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_passed.csv",
+    "watchlist": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_watchlist.csv",
+    "rejected": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_rejected.csv",
+    "transitions": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_transitions.csv",
+    "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_summary.json",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_report.md"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "production_stage1_overwritten": false,
+  "release_modified": false
+}

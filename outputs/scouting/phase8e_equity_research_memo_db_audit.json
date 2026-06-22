@@ -1,0 +1,40 @@
+{
+  "phase": "8E",
+  "status": "OK",
+  "database_path": "D:\\Proyectos\\💰 Scout Finance\\data\\demo\\demo_signals.db",
+  "table_name": "equity_research_memos",
+  "table_exists": true,
+  "columns": [
+    "id",
+    "run_id",
+    "ticker",
+    "company_name",
+    "ranking_position",
+    "quant_score",
+    "memo_status",
+    "financial_health_score",
+    "moat_score",
+    "valuation_score",
+    "growth_score",
+    "risk_score",
+    "institutional_score",
+    "data_gaps",
+    "objective_data_json",
+    "ai_interpretation_json",
+    "prompt_version",
+    "schema_version",
+    "estimated_cost",
+    "model_used",
+    "source_file",
+    "created_at",
+    "updated_at"
+  ],
+  "rows_for_run": 3,
+  "run_id": "phase8e_2026-06-17T221355+0000",
+  "source_hashes": {
+    "input_memos_sha256": "fc263c270328cbf2b76c0a0729201fc019725a334525c3b3e93ebf7f17b795be",
+    "bound_candidates_sha256": "cf6a44c2591479cfe6b5edd1d599bc620218b176160af262d30fefaef0f2d589",
+    "app_py_sha256": "dc27b9a248f243247155cd17d75fe1a33493d2095f6376e9587bca8996a20e60",
+    "filters_py_sha256": "cfec47448605da16f8db0d9052f44d6b1b957f6d6a290e7b637c517df2a1c5a4"
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "phase": "7A",
+  "runner": "run_real_universe_pilot",
+  "status": "OK",
+  "started_at": "2026-06-08T08:39:46+00:00",
+  "finished_at": "2026-06-08T08:39:46+00:00",
+  "elapsed_seconds": 0.338,
+  "source": "yfinance_clean_market_data_500",
+  "input_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_real_clean_market_enriched_500.csv",
+  "pilot_input_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_pilot.csv",
+  "limit": 500,
+  "raw_rows_loaded": 500,
+  "stage2_executed": false,
+  "openai_called": false,
+  "api_called": false,
+  "app_modified": false,
+  "release_v0_6_modified": false,
+  "steps": [
+    {
+      "name": "Phase 6A — Normalize pilot CSV",
+      "status": "OK",
+      "started_at": "2026-06-08T08:39:46+00:00",
+      "finished_at": "2026-06-08T08:39:46+00:00",
+      "elapsed_seconds": 0.051,
+      "details": {
+        "rows_written": 500,
+        "input_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_pilot.csv"
+      },
+      "error": null
+    },
+    {
+      "name": "Stage 0 — Validate normalized global universe",
+      "status": "OK",
+      "started_at": "2026-06-08T08:39:46+00:00",
+      "finished_at": "2026-06-08T08:39:46+00:00",
+      "elapsed_seconds": 0.064,
+      "details": {
+        "phase": "5B",
+        "created_at": "2026-06-08T08:39:46+00:00",
+        "input_companies": 500,
+        "missing_required_columns": [],
+        "has_required_columns": true,
+        "duplicated_ticker_rows": 0,
+        "missing_values": {
+          "ticker": 0,
+          "name": 0,
+          "exchange": 0,
+          "country": 0,
+          "region": 0,
+          "currency": 0,
+          "sector": 0,
+          "industry": 0,
+          "asset_type": 0,
+          "is_active": 0,
+          "market_cap": 2,
+          "price": 0,
+          "avg_volume_30d": 0,
+          "avg_volume_90d": 0,
+          "data_source": 0,
+          "last_updated": 0
+        },
+        "counts": {
+          "missing_market_cap": 2,
+          "market_cap_positive": 498,
+          "missing_price": 0,
+          "price_positive": 500,
+          "missing_avg_volume_90d": 0,
+          "avg_volume_90d_positive": 500
+        },
+        "asset_type_distribution": {
+          "common_stock": 500
+        },
+        "country_distribution_top20": {
+          "USA": 500
+        },
+        "sector_distribution_top20": {
+          "Healthcare": 165,
+          "Technology": 106,
+          "Financial Services": 80,
+          "Industrials": 46,
+          "Consumer Cyclical": 26,
+          "Consumer Defensive": 20,
+          "Communication Services": 18,
+          "Basic Materials": 17,
+          "Energy": 7,
+          "Real Estate": 7,
+          "Unknown": 5,
+          "Utilities": 3
+        },
+        "status": "OK"
+      },
+      "error": null
+    },
+    {
+      "name": "Stage 1 — Investable universe filter",
+      "status": "OK",
+      "started_at": "2026-06-08T08:39:46+00:00",
+      "finished_at": "2026-06-08T08:39:46+00:00",
+      "elapsed_seconds": 0.134,
+      "details": {
+        "phase": "5C",
+        "stage": "stage1",
+        "created_at": "2026-06-08T08:39:46+00:00",
+        "input_companies": 500,
+        "passed_companies": 226,
+        "watchlist_companies": 66,
+        "rejected_companies": 208,
+        "pass_rate": 0.452,
+        "watchlist_rate": 0.132,
+        "rejection_rate": 0.416,
+        "top_rejection_or_watchlist_reasons": {
+          "MARKET_CAP_BELOW_MINIMUM": 171,
+          "LOW_DOLLAR_VOLUME": 132,
+          "PRICE_WATCHLIST_RANGE": 98,
+          "DOLLAR_VOLUME_WATCHLIST_RANGE": 71,
+          "MARKET_CAP_WATCHLIST_RANGE": 68,
+          "PRICE_BELOW_MINIMUM": 39,
+          "MISSING_MARKET_CAP": 2
+        },
+        "output_files": {
+          "passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+          "watchlist": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_watchlist.csv",
+          "rejected": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejected.csv",
+          "rejection_log": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejection_log.csv",
+          "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_summary.json"
+        },
+        "config": {
+          "target_pass_rate": 0.2,
+          "min_market_cap_pass": 300000000,
+          "min_market_cap_watchlist": 100000000,
+          "min_price_pass": 3.0,
+          "min_price_watchlist": 1.0,
+          "min_dollar_volume_pass": 2000000,
+          "min_dollar_volume_watchlist": 500000,
+          "allowed_asset_types": [
+            "common_stock"
+          ],
+          "allow_adr": true,
+          "allow_otc": false,
+          "allowed_exchanges": [
+            "AMEX",
+            "ARCA",
+            "ASX",
+            "CBOE",
+            "EURONEXT",
+            "HKEX",
+            "LSE",
+            "NASDAQ",
+            "NYSE",
+            "SIX",
+            "TSE",
+            "TSX",
+            "XETRA"
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "name": "Phase 6B — Fundamental coverage report",
+      "status": "OK",
+      "started_at": "2026-06-08T08:39:46+00:00",
+      "finished_at": "2026-06-08T08:39:46+00:00",
+      "elapsed_seconds": 0.061,
+      "details": {
+        "phase": "6B",
+        "created_at": "2026-06-08T08:39:46+00:00",
+        "input_file": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+        "input_companies": 226,
+        "core_stage2_columns": [
+          "revenue_ttm",
+          "operating_margin",
+          "fcf_margin",
+          "net_debt_to_ebitda",
+          "shares_dilution_3y",
+          "data_completeness_score",
+          "financial_data_date",
+          "special_case"
+        ],
+        "recommended_stage2_columns": [
+          "revenue_growth_1y",
+          "revenue_growth_3y",
+          "gross_margin",
+          "net_margin",
+          "ebitda",
+          "free_cash_flow",
+          "total_debt",
+          "cash",
+          "net_debt",
+          "debt_to_equity",
+          "current_ratio",
+          "interest_coverage"
+        ],
+        "stage3_extra_columns": [
+          "pe_ratio",
+          "forward_pe",
+          "ev_ebitda",
+          "price_sales",
+          "fcf_yield",
+          "price_change_6m",
+          "price_change_12m",
+          "relative_strength_6m",
+          "drawdown_from_52w_high"
+        ],
+        "average_core_stage2_coverage_percent": 0.0,
+        "fully_covered_core_stage2_columns": 0,
+        "total_core_stage2_columns": 8,
+        "companies_ready_for_stage2": 0,
+        "companies_not_ready_for_stage2": 226,
+        "top_missing_core_stage2_columns": [
+          {
+            "column": "revenue_ttm",
+            "coverage_percent": 0.0,
+            "missing_count": 226
+          },
+          {
+            "column": "operating_margin",
+            "coverage_percent": 0.0,
+            "missing_count": 226
+          },
+          {
+            "column": "fcf_margin",
+            "coverage_percent": 0.0,
+            "missing_count": 226
+          },
+          {
+            "column": "net_debt_to_ebitda",
+            "coverage_percent": 0.0,
+            "missing_count": 226
+          },
+          {
+            "column": "shares_dilution_3y",
+            "coverage_percent": 0.0,
+            "missing_count": 226
+          },
+          {
+            "column": "data_completeness_score",
+            "coverage_percent": 0.0,
+            "missing_count": 226
+          },
+          {
+            "column": "financial_data_date",
+            "coverage_percent": 0.0,
+            "missing_count": 226
+          },
+          {
+            "column": "special_case",
+            "coverage_percent": 0.0,
+            "missing_count": 226
+          }
+        ],
+        "output_files": {
+          "coverage_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamental_coverage_report.json",
+          "coverage_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamental_coverage_report.csv",
+          "missing_by_company": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamental_missing_by_company.csv"
+        },
+        "openai_called": false,
+        "api_called": false,
+        "app_modified": false
+      },
+      "error": null
+    }
+  ],
+  "counts": {
+    "stage0_input_companies": 500,
+    "stage1_passed": 226,
+    "stage1_watchlist": 66,
+    "stage1_rejected": 208,
+    "fundamental_coverage_input_companies": 226,
+    "companies_ready_for_stage2": 0,
+    "companies_not_ready_for_stage2": 226,
+    "average_core_stage2_coverage_percent": 0.0
+  },
+  "output_files": {
+    "pilot_summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\real_universe_pilot_summary.json",
+    "pilot_input": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_pilot.csv",
+    "pilot_sample_export": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\real_universe_pilot_input_sample.csv",
+    "global_universe": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\universe\\global_universe.csv",
+    "stage1_passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+    "stage1_rejection_log": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejection_log.csv",
+    "fundamental_coverage_report": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamental_coverage_report.json"
+  }
+}

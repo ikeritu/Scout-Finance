@@ -1,0 +1,19 @@
+{
+  "phase": "8I",
+  "status": "OK",
+  "run_id": "phase8i_2026-06-17T223555+0000",
+  "default_top_n": 3,
+  "max_top_n": 3,
+  "prompt_packages_loaded": 3,
+  "sandbox_executions_created": 3,
+  "ai_gate_status": "closed",
+  "ai_allowed": false,
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false,
+  "next": "8J — AI memo integration readiness and final v0.8 candidate audit"
+}

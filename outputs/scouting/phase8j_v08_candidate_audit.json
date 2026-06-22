@@ -1,0 +1,375 @@
+{
+  "phase": "8J",
+  "status": "OK",
+  "run_id": "phase8j_2026-06-17T223745+0000",
+  "phase_status": [
+    {
+      "phase": "8A",
+      "summary_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8a_dashboard_final_design_summary.json",
+      "summary_exists": true,
+      "status": "OK",
+      "default_top_n": null,
+      "max_top_n": null,
+      "openai_called": null,
+      "api_called": null,
+      "yfinance_called": null,
+      "pipeline_recalculated": null,
+      "app_modified": null,
+      "filters_modified": null,
+      "release_modified": null
+    },
+    {
+      "phase": "8B",
+      "summary_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8b_ai_equity_research_memo_blueprint_summary.json",
+      "summary_exists": true,
+      "status": "OK",
+      "default_top_n": 3,
+      "max_top_n": null,
+      "openai_called": null,
+      "api_called": null,
+      "yfinance_called": null,
+      "pipeline_recalculated": null,
+      "app_modified": null,
+      "filters_modified": null,
+      "release_modified": null
+    },
+    {
+      "phase": "8C",
+      "summary_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8c_deterministic_research_modules_summary.json",
+      "summary_exists": true,
+      "status": "OK",
+      "default_top_n": 3,
+      "max_top_n": null,
+      "openai_called": null,
+      "api_called": null,
+      "yfinance_called": null,
+      "pipeline_recalculated": null,
+      "app_modified": null,
+      "filters_modified": null,
+      "release_modified": null
+    },
+    {
+      "phase": "8D",
+      "summary_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8d_candidate_source_binding_summary.json",
+      "summary_exists": true,
+      "status": "OK",
+      "default_top_n": 3,
+      "max_top_n": null,
+      "openai_called": null,
+      "api_called": null,
+      "yfinance_called": null,
+      "pipeline_recalculated": null,
+      "app_modified": null,
+      "filters_modified": null,
+      "release_modified": null
+    },
+    {
+      "phase": "8E",
+      "summary_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8e_equity_research_memo_persistence_summary.json",
+      "summary_exists": true,
+      "status": "OK",
+      "default_top_n": 3,
+      "max_top_n": null,
+      "openai_called": null,
+      "api_called": null,
+      "yfinance_called": null,
+      "pipeline_recalculated": null,
+      "app_modified": null,
+      "filters_modified": null,
+      "release_modified": null
+    },
+    {
+      "phase": "8F",
+      "summary_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8f_research_memo_export_report_layer_summary.json",
+      "summary_exists": true,
+      "status": "OK",
+      "default_top_n": 3,
+      "max_top_n": null,
+      "openai_called": null,
+      "api_called": null,
+      "yfinance_called": null,
+      "pipeline_recalculated": null,
+      "app_modified": null,
+      "filters_modified": null,
+      "release_modified": null
+    },
+    {
+      "phase": "8G",
+      "summary_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8g_optional_ai_interpretation_gate_summary.json",
+      "summary_exists": true,
+      "status": "OK",
+      "default_top_n": 3,
+      "max_top_n": 3,
+      "openai_called": false,
+      "api_called": false,
+      "yfinance_called": false,
+      "pipeline_recalculated": false,
+      "app_modified": false,
+      "filters_modified": false,
+      "release_modified": false
+    },
+    {
+      "phase": "8H",
+      "summary_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8h_prompt_packaging_dry_run_summary.json",
+      "summary_exists": true,
+      "status": "OK",
+      "default_top_n": 3,
+      "max_top_n": 3,
+      "openai_called": false,
+      "api_called": false,
+      "yfinance_called": false,
+      "pipeline_recalculated": false,
+      "app_modified": false,
+      "filters_modified": false,
+      "release_modified": false
+    },
+    {
+      "phase": "8I",
+      "summary_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8i_optional_ai_execution_sandbox_summary.json",
+      "summary_exists": true,
+      "status": "OK",
+      "default_top_n": 3,
+      "max_top_n": 3,
+      "openai_called": false,
+      "api_called": false,
+      "yfinance_called": false,
+      "pipeline_recalculated": false,
+      "app_modified": false,
+      "filters_modified": false,
+      "release_modified": false
+    }
+  ],
+  "key_outputs": [
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8a_dashboard_final_design_summary.json",
+      "relative_path": "outputs\\scouting\\phase8a_dashboard_final_design_summary.json",
+      "exists": true,
+      "size_bytes": 1469,
+      "sha256": "829c2b554078590571748052ae5fd08edde129862f3596ad877d51cc98a28d08"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8a_dashboard_final_design_report.md",
+      "relative_path": "outputs\\scouting\\phase8a_dashboard_final_design_report.md",
+      "exists": true,
+      "size_bytes": 4009,
+      "sha256": "9347e44cd29760cf45dc7af4cbb437c62bd28b932ae2b8db279f37e3cfc8acf4"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8a_dashboard_final_design_matrix.csv",
+      "relative_path": "outputs\\scouting\\phase8a_dashboard_final_design_matrix.csv",
+      "exists": true,
+      "size_bytes": 1292,
+      "sha256": "ab1223b6026138f5bffae11bd8bd3b33f573711dcc615aa3c14cd335ae0b3622"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8b_ai_equity_research_memo_blueprint_summary.json",
+      "relative_path": "outputs\\scouting\\phase8b_ai_equity_research_memo_blueprint_summary.json",
+      "exists": true,
+      "size_bytes": 1888,
+      "sha256": "7f57137d88e5aee3da01185d5ea8495230c2d281a9c563ca753cb2414f20acc9"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8b_ai_equity_research_memo_blueprint_report.md",
+      "relative_path": "outputs\\scouting\\phase8b_ai_equity_research_memo_blueprint_report.md",
+      "exists": true,
+      "size_bytes": 4533,
+      "sha256": "7f19c80ee1d19f7da6621bd4cc110145967a93e1b50d5cb64b5b2637ba352d76"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8b_ai_equity_research_memo_modules_matrix.csv",
+      "relative_path": "outputs\\scouting\\phase8b_ai_equity_research_memo_modules_matrix.csv",
+      "exists": true,
+      "size_bytes": 1237,
+      "sha256": "b7000eee086019f2448ee68aad52d15e0a1b794cf3be8f9f69cf06a6e1a3b8f6"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8b_equity_research_memos_table_schema.json",
+      "relative_path": "outputs\\scouting\\phase8b_equity_research_memos_table_schema.json",
+      "exists": true,
+      "size_bytes": 3427,
+      "sha256": "bbb38c532a3dc5943616f60248e1f4f56a5dd9cad3503768a40e5b3a3e1a7aaf"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\schemas\\equity_research_memo_schema_v0_1.json",
+      "relative_path": "schemas\\equity_research_memo_schema_v0_1.json",
+      "exists": true,
+      "size_bytes": 2241,
+      "sha256": "9e99c0d5eeed79f0e8e1bb2c75836f17e808f1502806e20b4adafccd02f33dd7"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8c_deterministic_research_modules_summary.json",
+      "relative_path": "outputs\\scouting\\phase8c_deterministic_research_modules_summary.json",
+      "exists": true,
+      "size_bytes": 1205,
+      "sha256": "740f557093ef557bd80669007870c0d5ac23b559e685dbfbbc6115cf037bfe55"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8c_deterministic_research_memos.json",
+      "relative_path": "outputs\\scouting\\phase8c_deterministic_research_memos.json",
+      "exists": true,
+      "size_bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8d_candidate_source_binding_summary.json",
+      "relative_path": "outputs\\scouting\\phase8d_candidate_source_binding_summary.json",
+      "exists": true,
+      "size_bytes": 1834,
+      "sha256": "78ade0b553b0300376e91825118f81052f1a20457b8415a72cdaf663a781fcfe"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8d_candidate_source_bound_memos.json",
+      "relative_path": "outputs\\scouting\\phase8d_candidate_source_bound_memos.json",
+      "exists": true,
+      "size_bytes": 50155,
+      "sha256": "fc263c270328cbf2b76c0a0729201fc019725a334525c3b3e93ebf7f17b795be"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8d_bound_top_candidates.csv",
+      "relative_path": "outputs\\scouting\\phase8d_bound_top_candidates.csv",
+      "exists": true,
+      "size_bytes": 465,
+      "sha256": "cf6a44c2591479cfe6b5edd1d599bc620218b176160af262d30fefaef0f2d589"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8e_equity_research_memo_persistence_summary.json",
+      "relative_path": "outputs\\scouting\\phase8e_equity_research_memo_persistence_summary.json",
+      "exists": true,
+      "size_bytes": 1231,
+      "sha256": "f3475249383a14d06ffc3dc08db4d8fb073abc649ca534d548f756ae8dc581d3"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8e_persisted_equity_research_memos.json",
+      "relative_path": "outputs\\scouting\\phase8e_persisted_equity_research_memos.json",
+      "exists": true,
+      "size_bytes": 28970,
+      "sha256": "328f493acfb717e85b7aa0bc1742bbef54e746d55ff1ee711f5c5d89fbecd7a8"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8e_equity_research_memo_db_audit.json",
+      "relative_path": "outputs\\scouting\\phase8e_equity_research_memo_db_audit.json",
+      "exists": true,
+      "size_bytes": 1181,
+      "sha256": "992edf41a20753c4ffe2520f10c8d6a96cb2ee9672748db80e38f1154f511bc2"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8f_research_memo_export_report_layer_summary.json",
+      "relative_path": "outputs\\scouting\\phase8f_research_memo_export_report_layer_summary.json",
+      "exists": true,
+      "size_bytes": 984,
+      "sha256": "ff6f83cb2e1f94c092b4c0e51cfa348447cde5cc237ec1a2713d4638ea7a1b9c"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8f_research_memo_export.json",
+      "relative_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8f_research_memo_export.json",
+      "exists": false,
+      "size_bytes": null,
+      "sha256": null
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8f_research_memo_index.csv",
+      "relative_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8f_research_memo_index.csv",
+      "exists": false,
+      "size_bytes": null,
+      "sha256": null
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8f_research_memo_export_report_layer_audit.json",
+      "relative_path": "outputs\\scouting\\phase8f_research_memo_export_report_layer_audit.json",
+      "exists": true,
+      "size_bytes": 1250,
+      "sha256": "052e43903ce904dd19c925fd01ba39970beef6527c0b48e1fc497d251f86b656"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8g_optional_ai_interpretation_gate_summary.json",
+      "relative_path": "outputs\\scouting\\phase8g_optional_ai_interpretation_gate_summary.json",
+      "exists": true,
+      "size_bytes": 742,
+      "sha256": "01087afe532ad71fbe08b46fc3adb5911b4eb93e50073118c284f7a3c6f51d5f"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8g_ai_interpretation_gate_decision.json",
+      "relative_path": "outputs\\scouting\\phase8g_ai_interpretation_gate_decision.json",
+      "exists": true,
+      "size_bytes": 558,
+      "sha256": "1cebfe16674aea3ccb03854593b6ae7a55b7b2aad189e4bb75c43a8027985510"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8g_ai_interpretation_plan.json",
+      "relative_path": "outputs\\scouting\\phase8g_ai_interpretation_plan.json",
+      "exists": true,
+      "size_bytes": 1366,
+      "sha256": "acbfcafefbb89b36c126bac90d5f393cb3ceb75406f435e6a5dc11ac459f4aa4"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8h_prompt_packaging_dry_run_summary.json",
+      "relative_path": "outputs\\scouting\\phase8h_prompt_packaging_dry_run_summary.json",
+      "exists": true,
+      "size_bytes": 760,
+      "sha256": "1fb96a7a224dd0027bfc17f3bc94162f683ecaa78b57735686fcd1df7e00f65a"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8h_ai_prompt_packages.json",
+      "relative_path": "outputs\\scouting\\phase8h_ai_prompt_packages.json",
+      "exists": true,
+      "size_bytes": 37459,
+      "sha256": "c06d9010f4d17f8ee0b5568488eb46ddc98aeaa8108f90675ccf6e6c7975e594"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8h_prompt_packaging_dry_run_audit.json",
+      "relative_path": "outputs\\scouting\\phase8h_prompt_packaging_dry_run_audit.json",
+      "exists": true,
+      "size_bytes": 2185,
+      "sha256": "2b4db07060f6bf66a5662be478c00d121e685b27eeb85dac71abdf6575fe37f9"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8i_optional_ai_execution_sandbox_summary.json",
+      "relative_path": "outputs\\scouting\\phase8i_optional_ai_execution_sandbox_summary.json",
+      "exists": true,
+      "size_bytes": 535,
+      "sha256": "b9cae8cf303500f264c27c94300a84a118428f6a5212b4eec06ef5d7eb635837"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8i_ai_execution_sandbox_results.json",
+      "relative_path": "outputs\\scouting\\phase8i_ai_execution_sandbox_results.json",
+      "exists": true,
+      "size_bytes": 40123,
+      "sha256": "a5bf29dbbe8dc80944dde83cdb56415302cde32f22200522da90c0b5624cc549"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8i_ai_execution_sandbox_audit.json",
+      "relative_path": "outputs\\scouting\\phase8i_ai_execution_sandbox_audit.json",
+      "exists": true,
+      "size_bytes": 1987,
+      "sha256": "ee9423b294e9c01ad3be0e2e643472c65bd11d0097c5d2ac9a2fb8cc34fd3298"
+    },
+    {
+      "path": "D:\\Proyectos\\💰 Scout Finance\\data\\demo\\demo_signals.db",
+      "relative_path": "data\\demo\\demo_signals.db",
+      "exists": true,
+      "size_bytes": 176128,
+      "sha256": "66ef5edb18916aa61f94e617896fbc3f0841f1377bd2d5eca4b70e32b150a9e0"
+    }
+  ],
+  "readiness": {
+    "readiness": "ready_for_v0_8_candidate",
+    "blockers": [],
+    "warnings": [],
+    "recommendation": "Freeze v0.8 candidate as quantitative ranking + deterministic equity research memo layer, with AI execution disabled by default.",
+    "release_positioning": {
+      "v0_8_scope": "ranking cuantitativo + AI Equity Research Memo estructurado en modo determinista/dry-run/sandbox",
+      "real_ai_calls": "disabled_by_default",
+      "cost_control": "explicit gate required before any future real AI execution",
+      "top_n": 3
+    }
+  },
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": false
+  }
+}

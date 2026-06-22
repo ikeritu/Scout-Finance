@@ -1,0 +1,6 @@
+Symbol,Name,Exchange,Country,Sector,Industry,Market Cap,Last Sale,Volume
+AAPL,Apple Inc.,NASDAQ,USA,Technology,Consumer Electronics,$3.0T,$190,60000000
+MSFT,Microsoft Corporation,NASDAQ,USA,Technology,Software,$3.2T,$420,28000000
+NVDA,NVIDIA Corporation,NASDAQ,USA,Technology,Semiconductors,$2.8T,$950,45000000
+JPM,JPMorgan Chase & Co.,NYSE,USA,Financial Services,Banks,$600B,$200,9000000
+XYZ,Example Microcap Corp,NYSE,USA,Industrials,Specialty Industrial Machinery,$50M,$0.75,12000

@@ -1,0 +1,48 @@
+{
+  "phase": "8H",
+  "status": "OK",
+  "source": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8e_persisted_equity_research_memos.json",
+  "packages_created": 3,
+  "reports": [
+    {
+      "ticker": "AUPH",
+      "json_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_prompts\\ai_prompt_package_01_AUPH.json",
+      "json_exists": true,
+      "json_sha256": "43238aab05efbc3895dc7761dfeb61ca5626bbddc99abef2400dfdc851f9d0d0",
+      "md_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_prompts\\ai_prompt_package_01_AUPH.md",
+      "md_exists": true,
+      "md_sha256": "59762f3f2ba1fa2498ca726e784e5653737fec8d5b1ff58d7ad2fcdc5d5c57aa",
+      "openai_called": false,
+      "estimated_cost": 0.0
+    },
+    {
+      "ticker": "BZ",
+      "json_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_prompts\\ai_prompt_package_02_BZ.json",
+      "json_exists": true,
+      "json_sha256": "3f3637d7ed9865cf0b9f575dc5917e01f3e64132ae87e3833c465dd4a61f7192",
+      "md_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_prompts\\ai_prompt_package_02_BZ.md",
+      "md_exists": true,
+      "md_sha256": "89e1a20d87749fbec199c3426ea0a3565e26bccf8287162cfc6791db889e33ab",
+      "openai_called": false,
+      "estimated_cost": 0.0
+    },
+    {
+      "ticker": "ADBE",
+      "json_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_prompts\\ai_prompt_package_03_ADBE.json",
+      "json_exists": true,
+      "json_sha256": "afd6efeb205ce18ed298911d277fceaf3e55c3cfb9cdd84e9553873aeacd2aef",
+      "md_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_prompts\\ai_prompt_package_03_ADBE.md",
+      "md_exists": true,
+      "md_sha256": "21ab37c06bcc755da70ae309fb301126b4b2b87d3cd42de11092a3883b5a0205",
+      "openai_called": false,
+      "estimated_cost": 0.0
+    }
+  ],
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false
+}

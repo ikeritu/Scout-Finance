@@ -1,0 +1,45 @@
+{
+  "phase": "7C.1",
+  "status": "OK",
+  "created_at": "2026-06-09T08:08:58+00:00",
+  "input_file": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+  "input_companies": 182,
+  "unique_tickers": 182,
+  "yf_success_rows": 182,
+  "yf_failed_rows": 0,
+  "companies_ready_for_stage2": 147,
+  "companies_not_ready_for_stage2": 35,
+  "average_core_stage2_coverage_percent": 83.17,
+  "core_stage2_columns": [
+    "revenue_ttm",
+    "operating_margin",
+    "fcf_margin",
+    "net_debt_to_ebitda",
+    "shares_dilution_3y",
+    "data_completeness_score",
+    "financial_data_date",
+    "special_case"
+  ],
+  "hard_required_for_stage2_after_yfinance": [
+    "revenue_ttm",
+    "operating_margin",
+    "fcf_margin",
+    "net_debt_to_ebitda",
+    "data_completeness_score",
+    "financial_data_date",
+    "special_case"
+  ],
+  "output_files": {
+    "raw_fundamentals": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\fundamentals_source_yfinance.csv",
+    "stage1_passed_enriched": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed_enriched.csv",
+    "summary_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamentals_yfinance_enrichment_summary.json",
+    "failures_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamentals_yfinance_failures.csv",
+    "coverage_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamentals_yfinance_enrichment_coverage.csv",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamentals_yfinance_enrichment_report.md"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": true,
+  "app_modified": false,
+  "release_modified": false
+}

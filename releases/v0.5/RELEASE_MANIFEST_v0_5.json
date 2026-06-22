@@ -1,0 +1,92 @@
+{
+  "release": "v0.5",
+  "phase": "5J",
+  "created_at": "2026-06-04T07:52:15+00:00",
+  "release_dir": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.5",
+  "openai_called": false,
+  "funnel_executed": false,
+  "outputs_modified": false,
+  "stable_app_snapshot": {
+    "root_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\app_v0_5_stable.py",
+    "release_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.5\\app_v0_5_stable.py",
+    "status": "copied",
+    "sha256": "bc6e3f6d092cc0b0cbed75098d3c2e88f5bcba439f7ca42f8d1de61053b9fe58"
+  },
+  "copied_files": [
+    {
+      "path": "app.py",
+      "status": "copied",
+      "size_bytes": 161086,
+      "sha256": "bc6e3f6d092cc0b0cbed75098d3c2e88f5bcba439f7ca42f8d1de61053b9fe58"
+    },
+    {
+      "path": "config.py",
+      "status": "copied",
+      "size_bytes": 2932,
+      "sha256": "3b87579fa9b10c6719cf2397287d13e345f129a8e11b897dcf719e53303a9b4c"
+    },
+    {
+      "path": "README.md",
+      "status": "copied",
+      "size_bytes": 1967,
+      "sha256": "6370ecf4ec85aa67a11f875e10f63dff664b6076d2d71e670051041515c2e36e"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "status": "copied",
+      "size_bytes": 707,
+      "sha256": "6488144f6675509b88023375f817e3cf0237fd54adf4351a4f98c81ad9c1be87"
+    },
+    {
+      "path": "VERSION.md",
+      "status": "copied",
+      "size_bytes": 519,
+      "sha256": "1822ea75ab6180382b6506e615e98c841e408dff46e3182c673c22e94ace227c"
+    },
+    {
+      "path": "requirements.txt",
+      "status": "copied",
+      "size_bytes": 76,
+      "sha256": "d5902eb541d90664eaf20413e17d324b678992ea40d00b25bc4fdc49388763bd"
+    },
+    {
+      "path": ".env.example",
+      "status": "copied",
+      "size_bytes": 273,
+      "sha256": "c8017b5a77a5e91fbbb1b70ffe5553c684c1b2b01b784cde44526d911e24c7d9"
+    },
+    {
+      "path": ".gitignore",
+      "status": "copied",
+      "size_bytes": 433,
+      "sha256": "c65a06d3f4cf28c138ca4493347e0c63faccb34bf932da70670cfdbb06d5ec51"
+    }
+  ],
+  "copied_directories": [
+    {
+      "path": "src",
+      "status": "copied",
+      "files": 42
+    },
+    {
+      "path": "scripts",
+      "status": "copied",
+      "files": 11
+    },
+    {
+      "path": "templates",
+      "status": "copied",
+      "files": 7
+    },
+    {
+      "path": "docs",
+      "status": "copied",
+      "files": 14
+    }
+  ],
+  "notes": [
+    "Release v0.5 freezes the current stable state before moving to real global universe data.",
+    "This release should include Phase 5B-5I functionality.",
+    "The script does not call OpenAI and does not run the funnel."
+  ]
+}

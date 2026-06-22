@@ -1,0 +1,138 @@
+{
+  "ticker": "AAPL",
+  "company_name": "Apple Inc.",
+  "sector": "Technology",
+  "industry": "Consumer Electronics",
+  "analysis_date": "2026-06-01T08:41:03.192207+00:00",
+  "currency": "USD",
+  "business_summary": "Apple diseña, fabrica y comercializa dispositivos electrónicos de consumo, software y servicios asociados a su ecosistema.",
+  "business_model": "Modelo integrado hardware-software-servicios, apoyado en marca global, base instalada amplia y monetización recurrente de servicios.",
+  "revenue_streams": [
+    "Venta de iPhone y otros dispositivos",
+    "Servicios digitales y de plataforma",
+    "Accesorios y wearables",
+    "Software y ecosistema asociado"
+  ],
+  "scores": {
+    "business_quality_score": 8.8,
+    "financial_health_score": null,
+    "growth_score": null,
+    "valuation_score": null,
+    "risk_score": 5.5,
+    "moat_score": 8.9,
+    "evidence_quality_score": 6.4,
+    "data_freshness_score": 8.8,
+    "confidence_score": 6.1
+  },
+  "moat_breakdown": {
+    "brand_strength": 9.5,
+    "switching_costs": 8.7,
+    "network_effects": 7.2,
+    "cost_advantage": 6.1,
+    "technology_edge": 8.3,
+    "scale_advantage": 9.4,
+    "moat_comment": "El moat probable es fuerte por marca, escala y ecosistema. Sin embargo, no se aportan métricas operativas para medir su intensidad con precisión."
+  },
+  "valuation_summary": {
+    "relative_valuation": "Sin múltiplos de valoración no es posible concluir si cotiza con prima o descuento frente a pares. El precio actual en máximo de 52 semanas sugiere una valoración exigente desde la óptica del mercado.",
+    "valuation_status": "No determinable con la información disponible",
+    "valuation_confidence": 2.8,
+    "main_valuation_risk": "Falta de ratios de valoración y de métricas fundamentales para contrastar el precio actual."
+  },
+  "risk_analysis": {
+    "main_risks": [
+      {
+        "risk": "Valoración exigente",
+        "probability": "media",
+        "impact": "alto",
+        "severity": "alto",
+        "comment": "Cotizar en máximos de 52 semanas puede dejar poco margen de seguridad si el crecimiento decepciona."
+      },
+      {
+        "risk": "Riesgo regulatorio y antitrust",
+        "probability": "media",
+        "impact": "alto",
+        "severity": "alto",
+        "comment": "El ecosistema y las comisiones están expuestos a escrutinio regulatorio."
+      },
+      {
+        "risk": "Dependencia del ciclo de renovación de hardware",
+        "probability": "media",
+        "impact": "medio",
+        "severity": "medio",
+        "comment": "Una parte importante del negocio depende de lanzamientos y actualizaciones de producto."
+      },
+      {
+        "risk": "Cadena de suministro global",
+        "probability": "media",
+        "impact": "medio",
+        "severity": "medio",
+        "comment": "La fabricación y componentes pueden verse afectados por tensiones geopolíticas o logísticas."
+      }
+    ],
+    "risk_level": "medio",
+    "risk_comment": "El riesgo no parece extremo por la calidad del negocio, pero la combinación de precio alto y falta de datos fundamentales eleva la incertidumbre."
+  },
+  "scenarios": {
+    "bull_case": {
+      "summary": "El ecosistema se monetiza mejor, servicios crecen con fuerza y la rentabilidad permanece elevada, sosteniendo la percepción de calidad.",
+      "key_assumptions": [
+        "Crecimiento sólido de servicios",
+        "Renovación exitosa de productos clave",
+        "Margen operativo estable o en expansión",
+        "Sin deterioro regulatorio material"
+      ],
+      "probability": 30
+    },
+    "base_case": {
+      "summary": "Crecimiento moderado con estabilidad en hardware y contribución creciente de servicios, pero sin re-rating claro por valoración.",
+      "key_assumptions": [
+        "Demanda estable de dispositivos",
+        "Servicios compensan madurez en hardware",
+        "Márgenes relativamente estables"
+      ],
+      "probability": 45
+    },
+    "bear_case": {
+      "summary": "Desaceleración de demanda, presión regulatoria o compresión de múltiplos reduce el atractivo relativo del activo.",
+      "key_assumptions": [
+        "Menor crecimiento de ingresos",
+        "Presión competitiva o regulatoria",
+        "Expansión de múltiplos limitada o negativa"
+      ],
+      "probability": 25
+    }
+  },
+  "dividend_analysis": {
+    "is_dividend_payer": null,
+    "dividend_yield": null,
+    "payout_ratio_earnings": null,
+    "payout_ratio_fcf": null,
+    "dividend_growth_5y": null,
+    "yield_trap_warning": null,
+    "dividend_verdict": "No hay datos suficientes en el input para evaluar dividendos, sostenibilidad o riesgo de yield trap."
+  },
+  "final_result": {
+    "final_category": "🟢 Alta calidad / seguir de cerca",
+    "confidence_level": "medio",
+    "final_reasoning": "La evidencia disponible apunta a un negocio de muy alta calidad y con moat sólido, pero faltan métricas fundamentales clave. Además, el precio actual en máximos sugiere poca holgura de valoración. La categoría final se apoya más en calidad estructural que en evidencia completa de valor.",
+    "watchlist_decision": "Seguir de cerca"
+  },
+  "sources": {
+    "main_sources": [
+      "company_input proporcionado por el usuario",
+      "datos de mercado y momentum de yfinance"
+    ],
+    "source_warnings": [
+      "No se han incluido estados financieros ni métricas de valoración fundamental.",
+      "La evidencia es fuerte en precio/momentum, pero limitada para calidad financiera y valoración.",
+      "Modelo usado: gpt-5.4-mini; coste estimado llamada: $0.012170"
+    ],
+    "data_limitations": [
+      "Faltan ingresos, márgenes, ROIC, FCF, deuda, caja, EPS y guidance.",
+      "Faltan múltiplos de valoración para comparar contra pares o histórico.",
+      "No hay desglose de segmentos ni datos de dividendos.",
+      "No se puede verificar crecimiento fundamental con el material recibido."
+    ]
+  }
+}

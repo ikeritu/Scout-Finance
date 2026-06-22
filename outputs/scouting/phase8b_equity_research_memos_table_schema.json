@@ -1,0 +1,184 @@
+{
+  "table_name": "equity_research_memos",
+  "schema_version": "0.1",
+  "purpose": "Persist structured qualitative and fundamental research memos for top ranked Scout Finance candidates.",
+  "primary_key_candidate": [
+    "run_id",
+    "ticker",
+    "created_at"
+  ],
+  "fields": [
+    {
+      "name": "run_id",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "ticker",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "company_name",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "ranking_position",
+      "type": "INTEGER",
+      "required": true
+    },
+    {
+      "name": "quant_score",
+      "type": "REAL",
+      "required": false
+    },
+    {
+      "name": "memo_status",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "business_model",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "name": "financial_health_score",
+      "type": "REAL",
+      "required": false
+    },
+    {
+      "name": "moat_score",
+      "type": "REAL",
+      "required": false
+    },
+    {
+      "name": "valuation_score",
+      "type": "REAL",
+      "required": false
+    },
+    {
+      "name": "growth_score",
+      "type": "REAL",
+      "required": false
+    },
+    {
+      "name": "risk_score",
+      "type": "REAL",
+      "required": false
+    },
+    {
+      "name": "institutional_score",
+      "type": "REAL",
+      "required": false
+    },
+    {
+      "name": "bull_case",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "name": "base_case",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "name": "bear_case",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "name": "final_verdict",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "confidence",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "data_quality",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "data_gaps",
+      "type": "JSON",
+      "required": true
+    },
+    {
+      "name": "objective_data_json",
+      "type": "JSON",
+      "required": true
+    },
+    {
+      "name": "ai_interpretation_json",
+      "type": "JSON",
+      "required": false
+    },
+    {
+      "name": "risk_ranking_json",
+      "type": "JSON",
+      "required": false
+    },
+    {
+      "name": "valuation_summary_json",
+      "type": "JSON",
+      "required": false
+    },
+    {
+      "name": "sources",
+      "type": "JSON",
+      "required": true
+    },
+    {
+      "name": "created_at",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "updated_at",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "name": "model_used",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "name": "prompt_version",
+      "type": "TEXT",
+      "required": false
+    },
+    {
+      "name": "schema_version",
+      "type": "TEXT",
+      "required": true
+    },
+    {
+      "name": "estimated_cost",
+      "type": "REAL",
+      "required": false
+    }
+  ],
+  "indexes_recommended": [
+    [
+      "ticker"
+    ],
+    [
+      "run_id"
+    ],
+    [
+      "created_at"
+    ],
+    [
+      "final_verdict"
+    ],
+    [
+      "memo_status"
+    ]
+  ]
+}

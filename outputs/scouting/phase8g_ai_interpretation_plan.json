@@ -1,0 +1,47 @@
+[
+  {
+    "ticker": "AUPH",
+    "company_name": "Aurinia Pharmaceuticals Inc - Common Shares",
+    "ranking_position": 1,
+    "quant_score": 70.83,
+    "memo_status": "data_insufficient",
+    "data_gaps_count": 1403,
+    "report_path": null,
+    "ai_interpretation_status": "blocked_by_gate",
+    "estimated_cost": 0.0,
+    "model_used": null,
+    "openai_called": false,
+    "objective_data_required": true,
+    "no_invented_data_rule": true
+  },
+  {
+    "ticker": "BZ",
+    "company_name": "KANZHUN LIMITED - American Depository Shares",
+    "ranking_position": 2,
+    "quant_score": 68.5,
+    "memo_status": "data_insufficient",
+    "data_gaps_count": 1403,
+    "report_path": null,
+    "ai_interpretation_status": "blocked_by_gate",
+    "estimated_cost": 0.0,
+    "model_used": null,
+    "openai_called": false,
+    "objective_data_required": true,
+    "no_invented_data_rule": true
+  },
+  {
+    "ticker": "ADBE",
+    "company_name": "Adobe Inc. - Common Stock",
+    "ranking_position": 3,
+    "quant_score": 65.97,
+    "memo_status": "data_insufficient",
+    "data_gaps_count": 1403,
+    "report_path": null,
+    "ai_interpretation_status": "blocked_by_gate",
+    "estimated_cost": 0.0,
+    "model_used": null,
+    "openai_called": false,
+    "objective_data_required": true,
+    "no_invented_data_rule": true
+  }
+]

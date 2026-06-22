@@ -1,0 +1,5 @@
+﻿ticker,revenue_ttm,revenue_growth_1y,revenue_growth_3y,gross_margin,operating_margin,net_margin,ebitda,free_cash_flow,fcf_margin,total_debt,cash,net_debt,net_debt_to_ebitda,debt_to_equity,current_ratio,interest_coverage,shares_dilution_3y,financial_data_date,special_case
+AAPL,390B,3%,6%,46%,30%,25%,125B,100B,26%,110B,65B,45B,0.36,1.5,1.0,35,-8%,2026-03-31,false
+MSFT,245B,14%,15%,69%,44%,36%,130B,75B,31%,80B,85B,-5B,-0.04,0.4,1.2,40,-3%,2026-03-31,false
+NVDA,110B,90%,55%,73%,55%,49%,65B,45B,41%,12B,30B,-18B,-0.28,0.2,3.5,50,1%,2026-03-31,false
+JPM,160B,5%,7%,,38%,29%,,80B,50%,,,, ,1.2,0.9,,2%,2026-03-31,true

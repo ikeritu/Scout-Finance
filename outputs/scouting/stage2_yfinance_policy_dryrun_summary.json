@@ -1,0 +1,119 @@
+{
+  "phase": "7C.2",
+  "version": "v2",
+  "status": "OK",
+  "created_at": "2026-06-09T08:27:07+00:00",
+  "input_file": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed_enriched.csv",
+  "input_companies": 182,
+  "current_stage2_counts": {
+    "passed": 0,
+    "watchlist": 144,
+    "rejected": 38
+  },
+  "simulated_counts": {
+    "passed": 63,
+    "watchlist": 81,
+    "rejected": 38
+  },
+  "passed_delta": 63,
+  "watchlist_delta": -63,
+  "rejected_delta": 0,
+  "old_missing_shares_dilution_count": 182,
+  "provider_limitation_warning_count": 182,
+  "top_simulated_reasons": [
+    {
+      "reason_code": "MISSING_SHARES_DILUTION_PROVIDER_LIMITATION",
+      "count": 182
+    },
+    {
+      "reason_code": "MISSING_FCF_MARGIN",
+      "count": 33
+    },
+    {
+      "reason_code": "DATA_COMPLETENESS_WATCHLIST_RANGE",
+      "count": 24
+    },
+    {
+      "reason_code": "OPERATING_MARGIN_WATCHLIST_RANGE",
+      "count": 23
+    },
+    {
+      "reason_code": "DEBT_WATCHLIST_RANGE",
+      "count": 23
+    },
+    {
+      "reason_code": "MISSING_NET_DEBT_TO_EBITDA",
+      "count": 20
+    },
+    {
+      "reason_code": "FCF_MARGIN_TOO_NEGATIVE",
+      "count": 19
+    },
+    {
+      "reason_code": "OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE",
+      "count": 19
+    },
+    {
+      "reason_code": "OPERATING_MARGIN_TOO_NEGATIVE",
+      "count": 19
+    },
+    {
+      "reason_code": "DEBT_TOO_HIGH",
+      "count": 15
+    },
+    {
+      "reason_code": "FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE",
+      "count": 13
+    },
+    {
+      "reason_code": "FCF_MARGIN_WATCHLIST_RANGE",
+      "count": 10
+    },
+    {
+      "reason_code": "MISSING_REVENUE_SPECIAL_CASE",
+      "count": 9
+    },
+    {
+      "reason_code": "LOW_DATA_COMPLETENESS",
+      "count": 2
+    },
+    {
+      "reason_code": "MISSING_REVENUE",
+      "count": 1
+    }
+  ],
+  "transition_summary": [
+    {
+      "transition": "WATCHLIST->WATCHLIST",
+      "count": 81
+    },
+    {
+      "transition": "WATCHLIST->PASSED",
+      "count": 63
+    },
+    {
+      "transition": "REJECTED->REJECTED",
+      "count": 38
+    }
+  ],
+  "recommended_decision": "APPROVE_FOR_GUARDED_IMPLEMENTATION",
+  "recommended_next_phase": "7C.3 — Guarded Stage 2 yfinance policy implementation",
+  "policy_change_simulated": {
+    "old_reason": "MISSING_SHARES_DILUTION",
+    "new_reason": "MISSING_SHARES_DILUTION_PROVIDER_LIMITATION",
+    "provider_limitation_does_not_block_pass": true
+  },
+  "output_files": {
+    "summary_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_dryrun_summary.json",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_dryrun_report.md",
+    "results_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_dryrun_results.csv",
+    "reasons_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_dryrun_reasons.csv",
+    "transitions_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_dryrun_transition_summary.csv"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "filter_stage2_modified": false,
+  "release_modified": false
+}

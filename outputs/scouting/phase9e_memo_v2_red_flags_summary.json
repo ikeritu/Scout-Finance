@@ -1,0 +1,37 @@
+{
+  "phase": "9E",
+  "title": "Integrate Red Flags into Research Memo v2",
+  "status": "OK",
+  "created_at": "2026-06-22T09:29:04+0000",
+  "schema_version": "equity_research_memo_schema_v0_2",
+  "default_top_n": 3,
+  "max_top_n": 3,
+  "memo_source_file": "outputs\\scouting\\phase9c_research_memo_v2_contract_export.json",
+  "red_flags_source_file": "outputs\\scouting\\phase9d_red_flags_detector_export.json",
+  "memos_loaded": 3,
+  "red_flag_records_loaded": 3,
+  "memos_exported": 3,
+  "verdict_counts": {
+    "NEEDS_MORE_DATA": 3
+  },
+  "total_red_flags": 9,
+  "records_with_high_or_critical": 3,
+  "manual_review_required_all": true,
+  "not_financial_advice_all": true,
+  "allowed_verdicts": [
+    "NEEDS_MORE_DATA",
+    "REJECT",
+    "WATCHLIST"
+  ],
+  "export_json": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase9e_memo_v2_red_flags_export.json",
+  "index_csv": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase9e_memo_v2_red_flags_index.csv",
+  "memo_dir": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memos_v2_red_flags",
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false,
+  "next": "Phase 9F — AI profiles dry-run, optional"
+}

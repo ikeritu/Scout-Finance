@@ -1,0 +1,7 @@
+﻿check,status,detail
+filter_stage1_exists,OK,C:\Users\ikeri\proyectos\Scout Finance\src\filter_stage1.py
+rollback_backup_exists,OK,C:\Users\ikeri\proyectos\Scout Finance\src\filter_stage1_before_phase7b8_1_exact.py
+filter_stage1_compiles,OK,compiled
+balanced_policy_markers_present,OK,all markers present
+run_stage1_filter,OK,executed
+stage1_counts_match_balanced,OK,"expected={'passed': 182, 'watchlist': 84, 'rejected': 234}; actual={'passed': 182, 'watchlist': 84, 'rejected': 234}"

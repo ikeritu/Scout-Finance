@@ -1,0 +1,151 @@
+{
+  "phase": "7B",
+  "status": "OK",
+  "created_at": "2026-06-08T09:13:13+00:00",
+  "source_summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\clean_500_stability_summary.json",
+  "stage1_input": 500,
+  "stage1_passed": 226,
+  "stage1_watchlist": 66,
+  "stage1_rejected": 208,
+  "stage1_pass_rate_percent": 45.2,
+  "stage1_watchlist_rate_percent": 13.2,
+  "stage1_rejection_rate_percent": 41.6,
+  "clean_500_market_data_success_rate_percent": 99.6,
+  "numeric_profile": {
+    "passed": {
+      "market_cap": {
+        "count": 226,
+        "min": 301000512.0,
+        "p25": 813871264.0,
+        "median": 1829743296.0,
+        "p75": 5885543808.0,
+        "max": 4514011676672.0,
+        "mean": 58480952005.8053
+      },
+      "price": {
+        "count": 226,
+        "min": 3.11,
+        "p25": 11.5625,
+        "median": 29.27,
+        "p75": 79.905,
+        "max": 1641.74,
+        "mean": 80.236
+      },
+      "dollar_volume_90d": {
+        "count": 226,
+        "min": 2053369.56,
+        "p25": 8924241.6275,
+        "median": 26991102.525,
+        "p75": 82533267.7125,
+        "max": 17473402407.6,
+        "mean": 395910695.5813
+      }
+    },
+    "watchlist": {
+      "market_cap": {
+        "count": 66,
+        "min": 104102832.0,
+        "p25": 154352508.0,
+        "median": 231209232.0,
+        "p75": 423648560.0,
+        "max": 1498261376.0,
+        "mean": 330573774.9091
+      },
+      "price": {
+        "count": 66,
+        "min": 1.4,
+        "p25": 2.7425,
+        "median": 5.92,
+        "p75": 11.0675,
+        "max": 45.08,
+        "mean": 9.2181
+      },
+      "dollar_volume_90d": {
+        "count": 66,
+        "min": 521681.78,
+        "p25": 1130723.46,
+        "median": 1788522.585,
+        "p75": 3803093.1625,
+        "max": 35661011.16,
+        "mean": 3937438.307
+      }
+    },
+    "rejected": {
+      "market_cap": {
+        "count": 206,
+        "min": 50668.0,
+        "p25": 10346569.5,
+        "median": 34091560.0,
+        "p75": 83182928.0,
+        "max": 1696800128.0,
+        "mean": 92082426.5971
+      },
+      "price": {
+        "count": 208,
+        "min": 0.0621,
+        "p25": 1.1088,
+        "median": 2.18,
+        "p75": 5.6625,
+        "max": 37.49,
+        "mean": 4.706
+      },
+      "dollar_volume_90d": {
+        "count": 208,
+        "min": 4856.22,
+        "p25": 97550.1582,
+        "median": 276074.009,
+        "p75": 1081231.0073,
+        "max": 484081804.65,
+        "mean": 5975308.8294
+      }
+    }
+  },
+  "rejection_reason_distribution": [
+    {
+      "reason_code": "MARKET_CAP_BELOW_MINIMUM",
+      "count": 171
+    },
+    {
+      "reason_code": "LOW_DOLLAR_VOLUME",
+      "count": 132
+    },
+    {
+      "reason_code": "PRICE_WATCHLIST_RANGE",
+      "count": 98
+    },
+    {
+      "reason_code": "DOLLAR_VOLUME_WATCHLIST_RANGE",
+      "count": 71
+    },
+    {
+      "reason_code": "MARKET_CAP_WATCHLIST_RANGE",
+      "count": 68
+    },
+    {
+      "reason_code": "PRICE_BELOW_MINIMUM",
+      "count": 39
+    },
+    {
+      "reason_code": "MISSING_MARKET_CAP",
+      "count": 2
+    }
+  ],
+  "bucket_summary_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_professional_bucket_summary.csv",
+  "rejection_reasons_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_professional_rejection_reasons.csv",
+  "watchlist_review_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_professional_watchlist_review.csv",
+  "passed_sample_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_professional_passed_sample.csv",
+  "report_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_professional_diagnostic_report.json",
+  "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_professional_diagnostic_report.md",
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "release_v0_6_modified": false,
+  "interpretation": [
+    "Stage 1 pass rate is within a reasonable diagnostic range for a first investability layer.",
+    "Watchlist rate looks usable as an intermediate review bucket.",
+    "Rejection rate appears compatible with a broad first-pass filter.",
+    "Stage 1 remains a market/liquidity filter; Stage 2 still needs real fundamentals before professional opportunity ranking.",
+    "No threshold changes are applied in this phase; this is a diagnostic report only."
+  ]
+}

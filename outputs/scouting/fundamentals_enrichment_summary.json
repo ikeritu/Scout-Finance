@@ -1,0 +1,12 @@
+{
+  "phase": "6C",
+  "input_stage1_companies": 4,
+  "fundamentals_rows": 4,
+  "matched_companies_with_revenue": 4,
+  "match_rate_percent": 100.0,
+  "output_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed_enriched.csv",
+  "stage1_passed_overwritten": false,
+  "openai_called": false,
+  "api_called": false,
+  "app_modified": false
+}

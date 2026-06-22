@@ -1,0 +1,96 @@
+{
+  "phase": "6B",
+  "created_at": "2026-06-09T08:14:18+00:00",
+  "input_file": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+  "input_companies": 182,
+  "core_stage2_columns": [
+    "revenue_ttm",
+    "operating_margin",
+    "fcf_margin",
+    "net_debt_to_ebitda",
+    "shares_dilution_3y",
+    "data_completeness_score",
+    "financial_data_date",
+    "special_case"
+  ],
+  "recommended_stage2_columns": [
+    "revenue_growth_1y",
+    "revenue_growth_3y",
+    "gross_margin",
+    "net_margin",
+    "ebitda",
+    "free_cash_flow",
+    "total_debt",
+    "cash",
+    "net_debt",
+    "debt_to_equity",
+    "current_ratio",
+    "interest_coverage"
+  ],
+  "stage3_extra_columns": [
+    "pe_ratio",
+    "forward_pe",
+    "ev_ebitda",
+    "price_sales",
+    "fcf_yield",
+    "price_change_6m",
+    "price_change_12m",
+    "relative_strength_6m",
+    "drawdown_from_52w_high"
+  ],
+  "average_core_stage2_coverage_percent": 0.0,
+  "fully_covered_core_stage2_columns": 0,
+  "total_core_stage2_columns": 8,
+  "companies_ready_for_stage2": 0,
+  "companies_not_ready_for_stage2": 182,
+  "top_missing_core_stage2_columns": [
+    {
+      "column": "revenue_ttm",
+      "coverage_percent": 0.0,
+      "missing_count": 182
+    },
+    {
+      "column": "operating_margin",
+      "coverage_percent": 0.0,
+      "missing_count": 182
+    },
+    {
+      "column": "fcf_margin",
+      "coverage_percent": 0.0,
+      "missing_count": 182
+    },
+    {
+      "column": "net_debt_to_ebitda",
+      "coverage_percent": 0.0,
+      "missing_count": 182
+    },
+    {
+      "column": "shares_dilution_3y",
+      "coverage_percent": 0.0,
+      "missing_count": 182
+    },
+    {
+      "column": "data_completeness_score",
+      "coverage_percent": 0.0,
+      "missing_count": 182
+    },
+    {
+      "column": "financial_data_date",
+      "coverage_percent": 0.0,
+      "missing_count": 182
+    },
+    {
+      "column": "special_case",
+      "coverage_percent": 0.0,
+      "missing_count": 182
+    }
+  ],
+  "output_files": {
+    "coverage_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamental_coverage_report.json",
+    "coverage_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamental_coverage_report.csv",
+    "missing_by_company": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamental_missing_by_company.csv"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "app_modified": false
+}

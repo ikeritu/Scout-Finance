@@ -1,0 +1,4 @@
+ranking_position,ticker,company_name,quant_score,memo_status,report_path,estimated_cost,model_used
+1,AUPH,Aurinia Pharmaceuticals Inc - Common Shares,70.83,data_insufficient,D:\Proyectos\💰 Scout Finance\outputs\scouting\research_memos\equity_research_memo_01_AUPH.md,0.0,
+2,BZ,KANZHUN LIMITED - American Depository Shares,68.5,data_insufficient,D:\Proyectos\💰 Scout Finance\outputs\scouting\research_memos\equity_research_memo_02_BZ.md,0.0,
+3,ADBE,Adobe Inc. - Common Stock,65.97,data_insufficient,D:\Proyectos\💰 Scout Finance\outputs\scouting\research_memos\equity_research_memo_03_ADBE.md,0.0,

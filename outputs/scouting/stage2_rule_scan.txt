@@ -1,0 +1,534 @@
+﻿
+  src\clean_universe_institutional.py:233:            "instrument_scope": "OUT_OF_SCOPE",
+  src\clean_universe_institutional.py:234:            "classification_confidence": "HIGH",
+> src\clean_universe_institutional.py:235:            "classification_reason": "Security name indicates debt security.",
+  src\clean_universe_institutional.py:236:        }
+  src\clean_universe_institutional.py:237:
+  src\enrich_fundamentals_yfinance.py:23:
+  src\enrich_fundamentals_yfinance.py:24:CORE_STAGE2_COLUMNS = [
+> src\enrich_fundamentals_yfinance.py:25:    "revenue_ttm", "operating_margin", "fcf_margin", "net_debt_to_ebitda",
+> src\enrich_fundamentals_yfinance.py:26:    "shares_dilution_3y", "data_completeness_score", "financial_data_date", "special_case",
+  src\enrich_fundamentals_yfinance.py:27:]
+  src\enrich_fundamentals_yfinance.py:28:
+  src\enrich_fundamentals_yfinance.py:29:OPTIONAL_COLUMNS = [
+  src\enrich_fundamentals_yfinance.py:30:    "revenue_growth_1y", "gross_margin", "net_margin", "ebitda", "free_cash_flow",
+> src\enrich_fundamentals_yfinance.py:31:    "total_debt", "cash", "net_debt", "debt_to_equity", "current_ratio",
+  src\enrich_fundamentals_yfinance.py:32:    "interest_coverage", "pe_ratio", "forward_pe", "ev_ebitda", "price_sales", "fcf_yield",
+  src\enrich_fundamentals_yfinance.py:33:]
+  src\enrich_fundamentals_yfinance.py:78:
+  src\enrich_fundamentals_yfinance.py:79:def score_completeness(row: dict[str, Any]) -> float:
+> src\enrich_fundamentals_yfinance.py:80:    required = ["revenue_ttm", "operating_margin", "fcf_margin", "net_debt_to_ebitda", "financial_data_date", "special_case"]
+  src\enrich_fundamentals_yfinance.py:81:    present = sum(1 for col in required if row.get(col) not in (None, "", "None"))
+> src\enrich_fundamentals_yfinance.py:82:    if row.get("shares_dilution_3y") not in (None, "", "None"):
+  src\enrich_fundamentals_yfinance.py:83:        present += 0.5
+  src\enrich_fundamentals_yfinance.py:84:    return round(100 * present / 6.5, 2)
+  src\enrich_fundamentals_yfinance.py:113:
+  src\enrich_fundamentals_yfinance.py:114:        revenue = safe_float(get_from_info(info, ["totalRevenue", "revenue"]))
+> src\enrich_fundamentals_yfinance.py:115:        operating_margin = safe_float(get_from_info(info, ["operatingMargins", "operatingMargin"]))
+  src\enrich_fundamentals_yfinance.py:116:        gross_margin = safe_float(get_from_info(info, ["grossMargins", "grossMargin"]))
+  src\enrich_fundamentals_yfinance.py:117:        net_margin = safe_float(get_from_info(info, ["profitMargins", "netMargins"]))
+  src\enrich_fundamentals_yfinance.py:118:        ebitda = safe_float(get_from_info(info, ["ebitda"]))
+  src\enrich_fundamentals_yfinance.py:119:        free_cash_flow = safe_float(get_from_info(info, ["freeCashflow", "freeCashFlow"]))
+> src\enrich_fundamentals_yfinance.py:120:        total_debt = safe_float(get_from_info(info, ["totalDebt"]))
+  src\enrich_fundamentals_yfinance.py:121:        cash = safe_float(get_from_info(info, ["totalCash", "cash"]))
+  src\enrich_fundamentals_yfinance.py:122:        market_cap = safe_float(get_from_info(info, ["marketCap"]))
+  src\enrich_fundamentals_yfinance.py:123:
+> src\enrich_fundamentals_yfinance.py:124:        net_debt = (total_debt or 0) - (cash or 0) if (total_debt is not None or cash is not None) else None
+  src\enrich_fundamentals_yfinance.py:125:
+  src\enrich_fundamentals_yfinance.py:126:        row = {
+  src\enrich_fundamentals_yfinance.py:134:            "country_yf": get_from_info(info, ["country"]),
+  src\enrich_fundamentals_yfinance.py:135:            "revenue_ttm": revenue,
+> src\enrich_fundamentals_yfinance.py:136:            "operating_margin": operating_margin,
+> src\enrich_fundamentals_yfinance.py:137:            "fcf_margin": div(free_cash_flow, revenue),
+> src\enrich_fundamentals_yfinance.py:138:            "net_debt_to_ebitda": div(net_debt, ebitda),
+> src\enrich_fundamentals_yfinance.py:139:            "shares_dilution_3y": None,
+  src\enrich_fundamentals_yfinance.py:140:            "revenue_growth_1y": safe_float(get_from_info(info, ["revenueGrowth"])),
+  src\enrich_fundamentals_yfinance.py:141:            "gross_margin": gross_margin,
+  src\enrich_fundamentals_yfinance.py:143:            "ebitda": ebitda,
+  src\enrich_fundamentals_yfinance.py:144:            "free_cash_flow": free_cash_flow,
+> src\enrich_fundamentals_yfinance.py:145:            "total_debt": total_debt,
+  src\enrich_fundamentals_yfinance.py:146:            "cash": cash,
+> src\enrich_fundamentals_yfinance.py:147:            "net_debt": net_debt,
+> src\enrich_fundamentals_yfinance.py:148:            "debt_to_equity": safe_float(get_from_info(info, ["debtToEquity"])),
+  src\enrich_fundamentals_yfinance.py:149:            "current_ratio": safe_float(get_from_info(info, ["currentRatio"])),
+  src\enrich_fundamentals_yfinance.py:150:            "interest_coverage": None,
+  src\enrich_fundamentals_yfinance.py:159:        }
+  src\enrich_fundamentals_yfinance.py:160:        row["special_case"] = infer_special_case(row)
+> src\enrich_fundamentals_yfinance.py:161:        row["data_completeness_score"] = score_completeness(row)
+  src\enrich_fundamentals_yfinance.py:162:
+  src\enrich_fundamentals_yfinance.py:163:        time.sleep(pause_seconds)
+  src\enrich_fundamentals_yfinance.py:168:        row = {
+  src\enrich_fundamentals_yfinance.py:169:            "ticker": ticker, "yf_success": False, "yf_error": str(exc), "financial_data_date": None,
+> src\enrich_fundamentals_yfinance.py:170:            "revenue_ttm": None, "operating_margin": None, "fcf_margin": None,
+> src\enrich_fundamentals_yfinance.py:171:            "net_debt_to_ebitda": None, "shares_dilution_3y": None,
+> src\enrich_fundamentals_yfinance.py:172:            "data_completeness_score": 0.0, "special_case": "fetch_failed",
+  src\enrich_fundamentals_yfinance.py:173:        }
+  src\enrich_fundamentals_yfinance.py:174:        return row, failure
+  src\enrich_fundamentals_yfinance.py:259:    cov.to_csv(COVERAGE_PATH, index=False, encoding="utf-8-sig")
+  src\enrich_fundamentals_yfinance.py:260:
+> src\enrich_fundamentals_yfinance.py:261:    hard_required = ["revenue_ttm", "operating_margin", "fcf_margin", "net_debt_to_ebitda", "data_completeness_score", "financial_data_date", "special_case"]
+  src\enrich_fundamentals_yfinance.py:262:    ready_mask = pd.Series(True, index=enriched.index)
+  src\enrich_fundamentals_yfinance.py:263:    for col in hard_required:
+  src\enrich_stage1_demo_financials.py:31:        "revenue_growth_3y": 0.06,
+  src\enrich_stage1_demo_financials.py:32:        "gross_margin": 0.46,
+> src\enrich_stage1_demo_financials.py:33:        "operating_margin": 0.30,
+  src\enrich_stage1_demo_financials.py:34:        "net_margin": 0.25,
+  src\enrich_stage1_demo_financials.py:35:        "ebitda": 125_000_000_000,
+  src\enrich_stage1_demo_financials.py:36:        "free_cash_flow": 100_000_000_000,
+> src\enrich_stage1_demo_financials.py:37:        "fcf_margin": 0.26,
+> src\enrich_stage1_demo_financials.py:38:        "total_debt": 110_000_000_000,
+  src\enrich_stage1_demo_financials.py:39:        "cash": 65_000_000_000,
+> src\enrich_stage1_demo_financials.py:40:        "net_debt": 45_000_000_000,
+> src\enrich_stage1_demo_financials.py:41:        "net_debt_to_ebitda": 0.36,
+> src\enrich_stage1_demo_financials.py:42:        "debt_to_equity": 1.5,
+  src\enrich_stage1_demo_financials.py:43:        "current_ratio": 1.0,
+  src\enrich_stage1_demo_financials.py:44:        "interest_coverage": 35.0,
+> src\enrich_stage1_demo_financials.py:45:        "shares_dilution_3y": -0.08,
+  src\enrich_stage1_demo_financials.py:46:        "financial_data_date": "2026-03-31",
+> src\enrich_stage1_demo_financials.py:47:        "data_completeness_score": 95,
+  src\enrich_stage1_demo_financials.py:48:        "special_case": False,
+  src\enrich_stage1_demo_financials.py:49:    },
+  src\enrich_stage1_demo_financials.py:53:        "revenue_growth_3y": 0.15,
+  src\enrich_stage1_demo_financials.py:54:        "gross_margin": 0.69,
+> src\enrich_stage1_demo_financials.py:55:        "operating_margin": 0.44,
+  src\enrich_stage1_demo_financials.py:56:        "net_margin": 0.36,
+  src\enrich_stage1_demo_financials.py:57:        "ebitda": 130_000_000_000,
+  src\enrich_stage1_demo_financials.py:58:        "free_cash_flow": 75_000_000_000,
+> src\enrich_stage1_demo_financials.py:59:        "fcf_margin": 0.31,
+> src\enrich_stage1_demo_financials.py:60:        "total_debt": 80_000_000_000,
+  src\enrich_stage1_demo_financials.py:61:        "cash": 85_000_000_000,
+> src\enrich_stage1_demo_financials.py:62:        "net_debt": -5_000_000_000,
+> src\enrich_stage1_demo_financials.py:63:        "net_debt_to_ebitda": -0.04,
+> src\enrich_stage1_demo_financials.py:64:        "debt_to_equity": 0.4,
+  src\enrich_stage1_demo_financials.py:65:        "current_ratio": 1.2,
+  src\enrich_stage1_demo_financials.py:66:        "interest_coverage": 40.0,
+> src\enrich_stage1_demo_financials.py:67:        "shares_dilution_3y": -0.03,
+  src\enrich_stage1_demo_financials.py:68:        "financial_data_date": "2026-03-31",
+> src\enrich_stage1_demo_financials.py:69:        "data_completeness_score": 96,
+  src\enrich_stage1_demo_financials.py:70:        "special_case": False,
+  src\enrich_stage1_demo_financials.py:71:    },
+  src\filter_stage2.py:42:DEFAULT_STAGE2_CONFIG = {
+  src\filter_stage2.py:43:    "max_financial_data_age_months": 18,
+> src\filter_stage2.py:44:    "data_completeness_pass": 70,
+> src\filter_stage2.py:45:    "data_completeness_watchlist": 50,
+> src\filter_stage2.py:46:    "min_operating_margin_pass": 0.0,
+> src\filter_stage2.py:47:    "min_operating_margin_watchlist": -0.20,
+> src\filter_stage2.py:48:    "min_fcf_margin_pass": 0.0,
+> src\filter_stage2.py:49:    "min_fcf_margin_watchlist": -0.10,
+> src\filter_stage2.py:50:    "max_net_debt_to_ebitda_pass": 3.0,
+> src\filter_stage2.py:51:    "max_net_debt_to_ebitda_watchlist": 5.0,
+> src\filter_stage2.py:52:    "max_shares_dilution_3y_pass": 0.10,
+> src\filter_stage2.py:53:    "max_shares_dilution_3y_watchlist": 0.30,
+  src\filter_stage2.py:54:    "growth_exception_min_revenue_growth_3y": 0.25,
+  src\filter_stage2.py:55:    "growth_exception_min_gross_margin": 0.40,
+  src\filter_stage2.py:92:REQUIRED_STAGE2_COLUMNS = [
+  src\filter_stage2.py:93:    "revenue_ttm",
+> src\filter_stage2.py:94:    "operating_margin",
+> src\filter_stage2.py:95:    "fcf_margin",
+> src\filter_stage2.py:96:    "net_debt_to_ebitda",
+> src\filter_stage2.py:97:    "shares_dilution_3y",
+> src\filter_stage2.py:98:    "data_completeness_score",
+  src\filter_stage2.py:99:    "financial_data_date",
+  src\filter_stage2.py:100:    "special_case",
+  src\filter_stage2.py:189:    revenue_growth_3y = _to_float(row.get("revenue_growth_3y"))
+  src\filter_stage2.py:190:    gross_margin = _to_float(row.get("gross_margin"))
+> src\filter_stage2.py:191:    net_debt_to_ebitda = _to_float(row.get("net_debt_to_ebitda"))
+  src\filter_stage2.py:192:
+  src\filter_stage2.py:193:    if revenue_growth_3y is None or gross_margin is None:
+  src\filter_stage2.py:200:        return False
+  src\filter_stage2.py:201:
+> src\filter_stage2.py:202:    if net_debt_to_ebitda is not None and net_debt_to_ebitda > config["max_net_debt_to_ebitda_watchlist"]:
+  src\filter_stage2.py:203:        return False
+  src\filter_stage2.py:204:
+  src\filter_stage2.py:220:        "revenue_growth_3y",
+  src\filter_stage2.py:221:        "gross_margin",
+> src\filter_stage2.py:222:        "operating_margin",
+  src\filter_stage2.py:223:        "net_margin",
+  src\filter_stage2.py:224:        "ebitda",
+  src\filter_stage2.py:225:        "free_cash_flow",
+> src\filter_stage2.py:226:        "fcf_margin",
+> src\filter_stage2.py:227:        "total_debt",
+  src\filter_stage2.py:228:        "cash",
+> src\filter_stage2.py:229:        "net_debt",
+> src\filter_stage2.py:230:        "net_debt_to_ebitda",
+> src\filter_stage2.py:231:        "debt_to_equity",
+  src\filter_stage2.py:232:        "current_ratio",
+  src\filter_stage2.py:233:        "interest_coverage",
+> src\filter_stage2.py:234:        "shares_dilution_3y",
+  src\filter_stage2.py:235:        "financial_data_date",
+> src\filter_stage2.py:236:        "data_completeness_score",
+  src\filter_stage2.py:237:        "special_case",
+  src\filter_stage2.py:238:    ]
+  src\filter_stage2.py:269:
+  src\filter_stage2.py:270:    revenue_ttm = _to_float(row.get("revenue_ttm"))
+> src\filter_stage2.py:271:    operating_margin = _to_float(row.get("operating_margin"))
+> src\filter_stage2.py:272:    fcf_margin = _to_float(row.get("fcf_margin"))
+> src\filter_stage2.py:273:    net_debt_to_ebitda = _to_float(row.get("net_debt_to_ebitda"))
+> src\filter_stage2.py:274:    shares_dilution_3y = _to_float(row.get("shares_dilution_3y"))
+> src\filter_stage2.py:275:    data_completeness_score = _to_float(row.get("data_completeness_score"))
+  src\filter_stage2.py:276:    financial_data_date = row.get("financial_data_date")
+  src\filter_stage2.py:277:
+  src\filter_stage2.py:278:    # Data completeness
+> src\filter_stage2.py:279:    if data_completeness_score is None:
+  src\filter_stage2.py:280:        hard_reject = True
+  src\filter_stage2.py:281:        _add_reason(
+  src\filter_stage2.py:282:            reasons,
+> src\filter_stage2.py:283:            reason_code="MISSING_DATA_COMPLETENESS",
+  src\filter_stage2.py:284:            reason_text="Data completeness score missing.",
+> src\filter_stage2.py:285:            metric_name="data_completeness_score",
+> src\filter_stage2.py:286:            metric_value=data_completeness_score,
+  src\filter_stage2.py:287:            threshold="required",
+  src\filter_stage2.py:288:            severity="high",
+  src\filter_stage2.py:289:            recoverable=True,
+  src\filter_stage2.py:290:        )
+> src\filter_stage2.py:291:    elif data_completeness_score < cfg["data_completeness_watchlist"]:
+  src\filter_stage2.py:292:        hard_reject = True
+  src\filter_stage2.py:293:        _add_reason(
+  src\filter_stage2.py:294:            reasons,
+> src\filter_stage2.py:295:            reason_code="LOW_DATA_COMPLETENESS",
+  src\filter_stage2.py:296:            reason_text="Data completeness below Stage 2 minimum.",
+> src\filter_stage2.py:297:            metric_name="data_completeness_score",
+> src\filter_stage2.py:298:            metric_value=data_completeness_score,
+> src\filter_stage2.py:299:            threshold=cfg["data_completeness_watchlist"],
+  src\filter_stage2.py:300:            severity="high",
+  src\filter_stage2.py:301:            recoverable=True,
+  src\filter_stage2.py:302:        )
+> src\filter_stage2.py:303:    elif data_completeness_score < cfg["data_completeness_pass"]:
+  src\filter_stage2.py:304:        watchlist = True
+  src\filter_stage2.py:305:        _add_reason(
+  src\filter_stage2.py:306:            reasons,
+> src\filter_stage2.py:307:            reason_code="DATA_COMPLETENESS_WATCHLIST_RANGE",
+  src\filter_stage2.py:308:            reason_text="Data completeness below pass threshold but above rejection threshold.",
+> src\filter_stage2.py:309:            metric_name="data_completeness_score",
+> src\filter_stage2.py:310:            metric_value=data_completeness_score,
+> src\filter_stage2.py:311:            threshold=cfg["data_completeness_pass"],
+  src\filter_stage2.py:312:            severity="medium",
+  src\filter_stage2.py:313:            recoverable=True,
+  src\filter_stage2.py:381:
+  src\filter_stage2.py:382:    # Operating margin
+> src\filter_stage2.py:383:    if operating_margin is None:
+  src\filter_stage2.py:384:        watchlist = True
+  src\filter_stage2.py:385:        _add_reason(
+  src\filter_stage2.py:386:            reasons,
+> src\filter_stage2.py:387:            reason_code="MISSING_OPERATING_MARGIN",
+  src\filter_stage2.py:388:            reason_text="Operating margin missing.",
+> src\filter_stage2.py:389:            metric_name="operating_margin",
+> src\filter_stage2.py:390:            metric_value=operating_margin,
+  src\filter_stage2.py:391:            threshold="required for clean pass",
+  src\filter_stage2.py:392:            severity="medium",
+  src\filter_stage2.py:393:            recoverable=True,
+  src\filter_stage2.py:394:        )
+> src\filter_stage2.py:395:    elif operating_margin < cfg["min_operating_margin_watchlist"]:
+  src\filter_stage2.py:396:        if special_case or growth_exception:
+  src\filter_stage2.py:397:            watchlist = True
+  src\filter_stage2.py:398:            _add_reason(
+  src\filter_stage2.py:399:                reasons,
+> src\filter_stage2.py:400:                reason_code="OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE",
+  src\filter_stage2.py:401:                reason_text="Operating margin is very negative, but company has special/growth exception.",
+> src\filter_stage2.py:402:                metric_name="operating_margin",
+> src\filter_stage2.py:403:                metric_value=operating_margin,
+> src\filter_stage2.py:404:                threshold=cfg["min_operating_margin_watchlist"],
+  src\filter_stage2.py:405:                severity="medium",
+  src\filter_stage2.py:406:                recoverable=True,
+  src\filter_stage2.py:410:            _add_reason(
+  src\filter_stage2.py:411:                reasons,
+> src\filter_stage2.py:412:                reason_code="OPERATING_MARGIN_TOO_NEGATIVE",
+  src\filter_stage2.py:413:                reason_text="Operating margin below Stage 2 minimum.",
+> src\filter_stage2.py:414:                metric_name="operating_margin",
+> src\filter_stage2.py:415:                metric_value=operating_margin,
+> src\filter_stage2.py:416:                threshold=cfg["min_operating_margin_watchlist"],
+  src\filter_stage2.py:417:                severity="high",
+  src\filter_stage2.py:418:                recoverable=True,
+  src\filter_stage2.py:419:            )
+> src\filter_stage2.py:420:    elif operating_margin < cfg["min_operating_margin_pass"]:
+  src\filter_stage2.py:421:        watchlist = True
+  src\filter_stage2.py:422:        _add_reason(
+  src\filter_stage2.py:423:            reasons,
+> src\filter_stage2.py:424:            reason_code="OPERATING_MARGIN_WATCHLIST_RANGE",
+  src\filter_stage2.py:425:            reason_text="Operating margin below pass threshold but above rejection threshold.",
+> src\filter_stage2.py:426:            metric_name="operating_margin",
+> src\filter_stage2.py:427:            metric_value=operating_margin,
+> src\filter_stage2.py:428:            threshold=cfg["min_operating_margin_pass"],
+  src\filter_stage2.py:429:            severity="medium",
+  src\filter_stage2.py:430:            recoverable=True,
+  src\filter_stage2.py:432:
+  src\filter_stage2.py:433:    # FCF margin
+> src\filter_stage2.py:434:    if fcf_margin is None:
+  src\filter_stage2.py:435:        watchlist = True
+  src\filter_stage2.py:436:        _add_reason(
+  src\filter_stage2.py:437:            reasons,
+> src\filter_stage2.py:438:            reason_code="MISSING_FCF_MARGIN",
+  src\filter_stage2.py:439:            reason_text="FCF margin missing.",
+> src\filter_stage2.py:440:            metric_name="fcf_margin",
+> src\filter_stage2.py:441:            metric_value=fcf_margin,
+  src\filter_stage2.py:442:            threshold="required for clean pass",
+  src\filter_stage2.py:443:            severity="medium",
+  src\filter_stage2.py:444:            recoverable=True,
+  src\filter_stage2.py:445:        )
+> src\filter_stage2.py:446:    elif fcf_margin < cfg["min_fcf_margin_watchlist"]:
+  src\filter_stage2.py:447:        if special_case or growth_exception:
+  src\filter_stage2.py:448:            watchlist = True
+  src\filter_stage2.py:449:            _add_reason(
+  src\filter_stage2.py:450:                reasons,
+> src\filter_stage2.py:451:                reason_code="FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE",
+  src\filter_stage2.py:452:                reason_text="FCF margin very negative, but company has special/growth exception.",
+> src\filter_stage2.py:453:                metric_name="fcf_margin",
+> src\filter_stage2.py:454:                metric_value=fcf_margin,
+> src\filter_stage2.py:455:                threshold=cfg["min_fcf_margin_watchlist"],
+  src\filter_stage2.py:456:                severity="medium",
+  src\filter_stage2.py:457:                recoverable=True,
+  src\filter_stage2.py:461:            _add_reason(
+  src\filter_stage2.py:462:                reasons,
+> src\filter_stage2.py:463:                reason_code="FCF_MARGIN_TOO_NEGATIVE",
+  src\filter_stage2.py:464:                reason_text="FCF margin below Stage 2 minimum.",
+> src\filter_stage2.py:465:                metric_name="fcf_margin",
+> src\filter_stage2.py:466:                metric_value=fcf_margin,
+> src\filter_stage2.py:467:                threshold=cfg["min_fcf_margin_watchlist"],
+  src\filter_stage2.py:468:                severity="high",
+  src\filter_stage2.py:469:                recoverable=True,
+  src\filter_stage2.py:470:            )
+> src\filter_stage2.py:471:    elif fcf_margin < cfg["min_fcf_margin_pass"]:
+  src\filter_stage2.py:472:        watchlist = True
+  src\filter_stage2.py:473:        _add_reason(
+  src\filter_stage2.py:474:            reasons,
+> src\filter_stage2.py:475:            reason_code="FCF_MARGIN_WATCHLIST_RANGE",
+  src\filter_stage2.py:476:            reason_text="FCF margin below pass threshold but above rejection threshold.",
+> src\filter_stage2.py:477:            metric_name="fcf_margin",
+> src\filter_stage2.py:478:            metric_value=fcf_margin,
+> src\filter_stage2.py:479:            threshold=cfg["min_fcf_margin_pass"],
+  src\filter_stage2.py:480:            severity="medium",
+  src\filter_stage2.py:481:            recoverable=True,
+  src\filter_stage2.py:482:        )
+  src\filter_stage2.py:483:
+> src\filter_stage2.py:484:    # Debt. Skip hard debt rule for special financial sectors.
+> src\filter_stage2.py:485:    if net_debt_to_ebitda is None:
+  src\filter_stage2.py:486:        watchlist = True
+  src\filter_stage2.py:487:        _add_reason(
+  src\filter_stage2.py:488:            reasons,
+> src\filter_stage2.py:489:            reason_code="MISSING_NET_DEBT_TO_EBITDA",
+> src\filter_stage2.py:490:            reason_text="Net debt to EBITDA missing.",
+> src\filter_stage2.py:491:            metric_name="net_debt_to_ebitda",
+> src\filter_stage2.py:492:            metric_value=net_debt_to_ebitda,
+  src\filter_stage2.py:493:            threshold="required for clean pass",
+  src\filter_stage2.py:494:            severity="medium",
+  src\filter_stage2.py:496:        )
+  src\filter_stage2.py:497:    elif not special_case:
+> src\filter_stage2.py:498:        if net_debt_to_ebitda > cfg["max_net_debt_to_ebitda_watchlist"]:
+  src\filter_stage2.py:499:            hard_reject = True
+  src\filter_stage2.py:500:            _add_reason(
+  src\filter_stage2.py:501:                reasons,
+> src\filter_stage2.py:502:                reason_code="DEBT_TOO_HIGH",
+> src\filter_stage2.py:503:                reason_text="Net debt to EBITDA above Stage 2 maximum.",
+> src\filter_stage2.py:504:                metric_name="net_debt_to_ebitda",
+> src\filter_stage2.py:505:                metric_value=net_debt_to_ebitda,
+> src\filter_stage2.py:506:                threshold=cfg["max_net_debt_to_ebitda_watchlist"],
+  src\filter_stage2.py:507:                severity="high",
+  src\filter_stage2.py:508:                recoverable=True,
+  src\filter_stage2.py:509:            )
+> src\filter_stage2.py:510:        elif net_debt_to_ebitda > cfg["max_net_debt_to_ebitda_pass"]:
+  src\filter_stage2.py:511:            watchlist = True
+  src\filter_stage2.py:512:            _add_reason(
+  src\filter_stage2.py:513:                reasons,
+> src\filter_stage2.py:514:                reason_code="DEBT_WATCHLIST_RANGE",
+> src\filter_stage2.py:515:                reason_text="Net debt to EBITDA above pass threshold but below rejection threshold.",
+> src\filter_stage2.py:516:                metric_name="net_debt_to_ebitda",
+> src\filter_stage2.py:517:                metric_value=net_debt_to_ebitda,
+> src\filter_stage2.py:518:                threshold=cfg["max_net_debt_to_ebitda_pass"],
+  src\filter_stage2.py:519:                severity="medium",
+  src\filter_stage2.py:520:                recoverable=True,
+  src\filter_stage2.py:522:
+  src\filter_stage2.py:523:    # Dilution
+> src\filter_stage2.py:524:    if shares_dilution_3y is None:
+  src\filter_stage2.py:525:        watchlist = True
+  src\filter_stage2.py:526:        _add_reason(
+  src\filter_stage2.py:527:            reasons,
+> src\filter_stage2.py:528:            reason_code="MISSING_SHARES_DILUTION",
+  src\filter_stage2.py:529:            reason_text="Shares dilution 3Y missing.",
+> src\filter_stage2.py:530:            metric_name="shares_dilution_3y",
+> src\filter_stage2.py:531:            metric_value=shares_dilution_3y,
+  src\filter_stage2.py:532:            threshold="required for clean pass",
+  src\filter_stage2.py:533:            severity="medium",
+  src\filter_stage2.py:534:            recoverable=True,
+  src\filter_stage2.py:535:        )
+> src\filter_stage2.py:536:    elif shares_dilution_3y > cfg["max_shares_dilution_3y_watchlist"]:
+  src\filter_stage2.py:537:        hard_reject = True
+  src\filter_stage2.py:538:        _add_reason(
+  src\filter_stage2.py:540:            reason_code="HIGH_DILUTION",
+  src\filter_stage2.py:541:            reason_text="Shares dilution 3Y above Stage 2 maximum.",
+> src\filter_stage2.py:542:            metric_name="shares_dilution_3y",
+> src\filter_stage2.py:543:            metric_value=shares_dilution_3y,
+> src\filter_stage2.py:544:            threshold=cfg["max_shares_dilution_3y_watchlist"],
+  src\filter_stage2.py:545:            severity="high",
+  src\filter_stage2.py:546:            recoverable=True,
+  src\filter_stage2.py:547:        )
+> src\filter_stage2.py:548:    elif shares_dilution_3y > cfg["max_shares_dilution_3y_pass"]:
+  src\filter_stage2.py:549:        watchlist = True
+  src\filter_stage2.py:550:        _add_reason(
+  src\filter_stage2.py:552:            reason_code="DILUTION_WATCHLIST_RANGE",
+  src\filter_stage2.py:553:            reason_text="Shares dilution 3Y above pass threshold but below rejection threshold.",
+> src\filter_stage2.py:554:            metric_name="shares_dilution_3y",
+> src\filter_stage2.py:555:            metric_value=shares_dilution_3y,
+> src\filter_stage2.py:556:            threshold=cfg["max_shares_dilution_3y_pass"],
+  src\filter_stage2.py:557:            severity="medium",
+  src\filter_stage2.py:558:            recoverable=True,
+  src\filter_stage3.py:199:
+  src\filter_stage3.py:200:    gross_margin = _to_float(row.get("gross_margin"))
+> src\filter_stage3.py:201:    operating_margin = _to_float(row.get("operating_margin"))
+  src\filter_stage3.py:202:    net_margin = _to_float(row.get("net_margin"))
+> src\filter_stage3.py:203:    fcf_margin = _to_float(row.get("fcf_margin"))
+  src\filter_stage3.py:204:    revenue_growth_1y = _to_float(row.get("revenue_growth_1y"))
+  src\filter_stage3.py:205:    revenue_growth_3y = _to_float(row.get("revenue_growth_3y"))
+> src\filter_stage3.py:206:    net_debt_to_ebitda = _to_float(row.get("net_debt_to_ebitda"))
+  src\filter_stage3.py:207:    interest_coverage = _to_float(row.get("interest_coverage"))
+  src\filter_stage3.py:208:    current_ratio = _to_float(row.get("current_ratio"))
+> src\filter_stage3.py:209:    shares_dilution_3y = _to_float(row.get("shares_dilution_3y"))
+> src\filter_stage3.py:210:    data_completeness_score = _to_float(row.get("data_completeness_score"))
+  src\filter_stage3.py:211:    dollar_volume_90d = _to_float(row.get("dollar_volume_90d"))
+  src\filter_stage3.py:212:
+  src\filter_stage3.py:223:    quality_parts = [
+  src\filter_stage3.py:224:        _scale_between(gross_margin, 0.20, 0.70),
+> src\filter_stage3.py:225:        _scale_between(operating_margin, 0.00, 0.35),
+  src\filter_stage3.py:226:        _scale_between(net_margin, 0.00, 0.30),
+> src\filter_stage3.py:227:        _scale_between(fcf_margin, 0.00, 0.30),
+  src\filter_stage3.py:228:    ]
+  src\filter_stage3.py:229:    business_quality_score = sum(quality_parts) / len(quality_parts)
+  src\filter_stage3.py:231:    # Financial health: leverage, interest coverage, liquidity, dilution.
+  src\filter_stage3.py:232:    health_parts = [
+> src\filter_stage3.py:233:        _inverse_scale_between(net_debt_to_ebitda, 0.0, 5.0),
+  src\filter_stage3.py:234:        _scale_between(interest_coverage, 2.0, 25.0),
+  src\filter_stage3.py:235:        _scale_between(current_ratio, 0.8, 2.0),
+> src\filter_stage3.py:236:        _inverse_scale_between(shares_dilution_3y, -0.05, 0.30),
+  src\filter_stage3.py:237:    ]
+  src\filter_stage3.py:238:    financial_health_score = sum(health_parts) / len(health_parts)
+  src\filter_stage3.py:269:    # Risk: higher is worse. Penalize leverage, negative FCF, dilution, weak data, large drawdowns.
+  src\filter_stage3.py:270:    risk_parts = [
+> src\filter_stage3.py:271:        _scale_between(net_debt_to_ebitda, 0.0, 6.0),
+> src\filter_stage3.py:272:        _inverse_scale_between(fcf_margin, -0.20, 0.20),
+> src\filter_stage3.py:273:        _scale_between(shares_dilution_3y, -0.05, 0.40),
+> src\filter_stage3.py:274:        _inverse_scale_between(data_completeness_score, 40.0, 100.0),
+  src\filter_stage3.py:275:    ]
+  src\filter_stage3.py:276:
+  src\filter_stage3.py:284:    moat_parts = [
+  src\filter_stage3.py:285:        _scale_between(gross_margin, 0.25, 0.75),
+> src\filter_stage3.py:286:        _scale_between(operating_margin, 0.05, 0.35),
+> src\filter_stage3.py:287:        _scale_between(fcf_margin, 0.00, 0.30),
+  src\filter_stage3.py:288:        _scale_between(revenue_growth_3y, 0.02, 0.18),
+  src\filter_stage3.py:289:    ]
+  src\filter_stage3.py:308:
+  src\filter_stage3.py:309:    # Data quality from completeness.
+> src\filter_stage3.py:310:    data_quality_score = _scale_between(data_completeness_score, 50.0, 100.0)
+  src\filter_stage3.py:311:
+  src\filter_stage3.py:312:    return {
+  src\fundamental_coverage_report.py:38:CORE_STAGE2_COLUMNS = [
+  src\fundamental_coverage_report.py:39:    "revenue_ttm",
+> src\fundamental_coverage_report.py:40:    "operating_margin",
+> src\fundamental_coverage_report.py:41:    "fcf_margin",
+> src\fundamental_coverage_report.py:42:    "net_debt_to_ebitda",
+> src\fundamental_coverage_report.py:43:    "shares_dilution_3y",
+> src\fundamental_coverage_report.py:44:    "data_completeness_score",
+  src\fundamental_coverage_report.py:45:    "financial_data_date",
+  src\fundamental_coverage_report.py:46:    "special_case",
+  src\fundamental_coverage_report.py:55:    "ebitda",
+  src\fundamental_coverage_report.py:56:    "free_cash_flow",
+> src\fundamental_coverage_report.py:57:    "total_debt",
+  src\fundamental_coverage_report.py:58:    "cash",
+> src\fundamental_coverage_report.py:59:    "net_debt",
+> src\fundamental_coverage_report.py:60:    "debt_to_equity",
+  src\fundamental_coverage_report.py:61:    "current_ratio",
+  src\fundamental_coverage_report.py:62:    "interest_coverage",
+  src\prepare_fundamentals_csv.py:37:    "revenue_growth_3y",
+  src\prepare_fundamentals_csv.py:38:    "gross_margin",
+> src\prepare_fundamentals_csv.py:39:    "operating_margin",
+  src\prepare_fundamentals_csv.py:40:    "net_margin",
+  src\prepare_fundamentals_csv.py:41:    "ebitda",
+  src\prepare_fundamentals_csv.py:42:    "free_cash_flow",
+> src\prepare_fundamentals_csv.py:43:    "fcf_margin",
+> src\prepare_fundamentals_csv.py:44:    "total_debt",
+  src\prepare_fundamentals_csv.py:45:    "cash",
+> src\prepare_fundamentals_csv.py:46:    "net_debt",
+> src\prepare_fundamentals_csv.py:47:    "net_debt_to_ebitda",
+> src\prepare_fundamentals_csv.py:48:    "debt_to_equity",
+  src\prepare_fundamentals_csv.py:49:    "current_ratio",
+  src\prepare_fundamentals_csv.py:50:    "interest_coverage",
+> src\prepare_fundamentals_csv.py:51:    "shares_dilution_3y",
+  src\prepare_fundamentals_csv.py:52:    "financial_data_date",
+> src\prepare_fundamentals_csv.py:53:    "data_completeness_score",
+  src\prepare_fundamentals_csv.py:54:    "special_case",
+  src\prepare_fundamentals_csv.py:55:]
+  src\prepare_fundamentals_csv.py:62:    "revenue_growth_3y": ["revenue_growth_3y", "Revenue Growth 3Y", "revenueGrowth3Y"],
+  src\prepare_fundamentals_csv.py:63:    "gross_margin": ["gross_margin", "Gross Margin", "grossMargin"],
+> src\prepare_fundamentals_csv.py:64:    "operating_margin": ["operating_margin", "Operating Margin", "operatingMargin"],
+  src\prepare_fundamentals_csv.py:65:    "net_margin": ["net_margin", "Net Margin", "netMargin"],
+  src\prepare_fundamentals_csv.py:66:    "ebitda": ["ebitda", "EBITDA", "Ebitda"],
+  src\prepare_fundamentals_csv.py:67:    "free_cash_flow": ["free_cash_flow", "Free Cash Flow", "FCF", "freeCashFlow"],
+> src\prepare_fundamentals_csv.py:68:    "fcf_margin": ["fcf_margin", "FCF Margin", "freeCashFlowMargin"],
+> src\prepare_fundamentals_csv.py:69:    "total_debt": ["total_debt", "Total Debt", "totalDebt"],
+  src\prepare_fundamentals_csv.py:70:    "cash": ["cash", "Cash", "cashAndCashEquivalents"],
+> src\prepare_fundamentals_csv.py:71:    "net_debt": ["net_debt", "Net Debt", "netDebt"],
+> src\prepare_fundamentals_csv.py:72:    "net_debt_to_ebitda": ["net_debt_to_ebitda", "Net Debt / EBITDA", "netDebtToEbitda"],
+> src\prepare_fundamentals_csv.py:73:    "debt_to_equity": ["debt_to_equity", "Debt to Equity", "debtToEquity"],
+  src\prepare_fundamentals_csv.py:74:    "current_ratio": ["current_ratio", "Current Ratio", "currentRatio"],
+  src\prepare_fundamentals_csv.py:75:    "interest_coverage": ["interest_coverage", "Interest Coverage", "interestCoverage"],
+> src\prepare_fundamentals_csv.py:76:    "shares_dilution_3y": ["shares_dilution_3y", "Shares Dilution 3Y", "sharesDilution3Y"],
+  src\prepare_fundamentals_csv.py:77:    "financial_data_date": ["financial_data_date", "Financial Data Date", "date", "fiscalDateEnding"],
+> src\prepare_fundamentals_csv.py:78:    "data_completeness_score": ["data_completeness_score", "Data Completeness Score", "dataCompletenessScore"],
+  src\prepare_fundamentals_csv.py:79:    "special_case": ["special_case", "Special Case", "specialCase"],
+  src\prepare_fundamentals_csv.py:80:}
+  src\prepare_fundamentals_csv.py:194:    result["ticker"] = _get_series(raw, "ticker").astype("string").str.strip().str.upper()
+  src\prepare_fundamentals_csv.py:195:
+> src\prepare_fundamentals_csv.py:196:    money_columns = ["revenue_ttm", "ebitda", "free_cash_flow", "total_debt", "cash", "net_debt"]
+  src\prepare_fundamentals_csv.py:197:    ratio_columns = [
+  src\prepare_fundamentals_csv.py:198:        "revenue_growth_1y",
+  src\prepare_fundamentals_csv.py:199:        "revenue_growth_3y",
+  src\prepare_fundamentals_csv.py:200:        "gross_margin",
+> src\prepare_fundamentals_csv.py:201:        "operating_margin",
+  src\prepare_fundamentals_csv.py:202:        "net_margin",
+> src\prepare_fundamentals_csv.py:203:        "fcf_margin",
+> src\prepare_fundamentals_csv.py:204:        "net_debt_to_ebitda",
+> src\prepare_fundamentals_csv.py:205:        "debt_to_equity",
+  src\prepare_fundamentals_csv.py:206:        "current_ratio",
+  src\prepare_fundamentals_csv.py:207:        "interest_coverage",
+> src\prepare_fundamentals_csv.py:208:        "shares_dilution_3y",
+  src\prepare_fundamentals_csv.py:209:    ]
+  src\prepare_fundamentals_csv.py:210:
+  src\prepare_fundamentals_csv.py:219:    result["special_case"] = _get_series(raw, "special_case", False).apply(_parse_bool)
+  src\prepare_fundamentals_csv.py:220:
+> src\prepare_fundamentals_csv.py:221:    mask_net_debt = result["net_debt"].isna() & result["total_debt"].notna() & result["cash"].notna()
+> src\prepare_fundamentals_csv.py:222:    result.loc[mask_net_debt, "net_debt"] = result.loc[mask_net_debt, "total_debt"] - result.loc[mask_net_debt, "cash"]
+  src\prepare_fundamentals_csv.py:223:
+> src\prepare_fundamentals_csv.py:224:    mask_fcf_margin = (
+> src\prepare_fundamentals_csv.py:225:        result["fcf_margin"].isna()
+  src\prepare_fundamentals_csv.py:226:        & result["free_cash_flow"].notna()
+  src\prepare_fundamentals_csv.py:227:        & result["revenue_ttm"].notna()
+  src\prepare_fundamentals_csv.py:228:        & (result["revenue_ttm"] != 0)
+  src\prepare_fundamentals_csv.py:229:    )
+> src\prepare_fundamentals_csv.py:230:    result.loc[mask_fcf_margin, "fcf_margin"] = (
+> src\prepare_fundamentals_csv.py:231:        result.loc[mask_fcf_margin, "free_cash_flow"] / result.loc[mask_fcf_margin, "revenue_ttm"]
+  src\prepare_fundamentals_csv.py:232:    )
+  src\prepare_fundamentals_csv.py:233:
+  src\prepare_fundamentals_csv.py:234:    mask_nd_ebitda = (
+> src\prepare_fundamentals_csv.py:235:        result["net_debt_to_ebitda"].isna()
+> src\prepare_fundamentals_csv.py:236:        & result["net_debt"].notna()
+  src\prepare_fundamentals_csv.py:237:        & result["ebitda"].notna()
+  src\prepare_fundamentals_csv.py:238:        & (result["ebitda"] != 0)
+  src\prepare_fundamentals_csv.py:239:    )
+> src\prepare_fundamentals_csv.py:240:    result.loc[mask_nd_ebitda, "net_debt_to_ebitda"] = (
+> src\prepare_fundamentals_csv.py:241:        result.loc[mask_nd_ebitda, "net_debt"] / result.loc[mask_nd_ebitda, "ebitda"]
+  src\prepare_fundamentals_csv.py:242:    )
+  src\prepare_fundamentals_csv.py:243:
+  src\prepare_fundamentals_csv.py:244:    completeness_columns = [
+  src\prepare_fundamentals_csv.py:245:        "revenue_ttm",
+> src\prepare_fundamentals_csv.py:246:        "operating_margin",
+> src\prepare_fundamentals_csv.py:247:        "fcf_margin",
+> src\prepare_fundamentals_csv.py:248:        "net_debt_to_ebitda",
+> src\prepare_fundamentals_csv.py:249:        "shares_dilution_3y",
+  src\prepare_fundamentals_csv.py:250:        "financial_data_date",
+  src\prepare_fundamentals_csv.py:251:        "special_case",
+  src\prepare_fundamentals_csv.py:252:    ]
+> src\prepare_fundamentals_csv.py:253:    existing_score = _get_series(raw, "data_completeness_score")
+  src\prepare_fundamentals_csv.py:254:    calculated_scores = result.apply(lambda row: _calculate_completeness(row, completeness_columns), axis=1)
+> src\prepare_fundamentals_csv.py:255:    result["data_completeness_score"] = existing_score.apply(_parse_number).fillna(calculated_scores)
+  src\prepare_fundamentals_csv.py:256:
+  src\prepare_fundamentals_csv.py:257:    result["fundamentals_data_source"] = data_source
+
+

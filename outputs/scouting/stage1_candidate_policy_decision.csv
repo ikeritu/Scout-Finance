@@ -1,0 +1,2 @@
+﻿selected_policy,selected_policy_label,decision,apply_to_production_now,reason
+balanced,Equilibrado,SELECT_FOR_DRY_RUN,False,Balanced is selected as the candidate for a guarded dry-run. It improves discipline versus current/base while preserving discovery capacity.

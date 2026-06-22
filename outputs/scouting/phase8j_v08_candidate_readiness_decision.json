@@ -1,0 +1,12 @@
+{
+  "readiness": "ready_for_v0_8_candidate",
+  "blockers": [],
+  "warnings": [],
+  "recommendation": "Freeze v0.8 candidate as quantitative ranking + deterministic equity research memo layer, with AI execution disabled by default.",
+  "release_positioning": {
+    "v0_8_scope": "ranking cuantitativo + AI Equity Research Memo estructurado en modo determinista/dry-run/sandbox",
+    "real_ai_calls": "disabled_by_default",
+    "cost_control": "explicit gate required before any future real AI execution",
+    "top_n": 3
+  }
+}

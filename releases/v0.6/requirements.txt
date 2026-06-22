@@ -1,0 +1,8 @@
+pandas
+numpy
+python-dotenv
+streamlit
+yfinance
+openai
+plotly
+matplotlib>=3.8

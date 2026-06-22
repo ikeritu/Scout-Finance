@@ -1,0 +1,10 @@
+phase,summary_exists,status,default_top_n,max_top_n,openai_called,api_called,yfinance_called,pipeline_recalculated,app_modified,filters_modified,release_modified,summary_path
+8A,True,OK,,,,,,,,,,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8a_dashboard_final_design_summary.json
+8B,True,OK,3,,,,,,,,,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8b_ai_equity_research_memo_blueprint_summary.json
+8C,True,OK,3,,,,,,,,,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8c_deterministic_research_modules_summary.json
+8D,True,OK,3,,,,,,,,,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8d_candidate_source_binding_summary.json
+8E,True,OK,3,,,,,,,,,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8e_equity_research_memo_persistence_summary.json
+8F,True,OK,3,,,,,,,,,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8f_research_memo_export_report_layer_summary.json
+8G,True,OK,3,3,False,False,False,False,False,False,False,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8g_optional_ai_interpretation_gate_summary.json
+8H,True,OK,3,3,False,False,False,False,False,False,False,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8h_prompt_packaging_dry_run_summary.json
+8I,True,OK,3,3,False,False,False,False,False,False,False,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8i_optional_ai_execution_sandbox_summary.json

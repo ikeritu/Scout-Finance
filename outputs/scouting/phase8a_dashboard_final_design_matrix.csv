@@ -1,0 +1,10 @@
+area,final_tab,audience,status,action,priority
+"executive","Inicio ejecutivo","usuario normal","parcial","simplificar portada y mostrar solo estado, funnel, top ideas y alertas","alta"
+"ranking","Ranking final","usuario normal","parcial","convertir ranking en tabla de decisión con motivo corto y riesgo principal","alta"
+"company_detail","Ficha de empresa","usuario normal","pendiente","crear ficha profunda por ticker con tesis, riesgos, métricas y datos faltantes","muy alta"
+"comparison","Comparador","usuario normal","pendiente","comparar candidatas por score, riesgo, crecimiento, valoración y calidad de datos","alta"
+"audit","Funnel y auditoría","técnico","avanzado","ordenar Stage 1/2/3, watchlist, rechazos y warnings en modo auditoría","media"
+"data_quality","Datos y cobertura","técnico","parcial","explicar cobertura, limitaciones yfinance y faltantes críticos como dilución","alta"
+"feedback","Feedback","usuario normal","parcial","hacer que el feedback sea útil para revisar y aprender en futuros runs","media"
+"exports","Exportaciones","usuario normal","parcial","centralizar CSV, informe global y futuro HTML/PDF por empresa","media"
+"settings","Configuración","técnico","parcial","mover pesos, umbrales, proveedor y costes IA a panel avanzado","media"

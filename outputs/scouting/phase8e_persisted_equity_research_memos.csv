@@ -1,0 +1,4 @@
+run_id,ticker,company_name,ranking_position,quant_score,memo_status,financial_health_score,moat_score,valuation_score,growth_score,risk_score,institutional_score,estimated_cost,model_used,prompt_version,schema_version,source_file
+phase8e_2026-06-17T221355+0000,AUPH,Aurinia Pharmaceuticals Inc - Common Shares,1,70.83,data_insufficient,,,,,,,0.0,,deterministic_v0.1_no_ai,0.1,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8d_candidate_source_bound_memos.json
+phase8e_2026-06-17T221355+0000,BZ,KANZHUN LIMITED - American Depository Shares,2,68.5,data_insufficient,,,,,,,0.0,,deterministic_v0.1_no_ai,0.1,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8d_candidate_source_bound_memos.json
+phase8e_2026-06-17T221355+0000,ADBE,Adobe Inc. - Common Stock,3,65.97,data_insufficient,,,,,,,0.0,,deterministic_v0.1_no_ai,0.1,D:\Proyectos\💰 Scout Finance\outputs\scouting\phase8d_candidate_source_bound_memos.json

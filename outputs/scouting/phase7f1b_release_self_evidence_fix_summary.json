@@ -1,0 +1,37 @@
+{
+  "phase": "7F.1b",
+  "status": "OK",
+  "created_at": "2026-06-10T11:39:20+00:00",
+  "release_dir": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7",
+  "copied_files": [
+    {
+      "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7f_release_v07_packaging_summary.json",
+      "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\phase7f_release_v07_packaging_summary.json",
+      "relative_path": "outputs/scouting/phase7f_release_v07_packaging_summary.json",
+      "copied": true,
+      "exists_after": true,
+      "size_bytes": 74996,
+      "sha256": "622585e197bff703dedda8560f97789d9df3e2543e81ae5ad40ecd108d87f49c"
+    },
+    {
+      "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7f_release_v07_packaging_report.md",
+      "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\phase7f_release_v07_packaging_report.md",
+      "relative_path": "outputs/scouting/phase7f_release_v07_packaging_report.md",
+      "copied": true,
+      "exists_after": true,
+      "size_bytes": 969,
+      "sha256": "b785baed788595781f26e3ebc314629244ac04ab846b7b424ef8d2f247a38db3"
+    }
+  ],
+  "changes": [
+    "ADDED_MANIFEST_ENTRY:outputs/scouting/phase7f_release_v07_packaging_summary.json",
+    "ADDED_MANIFEST_ENTRY:outputs/scouting/phase7f_release_v07_packaging_report.md"
+  ],
+  "release_self_evidence_complete": true,
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": true
+}

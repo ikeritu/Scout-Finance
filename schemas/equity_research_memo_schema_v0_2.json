@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scout Finance Equity Research Memo v0.2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "ticker",
+    "company_name",
+    "ranking_position",
+    "quant_score",
+    "memo_status",
+    "normalized_verdict",
+    "manual_review_required",
+    "not_financial_advice",
+    "objective_data",
+    "deterministic_analysis",
+    "ai_interpretation",
+    "data_gaps",
+    "sources",
+    "metadata"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "equity_research_memo_schema_v0_2"
+    },
+    "ticker": {
+      "type": "string"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "ranking_position": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "quant_score": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "memo_status": {
+      "type": "string"
+    },
+    "legacy_verdict": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "normalized_verdict": {
+      "type": "string",
+      "enum": [
+        "WATCHLIST",
+        "REJECT",
+        "NEEDS_MORE_DATA"
+      ]
+    },
+    "manual_review_required": {
+      "const": true
+    },
+    "not_financial_advice": {
+      "const": true
+    },
+    "objective_data": {
+      "type": "object"
+    },
+    "deterministic_analysis": {
+      "type": "object"
+    },
+    "ai_interpretation": {
+      "type": "object"
+    },
+    "data_gaps": {
+      "type": "array",
+      "items": {
+        "type": [
+          "string",
+          "object"
+        ]
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": [
+          "string",
+          "object"
+        ]
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "phase",
+        "created_at",
+        "source_file",
+        "source_schema_version",
+        "openai_called",
+        "api_called",
+        "yfinance_called",
+        "pipeline_recalculated",
+        "estimated_cost",
+        "model_used"
+      ]
+    }
+  }
+}

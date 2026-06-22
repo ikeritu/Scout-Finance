@@ -1,0 +1,9 @@
+module,priority,role,ai_usage,responsibility,phase
+"src/research_memo.py","1","orchestrator","controlled_optional","Generate structured memo for TOP 3 ranking candidates.","8D"
+"src/fundamentals.py","4","deterministic_analysis","none","Analyze revenue, income, FCF, margins, debt and financial deterioration.","8C"
+"src/valuation.py","3","deterministic_analysis","none","Analyze PE, sector PE, EV/EBITDA, P/S, FCF yield and valuation conclusion.","8C"
+"src/risk_analysis.py","2","mandatory_anti_thesis","controlled_optional","Explain why NOT to invest and rank risks by severity.","8C"
+"src/moat_analysis.py","5","qualitative_scoring","controlled_optional","Score moat 1-10: brand, network effects, switching costs, costs, patents, tech, scale.","8C/8D"
+"src/growth_analysis.py","6","qualitative_growth","controlled_optional","Analyze market size, sector growth, expansion, products, AI/tech and 5-10 year potential.","8C/8D"
+"src/institutional_view.py","7","institutional_lens","controlled_optional","Why institutions might buy or avoid the company.","8D"
+"src/earnings_analysis.py","8","future_stub","disabled_until_reliable_data","Future earnings vs expectations, guidance, market reaction and management comments.","future"

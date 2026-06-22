@@ -1,0 +1,176 @@
+{
+  "phase": "7E.1",
+  "status": "OK",
+  "created_at": "2026-06-10T09:38:57+00:00",
+  "ready_for_v07_release": true,
+  "recommended_next_phase": "7F — Package release v0.7 candidate",
+  "validated_funnel": "500 → 182 → 63 → 6",
+  "counts": {
+    "stage1_passed_rows": 182,
+    "stage2_passed_rows": 63,
+    "stage3_passed_rows": 6,
+    "top_100_candidates_rows": 34,
+    "stage3_candidates_for_ranking_rows": 34
+  },
+  "checks": {
+    "app_compiles": true,
+    "counts_ok": true,
+    "required_dashboard_markers_ok": true,
+    "required_files_ok": true,
+    "stage2_policy_ok": true,
+    "dashboard_hotfixes_ok": true,
+    "phase7c4_ok": true
+  },
+  "app_compile_error": "",
+  "required_app_text_checks": {
+    "# PHASE 7D.1 DASHBOARD HOTFIX APPLIED": true,
+    "# PHASE 7D.2 INSTITUTIONAL COUNT HOTFIX APPLIED": true,
+    "# PHASE 7D.3B FUNDAMENTAL COVERAGE EXACT FIX APPLIED": true,
+    "Funnel real revalidado": true,
+    "500 → 182 → 63 → 6": true,
+    "fundamentals_yfinance_enrichment_summary.json": true,
+    "summary[\"runner_phase\"] = \"7C.1\"": true
+  },
+  "optional_legacy_app_text_checks": {
+    "# PHASE 7D REVALIDATED FUNNEL DASHBOARD APPLIED": false
+  },
+  "evidence_files": [
+    {
+      "label": "stage1_balanced_closure",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_official_closure_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 2418,
+      "modified_at": "2026-06-08T18:43:18+00:00"
+    },
+    {
+      "label": "stage2_yfinance_policy",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_implementation_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 2386,
+      "modified_at": "2026-06-09T08:37:54+00:00"
+    },
+    {
+      "label": "phase7c4_pipeline_closure",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7c4_pipeline_revalidation_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 7765,
+      "modified_at": "2026-06-09T09:11:41+00:00"
+    },
+    {
+      "label": "phase7d_dashboard",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7d_dashboard_revalidated_funnel_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 1071,
+      "modified_at": "2026-06-09T09:46:11+00:00"
+    },
+    {
+      "label": "phase7d1_hotfix",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7d1_dashboard_hotfix_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 596,
+      "modified_at": "2026-06-09T10:06:25+00:00"
+    },
+    {
+      "label": "phase7d2_count_hotfix",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7d2_institutional_count_hotfix_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 549,
+      "modified_at": "2026-06-09T10:13:39+00:00"
+    },
+    {
+      "label": "phase7d3b_fundamental_exact_fix",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7d3b_fundamental_coverage_exact_fix_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 898,
+      "modified_at": "2026-06-09T10:58:40+00:00"
+    },
+    {
+      "label": "active_pipeline_policy_status",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\active_pipeline_policy_status.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 518,
+      "modified_at": "2026-06-09T09:11:41+00:00"
+    },
+    {
+      "label": "stage3_summary",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage3_summary.json",
+      "exists": true,
+      "rows": null,
+      "size_bytes": 2533,
+      "modified_at": "2026-06-09T08:53:00+00:00"
+    },
+    {
+      "label": "stage1_passed",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+      "exists": true,
+      "rows": 182,
+      "size_bytes": 53244,
+      "modified_at": "2026-06-08T18:43:18+00:00"
+    },
+    {
+      "label": "stage2_passed",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_passed.csv",
+      "exists": true,
+      "rows": 63,
+      "size_bytes": 46336,
+      "modified_at": "2026-06-09T08:37:54+00:00"
+    },
+    {
+      "label": "stage3_passed",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_passed.csv",
+      "exists": true,
+      "rows": 6,
+      "size_bytes": 6101,
+      "modified_at": "2026-06-09T08:53:00+00:00"
+    },
+    {
+      "label": "top_100_candidates",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_100_candidates.csv",
+      "exists": true,
+      "rows": 34,
+      "size_bytes": 30626,
+      "modified_at": "2026-06-09T08:53:00+00:00"
+    },
+    {
+      "label": "stage3_candidates_for_ranking",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage3_candidates_for_ranking.csv",
+      "exists": true,
+      "rows": 34,
+      "size_bytes": 5660,
+      "modified_at": "2026-06-09T08:53:21+00:00"
+    },
+    {
+      "label": "phase7c4_top_candidates",
+      "path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7c4_pipeline_revalidation_top_candidates.csv",
+      "exists": true,
+      "rows": 20,
+      "size_bytes": 2131,
+      "modified_at": "2026-06-09T09:11:40+00:00"
+    }
+  ],
+  "top_company": {
+    "ticker": "AUPH",
+    "name": "Aurinia Pharmaceuticals Inc - Common Shares",
+    "final_stage3_score": 70.83,
+    "stage3_category": "🟢 Candidata fuerte para scouting"
+  },
+  "output_files": {
+    "summary_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7e_v07_release_checkpoint_summary.json",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7e_v07_release_checkpoint_report.md",
+    "evidence_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7e_v07_release_checkpoint_evidence.csv"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false
+}

@@ -1,0 +1,12 @@
+{
+  "active_stage1_policy": "balanced",
+  "phase_confirmed": "7B.9",
+  "confirmed_at": "2026-06-08T18:43:18+00:00",
+  "counts": {
+    "passed": 182,
+    "watchlist": 84,
+    "rejected": 234
+  },
+  "rollback_backup_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage1_before_phase7b8_1_exact.py",
+  "next_phase": "7C — Revalidate Stage 2 / Stage 3 / candidates with Stage 1 Balanced active"
+}

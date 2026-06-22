@@ -1,0 +1,145 @@
+{
+  "release": "v0.6",
+  "phase": "6G",
+  "created_at": "2026-06-05T10:20:10+00:00",
+  "release_dir": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.6",
+  "openai_called": false,
+  "api_called": false,
+  "funnel_executed": false,
+  "outputs_modified": false,
+  "stable_app_snapshot": {
+    "root_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\app_v0_6_stable.py",
+    "release_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.6\\app_v0_6_stable.py",
+    "status": "copied",
+    "sha256": "6099779e7bc75231cf220569b227e286565772272974eab72fd9ff082ae999b6"
+  },
+  "copied_files": [
+    {
+      "path": "app.py",
+      "status": "copied",
+      "size_bytes": 166468,
+      "sha256": "6099779e7bc75231cf220569b227e286565772272974eab72fd9ff082ae999b6"
+    },
+    {
+      "path": "config.py",
+      "status": "copied",
+      "size_bytes": 2932,
+      "sha256": "3b87579fa9b10c6719cf2397287d13e345f129a8e11b897dcf719e53303a9b4c"
+    },
+    {
+      "path": "README.md",
+      "status": "copied",
+      "size_bytes": 1967,
+      "sha256": "6370ecf4ec85aa67a11f875e10f63dff664b6076d2d71e670051041515c2e36e"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "status": "copied",
+      "size_bytes": 707,
+      "sha256": "6488144f6675509b88023375f817e3cf0237fd54adf4351a4f98c81ad9c1be87"
+    },
+    {
+      "path": "VERSION.md",
+      "status": "copied",
+      "size_bytes": 519,
+      "sha256": "1822ea75ab6180382b6506e615e98c841e408dff46e3182c673c22e94ace227c"
+    },
+    {
+      "path": "requirements.txt",
+      "status": "copied",
+      "size_bytes": 76,
+      "sha256": "d5902eb541d90664eaf20413e17d324b678992ea40d00b25bc4fdc49388763bd"
+    },
+    {
+      "path": ".env.example",
+      "status": "copied",
+      "size_bytes": 273,
+      "sha256": "c8017b5a77a5e91fbbb1b70ffe5553c684c1b2b01b784cde44526d911e24c7d9"
+    },
+    {
+      "path": ".gitignore",
+      "status": "copied",
+      "size_bytes": 433,
+      "sha256": "c65a06d3f4cf28c138ca4493347e0c63faccb34bf932da70670cfdbb06d5ec51"
+    }
+  ],
+  "copied_directories": [
+    {
+      "path": "src",
+      "status": "copied",
+      "files": 46
+    },
+    {
+      "path": "scripts",
+      "status": "copied",
+      "files": 19
+    },
+    {
+      "path": "templates",
+      "status": "copied",
+      "files": 9
+    },
+    {
+      "path": "docs",
+      "status": "copied",
+      "files": 14
+    }
+  ],
+  "required_phase6_files": [
+    {
+      "path": "src/prepare_real_universe_csv.py",
+      "exists_in_release": true,
+      "sha256": "57c25ea07571da3a052e55a08be030c42405b1848c0f858111430ea9433c59eb"
+    },
+    {
+      "path": "src/fundamental_coverage_report.py",
+      "exists_in_release": true,
+      "sha256": "67706c7e4bff1e2ac223eb4d67d16fcaa989173180ee13ca30e1c1cab545353b"
+    },
+    {
+      "path": "src/prepare_fundamentals_csv.py",
+      "exists_in_release": true,
+      "sha256": "ef5aca1c0511c8eb650d901244c14d09bf4f15689234610b6b00dee2bed6faed"
+    },
+    {
+      "path": "src/run_stage2_filter_enriched.py",
+      "exists_in_release": true,
+      "sha256": "deca1d505d43dca65def6c90dd5f501628c3f504029d7ecbc577cac2013e5347"
+    },
+    {
+      "path": "src/run_global_funnel_demo.py",
+      "exists_in_release": true,
+      "sha256": "5b0eccf4ec9cbf1d4dd28f5824980eb5ec650b53ff1db79ace4c9838a060da34"
+    },
+    {
+      "path": "scripts/check_phase6a_real_universe.py",
+      "exists_in_release": true,
+      "sha256": "d95006d41db285ba2552911ca2e28740b815f274b3e3d587b508e47ac2b67fca"
+    },
+    {
+      "path": "scripts/check_phase6b_fundamental_coverage.py",
+      "exists_in_release": true,
+      "sha256": "72c91b0793d19b011ddfc5f8bac4e63159eefef33a9c843f0c0a537dab1f22d4"
+    },
+    {
+      "path": "scripts/check_phase6c_fundamentals_enrichment.py",
+      "exists_in_release": true,
+      "sha256": "4f358015749f17538f238d03219e89f802ff676c8c754180e8bf6c05b54b7f13"
+    },
+    {
+      "path": "scripts/check_phase6d_stage2_enriched.py",
+      "exists_in_release": true,
+      "sha256": "f4f07e1a42a21a736e5eea867ce4663fdd797285493bcfab50597bd616e05140"
+    },
+    {
+      "path": "scripts/check_phase6e_clean_global_runner.py",
+      "exists_in_release": true,
+      "sha256": "02393c8bad916e3e948f3d0a8f326670871ecf04a81ee2fbdf860da91e5096a8"
+    },
+    {
+      "path": "scripts/check_phase6f_dashboard.py",
+      "exists_in_release": true,
+      "sha256": "413a412ac0fd42d631725d73799f489eb8d9b9b4ccf7ca91608fa13ac8b8f554"
+    }
+  ]
+}

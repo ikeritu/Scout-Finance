@@ -1,0 +1,36 @@
+{
+  "phase": "8I",
+  "status": "OK",
+  "run_id": "phase8i_2026-06-17T223555+0000",
+  "sandbox_directory": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_execution_sandbox",
+  "executions_count": 3,
+  "executions": [
+    {
+      "ticker": "AUPH",
+      "json_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_execution_sandbox\\ai_execution_sandbox_01_AUPH.json",
+      "json_sha256": "6a4d3ce960d5f780d46d7f15744c0567a73f8fa52592d5b3ab5629736f2752f0",
+      "markdown_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_execution_sandbox\\ai_execution_sandbox_01_AUPH.md",
+      "markdown_sha256": "11cef150a3cb3fa286f1092767b4962e7684e47f1332450eff8ad5b1b28a1c5b",
+      "openai_called": false,
+      "estimated_cost": 0.0
+    },
+    {
+      "ticker": "BZ",
+      "json_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_execution_sandbox\\ai_execution_sandbox_02_BZ.json",
+      "json_sha256": "db9bd49f79d1f8c2f658302a0f211d283f33c85d825436d33da3357210ddbca9",
+      "markdown_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_execution_sandbox\\ai_execution_sandbox_02_BZ.md",
+      "markdown_sha256": "68951f49b25c387ae16f1f1c4db09b6fb6e6881b1ef6c8aa07f7d15a8a4c7dc3",
+      "openai_called": false,
+      "estimated_cost": 0.0
+    },
+    {
+      "ticker": "ADBE",
+      "json_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_execution_sandbox\\ai_execution_sandbox_03_ADBE.json",
+      "json_sha256": "c030cc314d25a9dd59ea4ce9b473f7b8b01ca5f2e80713a5f833a22fad6bf61c",
+      "markdown_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memo_ai_execution_sandbox\\ai_execution_sandbox_03_ADBE.md",
+      "markdown_sha256": "03570ec34ba76c86481e3c8bb6dfb49f3e8bc63ea03661eba07ce256eac102f9",
+      "openai_called": false,
+      "estimated_cost": 0.0
+    }
+  ]
+}

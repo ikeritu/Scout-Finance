@@ -1,0 +1,4 @@
+ticker,company_name,ranking_position,quant_score,memo_status,legacy_verdict,normalized_verdict,manual_review_required,not_financial_advice,data_gap_count,source_count,memo_sha256
+AUPH,Aurinia Pharmaceuticals Inc - Common Shares,1,70.83,data_insufficient,,NEEDS_MORE_DATA,True,True,40,1,415c58c9a1cf55bc8d530ece40bfe27a528a1aedc2442bcf4e8c92382f1b315c
+BZ,KANZHUN LIMITED - American Depository Shares,2,68.5,data_insufficient,,NEEDS_MORE_DATA,True,True,40,1,459f497fcc185079d865aae81ef935c76bb7b1850f08d028f527ea04cc21d63b
+ADBE,Adobe Inc. - Common Stock,3,65.97,data_insufficient,,NEEDS_MORE_DATA,True,True,40,1,224fab39121fdc79389eafeac0f92bd47e89d9a24092e132f6e5990347e43425

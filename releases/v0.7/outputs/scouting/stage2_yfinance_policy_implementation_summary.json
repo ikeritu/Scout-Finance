@@ -1,0 +1,38 @@
+{
+  "phase": "7C.3",
+  "status": "OK",
+  "created_at": "2026-06-09T08:37:54+00:00",
+  "backup_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage2_before_phase7c3_yfinance_policy.py",
+  "backup_created": true,
+  "changes": [
+    "PHASE7C3_MARKER_ADDED",
+    "MISSING_SHARES_DILUTION_NO_LONGER_BLOCKS_CLEAN_PASS",
+    "MISSING_SHARES_DILUTION_PROVIDER_LIMITATION_ADDED"
+  ],
+  "stage2_run_ok": true,
+  "stage2_output_tail": "Scout Finance — Phase 5D Stage 2 financial sanity check\n================================================================\nInput companies: 182\nPASSED: 63\nWATCHLIST: 81\nREJECTED: 38\nPass rate: 34.62%\nWatchlist rate: 44.51%\nRejection rate: 20.88%\n\nOutput files:\n- passed: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_passed.csv\n- watchlist: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_watchlist.csv\n- rejected: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_rejected.csv\n- rejection_log: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_rejection_log.csv\n- summary: C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_summary.json\n\nPhase 6D note\n----------------------------------------------------------------\nStage 2 input: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed_enriched.csv\nstage1_passed.csv was not overwritten by this command.\nNo API call. No OpenAI call. app.py not modified.",
+  "expected": {
+    "passed": 63,
+    "watchlist": 81,
+    "rejected": 38
+  },
+  "actual": {
+    "passed": 63,
+    "watchlist": 81,
+    "rejected": 38
+  },
+  "matches_expected": true,
+  "old_missing_shares_dilution_present": false,
+  "provider_limitation_reason_present": true,
+  "output_files": {
+    "summary_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_implementation_summary.json",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_implementation_report.md",
+    "comparison_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_implementation_comparison.csv"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "filter_stage2_modified": true,
+  "release_modified": false
+}

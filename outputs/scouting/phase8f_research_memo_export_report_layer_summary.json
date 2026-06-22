@@ -1,0 +1,30 @@
+{
+  "phase": "8F",
+  "status": "OK",
+  "run_id": "phase8f_2026-06-17T221915+0000",
+  "default_top_n": 3,
+  "source": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase8e_persisted_equity_research_memos.json",
+  "source_type": "phase8e_json",
+  "memos_loaded": 3,
+  "reports_created": 3,
+  "reports_dir": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memos",
+  "top_tickers": [
+    "AUPH",
+    "BZ",
+    "ADBE"
+  ],
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": false
+  },
+  "signatures": {
+    "app_py_sha256": "dc27b9a248f243247155cd17d75fe1a33493d2095f6376e9587bca8996a20e60",
+    "filters_py_sha256": "cfec47448605da16f8db0d9052f44d6b1b957f6d6a290e7b637c517df2a1c5a4"
+  },
+  "next_phase": "8G — Optional AI interpretation gate and cost guardrails"
+}

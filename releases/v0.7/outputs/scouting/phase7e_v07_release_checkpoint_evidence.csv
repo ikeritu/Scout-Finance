@@ -1,0 +1,16 @@
+﻿label,path,exists,rows,size_bytes,modified_at
+stage1_balanced_closure,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\stage1_balanced_official_closure_summary.json,True,,2418,2026-06-08T18:43:18+00:00
+stage2_yfinance_policy,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\stage2_yfinance_policy_implementation_summary.json,True,,2386,2026-06-09T08:37:54+00:00
+phase7c4_pipeline_closure,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\phase7c4_pipeline_revalidation_summary.json,True,,7765,2026-06-09T09:11:41+00:00
+phase7d_dashboard,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\phase7d_dashboard_revalidated_funnel_summary.json,True,,1071,2026-06-09T09:46:11+00:00
+phase7d1_hotfix,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\phase7d1_dashboard_hotfix_summary.json,True,,596,2026-06-09T10:06:25+00:00
+phase7d2_count_hotfix,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\phase7d2_institutional_count_hotfix_summary.json,True,,549,2026-06-09T10:13:39+00:00
+phase7d3b_fundamental_exact_fix,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\phase7d3b_fundamental_coverage_exact_fix_summary.json,True,,898,2026-06-09T10:58:40+00:00
+active_pipeline_policy_status,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\active_pipeline_policy_status.json,True,,518,2026-06-09T09:11:41+00:00
+stage3_summary,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\stage3_summary.json,True,,2533,2026-06-09T08:53:00+00:00
+stage1_passed,C:\Users\ikeri\proyectos\Scout Finance\data\stages\stage1_passed.csv,True,182.0,53244,2026-06-08T18:43:18+00:00
+stage2_passed,C:\Users\ikeri\proyectos\Scout Finance\data\stages\stage2_passed.csv,True,63.0,46336,2026-06-09T08:37:54+00:00
+stage3_passed,C:\Users\ikeri\proyectos\Scout Finance\data\stages\stage3_passed.csv,True,6.0,6101,2026-06-09T08:53:00+00:00
+top_100_candidates,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\top_100_candidates.csv,True,34.0,30626,2026-06-09T08:53:00+00:00
+stage3_candidates_for_ranking,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\stage3_candidates_for_ranking.csv,True,34.0,5660,2026-06-09T08:53:21+00:00
+phase7c4_top_candidates,C:\Users\ikeri\proyectos\Scout Finance\outputs\scouting\phase7c4_pipeline_revalidation_top_candidates.csv,True,20.0,2131,2026-06-09T09:11:40+00:00

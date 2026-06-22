@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Scout Finance — AAPL</title>
+<style>
+body {
+    font-family: Inter, Arial, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    margin: 0;
+    padding: 32px;
+}
+.card {
+    max-width: 1120px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 24px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    padding: 32px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-start;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 22px;
+}
+h1 {
+    margin: 0;
+    font-size: 32px;
+}
+h2 {
+    margin-top: 28px;
+}
+.muted {
+    color: #64748b;
+}
+.badge {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 10px 14px;
+    background: #ecfdf5;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+    font-weight: 700;
+}
+.main-score {
+    font-size: 56px;
+    font-weight: 800;
+    color: #f97316;
+    line-height: 1;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 22px;
+}
+.score-card, .scenario, .section {
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 18px;
+    background: #ffffff;
+}
+.score-title {
+    color: #334155;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.score-value {
+    font-size: 30px;
+    font-weight: 800;
+}
+.score-label {
+    font-weight: 700;
+    margin-top: 8px;
+}
+.scenario-title {
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+.scenario-prob {
+    color: #2563eb;
+    font-weight: 800;
+    font-size: 24px;
+}
+.warning-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 18px;
+    padding: 18px;
+    margin-top: 22px;
+    color: #78350f;
+}
+.warning-title {
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+ul {
+    margin-top: 8px;
+}
+.footer {
+    margin-top: 24px;
+    font-size: 13px;
+    color: #64748b;
+}
+@media (max-width: 850px) {
+    .header {
+        flex-direction: column;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="header">
+        <div>
+            <h1>AAPL — Apple Inc.</h1>
+            <p class="muted">2026-06-01T08:37:11.799335+00:00</p>
+            <span class="badge">🟢 Alta calidad / seguir de cerca</span>
+            <p class="muted">Categoría interna de seguimiento. No es recomendación de inversión.</p>
+        </div>
+        <div>
+            <div class="muted">Confianza del análisis</div>
+            <div class="main-score">5.4/10</div>
+            <div class="muted">medio</div>
+        </div>
+    </div>
+
+    
+    <div class="warning-box">
+        <div class="warning-title">⚠️ Lectura prudente</div>
+        <ul><li>Existen limitaciones de datos relevantes indicadas por el análisis.</li></ul>
+    </div>
+    
+
+    <h2>Scores principales</h2>
+    <div class="grid">
+        
+        <div class="score-card">
+            <div class="score-title">Calidad negocio</div>
+            <div class="score-value" style="color:#16a34a;">8.6/10</div>
+            <div class="score-label" style="color:#16a34a;">Muy fuerte</div>
+        </div>
+        
+        <div class="score-card">
+            <div class="score-title">Salud financiera</div>
+            <div class="score-value" style="color:#94a3b8;">Sin datos</div>
+            <div class="score-label" style="color:#94a3b8;">Sin datos</div>
+        </div>
+        
+        <div class="score-card">
+            <div class="score-title">Crecimiento</div>
+            <div class="score-value" style="color:#94a3b8;">Sin datos</div>
+            <div class="score-label" style="color:#94a3b8;">Sin datos</div>
+        </div>
+        
+        <div class="score-card">
+            <div class="score-title">Valoración</div>
+            <div class="score-value" style="color:#94a3b8;">Sin datos</div>
+            <div class="score-label" style="color:#94a3b8;">Sin datos</div>
+        </div>
+        
+        <div class="score-card">
+            <div class="score-title">Moat</div>
+            <div class="score-value" style="color:#16a34a;">8.4/10</div>
+            <div class="score-label" style="color:#16a34a;">Muy fuerte</div>
+        </div>
+        
+        <div class="score-card">
+            <div class="score-title">Calidad evidencia</div>
+            <div class="score-value" style="color:#f97316;">5.8/10</div>
+            <div class="score-label" style="color:#f97316;">Aceptable</div>
+        </div>
+        
+        <div class="score-card">
+            <div class="score-title">Actualidad datos</div>
+            <div class="score-value" style="color:#2563eb;">6.9/10</div>
+            <div class="score-label" style="color:#2563eb;">Bueno</div>
+        </div>
+        
+        <div class="score-card">
+            <div class="score-title">Confianza</div>
+            <div class="score-value" style="color:#f97316;">5.4/10</div>
+            <div class="score-label" style="color:#f97316;">Aceptable</div>
+        </div>
+        
+        <div class="score-card">
+            <div class="score-title">Riesgo</div>
+            <div class="score-value" style="color:#f97316;">4.0/10</div>
+            <div class="score-label" style="color:#f97316;">Riesgo medio · más bajo es mejor</div>
+        </div>
+        
+    </div>
+
+    <h2>Escenarios</h2>
+    <div class="grid">
+        
+        <div class="scenario">
+            <div class="scenario-title">Escenario alcista</div>
+            <div class="scenario-prob">30%</div>
+            <p>El ecosistema y los servicios continúan expandiéndose, sosteniendo una prima de calidad elevada y una monetización recurrente superior a la esperada.</p>
+        </div>
+        
+        <div class="scenario">
+            <div class="scenario-title">Escenario base</div>
+            <div class="scenario-prob">50%</div>
+            <p>La empresa mantiene su posición competitiva y crece a un ritmo moderado, con rentabilidad alta y expansión limitada del múltiplo.</p>
+        </div>
+        
+        <div class="scenario">
+            <div class="scenario-title">Escenario bajista</div>
+            <div class="scenario-prob">20%</div>
+            <p>Se ralentiza la demanda, se comprimen márgenes o el mercado reduce la prima de valoración ante expectativas más débiles.</p>
+        </div>
+        
+    </div>
+
+    <h2>Riesgos principales</h2>
+    <div class="section">
+        <ul><li>Dependencia de ciclos de renovación de hardware</li><li>Presión regulatoria sobre el ecosistema</li><li>Competencia intensa en smartphones y servicios</li></ul>
+    </div>
+
+    <h2>Limitaciones clave</h2>
+    <div class="section">
+        <ul><li>No hay información suficiente para calcular financial_health_score.</li><li>No hay información suficiente para calcular growth_score.</li><li>No hay información suficiente para calcular valuation_score.</li><li>No hay información suficiente para evaluar dividendos.</li><li>No se incluyen métricas de ingresos, márgenes, FCF, ROIC, deuda o múltiplos comparables.</li></ul>
+    </div>
+
+    <h2>Advertencias de fuentes</h2>
+    <div class="section">
+        <ul><li>No se aportaron estados financieros ni múltiplos de valoración.</li><li>No se aportaron datos de dividendos ni caja/deuda.</li><li>Parte de la evaluación de moat y calidad usa conocimiento general del negocio y no evidencia cuantitativa adjunta.</li><li>Modelo usado: gpt-5.4-mini; coste estimado llamada: $0.012242</li></ul>
+    </div>
+
+    <h2>Conclusión prudente</h2>
+    <div class="section">
+        <p>El negocio parece de alta calidad y la señal cuantitativa de mercado es favorable, pero faltan datos fundamentales críticos para valorar con precisión salud financiera, crecimiento, rentabilidad y valoración.</p>
+    </div>
+
+    <div class="footer">
+        Scout Finance no emite recomendaciones de compra/venta. Esta ficha ayuda a priorizar investigación.
+    </div>
+</div>
+</body>
+</html>

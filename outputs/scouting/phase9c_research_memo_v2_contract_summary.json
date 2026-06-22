@@ -1,0 +1,33 @@
+{
+  "phase": "9C",
+  "title": "Research Memo v2 Contract Hardening",
+  "status": "OK",
+  "created_at": "2026-06-22T08:41:09+0000",
+  "schema_version": "equity_research_memo_schema_v0_2",
+  "default_top_n": 3,
+  "max_top_n": 3,
+  "source_file": "outputs\\scouting\\phase8f_research_memo_export_report_layer_export.json",
+  "memos_loaded": 3,
+  "memos_exported_v2": 3,
+  "verdict_counts": {
+    "NEEDS_MORE_DATA": 3
+  },
+  "manual_review_required_all": true,
+  "not_financial_advice_all": true,
+  "allowed_verdicts": [
+    "WATCHLIST",
+    "REJECT",
+    "NEEDS_MORE_DATA"
+  ],
+  "export_json": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase9c_research_memo_v2_contract_export.json",
+  "index_csv": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase9c_research_memo_v2_contract_index.csv",
+  "memo_v2_dir": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memos_v2",
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false,
+  "next": "Phase 9D — Red Flags Detector"
+}

@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-06-09T09:11:41+00:00",
+  "active_stage1_policy": "Balanced official policy",
+  "active_stage2_policy": "yfinance-aligned provider-limitation policy",
+  "active_stage3_policy": "Existing Stage 3 opportunity scoring policy",
+  "current_revalidated_funnel": {
+    "initial_pilot_universe": 500,
+    "stage1_passed": 182,
+    "stage2_passed": 63,
+    "stage3_passed": 6,
+    "path": "500 → 182 → 63 → 6"
+  },
+  "ready_for_dashboard_integration": true,
+  "source_phase": "7C.4"
+}

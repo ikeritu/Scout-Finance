@@ -1,0 +1,36 @@
+{
+  "phase": "8F",
+  "status": "OK",
+  "reports": [
+    {
+      "ticker": "AUPH",
+      "ranking_position": 1,
+      "report_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memos\\equity_research_memo_01_AUPH.md",
+      "report_exists": true,
+      "report_sha256": "c1ccc85711a1ce5852671e9734a4cd1d42e8ba570349f13c0804b19fef01a4ae"
+    },
+    {
+      "ticker": "BZ",
+      "ranking_position": 2,
+      "report_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memos\\equity_research_memo_02_BZ.md",
+      "report_exists": true,
+      "report_sha256": "9047fed1f52f00ed233283b8e3222eb896f7ae0cbdaf3ff14878e6f3185ddb64"
+    },
+    {
+      "ticker": "ADBE",
+      "ranking_position": 3,
+      "report_path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\research_memos\\equity_research_memo_03_ADBE.md",
+      "report_exists": true,
+      "report_sha256": "9af721999814e3aa0064636b3823b8a84b4938ab78533263869a680f9b2bf10e"
+    }
+  ],
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": false
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "phase": "5E",
+  "stage": "stage3",
+  "created_at": "2026-06-09T08:53:00+00:00",
+  "input_companies": 63,
+  "passed_companies": 6,
+  "watchlist_companies": 28,
+  "rejected_companies": 29,
+  "pass_rate": 0.09523809523809523,
+  "watchlist_rate": 0.4444444444444444,
+  "rejection_rate": 0.4603174603174603,
+  "category_distribution": {
+    "🟡 Interesante con condiciones": 33,
+    "🔴 Descartada por scoring": 29,
+    "🟢 Candidata fuerte para scouting": 1
+  },
+  "top_rejection_or_watchlist_reasons": {
+    "LOW_FINAL_SCORE": 29,
+    "FINAL_SCORE_WATCHLIST_RANGE": 28
+  },
+  "top_company": {
+    "ticker": "AUPH",
+    "name": "Aurinia Pharmaceuticals Inc - Common Shares",
+    "final_stage3_score": 70.83,
+    "stage3_category": "🟢 Candidata fuerte para scouting"
+  },
+  "output_files": {
+    "passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_passed.csv",
+    "watchlist": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_watchlist.csv",
+    "rejected": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_rejected.csv",
+    "rejection_log": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_rejection_log.csv",
+    "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage3_summary.json",
+    "top_20_deep_research": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_20_deep_research.csv",
+    "top_50_watchlist": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_50_watchlist.csv",
+    "top_100_candidates": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_100_candidates.csv",
+    "top_recoverable_candidates": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_recoverable_candidates.csv"
+  },
+  "config": {
+    "target_pass_count": 450,
+    "max_risk_score_pass": 7.5,
+    "max_risk_score_watchlist": 8.5,
+    "min_data_quality_score_pass": 5.0,
+    "min_data_quality_score_watchlist": 3.5,
+    "min_final_score_pass": 60.0,
+    "min_final_score_watchlist": 45.0,
+    "weights": {
+      "business_quality_score": 0.2,
+      "financial_health_score": 0.15,
+      "growth_score": 0.15,
+      "valuation_score": 0.15,
+      "moat_proxy_score": 0.15,
+      "momentum_score": 0.1,
+      "data_quality_score": 0.1
+    },
+    "risk_penalty_multiplier": 0.5,
+    "top_deep_research_count": 20,
+    "top_watchlist_count": 50,
+    "top_candidates_count": 100,
+    "top_recoverable_count": 100
+  }
+}

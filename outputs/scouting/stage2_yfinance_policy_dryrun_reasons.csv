@@ -1,0 +1,413 @@
+﻿ticker,simulated_stage2_status,reason_code,reason_text,metric_name,metric_value,threshold,severity,recoverable
+AAL,REJECTED,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.00065,0.0,medium,True
+AAL,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,6.593353196480939,5.0,high,True
+AAL,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AAOI,REJECTED,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.08595,0.0,medium,True
+AAOI,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-0.8788624536489152,-0.1,high,True
+AAOI,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,5.801390442890443,5.0,high,True
+AAOI,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AAON,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-0.1330488326761387,-0.1,high,True
+AAON,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AAPL,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ABCL,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-6.9175,-0.2,medium,True
+ABCL,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-1.3306389253610746,-0.1,medium,True
+ABCL,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ABNB,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ABSI,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-143.46977,-0.2,medium,True
+ABSI,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-22.590074074074074,-0.1,medium,True
+ABSI,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ABUS,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-0.4722329012398507,-0.1,medium,True
+ABUS,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ABVX,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-41.83705,-0.2,medium,True
+ABVX,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-23.266640650406504,-0.1,medium,True
+ABVX,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ACAD,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.01722,0.0,medium,True
+ACAD,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ACDC,REJECTED,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.10187,0.0,medium,True
+ACDC,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,5.909136224899599,5.0,high,True
+ACDC,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ACGL,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ACHC,WATCHLIST,FCF_MARGIN_WATCHLIST_RANGE,FCF margin below pass threshold but above rejection threshold.,fcf_margin,-0.0643464852937301,0.0,medium,True
+ACHC,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,4.310144237818508,3.0,medium,True
+ACHC,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ACHV,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+ACHV,WATCHLIST,MISSING_REVENUE_SPECIAL_CASE,Revenue missing but company is marked as special case.,revenue_ttm,,revenue_ttm > 0 unless special_case,medium,True
+ACHV,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+ACHV,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ACIW,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ACLS,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ACMR,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-0.1483195339012535,-0.1,high,True
+ACMR,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ACRS,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-11.118239,-0.2,medium,True
+ACRS,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-3.849752121429425,-0.1,medium,True
+ACRS,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ACT,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+ACT,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ADAM,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+ADAM,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+ADAM,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+ADAM,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ADBE,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ADEA,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ADI,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ADMA,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-1.23389,-0.2,medium,True
+ADMA,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ADP,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ADPT,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.27099,-0.2,high,True
+ADPT,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ADSK,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ADTN,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ADUS,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AEHR,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.41006002,-0.2,high,True
+AEHR,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-0.1646586012595293,-0.1,high,True
+AEHR,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AEIS,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AEP,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-0.3099652370409654,-0.1,medium,True
+AEP,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AEVA,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-5.61099,-0.2,high,True
+AEVA,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-3.2311184856720545,-0.1,high,True
+AEVA,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AFRM,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AGIO,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-5.30343,-0.2,medium,True
+AGIO,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-4.045875726744186,-0.1,medium,True
+AGIO,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AGNC,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+AGNC,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+AGNC,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+AGNC,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AGNT,REJECTED,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.00874,0.0,medium,True
+AGNT,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,11.572619611558505,5.0,high,True
+AGNT,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AGYS,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AHCO,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.351726965644138,3.0,medium,True
+AHCO,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AIOT,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.18205529047174,3.0,medium,True
+AIOT,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AIP,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.38001,-0.2,high,True
+AIP,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AKAM,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,4.3046035145170825,3.0,medium,True
+AKAM,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AKTS,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-7.0362597,-0.2,medium,True
+AKTS,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+AKTS,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALAB,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALGM,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALGN,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALGT,WATCHLIST,FCF_MARGIN_WATCHLIST_RANGE,FCF margin below pass threshold but above rejection threshold.,fcf_margin,-0.0104713194855363,0.0,medium,True
+ALGT,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALHC,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALKS,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.0019200001,0.0,medium,True
+ALKS,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.840140946428434,3.0,medium,True
+ALKS,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALKT,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.042140003,0.0,medium,True
+ALKT,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALM,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-1.1914145502539697,-0.1,high,True
+ALM,REJECTED,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,4.137672561722991,3.0,medium,True
+ALM,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALMR,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.47425,-0.2,high,True
+ALMR,REJECTED,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+ALMR,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALMS,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-56.52441,-0.2,medium,True
+ALMS,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-24.607786717448228,-0.1,medium,True
+ALMS,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALNT,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALNY,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALOY,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-391.5096,-0.2,high,True
+ALOY,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-26.2809375,-0.1,high,True
+ALOY,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ALRM,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMAL,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+AMAL,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+AMAL,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+AMAL,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMAT,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMBA,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.19347,0.0,medium,True
+AMBA,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,4.213989868416861,3.0,medium,True
+AMBA,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMD,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMGN,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMKR,WATCHLIST,FCF_MARGIN_WATCHLIST_RANGE,FCF margin below pass threshold but above rejection threshold.,fcf_margin,-0.0066674849524892,0.0,medium,True
+AMKR,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMLX,REJECTED,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+AMLX,REJECTED,MISSING_REVENUE,Revenue missing and company is not special case.,revenue_ttm,,revenue_ttm > 0,high,True
+AMLX,REJECTED,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+AMLX,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMPH,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMPL,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.2582,-0.2,high,True
+AMPL,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMRX,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.737585537665325,3.0,medium,True
+AMRX,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMSC,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMSF,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AMZN,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ANAB,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-1.35534,-0.2,medium,True
+ANAB,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ANDE,WATCHLIST,FCF_MARGIN_WATCHLIST_RANGE,FCF margin below pass threshold but above rejection threshold.,fcf_margin,-0.021045708148551,0.0,medium,True
+ANDE,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,4.4999526661696905,3.0,medium,True
+ANDE,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ANIP,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ANNX,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+ANNX,WATCHLIST,MISSING_REVENUE_SPECIAL_CASE,Revenue missing but company is marked as special case.,revenue_ttm,,revenue_ttm > 0 unless special_case,medium,True
+ANNX,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+ANNX,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AOSL,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.08583,0.0,medium,True
+AOSL,WATCHLIST,FCF_MARGIN_WATCHLIST_RANGE,FCF margin below pass threshold but above rejection threshold.,fcf_margin,-0.0544668924442368,0.0,medium,True
+AOSL,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+APA,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+APEI,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+APGE,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+APGE,WATCHLIST,MISSING_REVENUE_SPECIAL_CASE,Revenue missing but company is marked as special case.,revenue_ttm,,revenue_ttm > 0 unless special_case,medium,True
+APGE,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+APGE,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+APLD,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.20466,-0.2,high,True
+APLD,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-4.688673418638063,-0.1,high,True
+APLD,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,78.8953705861201,5.0,high,True
+APLD,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+APOG,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+APP,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+APPF,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+APPN,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.524133027885299,3.0,medium,True
+APPN,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+APPS,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.120731323030532,3.0,medium,True
+APPS,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ARCB,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ARDX,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-0.34712002,-0.2,medium,True
+ARDX,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ARGX,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+ARGX,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ARHS,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.166063395740154,3.0,medium,True
+ARHS,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ARKO,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,8.169030324517243,5.0,high,True
+ARKO,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ARM,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ARQT,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.08623999,0.0,medium,True
+ARQT,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ARRY,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,4.506016117403912,3.0,medium,True
+ARRY,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ARWR,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-1.91573,-0.2,medium,True
+ARWR,WATCHLIST,FCF_MARGIN_WATCHLIST_RANGE,FCF margin below pass threshold but above rejection threshold.,fcf_margin,-0.0741488406444727,0.0,medium,True
+ARWR,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ARXS,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+ARXS,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,4.658828340651266,3.0,medium,True
+ARXS,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ASML,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ASND,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ASO,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ASPI,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-5.9540696,-0.2,high,True
+ASPI,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-1.4791309837709363,-0.1,high,True
+ASPI,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ASST,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-113.63732,-0.2,medium,True
+ASST,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-45.63338083370118,-0.1,medium,True
+ASST,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ASTE,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ASTH,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.676218105099234,3.0,medium,True
+ASTH,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ASTL,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.52946997,-0.2,high,True
+ASTL,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-0.1442642655500099,-0.1,high,True
+ASTL,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ATAI,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-32.39099,-0.2,medium,True
+ATAI,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+ATAI,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ATAT,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ATEC,REJECTED,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.11481,0.0,medium,True
+ATEC,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,16.30573046049852,5.0,high,True
+ATEC,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ATEX,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-6.18563,-0.2,high,True
+ATEX,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-6.130310182063385,-0.1,high,True
+ATEX,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ATLC,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+ATLC,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+ATLC,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+ATLC,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ATRC,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+ATRO,WATCHLIST,FCF_MARGIN_WATCHLIST_RANGE,FCF margin below pass threshold but above rejection threshold.,fcf_margin,-0.0027707425571334,0.0,medium,True
+ATRO,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AUGO,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AUPH,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AUR,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-244.0,-0.2,high,True
+AUR,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-100.437504,-0.1,high,True
+AUR,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AVAH,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,4.208964217480044,3.0,medium,True
+AVAH,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AVAV,REJECTED,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.051149998,0.0,medium,True
+AVAV,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-0.1888203823357223,-0.1,high,True
+AVAV,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AVBP,REJECTED,LOW_DATA_COMPLETENESS,Data completeness below Stage 2 minimum.,data_completeness_score,46.15,50,high,True
+AVBP,REJECTED,MISSING_REVENUE_SPECIAL_CASE,Revenue missing but company is marked as special case.,revenue_ttm,,revenue_ttm > 0 unless special_case,medium,True
+AVBP,REJECTED,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+AVBP,REJECTED,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+AVBP,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AVGO,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AVLN,REJECTED,LOW_DATA_COMPLETENESS,Data completeness below Stage 2 minimum.,data_completeness_score,46.15,50,high,True
+AVLN,REJECTED,MISSING_REVENUE_SPECIAL_CASE,Revenue missing but company is marked as special case.,revenue_ttm,,revenue_ttm > 0 unless special_case,medium,True
+AVLN,REJECTED,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+AVLN,REJECTED,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+AVLN,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AVO,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.02406,0.0,medium,True
+AVO,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AVPT,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AVR,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-48.597168,-0.2,high,True
+AVR,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-28.44725877903836,-0.1,high,True
+AVR,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AVT,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.880037421562539,3.0,medium,True
+AVT,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AVTX,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-1341.644,-0.2,medium,True
+AVTX,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-394.0190508474576,-0.1,medium,True
+AVTX,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AXGN,REJECTED,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.046079997,0.0,medium,True
+AXGN,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,37.91990632318501,5.0,high,True
+AXGN,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AXON,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,10.726962094477011,5.0,high,True
+AXON,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AXSM,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-0.32827,-0.2,medium,True
+AXSM,WATCHLIST,FCF_MARGIN_WATCHLIST_RANGE,FCF margin below pass threshold but above rejection threshold.,fcf_margin,-0.00543851177569,0.0,medium,True
+AXSM,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AXTI,REJECTED,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.058870003,0.0,medium,True
+AXTI,REJECTED,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+AXTI,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,6.914888457807954,5.0,high,True
+AXTI,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AYA,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+AZTA,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.10556,0.0,medium,True
+AZTA,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BAND,REJECTED,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.022130001,0.0,medium,True
+BAND,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,10.149625581711796,5.0,high,True
+BAND,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BANF,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BANF,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BANF,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BANF,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BANR,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BANR,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BANR,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BANR,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BATRK,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.57287,-0.2,high,True
+BATRK,REJECTED,FCF_MARGIN_WATCHLIST_RANGE,FCF margin below pass threshold but above rejection threshold.,fcf_margin,-0.0080666140226703,0.0,medium,True
+BATRK,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,6.968044392212968,5.0,high,True
+BATRK,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BBIO,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-0.54472,-0.2,medium,True
+BBIO,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-0.5481605620224758,-0.1,medium,True
+BBIO,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BBNX,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.87856,-0.2,high,True
+BBNX,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-0.3996421560623378,-0.1,high,True
+BBNX,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BBSI,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.021070002,0.0,medium,True
+BBSI,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BCAX,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BCAX,WATCHLIST,MISSING_REVENUE_SPECIAL_CASE,Revenue missing but company is marked as special case.,revenue_ttm,,revenue_ttm > 0 unless special_case,medium,True
+BCAX,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BCAX,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BCPC,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BCRX,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.024530001,0.0,medium,True
+BCRX,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BEAM,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-3.37813,-0.2,medium,True
+BEAM,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-1.424024806920277,-0.1,medium,True
+BEAM,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BELFA,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BELFB,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BFC,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BFC,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BFC,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BFC,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BFST,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BFST,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BFST,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BFST,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BGC,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BGC,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BGC,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BGC,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BHF,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-0.63366,-0.2,medium,True
+BHF,WATCHLIST,FCF_MARGIN_WATCHLIST_RANGE,FCF margin below pass threshold but above rejection threshold.,fcf_margin,-0.0860632188860578,0.0,medium,True
+BHF,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BHF,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BHRB,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BHRB,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BHRB,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BHRB,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BIDU,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BIIB,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BILI,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BILI,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BIOA,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-9.15404,-0.2,high,True
+BIOA,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-5.6550748352074445,-0.1,high,True
+BIOA,REJECTED,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.736670779540751,3.0,medium,True
+BIOA,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BJRI,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.4214205729571683,3.0,medium,True
+BJRI,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BKNG,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BKR,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BL,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BLBD,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BLDP,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.67314005,-0.2,high,True
+BLDP,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-0.28825481131893,-0.1,high,True
+BLDP,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,7.744175847326352,5.0,high,True
+BLDP,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BLFS,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BLKB,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,4.402608712500976,3.0,medium,True
+BLKB,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BLLN,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BLMN,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,6.284283920525578,5.0,high,True
+BLMN,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BLTE,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BLTE,WATCHLIST,MISSING_REVENUE_SPECIAL_CASE,Revenue missing but company is marked as special case.,revenue_ttm,,revenue_ttm > 0 unless special_case,medium,True
+BLTE,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BLTE,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BMRN,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BNTX,WATCHLIST,OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"Operating margin is very negative, but company has special/growth exception.",operating_margin,-5.7663,-0.2,medium,True
+BNTX,WATCHLIST,FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE,"FCF margin very negative, but company has special/growth exception.",fcf_margin,-0.1526139068638885,-0.1,medium,True
+BNTX,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BOKF,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BOKF,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BOKF,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BOKF,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BPOP,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BPOP,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BPOP,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BPOP,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BRKR,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.2158787313280133,3.0,medium,True
+BRKR,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BRUN,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.12472,0.0,medium,True
+BRUN,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BRZE,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.1304,0.0,medium,True
+BRZE,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BSY,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BTDR,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-0.43352002,-0.2,high,True
+BTDR,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-0.9959646628507376,-0.1,high,True
+BTDR,REJECTED,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.8199261962433417,3.0,medium,True
+BTDR,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BTQ,REJECTED,OPERATING_MARGIN_TOO_NEGATIVE,Operating margin below Stage 2 minimum.,operating_margin,-620.99036,-0.2,high,True
+BTQ,REJECTED,FCF_MARGIN_TOO_NEGATIVE,FCF margin below Stage 2 minimum.,fcf_margin,-83.21921614730445,-0.1,high,True
+BTQ,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BTSG,WATCHLIST,DEBT_WATCHLIST_RANGE,Net debt to EBITDA above pass threshold but below rejection threshold.,net_debt_to_ebitda,3.274938623907024,3.0,medium,True
+BTSG,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BULL,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BULL,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.01487,0.0,medium,True
+BULL,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BULL,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BULL,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BUSE,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+BUSE,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+BUSE,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+BUSE,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BWIN,WATCHLIST,OPERATING_MARGIN_WATCHLIST_RANGE,Operating margin below pass threshold but above rejection threshold.,operating_margin,-0.17468001,0.0,medium,True
+BWIN,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+BZ,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+CABA,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+CABA,WATCHLIST,MISSING_REVENUE_SPECIAL_CASE,Revenue missing but company is marked as special case.,revenue_ttm,,revenue_ttm > 0 unless special_case,medium,True
+CABA,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+CABA,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+CAC,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+CAC,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+CAC,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+CAC,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+CACC,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+CACC,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+CACC,WATCHLIST,MISSING_NET_DEBT_TO_EBITDA,Net debt to EBITDA missing.,net_debt_to_ebitda,,required for clean pass,medium,True
+CACC,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+CADL,WATCHLIST,DATA_COMPLETENESS_WATCHLIST_RANGE,Data completeness below pass threshold but above rejection threshold.,data_completeness_score,61.54,70,medium,True
+CADL,WATCHLIST,MISSING_REVENUE_SPECIAL_CASE,Revenue missing but company is marked as special case.,revenue_ttm,,revenue_ttm > 0 unless special_case,medium,True
+CADL,WATCHLIST,MISSING_FCF_MARGIN,FCF margin missing.,fcf_margin,,required for clean pass,medium,True
+CADL,WATCHLIST,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+CAI,PASSED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True
+CAKE,REJECTED,DEBT_TOO_HIGH,Net debt to EBITDA above Stage 2 maximum.,net_debt_to_ebitda,5.627689484462625,5.0,high,True
+CAKE,REJECTED,MISSING_SHARES_DILUTION_PROVIDER_LIMITATION,"Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker.",shares_dilution_3y,,provider limitation,low,True

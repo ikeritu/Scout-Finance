@@ -1,0 +1,18 @@
+{
+  "phase": "7D.2",
+  "status": "OK",
+  "created_at": "2026-06-09T10:13:39+00:00",
+  "backup_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\app_before_phase7d2_institutional_count_hotfix.py",
+  "backup_created": true,
+  "changes": [
+    "REPLACED_SORT_COUNT_WITH_N_IN_INSTITUTIONAL_DASHBOARD_1",
+    "PHASE7D2_MARKER_ADDED"
+  ],
+  "fixed_error": "KeyError: 'Count'",
+  "app_modified": true,
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "filters_modified": false,
+  "release_modified": false
+}

@@ -1,0 +1,98 @@
+{
+  "phase": "7B.7",
+  "status": "OK",
+  "created_at": "2026-06-08T13:19:01+00:00",
+  "source_dry_run_summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_summary.json",
+  "source_transitions": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_transitions.csv",
+  "input_companies": 500,
+  "balanced_passed": 182,
+  "balanced_watchlist": 84,
+  "balanced_rejected": 234,
+  "balanced_pass_rate_percent": 36.4,
+  "balanced_watchlist_rate_percent": 16.8,
+  "balanced_rejection_rate_percent": 46.8,
+  "passed_retained_as_passed": 182,
+  "passed_to_watchlist": 44,
+  "passed_to_rejected": 0,
+  "watchlist_to_rejected": 26,
+  "transition_summary": [
+    {
+      "transition": "REJECTED->REJECTED",
+      "count": 208
+    },
+    {
+      "transition": "PASSED->PASSED",
+      "count": 182
+    },
+    {
+      "transition": "PASSED->WATCHLIST",
+      "count": 44
+    },
+    {
+      "transition": "WATCHLIST->WATCHLIST",
+      "count": 40
+    },
+    {
+      "transition": "WATCHLIST->REJECTED",
+      "count": 26
+    }
+  ],
+  "reason_summary": [
+    {
+      "reason_code": "MARKET_CAP_BELOW_MINIMUM",
+      "count": 199
+    },
+    {
+      "reason_code": "LOW_DOLLAR_VOLUME",
+      "count": 164
+    },
+    {
+      "reason_code": "DOLLAR_VOLUME_WATCHLIST_RANGE",
+      "count": 100
+    },
+    {
+      "reason_code": "MARKET_CAP_WATCHLIST_RANGE",
+      "count": 85
+    },
+    {
+      "reason_code": "PRICE_BELOW_MINIMUM",
+      "count": 80
+    },
+    {
+      "reason_code": "PRICE_WEAK_WATCHLIST_RANGE",
+      "count": 58
+    },
+    {
+      "reason_code": "PRICE_STRONG_WATCHLIST_RANGE",
+      "count": 57
+    },
+    {
+      "reason_code": "MISSING_MARKET_CAP",
+      "count": 2
+    }
+  ],
+  "professional_interpretation": [
+    "Balanced policy reduces pass-through noise while keeping a substantial discovery pool.",
+    "No current PASSED company is moved directly to REJECTED.",
+    "PASSED to WATCHLIST transitions are review downgrades, not hard exclusions.",
+    "WATCHLIST to REJECTED transitions are primarily the intended cleanup area.",
+    "Production filters should only be changed in a guarded implementation phase with backup and rollback."
+  ],
+  "decision": "APPROVE_FOR_GUARDED_APPLICATION",
+  "recommended_next_step": "Phase 7B.8 guarded implementation patch",
+  "apply_to_production_now": false,
+  "output_files": {
+    "report_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_impact_approval_report.json",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_impact_approval_report.md",
+    "transition_summary_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_impact_transition_summary.csv",
+    "reason_summary_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_impact_reason_summary.csv",
+    "approval_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_impact_approval_decision.csv"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "production_stage1_overwritten": false,
+  "release_modified": false
+}

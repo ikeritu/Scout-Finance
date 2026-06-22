@@ -1,0 +1,376 @@
+{
+  "phase": "9G",
+  "title": "v0.9.0 Experimental AI Audit and Freeze",
+  "version": "v0.9.0-experimental-ai",
+  "status": "OK",
+  "created_at": "2026-06-22T10:03:04+0000",
+  "phase_status": {
+    "9A": {
+      "required_files": [
+        {
+          "path": "outputs/scouting/phase9a_data_layer_external_calls_audit_summary.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1152,
+          "sha256": "44e669c5f6201ea30ce072ad89a69d175a6cd0f5ee54e4c3b89000f0b05ca5d9"
+        },
+        {
+          "path": "outputs/scouting/phase9a_data_layer_external_calls_audit_report.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1361,
+          "sha256": "e3d0564b394b87af632c07747c2df6f46333db83fe93706c79c97d75d793741c"
+        },
+        {
+          "path": "outputs/scouting/phase9a_data_layer_external_calls_audit.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 418957,
+          "sha256": "fba48b03a7b971958f2d6a08009fd32e99fdf405d73d13451e1e1eac27459762"
+        }
+      ],
+      "all_required_files_exist": true,
+      "summary_status": "OK",
+      "summary_phase": "9A",
+      "controls": {
+        "openai_called": false,
+        "api_called": false,
+        "yfinance_called": false,
+        "pipeline_recalculated": false,
+        "app_modified": false,
+        "filters_modified": false,
+        "release_modified": false
+      }
+    },
+    "9B": {
+      "required_files": [
+        {
+          "path": "outputs/scouting/phase9b_minimal_datahub_cache_summary.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1144,
+          "sha256": "421aba52191ddbb7f6db1aec84e27305387c19e4d118f53955364179ca1ecb23"
+        },
+        {
+          "path": "outputs/scouting/phase9b_minimal_datahub_cache_report.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1173,
+          "sha256": "8ef4f95fc9ce7f497e5e71d27c4124281da2e6886eae9d29c2a38df9e517c7b9"
+        },
+        {
+          "path": "outputs/scouting/phase9b_datahub_local_source_manifest.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 113672,
+          "sha256": "669d8d6fc239d1ccad56098bdcac23441af3fb9abc9c3eb77cab13d349252b15"
+        }
+      ],
+      "all_required_files_exist": true,
+      "summary_status": "OK",
+      "summary_phase": "9B",
+      "controls": {
+        "openai_called": false,
+        "api_called": false,
+        "yfinance_called": false,
+        "pipeline_recalculated": false,
+        "app_modified": false,
+        "filters_modified": false,
+        "release_modified": false
+      }
+    },
+    "9C": {
+      "required_files": [
+        {
+          "path": "outputs/scouting/phase9c_research_memo_v2_contract_summary.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1174,
+          "sha256": "695e8bba445a3ce585251fb3123d7a1fb7ad013d3fa79e0f4037bdef839ee409"
+        },
+        {
+          "path": "outputs/scouting/phase9c_research_memo_v2_contract_report.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 893,
+          "sha256": "230c24048e6e44e34e230097fc5bbee1a0b9d380bd7dfe2a9a8d20e3bd5a6c25"
+        },
+        {
+          "path": "outputs/scouting/phase9c_research_memo_v2_contract_export.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 38189,
+          "sha256": "654ce9ae7e93e8cd0517959da97e7a833840c52b8e71f029cc13bafec3b71f71"
+        }
+      ],
+      "all_required_files_exist": true,
+      "summary_status": "OK",
+      "summary_phase": "9C",
+      "controls": {
+        "openai_called": false,
+        "api_called": false,
+        "yfinance_called": false,
+        "pipeline_recalculated": false,
+        "app_modified": false,
+        "filters_modified": false,
+        "release_modified": false
+      }
+    },
+    "9D": {
+      "required_files": [
+        {
+          "path": "outputs/scouting/phase9d_red_flags_detector_summary.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 956,
+          "sha256": "2b5b247d265fd129c1228d4ea32c32174a65056304ddc0c508021999c1be7d42"
+        },
+        {
+          "path": "outputs/scouting/phase9d_red_flags_detector_report.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 751,
+          "sha256": "22d952aa40be7c1c7b1c154aaf84a39adee7acef440422eaca64d04d7e0671f7"
+        },
+        {
+          "path": "outputs/scouting/phase9d_red_flags_detector_export.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 5279,
+          "sha256": "5d46d6e6d870e030e2d63cbde211ea1207841d6269cafbcec713098b2ec5a044"
+        }
+      ],
+      "all_required_files_exist": true,
+      "summary_status": "OK",
+      "summary_phase": "9D",
+      "controls": {
+        "openai_called": false,
+        "api_called": false,
+        "yfinance_called": false,
+        "pipeline_recalculated": false,
+        "app_modified": false,
+        "filters_modified": false,
+        "release_modified": false
+      }
+    },
+    "9E": {
+      "required_files": [
+        {
+          "path": "outputs/scouting/phase9e_memo_v2_red_flags_summary.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1362,
+          "sha256": "f4398f81e97b9d3ed8011d0b8ac3f34ac5d97713282e2b2d4f8417900f770cf6"
+        },
+        {
+          "path": "outputs/scouting/phase9e_memo_v2_red_flags_report.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 830,
+          "sha256": "74954a71fb9b5cde188df6d5e74ce9a9f0e506a6e58d42be412e607e8ad83d3f"
+        },
+        {
+          "path": "outputs/scouting/phase9e_memo_v2_red_flags_export.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 45392,
+          "sha256": "3eaa1d5ad6c15038d468997db776df54320758cd83413c9b7e96cab0ee83aee2"
+        }
+      ],
+      "all_required_files_exist": true,
+      "summary_status": "OK",
+      "summary_phase": "9E",
+      "controls": {
+        "openai_called": false,
+        "api_called": false,
+        "yfinance_called": false,
+        "pipeline_recalculated": false,
+        "app_modified": false,
+        "filters_modified": false,
+        "release_modified": false
+      }
+    },
+    "9F": {
+      "required_files": [
+        {
+          "path": "outputs/scouting/phase9f_ai_profiles_dry_run_summary.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 1225,
+          "sha256": "8f1187cabd2071b059d2256805cff4c2d01a5d5285d4a97f382eb5fe5ea76f61"
+        },
+        {
+          "path": "outputs/scouting/phase9f_ai_profiles_dry_run_report.md",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 858,
+          "sha256": "94ee8538bfdbde87a7f6cda7ca520637a4ec25691c91ff05cfb33eb88b587ae1"
+        },
+        {
+          "path": "outputs/scouting/phase9f_ai_profiles_dry_run_export.json",
+          "exists": true,
+          "is_file": true,
+          "size_bytes": 201803,
+          "sha256": "15db73effb8d839871dbe1b9a0d69acfd7ad37c6eee07a72ec5ff371d615cb90"
+        }
+      ],
+      "all_required_files_exist": true,
+      "summary_status": "OK",
+      "summary_phase": "9F",
+      "controls": {
+        "openai_called": false,
+        "api_called": false,
+        "yfinance_called": false,
+        "pipeline_recalculated": false,
+        "app_modified": false,
+        "filters_modified": false,
+        "release_modified": false
+      }
+    }
+  },
+  "source_files": [
+    {
+      "path": "src/phase9a_data_layer_external_calls_audit.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 10473,
+      "sha256": "c06ad6c0c813688275a3bfb4dc0ac650594b5894aa562afe4c7f1e9d0e2e9793"
+    },
+    {
+      "path": "src/data_hub.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 7198,
+      "sha256": "6298d8ce9502c5c3f2ebb46e1e921e6aab17adf2324e04d810701c2cd51f27cf"
+    },
+    {
+      "path": "src/phase9b_minimal_datahub_cache.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 7007,
+      "sha256": "f7b721bc81bf6012f7fb1aa990c0f8353b717f77a65d94778df0694f87500e59"
+    },
+    {
+      "path": "src/phase9c_research_memo_v2_contract.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 17093,
+      "sha256": "5a2e88acc7847fae711965cbb761eed1c0ccc6077d4f5812388c47a600e5de57"
+    },
+    {
+      "path": "src/red_flags.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 12588,
+      "sha256": "c45161ac2bf641c162d13a36c1cb90cc2156816c21411d0ed0a5a2a3b0c97826"
+    },
+    {
+      "path": "src/phase9d_red_flags_detector.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 11997,
+      "sha256": "33141d5bb43aab3d135ba027815ff7230c893a576209c3b231e4ceda94324acb"
+    },
+    {
+      "path": "src/phase9e_integrate_red_flags_memo_v2.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 15412,
+      "sha256": "0b7c72229eb63274056f17d820509dc8e929435fe9e94c178f7ea1ad8a660a35"
+    },
+    {
+      "path": "src/phase9f_ai_profiles_dry_run.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 14249,
+      "sha256": "c07cffd3afe72e37d8fa543d32e4e2d13016b6c6dbd0a966fd96b75f960ce2ae"
+    },
+    {
+      "path": "schemas/equity_research_memo_schema_v0_2.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 2044,
+      "sha256": "5469d9e46449eae101932e832d8754dbfa020f39fb7849ca8abeb06357c0d5db"
+    },
+    {
+      "path": "scripts/check_phase9a_data_layer_external_calls_audit.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 3214,
+      "sha256": "2b8832de843a8409aecb1a86cc328f82c54d913a8aa7a2b3e81bb3d55b4e0776"
+    },
+    {
+      "path": "scripts/check_phase9b_minimal_datahub_cache.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 4411,
+      "sha256": "35961b55049b5e17343052acaa503e9882ac87d1a2ea4c349f07218764e36386"
+    },
+    {
+      "path": "scripts/check_phase9c_research_memo_v2_contract.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 7080,
+      "sha256": "4312fc388b8506ccf1af69a87e0e39197ecddae5ff507e33742d21f3a6196003"
+    },
+    {
+      "path": "scripts/check_phase9d_red_flags_detector.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 5795,
+      "sha256": "8f48435cfd959bc4f8781570075c5af4479d4e6b0cabd3e7583e866fd71775be"
+    },
+    {
+      "path": "scripts/check_phase9e_integrate_red_flags_memo_v2.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 7216,
+      "sha256": "48c2d47cf4559c3653ab132b3ee61bf9dee8ab50ef20a4e84222a22805449d8d"
+    },
+    {
+      "path": "scripts/check_phase9f_ai_profiles_dry_run.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 6777,
+      "sha256": "544c41f71d53720e044b92a136c2ed7aea657ef37ed9a9697b506e7ce2f3387f"
+    }
+  ],
+  "v08_freeze_files": [
+    {
+      "path": "releases/Scout_Finance_v0.8.0_candidate_FREEZE.zip",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 3514720,
+      "sha256": "413074748afef20cd1f83c30ff4e7838d990f6e32592e4a189f2684019660262"
+    },
+    {
+      "path": "releases/RELEASE_LOCK_v0.8.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1325,
+      "sha256": "ab52139c59e155e0e1a98a3fa5610d246f72b5294e4d9077edbd7f88dd6a33fb"
+    }
+  ],
+  "checks": {
+    "all_phase_required_files_exist": true,
+    "all_phase_status_ok": true,
+    "all_source_files_exist": true,
+    "v08_freeze_detected": true,
+    "all_controls_false_or_missing": true
+  },
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": false
+  },
+  "zip": {
+    "path": "releases\\Scout_Finance_v0.9.0_experimental_ai_FREEZE.zip",
+    "sha256": "fcae5aa051ac01eebd31d309a5057b870c59351a1ec2405b1bd4c42cf10b8f29",
+    "file_count": 94
+  },
+  "next": "Manual review, git commit, optional future real-AI guarded phase"
+}

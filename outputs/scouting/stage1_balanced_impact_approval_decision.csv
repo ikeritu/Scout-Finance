@@ -1,0 +1,2 @@
+﻿phase,decision,recommended_next_step,apply_to_production_now,candidate_policy,passed_to_rejected,passed_to_watchlist,watchlist_to_rejected
+7B.7,APPROVE_FOR_GUARDED_APPLICATION,Phase 7B.8 guarded implementation patch,False,balanced,0,44,26

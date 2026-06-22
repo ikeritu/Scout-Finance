@@ -1,0 +1,58 @@
+{
+  "phase": "5C",
+  "stage": "stage1",
+  "created_at": "2026-06-08T18:43:18+00:00",
+  "input_companies": 500,
+  "passed_companies": 182,
+  "watchlist_companies": 84,
+  "rejected_companies": 234,
+  "pass_rate": 0.364,
+  "watchlist_rate": 0.168,
+  "rejection_rate": 0.468,
+  "top_rejection_or_watchlist_reasons": {
+    "MARKET_CAP_BELOW_MINIMUM": 199,
+    "LOW_DOLLAR_VOLUME": 164,
+    "DOLLAR_VOLUME_WATCHLIST_RANGE": 100,
+    "MARKET_CAP_WATCHLIST_RANGE": 85,
+    "PRICE_BELOW_MINIMUM": 80,
+    "PRICE_WEAK_WATCHLIST_RANGE": 58,
+    "PRICE_STRONG_WATCHLIST_RANGE": 57,
+    "MISSING_MARKET_CAP": 2
+  },
+  "output_files": {
+    "passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+    "watchlist": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_watchlist.csv",
+    "rejected": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejected.csv",
+    "rejection_log": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejection_log.csv",
+    "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_summary.json"
+  },
+  "config": {
+    "target_pass_rate": 0.2,
+    "min_market_cap_pass": 500000000,
+    "min_market_cap_watchlist": 150000000,
+    "min_price_pass": 3.0,
+    "min_price_watchlist": 1.5,
+    "min_dollar_volume_pass": 5000000,
+    "min_dollar_volume_watchlist": 1000000,
+    "allowed_asset_types": [
+      "common_stock"
+    ],
+    "allow_adr": true,
+    "allow_otc": false,
+    "allowed_exchanges": [
+      "AMEX",
+      "ARCA",
+      "ASX",
+      "CBOE",
+      "EURONEXT",
+      "HKEX",
+      "LSE",
+      "NASDAQ",
+      "NYSE",
+      "SIX",
+      "TSE",
+      "TSX",
+      "XETRA"
+    ]
+  }
+}

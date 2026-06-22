@@ -1,0 +1,62 @@
+{
+  "phase": "5D",
+  "stage": "stage2",
+  "created_at": "2026-06-09T08:37:54+00:00",
+  "input_companies": 182,
+  "passed_companies": 63,
+  "watchlist_companies": 81,
+  "rejected_companies": 38,
+  "pass_rate": 0.34615384615384615,
+  "watchlist_rate": 0.44505494505494503,
+  "rejection_rate": 0.2087912087912088,
+  "top_rejection_or_watchlist_reasons": {
+    "MISSING_SHARES_DILUTION_PROVIDER_LIMITATION": 182,
+    "MISSING_FCF_MARGIN": 33,
+    "DATA_COMPLETENESS_WATCHLIST_RANGE": 24,
+    "OPERATING_MARGIN_WATCHLIST_RANGE": 23,
+    "DEBT_WATCHLIST_RANGE": 23,
+    "MISSING_NET_DEBT_TO_EBITDA": 20,
+    "FCF_MARGIN_TOO_NEGATIVE": 19,
+    "OPERATING_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE": 19,
+    "OPERATING_MARGIN_TOO_NEGATIVE": 19,
+    "DEBT_TOO_HIGH": 15,
+    "FCF_MARGIN_TOO_NEGATIVE_BUT_RECOVERABLE": 13,
+    "FCF_MARGIN_WATCHLIST_RANGE": 10,
+    "MISSING_REVENUE_SPECIAL_CASE": 9,
+    "LOW_DATA_COMPLETENESS": 2,
+    "MISSING_REVENUE": 1
+  },
+  "output_files": {
+    "passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_passed.csv",
+    "watchlist": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_watchlist.csv",
+    "rejected": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_rejected.csv",
+    "rejection_log": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_rejection_log.csv",
+    "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_summary.json"
+  },
+  "config": {
+    "max_financial_data_age_months": 18,
+    "data_completeness_pass": 70,
+    "data_completeness_watchlist": 50,
+    "min_operating_margin_pass": 0.0,
+    "min_operating_margin_watchlist": -0.2,
+    "min_fcf_margin_pass": 0.0,
+    "min_fcf_margin_watchlist": -0.1,
+    "max_net_debt_to_ebitda_pass": 3.0,
+    "max_net_debt_to_ebitda_watchlist": 5.0,
+    "max_shares_dilution_3y_pass": 0.1,
+    "max_shares_dilution_3y_watchlist": 0.3,
+    "growth_exception_min_revenue_growth_3y": 0.25,
+    "growth_exception_min_gross_margin": 0.4,
+    "special_case_sectors": [
+      "banking",
+      "banks",
+      "biotechnology",
+      "financial services",
+      "insurance",
+      "mining",
+      "reit",
+      "reits",
+      "utilities"
+    ]
+  }
+}

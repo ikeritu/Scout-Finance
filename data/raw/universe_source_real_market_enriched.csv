@@ -1,0 +1,51 @@
+﻿Symbol,Name,Exchange,Country,Sector,Industry,Market Cap,Last Sale,Volume,Source,yf_symbol,quote_type,has_core_market_data,market_data_error,avg_volume_30d,avg_volume_90d
+AACB,Artius II Acquisition Inc. - Class A Ordinary Shares,NASDAQ,USA,Financial Services,Shell Companies,290310752.0,10.49,18169,nasdaqlisted|yfinance,AACB,EQUITY,True,,18169,18169
+AACBR,Artius II Acquisition Inc. - Rights,NASDAQ,USA,,,,0.26,225565,nasdaqlisted|yfinance,AACBR,EQUITY,False,,225565,225565
+AACBU,Artius II Acquisition Inc. - Units,NASDAQ,USA,Financial Services,Shell Companies,,11.01,168,nasdaqlisted|yfinance,AACBU,EQUITY,False,,168,168
+AACG,"ATA Creativity Global - American Depositary Shares, each representing two common shares",NASDAQ,USA,Consumer Defensive,Education & Training Services,47096996.0,1.09,13744,nasdaqlisted|yfinance,AACG,EQUITY,True,,13744,13744
+AACI,Armada Acquisition Corp. III - Class A Ordinary Share,NASDAQ,USA,Financial Services,Shell Companies,338596832.0,9.95,27348,nasdaqlisted|yfinance,AACI,EQUITY,True,,27348,27348
+AACIU,Armada Acquisition Corp. III - Units,NASDAQ,USA,Financial Services,Shell Companies,,10.08,5393,nasdaqlisted|yfinance,AACIU,EQUITY,False,,5393,5393
+AACIW,Armada Acquisition Corp. III - Warrant,NASDAQ,USA,,,,0.3293,16831,nasdaqlisted|yfinance,AACIW,EQUITY,False,,16831,16831
+AACO,Abony Acquisition Corp. I - Class A Ordinary Share,NASDAQ,USA,Financial Services,Shell Companies,310166912.0,9.89,5475,nasdaqlisted|yfinance,AACO,EQUITY,True,,5475,5475
+AACOU,Abony Acquisition Corp. I - Units,NASDAQ,USA,Financial Services,Shell Companies,,10.02,11338,nasdaqlisted|yfinance,AACOU,EQUITY,False,,11338,11338
+AACOW,Abony Acquisition Corp. I - Warrants,NASDAQ,USA,,,,0.45,7615,nasdaqlisted|yfinance,AACOW,EQUITY,False,,7615,7615
+AACP,Apogee Acquisition Corp - Class A Ordinary Shares,NASDAQ,USA,Financial Services,Shell Companies,291907808.0,9.99,826340,nasdaqlisted|yfinance,AACP,EQUITY,True,,826340,826340
+AACPR,Apogee Acquisition Corp - Rights,NASDAQ,USA,,,,0.2,862880,nasdaqlisted|yfinance,AACPR,EQUITY,False,,862880,862880
+AACPU,Apogee Acquisition Corp - Units,NASDAQ,USA,Financial Services,Shell Companies,,10.235,166446,nasdaqlisted|yfinance,AACPU,EQUITY,False,,166446,166446
+AACPW,Apogee Acquisition Corp - Warrant,NASDAQ,USA,,,,0.0901,5050,nasdaqlisted|yfinance,AACPW,EQUITY,False,,5050,5050
+AAL,"American Airlines Group, Inc. - Common Stock",NASDAQ,USA,Industrials,Airlines,8928699392.0,13.5,67493293,nasdaqlisted|yfinance,AAL,EQUITY,True,,67493293,67493293
+AAME,Atlantic American Corporation - Common Stock,NASDAQ,USA,Financial Services,Insurance - Life,34063368.0,1.67,9814,nasdaqlisted|yfinance,AAME,EQUITY,True,,9814,9814
+AAOI,"Applied Optoelectronics, Inc. - Common Stock",NASDAQ,USA,Technology,Communication Equipment,14202970112.0,177.0,12310404,nasdaqlisted|yfinance,AAOI,EQUITY,True,,12310404,12310404
+AAON,"AAON, Inc. - Common Stock",NASDAQ,USA,Industrials,Building Products & Equipment,10863130624.0,132.62,1049784,nasdaqlisted|yfinance,AAON,EQUITY,True,,1049784,1049784
+AAPG,Ascentage Pharma Group International - American Depository Shares,NASDAQ,USA,Healthcare,Biotechnology,1605400192.0,17.2,5363,nasdaqlisted|yfinance,AAPG,EQUITY,True,,5363,5363
+AAPL,Apple Inc. - Common Stock,NASDAQ,USA,Technology,Consumer Electronics,4514011676672.0,307.34,44645993,nasdaqlisted|yfinance,AAPL,EQUITY,True,,44645993,44645993
+AARD,"Aardvark Therapeutics, Inc. - Common Stock",NASDAQ,USA,Healthcare,Biotechnology,80284296.0,3.68,228526,nasdaqlisted|yfinance,AARD,EQUITY,True,,228526,228526
+ABAT,American Battery Technology Company - Common Stock,NASDAQ,USA,Industrials,Waste Management,424248832.0,3.11,4566960,nasdaqlisted|yfinance,ABAT,EQUITY,True,,4566960,4566960
+ABCL,AbCellera Biologics Inc. - Common Shares,NASDAQ,USA,Healthcare,Biotechnology,1716209664.0,5.62,5900442,nasdaqlisted|yfinance,ABCL,EQUITY,True,,5900442,5900442
+ABEO,Abeona Therapeutics Inc. - Common Stock,NASDAQ,USA,Healthcare,Biotechnology,311193504.0,5.46,1228557,nasdaqlisted|yfinance,ABEO,EQUITY,True,,1228557,1228557
+ABLV,Able View Global Inc. - Class B Ordinary Shares,NASDAQ,USA,Consumer Cyclical,Specialty Retail,52847216.0,1.07,404217,nasdaqlisted|yfinance,ABLV,EQUITY,True,,404217,404217
+ABLVW,Able View Global Inc. - Warrant,NASDAQ,USA,,,,0.0183,3419,nasdaqlisted|yfinance,ABLVW,EQUITY,False,,3419,3419
+ABNB,"Airbnb, Inc. - Class A Common Stock",NASDAQ,USA,Consumer Cyclical,Travel Services,79256641536.0,133.54,3691225,nasdaqlisted|yfinance,ABNB,EQUITY,True,,3691225,3691225
+ABOS,"Acumen Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,Healthcare,Biotechnology,155289312.0,2.15,536973,nasdaqlisted|yfinance,ABOS,EQUITY,True,,536973,536973
+ABSI,Absci Corporation - Common Stock,NASDAQ,USA,Healthcare,Biotechnology,997792384.0,6.4,4715282,nasdaqlisted|yfinance,ABSI,EQUITY,True,,4715282,4715282
+ABTC,American Bitcoin Corp. - Class A Common Stock,NASDAQ,USA,Financial Services,Capital Markets,1549470080.0,0.8631,14437155,nasdaqlisted|yfinance,ABTC,EQUITY,True,,14437155,14437155
+ABTS,Abits Group Inc - Ordinary Shares,NASDAQ,USA,Financial Services,Capital Markets,5893279.0,1.99,2405588,nasdaqlisted|yfinance,ABTS,EQUITY,True,,2405588,2405588
+ABUS,Arbutus Biopharma Corporation - Common Stock,NASDAQ,USA,Healthcare,Biotechnology,839535296.0,4.25,1936204,nasdaqlisted|yfinance,ABUS,EQUITY,True,,1936204,1936204
+ABVC,"ABVC BioPharma, Inc. - Common Stock",NASDAQ,USA,Healthcare,Biotechnology,34580588.0,1.33,103998,nasdaqlisted|yfinance,ABVC,EQUITY,True,,103998,103998
+ABVX,Abivax SA - American Depositary Shares,NASDAQ,USA,Healthcare,Biotechnology,8091386368.0,101.53,1449963,nasdaqlisted|yfinance,ABVX,EQUITY,True,,1449963,1449963
+ACAA,Averin Capital Acquisition Corp. - Class A Ordinary Shares,NASDAQ,USA,Financial Services,Shell Companies,356111456.0,9.98,8347,nasdaqlisted|yfinance,ACAA,EQUITY,True,,8347,8347
+ACAAU,Averin Capital Acquisition Corp. - Units,NASDAQ,USA,Financial Services,Shell Companies,,10.05,34403,nasdaqlisted|yfinance,ACAAU,EQUITY,False,,34403,34403
+ACAAW,Averin Capital Acquisition Corp. - Warrants,NASDAQ,USA,,,,0.5791,375,nasdaqlisted|yfinance,ACAAW,EQUITY,False,,375,375
+ACAD,ACADIA Pharmaceuticals Inc. - Common Stock,NASDAQ,USA,Healthcare,Biotechnology,3691845376.0,21.56,1765846,nasdaqlisted|yfinance,ACAD,EQUITY,True,,1765846,1765846
+ACB,Aurora Cannabis Inc. - Common Shares,NASDAQ,USA,Healthcare,Drug Manufacturers - Specialty & Generic,199847936.0,3.38,918669,nasdaqlisted|yfinance,ACB,EQUITY,True,,918669,918669
+ACCL,Acco Group Holdings Limited - Class A Ordinary Shares,NASDAQ,USA,Industrials,Consulting Services,21622344.0,1.55,76634,nasdaqlisted|yfinance,ACCL,EQUITY,True,,76634,76634
+ACDC,ProFrac Holding Corp. - Class A Common Stock,NASDAQ,USA,Energy,Oil & Gas Equipment & Services,1253780736.0,6.93,1506595,nasdaqlisted|yfinance,ACDC,EQUITY,True,,1506595,1506595
+ACET,"Adicet Bio, Inc. - Common Stock",NASDAQ,USA,Healthcare,Biotechnology,67868192.0,7.26,123650,nasdaqlisted|yfinance,ACET,EQUITY,True,,123650,123650
+ACFN,"Acorn Energy, Inc. - Common Stock",NASDAQ,USA,Technology,Scientific & Technical Instruments,39981632.0,15.94,17369,nasdaqlisted|yfinance,ACFN,EQUITY,True,,17369,17369
+ACGC,ACP Holdings Acquisition Corp. - Class A Ordinary Shares,NASDAQ,USA,Financial Services,Shell Companies,294059776.0,9.93,518420,nasdaqlisted|yfinance,ACGC,EQUITY,True,,518420,518420
+ACGCU,ACP Holdings Acquisition Corp. - Units,NASDAQ,USA,Financial Services,Shell Companies,,10.0734,279192,nasdaqlisted|yfinance,ACGCU,EQUITY,False,,279192,279192
+ACGCW,ACP Holdings Acquisition Corp. - Warrants,NASDAQ,USA,,,,0.28,175620,nasdaqlisted|yfinance,ACGCW,EQUITY,False,,175620,175620
+ACGL,Arch Capital Group Ltd. - Common Stock,NASDAQ,USA,Financial Services,Insurance - Diversified,31860838400.0,91.19,2203426,nasdaqlisted|yfinance,ACGL,EQUITY,True,,2203426,2203426
+ACGLN,"Arch Capital Group Ltd. - Depositary Shares, each Representing a 1/1,000th Interest in a 4.550% Non-Cumulative Preferred Share, Series G",NASDAQ,USA,Financial Services,Insurance - Diversified,,16.36,37447,nasdaqlisted|yfinance,ACGLN,EQUITY,False,,37447,37447
+ACGLO,"Arch Capital Group Ltd. - Depositary Shares Each Representing 1/1,000th Interest in a Share of5.45% Non-Cumulative Preferred Shares, Series F",NASDAQ,USA,Financial Services,Insurance - Diversified,,19.45,23266,nasdaqlisted|yfinance,ACGLO,EQUITY,False,,23266,23266
+ACHC,"Acadia Healthcare Company, Inc. - Common Stock",NASDAQ,USA,Healthcare,Medical Care Facilities,2251352832.0,24.48,2957084,nasdaqlisted|yfinance,ACHC,EQUITY,True,,2957084,2957084

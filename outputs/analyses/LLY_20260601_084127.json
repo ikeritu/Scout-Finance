@@ -1,0 +1,135 @@
+{
+  "ticker": "LLY",
+  "company_name": "Eli Lilly and Company",
+  "sector": "Healthcare",
+  "industry": "Drug Manufacturers - General",
+  "analysis_date": "2026-06-01T08:41:27.463720+00:00",
+  "currency": "USD",
+  "business_summary": "Eli Lilly and Company es una farmacéutica global enfocada en medicamentos de prescripción. Su negocio depende de I+D, aprobaciones regulatorias, protección de patentes y comercialización a gran escala. No se proporcionó desglose por productos, geografías o áreas terapéuticas.",
+  "business_model": "Modelo farmacéutico basado en investigación, desarrollo, aprobación regulatoria, fabricación y comercialización de medicamentos patentados. La rentabilidad suele depender de la innovación clínica, exclusividad temporal y capacidad comercial.",
+  "revenue_streams": [],
+  "scores": {
+    "business_quality_score": 8.0,
+    "financial_health_score": null,
+    "growth_score": 7.5,
+    "valuation_score": null,
+    "risk_score": 6.5,
+    "moat_score": 8.5,
+    "evidence_quality_score": 4.5,
+    "data_freshness_score": 8.5,
+    "confidence_score": 5.2
+  },
+  "moat_breakdown": {
+    "brand_strength": 7.5,
+    "switching_costs": 6.5,
+    "network_effects": 0.0,
+    "cost_advantage": 5.0,
+    "technology_edge": 8.5,
+    "scale_advantage": 8.0,
+    "moat_comment": "El moat probable proviene de patentes, pipeline, regulación y escala comercial. No se aportan datos sobre expiraciones de patente, concentración de productos ni comparación con competidores, por lo que la evaluación es inferencial."
+  },
+  "valuation_summary": {
+    "relative_valuation": "No evaluable con precisión por falta de múltiplos y métricas de beneficios o flujo de caja. El precio de mercado sugiere una prima elevada.",
+    "valuation_status": "No concluyente",
+    "valuation_confidence": 2.0,
+    "main_valuation_risk": "Expectativas demasiado altas incorporadas en el precio sin respaldo de datos de valoración absoluta o relativa."
+  },
+  "risk_analysis": {
+    "main_risks": [
+      {
+        "risk": "Valoración exigente",
+        "probability": "Alta",
+        "impact": "Alto",
+        "severity": "Alta",
+        "comment": "Un múltiplo elevado deja poco margen para fallos en crecimiento o ejecución."
+      },
+      {
+        "risk": "Riesgo regulatorio y clínico",
+        "probability": "Media",
+        "impact": "Alto",
+        "severity": "Alta",
+        "comment": "El sector depende de aprobaciones, resultados clínicos y revisiones regulatorias."
+      },
+      {
+        "risk": "Competencia y presión de precios",
+        "probability": "Media",
+        "impact": "Medio",
+        "severity": "Media",
+        "comment": "La entrada de competidores, genéricos o biosimilares puede erosionar márgenes y cuota."
+      },
+      {
+        "risk": "Concentración en productos clave",
+        "probability": "Media",
+        "impact": "Alto",
+        "severity": "Alta",
+        "comment": "Si el crecimiento depende de pocos activos, cualquier revés puede impactar significativamente."
+      }
+    ],
+    "risk_level": "Medio-Alto",
+    "risk_comment": "La calidad aparente del negocio es alta, pero el riesgo de valoración y la dependencia del pipeline elevan la fragilidad de la tesis sin más datos fundamentales."
+  },
+  "scenarios": {
+    "bull_case": {
+      "summary": "El pipeline convierte varias oportunidades en ventas significativas, el crecimiento supera expectativas y la valoración se mantiene o expande.",
+      "key_assumptions": [
+        "Éxito clínico y comercial del pipeline",
+        "Demanda sólida de productos clave",
+        "Capacidad de sostener márgenes y pricing",
+        "Entorno regulatorio manejable"
+      ],
+      "probability": 30
+    },
+    "base_case": {
+      "summary": "La compañía sigue creciendo de forma saludable, pero el mercado normaliza expectativas y la valoración se mantiene exigente.",
+      "key_assumptions": [
+        "Crecimiento operativo continuo",
+        "Sin sorpresas mayores en pipeline",
+        "Márgenes relativamente estables",
+        "Múltiplo de mercado moderadamente alto"
+      ],
+      "probability": 45
+    },
+    "bear_case": {
+      "summary": "Se enfría el entusiasmo por productos clave, aparecen presiones competitivas o regulatorias y el múltiplo se contrae.",
+      "key_assumptions": [
+        "Retrasos o fallos en pipeline",
+        "Presión competitiva o de precios",
+        "Revisión a la baja de expectativas",
+        "Compresión de valoración"
+      ],
+      "probability": 25
+    }
+  },
+  "dividend_analysis": {
+    "is_dividend_payer": null,
+    "dividend_yield": null,
+    "payout_ratio_earnings": null,
+    "payout_ratio_fcf": null,
+    "dividend_growth_5y": null,
+    "yield_trap_warning": null,
+    "dividend_verdict": "Información insuficiente para evaluar el dividendo. No se dispone de yield, payout ni historial de crecimiento del dividendo."
+  },
+  "final_result": {
+    "final_category": "🟡 Apta solo con margen de seguridad",
+    "confidence_level": "medio",
+    "final_reasoning": "La señal cuantitativa es favorable y el negocio parece de alta calidad, pero faltan datos fundamentales críticos y la valoración probable parece exigente. La conclusión es preliminar y requiere investigación adicional.",
+    "watchlist_decision": "Seguir de cerca"
+  },
+  "sources": {
+    "main_sources": [
+      "company_input provided by user",
+      "yfinance market data"
+    ],
+    "source_warnings": [
+      "No se aportaron estados financieros, estimaciones de consenso, métricas de valoración ni desglose del negocio.",
+      "El análisis fundamental está limitado a precio, momentum, liquidez y clasificación sectorial.",
+      "Modelo usado: gpt-5.4-mini; coste estimado llamada: $0.014225"
+    ],
+    "data_limitations": [
+      "Faltan ingresos, EBITDA, EPS, márgenes, deuda, FCF y ROIC.",
+      "Faltan múltiplos de valoración comparables y estimaciones forward.",
+      "No hay información sobre pipeline, expiraciones de patentes, concentración de productos ni geografía de ventas.",
+      "No hay datos suficientes para evaluar dividendos con prudencia."
+    ]
+  }
+}

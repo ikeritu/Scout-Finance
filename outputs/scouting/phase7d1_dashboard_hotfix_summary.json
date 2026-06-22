@@ -1,0 +1,20 @@
+{
+  "phase": "7D.1",
+  "status": "OK",
+  "created_at": "2026-06-09T10:06:25+00:00",
+  "backup_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\app_before_phase7d1_dashboard_hotfix.py",
+  "backup_created": true,
+  "changes": [
+    "REMOVED_OLD_RENDER_CALL_BLOCKS_1",
+    "REMOVED_OLD_HELPER_BLOCKS_1",
+    "APPENDED_HELPERS_AT_END",
+    "APPENDED_RENDER_CALL_AFTER_HELPERS"
+  ],
+  "helper_before_render_call": true,
+  "app_modified": true,
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "filters_modified": false,
+  "release_modified": false
+}

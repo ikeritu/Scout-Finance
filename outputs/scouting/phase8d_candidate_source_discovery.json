@@ -1,0 +1,227 @@
+[
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage3_candidates_for_ranking.csv",
+    "source_type": "csv",
+    "rows": 34,
+    "ticker_key": "ticker",
+    "score_key": "score",
+    "discovery_score": 89,
+    "reason": "score column: score; valid ticker rows: 34; preferred filename token: ranking"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_current_base_alignment.csv",
+    "source_type": "csv",
+    "rows": 500,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 75,
+    "reason": "valid ticker rows: 500; preferred filename token: final"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_policy_simulation_final_decisions.csv",
+    "source_type": "csv",
+    "rows": 2000,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 75,
+    "reason": "valid ticker rows: 2000; preferred filename token: final"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\top_recoverable_candidates.csv",
+    "source_type": "csv",
+    "rows": 57,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 75,
+    "reason": "valid ticker rows: 57; preferred filename token: candidate"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\data\\stages\\stage3_rejection_log.csv",
+    "source_type": "csv",
+    "rows": 57,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 75,
+    "reason": "valid ticker rows: 57; preferred filename token: stage3"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\fundamental_missing_by_company.csv",
+    "source_type": "csv",
+    "rows": 182,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 182"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\market_data_enrichment_success_sample.csv",
+    "source_type": "csv",
+    "rows": 50,
+    "ticker_key": "Symbol",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 50"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\real_universe_pilot_input_sample.csv",
+    "source_type": "csv",
+    "rows": 50,
+    "ticker_key": "Symbol",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 50"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_passed.csv",
+    "source_type": "csv",
+    "rows": 182,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 182"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_rejected.csv",
+    "source_type": "csv",
+    "rows": 234,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 234"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_transitions.csv",
+    "source_type": "csv",
+    "rows": 500,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 500"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_balanced_dry_run\\balanced_dry_run_watchlist.csv",
+    "source_type": "csv",
+    "rows": 84,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 84"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_policy_simulation_aligned_current_base_alignment.csv",
+    "source_type": "csv",
+    "rows": 500,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 500"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_policy_simulation_aligned_decisions.csv",
+    "source_type": "csv",
+    "rows": 2000,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 2000"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_policy_simulation_decisions.csv",
+    "source_type": "csv",
+    "rows": 2000,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 2000"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_professional_passed_sample.csv",
+    "source_type": "csv",
+    "rows": 50,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 50"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage1_professional_watchlist_review.csv",
+    "source_type": "csv",
+    "rows": 66,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 66"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_dryrun_reasons.csv",
+    "source_type": "csv",
+    "rows": 412,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 412"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_dryrun_results.csv",
+    "source_type": "csv",
+    "rows": 182,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 182"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\universe_cleaning_exclusion_log.csv",
+    "source_type": "csv",
+    "rows": 1436,
+    "ticker_key": "Symbol",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 1436"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\data\\raw\\fundamentals_source_yfinance.csv",
+    "source_type": "csv",
+    "rows": 182,
+    "ticker_key": "ticker",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 182"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\data\\raw\\universe_source_pilot.csv",
+    "source_type": "csv",
+    "rows": 500,
+    "ticker_key": "Symbol",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 500"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\data\\raw\\universe_source_real.csv",
+    "source_type": "csv",
+    "rows": 7053,
+    "ticker_key": "Symbol",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 7053"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\data\\raw\\universe_source_real_clean.csv",
+    "source_type": "csv",
+    "rows": 5617,
+    "ticker_key": "Symbol",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 5617"
+  },
+  {
+    "path": "D:\\Proyectos\\💰 Scout Finance\\data\\raw\\universe_source_real_clean_market_enriched.csv",
+    "source_type": "csv",
+    "rows": 100,
+    "ticker_key": "Symbol",
+    "score_key": null,
+    "discovery_score": 60,
+    "reason": "valid ticker rows: 100"
+  }
+]

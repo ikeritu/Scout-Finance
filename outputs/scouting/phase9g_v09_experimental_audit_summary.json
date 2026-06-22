@@ -1,0 +1,21 @@
+{
+  "phase": "9G",
+  "title": "v0.9.0 Experimental AI Audit and Freeze",
+  "version": "v0.9.0-experimental-ai",
+  "status": "OK",
+  "created_at": "2026-06-22T10:03:04+0000",
+  "all_phase_required_files_exist": true,
+  "all_phase_status_ok": true,
+  "all_source_files_exist": true,
+  "v08_freeze_detected": true,
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false,
+  "zip_path": "releases\\Scout_Finance_v0.9.0_experimental_ai_FREEZE.zip",
+  "zip_sha256": "fcae5aa051ac01eebd31d309a5057b870c59351a1ec2405b1bd4c42cf10b8f29",
+  "zip_file_count": 94
+}

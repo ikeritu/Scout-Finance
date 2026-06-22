@@ -1,0 +1,465 @@
+# AI Profile Dry-run Package — ADBE — Quality Analyst
+
+- Profile: **Quality Analyst**
+- Ticker: **ADBE**
+- Company: **Adobe Inc. - Common Stock**
+- Dry-run only: `True`
+- Execution allowed: `False`
+- OpenAI called: `False`
+- API called: `False`
+- yfinance called: `False`
+- Pipeline recalculated: `False`
+- Estimated cost: `0.0`
+- Model used: `None`
+
+## System prompt
+
+```text
+You are a constrained research-review profile inside Scout Finance. You must not give financial advice. You must not use buy/sell language. You must not invent missing facts. If evidence is insufficient, say NEEDS_MORE_DATA. You only review the provided local context.
+```
+
+## User prompt JSON
+
+```json
+{
+  "task": "Review this Scout Finance memo from the perspective of the assigned profile.",
+  "profile": {
+    "id": "quality_analyst",
+    "name": "Quality Analyst",
+    "purpose": "Review business quality, margins, cash generation and durability.",
+    "must_focus_on": [
+      "operating margin",
+      "FCF margin",
+      "moat/business quality",
+      "financial deterioration"
+    ]
+  },
+  "required_output_contract": {
+    "profile_id": "quality_analyst",
+    "ticker": "ADBE",
+    "verdict": "WATCHLIST | REJECT | NEEDS_MORE_DATA",
+    "confidence": "LOW | MEDIUM | HIGH",
+    "main_observations": [
+      "string"
+    ],
+    "blocking_questions": [
+      "string"
+    ],
+    "red_flags_to_prioritize": [
+      "string"
+    ],
+    "data_needed_before_decision": [
+      "string"
+    ],
+    "not_financial_advice": true,
+    "manual_review_required": true
+  },
+  "memo_context": {
+    "ticker": "ADBE",
+    "company_name": "Adobe Inc. - Common Stock",
+    "ranking_position": 3,
+    "quant_score": 65.97,
+    "normalized_verdict": "NEEDS_MORE_DATA",
+    "manual_review_required": true,
+    "not_financial_advice": true,
+    "objective_data": {
+      "ticker": "ADBE",
+      "company_name": "Adobe Inc. - Common Stock",
+      "ranking_position": 3,
+      "quant_score": 65.97,
+      "memo_status": "data_insufficient",
+      "sources": [
+        {
+          "type": "local_file",
+          "path": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\stage3_candidates_for_ranking.csv"
+        }
+      ],
+      "business_model": {
+        "status": "data_insufficient",
+        "objective_data": {},
+        "interpretation": null,
+        "data_gaps": [
+          "Business model requires external/company description data not available in local ranking rows."
+        ]
+      },
+      "financial_health": {
+        "ticker": "ADBE",
+        "module": "fundamentals",
+        "status": "data_insufficient",
+        "score": null,
+        "objective_data": {
+          "revenue_growth": null,
+          "gross_margin": null,
+          "operating_margin": null,
+          "net_margin": null,
+          "roe": null,
+          "roa": null,
+          "debt_to_equity": null,
+          "current_ratio": null,
+          "free_cash_flow": null
+        },
+        "metric_scores": {
+          "revenue_growth": null,
+          "gross_margin": null,
+          "operating_margin": null,
+          "net_margin": null,
+          "roe": null,
+          "roa": null,
+          "debt_to_equity": null,
+          "current_ratio": null,
+          "free_cash_flow": null
+        },
+        "interpretation": "Insufficient objective fundamentals available; no synthetic fundamentals were created.",
+        "data_gaps": [
+          "revenue_growth",
+          "gross_margin",
+          "operating_margin",
+          "net_margin",
+          "roe",
+          "roa",
+          "debt_to_equity",
+          "current_ratio",
+          "free_cash_flow"
+        ]
+      },
+      "valuation_analysis": {
+        "ticker": "ADBE",
+        "module": "valuation",
+        "status": "data_insufficient",
+        "score": null,
+        "objective_data": {
+          "pe": null,
+          "price_to_sales": null,
+          "price_to_book": null,
+          "ev_to_ebitda": null,
+          "fcf_yield": null,
+          "quant_score": 65.97
+        },
+        "metric_scores": {
+          "pe": null,
+          "price_to_sales": null,
+          "price_to_book": null,
+          "ev_to_ebitda": null,
+          "fcf_yield": null
+        },
+        "interpretation": "Valuation estimated only from available multiples; absent multiples remain data gaps.",
+        "data_gaps": [
+          "pe",
+          "price_to_sales",
+          "price_to_book",
+          "ev_to_ebitda",
+          "fcf_yield"
+        ]
+      },
+      "risk_analysis": {
+        "ticker": "ADBE",
+        "module": "risk_analysis",
+        "status": "data_insufficient",
+        "score": null,
+        "risk_level": null,
+        "objective_data": {
+          "beta": null,
+          "volatility": null,
+          "max_drawdown": null,
+          "debt_to_equity": null,
+          "short_ratio": null,
+          "current_ratio": null,
+          "market_cap": null
+        },
+        "metric_scores": {
+          "beta": null,
+          "volatility": null,
+          "max_drawdown": null,
+          "debt_to_equity": null,
+          "short_ratio": null,
+          "current_ratio": null,
+          "market_cap": null
+        },
+        "interpretation": "Risk score is deterministic and based only on available balance-sheet, liquidity, volatility and size proxies.",
+        "data_gaps": [
+          "beta",
+          "volatility",
+          "max_drawdown",
+          "debt_to_equity",
+          "short_ratio",
+          "current_ratio",
+          "market_cap"
+        ]
+      },
+      "moat_analysis": {
+        "ticker": "ADBE",
+        "module": "moat_analysis",
+        "status": "data_insufficient",
+        "score": null,
+        "objective_data": {
+          "gross_margin": null,
+          "operating_margin": null,
+          "roe": null,
+          "roic": null,
+          "revenue_growth": null
+        },
+        "metric_scores": {
+          "gross_margin": null,
+          "operating_margin": null,
+          "roe": null,
+          "roic": null,
+          "revenue_growth": null
+        },
+        "interpretation": "Moat is only a proxy from profitability and return metrics; it is not proof of durable competitive advantage.",
+        "data_gaps": [
+          "gross_margin",
+          "operating_margin",
+          "roe",
+          "roic",
+          "revenue_growth"
+        ]
+      },
+      "growth_analysis": {
+        "ticker": "ADBE",
+        "module": "growth_analysis",
+        "status": "data_insufficient",
+        "score": null,
+        "objective_data": {
+          "revenue_growth": null,
+          "earnings_growth": null,
+          "ebitda_growth": null,
+          "free_cash_flow_growth": null,
+          "analyst_growth": null
+        },
+        "metric_scores": {
+          "revenue_growth": null,
+          "earnings_growth": null,
+          "ebitda_growth": null,
+          "free_cash_flow_growth": null,
+          "analyst_growth": null
+        },
+        "interpretation": "Growth score is based only on available growth fields in the existing dataset.",
+        "data_gaps": [
+          "revenue_growth",
+          "earnings_growth",
+          "ebitda_growth",
+          "free_cash_flow_growth",
+          "analyst_growth"
+        ]
+      },
+      "institutional_view": {
+        "ticker": "ADBE",
+        "module": "institutional_view",
+        "status": "data_insufficient",
+        "score": null,
+        "objective_data": {
+          "institutional_ownership": null,
+          "insider_ownership": null,
+          "analyst_count": null,
+          "recommendation_mean": null
+        },
+        "metric_scores": {
+          "institutional_ownership": null,
+          "insider_ownership": null,
+          "analyst_count": null,
+          "recommendation_mean": null
+        },
+        "interpretation": "Institutional view is a deterministic proxy from ownership and analyst-coverage fields only.",
+        "data_gaps": [
+          "institutional_ownership",
+          "insider_ownership",
+          "analyst_count",
+          "recommendation_mean"
+        ]
+      },
+      "earnings_analysis": {
+        "ticker": "ADBE",
+        "module": "earnings_analysis",
+        "status": "data_insufficient",
+        "score": null,
+        "objective_data": {
+          "eps_growth": null,
+          "revenue_growth": null,
+          "earnings_surprise": null,
+          "next_earnings_date": null
+        },
+        "metric_scores": {
+          "eps_growth": null,
+          "revenue_growth": null,
+          "earnings_surprise": null
+        },
+        "interpretation": "Earnings analysis is deterministic and incomplete when earnings fields are absent.",
+        "data_gaps": [
+          "eps_growth",
+          "revenue_growth",
+          "earnings_surprise",
+          "next_earnings_date"
+        ]
+      },
+      "data_gaps": [
+        "financial_health: revenue_growth",
+        "financial_health: gross_margin",
+        "financial_health: operating_margin",
+        "financial_health: net_margin",
+        "financial_health: roe",
+        "financial_health: roa",
+        "financial_health: debt_to_equity",
+        "financial_health: current_ratio",
+        "financial_health: free_cash_flow",
+        "valuation_analysis: pe",
+        "valuation_analysis: price_to_sales",
+        "valuation_analysis: price_to_book",
+        "valuation_analysis: ev_to_ebitda",
+        "valuation_analysis: fcf_yield",
+        "risk_analysis: beta",
+        "risk_analysis: volatility",
+        "risk_analysis: max_drawdown",
+        "risk_analysis: debt_to_equity",
+        "risk_analysis: short_ratio",
+        "risk_analysis: current_ratio",
+        "risk_analysis: market_cap",
+        "moat_analysis: gross_margin",
+        "moat_analysis: operating_margin",
+        "moat_analysis: roe",
+        "moat_analysis: roic",
+        "moat_analysis: revenue_growth",
+        "growth_analysis: revenue_growth",
+        "growth_analysis: earnings_growth",
+        "growth_analysis: ebitda_growth",
+        "growth_analysis: free_cash_flow_growth",
+        "growth_analysis: analyst_growth",
+        "institutional_view: institutional_ownership",
+        "institutional_view: insider_ownership",
+        "institutional_view: analyst_count",
+        "institutional_view: recommendation_mean",
+        "earnings_analysis: eps_growth",
+        "earnings_analysis: revenue_growth",
+        "earnings_analysis: earnings_surprise",
+        "earnings_analysis: next_earnings_date",
+        "business_model: local ranking rows do not provide enough company narrative data."
+      ]
+    },
+    "deterministic_analysis": {},
+    "data_gaps": [
+      "financial_health: revenue_growth",
+      "financial_health: gross_margin",
+      "financial_health: operating_margin",
+      "financial_health: net_margin",
+      "financial_health: roe",
+      "financial_health: roa",
+      "financial_health: debt_to_equity",
+      "financial_health: current_ratio",
+      "financial_health: free_cash_flow",
+      "valuation_analysis: pe",
+      "valuation_analysis: price_to_sales",
+      "valuation_analysis: price_to_book",
+      "valuation_analysis: ev_to_ebitda",
+      "valuation_analysis: fcf_yield",
+      "risk_analysis: beta",
+      "risk_analysis: volatility",
+      "risk_analysis: max_drawdown",
+      "risk_analysis: debt_to_equity",
+      "risk_analysis: short_ratio",
+      "risk_analysis: current_ratio",
+      "risk_analysis: market_cap",
+      "moat_analysis: gross_margin",
+      "moat_analysis: operating_margin",
+      "moat_analysis: roe",
+      "moat_analysis: roic",
+      "moat_analysis: revenue_growth",
+      "growth_analysis: revenue_growth",
+      "growth_analysis: earnings_growth",
+      "growth_analysis: ebitda_growth",
+      "growth_analysis: free_cash_flow_growth",
+      "growth_analysis: analyst_growth",
+      "institutional_view: institutional_ownership",
+      "institutional_view: insider_ownership",
+      "institutional_view: analyst_count",
+      "institutional_view: recommendation_mean",
+      "earnings_analysis: eps_growth",
+      "earnings_analysis: revenue_growth",
+      "earnings_analysis: earnings_surprise",
+      "earnings_analysis: next_earnings_date",
+      "business_model: local ranking rows do not provide enough company narrative data."
+    ],
+    "sources": [
+      {
+        "source_type": "local_phase_output",
+        "path": "outputs\\scouting\\phase8f_research_memo_export_report_layer_export.json",
+        "note": "Source memo package from previous validated phase."
+      }
+    ],
+    "red_flags_summary": {
+      "red_flag_count": 3,
+      "by_severity": {
+        "LOW": 0,
+        "MEDIUM": 1,
+        "HIGH": 2,
+        "CRITICAL": 0
+      },
+      "by_category": {
+        "debt": 1,
+        "margins": 1,
+        "source_quality": 1
+      },
+      "max_severity": "HIGH",
+      "has_high_or_critical": true
+    },
+    "red_flags": [
+      {
+        "category": "debt",
+        "severity": "HIGH",
+        "code": "DEBT_REASON_PRESENT",
+        "title": "Debt-related warning detected",
+        "detail": "Reason token `DEBT` found in source row.",
+        "evidence": {
+          "token": "DEBT"
+        },
+        "source": "reason_text"
+      },
+      {
+        "category": "margins",
+        "severity": "HIGH",
+        "code": "OPERATING_MARGIN_REASON_PRESENT",
+        "title": "Operating margin warning detected",
+        "detail": "Reason token `OPERATING_MARGIN` found in source row.",
+        "evidence": {
+          "token": "OPERATING_MARGIN"
+        },
+        "source": "reason_text"
+      },
+      {
+        "category": "source_quality",
+        "severity": "MEDIUM",
+        "code": "MARKET_CAP_REASON_PRESENT",
+        "title": "Market cap warning detected",
+        "detail": "Reason token `MARKET_CAP` found in source row.",
+        "evidence": {
+          "token": "MARKET_CAP"
+        },
+        "source": "reason_text"
+      }
+    ],
+    "verdict_policy": {
+      "previous_normalized_verdict": "NEEDS_MORE_DATA",
+      "final_normalized_verdict": "NEEDS_MORE_DATA",
+      "reason": "High or critical red flags detected; keeping conservative NEEDS_MORE_DATA verdict.",
+      "allowed_verdicts": [
+        "NEEDS_MORE_DATA",
+        "REJECT",
+        "WATCHLIST"
+      ]
+    }
+  }
+}
+```
+
+## Safety
+
+```json
+{
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "estimated_cost": 0.0,
+  "model_used": null,
+  "not_financial_advice": true,
+  "manual_review_required": true
+}
+```

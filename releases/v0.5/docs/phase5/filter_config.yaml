@@ -1,0 +1,58 @@
+stage1:
+  target_pass_rate: 0.20
+  min_market_cap_pass: 300000000
+  min_market_cap_watchlist: 100000000
+  min_price_pass: 3
+  min_price_watchlist: 1
+  min_dollar_volume_pass: 2000000
+  min_dollar_volume_watchlist: 500000
+  allowed_asset_types:
+    - common_stock
+  excluded_asset_types:
+    - etf
+    - fund
+    - warrant
+    - preferred_share
+  allow_adr: true
+  allow_otc: false
+
+stage2:
+  target_pass_rate: 0.20
+  max_financial_data_age_months: 18
+  data_completeness_pass: 70
+  data_completeness_watchlist: 50
+  min_operating_margin_pass: 0.0
+  min_operating_margin_watchlist: -0.20
+  min_fcf_margin_pass: 0.0
+  min_fcf_margin_watchlist: -0.10
+  max_net_debt_to_ebitda_pass: 3.0
+  max_net_debt_to_ebitda_watchlist: 5.0
+  max_shares_dilution_3y_pass: 0.10
+  max_shares_dilution_3y_watchlist: 0.30
+  special_case_sectors:
+    - Banks
+    - Insurance
+    - REITs
+    - Biotechnology
+    - Utilities
+    - Mining
+
+stage3:
+  target_pass_count: 450
+  max_risk_score: 8
+  min_data_quality_score: 5
+  weights:
+    business_quality_score: 0.20
+    financial_health_score: 0.15
+    growth_score: 0.15
+    valuation_score: 0.15
+    moat_proxy_score: 0.15
+    momentum_score: 0.10
+    data_quality_score: 0.10
+  risk_penalty_multiplier: 0.5
+
+outputs:
+  top_deep_research_count: 20
+  top_watchlist_count: 50
+  top_candidates_count: 100
+  top_recoverable_count: 100

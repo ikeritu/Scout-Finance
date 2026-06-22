@@ -1,0 +1,26 @@
+{
+  "phase": "7A.2",
+  "status": "OK",
+  "created_at": "2026-06-08T08:39:46+00:00",
+  "input_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_real_clean.csv",
+  "output_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_real_clean_market_enriched_500.csv",
+  "input_rows": 5617,
+  "processed_rows": 500,
+  "success_with_core_market_data": 498,
+  "failed_or_incomplete_rows": 2,
+  "fetched_count": 400,
+  "cached_count": 100,
+  "sleep_seconds": 0.3,
+  "cache_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\cache\\yfinance_market_data_cache.json",
+  "failures_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\market_data_enrichment_failures.csv",
+  "success_sample_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\market_data_enrichment_success_sample.csv",
+  "openai_called": false,
+  "paid_api_called": false,
+  "app_modified": false,
+  "release_v0_6_modified": false,
+  "notes": [
+    "Uses yfinance for free local testing.",
+    "yfinance is not an official guaranteed market-data API.",
+    "Use small limits first and rely on cache."
+  ]
+}

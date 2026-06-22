@@ -1,0 +1,13 @@
+ticker,company_name,profile_id,profile_name,dry_run_only,execution_allowed,openai_called,api_called,yfinance_called,pipeline_recalculated,estimated_cost,model_used,prompt_package_sha256
+AUPH,Aurinia Pharmaceuticals Inc - Common Shares,value_analyst,Value Analyst,True,False,False,False,False,False,0.0,,550ceb900bb947ca1475aae35362eea56d885b88bd23ad19f352faf271cb0514
+AUPH,Aurinia Pharmaceuticals Inc - Common Shares,quality_analyst,Quality Analyst,True,False,False,False,False,False,0.0,,bbc6cd8d8d259baa0e562d39d207c3b8c66acde31884c3063d3e05949f5bafc4
+AUPH,Aurinia Pharmaceuticals Inc - Common Shares,risk_analyst,Risk Analyst,True,False,False,False,False,False,0.0,,955f20a50687aa36d815b597397b3797ec141007e938a25cd64c9450eb8eecbe
+AUPH,Aurinia Pharmaceuticals Inc - Common Shares,skeptic_analyst,Skeptic Analyst,True,False,False,False,False,False,0.0,,bcc59b8d73344bfd2176e170f33769ed5840b10900635a71220b8ee715dc323b
+BZ,KANZHUN LIMITED - American Depository Shares,value_analyst,Value Analyst,True,False,False,False,False,False,0.0,,d9931ef28e7a471cd8633aeb81a5bbd66d3d413fc7ae144d972de6f429c5da09
+BZ,KANZHUN LIMITED - American Depository Shares,quality_analyst,Quality Analyst,True,False,False,False,False,False,0.0,,391dcf73ed1482e8bc957ec7d121b49a1f475db61b1314008d5875b55cfdea88
+BZ,KANZHUN LIMITED - American Depository Shares,risk_analyst,Risk Analyst,True,False,False,False,False,False,0.0,,d8628154a86d3c165262733419ec26ab0d3ff38e07d55c3843d4d48b87e65605
+BZ,KANZHUN LIMITED - American Depository Shares,skeptic_analyst,Skeptic Analyst,True,False,False,False,False,False,0.0,,23365c699d03a685c12fe05acb17216b3c871d3c5bca7939cfe2ba16b0a0cd7e
+ADBE,Adobe Inc. - Common Stock,value_analyst,Value Analyst,True,False,False,False,False,False,0.0,,25efaf0cabaaa131ce5b629a782816681ec8967cedbc6682b2e977c6980af513
+ADBE,Adobe Inc. - Common Stock,quality_analyst,Quality Analyst,True,False,False,False,False,False,0.0,,07714eeb522e2c8c6a15839842fa21ac4c3342e09cbad012b6c798267aa25475
+ADBE,Adobe Inc. - Common Stock,risk_analyst,Risk Analyst,True,False,False,False,False,False,0.0,,ceb9e5c0a14aaaf07304ac0ef825a9116b0b239c9c8c14386c4b81e77095a1df
+ADBE,Adobe Inc. - Common Stock,skeptic_analyst,Skeptic Analyst,True,False,False,False,False,False,0.0,,565519089443218049cd67f60608344cab3085f22ace532038580454d9741782

@@ -1,0 +1,58 @@
+{
+  "phase": "7B.9",
+  "status": "OK",
+  "created_at": "2026-06-08T18:43:18+00:00",
+  "active_stage1_policy": "balanced",
+  "actual_counts": {
+    "passed": 182,
+    "watchlist": 84,
+    "rejected": 234
+  },
+  "expected_counts": {
+    "passed": 182,
+    "watchlist": 84,
+    "rejected": 234
+  },
+  "evidence": [
+    {
+      "check": "filter_stage1_exists",
+      "status": "OK",
+      "detail": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage1.py"
+    },
+    {
+      "check": "rollback_backup_exists",
+      "status": "OK",
+      "detail": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage1_before_phase7b8_1_exact.py"
+    },
+    {
+      "check": "filter_stage1_compiles",
+      "status": "OK",
+      "detail": "compiled"
+    },
+    {
+      "check": "balanced_policy_markers_present",
+      "status": "OK",
+      "detail": "all markers present"
+    },
+    {
+      "check": "run_stage1_filter",
+      "status": "OK",
+      "detail": "executed"
+    },
+    {
+      "check": "stage1_counts_match_balanced",
+      "status": "OK",
+      "detail": "expected={'passed': 182, 'watchlist': 84, 'rejected': 234}; actual={'passed': 182, 'watchlist': 84, 'rejected': 234}"
+    }
+  ],
+  "rollback_backup_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage1_before_phase7b8_1_exact.py",
+  "stage1_output_tail": "Scout Finance — Phase 5C Stage 1 filter\n====================================================\nInput companies: 500\nPASSED: 182\nWATCHLIST: 84\nREJECTED: 234\nPass rate: 36.40%\nWatchlist rate: 16.80%\nRejection rate: 46.80%\n\nOutput files:\n- passed: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv\n- watchlist: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_watchlist.csv\n- rejected: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejected.csv\n- rejection_log: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejection_log.csv\n- summary: C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_summary.json",
+  "ready_for_v0_7_checkpoint": true,
+  "recommended_next_phase": "7C — Revalidate Stage 2 / Stage 3 / candidates with Stage 1 Balanced active",
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "release_modified": false,
+  "filter_modified": true
+}

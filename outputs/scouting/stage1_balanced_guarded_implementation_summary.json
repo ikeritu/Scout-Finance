@@ -1,0 +1,30 @@
+{
+  "phase": "7B.8",
+  "status": "MISMATCH",
+  "created_at": "2026-06-08T13:40:58+00:00",
+  "backup_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage1_before_phase7b8_balanced.py",
+  "backup_created": true,
+  "changes": [
+    "PHASE7B8_MARKER_ADDED",
+    "PHASE7B8_POLICY_BLOCK_APPENDED"
+  ],
+  "stage1_run_ok": true,
+  "stage1_output_tail": "Scout Finance — Phase 5C Stage 1 filter\n====================================================\nInput companies: 500\nPASSED: 226\nWATCHLIST: 66\nREJECTED: 208\nPass rate: 45.20%\nWatchlist rate: 13.20%\nRejection rate: 41.60%\n\nOutput files:\n- passed: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv\n- watchlist: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_watchlist.csv\n- rejected: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejected.csv\n- rejection_log: C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejection_log.csv\n- summary: C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_summary.json",
+  "expected": {
+    "passed": 182,
+    "watchlist": 84,
+    "rejected": 234
+  },
+  "actual": {
+    "passed": 226,
+    "watchlist": 66,
+    "rejected": 208
+  },
+  "matches_expected": false,
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "release_modified": false,
+  "filter_modified": true
+}

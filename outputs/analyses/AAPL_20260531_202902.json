@@ -1,0 +1,142 @@
+{
+  "ticker": "AAPL",
+  "company_name": "Apple Inc.",
+  "sector": "Technology",
+  "industry": "Consumer Electronics",
+  "analysis_date": "2026-05-31T20:29:02.933863+00:00",
+  "currency": "USD",
+  "business_summary": "Apple diseña, fabrica y comercializa dispositivos electrónicos de consumo, software y servicios digitales integrados en un ecosistema cerrado.",
+  "business_model": "Modelo mixto basado en venta de hardware premium, monetización recurrente de servicios, accesorios y fortalecimiento del ecosistema de usuarios.",
+  "revenue_streams": [
+    "iPhone y otros dispositivos hardware",
+    "Servicios digitales y suscripciones",
+    "Accesorios y wearables",
+    "Software y ecosistema de plataforma"
+  ],
+  "scores": {
+    "business_quality_score": 8.8,
+    "financial_health_score": null,
+    "growth_score": null,
+    "valuation_score": null,
+    "risk_score": 3.6,
+    "moat_score": 8.9,
+    "evidence_quality_score": 4.2,
+    "data_freshness_score": 8.8,
+    "confidence_score": 4.1
+  },
+  "moat_breakdown": {
+    "brand_strength": 9.6,
+    "switching_costs": 8.8,
+    "network_effects": 6.8,
+    "cost_advantage": 5.2,
+    "technology_edge": 8.4,
+    "scale_advantage": 9.5,
+    "moat_comment": "El moat parece muy sólido por marca, escala, ecosistema y costes de cambio. La puntuación es inferida en gran parte por la naturaleza del negocio, no por métricas operativas recientes aportadas en el input."
+  },
+  "valuation_summary": {
+    "relative_valuation": "No evaluable con rigor con los datos aportados; faltan múltiplos y comparables.",
+    "valuation_status": "insuficiente",
+    "valuation_confidence": 2.1,
+    "main_valuation_risk": "La cotización en máximos puede estar incorporando expectativas elevadas sin que el input permita verificar si la valoración fundamental está justificada."
+  },
+  "risk_analysis": {
+    "main_risks": [
+      {
+        "risk": "Desaceleración de la demanda de consumo premium",
+        "probability": "media",
+        "impact": "alto",
+        "severity": "medio-alto",
+        "comment": "Un ciclo de reemplazo más débil o menor gasto discrecional podría afectar ventas de hardware."
+      },
+      {
+        "risk": "Presión regulatoria sobre App Store y ecosistema",
+        "probability": "media",
+        "impact": "alto",
+        "severity": "alto",
+        "comment": "La regulación puede afectar márgenes, comisiones y control del ecosistema."
+      },
+      {
+        "risk": "Dependencia del iPhone y del ecosistema principal",
+        "probability": "media",
+        "impact": "alto",
+        "severity": "alto",
+        "comment": "La concentración en productos clave puede amplificar cualquier desaceleración de demanda."
+      },
+      {
+        "risk": "Valoración exigente implícita en máximos de cotización",
+        "probability": "alta",
+        "impact": "medio",
+        "severity": "medio",
+        "comment": "Sin múltiplos no puede validarse la valoración; el precio actual podría anticipar demasiado optimismo."
+      }
+    ],
+    "risk_level": "medio",
+    "risk_comment": "El riesgo operativo parece moderado por la fortaleza del negocio, pero la falta de datos financieros y de valoración impide una lectura más precisa."
+  },
+  "scenarios": {
+    "bull_case": {
+      "summary": "La expansión de servicios y la resiliencia del ecosistema sostienen márgenes y crecimiento superiores a lo esperado.",
+      "key_assumptions": [
+        "Fuerte fidelidad del ecosistema",
+        "Crecimiento sólido de servicios",
+        "Capacidad de mantener pricing power",
+        "Ausencia de disrupción regulatoria material"
+      ],
+      "probability": 35
+    },
+    "base_case": {
+      "summary": "El negocio mantiene liderazgo y generación de caja, con crecimiento moderado y estabilidad operativa.",
+      "key_assumptions": [
+        "Demanda estable en hardware premium",
+        "Servicios creciendo a ritmo razonable",
+        "Márgenes razonablemente sostenidos",
+        "Entorno competitivo controlado"
+      ],
+      "probability": 45
+    },
+    "bear_case": {
+      "summary": "Se enfría el consumo, aumenta la presión regulatoria y el mercado penaliza expectativas elevadas.",
+      "key_assumptions": [
+        "Menor crecimiento de hardware",
+        "Presión competitiva o regulatoria",
+        "Desaceleración de servicios",
+        "Compresión de múltiplos"
+      ],
+      "probability": 20
+    }
+  },
+  "dividend_analysis": {
+    "is_dividend_payer": null,
+    "dividend_yield": null,
+    "payout_ratio_earnings": null,
+    "payout_ratio_fcf": null,
+    "dividend_growth_5y": null,
+    "yield_trap_warning": null,
+    "dividend_verdict": "No hay información suficiente en el input para evaluar dividendo, rentabilidad por dividendo o sostenibilidad del payout."
+  },
+  "final_result": {
+    "final_category": "🟢 Alta calidad / seguir de cerca",
+    "confidence_level": "medio",
+    "final_reasoning": "La empresa parece de alta calidad y el contexto de mercado es favorable, pero faltan datos fundamentales clave para validar salud financiera, crecimiento y valoración. La categoría refleja prioridad de seguimiento, no una conclusión de valoración completa.",
+    "watchlist_decision": "Mantener en lista prioritaria de investigación hasta completar estados financieros, múltiplos y métricas de caja."
+  },
+  "sources": {
+    "main_sources": [
+      "Input cuantitativo proporcionado por el usuario",
+      "Datos de mercado y precio procedentes de yfinance indicados en el input"
+    ],
+    "source_warnings": [
+      "No se aportaron estados financieros ni series históricas de fundamentales",
+      "No se aportaron múltiplos de valoración ni comparables sectoriales",
+      "No se aportó información de dividendo ni payout",
+      "La evidencia fundamental es incompleta y la confianza debe considerarse limitada",
+      "Modelo usado: gpt-5.4-mini; coste estimado llamada: $0.013241"
+    ],
+    "data_limitations": [
+      "No hay datos de ingresos, márgenes, EPS, FCF, deuda, ROIC ni crecimiento histórico.",
+      "No hay valoración relativa con P/E, EV/EBITDA, P/FCF o comparables.",
+      "No hay información suficiente para evaluar dividendos con seguridad.",
+      "La puntuación de moat y calidad de negocio incluye inferencia cualitativa y no debe leerse como una medición exhaustiva."
+    ]
+  }
+}

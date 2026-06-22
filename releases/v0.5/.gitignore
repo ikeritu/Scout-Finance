@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Databases and generated data
+*.db
+*.sqlite
+*.sqlite3
+
+# Outputs and cache
+outputs/logs/*
+outputs/exports/*
+data/cache/demo/*
+data/cache/real/*
+
+# Keep folders
+!outputs/logs/.gitkeep
+!outputs/exports/.gitkeep
+!data/cache/demo/.gitkeep
+!data/cache/real/.gitkeep
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

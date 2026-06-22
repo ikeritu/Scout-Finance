@@ -1,0 +1,33 @@
+{
+  "phase": "7G",
+  "release": "v0.7.0-candidate",
+  "status": "FROZEN",
+  "freeze_created_at": "2026-06-10T12:08:42+00:00",
+  "release_dir": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7",
+  "validated_funnel": "500 → 182 → 63 → 6",
+  "counts": {
+    "stage1_passed": 182,
+    "stage2_passed": 63,
+    "stage3_passed": 6,
+    "stage3_candidates_for_ranking": 34
+  },
+  "top_candidate": {
+    "ticker": "AUPH",
+    "name": "Aurinia Pharmaceuticals Inc - Common Shares",
+    "score": 70.83
+  },
+  "integrity": {
+    "summary_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7f1_release_v07_integrity_summary.json",
+    "status": "OK",
+    "release_freeze_approved": true,
+    "files_audit_rows": 216
+  },
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "pipeline_recalculated": false
+  }
+}

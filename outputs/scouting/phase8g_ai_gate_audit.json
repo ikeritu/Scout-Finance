@@ -1,0 +1,107 @@
+{
+  "phase": "8G",
+  "status": "OK",
+  "summary": {
+    "phase": "8G",
+    "title": "Optional AI Interpretation Gate and Cost Guardrails",
+    "status": "OK",
+    "created_at": "2026-06-17T222619+0000",
+    "schema_version": "phase8g_ai_gate_v0_1",
+    "default_top_n": 3,
+    "max_top_n": 3,
+    "memos_loaded": 3,
+    "ai_gate_status": "closed",
+    "ai_allowed": false,
+    "gate_reason": "ENABLE_OPENAI is not True; ENABLE_AI_RESEARCH_MEMO is not True; ALLOW_AI_SPEND is not True",
+    "estimated_cost": 0.0,
+    "model_used": null,
+    "next": "8H — Prompt packaging and dry-run AI memo preview",
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": false
+  },
+  "gate": {
+    "ai_allowed": false,
+    "gate_status": "closed",
+    "reason": "ENABLE_OPENAI is not True; ENABLE_AI_RESEARCH_MEMO is not True; ALLOW_AI_SPEND is not True",
+    "hard_blockers": [
+      "ENABLE_OPENAI is not True",
+      "ENABLE_AI_RESEARCH_MEMO is not True",
+      "ALLOW_AI_SPEND is not True"
+    ],
+    "settings": {
+      "ENABLE_OPENAI": false,
+      "ENABLE_AI_RESEARCH_MEMO": false,
+      "ALLOW_AI_SPEND": false,
+      "AI_RESEARCH_MEMO_MODEL": "gpt-4.1-mini",
+      "AI_RESEARCH_MEMO_MAX_COST_USD": 0.5,
+      "DEFAULT_TOP_N": 3,
+      "MAX_TOP_N": 3
+    }
+  },
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": false
+  },
+  "signatures": {
+    "app.py": "dc27b9a248f243247155cd17d75fe1a33493d2095f6376e9587bca8996a20e60",
+    "src/filters.py": "cfec47448605da16f8db0d9052f44d6b1b957f6d6a290e7b637c517df2a1c5a4",
+    "v0.7_zip": "c2a41b090b1bc3e1d8b0269e1864a968e6c00fd5fc1de38bc32c84476cd7a385"
+  },
+  "memos": [
+    {
+      "ticker": "AUPH",
+      "company_name": "Aurinia Pharmaceuticals Inc - Common Shares",
+      "ranking_position": 1,
+      "quant_score": 70.83,
+      "memo_status": "data_insufficient",
+      "data_gaps_count": 1403,
+      "report_path": null,
+      "ai_interpretation_status": "blocked_by_gate",
+      "estimated_cost": 0.0,
+      "model_used": null,
+      "openai_called": false,
+      "objective_data_required": true,
+      "no_invented_data_rule": true
+    },
+    {
+      "ticker": "BZ",
+      "company_name": "KANZHUN LIMITED - American Depository Shares",
+      "ranking_position": 2,
+      "quant_score": 68.5,
+      "memo_status": "data_insufficient",
+      "data_gaps_count": 1403,
+      "report_path": null,
+      "ai_interpretation_status": "blocked_by_gate",
+      "estimated_cost": 0.0,
+      "model_used": null,
+      "openai_called": false,
+      "objective_data_required": true,
+      "no_invented_data_rule": true
+    },
+    {
+      "ticker": "ADBE",
+      "company_name": "Adobe Inc. - Common Stock",
+      "ranking_position": 3,
+      "quant_score": 65.97,
+      "memo_status": "data_insufficient",
+      "data_gaps_count": 1403,
+      "report_path": null,
+      "ai_interpretation_status": "blocked_by_gate",
+      "estimated_cost": 0.0,
+      "model_used": null,
+      "openai_called": false,
+      "objective_data_required": true,
+      "no_invented_data_rule": true
+    }
+  ]
+}

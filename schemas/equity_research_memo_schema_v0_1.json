@@ -1,0 +1,96 @@
+{
+  "schema_name": "equity_research_memo",
+  "schema_version": "0.1",
+  "default_scope": "TOP_3_RANKING_CANDIDATES",
+  "memo_status_allowed_values": [
+    "completed",
+    "ai_disabled",
+    "data_insufficient",
+    "error",
+    "draft"
+  ],
+  "confidence_allowed_values": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "verdict_allowed_values": [
+    "strong_research_candidate",
+    "watchlist",
+    "avoid",
+    "data_insufficient"
+  ],
+  "required_fields": [
+    "ticker",
+    "company_name",
+    "memo_status",
+    "ranking_position",
+    "quant_score",
+    "business_model",
+    "revenue_sources",
+    "sector_trends",
+    "financial_health",
+    "moat_analysis",
+    "valuation_analysis",
+    "growth_analysis",
+    "risk_analysis",
+    "institutional_view",
+    "bull_case",
+    "base_case",
+    "bear_case",
+    "final_verdict",
+    "confidence",
+    "data_gaps",
+    "sources",
+    "created_at",
+    "model_used",
+    "estimated_cost"
+  ],
+  "anti_hallucination_rules": [
+    "Never invent missing financial data.",
+    "If a field is unavailable, return data_insufficient.",
+    "Separate objective data, interpretation and AI opinion.",
+    "Every final verdict must include data_gaps and confidence.",
+    "No DCF in v0.1 except as future placeholder.",
+    "No buy/sell language. Use research_candidate/watchlist/avoid."
+  ],
+  "sections": {
+    "objective_data": [
+      "market_cap",
+      "sector",
+      "industry",
+      "price",
+      "revenue_growth",
+      "net_income",
+      "free_cash_flow",
+      "margins",
+      "debt_metrics",
+      "valuation_multiples",
+      "data_quality_flags"
+    ],
+    "interpretation": [
+      "financial_health_summary",
+      "valuation_summary",
+      "growth_summary",
+      "moat_summary",
+      "institutional_summary"
+    ],
+    "ai_opinion": [
+      "bull_case",
+      "base_case",
+      "bear_case",
+      "anti_thesis",
+      "final_verdict",
+      "confidence"
+    ],
+    "risk_analysis": [
+      "economic_risks",
+      "competitive_risks",
+      "regulatory_risks",
+      "debt_risks",
+      "valuation_risks",
+      "technology_disruption_risks",
+      "risk_ranking"
+    ]
+  }
+}

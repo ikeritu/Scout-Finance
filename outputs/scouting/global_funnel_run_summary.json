@@ -1,0 +1,317 @@
+{
+  "phase": "6E",
+  "runner": "run_global_funnel_demo",
+  "status": "OK",
+  "started_at": "2026-06-04T13:03:10+00:00",
+  "finished_at": "2026-06-04T13:03:11+00:00",
+  "elapsed_seconds": 0.259,
+  "clean_enriched_flow": true,
+  "stage1_passed_overwritten": false,
+  "stage2_input": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed_enriched.csv",
+  "openai_called": false,
+  "api_called": false,
+  "app_modified": false,
+  "steps": [
+    {
+      "name": "Stage 0 — Validate global universe",
+      "status": "OK",
+      "started_at": "2026-06-04T13:03:10+00:00",
+      "finished_at": "2026-06-04T13:03:10+00:00",
+      "elapsed_seconds": 0.053,
+      "details": {
+        "phase": "5B",
+        "created_at": "2026-06-04T13:03:10+00:00",
+        "input_companies": 5,
+        "missing_required_columns": [],
+        "has_required_columns": true,
+        "duplicated_ticker_rows": 0,
+        "missing_values": {
+          "ticker": 0,
+          "name": 0,
+          "exchange": 0,
+          "country": 0,
+          "region": 0,
+          "currency": 0,
+          "sector": 0,
+          "industry": 0,
+          "asset_type": 0,
+          "is_active": 0,
+          "market_cap": 0,
+          "price": 0,
+          "avg_volume_30d": 0,
+          "avg_volume_90d": 0,
+          "data_source": 0,
+          "last_updated": 0
+        },
+        "counts": {
+          "missing_market_cap": 0,
+          "market_cap_positive": 5,
+          "missing_price": 0,
+          "price_positive": 5,
+          "missing_avg_volume_90d": 0,
+          "avg_volume_90d_positive": 5
+        },
+        "asset_type_distribution": {
+          "common_stock": 5
+        },
+        "country_distribution_top20": {
+          "USA": 5
+        },
+        "sector_distribution_top20": {
+          "Technology": 3,
+          "Financial Services": 1,
+          "Industrials": 1
+        },
+        "status": "OK"
+      },
+      "error": null
+    },
+    {
+      "name": "Stage 1 — Investable universe filter",
+      "status": "OK",
+      "started_at": "2026-06-04T13:03:10+00:00",
+      "finished_at": "2026-06-04T13:03:10+00:00",
+      "elapsed_seconds": 0.032,
+      "details": {
+        "phase": "5C",
+        "stage": "stage1",
+        "created_at": "2026-06-04T13:03:10+00:00",
+        "input_companies": 5,
+        "passed_companies": 4,
+        "watchlist_companies": 0,
+        "rejected_companies": 1,
+        "pass_rate": 0.8,
+        "watchlist_rate": 0.0,
+        "rejection_rate": 0.2,
+        "top_rejection_or_watchlist_reasons": {
+          "MARKET_CAP_BELOW_MINIMUM": 1,
+          "PRICE_BELOW_MINIMUM": 1,
+          "LOW_DOLLAR_VOLUME": 1
+        },
+        "output_files": {
+          "passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+          "watchlist": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_watchlist.csv",
+          "rejected": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejected.csv",
+          "rejection_log": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejection_log.csv",
+          "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_summary.json"
+        },
+        "config": {
+          "target_pass_rate": 0.2,
+          "min_market_cap_pass": 300000000,
+          "min_market_cap_watchlist": 100000000,
+          "min_price_pass": 3.0,
+          "min_price_watchlist": 1.0,
+          "min_dollar_volume_pass": 2000000,
+          "min_dollar_volume_watchlist": 500000,
+          "allowed_asset_types": [
+            "common_stock"
+          ],
+          "allow_adr": true,
+          "allow_otc": false,
+          "allowed_exchanges": [
+            "AMEX",
+            "ARCA",
+            "ASX",
+            "CBOE",
+            "EURONEXT",
+            "HKEX",
+            "LSE",
+            "NASDAQ",
+            "NYSE",
+            "SIX",
+            "TSE",
+            "TSX",
+            "XETRA"
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "name": "Phase 6C — Enrich Stage 1 fundamentals cleanly",
+      "status": "OK",
+      "started_at": "2026-06-04T13:03:10+00:00",
+      "finished_at": "2026-06-04T13:03:11+00:00",
+      "elapsed_seconds": 0.037,
+      "details": {
+        "phase": "6C",
+        "input_stage1_companies": 4,
+        "fundamentals_rows": 4,
+        "matched_companies_with_revenue": 4,
+        "match_rate_percent": 100.0,
+        "output_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed_enriched.csv",
+        "stage1_passed_overwritten": false,
+        "openai_called": false,
+        "api_called": false,
+        "app_modified": false
+      },
+      "error": null
+    },
+    {
+      "name": "Phase 6D — Stage 2 from enriched Stage 1",
+      "status": "OK",
+      "started_at": "2026-06-04T13:03:11+00:00",
+      "finished_at": "2026-06-04T13:03:11+00:00",
+      "elapsed_seconds": 0.033,
+      "details": {
+        "phase": "5D",
+        "stage": "stage2",
+        "created_at": "2026-06-04T13:03:11+00:00",
+        "input_companies": 4,
+        "passed_companies": 3,
+        "watchlist_companies": 1,
+        "rejected_companies": 0,
+        "pass_rate": 0.75,
+        "watchlist_rate": 0.25,
+        "rejection_rate": 0.0,
+        "top_rejection_or_watchlist_reasons": {
+          "MISSING_NET_DEBT_TO_EBITDA": 1
+        },
+        "output_files": {
+          "passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_passed.csv",
+          "watchlist": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_watchlist.csv",
+          "rejected": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_rejected.csv",
+          "rejection_log": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_rejection_log.csv",
+          "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_summary.json"
+        },
+        "config": {
+          "max_financial_data_age_months": 18,
+          "data_completeness_pass": 70,
+          "data_completeness_watchlist": 50,
+          "min_operating_margin_pass": 0.0,
+          "min_operating_margin_watchlist": -0.2,
+          "min_fcf_margin_pass": 0.0,
+          "min_fcf_margin_watchlist": -0.1,
+          "max_net_debt_to_ebitda_pass": 3.0,
+          "max_net_debt_to_ebitda_watchlist": 5.0,
+          "max_shares_dilution_3y_pass": 0.1,
+          "max_shares_dilution_3y_watchlist": 0.3,
+          "growth_exception_min_revenue_growth_3y": 0.25,
+          "growth_exception_min_gross_margin": 0.4,
+          "special_case_sectors": [
+            "banking",
+            "banks",
+            "biotechnology",
+            "financial services",
+            "insurance",
+            "mining",
+            "reit",
+            "reits",
+            "utilities"
+          ]
+        }
+      },
+      "error": null
+    },
+    {
+      "name": "Demo enrichment — Stage 2 scoring inputs",
+      "status": "OK",
+      "started_at": "2026-06-04T13:03:11+00:00",
+      "finished_at": "2026-06-04T13:03:11+00:00",
+      "elapsed_seconds": 0.013,
+      "details": {
+        "result": "0"
+      },
+      "error": null
+    },
+    {
+      "name": "Stage 3 — Opportunity scoring",
+      "status": "OK",
+      "started_at": "2026-06-04T13:03:11+00:00",
+      "finished_at": "2026-06-04T13:03:11+00:00",
+      "elapsed_seconds": 0.075,
+      "details": {
+        "phase": "5E",
+        "stage": "stage3",
+        "created_at": "2026-06-04T13:03:11+00:00",
+        "input_companies": 3,
+        "passed_companies": 2,
+        "watchlist_companies": 1,
+        "rejected_companies": 0,
+        "pass_rate": 0.6666666666666666,
+        "watchlist_rate": 0.3333333333333333,
+        "rejection_rate": 0.0,
+        "category_distribution": {
+          "🔵 Alta calidad pero valoración exigente": 2,
+          "🟡 Interesante con condiciones": 1
+        },
+        "top_rejection_or_watchlist_reasons": {
+          "FINAL_SCORE_WATCHLIST_RANGE": 1
+        },
+        "top_company": {
+          "ticker": "NVDA",
+          "name": "NVIDIA Corporation",
+          "final_stage3_score": 78.29,
+          "stage3_category": "🔵 Alta calidad pero valoración exigente"
+        },
+        "output_files": {
+          "passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_passed.csv",
+          "watchlist": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_watchlist.csv",
+          "rejected": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_rejected.csv",
+          "rejection_log": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_rejection_log.csv",
+          "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage3_summary.json",
+          "top_20_deep_research": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_20_deep_research.csv",
+          "top_50_watchlist": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_50_watchlist.csv",
+          "top_100_candidates": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_100_candidates.csv",
+          "top_recoverable_candidates": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_recoverable_candidates.csv"
+        },
+        "config": {
+          "target_pass_count": 450,
+          "max_risk_score_pass": 7.5,
+          "max_risk_score_watchlist": 8.5,
+          "min_data_quality_score_pass": 5.0,
+          "min_data_quality_score_watchlist": 3.5,
+          "min_final_score_pass": 60.0,
+          "min_final_score_watchlist": 45.0,
+          "weights": {
+            "business_quality_score": 0.2,
+            "financial_health_score": 0.15,
+            "growth_score": 0.15,
+            "valuation_score": 0.15,
+            "moat_proxy_score": 0.15,
+            "momentum_score": 0.1,
+            "data_quality_score": 0.1
+          },
+          "risk_penalty_multiplier": 0.5,
+          "top_deep_research_count": 20,
+          "top_watchlist_count": 50,
+          "top_candidates_count": 100,
+          "top_recoverable_count": 100
+        }
+      },
+      "error": null
+    },
+    {
+      "name": "Export — Stage 3 candidates bridge",
+      "status": "OK",
+      "started_at": "2026-06-04T13:03:11+00:00",
+      "finished_at": "2026-06-04T13:03:11+00:00",
+      "elapsed_seconds": 0.016,
+      "details": {
+        "result": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage3_candidates_for_ranking.csv"
+      },
+      "error": null
+    }
+  ],
+  "funnel_counts": {
+    "stage0_input_companies": 5,
+    "stage1_passed": 4,
+    "stage1_watchlist": 0,
+    "stage1_rejected": 1,
+    "fundamentals_matched_companies": 4,
+    "stage2_passed": 3,
+    "stage2_watchlist": 1,
+    "stage2_rejected": 0,
+    "stage3_passed": 2,
+    "stage3_watchlist": 1,
+    "stage3_rejected": 0
+  },
+  "output_files": {
+    "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\global_funnel_run_summary.json",
+    "stage1_passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+    "stage1_passed_enriched": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed_enriched.csv",
+    "stage2_passed": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_passed.csv",
+    "top_100_candidates": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_100_candidates.csv",
+    "stage3_candidates_for_ranking": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage3_candidates_for_ranking.csv"
+  }
+}

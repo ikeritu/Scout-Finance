@@ -1,0 +1,23 @@
+{
+  "phase": "8G",
+  "title": "Optional AI Interpretation Gate and Cost Guardrails",
+  "status": "OK",
+  "created_at": "2026-06-17T222619+0000",
+  "schema_version": "phase8g_ai_gate_v0_1",
+  "default_top_n": 3,
+  "max_top_n": 3,
+  "memos_loaded": 3,
+  "ai_gate_status": "closed",
+  "ai_allowed": false,
+  "gate_reason": "ENABLE_OPENAI is not True; ENABLE_AI_RESEARCH_MEMO is not True; ALLOW_AI_SPEND is not True",
+  "estimated_cost": 0.0,
+  "model_used": null,
+  "next": "8H — Prompt packaging and dry-run AI memo preview",
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false
+}

@@ -1,0 +1,313 @@
+﻿
+  src\filter_stage1.py:5:Classify validated global universe companies as:
+  src\filter_stage1.py:6:
+> src\filter_stage1.py:7:- PASSED
+> src\filter_stage1.py:8:- WATCHLIST
+> src\filter_stage1.py:9:- REJECTED
+  src\filter_stage1.py:10:
+  src\filter_stage1.py:11:using only cheap market/investability filters.
+  src\filter_stage1.py:32:
+  src\filter_stage1.py:33:
+> src\filter_stage1.py:34:STAGE1_PASSED_PATH = STAGES_DIR / "stage1_passed.csv"
+> src\filter_stage1.py:35:STAGE1_WATCHLIST_PATH = STAGES_DIR / "stage1_watchlist.csv"
+> src\filter_stage1.py:36:STAGE1_REJECTED_PATH = STAGES_DIR / "stage1_rejected.csv"
+  src\filter_stage1.py:37:STAGE1_REJECTION_LOG_PATH = STAGES_DIR / "stage1_rejection_log.csv"
+  src\filter_stage1.py:38:STAGE1_SUMMARY_PATH = SCOUTING_OUTPUTS_DIR / "stage1_summary.json"
+  src\filter_stage1.py:41:DEFAULT_STAGE1_CONFIG = {
+  src\filter_stage1.py:42:    "target_pass_rate": 0.20,
+> src\filter_stage1.py:43:    "min_market_cap_pass": 300_000_000,
+> src\filter_stage1.py:44:    "min_market_cap_watchlist": 100_000_000,
+> src\filter_stage1.py:45:    "min_price_pass": 3.0,
+> src\filter_stage1.py:46:    "min_price_watchlist": 1.0,
+> src\filter_stage1.py:47:    "min_dollar_volume_pass": 2_000_000,
+> src\filter_stage1.py:48:    "min_dollar_volume_watchlist": 500_000,
+  src\filter_stage1.py:49:    "allowed_asset_types": {"common_stock"},
+  src\filter_stage1.py:50:    "allow_adr": True,
+  src\filter_stage1.py:73:    "stage",
+  src\filter_stage1.py:74:    "status",
+> src\filter_stage1.py:75:    "reason_code",
+  src\filter_stage1.py:76:    "reason_text",
+  src\filter_stage1.py:77:    "metric_name",
+  src\filter_stage1.py:84:    "industry",
+  src\filter_stage1.py:85:    "country",
+> src\filter_stage1.py:86:    "market_cap",
+  src\filter_stage1.py:87:    "data_date",
+  src\filter_stage1.py:88:    "created_at",
+  src\filter_stage1.py:139:    reasons: list[dict[str, Any]],
+  src\filter_stage1.py:140:    *,
+> src\filter_stage1.py:141:    reason_code: str,
+  src\filter_stage1.py:142:    reason_text: str,
+  src\filter_stage1.py:143:    metric_name: str,
+  src\filter_stage1.py:149:    reasons.append(
+  src\filter_stage1.py:150:        {
+> src\filter_stage1.py:151:            "reason_code": reason_code,
+  src\filter_stage1.py:152:            "reason_text": reason_text,
+  src\filter_stage1.py:153:            "metric_name": metric_name,
+  src\filter_stage1.py:171:
+  src\filter_stage1.py:172:    status in:
+> src\filter_stage1.py:173:        PASSED, WATCHLIST, REJECTED
+  src\filter_stage1.py:174:    """
+  src\filter_stage1.py:175:
+  src\filter_stage1.py:177:    reasons: list[dict[str, Any]] = []
+  src\filter_stage1.py:178:    hard_reject = False
+> src\filter_stage1.py:179:    watchlist = False
+  src\filter_stage1.py:180:
+  src\filter_stage1.py:181:    ticker = _clean_text(row.get("ticker")).upper()
+  src\filter_stage1.py:184:    is_active = _to_bool(row.get("is_active"))
+  src\filter_stage1.py:185:
+> src\filter_stage1.py:186:    market_cap = _to_float(row.get("market_cap"))
+> src\filter_stage1.py:187:    price = _to_float(row.get("price"))
+  src\filter_stage1.py:188:    avg_volume_90d = _to_float(row.get("avg_volume_90d"))
+> src\filter_stage1.py:189:    dollar_volume_90d = _to_float(row.get("dollar_volume_90d"))
+  src\filter_stage1.py:190:
+> src\filter_stage1.py:191:    if dollar_volume_90d is None and price is not None and avg_volume_90d is not None:
+> src\filter_stage1.py:192:        dollar_volume_90d = price * avg_volume_90d
+  src\filter_stage1.py:193:
+  src\filter_stage1.py:194:    # Hard rules
+  src\filter_stage1.py:197:        _add_reason(
+  src\filter_stage1.py:198:            reasons,
+> src\filter_stage1.py:199:            reason_code="MISSING_TICKER",
+  src\filter_stage1.py:200:            reason_text="Ticker missing.",
+  src\filter_stage1.py:201:            metric_name="ticker",
+  src\filter_stage1.py:210:        _add_reason(
+  src\filter_stage1.py:211:            reasons,
+> src\filter_stage1.py:212:            reason_code="INACTIVE_SECURITY",
+  src\filter_stage1.py:213:            reason_text="Security is not active.",
+  src\filter_stage1.py:214:            metric_name="is_active",
+  src\filter_stage1.py:223:        _add_reason(
+  src\filter_stage1.py:224:            reasons,
+> src\filter_stage1.py:225:            reason_code="NOT_COMMON_STOCK",
+  src\filter_stage1.py:226:            reason_text="Asset type is not allowed for Stage 1.",
+  src\filter_stage1.py:227:            metric_name="asset_type",
+  src\filter_stage1.py:236:        _add_reason(
+  src\filter_stage1.py:237:            reasons,
+> src\filter_stage1.py:238:            reason_code="OTC_NOT_ALLOWED",
+  src\filter_stage1.py:239:            reason_text="OTC/Pink Sheet security excluded in Stage 1.",
+  src\filter_stage1.py:240:            metric_name="exchange",
+  src\filter_stage1.py:245:        )
+  src\filter_stage1.py:246:
+> src\filter_stage1.py:247:    # Exchange rule: if exchange missing or not in known list, watchlist rather than reject.
+  src\filter_stage1.py:248:    if not exchange:
+> src\filter_stage1.py:249:        watchlist = True
+  src\filter_stage1.py:250:        _add_reason(
+  src\filter_stage1.py:251:            reasons,
+> src\filter_stage1.py:252:            reason_code="MISSING_EXCHANGE",
+  src\filter_stage1.py:253:            reason_text="Exchange missing.",
+  src\filter_stage1.py:254:            metric_name="exchange",
+  src\filter_stage1.py:259:        )
+  src\filter_stage1.py:260:    elif exchange not in cfg["allowed_exchanges"]:
+> src\filter_stage1.py:261:        watchlist = True
+  src\filter_stage1.py:262:        _add_reason(
+  src\filter_stage1.py:263:            reasons,
+> src\filter_stage1.py:264:            reason_code="EXCHANGE_NOT_IN_ALLOWED_LIST",
+  src\filter_stage1.py:265:            reason_text="Exchange is not in the default allowed list.",
+  src\filter_stage1.py:266:            metric_name="exchange",
+  src\filter_stage1.py:272:
+  src\filter_stage1.py:273:    # Market cap
+> src\filter_stage1.py:274:    if market_cap is None:
+  src\filter_stage1.py:275:        hard_reject = True
+  src\filter_stage1.py:276:        _add_reason(
+  src\filter_stage1.py:277:            reasons,
+> src\filter_stage1.py:278:            reason_code="MISSING_MARKET_CAP",
+  src\filter_stage1.py:279:            reason_text="Market cap missing.",
+> src\filter_stage1.py:280:            metric_name="market_cap",
+> src\filter_stage1.py:281:            metric_value=market_cap,
+  src\filter_stage1.py:282:            threshold="required",
+  src\filter_stage1.py:283:            severity="high",
+  src\filter_stage1.py:284:            recoverable=True,
+  src\filter_stage1.py:285:        )
+> src\filter_stage1.py:286:    elif market_cap < cfg["min_market_cap_watchlist"]:
+  src\filter_stage1.py:287:        hard_reject = True
+  src\filter_stage1.py:288:        _add_reason(
+  src\filter_stage1.py:289:            reasons,
+> src\filter_stage1.py:290:            reason_code="MARKET_CAP_BELOW_MINIMUM",
+  src\filter_stage1.py:291:            reason_text="Market cap below Stage 1 minimum.",
+> src\filter_stage1.py:292:            metric_name="market_cap",
+> src\filter_stage1.py:293:            metric_value=market_cap,
+> src\filter_stage1.py:294:            threshold=cfg["min_market_cap_watchlist"],
+  src\filter_stage1.py:295:            severity="high",
+  src\filter_stage1.py:296:            recoverable=False,
+  src\filter_stage1.py:297:        )
+> src\filter_stage1.py:298:    elif market_cap < cfg["min_market_cap_pass"]:
+> src\filter_stage1.py:299:        watchlist = True
+  src\filter_stage1.py:300:        _add_reason(
+  src\filter_stage1.py:301:            reasons,
+> src\filter_stage1.py:302:            reason_code="MARKET_CAP_WATCHLIST_RANGE",
+  src\filter_stage1.py:303:            reason_text="Market cap is below pass threshold but above rejection threshold.",
+> src\filter_stage1.py:304:            metric_name="market_cap",
+> src\filter_stage1.py:305:            metric_value=market_cap,
+> src\filter_stage1.py:306:            threshold=cfg["min_market_cap_pass"],
+  src\filter_stage1.py:307:            severity="medium",
+  src\filter_stage1.py:308:            recoverable=True,
+  src\filter_stage1.py:309:        )
+  src\filter_stage1.py:310:
+> src\filter_stage1.py:311:    # Price
+> src\filter_stage1.py:312:    if price is None:
+  src\filter_stage1.py:313:        hard_reject = True
+  src\filter_stage1.py:314:        _add_reason(
+  src\filter_stage1.py:315:            reasons,
+> src\filter_stage1.py:316:            reason_code="MISSING_PRICE",
+> src\filter_stage1.py:317:            reason_text="Price missing.",
+> src\filter_stage1.py:318:            metric_name="price",
+> src\filter_stage1.py:319:            metric_value=price,
+  src\filter_stage1.py:320:            threshold="required",
+  src\filter_stage1.py:321:            severity="high",
+  src\filter_stage1.py:322:            recoverable=True,
+  src\filter_stage1.py:323:        )
+> src\filter_stage1.py:324:    elif price < cfg["min_price_watchlist"]:
+  src\filter_stage1.py:325:        hard_reject = True
+  src\filter_stage1.py:326:        _add_reason(
+  src\filter_stage1.py:327:            reasons,
+> src\filter_stage1.py:328:            reason_code="PRICE_BELOW_MINIMUM",
+> src\filter_stage1.py:329:            reason_text="Price below Stage 1 minimum.",
+> src\filter_stage1.py:330:            metric_name="price",
+> src\filter_stage1.py:331:            metric_value=price,
+> src\filter_stage1.py:332:            threshold=cfg["min_price_watchlist"],
+  src\filter_stage1.py:333:            severity="high",
+  src\filter_stage1.py:334:            recoverable=False,
+  src\filter_stage1.py:335:        )
+> src\filter_stage1.py:336:    elif price < cfg["min_price_pass"]:
+> src\filter_stage1.py:337:        watchlist = True
+  src\filter_stage1.py:338:        _add_reason(
+  src\filter_stage1.py:339:            reasons,
+> src\filter_stage1.py:340:            reason_code="PRICE_WATCHLIST_RANGE",
+> src\filter_stage1.py:341:            reason_text="Price is below pass threshold but above rejection threshold.",
+> src\filter_stage1.py:342:            metric_name="price",
+> src\filter_stage1.py:343:            metric_value=price,
+> src\filter_stage1.py:344:            threshold=cfg["min_price_pass"],
+  src\filter_stage1.py:345:            severity="medium",
+  src\filter_stage1.py:346:            recoverable=True,
+  src\filter_stage1.py:348:
+  src\filter_stage1.py:349:    # Dollar volume
+> src\filter_stage1.py:350:    if dollar_volume_90d is None:
+  src\filter_stage1.py:351:        hard_reject = True
+  src\filter_stage1.py:352:        _add_reason(
+  src\filter_stage1.py:353:            reasons,
+> src\filter_stage1.py:354:            reason_code="MISSING_DOLLAR_VOLUME",
+  src\filter_stage1.py:355:            reason_text="Dollar volume cannot be calculated.",
+> src\filter_stage1.py:356:            metric_name="dollar_volume_90d",
+> src\filter_stage1.py:357:            metric_value=dollar_volume_90d,
+  src\filter_stage1.py:358:            threshold="required",
+  src\filter_stage1.py:359:            severity="high",
+  src\filter_stage1.py:360:            recoverable=True,
+  src\filter_stage1.py:361:        )
+> src\filter_stage1.py:362:    elif dollar_volume_90d < cfg["min_dollar_volume_watchlist"]:
+  src\filter_stage1.py:363:        hard_reject = True
+  src\filter_stage1.py:364:        _add_reason(
+  src\filter_stage1.py:365:            reasons,
+> src\filter_stage1.py:366:            reason_code="LOW_DOLLAR_VOLUME",
+  src\filter_stage1.py:367:            reason_text="Dollar volume below Stage 1 minimum.",
+> src\filter_stage1.py:368:            metric_name="dollar_volume_90d",
+> src\filter_stage1.py:369:            metric_value=dollar_volume_90d,
+> src\filter_stage1.py:370:            threshold=cfg["min_dollar_volume_watchlist"],
+  src\filter_stage1.py:371:            severity="high",
+  src\filter_stage1.py:372:            recoverable=False,
+  src\filter_stage1.py:373:        )
+> src\filter_stage1.py:374:    elif dollar_volume_90d < cfg["min_dollar_volume_pass"]:
+> src\filter_stage1.py:375:        watchlist = True
+  src\filter_stage1.py:376:        _add_reason(
+  src\filter_stage1.py:377:            reasons,
+> src\filter_stage1.py:378:            reason_code="DOLLAR_VOLUME_WATCHLIST_RANGE",
+  src\filter_stage1.py:379:            reason_text="Dollar volume is below pass threshold but above rejection threshold.",
+> src\filter_stage1.py:380:            metric_name="dollar_volume_90d",
+> src\filter_stage1.py:381:            metric_value=dollar_volume_90d,
+> src\filter_stage1.py:382:            threshold=cfg["min_dollar_volume_pass"],
+  src\filter_stage1.py:383:            severity="medium",
+  src\filter_stage1.py:384:            recoverable=True,
+  src\filter_stage1.py:386:
+  src\filter_stage1.py:387:    if hard_reject:
+> src\filter_stage1.py:388:        return "REJECTED", reasons
+  src\filter_stage1.py:389:
+> src\filter_stage1.py:390:    if watchlist:
+> src\filter_stage1.py:391:        return "WATCHLIST", reasons
+  src\filter_stage1.py:392:
+> src\filter_stage1.py:393:    return "PASSED", reasons
+  src\filter_stage1.py:394:
+  src\filter_stage1.py:395:
+  src\filter_stage1.py:404:        "stage": "stage1",
+  src\filter_stage1.py:405:        "status": status,
+> src\filter_stage1.py:406:        "reason_code": reason.get("reason_code"),
+  src\filter_stage1.py:407:        "reason_text": reason.get("reason_text"),
+  src\filter_stage1.py:408:        "metric_name": reason.get("metric_name"),
+  src\filter_stage1.py:415:        "industry": _clean_text(row.get("industry")),
+  src\filter_stage1.py:416:        "country": _clean_text(row.get("country")),
+> src\filter_stage1.py:417:        "market_cap": row.get("market_cap"),
+  src\filter_stage1.py:418:        "data_date": row.get("last_updated"),
+  src\filter_stage1.py:419:        "created_at": _utc_now_iso(),
+  src\filter_stage1.py:423:def run_stage1_filter(
+  src\filter_stage1.py:424:    input_path: Path = GLOBAL_UNIVERSE_VALIDATED_PATH,
+> src\filter_stage1.py:425:    passed_path: Path = STAGE1_PASSED_PATH,
+> src\filter_stage1.py:426:    watchlist_path: Path = STAGE1_WATCHLIST_PATH,
+> src\filter_stage1.py:427:    rejected_path: Path = STAGE1_REJECTED_PATH,
+  src\filter_stage1.py:428:    rejection_log_path: Path = STAGE1_REJECTION_LOG_PATH,
+  src\filter_stage1.py:429:    summary_path: Path = STAGE1_SUMMARY_PATH,
+  src\filter_stage1.py:444:    df = pd.read_csv(input_path)
+  src\filter_stage1.py:445:
+> src\filter_stage1.py:446:    if "dollar_volume_90d" not in df.columns:
+> src\filter_stage1.py:447:        df["dollar_volume_90d"] = (
+> src\filter_stage1.py:448:            pd.to_numeric(df.get("price"), errors="coerce")
+  src\filter_stage1.py:449:            * pd.to_numeric(df.get("avg_volume_90d"), errors="coerce")
+  src\filter_stage1.py:450:        )
+  src\filter_stage1.py:452:    statuses = []
+  src\filter_stage1.py:453:    primary_reasons = []
+> src\filter_stage1.py:454:    all_reason_codes = []
+  src\filter_stage1.py:455:    log_rows = []
+  src\filter_stage1.py:456:
+  src\filter_stage1.py:461:
+  src\filter_stage1.py:462:        if reasons:
+> src\filter_stage1.py:463:            primary_reasons.append(reasons[0]["reason_code"])
+> src\filter_stage1.py:464:            all_reason_codes.append("|".join(reason["reason_code"] for reason in reasons))
+  src\filter_stage1.py:465:        else:
+  src\filter_stage1.py:466:            primary_reasons.append("")
+> src\filter_stage1.py:467:            all_reason_codes.append("")
+  src\filter_stage1.py:468:
+  src\filter_stage1.py:469:        for reason in reasons:
+  src\filter_stage1.py:473:    result_df["stage1_status"] = statuses
+  src\filter_stage1.py:474:    result_df["stage1_primary_reason"] = primary_reasons
+> src\filter_stage1.py:475:    result_df["stage1_all_reasons"] = all_reason_codes
+  src\filter_stage1.py:476:
+> src\filter_stage1.py:477:    passed_df = result_df[result_df["stage1_status"] == "PASSED"].copy()
+> src\filter_stage1.py:478:    watchlist_df = result_df[result_df["stage1_status"] == "WATCHLIST"].copy()
+> src\filter_stage1.py:479:    rejected_df = result_df[result_df["stage1_status"] == "REJECTED"].copy()
+  src\filter_stage1.py:480:
+> src\filter_stage1.py:481:    passed_df.to_csv(passed_path, index=False, encoding="utf-8-sig")
+> src\filter_stage1.py:482:    watchlist_df.to_csv(watchlist_path, index=False, encoding="utf-8-sig")
+> src\filter_stage1.py:483:    rejected_df.to_csv(rejected_path, index=False, encoding="utf-8-sig")
+  src\filter_stage1.py:484:
+  src\filter_stage1.py:485:    log_df = pd.DataFrame(log_rows, columns=REJECTION_COLUMNS)
+  src\filter_stage1.py:487:
+  src\filter_stage1.py:488:    input_count = int(len(result_df))
+> src\filter_stage1.py:489:    passed_count = int(len(passed_df))
+> src\filter_stage1.py:490:    watchlist_count = int(len(watchlist_df))
+> src\filter_stage1.py:491:    rejected_count = int(len(rejected_df))
+  src\filter_stage1.py:492:
+  src\filter_stage1.py:493:    top_reasons = (
+> src\filter_stage1.py:494:        log_df["reason_code"].value_counts().head(20).to_dict()
+  src\filter_stage1.py:495:        if not log_df.empty
+  src\filter_stage1.py:496:        else {}
+  src\filter_stage1.py:502:        "created_at": _utc_now_iso(),
+  src\filter_stage1.py:503:        "input_companies": input_count,
+> src\filter_stage1.py:504:        "passed_companies": passed_count,
+> src\filter_stage1.py:505:        "watchlist_companies": watchlist_count,
+> src\filter_stage1.py:506:        "rejected_companies": rejected_count,
+> src\filter_stage1.py:507:        "pass_rate": passed_count / input_count if input_count else 0,
+> src\filter_stage1.py:508:        "watchlist_rate": watchlist_count / input_count if input_count else 0,
+> src\filter_stage1.py:509:        "rejection_rate": rejected_count / input_count if input_count else 0,
+> src\filter_stage1.py:510:        "top_rejection_or_watchlist_reasons": top_reasons,
+  src\filter_stage1.py:511:        "output_files": {
+> src\filter_stage1.py:512:            "passed": str(passed_path),
+> src\filter_stage1.py:513:            "watchlist": str(watchlist_path),
+> src\filter_stage1.py:514:            "rejected": str(rejected_path),
+  src\filter_stage1.py:515:            "rejection_log": str(rejection_log_path),
+  src\filter_stage1.py:516:            "summary": str(summary_path),
+  src\filter_stage1.py:534:    print("=" * 52)
+  src\filter_stage1.py:535:    print(f"Input companies: {summary.get('input_companies')}")
+> src\filter_stage1.py:536:    print(f"PASSED: {summary.get('passed_companies')}")
+> src\filter_stage1.py:537:    print(f"WATCHLIST: {summary.get('watchlist_companies')}")
+> src\filter_stage1.py:538:    print(f"REJECTED: {summary.get('rejected_companies')}")
+  src\filter_stage1.py:539:    print(f"Pass rate: {summary.get('pass_rate'):.2%}")
+> src\filter_stage1.py:540:    print(f"Watchlist rate: {summary.get('watchlist_rate'):.2%}")
+  src\filter_stage1.py:541:    print(f"Rejection rate: {summary.get('rejection_rate'):.2%}")
+  src\filter_stage1.py:542:    print()
+
+

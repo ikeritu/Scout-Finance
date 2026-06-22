@@ -1,0 +1,137 @@
+{
+  "ticker": "AMD",
+  "company_name": "Advanced Micro Devices, Inc.",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "analysis_date": "2026-06-01T08:41:46.885807+00:00",
+  "currency": "USD",
+  "business_summary": "Empresa de semiconductores con exposición probable a CPUs, GPUs y soluciones de computación de alto rendimiento. La información disponible no incluye desglose operativo, por lo que la descripción es general y parcial.",
+  "business_model": "Diseña y comercializa semiconductores y soluciones de computación para mercados de consumo, empresarial y centros de datos. La evidencia proporcionada no permite desglosar segmentos ni medir su contribución relativa.",
+  "revenue_streams": [
+    "Venta de procesadores y chips de computación",
+    "Venta de GPUs y soluciones gráficas",
+    "Soluciones para centros de datos y mercados empresariales"
+  ],
+  "scores": {
+    "business_quality_score": 6.5,
+    "financial_health_score": null,
+    "growth_score": 7.5,
+    "valuation_score": null,
+    "risk_score": 6.5,
+    "moat_score": 6.5,
+    "evidence_quality_score": 3.0,
+    "data_freshness_score": 4.0,
+    "confidence_score": 3.2
+  },
+  "moat_breakdown": {
+    "brand_strength": 6.5,
+    "switching_costs": 6.0,
+    "network_effects": 1.0,
+    "cost_advantage": 5.5,
+    "technology_edge": 7.5,
+    "scale_advantage": 6.5,
+    "moat_comment": "La ventaja competitiva probable proviene de tecnología, escala y posicionamiento en semiconductores; sin embargo, no hay datos suficientes para confirmar la durabilidad del moat ni su cuantificación relativa frente a competidores."
+  },
+  "valuation_summary": {
+    "relative_valuation": "No evaluable con precisión con los datos aportados; el mercado parece asignar una prima elevada dada la capitalización y el momentum.",
+    "valuation_status": "insuficiente",
+    "valuation_confidence": 2.0,
+    "main_valuation_risk": "Pagar una valoración exigente sin múltiplos fundamentales, crecimiento normalizado o generación de caja disponibles para contrastar."
+  },
+  "risk_analysis": {
+    "main_risks": [
+      {
+        "risk": "Valoración exigente",
+        "probability": "media",
+        "impact": "alto",
+        "severity": "alto",
+        "comment": "El precio y la capitalización sugieren expectativas elevadas; si el crecimiento no acompaña, puede haber compresión múltiple."
+      },
+      {
+        "risk": "Ciclo de semiconductores",
+        "probability": "media",
+        "impact": "alto",
+        "severity": "alto",
+        "comment": "La demanda de semiconductores es cíclica y puede afectar ingresos, márgenes y visibilidad."
+      },
+      {
+        "risk": "Competencia tecnológica",
+        "probability": "media",
+        "impact": "alto",
+        "severity": "alto",
+        "comment": "La competencia en CPUs, GPUs y centros de datos puede presionar cuota y rentabilidad."
+      },
+      {
+        "risk": "Falta de visibilidad financiera",
+        "probability": "alta",
+        "impact": "medio",
+        "severity": "medio-alto",
+        "comment": "No se dispone de deuda, caja, FCF, márgenes ni ROIC, lo que limita la convicción fundamental."
+      }
+    ],
+    "risk_level": "alto",
+    "risk_comment": "El perfil de riesgo es elevado para análisis fundamental debido a la ausencia de estados financieros y valoración detallada, pese a que el comportamiento de mercado es favorable."
+  },
+  "scenarios": {
+    "bull_case": {
+      "summary": "AMD mantiene crecimiento superior al sector, mejora su posición competitiva y el mercado sigue premiando el negocio con múltiplos altos.",
+      "key_assumptions": [
+        "Fuerte ejecución comercial y tecnológica",
+        "Expansión en centros de datos y productos de alto valor añadido",
+        "Múltiplos de mercado se sostienen"
+      ],
+      "probability": 30
+    },
+    "base_case": {
+      "summary": "El negocio crece de forma saludable, pero el entusiasmo del mercado se normaliza y la valoración se estabiliza.",
+      "key_assumptions": [
+        "Crecimiento operativo ordenado",
+        "Margen sin expansión extraordinaria",
+        "Múltiplos menos extremos"
+      ],
+      "probability": 45
+    },
+    "bear_case": {
+      "summary": "La competencia, el ciclo sectorial o una desaceleración de expectativas reduce la apreciación del mercado y presiona la tesis.",
+      "key_assumptions": [
+        "Desaceleración de demanda",
+        "Presión competitiva en márgenes",
+        "Compresión de múltiplos"
+      ],
+      "probability": 25
+    }
+  },
+  "dividend_analysis": {
+    "is_dividend_payer": null,
+    "dividend_yield": null,
+    "payout_ratio_earnings": null,
+    "payout_ratio_fcf": null,
+    "dividend_growth_5y": null,
+    "yield_trap_warning": null,
+    "dividend_verdict": "No hay información suficiente para evaluar dividendos. No se confirma si existe dividendo ni su sostenibilidad."
+  },
+  "final_result": {
+    "final_category": "⚫ Datos insuficientes",
+    "confidence_level": "insuficiente",
+    "final_reasoning": "La evidencia disponible es fuerte para momentum y calidad del dato de mercado, pero insuficiente para validar calidad de negocio, balance, FCF, valoración y moat con rigor fundamental.",
+    "watchlist_decision": "Seguir de cerca y completar con estados financieros, múltiplos, guidance y comparables antes de cualquier conclusión de fondo."
+  },
+  "sources": {
+    "main_sources": [
+      "yfinance",
+      "company_input proporcionado por el usuario"
+    ],
+    "source_warnings": [
+      "La evidencia aportada se limita prácticamente a datos de mercado y métricas técnicas.",
+      "No se aportan estados financieros, guidance, múltiplos de valoración ni desglose por segmentos.",
+      "Modelo usado: gpt-5.4-mini; coste estimado llamada: $0.012814"
+    ],
+    "data_limitations": [
+      "No hay ingresos, márgenes, beneficios, FCF, deuda, caja ni ROIC.",
+      "No hay múltiplos de valoración fundamentales para comparar.",
+      "No hay datos suficientes sobre dividendos.",
+      "No hay desglose geográfico ni por segmento.",
+      "No hay evidencia directa suficiente para cuantificar moat o calidad del negocio."
+    ]
+  }
+}

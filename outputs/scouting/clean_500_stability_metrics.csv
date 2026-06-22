@@ -1,0 +1,9 @@
+﻿metric,value
+market_data_success_rate_percent,99.6
+stage1_pass_rate_percent,45.2
+stage1_watchlist_rate_percent,13.2
+stage1_rejection_rate_percent,41.6
+market_data_success,498.0
+stage1_passed,226.0
+stage1_watchlist,66.0
+stage1_rejected,208.0

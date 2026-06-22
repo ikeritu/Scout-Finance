@@ -1,0 +1,27 @@
+{
+  "package": "scout_finance_phase8c_deterministic_research_modules",
+  "phase": "8C",
+  "files": [
+    "docs/phase8/PHASE8C_DETERMINISTIC_RESEARCH_MODULES.md",
+    "scripts/check_phase8c_deterministic_research_modules.py",
+    "src/earnings_analysis.py",
+    "src/fundamentals.py",
+    "src/growth_analysis.py",
+    "src/institutional_view.py",
+    "src/moat_analysis.py",
+    "src/phase8c_deterministic_research_modules.py",
+    "src/research_memo.py",
+    "src/risk_analysis.py",
+    "src/valuation.py"
+  ],
+  "rules": [
+    "No OpenAI",
+    "No APIs",
+    "No yfinance",
+    "No app.py",
+    "No filters.py",
+    "No releases/v0.7",
+    "TOP 3 default",
+    "No invented data"
+  ]
+}

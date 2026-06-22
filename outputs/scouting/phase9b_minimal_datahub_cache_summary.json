@@ -1,0 +1,31 @@
+{
+  "phase": "9B",
+  "title": "Minimal DataHub and Local Source Manifest",
+  "status": "OK",
+  "created_at": "2026-06-22T08:30:32+0000",
+  "default_top_n": 3,
+  "max_top_n": 3,
+  "data_mode": "local_only",
+  "external_fetch_allowed": false,
+  "local_source_records": 203,
+  "outputs_scouting_records": 190,
+  "data_stages_records": 13,
+  "phase9a_status": "OK",
+  "phase9a_external_findings_count": 1262,
+  "expected_paths": {
+    "src/data_hub.py": true,
+    "src/data_cache.py": false,
+    "src/red_flags.py": false,
+    "releases/Scout_Finance_v0.8.0_candidate_FREEZE.zip": true
+  },
+  "manifest_json": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase9b_datahub_local_source_manifest.json",
+  "manifest_csv": "D:\\Proyectos\\💰 Scout Finance\\outputs\\scouting\\phase9b_datahub_local_source_manifest.csv",
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false,
+  "next": "Phase 9C — Research Memo v2 Contract Hardening or Phase 9D — Red Flags Detector"
+}

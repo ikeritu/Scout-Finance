@@ -1,0 +1,1263 @@
+relative_path,kind,line_number,pattern,line
+.env,openai,1,OpenAI,OPENAI_API_KEY=your_openai_api_key_here
+.env,openai,3,OpenAI,OPENAI_MODEL_LIGHT=gpt-5.4-mini
+.env,openai,4,OpenAI,OPENAI_MODEL_STRONG=gpt-5.5
+.env,openai,5,OpenAI,ENABLE_OPENAI=false
+.env,openai,7,OpenAI,MAX_OPENAI_COMPANIES_PER_RUN=5
+.env,openai,8,OpenAI,OPENAI_DAILY_BUDGET_USD=5
+.env,openai,9,OpenAI,OPENAI_MONTHLY_BUDGET_USD=50
+.env,dotenv_env,5,ENABLE_,ENABLE_OPENAI=false
+.env,dotenv_env,6,ENABLE_,ENABLE_STRONG_MODEL=false
+.env,api_key,1,API_KEY,OPENAI_API_KEY=your_openai_api_key_here
+.env.example,openai,1,OpenAI,OPENAI_API_KEY=your_openai_api_key_here
+.env.example,openai,3,OpenAI,OPENAI_MODEL_LIGHT=gpt-5.4-mini
+.env.example,openai,4,OpenAI,OPENAI_MODEL_STRONG=gpt-5.5
+.env.example,openai,5,OpenAI,ENABLE_OPENAI=false
+.env.example,openai,7,OpenAI,MAX_OPENAI_COMPANIES_PER_RUN=5
+.env.example,openai,8,OpenAI,OPENAI_DAILY_BUDGET_USD=5
+.env.example,openai,9,OpenAI,OPENAI_MONTHLY_BUDGET_USD=50
+.env.example,dotenv_env,5,ENABLE_,ENABLE_OPENAI=false
+.env.example,dotenv_env,6,ENABLE_,ENABLE_STRONG_MODEL=false
+.env.example,api_key,1,API_KEY,OPENAI_API_KEY=your_openai_api_key_here
+requirements.txt,yfinance,5,\byfinance\b,yfinance
+requirements.txt,openai,6,\bopenai\b,openai
+scripts\apply_phase7a5_3_ui_text_polish.py,yfinance,8,\byfinance\b,- No OpenAI/API/yfinance calls.
+scripts\apply_phase7a5_3_ui_text_polish.py,yfinance,108,\byfinance\b,"ok(""No OpenAI/API/yfinance call performed"")"
+scripts\apply_phase7a5_3_ui_text_polish.py,openai,8,\bopenai\b,- No OpenAI/API/yfinance calls.
+scripts\apply_phase7a5_3_ui_text_polish.py,openai,108,\bopenai\b,"ok(""No OpenAI/API/yfinance call performed"")"
+scripts\apply_phase7a5_institutional_dashboard.py,yfinance,134,\byfinance\b,"{""Control"": ""yfinance llamado en informe"", ""Valor"": summary.get(""yfinance_called"")},"
+scripts\apply_phase7a5_institutional_dashboard.py,yfinance,203,\byfinance\b,"print(""OK   No OpenAI/API/yfinance call performed"")"
+scripts\apply_phase7a5_institutional_dashboard.py,openai,42,OpenAI,"""openai_called"": comparison_report.get(""openai_called"", False) if comparison_report else False,"
+scripts\apply_phase7a5_institutional_dashboard.py,openai,132,\bopenai\b,"{""Control"": ""OpenAI llamado en informe"", ""Valor"": summary.get(""openai_called"")},"
+scripts\apply_phase7a5_institutional_dashboard.py,openai,203,\bopenai\b,"print(""OK   No OpenAI/API/yfinance call performed"")"
+scripts\apply_phase7b8_1_exact_stage1_policy.py,yfinance,182,\byfinance\b,- yfinance called: `{summary['yfinance_called']}`
+scripts\apply_phase7b8_1_exact_stage1_policy.py,openai,180,\bopenai\b,- OpenAI called: `{summary['openai_called']}`
+scripts\apply_phase7b8_1_exact_stage1_policy.py,openai,253,OpenAI,"""openai_called"": False,"
+scripts\apply_phase7b8_1_exact_stage1_policy.py,pandas_read_csv,142,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+scripts\apply_phase7b8_guarded_stage1_policy.py,openai,213,OpenAI,"""openai_called"": False,"
+scripts\apply_phase7b8_guarded_stage1_policy.py,pandas_read_csv,122,\bread_csv\s*\(,return len(pd.read_csv(path))
+scripts\apply_phase7c3_stage2_yfinance_policy.py,yfinance,39,\byfinance\b,"PATCH_MARKER = ""# PHASE 7C.3 YFINANCE STAGE 2 POLICY APPLIED"""
+scripts\apply_phase7c3_stage2_yfinance_policy.py,yfinance,171,\byfinance\b,"return f""""""# Scout Finance — Phase 7C.3 Stage 2 yfinance policy implementation"
+scripts\apply_phase7c3_stage2_yfinance_policy.py,yfinance,196,\byfinance\b,Missing 3Y dilution from yfinance is tracked as a provider limitation and does not block clean pass by itself.
+scripts\apply_phase7c3_stage2_yfinance_policy.py,yfinance,218,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+scripts\apply_phase7c3_stage2_yfinance_policy.py,yfinance,226,\byfinance\b,"print(""Scout Finance — Phase 7C.3 guarded Stage 2 yfinance policy implementation"")"
+scripts\apply_phase7c3_stage2_yfinance_policy.py,openai,216,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+scripts\apply_phase7c3_stage2_yfinance_policy.py,openai,305,OpenAI,"""openai_called"": False,"
+scripts\apply_phase7c3_stage2_yfinance_policy.py,pandas_read_csv,148,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+scripts\apply_phase7c3_stage2_yfinance_policy.py,pandas_read_csv,158,\bread_csv\s*\(,df = pd.read_csv(path)
+scripts\apply_phase7d1_dashboard_hotfix.py,yfinance,27,\byfinance\b,"HELPER_CODE = '# >>> PHASE 7D REVALIDATED FUNNEL DASHBOARD HELPERS\n\ndef _phase7d_load_json(path):\n    import json\n    from pathlib import Path\n    p = Path(path)\n    if not p.exists():\n        return {}\n    try:\n        return json.loads(p.read_text(encoding=""utf-8""))\n    except Exception:\n        return {}\n\n\ndef _phase7d_load_csv(path):\n    from pathlib import Path\n    import pandas as pd\n    p = Path(path)\n    if not p.exists():\n        return pd.DataFrame()\n    try:\n     "
+scripts\apply_phase7d1_dashboard_hotfix.py,yfinance,146,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+scripts\apply_phase7d1_dashboard_hotfix.py,openai,144,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+scripts\apply_phase7d1_dashboard_hotfix.py,openai,208,OpenAI,"""openai_called"": False,"
+scripts\apply_phase7d1_dashboard_hotfix.py,pandas_read_csv,27,\bread_csv\s*\(,"HELPER_CODE = '# >>> PHASE 7D REVALIDATED FUNNEL DASHBOARD HELPERS\n\ndef _phase7d_load_json(path):\n    import json\n    from pathlib import Path\n    p = Path(path)\n    if not p.exists():\n        return {}\n    try:\n        return json.loads(p.read_text(encoding=""utf-8""))\n    except Exception:\n        return {}\n\n\ndef _phase7d_load_csv(path):\n    from pathlib import Path\n    import pandas as pd\n    p = Path(path)\n    if not p.exists():\n        return pd.DataFrame()\n    try:\n     "
+scripts\apply_phase7d1_dashboard_hotfix.py,dotenv_env,27,ALLOW_,"HELPER_CODE = '# >>> PHASE 7D REVALIDATED FUNNEL DASHBOARD HELPERS\n\ndef _phase7d_load_json(path):\n    import json\n    from pathlib import Path\n    p = Path(path)\n    if not p.exists():\n        return {}\n    try:\n        return json.loads(p.read_text(encoding=""utf-8""))\n    except Exception:\n        return {}\n\n\ndef _phase7d_load_csv(path):\n    from pathlib import Path\n    import pandas as pd\n    p = Path(path)\n    if not p.exists():\n        return pd.DataFrame()\n    try:\n     "
+scripts\apply_phase7d2_institutional_count_hotfix.py,yfinance,134,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+scripts\apply_phase7d2_institutional_count_hotfix.py,openai,132,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+scripts\apply_phase7d2_institutional_count_hotfix.py,openai,189,OpenAI,"""openai_called"": False,"
+scripts\apply_phase7d3_fundamental_coverage_dashboard_fix.py,yfinance,25,\byfinance\b,"NOTE_CODE = '    st.success(""Cobertura yfinance 7C.1 activa: 182 empresas enriquecidas · 147 ready Stage 2 · 35 not ready · cobertura media 83.17%."")\n    st.info(""Nota: `shares_dilution_3y` queda pendiente por limitación de yfinance y se trata como aviso de proveedor, no como bloqueo automático."")'"
+scripts\apply_phase7d3_fundamental_coverage_dashboard_fix.py,yfinance,110,\byfinance\b,"if ""Cobertura yfinance 7C.1 activa"" in block:"
+scripts\apply_phase7d3_fundamental_coverage_dashboard_fix.py,yfinance,171,\byfinance\b,| yfinance successful rows | 182 |
+scripts\apply_phase7d3_fundamental_coverage_dashboard_fix.py,yfinance,191,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+scripts\apply_phase7d3_fundamental_coverage_dashboard_fix.py,openai,189,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+scripts\apply_phase7d3_fundamental_coverage_dashboard_fix.py,openai,256,OpenAI,"""openai_called"": False,"
+scripts\apply_phase7d3b_fundamental_coverage_exact_fix.py,yfinance,107,\byfinance\b,"f""- yfinance called: `{summary['yfinance_called']}`\n"""
+scripts\apply_phase7d3b_fundamental_coverage_exact_fix.py,openai,105,\bopenai\b,"f""- OpenAI called: `{summary['openai_called']}`\n"""
+scripts\apply_phase7d3b_fundamental_coverage_exact_fix.py,openai,169,OpenAI,"""openai_called"": False,"
+scripts\apply_phase7d_dashboard_revalidated_funnel.py,yfinance,33,\byfinance\b,"HELPER_CODE = '# >>> PHASE 7D REVALIDATED FUNNEL DASHBOARD HELPERS\n\ndef _phase7d_load_json(path):\n    import json\n    from pathlib import Path\n    p = Path(path)\n    if not p.exists():\n        return {}\n    try:\n        return json.loads(p.read_text(encoding=""utf-8""))\n    except Exception:\n        return {}\n\n\ndef _phase7d_load_csv(path):\n    from pathlib import Path\n    import pandas as pd\n    p = Path(path)\n    if not p.exists():\n        return pd.DataFrame()\n    try:\n     "
+scripts\apply_phase7d_dashboard_revalidated_funnel.py,yfinance,181,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+scripts\apply_phase7d_dashboard_revalidated_funnel.py,openai,179,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+scripts\apply_phase7d_dashboard_revalidated_funnel.py,openai,253,OpenAI,"""openai_called"": False,"
+scripts\apply_phase7d_dashboard_revalidated_funnel.py,pandas_read_csv,33,\bread_csv\s*\(,"HELPER_CODE = '# >>> PHASE 7D REVALIDATED FUNNEL DASHBOARD HELPERS\n\ndef _phase7d_load_json(path):\n    import json\n    from pathlib import Path\n    p = Path(path)\n    if not p.exists():\n        return {}\n    try:\n        return json.loads(p.read_text(encoding=""utf-8""))\n    except Exception:\n        return {}\n\n\ndef _phase7d_load_csv(path):\n    from pathlib import Path\n    import pandas as pd\n    p = Path(path)\n    if not p.exists():\n        return pd.DataFrame()\n    try:\n     "
+scripts\apply_phase7d_dashboard_revalidated_funnel.py,pandas_read_csv,74,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+scripts\apply_phase7d_dashboard_revalidated_funnel.py,dotenv_env,33,ALLOW_,"HELPER_CODE = '# >>> PHASE 7D REVALIDATED FUNNEL DASHBOARD HELPERS\n\ndef _phase7d_load_json(path):\n    import json\n    from pathlib import Path\n    p = Path(path)\n    if not p.exists():\n        return {}\n    try:\n        return json.loads(p.read_text(encoding=""utf-8""))\n    except Exception:\n        return {}\n\n\ndef _phase7d_load_csv(path):\n    from pathlib import Path\n    import pandas as pd\n    p = Path(path)\n    if not p.exists():\n        return pd.DataFrame()\n    try:\n     "
+scripts\check_phase5b_global_universe.py,openai,8,\bopenai\b,This script does not call OpenAI and does not modify files.
+scripts\check_phase5c_stage1.py,openai,8,\bopenai\b,This script does not call OpenAI and does not modify files.
+scripts\check_phase5c_stage1.py,pandas_read_csv,45,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+scripts\check_phase5d_stage2.py,openai,8,\bopenai\b,This script does not call OpenAI and does not modify files.
+scripts\check_phase5d_stage2.py,pandas_read_csv,45,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+scripts\check_phase5e_stage3.py,openai,8,\bopenai\b,This script does not call OpenAI and does not modify files.
+scripts\check_phase5e_stage3.py,pandas_read_csv,47,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+scripts\check_phase5e_stage3.py,pandas_read_csv,91,\bread_csv\s*\(,"pd.read_csv(PASSED),"
+scripts\check_phase5e_stage3.py,pandas_read_csv,92,\bread_csv\s*\(,"pd.read_csv(WATCHLIST),"
+scripts\check_phase5e_stage3.py,pandas_read_csv,93,\bread_csv\s*\(,"pd.read_csv(REJECTED),"
+scripts\check_phase5e_stage3.py,pandas_read_csv,126,\bread_csv\s*\(,top100 = pd.read_csv(TOP100)
+scripts\check_phase5f_candidates.py,openai,8,\bopenai\b,This script does not call OpenAI and does not modify app.py.
+scripts\check_phase5f_candidates.py,openai,100,\bopenai\b,"print(""No OpenAI call. app.py not modified."")"
+scripts\check_phase5g_app.py,openai,50,\bopenai\b,"""No llama a OpenAI"","
+scripts\check_phase5h_app.py,openai,54,\bopenai\b,"""No ejecuta OpenAI ni modifica archivos"","
+scripts\check_phase5i_global_funnel_runner.py,openai,8,\bopenai\b,This checker does not call OpenAI and does not modify app.py.
+scripts\check_phase5i_global_funnel_runner.py,openai,53,OpenAI,"if summary.get(""openai_called"") is False:"
+scripts\check_phase5i_global_funnel_runner.py,openai,54,\bopenai\b,"ok(""OpenAI was not called"")"
+scripts\check_phase5i_global_funnel_runner.py,openai,56,\bopenai\b,"fail(""Summary indicates OpenAI was called"")"
+scripts\check_phase6a_real_universe.py,pandas_read_csv,68,\bread_csv\s*\(,df = pd.read_csv(GLOBAL_UNIVERSE)
+scripts\check_phase6b_fundamental_coverage.py,openai,9,\bopenai\b,This checker does not call OpenAI and does not call external APIs.
+scripts\check_phase6b_fundamental_coverage.py,openai,57,OpenAI,"if report.get(""openai_called"") is False:"
+scripts\check_phase6b_fundamental_coverage.py,openai,58,\bopenai\b,"ok(""OpenAI was not called"")"
+scripts\check_phase6b_fundamental_coverage.py,openai,60,\bopenai\b,"fail(""Report indicates OpenAI was called"")"
+scripts\check_phase6b_fundamental_coverage.py,pandas_read_csv,69,\bread_csv\s*\(,coverage_df = pd.read_csv(COVERAGE_CSV)
+scripts\check_phase6b_fundamental_coverage.py,pandas_read_csv,70,\bread_csv\s*\(,missing_df = pd.read_csv(MISSING_BY_COMPANY)
+scripts\check_phase6c_fundamentals_enrichment.py,openai,76,OpenAI,"if summary.get(""openai_called"") is False:"
+scripts\check_phase6c_fundamentals_enrichment.py,openai,77,\bopenai\b,"ok(""OpenAI was not called"")"
+scripts\check_phase6c_fundamentals_enrichment.py,openai,79,\bopenai\b,"fail(""Summary indicates OpenAI was called"")"
+scripts\check_phase6c_fundamentals_enrichment.py,pandas_read_csv,82,\bread_csv\s*\(,df = pd.read_csv(ENRICHED)
+scripts\check_phase6d_stage2_enriched.py,openai,150,\bopenai\b,"print(""No API call. No OpenAI call. app.py not modified."")"
+scripts\check_phase6d_stage2_enriched.py,pandas_read_csv,59,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+scripts\check_phase6d_stage2_enriched.py,pandas_read_csv,80,\bread_csv\s*\(,enriched_df = pd.read_csv(STAGE1_PASSED_ENRICHED)
+scripts\check_phase6e_clean_global_runner.py,openai,71,OpenAI,"if summary.get(""openai_called"") is False:"
+scripts\check_phase6e_clean_global_runner.py,openai,72,\bopenai\b,"ok(""OpenAI was not called"")"
+scripts\check_phase6e_clean_global_runner.py,openai,74,\bopenai\b,"fail(""Summary indicates OpenAI was called"")"
+scripts\check_phase6e_clean_global_runner.py,pandas_read_csv,93,\bread_csv\s*\(,stage1_df = pd.read_csv(STAGE1_PASSED)
+scripts\check_phase6e_clean_global_runner.py,pandas_read_csv,94,\bread_csv\s*\(,enriched_df = pd.read_csv(STAGE1_PASSED_ENRICHED)
+scripts\check_phase7a1_free_us_universe.py,openai,64,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7a1_free_us_universe.py,pandas_read_csv,76,\bread_csv\s*\(,df = pd.read_csv(OUTPUT)
+scripts\check_phase7a2_market_data_enrichment.py,yfinance,117,\byfinance\b,"warn(""No rows have complete core market data. Check yfinance availability or ticker compatibility."")"
+scripts\check_phase7a2_market_data_enrichment.py,openai,78,OpenAI,"if summary.get(""openai_called"") is False:"
+scripts\check_phase7a2_market_data_enrichment.py,openai,79,\bopenai\b,"ok(""OpenAI was not called"")"
+scripts\check_phase7a2_market_data_enrichment.py,openai,81,\bopenai\b,"fail(""Summary indicates OpenAI was called"")"
+scripts\check_phase7a2_market_data_enrichment.py,pandas_read_csv,96,\bread_csv\s*\(,df = pd.read_csv(OUTPUT)
+scripts\check_phase7a3_institutional_universe_cleaning.py,openai,95,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7a3_institutional_universe_cleaning.py,pandas_read_csv,106,\bread_csv\s*\(,clean_df = pd.read_csv(CLEAN)
+scripts\check_phase7a3_institutional_universe_cleaning.py,pandas_read_csv,107,\bread_csv\s*\(,excluded_df = pd.read_csv(EXCLUDED)
+scripts\check_phase7a4_institutional_cleaning_comparison.py,yfinance,53,\byfinance\b,"(""yfinance_called"", ""yfinance was not called by this report""),"
+scripts\check_phase7a4_institutional_cleaning_comparison.py,openai,51,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7a4_institutional_cleaning_comparison.py,pandas_read_csv,64,\bread_csv\s*\(,metrics_df = pd.read_csv(COMPARISON_CSV)
+scripts\check_phase7a5_1_institutional_dashboard.py,yfinance,81,\byfinance\b,"ok(""Comparison report confirms yfinance was not called by report"")"
+scripts\check_phase7a5_1_institutional_dashboard.py,openai,76,OpenAI,"if report.get(""openai_called"") is False:"
+scripts\check_phase7a5_1_institutional_dashboard.py,openai,77,\bopenai\b,"ok(""Comparison report confirms OpenAI was not called"")"
+scripts\check_phase7a5_2_institutional_dashboard.py,yfinance,74,\byfinance\b,"ok(""Comparison report confirms yfinance was not called by report"")"
+scripts\check_phase7a5_2_institutional_dashboard.py,openai,69,OpenAI,"if report.get(""openai_called"") is False:"
+scripts\check_phase7a5_2_institutional_dashboard.py,openai,70,\bopenai\b,"ok(""Comparison report confirms OpenAI was not called"")"
+scripts\check_phase7a5_institutional_dashboard.py,yfinance,83,\byfinance\b,"ok(""Comparison report confirms yfinance was not called by report"")"
+scripts\check_phase7a5_institutional_dashboard.py,openai,78,OpenAI,"if report.get(""openai_called"") is False:"
+scripts\check_phase7a5_institutional_dashboard.py,openai,79,\bopenai\b,"ok(""Comparison report confirms OpenAI was not called"")"
+scripts\check_phase7a6_clean_500_stability.py,yfinance,69,\byfinance\b,"ok(""yfinance call acknowledged for free market-data enrichment"")"
+scripts\check_phase7a6_clean_500_stability.py,yfinance,71,\byfinance\b,"warn(""Summary does not acknowledge yfinance call"")"
+scripts\check_phase7a6_clean_500_stability.py,openai,56,OpenAI,"if summary.get(""openai_called"") is False:"
+scripts\check_phase7a6_clean_500_stability.py,openai,57,\bopenai\b,"ok(""OpenAI was not called"")"
+scripts\check_phase7a6_clean_500_stability.py,openai,59,\bopenai\b,"fail(""Summary indicates OpenAI was called"")"
+scripts\check_phase7a6_clean_500_stability.py,pandas_read_csv,85,\bread_csv\s*\(,enriched_df = pd.read_csv(ENRICHED)
+scripts\check_phase7a_real_universe_pilot.py,openai,72,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7a_real_universe_pilot.py,pandas_read_csv,35,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+scripts\check_phase7b1_policy_simulation.py,yfinance,72,\byfinance\b,"(""yfinance_called"", ""yfinance was not called""),"
+scripts\check_phase7b1_policy_simulation.py,openai,70,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7b1_policy_simulation.py,pandas_read_csv,83,\bread_csv\s*\(,summary_df = pd.read_csv(SCENARIO_SUMMARY_CSV)
+scripts\check_phase7b1_policy_simulation.py,pandas_read_csv,84,\bread_csv\s*\(,decisions_df = pd.read_csv(SCENARIO_DECISIONS_CSV)
+scripts\check_phase7b2_simulator_alignment.py,yfinance,69,\byfinance\b,"(""yfinance_called"", ""yfinance was not called""),"
+scripts\check_phase7b2_simulator_alignment.py,openai,67,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7b2_simulator_alignment.py,pandas_read_csv,90,\bread_csv\s*\(,mismatches = pd.read_csv(MISMATCHES_CSV)
+scripts\check_phase7b3_aligned_simulator.py,yfinance,68,\byfinance\b,"(""yfinance_called"", ""yfinance was not called""),"
+scripts\check_phase7b3_aligned_simulator.py,openai,66,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7b3_aligned_simulator.py,pandas_read_csv,79,\bread_csv\s*\(,summary = pd.read_csv(SUMMARY_CSV)
+scripts\check_phase7b4_final_simulator.py,yfinance,52,\byfinance\b,"(""yfinance_called"", ""yfinance was not called""),"
+scripts\check_phase7b4_final_simulator.py,openai,50,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7b4_final_simulator.py,pandas_read_csv,63,\bread_csv\s*\(,summary = pd.read_csv(SUMMARY_CSV)
+scripts\check_phase7b5_candidate_policy.py,yfinance,62,\byfinance\b,"(""yfinance_called"", ""yfinance was not called""),"
+scripts\check_phase7b5_candidate_policy.py,openai,60,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7b5_candidate_policy.py,pandas_read_csv,73,\bread_csv\s*\(,comparison = pd.read_csv(COMPARISON_CSV)
+scripts\check_phase7b5_candidate_policy.py,pandas_read_csv,74,\bread_csv\s*\(,decision = pd.read_csv(DECISION_CSV)
+scripts\check_phase7b6_balanced_dry_run.py,yfinance,53,\byfinance\b,"(""yfinance_called"", ""yfinance was not called""),"
+scripts\check_phase7b6_balanced_dry_run.py,openai,51,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7b6_balanced_dry_run.py,pandas_read_csv,65,\bread_csv\s*\(,passed = pd.read_csv(PASSED_OUT)
+scripts\check_phase7b6_balanced_dry_run.py,pandas_read_csv,66,\bread_csv\s*\(,watchlist = pd.read_csv(WATCHLIST_OUT)
+scripts\check_phase7b6_balanced_dry_run.py,pandas_read_csv,67,\bread_csv\s*\(,rejected = pd.read_csv(REJECTED_OUT)
+scripts\check_phase7b6_balanced_dry_run.py,pandas_read_csv,68,\bread_csv\s*\(,transitions = pd.read_csv(TRANSITIONS_OUT)
+scripts\check_phase7b7_impact_approval.py,yfinance,69,\byfinance\b,"(""yfinance_called"", ""yfinance was not called""),"
+scripts\check_phase7b7_impact_approval.py,openai,67,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7b7_impact_approval.py,pandas_read_csv,81,\bread_csv\s*\(,transition_summary = pd.read_csv(TRANSITION_SUMMARY_CSV)
+scripts\check_phase7b7_impact_approval.py,pandas_read_csv,82,\bread_csv\s*\(,approval = pd.read_csv(APPROVAL_CSV)
+scripts\check_phase7b8_1_exact_implementation.py,yfinance,51,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7b8_1_exact_implementation.py,openai,49,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7b8_guarded_implementation.py,yfinance,59,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7b8_guarded_implementation.py,openai,57,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7b9_stage1_balanced_closure.py,yfinance,80,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7b9_stage1_balanced_closure.py,openai,78,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7b9_stage1_balanced_closure.py,pandas_read_csv,59,\bread_csv\s*\(,evidence = pd.read_csv(EVIDENCE)
+scripts\check_phase7b_stage1_diagnostic.py,yfinance,74,\byfinance\b,"(""yfinance_called"", ""yfinance was not called""),"
+scripts\check_phase7b_stage1_diagnostic.py,openai,72,\bopenai\b,"(""openai_called"", ""OpenAI was not called""),"
+scripts\check_phase7b_stage1_diagnostic.py,pandas_read_csv,96,\bread_csv\s*\(,buckets = pd.read_csv(BUCKETS_CSV)
+scripts\check_phase7b_stage1_diagnostic.py,pandas_read_csv,104,\bread_csv\s*\(,reasons = pd.read_csv(REJECTION_REASONS_CSV)
+scripts\check_phase7c1_yfinance_fundamentals.py,yfinance,38,\byfinance\b,"print(""Scout Finance — Phase 7C.1 yfinance fundamentals enrichment checker"")"
+scripts\check_phase7c1_yfinance_fundamentals.py,yfinance,87,\byfinance\b,"(""yfinance_called"", True, ""yfinance was called""),"
+scripts\check_phase7c1_yfinance_fundamentals.py,yfinance,107,\byfinance\b,"print(f""yfinance successful rows: {summary.get('yf_success_rows')}"")"
+scripts\check_phase7c1_yfinance_fundamentals.py,yfinance,108,\byfinance\b,"print(f""yfinance failed rows: {summary.get('yf_failed_rows')}"")"
+scripts\check_phase7c1_yfinance_fundamentals.py,yfinance,116,\byfinance\b,"ok(""Phase 7C.1 yfinance fundamentals enrichment is valid"")"
+scripts\check_phase7c1_yfinance_fundamentals.py,openai,85,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7c1_yfinance_fundamentals.py,pandas_read_csv,59,\bread_csv\s*\(,stage1 = pd.read_csv(STAGE1_PASSED)
+scripts\check_phase7c1_yfinance_fundamentals.py,pandas_read_csv,60,\bread_csv\s*\(,enriched = pd.read_csv(ENRICHED_PATH)
+scripts\check_phase7c1_yfinance_fundamentals.py,pandas_read_csv,61,\bread_csv\s*\(,raw = pd.read_csv(RAW_FUNDAMENTALS)
+scripts\check_phase7c1_yfinance_fundamentals.py,pandas_read_csv,97,\bread_csv\s*\(,coverage = pd.read_csv(COVERAGE_PATH)
+scripts\check_phase7c2_stage2_yfinance_policy.py,yfinance,30,\byfinance\b,"print(""Scout Finance — Phase 7C.2 Stage 2 yfinance policy dry-run checker"")"
+scripts\check_phase7c2_stage2_yfinance_policy.py,yfinance,85,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called by dry-run""),"
+scripts\check_phase7c2_stage2_yfinance_policy.py,yfinance,107,\byfinance\b,"ok(""Phase 7C.2 Stage 2 yfinance policy dry-run is valid"")"
+scripts\check_phase7c2_stage2_yfinance_policy.py,openai,83,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7c2_stage2_yfinance_policy.py,pandas_read_csv,51,\bread_csv\s*\(,input_df = pd.read_csv(INPUT_PATH)
+scripts\check_phase7c2_stage2_yfinance_policy.py,pandas_read_csv,52,\bread_csv\s*\(,results_df = pd.read_csv(RESULTS_PATH)
+scripts\check_phase7c2_stage2_yfinance_policy.py,pandas_read_csv,53,\bread_csv\s*\(,reasons_df = pd.read_csv(REASONS_PATH)
+scripts\check_phase7c2_v2_stage2_yfinance_policy.py,yfinance,33,\byfinance\b,"print(""Scout Finance — Phase 7C.2 v2 Stage 2 yfinance policy dry-run checker"")"
+scripts\check_phase7c2_v2_stage2_yfinance_policy.py,yfinance,105,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called by dry-run""),"
+scripts\check_phase7c2_v2_stage2_yfinance_policy.py,yfinance,127,\byfinance\b,"ok(""Phase 7C.2 v2 Stage 2 yfinance policy dry-run is valid"")"
+scripts\check_phase7c2_v2_stage2_yfinance_policy.py,openai,103,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7c2_v2_stage2_yfinance_policy.py,pandas_read_csv,59,\bread_csv\s*\(,input_df = pd.read_csv(INPUT_PATH)
+scripts\check_phase7c2_v2_stage2_yfinance_policy.py,pandas_read_csv,60,\bread_csv\s*\(,results_df = pd.read_csv(RESULTS_PATH)
+scripts\check_phase7c2_v2_stage2_yfinance_policy.py,pandas_read_csv,61,\bread_csv\s*\(,reasons_df = pd.read_csv(REASONS_PATH)
+scripts\check_phase7c3_stage2_yfinance_policy.py,yfinance,32,\byfinance\b,"print(""Scout Finance — Phase 7C.3 Stage 2 yfinance policy implementation checker"")"
+scripts\check_phase7c3_stage2_yfinance_policy.py,yfinance,67,\byfinance\b,"""# PHASE 7C.3 YFINANCE STAGE 2 POLICY APPLIED"","
+scripts\check_phase7c3_stage2_yfinance_policy.py,yfinance,93,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called by implementation script""),"
+scripts\check_phase7c3_stage2_yfinance_policy.py,yfinance,107,\byfinance\b,"ok(""Phase 7C.3 Stage 2 yfinance policy implementation is valid"")"
+scripts\check_phase7c3_stage2_yfinance_policy.py,openai,91,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7c3_stage2_yfinance_policy.py,pandas_read_csv,77,\bread_csv\s*\(,log = pd.read_csv(LOG_PATH)
+scripts\check_phase7c4_pipeline_revalidation.py,yfinance,111,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7c4_pipeline_revalidation.py,openai,109,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7c4_pipeline_revalidation.py,pandas_read_csv,81,\bread_csv\s*\(,evidence = pd.read_csv(EVIDENCE_PATH)
+scripts\check_phase7c4_pipeline_revalidation.py,pandas_read_csv,96,\bread_csv\s*\(,top = pd.read_csv(TOP_CANDIDATES_PATH)
+scripts\check_phase7d1_dashboard_hotfix.py,yfinance,95,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7d1_dashboard_hotfix.py,openai,93,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7d2_institutional_count_hotfix.py,yfinance,99,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7d2_institutional_count_hotfix.py,openai,97,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7d3_fundamental_coverage_dashboard_fix.py,yfinance,23,\byfinance\b,"""Cobertura yfinance 7C.1 activa"","
+scripts\check_phase7d3_fundamental_coverage_dashboard_fix.py,yfinance,98,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7d3_fundamental_coverage_dashboard_fix.py,openai,96,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7d3b_fundamental_coverage_exact_fix.py,yfinance,104,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7d3b_fundamental_coverage_exact_fix.py,openai,102,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7d_dashboard_revalidated_funnel.py,yfinance,93,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7d_dashboard_revalidated_funnel.py,openai,91,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7e1_v07_checkpoint_marker_fix.py,yfinance,98,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7e1_v07_checkpoint_marker_fix.py,openai,96,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7e1_v07_checkpoint_marker_fix.py,pandas_read_csv,83,\bread_csv\s*\(,evidence = pd.read_csv(EVIDENCE_PATH)
+scripts\check_phase7e_v07_release_checkpoint.py,yfinance,98,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7e_v07_release_checkpoint.py,openai,96,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7e_v07_release_checkpoint.py,pandas_read_csv,83,\bread_csv\s*\(,evidence = pd.read_csv(EVIDENCE_PATH)
+scripts\check_phase7f1_release_v07_integrity.py,yfinance,84,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7f1_release_v07_integrity.py,openai,82,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7f1_release_v07_integrity.py,pandas_read_csv,70,\bread_csv\s*\(,audit = pd.read_csv(FILES_AUDIT_PATH)
+scripts\check_phase7f1b_release_self_evidence.py,yfinance,85,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7f1b_release_self_evidence.py,openai,83,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7f_release_v07_package.py,yfinance,147,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7f_release_v07_package.py,openai,145,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase7f_release_v07_package.py,pandas_read_csv,59,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+scripts\check_phase7g_freeze_final_v07.py,yfinance,117,\byfinance\b,"(""yfinance_called"", False, ""yfinance was not called""),"
+scripts\check_phase7g_freeze_final_v07.py,openai,115,\bopenai\b,"(""openai_called"", False, ""OpenAI was not called""),"
+scripts\check_phase8a_dashboard_final_design.py,openai,54,OpenAI,"for key in [""openai_called"", ""api_called"", ""yfinance_called"", ""app_modified"", ""filters_modified"", ""pipeline_recalculated"", ""release_modified""]:"
+scripts\check_phase8b_ai_equity_research_memo_blueprint.py,openai,67,OpenAI,"for key in [""openai_called"",""api_called"",""yfinance_called"",""app_modified"",""filters_modified"",""pipeline_recalculated"",""release_modified""]:"
+scripts\check_phase8c_deterministic_research_modules.py,openai,101,OpenAI,"for control in [""openai_called"", ""api_called"", ""yfinance_called"", ""pipeline_recalculated""]:"
+scripts\check_phase8c_deterministic_research_modules.py,openai,150,\bopenai\b,"""OpenAI called"","
+scripts\check_phase8d_candidate_source_binding.py,openai,76,OpenAI,"for key in [""openai_called"", ""api_called"", ""yfinance_called"", ""pipeline_recalculated"", ""app_modified"", ""filters_modified"", ""release_modified""]:"
+scripts\check_phase8d_candidate_source_binding.py,openai,129,\bopenai\b,"for needle in [""Phase 8D"", ""Candidate source"", ""OpenAI called"", ""data_insufficient"", ""8E""]:"
+scripts\check_phase8e_equity_research_memo_persistence.py,openai,72,OpenAI,"for key in [""openai_called"", ""api_called"", ""yfinance_called"", ""pipeline_recalculated"", ""app_modified"", ""filters_modified"", ""release_modified""]:"
+scripts\check_phase8e_equity_research_memo_persistence.py,openai,125,\bopenai\b,"for phrase in [""Phase 8E"", ""equity_research_memos"", ""No inventar datos"", ""OpenAI called"", ""Objective data"", ""AI interpretation"", ""8F""]:"
+scripts\check_phase8e_equity_research_memo_persistence.py,sqlite,5,\bsqlite3\b,import sqlite3
+scripts\check_phase8e_equity_research_memo_persistence.py,sqlite,92,\bsqlite3\b,with sqlite3.connect(db_path) as conn:
+scripts\check_phase8f_research_memo_export_report_layer.py,openai,77,OpenAI,"""openai_called"","
+scripts\check_phase8f_research_memo_export_report_layer.py,openai,114,\bopenai\b,"for phrase in [""Equity Research Memo"", ""Objective data"", ""AI interpretation"", ""Data gaps"", ""OpenAI called: False""]:"
+scripts\check_phase8g_optional_ai_interpretation_gate.py,openai,83,OpenAI,"for key in [""openai_called"", ""api_called"", ""yfinance_called"", ""pipeline_recalculated"", ""app_modified"", ""filters_modified"", ""release_modified""]:"
+scripts\check_phase8g_optional_ai_interpretation_gate.py,openai,115,OpenAI,"for field in [""ticker"", ""company_name"", ""ranking_position"", ""memo_status"", ""ai_interpretation_status"", ""estimated_cost"", ""model_used"", ""openai_called""]:"
+scripts\check_phase8g_optional_ai_interpretation_gate.py,openai,125,OpenAI,"if row.get(""openai_called"") is not False:"
+scripts\check_phase8g_optional_ai_interpretation_gate.py,openai,126,OpenAI,"fail(f""Memo openai_called is not false: {ticker}"")"
+scripts\check_phase8g_optional_ai_interpretation_gate.py,openai,127,OpenAI,"ok(f""Memo openai_called OK: {ticker}"")"
+scripts\check_phase8g_optional_ai_interpretation_gate.py,openai,145,\bopenai\b,"""OpenAI called: False"","
+scripts\check_phase8g_optional_ai_interpretation_gate.py,sqlite,5,\bsqlite3\b,import sqlite3
+scripts\check_phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,67,OpenAI,"""openai_called"","
+scripts\check_phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,96,OpenAI,"""openai_called"","
+scripts\check_phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,103,OpenAI,"require(pkg.get(""openai_called"") is False, f""Package openai_called OK: {ticker}"")"
+scripts\check_phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,108,OpenAI,"require(pkg[""dry_run_preview""].get(""openai_called"") is False, f""Dry-run openai_called OK: {ticker}"")"
+scripts\check_phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,118,\bopenai\b,"""OpenAI called: False"","
+scripts\check_phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,137,OpenAI,"require(report.get(""openai_called"") is False, f""Audit openai_called OK: {ticker}"")"
+scripts\check_phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,144,\bopenai\b,"""OpenAI called: False"","
+scripts\check_phase8i_optional_ai_execution_sandbox.py,openai,72,OpenAI,"""openai_called"","
+scripts\check_phase8i_optional_ai_execution_sandbox.py,openai,112,OpenAI,"""openai_called"","
+scripts\check_phase8i_optional_ai_execution_sandbox.py,openai,127,OpenAI,"require(item.get(""openai_called"") is False, f""Sandbox openai_called OK: {ticker}"")"
+scripts\check_phase8i_optional_ai_execution_sandbox.py,openai,142,\bopenai\b,"""OpenAI called: False"","
+scripts\check_phase8i_optional_ai_execution_sandbox.py,openai,164,OpenAI,"require(entry.get(""openai_called"") is False, f""Audit openai_called OK: {ticker}"")"
+scripts\check_phase8i_optional_ai_execution_sandbox.py,openai,171,\bopenai\b,"""OpenAI called: False"","
+scripts\check_phase8j_v08_candidate_audit.py,openai,70,OpenAI,"""openai_called"","
+scripts\check_phase8j_v08_candidate_audit.py,openai,103,OpenAI,"for flag in [""openai_called"", ""api_called"", ""yfinance_called"", ""pipeline_recalculated"", ""app_modified"", ""filters_modified"", ""release_modified""]:"
+scripts\check_phase8j_v08_candidate_audit.py,openai,127,\bopenai\b,"""OpenAI called: False"","
+scripts\check_phase9a_data_layer_external_calls_audit.py,yfinance,30,\byfinance\b,"for t in ['Phase 9A','DataLayer','External Calls','OpenAI called: False','yfinance called: False','Pipeline recalculated: False','Phase 9B']: req(t in rep,f'Report contains: {t}')"
+scripts\check_phase9a_data_layer_external_calls_audit.py,openai,18,OpenAI,"for k in ['openai_called','api_called','yfinance_called','pipeline_recalculated','app_modified','filters_modified','release_modified']: req(s.get(k) is False,f'Control OK: {k}=False')"
+scripts\check_phase9a_data_layer_external_calls_audit.py,openai,28,OpenAI,"for p in ['src/research_memo.py','src/openai_client.py','src/phase8g_optional_ai_interpretation_gate.py','outputs/scouting','releases/Scout_Finance_v0.8.0_candidate_FREEZE.zip']: req(p in exp,f'Expected path audited: {p}')"
+scripts\check_phase9a_data_layer_external_calls_audit.py,openai,30,\bopenai\b,"for t in ['Phase 9A','DataLayer','External Calls','OpenAI called: False','yfinance called: False','Pipeline recalculated: False','Phase 9B']: req(t in rep,f'Report contains: {t}')"
+scripts\check_release_v0_5.py,openai,8,\bopenai\b,This checker does not call OpenAI and does not modify app.py.
+scripts\check_release_v0_5.py,openai,115,OpenAI,"if manifest.get(""openai_called"") is False:"
+scripts\check_release_v0_5.py,openai,116,\bopenai\b,"ok(""Manifest confirms OpenAI was not called"")"
+scripts\check_release_v0_5.py,openai,118,\bopenai\b,"fail(""Manifest indicates OpenAI was called"")"
+scripts\check_release_v0_6.py,openai,85,OpenAI,"if manifest.get(""openai_called"") is False:"
+scripts\check_release_v0_6.py,openai,86,\bopenai\b,"ok(""Manifest confirms OpenAI was not called"")"
+scripts\check_release_v0_6.py,openai,88,\bopenai\b,"fail(""Manifest indicates OpenAI was called"")"
+scripts\check_v08_candidate_freeze.py,yfinance,119,\byfinance\b,"""yfinance called: False"","
+scripts\check_v08_candidate_freeze.py,openai,65,OpenAI,"""openai_called"","
+scripts\check_v08_candidate_freeze.py,openai,118,\bopenai\b,"""OpenAI called: False"","
+scripts\create_release_v0_5.py,openai,14,\bopenai\b,This script does not call OpenAI.
+scripts\create_release_v0_5.py,openai,180,OpenAI,"""openai_called"": False,"
+scripts\create_release_v0_5.py,openai,194,\bopenai\b,"""The script does not call OpenAI and does not run the funnel."","
+scripts\create_release_v0_5.py,openai,211,\bopenai\b,"print(f""OpenAI called: {manifest.get('openai_called')}"")"
+scripts\create_release_v0_6.py,openai,123,OpenAI,"""openai_called"": False,"
+scripts\create_release_v0_6.py,openai,147,\bopenai\b,"print(f""OpenAI called: {manifest.get('openai_called')}"")"
+scripts\hotfix_phase7a5_2_dashboard.py,yfinance,13,\byfinance\b,"PHASE7A5_FUNCTIONS = '\ndef _sf7a5_build_institutional_universe_summary() -> dict:\n    scouting_dir = _sf5g_project_root() / ""outputs"" / ""scouting""\n\n    cleaning_summary = _sf5h_read_json(scouting_dir / ""universe_cleaning_summary.json"")\n    comparison_report = _sf5h_read_json(scouting_dir / ""institutional_cleaning_comparison_report.json"")\n\n    metrics = comparison_report.get(""metrics"", {}) if comparison_report else {}\n    pre = metrics.get(""pre_cleaning"", {})\n    post = metrics.get(""post"
+scripts\hotfix_phase7a5_2_dashboard.py,yfinance,95,\byfinance\b,"print(""OK   No OpenAI/API/yfinance call performed"")"
+scripts\hotfix_phase7a5_2_dashboard.py,openai,13,\bopenai\b,"PHASE7A5_FUNCTIONS = '\ndef _sf7a5_build_institutional_universe_summary() -> dict:\n    scouting_dir = _sf5g_project_root() / ""outputs"" / ""scouting""\n\n    cleaning_summary = _sf5h_read_json(scouting_dir / ""universe_cleaning_summary.json"")\n    comparison_report = _sf5h_read_json(scouting_dir / ""institutional_cleaning_comparison_report.json"")\n\n    metrics = comparison_report.get(""metrics"", {}) if comparison_report else {}\n    pre = metrics.get(""pre_cleaning"", {})\n    post = metrics.get(""post"
+scripts\hotfix_phase7a5_2_dashboard.py,openai,95,\bopenai\b,"print(""OK   No OpenAI/API/yfinance call performed"")"
+src\align_stage1_simulator.py,yfinance,14,\byfinance\b,- does not call yfinance;
+src\align_stage1_simulator.py,yfinance,344,\byfinance\b,"f""- yfinance called: `{report.get('yfinance_called')}`"","
+src\align_stage1_simulator.py,openai,12,\bopenai\b,- does not call OpenAI;
+src\align_stage1_simulator.py,openai,272,OpenAI,"""openai_called"": False,"
+src\align_stage1_simulator.py,openai,342,\bopenai\b,"f""- OpenAI called: `{report.get('openai_called')}`"","
+src\align_stage1_simulator.py,pandas_read_csv,59,\bread_csv\s*\(,return pd.read_csv(path)
+src\analysis_history.py,openai,6,\bopenai\b,comparison tables without calling OpenAI.
+src\auth.py,dotenv_env,26,load_dotenv,from dotenv import load_dotenv
+src\auth.py,dotenv_env,29,load_dotenv,load_dotenv()
+src\auth.py,dotenv_env,48,os\.getenv\s*\(,"password = os.getenv(""APP_PASSWORD"")"
+src\cache.py,yfinance,18,\byfinance\b,- yfinance integration changes.
+src\cache.py,pandas_read_csv,261,\bread_csv\s*\(,"return pd.read_csv(paths[""csv""])"
+src\clean_universe_institutional.py,openai,20,\bopenai\b,- does not call OpenAI;
+src\clean_universe_institutional.py,openai,436,OpenAI,"""openai_called"": False,"
+src\clean_universe_institutional.py,openai,461,\bopenai\b,"print(f""OpenAI called: {summary.get('openai_called')}"")"
+src\clean_universe_institutional.py,pandas_read_csv,333,\bread_csv\s*\(,raw = pd.read_csv(input_path)
+src\close_phase7c4_pipeline_revalidation.py,yfinance,240,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+src\close_phase7c4_pipeline_revalidation.py,yfinance,329,\byfinance\b,"""stage2"": ""yfinance-aligned provider-limitation policy"","
+src\close_phase7c4_pipeline_revalidation.py,openai,238,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+src\close_phase7c4_pipeline_revalidation.py,openai,367,OpenAI,"""openai_called"": False,"
+src\close_phase7c4_pipeline_revalidation.py,pandas_read_csv,88,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+src\close_phase7c4_pipeline_revalidation.py,pandas_read_csv,141,\bread_csv\s*\(,df = pd.read_csv(candidates)
+src\close_phase7e1_v07_checkpoint_marker_fix.py,yfinance,170,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+src\close_phase7e1_v07_checkpoint_marker_fix.py,yfinance,179,\byfinance\b,Pipeline: institutional universe → Stage 1 Balanced → Stage 2 yfinance-aligned → Stage 3 scoring.
+src\close_phase7e1_v07_checkpoint_marker_fix.py,openai,168,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+src\close_phase7e1_v07_checkpoint_marker_fix.py,openai,253,OpenAI,"""openai_called"": False,"
+src\close_phase7e1_v07_checkpoint_marker_fix.py,pandas_read_csv,73,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+src\close_phase7e_v07_release_checkpoint.py,yfinance,142,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+src\close_phase7e_v07_release_checkpoint.py,yfinance,151,\byfinance\b,Pipeline: institutional universe → Stage 1 Balanced → Stage 2 yfinance-aligned → Stage 3 scoring.
+src\close_phase7e_v07_release_checkpoint.py,openai,140,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+src\close_phase7e_v07_release_checkpoint.py,openai,221,OpenAI,"""openai_called"": False,"
+src\close_phase7e_v07_release_checkpoint.py,pandas_read_csv,68,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+src\close_stage1_balanced_policy.py,yfinance,113,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+src\close_stage1_balanced_policy.py,openai,111,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+src\close_stage1_balanced_policy.py,openai,164,OpenAI,"""openai_called"": False,"
+src\close_stage1_balanced_policy.py,pandas_read_csv,52,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+src\company_research_report.py,openai,8,OpenAI,- Stores full JSON in openai_analysis.raw_response_json.
+src\company_research_report.py,openai,9,OpenAI,- Maps key fields into existing openai_analysis columns.
+src\company_research_report.py,openai,30,OpenAI,from src.openai_client import (
+src\company_research_report.py,openai,32,OpenAI,"get_openai_client,"
+src\company_research_report.py,openai,33,OpenAI,"get_openai_status,"
+src\company_research_report.py,openai,37,OpenAI,"validate_openai_ready,"
+src\company_research_report.py,openai,39,OpenAI,from src.openai_persistence import (
+src\company_research_report.py,openai,41,OpenAI,"insert_openai_analysis,"
+src\company_research_report.py,openai,42,OpenAI,"summarize_persisted_openai_analysis,"
+src\company_research_report.py,openai,43,OpenAI,"update_run_openai_count,"
+src\company_research_report.py,openai,45,OpenAI,"from src.results import get_latest_run_id, get_top_signals_enriched, load_openai_analysis"
+src\company_research_report.py,openai,165,\bopenai\b,Safely read usage fields from OpenAI SDK response objects or dictionaries.
+src\company_research_report.py,openai,268,\bopenai\b,Build the final OpenAI input text.
+src\company_research_report.py,openai,281,\bopenai\b,Parse OpenAI response as JSON.
+src\company_research_report.py,openai,288,\bopenai\b,"""OpenAI response was not valid JSON. """
+src\company_research_report.py,openai,293,\bopenai\b,"raise ValueError(""OpenAI response JSON must be an object."")"
+src\company_research_report.py,openai,389,OpenAI,def report_v2_to_openai_analysis_payload(
+src\company_research_report.py,openai,399,OpenAI,Map valid Company Research Report v0.2 to existing openai_analysis columns.
+src\company_research_report.py,openai,466,OpenAI,validate_openai_ready(use_strong_model=False)
+src\company_research_report.py,openai,488,OpenAI,client = get_openai_client(use_strong_model=False)
+src\company_research_report.py,openai,510,OpenAI,"input_cost_per_1m=_env_float(""OPENAI_INPUT_COST_PER_1M"", 0.0),"
+src\company_research_report.py,openai,511,OpenAI,"output_cost_per_1m=_env_float(""OPENAI_OUTPUT_COST_PER_1M"", 0.0),"
+src\company_research_report.py,openai,537,OpenAI,payload = report_v2_to_openai_analysis_payload(
+src\company_research_report.py,openai,550,OpenAI,"analysis_id = insert_openai_analysis(conn, payload)"
+src\company_research_report.py,openai,552,OpenAI,"openai_analyzed_companies = update_run_openai_count(conn, run_id)"
+src\company_research_report.py,openai,567,OpenAI,"""openai_analyzed_companies"": openai_analyzed_companies,"
+src\company_research_report.py,openai,605,OpenAI,status = get_openai_status()
+src\company_research_report.py,openai,629,OpenAI,persisted_summary = summarize_persisted_openai_analysis(
+src\company_research_report.py,openai,637,\bopenai\b,"print(""\nLatest OpenAI analysis rows:"")"
+src\company_research_report.py,openai,638,OpenAI,"analysis_df = load_openai_analysis(run_id=summary[""run_id""], mode=mode)"
+src\company_research_report.py,openai,640,\bopenai\b,"print(""No OpenAI analysis rows found."")"
+src\company_research_report.py,dotenv_env,115,os\.getenv\s*\(,value = os.getenv(name)
+src\company_research_report.py,api_key,394,TOKEN,"input_tokens: int,"
+src\company_research_report.py,api_key,395,TOKEN,"output_tokens: int,"
+src\company_research_report.py,api_key,451,TOKEN,"""input_tokens"": input_tokens,"
+src\company_research_report.py,api_key,452,TOKEN,"""output_tokens"": output_tokens,"
+src\company_research_report.py,api_key,504,TOKEN,"input_tokens = _get_usage_value(usage, ""input_tokens"", ""prompt_tokens"")"
+src\company_research_report.py,api_key,505,TOKEN,"output_tokens = _get_usage_value(usage, ""output_tokens"", ""completion_tokens"")"
+src\company_research_report.py,api_key,508,TOKEN,"input_tokens=input_tokens,"
+src\company_research_report.py,api_key,509,TOKEN,"output_tokens=output_tokens,"
+src\company_research_report.py,api_key,542,TOKEN,"input_tokens=input_tokens,"
+src\company_research_report.py,api_key,543,TOKEN,"output_tokens=output_tokens,"
+src\company_research_report.py,api_key,568,TOKEN,"""input_tokens"": input_tokens,"
+src\company_research_report.py,api_key,569,TOKEN,"""output_tokens"": output_tokens,"
+src\company_research_report.py,api_key,652,TOKEN,"""input_tokens"","
+src\company_research_report.py,api_key,653,TOKEN,"""output_tokens"","
+src\company_research_report_outputs.py,openai,27,OpenAI,from src.openai_client import (
+src\company_research_report_outputs.py,openai,29,OpenAI,"get_openai_client,"
+src\company_research_report_outputs.py,openai,30,OpenAI,"get_openai_status,"
+src\company_research_report_outputs.py,openai,34,OpenAI,"validate_openai_ready,"
+src\company_research_report_outputs.py,openai,132,OpenAI,"def build_openai_input(prompt: str, company_input: dict[str, Any]) -> str:"
+src\company_research_report_outputs.py,openai,146,\bopenai\b,"""OpenAI returned invalid JSON. No output files were saved for this company.\n"""
+src\company_research_report_outputs.py,openai,151,\bopenai\b,"raise ValueError(""OpenAI response must be a JSON object."")"
+src\company_research_report_outputs.py,openai,262,OpenAI,"est_input_tokens = _env_int(""OPENAI_EST_INPUT_TOKENS_PER_COMPANY"", 3000)"
+src\company_research_report_outputs.py,openai,263,OpenAI,"est_output_tokens = _env_int(""OPENAI_EST_OUTPUT_TOKENS_PER_COMPANY"", 1200)"
+src\company_research_report_outputs.py,openai,268,OpenAI,"input_cost_per_1m=_env_float(""OPENAI_INPUT_COST_PER_1M"", 0.0),"
+src\company_research_report_outputs.py,openai,269,OpenAI,"output_cost_per_1m=_env_float(""OPENAI_OUTPUT_COST_PER_1M"", 0.0),"
+src\company_research_report_outputs.py,openai,279,OpenAI,"input=build_openai_input(prompt, company_input),"
+src\company_research_report_outputs.py,openai,293,OpenAI,"input_cost_per_1m=_env_float(""OPENAI_INPUT_COST_PER_1M"", 0.0),"
+src\company_research_report_outputs.py,openai,294,OpenAI,"output_cost_per_1m=_env_float(""OPENAI_OUTPUT_COST_PER_1M"", 0.0),"
+src\company_research_report_outputs.py,openai,345,OpenAI,validate_openai_ready(use_strong_model=False)
+src\company_research_report_outputs.py,openai,360,OpenAI,client = get_openai_client(use_strong_model=False)
+src\company_research_report_outputs.py,openai,457,OpenAI,"for key, value in get_openai_status().items():"
+src\company_research_report_outputs.py,dotenv_env,46,os\.getenv\s*\(,value = os.getenv(name)
+src\company_research_report_outputs.py,dotenv_env,56,os\.getenv\s*\(,value = os.getenv(name)
+src\company_research_report_outputs.py,api_key,262,TOKEN,"est_input_tokens = _env_int(""OPENAI_EST_INPUT_TOKENS_PER_COMPANY"", 3000)"
+src\company_research_report_outputs.py,api_key,263,TOKEN,"est_output_tokens = _env_int(""OPENAI_EST_OUTPUT_TOKENS_PER_COMPANY"", 1200)"
+src\company_research_report_outputs.py,api_key,266,TOKEN,"input_tokens=est_input_tokens * top_n,"
+src\company_research_report_outputs.py,api_key,267,TOKEN,"output_tokens=est_output_tokens * top_n,"
+src\company_research_report_outputs.py,api_key,287,TOKEN,"input_tokens = _get_usage_value(usage, ""input_tokens"", ""prompt_tokens"")"
+src\company_research_report_outputs.py,api_key,288,TOKEN,"output_tokens = _get_usage_value(usage, ""output_tokens"", ""completion_tokens"")"
+src\company_research_report_outputs.py,api_key,291,TOKEN,"input_tokens=input_tokens,"
+src\company_research_report_outputs.py,api_key,292,TOKEN,"output_tokens=output_tokens,"
+src\company_research_report_outputs.py,api_key,329,TOKEN,"""input_tokens"": input_tokens,"
+src\company_research_report_outputs.py,api_key,330,TOKEN,"""output_tokens"": output_tokens,"
+src\company_research_report_outputs.py,api_key,364,TOKEN,total_input_tokens = 0
+src\company_research_report_outputs.py,api_key,365,TOKEN,total_output_tokens = 0
+src\company_research_report_outputs.py,api_key,375,TOKEN,"total_input_tokens += int(result.get(""input_tokens"") or 0)"
+src\company_research_report_outputs.py,api_key,376,TOKEN,"total_output_tokens += int(result.get(""output_tokens"") or 0)"
+src\company_research_report_outputs.py,api_key,394,TOKEN,"""total_input_tokens"": total_input_tokens,"
+src\company_research_report_outputs.py,api_key,395,TOKEN,"""total_output_tokens"": total_output_tokens,"
+src\company_research_report_outputs.py,api_key,423,TOKEN,"print(f""- total_input_tokens: {summary.get('total_input_tokens')}"")"
+src\company_research_report_outputs.py,api_key,424,TOKEN,"print(f""- total_output_tokens: {summary.get('total_output_tokens')}"")"
+src\compare_institutional_cleaning_impact.py,yfinance,6,\byfinance\b,"Does not call OpenAI, paid APIs or yfinance."
+src\compare_institutional_cleaning_impact.py,yfinance,165,\byfinance\b,"""- yfinance called during this report: `False`"","
+src\compare_institutional_cleaning_impact.py,yfinance,182,\byfinance\b,"""description"": ""Institutionally cleaned universe enriched with yfinance market data."","
+src\compare_institutional_cleaning_impact.py,openai,6,\bopenai\b,"Does not call OpenAI, paid APIs or yfinance."
+src\compare_institutional_cleaning_impact.py,openai,163,\bopenai\b,"""- OpenAI called: `False`"","
+src\compare_institutional_cleaning_impact.py,openai,230,OpenAI,"""openai_called"": False,"
+src\compare_institutional_cleaning_impact.py,pandas_read_csv,70,\bread_csv\s*\(,df = pd.read_csv(path)
+src\data_quality.py,openai,5,\bopenai\b,"basic data to be used later by filters, scoring and OpenAI analysis."
+src\data_quality.py,openai,15,\bopenai\b,- OpenAI analysis.
+src\database.py,yfinance,4,\byfinance\b,"It intentionally avoids Streamlit, yfinance, OpenAI calls and financial logic."
+src\database.py,openai,4,\bopenai\b,"It intentionally avoids Streamlit, yfinance, OpenAI calls and financial logic."
+src\database.py,openai,53,OpenAI,"openai_analyzed_companies INTEGER DEFAULT 0,"
+src\database.py,openai,138,OpenAI,CREATE TABLE IF NOT EXISTS openai_analysis (
+src\database.py,sqlite,9,\bsqlite3\b,import sqlite3
+src\database.py,sqlite,23,\bsqlite3\b,def get_connection(db_path: str | Path) -> sqlite3.Connection:
+src\database.py,sqlite,28,\bsqlite3\b,conn = sqlite3.connect(path)
+src\database.py,sqlite,29,\bsqlite3\b,conn.row_factory = sqlite3.Row
+src\database.py,sqlite,40,\bsqlite3\b,def create_tables(conn: sqlite3.Connection) -> None:
+src\database.py,sqlite,241,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\database.py,sqlite,274,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\database.py,api_key,167,TOKEN,"input_tokens INTEGER,"
+src\database.py,api_key,168,TOKEN,"output_tokens INTEGER,"
+src\database.py,api_key,215,TOKEN,"input_tokens INTEGER,"
+src\database.py,api_key,216,TOKEN,"output_tokens INTEGER,"
+src\diagnose_stage1_professional.py,yfinance,15,\byfinance\b,- does not call yfinance;
+src\diagnose_stage1_professional.py,yfinance,347,\byfinance\b,"f""- yfinance called: `{report.get('yfinance_called')}`"","
+src\diagnose_stage1_professional.py,openai,13,\bopenai\b,- does not call OpenAI;
+src\diagnose_stage1_professional.py,openai,345,\bopenai\b,"f""- OpenAI called: `{report.get('openai_called')}`"","
+src\diagnose_stage1_professional.py,openai,434,OpenAI,"""openai_called"": False,"
+src\diagnose_stage1_professional.py,pandas_read_csv,60,\bread_csv\s*\(,return pd.read_csv(path)
+src\download_free_us_universe.py,openai,191,OpenAI,"""openai_called"": False,"
+src\download_free_us_universe.py,openai,212,\bopenai\b,"print(f""OpenAI called: {summary.get('openai_called')}"")"
+src\download_free_us_universe.py,urllib,17,\burllib\b,import urllib.request
+src\download_free_us_universe.py,urllib,39,\burllib\b,request = urllib.request.Request(
+src\download_free_us_universe.py,urllib,43,\burllib\b,"with urllib.request.urlopen(request, timeout=timeout) as response:"
+src\download_free_us_universe.py,pandas_read_csv,60,\bread_csv\s*\(,"return pd.read_csv(io.StringIO(""\n"".join(lines)), sep=""|"")"
+src\enrich_fundamentals_yfinance.py,yfinance,106,\byfinance\b,import yfinance as yf
+src\enrich_fundamentals_yfinance.py,yfinance,108,\byfinance\b,"raise RuntimeError(""yfinance is not installed. Run: .\\.venv\\Scripts\\python.exe -m pip install yfinance"") from exc"
+src\enrich_fundamentals_yfinance.py,yfinance,111,\byf\.,yt = yf.Ticker(ticker)
+src\enrich_fundamentals_yfinance.py,yfinance,192,\byfinance\b,"return f""""""# Scout Finance — Phase 7C.1 yfinance fundamentals enrichment"
+src\enrich_fundamentals_yfinance.py,yfinance,200,\byfinance\b,"- yfinance successful rows: **{summary[""yf_success_rows""]}**"
+src\enrich_fundamentals_yfinance.py,yfinance,201,\byfinance\b,"- yfinance failed rows: **{summary[""yf_failed_rows""]}**"
+src\enrich_fundamentals_yfinance.py,yfinance,210,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+src\enrich_fundamentals_yfinance.py,yfinance,217,\byfinance\b,"print(""Scout Finance — Phase 7C.1 yfinance fundamentals enrichment"")"
+src\enrich_fundamentals_yfinance.py,yfinance,307,\byfinance\b,"print(f""yfinance successful rows: {summary['yf_success_rows']}"")"
+src\enrich_fundamentals_yfinance.py,yfinance,308,\byfinance\b,"print(f""yfinance failed rows: {summary['yf_failed_rows']}"")"
+src\enrich_fundamentals_yfinance.py,openai,208,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+src\enrich_fundamentals_yfinance.py,openai,294,OpenAI,"""openai_called"": False,"
+src\enrich_fundamentals_yfinance.py,pandas_read_csv,224,\bread_csv\s*\(,df = pd.read_csv(STAGE1_PASSED)
+src\enrich_market_data_yfinance.py,yfinance,7,\byfinance\b,- Enrich a limited number of symbols with free market data using yfinance
+src\enrich_market_data_yfinance.py,yfinance,19,\byfinance\b,"- yfinance is useful for local testing, but it is not a guaranteed official market-data API."
+src\enrich_market_data_yfinance.py,yfinance,23,\byfinance\b,./.venv/Scripts/python.exe -m pip install yfinance
+src\enrich_market_data_yfinance.py,yfinance,172,\byfinance\b,Try to convert common USA symbols to yfinance format.
+src\enrich_market_data_yfinance.py,yfinance,200,\byfinance\b,import yfinance as yf
+src\enrich_market_data_yfinance.py,yfinance,203,\byfinance\b,"""Missing dependency: yfinance. Install it with """
+src\enrich_market_data_yfinance.py,yfinance,204,\byfinance\b,"""./.venv/Scripts/python.exe -m pip install yfinance"""
+src\enrich_market_data_yfinance.py,yfinance,208,\byf\.,ticker = yf.Ticker(yf_symbol)
+src\enrich_market_data_yfinance.py,yfinance,382,\byfinance\b,"output_row[""Source""] = f""{output_row.get('Source', '')}|yfinance"".strip(""|"")"
+src\enrich_market_data_yfinance.py,yfinance,443,\byfinance\b,"""Uses yfinance for free local testing."","
+src\enrich_market_data_yfinance.py,yfinance,444,\byfinance\b,"""yfinance is not an official guaranteed market-data API."","
+src\enrich_market_data_yfinance.py,openai,12,\bopenai\b,- does not call OpenAI;
+src\enrich_market_data_yfinance.py,openai,438,OpenAI,"""openai_called"": False,"
+src\enrich_market_data_yfinance.py,openai,466,\bopenai\b,"print(f""OpenAI called: {summary.get('openai_called')}"")"
+src\enrich_market_data_yfinance.py,pandas_read_csv,298,\bread_csv\s*\(,raw = pd.read_csv(input_path)
+src\enrich_stage1_demo_financials.py,openai,7,\bopenai\b,- It does not call OpenAI.
+src\enrich_stage1_demo_financials.py,pandas_read_csv,82,\bread_csv\s*\(,df = pd.read_csv(STAGE1_PASSED_PATH)
+src\enrich_stage2_demo_scoring_inputs.py,openai,7,\bopenai\b,- It does not call OpenAI.
+src\enrich_stage2_demo_scoring_inputs.py,pandas_read_csv,58,\bread_csv\s*\(,df = pd.read_csv(STAGE2_PASSED_PATH)
+src\export.py,openai,15,\bopenai\b,- OpenAI analysis export.
+src\export.py,openai,258,OpenAI,def _short_openai_reason(value: Any) -> str:
+src\export.py,openai,260,\bopenai\b,Shorten technical OpenAI placeholder messages for clean exports.
+src\export.py,openai,268,OpenAI,"if ""ENABLE_OPENAI=false"" in value_str:"
+src\export.py,openai,322,OpenAI,"""openai_reason_to_pass"": ""Análisis IA"","
+src\export.py,openai,360,OpenAI,"clean_df[""Análisis IA""] = clean_df[""Análisis IA""].apply(_short_openai_reason)"
+src\export.py,openai,499,\bopenai\b,"ranking, OpenAI status, manual feedback and key thesis fields in one table."
+src\export.py,dotenv_env,268,ENABLE_,"if ""ENABLE_OPENAI=false"" in value_str:"
+src\feedback.py,openai,17,\bopenai\b,- OpenAI analysis.
+src\filter_stage1.py,openai,14,\bopenai\b,This module does not call OpenAI.
+src\filter_stage1.py,pandas_read_csv,456,\bread_csv\s*\(,df = pd.read_csv(input_path)
+src\filter_stage1.py,dotenv_env,51,ALLOW_,"""allow_adr"": True,"
+src\filter_stage1.py,dotenv_env,52,ALLOW_,"""allow_otc"": False,"
+src\filter_stage1.py,dotenv_env,235,ALLOW_,"if not cfg.get(""allow_otc"", False) and (""OTC"" in exchange or exchange == ""PINK""):"
+src\filter_stage1_before_phase7b8_1_exact.py,openai,13,\bopenai\b,This module does not call OpenAI.
+src\filter_stage1_before_phase7b8_1_exact.py,pandas_read_csv,444,\bread_csv\s*\(,df = pd.read_csv(input_path)
+src\filter_stage1_before_phase7b8_1_exact.py,dotenv_env,50,ALLOW_,"""allow_adr"": True,"
+src\filter_stage1_before_phase7b8_1_exact.py,dotenv_env,51,ALLOW_,"""allow_otc"": False,"
+src\filter_stage1_before_phase7b8_1_exact.py,dotenv_env,234,ALLOW_,"if not cfg.get(""allow_otc"", False) and (""OTC"" in exchange or exchange == ""PINK""):"
+src\filter_stage1_before_phase7b8_balanced.py,openai,13,\bopenai\b,This module does not call OpenAI.
+src\filter_stage1_before_phase7b8_balanced.py,pandas_read_csv,444,\bread_csv\s*\(,df = pd.read_csv(input_path)
+src\filter_stage1_before_phase7b8_balanced.py,dotenv_env,50,ALLOW_,"""allow_adr"": True,"
+src\filter_stage1_before_phase7b8_balanced.py,dotenv_env,51,ALLOW_,"""allow_otc"": False,"
+src\filter_stage1_before_phase7b8_balanced.py,dotenv_env,234,ALLOW_,"if not cfg.get(""allow_otc"", False) and (""OTC"" in exchange or exchange == ""PINK""):"
+src\filter_stage2.py,yfinance,1,\byfinance\b,# PHASE 7C.3 YFINANCE STAGE 2 POLICY APPLIED
+src\filter_stage2.py,openai,14,\bopenai\b,This module does not call OpenAI.
+src\filter_stage2.py,pandas_read_csv,618,\bread_csv\s*\(,df = pd.read_csv(input_path)
+src\filter_stage2_before_phase7c3_yfinance_policy.py,openai,13,\bopenai\b,This module does not call OpenAI.
+src\filter_stage2_before_phase7c3_yfinance_policy.py,pandas_read_csv,618,\bread_csv\s*\(,df = pd.read_csv(input_path)
+src\filter_stage3.py,openai,7,\bopenai\b,This module does not call OpenAI.
+src\filter_stage3.py,pandas_read_csv,505,\bread_csv\s*\(,df = pd.read_csv(input_path)
+src\filters.py,openai,5,\bopenai\b,scoring or OpenAI analysis.
+src\filters.py,openai,17,\bopenai\b,- OpenAI analysis.
+src\fix_phase7f1b_release_self_evidence.py,yfinance,130,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+src\fix_phase7f1b_release_self_evidence.py,openai,128,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+src\fix_phase7f1b_release_self_evidence.py,openai,192,OpenAI,"""openai_called"": False,"
+src\freeze_phase7g_final_v07.py,yfinance,145,\byfinance\b,- yfinance called: `False`
+src\freeze_phase7g_final_v07.py,openai,143,\bopenai\b,- OpenAI called: `False`
+src\freeze_phase7g_final_v07.py,openai,237,OpenAI,"""openai_called"": False,"
+src\freeze_phase7g_final_v07.py,openai,282,OpenAI,"""openai_called"": False,"
+src\freeze_v08_candidate.py,yfinance,182,\byfinance\b,"""- yfinance called: False"","
+src\freeze_v08_candidate.py,yfinance,317,\byfinance\b,"print(""yfinance called: False"")"
+src\freeze_v08_candidate.py,openai,136,OpenAI,"for key in [""openai_called"", ""api_called"", ""yfinance_called"", ""pipeline_recalculated"", ""app_modified"", ""filters_modified"", ""release_modified""]:"
+src\freeze_v08_candidate.py,openai,180,\bopenai\b,"""- OpenAI called: False"","
+src\freeze_v08_candidate.py,openai,247,OpenAI,"""openai_called"": False,"
+src\freeze_v08_candidate.py,openai,315,\bopenai\b,"print(""OpenAI called: False"")"
+src\fundamental_coverage_report.py,openai,11,\bopenai\b,It does not call OpenAI.
+src\fundamental_coverage_report.py,openai,226,OpenAI,"""openai_called"": False,"
+src\fundamental_coverage_report.py,openai,269,\bopenai\b,"print(""No OpenAI call. No external API call. app.py not modified."")"
+src\fundamental_coverage_report.py,pandas_read_csv,142,\bread_csv\s*\(,df = pd.read_csv(input_path)
+src\fundamentals.py,yfinance,6,\byfinance\b,- no yfinance calls
+src\fundamentals.py,openai,5,\bopenai\b,- no OpenAI calls
+src\funnel_paths.py,openai,5,\bopenai\b,No OpenAI calls.
+src\global_universe.py,openai,13,\bopenai\b,This module does not call OpenAI.
+src\global_universe.py,pandas_read_csv,149,\bread_csv\s*\(,return pd.read_csv(path)
+src\market_data.py,yfinance,4,\byfinance\b,This module downloads basic historical market data with yfinance and builds a
+src\market_data.py,yfinance,10,\byfinance\b,- Retrieve basic company metadata from yfinance.
+src\market_data.py,yfinance,28,\byfinance\b,import yfinance as yf
+src\market_data.py,yfinance,91,\byfinance\b,"yfinance period string. Default is ""1y""."
+src\market_data.py,yfinance,108,\byf\.,raw_data = yf.download(
+src\market_data.py,yfinance,118,\byfinance\b,"print(f""Bulk yfinance download failed: {exc}"")"
+src\market_data.py,yfinance,124,\byf\.,history_df = yf.download(
+src\market_data.py,yfinance,138,\byfinance\b,# yfinance returns a flat dataframe when only one ticker is downloaded.
+src\market_data.py,yfinance,255,\byfinance\b,Retrieve basic company information from yfinance.
+src\market_data.py,yfinance,278,\byf\.,info = yf.Ticker(ticker).info or {}
+src\market_data.py,yfinance,307,\byfinance\b,"One row per ticker combining universe metadata, yfinance company info"
+src\market_data.py,yfinance,336,\byfinance\b,"""data_source"": ""yfinance"","
+src\market_data.py,openai,15,\bopenai\b,- OpenAI analysis.
+src\openai_analysis.py,openai,2,\bopenai\b,OpenAI analysis module.
+src\openai_analysis.py,openai,4,\bopenai\b,This module prepares the future company analysis layer powered by OpenAI.
+src\openai_analysis.py,openai,11,OpenAI,- Provide safe disabled behavior when ENABLE_OPENAI=false.
+src\openai_analysis.py,openai,15,\bopenai\b,- Real OpenAI API calls.
+src\openai_analysis.py,openai,19,OpenAI,- Database writes to openai_analysis.
+src\openai_analysis.py,openai,33,OpenAI,from src.openai_client import (
+src\openai_analysis.py,openai,35,OpenAI,"get_openai_status,"
+src\openai_analysis.py,openai,37,OpenAI,"is_openai_enabled,"
+src\openai_analysis.py,openai,46,OpenAI,"DEFAULT_ANALYSIS_PROMPT = PROMPTS_DIR / ""openai_analysis_v0_1.txt"""
+src\openai_analysis.py,openai,124,OpenAI,"""openai_analysis"": DEFAULT_ANALYSIS_PROMPT,"
+src\openai_analysis.py,openai,153,\bopenai\b,Build structured input for future OpenAI company analysis.
+src\openai_analysis.py,openai,220,\bopenai\b,This function does not call OpenAI. It only prepares the future payload.
+src\openai_analysis.py,openai,236,OpenAI,"""system_prompt"": prompts.get(""openai_analysis"", """"),"
+src\openai_analysis.py,openai,253,\bopenai\b,"reason: str = ""OpenAI analysis not executed."","
+src\openai_analysis.py,openai,430,OpenAI,Payload aligned with openai_analysis table columns.
+src\openai_analysis.py,openai,492,\bopenai\b,"If OpenAI is disabled, returns a safe disabled result."
+src\openai_analysis.py,openai,493,\bopenai\b,"If OpenAI is enabled, this still does not call the API in this phase."
+src\openai_analysis.py,openai,512,OpenAI,if not is_openai_enabled():
+src\openai_analysis.py,openai,513,OpenAI,"disabled = disabled_response(""ENABLE_OPENAI=false. Analysis skipped."")"
+src\openai_analysis.py,openai,522,\bopenai\b,# Deliberately do not call OpenAI yet.
+src\openai_analysis.py,openai,525,\bopenai\b,"reason=""OpenAI is enabled, but real calls are not implemented in this phase."","
+src\openai_analysis.py,openai,542,\bopenai\b,results without calling OpenAI.
+src\openai_analysis.py,openai,568,\bopenai\b,Summarize placeholder or future OpenAI analysis results.
+src\openai_analysis.py,openai,596,\bopenai\b,"print(""OpenAI configuration status:"")"
+src\openai_analysis.py,openai,597,OpenAI,status = get_openai_status()
+src\openai_analysis.py,dotenv_env,11,ENABLE_,- Provide safe disabled behavior when ENABLE_OPENAI=false.
+src\openai_analysis.py,dotenv_env,513,ENABLE_,"disabled = disabled_response(""ENABLE_OPENAI=false. Analysis skipped."")"
+src\openai_analysis.py,api_key,296,TOKEN,"""input_tokens"": 0,"
+src\openai_analysis.py,api_key,297,TOKEN,"""output_tokens"": 0,"
+src\openai_analysis.py,api_key,478,TOKEN,"""input_tokens"": result.get(""input_tokens"", 0),"
+src\openai_analysis.py,api_key,479,TOKEN,"""output_tokens"": result.get(""output_tokens"", 0),"
+src\openai_client.py,openai,2,\bopenai\b,OpenAI client module.
+src\openai_client.py,openai,4,\bopenai\b,This module prepares a safe wrapper for future OpenAI usage.
+src\openai_client.py,openai,7,\bopenai\b,- Read OpenAI-related environment variables.
+src\openai_client.py,openai,8,\bopenai\b,- Check whether OpenAI is enabled.
+src\openai_client.py,openai,40,OpenAI,class OpenAISettings:
+src\openai_client.py,openai,42,\bopenai\b,OpenAI configuration values loaded from environment variables.
+src\openai_client.py,openai,48,OpenAI,enable_openai: bool
+src\openai_client.py,openai,55,OpenAI,class OpenAIDisabledError(RuntimeError):
+src\openai_client.py,openai,57,\bopenai\b,Raised when OpenAI usage is requested but ENABLE_OPENAI is false.
+src\openai_client.py,openai,61,OpenAI,class OpenAIConfigurationError(RuntimeError):
+src\openai_client.py,openai,63,\bopenai\b,Raised when OpenAI is enabled but configuration is incomplete.
+src\openai_client.py,openai,67,OpenAI,class OpenAIBudgetError(RuntimeError):
+src\openai_client.py,openai,118,OpenAI,def load_openai_settings() -> OpenAISettings:
+src\openai_client.py,openai,120,\bopenai\b,Load OpenAI settings from environment variables.
+src\openai_client.py,openai,124,OpenAI,OpenAISettings
+src\openai_client.py,openai,128,OpenAI,"api_key = os.getenv(""OPENAI_API_KEY"")"
+src\openai_client.py,openai,133,OpenAI,return OpenAISettings(
+src\openai_client.py,openai,135,OpenAI,"model_light=os.getenv(""OPENAI_MODEL_LIGHT"", DEFAULT_LIGHT_MODEL).strip(),"
+src\openai_client.py,openai,136,OpenAI,"model_strong=os.getenv(""OPENAI_MODEL_STRONG"", DEFAULT_STRONG_MODEL).strip(),"
+src\openai_client.py,openai,137,OpenAI,"enable_openai=_env_bool(""ENABLE_OPENAI"", default=False),"
+src\openai_client.py,openai,139,OpenAI,"max_companies_per_run=_env_int(""MAX_OPENAI_COMPANIES_PER_RUN"", default=5),"
+src\openai_client.py,openai,140,OpenAI,"daily_budget_usd=_env_float(""OPENAI_DAILY_BUDGET_USD"", default=5.0),"
+src\openai_client.py,openai,141,OpenAI,"monthly_budget_usd=_env_float(""OPENAI_MONTHLY_BUDGET_USD"", default=50.0),"
+src\openai_client.py,openai,145,OpenAI,def is_openai_enabled() -> bool:
+src\openai_client.py,openai,147,\bopenai\b,Return whether OpenAI usage is enabled.
+src\openai_client.py,openai,150,OpenAI,return load_openai_settings().enable_openai
+src\openai_client.py,openai,160,OpenAI,settings = load_openai_settings()
+src\openai_client.py,openai,168,OpenAI,def validate_openai_ready(use_strong_model: bool = False) -> None:
+src\openai_client.py,openai,170,\bopenai\b,Validate whether OpenAI can be used.
+src\openai_client.py,openai,174,OpenAI,OpenAIDisabledError
+src\openai_client.py,openai,175,OpenAI,If ENABLE_OPENAI is false.
+src\openai_client.py,openai,176,OpenAI,OpenAIConfigurationError
+src\openai_client.py,openai,177,\bopenai\b,If OpenAI is enabled but the API key is missing.
+src\openai_client.py,openai,178,OpenAI,OpenAIConfigurationError
+src\openai_client.py,openai,182,OpenAI,settings = load_openai_settings()
+src\openai_client.py,openai,184,OpenAI,if not settings.enable_openai:
+src\openai_client.py,openai,185,OpenAI,raise OpenAIDisabledError(
+src\openai_client.py,openai,186,\bopenai\b,"""OpenAI is disabled. Set ENABLE_OPENAI=true in .env to enable it."""
+src\openai_client.py,openai,189,OpenAI,"if settings.api_key is None or settings.api_key == ""your_openai_api_key_here"":"
+src\openai_client.py,openai,190,OpenAI,raise OpenAIConfigurationError(
+src\openai_client.py,openai,191,OpenAI,"""OPENAI_API_KEY is missing or still set to the placeholder value."""
+src\openai_client.py,openai,195,OpenAI,raise OpenAIConfigurationError(
+src\openai_client.py,openai,200,OpenAI,def get_openai_client(use_strong_model: bool = False) -> Any:
+src\openai_client.py,openai,202,\bopenai\b,Create and return an OpenAI client.
+src\openai_client.py,openai,204,\bopenai\b,The client is only created when OpenAI is explicitly enabled and configured.
+src\openai_client.py,openai,214,\bopenai\b,OpenAI client instance.
+src\openai_client.py,openai,217,OpenAI,validate_openai_ready(use_strong_model=use_strong_model)
+src\openai_client.py,openai,220,\bopenai\b,from openai import OpenAI
+src\openai_client.py,openai,222,OpenAI,raise OpenAIConfigurationError(
+src\openai_client.py,openai,223,\bopenai\b,"""The openai package is not installed. Run: pip install openai"""
+src\openai_client.py,openai,226,OpenAI,settings = load_openai_settings()
+src\openai_client.py,openai,228,\bopenai\b,return OpenAI(api_key=settings.api_key)
+src\openai_client.py,openai,285,OpenAI,OpenAIBudgetError
+src\openai_client.py,openai,289,OpenAI,settings = load_openai_settings()
+src\openai_client.py,openai,292,OpenAI,raise OpenAIBudgetError(
+src\openai_client.py,openai,293,\bopenai\b,"""Projected OpenAI usage would exceed the daily budget. """
+src\openai_client.py,openai,299,OpenAI,raise OpenAIBudgetError(
+src\openai_client.py,openai,300,\bopenai\b,"""Projected OpenAI usage would exceed the monthly budget. """
+src\openai_client.py,openai,308,OpenAI,Validate that a run does not exceed MAX_OPENAI_COMPANIES_PER_RUN.
+src\openai_client.py,openai,316,OpenAI,settings = load_openai_settings()
+src\openai_client.py,openai,320,\bopenai\b,"""Too many companies requested for OpenAI analysis. """
+src\openai_client.py,openai,326,OpenAI,"def get_openai_status() -> dict[str, Any]:"
+src\openai_client.py,openai,328,\bopenai\b,Return safe OpenAI configuration status without exposing the API key.
+src\openai_client.py,openai,331,OpenAI,settings = load_openai_settings()
+src\openai_client.py,openai,334,OpenAI,"""enable_openai"": settings.enable_openai,"
+src\openai_client.py,openai,336,OpenAI,"""api_key_looks_placeholder"": settings.api_key == ""your_openai_api_key_here"","
+src\openai_client.py,openai,350,\bopenai\b,Return a standard response when OpenAI is disabled.
+src\openai_client.py,openai,353,OpenAI,ENABLE_OPENAI=false.
+src\openai_client.py,openai,359,\bopenai\b,"""reason"": reason or ""OpenAI is disabled by configuration."","
+src\openai_client.py,openai,379,OpenAI,validate_openai_ready(use_strong_model=use_strong_model)
+src\openai_client.py,openai,380,OpenAI,"except (OpenAIDisabledError, OpenAIConfigurationError) as exc:"
+src\openai_client.py,openai,390,\bopenai\b,"""message"": ""OpenAI is enabled and configured."","
+src\openai_client.py,openai,395,\bopenai\b,"print(""OpenAI status:"")"
+src\openai_client.py,openai,396,OpenAI,status = get_openai_status()
+src\openai_client.py,openai,423,OpenAI,except OpenAIBudgetError as exc:
+src\openai_client.py,dotenv_env,29,load_dotenv,from dotenv import load_dotenv
+src\openai_client.py,dotenv_env,32,load_dotenv,load_dotenv()
+src\openai_client.py,dotenv_env,48,ENABLE_,enable_openai: bool
+src\openai_client.py,dotenv_env,49,ENABLE_,enable_strong_model: bool
+src\openai_client.py,dotenv_env,57,ENABLE_,Raised when OpenAI usage is requested but ENABLE_OPENAI is false.
+src\openai_client.py,dotenv_env,78,os\.getenv\s*\(,value = os.getenv(name)
+src\openai_client.py,dotenv_env,91,os\.getenv\s*\(,value = os.getenv(name)
+src\openai_client.py,dotenv_env,107,os\.getenv\s*\(,value = os.getenv(name)
+src\openai_client.py,dotenv_env,128,os\.getenv\s*\(,"api_key = os.getenv(""OPENAI_API_KEY"")"
+src\openai_client.py,dotenv_env,135,os\.getenv\s*\(,"model_light=os.getenv(""OPENAI_MODEL_LIGHT"", DEFAULT_LIGHT_MODEL).strip(),"
+src\openai_client.py,dotenv_env,136,os\.getenv\s*\(,"model_strong=os.getenv(""OPENAI_MODEL_STRONG"", DEFAULT_STRONG_MODEL).strip(),"
+src\openai_client.py,dotenv_env,137,ENABLE_,"enable_openai=_env_bool(""ENABLE_OPENAI"", default=False),"
+src\openai_client.py,dotenv_env,138,ENABLE_,"enable_strong_model=_env_bool(""ENABLE_STRONG_MODEL"", default=False),"
+src\openai_client.py,dotenv_env,150,ENABLE_,return load_openai_settings().enable_openai
+src\openai_client.py,dotenv_env,157,ENABLE_,Strong model usage is only allowed when ENABLE_STRONG_MODEL=true.
+src\openai_client.py,dotenv_env,162,ENABLE_,if use_strong_model and settings.enable_strong_model:
+src\openai_client.py,dotenv_env,175,ENABLE_,If ENABLE_OPENAI is false.
+src\openai_client.py,dotenv_env,184,ENABLE_,if not settings.enable_openai:
+src\openai_client.py,dotenv_env,186,ENABLE_,"""OpenAI is disabled. Set ENABLE_OPENAI=true in .env to enable it."""
+src\openai_client.py,dotenv_env,194,ENABLE_,if use_strong_model and not settings.enable_strong_model:
+src\openai_client.py,dotenv_env,196,ENABLE_,"""Strong model requested but ENABLE_STRONG_MODEL=false."""
+src\openai_client.py,dotenv_env,334,ENABLE_,"""enable_openai"": settings.enable_openai,"
+src\openai_client.py,dotenv_env,339,ENABLE_,"""enable_strong_model"": settings.enable_strong_model,"
+src\openai_client.py,dotenv_env,353,ENABLE_,ENABLE_OPENAI=false.
+src\openai_client.py,api_key,45,API_KEY,api_key: str | None
+src\openai_client.py,api_key,128,API_KEY,"api_key = os.getenv(""OPENAI_API_KEY"")"
+src\openai_client.py,api_key,130,API_KEY,if api_key is not None:
+src\openai_client.py,api_key,131,API_KEY,api_key = api_key.strip() or None
+src\openai_client.py,api_key,134,API_KEY,"api_key=api_key,"
+src\openai_client.py,api_key,189,API_KEY,"if settings.api_key is None or settings.api_key == ""your_openai_api_key_here"":"
+src\openai_client.py,api_key,191,API_KEY,"""OPENAI_API_KEY is missing or still set to the placeholder value."""
+src\openai_client.py,api_key,228,API_KEY,return OpenAI(api_key=settings.api_key)
+src\openai_client.py,api_key,232,TOKEN,"input_tokens: int,"
+src\openai_client.py,api_key,233,TOKEN,"output_tokens: int,"
+src\openai_client.py,api_key,238,TOKEN,Estimate request cost from token usage and configurable rates.
+src\openai_client.py,api_key,245,TOKEN,input_tokens:
+src\openai_client.py,api_key,246,TOKEN,Estimated input tokens.
+src\openai_client.py,api_key,247,TOKEN,output_tokens:
+src\openai_client.py,api_key,248,TOKEN,Estimated output tokens.
+src\openai_client.py,api_key,250,TOKEN,Cost in USD per 1M input tokens.
+src\openai_client.py,api_key,252,TOKEN,Cost in USD per 1M output tokens.
+src\openai_client.py,api_key,260,TOKEN,"input_cost = (max(input_tokens, 0) / 1_000_000) * input_cost_per_1m"
+src\openai_client.py,api_key,261,TOKEN,"output_cost = (max(output_tokens, 0) / 1_000_000) * output_cost_per_1m"
+src\openai_client.py,api_key,335,API_KEY,"""api_key_defined"": settings.api_key is not None,"
+src\openai_client.py,api_key,336,API_KEY,"""api_key_looks_placeholder"": settings.api_key == ""your_openai_api_key_here"","
+src\openai_client.py,api_key,362,TOKEN,"""input_tokens"": 0,"
+src\openai_client.py,api_key,363,TOKEN,"""output_tokens"": 0,"
+src\openai_client.py,api_key,409,TOKEN,"input_tokens=2_000,"
+src\openai_client.py,api_key,410,TOKEN,"output_tokens=800,"
+src\openai_equity_research_v2.py,openai,4,\bopenai\b,This module runs one real OpenAI analysis for the top-ranked company using
+src\openai_equity_research_v2.py,openai,11,OpenAI,- Store the full structured report in openai_analysis.raw_response_json.
+src\openai_equity_research_v2.py,openai,12,OpenAI,- Map only key fields to the existing openai_analysis columns.
+src\openai_equity_research_v2.py,openai,17,OpenAI,python -m src.openai_equity_research_v2
+src\openai_equity_research_v2.py,openai,31,OpenAI,from src.openai_client import (
+src\openai_equity_research_v2.py,openai,33,OpenAI,"get_openai_client,"
+src\openai_equity_research_v2.py,openai,34,OpenAI,"get_openai_status,"
+src\openai_equity_research_v2.py,openai,38,OpenAI,"validate_openai_ready,"
+src\openai_equity_research_v2.py,openai,40,OpenAI,from src.openai_persistence import (
+src\openai_equity_research_v2.py,openai,42,OpenAI,"insert_openai_analysis,"
+src\openai_equity_research_v2.py,openai,43,OpenAI,"summarize_persisted_openai_analysis,"
+src\openai_equity_research_v2.py,openai,44,OpenAI,"update_run_openai_count,"
+src\openai_equity_research_v2.py,openai,46,OpenAI,"from src.results import get_latest_run_id, get_top_signals_enriched, load_openai_analysis"
+src\openai_equity_research_v2.py,openai,52,OpenAI,"PROMPT_PATH_V2 = PROJECT_ROOT / ""prompts"" / ""openai_analysis_v0_2.txt"""
+src\openai_equity_research_v2.py,openai,102,\bopenai\b,Safely read usage fields from OpenAI SDK response objects or dictionaries.
+src\openai_equity_research_v2.py,openai,140,OpenAI,"""Copy openai_analysis_v0_2.txt into the prompts folder first."""
+src\openai_equity_research_v2.py,openai,204,\bopenai\b,Build final input text for OpenAI.
+src\openai_equity_research_v2.py,openai,217,\bopenai\b,Parse OpenAI text as JSON.
+src\openai_equity_research_v2.py,openai,223,\bopenai\b,"raise ValueError(f""OpenAI response was not valid JSON: {exc}\n{response_text}"") from exc"
+src\openai_equity_research_v2.py,openai,226,\bopenai\b,"raise ValueError(""OpenAI response JSON must be an object."")"
+src\openai_equity_research_v2.py,openai,291,OpenAI,def report_to_openai_analysis_payload(
+src\openai_equity_research_v2.py,openai,301,OpenAI,Map v0.2 structured report to existing openai_analysis table columns.
+src\openai_equity_research_v2.py,openai,367,OpenAI,validate_openai_ready(use_strong_model=False)
+src\openai_equity_research_v2.py,openai,389,OpenAI,client = get_openai_client(use_strong_model=False)
+src\openai_equity_research_v2.py,openai,411,OpenAI,"input_cost_per_1m=_env_float(""OPENAI_INPUT_COST_PER_1M"", 0.0),"
+src\openai_equity_research_v2.py,openai,412,OpenAI,"output_cost_per_1m=_env_float(""OPENAI_OUTPUT_COST_PER_1M"", 0.0),"
+src\openai_equity_research_v2.py,openai,421,OpenAI,payload = report_to_openai_analysis_payload(
+src\openai_equity_research_v2.py,openai,434,OpenAI,"analysis_id = insert_openai_analysis(conn, payload)"
+src\openai_equity_research_v2.py,openai,436,OpenAI,"openai_analyzed_companies = update_run_openai_count(conn, run_id)"
+src\openai_equity_research_v2.py,openai,448,OpenAI,"""openai_analyzed_companies"": openai_analyzed_companies,"
+src\openai_equity_research_v2.py,openai,470,OpenAI,status = get_openai_status()
+src\openai_equity_research_v2.py,openai,489,OpenAI,persisted_summary = summarize_persisted_openai_analysis(
+src\openai_equity_research_v2.py,openai,497,\bopenai\b,"print(""\nLatest OpenAI analysis rows:"")"
+src\openai_equity_research_v2.py,openai,498,OpenAI,"analysis_df = load_openai_analysis(run_id=summary[""run_id""], mode=mode)"
+src\openai_equity_research_v2.py,openai,500,\bopenai\b,"print(""No OpenAI analysis rows found."")"
+src\openai_equity_research_v2.py,dotenv_env,60,os\.getenv\s*\(,value = os.getenv(name)
+src\openai_equity_research_v2.py,api_key,296,TOKEN,"input_tokens: int,"
+src\openai_equity_research_v2.py,api_key,297,TOKEN,"output_tokens: int,"
+src\openai_equity_research_v2.py,api_key,354,TOKEN,"""input_tokens"": input_tokens,"
+src\openai_equity_research_v2.py,api_key,355,TOKEN,"""output_tokens"": output_tokens,"
+src\openai_equity_research_v2.py,api_key,405,TOKEN,"input_tokens = _get_usage_value(usage, ""input_tokens"", ""prompt_tokens"")"
+src\openai_equity_research_v2.py,api_key,406,TOKEN,"output_tokens = _get_usage_value(usage, ""output_tokens"", ""completion_tokens"")"
+src\openai_equity_research_v2.py,api_key,409,TOKEN,"input_tokens=input_tokens,"
+src\openai_equity_research_v2.py,api_key,410,TOKEN,"output_tokens=output_tokens,"
+src\openai_equity_research_v2.py,api_key,426,TOKEN,"input_tokens=input_tokens,"
+src\openai_equity_research_v2.py,api_key,427,TOKEN,"output_tokens=output_tokens,"
+src\openai_equity_research_v2.py,api_key,449,TOKEN,"""input_tokens"": input_tokens,"
+src\openai_equity_research_v2.py,api_key,450,TOKEN,"""output_tokens"": output_tokens,"
+src\openai_equity_research_v2.py,api_key,513,TOKEN,"""input_tokens"","
+src\openai_equity_research_v2.py,api_key,514,TOKEN,"""output_tokens"","
+src\openai_persistence.py,openai,2,\bopenai\b,OpenAI persistence module.
+src\openai_persistence.py,openai,4,\bopenai\b,This module persists OpenAI analysis results into SQLite.
+src\openai_persistence.py,openai,7,\bopenai\b,- Insert normalized OpenAI analysis payloads into openai_analysis.
+src\openai_persistence.py,openai,10,OpenAI,- Persist skipped/disabled results when ENABLE_OPENAI=false.
+src\openai_persistence.py,openai,11,OpenAI,- Update runs.openai_analyzed_companies.
+src\openai_persistence.py,openai,14,\bopenai\b,- Real OpenAI API calls.
+src\openai_persistence.py,openai,33,OpenAI,from src.openai_analysis import (
+src\openai_persistence.py,openai,38,OpenAI,"from src.openai_client import get_selected_model, validate_company_limit"
+src\openai_persistence.py,openai,42,OpenAI,OPENAI_ANALYSIS_COLUMNS = [
+src\openai_persistence.py,openai,156,OpenAI,def insert_openai_analysis(
+src\openai_persistence.py,openai,161,\bopenai\b,Insert one OpenAI analysis payload into SQLite.
+src\openai_persistence.py,openai,168,OpenAI,Payload aligned with openai_analysis table.
+src\openai_persistence.py,openai,173,OpenAI,Created openai_analysis row id.
+src\openai_persistence.py,openai,179,OpenAI,"placeholders = "", "".join([""?""] * len(OPENAI_ANALYSIS_COLUMNS))"
+src\openai_persistence.py,openai,180,OpenAI,"columns_sql = "", "".join(OPENAI_ANALYSIS_COLUMNS)"
+src\openai_persistence.py,openai,183,OpenAI,INSERT INTO openai_analysis ({columns_sql})
+src\openai_persistence.py,openai,187,OpenAI,values = tuple(_to_sql_value(row_payload.get(column)) for column in OPENAI_ANALYSIS_COLUMNS)
+src\openai_persistence.py,openai,196,OpenAI,"purpose: str = ""openai_company_analysis"","
+src\openai_persistence.py,openai,206,\bopenai\b,OpenAI analysis payload.
+src\openai_persistence.py,openai,244,OpenAI,def count_openai_analysis_for_run(
+src\openai_persistence.py,openai,249,\bopenai\b,Count OpenAI analysis rows for one run.
+src\openai_persistence.py,openai,255,OpenAI,FROM openai_analysis
+src\openai_persistence.py,openai,264,OpenAI,def update_run_openai_count(
+src\openai_persistence.py,openai,269,OpenAI,Update runs.openai_analyzed_companies using current openai_analysis rows.
+src\openai_persistence.py,openai,272,OpenAI,"total = count_openai_analysis_for_run(conn, run_id)"
+src\openai_persistence.py,openai,277,OpenAI,SET openai_analyzed_companies = ?
+src\openai_persistence.py,openai,286,OpenAI,def load_openai_analysis(
+src\openai_persistence.py,openai,291,\bopenai\b,Load OpenAI analysis rows for one run.
+src\openai_persistence.py,openai,306,OpenAI,FROM openai_analysis
+src\openai_persistence.py,openai,354,\bopenai\b,This does not call OpenAI while openai_analysis.py is in placeholder mode.
+src\openai_persistence.py,openai,400,OpenAI,"""openai_analyzed_companies"": 0,"
+src\openai_persistence.py,openai,422,OpenAI,"analysis_id = insert_openai_analysis(conn, payload)"
+src\openai_persistence.py,openai,429,OpenAI,"openai_analyzed_count = update_run_openai_count(conn, run_id)"
+src\openai_persistence.py,openai,439,OpenAI,"""openai_analyzed_companies"": int(openai_analyzed_count),"
+src\openai_persistence.py,openai,446,OpenAI,def summarize_persisted_openai_analysis(
+src\openai_persistence.py,openai,451,\bopenai\b,Summarize persisted OpenAI analysis and cost rows.
+src\openai_persistence.py,openai,454,OpenAI,"analysis_df = load_openai_analysis(run_id=run_id, mode=mode)"
+src\openai_persistence.py,openai,488,\bopenai\b,"print(f""Persisting placeholder OpenAI analysis for run: {run_id}"")"
+src\openai_persistence.py,openai,502,\bopenai\b,"print(""\nPersisted OpenAI analysis summary:"")"
+src\openai_persistence.py,openai,503,OpenAI,persisted_summary = summarize_persisted_openai_analysis(
+src\openai_persistence.py,openai,510,\bopenai\b,"print(""\nLatest OpenAI analysis rows:"")"
+src\openai_persistence.py,openai,511,OpenAI,"analysis_df = load_openai_analysis(run_id=run_id, mode=mode)"
+src\openai_persistence.py,openai,513,\bopenai\b,"print(""No OpenAI analysis rows found."")"
+src\openai_persistence.py,sqlite,25,\bsqlite3\b,import sqlite3
+src\openai_persistence.py,sqlite,157,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\openai_persistence.py,sqlite,194,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\openai_persistence.py,sqlite,245,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\openai_persistence.py,sqlite,265,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\openai_persistence.py,dotenv_env,10,ENABLE_,- Persist skipped/disabled results when ENABLE_OPENAI=false.
+src\openai_persistence.py,api_key,70,TOKEN,"""input_tokens"","
+src\openai_persistence.py,api_key,71,TOKEN,"""output_tokens"","
+src\openai_persistence.py,api_key,84,TOKEN,"""input_tokens"","
+src\openai_persistence.py,api_key,85,TOKEN,"""output_tokens"","
+src\openai_persistence.py,api_key,223,TOKEN,"""input_tokens"": payload.get(""input_tokens"", 0),"
+src\openai_persistence.py,api_key,224,TOKEN,"""output_tokens"": payload.get(""output_tokens"", 0),"
+src\openai_persistence.py,api_key,521,TOKEN,"""input_tokens"","
+src\openai_persistence.py,api_key,522,TOKEN,"""output_tokens"","
+src\openai_persistence.py,api_key,540,TOKEN,"""input_tokens"","
+src\openai_persistence.py,api_key,541,TOKEN,"""output_tokens"","
+src\openai_real_top1.py,openai,2,\bopenai\b,OpenAI real top-1 analysis runner.
+src\openai_real_top1.py,openai,4,\bopenai\b,This module makes one real OpenAI call for the top-ranked enriched signal
+src\openai_real_top1.py,openai,9,OpenAI,- Requires ENABLE_OPENAI=true.
+src\openai_real_top1.py,openai,10,OpenAI,- Requires a real OPENAI_API_KEY.
+src\openai_real_top1.py,openai,12,OpenAI,- Writes to openai_analysis and cost_log.
+src\openai_real_top1.py,openai,16,OpenAI,python -m src.openai_real_top1
+src\openai_real_top1.py,openai,29,OpenAI,from src.openai_analysis import (
+src\openai_real_top1.py,openai,37,OpenAI,from src.openai_client import (
+src\openai_real_top1.py,openai,39,OpenAI,"get_openai_client,"
+src\openai_real_top1.py,openai,40,OpenAI,"get_openai_status,"
+src\openai_real_top1.py,openai,44,OpenAI,"validate_openai_ready,"
+src\openai_real_top1.py,openai,46,OpenAI,from src.openai_persistence import (
+src\openai_real_top1.py,openai,48,OpenAI,"insert_openai_analysis,"
+src\openai_real_top1.py,openai,50,OpenAI,"load_openai_analysis,"
+src\openai_real_top1.py,openai,51,OpenAI,"summarize_persisted_openai_analysis,"
+src\openai_real_top1.py,openai,52,OpenAI,"update_run_openai_count,"
+src\openai_real_top1.py,openai,122,OpenAI,"def build_real_openai_input(row: pd.Series | dict[str, Any]) -> str:"
+src\openai_real_top1.py,openai,124,\bopenai\b,Build the prompt text sent to OpenAI for a company row.
+src\openai_real_top1.py,openai,164,OpenAI,"def analyze_row_with_openai(row: pd.Series | dict[str, Any], use_strong_model: bool = False) -> dict[str, Any]:"
+src\openai_real_top1.py,openai,166,\bopenai\b,Make one real OpenAI call and return a normalized analysis result.
+src\openai_real_top1.py,openai,169,OpenAI,validate_openai_ready(use_strong_model=use_strong_model)
+src\openai_real_top1.py,openai,172,OpenAI,client = get_openai_client(use_strong_model=use_strong_model)
+src\openai_real_top1.py,openai,175,OpenAI,input_text = build_real_openai_input(row)
+src\openai_real_top1.py,openai,193,OpenAI,"input_cost_per_1m=_env_float(""OPENAI_INPUT_COST_PER_1M"", 0.0),"
+src\openai_real_top1.py,openai,194,OpenAI,"output_cost_per_1m=_env_float(""OPENAI_OUTPUT_COST_PER_1M"", 0.0),"
+src\openai_real_top1.py,openai,217,OpenAI,"def persist_real_openai_top1(mode: str = ""demo"", run_id: str | None = None) -> dict[str, Any]:"
+src\openai_real_top1.py,openai,219,\bopenai\b,Analyze only the top-ranked signal with real OpenAI and persist the result.
+src\openai_real_top1.py,openai,235,OpenAI,"result = analyze_row_with_openai(row, use_strong_model=False)"
+src\openai_real_top1.py,openai,241,OpenAI,"analysis_id = insert_openai_analysis(conn, payload)"
+src\openai_real_top1.py,openai,243,OpenAI,"openai_count = update_run_openai_count(conn, run_id)"
+src\openai_real_top1.py,openai,254,OpenAI,"""openai_analyzed_companies"": openai_count,"
+src\openai_real_top1.py,openai,268,\bopenai\b,"print(""OpenAI real top-1 analysis"")"
+src\openai_real_top1.py,openai,271,OpenAI,status = get_openai_status()
+src\openai_real_top1.py,openai,275,OpenAI,"key in {""enable_openai"", ""api_key_defined"", ""api_key_looks_placeholder""}"
+src\openai_real_top1.py,openai,283,OpenAI,summary = persist_real_openai_top1(mode=mode)
+src\openai_real_top1.py,openai,290,OpenAI,persisted_summary = summarize_persisted_openai_analysis(
+src\openai_real_top1.py,openai,297,\bopenai\b,"print(""\nLatest OpenAI analysis rows:"")"
+src\openai_real_top1.py,openai,298,OpenAI,"analysis_df = load_openai_analysis(run_id=summary[""run_id""], mode=mode)"
+src\openai_real_top1.py,dotenv_env,9,ENABLE_,- Requires ENABLE_OPENAI=true.
+src\openai_real_top1.py,dotenv_env,94,os\.getenv\s*\(,value = os.getenv(name)
+src\openai_real_top1.py,dotenv_env,266,os\.getenv\s*\(,"mode = os.getenv(""DEFAULT_MODE"", ""demo"")"
+src\openai_real_top1.py,dotenv_env,275,ENABLE_,"key in {""enable_openai"", ""api_key_defined"", ""api_key_looks_placeholder""}"
+src\openai_real_top1.py,api_key,10,API_KEY,- Requires a real OPENAI_API_KEY.
+src\openai_real_top1.py,api_key,187,TOKEN,"input_tokens = _get_usage_value(usage, ""input_tokens"", ""prompt_tokens"")"
+src\openai_real_top1.py,api_key,188,TOKEN,"output_tokens = _get_usage_value(usage, ""output_tokens"", ""completion_tokens"")"
+src\openai_real_top1.py,api_key,191,TOKEN,"input_tokens=input_tokens,"
+src\openai_real_top1.py,api_key,192,TOKEN,"output_tokens=output_tokens,"
+src\openai_real_top1.py,api_key,201,TOKEN,"result[""input_tokens""] = input_tokens"
+src\openai_real_top1.py,api_key,202,TOKEN,"result[""output_tokens""] = output_tokens"
+src\openai_real_top1.py,api_key,255,TOKEN,"""input_tokens"": result.get(""input_tokens""),"
+src\openai_real_top1.py,api_key,256,TOKEN,"""output_tokens"": result.get(""output_tokens""),"
+src\openai_real_top1.py,api_key,275,API_KEY,"key in {""enable_openai"", ""api_key_defined"", ""api_key_looks_placeholder""}"
+src\openai_real_top1.py,api_key,308,TOKEN,"""input_tokens"","
+src\openai_real_top1.py,api_key,309,TOKEN,"""output_tokens"","
+src\openai_real_top1.py,api_key,323,TOKEN,"""input_tokens"","
+src\openai_real_top1.py,api_key,324,TOKEN,"""output_tokens"","
+src\openai_smoke_test.py,openai,2,\bopenai\b,OpenAI smoke test module.
+src\openai_smoke_test.py,openai,4,\bopenai\b,This module performs a minimal real OpenAI API connectivity test.
+src\openai_smoke_test.py,openai,7,OpenAI,- Validate OPENAI_API_KEY.
+src\openai_smoke_test.py,openai,17,OpenAI,1. Set ENABLE_OPENAI=true in .env.
+src\openai_smoke_test.py,openai,18,OpenAI,2. Set a real OPENAI_API_KEY.
+src\openai_smoke_test.py,openai,19,OpenAI,3. Keep MAX_OPENAI_COMPANIES_PER_RUN=1.
+src\openai_smoke_test.py,openai,22,OpenAI,python -m src.openai_smoke_test
+src\openai_smoke_test.py,openai,24,OpenAI,"If ENABLE_OPENAI=false, this module exits safely without calling the API."
+src\openai_smoke_test.py,openai,33,OpenAI,from src.openai_client import (
+src\openai_smoke_test.py,openai,34,OpenAI,"OpenAIConfigurationError,"
+src\openai_smoke_test.py,openai,35,OpenAI,"OpenAIDisabledError,"
+src\openai_smoke_test.py,openai,37,OpenAI,"get_openai_client,"
+src\openai_smoke_test.py,openai,38,OpenAI,"get_openai_status,"
+src\openai_smoke_test.py,openai,41,OpenAI,"validate_openai_ready,"
+src\openai_smoke_test.py,openai,63,\bopenai\b,Safely read usage fields from OpenAI SDK response objects or dictionaries.
+src\openai_smoke_test.py,openai,98,\bopenai\b,Run a minimal OpenAI API smoke test.
+src\openai_smoke_test.py,openai,101,OpenAI,status = get_openai_status()
+src\openai_smoke_test.py,openai,119,OpenAI,validate_openai_ready(use_strong_model=use_strong_model)
+src\openai_smoke_test.py,openai,120,OpenAI,client = get_openai_client(use_strong_model=use_strong_model)
+src\openai_smoke_test.py,openai,125,\bopenai\b,"""Use status='ok' and message='OpenAI smoke test successful'."""
+src\openai_smoke_test.py,openai,161,OpenAI,"input_cost_per_1m=_env_float(""OPENAI_INPUT_COST_PER_1M"", 0.0),"
+src\openai_smoke_test.py,openai,162,OpenAI,"output_cost_per_1m=_env_float(""OPENAI_OUTPUT_COST_PER_1M"", 0.0),"
+src\openai_smoke_test.py,openai,180,\bopenai\b,"print(""OpenAI smoke test"")"
+src\openai_smoke_test.py,openai,183,OpenAI,status = get_openai_status()
+src\openai_smoke_test.py,openai,206,\bopenai\b,"print(""\nCalling OpenAI API with a minimal JSON request..."")"
+src\openai_smoke_test.py,openai,210,OpenAI,"except (OpenAIDisabledError, OpenAIConfigurationError) as exc:"
+src\openai_smoke_test.py,openai,211,OpenAI,"print(f""\nOpenAI configuration error: {exc}"")"
+src\openai_smoke_test.py,openai,214,OpenAI,"print(f""\nOpenAI smoke test failed: {exc}"")"
+src\openai_smoke_test.py,dotenv_env,17,ENABLE_,1. Set ENABLE_OPENAI=true in .env.
+src\openai_smoke_test.py,dotenv_env,24,ENABLE_,"If ENABLE_OPENAI=false, this module exits safely without calling the API."
+src\openai_smoke_test.py,dotenv_env,50,os\.getenv\s*\(,value = os.getenv(name)
+src\openai_smoke_test.py,api_key,7,API_KEY,- Validate OPENAI_API_KEY.
+src\openai_smoke_test.py,api_key,10,TOKEN,- Print token usage when available.
+src\openai_smoke_test.py,api_key,18,API_KEY,2. Set a real OPENAI_API_KEY.
+src\openai_smoke_test.py,api_key,112,TOKEN,"""input_tokens"": 0,"
+src\openai_smoke_test.py,api_key,113,TOKEN,"""output_tokens"": 0,"
+src\openai_smoke_test.py,api_key,147,TOKEN,input_tokens = _get_usage_value(
+src\openai_smoke_test.py,api_key,149,TOKEN,"""input_tokens"","
+src\openai_smoke_test.py,api_key,150,TOKEN,"""prompt_tokens"","
+src\openai_smoke_test.py,api_key,152,TOKEN,output_tokens = _get_usage_value(
+src\openai_smoke_test.py,api_key,154,TOKEN,"""output_tokens"","
+src\openai_smoke_test.py,api_key,155,TOKEN,"""completion_tokens"","
+src\openai_smoke_test.py,api_key,159,TOKEN,"input_tokens=input_tokens,"
+src\openai_smoke_test.py,api_key,160,TOKEN,"output_tokens=output_tokens,"
+src\openai_smoke_test.py,api_key,173,TOKEN,"""input_tokens"": input_tokens,"
+src\openai_smoke_test.py,api_key,174,TOKEN,"""output_tokens"": output_tokens,"
+src\openai_smoke_test.py,api_key,188,API_KEY,"key in {""api_key_defined"", ""api_key_looks_placeholder""}"
+src\openai_smoke_test.py,api_key,221,TOKEN,"print(f""- input_tokens: {result['input_tokens']}"")"
+src\openai_smoke_test.py,api_key,222,TOKEN,"print(f""- output_tokens: {result['output_tokens']}"")"
+src\package_phase7f_release_v07.py,yfinance,167,\byfinance\b,- Stage 2 yfinance-aligned provider-limitation policy integrated.
+src\package_phase7f_release_v07.py,yfinance,177,\byfinance\b,- Fundamental coverage dashboard now reflects 7C.1 yfinance enrichment:
+src\package_phase7f_release_v07.py,yfinance,198,\byfinance\b,"This is a candidate release. It packages validated code and evidence; it does not call OpenAI, yfinance, or external APIs during packaging."
+src\package_phase7f_release_v07.py,yfinance,210,\byfinance\b,Institutional universe → Stage 1 Balanced → Stage 2 yfinance-aligned → Stage 3 scoring
+src\package_phase7f_release_v07.py,yfinance,222,\byfinance\b,- Stage 2 yfinance policy implementation evidence.
+src\package_phase7f_release_v07.py,yfinance,229,\byfinance\b,"Missing `shares_dilution_3y` from yfinance is treated as a provider limitation warning, not as an automatic clean-pass blocker."
+src\package_phase7f_release_v07.py,yfinance,317,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+src\package_phase7f_release_v07.py,openai,198,\bopenai\b,"This is a candidate release. It packages validated code and evidence; it does not call OpenAI, yfinance, or external APIs during packaging."
+src\package_phase7f_release_v07.py,openai,315,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+src\package_phase7f_release_v07.py,openai,405,OpenAI,"""openai_called"": False,"
+src\package_phase7f_release_v07.py,pandas_read_csv,145,\bread_csv\s*\(,return int(len(pd.read_csv(path)))
+src\phase8a_dashboard_final_design.py,yfinance,148,\byfinance\b,"Debe explicar cobertura, limitaciones de yfinance y faltantes críticos como dilución."
+src\phase8a_dashboard_final_design.py,yfinance,180,\byfinance\b,yfinance llamado: False
+src\phase8a_dashboard_final_design.py,yfinance,212,\byfinance\b,"{""area"": ""data_quality"", ""final_tab"": ""Datos y cobertura"", ""audience"": ""técnico"", ""status"": ""parcial"", ""action"": ""explicar cobertura, limitaciones yfinance y faltantes críticos como dilución"", ""priority"": ""alta""},"
+src\phase8a_dashboard_final_design.py,openai,178,\bopenai\b,OpenAI llamado: False
+src\phase8a_dashboard_final_design.py,openai,232,OpenAI,"""openai_called"": False,"
+src\phase8b_ai_equity_research_memo_blueprint.py,yfinance,220,\byfinance\b,yfinance llamado: False
+src\phase8b_ai_equity_research_memo_blueprint.py,openai,141,\bopenai\b,No llamar OpenAI salvo ENABLE_OPENAI=True.
+src\phase8b_ai_equity_research_memo_blueprint.py,openai,202,\bopenai\b,"Con OpenAI desactivado, el sistema debe devolver memo_status=`ai_disabled` y estructura mínima."
+src\phase8b_ai_equity_research_memo_blueprint.py,openai,218,\bopenai\b,OpenAI llamado: False
+src\phase8b_ai_equity_research_memo_blueprint.py,openai,261,OpenAI,"""controls"": {""openai_called"": False, ""api_called"": False, ""yfinance_called"": False, ""app_modified"": False, ""filters_modified"": False, ""pipeline_recalculated"": False, ""release_modified"": False},"
+src\phase8b_ai_equity_research_memo_blueprint.py,dotenv_env,141,ENABLE_,No llamar OpenAI salvo ENABLE_OPENAI=True.
+src\phase8c_deterministic_research_modules.py,yfinance,265,\byfinance\b,"It does **not** call OpenAI, APIs, yfinance or the pipeline. It reads existing Scout Finance outputs only."
+src\phase8c_deterministic_research_modules.py,yfinance,273,\byfinance\b,| yfinance called | {controls['yfinance_called']} |
+src\phase8c_deterministic_research_modules.py,yfinance,336,\byfinance\b,"print(""yfinance called: False"")"
+src\phase8c_deterministic_research_modules.py,openai,207,OpenAI,"""openai_called"": False,"
+src\phase8c_deterministic_research_modules.py,openai,265,\bopenai\b,"It does **not** call OpenAI, APIs, yfinance or the pipeline. It reads existing Scout Finance outputs only."
+src\phase8c_deterministic_research_modules.py,openai,271,\bopenai\b,| OpenAI called | {controls['openai_called']} |
+src\phase8c_deterministic_research_modules.py,openai,334,\bopenai\b,"print(""OpenAI called: False"")"
+src\phase8d_candidate_source_binding.py,yfinance,7,\byfinance\b,"- Do not call OpenAI, APIs or yfinance."
+src\phase8d_candidate_source_binding.py,yfinance,564,\byfinance\b,"""- yfinance called: False"","
+src\phase8d_candidate_source_binding.py,yfinance,626,\byfinance\b,"print(f""yfinance called: {summary['controls']['yfinance_called']}"")"
+src\phase8d_candidate_source_binding.py,openai,7,\bopenai\b,"- Do not call OpenAI, APIs or yfinance."
+src\phase8d_candidate_source_binding.py,openai,502,OpenAI,"""openai_called"": False,"
+src\phase8d_candidate_source_binding.py,openai,509,OpenAI,"""enable_openai_env"": _truthy_env(""ENABLE_OPENAI""),"
+src\phase8d_candidate_source_binding.py,openai,562,\bopenai\b,"""- OpenAI called: False"","
+src\phase8d_candidate_source_binding.py,openai,624,\bopenai\b,"print(f""OpenAI called: {summary['controls']['openai_called']}"")"
+src\phase8d_candidate_source_binding.py,dotenv_env,110,os\.getenv\s*\(,"return os.getenv(name, """").strip().lower() in {""1"", ""true"", ""yes"", ""on""}"
+src\phase8d_candidate_source_binding.py,dotenv_env,509,ENABLE_,"""enable_openai_env"": _truthy_env(""ENABLE_OPENAI""),"
+src\phase8d_candidate_source_binding.py,api_key,264,TOKEN,"reason_bits.append(f""preferred filename token: {part}"")"
+src\phase8e_equity_research_memo_persistence.py,yfinance,6,\byfinance\b,"- Do not call OpenAI, external APIs or yfinance."
+src\phase8e_equity_research_memo_persistence.py,yfinance,312,\byfinance\b,"f""- yfinance called: {summary['controls']['yfinance_called']}"","
+src\phase8e_equity_research_memo_persistence.py,yfinance,405,\byfinance\b,"print(""yfinance called: False"")"
+src\phase8e_equity_research_memo_persistence.py,openai,6,\bopenai\b,"- Do not call OpenAI, external APIs or yfinance."
+src\phase8e_equity_research_memo_persistence.py,openai,39,OpenAI,"""openai_called"": False,"
+src\phase8e_equity_research_memo_persistence.py,openai,310,\bopenai\b,"f""- OpenAI called: {summary['controls']['openai_called']}"","
+src\phase8e_equity_research_memo_persistence.py,openai,403,\bopenai\b,"print(""OpenAI called: False"")"
+src\phase8e_equity_research_memo_persistence.py,sqlite,16,\bsqlite3\b,import sqlite3
+src\phase8e_equity_research_memo_persistence.py,sqlite,24,\.db\b,"DEFAULT_DB = DATA_DIR / ""demo_signals.db"""
+src\phase8e_equity_research_memo_persistence.py,sqlite,195,\bsqlite3\b,def ensure_table(conn: sqlite3.Connection) -> None:
+src\phase8e_equity_research_memo_persistence.py,sqlite,200,\bsqlite3\b,"def persist_memos(conn: sqlite3.Connection, memos: List[Dict[str, Any]], run_id: str) -> List[Dict[str, Any]]:"
+src\phase8e_equity_research_memo_persistence.py,sqlite,272,\bsqlite3\b,def table_columns(conn: sqlite3.Connection) -> List[str]:
+src\phase8e_equity_research_memo_persistence.py,sqlite,276,\bsqlite3\b,"def count_rows(conn: sqlite3.Connection, run_id: str) -> int:"
+src\phase8e_equity_research_memo_persistence.py,sqlite,351,\bsqlite3\b,with sqlite3.connect(db_path) as conn:
+src\phase8e_equity_research_memo_persistence.py,sqlite,362,\bsqlite3\b,"""table_exists"": TABLE_NAME in sqlite3.connect(db_path).execute(""SELECT name FROM sqlite_master WHERE type='table'"").fetchall()[0] if False else True,"
+src\phase8f_research_memo_export_report_layer.py,yfinance,12,\byfinance\b,- No yfinance calls.
+src\phase8f_research_memo_export_report_layer.py,yfinance,268,\byfinance\b,"lines.append(""- yfinance called: False"")"
+src\phase8f_research_memo_export_report_layer.py,yfinance,373,\byfinance\b,"""- yfinance called: False"","
+src\phase8f_research_memo_export_report_layer.py,yfinance,408,\byfinance\b,"print(""yfinance called: False"")"
+src\phase8f_research_memo_export_report_layer.py,openai,10,\bopenai\b,- No OpenAI calls.
+src\phase8f_research_memo_export_report_layer.py,openai,37,OpenAI,"""openai_called"": False,"
+src\phase8f_research_memo_export_report_layer.py,openai,252,OpenAI,"lines.append(""- Not generated. ENABLE_OPENAI was not used in this phase."")"
+src\phase8f_research_memo_export_report_layer.py,openai,266,\bopenai\b,"lines.append(""- OpenAI called: False"")"
+src\phase8f_research_memo_export_report_layer.py,openai,371,\bopenai\b,"""- OpenAI called: False"","
+src\phase8f_research_memo_export_report_layer.py,openai,406,\bopenai\b,"print(""OpenAI called: False"")"
+src\phase8f_research_memo_export_report_layer.py,sqlite,23,\bsqlite3\b,import sqlite3
+src\phase8f_research_memo_export_report_layer.py,sqlite,31,\.db\b,"DB_PATH = PROJECT_ROOT / ""data"" / ""demo"" / ""demo_signals.db"""
+src\phase8f_research_memo_export_report_layer.py,sqlite,114,\bsqlite3\b,conn = sqlite3.connect(DB_PATH)
+src\phase8f_research_memo_export_report_layer.py,sqlite,115,\bsqlite3\b,conn.row_factory = sqlite3.Row
+src\phase8f_research_memo_export_report_layer.py,dotenv_env,252,ENABLE_,"lines.append(""- Not generated. ENABLE_OPENAI was not used in this phase."")"
+src\phase8g_optional_ai_interpretation_gate.py,yfinance,219,\byfinance\b,"""- yfinance called: False"","
+src\phase8g_optional_ai_interpretation_gate.py,yfinance,278,\byfinance\b,"print(""yfinance called: False"")"
+src\phase8g_optional_ai_interpretation_gate.py,openai,102,OpenAI,"enable_openai = env_bool(""ENABLE_OPENAI"", False)"
+src\phase8g_optional_ai_interpretation_gate.py,openai,109,OpenAI,if not enable_openai:
+src\phase8g_optional_ai_interpretation_gate.py,openai,110,OpenAI,"hard_blockers.append(""ENABLE_OPENAI is not True"")"
+src\phase8g_optional_ai_interpretation_gate.py,openai,127,OpenAI,"""ENABLE_OPENAI"": enable_openai,"
+src\phase8g_optional_ai_interpretation_gate.py,openai,155,OpenAI,"""openai_called"": False,"
+src\phase8g_optional_ai_interpretation_gate.py,openai,161,OpenAI,"""openai_called"": False,"
+src\phase8g_optional_ai_interpretation_gate.py,openai,217,\bopenai\b,"""- OpenAI called: False"","
+src\phase8g_optional_ai_interpretation_gate.py,openai,226,OpenAI,"""- ENABLE_OPENAI must be true."","
+src\phase8g_optional_ai_interpretation_gate.py,openai,233,\bopenai\b,"""- This phase does not call OpenAI; it only decides whether a later phase may be allowed to do so."","
+src\phase8g_optional_ai_interpretation_gate.py,openai,260,OpenAI,"""data_gaps_count"", ""ai_interpretation_status"", ""estimated_cost"", ""model_used"", ""openai_called"", ""report_path"""
+src\phase8g_optional_ai_interpretation_gate.py,openai,276,\bopenai\b,"print(""OpenAI called: False"")"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,58,os\.getenv\s*\(,value = os.getenv(name)
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,65,os\.getenv\s*\(,value = os.getenv(name)
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,102,ENABLE_,"enable_openai = env_bool(""ENABLE_OPENAI"", False)"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,103,ENABLE_,"explicit_ai_gate = env_bool(""ENABLE_AI_RESEARCH_MEMO"", False)"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,104,ALLOW_,"allow_spend = env_bool(""ALLOW_AI_SPEND"", False)"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,105,AI_RESEARCH,"max_cost = env_float(""AI_RESEARCH_MEMO_MAX_COST_USD"", DEFAULT_MAX_ESTIMATED_COST_USD)"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,106,os\.getenv\s*\(,"model = os.getenv(""AI_RESEARCH_MEMO_MODEL"", DEFAULT_MODEL).strip() or DEFAULT_MODEL"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,109,ENABLE_,if not enable_openai:
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,110,ENABLE_,"hard_blockers.append(""ENABLE_OPENAI is not True"")"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,112,ENABLE_,"hard_blockers.append(""ENABLE_AI_RESEARCH_MEMO is not True"")"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,113,ALLOW_,if not allow_spend:
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,114,ALLOW_,"hard_blockers.append(""ALLOW_AI_SPEND is not True"")"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,118,AI_RESEARCH,"hard_blockers.append(""AI_RESEARCH_MEMO_MAX_COST_USD must be positive"")"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,127,ENABLE_,"""ENABLE_OPENAI"": enable_openai,"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,128,ENABLE_,"""ENABLE_AI_RESEARCH_MEMO"": explicit_ai_gate,"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,129,ALLOW_,"""ALLOW_AI_SPEND"": allow_spend,"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,130,AI_RESEARCH,"""AI_RESEARCH_MEMO_MODEL"": model,"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,131,AI_RESEARCH,"""AI_RESEARCH_MEMO_MAX_COST_USD"": max_cost,"
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,226,ENABLE_,"""- ENABLE_OPENAI must be true."","
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,227,ENABLE_,"""- ENABLE_AI_RESEARCH_MEMO must be true."","
+src\phase8g_optional_ai_interpretation_gate.py,dotenv_env,228,ALLOW_,"""- ALLOW_AI_SPEND must be true."","
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,yfinance,309,\byfinance\b,- yfinance called: False
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,yfinance,347,\byfinance\b,"print(""yfinance called: False"")"
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,22,OpenAI,"""openai_called"": False,"
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,111,OpenAI,"""openai_called"": False,"
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,138,OpenAI,"""openai_called"": False,"
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,161,\bopenai\b,- OpenAI called: False
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,188,\bopenai\b,- This file is a dry-run package only; no API/OpenAI call was made.
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,226,OpenAI,"""openai_called"": False,"
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,242,OpenAI,"""openai_called"": False,"
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,253,OpenAI,"""ai_gate_status"", ""ai_allowed"", ""openai_called"", ""estimated_cost"", ""model_used"","
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,307,\bopenai\b,- OpenAI called: False
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,320,\bopenai\b,- No OpenAI/API call is made.
+src\phase8h_prompt_packaging_dry_run_ai_memo_preview.py,openai,345,\bopenai\b,"print(""OpenAI called: False"")"
+src\phase8i_optional_ai_execution_sandbox.py,yfinance,351,\byfinance\b,- yfinance called: False
+src\phase8i_optional_ai_execution_sandbox.py,yfinance,358,\byfinance\b,It does **not** call OpenAI. It does **not** call APIs. It does **not** call yfinance.
+src\phase8i_optional_ai_execution_sandbox.py,yfinance,407,\byfinance\b,"print(f""yfinance called: False"")"
+src\phase8i_optional_ai_execution_sandbox.py,openai,74,OpenAI,"enable_openai = env_true(""ENABLE_OPENAI"")"
+src\phase8i_optional_ai_execution_sandbox.py,openai,86,OpenAI,if not enable_openai:
+src\phase8i_optional_ai_execution_sandbox.py,openai,87,OpenAI,"hard_blockers.append(""ENABLE_OPENAI is not True"")"
+src\phase8i_optional_ai_execution_sandbox.py,openai,109,OpenAI,"""ENABLE_OPENAI"": enable_openai,"
+src\phase8i_optional_ai_execution_sandbox.py,openai,148,\bopenai\b,# Critical: this phase never calls OpenAI. It only prepares the execution envelope.
+src\phase8i_optional_ai_execution_sandbox.py,openai,187,OpenAI,"""openai_called"": False,"
+src\phase8i_optional_ai_execution_sandbox.py,openai,207,\bopenai\b,"f""- OpenAI called: {execution.get('openai_called')}"","
+src\phase8i_optional_ai_execution_sandbox.py,openai,244,OpenAI,"""openai_called"","
+src\phase8i_optional_ai_execution_sandbox.py,openai,292,OpenAI,"""openai_called"": execution.get(""openai_called""),"
+src\phase8i_optional_ai_execution_sandbox.py,openai,307,OpenAI,"""openai_called"": False,"
+src\phase8i_optional_ai_execution_sandbox.py,openai,330,OpenAI,"""openai_called"": item.get(""openai_called""),"
+src\phase8i_optional_ai_execution_sandbox.py,openai,349,\bopenai\b,- OpenAI called: False
+src\phase8i_optional_ai_execution_sandbox.py,openai,358,\bopenai\b,It does **not** call OpenAI. It does **not** call APIs. It does **not** call yfinance.
+src\phase8i_optional_ai_execution_sandbox.py,openai,405,\bopenai\b,"print(f""OpenAI called: False"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,46,os\.getenv\s*\(,"return os.getenv(name, """").strip().lower() in {""1"", ""true"", ""yes"", ""y"", ""on""}"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,50,os\.getenv\s*\(,"raw = os.getenv(name, """").strip()"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,74,ENABLE_,"enable_openai = env_true(""ENABLE_OPENAI"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,75,ENABLE_,"enable_ai_research_memo = env_true(""ENABLE_AI_RESEARCH_MEMO"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,76,ALLOW_,"allow_ai_spend = env_true(""ALLOW_AI_SPEND"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,80,ALLOW_,"allow_real_execution = env_true(""SCOUT_FINANCE_ALLOW_REAL_AI_EXECUTION"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,82,AI_RESEARCH,"max_cost_usd = env_float(""AI_RESEARCH_MEMO_MAX_COST_USD"", 0.0)"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,83,os\.getenv\s*\(,"model = os.getenv(""AI_RESEARCH_MEMO_MODEL"", """").strip() or None"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,86,ENABLE_,if not enable_openai:
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,87,ENABLE_,"hard_blockers.append(""ENABLE_OPENAI is not True"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,88,ENABLE_,if not enable_ai_research_memo:
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,89,ENABLE_,"hard_blockers.append(""ENABLE_AI_RESEARCH_MEMO is not True"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,90,ALLOW_,if not allow_ai_spend:
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,91,ALLOW_,"hard_blockers.append(""ALLOW_AI_SPEND is not True"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,92,ALLOW_,if not allow_real_execution:
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,93,ALLOW_,"hard_blockers.append(""SCOUT_FINANCE_ALLOW_REAL_AI_EXECUTION is not True"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,95,AI_RESEARCH,"hard_blockers.append(""AI_RESEARCH_MEMO_MAX_COST_USD must be > 0 for real execution"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,97,AI_RESEARCH,"hard_blockers.append(""AI_RESEARCH_MEMO_MODEL is not configured"")"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,109,ENABLE_,"""ENABLE_OPENAI"": enable_openai,"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,110,ENABLE_,"""ENABLE_AI_RESEARCH_MEMO"": enable_ai_research_memo,"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,111,ALLOW_,"""ALLOW_AI_SPEND"": allow_ai_spend,"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,112,ALLOW_,"""SCOUT_FINANCE_ALLOW_REAL_AI_EXECUTION"": allow_real_execution,"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,113,AI_RESEARCH,"""AI_RESEARCH_MEMO_MODEL"": model,"
+src\phase8i_optional_ai_execution_sandbox.py,dotenv_env,114,AI_RESEARCH,"""AI_RESEARCH_MEMO_MAX_COST_USD"": max_cost_usd,"
+src\phase8j_v08_candidate_audit.py,yfinance,245,\byfinance\b,"""- yfinance called: False"","
+src\phase8j_v08_candidate_audit.py,yfinance,252,\byfinance\b,"""| Phase | Summary | Status | OpenAI | API | yfinance | Pipeline | app.py | filters.py | release |"","
+src\phase8j_v08_candidate_audit.py,yfinance,370,\byfinance\b,"print(f""yfinance called: False"")"
+src\phase8j_v08_candidate_audit.py,openai,85,OpenAI,"""openai_called"": data.get(""openai_called""),"
+src\phase8j_v08_candidate_audit.py,openai,140,OpenAI,"""openai_called"","
+src\phase8j_v08_candidate_audit.py,openai,178,OpenAI,"for flag in [""openai_called"", ""api_called"", ""yfinance_called"", ""pipeline_recalculated"", ""app_modified"", ""filters_modified"", ""release_modified""]:"
+src\phase8j_v08_candidate_audit.py,openai,243,\bopenai\b,"""- OpenAI called: False"","
+src\phase8j_v08_candidate_audit.py,openai,252,\bopenai\b,"""| Phase | Summary | Status | OpenAI | API | yfinance | Pipeline | app.py | filters.py | release |"","
+src\phase8j_v08_candidate_audit.py,openai,258,OpenAI,"f""{row.get('openai_called')} | {row.get('api_called')} | {row.get('yfinance_called')} | """
+src\phase8j_v08_candidate_audit.py,openai,322,OpenAI,"""openai_called"": False,"
+src\phase8j_v08_candidate_audit.py,openai,340,OpenAI,"""openai_called"": False,"
+src\phase8j_v08_candidate_audit.py,openai,368,\bopenai\b,"print(f""OpenAI called: False"")"
+src\phase8j_v08_candidate_audit.py,sqlite,128,\.db\b,"root / ""data"" / ""demo"" / ""demo_signals.db"","
+src\phase9a_data_layer_external_calls_audit.py,yfinance,9,\byfinance\b,"'yfinance':[r'\byfinance\b',r'\byf\.'], 'openai':[r'\bopenai\b',r'OpenAI',r'ENABLE_OPENAI'],"
+src\phase9a_data_layer_external_calls_audit.py,yfinance,15,\byfinance\b,"'data':['data','download','fetch','universe','yfinance','enrich','clean'], 'scoring':['score','scoring','rank','ranking'],"
+src\phase9a_data_layer_external_calls_audit.py,yfinance,103,\byfinance\b,"report=['# Phase 9A — DataLayer and External Calls Audit','','Status: **OK**','',f'- Modules scanned: {len(mods)}',f'- External/data-access findings: {len(finds)}',f'- DataHub detected: {summary[""data_hub_detected""]}',f'- Red flags module detected: {summary[""red_flags_module_detected""]}',f'- OpenAI client detected: {summary[""openai_client_detected""]}',f'- Research memo detected: {summary[""research_memo_detected""]}',f'- Phase 8 AI gate detected: {summary[""phase8_gate_detected""]}',f'- v0.8 freeze "
+src\phase9a_data_layer_external_calls_audit.py,openai,9,\bopenai\b,"'yfinance':[r'\byfinance\b',r'\byf\.'], 'openai':[r'\bopenai\b',r'OpenAI',r'ENABLE_OPENAI'],"
+src\phase9a_data_layer_external_calls_audit.py,openai,17,\bopenai\b,"'ai':['openai','ai_','llm','prompt','gate'], 'exports':['export','report','markdown','csv','json'], 'dashboard':['dashboard','streamlit','app'], 'checks':['check_','validate','audit']}"
+src\phase9a_data_layer_external_calls_audit.py,openai,18,OpenAI,"CONTROL={'openai_called':False,'api_called':False,'yfinance_called':False,'pipeline_recalculated':False,'app_modified':False,'filters_modified':False,'release_modified':False}"
+src\phase9a_data_layer_external_calls_audit.py,openai,64,OpenAI,"arr=['src/research_memo.py','src/fundamentals.py','src/valuation.py','src/risk_analysis.py','src/moat_analysis.py','src/growth_analysis.py','src/institutional_view.py','src/earnings_quality.py','src/earnings_analysis.py','src/red_flags.py','src/data_hub.py','src/data_cache.py','src/openai_client.py','src/openai_equity_research_v2.py','src/phase8g_optional_ai_interpretation_gate.py','src/phase8i_optional_ai_execution_sandbox.py','scripts/check_phase8g_optional_ai_interpretation_gate.py','scripts/"
+src\phase9a_data_layer_external_calls_audit.py,openai,90,OpenAI,"summary={'phase':PHASE,'title':TITLE,'status':'OK','created_at':now(),'default_top_n':DEFAULT_TOP_N,'max_top_n':MAX_TOP_N,**CONTROL,'module_count':len(mods),'external_findings_count':len(finds),'external_findings_by_kind':by,'module_categories':cats_count,'data_hub_detected':bool(ex.get('src/data_hub.py') or ex.get('src/data_cache.py')),'red_flags_module_detected':bool(ex.get('src/red_flags.py')),'openai_client_detected':bool(ex.get('src/openai_client.py')),'research_memo_detected':bool(ex.get('"
+src\phase9a_data_layer_external_calls_audit.py,openai,94,\bopenai\b,"if summary['openai_client_detected']: recs.append({'priority':'Alta','area':'OpenAI','recommendation':'Reutilizar openai_client.py; no crear cliente duplicado.','rationale':'Cliente existente detectado.'})"
+src\phase9a_data_layer_external_calls_audit.py,openai,103,\bopenai\b,"report=['# Phase 9A — DataLayer and External Calls Audit','','Status: **OK**','',f'- Modules scanned: {len(mods)}',f'- External/data-access findings: {len(finds)}',f'- DataHub detected: {summary[""data_hub_detected""]}',f'- Red flags module detected: {summary[""red_flags_module_detected""]}',f'- OpenAI client detected: {summary[""openai_client_detected""]}',f'- Research memo detected: {summary[""research_memo_detected""]}',f'- Phase 8 AI gate detected: {summary[""phase8_gate_detected""]}',f'- v0.8 freeze "
+src\phase9a_data_layer_external_calls_audit.py,openai,113,\bopenai\b,"print(f""OpenAI client detected: {summary['openai_client_detected']}""); print(f""Research memo detected: {summary['research_memo_detected']}"")"
+src\phase9a_data_layer_external_calls_audit.py,openai,115,\bopenai\b,print('OpenAI called: False\nAPI called: False\nyfinance called: False\nPipeline recalculated: False')
+src\phase9a_data_layer_external_calls_audit.py,requests,10,\brequests\b,"'requests':[r'\brequests\.',r'\brequests\b'], 'urllib':[r'\burllib\b'], 'httpx':[r'\bhttpx\b'],"
+src\phase9a_data_layer_external_calls_audit.py,urllib,10,\burllib\b,"'requests':[r'\brequests\.',r'\brequests\b'], 'urllib':[r'\burllib\b'], 'httpx':[r'\bhttpx\b'],"
+src\phase9a_data_layer_external_calls_audit.py,httpx,10,\bhttpx\b,"'requests':[r'\brequests\.',r'\brequests\b'], 'urllib':[r'\burllib\b'], 'httpx':[r'\bhttpx\b'],"
+src\phase9a_data_layer_external_calls_audit.py,sqlite,11,\.db\b,"'pandas_read_csv':[r'\bread_csv\s*\('], 'sqlite':[r'\bsqlite3\b',r'\.db\b',r'connect\s*\('],"
+src\phase9a_data_layer_external_calls_audit.py,dotenv_env,9,ENABLE_,"'yfinance':[r'\byfinance\b',r'\byf\.'], 'openai':[r'\bopenai\b',r'OpenAI',r'ENABLE_OPENAI'],"
+src\phase9a_data_layer_external_calls_audit.py,dotenv_env,12,load_dotenv,"'dotenv_env':[r'os\.getenv\s*\(',r'load_dotenv',r'ENABLE_',r'ALLOW_',r'AI_RESEARCH'],"
+src\phase9a_data_layer_external_calls_audit.py,api_key,13,API_KEY,"'api_key':[r'API_KEY',r'api_key',r'SECRET',r'TOKEN']}"
+src\pipeline.py,yfinance,297,\byfinance\b,"return _row_value(row, column, ""yfinance"")"
+src\pipeline.py,yfinance,510,\byfinance\b,yfinance history period used by market_data.py.
+src\pipeline.py,openai,17,\bopenai\b,- OpenAI analysis.
+src\pipeline.py,openai,561,\bopenai\b,"notes=""Quantitative demo pipeline completed without OpenAI."","
+src\pipeline.py,sqlite,26,\bsqlite3\b,import sqlite3
+src\pipeline.py,sqlite,164,\bsqlite3\b,"def upsert_companies(conn: sqlite3.Connection, universe_df: pd.DataFrame) -> int:"
+src\pipeline.py,sqlite,223,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\pipeline.py,sqlite,303,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\pipeline.py,sqlite,388,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\pipeline.py,sqlite,431,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\pipeline.py,sqlite,469,\bsqlite3\b,"conn: sqlite3.Connection,"
+src\prepare_fundamentals_csv.py,openai,9,\bopenai\b,No external APIs. No OpenAI. Does not modify app.py.
+src\prepare_fundamentals_csv.py,openai,309,OpenAI,"""openai_called"": False,"
+src\prepare_fundamentals_csv.py,openai,338,\bopenai\b,"print(""No API call. No OpenAI call. app.py not modified."")"
+src\prepare_fundamentals_csv.py,pandas_read_csv,189,\bread_csv\s*\(,raw = pd.read_csv(input_path)
+src\prepare_fundamentals_csv.py,pandas_read_csv,283,\bread_csv\s*\(,stage1_df = pd.read_csv(stage1_passed_path)
+src\prepare_real_universe_csv.py,openai,8,\bopenai\b,- Do not call OpenAI
+src\prepare_real_universe_csv.py,openai,256,\bopenai\b,"print(""No OpenAI call. app.py not modified."")"
+src\prepare_real_universe_csv.py,pandas_read_csv,184,\bread_csv\s*\(,raw = pd.read_csv(input_path)
+src\research_memo.py,openai,3,\bopenai\b,"This is not the OpenAI memo generator. It is the offline, auditable base layer"
+src\results.py,openai,14,\bopenai\b,signals + market_snapshots + latest OpenAI analysis + latest manual feedback.
+src\results.py,openai,21,\bopenai\b,- OpenAI analysis writes.
+src\results.py,openai,70,OpenAI,"openai_analyzed_companies,"
+src\results.py,openai,144,OpenAI,openai_analysis = conn.execute(
+src\results.py,openai,145,OpenAI,"""SELECT COUNT(*) AS total FROM openai_analysis WHERE run_id = ?"","
+src\results.py,openai,163,OpenAI,"""openai_analyzed_companies"": run_row[""openai_analyzed_companies""],"
+src\results.py,openai,170,OpenAI,"""openai_analysis_rows"": int(openai_analysis),"
+src\results.py,openai,385,OpenAI,def load_openai_analysis(
+src\results.py,openai,390,\bopenai\b,Load OpenAI analysis rows for one run.
+src\results.py,openai,405,OpenAI,FROM openai_analysis
+src\results.py,openai,414,OpenAI,def load_latest_openai_analysis_per_signal(
+src\results.py,openai,419,\bopenai\b,Load the latest OpenAI analysis row per signal for one run.
+src\results.py,openai,432,OpenAI,FROM openai_analysis oa
+src\results.py,openai,435,OpenAI,FROM openai_analysis
+src\results.py,openai,571,\bopenai\b,- latest OpenAI analysis per signal
+src\results.py,openai,585,OpenAI,"openai_df = load_latest_openai_analysis_per_signal(run_id=run_id, mode=mode)"
+src\results.py,openai,590,OpenAI,if not openai_df.empty:
+src\results.py,openai,591,OpenAI,openai_subset = openai_df[
+src\results.py,openai,612,OpenAI,"""id"": ""openai_analysis_id"","
+src\results.py,openai,613,OpenAI,"""created_at"": ""openai_created_at"","
+src\results.py,openai,614,OpenAI,"""model"": ""openai_model"","
+src\results.py,openai,615,OpenAI,"""reason_to_pass"": ""openai_reason_to_pass"","
+src\results.py,openai,616,OpenAI,"""estimated_cost"": ""openai_estimated_cost"","
+src\results.py,openai,617,OpenAI,"""cache_hit"": ""openai_cache_hit"","
+src\results.py,openai,621,OpenAI,"result = result.merge(openai_subset, on=""id"", how=""left"")"
+src\results.py,openai,623,OpenAI,"result[""openai_analysis_id""] = None"
+src\results.py,openai,624,OpenAI,"result[""openai_created_at""] = None"
+src\results.py,openai,625,OpenAI,"result[""openai_model""] = None"
+src\results.py,openai,631,OpenAI,"result[""openai_reason_to_pass""] = None"
+src\results.py,openai,635,OpenAI,"result[""openai_estimated_cost""] = None"
+src\results.py,openai,636,OpenAI,"result[""openai_cache_hit""] = None"
+src\results.py,openai,780,OpenAI,"""rows_with_openai_analysis"": 0,"
+src\results.py,openai,782,OpenAI,"""total_openai_estimated_cost"": 0.0,"
+src\results.py,openai,795,OpenAI,"""rows_with_openai_analysis"": int(view_df[""openai_analysis_id""].notna().sum())"
+src\results.py,openai,796,OpenAI,"if ""openai_analysis_id"" in view_df.columns"
+src\results.py,openai,801,OpenAI,"""total_openai_estimated_cost"": float("
+src\results.py,openai,802,OpenAI,"view_df[""openai_estimated_cost""].fillna(0).sum()"
+src\results.py,openai,804,OpenAI,"if ""openai_estimated_cost"" in view_df.columns"
+src\results.py,openai,857,OpenAI,"""openai_analyzed_companies"","
+src\results.py,openai,935,OpenAI,"""openai_model"","
+src\results.py,openai,936,OpenAI,"""openai_reason_to_pass"","
+src\results.py,openai,937,OpenAI,"""openai_estimated_cost"","
+src\results.py,api_key,961,TOKEN,"""input_tokens"","
+src\results.py,api_key,962,TOKEN,"""output_tokens"","
+src\review_stage1_balanced_impact.py,yfinance,121,\byfinance\b,"f""- yfinance called: `{report.get('yfinance_called')}`"","
+src\review_stage1_balanced_impact.py,openai,119,\bopenai\b,"f""- OpenAI called: `{report.get('openai_called')}`"","
+src\review_stage1_balanced_impact.py,openai,222,OpenAI,"""openai_called"": False,"
+src\review_stage1_balanced_impact.py,pandas_read_csv,138,\bread_csv\s*\(,transitions = pd.read_csv(TRANSITIONS)
+src\run_clean_500_stability_pilot.py,yfinance,95,\byfinance\b,"f""- yfinance called: `{summary.get('yfinance_called')}`"","
+src\run_clean_500_stability_pilot.py,openai,93,\bopenai\b,"f""- OpenAI called: `{summary.get('openai_called')}`"","
+src\run_clean_500_stability_pilot.py,openai,185,OpenAI,"""openai_called"": False,"
+src\run_clean_500_stability_pilot.py,pandas_read_csv,44,\bread_csv\s*\(,df = pd.read_csv(STAGE1_REJECTION_LOG)
+src\run_global_funnel_demo.py,openai,13,\bopenai\b,- Do not call OpenAI.
+src\run_global_funnel_demo.py,openai,180,OpenAI,"""openai_called"": False,"
+src\run_global_funnel_demo.py,openai,223,\bopenai\b,"print(f""OpenAI called: {summary.get('openai_called')}"")"
+src\run_real_universe_pilot.py,openai,147,OpenAI,"""openai_called"": False,"
+src\run_real_universe_pilot.py,openai,184,\bopenai\b,"print(f""OpenAI called: {summary.get('openai_called')}"")"
+src\run_real_universe_pilot.py,pandas_read_csv,45,\bread_csv\s*\(,df = pd.read_csv(input_path)
+src\run_stage1_balanced_dry_run.py,yfinance,158,\byfinance\b,"f""- yfinance called: `{summary.get('yfinance_called')}`"","
+src\run_stage1_balanced_dry_run.py,openai,156,\bopenai\b,"f""- OpenAI called: `{summary.get('openai_called')}`"","
+src\run_stage1_balanced_dry_run.py,openai,249,OpenAI,"""openai_called"": False,"
+src\run_stage1_balanced_dry_run.py,pandas_read_csv,38,\bread_csv\s*\(,return pd.read_csv(path)
+src\run_stage1_balanced_dry_run.py,pandas_read_csv,83,\bread_csv\s*\(,df = pd.read_csv(FINAL_DECISIONS)
+src\run_stage2_filter_enriched.py,openai,11,\bopenai\b,It does not call OpenAI.
+src\run_stage2_filter_enriched.py,openai,45,\bopenai\b,"print(""No API call. No OpenAI call. app.py not modified."")"
+src\save_outputs.py,api_key,9,TOKEN,def _safe_token(value: str) -> str:
+src\save_outputs.py,api_key,21,TOKEN,"return f""{_safe_token(ticker)}_{dt.strftime('%Y%m%d_%H%M%S')}"""
+src\scoring.py,openai,13,\bopenai\b,- OpenAI analysis.
+src\scouting_candidates.py,openai,9,\bopenai\b,This module does not call OpenAI.
+src\scouting_candidates.py,pandas_read_csv,45,\bread_csv\s*\(,return pd.read_csv(path)
+src\select_stage1_candidate_policy.py,yfinance,185,\byfinance\b,"f""- yfinance called: `{report.get('yfinance_called')}`"","
+src\select_stage1_candidate_policy.py,openai,183,\bopenai\b,"f""- OpenAI called: `{report.get('openai_called')}`"","
+src\select_stage1_candidate_policy.py,openai,243,OpenAI,"""openai_called"": False,"
+src\select_stage1_candidate_policy.py,pandas_read_csv,43,\bread_csv\s*\(,df = pd.read_csv(FINAL_SIM_SUMMARY)
+src\simulate_stage1_policy.py,yfinance,14,\byfinance\b,- does not call yfinance;
+src\simulate_stage1_policy.py,yfinance,341,\byfinance\b,"f""- yfinance called: `{report.get('yfinance_called')}`"","
+src\simulate_stage1_policy.py,openai,12,\bopenai\b,- does not call OpenAI;
+src\simulate_stage1_policy.py,openai,339,\bopenai\b,"f""- OpenAI called: `{report.get('openai_called')}`"","
+src\simulate_stage1_policy.py,openai,423,OpenAI,"""openai_called"": False,"
+src\simulate_stage1_policy.py,pandas_read_csv,360,\bread_csv\s*\(,raw = pd.read_csv(input_path)
+src\simulate_stage1_policy_aligned.py,yfinance,14,\byfinance\b,- does not call yfinance;
+src\simulate_stage1_policy_aligned.py,yfinance,352,\byfinance\b,"f""- yfinance called: `{report.get('yfinance_called')}`"","
+src\simulate_stage1_policy_aligned.py,openai,12,\bopenai\b,- does not call OpenAI;
+src\simulate_stage1_policy_aligned.py,openai,350,\bopenai\b,"f""- OpenAI called: `{report.get('openai_called')}`"","
+src\simulate_stage1_policy_aligned.py,openai,434,OpenAI,"""openai_called"": False,"
+src\simulate_stage1_policy_aligned.py,pandas_read_csv,105,\bread_csv\s*\(,return pd.read_csv(path)
+src\simulate_stage1_policy_aligned.py,pandas_read_csv,369,\bread_csv\s*\(,df = _normalize_input(pd.read_csv(input_path))
+src\simulate_stage1_policy_final.py,yfinance,274,\byfinance\b,"f""- yfinance called: `{report.get('yfinance_called')}`"","
+src\simulate_stage1_policy_final.py,openai,272,\bopenai\b,"f""- OpenAI called: `{report.get('openai_called')}`"","
+src\simulate_stage1_policy_final.py,openai,343,OpenAI,"""openai_called"": False,"
+src\simulate_stage1_policy_final.py,pandas_read_csv,82,\bread_csv\s*\(,return pd.read_csv(path)
+src\simulate_stage1_policy_final.py,pandas_read_csv,287,\bread_csv\s*\(,df = _normalize_input(pd.read_csv(input_path))
+src\simulate_stage2_yfinance_policy.py,yfinance,63,\byfinance\b,"Reuse the real Stage 2 classifier, then remove only the yfinance-provider"
+src\simulate_stage2_yfinance_policy.py,yfinance,92,\byfinance\b,"""reason_text"": ""Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker."","
+src\simulate_stage2_yfinance_policy.py,yfinance,153,\byfinance\b,"return f""""""# Scout Finance — Phase 7C.2 Stage 2 yfinance policy dry-run"
+src\simulate_stage2_yfinance_policy.py,yfinance,159,\byfinance\b,Dry-run a Stage 2 policy aligned with yfinance limitations.
+src\simulate_stage2_yfinance_policy.py,yfinance,167,\byfinance\b,This means missing 3Y dilution from yfinance is tracked as a provider limitation but does not block a clean pass by itself.
+src\simulate_stage2_yfinance_policy.py,yfinance,177,\byfinance\b,## Simulated yfinance-aligned Stage 2
+src\simulate_stage2_yfinance_policy.py,yfinance,202,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+src\simulate_stage2_yfinance_policy.py,yfinance,210,\byfinance\b,"print(""Scout Finance — Phase 7C.2 Stage 2 yfinance policy dry-run"")"
+src\simulate_stage2_yfinance_policy.py,yfinance,299,\byfinance\b,"next_phase = ""7C.3 — Guarded Stage 2 yfinance policy implementation"""
+src\simulate_stage2_yfinance_policy.py,yfinance,305,\byfinance\b,"next_phase = ""7C.2b — Tighten Stage 2 yfinance policy"""
+src\simulate_stage2_yfinance_policy.py,yfinance,359,\byfinance\b,"print(""Simulated yfinance-aligned Stage 2"")"
+src\simulate_stage2_yfinance_policy.py,openai,200,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+src\simulate_stage2_yfinance_policy.py,openai,342,OpenAI,"""openai_called"": False,"
+src\simulate_stage2_yfinance_policy.py,pandas_read_csv,53,\bread_csv\s*\(,df = pd.read_csv(path)
+src\simulate_stage2_yfinance_policy.py,pandas_read_csv,217,\bread_csv\s*\(,df = pd.read_csv(INPUT_PATH)
+src\simulate_stage2_yfinance_policy_v2.py,yfinance,119,\byfinance\b,"""reason_text"": ""Shares dilution 3Y is unavailable from yfinance; tracked as provider limitation, not as a clean-pass blocker."","
+src\simulate_stage2_yfinance_policy_v2.py,yfinance,171,\byfinance\b,"return f""""""# Scout Finance — Phase 7C.2 v2 Stage 2 yfinance policy dry-run"
+src\simulate_stage2_yfinance_policy_v2.py,yfinance,177,\byfinance\b,Dry-run a Stage 2 policy aligned with yfinance limitations without calling internal `filter_stage2.py` functions.
+src\simulate_stage2_yfinance_policy_v2.py,yfinance,185,\byfinance\b,Missing 3Y dilution from yfinance is tracked as a provider limitation but does not block a clean pass by itself.
+src\simulate_stage2_yfinance_policy_v2.py,yfinance,195,\byfinance\b,## Simulated yfinance-aligned Stage 2
+src\simulate_stage2_yfinance_policy_v2.py,yfinance,220,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+src\simulate_stage2_yfinance_policy_v2.py,yfinance,228,\byfinance\b,"print(""Scout Finance — Phase 7C.2 v2 Stage 2 yfinance policy dry-run"")"
+src\simulate_stage2_yfinance_policy_v2.py,yfinance,330,\byfinance\b,"next_phase = ""7C.3 — Guarded Stage 2 yfinance policy implementation"""
+src\simulate_stage2_yfinance_policy_v2.py,yfinance,336,\byfinance\b,"next_phase = ""7C.2b — Tighten Stage 2 yfinance policy"""
+src\simulate_stage2_yfinance_policy_v2.py,yfinance,393,\byfinance\b,"print(""Simulated yfinance-aligned Stage 2"")"
+src\simulate_stage2_yfinance_policy_v2.py,openai,218,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+src\simulate_stage2_yfinance_policy_v2.py,openai,376,OpenAI,"""openai_called"": False,"
+src\simulate_stage2_yfinance_policy_v2.py,pandas_read_csv,70,\bread_csv\s*\(,df = pd.read_csv(path)
+src\simulate_stage2_yfinance_policy_v2.py,pandas_read_csv,85,\bread_csv\s*\(,log = pd.read_csv(CURRENT_STAGE2_LOG)
+src\simulate_stage2_yfinance_policy_v2.py,pandas_read_csv,238,\bread_csv\s*\(,input_df = pd.read_csv(INPUT_PATH)
+src\universe.py,yfinance,15,\byfinance\b,- yfinance integration.
+src\universe.py,openai,17,\bopenai\b,- OpenAI analysis.
+src\universe.py,pandas_read_csv,94,\bread_csv\s*\(,return pd.read_csv(csv_path)
+src\utils.py,openai,19,\bopenai\b,- OpenAI calls.
+src\validate_phase7f1_release_v07_integrity.py,yfinance,33,\byfinance\b,"""CHANGELOG_v0.7.md"": [""500 → 182 → 63 → 6"", ""AUPH"", ""Stage 2 yfinance-aligned""],"
+src\validate_phase7f1_release_v07_integrity.py,yfinance,117,\byfinance\b,"- yfinance called: `{summary[""yfinance_called""]}`"
+src\validate_phase7f1_release_v07_integrity.py,openai,115,\bopenai\b,"- OpenAI called: `{summary[""openai_called""]}`"
+src\validate_phase7f1_release_v07_integrity.py,openai,196,OpenAI,"""openai_called"": False,"
+src\validate_phase7f1_release_v07_integrity.py,pandas_read_csv,48,\bread_csv\s*\(,return int(len(pd.read_csv(path))) if path.exists() else 0

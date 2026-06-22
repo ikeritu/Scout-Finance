@@ -1,0 +1,44 @@
+{
+  "phase": "7B.2",
+  "status": "OK",
+  "created_at": "2026-06-08T09:36:20+00:00",
+  "total_companies_compared": 500,
+  "matched": 487,
+  "mismatched": 13,
+  "match_rate_percent": 97.4,
+  "real_counts": {
+    "PASSED": 226,
+    "REJECTED": 208,
+    "WATCHLIST": 66
+  },
+  "simulated_current_base_counts": {
+    "PASSED": 213,
+    "REJECTED": 208,
+    "WATCHLIST": 79
+  },
+  "mismatch_summary": [
+    {
+      "real_decision": "PASSED",
+      "simulated_decision": "WATCHLIST",
+      "count": 13
+    }
+  ],
+  "likely_causes": [
+    "The simulator approximates Stage 1 but may not replicate every internal condition from src/filter_stage1.py.",
+    "Most important differences should be inspected in stage1_simulator_alignment_mismatches.csv.",
+    "If mismatches are mostly PASSED vs WATCHLIST, hard rejection thresholds may already match while watchlist-band logic differs."
+  ],
+  "outputs": {
+    "report_json": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_simulator_alignment_report.json",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_simulator_alignment_report.md",
+    "mismatches_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_simulator_alignment_mismatches.csv",
+    "mismatch_summary_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_simulator_alignment_mismatch_summary.csv"
+  },
+  "recommendation": "Do not apply Stage 1 threshold changes until current_base simulation matches real Stage 1 or until documented differences are intentionally accepted.",
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_v0_6_modified": false
+}

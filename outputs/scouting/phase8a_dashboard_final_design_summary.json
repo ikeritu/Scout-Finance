@@ -1,0 +1,49 @@
+{
+  "phase": "8A",
+  "status": "OK",
+  "created_at": "2026-06-10T20:03:42+00:00",
+  "goal": "dashboard_final_functional_design",
+  "base_release": "v0.7.0-candidate",
+  "phase7g_frozen": true,
+  "validated_funnel": "500 → 182 → 63 → 6",
+  "final_tabs_count": 9,
+  "recommended_next_phase": "8B — Ficha profunda por empresa",
+  "outputs": {
+    "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase8a_dashboard_final_design_summary.json",
+    "report": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase8a_dashboard_final_design_report.md",
+    "matrix": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase8a_dashboard_final_design_matrix.csv"
+  },
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "pipeline_recalculated": false,
+    "release_modified": false
+  },
+  "signatures_before": {
+    "app.py": {
+      "exists": true,
+      "size": 185246,
+      "mtime": 1781002719.9663692
+    },
+    "src/filters.py": {
+      "exists": true,
+      "size": 8710,
+      "mtime": 1779969132.3792703
+    }
+  },
+  "signatures_after": {
+    "app.py": {
+      "exists": true,
+      "size": 185246,
+      "mtime": 1781002719.9663692
+    },
+    "src/filters.py": {
+      "exists": true,
+      "size": 8710,
+      "mtime": 1779969132.3792703
+    }
+  }
+}

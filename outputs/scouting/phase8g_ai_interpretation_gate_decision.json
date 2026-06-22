@@ -1,0 +1,19 @@
+{
+  "ai_allowed": false,
+  "gate_status": "closed",
+  "reason": "ENABLE_OPENAI is not True; ENABLE_AI_RESEARCH_MEMO is not True; ALLOW_AI_SPEND is not True",
+  "hard_blockers": [
+    "ENABLE_OPENAI is not True",
+    "ENABLE_AI_RESEARCH_MEMO is not True",
+    "ALLOW_AI_SPEND is not True"
+  ],
+  "settings": {
+    "ENABLE_OPENAI": false,
+    "ENABLE_AI_RESEARCH_MEMO": false,
+    "ALLOW_AI_SPEND": false,
+    "AI_RESEARCH_MEMO_MODEL": "gpt-4.1-mini",
+    "AI_RESEARCH_MEMO_MAX_COST_USD": 0.5,
+    "DEFAULT_TOP_N": 3,
+    "MAX_TOP_N": 3
+  }
+}

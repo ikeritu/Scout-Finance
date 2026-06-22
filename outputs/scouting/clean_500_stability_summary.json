@@ -1,0 +1,68 @@
+{
+  "phase": "7A.6",
+  "status": "OK",
+  "created_at": "2026-06-08T08:39:46+00:00",
+  "started_at": "2026-06-08T08:34:41+00:00",
+  "elapsed_seconds": 305.153,
+  "input_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_real_clean.csv",
+  "enriched_output_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_real_clean_market_enriched_500.csv",
+  "limit": 500,
+  "sleep_seconds": 0.3,
+  "source": "yfinance_clean_market_data_500",
+  "market_data_processed_rows": 500,
+  "market_data_success": 498,
+  "market_data_failed_or_incomplete": 2,
+  "market_data_success_rate_percent": 99.6,
+  "stage1_input": 500,
+  "stage1_passed": 226,
+  "stage1_watchlist": 66,
+  "stage1_rejected": 208,
+  "stage1_pass_rate_percent": 45.2,
+  "stage1_watchlist_rate_percent": 13.2,
+  "stage1_rejection_rate_percent": 41.6,
+  "companies_ready_for_stage2": 0,
+  "companies_not_ready_for_stage2": 226,
+  "average_core_stage2_coverage_percent": 0.0,
+  "stage1_rejection_distribution": [
+    {
+      "reason_code": "MARKET_CAP_BELOW_MINIMUM",
+      "count": 171
+    },
+    {
+      "reason_code": "LOW_DOLLAR_VOLUME",
+      "count": 132
+    },
+    {
+      "reason_code": "PRICE_WATCHLIST_RANGE",
+      "count": 98
+    },
+    {
+      "reason_code": "DOLLAR_VOLUME_WATCHLIST_RANGE",
+      "count": 71
+    },
+    {
+      "reason_code": "MARKET_CAP_WATCHLIST_RANGE",
+      "count": 68
+    },
+    {
+      "reason_code": "PRICE_BELOW_MINIMUM",
+      "count": 39
+    },
+    {
+      "reason_code": "MISSING_MARKET_CAP",
+      "count": 2
+    }
+  ],
+  "output_files": {
+    "summary": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\clean_500_stability_summary.json",
+    "metrics_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\clean_500_stability_metrics.csv",
+    "rejection_distribution_csv": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\clean_500_stage1_rejection_distribution.csv",
+    "report_md": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\clean_500_stability_report.md",
+    "enriched_output": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\raw\\universe_source_real_clean_market_enriched_500.csv"
+  },
+  "openai_called": false,
+  "paid_api_called": false,
+  "yfinance_called": true,
+  "app_modified": false,
+  "release_v0_6_modified": false
+}

@@ -1,0 +1,2723 @@
+{
+  "release": "v0.7.0-candidate",
+  "created_at": "2026-06-10T10:34:14+00:00",
+  "validated_funnel": "500 → 182 → 63 → 6",
+  "stage_counts": {
+    "stage1_passed": 182,
+    "stage2_passed": 63,
+    "stage3_passed": 6
+  },
+  "top_candidate": {
+    "ticker": "AUPH",
+    "name": "Aurinia Pharmaceuticals Inc - Common Shares",
+    "score": 70.83
+  },
+  "source_summary": {
+    "phase": "7F",
+    "status": "OK",
+    "created_at": "2026-06-10T10:34:14+00:00",
+    "release": "v0.7.0-candidate",
+    "release_dir": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7",
+    "ready_for_freeze": true,
+    "counts": {
+      "stage1_passed": 182,
+      "stage2_passed": 63,
+      "stage3_passed": 6,
+      "stage3_candidates_for_ranking": 34
+    },
+    "copy_results": [
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\app.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\app.py",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 185246
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\align_stage1_simulator.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\align_stage1_simulator.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 12303
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\analysis_history.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\analysis_history.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 7549
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\analysis_schema.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\analysis_schema.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3175
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\auth.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\auth.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3865
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\cache.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\cache.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 11579
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\clean_universe_institutional.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\clean_universe_institutional.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 16725
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\close_phase7c4_pipeline_revalidation.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\close_phase7c4_pipeline_revalidation.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 13627
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\close_phase7e1_v07_checkpoint_marker_fix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\close_phase7e1_v07_checkpoint_marker_fix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 10251
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\close_phase7e_v07_release_checkpoint.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\close_phase7e_v07_release_checkpoint.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 9200
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\close_stage1_balanced_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\close_stage1_balanced_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 6262
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\company_research_report.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\company_research_report.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 19041
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\company_research_report_outputs.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\company_research_report_outputs.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 17624
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\compare_institutional_cleaning_impact.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\compare_institutional_cleaning_impact.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 11743
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\create_global_universe_template.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\create_global_universe_template.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 851
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\database.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\database.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 9281
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\data_quality.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\data_quality.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 9320
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\diagnose_stage1_professional.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\diagnose_stage1_professional.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 16628
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\download_free_us_universe.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\download_free_us_universe.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 8454
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\enrich_fundamentals_yfinance.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\enrich_fundamentals_yfinance.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 12385
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\enrich_market_data_yfinance.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\enrich_market_data_yfinance.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 14629
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\enrich_stage1_demo_financials.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\enrich_stage1_demo_financials.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2894
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\enrich_stage2_demo_scoring_inputs.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\enrich_stage2_demo_scoring_inputs.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2074
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\export.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\export.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 18299
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\export_stage3_candidates_for_app.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\export_stage3_candidates_for_app.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 501
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\feedback.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\feedback.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 12390
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filters.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\filters.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 8710
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage1.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\filter_stage1.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 17181
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage1_before_phase7b8_1_exact.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\filter_stage1_before_phase7b8_1_exact.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 16177
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage1_before_phase7b8_balanced.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\filter_stage1_before_phase7b8_balanced.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 16177
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage2.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\filter_stage2.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 23657
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage2_before_phase7c3_yfinance_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\filter_stage2_before_phase7c3_yfinance_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 22801
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\filter_stage3.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\filter_stage3.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 22732
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\fundamental_coverage_report.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\fundamental_coverage_report.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 8690
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\funnel_paths.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\funnel_paths.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 947
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\global_universe.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\global_universe.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 9638
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\load_global_universe.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\load_global_universe.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 496
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\market_data.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\market_data.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 12182
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\openai_analysis.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\openai_analysis.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 19294
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\openai_client.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\openai_client.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 11107
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\openai_equity_research_v2.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\openai_equity_research_v2.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 15659
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\openai_persistence.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\openai_persistence.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 13714
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\openai_real_top1.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\openai_real_top1.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 10292
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\openai_smoke_test.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\openai_smoke_test.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 6172
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\package_phase7f_release_v07.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\package_phase7f_release_v07.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 12673
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\pipeline.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\pipeline.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 15156
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\prepare_fundamentals_csv.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\prepare_fundamentals_csv.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 12216
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\prepare_real_universe_csv.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\prepare_real_universe_csv.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 7606
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\results.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\results.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 26404
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\review_stage1_balanced_impact.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\review_stage1_balanced_impact.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 11216
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\run_clean_500_stability_pilot.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\run_clean_500_stability_pilot.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 10700
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\run_global_funnel_demo.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\run_global_funnel_demo.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 9546
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\run_real_universe_pilot.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\run_real_universe_pilot.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 8849
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\run_stage1_balanced_dry_run.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\run_stage1_balanced_dry_run.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 10852
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\run_stage1_filter.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\run_stage1_filter.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 385
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\run_stage2_filter.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\run_stage2_filter.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 401
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\run_stage2_filter_enriched.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\run_stage2_filter_enriched.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1360
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\run_stage3_scoring.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\run_stage3_scoring.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 401
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\save_outputs.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\save_outputs.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2544
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\scoring.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\scoring.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 15917
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\scouting_candidates.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\scouting_candidates.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 7114
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\select_stage1_candidate_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\select_stage1_candidate_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 10000
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\simulate_stage1_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\simulate_stage1_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 15980
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\simulate_stage1_policy_aligned.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\simulate_stage1_policy_aligned.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 17043
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\simulate_stage1_policy_final.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\simulate_stage1_policy_final.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 15354
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\simulate_stage2_yfinance_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\simulate_stage2_yfinance_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 12429
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\simulate_stage2_yfinance_policy_v2.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\simulate_stage2_yfinance_policy_v2.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 13615
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\universe.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\universe.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 6850
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\utils.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\utils.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 9044
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\validate_analysis.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\validate_analysis.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 6761
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\visualizations.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\visualizations.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 18958
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\src\\__init__.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\src\\__init__.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 0
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\apply_phase7a5_3_ui_text_polish.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\apply_phase7a5_3_ui_text_polish.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3210
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\apply_phase7a5_institutional_dashboard.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\apply_phase7a5_institutional_dashboard.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 9220
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\apply_phase7b8_1_exact_stage1_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\apply_phase7b8_1_exact_stage1_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 9890
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\apply_phase7b8_guarded_stage1_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\apply_phase7b8_guarded_stage1_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 7536
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\apply_phase7c3_stage2_yfinance_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\apply_phase7c3_stage2_yfinance_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 10598
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\apply_phase7d1_dashboard_hotfix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\apply_phase7d1_dashboard_hotfix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 11113
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\apply_phase7d2_institutional_count_hotfix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\apply_phase7d2_institutional_count_hotfix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 5563
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\apply_phase7d3b_fundamental_coverage_exact_fix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\apply_phase7d3b_fundamental_coverage_exact_fix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 7376
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\apply_phase7d3_fundamental_coverage_dashboard_fix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\apply_phase7d3_fundamental_coverage_dashboard_fix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 8399
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\apply_phase7d_dashboard_revalidated_funnel.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\apply_phase7d_dashboard_revalidated_funnel.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 12439
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase5b_global_universe.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase5b_global_universe.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2086
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase5c_stage1.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase5c_stage1.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3180
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase5d_stage2.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase5d_stage2.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3119
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase5e_stage3.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase5e_stage3.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3988
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase5f_candidates.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase5f_candidates.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2585
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase5g1_app.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase5g1_app.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1610
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase5g_app.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase5g_app.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1438
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase5h_app.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase5h_app.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1614
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase5i_global_funnel_runner.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase5i_global_funnel_runner.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3668
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase6a_real_universe.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase6a_real_universe.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2595
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase6b_fundamental_coverage.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase6b_fundamental_coverage.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3015
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase6c_fundamentals_enrichment.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase6c_fundamentals_enrichment.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2797
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase6d_stage2_enriched.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase6d_stage2_enriched.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 4236
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase6e_clean_global_runner.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase6e_clean_global_runner.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 5262
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase6f_dashboard.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase6f_dashboard.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1695
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7a1_free_us_universe.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7a1_free_us_universe.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3207
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7a2_market_data_enrichment.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7a2_market_data_enrichment.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3547
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7a3_institutional_universe_cleaning.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7a3_institutional_universe_cleaning.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 4678
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7a4_institutional_cleaning_comparison.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7a4_institutional_cleaning_comparison.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3339
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7a5_1_institutional_dashboard.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7a5_1_institutional_dashboard.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2769
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7a5_2_institutional_dashboard.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7a5_2_institutional_dashboard.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2539
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7a5_3_ui_text_polish.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7a5_3_ui_text_polish.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1602
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7a5_institutional_dashboard.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7a5_institutional_dashboard.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2773
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7a6_clean_500_stability.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7a6_clean_500_stability.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3880
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7a_real_universe_pilot.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7a_real_universe_pilot.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 4036
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b1_policy_simulation.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b1_policy_simulation.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3245
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b2_simulator_alignment.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b2_simulator_alignment.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3369
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b3_aligned_simulator.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b3_aligned_simulator.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3315
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b4_final_simulator.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b4_final_simulator.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3066
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b5_candidate_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b5_candidate_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2893
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b6_balanced_dry_run.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b6_balanced_dry_run.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3094
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b7_impact_approval.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b7_impact_approval.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3643
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b8_1_exact_implementation.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b8_1_exact_implementation.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3351
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b8_guarded_implementation.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b8_guarded_implementation.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 2495
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b9_stage1_balanced_closure.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b9_stage1_balanced_closure.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3180
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7b_stage1_diagnostic.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7b_stage1_diagnostic.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3590
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7c1_yfinance_fundamentals.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7c1_yfinance_fundamentals.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 4152
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7c2_stage2_yfinance_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7c2_stage2_yfinance_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3843
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7c2_v2_stage2_yfinance_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7c2_v2_stage2_yfinance_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 4615
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7c3_stage2_yfinance_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7c3_stage2_yfinance_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3818
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7c4_pipeline_revalidation.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7c4_pipeline_revalidation.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 4423
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7d1_dashboard_hotfix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7d1_dashboard_hotfix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3405
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7d2_institutional_count_hotfix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7d2_institutional_count_hotfix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3538
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7d3b_fundamental_coverage_exact_fix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7d3b_fundamental_coverage_exact_fix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3867
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7d3_fundamental_coverage_dashboard_fix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7d3_fundamental_coverage_dashboard_fix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3333
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7d_dashboard_revalidated_funnel.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7d_dashboard_revalidated_funnel.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3558
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7e1_v07_checkpoint_marker_fix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7e1_v07_checkpoint_marker_fix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3632
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7e_v07_release_checkpoint.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7e_v07_release_checkpoint.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3603
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_phase7f_release_v07_package.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_phase7f_release_v07_package.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 5240
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_release_v0_5.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_release_v0_5.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 4129
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\check_release_v0_6.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\check_release_v0_6.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 3948
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\create_release_v0_5.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\create_release_v0_5.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 6532
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\create_release_v0_6.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\create_release_v0_6.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 5906
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\hotfix_phase7a5_2_dashboard.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\hotfix_phase7a5_2_dashboard.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 10084
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\hotfix_phase7a5_dashboard.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\hotfix_phase7a5_dashboard.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 720
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\rollback_phase7b8_1_exact_stage1_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\rollback_phase7b8_1_exact_stage1_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 723
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\rollback_phase7b8_stage1_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\rollback_phase7b8_stage1_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 681
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\rollback_phase7c3_stage2_yfinance_policy.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\rollback_phase7c3_stage2_yfinance_policy.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 735
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\rollback_phase7d1_dashboard_hotfix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\rollback_phase7d1_dashboard_hotfix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 695
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\rollback_phase7d2_institutional_count_hotfix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\rollback_phase7d2_institutional_count_hotfix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 721
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\rollback_phase7d3b_fundamental_coverage_exact_fix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\rollback_phase7d3b_fundamental_coverage_exact_fix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 727
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\rollback_phase7d3_fundamental_coverage_dashboard_fix.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\rollback_phase7d3_fundamental_coverage_dashboard_fix.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 733
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\scripts\\rollback_phase7d_dashboard_revalidated_funnel.py",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\scripts\\rollback_phase7d_dashboard_revalidated_funnel.py",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 697
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7A1_FREE_US_UNIVERSE.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7A1_FREE_US_UNIVERSE.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1216
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7A2_FREE_MARKET_DATA.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7A2_FREE_MARKET_DATA.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1670
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7A3_INSTITUTIONAL_UNIVERSE_CLEANING.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7A3_INSTITUTIONAL_UNIVERSE_CLEANING.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1777
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7A4_INSTITUTIONAL_CLEANING_COMPARISON.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7A4_INSTITUTIONAL_CLEANING_COMPARISON.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 873
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7A5_INSTITUTIONAL_UNIVERSE_DASHBOARD.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7A5_INSTITUTIONAL_UNIVERSE_DASHBOARD.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 965
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7A6_CLEAN_500_STABILITY.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7A6_CLEAN_500_STABILITY.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 639
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7A_REAL_UNIVERSE_PILOT.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7A_REAL_UNIVERSE_PILOT.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1320
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B1_STAGE1_POLICY_SIMULATOR.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B1_STAGE1_POLICY_SIMULATOR.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 900
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B2_ALIGN_STAGE1_SIMULATOR.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B2_ALIGN_STAGE1_SIMULATOR.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 908
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B3_ALIGNED_STAGE1_POLICY_SIMULATOR.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B3_ALIGNED_STAGE1_POLICY_SIMULATOR.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 994
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B4_STAGE1_SIMULATOR_100_ALIGNMENT.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B4_STAGE1_SIMULATOR_100_ALIGNMENT.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 480
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B5_STAGE1_CANDIDATE_POLICY_DECISION.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B5_STAGE1_CANDIDATE_POLICY_DECISION.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 813
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B6_BALANCED_POLICY_DRY_RUN.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B6_BALANCED_POLICY_DRY_RUN.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 759
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B7_BALANCED_POLICY_IMPACT_APPROVAL.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B7_BALANCED_POLICY_IMPACT_APPROVAL.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 457
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B8_1_EXACT_STAGE1_IMPLEMENTATION.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B8_1_EXACT_STAGE1_IMPLEMENTATION.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 522
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B8_GUARDED_STAGE1_IMPLEMENTATION.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B8_GUARDED_STAGE1_IMPLEMENTATION.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 491
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B9_STAGE1_BALANCED_CLOSURE.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B9_STAGE1_BALANCED_CLOSURE.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 353
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7B_STAGE1_PROFESSIONAL_DIAGNOSTIC.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7B_STAGE1_PROFESSIONAL_DIAGNOSTIC.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 1135
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7C1_YFINANCE_FUNDAMENTALS_ENRICHMENT.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7C1_YFINANCE_FUNDAMENTALS_ENRICHMENT.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 694
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7C2_STAGE2_YFINANCE_POLICY_DRYRUN.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7C2_STAGE2_YFINANCE_POLICY_DRYRUN.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 657
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7C2_V2_STAGE2_YFINANCE_POLICY_DRYRUN.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7C2_V2_STAGE2_YFINANCE_POLICY_DRYRUN.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 723
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7C3_STAGE2_YFINANCE_POLICY_IMPLEMENTATION.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7C3_STAGE2_YFINANCE_POLICY_IMPLEMENTATION.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 765
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7C4_PIPELINE_REVALIDATION_CLOSURE.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7C4_PIPELINE_REVALIDATION_CLOSURE.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 597
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7D1_DASHBOARD_HOTFIX.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7D1_DASHBOARD_HOTFIX.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 602
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7D2_INSTITUTIONAL_COUNT_HOTFIX.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7D2_INSTITUTIONAL_COUNT_HOTFIX.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 641
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7D3B_FUNDAMENTAL_COVERAGE_EXACT_FIX.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7D3B_FUNDAMENTAL_COVERAGE_EXACT_FIX.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 704
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7D3_FUNDAMENTAL_COVERAGE_DASHBOARD_FIX.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7D3_FUNDAMENTAL_COVERAGE_DASHBOARD_FIX.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 511
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7D_DASHBOARD_REVALIDATED_FUNNEL.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7D_DASHBOARD_REVALIDATED_FUNNEL.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 779
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7D_V2_DASHBOARD_REVALIDATED_FUNNEL.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7D_V2_DASHBOARD_REVALIDATED_FUNNEL.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 504
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7E1_V07_CHECKPOINT_MARKER_FIX.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7E1_V07_CHECKPOINT_MARKER_FIX.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 544
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7E_V07_RELEASE_CHECKPOINT.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7E_V07_RELEASE_CHECKPOINT.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 396
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\docs\\phase7\\PHASE7F_PACKAGE_RELEASE_V07.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\docs\\phase7\\PHASE7F_PACKAGE_RELEASE_V07.md",
+        "exists": true,
+        "copied": true,
+        "required": false,
+        "error": null,
+        "size_bytes": 428
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7e_v07_release_checkpoint_summary.json",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\phase7e_v07_release_checkpoint_summary.json",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 6415
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7e_v07_release_checkpoint_report.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\phase7e_v07_release_checkpoint_report.md",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 4108
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7e_v07_release_checkpoint_evidence.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\phase7e_v07_release_checkpoint_evidence.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 2338
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7c4_pipeline_revalidation_summary.json",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\phase7c4_pipeline_revalidation_summary.json",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 7765
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7c4_pipeline_revalidation_report.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\phase7c4_pipeline_revalidation_report.md",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 4862
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7c4_pipeline_revalidation_evidence.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\phase7c4_pipeline_revalidation_evidence.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 2584
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\phase7c4_pipeline_revalidation_top_candidates.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\phase7c4_pipeline_revalidation_top_candidates.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 2131
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\active_pipeline_policy_status.json",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\active_pipeline_policy_status.json",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 518
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage1_balanced_official_closure_summary.json",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\stage1_balanced_official_closure_summary.json",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 2418
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage2_yfinance_policy_implementation_summary.json",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\stage2_yfinance_policy_implementation_summary.json",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 2386
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage3_summary.json",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\stage3_summary.json",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 2533
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_20_deep_research.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\top_20_deep_research.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 18316
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_50_watchlist.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\top_50_watchlist.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 30626
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\top_100_candidates.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\top_100_candidates.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 30626
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\stage3_candidates_for_ranking.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\stage3_candidates_for_ranking.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 5660
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamentals_yfinance_enrichment_summary.json",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\fundamentals_yfinance_enrichment_summary.json",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 1785
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\outputs\\scouting\\fundamentals_yfinance_enrichment_report.md",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\outputs\\scouting\\fundamentals_yfinance_enrichment_report.md",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 517
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_passed.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\data\\stages\\stage1_passed.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 53244
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_watchlist.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\data\\stages\\stage1_watchlist.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 31006
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage1_rejected.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\data\\stages\\stage1_rejected.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 86318
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_passed.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\data\\stages\\stage2_passed.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 46336
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_watchlist.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\data\\stages\\stage2_watchlist.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 60097
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage2_rejected.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\data\\stages\\stage2_rejected.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 29096
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_passed.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\data\\stages\\stage3_passed.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 6101
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_watchlist.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\data\\stages\\stage3_watchlist.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 25801
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_rejected.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\data\\stages\\stage3_rejected.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 25636
+      },
+      {
+        "source": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\data\\stages\\stage3_rejection_log.csv",
+        "target": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\data\\stages\\stage3_rejection_log.csv",
+        "exists": true,
+        "copied": true,
+        "required": true,
+        "error": null,
+        "size_bytes": 15315
+      }
+    ],
+    "checks": {
+      "app_compiles": true,
+      "checkpoint_ready": true,
+      "required_copy_ok": true,
+      "counts_ok": true
+    },
+    "manifest_path": "C:\\Users\\ikeri\\proyectos\\Scout Finance\\releases\\v0.7\\manifest_v0.7.json",
+    "recommended_next_phase": "7F.1 — Validate release v0.7 package integrity",
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": true
+  },
+  "files": [
+    {
+      "path": "app.py",
+      "size_bytes": 185246
+    },
+    {
+      "path": "CHANGELOG_v0.7.md",
+      "size_bytes": 1179
+    },
+    {
+      "path": "RELEASE_NOTES_v0.7.md",
+      "size_bytes": 908
+    },
+    {
+      "path": "VERSION",
+      "size_bytes": 17
+    },
+    {
+      "path": "scripts/apply_phase7a5_3_ui_text_polish.py",
+      "size_bytes": 3210
+    },
+    {
+      "path": "scripts/apply_phase7a5_institutional_dashboard.py",
+      "size_bytes": 9220
+    },
+    {
+      "path": "scripts/apply_phase7b8_1_exact_stage1_policy.py",
+      "size_bytes": 9890
+    },
+    {
+      "path": "scripts/apply_phase7b8_guarded_stage1_policy.py",
+      "size_bytes": 7536
+    },
+    {
+      "path": "scripts/apply_phase7c3_stage2_yfinance_policy.py",
+      "size_bytes": 10598
+    },
+    {
+      "path": "scripts/apply_phase7d1_dashboard_hotfix.py",
+      "size_bytes": 11113
+    },
+    {
+      "path": "scripts/apply_phase7d2_institutional_count_hotfix.py",
+      "size_bytes": 5563
+    },
+    {
+      "path": "scripts/apply_phase7d3b_fundamental_coverage_exact_fix.py",
+      "size_bytes": 7376
+    },
+    {
+      "path": "scripts/apply_phase7d3_fundamental_coverage_dashboard_fix.py",
+      "size_bytes": 8399
+    },
+    {
+      "path": "scripts/apply_phase7d_dashboard_revalidated_funnel.py",
+      "size_bytes": 12439
+    },
+    {
+      "path": "scripts/check_phase5b_global_universe.py",
+      "size_bytes": 2086
+    },
+    {
+      "path": "scripts/check_phase5c_stage1.py",
+      "size_bytes": 3180
+    },
+    {
+      "path": "scripts/check_phase5d_stage2.py",
+      "size_bytes": 3119
+    },
+    {
+      "path": "scripts/check_phase5e_stage3.py",
+      "size_bytes": 3988
+    },
+    {
+      "path": "scripts/check_phase5f_candidates.py",
+      "size_bytes": 2585
+    },
+    {
+      "path": "scripts/check_phase5g1_app.py",
+      "size_bytes": 1610
+    },
+    {
+      "path": "scripts/check_phase5g_app.py",
+      "size_bytes": 1438
+    },
+    {
+      "path": "scripts/check_phase5h_app.py",
+      "size_bytes": 1614
+    },
+    {
+      "path": "scripts/check_phase5i_global_funnel_runner.py",
+      "size_bytes": 3668
+    },
+    {
+      "path": "scripts/check_phase6a_real_universe.py",
+      "size_bytes": 2595
+    },
+    {
+      "path": "scripts/check_phase6b_fundamental_coverage.py",
+      "size_bytes": 3015
+    },
+    {
+      "path": "scripts/check_phase6c_fundamentals_enrichment.py",
+      "size_bytes": 2797
+    },
+    {
+      "path": "scripts/check_phase6d_stage2_enriched.py",
+      "size_bytes": 4236
+    },
+    {
+      "path": "scripts/check_phase6e_clean_global_runner.py",
+      "size_bytes": 5262
+    },
+    {
+      "path": "scripts/check_phase6f_dashboard.py",
+      "size_bytes": 1695
+    },
+    {
+      "path": "scripts/check_phase7a1_free_us_universe.py",
+      "size_bytes": 3207
+    },
+    {
+      "path": "scripts/check_phase7a2_market_data_enrichment.py",
+      "size_bytes": 3547
+    },
+    {
+      "path": "scripts/check_phase7a3_institutional_universe_cleaning.py",
+      "size_bytes": 4678
+    },
+    {
+      "path": "scripts/check_phase7a4_institutional_cleaning_comparison.py",
+      "size_bytes": 3339
+    },
+    {
+      "path": "scripts/check_phase7a5_1_institutional_dashboard.py",
+      "size_bytes": 2769
+    },
+    {
+      "path": "scripts/check_phase7a5_2_institutional_dashboard.py",
+      "size_bytes": 2539
+    },
+    {
+      "path": "scripts/check_phase7a5_3_ui_text_polish.py",
+      "size_bytes": 1602
+    },
+    {
+      "path": "scripts/check_phase7a5_institutional_dashboard.py",
+      "size_bytes": 2773
+    },
+    {
+      "path": "scripts/check_phase7a6_clean_500_stability.py",
+      "size_bytes": 3880
+    },
+    {
+      "path": "scripts/check_phase7a_real_universe_pilot.py",
+      "size_bytes": 4036
+    },
+    {
+      "path": "scripts/check_phase7b1_policy_simulation.py",
+      "size_bytes": 3245
+    },
+    {
+      "path": "scripts/check_phase7b2_simulator_alignment.py",
+      "size_bytes": 3369
+    },
+    {
+      "path": "scripts/check_phase7b3_aligned_simulator.py",
+      "size_bytes": 3315
+    },
+    {
+      "path": "scripts/check_phase7b4_final_simulator.py",
+      "size_bytes": 3066
+    },
+    {
+      "path": "scripts/check_phase7b5_candidate_policy.py",
+      "size_bytes": 2893
+    },
+    {
+      "path": "scripts/check_phase7b6_balanced_dry_run.py",
+      "size_bytes": 3094
+    },
+    {
+      "path": "scripts/check_phase7b7_impact_approval.py",
+      "size_bytes": 3643
+    },
+    {
+      "path": "scripts/check_phase7b8_1_exact_implementation.py",
+      "size_bytes": 3351
+    },
+    {
+      "path": "scripts/check_phase7b8_guarded_implementation.py",
+      "size_bytes": 2495
+    },
+    {
+      "path": "scripts/check_phase7b9_stage1_balanced_closure.py",
+      "size_bytes": 3180
+    },
+    {
+      "path": "scripts/check_phase7b_stage1_diagnostic.py",
+      "size_bytes": 3590
+    },
+    {
+      "path": "scripts/check_phase7c1_yfinance_fundamentals.py",
+      "size_bytes": 4152
+    },
+    {
+      "path": "scripts/check_phase7c2_stage2_yfinance_policy.py",
+      "size_bytes": 3843
+    },
+    {
+      "path": "scripts/check_phase7c2_v2_stage2_yfinance_policy.py",
+      "size_bytes": 4615
+    },
+    {
+      "path": "scripts/check_phase7c3_stage2_yfinance_policy.py",
+      "size_bytes": 3818
+    },
+    {
+      "path": "scripts/check_phase7c4_pipeline_revalidation.py",
+      "size_bytes": 4423
+    },
+    {
+      "path": "scripts/check_phase7d1_dashboard_hotfix.py",
+      "size_bytes": 3405
+    },
+    {
+      "path": "scripts/check_phase7d2_institutional_count_hotfix.py",
+      "size_bytes": 3538
+    },
+    {
+      "path": "scripts/check_phase7d3b_fundamental_coverage_exact_fix.py",
+      "size_bytes": 3867
+    },
+    {
+      "path": "scripts/check_phase7d3_fundamental_coverage_dashboard_fix.py",
+      "size_bytes": 3333
+    },
+    {
+      "path": "scripts/check_phase7d_dashboard_revalidated_funnel.py",
+      "size_bytes": 3558
+    },
+    {
+      "path": "scripts/check_phase7e1_v07_checkpoint_marker_fix.py",
+      "size_bytes": 3632
+    },
+    {
+      "path": "scripts/check_phase7e_v07_release_checkpoint.py",
+      "size_bytes": 3603
+    },
+    {
+      "path": "scripts/check_phase7f_release_v07_package.py",
+      "size_bytes": 5240
+    },
+    {
+      "path": "scripts/check_release_v0_5.py",
+      "size_bytes": 4129
+    },
+    {
+      "path": "scripts/check_release_v0_6.py",
+      "size_bytes": 3948
+    },
+    {
+      "path": "scripts/create_release_v0_5.py",
+      "size_bytes": 6532
+    },
+    {
+      "path": "scripts/create_release_v0_6.py",
+      "size_bytes": 5906
+    },
+    {
+      "path": "scripts/hotfix_phase7a5_2_dashboard.py",
+      "size_bytes": 10084
+    },
+    {
+      "path": "scripts/hotfix_phase7a5_dashboard.py",
+      "size_bytes": 720
+    },
+    {
+      "path": "scripts/rollback_phase7b8_1_exact_stage1_policy.py",
+      "size_bytes": 723
+    },
+    {
+      "path": "scripts/rollback_phase7b8_stage1_policy.py",
+      "size_bytes": 681
+    },
+    {
+      "path": "scripts/rollback_phase7c3_stage2_yfinance_policy.py",
+      "size_bytes": 735
+    },
+    {
+      "path": "scripts/rollback_phase7d1_dashboard_hotfix.py",
+      "size_bytes": 695
+    },
+    {
+      "path": "scripts/rollback_phase7d2_institutional_count_hotfix.py",
+      "size_bytes": 721
+    },
+    {
+      "path": "scripts/rollback_phase7d3b_fundamental_coverage_exact_fix.py",
+      "size_bytes": 727
+    },
+    {
+      "path": "scripts/rollback_phase7d3_fundamental_coverage_dashboard_fix.py",
+      "size_bytes": 733
+    },
+    {
+      "path": "scripts/rollback_phase7d_dashboard_revalidated_funnel.py",
+      "size_bytes": 697
+    },
+    {
+      "path": "src/align_stage1_simulator.py",
+      "size_bytes": 12303
+    },
+    {
+      "path": "src/analysis_history.py",
+      "size_bytes": 7549
+    },
+    {
+      "path": "src/analysis_schema.py",
+      "size_bytes": 3175
+    },
+    {
+      "path": "src/auth.py",
+      "size_bytes": 3865
+    },
+    {
+      "path": "src/cache.py",
+      "size_bytes": 11579
+    },
+    {
+      "path": "src/clean_universe_institutional.py",
+      "size_bytes": 16725
+    },
+    {
+      "path": "src/close_phase7c4_pipeline_revalidation.py",
+      "size_bytes": 13627
+    },
+    {
+      "path": "src/close_phase7e1_v07_checkpoint_marker_fix.py",
+      "size_bytes": 10251
+    },
+    {
+      "path": "src/close_phase7e_v07_release_checkpoint.py",
+      "size_bytes": 9200
+    },
+    {
+      "path": "src/close_stage1_balanced_policy.py",
+      "size_bytes": 6262
+    },
+    {
+      "path": "src/company_research_report.py",
+      "size_bytes": 19041
+    },
+    {
+      "path": "src/company_research_report_outputs.py",
+      "size_bytes": 17624
+    },
+    {
+      "path": "src/compare_institutional_cleaning_impact.py",
+      "size_bytes": 11743
+    },
+    {
+      "path": "src/create_global_universe_template.py",
+      "size_bytes": 851
+    },
+    {
+      "path": "src/database.py",
+      "size_bytes": 9281
+    },
+    {
+      "path": "src/data_quality.py",
+      "size_bytes": 9320
+    },
+    {
+      "path": "src/diagnose_stage1_professional.py",
+      "size_bytes": 16628
+    },
+    {
+      "path": "src/download_free_us_universe.py",
+      "size_bytes": 8454
+    },
+    {
+      "path": "src/enrich_fundamentals_yfinance.py",
+      "size_bytes": 12385
+    },
+    {
+      "path": "src/enrich_market_data_yfinance.py",
+      "size_bytes": 14629
+    },
+    {
+      "path": "src/enrich_stage1_demo_financials.py",
+      "size_bytes": 2894
+    },
+    {
+      "path": "src/enrich_stage2_demo_scoring_inputs.py",
+      "size_bytes": 2074
+    },
+    {
+      "path": "src/export.py",
+      "size_bytes": 18299
+    },
+    {
+      "path": "src/export_stage3_candidates_for_app.py",
+      "size_bytes": 501
+    },
+    {
+      "path": "src/feedback.py",
+      "size_bytes": 12390
+    },
+    {
+      "path": "src/filters.py",
+      "size_bytes": 8710
+    },
+    {
+      "path": "src/filter_stage1.py",
+      "size_bytes": 17181
+    },
+    {
+      "path": "src/filter_stage1_before_phase7b8_1_exact.py",
+      "size_bytes": 16177
+    },
+    {
+      "path": "src/filter_stage1_before_phase7b8_balanced.py",
+      "size_bytes": 16177
+    },
+    {
+      "path": "src/filter_stage2.py",
+      "size_bytes": 23657
+    },
+    {
+      "path": "src/filter_stage2_before_phase7c3_yfinance_policy.py",
+      "size_bytes": 22801
+    },
+    {
+      "path": "src/filter_stage3.py",
+      "size_bytes": 22732
+    },
+    {
+      "path": "src/fundamental_coverage_report.py",
+      "size_bytes": 8690
+    },
+    {
+      "path": "src/funnel_paths.py",
+      "size_bytes": 947
+    },
+    {
+      "path": "src/global_universe.py",
+      "size_bytes": 9638
+    },
+    {
+      "path": "src/load_global_universe.py",
+      "size_bytes": 496
+    },
+    {
+      "path": "src/market_data.py",
+      "size_bytes": 12182
+    },
+    {
+      "path": "src/openai_analysis.py",
+      "size_bytes": 19294
+    },
+    {
+      "path": "src/openai_client.py",
+      "size_bytes": 11107
+    },
+    {
+      "path": "src/openai_equity_research_v2.py",
+      "size_bytes": 15659
+    },
+    {
+      "path": "src/openai_persistence.py",
+      "size_bytes": 13714
+    },
+    {
+      "path": "src/openai_real_top1.py",
+      "size_bytes": 10292
+    },
+    {
+      "path": "src/openai_smoke_test.py",
+      "size_bytes": 6172
+    },
+    {
+      "path": "src/package_phase7f_release_v07.py",
+      "size_bytes": 12673
+    },
+    {
+      "path": "src/pipeline.py",
+      "size_bytes": 15156
+    },
+    {
+      "path": "src/prepare_fundamentals_csv.py",
+      "size_bytes": 12216
+    },
+    {
+      "path": "src/prepare_real_universe_csv.py",
+      "size_bytes": 7606
+    },
+    {
+      "path": "src/results.py",
+      "size_bytes": 26404
+    },
+    {
+      "path": "src/review_stage1_balanced_impact.py",
+      "size_bytes": 11216
+    },
+    {
+      "path": "src/run_clean_500_stability_pilot.py",
+      "size_bytes": 10700
+    },
+    {
+      "path": "src/run_global_funnel_demo.py",
+      "size_bytes": 9546
+    },
+    {
+      "path": "src/run_real_universe_pilot.py",
+      "size_bytes": 8849
+    },
+    {
+      "path": "src/run_stage1_balanced_dry_run.py",
+      "size_bytes": 10852
+    },
+    {
+      "path": "src/run_stage1_filter.py",
+      "size_bytes": 385
+    },
+    {
+      "path": "src/run_stage2_filter.py",
+      "size_bytes": 401
+    },
+    {
+      "path": "src/run_stage2_filter_enriched.py",
+      "size_bytes": 1360
+    },
+    {
+      "path": "src/run_stage3_scoring.py",
+      "size_bytes": 401
+    },
+    {
+      "path": "src/save_outputs.py",
+      "size_bytes": 2544
+    },
+    {
+      "path": "src/scoring.py",
+      "size_bytes": 15917
+    },
+    {
+      "path": "src/scouting_candidates.py",
+      "size_bytes": 7114
+    },
+    {
+      "path": "src/select_stage1_candidate_policy.py",
+      "size_bytes": 10000
+    },
+    {
+      "path": "src/simulate_stage1_policy.py",
+      "size_bytes": 15980
+    },
+    {
+      "path": "src/simulate_stage1_policy_aligned.py",
+      "size_bytes": 17043
+    },
+    {
+      "path": "src/simulate_stage1_policy_final.py",
+      "size_bytes": 15354
+    },
+    {
+      "path": "src/simulate_stage2_yfinance_policy.py",
+      "size_bytes": 12429
+    },
+    {
+      "path": "src/simulate_stage2_yfinance_policy_v2.py",
+      "size_bytes": 13615
+    },
+    {
+      "path": "src/universe.py",
+      "size_bytes": 6850
+    },
+    {
+      "path": "src/utils.py",
+      "size_bytes": 9044
+    },
+    {
+      "path": "src/validate_analysis.py",
+      "size_bytes": 6761
+    },
+    {
+      "path": "src/visualizations.py",
+      "size_bytes": 18958
+    },
+    {
+      "path": "src/__init__.py",
+      "size_bytes": 0
+    },
+    {
+      "path": "outputs/scouting/active_pipeline_policy_status.json",
+      "size_bytes": 518
+    },
+    {
+      "path": "outputs/scouting/fundamentals_yfinance_enrichment_report.md",
+      "size_bytes": 517
+    },
+    {
+      "path": "outputs/scouting/fundamentals_yfinance_enrichment_summary.json",
+      "size_bytes": 1785
+    },
+    {
+      "path": "outputs/scouting/phase7c4_pipeline_revalidation_evidence.csv",
+      "size_bytes": 2584
+    },
+    {
+      "path": "outputs/scouting/phase7c4_pipeline_revalidation_report.md",
+      "size_bytes": 4862
+    },
+    {
+      "path": "outputs/scouting/phase7c4_pipeline_revalidation_summary.json",
+      "size_bytes": 7765
+    },
+    {
+      "path": "outputs/scouting/phase7c4_pipeline_revalidation_top_candidates.csv",
+      "size_bytes": 2131
+    },
+    {
+      "path": "outputs/scouting/phase7e_v07_release_checkpoint_evidence.csv",
+      "size_bytes": 2338
+    },
+    {
+      "path": "outputs/scouting/phase7e_v07_release_checkpoint_report.md",
+      "size_bytes": 4108
+    },
+    {
+      "path": "outputs/scouting/phase7e_v07_release_checkpoint_summary.json",
+      "size_bytes": 6415
+    },
+    {
+      "path": "outputs/scouting/stage1_balanced_official_closure_summary.json",
+      "size_bytes": 2418
+    },
+    {
+      "path": "outputs/scouting/stage2_yfinance_policy_implementation_summary.json",
+      "size_bytes": 2386
+    },
+    {
+      "path": "outputs/scouting/stage3_candidates_for_ranking.csv",
+      "size_bytes": 5660
+    },
+    {
+      "path": "outputs/scouting/stage3_summary.json",
+      "size_bytes": 2533
+    },
+    {
+      "path": "outputs/scouting/top_100_candidates.csv",
+      "size_bytes": 30626
+    },
+    {
+      "path": "outputs/scouting/top_20_deep_research.csv",
+      "size_bytes": 18316
+    },
+    {
+      "path": "outputs/scouting/top_50_watchlist.csv",
+      "size_bytes": 30626
+    },
+    {
+      "path": "docs/phase7/PHASE7A1_FREE_US_UNIVERSE.md",
+      "size_bytes": 1216
+    },
+    {
+      "path": "docs/phase7/PHASE7A2_FREE_MARKET_DATA.md",
+      "size_bytes": 1670
+    },
+    {
+      "path": "docs/phase7/PHASE7A3_INSTITUTIONAL_UNIVERSE_CLEANING.md",
+      "size_bytes": 1777
+    },
+    {
+      "path": "docs/phase7/PHASE7A4_INSTITUTIONAL_CLEANING_COMPARISON.md",
+      "size_bytes": 873
+    },
+    {
+      "path": "docs/phase7/PHASE7A5_INSTITUTIONAL_UNIVERSE_DASHBOARD.md",
+      "size_bytes": 965
+    },
+    {
+      "path": "docs/phase7/PHASE7A6_CLEAN_500_STABILITY.md",
+      "size_bytes": 639
+    },
+    {
+      "path": "docs/phase7/PHASE7A_REAL_UNIVERSE_PILOT.md",
+      "size_bytes": 1320
+    },
+    {
+      "path": "docs/phase7/PHASE7B1_STAGE1_POLICY_SIMULATOR.md",
+      "size_bytes": 900
+    },
+    {
+      "path": "docs/phase7/PHASE7B2_ALIGN_STAGE1_SIMULATOR.md",
+      "size_bytes": 908
+    },
+    {
+      "path": "docs/phase7/PHASE7B3_ALIGNED_STAGE1_POLICY_SIMULATOR.md",
+      "size_bytes": 994
+    },
+    {
+      "path": "docs/phase7/PHASE7B4_STAGE1_SIMULATOR_100_ALIGNMENT.md",
+      "size_bytes": 480
+    },
+    {
+      "path": "docs/phase7/PHASE7B5_STAGE1_CANDIDATE_POLICY_DECISION.md",
+      "size_bytes": 813
+    },
+    {
+      "path": "docs/phase7/PHASE7B6_BALANCED_POLICY_DRY_RUN.md",
+      "size_bytes": 759
+    },
+    {
+      "path": "docs/phase7/PHASE7B7_BALANCED_POLICY_IMPACT_APPROVAL.md",
+      "size_bytes": 457
+    },
+    {
+      "path": "docs/phase7/PHASE7B8_1_EXACT_STAGE1_IMPLEMENTATION.md",
+      "size_bytes": 522
+    },
+    {
+      "path": "docs/phase7/PHASE7B8_GUARDED_STAGE1_IMPLEMENTATION.md",
+      "size_bytes": 491
+    },
+    {
+      "path": "docs/phase7/PHASE7B9_STAGE1_BALANCED_CLOSURE.md",
+      "size_bytes": 353
+    },
+    {
+      "path": "docs/phase7/PHASE7B_STAGE1_PROFESSIONAL_DIAGNOSTIC.md",
+      "size_bytes": 1135
+    },
+    {
+      "path": "docs/phase7/PHASE7C1_YFINANCE_FUNDAMENTALS_ENRICHMENT.md",
+      "size_bytes": 694
+    },
+    {
+      "path": "docs/phase7/PHASE7C2_STAGE2_YFINANCE_POLICY_DRYRUN.md",
+      "size_bytes": 657
+    },
+    {
+      "path": "docs/phase7/PHASE7C2_V2_STAGE2_YFINANCE_POLICY_DRYRUN.md",
+      "size_bytes": 723
+    },
+    {
+      "path": "docs/phase7/PHASE7C3_STAGE2_YFINANCE_POLICY_IMPLEMENTATION.md",
+      "size_bytes": 765
+    },
+    {
+      "path": "docs/phase7/PHASE7C4_PIPELINE_REVALIDATION_CLOSURE.md",
+      "size_bytes": 597
+    },
+    {
+      "path": "docs/phase7/PHASE7D1_DASHBOARD_HOTFIX.md",
+      "size_bytes": 602
+    },
+    {
+      "path": "docs/phase7/PHASE7D2_INSTITUTIONAL_COUNT_HOTFIX.md",
+      "size_bytes": 641
+    },
+    {
+      "path": "docs/phase7/PHASE7D3B_FUNDAMENTAL_COVERAGE_EXACT_FIX.md",
+      "size_bytes": 704
+    },
+    {
+      "path": "docs/phase7/PHASE7D3_FUNDAMENTAL_COVERAGE_DASHBOARD_FIX.md",
+      "size_bytes": 511
+    },
+    {
+      "path": "docs/phase7/PHASE7D_DASHBOARD_REVALIDATED_FUNNEL.md",
+      "size_bytes": 779
+    },
+    {
+      "path": "docs/phase7/PHASE7D_V2_DASHBOARD_REVALIDATED_FUNNEL.md",
+      "size_bytes": 504
+    },
+    {
+      "path": "docs/phase7/PHASE7E1_V07_CHECKPOINT_MARKER_FIX.md",
+      "size_bytes": 544
+    },
+    {
+      "path": "docs/phase7/PHASE7E_V07_RELEASE_CHECKPOINT.md",
+      "size_bytes": 396
+    },
+    {
+      "path": "docs/phase7/PHASE7F_PACKAGE_RELEASE_V07.md",
+      "size_bytes": 428
+    },
+    {
+      "path": "data/stages/stage1_passed.csv",
+      "size_bytes": 53244
+    },
+    {
+      "path": "data/stages/stage1_rejected.csv",
+      "size_bytes": 86318
+    },
+    {
+      "path": "data/stages/stage1_watchlist.csv",
+      "size_bytes": 31006
+    },
+    {
+      "path": "data/stages/stage2_passed.csv",
+      "size_bytes": 46336
+    },
+    {
+      "path": "data/stages/stage2_rejected.csv",
+      "size_bytes": 29096
+    },
+    {
+      "path": "data/stages/stage2_watchlist.csv",
+      "size_bytes": 60097
+    },
+    {
+      "path": "data/stages/stage3_passed.csv",
+      "size_bytes": 6101
+    },
+    {
+      "path": "data/stages/stage3_rejected.csv",
+      "size_bytes": 25636
+    },
+    {
+      "path": "data/stages/stage3_rejection_log.csv",
+      "size_bytes": 15315
+    },
+    {
+      "path": "data/stages/stage3_watchlist.csv",
+      "size_bytes": 25801
+    },
+    {
+      "path": "outputs/scouting/phase7f_release_v07_packaging_summary.json",
+      "size_bytes": 74996,
+      "sha256": "622585e197bff703dedda8560f97789d9df3e2543e81ae5ad40ecd108d87f49c"
+    },
+    {
+      "path": "outputs/scouting/phase7f_release_v07_packaging_report.md",
+      "size_bytes": 969,
+      "sha256": "b785baed788595781f26e3ebc314629244ac04ab846b7b424ef8d2f247a38db3"
+    }
+  ],
+  "updated_at": "2026-06-10T11:39:20+00:00",
+  "self_evidence_fix": "7F.1b"
+}

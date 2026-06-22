@@ -1,0 +1,61 @@
+﻿
+  app.py:2830:            font-weight: 700;
+  app.py:2831:            margin-bottom: 12px;
+  app.py:2832:            max-width: 100%;
+  app.py:2833:        }
+> app.py:2834:        .sf4d-badge-green { background: #DCFCE7; color: #166534; border: 1px solid #86EFAC; }
+  app.py:2835:        .sf4d-badge-blue { background: #DBEAFE; color: #1D4ED8; border: 1px solid #93C5FD; }
+  app.py:2836:        .sf4d-badge-yellow { background: #FEF3C7; color: #92400E; border: 1px solid #FCD34D; }
+  app.py:2837:        .sf4d-badge-orange { background: #FFEDD5; color: #9A3412; border: 1px solid #FDBA74; }
+  app.py:2838:        .sf4d-badge-red { background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; }
+  app.py:5294:    """
+  app.py:5295:    Render Phase 6F fundamental enrichment status inside Dashboard.
+  app.py:5296:    """
+  app.py:5297:
+> app.py:5298:    st.markdown("### 🧬 Cobertura de fundamentales")
+  app.py:5299:    st.caption(
+  app.py:5300:        "Estado del enriquecimiento usado entre Stage 1 y Stage 2. "
+  app.py:5301:        "No ejecuta APIs, OpenAI ni modifica archivos."
+  app.py:5302:    )
+  app.py:5304:    summary = _sf6f_build_fundamental_enrichment_summary()
+  app.py:5305:
+  app.py:5306:    col1, col2, col3, col4 = st.columns(4)
+  app.py:5307:
+> app.py:5308:    col1.metric("Stage 1 passed", summary.get("stage1_passed", 0))
+> app.py:5309:    col2.metric("Fundamentals matched", summary.get("fundamentals_matched", 0))
+  app.py:5310:    col3.metric("Coverage", f"{summary.get('coverage_percent', 0)}%")
+> app.py:5311:    col4.metric("Runner phase", summary.get("runner_phase", "—"))
+  app.py:5312:
+  app.py:5313:    if summary.get("clean_enriched_flow"):
+  app.py:5314:        st.success(
+> app.py:5315:            "Flujo enriquecido limpio activo: Stage 2 usa `stage1_passed_enriched.csv` "
+  app.py:5316:            "sin sobrescribir `stage1_passed.csv`."
+  app.py:5317:        )
+  app.py:5318:    else:
+  app.py:5319:        st.warning(
+  app.py:5320:            "No se detecta todavía el flag `clean_enriched_flow=True`. "
+> app.py:5321:            "Ejecuta el runner de Fase 6E para actualizar el resumen global."
+  app.py:5322:        )
+  app.py:5323:
+  app.py:5324:    if summary.get("stage1_passed_overwritten") is False:
+  app.py:5325:        st.info("Confirmado: `stage1_passed.csv` no fue sobrescrito por el runner limpio.")
+  app.py:5368:        """
+  app.py:5369:        ```text
+  app.py:5370:        stage1_passed.csv
+  app.py:5371:        ↓
+> app.py:5372:        stage1_passed_enriched.csv
+  app.py:5373:        ↓
+  app.py:5374:        Stage 2 enriched input
+  app.py:5375:        ↓
+  app.py:5376:        stage2_passed / stage2_watchlist / stage2_rejected
+  app.py:5666:        stage3 = stage_counts.get("stage3", {})
+  app.py:5667:
+  app.py:5668:        c1, c2, c3 = st.columns(3)
+  app.py:5669:        with c1:
+> app.py:5670:            st.metric("Stage 1 PASSED", stage1.get("passed", 182))
+  app.py:5671:            st.caption(f"Watchlist {stage1.get('watchlist', 84)} · Rejected {stage1.get('rejected', 234)}")
+  app.py:5672:        with c2:
+  app.py:5673:            st.metric("Stage 2 PASSED", stage2.get("passed", 63))
+  app.py:5674:            st.caption(f"Watchlist {stage2.get('watchlist', 81)} · Rejected {stage2.get('rejected', 38)}")
+
+

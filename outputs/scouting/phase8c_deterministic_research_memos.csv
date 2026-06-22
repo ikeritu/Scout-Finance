@@ -1,0 +1,1 @@
+ranking_position,ticker,company_name,quant_score,memo_status,deterministic_score,financial_health_score,valuation_score,risk_score,moat_score,growth_score,institutional_score,final_verdict,confidence,data_gaps_count,estimated_cost,model_used,schema_version,prompt_version
