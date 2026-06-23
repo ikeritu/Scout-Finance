@@ -1,0 +1,288 @@
+{
+  "phase": "v1.0D",
+  "title": "Freeze v1.0.0-candidate",
+  "version": "v1.0.0-candidate",
+  "status": "OK",
+  "created_at": "2026-06-23T21:20:34+0000",
+  "checks": {
+    "all_required_files_exist": true,
+    "all_v1_summaries_ok": true,
+    "all_v1_controls_false": true,
+    "v09_freeze_detected": true,
+    "final_review_pack_detected": true,
+    "manual_review_state_detected": true
+  },
+  "required_files": [
+    {
+      "path": "releases/Scout_Finance_v0.9.0_experimental_ai_FREEZE.zip",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 305742,
+      "sha256": "fcae5aa051ac01eebd31d309a5057b870c59351a1ec2405b1bd4c42cf10b8f29"
+    },
+    {
+      "path": "releases/MANIFEST_v0.9.0_experimental_ai.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 12537,
+      "sha256": "e12a862b1d6a56e890dd976e02a5360dd1df77574d54b0f47141cbb607ac5176"
+    },
+    {
+      "path": "releases/FREEZE_REPORT_v0.9.0_experimental_ai.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1743,
+      "sha256": "f84ae71337b1e556a236da7d8be943608280edbf4cc0098e24f85f522c0f8395"
+    },
+    {
+      "path": "src/v1_0a_local_review_console.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 9747,
+      "sha256": "d0b0c3a5f01efa80ca98e63ae69d514a18c40fdb649c3af21dc9770b283bc897"
+    },
+    {
+      "path": "scripts/check_v1_0a_local_review_console.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 3489,
+      "sha256": "52553f45564a1562c02765b9e8e4a80018a87653f9d9cb144d950b79c9cc7927"
+    },
+    {
+      "path": "docs/v1/V1_0A_LOCAL_REVIEW_CONSOLE.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 840,
+      "sha256": "a21fca47c6d0352c7e3bc2eac75ab2fa2ad2cb9f5bd5f6335a8c049927f831a7"
+    },
+    {
+      "path": "outputs/scouting/v1_0a_local_review_console_summary.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1050,
+      "sha256": "1db96c03e9337144c039c258b5797dd3ee9c6c2b11fae734c2daaf6dc8d23439"
+    },
+    {
+      "path": "outputs/scouting/v1_0a_local_review_console_report.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 478,
+      "sha256": "770ad5af25a1d1a4b3f9d303d4f8da8448c2c27a55b072fe45bfe4cf6ec659b7"
+    },
+    {
+      "path": "src/v1_0b_human_review_layer.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 8180,
+      "sha256": "6098c8607125598c58f670244af15a958ae1f4f5ceefec707c25421a3f60bdf1"
+    },
+    {
+      "path": "scripts/check_v1_0b_human_review_layer.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 3477,
+      "sha256": "f1c845a03d1a96c7a5580b0ffc40feee91e019458a10d61a4bb6d051342301fb"
+    },
+    {
+      "path": "docs/v1/V1_0B_HUMAN_REVIEW_LAYER.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 957,
+      "sha256": "c97d1ca27576014b2dfcd5ddb2d186609d3e4fa1221bd9233bc5971a82705a82"
+    },
+    {
+      "path": "outputs/scouting/v1_0b_human_review_layer_summary.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1152,
+      "sha256": "65ad95b371967d89169af6c9db0a547f2da7b6789a10bfafe1e80ff4ddd2ce23"
+    },
+    {
+      "path": "outputs/scouting/v1_0b_human_review_layer_report.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 535,
+      "sha256": "1846633eca406f60070b21a9db26754ae185bc80a3cfe603c3b509d78ea0b146"
+    },
+    {
+      "path": "src/v1_0c_review_export_pack.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 7786,
+      "sha256": "f0d254a7331de720c8e20dc1be4e0fe26d2186a11ca97b0a4f0cb6af9af0b799"
+    },
+    {
+      "path": "scripts/check_v1_0c_review_export_pack.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 2645,
+      "sha256": "56b81726ff5601c7604b8c0fff820da5c26c6cd023686c72d4a04440e2d7e0ac"
+    },
+    {
+      "path": "docs/v1/V1_0C_REVIEW_EXPORT_PACK.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 689,
+      "sha256": "55557e590d0838c807d78ba27a70c02663d33b5c0104fdb298fa6b851a9517dd"
+    },
+    {
+      "path": "outputs/scouting/v1_0c_review_export_pack_summary.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 840,
+      "sha256": "e17f5f5bc68a0918e285e04650413e922f97a3581a7d5271049266fdd6a985d2"
+    },
+    {
+      "path": "outputs/scouting/v1_0c_review_export_pack_report.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 479,
+      "sha256": "991356f151a5fd506cbb1a06916ef18357de0b336f52039f873183b944e0b06c"
+    },
+    {
+      "path": "outputs/scouting/manual_review/manual_review_state.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 2149,
+      "sha256": "f908d56e205d71a701438c29457a9eaa2d6dbe381905ab6149936df42d0a15fd"
+    },
+    {
+      "path": "outputs/scouting/manual_review/local_review_console.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 927,
+      "sha256": "fa3891f1dd35b106bf585f5be68ec4a58f438b4e645df45d267243c327366692"
+    },
+    {
+      "path": "outputs/scouting/manual_review/local_review_console_index.csv",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 467,
+      "sha256": "eab323e3f9780ba1d6d0ca57612b6c63479654c2f5be2316a77a9f98919516fe"
+    },
+    {
+      "path": "outputs/scouting/manual_review/manual_review_notes.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 571,
+      "sha256": "b23d4af1a8f3ce05ec7844c6fe66f49d7e863294c7884295943b256e295c8c9c"
+    },
+    {
+      "path": "outputs/scouting/manual_review/manual_review_summary.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1144,
+      "sha256": "871308728d5b125805b5f51f4d491734e2240d0b5403b8d0c193a6c042b6adef"
+    },
+    {
+      "path": "outputs/scouting/manual_review/reviewed_watchlist.csv",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 355,
+      "sha256": "813055b5f61a2583f6f9e7a076bca47bd025e9c40d08b6e71e9950929a082d5e"
+    },
+    {
+      "path": "outputs/scouting/manual_review/reviewed_reject.csv",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 361,
+      "sha256": "a89f1dd35ac850c1b15ed8ae6a844612dd53cf99feaf80fcbe95a96d298bb3b4"
+    },
+    {
+      "path": "outputs/scouting/manual_review/needs_more_data.csv",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 370,
+      "sha256": "a51b10d8cc27c181d1916e8e8b14d36a5a73fbaf073449906e61aec288e9b0d7"
+    },
+    {
+      "path": "outputs/scouting/manual_review/final_review_pack.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1836,
+      "sha256": "1d19304d964722cd17c84432215d092eec4f2c7f76343ff13912b8ae8c753e1a"
+    },
+    {
+      "path": "outputs/scouting/manual_review/final_review_pack.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 2152,
+      "sha256": "cb7cc9a281e4e4df10e419c9b17d12c2caa813db6db33193b1cd418e26ac6ab7"
+    },
+    {
+      "path": "outputs/scouting/manual_review/final_review_pack.csv",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 736,
+      "sha256": "6a835ce23b020924c7d822c3d8c04fb0eb15e51dcd8eace8e160d2f07740167b"
+    }
+  ],
+  "v1_summaries": [
+    {
+      "path": "outputs/scouting/v1_0a_local_review_console_summary.json",
+      "exists": true,
+      "phase": "v1.0A",
+      "status": "OK",
+      "controls": {
+        "openai_called": false,
+        "api_called": false,
+        "yfinance_called": false,
+        "pipeline_recalculated": false,
+        "app_modified": false,
+        "filters_modified": false,
+        "release_modified": false
+      }
+    },
+    {
+      "path": "outputs/scouting/v1_0b_human_review_layer_summary.json",
+      "exists": true,
+      "phase": "v1.0B",
+      "status": "OK",
+      "controls": {
+        "openai_called": false,
+        "api_called": false,
+        "yfinance_called": false,
+        "pipeline_recalculated": false,
+        "app_modified": false,
+        "filters_modified": false,
+        "release_modified": false
+      }
+    },
+    {
+      "path": "outputs/scouting/v1_0c_review_export_pack_summary.json",
+      "exists": true,
+      "phase": "v1.0C",
+      "status": "OK",
+      "controls": {
+        "openai_called": false,
+        "api_called": false,
+        "yfinance_called": false,
+        "pipeline_recalculated": false,
+        "app_modified": false,
+        "filters_modified": false,
+        "release_modified": false
+      }
+    }
+  ],
+  "manual_review_counts": {
+    "reviewed_watchlist": 1,
+    "reviewed_reject": 1,
+    "needs_more_data": 1,
+    "pending_review": 0
+  },
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": false
+  },
+  "zip": {
+    "path": "releases\\Scout_Finance_v1.0.0_candidate_FREEZE.zip",
+    "sha256": "e9f47ab1466c61a5cf8f55800e030d725e232de8baa020e344c5863509df0b6c",
+    "file_count": 137
+  },
+  "next": "v1.0E — User Manual / Operating Guide"
+}
