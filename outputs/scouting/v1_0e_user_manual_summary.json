@@ -1,0 +1,21 @@
+{
+  "phase": "v1.0E",
+  "title": "User Manual / Operating Guide",
+  "version": "v1.0.0-candidate-user-manual-e",
+  "status": "OK",
+  "files": [
+    "docs\\USER_GUIDE.md",
+    "docs\\QUICKSTART.md",
+    "docs\\SAFETY_LIMITS.md",
+    "docs\\v1\\V1_0E_USER_MANUAL.md",
+    "scripts\\check_v1_0e_user_manual.py"
+  ],
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false,
+  "next": "v1.0F — Final Documentation Freeze"
+}
