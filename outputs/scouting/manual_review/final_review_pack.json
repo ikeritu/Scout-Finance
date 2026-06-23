@@ -1,0 +1,64 @@
+{
+  "phase": "v1.0C",
+  "title": "Review Export Pack",
+  "version": "v1.0.0-candidate-review-export-c",
+  "generated_at": "2026-06-23T20:39:36+0000",
+  "source_state": "outputs\\scouting\\manual_review\\manual_review_state.json",
+  "counts": {
+    "reviewed_watchlist": 1,
+    "reviewed_reject": 1,
+    "needs_more_data": 1,
+    "pending_review": 0
+  },
+  "records": [
+    {
+      "ticker": "ADBE",
+      "company_name": "Adobe Inc. - Common Stock",
+      "auto_verdict": "NEEDS_MORE_DATA",
+      "manual_status": "reviewed_watchlist",
+      "manual_notes": "Empresa sólida. Revisar valoración antes de entrada.",
+      "reviewed_at": "2026-06-22T22:31:16+0000",
+      "reviewer": "local_user",
+      "red_flag_count": 3,
+      "max_severity": "HIGH",
+      "has_high_or_critical": true,
+      "manual_review_required": true,
+      "not_financial_advice": true
+    },
+    {
+      "ticker": "AUPH",
+      "company_name": "Aurinia Pharmaceuticals Inc - Common Shares",
+      "auto_verdict": "NEEDS_MORE_DATA",
+      "manual_status": "needs_more_data",
+      "manual_notes": "Revisar caja, deuda, pipeline y próximos catalysts.",
+      "reviewed_at": "2026-06-22T22:31:26+0000",
+      "reviewer": "local_user",
+      "red_flag_count": 3,
+      "max_severity": "HIGH",
+      "has_high_or_critical": true,
+      "manual_review_required": true,
+      "not_financial_advice": true
+    },
+    {
+      "ticker": "BZ",
+      "company_name": "KANZHUN LIMITED - American Depository Shares",
+      "auto_verdict": "NEEDS_MORE_DATA",
+      "manual_status": "reviewed_reject",
+      "manual_notes": "Riesgo demasiado alto para seguimiento actual.",
+      "reviewed_at": "2026-06-22T22:31:20+0000",
+      "reviewer": "local_user",
+      "red_flag_count": 3,
+      "max_severity": "HIGH",
+      "has_high_or_critical": true,
+      "manual_review_required": true,
+      "not_financial_advice": true
+    }
+  ],
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false
+}

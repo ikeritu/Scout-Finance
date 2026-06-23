@@ -1,0 +1,25 @@
+{
+  "phase": "v1.0C",
+  "title": "Review Export Pack",
+  "version": "v1.0.0-candidate-review-export-c",
+  "status": "OK",
+  "created_at": "2026-06-23T20:39:36+0000",
+  "records_total": 3,
+  "watchlist_count": 1,
+  "reject_count": 1,
+  "needs_more_data_count": 1,
+  "pending_review_count": 0,
+  "outputs": {
+    "final_review_pack_md": "outputs\\scouting\\manual_review\\final_review_pack.md",
+    "final_review_pack_json": "outputs\\scouting\\manual_review\\final_review_pack.json",
+    "final_review_pack_csv": "outputs\\scouting\\manual_review\\final_review_pack.csv"
+  },
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false,
+  "next": "v1.0D — Freeze v1.0.0-candidate"
+}

@@ -1,0 +1,4 @@
+ticker,company_name,auto_verdict,manual_status,manual_notes,reviewed_at,reviewer,red_flag_count,max_severity,has_high_or_critical,manual_review_required,not_financial_advice
+ADBE,Adobe Inc. - Common Stock,NEEDS_MORE_DATA,reviewed_watchlist,Empresa sólida. Revisar valoración antes de entrada.,2026-06-22T22:31:16+0000,local_user,3,HIGH,True,True,True
+AUPH,Aurinia Pharmaceuticals Inc - Common Shares,NEEDS_MORE_DATA,needs_more_data,"Revisar caja, deuda, pipeline y próximos catalysts.",2026-06-22T22:31:26+0000,local_user,3,HIGH,True,True,True
+BZ,KANZHUN LIMITED - American Depository Shares,NEEDS_MORE_DATA,reviewed_reject,Riesgo demasiado alto para seguimiento actual.,2026-06-22T22:31:20+0000,local_user,3,HIGH,True,True,True
