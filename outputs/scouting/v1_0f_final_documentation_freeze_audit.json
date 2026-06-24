@@ -1,0 +1,108 @@
+{
+  "phase": "v1.0F",
+  "title": "Final Documentation Freeze",
+  "version": "v1.0.0-candidate-docs-freeze",
+  "status": "OK",
+  "created_at": "2026-06-24T09:18:39+0000",
+  "checks": {
+    "all_required_files_exist": true,
+    "v1d_freeze_summary_ok": true,
+    "v1e_user_manual_summary_ok": true,
+    "documentation_content_ok": true,
+    "candidate_freeze_detected": true,
+    "final_review_pack_detected": true,
+    "controls_false": true
+  },
+  "documentation_content_checks": {
+    "docs/USER_GUIDE.md": true,
+    "docs/QUICKSTART.md": true,
+    "docs/SAFETY_LIMITS.md": true
+  },
+  "required_files": [
+    {
+      "path": "releases/Scout_Finance_v1.0.0_candidate_FREEZE.zip",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 660332,
+      "sha256": "e9f47ab1466c61a5cf8f55800e030d725e232de8baa020e344c5863509df0b6c"
+    },
+    {
+      "path": "releases/MANIFEST_v1.0.0_candidate.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 9323,
+      "sha256": "b80e9ea8ef4bfb6d43a16698f0f73791b994783e24ee142292b0d77a98e39a58"
+    },
+    {
+      "path": "releases/FREEZE_REPORT_v1.0.0_candidate.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1149,
+      "sha256": "f37de645c32ae6754b60bbd2519934eb0b221443742e1a40c79c0e70e8e74a17"
+    },
+    {
+      "path": "docs/USER_GUIDE.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 2985,
+      "sha256": "57f9d79eb0640b01948b066fe76d4493d78b0f8f9eab62e718c96bd2ed548e9d"
+    },
+    {
+      "path": "docs/QUICKSTART.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1280,
+      "sha256": "255dda2ccb3030a22c42310260ffdc7372f46795c87e71359a01adbfc7d7f952"
+    },
+    {
+      "path": "docs/SAFETY_LIMITS.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1495,
+      "sha256": "6738c1dd597fd75fd4bd2eff04b65d9c1ddfc6f53f4f4f0cf4f8127c3a818485"
+    },
+    {
+      "path": "docs/v1/V1_0E_USER_MANUAL.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 355,
+      "sha256": "ef87a185e8242c13e0c14e26b3a9c01cf5eb9559b557e8b2dfe8afcd540ffbc8"
+    },
+    {
+      "path": "scripts/check_v1_0e_user_manual.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 2512,
+      "sha256": "218d4a1afb4251caa63bfade13d40a60a14d121903cb6a9bc2d307e9fcdc6fa3"
+    },
+    {
+      "path": "outputs/scouting/v1_0e_user_manual_summary.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 577,
+      "sha256": "f26586b3c26c8fdf66840d945ab11e9342b4d3ebe45b13dc0c5ce2686f275f23"
+    },
+    {
+      "path": "outputs/scouting/v1_0e_user_manual_report.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 342,
+      "sha256": "da54c8d3f43b545cc37a946ef125840951b0f466d24bc3351a5120a5e833fc92"
+    }
+  ],
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": false
+  },
+  "zip": {
+    "path": "releases\\Scout_Finance_v1.0.0_candidate_DOCUMENTATION_FREEZE.zip",
+    "sha256": "fa4f03067cd04841fc9face3ce0571333b3cdab05f977014982ffb55dd5a0f88",
+    "file_count": 25
+  },
+  "next": "v1.1A — Real Local Use Trial"
+}
