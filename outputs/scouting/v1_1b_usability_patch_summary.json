@@ -1,0 +1,20 @@
+{
+  "phase": "v1.1B",
+  "title": "Usability Patch",
+  "version": "v1.1B-usability-patch",
+  "status": "OK",
+  "scope": "documentation_only",
+  "files": [
+    "docs/QUICKSTART.md",
+    "docs/v1/V1_1B_USABILITY_PATCH.md",
+    "scripts/check_v1_1b_usability_patch.py"
+  ],
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false,
+  "app_modified": false,
+  "filters_modified": false,
+  "release_modified": false,
+  "next": "v1.1A qualitative review continuation or v1.1C MVP Final Freeze"
+}

@@ -1,0 +1,1 @@
+# v1.1B — Usability Patch\n\nStatus: **OK**\n\nScope: documentation only.\n\n## Files\n\n- `docs/QUICKSTART.md`\n- `docs/v1/V1_1B_USABILITY_PATCH.md`\n- `scripts/check_v1_1b_usability_patch.py`\n\n## Safety\n\n- OpenAI called: False\n- API called: False\n- yfinance called: False\n- Pipeline recalculated: False\n- No scoring changes.\n- No filter changes.\n
