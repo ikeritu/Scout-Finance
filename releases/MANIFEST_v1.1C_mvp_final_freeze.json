@@ -1,0 +1,209 @@
+{
+  "phase": "v1.1C",
+  "title": "MVP Final Freeze",
+  "version": "v1.1C-mvp-final-freeze",
+  "status": "OK",
+  "created_at": "2026-06-25T08:59:59+0000",
+  "checks": {
+    "all_required_files_exist": true,
+    "v1_0d_summary_ok": true,
+    "v1_0e_summary_ok": true,
+    "v1_0f_summary_ok": true,
+    "v1_1b_summary_ok": true,
+    "all_controls_false": true,
+    "candidate_freeze_detected": true,
+    "documentation_freeze_detected": true,
+    "final_review_pack_detected": true,
+    "git_clean": false
+  },
+  "required_files": [
+    {
+      "path": "releases/Scout_Finance_v1.0.0_candidate_FREEZE.zip",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 660332,
+      "sha256": "e9f47ab1466c61a5cf8f55800e030d725e232de8baa020e344c5863509df0b6c"
+    },
+    {
+      "path": "releases/Scout_Finance_v1.0.0_candidate_DOCUMENTATION_FREEZE.zip",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 657974,
+      "sha256": "fa4f03067cd04841fc9face3ce0571333b3cdab05f977014982ffb55dd5a0f88"
+    },
+    {
+      "path": "releases/MANIFEST_v1.0.0_candidate.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 9323,
+      "sha256": "b80e9ea8ef4bfb6d43a16698f0f73791b994783e24ee142292b0d77a98e39a58"
+    },
+    {
+      "path": "releases/FREEZE_REPORT_v1.0.0_candidate.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1149,
+      "sha256": "f37de645c32ae6754b60bbd2519934eb0b221443742e1a40c79c0e70e8e74a17"
+    },
+    {
+      "path": "releases/MANIFEST_v1.0.0_candidate_documentation.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 3380,
+      "sha256": "762f86f71b5537ab5cfc1d1eb21e822db03a7e6c9f849dd18d0d30e8159e13d8"
+    },
+    {
+      "path": "releases/FREEZE_REPORT_v1.0.0_candidate_documentation.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1470,
+      "sha256": "0267f1e27f2a9a163b74bf94ef1e6539404771fa071bfae8d53e5cea33b92884"
+    },
+    {
+      "path": "docs/USER_GUIDE.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 2985,
+      "sha256": "57f9d79eb0640b01948b066fe76d4493d78b0f8f9eab62e718c96bd2ed548e9d"
+    },
+    {
+      "path": "docs/QUICKSTART.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 3571,
+      "sha256": "a12f7a2b3996f353bc4f31a0b905ed5ae404447af1505db15b7bd601418af84a"
+    },
+    {
+      "path": "docs/SAFETY_LIMITS.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1495,
+      "sha256": "6738c1dd597fd75fd4bd2eff04b65d9c1ddfc6f53f4f4f0cf4f8127c3a818485"
+    },
+    {
+      "path": "docs/v1/V1_0E_USER_MANUAL.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 355,
+      "sha256": "ef87a185e8242c13e0c14e26b3a9c01cf5eb9559b557e8b2dfe8afcd540ffbc8"
+    },
+    {
+      "path": "docs/v1/V1_0F_FINAL_DOCUMENTATION_FREEZE.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 698,
+      "sha256": "1b3bfb55efd55548da78176985c2441d874d8b917288c43e3bff570913b605ac"
+    },
+    {
+      "path": "docs/v1/V1_1B_USABILITY_PATCH.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 710,
+      "sha256": "1321e226e63dc53105b255fdc762236b37dd9af30b94014315d077c2cef91a69"
+    },
+    {
+      "path": "scripts/check_v1_0d_freeze_candidate.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 3371,
+      "sha256": "d3b9dc3face98660b1ca6a7a5acc9a4a319e45c8f36fe682911edfd785b5b729"
+    },
+    {
+      "path": "scripts/check_v1_0e_user_manual.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 2512,
+      "sha256": "218d4a1afb4251caa63bfade13d40a60a14d121903cb6a9bc2d307e9fcdc6fa3"
+    },
+    {
+      "path": "scripts/check_v1_0f_final_documentation_freeze.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 3027,
+      "sha256": "87a7613acb479d8f5d0d35185e1ea32fb1751763544f5d920bd80eebbe38b527"
+    },
+    {
+      "path": "scripts/check_v1_1b_usability_patch.py",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 3156,
+      "sha256": "ff2d907164152d2d11f5c6a735c1da0860afaaf25884d5ce99291fe0747897f0"
+    },
+    {
+      "path": "outputs/scouting/v1_0d_freeze_candidate_summary.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 866,
+      "sha256": "25d2fbf451b457d6158736fa8a52f862cd047791ec9fa52021f1b09739590b61"
+    },
+    {
+      "path": "outputs/scouting/v1_0e_user_manual_summary.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 577,
+      "sha256": "f26586b3c26c8fdf66840d945ab11e9342b4d3ebe45b13dc0c5ce2686f275f23"
+    },
+    {
+      "path": "outputs/scouting/v1_0f_final_documentation_freeze_summary.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 822,
+      "sha256": "a9a468cbdf5b81fbc641d0511fd840e0a000061aba4dcb331860ef8adb5ebf97"
+    },
+    {
+      "path": "outputs/scouting/v1_1b_usability_patch_summary.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 560,
+      "sha256": "4508664fe3d879d494f0d3a3b6234264e4695fdbccec2a4317e34942ed2b7434"
+    },
+    {
+      "path": "outputs/scouting/manual_review/final_review_pack.md",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 1836,
+      "sha256": "1d19304d964722cd17c84432215d092eec4f2c7f76343ff13912b8ae8c753e1a"
+    },
+    {
+      "path": "outputs/scouting/manual_review/final_review_pack.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 2152,
+      "sha256": "cb7cc9a281e4e4df10e419c9b17d12c2caa813db6db33193b1cd418e26ac6ab7"
+    },
+    {
+      "path": "outputs/scouting/manual_review/final_review_pack.csv",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 736,
+      "sha256": "6a835ce23b020924c7d822c3d8c04fb0eb15e51dcd8eace8e160d2f07740167b"
+    },
+    {
+      "path": "outputs/scouting/manual_review/manual_review_state.json",
+      "exists": true,
+      "is_file": true,
+      "size_bytes": 2149,
+      "sha256": "f908d56e205d71a701438c29457a9eaa2d6dbe381905ab6149936df42d0a15fd"
+    }
+  ],
+  "controls": {
+    "openai_called": false,
+    "api_called": false,
+    "yfinance_called": false,
+    "pipeline_recalculated": false,
+    "app_modified": false,
+    "filters_modified": false,
+    "release_modified": false
+  },
+  "git": {
+    "status": "## main\n?? docs/v1/V1_1C_MVP_FINAL_FREEZE.md\n?? scripts/check_v1_1c_mvp_final_freeze.py\n?? src/v1_1c_mvp_final_freeze.py",
+    "head": "63ee96a Improve v1.0 quickstart usability",
+    "clean": false
+  },
+  "zip": {
+    "path": "releases\\Scout_Finance_v1.1C_MVP_FINAL_FREEZE.zip",
+    "sha256": "38f9e44a5bd4e47db6385a086bf6046493e3f8489da13d6c89159f25701acda7",
+    "file_count": 51
+  },
+  "next": "Use real local cases before v2 work"
+}
