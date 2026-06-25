@@ -104,6 +104,301 @@ st.set_page_config(
 )
 
 
+# =============================================================================
+# Scout Finance — Visual theme (v1.3 UI redesign)
+# v1.3A Visual UI Redesign packaged: CSS redesign + v1.2A fallback alignment.
+# Pure presentation layer. This block only injects CSS and changes NO logic,
+# data flow, callbacks or component structure. Safe to tweak or remove.
+# =============================================================================
+def _inject_scout_theme() -> None:
+    """Inject a single global stylesheet that restyles the whole app.
+
+    Re-skins native Streamlit chrome (tabs, buttons, inputs, sidebar,
+    metrics, tables, alerts) and the existing custom cards so everything
+    shares one calm, professional research-terminal identity.
+    """
+
+    st.markdown(
+        """
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --sf-bg:        #F4F6F8;
+            --sf-surface:   #FFFFFF;
+            --sf-surface-2: #FAFBFC;
+            --sf-border:    #E6E9EE;
+            --sf-border-2:  #EDF0F3;
+            --sf-ink:       #18222E;
+            --sf-ink-soft:  #3A4654;
+            --sf-muted:     #6A7480;
+            --sf-primary:   #0E7C86;
+            --sf-primary-d: #0B656D;
+            --sf-primary-s: #E6F4F5;
+            --sf-radius:    14px;
+            --sf-radius-sm: 10px;
+            --sf-shadow:    0 1px 2px rgba(20,30,45,.05), 0 10px 28px -10px rgba(20,30,45,.12);
+            --sf-shadow-sm: 0 1px 2px rgba(20,30,45,.06);
+        }
+
+        /* ---------- Base canvas + typography ---------- */
+        html, body, .stApp,
+        [data-testid="stAppViewContainer"] {
+            background: var(--sf-bg);
+            color: var(--sf-ink);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .stApp, .stMarkdown, p, span, label, li, td, th {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        /* Top header bar: blend into the canvas */
+        [data-testid="stHeader"] {
+            background: transparent;
+            border-bottom: none;
+        }
+        [data-testid="stToolbar"] { right: 1rem; }
+
+        /* Comfortable reading width + breathing room */
+        .block-container {
+            max-width: 1180px;
+            padding-top: 2.6rem;
+            padding-bottom: 4rem;
+        }
+
+        /* Headings */
+        .block-container h1 {
+            font-weight: 800;
+            font-size: 1.95rem;
+            letter-spacing: -0.02em;
+            color: var(--sf-ink);
+            margin-bottom: .2rem;
+        }
+        .block-container h2 {
+            font-weight: 700;
+            font-size: 1.35rem;
+            letter-spacing: -0.01em;
+            color: var(--sf-ink);
+            margin-top: 1.6rem;
+        }
+        .block-container h3 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--sf-ink);
+        }
+        .block-container h4 {
+            font-weight: 600;
+            font-size: .98rem;
+            color: var(--sf-ink-soft);
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+        /* Caption / subtitle */
+        [data-testid="stCaptionContainer"],
+        .block-container small {
+            color: var(--sf-muted) !important;
+            font-size: .9rem;
+        }
+
+        /* ---------- Sidebar ---------- */
+        [data-testid="stSidebar"] {
+            background: var(--sf-surface);
+            border-right: 1px solid var(--sf-border);
+        }
+        [data-testid="stSidebar"] .block-container { padding-top: 2rem; }
+        [data-testid="stSidebar"] h1,
+        [data-testid="stSidebar"] h2,
+        [data-testid="stSidebar"] .stMarkdown h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        /* ---------- Tabs ---------- */
+        .stTabs [data-baseweb="tab-list"] {
+            gap: 4px;
+            border-bottom: 1px solid var(--sf-border);
+            background: transparent;
+        }
+        .stTabs [data-baseweb="tab"] {
+            height: auto;
+            padding: 12px 18px;
+            background: transparent;
+            border-radius: var(--sf-radius-sm) var(--sf-radius-sm) 0 0;
+            color: var(--sf-muted);
+            font-weight: 600;
+            font-size: .96rem;
+            transition: color .15s ease, background .15s ease;
+        }
+        .stTabs [data-baseweb="tab"]:hover {
+            color: var(--sf-ink);
+            background: var(--sf-surface-2);
+        }
+        .stTabs [data-baseweb="tab"][aria-selected="true"] {
+            color: var(--sf-primary);
+        }
+        .stTabs [data-baseweb="tab-highlight"] {
+            background: var(--sf-primary);
+            height: 3px;
+            border-radius: 3px;
+        }
+        .stTabs [data-baseweb="tab-border"] { background: transparent; }
+
+        /* ---------- Buttons ---------- */
+        .stButton > button,
+        .stDownloadButton > button,
+        [data-testid="stFormSubmitButton"] > button {
+            border-radius: var(--sf-radius-sm);
+            border: 1px solid var(--sf-primary);
+            background: var(--sf-primary);
+            color: #FFFFFF;
+            font-weight: 600;
+            padding: .5rem 1.1rem;
+            box-shadow: var(--sf-shadow-sm);
+            transition: background .15s ease, transform .05s ease, box-shadow .15s ease;
+        }
+        .stButton > button:hover,
+        .stDownloadButton > button:hover,
+        [data-testid="stFormSubmitButton"] > button:hover {
+            background: var(--sf-primary-d);
+            border-color: var(--sf-primary-d);
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px -4px rgba(14,124,134,.5);
+        }
+        .stButton > button:active { transform: translateY(1px); }
+        /* Secondary (kind="secondary") buttons → quiet outline */
+        .stButton > button[kind="secondary"] {
+            background: var(--sf-surface);
+            color: var(--sf-ink);
+            border: 1px solid var(--sf-border);
+            box-shadow: none;
+        }
+        .stButton > button[kind="secondary"]:hover {
+            background: var(--sf-surface-2);
+            border-color: var(--sf-primary);
+            color: var(--sf-primary);
+        }
+
+        /* ---------- Inputs / selects / sliders ---------- */
+        .stTextInput input,
+        .stNumberInput input,
+        .stTextArea textarea,
+        [data-baseweb="select"] > div {
+            border-radius: var(--sf-radius-sm) !important;
+            border: 1px solid var(--sf-border) !important;
+            background: var(--sf-surface) !important;
+        }
+        .stTextInput input:focus,
+        .stNumberInput input:focus,
+        .stTextArea textarea:focus {
+            border-color: var(--sf-primary) !important;
+            box-shadow: 0 0 0 3px var(--sf-primary-s) !important;
+        }
+        [data-baseweb="select"] > div:focus-within {
+            border-color: var(--sf-primary) !important;
+            box-shadow: 0 0 0 3px var(--sf-primary-s) !important;
+        }
+        [data-testid="stSlider"] [data-baseweb="slider"] [role="slider"] {
+            background: var(--sf-primary);
+        }
+        .stSlider [data-baseweb="slider"] div[style*="background"] { }
+
+        /* ---------- Metrics → card style ---------- */
+        [data-testid="stMetric"] {
+            background: var(--sf-surface);
+            border: 1px solid var(--sf-border);
+            border-radius: var(--sf-radius);
+            padding: 16px 18px;
+            box-shadow: var(--sf-shadow-sm);
+        }
+        [data-testid="stMetricLabel"] {
+            color: var(--sf-muted);
+            font-weight: 600;
+        }
+        [data-testid="stMetricValue"] {
+            color: var(--sf-ink);
+            font-weight: 700;
+        }
+
+        /* ---------- Expanders ---------- */
+        [data-testid="stExpander"] {
+            border: 1px solid var(--sf-border);
+            border-radius: var(--sf-radius);
+            background: var(--sf-surface);
+            box-shadow: var(--sf-shadow-sm);
+            overflow: hidden;
+        }
+        [data-testid="stExpander"] summary,
+        [data-testid="stExpander"] details > summary {
+            font-weight: 600;
+            color: var(--sf-ink-soft);
+        }
+        [data-testid="stExpander"] summary:hover { color: var(--sf-primary); }
+
+        /* ---------- Dataframes / tables ---------- */
+        [data-testid="stDataFrame"],
+        [data-testid="stTable"] {
+            border: 1px solid var(--sf-border);
+            border-radius: var(--sf-radius);
+            overflow: hidden;
+            box-shadow: var(--sf-shadow-sm);
+        }
+        [data-testid="stTable"] thead tr th {
+            background: var(--sf-surface-2);
+            color: var(--sf-ink-soft);
+            font-weight: 600;
+        }
+
+        /* ---------- Alerts ---------- */
+        [data-testid="stAlert"] {
+            border-radius: var(--sf-radius);
+            border: 1px solid var(--sf-border-2);
+        }
+
+        /* ---------- Dividers: quieter ---------- */
+        hr, [data-testid="stDivider"] {
+            border-color: var(--sf-border-2) !important;
+            opacity: .9;
+            margin: 1.3rem 0;
+        }
+
+        /* ---------- Inline code ---------- */
+        code {
+            background: var(--sf-primary-s);
+            color: var(--sf-primary-d);
+            border-radius: 6px;
+            padding: 1px 6px;
+            font-size: .85em;
+        }
+
+        /* ---------- Harmonise the existing custom cards ----------
+           These selectors also exist in later-injected local <style> blocks;
+           !important keeps the unified look without editing those blocks. */
+        .sf-legacy-card, .sf2-card, .sf4d-card, .sf-legacy-markdown {
+            border: 1px solid var(--sf-border) !important;
+            border-radius: var(--sf-radius) !important;
+            background: var(--sf-surface) !important;
+            box-shadow: var(--sf-shadow) !important;
+        }
+        .sf-legacy-title, .sf2-title, .sf4d-card-title { color: var(--sf-ink) !important; }
+        .sf2-subtitle, .sf4d-card-subtitle, .sf-legacy-label, .sf-legacy-small {
+            color: var(--sf-muted) !important;
+        }
+        .sf-legacy-value { color: var(--sf-ink) !important; }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; animation: none !important; }
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+_inject_scout_theme()
+
+
 def _init_session_state() -> None:
     """
     Initialize Streamlit session state values.
@@ -399,15 +694,14 @@ def _render_cost_env_help() -> None:
     Render .env help for OpenAI cost estimation.
     """
 
-    with st.sidebar.expander("Configurar precios .env"):
-        st.caption("Para que el coste estimado/run no salga a cero, añade precios por 1M tokens.")
-        st.code(
-            "OPENAI_EST_INPUT_TOKENS_PER_COMPANY=3000\n"
-            "OPENAI_EST_OUTPUT_TOKENS_PER_COMPANY=1200\n"
-            "OPENAI_INPUT_COST_PER_1M=0\n"
-            "OPENAI_OUTPUT_COST_PER_1M=0",
-            language="env",
-        )
+    st.caption("Para que el coste estimado/run no salga a cero, añade precios por 1M tokens en .env:")
+    st.code(
+        "OPENAI_EST_INPUT_TOKENS_PER_COMPANY=3000\n"
+        "OPENAI_EST_OUTPUT_TOKENS_PER_COMPANY=1200\n"
+        "OPENAI_INPUT_COST_PER_1M=0\n"
+        "OPENAI_OUTPUT_COST_PER_1M=0",
+        language="env",
+    )
 
 
 def _render_faq_main() -> None:
@@ -768,12 +1062,6 @@ def _render_sidebar() -> tuple[str, int]:
     Render sidebar controls.
     """
 
-    if st.sidebar.button("❓ FAQ para dummies", use_container_width=True):
-        st.session_state.show_faq = not st.session_state.show_faq
-        st.rerun()
-
-    st.sidebar.divider()
-
     st.sidebar.title("⚙️ Configuración")
 
     mode = st.sidebar.selectbox(
@@ -794,44 +1082,38 @@ def _render_sidebar() -> tuple[str, int]:
     st.sidebar.divider()
 
     openai_status = get_openai_status()
-    st.sidebar.subheader("OpenAI")
-    st.sidebar.write(f"Activado: `{openai_status['enable_openai']}`")
-    st.sidebar.write(f"Modelo ligero: `{openai_status['model_light']}`")
 
-    estimated_cost = _estimate_openai_run_cost(
-        int(openai_status["max_companies_per_run"])
-    )
+    with st.sidebar.expander("🤖 OpenAI y costes"):
+        st.write(f"Activado: `{openai_status['enable_openai']}`")
+        st.write(f"Modelo ligero: `{openai_status['model_light']}`")
 
-    st.sidebar.markdown("### 💰 Control de costes OpenAI")
-    st.sidebar.write(f"Empresas IA/run: `{int(estimated_cost['number_of_companies'])}`")
-    st.sidebar.write(
-        f"Tokens estimados/run: "
-        f"`{int(estimated_cost['estimated_input_tokens']):,}` entrada + "
-        f"`{int(estimated_cost['estimated_output_tokens']):,}` salida"
-    )
-    st.sidebar.write(
-        f"Coste estimado/run: "
-        f"`${estimated_cost['estimated_total_cost']:.4f}`"
-    )
-    st.sidebar.write(f"Presupuesto diario: `${openai_status['daily_budget_usd']:.2f}`")
-    st.sidebar.write(f"Presupuesto mensual: `${openai_status['monthly_budget_usd']:.2f}`")
-
-    if (
-        estimated_cost["input_cost_per_1m"] == 0
-        and estimated_cost["output_cost_per_1m"] == 0
-    ):
-        st.sidebar.caption(
-            "Define OPENAI_INPUT_COST_PER_1M y OPENAI_OUTPUT_COST_PER_1M "
-            "en .env para estimar coste real."
+        estimated_cost = _estimate_openai_run_cost(
+            int(openai_status["max_companies_per_run"])
         )
 
-    _render_cost_env_help()
+        st.write(f"Empresas IA/run: `{int(estimated_cost['number_of_companies'])}`")
+        st.write(
+            f"Tokens estimados/run: "
+            f"`{int(estimated_cost['estimated_input_tokens']):,}` entrada + "
+            f"`{int(estimated_cost['estimated_output_tokens']):,}` salida"
+        )
+        st.write(
+            f"Coste estimado/run: "
+            f"`${estimated_cost['estimated_total_cost']:.4f}`"
+        )
+        st.write(f"Presupuesto diario: `${openai_status['daily_budget_usd']:.2f}`")
+        st.write(f"Presupuesto mensual: `${openai_status['monthly_budget_usd']:.2f}`")
 
-    st.sidebar.divider()
+        if (
+            estimated_cost["input_cost_per_1m"] == 0
+            and estimated_cost["output_cost_per_1m"] == 0
+        ):
+            st.caption(
+                "Define OPENAI_INPUT_COST_PER_1M y OPENAI_OUTPUT_COST_PER_1M "
+                "en .env para estimar coste real."
+            )
 
-    if st.sidebar.button("Cerrar sesión"):
-        st.session_state.authenticated = False
-        st.rerun()
+        _render_cost_env_help()
 
     return mode, top_n
 
@@ -2535,6 +2817,11 @@ def _render_phase3b_json_comparison() -> None:
         "Compara los análisis ya generados en `outputs/analyses/`. "
         "No llama a OpenAI y no gasta tokens."
     )
+    st.info(
+        "Esta pestaña compara JSON ya generados. Si ves AAPL/LLY/AMD, son análisis "
+        "históricos/de ejemplo y pueden no coincidir con las candidatas revalidadas "
+        "del ranking actual."
+    )
 
     analyses_dir = Path(__file__).resolve().parent / "outputs" / "analyses"
     latest_only = st.checkbox(
@@ -3410,21 +3697,13 @@ def _render_final_view(mode: str, top_n: int) -> pd.DataFrame:
 
     st.subheader("🔎 Vista final de investigación")
 
-    latest_run_id = get_latest_run_id(mode=mode)
+    final_df = _get_latest_final_view_df(mode=mode, top_n=top_n)
 
-    if latest_run_id is None:
+    if final_df.empty:
         st.info("No hay datos para mostrar.")
         return pd.DataFrame()
 
-    final_df = get_top_final_research_view(
-        run_id=latest_run_id,
-        mode=mode,
-        top_n=top_n,
-    )
-
-    if final_df.empty:
-        st.info("La vista final está vacía.")
-        return final_df
+    _sf12a_render_fallback_notice(final_df, context="pestaña de ranking")
 
     filtered_df = _apply_final_view_filters(final_df)
 
@@ -3499,24 +3778,194 @@ def _render_final_view(mode: str, top_n: int) -> pd.DataFrame:
 
 
 
+
+# >>> v1.2A UI ALIGNMENT PATCH HELPERS
+def _sf12a_project_root() -> Path:
+    """Return app project root. Read-only helper."""
+    return Path(__file__).resolve().parent
+
+
+def _sf12a_read_csv(path: Path) -> pd.DataFrame:
+    """Read a CSV safely. Never writes files and never calls external services."""
+    if not path.exists():
+        return pd.DataFrame()
+    try:
+        return pd.read_csv(path)
+    except Exception:
+        return pd.DataFrame()
+
+
+def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame:
+    """
+    Load the latest revalidated Stage 3 candidates as fallback UI source.
+
+    Priority:
+    1. phase7c4_pipeline_revalidation_top_candidates.csv
+    2. top_100_candidates.csv
+
+    This function is read-only and does not call OpenAI, yfinance, APIs or brokers.
+    """
+    out_dir = _sf12a_project_root() / "outputs" / "scouting"
+    candidates = [
+        out_dir / "phase7c4_pipeline_revalidation_top_candidates.csv",
+        out_dir / "top_100_candidates.csv",
+    ]
+
+    df = pd.DataFrame()
+    source_path = None
+
+    for path in candidates:
+        df = _sf12a_read_csv(path)
+        if not df.empty:
+            source_path = path
+            break
+
+    if df.empty:
+        return df
+
+    working = df.copy()
+
+    if "final_stage3_score" in working.columns:
+        working["_sf12a_sort_score"] = pd.to_numeric(
+            working["final_stage3_score"],
+            errors="coerce",
+        )
+        working = working.sort_values("_sf12a_sort_score", ascending=False)
+
+    if top_n is not None:
+        working = working.head(top_n)
+
+    normalized = pd.DataFrame()
+
+    normalized["ticker"] = working.get("ticker", pd.Series(dtype=str)).astype(str)
+
+    if "company_name" in working.columns:
+        normalized["company_name"] = working["company_name"]
+    elif "name" in working.columns:
+        normalized["company_name"] = working["name"]
+    else:
+        normalized["company_name"] = normalized["ticker"]
+
+    column_map = {
+        "sector": "sector",
+        "industry": "industry",
+        "country": "country",
+        "market_cap": "market_cap",
+        "final_stage3_score": "score_priority",
+        "stage3_category": "category_final",
+        "risk_score": "score_risk",
+        "data_quality_score": "score_confidence",
+        "business_quality_score": "score_context",
+        "moat_proxy_score": "score_adjusted",
+        "momentum_score": "score_momentum",
+        "liquidity_score": "score_liquidity",
+    }
+
+    for source, target in column_map.items():
+        if source in working.columns:
+            normalized[target] = working[source]
+
+    # Preserve useful Stage 3 columns for technical expanders and exports.
+    for column in [
+        "final_stage3_score",
+        "stage3_category",
+        "stage3_status",
+        "risk_score",
+        "data_quality_score",
+        "business_quality_score",
+        "financial_health_score",
+        "growth_score",
+        "valuation_score",
+        "moat_proxy_score",
+        "momentum_score",
+        "liquidity_score",
+    ]:
+        if column in working.columns and column not in normalized.columns:
+            normalized[column] = working[column]
+
+    normalized["openai_reason_to_pass"] = (
+        "Fallback UI: candidata procedente del último funnel revalidado; no se ha ejecutado OpenAI."
+    )
+    normalized["summary_thesis"] = (
+        "Candidata Stage 3 revalidada. Revisar ficha, riesgos y datos antes de cualquier decisión manual."
+    )
+    normalized["why_it_could_work"] = "Pasó el embudo revalidado Stage 1 → Stage 2 → Stage 3."
+    normalized["why_it_could_fail"] = (
+        "Puede carecer de análisis fundamental completo o datos superiores tipo SEC/companyfacts."
+    )
+    normalized["feedback_label"] = ""
+    normalized["feedback_notes"] = ""
+    normalized["reviewed_by"] = ""
+    normalized["openai_model"] = "placeholder/fallback"
+    normalized["data_quality_label"] = "Stage 3 revalidado"
+
+    normalized = normalized.reset_index(drop=True)
+    normalized.attrs["sf12a_source"] = "revalidated_funnel"
+    normalized.attrs["sf12a_source_path"] = (
+        str(source_path.relative_to(_sf12a_project_root())) if source_path else ""
+    )
+    return normalized
+
+
+def _sf12a_data_source(df: pd.DataFrame) -> str:
+    """Return source marker for UI dataframe."""
+    if df is None or df.empty:
+        return ""
+    return str(df.attrs.get("sf12a_source", ""))
+
+
+def _sf12a_source_path(df: pd.DataFrame) -> str:
+    """Return source path marker for UI dataframe."""
+    if df is None or df.empty:
+        return ""
+    return str(df.attrs.get("sf12a_source_path", ""))
+
+
+def _sf12a_render_fallback_notice(df: pd.DataFrame, context: str = "vista") -> None:
+    """Explain clearly when UI falls back to the revalidated funnel."""
+    if _sf12a_data_source(df) != "revalidated_funnel":
+        return
+
+    path = _sf12a_source_path(df) or "outputs/scouting/phase7c4_pipeline_revalidation_top_candidates.csv"
+    st.warning(
+        f"La vista final del último run está vacía. En esta {context} se muestra "
+        f"el último funnel revalidado disponible: `{path}`."
+    )
+
+
+def _sf12a_disable_global_post_main_render() -> bool:
+    """Feature flag used to stop old post-main global rendering blocks."""
+    return True
+# <<< v1.2A UI ALIGNMENT PATCH HELPERS
+
+
 def _get_latest_final_view_df(mode: str, top_n: int) -> pd.DataFrame:
     """
-    Load latest final research view without rendering UI.
+    Load latest final research view with a read-only UI fallback.
 
-    Used by the tabbed UX so every tab can reuse the same underlying data
-    without changing pipeline, OpenAI, database or scoring logic.
+    Priority:
+    1. Latest final research view for the selected mode.
+    2. Revalidated Stage 3 funnel candidates when the latest run is empty.
+
+    This does not modify pipeline logic, scoring, filters, OpenAI, yfinance or APIs.
     """
 
     latest_run_id = get_latest_run_id(mode=mode)
+    final_df = pd.DataFrame()
 
-    if latest_run_id is None:
-        return pd.DataFrame()
+    if latest_run_id is not None:
+        final_df = get_top_final_research_view(
+            run_id=latest_run_id,
+            mode=mode,
+            top_n=top_n,
+        )
 
-    return get_top_final_research_view(
-        run_id=latest_run_id,
-        mode=mode,
-        top_n=top_n,
-    )
+    if final_df is not None and not final_df.empty:
+        final_df = final_df.copy()
+        final_df.attrs["sf12a_source"] = "latest_final_view"
+        return final_df
+
+    return _sf12a_load_revalidated_candidates(top_n=top_n)
 
 
 def _render_now_actions_card() -> None:
@@ -3779,26 +4228,20 @@ def _render_ranking_tab(mode: str, top_n: int) -> pd.DataFrame:
     """
     Render ranking tab with filters, table and downloads.
 
-    Returns the filtered dataframe so the main flow can keep feedback compatible.
+    v1.3A keeps the visual redesign but restores the v1.2A read-only fallback:
+    if the latest final view is empty, the tab uses the latest revalidated funnel
+    candidates instead of showing a misleading empty ranking.
     """
 
     st.subheader("🔎 Ranking de investigación")
 
-    latest_run_id = get_latest_run_id(mode=mode)
+    final_df = _get_latest_final_view_df(mode=mode, top_n=top_n)
 
-    if latest_run_id is None:
+    if final_df.empty:
         st.info("No hay datos para mostrar.")
         return pd.DataFrame()
 
-    final_df = get_top_final_research_view(
-        run_id=latest_run_id,
-        mode=mode,
-        top_n=top_n,
-    )
-
-    if final_df.empty:
-        st.info("La vista final está vacía.")
-        return final_df
+    _sf12a_render_fallback_notice(final_df, context="pestaña de ranking")
 
     filtered_df = _apply_final_view_filters(final_df)
     final_summary = summarize_final_research_view(filtered_df)
@@ -3877,6 +4320,7 @@ def _render_company_analysis_tab(mode: str, top_n: int) -> pd.DataFrame:
         st.info("No hay empresas disponibles. Ejecuta primero el pipeline cuantitativo.")
         return final_df
 
+    _sf12a_render_fallback_notice(final_df, context="ficha individual")
     _render_company_detail(final_df, mode)
     return final_df
 
@@ -5551,14 +5995,7 @@ def main() -> None:
 
     _init_session_state()
 
-    if not st.session_state.authenticated:
-        _render_login()
-
     mode, top_n = _render_sidebar()
-
-    if st.session_state.show_faq:
-        _render_faq_main()
-        return
 
     st.title("📊 Scout Finance")
     st.caption(
@@ -5571,18 +6008,12 @@ def main() -> None:
         ranking_tab,
         company_tab,
         comparison_tab,
-        stage3_candidates_tab,
-        history_tab,
-        settings_tab,
     ) = st.tabs(
         [
             "🏠 Dashboard",
             "🔎 Ranking",
             "📄 Análisis empresa",
             "🧮 Comparar empresas",
-            "🧭 Candidatos Stage 3",
-            "🧾 Histórico / técnico",
-            "⚙️ Ajustes",
         ]
     )
 
@@ -5608,15 +6039,6 @@ def main() -> None:
 
     with comparison_tab:
         _render_phase3b_json_comparison()
-
-    with stage3_candidates_tab:
-        _render_stage3_candidates_tab()
-
-    with history_tab:
-        _render_history_technical_tab(mode, top_n)
-
-    with settings_tab:
-        _render_settings_tab()
 
     st.divider()
 
@@ -5738,12 +6160,17 @@ def _render_phase7d_revalidated_funnel_dashboard():
 
 # <<< PHASE 7D REVALIDATED FUNNEL DASHBOARD HELPERS
 
-# PHASE 7D.1 DASHBOARD HOTFIX APPLIED
-try:
-    _render_phase7d_revalidated_funnel_dashboard()
-except Exception as exc:
+# PHASE 7D.1 DASHBOARD HOTFIX SUPERSEDED BY v1.2A
+# The previous implementation rendered the revalidated funnel after main(),
+# so it appeared below every tab. v1.2A disables that global post-main render
+# and uses the revalidated Stage 3 candidates as a read-only fallback source
+# inside Ranking, Company Analysis and Feedback.
+if not _sf12a_disable_global_post_main_render():
     try:
-        import streamlit as st
-        st.warning(f"Phase 7D.1 dashboard block could not be rendered: {exc}")
-    except Exception:
-        pass
+        _render_phase7d_revalidated_funnel_dashboard()
+    except Exception as exc:
+        try:
+            import streamlit as st
+            st.warning(f"Phase 7D.1 dashboard block could not be rendered: {exc}")
+        except Exception:
+            pass

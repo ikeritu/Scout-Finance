@@ -1,0 +1,12 @@
+# Scout Finance — tema visual (v1.3 UI redesign)
+# Define los tokens base del tema de Streamlit para que los widgets nativos
+# y los popovers (desplegables, calendarios, etc.) sean coherentes con el CSS.
+# No afecta a la lógica de la app.
+
+[theme]
+base = "light"
+primaryColor = "#0E7C86"
+backgroundColor = "#F4F6F8"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#18222E"
+font = "sans serif"
