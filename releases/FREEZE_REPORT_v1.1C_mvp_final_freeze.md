@@ -5,10 +5,10 @@ Status: **OK**
 ## Summary
 
 - Version: `v1.1C-mvp-final-freeze`
-- Git HEAD: `63ee96a Improve v1.0 quickstart usability`
-- Git clean: `False`
+- Git HEAD: `a86a9d6 Freeze v1.1C MVP final`
+- Git clean: `True`
 - ZIP: `releases\Scout_Finance_v1.1C_MVP_FINAL_FREEZE.zip`
-- ZIP SHA256: `38f9e44a5bd4e47db6385a086bf6046493e3f8489da13d6c89159f25701acda7`
+- ZIP SHA256: `6316c44d3ca5cc44f720efcecab8d1b75fe3713645f1d818ca54e9afd308f35a`
 - Files included: 51
 
 ## Checks
@@ -22,7 +22,7 @@ Status: **OK**
 - candidate_freeze_detected: `True`
 - documentation_freeze_detected: `True`
 - final_review_pack_detected: `True`
-- git_clean: `False`
+- git_clean: `True`
 
 ## Safety
 
