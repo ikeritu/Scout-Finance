@@ -109,6 +109,7 @@ st.set_page_config(
 # v1.3A Visual UI Redesign packaged: CSS redesign + v1.2A fallback alignment.
 # v1.4A data source transparency packaged.
 # v1.4B real universe input packaged.
+# v1.4C real universe candidates packaged.
 # Pure presentation layer. This block only injects CSS and changes NO logic,
 # data flow, callbacks or component structure. Safe to tweak or remove.
 # =============================================================================
@@ -3809,6 +3810,8 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
     """
     out_dir = _sf12a_project_root() / "outputs" / "scouting"
     candidates = [
+        out_dir / "active_real_universe_top_candidates.csv",
+        out_dir / "real_universe_candidates.csv",
         out_dir / "phase7c4_pipeline_revalidation_top_candidates.csv",
         out_dir / "top_100_candidates.csv",
     ]
@@ -4156,6 +4159,74 @@ def _sf14b_render_real_universe_panel() -> None:
             """
         )
 # <<< v1.4B REAL UNIVERSE INPUT MVP HELPERS
+
+# >>> v1.4C REAL UNIVERSE CANDIDATES HELPERS
+def _sf14c_real_candidate_status() -> dict[str, Any]:
+    root = Path(__file__).resolve().parent
+    summary_path = root / "outputs" / "scouting" / "real_universe_candidates_summary.json"
+    candidates_path = root / "outputs" / "scouting" / "active_real_universe_top_candidates.csv"
+
+    summary: dict[str, Any] = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            summary = {}
+
+    rows = 0
+    top_tickers = ""
+    if candidates_path.exists():
+        try:
+            df = pd.read_csv(candidates_path)
+            rows = int(len(df))
+            if "ticker" in df.columns:
+                top_tickers = ", ".join(df["ticker"].dropna().astype(str).head(5).tolist())
+        except Exception:
+            rows = 0
+
+    return {
+        "summary_exists": summary_path.exists(),
+        "candidates_exists": candidates_path.exists(),
+        "status": summary.get("status", "missing"),
+        "rows": summary.get("candidates_generated", rows),
+        "top_tickers": summary.get("top_tickers", top_tickers),
+        "source": "outputs/scouting/active_real_universe_top_candidates.csv",
+        "placeholder": summary.get("scoring_is_placeholder_order_only", True),
+    }
+
+
+def _sf14c_render_real_candidates_panel() -> None:
+    status = _sf14c_real_candidate_status()
+
+    st.markdown("### 🧪 Candidatos desde universo real")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Archivo candidatos", "OK" if status["candidates_exists"] else "Falta")
+    c2.metric("Candidatos", status["rows"])
+    c3.metric("Estado", status["status"])
+
+    if status["candidates_exists"] and status["status"] == "OK":
+        st.success(
+            f"Candidatos generados desde `data/real/real_universe.csv`: "
+            f"{status['top_tickers']}"
+        )
+        if status.get("placeholder"):
+            st.warning(
+                "Estos candidatos son input-only: sirven para probar la interfaz con empresas nuevas. "
+                "No son scoring financiero real."
+            )
+    else:
+        st.info(
+            "Aún no hay candidatos generados desde universo real. Ejecuta v1.4C para crear "
+            "`active_real_universe_top_candidates.csv`."
+        )
+
+    with st.expander("Comandos v1.4C — generar candidatos desde universo real", expanded=False):
+        st.code(
+            ".\\.venv\\Scripts\\python.exe -m src.real_universe_candidates --generate\n"
+            ".\\.venv\\Scripts\\python.exe scripts/check_v1_4c_regenerate_candidates_real_universe.py",
+            language="powershell",
+        )
+# <<< v1.4C REAL UNIVERSE CANDIDATES HELPERS
 
 
 def _get_latest_final_view_df(mode: str, top_n: int) -> pd.DataFrame:
