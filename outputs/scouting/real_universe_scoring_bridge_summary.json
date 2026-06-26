@@ -1,0 +1,24 @@
+{
+  "phase": "v1.4D",
+  "title": "Real Universe Scoring Bridge",
+  "status": "OK",
+  "input_path": "data\\real\\real_universe.csv",
+  "created_at": "2026-06-26T12:37:03+0000",
+  "rows_input": 3,
+  "candidates_scored": 3,
+  "top_tickers": "AAPL, MSFT, ASML",
+  "score_method": "metadata_score_local_no_market_data",
+  "score_warning": "Metadata-only score. Not financial scoring, not investment advice.",
+  "outputs": [
+    "outputs\\scouting\\real_universe_scored_candidates.csv",
+    "outputs\\scouting\\active_real_universe_top_candidates.csv",
+    "outputs\\scouting\\real_universe_scoring_bridge_summary.json",
+    "outputs\\scouting\\real_universe_scoring_bridge_report.md"
+  ],
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "market_data_called": false,
+  "pipeline_recalculated": false,
+  "financial_scoring_recalculated": false
+}

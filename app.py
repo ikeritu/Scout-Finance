@@ -112,6 +112,7 @@ st.set_page_config(
 # v1.4C real universe candidates packaged.
 # v1.4C1 real universe UI wording fix packaged.
 # v1.4C1 hotfix real universe label packaged.
+# v1.4D real universe scoring bridge packaged.
 # Pure presentation layer. This block only injects CSS and changes NO logic,
 # data flow, callbacks or component structure. Safe to tweak or remove.
 # =============================================================================
@@ -3912,7 +3913,7 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
     if source_name in {"active_real_universe_top_candidates.csv", "real_universe_candidates.csv"}:
         normalized.attrs["sf12a_source"] = "real_universe_input"
         normalized["stage3_status"] = normalized.get("stage3_status", "INPUT_ONLY")
-        normalized["data_quality_label"] = "INPUT_ONLY · no scoring financiero real"
+        normalized["data_quality_label"] = "INPUT_ONLY/METADATA_SCORE · no scoring financiero completo"
     else:
         normalized.attrs["sf12a_source"] = "revalidated_funnel"
 
@@ -3945,7 +3946,7 @@ def _sf12a_render_fallback_notice(df: pd.DataFrame, context: str = "vista") -> N
         st.warning(
             f"La vista final del último run está vacía. En esta {context} se muestran "
             f"candidatos generados desde el universo real input: `{path}`. "
-            "Estado: `INPUT_ONLY`; no es scoring financiero real."
+            "Estado: `INPUT_ONLY` o `METADATA_SCORE`; no es scoring financiero completo."
         )
         return
 
@@ -4048,7 +4049,7 @@ def _sf14a_detect_active_source(mode: str, top_n: int) -> dict[str, Any]:
                     "La vista final del último run está vacía. La interfaz muestra candidatos "
                     "generados desde el universo real input: "
                     "outputs/scouting/active_real_universe_top_candidates.csv. "
-                    "Estado INPUT_ONLY: no es scoring financiero real."
+                    "Estado INPUT_ONLY/METADATA_SCORE: no es scoring financiero completo."
                 ),
             }
         return {"active_source": "revalidated_funnel_fallback", "label": "Fallback: funnel revalidado", "run_id": latest_run_id or "sin run válido", "rows": int(len(fallback_df)), "explanation": "La vista final del último run está vacía. La interfaz muestra el último funnel revalidado local; por eso pueden repetirse las mismas empresas."}
@@ -4281,8 +4282,72 @@ def _sf14c1_is_input_only_row(row: pd.Series | dict[str, Any]) -> bool:
 
 
 def _sf14c1_input_only_caption() -> str:
-    return "`INPUT_ONLY` · universo real input · score por orden de entrada · no scoring financiero real"
+    return "`INPUT_ONLY` · universo real input · score local por metadatos · no scoring financiero completo"
 # <<< v1.4C1 REAL UNIVERSE UI WORDING FIX HELPERS
+
+# >>> v1.4D REAL UNIVERSE SCORING BRIDGE HELPERS
+def _sf14d_scoring_bridge_status() -> dict[str, Any]:
+    root = Path(__file__).resolve().parent
+    summary_path = root / "outputs" / "scouting" / "real_universe_scoring_bridge_summary.json"
+    scored_path = root / "outputs" / "scouting" / "real_universe_scored_candidates.csv"
+
+    summary: dict[str, Any] = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            summary = {}
+
+    rows = 0
+    top_tickers = ""
+    if scored_path.exists():
+        try:
+            df = pd.read_csv(scored_path)
+            rows = int(len(df))
+            if "ticker" in df.columns:
+                top_tickers = ", ".join(df["ticker"].dropna().astype(str).head(5).tolist())
+        except Exception:
+            rows = 0
+
+    return {
+        "summary_exists": summary_path.exists(),
+        "scored_exists": scored_path.exists(),
+        "status": summary.get("status", "missing"),
+        "rows": summary.get("candidates_scored", rows),
+        "top_tickers": summary.get("top_tickers", top_tickers),
+        "method": summary.get("score_method", "metadata_score_local_no_market_data"),
+    }
+
+
+def _sf14d_render_scoring_bridge_panel() -> None:
+    status = _sf14d_scoring_bridge_status()
+
+    st.markdown("### 🧮 Scoring bridge universo real")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Scored candidates", "OK" if status["scored_exists"] else "Falta")
+    c2.metric("Empresas", status["rows"])
+    c3.metric("Estado", status["status"])
+
+    if status["scored_exists"] and status["status"] == "OK":
+        st.success(
+            f"Scoring bridge local generado. Top: {status['top_tickers']}"
+        )
+        st.caption(
+            "`METADATA_SCORE` · usa campos locales del CSV · no usa precio, market cap, fundamentales, OpenAI, APIs ni yfinance."
+        )
+    else:
+        st.info(
+            "Aún no hay scoring bridge generado. Ejecuta v1.4D para crear "
+            "`real_universe_scored_candidates.csv` y actualizar el ranking activo."
+        )
+
+    with st.expander("Comandos v1.4D — scoring bridge local", expanded=False):
+        st.code(
+            ".\\.venv\\Scripts\\python.exe -m src.real_universe_scoring_bridge --score\n"
+            ".\\.venv\\Scripts\\python.exe scripts/check_v1_4d_real_universe_scoring_bridge.py",
+            language="powershell",
+        )
+# <<< v1.4D REAL UNIVERSE SCORING BRIDGE HELPERS
 
 
 def _get_latest_final_view_df(mode: str, top_n: int) -> pd.DataFrame:
