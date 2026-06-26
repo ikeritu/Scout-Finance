@@ -110,6 +110,8 @@ st.set_page_config(
 # v1.4A data source transparency packaged.
 # v1.4B real universe input packaged.
 # v1.4C real universe candidates packaged.
+# v1.4C1 real universe UI wording fix packaged.
+# v1.4C1 hotfix real universe label packaged.
 # Pure presentation layer. This block only injects CSS and changes NO logic,
 # data flow, callbacks or component structure. Safe to tweak or remove.
 # =============================================================================
@@ -3905,7 +3907,15 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
     normalized["data_quality_label"] = "Stage 3 revalidado"
 
     normalized = normalized.reset_index(drop=True)
-    normalized.attrs["sf12a_source"] = "revalidated_funnel"
+
+    source_name = source_path.name if source_path else ""
+    if source_name in {"active_real_universe_top_candidates.csv", "real_universe_candidates.csv"}:
+        normalized.attrs["sf12a_source"] = "real_universe_input"
+        normalized["stage3_status"] = normalized.get("stage3_status", "INPUT_ONLY")
+        normalized["data_quality_label"] = "INPUT_ONLY · no scoring financiero real"
+    else:
+        normalized.attrs["sf12a_source"] = "revalidated_funnel"
+
     normalized.attrs["sf12a_source_path"] = (
         str(source_path.relative_to(_sf12a_project_root())) if source_path else ""
     )
@@ -3927,15 +3937,24 @@ def _sf12a_source_path(df: pd.DataFrame) -> str:
 
 
 def _sf12a_render_fallback_notice(df: pd.DataFrame, context: str = "vista") -> None:
-    """Explain clearly when UI falls back to the revalidated funnel."""
-    if _sf12a_data_source(df) != "revalidated_funnel":
+    """Explain clearly when UI falls back to a non-final-view source."""
+    source = _sf12a_data_source(df)
+    path = _sf12a_source_path(df)
+
+    if source == "real_universe_input":
+        st.warning(
+            f"La vista final del último run está vacía. En esta {context} se muestran "
+            f"candidatos generados desde el universo real input: `{path}`. "
+            "Estado: `INPUT_ONLY`; no es scoring financiero real."
+        )
         return
 
-    path = _sf12a_source_path(df) or "outputs/scouting/phase7c4_pipeline_revalidation_top_candidates.csv"
-    st.warning(
-        f"La vista final del último run está vacía. En esta {context} se muestra "
-        f"el último funnel revalidado disponible: `{path}`."
-    )
+    if source == "revalidated_funnel":
+        path = path or "outputs/scouting/phase7c4_pipeline_revalidation_top_candidates.csv"
+        st.warning(
+            f"La vista final del último run está vacía. En esta {context} se muestra "
+            f"el último funnel revalidado disponible: `{path}`."
+        )
 
 
 def _sf12a_disable_global_post_main_render() -> bool:
@@ -4019,6 +4038,19 @@ def _sf14a_detect_active_source(mode: str, top_n: int) -> dict[str, Any]:
         return {"active_source": "latest_final_view", "label": "Último run válido", "run_id": latest_run_id, "rows": int(len(final_df)), "explanation": "La interfaz está mostrando la vista final del último run."}
     fallback_df = _sf12a_load_revalidated_candidates(top_n=top_n)
     if fallback_df is not None and not fallback_df.empty:
+        if _sf12a_data_source(fallback_df) == "real_universe_input":
+            return {
+                "active_source": "real_universe_input",
+                "label": "Universo real input",
+                "run_id": latest_run_id or "sin run válido",
+                "rows": int(len(fallback_df)),
+                "explanation": (
+                    "La vista final del último run está vacía. La interfaz muestra candidatos "
+                    "generados desde el universo real input: "
+                    "outputs/scouting/active_real_universe_top_candidates.csv. "
+                    "Estado INPUT_ONLY: no es scoring financiero real."
+                ),
+            }
         return {"active_source": "revalidated_funnel_fallback", "label": "Fallback: funnel revalidado", "run_id": latest_run_id or "sin run válido", "rows": int(len(fallback_df)), "explanation": "La vista final del último run está vacía. La interfaz muestra el último funnel revalidado local; por eso pueden repetirse las mismas empresas."}
     return {"active_source": "empty", "label": "Sin datos visibles", "run_id": latest_run_id or "sin run", "rows": 0, "explanation": "No hay vista final ni fallback revalidado disponible."}
 
@@ -4031,7 +4063,9 @@ def _sf14a_render_data_source_panel(mode: str, top_n: int) -> None:
     c2.metric("Filas visibles", status["rows"])
     c3.metric("Modo", mode)
     c4.metric("Run", str(status["run_id"])[:12])
-    if status["active_source"] == "revalidated_funnel_fallback":
+    if status["active_source"] == "real_universe_input":
+        st.info(status["explanation"])
+    elif status["active_source"] == "revalidated_funnel_fallback":
         st.warning(status["explanation"])
     elif status["active_source"] == "latest_final_view":
         st.success(status["explanation"])
@@ -4206,7 +4240,7 @@ def _sf14c_render_real_candidates_panel() -> None:
 
     if status["candidates_exists"] and status["status"] == "OK":
         st.success(
-            f"Candidatos generados desde `data/real/real_universe.csv`: "
+            f"Candidatos `INPUT_ONLY` generados desde `data/real/real_universe.csv`: "
             f"{status['top_tickers']}"
         )
         if status.get("placeholder"):
@@ -4227,6 +4261,28 @@ def _sf14c_render_real_candidates_panel() -> None:
             language="powershell",
         )
 # <<< v1.4C REAL UNIVERSE CANDIDATES HELPERS
+
+# >>> v1.4C1 REAL UNIVERSE UI WORDING FIX HELPERS
+def _sf14c1_is_input_only_row(row: pd.Series | dict[str, Any]) -> bool:
+    """Return True when a company row comes from v1.4C input-only candidates."""
+    try:
+        source = str(row.get("_sf12a_source", "") or "")
+        status = str(row.get("stage3_status", "") or "")
+        category = str(row.get("stage3_category", "") or "")
+        note = str(row.get("note", "") or "")
+        return (
+            source == "real_universe_input"
+            or status == "INPUT_ONLY"
+            or category == "real_universe_input_candidate"
+            or "Input-only candidate" in note
+        )
+    except Exception:
+        return False
+
+
+def _sf14c1_input_only_caption() -> str:
+    return "`INPUT_ONLY` · universo real input · score por orden de entrada · no scoring financiero real"
+# <<< v1.4C1 REAL UNIVERSE UI WORDING FIX HELPERS
 
 
 def _get_latest_final_view_df(mode: str, top_n: int) -> pd.DataFrame:
