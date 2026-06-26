@@ -108,6 +108,7 @@ st.set_page_config(
 # Scout Finance — Visual theme (v1.3 UI redesign)
 # v1.3A Visual UI Redesign packaged: CSS redesign + v1.2A fallback alignment.
 # v1.4A data source transparency packaged.
+# v1.4B real universe input packaged.
 # Pure presentation layer. This block only injects CSS and changes NO logic,
 # data flow, callbacks or component structure. Safe to tweak or remove.
 # =============================================================================
@@ -4048,6 +4049,113 @@ def _sf14a_render_data_source_panel(mode: str, top_n: int) -> None:
         Esta fase no ejecuta APIs ni cambia scoring: solo muestra la fuente activa y evita confusión.
         """)
 # <<< v1.4A DATA SOURCE TRANSPARENCY HELPERS
+
+# >>> v1.4B REAL UNIVERSE INPUT MVP HELPERS
+def _sf14b_real_universe_paths() -> dict[str, Path]:
+    root = Path(__file__).resolve().parent
+    return {
+        "template": root / "data" / "real" / "universe_template.csv",
+        "input": root / "data" / "real" / "real_universe.csv",
+        "summary": root / "outputs" / "scouting" / "real_universe_input_summary.json",
+        "report": root / "outputs" / "scouting" / "real_universe_input_report.md",
+    }
+
+
+def _sf14b_read_json_safe(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
+def _sf14b_real_universe_status() -> dict[str, Any]:
+    paths = _sf14b_real_universe_paths()
+    summary = _sf14b_read_json_safe(paths["summary"])
+    input_exists = paths["input"].exists()
+    template_exists = paths["template"].exists()
+
+    rows = None
+    top_tickers = ""
+    if input_exists:
+        try:
+            df = pd.read_csv(paths["input"])
+            rows = int(len(df))
+            if "ticker" in df.columns:
+                top_tickers = ", ".join(df["ticker"].dropna().astype(str).head(5).tolist())
+        except Exception:
+            rows = None
+
+    return {
+        "template_exists": template_exists,
+        "input_exists": input_exists,
+        "summary_exists": paths["summary"].exists(),
+        "report_exists": paths["report"].exists(),
+        "status": summary.get("status", "pending" if input_exists else "missing"),
+        "rows": summary.get("rows_total", rows or 0),
+        "valid_tickers": summary.get("valid_tickers", 0),
+        "duplicate_tickers": summary.get("duplicate_tickers", 0),
+        "empty_tickers": summary.get("empty_tickers", 0),
+        "top_tickers": summary.get("top_tickers", top_tickers),
+    }
+
+
+def _sf14b_render_real_universe_panel() -> None:
+    status = _sf14b_real_universe_status()
+
+    st.markdown("### 🧺 Universo real de entrada")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Plantilla", "OK" if status["template_exists"] else "Falta")
+    c2.metric("real_universe.csv", "OK" if status["input_exists"] else "Falta")
+    c3.metric("Tickers válidos", status["valid_tickers"])
+    c4.metric("Estado", status["status"])
+
+    if not status["input_exists"]:
+        st.info(
+            "Aún no hay `data/real/real_universe.csv`. Copia la plantilla, añade tickers reales "
+            "y valida el archivo antes de regenerar candidatos."
+        )
+    elif status["status"] == "OK":
+        st.success(
+            f"Universo real validado: {status['valid_tickers']} tickers válidos. "
+            f"Top: {status.get('top_tickers', '')}"
+        )
+    else:
+        st.warning(
+            "Existe `real_universe.csv`, pero aún no está validado o tiene incidencias. "
+            "Ejecuta el validador v1.4B."
+        )
+
+    with st.expander("Comandos v1.4B — preparar y validar universo real", expanded=False):
+        st.code(
+            ".\\.venv\\Scripts\\python.exe -m src.real_universe_input --init-template\n"
+            "Copy-Item .\\data\\real\\universe_template.csv .\\data\\real\\real_universe.csv -Force\n"
+            "notepad .\\data\\real\\real_universe.csv\n"
+            ".\\.venv\\Scripts\\python.exe -m src.real_universe_input --validate\n"
+            ".\\.venv\\Scripts\\python.exe scripts/check_v1_4b_real_universe_input.py",
+            language="powershell",
+        )
+
+    with st.expander("Formato esperado", expanded=False):
+        st.markdown(
+            """
+            Columnas mínimas:
+
+            ```text
+            ticker,name,exchange,country,sector,industry
+            ```
+
+            Reglas:
+            - `ticker` obligatorio.
+            - `name` recomendable.
+            - `exchange` y `country` ayudan a depurar universo.
+            - `sector` e `industry` pueden dejarse vacíos.
+            - No se ejecutan APIs ni yfinance en esta fase.
+            """
+        )
+# <<< v1.4B REAL UNIVERSE INPUT MVP HELPERS
 
 
 def _get_latest_final_view_df(mode: str, top_n: int) -> pd.DataFrame:

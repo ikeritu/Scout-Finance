@@ -1,0 +1,4 @@
+ticker,name,exchange,country,sector,industry
+AAPL,Apple Inc.,NASDAQ,US,Technology,Consumer Electronics
+MSFT,Microsoft Corporation,NASDAQ,US,Technology,Software
+ASML,ASML Holding N.V.,NASDAQ,NL,Technology,Semiconductor Equipment

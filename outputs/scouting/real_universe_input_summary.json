@@ -1,0 +1,36 @@
+{
+  "phase": "v1.4B",
+  "title": "Real Universe Input MVP",
+  "status": "OK",
+  "input_path": "data\\real\\real_universe.csv",
+  "created_at": "2026-06-26T10:15:03+0000",
+  "rows_total": 3,
+  "columns": [
+    "ticker",
+    "name",
+    "exchange",
+    "country",
+    "sector",
+    "industry"
+  ],
+  "required_columns": [
+    "ticker",
+    "name",
+    "exchange",
+    "country",
+    "sector",
+    "industry"
+  ],
+  "missing_columns": [],
+  "valid_tickers": 3,
+  "duplicate_tickers": 0,
+  "duplicate_ticker_values": [],
+  "empty_tickers": 0,
+  "invalid_tickers": 0,
+  "top_tickers": "AAPL, MSFT, ASML",
+  "issues": [],
+  "openai_called": false,
+  "api_called": false,
+  "yfinance_called": false,
+  "pipeline_recalculated": false
+}
