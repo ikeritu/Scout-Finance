@@ -107,6 +107,7 @@ st.set_page_config(
 # =============================================================================
 # Scout Finance — Visual theme (v1.3 UI redesign)
 # v1.3A Visual UI Redesign packaged: CSS redesign + v1.2A fallback alignment.
+# v1.4A data source transparency packaged.
 # Pure presentation layer. This block only injects CSS and changes NO logic,
 # data flow, callbacks or component structure. Safe to tweak or remove.
 # =============================================================================
@@ -3938,6 +3939,116 @@ def _sf12a_disable_global_post_main_render() -> bool:
     return True
 # <<< v1.2A UI ALIGNMENT PATCH HELPERS
 
+# >>> v1.4A DATA SOURCE TRANSPARENCY HELPERS
+def _sf14a_file_info(relative_path: str) -> dict[str, Any]:
+    path = Path(__file__).resolve().parent / relative_path
+    info = {"source": relative_path, "exists": path.exists(), "kind": "missing", "rows": None, "size_kb": None, "modified_at": None, "top_tickers": ""}
+    if not path.exists():
+        return info
+    info["size_kb"] = round(path.stat().st_size / 1024, 1)
+    info["modified_at"] = datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+    info["kind"] = path.suffix.lower().replace(".", "") or "file"
+    if path.suffix.lower() == ".csv":
+        try:
+            df = pd.read_csv(path)
+            info["rows"] = int(len(df))
+            for col in ["ticker", "Ticker", "symbol", "Symbol"]:
+                if col in df.columns:
+                    info["top_tickers"] = ", ".join(df[col].dropna().astype(str).head(5).tolist())
+                    break
+        except Exception as exc:
+            info["kind"] = f"csv_error: {exc}"
+    elif path.suffix.lower() == ".json":
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            info["rows"] = len(data) if isinstance(data, (list, dict)) else None
+        except Exception as exc:
+            info["kind"] = f"json_error: {exc}"
+    return info
+
+
+def _sf14a_build_data_source_audit() -> pd.DataFrame:
+    sources = [
+        "outputs/scouting/phase7c4_pipeline_revalidation_top_candidates.csv",
+        "outputs/scouting/top_100_candidates.csv",
+        "outputs/scouting/top_20_deep_research.csv",
+        "outputs/scouting/top_50_watchlist.csv",
+        "outputs/scouting/phase7c4_pipeline_revalidation_summary.json",
+        "outputs/scouting/stage3_summary.json",
+        "outputs/scouting/global_funnel_run_summary.json",
+        "outputs/scouting/universe_cleaning_summary.json",
+        "outputs/analyses",
+        "data/demo",
+        "data/real",
+    ]
+    rows = []
+    root = Path(__file__).resolve().parent
+    for rel in sources:
+        path = root / rel
+        if path.is_dir():
+            files = [x for x in path.iterdir() if x.is_file()]
+            csvs = [x for x in files if x.suffix.lower() == ".csv"]
+            jsons = [x for x in files if x.suffix.lower() == ".json"]
+            rows.append({
+                "source": rel,
+                "exists": True,
+                "kind": "directory",
+                "rows": len(files),
+                "size_kb": round(sum(x.stat().st_size for x in files) / 1024, 1),
+                "modified_at": datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S"),
+                "top_tickers": f"{len(csvs)} CSV · {len(jsons)} JSON",
+            })
+        else:
+            rows.append(_sf14a_file_info(rel))
+    return pd.DataFrame(rows)
+
+
+def _sf14a_detect_active_source(mode: str, top_n: int) -> dict[str, Any]:
+    latest_run_id = get_latest_run_id(mode=mode)
+    final_df = pd.DataFrame()
+    if latest_run_id is not None:
+        try:
+            final_df = get_top_final_research_view(run_id=latest_run_id, mode=mode, top_n=top_n)
+        except Exception:
+            final_df = pd.DataFrame()
+    if final_df is not None and not final_df.empty:
+        return {"active_source": "latest_final_view", "label": "Último run válido", "run_id": latest_run_id, "rows": int(len(final_df)), "explanation": "La interfaz está mostrando la vista final del último run."}
+    fallback_df = _sf12a_load_revalidated_candidates(top_n=top_n)
+    if fallback_df is not None and not fallback_df.empty:
+        return {"active_source": "revalidated_funnel_fallback", "label": "Fallback: funnel revalidado", "run_id": latest_run_id or "sin run válido", "rows": int(len(fallback_df)), "explanation": "La vista final del último run está vacía. La interfaz muestra el último funnel revalidado local; por eso pueden repetirse las mismas empresas."}
+    return {"active_source": "empty", "label": "Sin datos visibles", "run_id": latest_run_id or "sin run", "rows": 0, "explanation": "No hay vista final ni fallback revalidado disponible."}
+
+
+def _sf14a_render_data_source_panel(mode: str, top_n: int) -> None:
+    status = _sf14a_detect_active_source(mode=mode, top_n=top_n)
+    st.markdown("### 🧭 Fuente de datos activa")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Fuente", status["label"])
+    c2.metric("Filas visibles", status["rows"])
+    c3.metric("Modo", mode)
+    c4.metric("Run", str(status["run_id"])[:12])
+    if status["active_source"] == "revalidated_funnel_fallback":
+        st.warning(status["explanation"])
+    elif status["active_source"] == "latest_final_view":
+        st.success(status["explanation"])
+    else:
+        st.info(status["explanation"])
+    with st.expander("Auditar archivos que alimentan la interfaz", expanded=False):
+        st.dataframe(_sf14a_build_data_source_audit(), use_container_width=True, hide_index=True)
+        st.caption("Si `phase7c4_pipeline_revalidation_top_candidates.csv` o `top_100_candidates.csv` no cambian, verás siempre las mismas empresas.")
+    with st.expander("Cómo conseguir empresas distintas", expanded=False):
+        st.markdown("""
+        Para que el ranking cambie necesitas cambiar la fuente de datos, no solo la interfaz.
+
+        1. Actualizar el universo real en `data/real`.
+        2. Regenerar el funnel hasta crear nuevos `top_100_candidates.csv`.
+        3. Generar nuevos JSON en `outputs/analyses` para que la comparativa deje de usar ejemplos antiguos.
+        4. Evitar depender siempre del fallback si el último run sale vacío.
+
+        Esta fase no ejecuta APIs ni cambia scoring: solo muestra la fuente activa y evita confusión.
+        """)
+# <<< v1.4A DATA SOURCE TRANSPARENCY HELPERS
+
 
 def _get_latest_final_view_df(mode: str, top_n: int) -> pd.DataFrame:
     """
@@ -4204,6 +4315,8 @@ def _render_dashboard_tab(mode: str, top_n: int) -> None:
     """
 
     _render_now_actions_card()
+
+    _sf14a_render_data_source_panel(mode=mode, top_n=top_n)
 
     final_df = _get_latest_final_view_df(mode=mode, top_n=top_n)
 
