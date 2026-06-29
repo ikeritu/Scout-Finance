@@ -2,31 +2,31 @@
 
 ## Versión actual
 
-`v0.4`
+`v1.1C — MVP Final Freeze`
 
-## Nombre
+Detalle del freeze en `docs/v1/V1_1C_MVP_FINAL_FREEZE.md` y `releases/FREEZE_REPORT_v1.1C_mvp_final_freeze.md`.
 
-Scout Finance v0.4 — Private Research MVP estable
+## Cambios sobre el freeze (sin tag formal todavía)
+
+Simplificación de la interfaz Streamlit (`app.py`) para pruebas locales rápidas:
+
+- login y FAQ deshabilitados (código intacto, sin llamar desde `main()`);
+- pestañas reducidas de 7 a 4: Dashboard, Ranking, Análisis empresa, Comparar empresas;
+- pestañas Candidatos Stage 3, Histórico/técnico y Ajustes ocultas (no eliminadas);
+- tema visual básico vía `.streamlit/config.toml`.
 
 ## Estado
 
 Estable para uso local en modo demo/privado.
 
-## Fecha de cierre
-
-Fase 4H
-
 ## Incluye
 
 - Dashboard ejecutivo.
 - Ranking.
-- Ficha empresa.
-- Outputs Fase 2.
+- Ficha empresa con outputs Fase 2.
 - Comparativa visual.
-- Histórico por empresa.
-- Ajustes técnicos.
-- Checker estabilidad.
-- FAQ actualizado.
+- Capa de revisión manual documentada (CLI) — `docs/QUICKSTART.md`.
+- Freeze candidate v1.0 y freeze final v1.1C.
 
 ## Principio del proyecto
 
