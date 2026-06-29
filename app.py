@@ -1,3 +1,5 @@
+# v1.4F market data UI integration packaged.
+# v1.4F1 market data UI runtime hotfix packaged.
 # v1.4E2 market data provider fallback packaged.
 """
 Streamlit app.
@@ -1387,8 +1389,14 @@ def _build_display_final_view(final_df: pd.DataFrame) -> pd.DataFrame:
         "price_at_signal": "Precio",
         "market_cap": "Market Cap",
         "relative_volume": "Vol. Rel.",
+        "volume": "Volumen",
+        "change_1d": "1D",
         "change_5d": "5D",
         "change_20d": "20D",
+        "currency": "Divisa",
+        "market_data_provider": "Proveedor",
+        "market_data_timestamp": "as_of",
+        "market_data_status": "Estado mercado",
         "openai_model": "Modelo IA",
         "openai_reason_to_pass": "Estado IA",
         "feedback_label": "Feedback",
@@ -1410,6 +1418,12 @@ def _build_display_final_view(final_df: pd.DataFrame) -> pd.DataFrame:
 
     if "Vol. Rel." in display_df.columns:
         display_df["Vol. Rel."] = display_df["Vol. Rel."].apply(lambda value: _format_number(value, 2))
+
+    if "Volumen" in display_df.columns:
+        display_df["Volumen"] = display_df["Volumen"].apply(lambda value: _format_number(value, 0))
+
+    if "1D" in display_df.columns:
+        display_df["1D"] = display_df["1D"].apply(_format_percent_ratio)
 
     if "5D" in display_df.columns:
         display_df["5D"] = display_df["5D"].apply(_format_percent_ratio)
@@ -2393,6 +2407,57 @@ def _render_generated_outputs_section(ticker: str) -> None:
             st.info("No se encontró la ficha ejecutiva HTML.")
 
 
+
+# >>> v1.4F1 MARKET DATA UI RUNTIME HOTFIX HELPERS
+def _sf14f_is_market_data_row(row: pd.Series | dict[str, Any]) -> bool:
+    """Return True when a row contains v1.4E/E2 market data state."""
+    try:
+        status = str(row.get("stage3_status", "") or "")
+        category = str(row.get("category_final", row.get("stage3_category", "")) or "")
+        provider = str(row.get("market_data_provider", "") or "")
+        method = str(row.get("score_method", "") or "")
+        return (
+            status.startswith("MARKET_DATA")
+            or status == "METADATA_SCORE_FALLBACK"
+            or "market_data" in category
+            or provider != ""
+            or method in {"market_data_score_yfinance_cache_v0", "market_data_provider_fallback_v0"}
+        )
+    except Exception:
+        return False
+
+
+def _sf14f_provider_label(row: pd.Series | dict[str, Any]) -> str:
+    """Return a readable provider label for market-data rows."""
+    provider = str(row.get("market_data_provider", "") or "")
+    status = str(row.get("stage3_status", "") or "")
+
+    if provider == "manual_market_data.csv" or status == "MARKET_DATA_SCORE_MANUAL":
+        return "manual_market_data.csv"
+    if provider == "yfinance_cache" or status == "MARKET_DATA_SCORE_YFINANCE":
+        return "yfinance cache"
+    if status == "METADATA_SCORE_FALLBACK":
+        return "metadata fallback"
+
+    return provider or "—"
+
+
+def _sf14f_render_market_data_notice(row: pd.Series | dict[str, Any]) -> None:
+    """Render visible context for market-data rows."""
+    if not _sf14f_is_market_data_row(row):
+        return
+
+    provider = _sf14f_provider_label(row)
+    status = _display_text(row.get("stage3_status"))
+    as_of = _display_text(row.get("market_data_timestamp"))
+
+    st.info(
+        f"`{status}` — datos de mercado desde `{provider}`. "
+        f"Fecha/as_of: `{as_of}`. No es recomendación financiera."
+    )
+# <<< v1.4F1 MARKET DATA UI RUNTIME HOTFIX HELPERS
+
+
 def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
     """
     Render individual company detail card with score breakdown and quick feedback.
@@ -2442,7 +2507,27 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
         score_cols[3].metric("Contexto", _format_number(row.get("score_context"), 2))
         score_cols[4].metric("Ajustado", _format_number(row.get("score_adjusted"), 2))
 
-    if _sf14d1_is_metadata_score_row(row):
+    if _sf14f_is_market_data_row(row):
+        _sf14f_render_market_data_notice(row)
+
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("Precio", _format_number(row.get("price_at_signal"), 2))
+        col2.metric("Market Cap", _format_compact_usd(row.get("market_cap")))
+        col3.metric("Vol. relativo", _format_number(row.get("relative_volume"), 2))
+        col4.metric("Proveedor", _sf14f_provider_label(row))
+
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("Volumen", _format_number(row.get("volume"), 0))
+        col2.metric("1D", _format_percent_ratio(row.get("change_1d")))
+        col3.metric("5D", _format_percent_ratio(row.get("change_5d")))
+        col4.metric("20D", _format_percent_ratio(row.get("change_20d")))
+
+        st.caption(
+            f"Currency: {_display_text(row.get('currency'))} · "
+            f"as_of: {_display_text(row.get('market_data_timestamp'))} · "
+            f"estado: {_display_text(row.get('stage3_status'))}"
+        )
+    elif _sf14d1_is_metadata_score_row(row):
         _sf14d1_render_metadata_score_notice(row)
 
         col1, col2, col3, col4 = st.columns(4)
@@ -2489,7 +2574,12 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
         st.write(f"{_display_text(row.get('exchange'))} / {_display_text(row.get('currency'))}")
 
     st.markdown("#### Razón cuantitativa")
-    if _sf14d1_is_metadata_score_row(row):
+    if _sf14f_is_market_data_row(row):
+        st.info(
+            "Score con datos de mercado disponibles: precio, market cap, volumen y cambios 1D/5D/20D "
+            "según proveedor manual/cache. No incluye estados financieros ni recomendación de inversión."
+        )
+    elif _sf14d1_is_metadata_score_row(row):
         st.info(
             "Score local por metadatos: completitud del CSV, exchange, país, sector, industria "
             "y desempate estable. No incluye precio, valoración, fundamentales ni riesgo financiero real."
@@ -3561,8 +3651,15 @@ def _build_clean_ranking_table(
         "Score",
         "Categoría",
         "Sector",
+        "Precio",
+        "Market Cap",
+        "1D",
+        "5D",
+        "20D",
+        "Proveedor",
         "Riesgo",
         "Confianza",
+        "Estado mercado",
         "Estado IA",
         "Feedback",
     ]
@@ -3890,6 +3987,18 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         "exchange": "exchange",
         "currency": "currency",
         "market_cap": "market_cap",
+        "regular_market_price": "price_at_signal",
+        "price_at_signal": "price_at_signal",
+        "volume": "volume",
+        "average_volume": "average_volume",
+        "relative_volume": "relative_volume",
+        "change_1d": "change_1d",
+        "change_5d": "change_5d",
+        "change_20d": "change_20d",
+        "market_data_timestamp": "market_data_timestamp",
+        "market_data_provider": "market_data_provider",
+        "market_data_status": "market_data_status",
+        "score_method": "score_method",
         "final_stage3_score": "score_priority",
         "stage3_category": "category_final",
         "risk_score": "score_risk",
@@ -3926,6 +4035,15 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         "moat_proxy_score",
         "momentum_score",
         "liquidity_score",
+        "volume",
+        "average_volume",
+        "relative_volume",
+        "change_1d",
+        "change_5d",
+        "change_20d",
+        "market_data_timestamp",
+        "market_data_provider",
+        "market_data_status",
         "metadata_completeness_score",
         "metadata_exchange_score",
         "metadata_country_score",
@@ -6771,3 +6889,6 @@ def _sf14e2_render_provider_fallback_panel() -> None:
     with st.expander("Comandos v1.4E2 — fallback manual", expanded=False):
         st.code(".\\.venv\\Scripts\\python.exe -m src.market_data_provider_fallback --init-template\nCopy-Item .\\data\\real\\manual_market_data_template.csv .\\data\\real\\manual_market_data.csv -Force\nnotepad .\\data\\real\\manual_market_data.csv\n.\\.venv\\Scripts\\python.exe -m src.market_data_provider_fallback --merge\n.\\.venv\\Scripts\\python.exe scripts/check_v1_4e2_market_data_provider_fallback.py", language="powershell")
 # <<< v1.4E2 MARKET DATA PROVIDER FALLBACK HELPERS
+
+
+
