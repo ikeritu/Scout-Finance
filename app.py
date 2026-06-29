@@ -1,3 +1,4 @@
+# v1.4E2 market data provider fallback packaged.
 """
 Streamlit app.
 
@@ -6740,3 +6741,33 @@ if not _sf12a_disable_global_post_main_render():
             st.warning(f"Phase 7D.1 dashboard block could not be rendered: {exc}")
         except Exception:
             pass
+
+
+
+# >>> v1.4E2 MARKET DATA PROVIDER FALLBACK HELPERS
+def _sf14e2_render_provider_fallback_panel() -> None:
+    root = Path(__file__).resolve().parent
+    summary_path = root / "outputs" / "market_data" / "market_data_provider_fallback_summary.json"
+    template_path = root / "data" / "real" / "manual_market_data_template.csv"
+    manual_path = root / "data" / "real" / "manual_market_data.csv"
+    summary = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            summary = {}
+    st.markdown("### 🧩 Market data provider fallback")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Plantilla manual", "OK" if template_path.exists() else "Falta")
+    c2.metric("CSV manual", "OK" if manual_path.exists() else "Falta")
+    c3.metric("Manual usados", summary.get("manual_used", 0))
+    c4.metric("Estado", summary.get("status", "missing"))
+    if summary_path.exists() and summary.get("status") == "OK":
+        st.success(f"Fallback manual aplicado. Top: {summary.get('top_tickers', '')}")
+    elif manual_path.exists():
+        st.warning("Existe manual_market_data.csv, pero aún no se ha fusionado o tiene incidencias.")
+    else:
+        st.info("Crea manual_market_data.csv para no depender solo de yfinance.")
+    with st.expander("Comandos v1.4E2 — fallback manual", expanded=False):
+        st.code(".\\.venv\\Scripts\\python.exe -m src.market_data_provider_fallback --init-template\nCopy-Item .\\data\\real\\manual_market_data_template.csv .\\data\\real\\manual_market_data.csv -Force\nnotepad .\\data\\real\\manual_market_data.csv\n.\\.venv\\Scripts\\python.exe -m src.market_data_provider_fallback --merge\n.\\.venv\\Scripts\\python.exe scripts/check_v1_4e2_market_data_provider_fallback.py", language="powershell")
+# <<< v1.4E2 MARKET DATA PROVIDER FALLBACK HELPERS
