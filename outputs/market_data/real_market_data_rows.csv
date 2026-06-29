@@ -1,0 +1,4 @@
+ticker,name,company_name,exchange,country,sector,industry,market_data_status,error,market_data_timestamp
+AAPL,Apple Inc.,Apple Inc.,NASDAQ,US,Technology,Consumer Electronics,ERROR,'exchangeTimezoneName',2026-06-29T14:26:56+0000
+MSFT,Microsoft Corporation,Microsoft Corporation,NASDAQ,US,Technology,Software,ERROR,'exchangeTimezoneName',2026-06-29T14:26:56+0000
+ASML,ASML Holding N.V.,ASML Holding N.V.,NASDAQ,NL,Technology,Semiconductor Equipment,ERROR,"Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: D:\Proyectos\💰 Scout Finance\.venv\Lib\site-packages\certifi\cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",2026-06-29T14:26:56+0000

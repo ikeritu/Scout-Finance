@@ -113,6 +113,10 @@ st.set_page_config(
 # v1.4C1 real universe UI wording fix packaged.
 # v1.4C1 hotfix real universe label packaged.
 # v1.4D real universe scoring bridge packaged.
+# v1.4D1 metadata score UI cleanup packaged.
+# v1.4E real market data adapter packaged.
+# v1.4E1 market data adapter hotfix packaged.
+# score_method: market_data_score_yfinance_cache_v0
 # Pure presentation layer. This block only injects CSS and changes NO logic,
 # data flow, callbacks or component structure. Safe to tweak or remove.
 # =============================================================================
@@ -2437,18 +2441,36 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
         score_cols[3].metric("Contexto", _format_number(row.get("score_context"), 2))
         score_cols[4].metric("Ajustado", _format_number(row.get("score_adjusted"), 2))
 
-    col1, col2, col3, col4 = st.columns(4)
+    if _sf14d1_is_metadata_score_row(row):
+        _sf14d1_render_metadata_score_notice(row)
 
-    col1.metric("Precio", _format_number(row.get("price_at_signal"), 2))
-    col2.metric("Market Cap", _format_compact_usd(row.get("market_cap")))
-    col3.metric("Vol. relativo", _format_number(row.get("relative_volume"), 2))
-    col4.metric("Calidad datos", _display_text(row.get("data_quality_label")))
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("Exchange", _display_text(row.get("exchange")))
+        col2.metric("País", _display_text(row.get("country")))
+        col3.metric("Método score", "METADATA")
+        col4.metric("Calidad metadatos", _display_text(row.get("data_quality_label")))
 
-    col1, col2, col3 = st.columns(3)
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Completitud", _format_number(row.get("metadata_completeness_score"), 2))
+        col2.metric("Exchange score", _format_number(row.get("metadata_exchange_score"), 2))
+        col3.metric("Country score", _format_number(row.get("metadata_country_score"), 2))
 
-    col1.metric("1D", _format_percent_ratio(row.get("change_1d")))
-    col2.metric("5D", _format_percent_ratio(row.get("change_5d")))
-    col3.metric("20D", _format_percent_ratio(row.get("change_20d")))
+        st.caption(
+            "Precio, market cap, volumen, 1D, 5D y 20D no se muestran porque v1.4D no usa datos de mercado."
+        )
+    else:
+        col1, col2, col3, col4 = st.columns(4)
+
+        col1.metric("Precio", _format_number(row.get("price_at_signal"), 2))
+        col2.metric("Market Cap", _format_compact_usd(row.get("market_cap")))
+        col3.metric("Vol. relativo", _format_number(row.get("relative_volume"), 2))
+        col4.metric("Calidad datos", _display_text(row.get("data_quality_label")))
+
+        col1, col2, col3 = st.columns(3)
+
+        col1.metric("1D", _format_percent_ratio(row.get("change_1d")))
+        col2.metric("5D", _format_percent_ratio(row.get("change_5d")))
+        col3.metric("20D", _format_percent_ratio(row.get("change_20d")))
 
     st.markdown("#### Contexto")
     context_col1, context_col2, context_col3 = st.columns(3)
@@ -2466,8 +2488,14 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
         st.write(f"{_display_text(row.get('exchange'))} / {_display_text(row.get('currency'))}")
 
     st.markdown("#### Razón cuantitativa")
-    reason_quant = _quant_reason_label(row.get("reason_to_pass_quant"))
-    st.info(reason_quant)
+    if _sf14d1_is_metadata_score_row(row):
+        st.info(
+            "Score local por metadatos: completitud del CSV, exchange, país, sector, industria "
+            "y desempate estable. No incluye precio, valoración, fundamentales ni riesgo financiero real."
+        )
+    else:
+        reason_quant = _quant_reason_label(row.get("reason_to_pass_quant"))
+        st.info(reason_quant)
 
     st.markdown("#### 🧠 Estado IA legacy resumido")
 
@@ -3858,6 +3886,8 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         "sector": "sector",
         "industry": "industry",
         "country": "country",
+        "exchange": "exchange",
+        "currency": "currency",
         "market_cap": "market_cap",
         "final_stage3_score": "score_priority",
         "stage3_category": "category_final",
@@ -3867,6 +3897,14 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         "moat_proxy_score": "score_adjusted",
         "momentum_score": "score_momentum",
         "liquidity_score": "score_liquidity",
+        "score_method": "score_method",
+        "metadata_completeness_score": "metadata_completeness_score",
+        "metadata_exchange_score": "metadata_exchange_score",
+        "metadata_country_score": "metadata_country_score",
+        "metadata_sector_score": "metadata_sector_score",
+        "metadata_industry_score": "metadata_industry_score",
+        "metadata_order_score": "metadata_order_score",
+        "note": "note",
     }
 
     for source, target in column_map.items():
@@ -3887,6 +3925,14 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         "moat_proxy_score",
         "momentum_score",
         "liquidity_score",
+        "metadata_completeness_score",
+        "metadata_exchange_score",
+        "metadata_country_score",
+        "metadata_sector_score",
+        "metadata_industry_score",
+        "metadata_order_score",
+        "score_method",
+        "note",
     ]:
         if column in working.columns and column not in normalized.columns:
             normalized[column] = working[column]
@@ -3913,7 +3959,20 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
     if source_name in {"active_real_universe_top_candidates.csv", "real_universe_candidates.csv"}:
         normalized.attrs["sf12a_source"] = "real_universe_input"
         normalized["stage3_status"] = normalized.get("stage3_status", "INPUT_ONLY")
-        normalized["data_quality_label"] = "INPUT_ONLY/METADATA_SCORE · no scoring financiero completo"
+
+        status_text = normalized["stage3_status"].astype(str).str.upper()
+        if status_text.str.contains("METADATA_SCORE").any():
+            normalized["data_quality_label"] = "Metadata high"
+            normalized["openai_reason_to_pass"] = (
+                "METADATA_SCORE local: score basado solo en metadatos del CSV; no usa precio, market cap, fundamentales, OpenAI, APIs ni yfinance."
+            )
+            normalized["summary_thesis"] = (
+                "Candidata del universo real con scoring bridge por metadatos. Requiere datos de mercado y análisis financiero antes de cualquier revisión seria."
+            )
+            normalized["why_it_could_work"] = "Metadatos completos y fuente controlada en data/real/real_universe.csv."
+            normalized["why_it_could_fail"] = "No contiene todavía datos de mercado, fundamentales, valoración ni riesgo financiero real."
+        else:
+            normalized["data_quality_label"] = "INPUT_ONLY"
     else:
         normalized.attrs["sf12a_source"] = "revalidated_funnel"
 
@@ -4049,7 +4108,7 @@ def _sf14a_detect_active_source(mode: str, top_n: int) -> dict[str, Any]:
                     "La vista final del último run está vacía. La interfaz muestra candidatos "
                     "generados desde el universo real input: "
                     "outputs/scouting/active_real_universe_top_candidates.csv. "
-                    "Estado INPUT_ONLY/METADATA_SCORE: no es scoring financiero completo."
+                    "Estado INPUT_ONLY/METADATA_SCORE/MARKET_DATA_SCORE: no es scoring financiero completo."
                 ),
             }
         return {"active_source": "revalidated_funnel_fallback", "label": "Fallback: funnel revalidado", "run_id": latest_run_id or "sin run válido", "rows": int(len(fallback_df)), "explanation": "La vista final del último run está vacía. La interfaz muestra el último funnel revalidado local; por eso pueden repetirse las mismas empresas."}
@@ -4348,6 +4407,100 @@ def _sf14d_render_scoring_bridge_panel() -> None:
             language="powershell",
         )
 # <<< v1.4D REAL UNIVERSE SCORING BRIDGE HELPERS
+
+# >>> v1.4D1 METADATA SCORE UI CLEANUP HELPERS
+def _sf14d1_is_metadata_score_row(row: pd.Series | dict[str, Any]) -> bool:
+    """Return True when the selected company row is a v1.4D metadata-score row."""
+    try:
+        status = str(row.get("stage3_status", "") or "").upper()
+        method = str(row.get("score_method", "") or "")
+        category = str(row.get("category_final", row.get("stage3_category", "")) or "")
+        return (
+            status == "METADATA_SCORE"
+            or method == "metadata_score_local_no_market_data"
+            or "metadata_" in category
+        )
+    except Exception:
+        return False
+
+
+def _sf14d1_render_metadata_score_notice(row: pd.Series | dict[str, Any]) -> None:
+    """Render a clear metadata-score explanation for company detail views."""
+    if not _sf14d1_is_metadata_score_row(row):
+        return
+
+    st.info(
+        "`METADATA_SCORE` — score local basado solo en metadatos del CSV "
+        "(`ticker`, `name`, `exchange`, `country`, `sector`, `industry`). "
+        "No usa precio, market cap, fundamentales, OpenAI, APIs ni yfinance."
+    )
+
+
+def _sf14d1_display_metric_value(row: pd.Series | dict[str, Any], key: str, fallback: str = "—") -> str:
+    try:
+        value = row.get(key)
+        if _is_missing(value):
+            return fallback
+        return str(value)
+    except Exception:
+        return fallback
+# <<< v1.4D1 METADATA SCORE UI CLEANUP HELPERS
+
+# >>> v1.4E REAL MARKET DATA ADAPTER HELPERS
+def _sf14e_market_data_status() -> dict[str, Any]:
+    root = Path(__file__).resolve().parent
+    summary_path = root / "outputs" / "market_data" / "real_market_data_summary.json"
+    enriched_path = root / "outputs" / "scouting" / "real_universe_market_data_candidates.csv"
+    summary = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            summary = {}
+    rows = 0
+    top_tickers = ""
+    if enriched_path.exists():
+        try:
+            df = pd.read_csv(enriched_path)
+            rows = int(len(df))
+            if "ticker" in df.columns:
+                top_tickers = ", ".join(df["ticker"].dropna().astype(str).head(5).tolist())
+        except Exception:
+            rows = 0
+    return {
+        "summary_exists": summary_path.exists(),
+        "enriched_exists": enriched_path.exists(),
+        "status": summary.get("status", "missing"),
+        "rows": summary.get("tickers_processed", rows),
+        "tickers_ok": summary.get("tickers_ok", 0),
+        "tickers_error": summary.get("tickers_error", 0),
+        "top_tickers": summary.get("top_tickers", top_tickers),
+    }
+
+
+def _sf14e_render_market_data_panel() -> None:
+    status = _sf14e_market_data_status()
+    st.markdown("### 📈 Market data adapter")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Market data", "OK" if status["enriched_exists"] else "Falta")
+    c2.metric("Tickers OK", status["tickers_ok"])
+    c3.metric("Errores", status["tickers_error"])
+    c4.metric("Estado", status["status"])
+    if status["enriched_exists"] and status["status"] == "OK":
+        st.success(f"Market data cacheado y ranking activo actualizado. Top: {status['top_tickers']}")
+        st.caption("`MARKET_DATA_SCORE` · yfinance opcional + caché local · no usa OpenAI ni broker.")
+    elif status["enriched_exists"]:
+        st.warning("Hay market data parcial o error del proveedor de datos. Revisa outputs/market_data/real_market_data_summary.json y outputs/market_data/real_market_data_report.md.")
+    else:
+        st.info("Aún no hay market data cacheado. Ejecuta v1.4E para enriquecer el universo real.")
+    with st.expander("Comandos v1.4E — market data adapter", expanded=False):
+        st.code(
+            ".\\.venv\\Scripts\\python.exe -m pip install yfinance\n"
+            ".\\.venv\\Scripts\\python.exe -m src.real_market_data_adapter --fetch\n"
+            ".\\.venv\\Scripts\\python.exe scripts/check_v1_4e_real_market_data_adapter.py",
+            language="powershell",
+        )
+# <<< v1.4E REAL MARKET DATA ADAPTER HELPERS
 
 
 def _get_latest_final_view_df(mode: str, top_n: int) -> pd.DataFrame:
