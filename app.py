@@ -1,3 +1,4 @@
+# v1.5B ranking explainability packaged.
 # v1.5A local scoring v0 packaged.
 # v1.4F2 manual market data percent normalization packaged.
 # v1.4F market data UI integration packaged.
@@ -2526,6 +2527,110 @@ def _sf15a_is_local_score_row(row: pd.Series | dict[str, Any]) -> bool:
         return False
 # <<< v1.5A LOCAL SCORING V0 HELPERS
 
+# >>> v1.5B RANKING EXPLAINABILITY PANEL
+def _sf15b_explainability_status() -> dict[str, Any]:
+    root = Path(__file__).resolve().parent
+    summary_path = root / "outputs" / "scoring" / "ranking_explainability_summary.json"
+    candidates_path = root / "outputs" / "scouting" / "ranking_explainability_candidates.csv"
+
+    summary: dict[str, Any] = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            summary = {}
+
+    rows = 0
+    if candidates_path.exists():
+        try:
+            rows = int(len(pd.read_csv(candidates_path)))
+        except Exception:
+            rows = 0
+
+    return {
+        "summary_exists": summary_path.exists(),
+        "candidates_exists": candidates_path.exists(),
+        "status": summary.get("status", "missing"),
+        "rows": summary.get("rows_explained", rows),
+        "top_tickers": summary.get("top_tickers", ""),
+    }
+
+
+def _sf15b_render_explainability_panel() -> None:
+    status = _sf15b_explainability_status()
+
+    st.markdown("### 🧭 Ranking Explainability")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Explainability", "OK" if status["candidates_exists"] else "Falta")
+    c2.metric("Empresas", status["rows"])
+    c3.metric("Estado", status["status"])
+
+    if status["candidates_exists"] and status["status"] == "OK":
+        st.success(f"Explicabilidad generada. Top: {status['top_tickers']}")
+        st.caption("Factores positivos, negativos, datos faltantes y flags de revisión. No usa OpenAI.")
+    else:
+        st.info("Aún no hay explicabilidad generada. Ejecuta v1.5B para crear factores del ranking.")
+
+    with st.expander("Comandos v1.5B — Ranking Explainability", expanded=False):
+        st.code(
+            ".\\.venv\\Scripts\\python.exe -m src.ranking_explainability --explain\n"
+            ".\\.venv\\Scripts\\python.exe scripts/check_v1_5b_ranking_explainability.py",
+            language="powershell",
+        )
+# <<< v1.5B RANKING EXPLAINABILITY PANEL
+
+
+
+# >>> v1.5B RANKING EXPLAINABILITY HELPERS
+def _sf15b_split_factors(value: Any) -> list[str]:
+    """Split exported factor strings safely."""
+    text = str(value or "").strip()
+    if not text or text == "—":
+        return []
+    return [part.strip() for part in text.replace(";", "|").split("|") if part.strip()]
+
+
+def _sf15b_render_factor_list(title: str, factors: list[str], empty_text: str = "Sin elementos.") -> None:
+    st.markdown(f"**{title}**")
+    if not factors:
+        st.caption(empty_text)
+        return
+    for factor in factors[:8]:
+        st.markdown(f"- {factor}")
+
+
+def _sf15b_is_explainability_row(row: pd.Series | dict[str, Any]) -> bool:
+    try:
+        return bool(
+            str(row.get("explainability_summary", "") or "").strip()
+            or str(row.get("positive_factors", "") or "").strip()
+            or str(row.get("negative_factors", "") or "").strip()
+            or str(row.get("review_flags", "") or "").strip()
+        )
+    except Exception:
+        return False
+
+
+def _sf15b_render_explainability_block(row: pd.Series | dict[str, Any]) -> None:
+    """Render explainability details in company detail view."""
+    if not _sf15b_is_explainability_row(row):
+        return
+
+    st.markdown("#### 🧭 Explicabilidad del ranking")
+
+    summary = _display_text(row.get("explainability_summary"))
+    if summary != "—":
+        st.info(summary)
+
+    c1, c2 = st.columns(2)
+    with c1:
+        _sf15b_render_factor_list("Sube por", _sf15b_split_factors(row.get("positive_factors")), "Sin fortalezas destacadas.")
+        _sf15b_render_factor_list("Datos faltantes", _sf15b_split_factors(row.get("missing_data_flags")), "Sin datos faltantes críticos.")
+    with c2:
+        _sf15b_render_factor_list("Baja / vigilar", _sf15b_split_factors(row.get("negative_factors")), "Sin alertas fuertes.")
+        _sf15b_render_factor_list("Revisión manual", _sf15b_split_factors(row.get("review_flags")), "Sin flags de revisión.")
+# <<< v1.5B RANKING EXPLAINABILITY HELPERS
+
 
 def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
     """
@@ -3734,6 +3839,9 @@ def _build_clean_ranking_table(
         "5D",
         "20D",
         "Proveedor",
+        "Lectura",
+        "Badges",
+        "Revisión",
         "Riesgo",
         "Confianza",
         "Estado mercado",
@@ -4081,6 +4189,12 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         "local_score_status": "stage3_status",
         "local_score_method": "score_method",
         "local_score_reason": "reason_to_pass_quant",
+        "explainability_summary": "explainability_summary",
+        "positive_factors": "positive_factors",
+        "negative_factors": "negative_factors",
+        "missing_data_flags": "missing_data_flags",
+        "review_flags": "review_flags",
+        "explainability_badges": "explainability_badges",
         "metadata_component_score": "metadata_component_score",
         "market_data_component_score": "market_data_component_score",
         "liquidity_component_score": "liquidity_component_score",
@@ -4143,6 +4257,12 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         "momentum_component_score",
         "data_quality_component_score",
         "penalty_score",
+        "explainability_summary",
+        "positive_factors",
+        "negative_factors",
+        "missing_data_flags",
+        "review_flags",
+        "explainability_badges",
         "metadata_completeness_score",
         "metadata_exchange_score",
         "metadata_country_score",
