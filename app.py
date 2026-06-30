@@ -1,3 +1,7 @@
+# v1.5D3 final UX polish render path fix packaged
+# v1.5D2 UX polish runtime application fix packaged
+# v1.5D1 company detail explainability hook fix packaged
+# v1.5D ranking explainability UX polish packaged.
 # v1.5C real universe scale test packaged.
 # v1.5C1 scale test output restore hotfix packaged.
 # v1.5B ranking explainability packaged.
@@ -2452,8 +2456,8 @@ def _sf14f_render_market_data_notice(row: pd.Series | dict[str, Any]) -> None:
     if not _sf14f_is_market_data_row(row):
         return
 
-    provider = _sf14f_provider_label(row)
-    status = _display_text(row.get("stage3_status"))
+    provider = _sf15d3_human_provider(_sf14f_provider_label(row))
+    status = _sf15d3_human_status(row.get("stage3_status"))
     as_of = _display_text(row.get("market_data_timestamp"))
 
     st.info(
@@ -2634,6 +2638,340 @@ def _sf15b_render_explainability_block(row: pd.Series | dict[str, Any]) -> None:
 # <<< v1.5B RANKING EXPLAINABILITY HELPERS
 
 
+
+# >>> v1.5D RANKING EXPLAINABILITY UX POLISH HELPERS
+def _sf15d_human_category(value: Any) -> str:
+    raw = str(value or "").strip()
+    mapping = {
+        "local_score_high": "Alta prioridad local",
+        "local_score_medium": "Prioridad media local",
+        "local_score_watch": "Vigilar",
+        "local_score_low": "Prioridad baja",
+        "market_data_provider_fallback": "Datos de mercado",
+        "metadata_high": "Metadatos altos",
+        "real_universe_input_candidate": "Universo real",
+    }
+    return mapping.get(raw, raw.replace("_", " ").strip().title() if raw else "—")
+
+
+def _sf15d_human_status(value: Any) -> str:
+    raw = str(value or "").strip()
+    mapping = {
+        "LOCAL_SCORE_V0": "Score local v0",
+        "MARKET_DATA_SCORE_MANUAL": "Datos manuales",
+        "MARKET_DATA_SCORE_YFINANCE": "Datos yfinance",
+        "MARKET_DATA_PARTIAL": "Datos parciales",
+        "METADATA_SCORE_FALLBACK": "Solo metadatos",
+        "INPUT_ONLY": "Solo input",
+        "OK_MANUAL": "Manual OK",
+        "NO_MARKET_DATA": "Sin market data",
+    }
+    return mapping.get(raw, raw.replace("_", " ").strip().title() if raw else "—")
+
+
+def _sf15d_human_provider(value: Any) -> str:
+    raw = str(value or "").strip()
+    mapping = {
+        "manual_market_data.csv": "Manual",
+        "yfinance_cache": "Cache yfinance",
+        "metadata_fallback": "Solo metadatos",
+    }
+    return mapping.get(raw, raw.replace("_", " ").strip().title() if raw else "—")
+
+
+def _sf15d_short_text(value: Any, max_len: int = 80) -> str:
+    raw = str(value or "").strip()
+    if not raw:
+        return "—"
+    return raw if len(raw) <= max_len else raw[: max_len - 1].rstrip() + "…"
+
+
+def _sf15d_factor_list(value: Any) -> list[str]:
+    raw = str(value or "").strip()
+    if not raw or raw == "—":
+        return []
+    return [p.strip() for p in raw.replace(";", "|").split("|") if p.strip()]
+
+
+def _sf15d_first_factor(value: Any, max_len: int = 70) -> str:
+    items = _sf15d_factor_list(value)
+    return _sf15d_short_text(items[0], max_len) if items else "—"
+
+
+def _sf15d_badge_summary(value: Any) -> str:
+    items = _sf15d_factor_list(value)
+    return " · ".join(items[:2]) if items else "—"
+
+
+def _sf15d_prepare_ranking_display(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    if "Categoría" in out.columns:
+        out["Categoría"] = out["Categoría"].apply(_sf15d_human_category)
+    if "Proveedor" in out.columns:
+        out["Proveedor"] = out["Proveedor"].apply(_sf15d_human_provider)
+    if "Estado mercado" in out.columns:
+        out["Estado mercado"] = out["Estado mercado"].apply(_sf15d_human_status)
+    if "Lectura" in out.columns:
+        out["Lectura"] = out["Lectura"].apply(lambda v: _sf15d_short_text(v, 90))
+    if "Badges" in out.columns:
+        out["Badges"] = out["Badges"].apply(_sf15d_badge_summary)
+    if "Revisión" in out.columns:
+        out["Revisión"] = out["Revisión"].apply(lambda v: _sf15d_first_factor(v, 70))
+    return out
+
+
+def _sf15d_render_explainability_block(row: pd.Series | dict[str, Any]) -> None:
+    summary = _display_text(row.get("explainability_summary"))
+    positives = _sf15d_factor_list(row.get("positive_factors"))
+    negatives = _sf15d_factor_list(row.get("negative_factors"))
+    missing = _sf15d_factor_list(row.get("missing_data_flags"))
+    review = _sf15d_factor_list(row.get("review_flags"))
+    badges = _sf15d_factor_list(row.get("explainability_badges"))
+
+    if summary == "—" and not any([positives, negatives, missing, review, badges]):
+        return
+
+    st.markdown("#### 🧭 Lectura del ranking")
+
+    if badges:
+        st.caption(" · ".join(badges[:5]))
+
+    if summary != "—":
+        st.info(summary)
+
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.markdown("**Sube por**")
+        if positives:
+            for item in positives[:5]:
+                st.markdown(f"- {item}")
+        else:
+            st.caption("Sin fortalezas destacadas.")
+    with c2:
+        st.markdown("**Vigilar**")
+        if negatives:
+            for item in negatives[:5]:
+                st.markdown(f"- {item}")
+        else:
+            st.caption("Sin alertas fuertes.")
+    with c3:
+        st.markdown("**Revisión**")
+        combined = review or missing
+        if combined:
+            for item in combined[:5]:
+                st.markdown(f"- {item}")
+        else:
+            st.caption("Revisión estándar.")
+
+
+def _sf15d_render_ux_polish_panel() -> None:
+    st.markdown("### ✨ UX polish")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Etiquetas", "Humanas")
+    c2.metric("Ranking", "Legible")
+    c3.metric("Scoring", "Sin cambios")
+    st.caption("v1.5D solo cambia presentación: etiquetas técnicas más claras, proveedor corto y lectura del ranking más visible.")
+# <<< v1.5D RANKING EXPLAINABILITY UX POLISH HELPERS
+
+
+
+# >>> v1.5D2 UX POLISH RUNTIME APPLICATION FIX HELPERS
+def _sf15d2_humanize_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """Runtime-safe humanization for any ranking/dataframe view."""
+    out = df.copy()
+    replacements = {
+        "local_score_high": "Alta prioridad local",
+        "local_score_medium": "Prioridad media local",
+        "local_score_watch": "Vigilar",
+        "local_score_low": "Prioridad baja",
+        "LOCAL_SCORE_V0": "Score local v0",
+        "MARKET_DATA_SCORE_MANUAL": "Datos manuales",
+        "MARKET_DATA_SCORE_YFINANCE": "Datos yfinance",
+        "METADATA_SCORE_FALLBACK": "Solo metadatos",
+        "manual_market_data.csv": "Manual",
+        "yfinance_cache": "Cache yfinance",
+        "metadata_fallback": "Solo metadatos",
+    }
+    for col in out.columns:
+        if col in {"Categoría", "Categoria", "category", "category_final", "Proveedor", "provider", "Estado IA", "Estado mercado", "stage3_status", "market_data_provider"}:
+            out[col] = out[col].apply(lambda v: replacements.get(str(v).strip(), str(v).strip() if str(v).strip() else "—"))
+        elif col in {"Lectura", "Badges", "Revisión", "Revision"}:
+            out[col] = out[col].apply(lambda v: _sf15d_short_text(v, 90) if "_sf15d_short_text" in globals() else str(v)[:90])
+    return out
+
+
+def _sf15d2_human_category(value: Any) -> str:
+    if "_sf15d_human_category" in globals():
+        return _sf15d_human_category(value)
+    return _sf15d2_humanize_dataframe(pd.DataFrame([{"x": value}]).rename(columns={"x": "Categoría"}))["Categoría"].iloc[0]
+
+
+def _sf15d2_human_status(value: Any) -> str:
+    if "_sf15d_human_status" in globals():
+        return _sf15d_human_status(value)
+    return _sf15d2_humanize_dataframe(pd.DataFrame([{"x": value}]).rename(columns={"x": "stage3_status"}))["stage3_status"].iloc[0]
+
+
+def _sf15d2_human_provider(value: Any) -> str:
+    if "_sf15d_human_provider" in globals():
+        return _sf15d_human_provider(value)
+    return _sf15d2_humanize_dataframe(pd.DataFrame([{"x": value}]).rename(columns={"x": "Proveedor"}))["Proveedor"].iloc[0]
+
+
+def _sf15d2_render_company_explainability(row: pd.Series | dict[str, Any]) -> None:
+    """Always-visible explainability block when v1.5B fields exist."""
+    positives = []
+    negatives = []
+    missing = []
+    review = []
+    badges = []
+
+    def split(v: Any) -> list[str]:
+        raw = str(v or "").strip()
+        if not raw or raw == "—":
+            return []
+        return [p.strip() for p in raw.replace(";", "|").split("|") if p.strip()]
+
+    summary = _display_text(row.get("explainability_summary"))
+    positives = split(row.get("positive_factors"))
+    negatives = split(row.get("negative_factors"))
+    missing = split(row.get("missing_data_flags"))
+    review = split(row.get("review_flags"))
+    badges = split(row.get("explainability_badges"))
+
+    if summary == "—" and not any([positives, negatives, missing, review, badges]):
+        return
+
+    st.markdown("#### 🧭 Lectura del ranking")
+    if badges:
+        st.caption(" · ".join(badges[:5]))
+    if summary != "—":
+        st.info(summary)
+
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.markdown("**Sube por**")
+        for item in (positives[:5] or ["Sin fortalezas destacadas."]):
+            st.markdown(f"- {item}")
+    with c2:
+        st.markdown("**Vigilar**")
+        for item in (negatives[:5] or ["Sin alertas fuertes."]):
+            st.markdown(f"- {item}")
+    with c3:
+        st.markdown("**Revisión**")
+        combined = review or missing or ["Revisión estándar."]
+        for item in combined[:5]:
+            st.markdown(f"- {item}")
+# <<< v1.5D2 UX POLISH RUNTIME APPLICATION FIX HELPERS
+
+
+
+# >>> v1.5D3 FINAL UX POLISH RENDER PATH FIX HELPERS
+def _sf15d3_human_category(value: Any) -> str:
+    raw = str(value or "").strip()
+    mapping = {
+        "local_score_high": "Alta prioridad local",
+        "local_score_medium": "Prioridad media local",
+        "local_score_watch": "Vigilar",
+        "local_score_low": "Prioridad baja",
+        "market_data_provider_fallback": "Datos de mercado",
+        "metadata_high": "Metadatos altos",
+        "real_universe_input_candidate": "Universo real",
+    }
+    return mapping.get(raw, raw.replace("_", " ").strip().title() if raw else "—")
+
+
+def _sf15d3_human_status(value: Any) -> str:
+    raw = str(value or "").strip()
+    mapping = {
+        "LOCAL_SCORE_V0": "Score local v0",
+        "MARKET_DATA_SCORE_MANUAL": "Datos manuales",
+        "MARKET_DATA_SCORE_YFINANCE": "Datos yfinance",
+        "MARKET_DATA_PARTIAL": "Datos parciales",
+        "METADATA_SCORE_FALLBACK": "Solo metadatos",
+        "INPUT_ONLY": "Solo input",
+        "OK_MANUAL": "Manual OK",
+        "NO_MARKET_DATA": "Sin market data",
+    }
+    return mapping.get(raw, raw.replace("_", " ").strip().title() if raw else "—")
+
+
+def _sf15d3_human_provider(value: Any) -> str:
+    raw = str(value or "").strip()
+    mapping = {
+        "manual_market_data.csv": "Manual",
+        "yfinance_cache": "Cache yfinance",
+        "metadata_fallback": "Solo metadatos",
+    }
+    return mapping.get(raw, raw.replace("_", " ").strip().title() if raw else "—")
+
+
+def _sf15d3_short(value: Any, max_len: int = 90) -> str:
+    raw = str(value or "").strip()
+    if not raw:
+        return "—"
+    return raw if len(raw) <= max_len else raw[: max_len - 1].rstrip() + "…"
+
+
+def _sf15d3_split(value: Any) -> list[str]:
+    raw = str(value or "").strip()
+    if not raw or raw == "—":
+        return []
+    return [part.strip() for part in raw.replace(";", "|").split("|") if part.strip()]
+
+
+def _sf15d3_humanize_ranking_df(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    if "Categoría" in out.columns:
+        out["Categoría"] = out["Categoría"].apply(_sf15d3_human_category)
+    if "Proveedor" in out.columns:
+        out["Proveedor"] = out["Proveedor"].apply(_sf15d3_human_provider)
+    if "Estado mercado" in out.columns:
+        out["Estado mercado"] = out["Estado mercado"].apply(_sf15d3_human_status)
+    if "Estado IA" in out.columns:
+        out["Estado IA"] = out["Estado IA"].apply(lambda value: _sf15d3_short(value, 32))
+    if "Lectura" in out.columns:
+        out["Lectura"] = out["Lectura"].apply(lambda value: _sf15d3_short(value, 90))
+    if "Badges" in out.columns:
+        out["Badges"] = out["Badges"].apply(lambda value: " · ".join(_sf15d3_split(value)[:2]) or "—")
+    if "Revisión" in out.columns:
+        out["Revisión"] = out["Revisión"].apply(lambda value: (_sf15d3_split(value) or ["—"])[0])
+    return out
+
+
+def _sf15d3_render_company_explainability(row: pd.Series | dict[str, Any]) -> None:
+    summary = _display_text(row.get("explainability_summary"))
+    positives = _sf15d3_split(row.get("positive_factors"))
+    negatives = _sf15d3_split(row.get("negative_factors"))
+    missing = _sf15d3_split(row.get("missing_data_flags"))
+    review = _sf15d3_split(row.get("review_flags"))
+    badges = _sf15d3_split(row.get("explainability_badges"))
+
+    if summary == "—" and not any([positives, negatives, missing, review, badges]):
+        return
+
+    st.markdown("#### 🧭 Lectura del ranking")
+    if badges:
+        st.caption(" · ".join(badges[:5]))
+    if summary != "—":
+        st.info(summary)
+
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.markdown("**Sube por**")
+        for item in (positives[:5] or ["Sin fortalezas destacadas."]):
+            st.markdown(f"- {item}")
+    with c2:
+        st.markdown("**Vigilar**")
+        for item in (negatives[:5] or ["Sin alertas fuertes."]):
+            st.markdown(f"- {item}")
+    with c3:
+        st.markdown("**Revisión**")
+        for item in ((review or missing)[:5] or ["Revisión estándar."]):
+            st.markdown(f"- {item}")
+# <<< v1.5D3 FINAL UX POLISH RENDER PATH FIX HELPERS
+
+
 def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
     """
     Render individual company detail card with score breakdown and quick feedback.
@@ -2669,7 +3007,7 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
     col1, col2, col3, col4 = st.columns(4)
 
     col1.metric("Score", _format_number(row.get("score_priority"), 2))
-    col2.metric("Categoría", _category_label(row.get("category_final")))
+    col2.metric("Categoría", _sf15d3_human_category(row.get("category_final")))
     col3.metric("Riesgo", _format_number(row.get("score_risk"), 2))
     col4.metric("Confianza", _format_number(row.get("score_confidence"), 2))
 
@@ -2690,7 +3028,7 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
         col1.metric("Precio", _format_number(row.get("price_at_signal"), 2))
         col2.metric("Market Cap", _format_compact_usd(row.get("market_cap")))
         col3.metric("Vol. relativo", _format_number(row.get("relative_volume"), 2))
-        col4.metric("Proveedor", _sf14f_provider_label(row))
+        col4.metric("Proveedor", _sf15d3_human_provider(_sf14f_provider_label(row)))
 
         col1, col2, col3, col4 = st.columns(4)
         col1.metric("Volumen", _format_number(row.get("volume"), 0))
@@ -2701,7 +3039,7 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
         st.caption(
             f"Currency: {_display_text(row.get('currency'))} · "
             f"as_of: {_display_text(row.get('market_data_timestamp'))} · "
-            f"estado: {_display_text(row.get('stage3_status'))}"
+            f"estado: {_sf15d3_human_status(row.get('stage3_status'))}"
         )
     elif _sf14d1_is_metadata_score_row(row):
         _sf14d1_render_metadata_score_notice(row)
@@ -2771,6 +3109,8 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
     else:
         reason_quant = _quant_reason_label(row.get("reason_to_pass_quant"))
         st.info(reason_quant)
+
+    _sf15d3_render_company_explainability(row)
 
     st.markdown("#### 🧠 Estado IA legacy resumido")
 
@@ -2961,6 +3301,8 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
                         use_container_width=True,
                         hide_index=True,
                     )
+
+
 
 
 def _render_visual_dashboard(final_df: pd.DataFrame) -> None:
@@ -3923,6 +4265,8 @@ def _build_clean_ranking_table(
 
     if "Estado IA" in clean_df.columns:
         clean_df["Estado IA"] = clean_df["Estado IA"].apply(_shorten_ai_state)
+
+    clean_df = _sf15d3_humanize_ranking_df(clean_df)
 
     return clean_df
 
@@ -6850,7 +7194,7 @@ def _render_institutional_universe_dashboard() -> None:
             clean_df = pd.DataFrame(
                 [{"Instrumento": key, "Nº": value} for key, value in clean_distribution.items()]
             )
-            st.dataframe(clean_df, use_container_width=True, hide_index=True)
+            st.dataframe(_sf15d2_humanize_dataframe(_sf15d_prepare_ranking_display(clean_df)), use_container_width=True, hide_index=True)
         else:
             st.info("No hay distribución limpia disponible.")
 
