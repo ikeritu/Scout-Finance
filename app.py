@@ -1,3 +1,5 @@
+# v1.5C real universe scale test packaged.
+# v1.5C1 scale test output restore hotfix packaged.
 # v1.5B ranking explainability packaged.
 # v1.5A local scoring v0 packaged.
 # v1.4F2 manual market data percent normalization packaged.
@@ -7111,3 +7113,29 @@ def _sf14e2_render_provider_fallback_panel() -> None:
 
 
 
+
+
+
+# >>> v1.5C REAL UNIVERSE SCALE TEST PANEL
+def _sf15c_render_scale_test_panel() -> None:
+    root = Path(__file__).resolve().parent
+    summary_path = root / "outputs" / "scale_tests" / "scale_test_summary.json"
+    summary = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            summary = {}
+    st.markdown("### 🧪 Real Universe Scale Test")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Scale test", "OK" if summary_path.exists() else "Falta")
+    c2.metric("Runs", len(summary.get("runs", [])) if isinstance(summary.get("runs", []), list) else 0)
+    c3.metric("Max size", summary.get("max_size_tested", 0))
+    c4.metric("Estado", summary.get("status", "missing"))
+    if summary_path.exists() and summary.get("status") == "OK":
+        st.success("Scale test completado para 20/50/100 tickers.")
+    else:
+        st.info("Ejecuta v1.5C para probar 20/50/100 tickers. v1.5C1 restaura inputs y outputs activos al finalizar.")
+    with st.expander("Comandos v1.5C — Real Universe Scale Test", expanded=False):
+        st.code(".\\.venv\\Scripts\\python.exe -m src.real_universe_scale_test --run\n.\\.venv\\Scripts\\python.exe scripts/check_v1_5c_real_universe_scale_test.py", language="powershell")
+# <<< v1.5C REAL UNIVERSE SCALE TEST PANEL

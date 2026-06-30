@@ -1,0 +1,64 @@
+{
+  "phase": "v1.5C1",
+  "title": "Real Universe Scale Test Output Restore Hotfix",
+  "status": "OK",
+  "created_at": "2026-06-30T10:50:52+0000",
+  "sizes": [
+    20,
+    50,
+    100
+  ],
+  "max_size_tested": 100,
+  "total_seconds": 0.3129,
+  "before_active_rows": 100,
+  "after_active_rows": 100,
+  "restore_ok": true,
+  "runs": [
+    {
+      "size": 20,
+      "status": "OK",
+      "active_rows": 20,
+      "fallback_status": "OK",
+      "score_status": "OK",
+      "explain_status": "OK",
+      "fallback_seconds": 0.0177,
+      "score_seconds": 0.0186,
+      "explain_seconds": 0.019,
+      "total_seconds": 0.066,
+      "active_kb": 26.66,
+      "errors": []
+    },
+    {
+      "size": 50,
+      "status": "OK",
+      "active_rows": 50,
+      "fallback_status": "OK",
+      "score_status": "OK",
+      "explain_status": "OK",
+      "fallback_seconds": 0.0221,
+      "score_seconds": 0.0251,
+      "explain_seconds": 0.0244,
+      "total_seconds": 0.0717,
+      "active_kb": 65.79,
+      "errors": []
+    },
+    {
+      "size": 100,
+      "status": "OK",
+      "active_rows": 100,
+      "fallback_status": "OK",
+      "score_status": "OK",
+      "explain_status": "OK",
+      "fallback_seconds": 0.0264,
+      "score_seconds": 0.0308,
+      "explain_seconds": 0.0307,
+      "total_seconds": 0.0879,
+      "active_kb": 131.01,
+      "errors": []
+    }
+  ],
+  "openai_called": false,
+  "broker_called": false,
+  "pipeline_recalculated": false,
+  "yfinance_called": false
+}
