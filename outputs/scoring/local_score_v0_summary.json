@@ -1,0 +1,15 @@
+{
+  "phase": "v1.5A",
+  "title": "Local Scoring v0",
+  "status": "OK",
+  "created_at": "2026-06-30T08:27:39+0000",
+  "rows_input": 3,
+  "rows_scored": 3,
+  "top_tickers": "AAPL, MSFT, ASML",
+  "score_method": "local_score_v0",
+  "openai_called": false,
+  "broker_called": false,
+  "pipeline_recalculated": false,
+  "yfinance_called": false,
+  "financial_statement_scoring_recalculated": false
+}

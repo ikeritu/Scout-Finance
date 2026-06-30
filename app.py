@@ -1,3 +1,4 @@
+# v1.5A local scoring v0 packaged.
 # v1.4F2 manual market data percent normalization packaged.
 # v1.4F market data UI integration packaged.
 # v1.4F1 market data UI runtime hotfix packaged.
@@ -2458,6 +2459,73 @@ def _sf14f_render_market_data_notice(row: pd.Series | dict[str, Any]) -> None:
     )
 # <<< v1.4F1 MARKET DATA UI RUNTIME HOTFIX HELPERS
 
+# >>> v1.5A LOCAL SCORING V0 HELPERS
+def _sf15a_local_score_status() -> dict[str, Any]:
+    root = Path(__file__).resolve().parent
+    summary_path = root / "outputs" / "scoring" / "local_score_v0_summary.json"
+    candidates_path = root / "outputs" / "scouting" / "local_score_v0_candidates.csv"
+
+    summary: dict[str, Any] = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            summary = {}
+
+    rows = 0
+    top_tickers = ""
+    if candidates_path.exists():
+        try:
+            df = pd.read_csv(candidates_path)
+            rows = int(len(df))
+            if "ticker" in df.columns:
+                top_tickers = ", ".join(df["ticker"].dropna().astype(str).head(5).tolist())
+        except Exception:
+            rows = 0
+
+    return {
+        "summary_exists": summary_path.exists(),
+        "candidates_exists": candidates_path.exists(),
+        "status": summary.get("status", "missing"),
+        "rows": summary.get("rows_scored", rows),
+        "top_tickers": summary.get("top_tickers", top_tickers),
+        "score_method": summary.get("score_method", "local_score_v0"),
+    }
+
+
+def _sf15a_render_local_scoring_panel() -> None:
+    status = _sf15a_local_score_status()
+
+    st.markdown("### 🧠 Local Scoring v0")
+    c1, c2, c3 = st.columns(3)
+    c1.metric("Local score", "OK" if status["candidates_exists"] else "Falta")
+    c2.metric("Empresas", status["rows"])
+    c3.metric("Estado", status["status"])
+
+    if status["candidates_exists"] and status["status"] == "OK":
+        st.success(f"LOCAL_SCORE_V0 generado. Top: {status['top_tickers']}")
+        st.caption("Score local determinista: metadata + market data + liquidez + momentum + penalizaciones. No usa OpenAI ni broker.")
+    else:
+        st.info("Aún no hay LOCAL_SCORE_V0 generado. Ejecuta v1.5A para crear el ranking local.")
+
+    with st.expander("Comandos v1.5A — Local Scoring v0", expanded=False):
+        st.code(
+            ".\\.venv\\Scripts\\python.exe -m src.local_scoring_v0 --score\n"
+            ".\\.venv\\Scripts\\python.exe scripts/check_v1_5a_local_scoring_v0.py",
+            language="powershell",
+        )
+
+
+def _sf15a_is_local_score_row(row: pd.Series | dict[str, Any]) -> bool:
+    try:
+        status = str(row.get("stage3_status", "") or "")
+        method = str(row.get("score_method", "") or "")
+        category = str(row.get("category_final", "") or "")
+        return status == "LOCAL_SCORE_V0" or method == "local_score_v0" or category.startswith("local_score_")
+    except Exception:
+        return False
+# <<< v1.5A LOCAL SCORING V0 HELPERS
+
 
 def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
     """
@@ -2575,7 +2643,15 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
         st.write(f"{_display_text(row.get('exchange'))} / {_display_text(row.get('currency'))}")
 
     st.markdown("#### Razón cuantitativa")
-    if _sf14f_is_market_data_row(row):
+    if _sf15a_is_local_score_row(row):
+        st.info(
+            _display_text(
+                row.get("local_score_reason")
+                or row.get("reason_to_pass_quant")
+                or "LOCAL_SCORE_V0: score local determinista con metadatos, market data, liquidez, momentum y penalizaciones."
+            )
+        )
+    elif _sf14f_is_market_data_row(row):
         st.info(
             "Score con datos de mercado disponibles: precio, market cap, volumen y cambios 1D/5D/20D "
             "según proveedor manual/cache. No incluye estados financieros ni recomendación de inversión."
@@ -4000,6 +4076,17 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         "market_data_provider": "market_data_provider",
         "market_data_status": "market_data_status",
         "score_method": "score_method",
+        "local_score_v0": "score_priority",
+        "local_score_category": "category_final",
+        "local_score_status": "stage3_status",
+        "local_score_method": "score_method",
+        "local_score_reason": "reason_to_pass_quant",
+        "metadata_component_score": "metadata_component_score",
+        "market_data_component_score": "market_data_component_score",
+        "liquidity_component_score": "liquidity_component_score",
+        "momentum_component_score": "momentum_component_score",
+        "data_quality_component_score": "data_quality_component_score",
+        "penalty_score": "penalty_score",
         "final_stage3_score": "score_priority",
         "stage3_category": "category_final",
         "risk_score": "score_risk",
@@ -4045,6 +4132,17 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         "market_data_timestamp",
         "market_data_provider",
         "market_data_status",
+        "local_score_v0",
+        "local_score_category",
+        "local_score_status",
+        "local_score_method",
+        "local_score_reason",
+        "metadata_component_score",
+        "market_data_component_score",
+        "liquidity_component_score",
+        "momentum_component_score",
+        "data_quality_component_score",
+        "penalty_score",
         "metadata_completeness_score",
         "metadata_exchange_score",
         "metadata_country_score",
