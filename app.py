@@ -1,3 +1,4 @@
+# v1.4F2 manual market data percent normalization packaged.
 # v1.4F market data UI integration packaged.
 # v1.4F1 market data UI runtime hotfix packaged.
 # v1.4E2 market data provider fallback packaged.
