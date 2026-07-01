@@ -1,3 +1,6 @@
+# v1.6A2 fundamentals panel helper order fix packaged
+# v1.6A1 fundamentals dashboard panel hook fix packaged
+# v1.6A fundamentals input bridge packaged
 # v1.5D3 final UX polish render path fix packaged
 # v1.5D2 UX polish runtime application fix packaged
 # v1.5D1 company detail explainability hook fix packaged
@@ -5443,6 +5446,55 @@ def _render_executive_dashboard_cards(final_df: pd.DataFrame) -> None:
     st.info(f"**Próxima acción recomendada:** {next_action}")
 
 
+
+# >>> v1.6A FUNDAMENTALS INPUT BRIDGE PANEL
+def _sf16a_fundamentals_status() -> dict[str, Any]:
+    root = Path(__file__).resolve().parent
+    summary_path = root / "outputs" / "fundamentals" / "fundamentals_input_summary.json"
+    csv_path = root / "data" / "real" / "manual_fundamentals.csv"
+    summary: dict[str, Any] = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            summary = {}
+    return {
+        "summary_exists": summary_path.exists(),
+        "csv_exists": csv_path.exists(),
+        "status": summary.get("status", "missing"),
+        "valid_tickers": summary.get("valid_tickers", 0),
+        "coverage_ratio": summary.get("coverage_ratio", 0),
+    }
+
+
+def _sf16a_render_fundamentals_panel() -> None:
+    status = _sf16a_fundamentals_status()
+    st.markdown("### 📊 Fundamentals input")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("CSV", "OK" if status["csv_exists"] else "Falta")
+    c2.metric("Estado", status["status"])
+    c3.metric("Tickers válidos", status["valid_tickers"])
+    coverage = status["coverage_ratio"]
+    c4.metric("Cobertura", f"{float(coverage):.0%}" if isinstance(coverage, (int, float)) else "—")
+
+    if status["summary_exists"] and status["status"] == "OK":
+        st.success("Fundamentals input validado. Listo para v1.6B/v1.6C.")
+    elif status["csv_exists"]:
+        st.info("manual_fundamentals.csv existe, pero falta validarlo.")
+    else:
+        st.info("Copia manual_fundamentals_template.csv como manual_fundamentals.csv.")
+
+    with st.expander("Comandos v1.6A — Fundamentals Input Bridge", expanded=False):
+        st.code(
+            ".\\.venv\\Scripts\\python.exe -m src.fundamentals_input --init-template\n"
+            "Copy-Item .\\data\\real\\manual_fundamentals_template.csv .\\data\\real\\manual_fundamentals.csv -Force\n"
+            ".\\.venv\\Scripts\\python.exe -m src.fundamentals_input --validate\n"
+            ".\\.venv\\Scripts\\python.exe scripts/check_v1_6a_fundamentals_input_bridge.py",
+            language="powershell",
+        )
+# <<< v1.6A FUNDAMENTALS INPUT BRIDGE PANEL
+
+
 def _render_dashboard_tab(mode: str, top_n: int) -> None:
     """
     Render Dashboard tab.
@@ -5460,6 +5512,9 @@ def _render_dashboard_tab(mode: str, top_n: int) -> None:
     if not final_df.empty:
         _render_executive_dashboard_cards(final_df)
         st.divider()
+
+    _sf16a_render_fundamentals_panel()
+    st.divider()
 
     _render_run_controls(mode)
     st.divider()
@@ -7411,7 +7466,10 @@ def _render_phase7d_revalidated_funnel_dashboard():
 # <<< PHASE 7D REVALIDATED FUNNEL DASHBOARD HELPERS
 
 # PHASE 7D.1 DASHBOARD HOTFIX SUPERSEDED BY v1.2A
-# The previous implementation rendered the revalidated funnel after main(),
+# The previous implementation rendered the revalidated funnel after 
+
+
+main(),
 # so it appeared below every tab. v1.2A disables that global post-main render
 # and uses the revalidated Stage 3 candidates as a read-only fallback source
 # inside Ranking, Company Analysis and Feedback.

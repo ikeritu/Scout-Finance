@@ -1,0 +1,19 @@
+{
+  "phase": "v1.6A",
+  "title": "Fundamentals Input Bridge",
+  "status": "OK",
+  "created_at": "2026-07-01T11:38:16+0000",
+  "rows_total": 3,
+  "valid_rows": 3,
+  "valid_tickers": 3,
+  "universe_tickers": 3,
+  "coverage_ratio": 1.0,
+  "errors": 0,
+  "warnings": 0,
+  "top_tickers": "AAPL, ASML, MSFT",
+  "openai_called": false,
+  "broker_called": false,
+  "pipeline_recalculated": false,
+  "yfinance_called": false,
+  "fundamentals_api_called": false
+}

@@ -1,0 +1,4 @@
+ticker,period,period_end,revenue,revenue_growth_yoy,gross_margin,operating_margin,net_margin,free_cash_flow,total_cash,total_debt,shares_diluted,currency,source_note,fundamentals_status,fundamentals_source,fundamentals_method
+AAPL,TTM,2026-06-29,385000000000,2.1,45.0,30.0,26.0,105000000000,62000000000,98000000000,15500000000,USD,manual test data,FUNDAMENTALS_INPUT_VALID,manual_fundamentals.csv,manual_fundamentals_input_v0
+MSFT,TTM,2026-06-29,245000000000,12.0,69.0,44.0,36.0,74000000000,80000000000,47000000000,7430000000,USD,manual test data,FUNDAMENTALS_INPUT_VALID,manual_fundamentals.csv,manual_fundamentals_input_v0
+ASML,TTM,2026-06-29,27500000000,8.5,51.0,31.0,27.0,8500000000,7500000000,4500000000,394000000,EUR,manual test data,FUNDAMENTALS_INPUT_VALID,manual_fundamentals.csv,manual_fundamentals_input_v0
