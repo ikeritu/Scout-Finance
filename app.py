@@ -1,3 +1,5 @@
+# v1.6B1 remove duplicate main invocation hotfix packaged
+# v1.6B fundamentals UI integration packaged
 # v1.6A2 fundamentals panel helper order fix packaged
 # v1.6A1 fundamentals dashboard panel hook fix packaged
 # v1.6A fundamentals input bridge packaged
@@ -2975,6 +2977,123 @@ def _sf15d3_render_company_explainability(row: pd.Series | dict[str, Any]) -> No
 # <<< v1.5D3 FINAL UX POLISH RENDER PATH FIX HELPERS
 
 
+
+# >>> v1.6B FUNDAMENTALS UI INTEGRATION HELPERS
+def _sf16b_fundamentals_path() -> Path:
+    root = Path(__file__).resolve().parent
+    valid_path = root / "outputs" / "fundamentals" / "manual_fundamentals_valid_rows.csv"
+    raw_path = root / "data" / "real" / "manual_fundamentals.csv"
+    return valid_path if valid_path.exists() else raw_path
+
+
+def _sf16b_load_fundamentals_df() -> pd.DataFrame:
+    path = _sf16b_fundamentals_path()
+    if not path.exists():
+        return pd.DataFrame()
+    try:
+        df = pd.read_csv(path)
+    except Exception:
+        return pd.DataFrame()
+    if "ticker" in df.columns:
+        df["ticker"] = df["ticker"].astype(str).str.upper().str.replace("$", "", regex=False).str.strip()
+    return df
+
+
+def _sf16b_get_fundamentals_for_ticker(ticker_value: Any) -> dict[str, Any]:
+    t = str(ticker_value or "").upper().replace("$", "").strip()
+    if not t:
+        return {}
+    df = _sf16b_load_fundamentals_df()
+    if df.empty or "ticker" not in df.columns:
+        return {}
+    matches = df[df["ticker"].astype(str).str.upper().str.strip() == t]
+    if matches.empty:
+        return {}
+    return matches.iloc[0].to_dict()
+
+
+def _sf16b_float(value: Any) -> float | None:
+    try:
+        raw = str(value or "").strip()
+        if raw == "":
+            return None
+        return float(raw)
+    except Exception:
+        return None
+
+
+def _sf16b_fmt_money(value: Any, currency: Any = "") -> str:
+    number = _sf16b_float(value)
+    cur = str(currency or "").strip()
+    prefix = "$" if cur.upper() == "USD" else (cur.upper() + " " if cur else "")
+    if number is None:
+        return "—"
+    abs_number = abs(number)
+    sign = "-" if number < 0 else ""
+    if abs_number >= 1_000_000_000_000:
+        return f"{sign}{prefix}{abs_number / 1_000_000_000_000:.2f}T"
+    if abs_number >= 1_000_000_000:
+        return f"{sign}{prefix}{abs_number / 1_000_000_000:.2f}B"
+    if abs_number >= 1_000_000:
+        return f"{sign}{prefix}{abs_number / 1_000_000:.2f}M"
+    return f"{sign}{prefix}{abs_number:,.0f}"
+
+
+def _sf16b_fmt_percent(value: Any) -> str:
+    number = _sf16b_float(value)
+    if number is None:
+        return "—"
+    return f"{number:.2f}%"
+
+
+def _sf16b_fmt_number(value: Any) -> str:
+    number = _sf16b_float(value)
+    if number is None:
+        return "—"
+    return f"{number:,.0f}"
+
+
+def _sf16b_fundamentals_status_for_ticker(ticker_value: Any) -> str:
+    return "OK" if _sf16b_get_fundamentals_for_ticker(ticker_value) else "Faltan"
+
+
+def _sf16b_render_fundamentals_block(row: pd.Series | dict[str, Any]) -> None:
+    ticker_value = row.get("ticker") if hasattr(row, "get") else None
+    fundamentals = _sf16b_get_fundamentals_for_ticker(ticker_value)
+
+    st.markdown("#### 📊 Fundamentales")
+
+    if not fundamentals:
+        st.warning("No hay fundamentales validados para este ticker en manual_fundamentals.csv.")
+        return
+
+    currency = fundamentals.get("currency", "")
+    period = _display_text(fundamentals.get("period"))
+    period_end = _display_text(fundamentals.get("period_end"))
+    source = _display_text(fundamentals.get("fundamentals_source") or "manual_fundamentals.csv")
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Revenue", _sf16b_fmt_money(fundamentals.get("revenue"), currency))
+    c2.metric("Crecimiento YoY", _sf16b_fmt_percent(fundamentals.get("revenue_growth_yoy")))
+    c3.metric("Gross margin", _sf16b_fmt_percent(fundamentals.get("gross_margin")))
+    c4.metric("Operating margin", _sf16b_fmt_percent(fundamentals.get("operating_margin")))
+
+    c5, c6, c7, c8 = st.columns(4)
+    c5.metric("Net margin", _sf16b_fmt_percent(fundamentals.get("net_margin")))
+    c6.metric("Free cash flow", _sf16b_fmt_money(fundamentals.get("free_cash_flow"), currency))
+    c7.metric("Cash", _sf16b_fmt_money(fundamentals.get("total_cash"), currency))
+    c8.metric("Debt", _sf16b_fmt_money(fundamentals.get("total_debt"), currency))
+
+    shares = _sf16b_fmt_number(fundamentals.get("shares_diluted"))
+    note = _display_text(fundamentals.get("source_note"))
+    st.caption(
+        f"Fuente: {source} · periodo: {period} · cierre: {period_end} · moneda: {_display_text(currency)} · shares diluted: {shares}"
+    )
+    if note != "—":
+        st.caption(f"Nota: {note}")
+# <<< v1.6B FUNDAMENTALS UI INTEGRATION HELPERS
+
+
 def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
     """
     Render individual company detail card with score breakdown and quick feedback.
@@ -3089,6 +3208,8 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
     with context_col3:
         st.write("**Exchange / Divisa**")
         st.write(f"{_display_text(row.get('exchange'))} / {_display_text(row.get('currency'))}")
+
+    _sf16b_render_fundamentals_block(row)
 
     st.markdown("#### Razón cuantitativa")
     if _sf15a_is_local_score_row(row):
@@ -4270,6 +4391,8 @@ def _build_clean_ranking_table(
         clean_df["Estado IA"] = clean_df["Estado IA"].apply(_shorten_ai_state)
 
     clean_df = _sf15d3_humanize_ranking_df(clean_df)
+    if "Ticker" in clean_df.columns:
+        clean_df["Fundamentales"] = clean_df["Ticker"].apply(_sf16b_fundamentals_status_for_ticker)
 
     return clean_df
 
@@ -7467,9 +7590,6 @@ def _render_phase7d_revalidated_funnel_dashboard():
 
 # PHASE 7D.1 DASHBOARD HOTFIX SUPERSEDED BY v1.2A
 # The previous implementation rendered the revalidated funnel after 
-
-
-main(),
 # so it appeared below every tab. v1.2A disables that global post-main render
 # and uses the revalidated Stage 3 candidates as a read-only fallback source
 # inside Ranking, Company Analysis and Feedback.
