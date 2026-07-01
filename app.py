@@ -1,3 +1,11 @@
+# v1.6C8 data source detection refactor packaged
+# v1.6C6 dashboard combined warning final fix packaged
+# v1.6C5 dashboard combined source card fix packaged
+# v1.6C4 combined UI final polish packaged
+# v1.6C3 active combined ranking normalizer fix packaged
+# v1.6C2 combined score legacy field bridge packaged
+# v1.6C1 combined score UI priority fix packaged
+# v1.6C combined scoring v1 packaged
 # v1.6B1 remove duplicate main invocation hotfix packaged
 # v1.6B fundamentals UI integration packaged
 # v1.6A2 fundamentals panel helper order fix packaged
@@ -2462,7 +2470,7 @@ def _sf14f_render_market_data_notice(row: pd.Series | dict[str, Any]) -> None:
         return
 
     provider = _sf15d3_human_provider(_sf14f_provider_label(row))
-    status = _sf15d3_human_status(row.get("stage3_status"))
+    status = _sf16c2_human_status(row.get("stage3_status"))
     as_of = _display_text(row.get("market_data_timestamp"))
 
     st.info(
@@ -2648,6 +2656,10 @@ def _sf15b_render_explainability_block(row: pd.Series | dict[str, Any]) -> None:
 def _sf15d_human_category(value: Any) -> str:
     raw = str(value or "").strip()
     mapping = {
+        "combined_score_high": "Alta prioridad combinada",
+        "combined_score_medium": "Prioridad media combinada",
+        "combined_score_watch": "Vigilar con fundamentales",
+        "combined_score_low": "Prioridad baja combinada",
         "local_score_high": "Alta prioridad local",
         "local_score_medium": "Prioridad media local",
         "local_score_watch": "Vigilar",
@@ -2662,6 +2674,7 @@ def _sf15d_human_category(value: Any) -> str:
 def _sf15d_human_status(value: Any) -> str:
     raw = str(value or "").strip()
     mapping = {
+        "COMBINED_SCORE_V1": "Score combinado v1",
         "LOCAL_SCORE_V0": "Score local v0",
         "MARKET_DATA_SCORE_MANUAL": "Datos manuales",
         "MARKET_DATA_SCORE_YFINANCE": "Datos yfinance",
@@ -2785,10 +2798,15 @@ def _sf15d2_humanize_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     """Runtime-safe humanization for any ranking/dataframe view."""
     out = df.copy()
     replacements = {
+        "combined_score_high": "Alta prioridad combinada",
+        "combined_score_medium": "Prioridad media combinada",
+        "combined_score_watch": "Vigilar con fundamentales",
+        "combined_score_low": "Prioridad baja combinada",
         "local_score_high": "Alta prioridad local",
         "local_score_medium": "Prioridad media local",
         "local_score_watch": "Vigilar",
         "local_score_low": "Prioridad baja",
+        "COMBINED_SCORE_V1": "Score combinado v1",
         "LOCAL_SCORE_V0": "Score local v0",
         "MARKET_DATA_SCORE_MANUAL": "Datos manuales",
         "MARKET_DATA_SCORE_YFINANCE": "Datos yfinance",
@@ -2875,6 +2893,10 @@ def _sf15d2_render_company_explainability(row: pd.Series | dict[str, Any]) -> No
 def _sf15d3_human_category(value: Any) -> str:
     raw = str(value or "").strip()
     mapping = {
+        "combined_score_high": "Alta prioridad combinada",
+        "combined_score_medium": "Prioridad media combinada",
+        "combined_score_watch": "Vigilar con fundamentales",
+        "combined_score_low": "Prioridad baja combinada",
         "local_score_high": "Alta prioridad local",
         "local_score_medium": "Prioridad media local",
         "local_score_watch": "Vigilar",
@@ -2889,6 +2911,7 @@ def _sf15d3_human_category(value: Any) -> str:
 def _sf15d3_human_status(value: Any) -> str:
     raw = str(value or "").strip()
     mapping = {
+        "COMBINED_SCORE_V1": "Score combinado v1",
         "LOCAL_SCORE_V0": "Score local v0",
         "MARKET_DATA_SCORE_MANUAL": "Datos manuales",
         "MARKET_DATA_SCORE_YFINANCE": "Datos yfinance",
@@ -3094,6 +3117,202 @@ def _sf16b_render_fundamentals_block(row: pd.Series | dict[str, Any]) -> None:
 # <<< v1.6B FUNDAMENTALS UI INTEGRATION HELPERS
 
 
+
+# >>> v1.6C1 COMBINED SCORE UI PRIORITY FIX HELPERS
+def _sf16c1_value(row: pd.Series | dict[str, Any], *keys: str, default: Any = None) -> Any:
+    for key in keys:
+        try:
+            value = row.get(key)
+        except Exception:
+            value = None
+        if value is not None and str(value).strip() not in {"", "nan", "None", "—"}:
+            return value
+    return default
+
+
+def _sf16c1_active_score(row: pd.Series | dict[str, Any]) -> Any:
+    return _sf16c1_value(row, "combined_score_v1", "score", "local_score_v0", "Score", default="—")
+
+
+def _sf16c1_active_reason(row: pd.Series | dict[str, Any]) -> str:
+    return _display_text(_sf16c1_value(row, "score_reason", "explainability_summary", "reason", default="—"))
+
+
+def _sf16c1_score_float(value: Any) -> float | None:
+    try:
+        raw = str(value or "").strip()
+        if not raw or raw in {"—", "nan", "None"}:
+            return None
+        return float(raw)
+    except Exception:
+        return None
+
+
+def _sf16c1_display_score(value: Any) -> str:
+    number = _sf16c1_score_float(value)
+    if number is None:
+        return "—"
+    return f"{number:.2f}"
+
+
+def _sf16c1_human_category(row_or_value: Any) -> str:
+    if isinstance(row_or_value, (dict, pd.Series)):
+        value = _sf16c1_value(row_or_value, "category_final", "category", "Categoría", default="—")
+    else:
+        value = row_or_value
+    raw = str(value or "").strip()
+    mapping = {
+        "combined_score_high": "Alta prioridad combinada",
+        "combined_score_medium": "Prioridad media combinada",
+        "combined_score_watch": "Vigilar con fundamentales",
+        "combined_score_low": "Prioridad baja combinada",
+        "local_score_high": "Alta prioridad local",
+        "local_score_medium": "Prioridad media local",
+        "local_score_watch": "Vigilar",
+        "local_score_low": "Prioridad baja",
+    }
+    return mapping.get(raw, raw.replace("_", " ").title() if raw else "—")
+
+
+def _sf16c1_human_status(row_or_value: Any) -> str:
+    if isinstance(row_or_value, (dict, pd.Series)):
+        value = _sf16c1_value(row_or_value, "stage3_status", "status", "Estado", default="—")
+    else:
+        value = row_or_value
+    raw = str(value or "").strip()
+    mapping = {
+        "COMBINED_SCORE_V1": "Score combinado v1",
+        "LOCAL_SCORE_V0": "Score local v0",
+    }
+    return mapping.get(raw, raw.replace("_", " ").title() if raw else "—")
+
+
+def _sf16c1_humanize_ranking_df(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    if "combined_score_v1" in out.columns:
+        out["Score"] = out["combined_score_v1"].apply(_sf16c1_display_score)
+    elif "score" in out.columns:
+        out["Score"] = out["score"].apply(_sf16c1_display_score)
+    if "category_final" in out.columns:
+        out["Categoría"] = out["category_final"].apply(_sf16c1_human_category)
+    if "stage3_status" in out.columns:
+        out["Estado"] = out["stage3_status"].apply(_sf16c1_human_status)
+    if "combined_score_delta" in out.columns:
+        out["Δ Score"] = out["combined_score_delta"].apply(_sf16c1_display_score)
+    if "metadata_score_component" in out.columns:
+        out["Metadata"] = out["metadata_score_component"].apply(_sf16c1_display_score)
+    if "market_data_score_component" in out.columns:
+        out["Market data"] = out["market_data_score_component"].apply(_sf16c1_display_score)
+    if "fundamentals_score_component" in out.columns:
+        out["Fundamentales score"] = out["fundamentals_score_component"].apply(_sf16c1_display_score)
+    return out
+# <<< v1.6C1 COMBINED SCORE UI PRIORITY FIX HELPERS
+
+
+
+# >>> v1.6C2 COMBINED SCORE LEGACY FIELD BRIDGE UI HELPERS
+def _sf16c2_human_category(value: Any) -> str:
+    raw = str(value or "").strip()
+    mapping = {
+        "combined_score_high": "Alta prioridad combinada",
+        "combined_score_medium": "Prioridad media combinada",
+        "combined_score_watch": "Vigilar con fundamentales",
+        "combined_score_low": "Prioridad baja combinada",
+        "local_score_high": "Alta prioridad local",
+        "local_score_medium": "Prioridad media local",
+        "local_score_watch": "Vigilar",
+        "local_score_low": "Prioridad baja",
+    }
+    return mapping.get(raw, raw.replace("_", " ").title() if raw else "—")
+
+
+def _sf16c2_human_status(value: Any) -> str:
+    raw = str(value or "").strip()
+    mapping = {
+        "COMBINED_SCORE_V1": "Score combinado v1",
+        "LOCAL_SCORE_V0": "Score local v0",
+    }
+    return mapping.get(raw, raw.replace("_", " ").title() if raw else "—")
+
+
+def _sf16c2_display_score(value: Any) -> str:
+    try:
+        return f"{float(value):.2f}"
+    except Exception:
+        return "—"
+
+
+def _sf16c2_humanize_any_ranking_df(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    if "combined_score_v1" in out.columns:
+        out["Score"] = out["combined_score_v1"].apply(_sf16c2_display_score)
+    elif "score" in out.columns:
+        out["Score"] = out["score"].apply(_sf16c2_display_score)
+    if "category_final" in out.columns:
+        out["Categoría"] = out["category_final"].apply(_sf16c2_human_category)
+    if "stage3_status" in out.columns:
+        out["Estado"] = out["stage3_status"].apply(_sf16c2_human_status)
+    return out
+# <<< v1.6C2 COMBINED SCORE LEGACY FIELD BRIDGE UI HELPERS
+
+
+
+# >>> v1.6C4 COMBINED UI FINAL POLISH HELPERS
+def _sf16c4_active_reason(row: pd.Series | dict[str, Any]) -> str:
+    for key in [
+        "score_reason",
+        "reason_to_pass_quant",
+        "explainability_summary",
+        "summary_thesis",
+        "openai_reason_to_pass",
+    ]:
+        try:
+            value = row.get(key)
+        except Exception:
+            value = None
+        if value is not None and str(value).strip() not in {"", "nan", "None", "—"}:
+            return _display_text(value)
+    return "—"
+
+
+def _sf16c4_active_source_label(source: Any, df: pd.DataFrame | None = None) -> str:
+    raw = str(source or "").strip()
+    try:
+        has_combined = df is not None and (
+            "combined_score_v1" in df.columns
+            or (
+                "stage3_status" in df.columns
+                and df["stage3_status"].astype(str).str.upper().str.contains("COMBINED_SCORE_V1").any()
+            )
+        )
+    except Exception:
+        has_combined = False
+
+    if raw == "combined_score_v1" or has_combined:
+        return "Score combinado v1"
+    if raw == "real_universe_input":
+        return "Universo real"
+    if raw == "revalidated_funnel":
+        return "Fallback local"
+    return raw.replace("_", " ").strip().title() if raw else "—"
+
+
+def _sf16c4_is_combined_active(df: pd.DataFrame | None = None, row: Any = None) -> bool:
+    try:
+        if df is not None:
+            if "combined_score_v1" in df.columns:
+                return True
+            if "stage3_status" in df.columns and df["stage3_status"].astype(str).str.upper().str.contains("COMBINED_SCORE_V1").any():
+                return True
+        if row is not None:
+            status = str(row.get("stage3_status") or row.get("status") or "").upper()
+            return status == "COMBINED_SCORE_V1" or row.get("combined_score_v1") is not None
+    except Exception:
+        pass
+    return False
+# <<< v1.6C4 COMBINED UI FINAL POLISH HELPERS
+
+
 def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
     """
     Render individual company detail card with score breakdown and quick feedback.
@@ -3129,7 +3348,7 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
     col1, col2, col3, col4 = st.columns(4)
 
     col1.metric("Score", _format_number(row.get("score_priority"), 2))
-    col2.metric("Categoría", _sf15d3_human_category(row.get("category_final")))
+    col2.metric("Categoría", _sf16c2_human_category(row.get("category_final")))
     col3.metric("Riesgo", _format_number(row.get("score_risk"), 2))
     col4.metric("Confianza", _format_number(row.get("score_confidence"), 2))
 
@@ -3161,7 +3380,7 @@ def _render_company_detail(final_df: pd.DataFrame, mode: str) -> None:
         st.caption(
             f"Currency: {_display_text(row.get('currency'))} · "
             f"as_of: {_display_text(row.get('market_data_timestamp'))} · "
-            f"estado: {_sf15d3_human_status(row.get('stage3_status'))}"
+            f"estado: {_sf16c2_human_status(row.get("stage3_status"))}"
         )
     elif _sf14d1_is_metadata_score_row(row):
         _sf14d1_render_metadata_score_notice(row)
@@ -4278,6 +4497,79 @@ def _build_metric_lookup(
     return lookup
 
 
+
+# >>> v1.6C COMBINED SCORING V1 UI HELPERS
+def _sf16c_combined_scoring_status() -> dict[str, Any]:
+    root = Path(__file__).resolve().parent
+    summary_path = root / "outputs" / "scoring" / "combined_score_v1_summary.json"
+    summary: dict[str, Any] = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            summary = {}
+    return {
+        "summary_exists": summary_path.exists(),
+        "status": summary.get("status", "missing"),
+        "rows_scored": summary.get("rows_scored", 0),
+        "fundamentals_coverage_ratio": summary.get("fundamentals_coverage_ratio", 0),
+        "top_ticker": summary.get("top_ticker", "—"),
+        "top_score": summary.get("top_score", "—"),
+        "active_ranking_updated": summary.get("active_ranking_updated", False),
+    }
+
+
+def _sf16c_render_combined_scoring_panel() -> None:
+    status = _sf16c_combined_scoring_status()
+    st.markdown("### 🧮 Combined scoring v1")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Estado", status["status"])
+    c2.metric("Filas scored", status["rows_scored"])
+    coverage = status["fundamentals_coverage_ratio"]
+    c3.metric("Cobertura fund.", f"{float(coverage):.0%}" if isinstance(coverage, (int, float)) else "—")
+    c4.metric("Top", f"{status['top_ticker']} · {status['top_score']}")
+
+    if status["summary_exists"] and status["status"] == "OK":
+        st.success("Combined scoring v1 activo. El ranking ya usa metadata + market data + fundamentales.")
+    else:
+        st.info("Ejecuta v1.6C para generar combined_score_v1 y actualizar el ranking activo.")
+
+    with st.expander("Comandos v1.6C — Combined Scoring v1", expanded=False):
+        st.code(
+            ".\\\\.venv\\\\Scripts\\\\python.exe -m src.combined_scoring_v1 --score\\n"
+            ".\\\\.venv\\\\Scripts\\\\python.exe scripts/check_v1_6c_combined_scoring_v1.py",
+            language="powershell",
+        )
+
+
+def _sf16c_human_category(value: Any) -> str:
+    raw = str(value or "").strip()
+    mapping = {
+        "combined_score_high": "Alta prioridad combinada",
+        "combined_score_medium": "Prioridad media combinada",
+        "combined_score_watch": "Vigilar con fundamentales",
+        "combined_score_low": "Prioridad baja combinada",
+    }
+    if raw in mapping:
+        return mapping[raw]
+    if "_sf15d3_human_category" in globals():
+        return _sf15d3_human_category(raw)
+    return raw.replace("_", " ").title() if raw else "—"
+
+
+def _sf16c_human_status(value: Any) -> str:
+    raw = str(value or "").strip()
+    mapping = {
+        "COMBINED_SCORE_V1": "Score combinado v1",
+    }
+    if raw in mapping:
+        return mapping[raw]
+    if "_sf15d3_human_status" in globals():
+        return _sf15d3_human_status(raw)
+    return raw.replace("_", " ").title() if raw else "—"
+# <<< v1.6C COMBINED SCORING V1 UI HELPERS
+
+
 def _build_clean_ranking_table(
     display_df: pd.DataFrame,
     filtered_df: pd.DataFrame | None = None,
@@ -4393,6 +4685,10 @@ def _build_clean_ranking_table(
     clean_df = _sf15d3_humanize_ranking_df(clean_df)
     if "Ticker" in clean_df.columns:
         clean_df["Fundamentales"] = clean_df["Ticker"].apply(_sf16b_fundamentals_status_for_ticker)
+
+    clean_df = _sf16c1_humanize_ranking_df(clean_df)
+
+    clean_df = _sf16c2_humanize_any_ranking_df(clean_df)
 
     return clean_df
 
@@ -4695,6 +4991,36 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         if source in working.columns:
             normalized[target] = working[source]
 
+    # v1.6C3 active combined ranking normalizer fix
+    # active_real_universe_top_candidates.csv can now contain COMBINED_SCORE_V1.
+    # Force combined fields after legacy mappings so old local_score_v0 routes cannot override them.
+    if "combined_score_v1" in working.columns:
+        normalized["score_priority"] = working["combined_score_v1"]
+        normalized["score"] = working["combined_score_v1"]
+        normalized["combined_score_v1"] = working["combined_score_v1"]
+    if "score_final" in working.columns:
+        normalized["score_final"] = working["score_final"]
+    if "display_score" in working.columns:
+        normalized["display_score"] = working["display_score"]
+    if "category_final" in working.columns:
+        normalized["category_final"] = working["category_final"]
+    if "category_label" in working.columns:
+        normalized["category_label"] = working["category_label"]
+    if "stage3_status" in working.columns:
+        normalized["stage3_status"] = working["stage3_status"]
+    if "status" in working.columns:
+        normalized["status"] = working["status"]
+    if "score_reason" in working.columns:
+        normalized["reason_to_pass_quant"] = working["score_reason"]
+        normalized["local_score_reason"] = working["score_reason"]
+        normalized["score_reason"] = working["score_reason"]
+    if "metadata_score_component" in working.columns:
+        normalized["metadata_score_component"] = working["metadata_score_component"]
+    if "market_data_score_component" in working.columns:
+        normalized["market_data_score_component"] = working["market_data_score_component"]
+    if "fundamentals_score_component" in working.columns:
+        normalized["fundamentals_score_component"] = working["fundamentals_score_component"]
+
     # Preserve useful Stage 3 columns for technical expanders and exports.
     for column in [
         "final_stage3_score",
@@ -4723,6 +5049,18 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
         "local_score_status",
         "local_score_method",
         "local_score_reason",
+        "combined_score_v1",
+        "score_final",
+        "display_score",
+        "combined_score_delta",
+        "metadata_score_component",
+        "market_data_score_component",
+        "fundamentals_score_component",
+        "score_previous",
+        "local_score_v0_previous",
+        "score_reason",
+        "status",
+        "category_label",
         "metadata_component_score",
         "market_data_component_score",
         "liquidity_component_score",
@@ -4767,22 +5105,35 @@ def _sf12a_load_revalidated_candidates(top_n: int | None = None) -> pd.DataFrame
 
     source_name = source_path.name if source_path else ""
     if source_name in {"active_real_universe_top_candidates.csv", "real_universe_candidates.csv"}:
-        normalized.attrs["sf12a_source"] = "real_universe_input"
         normalized["stage3_status"] = normalized.get("stage3_status", "INPUT_ONLY")
-
         status_text = normalized["stage3_status"].astype(str).str.upper()
-        if status_text.str.contains("METADATA_SCORE").any():
-            normalized["data_quality_label"] = "Metadata high"
+
+        if status_text.str.contains("COMBINED_SCORE_V1").any() or "combined_score_v1" in normalized.columns:
+            normalized.attrs["sf12a_source"] = "combined_score_v1"
+            normalized["data_quality_label"] = "Combined score v1"
             normalized["openai_reason_to_pass"] = (
-                "METADATA_SCORE local: score basado solo en metadatos del CSV; no usa precio, market cap, fundamentales, OpenAI, APIs ni yfinance."
+                "COMBINED_SCORE_V1 local: score combinado basado en metadatos, market data y fundamentales manuales. "
+                "No usa OpenAI, broker, yfinance ni APIs externas."
             )
             normalized["summary_thesis"] = (
-                "Candidata del universo real con scoring bridge por metadatos. Requiere datos de mercado y análisis financiero antes de cualquier revisión seria."
+                "Candidata priorizada por scoring combinado v1. Revisar componentes, fundamentales y riesgos antes de cualquier decisión manual."
             )
-            normalized["why_it_could_work"] = "Metadatos completos y fuente controlada en data/real/real_universe.csv."
-            normalized["why_it_could_fail"] = "No contiene todavía datos de mercado, fundamentales, valoración ni riesgo financiero real."
+            normalized["why_it_could_work"] = "Combina metadatos, market data y fundamentales manuales validados."
+            normalized["why_it_could_fail"] = "Puede depender de datos manuales incompletos o desactualizados."
         else:
-            normalized["data_quality_label"] = "INPUT_ONLY"
+            normalized.attrs["sf12a_source"] = "real_universe_input"
+            if status_text.str.contains("METADATA_SCORE").any():
+                normalized["data_quality_label"] = "Metadata high"
+                normalized["openai_reason_to_pass"] = (
+                    "METADATA_SCORE local: score basado solo en metadatos del CSV; no usa precio, market cap, fundamentales, OpenAI, APIs ni yfinance."
+                )
+                normalized["summary_thesis"] = (
+                    "Candidata del universo real con scoring bridge por metadatos. Requiere datos de mercado y análisis financiero antes de cualquier revisión seria."
+                )
+                normalized["why_it_could_work"] = "Metadatos completos y fuente controlada en data/real/real_universe.csv."
+                normalized["why_it_could_fail"] = "No contiene todavía datos de mercado, fundamentales, valoración ni riesgo financiero real."
+            else:
+                normalized["data_quality_label"] = "INPUT_ONLY"
     else:
         normalized.attrs["sf12a_source"] = "revalidated_funnel"
 
@@ -4811,6 +5162,13 @@ def _sf12a_render_fallback_notice(df: pd.DataFrame, context: str = "vista") -> N
     source = _sf12a_data_source(df)
     path = _sf12a_source_path(df)
 
+    if source == "combined_score_v1":
+        st.info(
+            f"Ranking activo generado por `COMBINED_SCORE_V1`: `{path}`. "
+            "Usa metadatos, market data y fundamentales manuales. No es recomendación financiera."
+        )
+        return
+
     if source == "real_universe_input":
         st.warning(
             f"La vista final del último run está vacía. En esta {context} se muestran "
@@ -4821,10 +5179,13 @@ def _sf12a_render_fallback_notice(df: pd.DataFrame, context: str = "vista") -> N
 
     if source == "revalidated_funnel":
         path = path or "outputs/scouting/phase7c4_pipeline_revalidation_top_candidates.csv"
-        st.warning(
-            f"La vista final del último run está vacía. En esta {context} se muestra "
-            f"el último funnel revalidado disponible: `{path}`."
-        )
+        if "_sf16c5_is_combined_active" in globals() and _sf16c5_is_combined_active():
+            _sf16c6_render_combined_dashboard_notice()
+        else:
+            st.warning(
+                        f"La vista final del último run está vacía. En esta {context} se muestra "
+                        f"el último funnel revalidado disponible: `{path}`."
+                    )
 
 
 def _sf12a_disable_global_post_main_render() -> bool:
@@ -4896,19 +5257,84 @@ def _sf14a_build_data_source_audit() -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+
 def _sf14a_detect_active_source(mode: str, top_n: int) -> dict[str, Any]:
+    """Detect the real active data source shown by the UI.
+
+    v1.6C8 refactor:
+    - COMBINED_SCORE_V1 is now a first-class source.
+    - The active ranking CSV takes precedence when it contains combined scoring.
+    - Legacy fallback labels are only used for genuinely legacy fallback data.
+    """
     latest_run_id = get_latest_run_id(mode=mode)
+
+    fallback_df = _sf12a_load_revalidated_candidates(top_n=top_n)
+    if fallback_df is not None and not fallback_df.empty:
+        fallback_source = _sf12a_data_source(fallback_df)
+        fallback_status = ""
+        if "stage3_status" in fallback_df.columns:
+            try:
+                fallback_status = " ".join(
+                    fallback_df["stage3_status"].astype(str).str.upper().dropna().unique().tolist()
+                )
+            except Exception:
+                fallback_status = ""
+
+        has_combined = (
+            fallback_source == "combined_score_v1"
+            or "combined_score_v1" in fallback_df.columns
+            or "COMBINED_SCORE_V1" in fallback_status
+        )
+
+        if has_combined:
+            top_ticker = "—"
+            top_score = "—"
+            try:
+                first_row = fallback_df.iloc[0]
+                top_ticker = str(first_row.get("ticker") or first_row.get("Ticker") or "—")
+                top_score = str(
+                    first_row.get("combined_score_v1")
+                    or first_row.get("score")
+                    or first_row.get("score_priority")
+                    or "—"
+                )
+            except Exception:
+                pass
+
+            return {
+                "active_source": "combined_score_v1",
+                "label": "Score combinado v1",
+                "run_id": latest_run_id or "ranking activo",
+                "rows": int(len(fallback_df)),
+                "explanation": (
+                    "Ranking activo generado por COMBINED_SCORE_V1: "
+                    "`outputs/scouting/active_real_universe_top_candidates.csv`. "
+                    f"Top: {top_ticker} · {top_score}. "
+                    "Usa metadatos, market data y fundamentales manuales. "
+                    "No es recomendación financiera."
+                ),
+            }
+
     final_df = pd.DataFrame()
     if latest_run_id is not None:
         try:
             final_df = get_top_final_research_view(run_id=latest_run_id, mode=mode, top_n=top_n)
         except Exception:
             final_df = pd.DataFrame()
+
     if final_df is not None and not final_df.empty:
-        return {"active_source": "latest_final_view", "label": "Último run válido", "run_id": latest_run_id, "rows": int(len(final_df)), "explanation": "La interfaz está mostrando la vista final del último run."}
-    fallback_df = _sf12a_load_revalidated_candidates(top_n=top_n)
+        return {
+            "active_source": "latest_final_view",
+            "label": "Último run válido",
+            "run_id": latest_run_id,
+            "rows": int(len(final_df)),
+            "explanation": "La interfaz está mostrando la vista final del último run.",
+        }
+
     if fallback_df is not None and not fallback_df.empty:
-        if _sf12a_data_source(fallback_df) == "real_universe_input":
+        fallback_source = _sf12a_data_source(fallback_df)
+
+        if fallback_source == "real_universe_input":
             return {
                 "active_source": "real_universe_input",
                 "label": "Universo real input",
@@ -4917,33 +5343,60 @@ def _sf14a_detect_active_source(mode: str, top_n: int) -> dict[str, Any]:
                 "explanation": (
                     "La vista final del último run está vacía. La interfaz muestra candidatos "
                     "generados desde el universo real input: "
-                    "outputs/scouting/active_real_universe_top_candidates.csv. "
+                    "`outputs/scouting/active_real_universe_top_candidates.csv`. "
                     "Estado INPUT_ONLY/METADATA_SCORE/MARKET_DATA_SCORE: no es scoring financiero completo."
                 ),
             }
-        return {"active_source": "revalidated_funnel_fallback", "label": "Fallback: funnel revalidado", "run_id": latest_run_id or "sin run válido", "rows": int(len(fallback_df)), "explanation": "La vista final del último run está vacía. La interfaz muestra el último funnel revalidado local; por eso pueden repetirse las mismas empresas."}
-    return {"active_source": "empty", "label": "Sin datos visibles", "run_id": latest_run_id or "sin run", "rows": 0, "explanation": "No hay vista final ni fallback revalidado disponible."}
+
+        return {
+            "active_source": "revalidated_funnel_fallback",
+            "label": "Fallback: funnel revalidado",
+            "run_id": latest_run_id or "sin run válido",
+            "rows": int(len(fallback_df)),
+            "explanation": (
+                "La vista final del último run está vacía. La interfaz muestra el último funnel "
+                "revalidado local; por eso pueden repetirse las mismas empresas."
+            ),
+        }
+
+    return {
+        "active_source": "empty",
+        "label": "Sin datos visibles",
+        "run_id": latest_run_id or "sin run",
+        "rows": 0,
+        "explanation": "No hay vista final ni fallback revalidado disponible.",
+    }
 
 
 def _sf14a_render_data_source_panel(mode: str, top_n: int) -> None:
+    """Render active data source using the refactored v1.6C8 source detector."""
     status = _sf14a_detect_active_source(mode=mode, top_n=top_n)
+
     st.markdown("### 🧭 Fuente de datos activa")
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Fuente", status["label"])
     c2.metric("Filas visibles", status["rows"])
     c3.metric("Modo", mode)
     c4.metric("Run", str(status["run_id"])[:12])
-    if status["active_source"] == "real_universe_input":
+
+    if status["active_source"] == "combined_score_v1":
         st.info(status["explanation"])
+    elif status["active_source"] == "real_universe_input":
+        st.warning(status["explanation"])
     elif status["active_source"] == "revalidated_funnel_fallback":
         st.warning(status["explanation"])
     elif status["active_source"] == "latest_final_view":
         st.success(status["explanation"])
     else:
         st.info(status["explanation"])
+
     with st.expander("Auditar archivos que alimentan la interfaz", expanded=False):
         st.dataframe(_sf14a_build_data_source_audit(), use_container_width=True, hide_index=True)
-        st.caption("Si `phase7c4_pipeline_revalidation_top_candidates.csv` o `top_100_candidates.csv` no cambian, verás siempre las mismas empresas.")
+        st.caption(
+            "Si `phase7c4_pipeline_revalidation_top_candidates.csv` o `top_100_candidates.csv` "
+            "no cambian, verás siempre las mismas empresas."
+        )
+
     with st.expander("Cómo conseguir empresas distintas", expanded=False):
         st.markdown("""
         Para que el ranking cambie necesitas cambiar la fuente de datos, no solo la interfaz.
@@ -4957,7 +5410,6 @@ def _sf14a_render_data_source_panel(mode: str, top_n: int) -> None:
         """)
 # <<< v1.4A DATA SOURCE TRANSPARENCY HELPERS
 
-# >>> v1.4B REAL UNIVERSE INPUT MVP HELPERS
 def _sf14b_real_universe_paths() -> dict[str, Path]:
     root = Path(__file__).resolve().parent
     return {
@@ -5616,6 +6068,115 @@ def _sf16a_render_fundamentals_panel() -> None:
             language="powershell",
         )
 # <<< v1.6A FUNDAMENTALS INPUT BRIDGE PANEL
+
+
+
+# >>> v1.6C5 DASHBOARD COMBINED SOURCE CARD FIX HELPERS
+def _sf16c5_active_combined_summary() -> dict[str, Any]:
+    root = Path(__file__).resolve().parent
+    summary_path = root / "outputs" / "scoring" / "combined_score_v1_summary.json"
+    active_path = root / "outputs" / "scouting" / "active_real_universe_top_candidates.csv"
+
+    summary: dict[str, Any] = {}
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            summary = {}
+
+    active_ok = False
+    if active_path.exists():
+        try:
+            active_df = pd.read_csv(active_path, nrows=5)
+            active_ok = (
+                "combined_score_v1" in active_df.columns
+                or (
+                    "stage3_status" in active_df.columns
+                    and active_df["stage3_status"].astype(str).str.upper().str.contains("COMBINED_SCORE_V1").any()
+                )
+            )
+        except Exception:
+            active_ok = False
+
+    return {
+        "summary_exists": summary_path.exists(),
+        "active_exists": active_path.exists(),
+        "active_ok": active_ok,
+        "status": summary.get("status", "missing"),
+        "rows_scored": summary.get("rows_scored", 0),
+        "top_ticker": summary.get("top_ticker", ""),
+        "top_score": summary.get("top_score", ""),
+    }
+
+
+def _sf16c5_is_combined_active() -> bool:
+    s = _sf16c5_active_combined_summary()
+    return bool(s["active_ok"] and s["status"] == "OK")
+
+
+def _sf16c5_source_card_label(current: Any = None) -> str:
+    if _sf16c5_is_combined_active():
+        return "Score combinado v1"
+    raw = str(current or "").strip()
+    if raw == "combined_score_v1":
+        return "Score combinado v1"
+    if raw == "real_universe_input":
+        return "Universo real"
+    if raw == "revalidated_funnel":
+        return "Fallback local"
+    return raw.replace("_", " ").strip().title() if raw else "—"
+
+
+def _sf16c5_render_dashboard_combined_notice() -> None:
+    if not _sf16c5_is_combined_active():
+        return
+    s = _sf16c5_active_combined_summary()
+    top = f"{s['top_ticker']} · {s['top_score']}" if s.get("top_ticker") else "—"
+    st.info(
+        "Ranking activo: COMBINED_SCORE_V1 · "
+        f"filas scored: {s.get('rows_scored', 0)} · top: {top}. "
+        "Usa metadatos, market data y fundamentales manuales. No es recomendación financiera."
+    )
+# <<< v1.6C5 DASHBOARD COMBINED SOURCE CARD FIX HELPERS
+
+
+
+# >>> v1.6C6 DASHBOARD COMBINED WARNING FINAL FIX HELPERS
+def _sf16c6_combined_dashboard_message() -> str:
+    root = Path(__file__).resolve().parent
+    active_path = root / "outputs" / "scouting" / "active_real_universe_top_candidates.csv"
+    summary_path = root / "outputs" / "scoring" / "combined_score_v1_summary.json"
+    top = "—"
+    rows = 0
+
+    if summary_path.exists():
+        try:
+            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            top_ticker = summary.get("top_ticker", "")
+            top_score = summary.get("top_score", "")
+            rows = summary.get("rows_scored", 0)
+            if top_ticker:
+                top = f"{top_ticker} · {top_score}"
+        except Exception:
+            pass
+
+    try:
+        active_rel = active_path.relative_to(root)
+    except Exception:
+        active_rel = active_path
+
+    return (
+        "Ranking activo generado por COMBINED_SCORE_V1: "
+        f"`{active_rel}`. "
+        f"Filas scored: {rows}. Top: {top}. "
+        "Usa metadatos, market data y fundamentales manuales. No es recomendación financiera."
+    )
+
+
+def _sf16c6_render_combined_dashboard_notice() -> None:
+    if "_sf16c5_is_combined_active" in globals() and _sf16c5_is_combined_active():
+        st.info(_sf16c6_combined_dashboard_message())
+# <<< v1.6C6 DASHBOARD COMBINED WARNING FINAL FIX HELPERS
 
 
 def _render_dashboard_tab(mode: str, top_n: int) -> None:
