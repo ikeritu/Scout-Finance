@@ -1,3 +1,4 @@
+# v1.6D3B remove superseded v1.6C legacy helpers packaged
 # v1.6D2C dashboard layout consolidation packaged
 # v1.6D2B streamlit cache csv json reads packaged
 # v1.6D1B post-main dead blocks cleanup packaged
@@ -3175,14 +3176,6 @@ def _sf16c1_value(row: pd.Series | dict[str, Any], *keys: str, default: Any = No
     return default
 
 
-def _sf16c1_active_score(row: pd.Series | dict[str, Any]) -> Any:
-    return _sf16c1_value(row, "combined_score_v1", "score", "local_score_v0", "Score", default="—")
-
-
-def _sf16c1_active_reason(row: pd.Series | dict[str, Any]) -> str:
-    return _display_text(_sf16c1_value(row, "score_reason", "explainability_summary", "reason", default="—"))
-
-
 def _sf16c1_score_float(value: Any) -> float | None:
     try:
         raw = str(value or "").strip()
@@ -3191,45 +3184,6 @@ def _sf16c1_score_float(value: Any) -> float | None:
         return float(raw)
     except Exception:
         return None
-
-
-def _sf16c1_display_score(value: Any) -> str:
-    number = _sf16c1_score_float(value)
-    if number is None:
-        return "—"
-    return f"{number:.2f}"
-
-
-def _sf16c1_human_category(row_or_value: Any) -> str:
-    if isinstance(row_or_value, (dict, pd.Series)):
-        value = _sf16c1_value(row_or_value, "category_final", "category", "Categoría", default="—")
-    else:
-        value = row_or_value
-    raw = str(value or "").strip()
-    mapping = {
-        "combined_score_high": "Alta prioridad combinada",
-        "combined_score_medium": "Prioridad media combinada",
-        "combined_score_watch": "Vigilar con fundamentales",
-        "combined_score_low": "Prioridad baja combinada",
-        "local_score_high": "Alta prioridad local",
-        "local_score_medium": "Prioridad media local",
-        "local_score_watch": "Vigilar",
-        "local_score_low": "Prioridad baja",
-    }
-    return mapping.get(raw, raw.replace("_", " ").title() if raw else "—")
-
-
-def _sf16c1_human_status(row_or_value: Any) -> str:
-    if isinstance(row_or_value, (dict, pd.Series)):
-        value = _sf16c1_value(row_or_value, "stage3_status", "status", "Estado", default="—")
-    else:
-        value = row_or_value
-    raw = str(value or "").strip()
-    mapping = {
-        "COMBINED_SCORE_V1": "Score combinado v1",
-        "LOCAL_SCORE_V0": "Score local v0",
-    }
-    return mapping.get(raw, raw.replace("_", " ").title() if raw else "—")
 
 
 def _sf16c1_humanize_ranking_df(df: pd.DataFrame) -> pd.DataFrame:
@@ -3280,13 +3234,6 @@ def _sf16c2_human_status(value: Any) -> str:
     return mapping.get(raw, raw.replace("_", " ").title() if raw else "—")
 
 
-def _sf16c2_display_score(value: Any) -> str:
-    try:
-        return f"{float(value):.2f}"
-    except Exception:
-        return "—"
-
-
 def _sf16c2_humanize_any_ranking_df(df: pd.DataFrame) -> pd.DataFrame:
     out = df.copy()
     if "combined_score_v1" in out.columns:
@@ -3303,58 +3250,6 @@ def _sf16c2_humanize_any_ranking_df(df: pd.DataFrame) -> pd.DataFrame:
 
 
 # >>> v1.6C4 COMBINED UI FINAL POLISH HELPERS
-def _sf16c4_active_reason(row: pd.Series | dict[str, Any]) -> str:
-    for key in [
-        "score_reason",
-        "reason_to_pass_quant",
-        "explainability_summary",
-        "summary_thesis",
-        "openai_reason_to_pass",
-    ]:
-        try:
-            value = row.get(key)
-        except Exception:
-            value = None
-        if value is not None and str(value).strip() not in {"", "nan", "None", "—"}:
-            return _display_text(value)
-    return "—"
-
-
-def _sf16c4_active_source_label(source: Any, df: pd.DataFrame | None = None) -> str:
-    raw = str(source or "").strip()
-    try:
-        has_combined = df is not None and (
-            "combined_score_v1" in df.columns
-            or (
-                "stage3_status" in df.columns
-                and df["stage3_status"].astype(str).str.upper().str.contains("COMBINED_SCORE_V1").any()
-            )
-        )
-    except Exception:
-        has_combined = False
-
-    if raw == "combined_score_v1" or has_combined:
-        return "Score combinado v1"
-    if raw == "real_universe_input":
-        return "Universo real"
-    if raw == "revalidated_funnel":
-        return "Fallback local"
-    return raw.replace("_", " ").strip().title() if raw else "—"
-
-
-def _sf16c4_is_combined_active(df: pd.DataFrame | None = None, row: Any = None) -> bool:
-    try:
-        if df is not None:
-            if "combined_score_v1" in df.columns:
-                return True
-            if "stage3_status" in df.columns and df["stage3_status"].astype(str).str.upper().str.contains("COMBINED_SCORE_V1").any():
-                return True
-        if row is not None:
-            status = str(row.get("stage3_status") or row.get("status") or "").upper()
-            return status == "COMBINED_SCORE_V1" or row.get("combined_score_v1") is not None
-    except Exception:
-        pass
-    return False
 # <<< v1.6C4 COMBINED UI FINAL POLISH HELPERS
 
 
@@ -6159,29 +6054,6 @@ def _sf16c5_is_combined_active() -> bool:
     return bool(s["active_ok"] and s["status"] == "OK")
 
 
-def _sf16c5_source_card_label(current: Any = None) -> str:
-    if _sf16c5_is_combined_active():
-        return "Score combinado v1"
-    raw = str(current or "").strip()
-    if raw == "combined_score_v1":
-        return "Score combinado v1"
-    if raw == "real_universe_input":
-        return "Universo real"
-    if raw == "revalidated_funnel":
-        return "Fallback local"
-    return raw.replace("_", " ").strip().title() if raw else "—"
-
-
-def _sf16c5_render_dashboard_combined_notice() -> None:
-    if not _sf16c5_is_combined_active():
-        return
-    s = _sf16c5_active_combined_summary()
-    top = f"{s['top_ticker']} · {s['top_score']}" if s.get("top_ticker") else "—"
-    st.info(
-        "Ranking activo: COMBINED_SCORE_V1 · "
-        f"filas scored: {s.get('rows_scored', 0)} · top: {top}. "
-        "Usa metadatos, market data y fundamentales manuales. No es recomendación financiera."
-    )
 # <<< v1.6C5 DASHBOARD COMBINED SOURCE CARD FIX HELPERS
 
 
