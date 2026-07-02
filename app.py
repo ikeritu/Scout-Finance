@@ -1,3 +1,5 @@
+# v1.6D2C dashboard layout consolidation packaged
+# v1.6D2B streamlit cache csv json reads packaged
 # v1.6D1B post-main dead blocks cleanup packaged
 # v1.6C8 data source detection refactor packaged
 # v1.6C6 dashboard combined warning final fix packaged
@@ -1858,12 +1860,54 @@ def _find_latest_analysis_output_files(ticker: str) -> dict[str, Path]:
     return {key: path for key, path in candidates.items() if path.exists()}
 
 
+# >>> v1.6D2B STREAMLIT CACHE FOR CSV JSON READS
+def _sf16d2b_file_mtime(path: Path) -> float:
+    """Return file mtime for Streamlit cache invalidation."""
+    try:
+        return float(path.stat().st_mtime)
+    except OSError:
+        return 0.0
+
+
+@st.cache_data(show_spinner=False)
+def _sf16d2b_cached_read_text(path_str: str, mtime: float) -> str:
+    """Cached text reader. mtime is part of the cache key."""
+    return Path(path_str).read_text(encoding="utf-8", errors="replace")
+
+
+@st.cache_data(show_spinner=False)
+def _sf16d2b_cached_read_json(path_str: str, mtime: float) -> dict:
+    """Cached JSON reader. mtime is part of the cache key."""
+    text = Path(path_str).read_text(encoding="utf-8", errors="replace")
+    return json.loads(text)
+
+
+@st.cache_data(show_spinner=False)
+def _sf16d2b_cached_read_csv(path_str: str, mtime: float, nrows: int | None = None) -> pd.DataFrame:
+    """Cached CSV reader. mtime is part of the cache key."""
+    if nrows is None:
+        return pd.read_csv(path_str)
+    return pd.read_csv(path_str, nrows=nrows)
+
+
+def _sf16d2b_read_text(path: Path) -> str:
+    return _sf16d2b_cached_read_text(str(path), _sf16d2b_file_mtime(path))
+
+
+def _sf16d2b_read_json(path: Path) -> dict:
+    return _sf16d2b_cached_read_json(str(path), _sf16d2b_file_mtime(path))
+
+
+def _sf16d2b_read_csv(path: Path, nrows: int | None = None) -> pd.DataFrame:
+    return _sf16d2b_cached_read_csv(str(path), _sf16d2b_file_mtime(path), nrows)
+# <<< v1.6D2B STREAMLIT CACHE FOR CSV JSON READS
+
 def _read_text_file(path: Path) -> str:
     """
     Read text file safely.
     """
 
-    return path.read_text(encoding="utf-8", errors="replace")
+    return _sf16d2b_read_text(path)
 
 
 def _download_file_button(label: str, path: Path, mime: str) -> None:
@@ -2489,7 +2533,7 @@ def _sf15a_local_score_status() -> dict[str, Any]:
     summary: dict[str, Any] = {}
     if summary_path.exists():
         try:
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            summary = _sf16d2b_read_json(summary_path)
         except Exception:
             summary = {}
 
@@ -2497,7 +2541,7 @@ def _sf15a_local_score_status() -> dict[str, Any]:
     top_tickers = ""
     if candidates_path.exists():
         try:
-            df = pd.read_csv(candidates_path)
+            df = _sf16d2b_read_csv(candidates_path)
             rows = int(len(df))
             if "ticker" in df.columns:
                 top_tickers = ", ".join(df["ticker"].dropna().astype(str).head(5).tolist())
@@ -2556,14 +2600,14 @@ def _sf15b_explainability_status() -> dict[str, Any]:
     summary: dict[str, Any] = {}
     if summary_path.exists():
         try:
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            summary = _sf16d2b_read_json(summary_path)
         except Exception:
             summary = {}
 
     rows = 0
     if candidates_path.exists():
         try:
-            rows = int(len(pd.read_csv(candidates_path)))
+            rows = int(len(_sf16d2b_read_csv(candidates_path)))
         except Exception:
             rows = 0
 
@@ -3015,7 +3059,7 @@ def _sf16b_load_fundamentals_df() -> pd.DataFrame:
     if not path.exists():
         return pd.DataFrame()
     try:
-        df = pd.read_csv(path)
+        df = _sf16d2b_read_csv(path)
     except Exception:
         return pd.DataFrame()
     if "ticker" in df.columns:
@@ -4506,7 +4550,7 @@ def _sf16c_combined_scoring_status() -> dict[str, Any]:
     summary: dict[str, Any] = {}
     if summary_path.exists():
         try:
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            summary = _sf16d2b_read_json(summary_path)
         except Exception:
             summary = {}
     return {
@@ -4876,7 +4920,7 @@ def _sf12a_read_csv(path: Path) -> pd.DataFrame:
     if not path.exists():
         return pd.DataFrame()
     try:
-        return pd.read_csv(path)
+        return _sf16d2b_read_csv(path)
     except Exception:
         return pd.DataFrame()
 
@@ -5205,7 +5249,7 @@ def _sf14a_file_info(relative_path: str) -> dict[str, Any]:
     info["kind"] = path.suffix.lower().replace(".", "") or "file"
     if path.suffix.lower() == ".csv":
         try:
-            df = pd.read_csv(path)
+            df = _sf16d2b_read_csv(path)
             info["rows"] = int(len(df))
             for col in ["ticker", "Ticker", "symbol", "Symbol"]:
                 if col in df.columns:
@@ -5215,7 +5259,7 @@ def _sf14a_file_info(relative_path: str) -> dict[str, Any]:
             info["kind"] = f"csv_error: {exc}"
     elif path.suffix.lower() == ".json":
         try:
-            data = json.loads(path.read_text(encoding="utf-8"))
+            data = _sf16d2b_read_json(path)
             info["rows"] = len(data) if isinstance(data, (list, dict)) else None
         except Exception as exc:
             info["kind"] = f"json_error: {exc}"
@@ -5425,7 +5469,7 @@ def _sf14b_read_json_safe(path: Path) -> dict[str, Any]:
     if not path.exists():
         return {}
     try:
-        data = json.loads(path.read_text(encoding="utf-8"))
+        data = _sf16d2b_read_json(path)
         return data if isinstance(data, dict) else {}
     except Exception:
         return {}
@@ -5441,7 +5485,7 @@ def _sf14b_real_universe_status() -> dict[str, Any]:
     top_tickers = ""
     if input_exists:
         try:
-            df = pd.read_csv(paths["input"])
+            df = _sf16d2b_read_csv(paths["input"])
             rows = int(len(df))
             if "ticker" in df.columns:
                 top_tickers = ", ".join(df["ticker"].dropna().astype(str).head(5).tolist())
@@ -5526,7 +5570,7 @@ def _sf14c_real_candidate_status() -> dict[str, Any]:
     summary: dict[str, Any] = {}
     if summary_path.exists():
         try:
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            summary = _sf16d2b_read_json(summary_path)
         except Exception:
             summary = {}
 
@@ -5534,7 +5578,7 @@ def _sf14c_real_candidate_status() -> dict[str, Any]:
     top_tickers = ""
     if candidates_path.exists():
         try:
-            df = pd.read_csv(candidates_path)
+            df = _sf16d2b_read_csv(candidates_path)
             rows = int(len(df))
             if "ticker" in df.columns:
                 top_tickers = ", ".join(df["ticker"].dropna().astype(str).head(5).tolist())
@@ -5616,7 +5660,7 @@ def _sf14d_scoring_bridge_status() -> dict[str, Any]:
     summary: dict[str, Any] = {}
     if summary_path.exists():
         try:
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            summary = _sf16d2b_read_json(summary_path)
         except Exception:
             summary = {}
 
@@ -5624,7 +5668,7 @@ def _sf14d_scoring_bridge_status() -> dict[str, Any]:
     top_tickers = ""
     if scored_path.exists():
         try:
-            df = pd.read_csv(scored_path)
+            df = _sf16d2b_read_csv(scored_path)
             rows = int(len(df))
             if "ticker" in df.columns:
                 top_tickers = ", ".join(df["ticker"].dropna().astype(str).head(5).tolist())
@@ -5717,14 +5761,14 @@ def _sf14e_market_data_status() -> dict[str, Any]:
     summary = {}
     if summary_path.exists():
         try:
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            summary = _sf16d2b_read_json(summary_path)
         except Exception:
             summary = {}
     rows = 0
     top_tickers = ""
     if enriched_path.exists():
         try:
-            df = pd.read_csv(enriched_path)
+            df = _sf16d2b_read_csv(enriched_path)
             rows = int(len(df))
             if "ticker" in df.columns:
                 top_tickers = ", ".join(df["ticker"].dropna().astype(str).head(5).tolist())
@@ -6031,7 +6075,7 @@ def _sf16a_fundamentals_status() -> dict[str, Any]:
     summary: dict[str, Any] = {}
     if summary_path.exists():
         try:
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            summary = _sf16d2b_read_json(summary_path)
         except Exception:
             summary = {}
     return {
@@ -6081,14 +6125,14 @@ def _sf16c5_active_combined_summary() -> dict[str, Any]:
     summary: dict[str, Any] = {}
     if summary_path.exists():
         try:
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            summary = _sf16d2b_read_json(summary_path)
         except Exception:
             summary = {}
 
     active_ok = False
     if active_path.exists():
         try:
-            active_df = pd.read_csv(active_path, nrows=5)
+            active_df = _sf16d2b_read_csv(active_path, nrows=5)
             active_ok = (
                 "combined_score_v1" in active_df.columns
                 or (
@@ -6152,7 +6196,7 @@ def _sf16c6_combined_dashboard_message() -> str:
 
     if summary_path.exists():
         try:
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
+            summary = _sf16d2b_read_json(summary_path)
             top_ticker = summary.get("top_ticker", "")
             top_score = summary.get("top_score", "")
             rows = summary.get("rows_scored", 0)
@@ -7158,7 +7202,7 @@ def _sf5g_load_stage3_candidates(limit: int | None = None) -> pd.DataFrame:
         return pd.DataFrame()
 
     try:
-        df = pd.read_csv(path)
+        df = _sf16d2b_read_csv(path)
     except Exception:
         return pd.DataFrame()
 
@@ -7186,7 +7230,7 @@ def _sf5g_count_candidate_file(filename: str) -> int:
         return 0
 
     try:
-        return int(len(pd.read_csv(path)))
+        return int(len(_sf16d2b_read_csv(path)))
     except Exception:
         return 0
 
@@ -7481,7 +7525,7 @@ def _sf5h_read_json(path: Path) -> dict:
         return {}
 
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        return _sf16d2b_read_json(path)
     except Exception:
         return {}
 
@@ -7745,7 +7789,7 @@ def _render_fundamental_enrichment_dashboard() -> None:
         _sf7c1_summary_path = Path(__file__).resolve().parent / "outputs" / "scouting" / "fundamentals_yfinance_enrichment_summary.json"
         _sf7c1 = {}
         if _sf7c1_summary_path.exists():
-            _sf7c1 = json.loads(_sf7c1_summary_path.read_text(encoding="utf-8"))
+            _sf7c1 = _sf16d2b_read_json(_sf7c1_summary_path)
 
         summary = dict(summary)
         summary["stage1_passed"] = int(_sf7c1.get("input_companies", 182) or 182)
@@ -8011,12 +8055,15 @@ def main() -> None:
 
     with dashboard_tab:
         _render_dashboard_tab(mode, top_n)
-        st.divider()
-        _render_global_funnel_summary_dashboard()
-        st.divider()
-        _render_fundamental_enrichment_dashboard()
-        st.divider()
-        _render_institutional_universe_dashboard()
+
+        with st.expander("Embudo global de scouting", expanded=False):
+            _render_global_funnel_summary_dashboard()
+
+        with st.expander("Cobertura de fundamentales", expanded=False):
+            _render_fundamental_enrichment_dashboard()
+
+        with st.expander("Universo institucional", expanded=False):
+            _render_institutional_universe_dashboard()
 
     with ranking_tab:
         final_df_for_feedback = _render_ranking_tab(mode, top_n)
