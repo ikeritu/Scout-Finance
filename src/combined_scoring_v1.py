@@ -1,3 +1,4 @@
+# v1.6E5 fundamentals granular tie-breaker packaged
 # v1.6C8 data source detection refactor compatible
 # v1.6C6 dashboard combined warning final fix compatible
 # v1.6C5 dashboard combined source card compatible
@@ -276,6 +277,115 @@ def fundamentals_score(f: dict[str, Any] | None) -> tuple[float, list[str], list
     return round(clamp(score), 2), positives, negatives
 
 
+# >>> v1.6E5 FUNDAMENTALS GRANULAR TIE-BREAKER HELPERS
+def revenue_scale_detail_score(revenue: float) -> float:
+    if revenue >= 100_000_000_000:
+        return 100.0
+    if revenue >= 50_000_000_000:
+        return 90.0
+    if revenue >= 25_000_000_000:
+        return 80.0
+    if revenue >= 10_000_000_000:
+        return 70.0
+    if revenue >= 5_000_000_000:
+        return 60.0
+    return 45.0
+
+
+def growth_detail_score(growth: float) -> float:
+    return clamp(50 + growth * 4, 0, 100)
+
+
+def margin_detail_score(margin: float, excellent: float) -> float:
+    if excellent <= 0:
+        return 0.0
+    return clamp((margin / excellent) * 100, 0, 100)
+
+
+def fcf_scale_detail_score(fcf: float) -> float:
+    if fcf >= 50_000_000_000:
+        return 100.0
+    if fcf >= 20_000_000_000:
+        return 90.0
+    if fcf >= 10_000_000_000:
+        return 80.0
+    if fcf >= 5_000_000_000:
+        return 70.0
+    if fcf > 0:
+        return 55.0
+    return 30.0
+
+
+def balance_sheet_detail_score(cash: float, debt: float) -> float:
+    if debt <= 0:
+        return 100.0
+    cash_to_debt = cash / debt
+    if cash_to_debt >= 1.5:
+        return 100.0
+    if cash_to_debt >= 1.0:
+        return 90.0
+    if cash_to_debt >= 0.75:
+        return 80.0
+    if cash_to_debt >= 0.5:
+        return 70.0
+    return 55.0
+
+
+def fundamentals_granular_score_v1_6e(fundamentals: dict[str, object] | None) -> float:
+    """Non-production granular fundamentals score used only for exact tie-breaking."""
+    if not fundamentals:
+        return 0.0
+
+    revenue = as_float(fundamentals.get("revenue"), 0) or 0.0
+    growth = as_float(fundamentals.get("revenue_growth_yoy"), 0) or 0.0
+    gross = as_float(fundamentals.get("gross_margin"), 0) or 0.0
+    operating = as_float(fundamentals.get("operating_margin"), 0) or 0.0
+    net = as_float(fundamentals.get("net_margin"), 0) or 0.0
+    fcf = as_float(fundamentals.get("free_cash_flow"), 0) or 0.0
+    cash = as_float(fundamentals.get("total_cash"), 0) or 0.0
+    debt = as_float(fundamentals.get("total_debt"), 0) or 0.0
+
+    score = (
+        revenue_scale_detail_score(revenue) * 0.15
+        + growth_detail_score(growth) * 0.20
+        + margin_detail_score(gross, 65.0) * 0.15
+        + margin_detail_score(operating, 40.0) * 0.15
+        + margin_detail_score(net, 35.0) * 0.10
+        + fcf_scale_detail_score(fcf) * 0.15
+        + balance_sheet_detail_score(cash, debt) * 0.10
+    )
+
+    return round(clamp(score, 0, 100), 2)
+
+
+def exact_component_tie_key(row: dict[str, object]) -> tuple[float, float, float, float]:
+    return (
+        round(as_float(row.get("combined_score_v1"), 0) or 0.0, 4),
+        round(as_float(row.get("metadata_score_component"), 0) or 0.0, 4),
+        round(as_float(row.get("market_data_score_component"), 0) or 0.0, 4),
+        round(as_float(row.get("fundamentals_score_component"), 0) or 0.0, 4),
+    )
+
+
+def annotate_exact_component_ties(rows: list[dict[str, object]]) -> None:
+    counts: dict[tuple[float, float, float, float], int] = {}
+
+    for row in rows:
+        key = exact_component_tie_key(row)
+        counts[key] = counts.get(key, 0) + 1
+
+    for row in rows:
+        key = exact_component_tie_key(row)
+        is_tie = counts.get(key, 0) > 1
+        row["tie_status"] = "EXACT_COMPONENT_TIE" if is_tie else "NO_TIE"
+        row["calibration_warning"] = (
+            "Empate exacto de componentes; orden secundario por granularidad fundamental."
+            if is_tie
+            else ""
+        )
+# <<< v1.6E5 FUNDAMENTALS GRANULAR TIE-BREAKER HELPERS
+
+
 def category(score: float) -> str:
     if score >= 85:
         return "combined_score_high"
@@ -309,6 +419,7 @@ def run() -> dict[str, Any]:
         m_score = metadata_score(row)
         md_score = market_data_score(row)
         f_score, f_pos, f_neg = fundamentals_score(f)
+        fundamentals_granular = fundamentals_granular_score_v1_6e(f)
 
         combined = round(clamp((m_score * 0.20) + (md_score * 0.35) + (f_score * 0.45)), 2)
         cat = category(combined)
@@ -362,6 +473,7 @@ def run() -> dict[str, Any]:
         out["metadata_score_component"] = m_score
         out["market_data_score_component"] = md_score
         out["fundamentals_score_component"] = f_score
+        out["fundamentals_granular_score_v1_6e"] = fundamentals_granular
         out["category_final"] = cat
         out["category"] = cat
         out["category_label"] = human_category(cat)
@@ -387,6 +499,7 @@ def run() -> dict[str, Any]:
             "metadata_score_component": m_score,
             "market_data_score_component": md_score,
             "fundamentals_score_component": f_score,
+            "fundamentals_granular_score_v1_6e": fundamentals_granular,
             "combined_score_v1": combined,
             "combined_score_delta": delta,
             "category_final": cat,
@@ -397,8 +510,25 @@ def run() -> dict[str, Any]:
             "method": METHOD,
         })
 
-    output_rows.sort(key=lambda r: as_float(r.get("combined_score_v1"), 0) or 0, reverse=True)
-    breakdown_rows.sort(key=lambda r: as_float(r.get("combined_score_v1"), 0) or 0, reverse=True)
+    annotate_exact_component_ties(output_rows)
+    annotate_exact_component_ties(breakdown_rows)
+
+    output_rows.sort(
+        key=lambda r: (
+            as_float(r.get("combined_score_v1"), 0) or 0,
+            as_float(r.get("fundamentals_granular_score_v1_6e"), 0) or 0,
+            str(r.get("ticker", "")),
+        ),
+        reverse=True,
+    )
+    breakdown_rows.sort(
+        key=lambda r: (
+            as_float(r.get("combined_score_v1"), 0) or 0,
+            as_float(r.get("fundamentals_granular_score_v1_6e"), 0) or 0,
+            str(r.get("ticker", "")),
+        ),
+        reverse=True,
+    )
 
     write_csv(COMBINED_CANDIDATES, output_rows)
     write_csv(BREAKDOWN, breakdown_rows)

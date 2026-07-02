@@ -1,0 +1,16 @@
+ticker,scenario,metadata_weight,market_data_weight,fundamentals_weight,metadata_score_component,market_data_score_component,fundamentals_score_component,scenario_score
+MSFT,current_20_35_45,0.2,0.35,0.45,91.48,79.32,100.0,91.06
+MSFT,balanced_25_35_40,0.25,0.35,0.4,91.48,79.32,100.0,90.63
+MSFT,market_heavier_20_45_35,0.2,0.45,0.35,91.48,79.32,100.0,88.99
+MSFT,fundamentals_heavier_15_30_55,0.15,0.3,0.55,91.48,79.32,100.0,92.52
+MSFT,metadata_lighter_10_40_50,0.1,0.4,0.5,91.48,79.32,100.0,90.88
+ASML,current_20_35_45,0.2,0.35,0.45,91.48,79.32,100.0,91.06
+ASML,balanced_25_35_40,0.25,0.35,0.4,91.48,79.32,100.0,90.63
+ASML,market_heavier_20_45_35,0.2,0.45,0.35,91.48,79.32,100.0,88.99
+ASML,fundamentals_heavier_15_30_55,0.15,0.3,0.55,91.48,79.32,100.0,92.52
+ASML,metadata_lighter_10_40_50,0.1,0.4,0.5,91.48,79.32,100.0,90.88
+AAPL,current_20_35_45,0.2,0.35,0.45,90.52,78.7,97.0,89.3
+AAPL,balanced_25_35_40,0.25,0.35,0.4,90.52,78.7,97.0,88.97
+AAPL,market_heavier_20_45_35,0.2,0.45,0.35,90.52,78.7,97.0,87.47
+AAPL,fundamentals_heavier_15_30_55,0.15,0.3,0.55,90.52,78.7,97.0,90.54
+AAPL,metadata_lighter_10_40_50,0.1,0.4,0.5,90.52,78.7,97.0,89.03
