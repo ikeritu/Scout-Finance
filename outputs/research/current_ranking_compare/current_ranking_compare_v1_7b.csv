@@ -1,0 +1,4 @@
+ticker,current_rank,research_snapshot_rank,rank_delta,current_score,research_snapshot_score,score_delta,combined_score_v1,fundamentals_granular_score_v1_6e,tie_status,calibration_warning,research_status,manual_review_status,decision_status,priority_flag,company_name,sector,industry
+MSFT,1,1,0,91.06,91.06,0.0,91.06,99.6,EXACT_COMPONENT_TIE,Empate exacto de componentes; orden secundario por granularidad fundamental.,NOT_STARTED,PENDING,PENDING_REVIEW,HIGH_SCORE_PENDING_REVIEW,Microsoft Corporation,Technology,Software
+ASML,2,2,0,91.06,91.06,0.0,91.06,80.41,EXACT_COMPONENT_TIE,Empate exacto de componentes; orden secundario por granularidad fundamental.,NOT_STARTED,PENDING,PENDING_REVIEW,HIGH_SCORE_PENDING_REVIEW,ASML Holding N.V.,Technology,Semiconductor Equipment
+AAPL,3,3,0,89.3,89.3,0.0,89.3,77.74,NO_TIE,,NOT_STARTED,PENDING,PENDING_REVIEW,HIGH_SCORE_PENDING_REVIEW,Apple Inc.,Technology,Consumer Electronics

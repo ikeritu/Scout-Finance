@@ -1,0 +1,82 @@
+{
+  "phase": "v1.7B",
+  "method": "compare_current_ranking_local_research_v1",
+  "created_at": "2026-07-03T08:47:34+00:00",
+  "inputs": {
+    "active_ranking": "outputs/scouting/active_real_universe_top_candidates.csv",
+    "research_index": "outputs/research/current_ranking/current_ranking_research_index.json"
+  },
+  "rows": 3,
+  "pending_review": 3,
+  "high_score_pending_review": 3,
+  "missing_cards": [],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "financial_advice": false
+  },
+  "comparison": [
+    {
+      "ticker": "MSFT",
+      "current_rank": 1,
+      "research_snapshot_rank": 1,
+      "rank_delta": 0,
+      "current_score": 91.06,
+      "research_snapshot_score": 91.06,
+      "score_delta": 0.0,
+      "combined_score_v1": 91.06,
+      "fundamentals_granular_score_v1_6e": 99.6,
+      "tie_status": "EXACT_COMPONENT_TIE",
+      "calibration_warning": "Empate exacto de componentes; orden secundario por granularidad fundamental.",
+      "research_status": "NOT_STARTED",
+      "manual_review_status": "PENDING",
+      "decision_status": "PENDING_REVIEW",
+      "priority_flag": "HIGH_SCORE_PENDING_REVIEW",
+      "company_name": "Microsoft Corporation",
+      "sector": "Technology",
+      "industry": "Software"
+    },
+    {
+      "ticker": "ASML",
+      "current_rank": 2,
+      "research_snapshot_rank": 2,
+      "rank_delta": 0,
+      "current_score": 91.06,
+      "research_snapshot_score": 91.06,
+      "score_delta": 0.0,
+      "combined_score_v1": 91.06,
+      "fundamentals_granular_score_v1_6e": 80.41,
+      "tie_status": "EXACT_COMPONENT_TIE",
+      "calibration_warning": "Empate exacto de componentes; orden secundario por granularidad fundamental.",
+      "research_status": "NOT_STARTED",
+      "manual_review_status": "PENDING",
+      "decision_status": "PENDING_REVIEW",
+      "priority_flag": "HIGH_SCORE_PENDING_REVIEW",
+      "company_name": "ASML Holding N.V.",
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment"
+    },
+    {
+      "ticker": "AAPL",
+      "current_rank": 3,
+      "research_snapshot_rank": 3,
+      "rank_delta": 0,
+      "current_score": 89.3,
+      "research_snapshot_score": 89.3,
+      "score_delta": 0.0,
+      "combined_score_v1": 89.3,
+      "fundamentals_granular_score_v1_6e": 77.74,
+      "tie_status": "NO_TIE",
+      "calibration_warning": "",
+      "research_status": "NOT_STARTED",
+      "manual_review_status": "PENDING",
+      "decision_status": "PENDING_REVIEW",
+      "priority_flag": "HIGH_SCORE_PENDING_REVIEW",
+      "company_name": "Apple Inc.",
+      "sector": "Technology",
+      "industry": "Consumer Electronics"
+    }
+  ]
+}
