@@ -1,0 +1,10 @@
+path,exists,status,type,size_bytes,rows,missing_required_columns
+outputs/scouting/active_real_universe_top_candidates.csv,True,OK,csv,8206,3,
+outputs/scouting/combined_score_v1_candidates.csv,True,OK,csv,8206,3,
+outputs/scoring/combined_score_v1_breakdown.csv,True,OK,csv,1372,3,
+outputs/scoring/combined_score_v1_summary.json,True,OK,json,966,,
+outputs/research/current_ranking/current_ranking_research_index.json,True,OK,json,1375,3,
+outputs/research/current_ranking_compare/current_ranking_compare_v1_7b.json,True,OK,json,2816,3,
+outputs/research/current_ranking/manual_review_log_v1_8a.json,True,OK,json,1836,,
+src/combined_scoring_v1.py,True,OK,py,22837,,
+app.py,True,OK,py,275814,,
