@@ -1,0 +1,56 @@
+{
+  "phase": "v1.8A",
+  "method": "manual_review_loop_v2",
+  "created_at": "2026-07-03T09:14:47+00:00",
+  "updated_at": "2026-07-03T09:14:47+00:00",
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "financial_advice": false
+  },
+  "events": [
+    {
+      "timestamp": "2026-07-03T09:14:47+00:00",
+      "ticker": "MSFT",
+      "previous": {
+        "research_status": "NOT_STARTED",
+        "manual_review_status": "PENDING"
+      },
+      "new": {
+        "research_status": "IN_PROGRESS",
+        "manual_review_status": "IN_PROGRESS",
+        "investment_thesis": "Pendiente de revisión manual detallada. Candidato de alta prioridad por score combinado y granularidad fundamental.",
+        "key_positive_points": [
+          "Score combinado alto",
+          "Fundamentals granular score alto",
+          "Margen operativo excelente",
+          "Balance sólido"
+        ],
+        "key_risks": [
+          "Market data real pendiente de resolver",
+          "Empate exacto previo de componentes"
+        ],
+        "questions_to_review": [
+          "Confirmar datos fundamentales con fuente externa",
+          "Revisar valoración actual",
+          "Revisar dependencia de crecimiento cloud/IA"
+        ],
+        "sources_checked": [
+          "manual_fundamentals.csv",
+          "active_real_universe_top_candidates.csv",
+          "current_ranking_compare_v1_7b.json"
+        ],
+        "notes": "Primera marca de revisión manual v1.8A."
+      },
+      "controls": {
+        "openai_called": false,
+        "broker_called": false,
+        "market_data_recalculated": false,
+        "scoring_recalculated": false,
+        "financial_advice": false
+      }
+    }
+  ]
+}

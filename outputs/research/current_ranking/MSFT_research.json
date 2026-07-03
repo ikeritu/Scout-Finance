@@ -20,14 +20,32 @@
     "calibration_warning": "Empate exacto de componentes; orden secundario por granularidad fundamental."
   },
   "local_research": {
-    "research_status": "NOT_STARTED",
-    "manual_review_status": "PENDING",
-    "investment_thesis": "",
-    "key_positive_points": [],
-    "key_risks": [],
-    "questions_to_review": [],
-    "sources_checked": [],
-    "notes": ""
+    "research_status": "IN_PROGRESS",
+    "manual_review_status": "IN_PROGRESS",
+    "investment_thesis": "Pendiente de revisión manual detallada. Candidato de alta prioridad por score combinado y granularidad fundamental.",
+    "key_positive_points": [
+      "Score combinado alto",
+      "Fundamentals granular score alto",
+      "Margen operativo excelente",
+      "Balance sólido"
+    ],
+    "key_risks": [
+      "Market data real pendiente de resolver",
+      "Empate exacto previo de componentes"
+    ],
+    "questions_to_review": [
+      "Confirmar datos fundamentales con fuente externa",
+      "Revisar valoración actual",
+      "Revisar dependencia de crecimiento cloud/IA"
+    ],
+    "sources_checked": [
+      "manual_fundamentals.csv",
+      "active_real_universe_top_candidates.csv",
+      "current_ranking_compare_v1_7b.json"
+    ],
+    "notes": "Primera marca de revisión manual v1.8A.",
+    "last_manual_review_at": "2026-07-03T09:14:47+00:00",
+    "review_method": "manual_review_loop_v2"
   },
   "controls": {
     "openai_called": false,
@@ -36,5 +54,6 @@
     "scoring_recalculated": false,
     "financial_advice": false
   },
-  "disclaimer": "Local research scaffold only. Not financial advice."
+  "disclaimer": "Local research scaffold only. Not financial advice.",
+  "updated_at": "2026-07-03T09:14:47+00:00"
 }
