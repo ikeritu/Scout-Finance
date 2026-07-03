@@ -1,0 +1,40 @@
+{
+  "phase": "v1.7A",
+  "method": "current_ranking_local_research_json_v1",
+  "created_at": "2026-07-03T08:36:02+00:00",
+  "ticker": "AAPL",
+  "rank": 3,
+  "company_name": "Apple Inc.",
+  "exchange": "NASDAQ",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Consumer Electronics",
+  "ranking_snapshot": {
+    "score": 89.3,
+    "combined_score_v1": 89.3,
+    "fundamentals_granular_score_v1_6e": 77.74,
+    "category_final": "combined_score_high",
+    "stage3_status": "COMBINED_SCORE_V1",
+    "status": "COMBINED_SCORE_V1",
+    "tie_status": "NO_TIE",
+    "calibration_warning": ""
+  },
+  "local_research": {
+    "research_status": "NOT_STARTED",
+    "manual_review_status": "PENDING",
+    "investment_thesis": "",
+    "key_positive_points": [],
+    "key_risks": [],
+    "questions_to_review": [],
+    "sources_checked": [],
+    "notes": ""
+  },
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "financial_advice": false
+  },
+  "disclaimer": "Local research scaffold only. Not financial advice."
+}

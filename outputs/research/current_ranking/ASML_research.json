@@ -1,0 +1,40 @@
+{
+  "phase": "v1.7A",
+  "method": "current_ranking_local_research_json_v1",
+  "created_at": "2026-07-03T08:36:02+00:00",
+  "ticker": "ASML",
+  "rank": 2,
+  "company_name": "ASML Holding N.V.",
+  "exchange": "NASDAQ",
+  "country": "NL",
+  "sector": "Technology",
+  "industry": "Semiconductor Equipment",
+  "ranking_snapshot": {
+    "score": 91.06,
+    "combined_score_v1": 91.06,
+    "fundamentals_granular_score_v1_6e": 80.41,
+    "category_final": "combined_score_high",
+    "stage3_status": "COMBINED_SCORE_V1",
+    "status": "COMBINED_SCORE_V1",
+    "tie_status": "EXACT_COMPONENT_TIE",
+    "calibration_warning": "Empate exacto de componentes; orden secundario por granularidad fundamental."
+  },
+  "local_research": {
+    "research_status": "NOT_STARTED",
+    "manual_review_status": "PENDING",
+    "investment_thesis": "",
+    "key_positive_points": [],
+    "key_risks": [],
+    "questions_to_review": [],
+    "sources_checked": [],
+    "notes": ""
+  },
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "financial_advice": false
+  },
+  "disclaimer": "Local research scaffold only. Not financial advice."
+}
