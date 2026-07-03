@@ -1,0 +1,16 @@
+size,file_name,path,exists,rows,size_bytes,size_mb,status,risk
+250,active_real_universe_top_candidates.csv,outputs/scale_tests/size_250/active_real_universe_top_candidates.csv,True,250,335177,0.32,OK,LOW
+250,local_score_v0_breakdown.csv,outputs/scale_tests/size_250/local_score_v0_breakdown.csv,True,250,85434,0.081,OK,LOW
+250,local_score_v0_candidates.csv,outputs/scale_tests/size_250/local_score_v0_candidates.csv,True,250,252044,0.24,OK,LOW
+250,ranking_explainability_candidates.csv,outputs/scale_tests/size_250/ranking_explainability_candidates.csv,True,250,335177,0.32,OK,LOW
+250,ranking_explainability_factors.csv,outputs/scale_tests/size_250/ranking_explainability_factors.csv,True,250,107323,0.102,OK,LOW
+500,active_real_universe_top_candidates.csv,outputs/scale_tests/size_500/active_real_universe_top_candidates.csv,True,500,669763,0.639,OK,LOW
+500,local_score_v0_breakdown.csv,outputs/scale_tests/size_500/local_score_v0_breakdown.csv,True,500,170868,0.163,OK,LOW
+500,local_score_v0_candidates.csv,outputs/scale_tests/size_500/local_score_v0_candidates.csv,True,500,503630,0.48,OK,LOW
+500,ranking_explainability_candidates.csv,outputs/scale_tests/size_500/ranking_explainability_candidates.csv,True,500,669763,0.639,OK,LOW
+500,ranking_explainability_factors.csv,outputs/scale_tests/size_500/ranking_explainability_factors.csv,True,500,214757,0.205,OK,LOW
+1000,active_real_universe_top_candidates.csv,outputs/scale_tests/size_1000/active_real_universe_top_candidates.csv,True,1000,1338523,1.277,OK,LOW
+1000,local_score_v0_breakdown.csv,outputs/scale_tests/size_1000/local_score_v0_breakdown.csv,True,1000,341478,0.326,OK,LOW
+1000,local_score_v0_candidates.csv,outputs/scale_tests/size_1000/local_score_v0_candidates.csv,True,1000,1006390,0.96,OK,LOW
+1000,ranking_explainability_candidates.csv,outputs/scale_tests/size_1000/ranking_explainability_candidates.csv,True,1000,1338523,1.277,OK,LOW
+1000,ranking_explainability_factors.csv,outputs/scale_tests/size_1000/ranking_explainability_factors.csv,True,1000,429367,0.409,OK,LOW
