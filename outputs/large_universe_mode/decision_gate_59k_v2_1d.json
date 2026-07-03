@@ -1,0 +1,56 @@
+{
+  "phase": "v2.1D",
+  "method": "decision_gate_for_59k_v1",
+  "created_at": "2026-07-03T19:45:03+00:00",
+  "decision": "CONDITIONALLY_READY_FOR_59K_DRY_RUN",
+  "readiness_score": 85,
+  "blockers": [],
+  "warnings": [
+    "Controlled scale generation used warnings; treat as structural/performance test.",
+    "outputs/scale_readiness/scale_readiness_audit_v1_9a.json: legacy artifact missing control full_59000_universe_launched"
+  ],
+  "positives": [
+    "Local Research MVP is ready.",
+    "Scale readiness v1.9A is ready with score 100.",
+    "Controlled 20/50/100 audit is ready with score 100.",
+    "Controlled 250/500/1000 gate is ready with score 100.",
+    "Controlled 250/500/1000 outputs generated: CONTROLLED_SCALE_GENERATED_WITH_WARNINGS.",
+    "Performance/UI large mode readiness is green with score 100.",
+    "All explicit safety controls are false: no OpenAI, no broker, no scoring recalculation, no 59k launch."
+  ],
+  "inputs": {
+    "mvp_v2_0": {
+      "path": "outputs/mvp/local_research_mvp_v2_0.json",
+      "exists": true
+    },
+    "scale_readiness_v1_9a": {
+      "path": "outputs/scale_readiness/scale_readiness_audit_v1_9a.json",
+      "exists": true
+    },
+    "controlled_20_50_100_v1_9b": {
+      "path": "outputs/large_universe/controlled_large_universe_audit_v1_9b.json",
+      "exists": true
+    },
+    "controlled_250_500_1000_gate_v2_1a": {
+      "path": "outputs/large_universe_mode/controlled_scale_250_500_1000_v2_1a.json",
+      "exists": true
+    },
+    "controlled_250_500_1000_generation_v2_1b": {
+      "path": "outputs/large_universe_mode/generate_controlled_scale_outputs_v2_1b.json",
+      "exists": true
+    },
+    "performance_ui_v2_1c": {
+      "path": "outputs/large_universe_mode/performance_ui_large_mode_readiness_v2_1c.json",
+      "exists": true
+    }
+  },
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false
+  },
+  "recommendation": "A 59k dry-run may be planned only with caution and explicit safeguards."
+}
