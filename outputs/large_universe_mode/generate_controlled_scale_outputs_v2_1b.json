@@ -1,0 +1,192 @@
+{
+  "phase": "v2.1B",
+  "method": "generate_controlled_scale_outputs_from_size_100_v1",
+  "created_at": "2026-07-03T12:13:57+00:00",
+  "generation_status": "CONTROLLED_SCALE_GENERATED_WITH_WARNINGS",
+  "readiness_score": 90,
+  "source_size": 100,
+  "target_sizes": [
+    250,
+    500,
+    1000
+  ],
+  "blockers": [],
+  "warnings": [
+    "Generated files are controlled structural scale outputs from size_100, not fresh real-universe data."
+  ],
+  "generated_files": [
+    {
+      "size": 250,
+      "file_name": "active_real_universe_top_candidates.csv",
+      "source_path": "outputs/scale_tests/size_100/active_real_universe_top_candidates.csv",
+      "target_path": "outputs/scale_tests/size_250/active_real_universe_top_candidates.csv",
+      "source_rows": 100,
+      "target_rows": 250,
+      "written_rows": 250,
+      "size_bytes": 335177,
+      "status": "OK"
+    },
+    {
+      "size": 250,
+      "file_name": "local_score_v0_breakdown.csv",
+      "source_path": "outputs/scale_tests/size_100/local_score_v0_breakdown.csv",
+      "target_path": "outputs/scale_tests/size_250/local_score_v0_breakdown.csv",
+      "source_rows": 100,
+      "target_rows": 250,
+      "written_rows": 250,
+      "size_bytes": 85434,
+      "status": "OK"
+    },
+    {
+      "size": 250,
+      "file_name": "local_score_v0_candidates.csv",
+      "source_path": "outputs/scale_tests/size_100/local_score_v0_candidates.csv",
+      "target_path": "outputs/scale_tests/size_250/local_score_v0_candidates.csv",
+      "source_rows": 100,
+      "target_rows": 250,
+      "written_rows": 250,
+      "size_bytes": 252044,
+      "status": "OK"
+    },
+    {
+      "size": 250,
+      "file_name": "ranking_explainability_candidates.csv",
+      "source_path": "outputs/scale_tests/size_100/ranking_explainability_candidates.csv",
+      "target_path": "outputs/scale_tests/size_250/ranking_explainability_candidates.csv",
+      "source_rows": 100,
+      "target_rows": 250,
+      "written_rows": 250,
+      "size_bytes": 335177,
+      "status": "OK"
+    },
+    {
+      "size": 250,
+      "file_name": "ranking_explainability_factors.csv",
+      "source_path": "outputs/scale_tests/size_100/ranking_explainability_factors.csv",
+      "target_path": "outputs/scale_tests/size_250/ranking_explainability_factors.csv",
+      "source_rows": 100,
+      "target_rows": 250,
+      "written_rows": 250,
+      "size_bytes": 107323,
+      "status": "OK"
+    },
+    {
+      "size": 500,
+      "file_name": "active_real_universe_top_candidates.csv",
+      "source_path": "outputs/scale_tests/size_100/active_real_universe_top_candidates.csv",
+      "target_path": "outputs/scale_tests/size_500/active_real_universe_top_candidates.csv",
+      "source_rows": 100,
+      "target_rows": 500,
+      "written_rows": 500,
+      "size_bytes": 669763,
+      "status": "OK"
+    },
+    {
+      "size": 500,
+      "file_name": "local_score_v0_breakdown.csv",
+      "source_path": "outputs/scale_tests/size_100/local_score_v0_breakdown.csv",
+      "target_path": "outputs/scale_tests/size_500/local_score_v0_breakdown.csv",
+      "source_rows": 100,
+      "target_rows": 500,
+      "written_rows": 500,
+      "size_bytes": 170868,
+      "status": "OK"
+    },
+    {
+      "size": 500,
+      "file_name": "local_score_v0_candidates.csv",
+      "source_path": "outputs/scale_tests/size_100/local_score_v0_candidates.csv",
+      "target_path": "outputs/scale_tests/size_500/local_score_v0_candidates.csv",
+      "source_rows": 100,
+      "target_rows": 500,
+      "written_rows": 500,
+      "size_bytes": 503630,
+      "status": "OK"
+    },
+    {
+      "size": 500,
+      "file_name": "ranking_explainability_candidates.csv",
+      "source_path": "outputs/scale_tests/size_100/ranking_explainability_candidates.csv",
+      "target_path": "outputs/scale_tests/size_500/ranking_explainability_candidates.csv",
+      "source_rows": 100,
+      "target_rows": 500,
+      "written_rows": 500,
+      "size_bytes": 669763,
+      "status": "OK"
+    },
+    {
+      "size": 500,
+      "file_name": "ranking_explainability_factors.csv",
+      "source_path": "outputs/scale_tests/size_100/ranking_explainability_factors.csv",
+      "target_path": "outputs/scale_tests/size_500/ranking_explainability_factors.csv",
+      "source_rows": 100,
+      "target_rows": 500,
+      "written_rows": 500,
+      "size_bytes": 214757,
+      "status": "OK"
+    },
+    {
+      "size": 1000,
+      "file_name": "active_real_universe_top_candidates.csv",
+      "source_path": "outputs/scale_tests/size_100/active_real_universe_top_candidates.csv",
+      "target_path": "outputs/scale_tests/size_1000/active_real_universe_top_candidates.csv",
+      "source_rows": 100,
+      "target_rows": 1000,
+      "written_rows": 1000,
+      "size_bytes": 1338523,
+      "status": "OK"
+    },
+    {
+      "size": 1000,
+      "file_name": "local_score_v0_breakdown.csv",
+      "source_path": "outputs/scale_tests/size_100/local_score_v0_breakdown.csv",
+      "target_path": "outputs/scale_tests/size_1000/local_score_v0_breakdown.csv",
+      "source_rows": 100,
+      "target_rows": 1000,
+      "written_rows": 1000,
+      "size_bytes": 341478,
+      "status": "OK"
+    },
+    {
+      "size": 1000,
+      "file_name": "local_score_v0_candidates.csv",
+      "source_path": "outputs/scale_tests/size_100/local_score_v0_candidates.csv",
+      "target_path": "outputs/scale_tests/size_1000/local_score_v0_candidates.csv",
+      "source_rows": 100,
+      "target_rows": 1000,
+      "written_rows": 1000,
+      "size_bytes": 1006390,
+      "status": "OK"
+    },
+    {
+      "size": 1000,
+      "file_name": "ranking_explainability_candidates.csv",
+      "source_path": "outputs/scale_tests/size_100/ranking_explainability_candidates.csv",
+      "target_path": "outputs/scale_tests/size_1000/ranking_explainability_candidates.csv",
+      "source_rows": 100,
+      "target_rows": 1000,
+      "written_rows": 1000,
+      "size_bytes": 1338523,
+      "status": "OK"
+    },
+    {
+      "size": 1000,
+      "file_name": "ranking_explainability_factors.csv",
+      "source_path": "outputs/scale_tests/size_100/ranking_explainability_factors.csv",
+      "target_path": "outputs/scale_tests/size_1000/ranking_explainability_factors.csv",
+      "source_rows": 100,
+      "target_rows": 1000,
+      "written_rows": 1000,
+      "size_bytes": 429367,
+      "status": "OK"
+    }
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false
+  }
+}

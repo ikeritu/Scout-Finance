@@ -1,0 +1,16 @@
+size,file_name,status,source_path,target_path,source_rows,target_rows,written_rows,size_bytes
+250,active_real_universe_top_candidates.csv,OK,outputs/scale_tests/size_100/active_real_universe_top_candidates.csv,outputs/scale_tests/size_250/active_real_universe_top_candidates.csv,100,250,250,335177
+250,local_score_v0_breakdown.csv,OK,outputs/scale_tests/size_100/local_score_v0_breakdown.csv,outputs/scale_tests/size_250/local_score_v0_breakdown.csv,100,250,250,85434
+250,local_score_v0_candidates.csv,OK,outputs/scale_tests/size_100/local_score_v0_candidates.csv,outputs/scale_tests/size_250/local_score_v0_candidates.csv,100,250,250,252044
+250,ranking_explainability_candidates.csv,OK,outputs/scale_tests/size_100/ranking_explainability_candidates.csv,outputs/scale_tests/size_250/ranking_explainability_candidates.csv,100,250,250,335177
+250,ranking_explainability_factors.csv,OK,outputs/scale_tests/size_100/ranking_explainability_factors.csv,outputs/scale_tests/size_250/ranking_explainability_factors.csv,100,250,250,107323
+500,active_real_universe_top_candidates.csv,OK,outputs/scale_tests/size_100/active_real_universe_top_candidates.csv,outputs/scale_tests/size_500/active_real_universe_top_candidates.csv,100,500,500,669763
+500,local_score_v0_breakdown.csv,OK,outputs/scale_tests/size_100/local_score_v0_breakdown.csv,outputs/scale_tests/size_500/local_score_v0_breakdown.csv,100,500,500,170868
+500,local_score_v0_candidates.csv,OK,outputs/scale_tests/size_100/local_score_v0_candidates.csv,outputs/scale_tests/size_500/local_score_v0_candidates.csv,100,500,500,503630
+500,ranking_explainability_candidates.csv,OK,outputs/scale_tests/size_100/ranking_explainability_candidates.csv,outputs/scale_tests/size_500/ranking_explainability_candidates.csv,100,500,500,669763
+500,ranking_explainability_factors.csv,OK,outputs/scale_tests/size_100/ranking_explainability_factors.csv,outputs/scale_tests/size_500/ranking_explainability_factors.csv,100,500,500,214757
+1000,active_real_universe_top_candidates.csv,OK,outputs/scale_tests/size_100/active_real_universe_top_candidates.csv,outputs/scale_tests/size_1000/active_real_universe_top_candidates.csv,100,1000,1000,1338523
+1000,local_score_v0_breakdown.csv,OK,outputs/scale_tests/size_100/local_score_v0_breakdown.csv,outputs/scale_tests/size_1000/local_score_v0_breakdown.csv,100,1000,1000,341478
+1000,local_score_v0_candidates.csv,OK,outputs/scale_tests/size_100/local_score_v0_candidates.csv,outputs/scale_tests/size_1000/local_score_v0_candidates.csv,100,1000,1000,1006390
+1000,ranking_explainability_candidates.csv,OK,outputs/scale_tests/size_100/ranking_explainability_candidates.csv,outputs/scale_tests/size_1000/ranking_explainability_candidates.csv,100,1000,1000,1338523
+1000,ranking_explainability_factors.csv,OK,outputs/scale_tests/size_100/ranking_explainability_factors.csv,outputs/scale_tests/size_1000/ranking_explainability_factors.csv,100,1000,1000,429367

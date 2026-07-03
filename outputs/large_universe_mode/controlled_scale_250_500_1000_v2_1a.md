@@ -2,9 +2,9 @@
 
 - Phase: v2.1A
 - Method: controlled_scale_250_500_1000_readiness_v1
-- Created at: 2026-07-03T11:55:09+00:00
-- Audit status: **CONTROLLED_SCALE_OUTPUTS_MISSING**
-- Readiness score: **0/100**
+- Created at: 2026-07-03T12:14:16+00:00
+- Audit status: **READY_FOR_250_500_1000_REVIEW**
+- Readiness score: **100/100**
 - Controlled sizes: 250, 500, 1000
 
 ## Controls
@@ -18,24 +18,7 @@
 
 ## Blockers
 
-- Missing scale test directory: outputs/scale_tests/size_250
-- size_250/active_real_universe_top_candidates.csv: MISSING
-- size_250/local_score_v0_breakdown.csv: MISSING
-- size_250/local_score_v0_candidates.csv: MISSING
-- size_250/ranking_explainability_candidates.csv: MISSING
-- size_250/ranking_explainability_factors.csv: MISSING
-- Missing scale test directory: outputs/scale_tests/size_500
-- size_500/active_real_universe_top_candidates.csv: MISSING
-- size_500/local_score_v0_breakdown.csv: MISSING
-- size_500/local_score_v0_candidates.csv: MISSING
-- size_500/ranking_explainability_candidates.csv: MISSING
-- size_500/ranking_explainability_factors.csv: MISSING
-- Missing scale test directory: outputs/scale_tests/size_1000
-- size_1000/active_real_universe_top_candidates.csv: MISSING
-- size_1000/local_score_v0_breakdown.csv: MISSING
-- size_1000/local_score_v0_candidates.csv: MISSING
-- size_1000/ranking_explainability_candidates.csv: MISSING
-- size_1000/ranking_explainability_factors.csv: MISSING
+- No blockers detected.
 
 ## Warnings
 
@@ -45,37 +28,37 @@
 
 ### size_250
 
-- Status: BLOCKED
-- Observed active rows: None
+- Status: OK
+- Observed active rows: 250
 
-- `active_real_universe_top_candidates.csv` ? MISSING ? rows: None ? size: None
-- `local_score_v0_breakdown.csv` ? MISSING ? rows: None ? size: None
-- `local_score_v0_candidates.csv` ? MISSING ? rows: None ? size: None
-- `ranking_explainability_candidates.csv` ? MISSING ? rows: None ? size: None
-- `ranking_explainability_factors.csv` ? MISSING ? rows: None ? size: None
+- `active_real_universe_top_candidates.csv` ? OK ? rows: 250 ? size: 335177
+- `local_score_v0_breakdown.csv` ? OK ? rows: 250 ? size: 85434
+- `local_score_v0_candidates.csv` ? OK ? rows: 250 ? size: 252044
+- `ranking_explainability_candidates.csv` ? OK ? rows: 250 ? size: 335177
+- `ranking_explainability_factors.csv` ? OK ? rows: 250 ? size: 107323
 
 ### size_500
 
-- Status: BLOCKED
-- Observed active rows: None
+- Status: OK
+- Observed active rows: 500
 
-- `active_real_universe_top_candidates.csv` ? MISSING ? rows: None ? size: None
-- `local_score_v0_breakdown.csv` ? MISSING ? rows: None ? size: None
-- `local_score_v0_candidates.csv` ? MISSING ? rows: None ? size: None
-- `ranking_explainability_candidates.csv` ? MISSING ? rows: None ? size: None
-- `ranking_explainability_factors.csv` ? MISSING ? rows: None ? size: None
+- `active_real_universe_top_candidates.csv` ? OK ? rows: 500 ? size: 669763
+- `local_score_v0_breakdown.csv` ? OK ? rows: 500 ? size: 170868
+- `local_score_v0_candidates.csv` ? OK ? rows: 500 ? size: 503630
+- `ranking_explainability_candidates.csv` ? OK ? rows: 500 ? size: 669763
+- `ranking_explainability_factors.csv` ? OK ? rows: 500 ? size: 214757
 
 ### size_1000
 
-- Status: BLOCKED
-- Observed active rows: None
+- Status: OK
+- Observed active rows: 1000
 
-- `active_real_universe_top_candidates.csv` ? MISSING ? rows: None ? size: None
-- `local_score_v0_breakdown.csv` ? MISSING ? rows: None ? size: None
-- `local_score_v0_candidates.csv` ? MISSING ? rows: None ? size: None
-- `ranking_explainability_candidates.csv` ? MISSING ? rows: None ? size: None
-- `ranking_explainability_factors.csv` ? MISSING ? rows: None ? size: None
+- `active_real_universe_top_candidates.csv` ? OK ? rows: 1000 ? size: 1338523
+- `local_score_v0_breakdown.csv` ? OK ? rows: 1000 ? size: 341478
+- `local_score_v0_candidates.csv` ? OK ? rows: 1000 ? size: 1006390
+- `ranking_explainability_candidates.csv` ? OK ? rows: 1000 ? size: 1338523
+- `ranking_explainability_factors.csv` ? OK ? rows: 1000 ? size: 429367
 
 ## Recommendation
 
-Generate controlled scale outputs for 250 / 500 / 1000 before continuing toward 59k mode.
+Proceed to performance and UI readiness checks before considering any larger run.
