@@ -1,0 +1,262 @@
+{
+  "phase": "v2.1A",
+  "method": "controlled_scale_250_500_1000_readiness_v1",
+  "created_at": "2026-07-03T11:55:09+00:00",
+  "audit_status": "CONTROLLED_SCALE_OUTPUTS_MISSING",
+  "readiness_score": 0,
+  "controlled_sizes": [
+    250,
+    500,
+    1000
+  ],
+  "blockers": [
+    "Missing scale test directory: outputs/scale_tests/size_250",
+    "size_250/active_real_universe_top_candidates.csv: MISSING",
+    "size_250/local_score_v0_breakdown.csv: MISSING",
+    "size_250/local_score_v0_candidates.csv: MISSING",
+    "size_250/ranking_explainability_candidates.csv: MISSING",
+    "size_250/ranking_explainability_factors.csv: MISSING",
+    "Missing scale test directory: outputs/scale_tests/size_500",
+    "size_500/active_real_universe_top_candidates.csv: MISSING",
+    "size_500/local_score_v0_breakdown.csv: MISSING",
+    "size_500/local_score_v0_candidates.csv: MISSING",
+    "size_500/ranking_explainability_candidates.csv: MISSING",
+    "size_500/ranking_explainability_factors.csv: MISSING",
+    "Missing scale test directory: outputs/scale_tests/size_1000",
+    "size_1000/active_real_universe_top_candidates.csv: MISSING",
+    "size_1000/local_score_v0_breakdown.csv: MISSING",
+    "size_1000/local_score_v0_candidates.csv: MISSING",
+    "size_1000/ranking_explainability_candidates.csv: MISSING",
+    "size_1000/ranking_explainability_factors.csv: MISSING"
+  ],
+  "warnings": [],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false
+  },
+  "size_reports": [
+    {
+      "size": 250,
+      "path": "outputs/scale_tests/size_250",
+      "exists": false,
+      "status": "BLOCKED",
+      "observed_active_rows": null,
+      "files": [
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 250,
+          "file_name": "active_real_universe_top_candidates.csv",
+          "path": "outputs/scale_tests/size_250/active_real_universe_top_candidates.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 250,
+          "file_name": "local_score_v0_breakdown.csv",
+          "path": "outputs/scale_tests/size_250/local_score_v0_breakdown.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 250,
+          "file_name": "local_score_v0_candidates.csv",
+          "path": "outputs/scale_tests/size_250/local_score_v0_candidates.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 250,
+          "file_name": "ranking_explainability_candidates.csv",
+          "path": "outputs/scale_tests/size_250/ranking_explainability_candidates.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 250,
+          "file_name": "ranking_explainability_factors.csv",
+          "path": "outputs/scale_tests/size_250/ranking_explainability_factors.csv"
+        }
+      ],
+      "blockers": [
+        "Missing scale test directory: outputs/scale_tests/size_250",
+        "size_250/active_real_universe_top_candidates.csv: MISSING",
+        "size_250/local_score_v0_breakdown.csv: MISSING",
+        "size_250/local_score_v0_candidates.csv: MISSING",
+        "size_250/ranking_explainability_candidates.csv: MISSING",
+        "size_250/ranking_explainability_factors.csv: MISSING"
+      ],
+      "warnings": []
+    },
+    {
+      "size": 500,
+      "path": "outputs/scale_tests/size_500",
+      "exists": false,
+      "status": "BLOCKED",
+      "observed_active_rows": null,
+      "files": [
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 500,
+          "file_name": "active_real_universe_top_candidates.csv",
+          "path": "outputs/scale_tests/size_500/active_real_universe_top_candidates.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 500,
+          "file_name": "local_score_v0_breakdown.csv",
+          "path": "outputs/scale_tests/size_500/local_score_v0_breakdown.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 500,
+          "file_name": "local_score_v0_candidates.csv",
+          "path": "outputs/scale_tests/size_500/local_score_v0_candidates.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 500,
+          "file_name": "ranking_explainability_candidates.csv",
+          "path": "outputs/scale_tests/size_500/ranking_explainability_candidates.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 500,
+          "file_name": "ranking_explainability_factors.csv",
+          "path": "outputs/scale_tests/size_500/ranking_explainability_factors.csv"
+        }
+      ],
+      "blockers": [
+        "Missing scale test directory: outputs/scale_tests/size_500",
+        "size_500/active_real_universe_top_candidates.csv: MISSING",
+        "size_500/local_score_v0_breakdown.csv: MISSING",
+        "size_500/local_score_v0_candidates.csv: MISSING",
+        "size_500/ranking_explainability_candidates.csv: MISSING",
+        "size_500/ranking_explainability_factors.csv: MISSING"
+      ],
+      "warnings": []
+    },
+    {
+      "size": 1000,
+      "path": "outputs/scale_tests/size_1000",
+      "exists": false,
+      "status": "BLOCKED",
+      "observed_active_rows": null,
+      "files": [
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 1000,
+          "file_name": "active_real_universe_top_candidates.csv",
+          "path": "outputs/scale_tests/size_1000/active_real_universe_top_candidates.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 1000,
+          "file_name": "local_score_v0_breakdown.csv",
+          "path": "outputs/scale_tests/size_1000/local_score_v0_breakdown.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 1000,
+          "file_name": "local_score_v0_candidates.csv",
+          "path": "outputs/scale_tests/size_1000/local_score_v0_candidates.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 1000,
+          "file_name": "ranking_explainability_candidates.csv",
+          "path": "outputs/scale_tests/size_1000/ranking_explainability_candidates.csv"
+        },
+        {
+          "exists": false,
+          "size_bytes": null,
+          "rows": null,
+          "columns": [],
+          "missing_required_columns": [],
+          "status": "MISSING",
+          "size": 1000,
+          "file_name": "ranking_explainability_factors.csv",
+          "path": "outputs/scale_tests/size_1000/ranking_explainability_factors.csv"
+        }
+      ],
+      "blockers": [
+        "Missing scale test directory: outputs/scale_tests/size_1000",
+        "size_1000/active_real_universe_top_candidates.csv: MISSING",
+        "size_1000/local_score_v0_breakdown.csv: MISSING",
+        "size_1000/local_score_v0_candidates.csv: MISSING",
+        "size_1000/ranking_explainability_candidates.csv: MISSING",
+        "size_1000/ranking_explainability_factors.csv: MISSING"
+      ],
+      "warnings": []
+    }
+  ]
+}
