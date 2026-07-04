@@ -1,0 +1,103 @@
+{
+  "phase": "v2.2A",
+  "method": "dry_run_59k_plan_v1",
+  "created_at": "2026-07-04T23:48:17+00:00",
+  "plan_status": "DRY_RUN_59K_PLAN_READY",
+  "readiness_score": 90,
+  "source_requirements": [
+    "A real source file or dataset containing approximately 59k companies must be identified.",
+    "The source must include at least a ticker column.",
+    "Optional but recommended columns: company_name, exchange, sector, industry, country, market_cap.",
+    "The source must be read-only during dry-run generation.",
+    "The source must be validated before any batch execution."
+  ],
+  "safety_rules": [
+    "Do not call OpenAI during v2.2 dry-run planning or first execution.",
+    "Do not call any broker or trading API.",
+    "Do not overwrite active MVP outputs.",
+    "Write all 59k dry-run outputs to a separate folder.",
+    "Keep scoring deterministic.",
+    "Do not recalculate production scoring unless explicitly approved.",
+    "Require a clean git checkpoint before any execution.",
+    "Record runtime, row counts, file sizes, and errors.",
+    "Stop immediately if memory/runtime/file-size limits are exceeded."
+  ],
+  "execution_limits": {
+    "first_batch_limit_rows": 1000,
+    "second_batch_limit_rows": 5000,
+    "full_dry_run_rows": 59000,
+    "max_single_output_file_mb_warning": 100,
+    "max_total_output_mb_warning": 1000,
+    "max_runtime_minutes_warning": 60
+  },
+  "dry_run_folder": "outputs/large_universe_dry_run_59k",
+  "planned_phases": [
+    {
+      "phase": "v2.2B",
+      "name": "59k Dry Run Script Skeleton",
+      "purpose": "Create a safeguarded dry-run script with no execution by default.",
+      "executes_59k": false
+    },
+    {
+      "phase": "v2.2C",
+      "name": "59k Source Validation",
+      "purpose": "Validate source rows, required columns and duplicate tickers.",
+      "executes_59k": false
+    },
+    {
+      "phase": "v2.2D",
+      "name": "Small Batch Dry Run",
+      "purpose": "Run a controlled batch, initially 1k rows.",
+      "executes_59k": false
+    },
+    {
+      "phase": "v2.2E",
+      "name": "Full Dry Run Gate",
+      "purpose": "Decide whether full 59k dry-run is allowed.",
+      "executes_59k": false
+    },
+    {
+      "phase": "v2.2F",
+      "name": "Full 59k Dry Run",
+      "purpose": "Execute full dry-run only after explicit approval.",
+      "executes_59k": true,
+      "requires_explicit_approval": true
+    }
+  ],
+  "rollback_plan": [
+    "Keep current tag v2.1_large_universe_mode_closed as rollback anchor.",
+    "Create a new checkpoint tag before any full 59k dry-run.",
+    "Never overwrite outputs/scouting or outputs/mvp during dry-run.",
+    "If the dry-run fails, delete only outputs/large_universe_dry_run_59k.",
+    "Return to the last clean commit if code changes are introduced."
+  ],
+  "blockers": [],
+  "warnings": [
+    "59k dry-run must remain conditional until source validation and safeguards are implemented."
+  ],
+  "positives": [
+    "v2.1 closure exists and allows conditional planning.",
+    "v2.1D allows planning a conditional 59k dry-run."
+  ],
+  "inputs": {
+    "closure_v2_1e": {
+      "path": "outputs/large_universe_mode/large_universe_mode_closure_v2_1e.json",
+      "exists": true,
+      "closure_status": "LARGE_UNIVERSE_MODE_CLOSED_WITH_CONDITIONS"
+    },
+    "decision_gate_v2_1d": {
+      "path": "outputs/large_universe_mode/decision_gate_59k_v2_1d.json",
+      "exists": true,
+      "decision": "CONDITIONALLY_READY_FOR_59K_DRY_RUN"
+    }
+  },
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false
+  },
+  "recommendation": "Proceed to v2.2B script skeleton. Do not execute the 59k universe yet."
+}
