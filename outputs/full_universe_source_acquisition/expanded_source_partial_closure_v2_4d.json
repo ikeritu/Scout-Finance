@@ -1,0 +1,85 @@
+{
+  "phase": "v2.4D",
+  "method": "expanded_source_partial_closure_report_v1",
+  "created_at": "2026-07-05T21:46:20+00:00",
+  "closure_status": "EXPANDED_SOURCE_PARTIAL_CLOSED_WITH_CONDITIONS",
+  "readiness_score": 90,
+  "inputs": {
+    "acquisition_v2_4a": {
+      "path": "outputs/full_universe_source_acquisition/provider_source_acquisition_v2_4a.json",
+      "exists": true,
+      "status": "PROVIDER_SOURCE_ACQUISITION_COMPLETED_WITH_WARNINGS"
+    },
+    "builder_v2_4b": {
+      "path": "outputs/full_universe_source_acquisition/expanded_source_builder_real_v2_4b.json",
+      "exists": true,
+      "status": "EXPANDED_SOURCE_BUILD_PARTIAL_BELOW_TARGET_WITH_WARNINGS"
+    },
+    "validation_v2_4c": {
+      "path": "outputs/full_universe_source_acquisition/expanded_source_validation_real_v2_4c.json",
+      "exists": true,
+      "status": "EXPANDED_SOURCE_REAL_VALIDATION_PARTIAL_BELOW_TARGET_WITH_WARNINGS",
+      "full_source_gate": "FULL_SOURCE_BLOCKED_BELOW_FIRST_EXPANSION_TARGET"
+    }
+  },
+  "summary": {
+    "raw_rows": 12957,
+    "included_rows": 5648,
+    "excluded_rows": 7309,
+    "issues": 0,
+    "duplicate_exchange_ticker_keys": 0,
+    "missing_required_columns": [],
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000
+  },
+  "next_options": [
+    {
+      "id": "A",
+      "name": "Add more official providers",
+      "status": "RECOMMENDED_IF_59K_REMAINS_GOAL",
+      "description": "Continue expanding with additional official exchange lists until reaching at least 15000 first, then 50000+."
+    },
+    {
+      "id": "B",
+      "name": "Use partial expanded source for product iteration",
+      "status": "RECOMMENDED_IF_PRODUCT_FEATURES_ARE_PRIORITY",
+      "description": "Keep 5648 structurally valid rows and return to MVP/product improvements."
+    },
+    {
+      "id": "C",
+      "name": "Repeat v2.2C/v2.2E on partial expanded source",
+      "status": "OPTIONAL",
+      "description": "Run existing source validation and full gate against the expanded partial source; full 59k will remain blocked."
+    }
+  ],
+  "blockers": [],
+  "warnings": [
+    "Expanded source remains below first expansion target: 5648 < 15000",
+    "Expanded source remains below full-source threshold: 5648 < 50000"
+  ],
+  "positives": [
+    "v2.4A acquisition artifact found: outputs/full_universe_source_acquisition/provider_source_acquisition_v2_4a.json",
+    "v2.4B builder artifact found: outputs/full_universe_source_acquisition/expanded_source_builder_real_v2_4b.json",
+    "v2.4C validation artifact found: outputs/full_universe_source_acquisition/expanded_source_validation_real_v2_4c.json",
+    "v2.4A acquisition usable: PROVIDER_SOURCE_ACQUISITION_COMPLETED_WITH_WARNINGS",
+    "v2.4B builder usable: EXPANDED_SOURCE_BUILD_PARTIAL_BELOW_TARGET_WITH_WARNINGS",
+    "v2.4C validation usable: EXPANDED_SOURCE_REAL_VALIDATION_PARTIAL_BELOW_TARGET_WITH_WARNINGS",
+    "Expanded source has valid included rows: 5648",
+    "No structural row issues detected in v2.4C.",
+    "No duplicate exchange+ticker keys detected.",
+    "No missing required canonical columns.",
+    "Full 59k gate remains correctly blocked by source size."
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false
+  },
+  "recommendation": "Close v2.4 as a valid partial expanded source. Full 59k remains blocked until more provider data is added."
+}
