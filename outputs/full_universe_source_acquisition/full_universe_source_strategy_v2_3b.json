@@ -1,0 +1,169 @@
+{
+  "phase": "v2.3B",
+  "method": "full_universe_source_strategy_v1",
+  "created_at": "2026-07-05T09:34:19+00:00",
+  "decision": "EXTERNAL_OR_EXPANDED_SOURCE_REQUIRED",
+  "readiness_score": 60,
+  "expected_full_rows": 59000,
+  "minimum_full_source_rows": 50000,
+  "v2_3a_audit": {
+    "path": "outputs/full_universe_source_acquisition/full_universe_source_acquisition_audit_v2_3a.json",
+    "exists": true,
+    "audit_status": "NO_FULL_SOURCE_FOUND_PARTIAL_AVAILABLE",
+    "csv_files_scanned": 194,
+    "full_candidates_count": 0,
+    "partial_candidates_count": 13
+  },
+  "best_local_candidate": {
+    "path": "data/raw/universe_source_real.csv",
+    "exists": true,
+    "size_bytes": 563078,
+    "readable": true,
+    "rows": 7053,
+    "columns": 10,
+    "column_names": [
+      "Symbol",
+      "Name",
+      "Exchange",
+      "Country",
+      "Sector",
+      "Industry",
+      "Market Cap",
+      "Last Sale",
+      "Volume",
+      "Source"
+    ],
+    "ticker_column": "Symbol",
+    "empty_tickers": 0,
+    "duplicate_tickers": 0,
+    "unique_tickers": 7053,
+    "recommended_columns_found": {
+      "company_name": "Name",
+      "exchange": "Exchange",
+      "sector": "Sector",
+      "industry": "Industry",
+      "country": "Country",
+      "market_cap": "Market Cap"
+    },
+    "candidate_scope": "PARTIAL_REAL_SOURCE_FOR_SMALL_BATCH",
+    "candidate_status": "PARTIAL_SOURCE_ONLY",
+    "blockers": [],
+    "warnings": [
+      "Rows below full-source threshold: 7053 < 50000"
+    ],
+    "positives": [
+      "CSV is readable.",
+      "Ticker column resolved: Symbol"
+    ]
+  },
+  "strategies": [
+    {
+      "id": "A",
+      "name": "Expand current public exchange universe",
+      "summary": "Build a larger source by combining official symbol lists from NASDAQ/NYSE/AMEX and additional exchanges.",
+      "pros": [
+        "Auditable and reproducible.",
+        "Can reuse current Symbol -> ticker mapping.",
+        "Keeps the project close to real public market data.",
+        "Best fit for incremental validation."
+      ],
+      "cons": [
+        "May still not reach 59k without global exchanges.",
+        "Requires careful deduplication by ticker/exchange/country.",
+        "Needs clear source provenance per exchange."
+      ],
+      "risk": "MEDIUM",
+      "recommended": true,
+      "next_step": "Create v2.3C source expansion plan and define provider/exchange list."
+    },
+    {
+      "id": "B",
+      "name": "Global multi-exchange universe",
+      "summary": "Create a broader global universe across US, Europe, Asia and other listed markets.",
+      "pros": [
+        "Most likely path to 50k-59k instruments.",
+        "Better long-term fit for global scouting."
+      ],
+      "cons": [
+        "Higher normalization complexity.",
+        "Ticker collisions across exchanges are likely.",
+        "Country, currency and exchange metadata become mandatory."
+      ],
+      "risk": "HIGH",
+      "recommended": false,
+      "next_step": "Use only after Strategy A is stable."
+    },
+    {
+      "id": "C",
+      "name": "Close 59k as future and keep 5k-7k mode",
+      "summary": "Accept the current partial universe as the operating universe for now.",
+      "pros": [
+        "Lowest technical risk.",
+        "Current pipeline already validates partial source and small batch.",
+        "Allows moving back to product features."
+      ],
+      "cons": [
+        "Does not satisfy the original 59k ambition.",
+        "Full 59k dry-run remains blocked."
+      ],
+      "risk": "LOW",
+      "recommended": false,
+      "next_step": "Tag current state and continue with MVP/product improvements."
+    },
+    {
+      "id": "D",
+      "name": "External complete dataset",
+      "summary": "Find or purchase/download a complete listed-companies dataset and validate it.",
+      "pros": [
+        "Fastest route if a trustworthy dataset is available.",
+        "Could immediately unlock v2.2C/v2.2E repeat."
+      ],
+      "cons": [
+        "Licensing and freshness risk.",
+        "Potential hidden quality issues.",
+        "May introduce non-reproducible dependency."
+      ],
+      "risk": "MEDIUM_HIGH",
+      "recommended": false,
+      "next_step": "Only use if license, freshness and schema are clear."
+    }
+  ],
+  "recommended_strategy": {
+    "id": "A",
+    "name": "Expand current public exchange universe",
+    "summary": "Build a larger source by combining official symbol lists from NASDAQ/NYSE/AMEX and additional exchanges.",
+    "pros": [
+      "Auditable and reproducible.",
+      "Can reuse current Symbol -> ticker mapping.",
+      "Keeps the project close to real public market data.",
+      "Best fit for incremental validation."
+    ],
+    "cons": [
+      "May still not reach 59k without global exchanges.",
+      "Requires careful deduplication by ticker/exchange/country.",
+      "Needs clear source provenance per exchange."
+    ],
+    "risk": "MEDIUM",
+    "recommended": true,
+    "next_step": "Create v2.3C source expansion plan and define provider/exchange list."
+  },
+  "blockers": [],
+  "warnings": [
+    "No local full universe source exists.",
+    "Current local universe is partial and cannot unlock full 59k."
+  ],
+  "positives": [
+    "v2.3A audit found and readable: outputs/full_universe_source_acquisition/full_universe_source_acquisition_audit_v2_3a.json",
+    "CSV files scanned in v2.3A: 194",
+    "Best local candidate: data/raw/universe_source_real.csv with 7053 rows."
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false
+  },
+  "recommendation": "Do not run full 59k. Choose a source expansion strategy first. Recommended route: build an expanded public-market universe by combining official exchange symbol lists, then normalize and validate it before repeating v2.2C and v2.2E."
+}
