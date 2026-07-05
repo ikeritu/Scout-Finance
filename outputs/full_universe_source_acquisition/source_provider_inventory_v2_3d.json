@@ -1,0 +1,271 @@
+{
+  "phase": "v2.3D",
+  "method": "source_provider_inventory_v1",
+  "created_at": "2026-07-05T10:32:55+00:00",
+  "inventory_status": "SOURCE_PROVIDER_INVENTORY_READY",
+  "readiness_score": 100,
+  "strategy": {
+    "expected_full_rows": 59000,
+    "minimum_full_source_rows": 50000,
+    "target_first_expansion_rows": 15000
+  },
+  "plan_input": {
+    "path": "outputs/full_universe_source_acquisition/source_expansion_plan_v2_3c.json",
+    "exists": true,
+    "plan_status": "SOURCE_EXPANSION_PLAN_READY"
+  },
+  "provider_count": 8,
+  "primary_route_provider_count": 2,
+  "first_expansion_provider_count": 3,
+  "providers": [
+    {
+      "provider_id": "nasdaq_trader_nasdaqlisted",
+      "provider_name": "NASDAQ Trader ? nasdaqlisted",
+      "exchange": "NASDAQ",
+      "country": "USA",
+      "region": "North America",
+      "priority": 1,
+      "route": "PRIMARY_ROUTE",
+      "source_type": "official_exchange_symbol_list",
+      "acquisition_method": "manual_or_scripted_download_later",
+      "network_download_now": false,
+      "expected_columns": [
+        "Symbol",
+        "Security Name",
+        "Market Category",
+        "ETF",
+        "Test Issue",
+        "Financial Status",
+        "Round Lot Size"
+      ],
+      "canonical_mapping": {
+        "Symbol": "ticker",
+        "Security Name": "company_name",
+        "NASDAQ": "exchange",
+        "USA": "country"
+      },
+      "expected_contribution": "core_us_listings",
+      "first_expansion_candidate": true,
+      "risk": "LOW_MEDIUM",
+      "notes": "Already aligned with current project source style; good first provider for reproducible expansion."
+    },
+    {
+      "provider_id": "nasdaq_trader_otherlisted",
+      "provider_name": "NASDAQ Trader ? otherlisted",
+      "exchange": "NYSE_AMEX_ARCA_CBOE_OTHER_US",
+      "country": "USA",
+      "region": "North America",
+      "priority": 1,
+      "route": "PRIMARY_ROUTE",
+      "source_type": "official_exchange_symbol_list",
+      "acquisition_method": "manual_or_scripted_download_later",
+      "network_download_now": false,
+      "expected_columns": [
+        "ACT Symbol",
+        "Security Name",
+        "Exchange",
+        "CQS Symbol",
+        "ETF",
+        "Round Lot Size",
+        "Test Issue",
+        "NASDAQ Symbol"
+      ],
+      "canonical_mapping": {
+        "ACT Symbol": "ticker",
+        "Security Name": "company_name",
+        "Exchange": "exchange",
+        "USA": "country"
+      },
+      "expected_contribution": "expanded_us_listings",
+      "first_expansion_candidate": true,
+      "risk": "LOW_MEDIUM",
+      "notes": "Likely best second source to expand beyond NASDAQ while keeping official US exchange provenance."
+    },
+    {
+      "provider_id": "nyse_listed_directory",
+      "provider_name": "NYSE Listed Company Directory",
+      "exchange": "NYSE",
+      "country": "USA",
+      "region": "North America",
+      "priority": 2,
+      "route": "SECONDARY_ROUTE",
+      "source_type": "official_exchange_directory",
+      "acquisition_method": "manual_download_or_export_later",
+      "network_download_now": false,
+      "expected_columns": [
+        "ticker",
+        "company_name",
+        "exchange"
+      ],
+      "canonical_mapping": {
+        "ticker": "ticker",
+        "company_name": "company_name",
+        "NYSE": "exchange",
+        "USA": "country"
+      },
+      "expected_contribution": "nyse_crosscheck",
+      "first_expansion_candidate": true,
+      "risk": "MEDIUM",
+      "notes": "Useful for cross-checking and improving metadata; schema may require manual inspection."
+    },
+    {
+      "provider_id": "euronext_instruments",
+      "provider_name": "Euronext Listed Instruments",
+      "exchange": "Euronext",
+      "country": "Multi-country Europe",
+      "region": "Europe",
+      "priority": 3,
+      "route": "LATER_ROUTE",
+      "source_type": "official_exchange_instrument_list",
+      "acquisition_method": "manual_download_or_export_later",
+      "network_download_now": false,
+      "expected_columns": [
+        "symbol",
+        "name",
+        "market",
+        "isin",
+        "currency"
+      ],
+      "canonical_mapping": {
+        "symbol": "ticker",
+        "name": "company_name",
+        "market": "exchange"
+      },
+      "expected_contribution": "european_expansion",
+      "first_expansion_candidate": false,
+      "risk": "HIGH",
+      "notes": "Useful later; ticker collisions and ISIN handling should be planned first."
+    },
+    {
+      "provider_id": "lse_instruments",
+      "provider_name": "London Stock Exchange Instruments",
+      "exchange": "London Stock Exchange",
+      "country": "United Kingdom",
+      "region": "Europe",
+      "priority": 3,
+      "route": "LATER_ROUTE",
+      "source_type": "official_exchange_instrument_list",
+      "acquisition_method": "manual_download_or_export_later",
+      "network_download_now": false,
+      "expected_columns": [
+        "ticker",
+        "name",
+        "market",
+        "segment",
+        "isin"
+      ],
+      "canonical_mapping": {
+        "ticker": "ticker",
+        "name": "company_name",
+        "market": "exchange",
+        "United Kingdom": "country"
+      },
+      "expected_contribution": "uk_expansion",
+      "first_expansion_candidate": false,
+      "risk": "HIGH",
+      "notes": "Add after US route is reproducible."
+    },
+    {
+      "provider_id": "xetra_frankfurt_instruments",
+      "provider_name": "Deutsche B?rse / Xetra instruments",
+      "exchange": "Xetra / Frankfurt",
+      "country": "Germany",
+      "region": "Europe",
+      "priority": 3,
+      "route": "LATER_ROUTE",
+      "source_type": "official_exchange_instrument_list",
+      "acquisition_method": "manual_download_or_export_later",
+      "network_download_now": false,
+      "expected_columns": [
+        "ticker",
+        "name",
+        "isin",
+        "market"
+      ],
+      "canonical_mapping": {
+        "ticker": "ticker",
+        "name": "company_name",
+        "market": "exchange",
+        "Germany": "country"
+      },
+      "expected_contribution": "germany_expansion",
+      "first_expansion_candidate": false,
+      "risk": "HIGH",
+      "notes": "Requires ISIN-aware deduplication."
+    },
+    {
+      "provider_id": "bme_instruments",
+      "provider_name": "BME / Bolsa de Madrid instruments",
+      "exchange": "BME",
+      "country": "Spain",
+      "region": "Europe",
+      "priority": 3,
+      "route": "LATER_ROUTE",
+      "source_type": "official_exchange_instrument_list",
+      "acquisition_method": "manual_download_or_export_later",
+      "network_download_now": false,
+      "expected_columns": [
+        "ticker",
+        "name",
+        "market",
+        "isin"
+      ],
+      "canonical_mapping": {
+        "ticker": "ticker",
+        "name": "company_name",
+        "market": "exchange",
+        "Spain": "country"
+      },
+      "expected_contribution": "spain_expansion",
+      "first_expansion_candidate": false,
+      "risk": "HIGH",
+      "notes": "Useful for later European coverage, not first expansion."
+    },
+    {
+      "provider_id": "jp_x_tse_instruments",
+      "provider_name": "Japan Exchange Group / Tokyo Stock Exchange",
+      "exchange": "Tokyo Stock Exchange",
+      "country": "Japan",
+      "region": "Asia-Pacific",
+      "priority": 4,
+      "route": "LATER_ROUTE",
+      "source_type": "official_exchange_instrument_list",
+      "acquisition_method": "manual_download_or_export_later",
+      "network_download_now": false,
+      "expected_columns": [
+        "code",
+        "name",
+        "market",
+        "sector"
+      ],
+      "canonical_mapping": {
+        "code": "ticker",
+        "name": "company_name",
+        "market": "exchange",
+        "Japan": "country"
+      },
+      "expected_contribution": "asia_pacific_expansion",
+      "first_expansion_candidate": false,
+      "risk": "HIGH",
+      "notes": "Later route; numeric tickers need canonical formatting rules."
+    }
+  ],
+  "blockers": [],
+  "warnings": [],
+  "positives": [
+    "v2.3C plan found and readable: outputs/full_universe_source_acquisition/source_expansion_plan_v2_3c.json",
+    "v2.3C confirms source expansion plan is ready.",
+    "Primary route providers defined: 2",
+    "First expansion providers defined: 3"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false
+  },
+  "recommendation": "Proceed to v2.3E Expanded Source Builder Skeleton. Do not download data yet."
+}
