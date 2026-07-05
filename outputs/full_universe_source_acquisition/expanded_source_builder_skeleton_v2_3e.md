@@ -2,13 +2,13 @@
 
 - Phase: v2.3E
 - Method: expanded_source_builder_skeleton_v1
-- Created at: 2026-07-05T19:08:21+00:00
-- Builder status: **EXPANDED_SOURCE_BUILDER_SKELETON_READY_WITH_WARNINGS**
-- Readiness score: **85/100**
+- Created at: 2026-07-05T20:30:06+00:00
+- Builder status: **EXPANDED_SOURCE_BUILDER_SKELETON_READY**
+- Readiness score: **100/100**
 - Provider count: 8
-- Local provider files found: 0
-- Readable local provider files: 0
-- Total local rows detected: 0
+- Local provider files found: 2
+- Readable local provider files: 2
+- Total local rows detected: 12957
 
 ## Controls
 
@@ -32,20 +32,20 @@
 ### nasdaq_trader_nasdaqlisted
 
 - Provider dir: `data/raw/source_providers/nasdaq_trader_nasdaqlisted`
-- Local file found: False
-- Selected file: ``
-- Readable: False
-- Rows: 0
-- Columns: 0
+- Local file found: True
+- Selected file: `data/raw/source_providers/nasdaq_trader_nasdaqlisted/nasdaq_trader_nasdaqlisted.csv`
+- Readable: True
+- Rows: 5537
+- Columns: 8
 
 ### nasdaq_trader_otherlisted
 
 - Provider dir: `data/raw/source_providers/nasdaq_trader_otherlisted`
-- Local file found: False
-- Selected file: ``
-- Readable: False
-- Rows: 0
-- Columns: 0
+- Local file found: True
+- Selected file: `data/raw/source_providers/nasdaq_trader_otherlisted/nasdaq_trader_otherlisted.csv`
+- Readable: True
+- Rows: 7420
+- Columns: 8
 
 ### nyse_listed_directory
 
@@ -105,6 +105,9 @@
 
 - v2.3D inventory found and readable: outputs/full_universe_source_acquisition/source_provider_inventory_v2_3d.json
 - v2.3D confirms source provider inventory is ready.
+- Local provider files found: 2
+- Readable local provider files: 2
+- Total local provider rows detected: 12957
 
 ## Blockers
 
@@ -112,7 +115,7 @@
 
 ## Warnings
 
-- No local provider source files found yet. This is expected for skeleton phase.
+- No warnings detected.
 
 ## Recommendation
 

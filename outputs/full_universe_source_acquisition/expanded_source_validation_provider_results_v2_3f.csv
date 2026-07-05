@@ -1,1 +1,3 @@
 provider_id,path,exists,readable,rows,columns,has_ticker_like_column,ticker_like_column,empty_tickers,duplicate_tickers,unique_tickers,status
+nasdaq_trader_nasdaqlisted,data/raw/source_providers/nasdaq_trader_nasdaqlisted/nasdaq_trader_nasdaqlisted.csv,True,True,5537,8,True,Symbol,0,0,5537,PROVIDER_FILE_VALID
+nasdaq_trader_otherlisted,data/raw/source_providers/nasdaq_trader_otherlisted/nasdaq_trader_otherlisted.csv,True,True,7420,8,True,ACT Symbol,0,0,7420,PROVIDER_FILE_VALID

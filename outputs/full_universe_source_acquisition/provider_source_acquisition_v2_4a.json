@@ -1,0 +1,71 @@
+{
+  "phase": "v2.4A",
+  "method": "controlled_provider_source_acquisition_v1",
+  "created_at": "2026-07-05T20:29:59+00:00",
+  "acquisition_status": "PROVIDER_SOURCE_ACQUISITION_COMPLETED_WITH_WARNINGS",
+  "readiness_score": 85,
+  "provider_count": 2,
+  "total_rows": 12957,
+  "results": [
+    {
+      "provider_id": "nasdaq_trader_nasdaqlisted",
+      "url": "https://www.nasdaqtrader.com/dynamic/symdir/nasdaqlisted.txt",
+      "raw_path": "data/raw/source_providers/nasdaq_trader_nasdaqlisted/nasdaqlisted.txt",
+      "csv_path": "data/raw/source_providers/nasdaq_trader_nasdaqlisted/nasdaq_trader_nasdaqlisted.csv",
+      "downloaded": true,
+      "converted": true,
+      "rows": 5537,
+      "columns": 8,
+      "ignored_lines": 1,
+      "blockers": [],
+      "warnings": [
+        "Ignored non-data lines: 1"
+      ],
+      "positives": [
+        "Source downloaded.",
+        "Pipe-delimited source converted to CSV."
+      ]
+    },
+    {
+      "provider_id": "nasdaq_trader_otherlisted",
+      "url": "https://www.nasdaqtrader.com/dynamic/symdir/otherlisted.txt",
+      "raw_path": "data/raw/source_providers/nasdaq_trader_otherlisted/otherlisted.txt",
+      "csv_path": "data/raw/source_providers/nasdaq_trader_otherlisted/nasdaq_trader_otherlisted.csv",
+      "downloaded": true,
+      "converted": true,
+      "rows": 7420,
+      "columns": 8,
+      "ignored_lines": 1,
+      "blockers": [],
+      "warnings": [
+        "Ignored non-data lines: 1"
+      ],
+      "positives": [
+        "Source downloaded.",
+        "Pipe-delimited source converted to CSV."
+      ]
+    }
+  ],
+  "blockers": [],
+  "warnings": [
+    "nasdaq_trader_nasdaqlisted: Ignored non-data lines: 1",
+    "nasdaq_trader_otherlisted: Ignored non-data lines: 1"
+  ],
+  "positives": [
+    "nasdaq_trader_nasdaqlisted: Source downloaded.",
+    "nasdaq_trader_nasdaqlisted: Pipe-delimited source converted to CSV.",
+    "nasdaq_trader_otherlisted: Source downloaded.",
+    "nasdaq_trader_otherlisted: Pipe-delimited source converted to CSV."
+  ],
+  "controls": {
+    "network_download_performed": true,
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "expanded_source_written": false
+  },
+  "recommendation": "Rerun v2.3E, then rerun v2.3F to validate local provider CSVs."
+}
