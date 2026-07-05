@@ -1,0 +1,92 @@
+{
+  "phase": "v2.4C",
+  "method": "expanded_source_validation_real_v1",
+  "created_at": "2026-07-05T21:12:47+00:00",
+  "validation_status": "EXPANDED_SOURCE_REAL_VALIDATION_PARTIAL_BELOW_TARGET_WITH_WARNINGS",
+  "readiness_score": 70,
+  "full_source_gate": "FULL_SOURCE_BLOCKED_BELOW_FIRST_EXPANSION_TARGET",
+  "builder_input": {
+    "path": "outputs/full_universe_source_acquisition/expanded_source_builder_real_v2_4b.json",
+    "exists": true,
+    "builder_status": "EXPANDED_SOURCE_BUILD_PARTIAL_BELOW_TARGET_WITH_WARNINGS"
+  },
+  "inputs": {
+    "expanded_source_csv": "data/raw/expanded_universe/expanded_universe_v2_4b.csv",
+    "exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_4b.csv"
+  },
+  "outputs": {
+    "duplicates_csv": "outputs/full_universe_source_acquisition/expanded_source_validation_duplicates_v2_4c.csv",
+    "issues_csv": "outputs/full_universe_source_acquisition/expanded_source_validation_issues_v2_4c.csv"
+  },
+  "targets": {
+    "expected_full_rows": 59000,
+    "minimum_full_source_rows": 50000,
+    "target_first_expansion_rows": 15000
+  },
+  "summary": {
+    "row_count": 5648,
+    "exclusions_count": 7309,
+    "column_count": 16,
+    "missing_required_columns": [],
+    "missing_optional_columns": [],
+    "empty_tickers": 0,
+    "empty_company_names": 0,
+    "empty_exchanges": 0,
+    "empty_countries": 0,
+    "duplicate_exchange_ticker_keys": 0,
+    "invalid_scope_values": 0,
+    "invalid_instrument_type_values": 0,
+    "invalid_confidence_values": 0,
+    "exchange_counts": {
+      "NASDAQ": 3244,
+      "NYSE": 2122,
+      "NYSE American": 265,
+      "NYSE Arca": 13,
+      "Cboe BZX": 4
+    },
+    "provider_counts": {
+      "nasdaq_trader_nasdaqlisted": 3244,
+      "nasdaq_trader_otherlisted": 2404
+    },
+    "scope_counts": {
+      "IN_SCOPE": 5578,
+      "IN_SCOPE_ADR": 70
+    },
+    "type_counts": {
+      "COMMON_STOCK": 5578,
+      "ADR": 70
+    }
+  },
+  "blockers": [],
+  "warnings": [
+    "Expanded source below first expansion target: 5648 < 15000",
+    "Expanded source below full-source threshold: 5648 < 50000"
+  ],
+  "positives": [
+    "v2.4B builder artifact found: outputs/full_universe_source_acquisition/expanded_source_builder_real_v2_4b.json",
+    "v2.4B builder status usable: EXPANDED_SOURCE_BUILD_PARTIAL_BELOW_TARGET_WITH_WARNINGS",
+    "Expanded source CSV readable: data/raw/expanded_universe/expanded_universe_v2_4b.csv",
+    "Exclusions CSV readable: data/raw/expanded_universe/expanded_universe_exclusions_v2_4b.csv",
+    "All required canonical columns are present.",
+    "All optional canonical columns are present.",
+    "No empty ticker values detected.",
+    "No empty exchange values detected.",
+    "No empty country values detected.",
+    "No empty company names detected.",
+    "No duplicate exchange+ticker keys detected.",
+    "All instrument_scope values are valid.",
+    "All instrument_type values are valid.",
+    "All classification_confidence values are valid."
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false
+  },
+  "recommendation": "Expanded source is structurally valid but does not unlock full 59k. Repeat v2.2C/v2.2E only as partial expanded-source validation."
+}
