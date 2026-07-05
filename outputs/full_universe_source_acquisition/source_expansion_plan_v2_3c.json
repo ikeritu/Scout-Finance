@@ -1,0 +1,201 @@
+{
+  "phase": "v2.3C",
+  "method": "source_expansion_plan_v1",
+  "created_at": "2026-07-05T09:47:08+00:00",
+  "plan_status": "SOURCE_EXPANSION_PLAN_READY",
+  "readiness_score": 100,
+  "strategy_input": {
+    "path": "outputs/full_universe_source_acquisition/full_universe_source_strategy_v2_3b.json",
+    "exists": true,
+    "decision": "EXTERNAL_OR_EXPANDED_SOURCE_REQUIRED"
+  },
+  "targets": {
+    "expected_full_rows": 59000,
+    "minimum_full_source_rows": 50000,
+    "target_first_expansion_rows": 15000
+  },
+  "canonical_schema": [
+    {
+      "column": "ticker",
+      "required": true,
+      "description": "Normalized ticker/symbol. Must be uppercase and non-empty."
+    },
+    {
+      "column": "company_name",
+      "required": true,
+      "description": "Company/security name from source."
+    },
+    {
+      "column": "exchange",
+      "required": true,
+      "description": "Exchange or market identifier."
+    },
+    {
+      "column": "country",
+      "required": true,
+      "description": "Country or market region."
+    },
+    {
+      "column": "sector",
+      "required": false,
+      "description": "Sector if available."
+    },
+    {
+      "column": "industry",
+      "required": false,
+      "description": "Industry if available."
+    },
+    {
+      "column": "market_cap",
+      "required": false,
+      "description": "Market capitalization if available."
+    },
+    {
+      "column": "source_provider",
+      "required": true,
+      "description": "Provider or exchange source name."
+    },
+    {
+      "column": "source_file",
+      "required": true,
+      "description": "Original source file path or source identifier."
+    },
+    {
+      "column": "instrument_type",
+      "required": true,
+      "description": "COMMON_STOCK, ETF, FUND, ADR, PREFERRED, WARRANT, etc."
+    },
+    {
+      "column": "instrument_scope",
+      "required": true,
+      "description": "IN_SCOPE or OUT_OF_SCOPE for Scout Finance universe."
+    },
+    {
+      "column": "classification_confidence",
+      "required": true,
+      "description": "HIGH, MEDIUM or LOW confidence after classification."
+    },
+    {
+      "column": "classification_reason",
+      "required": true,
+      "description": "Short reason for instrument inclusion/exclusion."
+    }
+  ],
+  "source_groups": [
+    {
+      "priority": 1,
+      "group": "US official exchange symbol lists",
+      "target_exchanges": [
+        "NASDAQ",
+        "NYSE",
+        "AMEX"
+      ],
+      "expected_use": "Expand and refresh current US public-market universe.",
+      "status": "PRIMARY_ROUTE",
+      "risk": "LOW_MEDIUM"
+    },
+    {
+      "priority": 2,
+      "group": "Additional North American listings",
+      "target_exchanges": [
+        "NYSE Arca",
+        "Cboe",
+        "OTC candidates only if explicitly approved"
+      ],
+      "expected_use": "Increase coverage after core US exchanges are stable.",
+      "status": "SECONDARY_ROUTE",
+      "risk": "MEDIUM"
+    },
+    {
+      "priority": 3,
+      "group": "European official exchange lists",
+      "target_exchanges": [
+        "London",
+        "Euronext",
+        "Frankfurt/Xetra",
+        "Madrid/BME",
+        "SIX"
+      ],
+      "expected_use": "Move toward global universe once US expansion is reproducible.",
+      "status": "LATER_ROUTE",
+      "risk": "HIGH"
+    },
+    {
+      "priority": 4,
+      "group": "Asia-Pacific official exchange lists",
+      "target_exchanges": [
+        "Tokyo",
+        "Hong Kong",
+        "Singapore",
+        "Australia"
+      ],
+      "expected_use": "Long-term global expansion.",
+      "status": "LATER_ROUTE",
+      "risk": "HIGH"
+    }
+  ],
+  "deduplication_rules": [
+    "Primary key must be exchange + ticker, not ticker alone.",
+    "Ticker collisions across exchanges must be preserved as separate instruments.",
+    "Exact duplicate exchange+ticker rows must be collapsed.",
+    "If duplicate rows have conflicting company names, keep the longest non-empty name and flag warning.",
+    "If duplicate rows have conflicting country/exchange values, flag blocker for that source.",
+    "Never merge different instrument types under one ticker without explicit classification."
+  ],
+  "exclusion_rules": [
+    "Exclude instruments without ticker.",
+    "Exclude obvious test rows, placeholders and malformed symbols.",
+    "Exclude warrants, rights, units and preferred shares from IN_SCOPE unless explicitly approved.",
+    "Classify ETFs/funds separately; do not mix with common-stock scouting unless approved.",
+    "ADR treatment must be explicit: either IN_SCOPE_ADR or OUT_OF_SCOPE_ADR.",
+    "Rows with low classification confidence must be reviewable before full dry-run."
+  ],
+  "validation_gates": [
+    {
+      "gate": "v2.3D",
+      "name": "Source Provider Inventory",
+      "goal": "Create a machine-readable inventory of target source providers/exchanges.",
+      "unlock_condition": "Providers listed with expected schema and acquisition method."
+    },
+    {
+      "gate": "v2.3E",
+      "name": "Expanded Source Builder Skeleton",
+      "goal": "Create a no-network skeleton that combines local provider files if present.",
+      "unlock_condition": "Builder can run safely without downloads and without scoring."
+    },
+    {
+      "gate": "v2.3F",
+      "name": "Expanded Source Validation",
+      "goal": "Validate the expanded source using canonical schema and row thresholds.",
+      "unlock_condition": "At least 15000 rows for first expansion, later 50000+ rows for full gate."
+    },
+    {
+      "gate": "repeat_v2.2C",
+      "name": "Repeat Source Validation",
+      "goal": "Run v2.2C against the expanded source.",
+      "unlock_condition": "Ticker mapping, duplicates and blockers clean."
+    },
+    {
+      "gate": "repeat_v2.2E",
+      "name": "Repeat Full Dry Run Gate",
+      "goal": "Run v2.2E again after expanded source exists.",
+      "unlock_condition": "Source rows >= 50000 and safety controls clean."
+    }
+  ],
+  "blockers": [],
+  "warnings": [],
+  "positives": [
+    "v2.3B strategy found and readable: outputs/full_universe_source_acquisition/full_universe_source_strategy_v2_3b.json",
+    "v2.3B confirms that an expanded source is required."
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false
+  },
+  "recommendation": "Proceed to v2.3D Source Provider Inventory. Do not download data yet."
+}
