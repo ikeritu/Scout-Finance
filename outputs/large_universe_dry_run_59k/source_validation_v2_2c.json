@@ -1,0 +1,59 @@
+{
+  "phase": "v2.2C",
+  "method": "source_validation_59k_v1",
+  "created_at": "2026-07-05T00:30:20+00:00",
+  "validation_status": "SOURCE_VALID_FOR_SMALL_BATCH_WITH_WARNINGS",
+  "readiness_score": 80,
+  "source": {
+    "path": "data/raw/universe_source_real_clean.csv",
+    "exists": true,
+    "size_bytes": 879101,
+    "size_mb": 0.838,
+    "rows": 5617,
+    "columns": 14,
+    "source_scope": "PARTIAL_REAL_SOURCE_FOR_SMALL_BATCH"
+  },
+  "ticker_mapping": {
+    "source_column": "Symbol",
+    "canonical_column": "ticker"
+  },
+  "recommended_mapping": {
+    "company_name": "Name",
+    "exchange": "Exchange",
+    "sector": "Sector",
+    "industry": "Industry",
+    "country": "Country",
+    "market_cap": "Market Cap"
+  },
+  "ticker_stats": {
+    "empty_tickers": 0,
+    "duplicate_tickers": 0,
+    "unique_tickers": 5617,
+    "sample_duplicates": []
+  },
+  "blockers": [],
+  "warnings": [
+    "Source has 5617 rows, below 59k. Valid for small batch, not full 59k."
+  ],
+  "positives": [
+    "Source CSV is readable: data/raw/universe_source_real_clean.csv",
+    "Ticker column resolved: Symbol -> ticker",
+    "No empty ticker values detected.",
+    "No duplicate tickers detected.",
+    "Recommended column resolved: Name -> company_name",
+    "Recommended column resolved: Exchange -> exchange",
+    "Recommended column resolved: Sector -> sector",
+    "Recommended column resolved: Industry -> industry",
+    "Recommended column resolved: Country -> country",
+    "Recommended column resolved: Market Cap -> market_cap"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false
+  },
+  "recommendation": "Proceed to v2.2D small batch dry-run using this partial real source."
+}

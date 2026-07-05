@@ -1,0 +1,15 @@
+source_column,canonical_column,used
+Symbol,ticker,True
+Name,company_name,True
+Exchange,exchange,True
+Country,country,True
+Sector,sector,True
+Industry,industry,True
+Market Cap,market_cap,True
+Last Sale,,False
+Volume,,False
+Source,,False
+instrument_type,,False
+instrument_scope,,False
+classification_confidence,,False
+classification_reason,,False
