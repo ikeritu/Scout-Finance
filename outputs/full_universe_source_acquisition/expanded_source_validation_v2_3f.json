@@ -1,0 +1,62 @@
+{
+  "phase": "v2.3F",
+  "method": "expanded_source_validation_v1",
+  "created_at": "2026-07-05T19:55:24+00:00",
+  "validation_status": "EXPANDED_SOURCE_VALIDATION_BLOCKED_NO_PROVIDER_FILES",
+  "readiness_score": 0,
+  "builder_input": {
+    "path": "outputs/full_universe_source_acquisition/expanded_source_builder_skeleton_v2_3e.json",
+    "exists": true,
+    "builder_status": "EXPANDED_SOURCE_BUILDER_SKELETON_READY_WITH_WARNINGS"
+  },
+  "targets": {
+    "expected_full_rows": 59000,
+    "minimum_full_source_rows": 50000,
+    "target_first_expansion_rows": 15000
+  },
+  "provider_scan": {
+    "path": "outputs/full_universe_source_acquisition/expanded_source_builder_provider_scan_v2_3e.csv",
+    "exists": true,
+    "providers_scanned": 8,
+    "provider_files_found": 0,
+    "valid_provider_files": 0
+  },
+  "expanded_source_summary": {
+    "total_rows": 0,
+    "total_unique_provider_tickers": 0,
+    "required_canonical_columns": [
+      "ticker",
+      "company_name",
+      "exchange",
+      "country",
+      "source_provider",
+      "source_file",
+      "instrument_type",
+      "instrument_scope",
+      "classification_confidence",
+      "classification_reason"
+    ]
+  },
+  "provider_results": [],
+  "blockers": [
+    "No local provider CSV files found. Add provider files before expanded source validation."
+  ],
+  "warnings": [],
+  "positives": [
+    "v2.3E builder artifact found: outputs/full_universe_source_acquisition/expanded_source_builder_skeleton_v2_3e.json",
+    "v2.3E builder status usable: EXPANDED_SOURCE_BUILDER_SKELETON_READY_WITH_WARNINGS",
+    "Provider scan CSV found: outputs/full_universe_source_acquisition/expanded_source_builder_provider_scan_v2_3e.csv"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_source_written": false
+  },
+  "recommendation": "Add local provider CSV files under data/raw/source_providers/<provider_id>/ and rerun v2.3E, then rerun v2.3F."
+}

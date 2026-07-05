@@ -1,0 +1,1 @@
+provider_id,path,exists,readable,rows,columns,has_ticker_like_column,ticker_like_column,empty_tickers,duplicate_tickers,unique_tickers,status
