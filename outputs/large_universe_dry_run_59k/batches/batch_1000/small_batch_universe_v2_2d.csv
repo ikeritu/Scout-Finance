@@ -1,0 +1,1001 @@
+dry_run_rank,ticker,company_name,exchange,country,sector,industry,market_cap,source,instrument_type,instrument_scope,classification_confidence,classification_reason,dry_run_status,scoring_performed,openai_called,broker_called,financial_advice
+1,AACB,Artius II Acquisition Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+2,AACG,"ATA Creativity Global - American Depositary Shares, each representing two common shares",NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+3,AAL,"American Airlines Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+4,AAME,Atlantic American Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+5,AAOI,"Applied Optoelectronics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+6,AAON,"AAON, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+7,AAPG,Ascentage Pharma Group International - American Depository Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+8,AAPL,Apple Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+9,AARD,"Aardvark Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+10,ABAT,American Battery Technology Company - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+11,ABCL,AbCellera Biologics Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+12,ABEO,Abeona Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+13,ABLV,Able View Global Inc. - Class B Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+14,ABNB,"Airbnb, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+15,ABOS,"Acumen Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+16,ABSI,Absci Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+17,ABTC,American Bitcoin Corp. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+18,ABTS,Abits Group Inc - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+19,ABUS,Arbutus Biopharma Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+20,ABVC,"ABVC BioPharma, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+21,ABVX,Abivax SA - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+22,ACAD,ACADIA Pharmaceuticals Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+23,ACB,Aurora Cannabis Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+24,ACCL,Acco Group Holdings Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+25,ACDC,ProFrac Holding Corp. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+26,ACET,"Adicet Bio, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+27,ACFN,"Acorn Energy, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+28,ACGL,Arch Capital Group Ltd. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+29,ACHC,"Acadia Healthcare Company, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+30,ACHV,"Achieve Life Sciences, Inc.  - Common Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+31,ACIC,American Coastal Insurance Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+32,ACIU,AC Immune SA - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+33,ACIW,"ACI Worldwide, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+34,ACLS,"Axcelis Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+35,ACMR,"ACM Research, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+36,ACNB,ACNB Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+37,ACNT,Ascent Industries Co. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+38,ACOG,Alpha Cognition Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+39,ACON,"Aclarion, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+40,ACRS,"Aclaris Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+41,ACRV,"Acrivon Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+42,ACT,"Enact Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+43,ACTG,Acacia Research Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+44,ACTU,"Actuate Therapeutics, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+45,ACXP,"Acurx Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+46,ADAC,American Drive Acquisition Company - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+47,ADAG,"Adagene Inc. - ADS, each representing 1.25 ordinary shares",NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+48,ADAM,"Adamas Trust, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+49,ADBE,Adobe Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+50,ADEA,Adeia Inc.  - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+51,ADGM,"Adagio Medical Holdings, Inc - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+52,ADI,"Analog Devices, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+53,ADIL,"Adial Pharmaceuticals, Inc - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+54,ADMA,ADMA Biologics Inc - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+55,ADP,"Automatic Data Processing, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+56,ADPT,Adaptive Biotechnologies Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+57,ADSE,ADS-TEC ENERGY PLC - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+58,ADSK,"Autodesk, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+59,ADTN,"ADTRAN Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+60,ADTX,"Aditxt, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+61,ADUR,Aduro Clean Technologies Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+62,ADUS,Addus HomeCare Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+63,ADV,Advantage Solutions Inc.  - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+64,ADVB,Advanced Biomed Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+65,ADXN,Addex Therapeutics Ltd - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+66,AEBI,Aebi Schmidt Holding AG - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+67,AEC,Anfield Energy Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+68,AEHL,Antelope Enterprise Holdings Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+69,AEHR,Aehr Test Systems - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+70,AEI,Alset Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+71,AEIS,"Advanced Energy Industries, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+72,AEMD,"Aethlon Medical, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+73,AENT,Alliance Entertainment Holding Corporation - common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+74,AEP,"American Electric Power Company, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+75,AERT,"Aeries Technology, Inc. - Class A Ordinary Share",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+76,AEVA,"Aeva Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+77,AEYE,"AudioEye, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+78,AFBI,"Affinity Bancshares, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+79,AFCG,Advanced Flower Capital Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+80,AFJK,"Aimei Health Technology Co., Ltd - Ordinary Share",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+81,AFRI,Forafric Global PLC - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+82,AFRM,"Affirm Holdings, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+83,AFYA,Afya Limited - Class A Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+84,AGCC,Agencia Comercial Spirits Ltd - Class A Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+85,AGEN,Agenus Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+86,AGIO,"Agios Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+87,AGMB,AgomAb Therapeutics NV - ADRs representing one common share.,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+88,AGMH,AGM Group Holdings Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+89,AGNC,AGNC Investment Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+90,AGNT,"eXp World Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+91,AGPU,Axe Compute Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+92,AGRZ,Agroz Inc. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+93,AGYS,"Agilysys, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+94,AHCO,AdaptHealth Corp.  - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+95,AHG,Akso Health Group - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+96,AHMA,Ambitions Enterprise Management Co. L.L.C - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+97,AIAI,AIAI Holdings Corporation - Class A common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+98,AIDX,"20/20 Biolabs, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+99,AIFA,"All In FutureTech Alliance, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+100,AIFC,AI Financial Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+101,AIFF,"Firefly Neuroscience, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+102,AIFU,AIFU Inc. - Class A Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+103,AIHS,Senmiao Technology Limited - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+104,AIIO,Robo.ai Inc. - Class B Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+105,AIIR,Air Global PLC - Ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+106,AIMD,"Ainos, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+107,AIOS,AIOS Tech Inc. - Class A Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+108,AIOT,"PowerFleet, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+109,AIP,"Arteris, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+110,AIRE,reAlpha Tech Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+111,AIRG,"Airgain, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+112,AIRJ,AirJoule Technologies Corporation - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+113,AIRO,"AIRO Group Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+114,AIRS,"AirSculpt Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+115,AIRT,"Air T, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+116,AISP,"Airship AI Holdings, Inc - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+117,AIXC,"AIxCrypto Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+118,AIXI,XIAO-I Corporation - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+119,AKAM,"Akamai Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+120,AKAN,Akanda Corp. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+121,AKBA,"Akebia Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+122,AKTS,"Aktis Oncology, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+123,AKTX,Akari Therapeutics Plc - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+124,ALAB,"Astera Labs, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+125,ALAR,Alarum Technologies Ltd. - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+126,ALBT,Avalon GloboCare Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+127,ALCO,"Alico, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+128,ALDF,Aldel Financial II Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+129,ALDX,"Aldeyra Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+130,ALEC,"Alector, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+131,ALGM,"Allegro MicroSystems, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+132,ALGN,"Align Technology, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+133,ALGS,"Aligos Therapeutics, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+134,ALGT,Allegiant Travel Company - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+135,ALHC,"Alignment Healthcare, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+136,ALKS,Alkermes plc - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+137,ALKT,"Alkami Technology, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+138,ALLO,"Allogene Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+139,ALLR,"Allarity Therapeutics, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+140,ALLT,Allot Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+141,ALM,Almonty Industries Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+142,ALMR,"Alamar Biosciences, Inc. - Class A common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+143,ALMS,Alumis Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+144,ALMU,"Aeluma, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+145,ALNT,Allient Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+146,ALNY,"Alnylam Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+147,ALOT,"AstroNova, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+148,ALOV,"Aldabra 4 Liquidity Opportunity Vehicle, Inc. - Class A Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+149,ALOY,REalloys Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+150,ALP,Alpha Compute Corp  - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+151,ALPS,ALPS Group Inc - Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+152,ALRM,"Alarm.com Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+153,ALRS,Alerus Financial Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+154,ALT,"Altimmune, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+155,ALTI,"AlTi Global, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+156,ALTO,"Alto Ingredients, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+157,ALVO,Alvotech - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+158,ALXO,ALX Oncology Holdings Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+159,ALZN,"Alzamend Neuro, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+160,AMAL,Amalgamated Financial Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+161,AMAT,"Applied Materials, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+162,AMBA,"Ambarella, Inc. - Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+163,AMBR,Amber International Holding Limited - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+164,AMCI,AMC Robotics Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+165,AMCX,AMC Global Media Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+166,AMD,"Advanced Micro Devices, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+167,AMGN,Amgen Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+168,AMIX,"Autonomix Medical, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+169,AMKR,"Amkor Technology, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+170,AMLX,"Amylyx Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+171,AMOD,"Alpha Modus Holdings, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+172,AMPG,"Amplitech Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+173,AMPH,"Amphastar Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+174,AMPL,"Amplitude, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+175,AMRN,Amarin Corporation plc - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+176,AMRX,"Amneal Pharmaceuticals, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+177,AMSC,American Superconductor Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+178,AMSF,"AMERISAFE, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+179,AMSS,AMASS Brands Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+180,AMST,Amesite Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+181,AMTX,"Aemetis, Inc - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+182,AMZN,"Amazon.com, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+183,ANAB,"AnaptysBio, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+184,ANDE,"The Andersons, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+185,ANGH,Anghami Inc. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+186,ANGI,Angi Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+187,ANGO,"AngioDynamics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+188,ANIK,Anika Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+189,ANIP,"ANI Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+190,ANIX,"Anixa Biosciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+191,ANL,Adlai Nortye Ltd. - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+192,ANNA,"AleAnna, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+193,ANNX,"Annexon, Inc. - common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+194,ANPA,Rich Sparkle Holdings Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+195,ANTA,Antalpha Platform Holding Company - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+196,ANTX,"AN2 Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+197,ANY,Sphere 3D Corp. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+198,AOSL,Alpha and Omega Semiconductor Limited - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+199,AOUT,"American Outdoor Brands, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+200,APA,APA Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+201,APAC,StoneBridge Acquisition II Corporation - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+202,APC,ARKO Petroleum Corp. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+203,APEI,"American Public Education, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+204,APGE,"Apogee Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+205,API,"Agora, Inc. - ADS",NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+206,APLD,Applied Digital Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+207,APLM,Apollomics Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+208,APM,Aptorum Group Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+209,APOG,"Apogee Enterprises, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+210,APP,Applovin Corporation - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+211,APPF,"AppFolio, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+212,APPN,Appian Corporation - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+213,APPS,"Digital Turbine, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+214,APRE,"Aprea Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+215,APVO,Aptevo Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+216,APWC,"Asia Pacific Wire & Cable Corporation Limited  - Common shares, Par value .01 per share",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+217,APXT,Apex Treasury Corporation - Class A Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+218,APYX,Apyx Medical Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+219,AQB,"AquaBounty Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+220,AQMS,"Aqua Metals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+221,AQST,"Aquestive Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+222,ARAI,Arrive AI Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+223,ARAY,Accuray Incorporated - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+224,ARBB,ARB IOT Group Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+225,ARBE,Arbe Robotics Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+226,ARBK,Argo Blockchain plc - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+227,ARCB,ArcBest Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+228,ARCL,ARC Group Acquisition I Corp - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+229,ARCT,Arcturus Therapeutics Holdings Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+230,ARDX,"Ardelyx, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+231,AREC,American Resources Corporation - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+232,ARGX,argenx SE - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+233,ARHS,"Arhaus, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+234,ARKO,ARKO Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+235,ARKR,Ark Restaurants Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+236,ARM,Arm Holdings plc - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+237,AROW,Arrow Financial Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+238,ARQ,"Arq, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+239,ARQQ,Arqit Quantum Inc. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+240,ARQT,"Arcutis Biotherapeutics, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+241,ARRY,"Array Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+242,ARTL,"Artelo Biosciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+243,ARTNA,Artesian Resources Corporation - Class A Non-Voting Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+244,ARTV,"Artiva Biotherapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+245,ARTW,"Art's-Way Manufacturing Co., Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+246,ARVN,"Arvinas, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+247,ARWR,"Arrowhead Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+248,ARXS,"Arxis, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+249,ASBP,"Aspire Biopharma Holdings, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+250,ASLE,AerSale Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+251,ASMB,"Assembly Biosciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+252,ASML,ASML Holding N.V. - New York Registry Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+253,ASND,Ascendis Pharma A/S - Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+254,ASO,"Academy Sports and Outdoors, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+255,ASPI,ASP Isotopes Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+256,ASPS,Altisource Portfolio Solutions S.A. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+257,ASRT,"Assertio Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+258,ASRV,AmeriServ Financial Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+259,ASST,"Strive, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+260,ASTC,Astrotech Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+261,ASTE,"Astec Industries, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+262,ASTH,Astrana Health Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+263,ASTI,"Ascent Solar Technologies, Inc - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+264,ASTL,Algoma Steel Group Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+265,ASUR,Asure Software Inc - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+266,ASYS,"Amtech Systems, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+267,ATAI,AtaiBeckley Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+268,ATAT,Atour Lifestyle Holdings Limited - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+269,ATCX,Atlas Critical Minerals Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+270,ATEC,"Alphatec Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+271,ATER,"Aterian, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+272,ATEX,Anterix Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+273,ATGL,Alpha Technology Group Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+274,ATHE,Alterity Therapeutics Limited - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+275,ATHR,"Aether Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+276,ATLC,Atlanticus Holdings Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+277,ATLN,Atlantic International Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+278,ATLO,Ames National Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+279,ATLX,Atlas Lithium Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+280,ATNI,"ATN International, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+281,ATOM,Atomera Incorporated - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+282,ATOS,"Atossa Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+283,ATPC,Agape ATP Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+284,ATRA,"Atara Biotherapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+285,ATRC,"AtriCure, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+286,ATRO,Astronics Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+287,ATXG,Addentax Group Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+288,ATYR,"aTyr Pharma, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+289,AUBN,"Auburn National Bancorporation, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+290,AUC,ATIF Holdings Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+291,AUDC,AudioCodes Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+292,AUGO,Aura Minerals Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+293,AUID,authID Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+294,AUPH,Aurinia Pharmaceuticals Inc - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+295,AUR,"Aurora Innovation, Inc.  - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+296,AURA,"Aura Biosciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+297,AURE,Aurelion Inc.  - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+298,AUTL,Autolus Therapeutics plc - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+299,AUUD,Auddia Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+300,AVAH,Aveanna Healthcare Holdings Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+301,AVAV,"AeroVironment, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+302,AVBH,"Avidbank Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+303,AVBP,"ArriVent BioPharma, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+304,AVGO,Broadcom Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+305,AVIR,"Atea Pharmaceuticals, Inc. - common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+306,AVLN,Avalyn Pharma Inc. - common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+307,AVNW,"Aviat Networks, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+308,AVO,"Mission Produce, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+309,AVPT,"AvePoint, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+310,AVR,Anteris Technologies Global Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+311,AVT,"Avnet, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+312,AVTX,"Avalo Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+313,AVX,Avax One Technology Ltd. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+314,AVXL,Anavex Life Sciences Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+315,AWRE,"Aware, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+316,AXG,Solowin Holdings - Class A Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+317,AXGN,"Axogen, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+318,AXON,"Axon Enterprise, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+319,AXSM,"Axsome Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+320,AXTI,AXT Inc - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+321,AYA,Aya Gold & Silver Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+322,AYTU,"Aytu BioPharma, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+323,AZ,A2Z Cust2Mate Solutions Corp. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+324,AZI,Autozi Internet Technology (Global) Ltd. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+325,AZTA,"Azenta, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+326,BAFN,BayFirst Financial Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+327,BAND,Bandwidth Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+328,BANF,BancFirst Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+329,BANL,CBL International Limited - Class B Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+330,BANR,Banner Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+331,BAOS,Baosheng Media Group Holdings Limited - Ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+332,BATRA,"Atlanta Braves Holdings, Inc. - Series A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+333,BATRK,"Atlanta Braves Holdings, Inc. - Series C Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+334,BBCP,"Concrete Pumping Holdings, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+335,BBGI,"Beasley Broadcast Group, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+336,BBIO,"BridgeBio Pharma, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+337,BBLG,Bone Biologics Corp - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+338,BBNX,"Beta Bionics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+339,BBOT,"BridgeBio Oncology Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+340,BBSI,"Barrett Business Services, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+341,BCAB,"BioAtla, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+342,BCAL,California BanCorp - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+343,BCAR,D. Boral ARC Acquisition I Corp. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+344,BCAX,Bicara Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+345,BCBP,"BCB Bancorp, Inc. (NJ) - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+346,BCDA,"BioCardia, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+347,BCG,"Binah Capital Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+348,BCML,BayCom Corp - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+349,BCPC,Balchem Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+350,BCRX,"BioCryst Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+351,BCTX,BriaCell Therapeutics Corp. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+352,BCYC,Bicycle Therapeutics plc - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+353,BDCI,BTC Development Corp. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+354,BDMD,Baird Medical Investment Holdings Ltd - Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+355,BDRX,Biodexa Pharmaceuticals plc - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+356,BDSX,"Biodesix, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+357,BDTX,"Black Diamond Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+358,BEAM,Beam Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+359,BEAT,"Heartbeam, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+360,BEEM,Beam Global - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+361,BEEP,Mobile Infrastructure Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+362,BELFA,Bel Fuse Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+363,BELFB,Bel Fuse Inc. - Class B Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+364,BENF,Beneficient - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+365,BETR,Better Home & Finance Holding Company - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+366,BFC,Bank First Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+367,BFRG,"Bullfrog AI Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+368,BFRI,Biofrontera Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+369,BFST,"Business First Bancshares, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+370,BGC,"BGC Group, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+371,BGDE,"Big Digital Energy, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+372,BGIN,Bgin Blockchain Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+373,BGL,Blue Gold Limited - Class A ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+374,BGLC,BioNexus Gene Lab Corp - Common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+375,BGM,BGM Group Ltd. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+376,BGMS,"Bio Green Med Solution, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+377,BHF,"Brighthouse Financial, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+378,BHFAL,"Brighthouse Financial, Inc. - Junior Subordinated Debentures due 2058",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+379,BHRB,Burke & Herbert Financial Services Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+380,BHST,BioHarvest Sciences Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+381,BIAF,"bioAffinity Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+382,BIDU,"Baidu, Inc. - American Depositary Shares, each representing 8 ordinary share",NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+383,BIIB,Biogen Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+384,BILI,Bilibili Inc. - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+385,BIOA,"BioAge Labs, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+386,BIOX,Bioceres Crop Solutions Corp. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+387,BIRD,"Allbirds, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+388,BIVI,BioVie Inc. - Common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+389,BIYA,Baiya International Group Inc.  - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+390,BJDX,"Bluejay Diagnostics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+391,BJRI,"BJ's Restaurants, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+392,BKNG,Booking Holdings Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+393,BKR,Baker Hughes Company - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+394,BL,"BlackLine, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+395,BLBD,Blue Bird Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+396,BLDP,"Ballard Power Systems, Inc. - Common Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+397,BLFS,"BioLife Solutions, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+398,BLIN,"Bridgeline Digital, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+399,BLIV,BeLive Holdings - ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+400,BLKB,"Blackbaud, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+401,BLLN,"BillionToOne, Inc. - Class A common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+402,BLMN,"Bloomin' Brands, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+403,BLNE,"Beeline Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+404,BLNK,Blink Charging Co. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+405,BLRX,BioLineRx Ltd. - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+406,BLTE,"Belite Bio, Inc - American Depositary Shares",NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+407,BLZE,"Backblaze, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+408,BMBL,Bumble Inc. - common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+409,BMEA,"Biomea Fusion, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+410,BMGL,Basel Medical Group Ltd - ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+411,BMHL,Bluemount Holdings Limited - Class B Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+412,BMM,Blue Moon Metals Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+413,BMR,Beamr Imaging Ltd. - Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+414,BMRA,"Biomerica, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+415,BMRC,Bank of Marin Bancorp - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+416,BMRN,BioMarin Pharmaceutical Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+417,BNAI,Brand Engagement Network Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+418,BNBX,BNB Plus Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+419,BNC,CEA Industries Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+420,BNGO,"Bionano Genomics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+421,BNKK,"Bonk, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+422,BNR,Burning Rock Biotech Limited - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+423,BNRG,Brenmiller Energy Ltd - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+424,BNTC,Benitec Biopharma Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+425,BNTX,BioNTech SE - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+426,BNZI,"Banzai International, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+427,BODI,"The Beachbody Company, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+428,BOF,BranchOut Food Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+429,BOKF,BOK Financial Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+430,BOLD,"Boundless Bio, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+431,BOLT,"Bolt Biotherapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+432,BON,Bon Natural Life Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+433,BOOM,DMC Global Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+434,BOSC,B.O.S. Better Online Solutions - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+435,BOT,"RoboStrategy, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+436,BOTJ,"Bank of the James Financial Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+437,BOXL,Boxlight Corporation - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+438,BPAC,Blueport Acquisition Ltd - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+439,BPOP,"Popular, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+440,BPRN,"Princeton Bancorp, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+441,BRAG,Bragg Gaming Group Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+442,BRAI,Braiin Limited - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+443,BRBI,BRBI BR Partners S.A. - ADSs,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+444,BRCB,"Black Rock Coffee Bar, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+445,BRFH,Barfresh Food Group Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+446,BRID,Bridgford Foods Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+447,BRKR,Bruker Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+448,BRLS,Borealis Foods Inc. - Class A Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+449,BRLT,"Brilliant Earth Group, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+450,BRNS,Barinthus Biotherapeutics plc - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+451,BRR,"ProCap Financial, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+452,BRTX,"BioRestorative Therapies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+453,BRUN,Boost Run Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+454,BRZE,"Braze, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+455,BSBK,Bogota Financial Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+456,BSET,"Bassett Furniture Industries, Incorporated - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+457,BSRR,Sierra Bancorp - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+458,BSVN,Bank7 Corp. - Common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+459,BSY,"Bentley Systems, Incorporated - Class B Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+460,BTAI,"BioXcel Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+461,BTBD,"BT Brands, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+462,BTBT,"Bit Digital, Inc. - Ordinary Share",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+463,BTCS,BTCS Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+464,BTCT,BTC Digital Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+465,BTDR,Bitdeer Technologies Group - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+466,BTMD,Biote Corp. - Class A common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+467,BTOC,Armlogi Holding Corp. - common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+468,BTOG,Bit Origin Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+469,BTQ,BTQ Technologies Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+470,BTSG,"BrightSpring Health Services, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+471,BTTC,Black Titan Corp - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+472,BULL,Webull Corporation - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+473,BUSE,First Busey Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+474,BUUU,BUUU Group Limited - Class A Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+475,BVC,BitVentures Limited - Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+476,BVFL,"BV Financial, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+477,BVS,Bioventus Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+478,BWAY,BrainsWay Ltd. - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+479,BWB,"Bridgewater Bancshares, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+480,BWEN,"Broadwind, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+481,BWFG,"Bankwell Financial Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+482,BWIN,"The Baldwin Insurance Group, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+483,BWMN,Bowman Consulting Group Ltd. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+484,BYAH,"Park Ha Biological Technology Co., Ltd. - Class A Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+485,BYFC,Broadway Financial Corporation - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+486,BYND,"Beyond Meat, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+487,BYRN,"Byrna Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+488,BYSI,"BeyondSpring, Inc. - Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+489,BZ,KANZHUN LIMITED - American Depository Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+490,BZAI,"Blaize Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+491,BZFD,"BuzzFeed, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+492,BZUN,Baozun Inc. - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+493,CAAS,"China Automotive Systems, Inc. - Ordinary Share",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+494,CABA,"Cabaletta Bio, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+495,CABR,"Caring Brands, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+496,CAC,Camden National Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+497,CACC,Credit Acceptance Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+498,CADL,"Candel Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+499,CAI,"Caris Life Sciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+500,CAKE,The Cheesecake Factory Incorporated - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+501,CALC,"CalciMedica, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+502,CALM,"Cal-Maine Foods, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+503,CAMP,CAMP4 Therapeutics Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+504,CAMT,Camtek Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+505,CAN,Canaan Inc. - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+506,CAPR,"Capricor Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+507,CAPS,Capstone Holding Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+508,CAR,"Avis Budget Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+509,CARE,"Carter Bankshares, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+510,CARG,"CarGurus, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+511,CARL,"Carlsmed, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+512,CART,Maplebear Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+513,CASH,"Pathward Financial, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+514,CASS,"Cass Information Systems, Inc - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+515,CAST,"FreeCast, Inc. - Class A common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+516,CASY,"Caseys General Stores, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+517,CATY,Cathay General Bancorp - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+518,CBAT,"CBAK Energy Technology, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+519,CBC,"Central Bancompany, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+520,CBFV,"CB Financial Services, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+521,CBIO,"Crescent Biopharma, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+522,CBK,"Commercial Bancgroup, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+523,CBLL,"CeriBell, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+524,CBNK,"Capital Bancorp, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+525,CBRL,"Cracker Barrel Old Country Store, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+526,CBRS,Cerebras Systems Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+527,CBSH,"Commerce Bancshares, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+528,CBUS,"Cibus, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+529,CCAP,"Crescent Capital BDC, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+530,CCB,Coastal Financial Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+531,CCBG,Capital City Bank Group - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+532,CCC,CCC Intelligent Solutions Holdings Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+533,CCCC,"C4 Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+534,CCEC,Capital Clean Energy Carriers Corp. - Common Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+535,CCEP,Coca-Cola Europacific Partners plc - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+536,CCG,Cheche Group Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+537,CCHH,CCH Holdings Ltd - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+538,CCIX,Churchill Capital Corp IX - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+539,CCLD,"CareCloud, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+540,CCNE,CNB Financial Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+541,CCOI,"Cogent Communications Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+542,CCRN,"Cross Country Healthcare, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+543,CCSI,"Consensus Cloud Solutions, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+544,CCTG,CCSC Technology International Holdings Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+545,CCXI,Churchill Capital Corp XI - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+546,CD,Chaince Digital Holdings Inc. - American Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+547,CDIO,Cardio Diagnostics Holdings Inc. - Common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+548,CDLX,"Cardlytics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+549,CDNA,"CareDx, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+550,CDNL,Cardinal Infrastructure Group Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+551,CDNS,"Cadence Design Systems, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+552,CDRO,"Codere Online Luxembourg, S.A. - Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+553,CDT,CDT Equity Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+554,CDTG,CDT Environmental Technology Investment Holdings Limited - ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+555,CDW,CDW Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+556,CDXS,"Codexis, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+557,CDZI,"Cadiz, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+558,CDZIP,"Cadiz, Inc. - Depositary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+559,CECO,CECO Environmental Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+560,CEG,Constellation Energy Corporation - Common Stock When-Issued,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+561,CELC,Celcuity Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+562,CELH,"Celsius Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+563,CELU,Celularity Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+564,CELZ,"Creative Medical Technology Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+565,CENN,Cenntro Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+566,CENT,Central Garden & Pet Company - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+567,CENTA,Central Garden & Pet Company - Class A Common Stock Nonvoting,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+568,CENX,Century Aluminum Company - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+569,CEPF,"Cantor Equity Partners IV, Inc. - Class A Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+570,CEPO,"Cantor Equity Partners I, Inc. - Class A Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+571,CEPS,"Cantor Equity Partners VI, Inc. - Class A Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+572,CEPT,"Cantor Equity Partners II, Inc. - Class A ordinary share",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+573,CEPV,"Cantor Equity Partners V, Inc. - Class A Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+574,CERS,Cerus Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+575,CERT,"Certara, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+576,CETX,Cemtrex Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+577,CETY,"Clean Energy Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+578,CEVA,"CEVA, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+579,CFBK,CF Bankshares Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+580,CFFI,C&F Financial Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+581,CFFN,"Capitol Federal Financial, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+582,CG,The Carlyle Group Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+583,CGC,Canopy Growth Corporation - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+584,CGCT,Cartesian Growth Corporation III - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+585,CGEM,"Cullinan Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+586,CGEN,Compugen Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+587,CGNT,Cognyte Software Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+588,CGNX,Cognex Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+589,CGON,"CG Oncology, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+590,CGTL,Creative Global Technology Holdings Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+591,CGTX,"Cognition Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+592,CHA,"Chagee Holdings Limited - American Depositary Shares, each representing 1 Class A ordinary share",NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+593,CHAI,"Core AI Holdings, Inc. - Common Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+594,CHCI,"Comstock Holding Companies, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+595,CHCO,City Holding Company - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+596,CHDN,"Churchill Downs, Incorporated - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+597,CHEC,Chenghe Acquisition III Co. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+598,CHEF,"The Chefs' Warehouse, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+599,CHKP,Check Point Software Technologies Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+600,CHMG,Chemung Financial Corp  - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+601,CHNR,"China Natural Resources, Inc. - Common Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+602,CHR,"Cheer Holding, Inc.  - Class A Ordinary Share",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+603,CHRD,Chord Energy Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+604,CHRN,ChronoScale Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+605,CHRS,"Coherus Oncology, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+606,CHRW,"C.H. Robinson Worldwide, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+607,CHSN,Chanson International Holding - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+608,CHTR,"Charter Communications, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+609,CHYM,"Chime Financial, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+610,CIFR,Cipher Digital Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+611,CIGI,Colliers International Group Inc.  - Subordinate Voting Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+612,CIIT,"Tianci International, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+613,CINF,Cincinnati Financial Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+614,CING,Cingulate Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+615,CISO,"CISO Global, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+616,CISS,C3is Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+617,CIVB,"Civista Bancshares, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+618,CJMB,Callan JMB Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+619,CLAR,Clarus Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+620,CLBK,"Columbia Financial, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+621,CLBT,Cellebrite DI Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+622,CLDX,"Celldex Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+623,CLFD,"Clearfield, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+624,CLGN,CollPlant Biotechnologies Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+625,CLIK,Click Holdings Limited - Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+626,CLIR,ClearSign Technologies Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+627,CLLS,Cellectis S.A. - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+628,CLMB,"Climb Global Solutions, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+629,CLMT,"Calumet, Inc - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+630,CLNE,Clean Energy Fuels Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+631,CLNN,Clene Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+632,CLOV,"Clover Health Investments, Corp.  - Class A Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+633,CLPS,CLPS Incorporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+634,CLPT,ClearPoint Neuro Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+635,CLRB,"Cellectar Biosciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+636,CLRO,"ClearOne, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+637,CLSK,"CleanSpark, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+638,CLST,"Catalyst Bancorp, Inc. - common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+639,CLWT,Euro Tech Holdings Company Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+640,CLYM,"Climb Bio, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+641,CMCO,Columbus McKinnon Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+642,CMCSA,Comcast Corporation - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+643,CMCT,Creative Media  - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+644,CME,CME Group Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+645,CMII,Columbus Circle Capital Corp II - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+646,CMMB,Chemomab Therapeutics Ltd.  - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+647,CMND,Clearmind Medicine Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+648,CMPR,Cimpress plc - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+649,CMPS,COMPASS Pathways Plc - American Depository Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+650,CMPX,"Compass Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+651,CMRC,"Commerce.com, Inc. - Series 1 Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+652,CMTL,Comtech Telecommunications Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+653,CMTV,Community Bancorp.  - Common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+654,CNCK,Coincheck Group N.V. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+655,CNDT,Conduent Incorporated - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+656,CNET,ZW Data Action Technologies Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+657,CNEY,CN Energy Group Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+658,CNOB,"ConnectOne Bancorp, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+659,CNSP,"CNS Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+660,CNTA,Centessa Pharmaceuticals plc - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+661,CNTB,Connect Biopharma Holdings Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+662,CNTN,"Canton Strategic Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+663,CNTX,Context Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+664,CNTY,"Century Casinos, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+665,CNVS,Cineverse Corp. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+666,CNXC,Concentrix Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+667,CNXN,"PC Connection, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+668,CNXU,Conexeu Sciences Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+669,COAG,"Hemab Therapeutics Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+670,COCH,"Envoy Medical, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+671,COCO,"The Vita Coco Company, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+672,COCP,"Cocrystal Pharma, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+673,CODA,"Coda Octopus Group, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+674,CODX,"Co-Diagnostics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+675,COFS,"ChoiceOne Financial Services, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+676,COGT,"Cogent Biosciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+677,COHU,"Cohu, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+678,COIN,"Coinbase Global, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+679,COKE,"Coca-Cola Consolidated, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+680,COLB,"Columbia Banking System, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+681,COLL,"Collegium Pharmaceutical, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+682,COLM,Columbia Sportswear Company - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+683,COO,"The Cooper Companies, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+684,COOT,Australian Oilseeds Holdings Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+685,CORT,Corcept Therapeutics Incorporated - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+686,CORZ,"Core Scientific, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+687,COSM,Cosmos Health Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+688,COST,Costco Wholesale Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+689,COYA,"Coya Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+690,CPB,The Campbell's Company - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+691,CPBI,"Central Plains Bancshares, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+692,CPHC,Canterbury Park Holding Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+693,CPIX,Cumberland Pharmaceuticals Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+694,CPOP,"Pop Culture Group Co., Ltd - Class A Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+695,CPRT,"Copart, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+696,CPRX,"Catalyst Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+697,CPSH,CPS Technologies Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+698,CPSS,"Consumer Portfolio Services, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+699,CRAI,"CRA International,Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+700,CRBP,"Corbus Pharmaceuticals Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+701,CRBU,"Caribou Biosciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+702,CRCT,"Cricut, Inc. - Class A common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+703,CRDF,"Cardiff Oncology, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+704,CRDL,Cardiol Therapeutics Inc. - Class A Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+705,CRDO,Credo Technology Group Holding Ltd - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+706,CRE,Cre8 Enterprise Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+707,CREG,Smart Powerr Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+708,CRESY,"Cresud S.A.C.I.F. y A. - American Depositary Shares, each representing ten shares of Common Stock",NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+709,CREX,"Creative Realities, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+710,CRGO,Freightos Limited - Ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+711,CRIS,"Curis, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+712,CRMD,CorMedix Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+713,CRML,Critical Metals Corp. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+714,CRMT,"America's Car-Mart, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+715,CRNC,Cerence Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+716,CRNT,Ceragon Networks Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+717,CRNX,"Crinetics Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+718,CRON,Cronos Group Inc. - Common Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+719,CROX,"Crocs, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+720,CRSP,CRISPR Therapeutics AG - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+721,CRSR,"Corsair Gaming, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+722,CRTO,Criteo S.A. - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+723,CRUS,"Cirrus Logic, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+724,CRVL,CorVel Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+725,CRVO,CervoMed Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+726,CRVS,"Corvus Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+727,CRWD,"CrowdStrike Holdings, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+728,CRWS,"Crown Crafts, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+729,CRWV,"CoreWeave, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+730,CSAI,"Cloudastructure, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+731,CSBR,"Champions Oncology, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+732,CSCO,"Cisco Systems, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+733,CSGP,"CoStar Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+734,CSHR,CoinShares PLC - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+735,CSIQ,Canadian Solar Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+736,CSPI,CSP Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+737,CSTE,Caesarstone Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+738,CSTL,"Castle Biosciences, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+739,CSWC,Capital Southwest Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+740,CSX,CSX Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+741,CTAS,Cintas Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+742,CTBI,"Community Trust Bancorp, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+743,CTKB,"Cytek Biosciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+744,CTMX,"CytomX Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+745,CTNM,"Contineum Therapeutics, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+746,CTNT,Cheetah Net Supply Chain Service Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+747,CTOR,"Citius Oncology, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+748,CTRM,Castor Maritime Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+749,CTRN,"Citi Trends, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+750,CTSH,Cognizant Technology Solutions Corporation - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+751,CTSO,Cytosorbents Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+752,CTW,CTW - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+753,CTXR,"Citius Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+754,CUB,Lionheart Holdings - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+755,CUE,"Cue Biopharma, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+756,CULP,"Culp, Inc. - Common Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+757,CUPR,Cuprina Holdings (Cayman) Limited - Class A Ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+758,CURI,CuriosityStream Inc.  - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+759,CURR,Currenc Group Inc. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+760,CURX,Curanex Pharmaceuticals Inc - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+761,CV,"CapsoVision, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+762,CVBF,CVB Financial Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+763,CVCO,"Cavco Industries, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+764,CVGI,"Commercial Vehicle Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+765,CVKD,"Cadrenal Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+766,CVLT,"Commvault Systems, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+767,CVRX,"CVRx, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+768,CVV,CVD Equipment Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+769,CWBC,Community West Bancshares - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+770,CWCO,Consolidated Water Co. Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+771,CWD,CaliberCos Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+772,CWST,"Casella Waste Systems, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+773,CXAI,CXApp Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+774,CXDO,"Crexendo, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+775,CYAB,"Cyabra, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+776,CYCN,"Cyclerion Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+777,CYCU,"Cycurion, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+778,CYN,Cyngn Inc. - Common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+779,CYPH,Cypherpunk Technologies Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+780,CYRX,"CryoPort, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+781,CYTK,"Cytokinetics, Incorporated - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+782,CZFS,"Citizens Financial Services, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+783,CZNC,Citizens & Northern Corp - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+784,CZR,"Caesars Entertainment, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+785,CZWI,"Citizens Community Bancorp, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+786,DAIC,"CID HoldCo, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+787,DAIO,Data I/O Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+788,DAKT,"Daktronics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+789,DARE,"Dare Bioscience, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+790,DASH,"DoorDash, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+791,DAVE,Dave Inc.  - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+792,DBCA,D. Boral Acquisition I Corp. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+793,DBGI,"Digital Brands Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+794,DBVT,DBV Technologies S.A. - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+795,DBX,"Dropbox, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+796,DCBO,Docebo Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+797,DCGO,DocGo Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+798,DCOY,Decoy Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+799,DCTH,"Delcath Systems, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+800,DCX,Digital Currency X Technology Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+801,DDI,"DoubleDown Interactive Co., Ltd. - American Depository Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+802,DDOG,"Datadog, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+803,DEFT,"Defi Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+804,DERM,Journey Medical Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+805,DETX,"Liberty Defense Holdings, Ltd. - Common Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+806,DEVS,DevvStream Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+807,DFDV,DeFi Development Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+808,DFLI,Dragonfly Energy Holdings Corp - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+809,DFNS,T3 Defense Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+810,DFSC,"DEFSEC Technologies Inc. - common stock, no R/S concurrent with offering",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+811,DFTX,"Definium Therapeutics, Inc.  - Common Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+812,DGICA,"Donegal Group, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+813,DGICB,"Donegal Group, Inc. - Class B Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+814,DGII,Digi International Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+815,DGNX,Diginex Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+816,DGXX,Digi Power X Inc. - Common Subordinate Voting Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+817,DH,Definitive Healthcare Corp. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+818,DHC,Diversified Healthcare Trust  - Common Shares of Beneficial Interest,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+819,DIBS,"1stdibs.com, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+820,DIOD,Diodes Incorporated - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+821,DJCO,Daily Journal Corp. (S.C.) - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+822,DJT,Trump Media & Technology Group Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+823,DKI,DarkIris Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+824,DKNG,DraftKings Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+825,DLHC,DLH Holdings Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+826,DLO,DLocal Limited - Class A Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+827,DLPN,"Dolphin Entertainment, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+828,DLTH,Duluth Holdings Inc. - Class B Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+829,DLTR,"Dollar Tree, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+830,DLXY,Delixy Holdings Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+831,DMAC,DiaMedica Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+832,DMII,Drugs Made In America Acquisition II Corp. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+833,DMRA,"Damora Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+834,DMRC,Digimarc Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+835,DNLI,Denali Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+836,DNMX,Dynamix Corporation III - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+837,DNTH,"Dianthus Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+838,DNUT,"Krispy Kreme, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+839,DOCU,"DocuSign, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+840,DOGZ,Dogness (International) Corporation - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+841,DOMH,Dominari Holdings Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+842,DOMO,"Domo, Inc. - Class B Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+843,DOO,BRP Inc. - Common Subordinate Voting Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+844,DORM,"Dorman Products, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+845,DOX,Amdocs Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+846,DOYU,DouYu International Holdings Limited - American Depositary Shares,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+847,DPRO,Draganfly Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+848,DPZ,Domino's Pizza Inc - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+849,DRCT,"Direct Digital Holdings, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+850,DRH,Diamondrock Hospitality Company - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+851,DRIO,DarioHealth Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+852,DRMA,"Dermata Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+853,DRS,"Leonardo DRS, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+854,DRTS,Alpha Tau Medical Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+855,DRUG,Bright Minds Biosciences Inc. - common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+856,DRVN,Driven Brands Holdings Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+857,DSGN,"Design Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+858,DSGR,"Distribution Solutions Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+859,DSGX,The Descartes Systems Group Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+860,DSP,Viant Technology Inc. - common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+861,DSWL,"Deswell Industries, Inc. - Common Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+862,DSY,Big Tree Cloud Holdings Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+863,DTCX,"Datacentrex, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+864,DTI,Drilling Tools International Corporation  - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+865,DTIL,"Precision BioSciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+866,DTSS,Datasea Intelligent Technology Ltd. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+867,DTST,Data Storage Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+868,DUKR,DUKE Robotics Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+869,DUO,Fangdd Network Group Ltd. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+870,DUOL,"Duolingo, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+871,DUOT,"Duos Technologies Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+872,DVLT,Datavault AI Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+873,DWSN,Dawson Geophysical Company - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+874,DWTX,"Dogwood Therapeutics, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+875,DXCM,"DexCom, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+876,DXLG,"Destination XL Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+877,DXPE,"DXP Enterprises, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+878,DXST,Decent Holding Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+879,DYAI,"Dyadic International, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+880,DYN,"Dyne Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+881,DYNC,Dynamix Corporation - Class A Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+882,DYOR,Insight Digital Partners II - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+883,EA,Electronic Arts Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+884,EBAY,eBay Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+885,EBC,"Eastern Bankshares, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+886,EBMT,"Eagle Bancorp Montana, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+887,EBON,Ebang International Holdings Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+888,ECBK,"ECB Bancorp, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+889,ECOR,"electroCore, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+890,ECPG,Encore Capital Group Inc - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+891,ECX,ECARX Holdings Inc. - Class A Ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+892,EDBL,Edible Garden AG Incorporated - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+893,EDHL,Everbright Digital Holding Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+894,EDIT,"Editas Medicine, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+895,EDRY,EuroDry Ltd. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+896,EDSA,"Edesa Biotech, Inc. - Common Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+897,EDTK,Skillful Craftsman Education Technology Limited - Ordinary Share,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+898,EDUC,Educational Development Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+899,EEFT,"Euronet Worldwide, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+900,EEIQ,EpicQuest Education Group International Limited - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+901,EFOI,"Energy Focus, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+902,EFSC,Enterprise Financial Services Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+903,EFSI,Eagle Financial Services Inc - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+904,EFTY,"Etoiles Capital Group Co., Ltd. - Class A Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+905,EGAN,eGain Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+906,EGBN,"Eagle Bancorp, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+907,EGHT,8x8 Inc - Common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+908,EH,EHang Holdings Limited - ADS,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+909,EHGO,Eshallgo Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+910,EHLD,Euroholdings Ltd. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+911,EHTH,"eHealth, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+912,EIKN,"Eikon Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+913,EJH,E-Home Household Service Holdings Limited - Ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+914,ELAB,PMGC Holdings Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+915,ELBM,Electra Battery Materials Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+916,ELDN,"Eledon Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+917,ELE,Elemental Royalty Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+918,ELMT,The Elmet Group Co. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+919,ELOG,Eastern International Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+920,ELPW,Elong Power Holding Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+921,ELSE,"Electro-Sensors, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+922,ELTK,Eltek Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+923,ELTX,"Elicio Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+924,ELUT,"Elutia, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+925,ELVA,Electrovaya Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+926,ELVN,"Enliven Therapeutics, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+927,ELVR,Elevra Lithium Limited - American Depository Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,LOW,No out-of-scope instrument markers detected; treated as common stock candidate.,SOURCE_ONLY,False,False,False,False
+928,ELWT,"Elauwit Connection, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+929,EMAT,Evolution Metals & Technologies Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+930,EMBC,Embecta Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+931,EML,Eastern Company (The) - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+932,EMPD,Empery Digital Inc. - Common stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+933,EMPG,Empro Group Inc. - Ordinary shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+934,ENGN,enGene Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+935,ENGS,Energys Group Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+936,ENLT,Enlight Renewable Energy Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+937,ENLV,Enlivex Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+938,ENPH,"Enphase Energy, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+939,ENSC,"Ensysce Biosciences, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+940,ENSG,"The Ensign Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+941,ENTA,"Enanta Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+942,ENTG,"Entegris, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+943,ENTX,Entera Bio Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+944,ENVB,"Enveric Biosciences, Inc.  - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+945,ENVX,Enovix Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+946,EOLS,"Evolus, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+947,EOSE,"Eos Energy Enterprises, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+948,EPOW,E-Power Inc. - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+949,EPRX,Eupraxia Pharmaceuticals Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+950,EPSM,Epsium Enterprise Limited - Class A Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+951,EPSN,Epsilon Energy Ltd. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+952,EQ,"Equillium, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+953,EQIX,"Equinix, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+954,EQPT,EquipmentShare.com Inc - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+955,ERAS,"Erasca, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+956,ERIE,Erie Indemnity Company - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+957,ERII,"Energy Recovery, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+958,ERNA,Ernexa Therapeutics Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+959,ESCA,"Escalade, Incorporated - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+960,ESEA,Euroseas Ltd. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+961,ESLA,"Estrella Immunopharma, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+962,ESLT,Elbit Systems Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+963,ESOA,Energy Services of America Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+964,ESPR,"Esperion Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+965,ESQ,"Esquire Financial Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+966,ESTA,Establishment Labs Holdings Inc. - Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+967,ETON,"Eton Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+968,ETOR,eToro Group Ltd. - Class A Common Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+969,ETS,Elite Express Holding Inc. - Class A Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+970,EU,enCore Energy Corp. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+971,EUDA,Euda Health Holdings Limited - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+972,EVAX,Evaxion A/S - American Depositary Share,NASDAQ,USA,,,,nasdaqlisted,ADR,IN_SCOPE,MEDIUM,Security name indicates ADR/ADS; keep in scope for now.,SOURCE_ONLY,False,False,False,False
+973,EVCM,EverCommerce Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+974,EVER,"EverQuote, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+975,EVGN,Evogene Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+976,EVGO,EVgo Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+977,EVLV,"Evolv Technologies Holdings, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+978,EVRG,"Evergy, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+979,EVTV,"Envirotech Vehicles, Inc. - Common stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+980,EWBC,"East West Bancorp, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+981,EWTX,"Edgewise Therapeutics, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+982,EXC,Exelon Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+983,EXE,Expand Energy Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+984,EXEL,"Exelixis, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+985,EXFY,"Expensify, Inc. - Class A Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+986,EXLS,"ExlService Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+987,EXOZ,eXoZymes Inc. - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+988,EXPE,"Expedia Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+989,EXPO,"Exponent, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+990,EXTR,"Extreme Networks, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+991,EXYN,"Exyn Technologies, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+992,EYE,"National Vision Holdings, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+993,EYPT,"EyePoint, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+994,EZGO,EZGO Technologies Ltd. - Ordinary Shares,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+995,EZPW,"EZCORP, Inc. - Class A Non-Voting Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+996,EZRA,"Reliance Global Group, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+997,FA,First Advantage Corporation - Common Stock,NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+998,FABC,"Fabric.AI, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+999,FAMI,"Farmmi, Inc. - Class A Ordinary Shares",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False
+1000,FANG,"Diamondback Energy, Inc. - Common Stock",NASDAQ,USA,,,,nasdaqlisted,COMMON_STOCK,IN_SCOPE,HIGH,Security name indicates common stock/common shares.,SOURCE_ONLY,False,False,False,False

@@ -1,0 +1,52 @@
+{
+  "phase": "v2.2D",
+  "method": "small_batch_dry_run_v1",
+  "created_at": "2026-07-05T00:58:39+00:00",
+  "dry_run_status": "SMALL_BATCH_DRY_RUN_COMPLETED_WITH_WARNINGS",
+  "readiness_score": 85,
+  "elapsed_seconds": 0.3527,
+  "source": {
+    "path": "data/raw/universe_source_real_clean.csv",
+    "rows": 5617,
+    "columns": 14,
+    "validation_status": "SOURCE_VALID_FOR_SMALL_BATCH_WITH_WARNINGS",
+    "validation_scope": "PARTIAL_REAL_SOURCE_FOR_SMALL_BATCH"
+  },
+  "batch": {
+    "requested_limit": 1000,
+    "written_rows": 1000,
+    "output_dir": "outputs/large_universe_dry_run_59k/batches/batch_1000",
+    "batch_csv": "outputs/large_universe_dry_run_59k/batches/batch_1000/small_batch_universe_v2_2d.csv",
+    "output_size_bytes": 194860
+  },
+  "dry_run_actions": {
+    "source_validation_used": true,
+    "batch_csv_written": true,
+    "batch_execution_performed": true,
+    "scoring_performed": false,
+    "openai_called": false,
+    "broker_called": false,
+    "active_outputs_overwritten": false,
+    "full_59000_universe_launched": false
+  },
+  "blockers": [],
+  "warnings": [
+    "Source is partial real source, not full 59k."
+  ],
+  "positives": [
+    "Output directory is isolated: outputs/large_universe_dry_run_59k/batches/batch_1000",
+    "v2.2C source validation allows small batch with warnings.",
+    "Source CSV readable: data/raw/universe_source_real_clean.csv",
+    "Required mapped ticker column exists: Symbol -> ticker",
+    "Small batch CSV written with 1000 rows."
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false
+  },
+  "recommendation": "Proceed to v2.2E full dry-run gate. Do not execute full 59k."
+}
