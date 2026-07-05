@@ -1,0 +1,93 @@
+{
+  "phase": "v2.5B",
+  "method": "next_provider_acquisition_plan_v1",
+  "created_at": "2026-07-05T22:24:44+00:00",
+  "plan_status": "NEXT_PROVIDER_PLAN_READY",
+  "readiness_score": 90,
+  "current_state": {
+    "v2_5a_gate_decision": "EXPANDED_SOURCE_REVALIDATED_PARTIAL_BELOW_TARGET",
+    "current_included_rows": 5648,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "rows_needed_first_expansion": 9352,
+    "rows_needed_full_source": 44352
+  },
+  "provider_candidates": [
+    {
+      "priority": 1,
+      "provider_id": "nyse_listed_directory",
+      "provider_name": "NYSE Listed Directory",
+      "role": "Close gap for NYSE coverage and validate against Nasdaq Trader otherlisted overlap.",
+      "expected_value": "HIGH",
+      "risk": "MEDIUM",
+      "network_required": true,
+      "recommended_phase": "v2.5C",
+      "decision": "NEXT_PROVIDER_CANDIDATE",
+      "notes": "Use as the next controlled provider because it was already identified in the source expansion inventory."
+    },
+    {
+      "priority": 2,
+      "provider_id": "exchange_official_listings_additional",
+      "provider_name": "Additional official exchange listing files",
+      "role": "Increase public equity universe beyond Nasdaq Trader partial coverage.",
+      "expected_value": "HIGH",
+      "risk": "MEDIUM",
+      "network_required": true,
+      "recommended_phase": "v2.5D_or_later",
+      "decision": "QUEUE_AFTER_NYSE",
+      "notes": "Only add after NYSE route is implemented and validated."
+    },
+    {
+      "priority": 3,
+      "provider_id": "sec_company_tickers",
+      "provider_name": "SEC company tickers/company facts mapping",
+      "role": "Improve identifier mapping and public company coverage, not necessarily exchange-listed universe completeness.",
+      "expected_value": "MEDIUM",
+      "risk": "MEDIUM",
+      "network_required": true,
+      "recommended_phase": "v2.6_or_later",
+      "decision": "OPTIONAL_IDENTIFIER_ENRICHMENT",
+      "notes": "Useful later for CIK/ticker mapping, but should not be treated as full listing source by itself."
+    },
+    {
+      "priority": 4,
+      "provider_id": "kaggle_or_third_party_datasets",
+      "provider_name": "Third-party public datasets",
+      "role": "Possible row-count expansion, but requires stricter license and freshness review.",
+      "expected_value": "MEDIUM",
+      "risk": "HIGH",
+      "network_required": true,
+      "recommended_phase": "not_first_choice",
+      "decision": "DEFER",
+      "notes": "Do not use before official provider routes unless explicitly reviewed."
+    }
+  ],
+  "recommended_next_phase": {
+    "phase": "v2.5C",
+    "name": "Controlled NYSE Provider Acquisition Plan",
+    "mode": "PLAN_FIRST_NO_DOWNLOAD",
+    "reason": "NYSE was already a primary first-expansion provider candidate and should be handled with a plan/gate before any network acquisition."
+  },
+  "blockers": [],
+  "warnings": [
+    "Rows still needed for first expansion target: 9352",
+    "Rows still needed for full-source threshold: 44352"
+  ],
+  "positives": [
+    "v2.5A revalidation artifact found: outputs/full_universe_source_acquisition/expanded_source_revalidation_gate_v2_5a.json",
+    "v2.4D closure artifact found: outputs/full_universe_source_acquisition/expanded_source_partial_closure_v2_4d.json",
+    "v2.5A gate decision accepted: EXPANDED_SOURCE_REVALIDATED_PARTIAL_BELOW_TARGET",
+    "Current expanded source has usable rows: 5648"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false
+  },
+  "recommendation": "Proceed with v2.5C as a plan-only NYSE provider acquisition gate. Do not download more data until that plan is reviewed."
+}
