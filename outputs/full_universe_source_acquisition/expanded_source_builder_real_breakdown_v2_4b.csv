@@ -1,0 +1,3 @@
+provider_id,source_file,exists,readable,raw_rows,included_rows,excluded_rows,duplicate_rows_removed,blockers,warnings
+nasdaq_trader_nasdaqlisted,data/raw/source_providers/nasdaq_trader_nasdaqlisted/nasdaq_trader_nasdaqlisted.csv,True,True,5537,3244,2293,0,,
+nasdaq_trader_otherlisted,data/raw/source_providers/nasdaq_trader_otherlisted/nasdaq_trader_otherlisted.csv,True,True,7420,2404,5016,0,,

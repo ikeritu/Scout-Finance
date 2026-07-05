@@ -1,0 +1,99 @@
+{
+  "phase": "v2.4B",
+  "method": "expanded_source_builder_real_v1",
+  "created_at": "2026-07-05T20:53:19+00:00",
+  "builder_status": "EXPANDED_SOURCE_BUILD_PARTIAL_BELOW_TARGET_WITH_WARNINGS",
+  "readiness_score": 70,
+  "acquisition_input": {
+    "path": "outputs/full_universe_source_acquisition/provider_source_acquisition_v2_4a.json",
+    "exists": true,
+    "acquisition_status": "PROVIDER_SOURCE_ACQUISITION_COMPLETED_WITH_WARNINGS"
+  },
+  "targets": {
+    "expected_full_rows": 59000,
+    "minimum_full_source_rows": 50000,
+    "target_first_expansion_rows": 15000
+  },
+  "outputs": {
+    "expanded_source_csv": "data/raw/expanded_universe/expanded_universe_v2_4b.csv",
+    "exclusion_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_4b.csv",
+    "breakdown_csv": "outputs/full_universe_source_acquisition/expanded_source_builder_real_breakdown_v2_4b.csv"
+  },
+  "summary": {
+    "provider_count": 2,
+    "raw_rows": 12957,
+    "included_rows": 5648,
+    "excluded_rows": 7309,
+    "global_duplicate_exclusions": 0,
+    "exchange_counts": {
+      "NASDAQ": 3244,
+      "NYSE": 2122,
+      "NYSE American": 265,
+      "NYSE Arca": 13,
+      "Cboe BZX": 4
+    },
+    "instrument_scope_counts": {
+      "IN_SCOPE": 5578,
+      "IN_SCOPE_ADR": 70
+    },
+    "instrument_type_counts": {
+      "COMMON_STOCK": 5578,
+      "ADR": 70
+    }
+  },
+  "provider_summaries": [
+    {
+      "provider_id": "nasdaq_trader_nasdaqlisted",
+      "source_file": "data/raw/source_providers/nasdaq_trader_nasdaqlisted/nasdaq_trader_nasdaqlisted.csv",
+      "exists": true,
+      "readable": true,
+      "raw_rows": 5537,
+      "included_rows": 3244,
+      "excluded_rows": 2293,
+      "duplicate_rows_removed": 0,
+      "blockers": [],
+      "warnings": [],
+      "positives": [
+        "Provider source file readable."
+      ]
+    },
+    {
+      "provider_id": "nasdaq_trader_otherlisted",
+      "source_file": "data/raw/source_providers/nasdaq_trader_otherlisted/nasdaq_trader_otherlisted.csv",
+      "exists": true,
+      "readable": true,
+      "raw_rows": 7420,
+      "included_rows": 2404,
+      "excluded_rows": 5016,
+      "duplicate_rows_removed": 0,
+      "blockers": [],
+      "warnings": [],
+      "positives": [
+        "Provider source file readable."
+      ]
+    }
+  ],
+  "blockers": [],
+  "warnings": [
+    "Expanded universe below first expansion target: 5648 < 15000",
+    "Expanded universe below full-source threshold: 5648 < 50000"
+  ],
+  "positives": [
+    "v2.4A acquisition artifact found: outputs/full_universe_source_acquisition/provider_source_acquisition_v2_4a.json",
+    "v2.4A acquisition status usable: PROVIDER_SOURCE_ACQUISITION_COMPLETED_WITH_WARNINGS",
+    "nasdaq_trader_nasdaqlisted: Provider source file readable.",
+    "nasdaq_trader_otherlisted: Provider source file readable."
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "expanded_source_written": true,
+    "active_outputs_overwritten": false
+  },
+  "recommendation": "Proceed to v2.4C expanded source validation real. Do not run scoring or full 59k."
+}
