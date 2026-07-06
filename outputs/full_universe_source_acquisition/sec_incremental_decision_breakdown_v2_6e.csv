@@ -1,0 +1,10 @@
+metric,value,interpretation
+current_expanded_rows,5648,Current validated expanded universe rows before SEC rebuild.
+sec_total_rows,10415,Total normalized SEC rows.
+sec_primary_candidate_rows,7668,SEC rows on primary exchanges considered possible provider rows.
+sec_primary_overlap_rows,5309,SEC primary rows already present in expanded universe.
+sec_primary_net_new_rows,2359,Net new primary exchange+ticker keys SEC could add.
+sec_enrichment_or_exclusion_rows,2747,OTC/None rows to keep out of primary universe but useful for enrichment/exclusion analysis.
+max_possible_rows_after_sec_rebuild,8007,Estimated row count if primary SEC new keys are merged.
+first_expansion_unlocked_15000,False,Whether SEC alone reaches 15k target.
+full_source_unlocked_50000,False,Whether SEC alone reaches 50k minimum full-source threshold.

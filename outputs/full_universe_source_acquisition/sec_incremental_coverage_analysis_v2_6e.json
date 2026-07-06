@@ -1,0 +1,90 @@
+{
+  "phase": "v2.6E",
+  "method": "sec_incremental_coverage_analysis_v1",
+  "created_at": "2026-07-06T12:17:33+00:00",
+  "analysis_status": "SEC_INCREMENTAL_COVERAGE_USEFUL_BUT_NOT_ENOUGH",
+  "readiness_score": 90,
+  "decision": "REBUILD_WITH_SEC_USEFUL_BUT_NOT_ENOUGH",
+  "recommended_next_phase": "v2.7A ? Rebuild Expanded Source With SEC Plan",
+  "inputs": {
+    "sec_csv": "data/raw/source_providers/sec_company_tickers_exchange/sec_company_tickers_exchange.csv",
+    "expanded_universe_csv": "data/raw/expanded_universe/expanded_universe_v2_4b.csv",
+    "validation_json": "outputs/full_universe_source_acquisition/sec_company_tickers_exchange_validation_v2_6d.json"
+  },
+  "summary": {
+    "current_expanded_rows": 5648,
+    "sec_total_rows": 10415,
+    "sec_total_unique_exchange_ticker_keys": 10415,
+    "sec_primary_candidate_keys": 7668,
+    "sec_primary_overlap_keys": 5309,
+    "sec_primary_net_new_keys": 2359,
+    "sec_enrichment_or_exclusion_rows": 2747,
+    "sec_unknown_rows": 0,
+    "sec_incremental_gain_rows": 2359,
+    "sec_incremental_gain_pct_vs_current": 41.77,
+    "max_possible_rows_after_sec_rebuild": 8007,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion_after_sec": 6993,
+    "rows_needed_full_source_after_sec": 41993,
+    "coverage_after_sec_pct_of_first_expansion": 53.38,
+    "coverage_after_sec_pct_of_full_source": 16.01,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false,
+    "sec_exchange_counts": {
+      "NASDAQ": 4329,
+      "NYSE": 3312,
+      "OTC": 2558,
+      "None": 189,
+      "CBOE": 27
+    },
+    "sec_classification_counts": {
+      "PRIMARY_EXCHANGE_CANDIDATE": 7668,
+      "ENRICHMENT_OR_EXCLUSION_CANDIDATE": 2747
+    },
+    "primary_new_exchange_counts": {
+      "NYSE": 1240,
+      "NASDAQ": 1092,
+      "CBOE": 27
+    },
+    "primary_overlap_exchange_counts": {
+      "NASDAQ": 3237,
+      "NYSE": 2072
+    }
+  },
+  "outputs": {
+    "primary_new_csv": "outputs/full_universe_source_acquisition/sec_incremental_primary_new_rows_v2_6e.csv",
+    "primary_overlap_csv": "outputs/full_universe_source_acquisition/sec_incremental_primary_overlap_rows_v2_6e.csv",
+    "enrichment_csv": "outputs/full_universe_source_acquisition/sec_incremental_enrichment_rows_v2_6e.csv",
+    "rebuild_candidates_csv": "outputs/full_universe_source_acquisition/sec_incremental_rebuild_candidates_v2_6e.csv",
+    "decision_breakdown_csv": "outputs/full_universe_source_acquisition/sec_incremental_decision_breakdown_v2_6e.csv"
+  },
+  "blockers": [],
+  "warnings": [
+    "SEC enrichment/exclusion rows should not be merged into primary universe: 2747",
+    "SEC does not unlock first expansion target: 8007 < 15000",
+    "SEC does not unlock full-source threshold: 8007 < 50000"
+  ],
+  "positives": [
+    "v2.6D validation artifact found: outputs/full_universe_source_acquisition/sec_company_tickers_exchange_validation_v2_6d.json",
+    "v2.6D validation status accepted: SEC_COMPANY_TICKERS_EXCHANGE_VALIDATED_WITH_PRIMARY_CANDIDATES",
+    "v2.6D SEC route decision accepted: USABLE_AS_PARTIAL_PROVIDER_AND_IDENTIFIER_ENRICHMENT",
+    "SEC CSV found: data/raw/source_providers/sec_company_tickers_exchange/sec_company_tickers_exchange.csv",
+    "Expanded universe CSV found: data/raw/expanded_universe/expanded_universe_v2_4b.csv",
+    "SEC adds net new primary exchange+ticker keys: 2359",
+    "SEC can increase expanded universe from 5648 to 8007 rows before further providers."
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false
+  },
+  "recommendation": "Proceed to v2.7A with a plan-only rebuild using SEC as partial provider and identifier enrichment. Do not run rebuild yet."
+}
