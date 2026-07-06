@@ -1,0 +1,100 @@
+{
+  "phase": "v2.6C",
+  "method": "sec_company_tickers_exchange_acquisition_real_v1",
+  "created_at": "2026-07-06T11:21:39+00:00",
+  "acquisition_status": "SEC_COMPANY_TICKERS_EXCHANGE_ACQUISITION_COMPLETED",
+  "readiness_score": 85,
+  "provider": {
+    "provider_id": "sec_company_tickers_exchange",
+    "provider_name": "SEC company_tickers_exchange.json",
+    "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
+    "provider_dir": "data/raw/source_providers/sec_company_tickers_exchange",
+    "raw_json": "data/raw/source_providers/sec_company_tickers_exchange/company_tickers_exchange.json",
+    "normalized_csv": "data/raw/source_providers/sec_company_tickers_exchange/sec_company_tickers_exchange.csv",
+    "sample_csv": "outputs/full_universe_source_acquisition/sec_company_tickers_exchange_sample_v2_6c.csv"
+  },
+  "network": {
+    "network_download_performed": true,
+    "status_ok": true,
+    "status_code": 200,
+    "reason": "OK",
+    "content_type": "application/json",
+    "size_bytes": 521876,
+    "sha256": "10cf18f2433682557f1d71c3085c811f20fae4efe660e1cee7e5ce1c341f23f4",
+    "timeout_seconds": 30,
+    "user_agent_env": "SCOUT_FINANCE_SEC_USER_AGENT",
+    "user_agent_present": true,
+    "error": null
+  },
+  "schema": {
+    "expected_fields": [
+      "cik",
+      "name",
+      "ticker",
+      "exchange"
+    ],
+    "detected_fields": [
+      "cik",
+      "name",
+      "ticker",
+      "exchange"
+    ],
+    "missing_expected_fields": [],
+    "raw_data_records": 10415
+  },
+  "summary": {
+    "normalized_rows": 10415,
+    "empty_tickers": 0,
+    "empty_company_names": 0,
+    "empty_exchanges": 0,
+    "empty_ciks": 0,
+    "duplicate_exchange_ticker_keys": 0,
+    "exchange_counts": {
+      "NASDAQ": 4329,
+      "NYSE": 3312,
+      "OTC": 2558,
+      "None": 189,
+      "CBOE": 27
+    },
+    "raw_exchange_counts": {
+      "Nasdaq": 4329,
+      "NYSE": 3312,
+      "OTC": 2558,
+      "None": 189,
+      "CBOE": 27
+    },
+    "rows_needed_first_expansion_before_sec": 9352,
+    "rows_needed_full_source_before_sec": 44352
+  },
+  "outputs": {
+    "issues_csv": "outputs/full_universe_source_acquisition/sec_company_tickers_exchange_issues_v2_6c.csv",
+    "duplicates_csv": "outputs/full_universe_source_acquisition/sec_company_tickers_exchange_duplicates_v2_6c.csv"
+  },
+  "blockers": [],
+  "warnings": [
+    "SEC source is acquired and normalized, but must be validated before rebuild or merge."
+  ],
+  "positives": [
+    "v2.6B plan artifact found: outputs/full_universe_source_acquisition/sec_company_tickers_exchange_acquisition_plan_v2_6b.json",
+    "v2.6B plan status accepted: SEC_COMPANY_TICKERS_EXCHANGE_PLAN_READY",
+    "SEC User-Agent configured via SCOUT_FINANCE_SEC_USER_AGENT",
+    "Raw SEC JSON response written: data/raw/source_providers/sec_company_tickers_exchange/company_tickers_exchange.json",
+    "SEC download succeeded: https://www.sec.gov/files/company_tickers_exchange.json",
+    "SEC JSON parsed successfully.",
+    "Normalized SEC CSV written: data/raw/source_providers/sec_company_tickers_exchange/sec_company_tickers_exchange.csv",
+    "SEC sample CSV written: outputs/full_universe_source_acquisition/sec_company_tickers_exchange_sample_v2_6c.csv",
+    "No duplicate exchange+ticker keys detected in SEC normalized rows.",
+    "SEC normalized row count: 10415"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false
+  },
+  "recommendation": "Proceed to v2.6D SEC validation before any rebuild or merge."
+}
