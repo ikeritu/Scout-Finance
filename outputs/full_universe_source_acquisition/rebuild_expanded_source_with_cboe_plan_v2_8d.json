@@ -1,0 +1,106 @@
+{
+  "phase": "v2.8D",
+  "method": "rebuild_expanded_source_with_cboe_plan_v1",
+  "created_at": "2026-07-06T22:27:20+00:00",
+  "plan_status": "REBUILD_EXPANDED_SOURCE_WITH_CBOE_PLAN_READY_WITH_CONDITIONS",
+  "readiness_score": 90,
+  "plan_decision": "CBOE_REBUILD_PLAN_APPROVED_WITH_CONDITIONS",
+  "recommended_next_phase": "v2.8E ? Rebuild Expanded Source With Cboe Real",
+  "inputs": {
+    "validation_json": "outputs/full_universe_source_acquisition/cboe_listed_symbols_validation_v2_8c.json",
+    "net_new_candidates_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_net_new_candidates_v2_8c.csv",
+    "normalized_candidates_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_normalized_candidate_v2_8c.csv",
+    "schema_detail_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_schema_detail_v2_8c.csv",
+    "current_expanded_csv": "data/raw/expanded_universe/expanded_universe_v2_7b.csv",
+    "current_exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_7b.csv"
+  },
+  "current_state": {
+    "current_expanded_rows": 8007,
+    "current_exclusions_rows": 10056,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false
+  },
+  "cboe_candidate_summary": {
+    "normalized_candidate_rows": 1220,
+    "net_new_exchange_ticker_rows": 1193,
+    "projected_rows_after_cboe": 9200,
+    "rows_needed_first_expansion_after_cboe": 5800,
+    "rows_needed_full_source_after_cboe": 40800,
+    "first_expansion_unlocked_after_cboe": false,
+    "full_source_unlocked_after_cboe": false
+  },
+  "planned_rebuild_outputs_v2_8e": {
+    "expanded_universe_with_cboe_csv": "data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "expanded_universe_exclusions_with_cboe_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "rebuild_json": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_cboe_real_v2_8e.json",
+    "rebuild_md": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_cboe_real_v2_8e.md",
+    "provider_breakdown_csv": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_cboe_provider_breakdown_v2_8e.csv",
+    "merge_audit_csv": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_cboe_merge_audit_v2_8e.csv",
+    "exclusion_breakdown_csv": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_cboe_exclusion_breakdown_v2_8e.csv"
+  },
+  "planned_rebuild_rules_v2_8e": [
+    "Use expanded_universe_v2_7b.csv as immutable input.",
+    "Use expanded_universe_exclusions_v2_7b.csv as immutable input.",
+    "Use cboe_listed_symbols_net_new_candidates_v2_8c.csv as Cboe candidate input.",
+    "Do not use cboe_listed_symbols_raw.csv as ticker source.",
+    "Append only net-new exchange+ticker keys.",
+    "Preserve existing rows exactly where keys already exist.",
+    "Set source_provider to cboe_listed_symbols for appended rows.",
+    "Keep classification confidence conservative because Cboe source semantics require validation.",
+    "Do not overwrite active MVP outputs.",
+    "Do not recalculate scoring.",
+    "Do not call OpenAI.",
+    "Do not call broker APIs.",
+    "Do not launch full 59k universe."
+  ],
+  "planned_validation_v2_8f": [
+    "Confirm final expanded rows equal 9200 if all 1193 net-new candidates are added.",
+    "Confirm duplicate exchange+ticker keys remain 0.",
+    "Confirm required canonical columns are present.",
+    "Confirm provider breakdown includes Cboe candidate rows.",
+    "Confirm first expansion remains blocked because 9200 < 15000.",
+    "Confirm full source remains blocked because 9200 < 50000.",
+    "Confirm no scoring/OpenAI/broker/full 59k was executed."
+  ],
+  "decision_constraints": {
+    "listed_symbols_raw_csv_usable_as_ticker_source": false,
+    "cboe_candidates_are_primary_provider_rows": false,
+    "cboe_candidates_are_candidate_provider_rows": true,
+    "rebuild_allowed": true,
+    "active_outputs_overwrite_allowed": false,
+    "full_59k_unlocked_after_cboe": false
+  },
+  "blockers": [],
+  "warnings": [
+    "Cboe listed_symbols_raw.csv is not usable as direct ticker source because no symbol/ticker field was detected.",
+    "Cboe candidates came from symbols_traded/lot-size style data and must remain candidate-provider rows until post-rebuild validation.",
+    "Projected rows after Cboe remain below 15000 and 50000 thresholds.",
+    "Full 59k dry-run remains blocked after this provider even if rebuild succeeds."
+  ],
+  "positives": [
+    "v2.8C validation artifact found: outputs/full_universe_source_acquisition/cboe_listed_symbols_validation_v2_8c.json",
+    "v2.8C validation status accepted: CBOE_VALIDATED_WITH_NET_NEW_CANDIDATES",
+    "v2.8C Cboe decision accepted: CBOE_USABLE_AS_CANDIDATE_PROVIDER_PENDING_REBUILD_PLAN",
+    "Required planning input available: outputs/full_universe_source_acquisition/cboe_listed_symbols_net_new_candidates_v2_8c.csv",
+    "Required planning input available: outputs/full_universe_source_acquisition/cboe_listed_symbols_normalized_candidate_v2_8c.csv",
+    "Required planning input available: outputs/full_universe_source_acquisition/cboe_listed_symbols_schema_detail_v2_8c.csv",
+    "Required planning input available: data/raw/expanded_universe/expanded_universe_v2_7b.csv",
+    "Required planning input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_7b.csv"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "plan_only": true
+  },
+  "recommendation": "Proceed to v2.8E controlled rebuild with Cboe candidate rows, then validate in v2.8F before any downstream use."
+}
