@@ -1,0 +1,131 @@
+{
+  "phase": "v2.8C",
+  "method": "cboe_listed_symbols_validation_v1",
+  "created_at": "2026-07-06T22:06:07+00:00",
+  "validation_status": "CBOE_VALIDATED_WITH_NET_NEW_CANDIDATES",
+  "readiness_score": 85,
+  "cboe_decision": "CBOE_USABLE_AS_CANDIDATE_PROVIDER_PENDING_REBUILD_PLAN",
+  "recommended_next_phase": "v2.8D ? Rebuild Expanded Source With Cboe Plan",
+  "inputs": {
+    "acquisition_json": "outputs/full_universe_source_acquisition/cboe_listed_symbols_acquisition_real_v2_8b.json",
+    "discovered_links_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_discovered_links_v2_8b.csv",
+    "schema_probe_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_schema_probe_v2_8b.csv",
+    "expanded_csv": "data/raw/expanded_universe/expanded_universe_v2_7b.csv",
+    "raw_listed_csv": "data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.csv",
+    "raw_listed_xml": "data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.xml",
+    "raw_symbols_traded_csv": "data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.csv",
+    "raw_symbols_traded_xml": "data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.xml"
+  },
+  "schema_summary": {
+    "listed_csv_rows": 1490,
+    "listed_csv_fields": [
+      "Name",
+      "Volume",
+      "Ask Size",
+      "Ask Price",
+      "Bid Size",
+      "Bid Price",
+      "Last Price",
+      "Shares Matched",
+      "Shares Routed"
+    ],
+    "listed_csv_best_header_line": 0,
+    "listed_detected_fields": {
+      "symbol_field": "",
+      "name_field": "Name",
+      "exchange_field": "",
+      "type_field": ""
+    },
+    "symbols_traded_csv_rows": 1220,
+    "symbols_traded_csv_fields": [
+      "measurement_month",
+      "trade_date",
+      "symbol",
+      "listed_mic",
+      "round_lot_size"
+    ],
+    "symbols_traded_csv_best_header_line": 0,
+    "symbols_traded_detected_fields": {
+      "symbol_field": "symbol",
+      "name_field": "",
+      "exchange_field": "",
+      "type_field": ""
+    },
+    "listed_xml_root": "bats",
+    "symbols_traded_xml_root": "cboe"
+  },
+  "coverage_summary": {
+    "current_expanded_rows": 8007,
+    "existing_exchange_ticker_keys": 8007,
+    "normalized_candidate_rows": 1220,
+    "net_new_exchange_ticker_rows": 1193,
+    "projected_rows_if_added": 9200,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "first_expansion_unlocked_if_added": false,
+    "full_source_unlocked_if_added": false
+  },
+  "download_review": {
+    "downloaded_symbols_traded_url": "https://cdn.cboe.com/data/us/equities/rpt_cboe_listed_lot_size/cboe_listed_lot_size.csv",
+    "proper_symbols_traded_csv_link_candidates": [
+      {
+        "route_id": "cboe_us_equities_symbols_traded_edgx",
+        "page_url": "https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx",
+        "file_type": "csv",
+        "url": "https://cdn.cboe.com/data/us/equities/market_statistics/symbols_traded/edgx/cboe_symbols_traded_edgx.csv"
+      },
+      {
+        "route_id": "cboe_us_equities_symbols_traded_edgx",
+        "page_url": "https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx",
+        "file_type": "csv",
+        "url": "https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx?download=csv"
+      },
+      {
+        "route_id": "cboe_us_equities_symbols_traded_edgx",
+        "page_url": "https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx",
+        "file_type": "csv",
+        "url": "https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx?output=csv"
+      }
+    ]
+  },
+  "outputs": {
+    "schema_detail_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_schema_detail_v2_8c.csv",
+    "normalized_candidate_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_normalized_candidate_v2_8c.csv",
+    "net_new_candidates_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_net_new_candidates_v2_8c.csv",
+    "sample_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_validation_sample_v2_8c.csv"
+  },
+  "blockers": [],
+  "warnings": [
+    "No symbol/ticker field detected for data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.csv",
+    "v2.8B downloaded Cboe lot-size CSV into symbols_traded slot before the real symbols_traded CSV. v2.8D/v2.8B2 may need corrected download priority."
+  ],
+  "positives": [
+    "v2.8B acquisition artifact found: outputs/full_universe_source_acquisition/cboe_listed_symbols_acquisition_real_v2_8b.json",
+    "v2.8B acquisition status accepted: CBOE_LISTED_SYMBOLS_ACQUISITION_COMPLETED_WITH_REVIEW_REQUIRED",
+    "Required validation input available: data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.csv",
+    "Required validation input available: data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.xml",
+    "Required validation input available: data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.csv",
+    "Required validation input available: data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.xml",
+    "Required validation input available: outputs/full_universe_source_acquisition/cboe_listed_symbols_discovered_links_v2_8b.csv",
+    "Required validation input available: outputs/full_universe_source_acquisition/cboe_listed_symbols_schema_probe_v2_8b.csv",
+    "Required validation input available: data/raw/expanded_universe/expanded_universe_v2_7b.csv",
+    "cboe_us_equities_symbols_traded_downloaded normalized candidate rows: 1220",
+    "Normalized candidate CSV written: outputs/full_universe_source_acquisition/cboe_listed_symbols_normalized_candidate_v2_8c.csv",
+    "Net-new candidate CSV written: outputs/full_universe_source_acquisition/cboe_listed_symbols_net_new_candidates_v2_8c.csv",
+    "Discovered proper symbols_traded CSV link candidates: 3"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "validation_only": true
+  },
+  "recommendation": "Use v2.8D to plan rebuild only if net-new candidates are meaningful; otherwise correct Cboe download priority or close Cboe as reference/review-required."
+}
