@@ -1,0 +1,73 @@
+{
+  "phase": "v2.5D",
+  "method": "controlled_nyse_provider_acquisition_real_v1",
+  "created_at": "2026-07-06T08:16:23+00:00",
+  "acquisition_status": "NYSE_PROVIDER_ACQUISITION_RAW_ONLY_REVIEW_REQUIRED",
+  "readiness_score": 60,
+  "provider": {
+    "provider_id": "nyse_listed_directory",
+    "provider_name": "NYSE Listed Directory",
+    "source_url": "https://www.nyse.com/listings_directory/stock",
+    "provider_dir": "data/raw/source_providers/nyse_listed_directory",
+    "raw_html": "data/raw/source_providers/nyse_listed_directory/nyse_listings_directory_stock.html",
+    "normalized_csv": null,
+    "sample_csv": "outputs/full_universe_source_acquisition/controlled_nyse_provider_acquisition_real_sample_v2_5d.csv"
+  },
+  "network": {
+    "network_download_performed": true,
+    "network_status": "SUCCESS",
+    "error": null,
+    "content_type": "text/html; charset=utf-8",
+    "response_headers": {
+      "Date": "Mon, 06 Jul 2026 08:16:26 GMT",
+      "Content-Type": "text/html; charset=utf-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "close",
+      "Content-Security-Policy": "default-src 'self';script-src 'self' 'unsafe-inline' 'unsafe-eval' *;style-src 'self' 'unsafe-inline' *;img-src 'self' data: blob: *;font-src 'self' data: *;connect-src 'self' *;media-src 'self' blob: *;frame-ancestors 'self' *.intcx.net *.paragonrels.com *.sigmacomputing.com *.bkfsconnect.com *.bkfstest.com *.opraplan.com *.theice.com *.ice.com *.nyse.com *.kcgbondpoint.com *.icedataservices.com *.appspace.com *.appspaceusercontent.com;frame-src *;worker-src 'self' blob: *;object-src 'self' *;manifest-src 'self' *;form-action 'self' https://*.theice.com https://*.intcx.net https://*.ice.com https://*.nyse.com https://*.kcgbondpoint.com https://*.icedataservices.com https://*.eloqua.com https://*.salesforce.com;upgrade-insecure-requests;base-uri 'self';script-src-attr 'none'",
+      "Cache-Control": "public, max-age=300",
+      "set-cookie": "__cf_bm=Io6AL838iaYtVlxszLRX5IjNmd15eIPypB4vWQVUt8E-1783325786.8255236-1.0.1.1-kr7GtemAoL7zRanjjhXJhiY_7daTryveWs.KsT4UNFBbruM6J__Mya9OAKm3JWqgtHCq3IoLpIrlsB3juYPzYWIm.gL4QZIOfvHFM77eqBuuDK2jo2W3CEIaonpDQERV; HttpOnly; SameSite=None; Secure; Path=/; Domain=nyse.com; Expires=Mon, 06 Jul 2026 08:46:26 GMT",
+      "Vary": "Accept-Encoding",
+      "Age": "1102941",
+      "expires": "Mon, 06 Jul 2026 08:21:26 GMT",
+      "cf-cache-status": "HIT",
+      "Server": "cloudflare",
+      "CF-RAY": "a16d2ad7acec0376-MAD"
+    },
+    "timeout_seconds": 30,
+    "raw_file_size_bytes": 73063,
+    "raw_sha256": "61ddbd85e8fd3634b32c43996be561b8fc955175dde5f3f3c71a7beda806d570"
+  },
+  "extraction": {
+    "detected_html_tables": 0,
+    "extracted_rows": 0,
+    "extraction_mode": "conservative_html_table_or_embedded_json_scan",
+    "requires_browser_or_api_review": true
+  },
+  "targets": {
+    "current_included_rows_before_nyse": 5648,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000
+  },
+  "blockers": [],
+  "warnings": [
+    "No usable listing rows could be extracted from NYSE HTML without browser automation or a dedicated CSV/API endpoint.",
+    "Raw acquisition succeeded, but normalized provider rows require manual endpoint/API review."
+  ],
+  "positives": [
+    "v2.5C plan artifact found: outputs/full_universe_source_acquisition/controlled_nyse_provider_acquisition_plan_v2_5c.json",
+    "v2.5C plan status accepted: CONTROLLED_NYSE_PROVIDER_PLAN_READY",
+    "Raw NYSE response written: data/raw/source_providers/nyse_listed_directory/nyse_listings_directory_stock.html",
+    "NYSE listings page downloaded from https://www.nyse.com/listings_directory/stock"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false
+  },
+  "recommendation": "Review the raw NYSE HTML and identify a stable public CSV/API endpoint before rebuilding expanded source."
+}
