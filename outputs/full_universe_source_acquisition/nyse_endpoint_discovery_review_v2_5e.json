@@ -1,0 +1,297 @@
+{
+  "phase": "v2.5E",
+  "method": "nyse_endpoint_discovery_review_v1",
+  "created_at": "2026-07-06T08:31:31+00:00",
+  "discovery_status": "NYSE_ENDPOINT_DISCOVERY_API_CANDIDATE_FOUND",
+  "readiness_score": 75,
+  "usability_decision": "POTENTIALLY_USABLE_AFTER_ENDPOINT_VALIDATION",
+  "inputs": {
+    "v2_5d_acquisition_json": {
+      "path": "outputs/full_universe_source_acquisition/controlled_nyse_provider_acquisition_real_v2_5d.json",
+      "exists": true,
+      "acquisition_status": "NYSE_PROVIDER_ACQUISITION_RAW_ONLY_REVIEW_REQUIRED"
+    },
+    "raw_html": {
+      "path": "data/raw/source_providers/nyse_listed_directory/nyse_listings_directory_stock.html",
+      "exists": true,
+      "size_bytes_utf8": 73063
+    }
+  },
+  "summary": {
+    "candidate_count": 39,
+    "candidate_type_counts": {
+      "listing_related": 5,
+      "api_candidate": 1,
+      "javascript_asset": 11,
+      "other": 22
+    },
+    "api_candidates": 1,
+    "graphql_candidates": 0,
+    "csv_candidates": 0,
+    "json_candidates": 0,
+    "listing_related_candidates": 5,
+    "javascript_assets": 11,
+    "keyword_counts": {
+      "listings": 24,
+      "directory": 8,
+      "instrument": 5,
+      "symbol": 1,
+      "ticker": 0,
+      "quote": 2,
+      "equity": 5,
+      "stock": 7,
+      "nyse": 166,
+      "api": 1,
+      "graphql": 0,
+      "apollo": 0,
+      "next_data": 0,
+      "__next_data__": 0,
+      "application/json": 0,
+      "csv": 0,
+      "download": 0,
+      "mft": 0
+    },
+    "current_included_rows_before_nyse": 5648,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000
+  },
+  "top_candidates": [
+    {
+      "candidate": "https://www.nyse.com/listings_directory/stock",
+      "candidate_type": "listing_related",
+      "score": 35,
+      "host": "www.nyse.com",
+      "path": "/listings_directory/stock"
+    },
+    {
+      "candidate": "https://www.nyse.com/api/sites/nyse/proxy",
+      "candidate_type": "api_candidate",
+      "score": 30,
+      "host": "www.nyse.com",
+      "path": "/api/sites/nyse/proxy"
+    },
+    {
+      "candidate": "https://www.nyse.com/listings-process",
+      "candidate_type": "listing_related",
+      "score": 25,
+      "host": "www.nyse.com",
+      "path": "/listings-process"
+    },
+    {
+      "candidate": "https://www.nyse.com/listings/gallery",
+      "candidate_type": "listing_related",
+      "score": 25,
+      "host": "www.nyse.com",
+      "path": "/listings/gallery"
+    },
+    {
+      "candidate": "https://www.nyse.com/listings/resources",
+      "candidate_type": "listing_related",
+      "score": 25,
+      "host": "www.nyse.com",
+      "path": "/listings/resources"
+    },
+    {
+      "candidate": "https://listingmanager.nyse.com",
+      "candidate_type": "listing_related",
+      "score": 20,
+      "host": "listingmanager.nyse.com",
+      "path": "https://listingmanager.nyse.com"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/chunks//var/opt/jenkins/workspace/ont-end-monorepo_release_2026-26/packages/website-components/build/components/feedback/Spinner-DwaMFcMk.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/chunks//var/opt/jenkins/workspace/ont-end-monorepo_release_2026-26/packages/website-components/build/components/feedback/Spinner-DwaMFcMk.js"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/chunks/__generated__/components/demos-BOS4m3ic.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/chunks/__generated__/components/demos-BOS4m3ic.js"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/chunks/__generated__/components/main-Bg6Hb68w.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/chunks/__generated__/components/main-Bg6Hb68w.js"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/chunks/__generated__/components/meta-BWKtRhNE.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/chunks/__generated__/components/meta-BWKtRhNE.js"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/chunks/node_modules/-pnpm/@theice-pushpop@3-5-0_@types-express@4-17-25/node_modules/@theice/pushpop/build/array/replace-IbWvJqX2.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/chunks/node_modules/-pnpm/@theice-pushpop@3-5-0_@types-express@4-17-25/node_modules/@theice/pushpop/build/array/replace-IbWvJqX2.js"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/chunks/node_modules/-pnpm/date-fns@2-30-0/node_modules/date-fns/addYears/index-js-commonjs-es-import-N9QxKcO-.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/chunks/node_modules/-pnpm/date-fns@2-30-0/node_modules/date-fns/addYears/index-js-commonjs-es-import-N9QxKcO-.js"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/chunks/node_modules/-pnpm/react-router@6-30-1_react@18-3-1/node_modules/react-router/dist/index-js-commonjs-proxy-CNaJNpJV.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/chunks/node_modules/-pnpm/react-router@6-30-1_react@18-3-1/node_modules/react-router/dist/index-js-commonjs-proxy-CNaJNpJV.js"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/chunks/shared/breadcrumb-context/BreadCrumbContext-DDWejWVZ.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/chunks/shared/breadcrumb-context/BreadCrumbContext-DDWejWVZ.js"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/chunks/shared/utils/isCmsTemplateName-CHdGwdya.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/chunks/shared/utils/isCmsTemplateName-CHdGwdya.js"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/chunks/shared/utils/shouldUseProxy-Bv9cgI89.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/chunks/shared/utils/shouldUseProxy-Bv9cgI89.js"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/hydrate.js",
+      "candidate_type": "javascript_asset",
+      "score": 10,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/hydrate.js"
+    },
+    {
+      "candidate": "http://localnyse:3000",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "localnyse:3000",
+      "path": "http://localnyse:3000"
+    },
+    {
+      "candidate": "https://careers.ice.com/jobs?keywords=NYSE&sortBy=relevance&page=1",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "careers.ice.com",
+      "path": "/jobs"
+    },
+    {
+      "candidate": "https://connect.nyse.com/Registration/Signup.aspx",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "connect.nyse.com",
+      "path": "/Registration/Signup.aspx"
+    },
+    {
+      "candidate": "https://static.nyse.com",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "static.nyse.com",
+      "path": "https://static.nyse.com"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/assets/icegroupweb-nyse.css",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/assets/icegroupweb-nyse.css"
+    },
+    {
+      "candidate": "https://static.nyse.com/cms/41.10.2/assets/nyse.css",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "static.nyse.com",
+      "path": "/cms/41.10.2/assets/nyse.css"
+    },
+    {
+      "candidate": "https://www.facebook.com/nyse",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "www.facebook.com",
+      "path": "/nyse"
+    },
+    {
+      "candidate": "https://www.instagram.com/nyse",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "www.instagram.com",
+      "path": "/nyse"
+    },
+    {
+      "candidate": "https://www.linkedin.com/company/nyse",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "www.linkedin.com",
+      "path": "/company/nyse"
+    },
+    {
+      "candidate": "https://www.nyse.com",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "www.nyse.com",
+      "path": "https://www.nyse.com"
+    },
+    {
+      "candidate": "https://www.nyse.com/article/nyse-closing-auction-insiders-guide",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "www.nyse.com",
+      "path": "/article/nyse-closing-auction-insiders-guide"
+    },
+    {
+      "candidate": "https://www.nyse.com/data-insights",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "www.nyse.com",
+      "path": "/data-insights"
+    },
+    {
+      "candidate": "https://www.nyse.com/data-products",
+      "candidate_type": "other",
+      "score": 5,
+      "host": "www.nyse.com",
+      "path": "/data-products"
+    }
+  ],
+  "outputs": {
+    "candidates_csv": "outputs/full_universe_source_acquisition/nyse_endpoint_discovery_candidates_v2_5e.csv"
+  },
+  "blockers": [],
+  "warnings": [
+    "No direct CSV candidate detected."
+  ],
+  "positives": [
+    "v2.5D acquisition artifact found: outputs/full_universe_source_acquisition/controlled_nyse_provider_acquisition_real_v2_5d.json",
+    "v2.5D acquisition status accepted: NYSE_PROVIDER_ACQUISITION_RAW_ONLY_REVIEW_REQUIRED",
+    "Raw NYSE HTML found: data/raw/source_providers/nyse_listed_directory/nyse_listings_directory_stock.html",
+    "Endpoint/asset candidates detected: 39",
+    "Potential API/JSON candidates detected: api=1, graphql=0, json=0",
+    "JavaScript assets detected for possible follow-up inspection: 11"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false
+  },
+  "recommendation": "Proceed to v2.5F to inspect candidate endpoints/assets before deciding whether NYSE is usable."
+}
