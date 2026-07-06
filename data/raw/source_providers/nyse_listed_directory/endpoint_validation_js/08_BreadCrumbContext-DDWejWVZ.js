@@ -1,0 +1,1 @@
+import{a as o}from"../../__generated__/components/demos-BOS4m3ic.js";import{n as t}from"../../node_modules/-pnpm/@theice-pushpop@3-5-0_@types-express@4-17-25/node_modules/@theice/pushpop/build/array/replace-IbWvJqX2.js";const r=[[],t],n=o.createContext(r);export{n as B};

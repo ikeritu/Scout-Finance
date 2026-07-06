@@ -1,0 +1,226 @@
+{
+  "phase": "v2.5F",
+  "method": "nyse_endpoint_candidate_validation_v1",
+  "created_at": "2026-07-06T08:44:28+00:00",
+  "validation_status": "NYSE_ENDPOINT_CANDIDATE_VALIDATION_JS_HINTS_FOUND",
+  "readiness_score": 70,
+  "usability_decision": "REQUIRES_DEEP_JS_PAYLOAD_REVIEW",
+  "inputs": {
+    "discovery_json": {
+      "path": "outputs/full_universe_source_acquisition/nyse_endpoint_discovery_review_v2_5e.json",
+      "exists": true,
+      "discovery_status": "NYSE_ENDPOINT_DISCOVERY_API_CANDIDATE_FOUND"
+    },
+    "candidates_csv": {
+      "path": "outputs/full_universe_source_acquisition/nyse_endpoint_discovery_candidates_v2_5e.csv",
+      "candidate_count": 39,
+      "api_candidate_count": 1,
+      "javascript_candidate_count": 11
+    }
+  },
+  "endpoint_validation": {
+    "url": "https://www.nyse.com/api/sites/nyse/proxy",
+    "status": "ENDPOINT_HTTP_FAILED",
+    "http_ok": false,
+    "status_code": 404,
+    "content_type": "text/html; charset=utf-8",
+    "size_bytes": 69809,
+    "sha256": "c023e9012b997936a3bf981f8c1726bbb9e25cf29388ec05fb32f997413fab2b",
+    "response_sample_path": "outputs/full_universe_source_acquisition/nyse_endpoint_candidate_validation_proxy_response_v2_5f.txt",
+    "error": "HTTPError 404: Not Found"
+  },
+  "javascript_asset_validation": {
+    "max_assets_to_fetch": 8,
+    "downloaded_assets": [
+      {
+        "url": "https://static.nyse.com/cms/41.10.2/chunks//var/opt/jenkins/workspace/ont-end-monorepo_release_2026-26/packages/website-components/build/components/feedback/Spinner-DwaMFcMk.js",
+        "ok": true,
+        "status_code": 200,
+        "content_type": "application/x-javascript",
+        "size_bytes": 9285,
+        "sha256": "a9f718460fe54f99b87261eb10bf085d1786adde058a282ae14f026f570a060d",
+        "local_path": "data/raw/source_providers/nyse_listed_directory/endpoint_validation_js/01_Spinner-DwaMFcMk.js",
+        "matched_patterns": [
+          "symbol",
+          "payload",
+          "query",
+          "GET",
+          "proxy"
+        ],
+        "matched_pattern_count": 5,
+        "error": null
+      },
+      {
+        "url": "https://static.nyse.com/cms/41.10.2/chunks/__generated__/components/demos-BOS4m3ic.js",
+        "ok": true,
+        "status_code": 200,
+        "content_type": "application/x-javascript",
+        "size_bytes": 674280,
+        "sha256": "2a41429063e147e5a08c9a94a25ef8c8f21fb079b271ce5cf94408c6778ba48b",
+        "local_path": "data/raw/source_providers/nyse_listed_directory/endpoint_validation_js/02_demos-BOS4m3ic.js",
+        "matched_patterns": [
+          "instrument",
+          "instruments",
+          "symbol",
+          "ticker",
+          "exchange",
+          "quote",
+          "equity",
+          "stock",
+          "payload",
+          "query",
+          "url:",
+          "method:",
+          "POST",
+          "GET",
+          "proxy",
+          "nyse"
+        ],
+        "matched_pattern_count": 16,
+        "error": null
+      },
+      {
+        "url": "https://static.nyse.com/cms/41.10.2/chunks/__generated__/components/main-Bg6Hb68w.js",
+        "ok": true,
+        "status_code": 200,
+        "content_type": "application/x-javascript",
+        "size_bytes": 130914,
+        "sha256": "3b924605f05956f727d3385db797732fd4384f0465964eee435b614356e9d6fa",
+        "local_path": "data/raw/source_providers/nyse_listed_directory/endpoint_validation_js/03_main-Bg6Hb68w.js",
+        "matched_patterns": [
+          "symbol",
+          "ticker",
+          "exchange",
+          "quote",
+          "equity",
+          "stock",
+          "query",
+          "POST",
+          "GET",
+          "proxy",
+          "nyse"
+        ],
+        "matched_pattern_count": 11,
+        "error": null
+      },
+      {
+        "url": "https://static.nyse.com/cms/41.10.2/chunks/__generated__/components/meta-BWKtRhNE.js",
+        "ok": true,
+        "status_code": 200,
+        "content_type": "application/x-javascript",
+        "size_bytes": 41697,
+        "sha256": "c4b4a98033983d46d7c1c4c59d60ec61c6890969c995ec1497c670cd4e306596",
+        "local_path": "data/raw/source_providers/nyse_listed_directory/endpoint_validation_js/04_meta-BWKtRhNE.js",
+        "matched_patterns": [
+          "symbol",
+          "ticker",
+          "exchange",
+          "quote",
+          "equity",
+          "stock",
+          "query",
+          "POST",
+          "GET",
+          "proxy",
+          "nyse"
+        ],
+        "matched_pattern_count": 11,
+        "error": null
+      },
+      {
+        "url": "https://static.nyse.com/cms/41.10.2/chunks/node_modules/-pnpm/@theice-pushpop@3-5-0_@types-express@4-17-25/node_modules/@theice/pushpop/build/array/replace-IbWvJqX2.js",
+        "ok": true,
+        "status_code": 200,
+        "content_type": "application/x-javascript",
+        "size_bytes": 8369,
+        "sha256": "bac97b0b403098a29f69b42aefb6aa11064f19c0e476069734df4afd208f4580",
+        "local_path": "data/raw/source_providers/nyse_listed_directory/endpoint_validation_js/05_replace-IbWvJqX2.js",
+        "matched_patterns": [
+          "symbol",
+          "GET"
+        ],
+        "matched_pattern_count": 2,
+        "error": null
+      },
+      {
+        "url": "https://static.nyse.com/cms/41.10.2/chunks/node_modules/-pnpm/date-fns@2-30-0/node_modules/date-fns/addYears/index-js-commonjs-es-import-N9QxKcO-.js",
+        "ok": true,
+        "status_code": 200,
+        "content_type": "application/x-javascript",
+        "size_bytes": 151168,
+        "sha256": "e64005d2f1603b08703d4cf6051d0d5433779b580f39adc593d0b7b05cc82000",
+        "local_path": "data/raw/source_providers/nyse_listed_directory/endpoint_validation_js/06_index-js-commonjs-es-import-N9QxKcO-.js",
+        "matched_patterns": [
+          "symbol",
+          "GET"
+        ],
+        "matched_pattern_count": 2,
+        "error": null
+      },
+      {
+        "url": "https://static.nyse.com/cms/41.10.2/chunks/node_modules/-pnpm/react-router@6-30-1_react@18-3-1/node_modules/react-router/dist/index-js-commonjs-proxy-CNaJNpJV.js",
+        "ok": true,
+        "status_code": 200,
+        "content_type": "application/x-javascript",
+        "size_bytes": 116099,
+        "sha256": "539320c4d8223c87e1b6e24313cd24fb58f8247705f88ae3d667c24f478bf719",
+        "local_path": "data/raw/source_providers/nyse_listed_directory/endpoint_validation_js/07_index-js-commonjs-proxy-CNaJNpJV.js",
+        "matched_patterns": [
+          "symbol",
+          "query",
+          "url:",
+          "method:",
+          "POST",
+          "GET"
+        ],
+        "matched_pattern_count": 6,
+        "error": null
+      },
+      {
+        "url": "https://static.nyse.com/cms/41.10.2/chunks/shared/breadcrumb-context/BreadCrumbContext-DDWejWVZ.js",
+        "ok": true,
+        "status_code": 200,
+        "content_type": "application/x-javascript",
+        "size_bytes": 272,
+        "sha256": "05bfe8160c8c0a83ab701a1f351296e6c6b230b282351769fd57596bd055f8de",
+        "local_path": "data/raw/source_providers/nyse_listed_directory/endpoint_validation_js/08_BreadCrumbContext-DDWejWVZ.js",
+        "matched_patterns": [],
+        "matched_pattern_count": 0,
+        "error": null
+      }
+    ],
+    "finding_count": 143,
+    "findings_csv": "outputs/full_universe_source_acquisition/nyse_endpoint_candidate_validation_js_findings_v2_5f.csv",
+    "raw_js_dir": "data/raw/source_providers/nyse_listed_directory/endpoint_validation_js"
+  },
+  "targets": {
+    "current_included_rows_before_nyse": 5648,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000
+  },
+  "blockers": [],
+  "warnings": [
+    "Endpoint request failed: HTTPError 404: Not Found",
+    "Endpoint candidate did not return OK: HTTPError 404: Not Found"
+  ],
+  "positives": [
+    "v2.5E discovery artifact found: outputs/full_universe_source_acquisition/nyse_endpoint_discovery_review_v2_5e.json",
+    "v2.5E discovery status accepted: NYSE_ENDPOINT_DISCOVERY_API_CANDIDATE_FOUND",
+    "Candidate CSV loaded: 39 candidates",
+    "API candidates available: 1",
+    "JavaScript candidates available: 11",
+    "JS findings detected: 143"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": true,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false
+  },
+  "recommendation": "Proceed to v2.5G to decide whether NYSE remains raw-only, requires deeper JS payload review, or can become a provider after schema review."
+}
