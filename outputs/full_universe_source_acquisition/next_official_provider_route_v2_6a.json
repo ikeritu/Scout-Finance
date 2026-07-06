@@ -1,0 +1,156 @@
+{
+  "phase": "v2.6A",
+  "method": "next_official_provider_route_v1",
+  "created_at": "2026-07-06T10:09:42+00:00",
+  "route_status": "NEXT_OFFICIAL_PROVIDER_ROUTE_READY",
+  "readiness_score": 90,
+  "recommended_next_phase": "v2.6B ? SEC Company Tickers Exchange Acquisition Plan",
+  "current_state": {
+    "current_included_rows": 5648,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion": 9352,
+    "rows_needed_full_source": 44352,
+    "nyse_decision_status": "NYSE_USABILITY_DECISION_DEEP_JS_REVIEW_REQUIRED",
+    "nyse_usability_decision": "REQUIRES_DEEP_JS_PAYLOAD_REVIEW",
+    "expanded_universe_rebuild_allowed": false,
+    "full_59000_remains_blocked": true
+  },
+  "provider_routes": [
+    {
+      "priority": 1,
+      "provider_id": "sec_company_tickers_exchange",
+      "provider_name": "SEC company_tickers_exchange.json",
+      "provider_type": "official_regulatory_identifier_mapping",
+      "route_status": "RECOMMENDED_NEXT_CONTROLLED_ROUTE",
+      "expected_value": "HIGH",
+      "risk": "MEDIUM",
+      "network_required": true,
+      "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
+      "why_next": "Official SEC file with company name, CIK, ticker and exchange mapping. Useful to expand and validate ticker universe with exchange metadata, although it is not a pure exchange listing file.",
+      "expected_outputs_if_acquired": [
+        "data/raw/source_providers/sec_company_tickers_exchange/company_tickers_exchange.json",
+        "data/raw/source_providers/sec_company_tickers_exchange/sec_company_tickers_exchange.csv",
+        "outputs/full_universe_source_acquisition/sec_company_tickers_exchange_acquisition_v2_6b.json",
+        "outputs/full_universe_source_acquisition/sec_company_tickers_exchange_acquisition_v2_6b.md"
+      ],
+      "controls": [
+        "Use SEC-compliant User-Agent.",
+        "No scoring.",
+        "No OpenAI.",
+        "No broker.",
+        "No full 59k launch.",
+        "No active output overwrite.",
+        "Do not rebuild expanded_universe until validation report is reviewed."
+      ],
+      "acceptance_criteria": [
+        "Download succeeds or fails with controlled report.",
+        "Raw JSON is preserved.",
+        "CSV normalization is produced only if schema is recognized.",
+        "Report row count, exchanges, duplicate ticker/exchange keys and missing fields."
+      ]
+    },
+    {
+      "priority": 2,
+      "provider_id": "cboe_listed_symbols",
+      "provider_name": "Cboe Listed Symbols",
+      "provider_type": "official_exchange_listing_source",
+      "route_status": "SECOND_ROUTE_AFTER_SEC_OR_PARALLEL_IF_NEEDED",
+      "expected_value": "MEDIUM",
+      "risk": "MEDIUM",
+      "network_required": true,
+      "source_url": "https://www.cboe.com/us/equities/market_statistics/listed_symbols/",
+      "why_next": "Official Cboe listed-symbol route with CSV/XML indications. Likely useful for BZX-listed securities, but may be narrower than SEC mapping.",
+      "expected_outputs_if_acquired": [
+        "data/raw/source_providers/cboe_listed_symbols/",
+        "outputs/full_universe_source_acquisition/cboe_listed_symbols_acquisition_v2_6x.json",
+        "outputs/full_universe_source_acquisition/cboe_listed_symbols_acquisition_v2_6x.md"
+      ],
+      "controls": [
+        "No scoring.",
+        "No OpenAI.",
+        "No broker.",
+        "No full 59k launch.",
+        "No active output overwrite."
+      ],
+      "acceptance_criteria": [
+        "Identify stable CSV/XML route.",
+        "Download raw file in isolated provider directory.",
+        "Report row count and schema.",
+        "Do not rebuild until validation gate passes."
+      ]
+    },
+    {
+      "priority": 3,
+      "provider_id": "cboe_bzx_daily_listed_securities_report",
+      "provider_name": "Cboe BZX Daily Listed Securities Report",
+      "provider_type": "official_exchange_listing_report",
+      "route_status": "FOLLOW_UP_IF_CBOE_ROUTE_IS_SELECTED",
+      "expected_value": "MEDIUM",
+      "risk": "MEDIUM",
+      "network_required": true,
+      "source_url": "Cboe BZX daily listed securities report documentation",
+      "why_next": "Cboe documentation describes a daily listed securities report for issues listed on BZX. Useful if a stable public file route can be confirmed.",
+      "expected_outputs_if_acquired": [],
+      "controls": [
+        "Documentation-first.",
+        "No scoring.",
+        "No OpenAI.",
+        "No broker.",
+        "No full 59k launch."
+      ],
+      "acceptance_criteria": [
+        "Confirm public accessibility.",
+        "Confirm format and schema.",
+        "Only then implement real acquisition."
+      ]
+    },
+    {
+      "priority": 4,
+      "provider_id": "third_party_aggregated_datasets",
+      "provider_name": "Third-party aggregated datasets",
+      "provider_type": "non_primary_external_dataset",
+      "route_status": "DEFER",
+      "expected_value": "VARIABLE",
+      "risk": "HIGH",
+      "network_required": true,
+      "source_url": null,
+      "why_next": "Could add rows, but license, freshness and provenance risks make it unsuitable before official routes are exhausted.",
+      "expected_outputs_if_acquired": [],
+      "controls": [
+        "License review required.",
+        "Freshness review required.",
+        "Do not use as primary source without explicit approval."
+      ],
+      "acceptance_criteria": [
+        "License documented.",
+        "Freshness documented.",
+        "Official source alternatives exhausted."
+      ]
+    }
+  ],
+  "blockers": [],
+  "warnings": [
+    "Rows still needed for first expansion target: 9352",
+    "Rows still needed for full-source threshold: 44352",
+    "NYSE remains deferred unless deep JS payload review is explicitly chosen later."
+  ],
+  "positives": [
+    "v2.5G NYSE decision artifact found: outputs/full_universe_source_acquisition/nyse_usability_decision_gate_v2_5g.json",
+    "v2.5A revalidation artifact found: outputs/full_universe_source_acquisition/expanded_source_revalidation_gate_v2_5a.json",
+    "NYSE correctly deferred from rebuild path: REQUIRES_DEEP_JS_PAYLOAD_REVIEW"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false
+  },
+  "recommendation": "Proceed with v2.6B as a plan-only SEC company_tickers_exchange acquisition route. Do not download until that plan is reviewed."
+}
