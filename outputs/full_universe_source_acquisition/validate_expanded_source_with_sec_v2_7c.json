@@ -1,0 +1,162 @@
+{
+  "phase": "v2.7C",
+  "method": "validate_expanded_source_with_sec_v1",
+  "created_at": "2026-07-06T14:34:03+00:00",
+  "validation_status": "EXPANDED_SOURCE_WITH_SEC_VALIDATED_USEFUL_BUT_NOT_ENOUGH",
+  "readiness_score": 90,
+  "recommended_next_phase": "v2.7D ? Expanded Source With SEC Closure Report",
+  "inputs": {
+    "rebuild_json": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_real_v2_7b.json",
+    "expanded_csv": "data/raw/expanded_universe/expanded_universe_v2_7b.csv",
+    "exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_7b.csv",
+    "provider_breakdown_csv": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_provider_breakdown_v2_7b.csv",
+    "merge_audit_csv": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_merge_audit_v2_7b.csv",
+    "exclusion_breakdown_csv": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_exclusion_breakdown_v2_7b.csv"
+  },
+  "outputs": {
+    "provider_validation_csv": "outputs/full_universe_source_acquisition/validate_expanded_source_with_sec_provider_validation_v2_7c.csv",
+    "issues_csv": "outputs/full_universe_source_acquisition/validate_expanded_source_with_sec_issues_v2_7c.csv",
+    "duplicates_csv": "outputs/full_universe_source_acquisition/validate_expanded_source_with_sec_duplicates_v2_7c.csv"
+  },
+  "schema": {
+    "required_columns": [
+      "ticker",
+      "company_name",
+      "exchange",
+      "country",
+      "source_provider",
+      "source_file",
+      "instrument_type",
+      "instrument_scope",
+      "classification_confidence",
+      "classification_reason",
+      "sector",
+      "industry",
+      "market_cap",
+      "raw_cik",
+      "raw_exchange",
+      "provider_precedence",
+      "merge_action",
+      "merge_reason"
+    ],
+    "detected_columns": [
+      "ticker",
+      "company_name",
+      "exchange",
+      "country",
+      "source_provider",
+      "source_file",
+      "instrument_type",
+      "instrument_scope",
+      "classification_confidence",
+      "classification_reason",
+      "sector",
+      "industry",
+      "market_cap",
+      "raw_cik",
+      "raw_exchange",
+      "provider_precedence",
+      "merge_action",
+      "merge_reason"
+    ],
+    "missing_columns": []
+  },
+  "summary": {
+    "expanded_rows": 8007,
+    "exclusions_rows": 10056,
+    "expected_expanded_rows": 8007,
+    "expected_exclusions_rows": 10056,
+    "provider_counts": {
+      "nasdaq_trader_nasdaqlisted": 3244,
+      "nasdaq_trader_otherlisted": 2404,
+      "sec_company_tickers_exchange": 2359
+    },
+    "exchange_counts": {
+      "NASDAQ": 4336,
+      "NYSE": 3362,
+      "NYSE American": 265,
+      "NYSE Arca": 13,
+      "Cboe BZX": 4,
+      "CBOE": 27
+    },
+    "merge_action_counts": {
+      "PRESERVE_EXISTING": 5648,
+      "ADD_SEC_PRIMARY_NET_NEW": 2359
+    },
+    "provider_precedence_counts": {
+      "1": 5648,
+      "2": 2359
+    },
+    "instrument_type_counts": {
+      "COMMON_STOCK": 5578,
+      "ADR": 70,
+      "UNKNOWN_PENDING_CLASSIFICATION": 2359
+    },
+    "instrument_scope_counts": {
+      "IN_SCOPE": 5578,
+      "IN_SCOPE_ADR": 70,
+      "UNKNOWN_PENDING_CLASSIFICATION": 2359
+    },
+    "classification_confidence_counts": {
+      "HIGH": 4974,
+      "MEDIUM": 674,
+      "LOW": 2359
+    },
+    "empty_counts": {
+      "ticker": 0,
+      "company_name": 0,
+      "exchange": 0,
+      "country": 0,
+      "source_provider": 0,
+      "instrument_type": 0,
+      "instrument_scope": 0,
+      "classification_confidence": 0,
+      "merge_action": 0,
+      "merge_reason": 0
+    },
+    "issues_count": 0,
+    "duplicate_exchange_ticker_keys": 0,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false,
+    "rows_needed_first_expansion": 6993,
+    "rows_needed_full_source": 41993
+  },
+  "blockers": [],
+  "warnings": [
+    "First expansion target remains blocked: 8007 < 15000",
+    "Full-source threshold remains blocked: 8007 < 50000"
+  ],
+  "positives": [
+    "v2.7B rebuild artifact found: outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_real_v2_7b.json",
+    "v2.7B rebuild status accepted: REBUILD_EXPANDED_SOURCE_WITH_SEC_COMPLETED_USEFUL_BUT_NOT_ENOUGH",
+    "Required validation input available: data/raw/expanded_universe/expanded_universe_v2_7b.csv",
+    "Required validation input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_7b.csv",
+    "Required validation input available: outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_provider_breakdown_v2_7b.csv",
+    "Required validation input available: outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_merge_audit_v2_7b.csv",
+    "Required validation input available: outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_exclusion_breakdown_v2_7b.csv",
+    "Expanded universe canonical schema validated.",
+    "Final expanded row count matches expected: 8007",
+    "Final exclusions row count matches expected: 10056",
+    "Duplicate exchange+ticker keys: 0",
+    "Provider count OK: nasdaq_trader_nasdaqlisted = 3244",
+    "Provider count OK: nasdaq_trader_otherlisted = 2404",
+    "Provider count OK: sec_company_tickers_exchange = 2359",
+    "SEC added rows match expected: 2359"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "validation_only": true
+  },
+  "recommendation": "Proceed to v2.7D closure. SEC rebuild is validated as useful but still not enough to unlock first expansion or full-source thresholds."
+}
