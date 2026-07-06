@@ -1,0 +1,130 @@
+{
+  "phase": "v2.6B",
+  "method": "sec_company_tickers_exchange_acquisition_plan_v1",
+  "created_at": "2026-07-06T10:38:32+00:00",
+  "plan_status": "SEC_COMPANY_TICKERS_EXCHANGE_PLAN_READY",
+  "readiness_score": 95,
+  "provider": {
+    "provider_id": "sec_company_tickers_exchange",
+    "provider_name": "SEC company_tickers_exchange.json",
+    "provider_type": "official_sec_identifier_exchange_mapping",
+    "source_url": "https://www.sec.gov/files/company_tickers_exchange.json",
+    "provider_dir": "data/raw/source_providers/sec_company_tickers_exchange",
+    "raw_json": "data/raw/source_providers/sec_company_tickers_exchange/company_tickers_exchange.json",
+    "normalized_csv": "data/raw/source_providers/sec_company_tickers_exchange/sec_company_tickers_exchange.csv",
+    "phase_for_real_acquisition": "v2.6C",
+    "mode": "PLAN_ONLY_NO_DOWNLOAD",
+    "user_agent_policy": {
+      "required": true,
+      "recommended_env_var": "SCOUT_FINANCE_SEC_USER_AGENT",
+      "fallback_format": "ScoutFinance/1.0 contact@example.com",
+      "notes": "Real acquisition must use a declared User-Agent. Replace fallback email with a valid contact before running v2.6C."
+    },
+    "rate_limit_policy": {
+      "max_requests_per_second": 10,
+      "planned_requests": 1,
+      "notes": "v2.6C should perform one controlled request only."
+    },
+    "expected_schema": {
+      "top_level": {
+        "fields": "list[str] expected to include cik, name, ticker, exchange",
+        "data": "list[list] records matching fields order"
+      },
+      "expected_fields": [
+        "cik",
+        "name",
+        "ticker",
+        "exchange"
+      ],
+      "canonical_columns_after_normalization": [
+        "ticker",
+        "company_name",
+        "exchange",
+        "country",
+        "source_provider",
+        "source_file",
+        "instrument_type",
+        "instrument_scope",
+        "classification_confidence",
+        "classification_reason",
+        "sector",
+        "industry",
+        "market_cap",
+        "raw_cik",
+        "raw_exchange"
+      ]
+    },
+    "normalization_rules": [
+      "Map ticker -> ticker uppercase/trimmed.",
+      "Map name -> company_name.",
+      "Map exchange -> exchange normalized but preserve raw_exchange.",
+      "Map cik -> raw_cik as string without losing leading semantics.",
+      "Set country to USA for SEC mapping source.",
+      "Set source_provider to sec_company_tickers_exchange.",
+      "Set source_file to raw JSON relative path.",
+      "Do not infer instrument_type as COMMON_STOCK solely from SEC mapping.",
+      "Default instrument_type to UNKNOWN_PENDING_CLASSIFICATION unless classified later.",
+      "Default instrument_scope to UNKNOWN_PENDING_CLASSIFICATION unless classified later.",
+      "Do not merge into expanded_universe in v2.6C."
+    ],
+    "validation_rules_for_v2_6C": [
+      "Raw JSON exists and is readable.",
+      "Top-level fields/data keys exist.",
+      "Expected fields include cik, name, ticker, exchange.",
+      "Row count is reported.",
+      "Empty ticker/name/exchange/cik counts are reported.",
+      "Duplicate exchange+ticker keys are reported.",
+      "Exchange counts are reported.",
+      "Normalized CSV is written only if schema is recognized."
+    ],
+    "controls_for_v2_6C": [
+      "No OpenAI.",
+      "No broker.",
+      "No scoring recalculation.",
+      "No full 59k universe launch.",
+      "No active output overwrite.",
+      "No expanded_universe rebuild.",
+      "One controlled network request.",
+      "Raw JSON preserved.",
+      "JSON and Markdown acquisition report produced."
+    ]
+  },
+  "current_state": {
+    "current_included_rows": 5648,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion": 9352,
+    "rows_needed_full_source": 44352,
+    "expanded_universe_rebuild_allowed": false,
+    "full_59000_remains_blocked": true
+  },
+  "recommended_next_phase": {
+    "phase": "v2.6C",
+    "name": "SEC Company Tickers Exchange Acquisition Real",
+    "mode": "CONTROLLED_SINGLE_REQUEST_ACQUISITION",
+    "reason": "Plan is ready; next step can perform one SEC-compliant controlled download into isolated provider directory."
+  },
+  "blockers": [],
+  "warnings": [
+    "Rows still needed for first expansion target before SEC acquisition: 9352",
+    "Rows still needed for full-source threshold before SEC acquisition: 44352"
+  ],
+  "positives": [
+    "v2.6A route artifact found: outputs/full_universe_source_acquisition/next_official_provider_route_v2_6a.json",
+    "v2.6A route status accepted: NEXT_OFFICIAL_PROVIDER_ROUTE_READY",
+    "v2.6A recommended phase accepted: v2.6B ? SEC Company Tickers Exchange Acquisition Plan"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false
+  },
+  "recommendation": "Proceed to v2.6C for one controlled SEC download after setting a valid SEC User-Agent contact."
+}
