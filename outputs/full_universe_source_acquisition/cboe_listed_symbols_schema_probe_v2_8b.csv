@@ -1,0 +1,5 @@
+route_id,file_type,url,saved_path,parse_ok,parse_error,rows,columns
+cboe_us_equities_listed_symbols,csv,https://www.cboe.com/us/equities/market_statistics/listed_symbols/csv,data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.csv,True,,1490,Name|Volume|Ask Size|Ask Price|Bid Size|Bid Price|Last Price|Shares Matched|Shares Routed
+cboe_us_equities_listed_symbols,xml,https://www.cboe.com/us/equities/market_statistics/listed_symbols/xml,data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.xml,not_parsed_xml,,,
+cboe_us_equities_symbols_traded_edgx,csv,https://cdn.cboe.com/data/us/equities/rpt_cboe_listed_lot_size/cboe_listed_lot_size.csv,data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.csv,True,,1220,measurement_month|trade_date|symbol|listed_mic|round_lot_size
+cboe_us_equities_symbols_traded_edgx,xml,https://cdn.cboe.com/data/us/equities/market_statistics/symbols_traded/edgx/cboe_symbols_traded_edgx.xml,data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.xml,not_parsed_xml,,,

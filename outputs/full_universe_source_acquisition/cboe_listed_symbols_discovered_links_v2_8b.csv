@@ -1,0 +1,15 @@
+route_id,page_url,file_type,url
+cboe_us_equities_listed_symbols,https://www.cboe.com/us/equities/market_statistics/listed_symbols/,csv,https://www.cboe.com/us/equities/market_statistics/listed_symbols/csv
+cboe_us_equities_listed_symbols,https://www.cboe.com/us/equities/market_statistics/listed_symbols/,xml,https://www.cboe.com/us/equities/market_statistics/listed_symbols/xml
+cboe_us_equities_listed_symbols,https://www.cboe.com/us/equities/market_statistics/listed_symbols/,csv,https://www.cboe.com/us/equities/listings/listed_products/symbols/ACSV/
+cboe_us_equities_listed_symbols,https://www.cboe.com/us/equities/market_statistics/listed_symbols/,csv,https://www.cboe.com/us/equities/market_statistics/listed_symbols/?download=csv
+cboe_us_equities_listed_symbols,https://www.cboe.com/us/equities/market_statistics/listed_symbols/,xml,https://www.cboe.com/us/equities/market_statistics/listed_symbols/?download=xml
+cboe_us_equities_listed_symbols,https://www.cboe.com/us/equities/market_statistics/listed_symbols/,csv,https://www.cboe.com/us/equities/market_statistics/listed_symbols/?output=csv
+cboe_us_equities_listed_symbols,https://www.cboe.com/us/equities/market_statistics/listed_symbols/,xml,https://www.cboe.com/us/equities/market_statistics/listed_symbols/?output=xml
+cboe_us_equities_symbols_traded_edgx,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx,csv,https://cdn.cboe.com/data/us/equities/rpt_cboe_listed_lot_size/cboe_listed_lot_size.csv
+cboe_us_equities_symbols_traded_edgx,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx,csv,https://cdn.cboe.com/data/us/equities/market_statistics/symbols_traded/edgx/cboe_symbols_traded_edgx.csv
+cboe_us_equities_symbols_traded_edgx,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx,xml,https://cdn.cboe.com/data/us/equities/market_statistics/symbols_traded/edgx/cboe_symbols_traded_edgx.xml
+cboe_us_equities_symbols_traded_edgx,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx,csv,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx?download=csv
+cboe_us_equities_symbols_traded_edgx,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx,xml,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx?download=xml
+cboe_us_equities_symbols_traded_edgx,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx,csv,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx?output=csv
+cboe_us_equities_symbols_traded_edgx,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx,xml,https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx?output=xml

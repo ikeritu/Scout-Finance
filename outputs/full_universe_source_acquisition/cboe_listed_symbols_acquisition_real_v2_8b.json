@@ -1,0 +1,146 @@
+{
+  "phase": "v2.8B",
+  "method": "cboe_listed_symbols_acquisition_real_v1",
+  "created_at": "2026-07-06T21:12:57+00:00",
+  "acquisition_status": "CBOE_LISTED_SYMBOLS_ACQUISITION_COMPLETED_WITH_REVIEW_REQUIRED",
+  "readiness_score": 70,
+  "recommended_next_phase": "v2.8C ? Cboe Listed Symbols Validation",
+  "current_state": {
+    "current_expanded_rows": 8007,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000
+  },
+  "inputs": {
+    "plan_json": "outputs/full_universe_source_acquisition/cboe_listed_symbols_route_plan_v2_8a.json"
+  },
+  "page_results": [
+    {
+      "route_id": "cboe_us_equities_listed_symbols",
+      "url": "https://www.cboe.com/us/equities/market_statistics/listed_symbols/",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "size_bytes": 1418488,
+      "sha256": "9b851e248bfff10c48b34c0abe0e7d3394d71bd938b58d8f1f4f6d1a31a4d268",
+      "error": null,
+      "html_path": "data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_page.html"
+    },
+    {
+      "route_id": "cboe_us_equities_symbols_traded_edgx",
+      "url": "https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "size_bytes": 594567,
+      "sha256": "ce58dd70cef27d31788a5c1825fae4a4275a2ea1a861e0fe70b8d0a890b7bbe3",
+      "error": null,
+      "html_path": "data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_page.html"
+    }
+  ],
+  "discovered_links_count": 14,
+  "candidate_downloads": [
+    {
+      "route_id": "cboe_us_equities_listed_symbols",
+      "file_type": "csv",
+      "url": "https://www.cboe.com/us/equities/market_statistics/listed_symbols/csv",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/csv",
+      "size_bytes": 61288,
+      "sha256": "e8da02331055f2de4e1f8324632b763ef98630452510af79502c85feb22650c3",
+      "error": null,
+      "saved_path": "data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.csv"
+    },
+    {
+      "route_id": "cboe_us_equities_listed_symbols",
+      "file_type": "xml",
+      "url": "https://www.cboe.com/us/equities/market_statistics/listed_symbols/xml",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/xml",
+      "size_bytes": 187980,
+      "sha256": "f7e164876f7750f2e93e21ec3e1c71895ad1f5aff4caf8925d0722483a245148",
+      "error": null,
+      "saved_path": "data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.xml"
+    },
+    {
+      "route_id": "cboe_us_equities_symbols_traded_edgx",
+      "file_type": "csv",
+      "url": "https://cdn.cboe.com/data/us/equities/rpt_cboe_listed_lot_size/cboe_listed_lot_size.csv",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/csv",
+      "size_bytes": 37795,
+      "sha256": "37f31a950881f8e5443ee064d4b3b68eb75a3486f14221c951e1dc8d411be551",
+      "error": null,
+      "saved_path": "data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.csv"
+    },
+    {
+      "route_id": "cboe_us_equities_symbols_traded_edgx",
+      "file_type": "xml",
+      "url": "https://cdn.cboe.com/data/us/equities/market_statistics/symbols_traded/edgx/cboe_symbols_traded_edgx.xml",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/xml",
+      "size_bytes": 309345,
+      "sha256": "c3b49304cac1da3956a75ba46b0af5bbdc5358e6181b94426eb6992ac84670ad",
+      "error": null,
+      "saved_path": "data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.xml"
+    }
+  ],
+  "outputs": {
+    "provider_dir": "data/raw/source_providers/cboe_listed_symbols",
+    "listed_html": "data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_page.html",
+    "symbols_traded_html": "data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_page.html",
+    "listed_csv": "data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.csv",
+    "listed_xml": "data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.xml",
+    "symbols_traded_csv": "data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.csv",
+    "symbols_traded_xml": "data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.xml",
+    "normalized_csv": null,
+    "schema_probe_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_schema_probe_v2_8b.csv",
+    "discovered_links_csv": "outputs/full_universe_source_acquisition/cboe_listed_symbols_discovered_links_v2_8b.csv",
+    "sample_csv": null
+  },
+  "summary": {
+    "pages_attempted": 2,
+    "pages_fetched_ok": 2,
+    "discovered_links": 14,
+    "candidate_downloads_attempted": 4,
+    "successful_downloads": 4,
+    "successful_csv_downloads": 2,
+    "normalized_rows": 0
+  },
+  "blockers": [],
+  "warnings": [
+    "Normalization warning: No symbol/ticker field detected.",
+    "No normalized Cboe listed-symbol rows produced. v2.8C must inspect raw/schema before deciding route usability."
+  ],
+  "positives": [
+    "v2.8A plan artifact found: outputs/full_universe_source_acquisition/cboe_listed_symbols_route_plan_v2_8a.json",
+    "v2.8A plan status accepted: CBOE_LISTED_SYMBOLS_ROUTE_PLAN_READY",
+    "Raw Cboe page saved: data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_page.html",
+    "Cboe page fetched OK: https://www.cboe.com/us/equities/market_statistics/listed_symbols/",
+    "Raw Cboe page saved: data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_page.html",
+    "Cboe page fetched OK: https://www.cboe.com/us/equities/market_statistics/symbols_traded/?mkt=edgx",
+    "Cboe CSV saved: data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.csv",
+    "CSV parsed for cboe_us_equities_listed_symbols: 1490 rows",
+    "Cboe XML saved: data/raw/source_providers/cboe_listed_symbols/cboe_listed_symbols_raw.xml",
+    "Cboe CSV saved: data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.csv",
+    "CSV parsed for cboe_us_equities_symbols_traded_edgx: 1220 rows",
+    "Cboe XML saved: data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.xml"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "network_download_performed": true,
+    "raw_files_preserved": true
+  },
+  "recommendation": "Proceed to v2.8C to validate Cboe schema, semantics and net new coverage before any rebuild."
+}
