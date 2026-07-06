@@ -1,0 +1,148 @@
+{
+  "phase": "v2.7A",
+  "method": "rebuild_expanded_source_with_sec_plan_v1",
+  "created_at": "2026-07-06T13:26:01+00:00",
+  "plan_status": "REBUILD_EXPANDED_SOURCE_WITH_SEC_PLAN_READY",
+  "readiness_score": 95,
+  "recommended_next_phase": "v2.7B ? Rebuild Expanded Source With SEC Real",
+  "source_decision_from_v2_6e": {
+    "analysis_status": "SEC_INCREMENTAL_COVERAGE_USEFUL_BUT_NOT_ENOUGH",
+    "decision": "REBUILD_WITH_SEC_USEFUL_BUT_NOT_ENOUGH",
+    "sec_primary_net_new_keys": 2359,
+    "planned_max_rows_after_sec": 8007,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false
+  },
+  "inputs": {
+    "current_expanded_csv": "data/raw/expanded_universe/expanded_universe_v2_4b.csv",
+    "current_exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_4b.csv",
+    "sec_provider_csv": "data/raw/source_providers/sec_company_tickers_exchange/sec_company_tickers_exchange.csv",
+    "sec_rebuild_candidates_csv": "outputs/full_universe_source_acquisition/sec_incremental_rebuild_candidates_v2_6e.csv",
+    "sec_enrichment_csv": "outputs/full_universe_source_acquisition/sec_incremental_enrichment_rows_v2_6e.csv",
+    "sec_analysis_json": "outputs/full_universe_source_acquisition/sec_incremental_coverage_analysis_v2_6e.json"
+  },
+  "planned_outputs": {
+    "expanded_universe_v2_7b_csv": "data/raw/expanded_universe/expanded_universe_v2_7b.csv",
+    "expanded_universe_exclusions_v2_7b_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_7b.csv",
+    "rebuild_report_json": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_real_v2_7b.json",
+    "rebuild_report_md": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_real_v2_7b.md",
+    "provider_breakdown_csv": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_provider_breakdown_v2_7b.csv",
+    "merge_audit_csv": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_merge_audit_v2_7b.csv"
+  },
+  "provider_precedence": [
+    {
+      "priority": 1,
+      "provider": "existing_expanded_universe_v2_4b",
+      "role": "base_validated_source",
+      "input": "data/raw/expanded_universe/expanded_universe_v2_4b.csv",
+      "treatment": "Preserve existing validated Nasdaq Trader derived rows unless duplicate policy explicitly replaces metadata."
+    },
+    {
+      "priority": 2,
+      "provider": "sec_company_tickers_exchange_primary_net_new",
+      "role": "partial_provider_and_identifier_enrichment",
+      "input": "outputs/full_universe_source_acquisition/sec_incremental_rebuild_candidates_v2_6e.csv",
+      "treatment": "Add only PRIMARY_NET_NEW rows with exchange in NASDAQ, NYSE, CBOE and key not already present as exchange+ticker."
+    },
+    {
+      "priority": 3,
+      "provider": "sec_company_tickers_exchange_enrichment_or_exclusion",
+      "role": "enrichment_exclusion_reference",
+      "input": "outputs/full_universe_source_acquisition/sec_incremental_enrichment_rows_v2_6e.csv",
+      "treatment": "Do not add to primary universe. Preserve in exclusions/reference output for future enrichment and provider diagnostics."
+    }
+  ],
+  "canonical_output_columns": [
+    "ticker",
+    "company_name",
+    "exchange",
+    "country",
+    "source_provider",
+    "source_file",
+    "instrument_type",
+    "instrument_scope",
+    "classification_confidence",
+    "classification_reason",
+    "sector",
+    "industry",
+    "market_cap",
+    "raw_cik",
+    "raw_exchange",
+    "provider_precedence",
+    "merge_action",
+    "merge_reason"
+  ],
+  "deduplication_rules": [
+    "Primary deduplication key: exchange+ticker.",
+    "Normalize ticker as uppercase trimmed string.",
+    "Normalize exchange as trimmed string.",
+    "Existing v2.4B rows win on duplicate exchange+ticker keys.",
+    "SEC primary net-new rows are added only when exchange+ticker key is absent from v2.4B.",
+    "SEC OTC/None/blank exchange rows are never added to primary expanded universe in v2.7B.",
+    "SEC duplicate exchange+ticker count must remain zero, as validated in v2.6D.",
+    "If a SEC row has unknown exchange, route it to exclusions/review, not primary universe."
+  ],
+  "classification_rules": [
+    "Existing v2.4B classification fields are preserved.",
+    "SEC rows keep instrument_type UNKNOWN_PENDING_CLASSIFICATION unless downstream classification is implemented.",
+    "SEC rows keep instrument_scope UNKNOWN_PENDING_CLASSIFICATION unless downstream classification is implemented.",
+    "SEC rows use classification_confidence LOW until a listing-specific provider confirms instrument class.",
+    "SEC CIK is stored as raw_cik for identifier enrichment.",
+    "SEC raw exchange is preserved as raw_exchange."
+  ],
+  "acceptance_criteria_v2_7b": [
+    "No network download performed.",
+    "No OpenAI call.",
+    "No broker call.",
+    "No scoring recalculation.",
+    "No full 59k universe launch.",
+    "No active MVP output overwrite.",
+    "Create new versioned expanded_universe_v2_7b.csv only.",
+    "Create new versioned expanded_universe_exclusions_v2_7b.csv only.",
+    "Preserve v2.4B outputs unchanged.",
+    "Final included rows should be approximately 8007 unless duplicate logic reveals a documented variance.",
+    "OTC/None SEC rows must stay out of primary universe.",
+    "Report provider breakdown and merge audit."
+  ],
+  "summary": {
+    "current_expanded_rows": 5648,
+    "sec_primary_net_new_keys": 2359,
+    "sec_enrichment_or_exclusion_rows": 2747,
+    "planned_max_rows_after_sec_rebuild": 8007,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion_after_sec": 6993,
+    "rows_needed_full_source_after_sec": 41993,
+    "first_expansion_unlocked_after_sec": false,
+    "full_source_unlocked_after_sec": false
+  },
+  "blockers": [],
+  "warnings": [
+    "SEC rebuild will not unlock first expansion target: 8007 < 15000",
+    "SEC rebuild will not unlock full-source threshold: 8007 < 50000",
+    "SEC OTC/None rows must remain exclusions/enrichment and must not be merged into primary expanded universe."
+  ],
+  "positives": [
+    "v2.6E SEC incremental analysis artifact found: outputs/full_universe_source_acquisition/sec_incremental_coverage_analysis_v2_6e.json",
+    "v2.6E analysis status accepted: SEC_INCREMENTAL_COVERAGE_USEFUL_BUT_NOT_ENOUGH",
+    "v2.6E decision accepted: REBUILD_WITH_SEC_USEFUL_BUT_NOT_ENOUGH",
+    "Required input available: data/raw/expanded_universe/expanded_universe_v2_4b.csv",
+    "Required input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_4b.csv",
+    "Required input available: data/raw/source_providers/sec_company_tickers_exchange/sec_company_tickers_exchange.csv",
+    "Required input available: outputs/full_universe_source_acquisition/sec_incremental_rebuild_candidates_v2_6e.csv",
+    "Required input available: outputs/full_universe_source_acquisition/sec_incremental_enrichment_rows_v2_6e.csv"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false
+  },
+  "recommendation": "Proceed to v2.7B to execute a controlled versioned rebuild with SEC. Do not overwrite v2.4B or active MVP outputs."
+}
