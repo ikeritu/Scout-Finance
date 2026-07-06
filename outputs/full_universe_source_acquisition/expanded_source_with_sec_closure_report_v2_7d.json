@@ -1,0 +1,95 @@
+{
+  "phase": "v2.7D",
+  "method": "expanded_source_with_sec_closure_report_v1",
+  "created_at": "2026-07-06T20:08:57+00:00",
+  "closure_status": "EXPANDED_SOURCE_WITH_SEC_CLOSED_USEFUL_BUT_NOT_ENOUGH",
+  "readiness_score": 95,
+  "closure_decision": "SEC_REBUILD_CLOSED_USEFUL_BUT_NOT_ENOUGH",
+  "recommended_next_phase": "v2.8A ? Cboe Listed Symbols Route Plan OR return to product/MVP",
+  "closed_block": {
+    "block_name": "v2.7 ? Rebuild Expanded Source With SEC",
+    "phases_closed": [
+      "v2.7A ? Rebuild Expanded Source With SEC Plan",
+      "v2.7B ? Rebuild Expanded Source With SEC Real",
+      "v2.7C ? Validate Expanded Source With SEC",
+      "v2.7D ? Expanded Source With SEC Closure Report"
+    ]
+  },
+  "inputs": {
+    "sec_analysis_json": "outputs/full_universe_source_acquisition/sec_incremental_coverage_analysis_v2_6e.json",
+    "plan_json": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_plan_v2_7a.json",
+    "rebuild_json": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_real_v2_7b.json",
+    "validation_json": "outputs/full_universe_source_acquisition/validate_expanded_source_with_sec_v2_7c.json",
+    "expanded_universe_v2_7b_csv": "data/raw/expanded_universe/expanded_universe_v2_7b.csv",
+    "expanded_universe_exclusions_v2_7b_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_7b.csv"
+  },
+  "final_result": {
+    "expanded_universe_csv": "data/raw/expanded_universe/expanded_universe_v2_7b.csv",
+    "expanded_universe_exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_7b.csv",
+    "final_expanded_rows": 8007,
+    "final_exclusions_rows": 10056,
+    "sec_rows_added": 2359,
+    "duplicate_exchange_ticker_keys": 0,
+    "issues_count": 0,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false,
+    "rows_needed_first_expansion": 6993,
+    "rows_needed_full_source": 41993
+  },
+  "provider_result": {
+    "nasdaq_trader_nasdaqlisted": 3244,
+    "nasdaq_trader_otherlisted": 2404,
+    "sec_company_tickers_exchange": 2359
+  },
+  "next_options": [
+    {
+      "option": "A",
+      "name": "Continue source expansion with Cboe / next official provider",
+      "recommended_phase": "v2.8A ? Cboe Listed Symbols Route Plan",
+      "reason": "Full 59k remains blocked and additional official providers are needed.",
+      "status": "RECOMMENDED_IF_59K_REMAINS_PRIORITY"
+    },
+    {
+      "option": "B",
+      "name": "Return to product/MVP with partial expanded universe",
+      "recommended_phase": "Product/MVP roadmap refresh",
+      "reason": "The project has a validated 8007-row universe and could shift back to dashboard/scoring/research usability.",
+      "status": "RECOMMENDED_IF_PRODUCT_UTILITY_IS_PRIORITY"
+    }
+  ],
+  "blockers": [],
+  "warnings": [
+    "First expansion target remains blocked: 8007 < 15000",
+    "Full-source threshold remains blocked: 8007 < 50000",
+    "SEC rebuild is useful, but not enough to close source expansion.",
+    "Next decision required: continue with Cboe/next provider or return to product/MVP with partial expanded universe."
+  ],
+  "positives": [
+    "v2.7C validation artifact found: outputs/full_universe_source_acquisition/validate_expanded_source_with_sec_v2_7c.json",
+    "v2.7B rebuild artifact found: outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_real_v2_7b.json",
+    "v2.7A plan artifact found: outputs/full_universe_source_acquisition/rebuild_expanded_source_with_sec_plan_v2_7a.json",
+    "v2.6E SEC incremental analysis artifact found: outputs/full_universe_source_acquisition/sec_incremental_coverage_analysis_v2_6e.json",
+    "Required source output found: data/raw/expanded_universe/expanded_universe_v2_7b.csv",
+    "Required source output found: data/raw/expanded_universe/expanded_universe_exclusions_v2_7b.csv",
+    "v2.7C validation status accepted: EXPANDED_SOURCE_WITH_SEC_VALIDATED_USEFUL_BUT_NOT_ENOUGH",
+    "v2.7B rebuild status accepted: REBUILD_EXPANDED_SOURCE_WITH_SEC_COMPLETED_USEFUL_BUT_NOT_ENOUGH",
+    "v2.7A plan status accepted: REBUILD_EXPANDED_SOURCE_WITH_SEC_PLAN_READY",
+    "v2.6E SEC decision accepted: REBUILD_WITH_SEC_USEFUL_BUT_NOT_ENOUGH"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "closure_only": true
+  },
+  "recommendation": "Close v2.7 with tag and decide whether to continue with v2.8A Cboe route or return to product/MVP with the validated 8007-row universe."
+}
