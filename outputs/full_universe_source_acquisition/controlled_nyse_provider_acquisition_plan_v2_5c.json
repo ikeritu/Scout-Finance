@@ -1,0 +1,130 @@
+{
+  "phase": "v2.5C",
+  "method": "controlled_nyse_provider_acquisition_plan_v1",
+  "created_at": "2026-07-06T07:55:24+00:00",
+  "plan_status": "CONTROLLED_NYSE_PROVIDER_PLAN_READY",
+  "readiness_score": 95,
+  "current_state": {
+    "current_included_rows": 5648,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion": 9352,
+    "rows_needed_full_source": 44352
+  },
+  "nyse_provider_plan": {
+    "provider_id": "nyse_listed_directory",
+    "provider_name": "NYSE Listed Directory",
+    "provider_type": "official_exchange_listing_source",
+    "priority": 1,
+    "phase_for_real_acquisition": "v2.5D",
+    "mode": "PLAN_ONLY_NO_DOWNLOAD",
+    "expected_role": "Add official NYSE-listed instrument coverage and compare/merge with existing Nasdaq Trader otherlisted coverage.",
+    "expected_inputs": [
+      {
+        "logical_name": "nyse_listed_directory_source",
+        "expected_location": "data/raw/source_providers/nyse_listed_directory/",
+        "expected_format": "csv_or_downloaded_exchange_file",
+        "required_before_build": true
+      }
+    ],
+    "expected_canonical_columns_after_normalization": [
+      "ticker",
+      "company_name",
+      "exchange",
+      "country",
+      "source_provider",
+      "source_file",
+      "instrument_type",
+      "instrument_scope",
+      "classification_confidence",
+      "classification_reason",
+      "sector",
+      "industry",
+      "market_cap",
+      "raw_exchange_code",
+      "raw_etf_flag",
+      "raw_test_issue_flag"
+    ],
+    "deduplication_rules": [
+      "Primary uniqueness key must remain exchange+ticker.",
+      "If NYSE rows duplicate existing Nasdaq Trader otherlisted NYSE rows, keep one canonical record.",
+      "Prefer official exchange-specific provider row when provider confidence is higher.",
+      "Never overwrite active MVP outputs during provider acquisition.",
+      "Write NYSE raw and normalized files in isolated provider folder."
+    ],
+    "risk_register": [
+      {
+        "risk": "Overlap with Nasdaq Trader otherlisted NYSE rows",
+        "severity": "HIGH",
+        "mitigation": "Run post-acquisition duplicate comparison by exchange+ticker before rebuilding expanded source."
+      },
+      {
+        "risk": "Provider schema drift",
+        "severity": "MEDIUM",
+        "mitigation": "Validate headers and row count before canonical normalization."
+      },
+      {
+        "risk": "Non-common-stock instruments included",
+        "severity": "MEDIUM",
+        "mitigation": "Reuse current instrument classification/exclusion rules before inclusion."
+      },
+      {
+        "risk": "Low incremental row gain",
+        "severity": "MEDIUM",
+        "mitigation": "Report gross rows, duplicate rows, excluded rows, and net new included rows separately."
+      },
+      {
+        "risk": "Network/download instability",
+        "severity": "LOW",
+        "mitigation": "Keep network acquisition isolated in v2.5D with timeout and no downstream rebuild by default."
+      }
+    ],
+    "acceptance_criteria_for_v2_5D": [
+      "Download or acquire NYSE provider file into isolated raw provider folder.",
+      "No OpenAI calls.",
+      "No broker calls.",
+      "No scoring recalculation.",
+      "No full 59k launch.",
+      "No overwrite of active MVP outputs.",
+      "Produce raw acquisition JSON and Markdown report.",
+      "Report network status, URL/source path, file size, row count, headers, and errors."
+    ],
+    "acceptance_criteria_before_rebuild_v2_5E": [
+      "NYSE provider file exists and is readable.",
+      "Headers/schema are understood.",
+      "Row count is reported.",
+      "Duplicate risk against existing expanded source is measured.",
+      "Instrument classification rules are prepared.",
+      "Commit checkpoint exists before rebuild."
+    ]
+  },
+  "recommended_next_phase": {
+    "phase": "v2.5D",
+    "name": "Controlled NYSE Provider Acquisition Real",
+    "mode": "NETWORK_ACQUISITION_ISOLATED",
+    "reason": "NYSE provider route is now planned and can be acquired in a controlled isolated step."
+  },
+  "blockers": [],
+  "warnings": [
+    "Rows still needed for first expansion target before NYSE acquisition: 9352",
+    "Rows still needed for full-source threshold before NYSE acquisition: 44352"
+  ],
+  "positives": [
+    "v2.5B provider plan artifact found: outputs/full_universe_source_acquisition/next_provider_acquisition_plan_v2_5b.json",
+    "v2.5A revalidation artifact found: outputs/full_universe_source_acquisition/expanded_source_revalidation_gate_v2_5a.json",
+    "v2.5B plan status accepted: NEXT_PROVIDER_PLAN_READY",
+    "Current expanded source rows confirmed: 5648"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false
+  },
+  "recommendation": "Proceed to v2.5D as isolated real NYSE provider acquisition. Do not rebuild expanded source until NYSE acquisition output is reviewed."
+}
