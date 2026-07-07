@@ -1,0 +1,143 @@
+{
+  "phase": "v2.9A",
+  "method": "next_official_provider_route_v1",
+  "created_at": "2026-07-07T10:27:45+00:00",
+  "route_status": "NEXT_OFFICIAL_PROVIDER_ROUTE_READY",
+  "readiness_score": 92,
+  "route_decision": "OTC_MARKETS_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+  "selected_provider": "otc_markets_stock_screener",
+  "recommended_next_phase": "v2.9B ? OTC Markets Acquisition Plan",
+  "current_state": {
+    "current_expanded_csv": "data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "current_exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "current_expanded_rows": 9200,
+    "current_exclusions_rows": 10056,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion": 5800,
+    "rows_needed_full_source": 40800,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false
+  },
+  "route_candidates": [
+    {
+      "priority": 1,
+      "provider_id": "otc_markets_stock_screener",
+      "name": "OTC Markets Stock Screener",
+      "source_url": "https://www.otcmarkets.com/research/stock-screener",
+      "download_candidate_url": "https://www.otcmarkets.com/research/stock-screener/api/downloadCSV?ce=true&sortField=volume&sortOrder=desc",
+      "route_type": "official_otc_markets_stock_screener_csv_candidate",
+      "expected_value": "HIGH_FOR_15000_THRESHOLD",
+      "risk": "MEDIUM",
+      "expected_coverage": "Large OTC universe; may be enough to exceed 15000 if usable and net-new.",
+      "why": "After Nasdaq Trader, SEC and Cboe, the remaining gap to 15000 is 5800 rows. OTC Markets has a broad official screener and download route candidate.",
+      "planned_treatment": "Plan controlled acquisition first. Preserve raw CSV. Validate schema and net-new exchange+ticker rows before any rebuild.",
+      "decision": "SELECTED_PRIMARY_ROUTE"
+    },
+    {
+      "priority": 2,
+      "provider_id": "nasdaq_stock_screener",
+      "name": "Nasdaq Stock Screener",
+      "source_url": "https://www.nasdaq.com/market-activity/stocks/screener",
+      "download_candidate_url": "",
+      "route_type": "official_or_semi_official_nasdaq_screener_review",
+      "expected_value": "LOW_TO_MEDIUM",
+      "risk": "MEDIUM_HIGH",
+      "expected_coverage": "May overlap heavily with Nasdaq Trader and SEC.",
+      "why": "Could provide names/metadata but likely not enough net-new after existing Nasdaq/SEC routes.",
+      "planned_treatment": "Keep as fallback or enrichment route.",
+      "decision": "FALLBACK_ROUTE"
+    },
+    {
+      "priority": 3,
+      "provider_id": "nyse_deep_js_payload_review",
+      "name": "NYSE Deep JS Payload Review",
+      "source_url": "",
+      "download_candidate_url": "",
+      "route_type": "deferred_deep_js_route",
+      "expected_value": "UNKNOWN",
+      "risk": "HIGH",
+      "expected_coverage": "Unknown until deep JS payload route is solved.",
+      "why": "Previously deferred because v2.5G required deep JS payload review.",
+      "planned_treatment": "Do not reopen until OTC route is resolved or explicitly prioritized.",
+      "decision": "DEFERRED_REQUIRES_DEEP_JS_PAYLOAD_REVIEW"
+    },
+    {
+      "priority": 4,
+      "provider_id": "openfigi_symbology",
+      "name": "OpenFIGI / FIGI Symbology",
+      "source_url": "https://www.openfigi.com/",
+      "download_candidate_url": "",
+      "route_type": "identifier_enrichment_or_api_route",
+      "expected_value": "MEDIUM_FOR_ENRICHMENT_LOW_FOR_BULK_SOURCE",
+      "risk": "MEDIUM_HIGH",
+      "expected_coverage": "Potentially useful for identifier enrichment, but bulk universe acquisition requires API and limits review.",
+      "why": "Good candidate for enrichment, not necessarily the next bulk source provider.",
+      "planned_treatment": "Defer as enrichment route unless source expansion stalls.",
+      "decision": "REFERENCE_OR_ENRICHMENT_ROUTE_REQUIRES_API_CONSTRAINT_REVIEW"
+    }
+  ],
+  "planned_outputs_v2_9b_v2_9c": {
+    "provider_dir": "data/raw/source_providers/otc_markets_stock_screener",
+    "route_plan_json": "outputs/full_universe_source_acquisition/otc_markets_acquisition_plan_v2_9b.json",
+    "route_plan_md": "outputs/full_universe_source_acquisition/otc_markets_acquisition_plan_v2_9b.md",
+    "raw_csv_target": "data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_raw.csv",
+    "schema_probe_csv": "outputs/full_universe_source_acquisition/otc_markets_schema_probe_v2_9c.csv",
+    "acquisition_json": "outputs/full_universe_source_acquisition/otc_markets_acquisition_real_v2_9c.json",
+    "acquisition_md": "outputs/full_universe_source_acquisition/otc_markets_acquisition_real_v2_9c.md"
+  },
+  "planned_controls": [
+    "v2.9B must be plan-only.",
+    "v2.9C may download only OTC Markets route candidates selected in v2.9B.",
+    "Preserve raw CSV exactly.",
+    "Report URL, status code, content type, size and SHA256.",
+    "Do not rebuild expanded_universe in acquisition phase.",
+    "Do not overwrite active MVP outputs.",
+    "Do not run scoring.",
+    "Do not call OpenAI.",
+    "Do not call broker APIs.",
+    "Do not launch full 59k universe.",
+    "Classify OTC rows conservatively until post-acquisition validation."
+  ],
+  "validation_questions": [
+    "How many rows are available in OTC Markets CSV?",
+    "Which columns are present?",
+    "Is there a clear ticker/symbol field?",
+    "Is there a company/security name field?",
+    "Is market tier available: OTCQX, OTCQB, OTCID, Pink Limited, etc.?",
+    "Is country available?",
+    "How many exchange+ticker keys are net-new against expanded_universe_v2_8e?",
+    "Are rows equities, ADRs, funds, preferreds, warrants, or mixed instruments?",
+    "Can OTC Markets unlock 15000 rows safely?",
+    "Should OTC Markets be primary source, candidate-provider source, enrichment source, or deferred?"
+  ],
+  "blockers": [],
+  "warnings": [
+    "Current expanded source remains below first expansion threshold: 9200 < 15000",
+    "Current expanded source remains below full-source threshold: 9200 < 50000",
+    "OTC Markets route may include OTCQX, OTCQB, OTCID, Pink Limited, international ordinary shares, ADRs and other securities; classification must be conservative.",
+    "OTC Markets CSV schema and licensing/usage constraints must be checked in v2.9B/v2.9C before rebuild.",
+    "Do not mix OTC candidates into main universe until a dedicated validation phase confirms schema, net-new rows, and instrument semantics."
+  ],
+  "positives": [
+    "v2.8G Cboe closure artifact found: outputs/full_universe_source_acquisition/expanded_source_with_cboe_closure_report_v2_8g.json",
+    "v2.8G closure status accepted: EXPANDED_SOURCE_WITH_CBOE_CLOSED_USEFUL_BUT_NOT_ENOUGH",
+    "v2.8G closure decision accepted: CBOE_REBUILD_CLOSED_USEFUL_BUT_NOT_ENOUGH",
+    "Current source input available: data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "Current source input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "plan_only": true
+  },
+  "recommendation": "Proceed to v2.9B with OTC Markets acquisition plan. Do not download or rebuild until v2.9B defines the controlled acquisition contract."
+}
