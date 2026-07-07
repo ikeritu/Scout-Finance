@@ -1,0 +1,5 @@
+priority,route_id,name,url,method,expected_content_type,expected_value,risk,network_allowed_in,treatment
+1,cboe_europe_reference_data_page_probe,Cboe Europe Reference Data page,https://www.cboe.com/europe/equities/support/reference_data/,GET,text/html,HIGH,LOW_MEDIUM,v2.11B/v2.11C,Discover official Live Symbols CSV and Live Symbols Enhanced CSV links from the Cboe Europe Reference Data page.
+2,cboe_europe_live_symbols_csv,Cboe Europe Live Symbols CSV files,DISCOVER_FROM_REFERENCE_DATA_PAGE,GET,text/csv,HIGH,LOW,v2.11C,Download only discovered official CSV files for BXE/CXE/DXE/TRF EU/TRF UK/SIS if present.
+3,cboe_europe_live_symbols_enhanced_csv,Cboe Europe Live Symbols Enhanced CSV files,DISCOVER_FROM_REFERENCE_DATA_PAGE,GET,text/csv,HIGH,LOW,v2.11C,"Prefer enhanced CSV if schema includes richer fields for symbol, name, currency, MIC, country, supported services or asset classification."
+4,cboe_europe_symbols_traded_pages,Cboe Europe Symbols Traded pages,CXE/BXE/DXE/TRF symbols_traded pages,GET,text/html,MEDIUM,MEDIUM,v2.11C,Fallback page probe only if Reference Data page does not expose direct CSV files.

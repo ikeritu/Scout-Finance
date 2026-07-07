@@ -1,0 +1,240 @@
+{
+  "phase": "v2.11A",
+  "method": "cboe_europe_route_plan_v1",
+  "created_at": "2026-07-07T22:08:30+00:00",
+  "route_status": "CBOE_EUROPE_ROUTE_READY",
+  "readiness_score": 92,
+  "route_decision": "CBOE_EUROPE_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+  "recommended_next_phase": "v2.11B ? Cboe Europe Acquisition Plan",
+  "provider": {
+    "provider_id": "cboe_europe_reference_data",
+    "provider_dir": "data/raw/source_providers/cboe_europe_reference_data",
+    "primary_route": "cboe_europe_reference_data_page_probe",
+    "preferred_files": [
+      "Live Symbols CSV",
+      "Live Symbols Enhanced CSV"
+    ],
+    "markets_or_services_to_probe": [
+      "BXE",
+      "CXE",
+      "DXE",
+      "TRF EU",
+      "TRF UK",
+      "SIS"
+    ]
+  },
+  "current_state": {
+    "current_expanded_csv": "data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "current_exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "current_expanded_rows": 9200,
+    "current_exclusions_rows": 10056,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion": 5800,
+    "rows_needed_full_source": 40800,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false
+  },
+  "route_candidates": [
+    {
+      "priority": 1,
+      "route_id": "cboe_europe_reference_data_page_probe",
+      "name": "Cboe Europe Reference Data page",
+      "url": "https://www.cboe.com/europe/equities/support/reference_data/",
+      "method": "GET",
+      "expected_content_type": "text/html",
+      "expected_value": "HIGH",
+      "risk": "LOW_MEDIUM",
+      "network_allowed_in": "v2.11B/v2.11C",
+      "treatment": "Discover official Live Symbols CSV and Live Symbols Enhanced CSV links from the Cboe Europe Reference Data page."
+    },
+    {
+      "priority": 2,
+      "route_id": "cboe_europe_live_symbols_csv",
+      "name": "Cboe Europe Live Symbols CSV files",
+      "url": "DISCOVER_FROM_REFERENCE_DATA_PAGE",
+      "method": "GET",
+      "expected_content_type": "text/csv",
+      "expected_value": "HIGH",
+      "risk": "LOW",
+      "network_allowed_in": "v2.11C",
+      "treatment": "Download only discovered official CSV files for BXE/CXE/DXE/TRF EU/TRF UK/SIS if present."
+    },
+    {
+      "priority": 3,
+      "route_id": "cboe_europe_live_symbols_enhanced_csv",
+      "name": "Cboe Europe Live Symbols Enhanced CSV files",
+      "url": "DISCOVER_FROM_REFERENCE_DATA_PAGE",
+      "method": "GET",
+      "expected_content_type": "text/csv",
+      "expected_value": "HIGH",
+      "risk": "LOW",
+      "network_allowed_in": "v2.11C",
+      "treatment": "Prefer enhanced CSV if schema includes richer fields for symbol, name, currency, MIC, country, supported services or asset classification."
+    },
+    {
+      "priority": 4,
+      "route_id": "cboe_europe_symbols_traded_pages",
+      "name": "Cboe Europe Symbols Traded pages",
+      "url": "CXE/BXE/DXE/TRF symbols_traded pages",
+      "method": "GET",
+      "expected_content_type": "text/html",
+      "expected_value": "MEDIUM",
+      "risk": "MEDIUM",
+      "network_allowed_in": "v2.11C",
+      "treatment": "Fallback page probe only if Reference Data page does not expose direct CSV files."
+    }
+  ],
+  "planned_symbol_pages": [
+    {
+      "market": "CXE",
+      "url": "https://www.cboe.com/europe/equities/market_statistics/symbols_traded/?mkt=cxe",
+      "planned_target": "data/raw/source_providers/cboe_europe_reference_data/cboe_europe_cxe_symbols_traded_page.html"
+    },
+    {
+      "market": "BXE",
+      "url": "https://www.cboe.com/europe/equities/market_statistics/symbols_traded/?mkt=bxe",
+      "planned_target": "data/raw/source_providers/cboe_europe_reference_data/cboe_europe_bxe_symbols_traded_page.html"
+    },
+    {
+      "market": "DXE",
+      "url": "https://www.cboe.com/europe/equities/market_statistics/symbols_traded/?mkt=dxe",
+      "planned_target": "data/raw/source_providers/cboe_europe_reference_data/cboe_europe_dxe_symbols_traded_page.html"
+    },
+    {
+      "market": "TRF",
+      "url": "https://www.cboe.com/europe/equities/market_statistics/symbols_traded/?mkt=trf",
+      "planned_target": "data/raw/source_providers/cboe_europe_reference_data/cboe_europe_trf_symbols_traded_page.html"
+    }
+  ],
+  "planned_outputs": [
+    {
+      "output_type": "provider_dir",
+      "path": "data/raw/source_providers/cboe_europe_reference_data"
+    },
+    {
+      "output_type": "route_plan_json",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_route_v2_11a.json"
+    },
+    {
+      "output_type": "route_plan_md",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_route_v2_11a.md"
+    },
+    {
+      "output_type": "route_candidates_csv",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_route_candidates_v2_11a.csv"
+    },
+    {
+      "output_type": "planned_outputs_csv",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_planned_outputs_v2_11a.csv"
+    },
+    {
+      "output_type": "v2_11b_acquisition_plan_json",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_acquisition_plan_v2_11b.json"
+    },
+    {
+      "output_type": "v2_11c_acquisition_real_json",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_acquisition_real_v2_11c.json"
+    },
+    {
+      "output_type": "v2_11d_validation_json",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_validation_v2_11d.json"
+    }
+  ],
+  "expected_schema_candidates": {
+    "symbol": [
+      "symbol",
+      "bats_name",
+      "ticker",
+      "instrument",
+      "isin"
+    ],
+    "issuer_name": [
+      "company",
+      "company_name",
+      "name",
+      "issuer",
+      "security_name"
+    ],
+    "market": [
+      "market",
+      "exchange",
+      "book",
+      "venue",
+      "mic",
+      "primary_market"
+    ],
+    "asset_class": [
+      "asset_class",
+      "asset type",
+      "security_type",
+      "instrument_type"
+    ],
+    "currency": [
+      "currency",
+      "trading_currency",
+      "price_currency"
+    ],
+    "country": [
+      "country",
+      "country_of_incorporation",
+      "domicile"
+    ],
+    "isin": [
+      "isin",
+      "isin_code"
+    ]
+  },
+  "validation_questions": [
+    "Does Cboe Europe expose stable official Live Symbols CSV files?",
+    "Are CSV files available for BXE, CXE, DXE, TRF EU, TRF UK and/or SIS?",
+    "Does enhanced CSV contain richer symbol/name/MIC/country/currency fields?",
+    "How many rows exist before net-new filtering?",
+    "How many exchange+ticker or MIC+ticker keys are net-new against expanded_universe_v2_8e?",
+    "Are rows ordinary shares, ETFs, funds, ETCs or mixed instruments?",
+    "Can Cboe Europe rows be normalized conservatively without brittle scraping?",
+    "Does Cboe Europe unlock the 15000-row first expansion threshold?",
+    "Should Cboe Europe be source provider, candidate provider, enrichment, reference-only or deferred?"
+  ],
+  "decision_gate": {
+    "minimum_net_new_rows_to_consider_rebuild": 5800,
+    "rebuild_allowed_only_after": "v2.11D validation confirms usable schema, duplicate control and net-new rows.",
+    "fallback_if_blocked": "Close Cboe Europe as blocked/reference-only and choose next provider route."
+  },
+  "outputs": {
+    "route_candidates_csv": "outputs/full_universe_source_acquisition/cboe_europe_route_candidates_v2_11a.csv",
+    "planned_outputs_csv": "outputs/full_universe_source_acquisition/cboe_europe_planned_outputs_v2_11a.csv",
+    "route_json": "outputs/full_universe_source_acquisition/cboe_europe_route_v2_11a.json",
+    "route_md": "outputs/full_universe_source_acquisition/cboe_europe_route_v2_11a.md"
+  },
+  "blockers": [],
+  "warnings": [
+    "v2.11A is route-selection only; no Cboe Europe data is downloaded in this phase.",
+    "Cboe Europe may include non-US symbols, multiple venues, MIC semantics and duplicate instruments across books.",
+    "European symbol semantics must not be merged blindly with US tickers.",
+    "Rows from TRF/APA/reporting routes may need separate classification from lit order book symbols.",
+    "Full 59k remains blocked until source reaches at least 50000 rows."
+  ],
+  "positives": [
+    "v2.10G LSE closure artifact found: outputs/full_universe_source_acquisition/lse_closure_report_v2_10g.json",
+    "v2.10G closure status accepted: LSE_CLOSED_ACCESSIBLE_BUT_NOT_USABLE_FOR_REBUILD",
+    "v2.10G closure decision accepted: LSE_CLOSED_NO_REBUILD_FALLBACK_REQUIRED",
+    "v2.10G recommended next phase accepted: v2.11A ? Cboe Europe Route",
+    "Current source input available: data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "Current source input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv"
+  ],
+  "controls": {
+    "network_download_performed": false,
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "route_selection_only": true
+  },
+  "recommendation": "Proceed to v2.11B Cboe Europe Acquisition Plan. Do not download until controlled acquisition contract is defined."
+}
