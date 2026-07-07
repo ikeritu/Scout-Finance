@@ -1,0 +1,123 @@
+{
+  "phase": "v2.9G",
+  "method": "otc_markets_closure_report_v1",
+  "created_at": "2026-07-07T12:49:21+00:00",
+  "closure_status": "OTC_MARKETS_CLOSED_VALID_BUT_NOT_ENOUGH",
+  "readiness_score": 95,
+  "closure_decision": "OTC_MARKETS_CLOSED_REFERENCE_OR_ENRICHMENT_ONLY_NO_REBUILD",
+  "recommended_next_phase": "v2.10A ? Next Provider Route",
+  "closed_block": {
+    "block_name": "v2.9 ? OTC Markets / next provider",
+    "phases_closed": [
+      "v2.9A ? Next Official Provider Route",
+      "v2.9B ? OTC Markets Acquisition Plan",
+      "v2.9C ? OTC Markets Acquisition Real",
+      "v2.9D ? OTC Markets Validation",
+      "v2.9G ? OTC Markets Closure Report"
+    ],
+    "phases_skipped": [
+      "v2.9E ? Rebuild Expanded Source With OTC Markets",
+      "v2.9F ? Validate Expanded Source With OTC Markets"
+    ],
+    "skip_reason": "OTC Markets produced only 25 net-new rows, below the 5800 rows required to consider expansion rebuild."
+  },
+  "inputs": {
+    "route_json": "outputs/full_universe_source_acquisition/next_official_provider_route_v2_9a.json",
+    "plan_json": "outputs/full_universe_source_acquisition/otc_markets_acquisition_plan_v2_9b.json",
+    "acquisition_json": "outputs/full_universe_source_acquisition/otc_markets_acquisition_real_v2_9c.json",
+    "validation_json": "outputs/full_universe_source_acquisition/otc_markets_validation_v2_9d.json",
+    "current_expanded_csv": "data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "current_exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "raw_otc_csv": "data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_raw.csv",
+    "raw_otc_html": "data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_page.html"
+  },
+  "final_result": {
+    "current_expanded_rows": 9200,
+    "current_exclusions_rows": 10056,
+    "otc_raw_rows": 25,
+    "otc_normalized_candidate_rows": 25,
+    "otc_net_new_candidate_rows": 25,
+    "otc_duplicate_exchange_ticker_keys": 0,
+    "otc_issues": 0,
+    "projected_rows_if_rebuilt": 9225,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "first_expansion_unlocked_if_rebuilt": false,
+    "full_source_unlocked_if_rebuilt": false,
+    "rows_needed_first_expansion_before_otc": 5800,
+    "rows_needed_full_source_before_otc": 40800,
+    "rows_still_needed_first_expansion_after_otc": 5775,
+    "rows_still_needed_full_source_after_otc": 40775
+  },
+  "provider_assessment": {
+    "provider_id": "otc_markets_stock_screener",
+    "schema_valid": true,
+    "raw_download_success": true,
+    "net_new_rows": 25,
+    "duplicate_keys": 0,
+    "issues": 0,
+    "usable_for_bulk_expansion": false,
+    "usable_for_reference": true,
+    "usable_for_enrichment": true,
+    "rebuild_allowed": false,
+    "reason": "Valid schema and 25 net-new rows, but insufficient for expansion target."
+  },
+  "next_options": [
+    {
+      "option": "A",
+      "name": "Continue source expansion with next provider",
+      "recommended_phase": "v2.10A ? Next Provider Route",
+      "status": "RECOMMENDED",
+      "reason": "OTC Markets did not provide enough rows to move toward 15000 or 50000."
+    },
+    {
+      "option": "B",
+      "name": "Return to product/MVP with validated 9200-row universe",
+      "recommended_phase": "Product/MVP roadmap refresh",
+      "status": "AVAILABLE",
+      "reason": "The current universe remains clean and validated, but still below expansion thresholds."
+    }
+  ],
+  "tag_recommendation": "v2.9_otc_markets_closed_valid_but_not_enough",
+  "blockers": [],
+  "warnings": [
+    "OTC Markets route downloaded and validated successfully, but only 25 net-new rows were found.",
+    "OTC Markets is not enough to unlock the 15000-row first expansion target.",
+    "OTC Markets is not enough to unlock the 50000-row full-source threshold.",
+    "v2.9E rebuild is explicitly skipped because 25 net-new rows are far below the 5800-row minimum needed.",
+    "Full 59k dry-run remains blocked."
+  ],
+  "positives": [
+    "v2.9A route artifact found: outputs/full_universe_source_acquisition/next_official_provider_route_v2_9a.json",
+    "v2.9B OTC acquisition plan artifact found: outputs/full_universe_source_acquisition/otc_markets_acquisition_plan_v2_9b.json",
+    "v2.9C OTC acquisition real artifact found: outputs/full_universe_source_acquisition/otc_markets_acquisition_real_v2_9c.json",
+    "v2.9D OTC validation artifact found: outputs/full_universe_source_acquisition/otc_markets_validation_v2_9d.json",
+    "Closure input available: data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "Closure input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "Closure input available: data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_raw.csv",
+    "Closure input available: data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_page.html",
+    "v2.9A route status accepted: NEXT_OFFICIAL_PROVIDER_ROUTE_READY",
+    "v2.9A route decision accepted: OTC_MARKETS_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+    "v2.9B plan status accepted: OTC_MARKETS_ACQUISITION_PLAN_READY",
+    "v2.9B plan decision accepted: OTC_MARKETS_CONTROLLED_ACQUISITION_APPROVED",
+    "v2.9C acquisition status accepted: OTC_MARKETS_ACQUISITION_COMPLETED",
+    "v2.9C acquisition decision accepted: OTC_MARKETS_RAW_SOURCE_READY_FOR_VALIDATION",
+    "v2.9D validation status accepted: OTC_MARKETS_VALIDATED_INSUFFICIENT_FOR_EXPANSION",
+    "v2.9D validation decision accepted: OTC_MARKETS_VALID_BUT_NOT_ENOUGH_REFERENCE_OR_ENRICHMENT_ONLY"
+  ],
+  "controls": {
+    "network_download_performed": false,
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "closure_only": true,
+    "rebuild_skipped": true
+  },
+  "recommendation": "Close v2.9 with tag, skip v2.9E/v2.9F, and proceed to v2.10A Next Provider Route."
+}
