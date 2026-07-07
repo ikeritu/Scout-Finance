@@ -1,0 +1,2 @@
+baseline_path,baseline_tickers_loaded,candidate_unique_symbols_diagnostic_only,candidate_symbol_overlap_diagnostic_only,candidate_symbol_not_in_baseline_diagnostic_only,important_note
+data\raw\expanded_universe\expanded_universe_v2_8e.csv,8920,21288,133,21155,Diagnostic only. No accepted net-new filtering or rebuild performed in v2.11D.
