@@ -1,0 +1,99 @@
+{
+  "phase": "v2.9C",
+  "method": "otc_markets_acquisition_real_v1",
+  "created_at": "2026-07-07T11:33:14+00:00",
+  "acquisition_status": "OTC_MARKETS_ACQUISITION_COMPLETED",
+  "readiness_score": 85,
+  "acquisition_decision": "OTC_MARKETS_RAW_SOURCE_READY_FOR_VALIDATION",
+  "recommended_next_phase": "v2.9D ? OTC Markets Validation",
+  "provider": {
+    "provider_id": "otc_markets_stock_screener",
+    "provider_dir": "data/raw/source_providers/otc_markets_stock_screener",
+    "raw_page_html": "data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_page.html",
+    "raw_csv": "data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_raw.csv"
+  },
+  "current_state": {
+    "current_expanded_rows": 9200,
+    "rows_needed_first_expansion": 5800,
+    "rows_needed_full_source": 40800
+  },
+  "request_results": [
+    {
+      "route_id": "otc_markets_stock_screener_page_probe",
+      "url": "https://www.otcmarkets.com/research/stock-screener",
+      "target_path": "data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_page.html",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "size_bytes": 16409,
+      "sha256": "09917ac15cfbc52f86c6385849600ce64db573cb9f214c5e27ecf5b34a77ff96",
+      "error": ""
+    },
+    {
+      "route_id": "otc_markets_stock_screener_download_csv",
+      "url": "https://www.otcmarkets.com/research/stock-screener/api/downloadCSV?ce=true&sortField=volume&sortOrder=desc",
+      "target_path": "data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_raw.csv",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/csv; charset=utf-8",
+      "size_bytes": 2073,
+      "sha256": "b83468aee4590b820ac4a98d873d0cb6cff723058d7eb0e51814cbcf2165b84e",
+      "error": ""
+    }
+  ],
+  "csv_probe": {
+    "exists": true,
+    "is_probable_csv": true,
+    "row_count": 25,
+    "field_count": 9,
+    "fields": [
+      "Symbol",
+      "Security Name",
+      "Tier",
+      "Price",
+      "Change %",
+      "Vol",
+      "Sec Type",
+      "Country",
+      "State"
+    ],
+    "sample_rows_written": 25,
+    "schema_probe_written": true,
+    "error": ""
+  },
+  "outputs": {
+    "schema_probe_csv": "outputs/full_universe_source_acquisition/otc_markets_schema_probe_v2_9c.csv",
+    "sample_csv": "outputs/full_universe_source_acquisition/otc_markets_sample_v2_9c.csv",
+    "acquisition_json": "outputs/full_universe_source_acquisition/otc_markets_acquisition_real_v2_9c.json",
+    "acquisition_md": "outputs/full_universe_source_acquisition/otc_markets_acquisition_real_v2_9c.md"
+  },
+  "blockers": [],
+  "warnings": [
+    "Raw OTC row count may be insufficient to unlock first expansion before net-new validation: 25 < 5800",
+    "v2.9C is acquisition-only. Net-new coverage is not computed until v2.9D.",
+    "Do not rebuild expanded_universe from v2.9C outputs.",
+    "Do not use OTC rows downstream until v2.9D validation."
+  ],
+  "positives": [
+    "v2.9B plan artifact found: outputs/full_universe_source_acquisition/otc_markets_acquisition_plan_v2_9b.json",
+    "v2.9B plan status accepted: OTC_MARKETS_ACQUISITION_PLAN_READY",
+    "v2.9B plan decision accepted: OTC_MARKETS_CONTROLLED_ACQUISITION_APPROVED",
+    "HTML page downloaded: data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_page.html",
+    "CSV candidate downloaded: data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_raw.csv",
+    "CSV schema detected with 9 fields and 25 rows."
+  ],
+  "controls": {
+    "network_download_performed": true,
+    "network_download_scope": "OTC_MARKETS_APPROVED_ROUTES_ONLY",
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "acquisition_only": true
+  },
+  "recommendation": "Proceed to v2.9D OTC Markets Validation. Do not rebuild until v2.9D confirms schema, duplicate control and net-new coverage."
+}
