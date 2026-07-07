@@ -1,0 +1,221 @@
+{
+  "version": "v2.11B",
+  "phase": "Cboe Europe Acquisition Plan",
+  "phase_type": "plan-only",
+  "status": "CBOE_EUROPE_ACQUISITION_PLAN_READY",
+  "readiness_score": 94,
+  "decision": "PROCEED_TO_V2_11C_ACQUISITION_ONLY_AFTER_V2_11B_VALIDATION_AND_COMMIT",
+  "generated_at_utc": "2026-07-07T22:40:12.626588+00:00",
+  "source_context": {
+    "previous_phase": "v2.11A",
+    "previous_phase_status": "CBOE_EUROPE_ROUTE_READY",
+    "previous_phase_commit": "581fff8",
+    "current_expanded_rows": 9200,
+    "rows_needed_first_expansion": 5800,
+    "rows_needed_full_source": 40800,
+    "first_expansion_threshold": 15000,
+    "full_source_threshold": 50000,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED"
+  },
+  "hard_guards": {
+    "phase_type": "plan-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false,
+    "rebuild_allowed": false
+  },
+  "contract_for_v2_11c": [
+    {
+      "step_id": "01",
+      "route_type": "official_reference_page",
+      "target": "cboe_europe_reference_data_page",
+      "url_or_discovery_rule": "https://www.cboe.com/europe/equities/support/reference_data/",
+      "purpose": "Download official reference data page as raw HTML and discover official CSV links.",
+      "allowed_in_v2_11c": "HTTP GET raw HTML, preserve exact bytes, compute SHA256, record metadata, discover links.",
+      "prohibited_in_v2_11c": "No normalization, no net-new filtering, no rebuild, no scoring.",
+      "raw_preservation_policy": "Save raw HTML exactly as received under raw/cboe_europe_v2_11c/.",
+      "validation_owner": "v2.11D"
+    },
+    {
+      "step_id": "02",
+      "route_type": "official_discovered_csv",
+      "target": "live_symbols_csv",
+      "url_or_discovery_rule": "DISCOVER_FROM_REFERENCE_DATA_PAGE: links mentioning live symbols CSV.",
+      "purpose": "Acquire official Live Symbols CSV files if exposed by Cboe Europe.",
+      "allowed_in_v2_11c": "Download discovered CSV files only, preserve raw bytes, compute SHA256, record metadata.",
+      "prohibited_in_v2_11c": "No schema coercion, no row filtering, no issuer inference, no rebuild.",
+      "raw_preservation_policy": "Save each CSV exactly as received with stable filename and manifest entry.",
+      "validation_owner": "v2.11D"
+    },
+    {
+      "step_id": "03",
+      "route_type": "official_discovered_csv",
+      "target": "live_symbols_enhanced_csv",
+      "url_or_discovery_rule": "DISCOVER_FROM_REFERENCE_DATA_PAGE: links mentioning enhanced live symbols CSV.",
+      "purpose": "Prefer enhanced CSV only if it contains richer symbol/name/MIC/country/currency fields.",
+      "allowed_in_v2_11c": "Download discovered enhanced CSV files, preserve raw bytes, compute SHA256, record metadata.",
+      "prohibited_in_v2_11c": "No preference decision in acquisition phase; preference belongs to validation.",
+      "raw_preservation_policy": "Save raw enhanced CSV separately from non-enhanced CSV.",
+      "validation_owner": "v2.11D"
+    },
+    {
+      "step_id": "04",
+      "route_type": "fallback_html_page",
+      "target": "symbols_traded_cxe",
+      "url_or_discovery_rule": "https://www.cboe.com/europe/equities/market_statistics/symbols_traded/?mkt=cxe",
+      "purpose": "Fallback acquisition if official CSV links are not sufficient.",
+      "allowed_in_v2_11c": "Download raw HTML only and record metadata.",
+      "prohibited_in_v2_11c": "No brittle scraping, no table extraction, no rebuild.",
+      "raw_preservation_policy": "Save raw HTML exactly as received.",
+      "validation_owner": "v2.11D"
+    },
+    {
+      "step_id": "05",
+      "route_type": "fallback_html_page",
+      "target": "symbols_traded_bxe",
+      "url_or_discovery_rule": "https://www.cboe.com/europe/equities/market_statistics/symbols_traded/?mkt=bxe",
+      "purpose": "Fallback acquisition if official CSV links are not sufficient.",
+      "allowed_in_v2_11c": "Download raw HTML only and record metadata.",
+      "prohibited_in_v2_11c": "No brittle scraping, no table extraction, no rebuild.",
+      "raw_preservation_policy": "Save raw HTML exactly as received.",
+      "validation_owner": "v2.11D"
+    },
+    {
+      "step_id": "06",
+      "route_type": "fallback_html_page",
+      "target": "symbols_traded_dxe",
+      "url_or_discovery_rule": "https://www.cboe.com/europe/equities/market_statistics/symbols_traded/?mkt=dxe",
+      "purpose": "Fallback acquisition if official CSV links are not sufficient.",
+      "allowed_in_v2_11c": "Download raw HTML only and record metadata.",
+      "prohibited_in_v2_11c": "No brittle scraping, no table extraction, no rebuild.",
+      "raw_preservation_policy": "Save raw HTML exactly as received.",
+      "validation_owner": "v2.11D"
+    },
+    {
+      "step_id": "07",
+      "route_type": "fallback_html_page",
+      "target": "symbols_traded_trf",
+      "url_or_discovery_rule": "https://www.cboe.com/europe/equities/market_statistics/symbols_traded/?mkt=trf",
+      "purpose": "Fallback acquisition if official CSV links are not sufficient.",
+      "allowed_in_v2_11c": "Download raw HTML only and record metadata.",
+      "prohibited_in_v2_11c": "No brittle scraping, no table extraction, no rebuild.",
+      "raw_preservation_policy": "Save raw HTML exactly as received.",
+      "validation_owner": "v2.11D"
+    },
+    {
+      "step_id": "08",
+      "route_type": "semantic_caution",
+      "target": "BXE_CXE_DXE_TRF_SIS_MIC_venue_semantics",
+      "url_or_discovery_rule": "Derived from official files only; do not assume primary exchange semantics.",
+      "purpose": "Prevent incorrect exchange+ticker assumptions before validation.",
+      "allowed_in_v2_11c": "Record venue/MIC labels exactly as source exposes them.",
+      "prohibited_in_v2_11c": "No mapping to primary listing exchange, no dedup logic, no key acceptance.",
+      "raw_preservation_policy": "Do not mutate source fields.",
+      "validation_owner": "v2.11D"
+    }
+  ],
+  "planned_downloads_for_v2_11c": [
+    {
+      "sequence": "1",
+      "family": "reference_data",
+      "method": "GET",
+      "url_or_rule": "https://www.cboe.com/europe/equities/support/reference_data/",
+      "planned_raw_output": "outputs/full_universe_source_acquisition/raw/cboe_europe_v2_11c/reference_data_page.html",
+      "metadata_required": "url,status_code,content_type,bytes,sha256,fetched_at_utc",
+      "notes": "Official discovery page. No data normalization."
+    },
+    {
+      "sequence": "2",
+      "family": "live_symbols_csv",
+      "method": "GET",
+      "url_or_rule": "Discover official Live Symbols CSV links from reference_data_page.html",
+      "planned_raw_output": "outputs/full_universe_source_acquisition/raw/cboe_europe_v2_11c/live_symbols_*.csv",
+      "metadata_required": "url,status_code,content_type,bytes,sha256,fetched_at_utc,source_link_text",
+      "notes": "Preserve raw CSV exactly."
+    },
+    {
+      "sequence": "3",
+      "family": "live_symbols_enhanced_csv",
+      "method": "GET",
+      "url_or_rule": "Discover official Live Symbols Enhanced CSV links from reference_data_page.html",
+      "planned_raw_output": "outputs/full_universe_source_acquisition/raw/cboe_europe_v2_11c/live_symbols_enhanced_*.csv",
+      "metadata_required": "url,status_code,content_type,bytes,sha256,fetched_at_utc,source_link_text",
+      "notes": "Validation later decides whether enhanced is preferred."
+    },
+    {
+      "sequence": "4",
+      "family": "fallback_symbols_traded_html",
+      "method": "GET",
+      "url_or_rule": "CXE/BXE/DXE/TRF symbols_traded pages",
+      "planned_raw_output": "outputs/full_universe_source_acquisition/raw/cboe_europe_v2_11c/symbols_traded_*.html",
+      "metadata_required": "url,status_code,content_type,bytes,sha256,fetched_at_utc,market_param",
+      "notes": "Fallback raw HTML only. No brittle table scraping in acquisition."
+    }
+  ],
+  "expected_outputs_for_v2_11c": [
+    {
+      "phase": "v2.11C",
+      "path": "scripts/cboe_europe_acquisition_v2_11c.py",
+      "type": "script",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.11C",
+      "path": "outputs/full_universe_source_acquisition/raw/cboe_europe_v2_11c/",
+      "type": "raw_directory",
+      "required": "yes",
+      "overwrite_policy": "new_directory_or_fail"
+    },
+    {
+      "phase": "v2.11C",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_download_manifest_v2_11c.json",
+      "type": "manifest",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.11C",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_download_manifest_v2_11c.csv",
+      "type": "manifest",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.11C",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_discovered_links_v2_11c.csv",
+      "type": "discovery_manifest",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.11C",
+      "path": "outputs/full_universe_source_acquisition/cboe_europe_acquisition_report_v2_11c.md",
+      "type": "report",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    }
+  ],
+  "validation_handoff_to_v2_11d": [
+    "Does Cboe Europe expose stable official Live Symbols CSV files?",
+    "Are CSV files available for BXE, CXE, DXE, TRF EU, TRF UK and/or SIS?",
+    "Does enhanced CSV contain richer symbol/name/MIC/country/currency fields?",
+    "How many rows exist before net-new filtering?",
+    "How many MIC+ticker, venue+ticker, ISIN and exchange+ticker candidates are net-new against expanded_universe_v2_8e?",
+    "Are rows ordinary shares, ETFs, funds, ETCs or mixed instruments?",
+    "Can Cboe Europe rows be normalized conservatively without brittle scraping?",
+    "Does Cboe Europe unlock the 15000-row first expansion threshold?",
+    "Should Cboe Europe be source provider, candidate provider, enrichment, reference-only or deferred?"
+  ],
+  "mic_venue_caution": [
+    "BXE, CXE, DXE, TRF and SIS must be treated as venue/source semantics until validation.",
+    "Do not assume Cboe venue equals primary listing exchange.",
+    "Do not accept exchange+ticker keys without validation against MIC/venue/ISIN evidence.",
+    "Preserve source MIC, venue, market and symbol fields exactly in acquisition."
+  ]
+}
