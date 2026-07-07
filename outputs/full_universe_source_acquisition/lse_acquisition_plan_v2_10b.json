@@ -1,0 +1,228 @@
+{
+  "phase": "v2.10B",
+  "method": "lse_acquisition_plan_v1",
+  "created_at": "2026-07-07T14:01:13+00:00",
+  "plan_status": "LSE_ACQUISITION_PLAN_READY",
+  "readiness_score": 90,
+  "plan_decision": "LSE_CONTROLLED_ACQUISITION_APPROVED",
+  "recommended_next_phase": "v2.10C ? LSE Acquisition Real",
+  "provider": {
+    "provider_id": "lse_issuers_and_instruments_reports",
+    "provider_dir": "data/raw/source_providers/lse_issuers_and_instruments_reports",
+    "primary_route": "lse_reports_page_probe",
+    "fallback_provider": "cboe_europe_reference_data"
+  },
+  "current_state": {
+    "current_expanded_csv": "data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "current_exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "current_expanded_rows": 9200,
+    "current_exclusions_rows": 10056,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion": 5800,
+    "rows_needed_full_source": 40800,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false
+  },
+  "planned_routes_v2_10c": [
+    {
+      "priority": 1,
+      "route_id": "lse_reports_page_probe",
+      "name": "LSE Reports page probe",
+      "url": "https://www.londonstockexchange.com/reports",
+      "method": "GET",
+      "expected_content_type": "text/html",
+      "network_allowed_in": "v2.10C",
+      "expected_value": "HIGH",
+      "risk": "LOW_MEDIUM",
+      "treatment": "Download official Reports page HTML, preserve raw, discover issuer/instrument report links."
+    },
+    {
+      "priority": 2,
+      "route_id": "lse_issuers_reports_tab_probe",
+      "name": "LSE Issuers reports tab/page probe",
+      "url": "https://www.londonstockexchange.com/reports?tab=issuers",
+      "method": "GET",
+      "expected_content_type": "text/html",
+      "network_allowed_in": "v2.10C",
+      "expected_value": "HIGH",
+      "risk": "MEDIUM",
+      "treatment": "Probe issuer-specific report route if tab URL resolves server-side or exposes embedded data."
+    },
+    {
+      "priority": 3,
+      "route_id": "lse_instruments_reports_tab_probe",
+      "name": "LSE Instruments reports tab/page probe",
+      "url": "https://www.londonstockexchange.com/reports?tab=instruments",
+      "method": "GET",
+      "expected_content_type": "text/html",
+      "network_allowed_in": "v2.10C",
+      "expected_value": "HIGH",
+      "risk": "MEDIUM",
+      "treatment": "Probe instrument-specific report route if tab URL resolves server-side or exposes embedded data."
+    },
+    {
+      "priority": 4,
+      "route_id": "lse_historical_analytics_data_products_probe",
+      "name": "LSE Historical and analytics data products probe",
+      "url": "https://www.londonstockexchange.com/equities-trading/market-data/historical-analytics-data-products",
+      "method": "GET",
+      "expected_content_type": "text/html",
+      "network_allowed_in": "v2.10C",
+      "expected_value": "MEDIUM",
+      "risk": "MEDIUM",
+      "treatment": "Reference route for Daily Tradeable Instruments Report or product documentation if public download route exists."
+    }
+  ],
+  "fallback_routes": [
+    {
+      "priority": 1,
+      "provider_id": "cboe_europe_reference_data",
+      "name": "Cboe Europe Equities Reference Data",
+      "url": "https://www.cboe.com/europe/equities/support/reference_data/",
+      "decision": "FALLBACK_IF_LSE_BLOCKED",
+      "reason": "Official European exchange/operator source for reference data."
+    }
+  ],
+  "planned_outputs_v2_10c": {
+    "provider_dir": "data/raw/source_providers/lse_issuers_and_instruments_reports",
+    "raw_reports_page_html": "data/raw/source_providers/lse_issuers_and_instruments_reports/lse_reports_page.html",
+    "raw_issuers_page_html": "data/raw/source_providers/lse_issuers_and_instruments_reports/lse_issuers_reports_page.html",
+    "raw_instruments_page_html": "data/raw/source_providers/lse_issuers_and_instruments_reports/lse_instruments_reports_page.html",
+    "raw_historical_analytics_page_html": "data/raw/source_providers/lse_issuers_and_instruments_reports/lse_historical_analytics_data_products_page.html",
+    "downloaded_report_candidates_dir": "data/raw/source_providers/lse_issuers_and_instruments_reports/report_candidates",
+    "acquisition_json": "outputs/full_universe_source_acquisition/lse_acquisition_real_v2_10c.json",
+    "acquisition_md": "outputs/full_universe_source_acquisition/lse_acquisition_real_v2_10c.md",
+    "discovered_links_csv": "outputs/full_universe_source_acquisition/lse_discovered_links_v2_10c.csv",
+    "schema_probe_csv": "outputs/full_universe_source_acquisition/lse_schema_probe_v2_10c.csv",
+    "sample_csv": "outputs/full_universe_source_acquisition/lse_sample_v2_10c.csv"
+  },
+  "expected_schema_candidates": {
+    "symbol_candidates": [
+      "symbol",
+      "ticker",
+      "tidm",
+      "sedol",
+      "isin",
+      "instrument code",
+      "epic"
+    ],
+    "name_candidates": [
+      "issuer name",
+      "company name",
+      "security name",
+      "instrument name",
+      "name"
+    ],
+    "market_candidates": [
+      "market",
+      "segment",
+      "trading service",
+      "market segment",
+      "admission market"
+    ],
+    "instrument_type_candidates": [
+      "instrument type",
+      "security type",
+      "type",
+      "sector",
+      "asset class"
+    ],
+    "country_candidates": [
+      "country",
+      "country of incorporation",
+      "domicile",
+      "issuer country"
+    ],
+    "currency_candidates": [
+      "currency",
+      "trading currency",
+      "price currency"
+    ],
+    "isin_candidates": [
+      "isin",
+      "isin code"
+    ]
+  },
+  "acquisition_controls_v2_10c": [
+    "Network download allowed only for planned LSE routes.",
+    "Preserve every raw HTML/report file exactly.",
+    "Report URL, status code, content type, size and SHA256 for every request.",
+    "Discover candidate links only from official LSE pages downloaded in v2.10C.",
+    "Download only official CSV/XLS/XLSX/ZIP/JSON report candidates discovered from LSE pages.",
+    "Do not normalize into expanded_universe during acquisition.",
+    "Do not rebuild expanded_universe.",
+    "Do not overwrite active MVP outputs.",
+    "Do not execute scoring.",
+    "Do not call OpenAI.",
+    "Do not call broker APIs.",
+    "Do not launch full 59k universe."
+  ],
+  "validation_contract_v2_10d": [
+    "Validate whether LSE produced any downloadable report file usable for source expansion.",
+    "Detect row count and schema for each downloaded candidate file.",
+    "Detect usable identifier fields: TIDM/ticker, ISIN, SEDOL, issuer name, market/segment and instrument type.",
+    "Avoid treating ISIN-only rows as ticker-ready unless a market symbol is present.",
+    "Normalize candidates conservatively with source_provider=lse_issuers_and_instruments_reports.",
+    "Compute duplicate keys inside LSE candidate source.",
+    "Compute net-new candidate rows against expanded_universe_v2_8e.",
+    "Decide whether LSE is usable for isolated rebuild, reference/enrichment only, or blocked.",
+    "Confirm whether LSE can unlock the 15000-row first expansion threshold."
+  ],
+  "planned_decision_gate": {
+    "minimum_net_new_rows_to_consider_rebuild": 5800,
+    "rebuild_allowed_if": [
+      "At least one official LSE report file is downloaded successfully.",
+      "Schema has usable symbol/ticker or safely mappable market identifier.",
+      "Rows can be normalized to canonical schema without brittle scraping.",
+      "Net-new rows are meaningful enough to justify rebuild.",
+      "Duplicate keys are controlled.",
+      "Instrument semantics are acceptable or conservatively classified."
+    ],
+    "rebuild_not_allowed_if": [
+      "LSE page is fully dynamic and exposes no stable report/download path.",
+      "Only PDFs or non-tabular documents are available.",
+      "No usable symbol/ticker/identifier field is available.",
+      "Rows are too ambiguous or mixed without safe classification.",
+      "Licensing/usage constraints make storage unsuitable.",
+      "Net-new rows are far below threshold."
+    ],
+    "fallback_if_blocked": "Switch to v2.11A Cboe Europe Reference Data Route or close LSE as blocked."
+  },
+  "outputs": {
+    "planned_links_csv": "outputs/full_universe_source_acquisition/lse_discovered_links_v2_10b.csv",
+    "route_probe_csv": "outputs/full_universe_source_acquisition/lse_route_probe_v2_10b.csv",
+    "plan_json": "outputs/full_universe_source_acquisition/lse_acquisition_plan_v2_10b.json",
+    "plan_md": "outputs/full_universe_source_acquisition/lse_acquisition_plan_v2_10b.md"
+  },
+  "blockers": [],
+  "warnings": [
+    "LSE reports may be dynamic and may require route discovery in v2.10C.",
+    "Prefer stable official report downloads over brittle scraping.",
+    "LSE may include mixed instruments: shares, ETFs, funds, bonds, warrants or other securities.",
+    "MIC, currency, segment and country semantics must be preserved conservatively.",
+    "Full 59k remains blocked until source reaches at least 50000 rows."
+  ],
+  "positives": [
+    "v2.10A route artifact found: outputs/full_universe_source_acquisition/next_provider_route_v2_10a.json",
+    "v2.10A route status accepted: NEXT_PROVIDER_ROUTE_READY",
+    "v2.10A route decision accepted: LSE_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+    "Selected provider accepted: lse_issuers_and_instruments_reports",
+    "Current source input available: data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "Current source input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv"
+  ],
+  "controls": {
+    "network_download_performed": false,
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "plan_only": true
+  },
+  "recommendation": "Proceed to v2.10C controlled LSE acquisition. Do not rebuild until v2.10D validates schema and net-new coverage."
+}

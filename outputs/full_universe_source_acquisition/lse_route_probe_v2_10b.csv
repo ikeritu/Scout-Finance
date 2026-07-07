@@ -1,0 +1,5 @@
+provider_id,route_id,route_status,network_download_performed,planned_for_phase,notes
+lse_issuers_and_instruments_reports,lse_reports_page_probe,PLANNED_NOT_DOWNLOADED,False,v2.10C,"Download official Reports page HTML, preserve raw, discover issuer/instrument report links."
+lse_issuers_and_instruments_reports,lse_issuers_reports_tab_probe,PLANNED_NOT_DOWNLOADED,False,v2.10C,Probe issuer-specific report route if tab URL resolves server-side or exposes embedded data.
+lse_issuers_and_instruments_reports,lse_instruments_reports_tab_probe,PLANNED_NOT_DOWNLOADED,False,v2.10C,Probe instrument-specific report route if tab URL resolves server-side or exposes embedded data.
+lse_issuers_and_instruments_reports,lse_historical_analytics_data_products_probe,PLANNED_NOT_DOWNLOADED,False,v2.10C,Reference route for Daily Tradeable Instruments Report or product documentation if public download route exists.
