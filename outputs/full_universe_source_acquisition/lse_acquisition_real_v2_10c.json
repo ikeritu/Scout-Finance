@@ -1,0 +1,113 @@
+{
+  "phase": "v2.10C",
+  "method": "lse_acquisition_real_v1",
+  "created_at": "2026-07-07T14:27:10+00:00",
+  "acquisition_status": "LSE_ACQUISITION_COMPLETED",
+  "readiness_score": 70,
+  "acquisition_decision": "LSE_RAW_SOURCE_READY_FOR_VALIDATION",
+  "recommended_next_phase": "v2.10D ? LSE Validation",
+  "provider": {
+    "provider_id": "lse_issuers_and_instruments_reports",
+    "provider_dir": "data/raw/source_providers/lse_issuers_and_instruments_reports",
+    "report_candidates_dir": "data/raw/source_providers/lse_issuers_and_instruments_reports/report_candidates"
+  },
+  "summary": {
+    "planned_page_routes": 4,
+    "successful_page_downloads": 4,
+    "discovered_links": 48,
+    "selected_download_candidates": 0,
+    "successful_candidate_downloads": 0,
+    "probable_csv_candidates": 0,
+    "total_probable_csv_rows": 0,
+    "current_expanded_rows": 9200,
+    "rows_needed_first_expansion": 5800,
+    "rows_needed_full_source": 40800
+  },
+  "request_results": [
+    {
+      "route_id": "lse_reports_page_probe",
+      "url": "https://www.londonstockexchange.com/reports",
+      "target_path": "data/raw/source_providers/lse_issuers_and_instruments_reports/lse_reports_page.html",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "size_bytes": 54995,
+      "sha256": "c082660492d1bfb06ac164700d1187ed1d47dc1e940d356ff9f622546ef03d25",
+      "error": ""
+    },
+    {
+      "route_id": "lse_issuers_reports_tab_probe",
+      "url": "https://www.londonstockexchange.com/reports?tab=issuers",
+      "target_path": "data/raw/source_providers/lse_issuers_and_instruments_reports/lse_issuers_reports_page.html",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "size_bytes": 54995,
+      "sha256": "c082660492d1bfb06ac164700d1187ed1d47dc1e940d356ff9f622546ef03d25",
+      "error": ""
+    },
+    {
+      "route_id": "lse_instruments_reports_tab_probe",
+      "url": "https://www.londonstockexchange.com/reports?tab=instruments",
+      "target_path": "data/raw/source_providers/lse_issuers_and_instruments_reports/lse_instruments_reports_page.html",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "size_bytes": 54995,
+      "sha256": "c082660492d1bfb06ac164700d1187ed1d47dc1e940d356ff9f622546ef03d25",
+      "error": ""
+    },
+    {
+      "route_id": "lse_historical_analytics_data_products_probe",
+      "url": "https://www.londonstockexchange.com/equities-trading/market-data/historical-analytics-data-products",
+      "target_path": "data/raw/source_providers/lse_issuers_and_instruments_reports/lse_historical_analytics_data_products_page.html",
+      "ok": true,
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "size_bytes": 54995,
+      "sha256": "c082660492d1bfb06ac164700d1187ed1d47dc1e940d356ff9f622546ef03d25",
+      "error": ""
+    }
+  ],
+  "candidate_download_results": [],
+  "schema_probes": [],
+  "outputs": {
+    "requests_csv": "outputs/full_universe_source_acquisition/lse_request_results_v2_10c.csv",
+    "discovered_links_csv": "outputs/full_universe_source_acquisition/lse_discovered_links_v2_10c.csv",
+    "schema_probe_csv": "outputs/full_universe_source_acquisition/lse_schema_probe_v2_10c.csv",
+    "sample_csv": "outputs/full_universe_source_acquisition/lse_sample_v2_10c.csv",
+    "acquisition_json": "outputs/full_universe_source_acquisition/lse_acquisition_real_v2_10c.json",
+    "acquisition_md": "outputs/full_universe_source_acquisition/lse_acquisition_real_v2_10c.md"
+  },
+  "blockers": [],
+  "warnings": [
+    "No official LSE report download candidates were selected from discovered links.",
+    "No probable CSV candidate was parsed in v2.10C; XLS/XLSX/ZIP/JSON, if downloaded, must be reviewed in v2.10D.",
+    "v2.10C is acquisition-only. Net-new coverage is not computed until v2.10D.",
+    "Do not rebuild expanded_universe from v2.10C outputs.",
+    "Do not use LSE rows downstream until v2.10D validation."
+  ],
+  "positives": [
+    "v2.10B plan artifact found: outputs/full_universe_source_acquisition/lse_acquisition_plan_v2_10b.json",
+    "v2.10B plan status accepted: LSE_ACQUISITION_PLAN_READY",
+    "v2.10B plan decision accepted: LSE_CONTROLLED_ACQUISITION_APPROVED",
+    "LSE route downloaded: lse_reports_page_probe -> data/raw/source_providers/lse_issuers_and_instruments_reports/lse_reports_page.html",
+    "LSE route downloaded: lse_issuers_reports_tab_probe -> data/raw/source_providers/lse_issuers_and_instruments_reports/lse_issuers_reports_page.html",
+    "LSE route downloaded: lse_instruments_reports_tab_probe -> data/raw/source_providers/lse_issuers_and_instruments_reports/lse_instruments_reports_page.html",
+    "LSE route downloaded: lse_historical_analytics_data_products_probe -> data/raw/source_providers/lse_issuers_and_instruments_reports/lse_historical_analytics_data_products_page.html"
+  ],
+  "controls": {
+    "network_download_performed": true,
+    "network_download_scope": "LSE_APPROVED_ROUTES_ONLY",
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "acquisition_only": true
+  },
+  "recommendation": "Proceed to v2.10D LSE Validation. Do not rebuild until v2.10D confirms schema, duplicate control and net-new coverage."
+}
