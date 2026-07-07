@@ -1,0 +1,23 @@
+metric,value
+provider_id,lse_issuers_and_instruments_reports
+closure_status,LSE_CLOSED_ACCESSIBLE_BUT_NOT_USABLE_FOR_REBUILD
+readiness_score,95
+closure_decision,LSE_CLOSED_NO_REBUILD_FALLBACK_REQUIRED
+successful_page_downloads,4
+discovered_links,48
+selected_download_candidates,0
+successful_candidate_downloads,0
+probable_csv_candidates,0
+total_probable_csv_rows,0
+normalized_candidate_rows,0
+net_new_candidate_rows,0
+current_expanded_rows,9200
+projected_rows_if_rebuilt,9200
+first_expansion_unlocked,False
+full_source_unlocked,False
+rows_still_needed_first_expansion,5800
+rows_still_needed_full_source,40800
+rebuild_allowed,False
+skip_v2_10e,True
+skip_v2_10f,True
+recommended_next_phase,v2.11A ? Cboe Europe Route

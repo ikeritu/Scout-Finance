@@ -1,0 +1,104 @@
+{
+  "phase": "v2.10G",
+  "method": "lse_closure_report_v1",
+  "created_at": "2026-07-07T20:47:57+00:00",
+  "closure_status": "LSE_CLOSED_ACCESSIBLE_BUT_NOT_USABLE_FOR_REBUILD",
+  "readiness_score": 95,
+  "closure_decision": "LSE_CLOSED_NO_REBUILD_FALLBACK_REQUIRED",
+  "recommended_next_phase": "v2.11A ? Cboe Europe Route",
+  "provider": {
+    "provider_id": "lse_issuers_and_instruments_reports"
+  },
+  "closure_summary": {
+    "provider_id": "lse_issuers_and_instruments_reports",
+    "closure_status": "LSE_CLOSED_ACCESSIBLE_BUT_NOT_USABLE_FOR_REBUILD",
+    "readiness_score": 95,
+    "closure_decision": "LSE_CLOSED_NO_REBUILD_FALLBACK_REQUIRED",
+    "successful_page_downloads": 4,
+    "discovered_links": 48,
+    "selected_download_candidates": 0,
+    "successful_candidate_downloads": 0,
+    "probable_csv_candidates": 0,
+    "total_probable_csv_rows": 0,
+    "normalized_candidate_rows": 0,
+    "net_new_candidate_rows": 0,
+    "current_expanded_rows": 9200,
+    "projected_rows_if_rebuilt": 9200,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false,
+    "rows_still_needed_first_expansion": 5800,
+    "rows_still_needed_full_source": 40800,
+    "rebuild_allowed": false,
+    "skip_v2_10e": true,
+    "skip_v2_10f": true,
+    "recommended_next_phase": "v2.11A ? Cboe Europe Route"
+  },
+  "skipped_phases": [
+    {
+      "phase": "v2.10E",
+      "name": "Rebuild Expanded Source With LSE",
+      "status": "SKIPPED",
+      "reason": "No usable tabular source and 0 net-new candidate rows."
+    },
+    {
+      "phase": "v2.10F",
+      "name": "Validate Expanded Source With LSE",
+      "status": "SKIPPED",
+      "reason": "No LSE rebuild was performed."
+    }
+  ],
+  "final_decision": {
+    "lse_accessible": true,
+    "lse_usable_for_rebuild": false,
+    "rebuild_allowed": false,
+    "expanded_universe_rebuilt": false,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false,
+    "fallback_required": true,
+    "fallback_route": "v2.11A ? Cboe Europe Route"
+  },
+  "outputs": {
+    "closure_summary_csv": "outputs/full_universe_source_acquisition/lse_closure_summary_v2_10g.csv",
+    "skipped_phases_csv": "outputs/full_universe_source_acquisition/lse_skipped_phases_v2_10g.csv",
+    "closure_json": "outputs/full_universe_source_acquisition/lse_closure_report_v2_10g.json",
+    "closure_md": "outputs/full_universe_source_acquisition/lse_closure_report_v2_10g.md"
+  },
+  "blockers": [],
+  "warnings": [
+    "No official downloadable report candidates selected.",
+    "No LSE report candidates downloaded.",
+    "No probable CSV/XLS-derived tabular candidate available.",
+    "LSE produced zero tabular rows.",
+    "LSE produced zero net-new source rows."
+  ],
+  "positives": [
+    "v2.10A route artifact found: outputs/full_universe_source_acquisition/next_provider_route_v2_10a.json",
+    "v2.10B plan artifact found: outputs/full_universe_source_acquisition/lse_acquisition_plan_v2_10b.json",
+    "v2.10C acquisition artifact found: outputs/full_universe_source_acquisition/lse_acquisition_real_v2_10c.json",
+    "v2.10D validation artifact found: outputs/full_universe_source_acquisition/lse_validation_v2_10d.json",
+    "v2.10A route_status accepted: NEXT_PROVIDER_ROUTE_READY",
+    "v2.10A route_decision accepted: LSE_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+    "v2.10B plan_status accepted: LSE_ACQUISITION_PLAN_READY",
+    "v2.10B plan_decision accepted: LSE_CONTROLLED_ACQUISITION_APPROVED",
+    "v2.10C acquisition_status accepted: LSE_ACQUISITION_COMPLETED",
+    "v2.10C acquisition_decision accepted: LSE_RAW_SOURCE_READY_FOR_VALIDATION",
+    "v2.10D validation_status accepted: LSE_VALIDATED_NO_USABLE_TABULAR_SOURCE",
+    "v2.10D validation_decision accepted: LSE_ACCESSIBLE_BUT_NO_REBUILDABLE_SOURCE",
+    "LSE accessibility confirmed: 4/4 planned pages downloaded.",
+    "LSE link discovery confirmed: 48 links discovered."
+  ],
+  "controls": {
+    "network_download_performed": false,
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "closure_only": true,
+    "rebuild_allowed": false
+  },
+  "recommendation": "Proceed to v2.11A Cboe Europe Route. LSE is closed as accessible but not usable for source rebuild in this route."
+}

@@ -1,0 +1,3 @@
+phase,name,status,reason
+v2.10E,Rebuild Expanded Source With LSE,SKIPPED,No usable tabular source and 0 net-new candidate rows.
+v2.10F,Validate Expanded Source With LSE,SKIPPED,No LSE rebuild was performed.
