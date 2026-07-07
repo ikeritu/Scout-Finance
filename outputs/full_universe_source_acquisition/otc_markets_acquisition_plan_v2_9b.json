@@ -1,0 +1,167 @@
+{
+  "phase": "v2.9B",
+  "method": "otc_markets_acquisition_plan_v1",
+  "created_at": "2026-07-07T10:48:53+00:00",
+  "plan_status": "OTC_MARKETS_ACQUISITION_PLAN_READY",
+  "readiness_score": 92,
+  "plan_decision": "OTC_MARKETS_CONTROLLED_ACQUISITION_APPROVED",
+  "recommended_next_phase": "v2.9C ? OTC Markets Acquisition Real",
+  "provider": {
+    "provider_id": "otc_markets_stock_screener",
+    "provider_dir": "data/raw/source_providers/otc_markets_stock_screener",
+    "primary_route": "otc_markets_stock_screener_download_csv",
+    "secondary_route": "otc_markets_stock_screener_page_probe"
+  },
+  "current_state": {
+    "current_expanded_csv": "data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "current_exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "current_expanded_rows": 9200,
+    "current_exclusions_rows": 10056,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion": 5800,
+    "rows_needed_full_source": 40800,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false
+  },
+  "planned_routes_v2_9c": [
+    {
+      "priority": 1,
+      "route_id": "otc_markets_stock_screener_download_csv",
+      "name": "OTC Markets Stock Screener CSV download",
+      "page_url": "https://www.otcmarkets.com/research/stock-screener",
+      "download_url": "https://www.otcmarkets.com/research/stock-screener/api/downloadCSV?ce=true&sortField=volume&sortOrder=desc",
+      "method": "GET",
+      "expected_content_type": "text/csv_or_octet_stream",
+      "expected_value": "HIGH",
+      "risk": "MEDIUM",
+      "treatment": "Primary route for v2.9C. Download raw CSV only, preserve exact bytes, then schema probe."
+    },
+    {
+      "priority": 2,
+      "route_id": "otc_markets_stock_screener_page_probe",
+      "name": "OTC Markets Stock Screener page probe",
+      "page_url": "https://www.otcmarkets.com/research/stock-screener",
+      "download_url": "https://www.otcmarkets.com/research/stock-screener",
+      "method": "GET",
+      "expected_content_type": "text/html",
+      "expected_value": "MEDIUM",
+      "risk": "LOW_MEDIUM",
+      "treatment": "Secondary route for HTML/page metadata and possible alternative download discovery."
+    }
+  ],
+  "planned_outputs_v2_9c": {
+    "provider_dir": "data/raw/source_providers/otc_markets_stock_screener",
+    "raw_page_html": "data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_page.html",
+    "raw_csv": "data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_raw.csv",
+    "schema_probe_csv": "outputs/full_universe_source_acquisition/otc_markets_schema_probe_v2_9c.csv",
+    "sample_csv": "outputs/full_universe_source_acquisition/otc_markets_sample_v2_9c.csv",
+    "acquisition_json": "outputs/full_universe_source_acquisition/otc_markets_acquisition_real_v2_9c.json",
+    "acquisition_md": "outputs/full_universe_source_acquisition/otc_markets_acquisition_real_v2_9c.md"
+  },
+  "expected_schema_candidates": {
+    "symbol_candidates": [
+      "symbol",
+      "ticker",
+      "security symbol",
+      "otc symbol"
+    ],
+    "name_candidates": [
+      "security name",
+      "company name",
+      "name",
+      "issuer name"
+    ],
+    "market_tier_candidates": [
+      "market",
+      "market tier",
+      "tier",
+      "otc market"
+    ],
+    "country_candidates": [
+      "country",
+      "country of incorporation",
+      "domicile"
+    ],
+    "security_type_candidates": [
+      "security type",
+      "type",
+      "instrument type"
+    ]
+  },
+  "acquisition_controls_v2_9c": [
+    "Network download allowed only for OTC Markets planned routes.",
+    "Preserve raw HTML and raw CSV exactly.",
+    "Report URL, status code, content type, size and SHA256 for every request.",
+    "Do not normalize into expanded_universe during acquisition.",
+    "Do not rebuild expanded_universe.",
+    "Do not overwrite active MVP outputs.",
+    "Do not execute scoring.",
+    "Do not call OpenAI.",
+    "Do not call broker APIs.",
+    "Do not launch full 59k universe.",
+    "Write schema probe and sample only."
+  ],
+  "validation_contract_v2_9d": [
+    "Validate row count of OTC raw CSV.",
+    "Detect symbol/ticker field.",
+    "Detect company/security name field.",
+    "Detect market tier if present.",
+    "Detect country if present.",
+    "Detect instrument/security type if present.",
+    "Normalize candidates conservatively.",
+    "Compute duplicate exchange+ticker keys inside OTC source.",
+    "Compute net-new exchange+ticker keys against expanded_universe_v2_8e.",
+    "Classify OTC rows as candidate-provider rows until post-rebuild validation.",
+    "Decide whether OTC is usable as provider, enrichment source, reference-only or deferred.",
+    "Confirm whether OTC can unlock 15000 rows."
+  ],
+  "planned_decision_gate": {
+    "minimum_net_new_rows_to_consider_rebuild": 5800,
+    "rebuild_allowed_if": [
+      "OTC CSV download succeeds.",
+      "Schema has usable symbol/ticker field.",
+      "Rows can be normalized to canonical schema.",
+      "Net-new exchange+ticker rows are meaningful.",
+      "Duplicate keys are controlled.",
+      "Instrument semantics are acceptable or conservatively classified."
+    ],
+    "rebuild_not_allowed_if": [
+      "No usable symbol/ticker field.",
+      "CSV is blocked, empty, HTML disguised as CSV, or not reproducible.",
+      "Schema cannot be interpreted without brittle scraping.",
+      "Rows are not securities or are too ambiguous.",
+      "Licensing/usage constraints make storage unsuitable."
+    ]
+  },
+  "blockers": [],
+  "warnings": [
+    "OTC Markets may include mixed instruments: equities, ADRs, preferreds, funds, rights, warrants or international securities.",
+    "OTC market tier and instrument semantics must be validated before any rebuild.",
+    "Rows must be treated as candidate-provider rows until v2.9D validation confirms usability.",
+    "Do not use OTC data downstream before validation and optional isolated rebuild.",
+    "Full 59k remains blocked until source reaches at least 50000 rows."
+  ],
+  "positives": [
+    "v2.9A route artifact found: outputs/full_universe_source_acquisition/next_official_provider_route_v2_9a.json",
+    "v2.9A route status accepted: NEXT_OFFICIAL_PROVIDER_ROUTE_READY",
+    "v2.9A route decision accepted: OTC_MARKETS_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+    "Selected provider accepted: otc_markets_stock_screener",
+    "Current source input available: data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "Current source input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "plan_only": true
+  },
+  "recommendation": "Proceed to v2.9C controlled OTC Markets acquisition. Do not rebuild until v2.9D validates schema and net-new coverage."
+}
