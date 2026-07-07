@@ -1,0 +1,103 @@
+{
+  "phase": "v2.8G",
+  "method": "expanded_source_with_cboe_closure_report_v1",
+  "created_at": "2026-07-07T09:36:22+00:00",
+  "closure_status": "EXPANDED_SOURCE_WITH_CBOE_CLOSED_USEFUL_BUT_NOT_ENOUGH",
+  "readiness_score": 95,
+  "closure_decision": "CBOE_REBUILD_CLOSED_USEFUL_BUT_NOT_ENOUGH",
+  "recommended_next_phase": "v2.9A ? Next Official Provider Route",
+  "closed_block": {
+    "block_name": "v2.8 ? Cboe / next official provider",
+    "phases_closed": [
+      "v2.8A ? Cboe Listed Symbols Route Plan",
+      "v2.8B ? Cboe Listed Symbols Acquisition Real",
+      "v2.8C ? Cboe Listed Symbols Validation",
+      "v2.8D ? Rebuild Expanded Source With Cboe Plan",
+      "v2.8E ? Rebuild Expanded Source With Cboe Real",
+      "v2.8F ? Validate Expanded Source With Cboe",
+      "v2.8G ? Expanded Source With Cboe Closure Report"
+    ]
+  },
+  "inputs": {
+    "cboe_provider_validation_json": "outputs/full_universe_source_acquisition/cboe_listed_symbols_validation_v2_8c.json",
+    "plan_json": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_cboe_plan_v2_8d.json",
+    "rebuild_json": "outputs/full_universe_source_acquisition/rebuild_expanded_source_with_cboe_real_v2_8e.json",
+    "validation_json": "outputs/full_universe_source_acquisition/validate_expanded_source_with_cboe_v2_8f.json",
+    "expanded_universe_v2_8e_csv": "data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "expanded_universe_exclusions_v2_8e_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv"
+  },
+  "final_result": {
+    "expanded_universe_csv": "data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "expanded_universe_exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "final_expanded_rows": 9200,
+    "final_exclusions_rows": 10056,
+    "cboe_rows_added": 1193,
+    "duplicate_exchange_ticker_keys": 0,
+    "issues_count": 1,
+    "known_issue": "EMPTY_COMPANY_NAME 1193 for Cboe candidate rows",
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false,
+    "rows_needed_first_expansion": 5800,
+    "rows_needed_full_source": 40800
+  },
+  "provider_result": {
+    "nasdaq_trader_nasdaqlisted": 3244,
+    "nasdaq_trader_otherlisted": 2404,
+    "sec_company_tickers_exchange": 2359,
+    "cboe_listed_symbols": 1193
+  },
+  "next_options": [
+    {
+      "option": "A",
+      "name": "Continue source expansion with next official provider",
+      "recommended_phase": "v2.9A ? Next Official Provider Route",
+      "reason": "9200 rows is useful but still below 15000 and 50000 thresholds.",
+      "status": "RECOMMENDED"
+    },
+    {
+      "option": "B",
+      "name": "Return to product/MVP with validated 9200-row universe",
+      "recommended_phase": "Product/MVP roadmap refresh",
+      "reason": "The project now has a validated expanded universe with Nasdaq, SEC and Cboe candidate rows.",
+      "status": "AVAILABLE"
+    }
+  ],
+  "tag_recommendation": "v2.8_expanded_source_with_cboe_closed",
+  "blockers": [],
+  "warnings": [
+    "Cboe added useful candidate-provider rows, but company names remain empty for Cboe rows.",
+    "Cboe rows should remain low-confidence pending downstream enrichment or provider cross-check.",
+    "First expansion remains blocked: 9200 < 15000",
+    "Full-source threshold remains blocked: 9200 < 50000",
+    "Full 59k dry-run remains blocked."
+  ],
+  "positives": [
+    "v2.8F Cboe expanded source validation artifact found: outputs/full_universe_source_acquisition/validate_expanded_source_with_cboe_v2_8f.json",
+    "v2.8E Cboe rebuild artifact found: outputs/full_universe_source_acquisition/rebuild_expanded_source_with_cboe_real_v2_8e.json",
+    "v2.8D Cboe rebuild plan artifact found: outputs/full_universe_source_acquisition/rebuild_expanded_source_with_cboe_plan_v2_8d.json",
+    "v2.8C Cboe provider validation artifact found: outputs/full_universe_source_acquisition/cboe_listed_symbols_validation_v2_8c.json",
+    "Closure input available: data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "Closure input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "v2.8F validation status accepted: EXPANDED_SOURCE_WITH_CBOE_VALIDATED_USEFUL_BUT_NOT_ENOUGH",
+    "v2.8F validation decision accepted: CBOE_REBUILD_VALIDATED_USEFUL_BUT_NOT_ENOUGH",
+    "v2.8E rebuild status accepted: REBUILD_EXPANDED_SOURCE_WITH_CBOE_COMPLETED_USEFUL_BUT_NOT_ENOUGH",
+    "v2.8D plan decision accepted: CBOE_REBUILD_PLAN_APPROVED_WITH_CONDITIONS",
+    "v2.8C Cboe decision accepted: CBOE_USABLE_AS_CANDIDATE_PROVIDER_PENDING_REBUILD_PLAN"
+  ],
+  "controls": {
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "network_download_performed": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "closure_only": true
+  },
+  "recommendation": "Close v2.8 with tag, then proceed to v2.9A Next Official Provider Route unless product/MVP utility becomes the priority."
+}
