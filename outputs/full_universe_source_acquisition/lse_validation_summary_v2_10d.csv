@@ -1,0 +1,12 @@
+metric,value
+planned_page_routes,4
+successful_page_downloads,4
+discovered_links,48
+selected_download_candidates,0
+successful_candidate_downloads,0
+probable_csv_candidates,0
+total_probable_csv_rows,0
+normalized_candidate_rows,0
+net_new_candidate_rows,0
+duplicate_exchange_ticker_keys,0
+projected_rows_if_rebuilt,9200

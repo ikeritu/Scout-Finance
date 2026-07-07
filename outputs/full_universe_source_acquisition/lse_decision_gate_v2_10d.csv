@@ -1,0 +1,7 @@
+gate,status,detail
+official_lse_pages_downloaded,PASS,4/4 planned pages downloaded.
+official_report_candidate_downloaded,FAIL,0 report candidate downloads.
+tabular_schema_available,FAIL,0 probable CSV candidates.
+net_new_rows_available,FAIL,0 net-new rows.
+first_expansion_unlocked,FAIL,Projected rows: 9200; target: 15000.
+rebuild_allowed,FAIL,No rebuild allowed because no usable tabular source was acquired.

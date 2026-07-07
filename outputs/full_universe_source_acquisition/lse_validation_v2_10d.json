@@ -1,0 +1,112 @@
+{
+  "phase": "v2.10D",
+  "method": "lse_validation_v1",
+  "created_at": "2026-07-07T19:14:22+00:00",
+  "validation_status": "LSE_VALIDATED_NO_USABLE_TABULAR_SOURCE",
+  "readiness_score": 78,
+  "validation_decision": "LSE_ACCESSIBLE_BUT_NO_REBUILDABLE_SOURCE",
+  "recommended_next_phase": "v2.10G ? LSE Closure Report OR v2.11A Cboe Europe Route",
+  "provider": {
+    "provider_id": "lse_issuers_and_instruments_reports",
+    "provider_dir": "data/raw/source_providers/lse_issuers_and_instruments_reports"
+  },
+  "row_summary": {
+    "planned_page_routes": 4,
+    "successful_page_downloads": 4,
+    "discovered_links": 48,
+    "selected_download_candidates": 0,
+    "successful_candidate_downloads": 0,
+    "probable_csv_candidates": 0,
+    "total_probable_csv_rows": 0,
+    "normalized_candidate_rows": 0,
+    "net_new_candidate_rows": 0,
+    "duplicate_exchange_ticker_keys": 0,
+    "issues_count": 2
+  },
+  "threshold_status": {
+    "current_expanded_rows": 9200,
+    "current_exclusions_rows": 10056,
+    "projected_rows_if_rebuilt": 9200,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "first_expansion_unlocked_if_rebuilt": false,
+    "full_source_unlocked_if_rebuilt": false,
+    "rows_still_needed_first_expansion_after_lse": 5800,
+    "rows_still_needed_full_source_after_lse": 40800
+  },
+  "decision_gate": [
+    {
+      "gate": "official_lse_pages_downloaded",
+      "status": "PASS",
+      "detail": "4/4 planned pages downloaded."
+    },
+    {
+      "gate": "official_report_candidate_downloaded",
+      "status": "FAIL",
+      "detail": "0 report candidate downloads."
+    },
+    {
+      "gate": "tabular_schema_available",
+      "status": "FAIL",
+      "detail": "0 probable CSV candidates."
+    },
+    {
+      "gate": "net_new_rows_available",
+      "status": "FAIL",
+      "detail": "0 net-new rows."
+    },
+    {
+      "gate": "first_expansion_unlocked",
+      "status": "FAIL",
+      "detail": "Projected rows: 9200; target: 15000."
+    },
+    {
+      "gate": "rebuild_allowed",
+      "status": "FAIL",
+      "detail": "No rebuild allowed because no usable tabular source was acquired."
+    }
+  ],
+  "outputs": {
+    "validation_summary_csv": "outputs/full_universe_source_acquisition/lse_validation_summary_v2_10d.csv",
+    "issues_csv": "outputs/full_universe_source_acquisition/lse_validation_issues_v2_10d.csv",
+    "decision_gate_csv": "outputs/full_universe_source_acquisition/lse_decision_gate_v2_10d.csv",
+    "validation_json": "outputs/full_universe_source_acquisition/lse_validation_v2_10d.json",
+    "validation_md": "outputs/full_universe_source_acquisition/lse_validation_v2_10d.md"
+  },
+  "blockers": [],
+  "warnings": [
+    "No LSE report download candidates were selected from discovered links.",
+    "No LSE report candidate files were downloaded.",
+    "No probable CSV/XLS-derived tabular candidate was available for schema validation.",
+    "LSE acquisition produced zero tabular rows.",
+    "Schema probe is empty because no report candidate file was parsed.",
+    "Discovered links contained no high-confidence downloadable report candidates."
+  ],
+  "positives": [
+    "v2.10C acquisition artifact found: outputs/full_universe_source_acquisition/lse_acquisition_real_v2_10c.json",
+    "v2.10C acquisition status accepted: LSE_ACQUISITION_COMPLETED",
+    "v2.10C acquisition decision accepted: LSE_RAW_SOURCE_READY_FOR_VALIDATION",
+    "Validation input available: data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "Validation input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "Validation input available: outputs/full_universe_source_acquisition/lse_discovered_links_v2_10c.csv",
+    "Validation input available: outputs/full_universe_source_acquisition/lse_request_results_v2_10c.csv",
+    "Validation input available: outputs/full_universe_source_acquisition/lse_schema_probe_v2_10c.csv",
+    "All planned LSE pages downloaded: 4/4.",
+    "LSE links discovered: 48."
+  ],
+  "controls": {
+    "network_download_performed": false,
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "validation_only": true,
+    "rebuild_allowed": false
+  },
+  "recommendation": "Do not rebuild. Close LSE as accessible but no usable tabular source in this route, then proceed to fallback provider route."
+}
