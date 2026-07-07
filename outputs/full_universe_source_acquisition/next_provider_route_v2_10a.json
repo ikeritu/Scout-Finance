@@ -1,0 +1,139 @@
+{
+  "phase": "v2.10A",
+  "method": "next_provider_route_after_otc_v1",
+  "created_at": "2026-07-07T13:34:55+00:00",
+  "route_status": "NEXT_PROVIDER_ROUTE_READY",
+  "readiness_score": 90,
+  "route_decision": "LSE_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+  "selected_provider": "lse_issuers_and_instruments_reports",
+  "recommended_next_phase": "v2.10B ? LSE Acquisition Plan",
+  "current_state": {
+    "current_expanded_csv": "data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "current_exclusions_csv": "data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "current_expanded_rows": 9200,
+    "current_exclusions_rows": 10056,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion": 5800,
+    "rows_needed_full_source": 40800,
+    "first_expansion_unlocked": false,
+    "full_source_unlocked": false
+  },
+  "route_candidates": [
+    {
+      "priority": 1,
+      "provider_id": "lse_issuers_and_instruments_reports",
+      "name": "London Stock Exchange ? Issuers and Instruments Reports",
+      "source_url": "https://www.londonstockexchange.com/reports",
+      "download_candidate_url": "",
+      "route_type": "official_exchange_reports_route",
+      "expected_value": "HIGH_FOR_NON_US_EXPANSION",
+      "risk": "MEDIUM",
+      "expected_coverage": "Potentially useful for UK and international instruments admitted to LSE markets, depending on available report exports.",
+      "why": "After OTC produced only 25 net-new rows, the next route should target an official venue/reporting source with broader coverage than a small screener result.",
+      "planned_treatment": "v2.10B must inspect/report planned LSE acquisition routes without downloading. v2.10C may download only routes approved by v2.10B.",
+      "decision": "SELECTED_PRIMARY_ROUTE"
+    },
+    {
+      "priority": 2,
+      "provider_id": "cboe_europe_reference_data",
+      "name": "Cboe Europe Equities Reference Data",
+      "source_url": "https://www.cboe.com/europe/equities/support/reference_data/",
+      "download_candidate_url": "",
+      "route_type": "official_european_reference_data_route",
+      "expected_value": "MEDIUM_TO_HIGH",
+      "risk": "MEDIUM",
+      "expected_coverage": "Potentially useful for pan-European reference data if downloadable instruments files are exposed.",
+      "why": "Official European exchange/operator source. Kept as fallback if LSE route is blocked or too dynamic.",
+      "planned_treatment": "Keep as fallback for v2.11A or switch route only if v2.10B blocks LSE.",
+      "decision": "FALLBACK_OFFICIAL_ROUTE"
+    },
+    {
+      "priority": 3,
+      "provider_id": "datahub_nyse_other_listings",
+      "name": "DataHub NYSE Other Listings",
+      "source_url": "https://datahub.io/core/nyse-other-listings",
+      "download_candidate_url": "",
+      "route_type": "third_party_packaged_reference_route",
+      "expected_value": "LOW",
+      "risk": "MEDIUM_HIGH",
+      "expected_coverage": "Likely overlap with existing Nasdaq Trader otherlisted data and may be too small.",
+      "why": "Useful as reference or QA comparison, but not ideal as next primary provider because it is not the primary exchange source and likely overlaps.",
+      "planned_treatment": "Reference/QA only unless official routes fail.",
+      "decision": "REFERENCE_ONLY_FALLBACK"
+    },
+    {
+      "priority": 4,
+      "provider_id": "nasdaq_stock_screener_revisit",
+      "name": "Nasdaq Stock Screener Revisit",
+      "source_url": "https://www.nasdaq.com/market-activity/stocks/screener",
+      "download_candidate_url": "",
+      "route_type": "official_or_semi_official_screener_review",
+      "expected_value": "LOW_TO_MEDIUM",
+      "risk": "MEDIUM_HIGH",
+      "expected_coverage": "Likely overlaps with existing Nasdaq Trader and SEC sources.",
+      "why": "Could enrich names/metadata, but less promising for large net-new expansion.",
+      "planned_treatment": "Keep deferred unless LSE and Cboe Europe fail.",
+      "decision": "DEFERRED_FALLBACK"
+    }
+  ],
+  "planned_outputs_v2_10b": {
+    "provider_dir": "data/raw/source_providers/lse_issuers_and_instruments_reports",
+    "route_plan_json": "outputs/full_universe_source_acquisition/lse_acquisition_plan_v2_10b.json",
+    "route_plan_md": "outputs/full_universe_source_acquisition/lse_acquisition_plan_v2_10b.md",
+    "discovered_links_csv": "outputs/full_universe_source_acquisition/lse_discovered_links_v2_10b.csv",
+    "route_probe_csv": "outputs/full_universe_source_acquisition/lse_route_probe_v2_10b.csv"
+  },
+  "planned_controls": [
+    "v2.10B must be plan-only.",
+    "No LSE download in v2.10A.",
+    "No expanded_universe rebuild in v2.10A or v2.10B.",
+    "No active MVP output overwrite.",
+    "No scoring.",
+    "No OpenAI.",
+    "No broker calls.",
+    "No full 59k launch.",
+    "Prefer official downloadable CSV/XLS/XLSX/report files over dynamic page scraping.",
+    "If LSE route is dynamic or blocked, close as blocked and switch to Cboe Europe route."
+  ],
+  "validation_questions": [
+    "Does LSE expose a stable downloadable issuer/instrument report?",
+    "What file format is available: CSV, XLS, XLSX, HTML table, ZIP, PDF?",
+    "Does the report contain a usable symbol, issuer name, instrument type, market/segment and country?",
+    "Does the report include ordinary shares, ETFs, funds, bonds or mixed instruments?",
+    "Can rows be normalized to the canonical source schema without brittle scraping?",
+    "How many rows are available before net-new filtering?",
+    "How many exchange+ticker or MIC+ticker keys are net-new against expanded_universe_v2_8e?",
+    "Does LSE unlock the 15000-row first expansion threshold?",
+    "Should LSE be treated as source provider, candidate provider, enrichment, reference-only or deferred?"
+  ],
+  "blockers": [],
+  "warnings": [
+    "Current expanded source remains below first expansion threshold: 9200 < 15000.",
+    "Current expanded source remains below full-source threshold: 9200 < 50000.",
+    "v2.10A is route-selection only; do not download LSE or Cboe Europe data in this phase.",
+    "LSE may contain multiple report formats, archives or dynamic pages; v2.10B must define a controlled acquisition contract before network access.",
+    "International venues may introduce non-US instruments, currencies, MICs and symbol semantics; classification must be conservative."
+  ],
+  "positives": [
+    "v2.9G OTC closure artifact found: outputs/full_universe_source_acquisition/otc_markets_closure_report_v2_9g.json",
+    "v2.9G closure status accepted: OTC_MARKETS_CLOSED_VALID_BUT_NOT_ENOUGH",
+    "v2.9G closure decision accepted: OTC_MARKETS_CLOSED_REFERENCE_OR_ENRICHMENT_ONLY_NO_REBUILD",
+    "Current source input available: data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "Current source input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv"
+  ],
+  "controls": {
+    "network_download_performed": false,
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "plan_only": true
+  },
+  "recommendation": "Proceed to v2.10B LSE Acquisition Plan. Do not download or rebuild until the controlled acquisition contract is defined."
+}
