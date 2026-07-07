@@ -1,0 +1,129 @@
+{
+  "phase": "v2.9D",
+  "method": "otc_markets_validation_v1",
+  "created_at": "2026-07-07T12:05:50+00:00",
+  "validation_status": "OTC_MARKETS_VALIDATED_INSUFFICIENT_FOR_EXPANSION",
+  "readiness_score": 82,
+  "validation_decision": "OTC_MARKETS_VALID_BUT_NOT_ENOUGH_REFERENCE_OR_ENRICHMENT_ONLY",
+  "recommended_next_phase": "v2.9G ? OTC Markets Closure Report OR v2.10A next provider route",
+  "provider": {
+    "provider_id": "otc_markets_stock_screener",
+    "raw_csv": "data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_raw.csv"
+  },
+  "schema": {
+    "raw_fields": [
+      "Symbol",
+      "Security Name",
+      "Tier",
+      "Price",
+      "Change %",
+      "Vol",
+      "Sec Type",
+      "Country",
+      "State"
+    ],
+    "expected_fields": [
+      "Symbol",
+      "Security Name",
+      "Tier",
+      "Price",
+      "Change %",
+      "Vol",
+      "Sec Type",
+      "Country",
+      "State"
+    ],
+    "missing_expected_fields": [],
+    "detected_fields": {
+      "symbol_field": "Symbol",
+      "name_field": "Security Name",
+      "tier_field": "Tier",
+      "sec_type_field": "Sec Type",
+      "country_field": "Country",
+      "state_field": "State"
+    },
+    "expanded_detection": {
+      "ticker": "ticker",
+      "exchange": "exchange",
+      "company_name": "company_name",
+      "source_provider": "source_provider"
+    }
+  },
+  "row_summary": {
+    "raw_rows": 25,
+    "normalized_candidate_rows": 25,
+    "net_new_candidate_rows": 25,
+    "overlap_rows": 0,
+    "duplicate_exchange_ticker_keys": 0,
+    "issues_count": 0
+  },
+  "distribution": {
+    "tier_counts": {
+      "Pink Limited": 16,
+      "OTCID": 9
+    },
+    "sec_type_counts": {
+      "Common Stock": 20,
+      "Foreign Ordinary Shares": 5
+    },
+    "country_counts": {
+      "USA": 17,
+      "Canada": 4,
+      "China": 2,
+      "United Arab Emirates": 1,
+      "Australia": 1
+    }
+  },
+  "threshold_status": {
+    "current_expanded_rows": 9200,
+    "projected_rows_if_rebuilt": 9225,
+    "target_first_expansion_rows": 15000,
+    "minimum_full_source_rows": 50000,
+    "expected_full_rows": 59000,
+    "rows_needed_first_expansion_before_otc": 5800,
+    "rows_needed_full_source_before_otc": 40800,
+    "first_expansion_unlocked_if_rebuilt": false,
+    "full_source_unlocked_if_rebuilt": false,
+    "rows_still_needed_first_expansion_after_otc": 5775,
+    "rows_still_needed_full_source_after_otc": 40775
+  },
+  "outputs": {
+    "normalized_candidate_csv": "outputs/full_universe_source_acquisition/otc_markets_normalized_candidate_v2_9d.csv",
+    "net_new_candidate_csv": "outputs/full_universe_source_acquisition/otc_markets_net_new_candidates_v2_9d.csv",
+    "duplicates_csv": "outputs/full_universe_source_acquisition/otc_markets_duplicates_v2_9d.csv",
+    "issues_csv": "outputs/full_universe_source_acquisition/otc_markets_issues_v2_9d.csv",
+    "validation_json": "outputs/full_universe_source_acquisition/otc_markets_validation_v2_9d.json",
+    "validation_md": "outputs/full_universe_source_acquisition/otc_markets_validation_v2_9d.md"
+  },
+  "blockers": [],
+  "warnings": [
+    "OTC route is insufficient for first expansion: 25 raw rows < 5800 rows needed.",
+    "OTC net-new rows are insufficient for first expansion: 25 < 5800 rows needed."
+  ],
+  "positives": [
+    "v2.9C acquisition artifact found: outputs/full_universe_source_acquisition/otc_markets_acquisition_real_v2_9c.json",
+    "v2.9C acquisition status accepted: OTC_MARKETS_ACQUISITION_COMPLETED",
+    "v2.9C acquisition decision accepted: OTC_MARKETS_RAW_SOURCE_READY_FOR_VALIDATION",
+    "Validation input available: data/raw/source_providers/otc_markets_stock_screener/otc_markets_stock_screener_raw.csv",
+    "Validation input available: data/raw/expanded_universe/expanded_universe_v2_8e.csv",
+    "Validation input available: data/raw/expanded_universe/expanded_universe_exclusions_v2_8e.csv",
+    "Expected OTC schema fields detected.",
+    "OTC symbol field detected: Symbol",
+    "OTC security name field detected: Security Name",
+    "OTC tier field detected: Tier",
+    "OTC security type field detected: Sec Type"
+  ],
+  "controls": {
+    "network_download_performed": false,
+    "openai_called": false,
+    "broker_called": false,
+    "market_data_recalculated": false,
+    "scoring_recalculated": false,
+    "full_59000_universe_launched": false,
+    "financial_advice": false,
+    "active_outputs_overwritten": false,
+    "expanded_universe_rebuilt": false,
+    "validation_only": true
+  },
+  "recommendation": "Do not rebuild. Close OTC route as valid schema/reference/enrichment but insufficient for expansion; proceed to next provider route."
+}
