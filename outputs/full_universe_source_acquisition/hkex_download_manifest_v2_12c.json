@@ -1,0 +1,167 @@
+{
+  "version": "v2.12C",
+  "phase": "HKEX Acquisition Real",
+  "phase_type": "acquisition-only",
+  "status": "HKEX_ACQUISITION_COMPLETED_RAW_ONLY",
+  "generated_at_utc": "2026-07-08T10:45:58.908308+00:00",
+  "hard_guards": {
+    "network_download_performed": true,
+    "raw_files_downloaded": true,
+    "raw_files_modified_after_write": false,
+    "workbook_parsed": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "counts": {
+    "manifest_rows": 2,
+    "raw_files_fetched_successfully": 2,
+    "fetch_failures": 0,
+    "discovered_links": 9,
+    "english_xlsx_valid_zip_container": true,
+    "chinese_fallback_triggered": false
+  },
+  "manifest_rows": [
+    {
+      "version": "v2.12C",
+      "phase_type": "acquisition-only",
+      "family": "hkex_official_direct_file",
+      "target": "hkex_list_of_securities_xlsx_en",
+      "url": "https://www.hkex.com.hk/eng/services/trading/securities/securitieslists/ListOfSecurities.xlsx",
+      "discovery_source": "v2.12B acquisition contract",
+      "source_note": "Official HKEX English List of Securities XLSX direct file.",
+      "raw_output_path": "outputs\\full_universe_source_acquisition\\raw\\hkex_v2_12c\\ListOfSecurities.xlsx",
+      "fetched_at_utc": "2026-07-08T10:45:52.372695+00:00",
+      "status": "FETCHED_RAW_BYTES_PRESERVED",
+      "status_code": 200,
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 1379361,
+      "sha256": "dde8dad707a556e9d956d07c1f2e9bc3a9ee8fb6a5fd4109c6b49662133d4f3d",
+      "error": ""
+    },
+    {
+      "version": "v2.12C",
+      "phase_type": "acquisition-only",
+      "family": "hkex_official_landing_page",
+      "target": "hkex_securities_lists_page",
+      "url": "https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists?sc_lang=en",
+      "discovery_source": "v2.12B acquisition contract",
+      "source_note": "Official HKEX Securities Lists landing page for provenance and discovery.",
+      "raw_output_path": "outputs\\full_universe_source_acquisition\\raw\\hkex_v2_12c\\securities_lists_page.html",
+      "fetched_at_utc": "2026-07-08T10:45:53.904096+00:00",
+      "status": "FETCHED_RAW_BYTES_PRESERVED",
+      "status_code": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 397240,
+      "sha256": "c9489161387542e10e588a954d02fe406d71a554e182f3ce2a43eecac35aeced",
+      "error": ""
+    }
+  ],
+  "discovered_links": [
+    {
+      "version": "v2.12C",
+      "discovery_source": "hkex_securities_lists_page",
+      "family": "hkex_discovered_page_candidate",
+      "link_text": "Securities Lists",
+      "href": "/Services/Trading/Securities/Securities-Lists?sc_lang=en",
+      "absolute_url": "https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists?sc_lang=en",
+      "downloaded_in_v2_12c": "no",
+      "normalization_allowed": "no",
+      "rebuild_allowed": "no"
+    },
+    {
+      "version": "v2.12C",
+      "discovery_source": "hkex_securities_lists_page",
+      "family": "hkex_discovered_workbook_candidate",
+      "link_text": "",
+      "href": "/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Redirect_List-of-Closing-Auction-Session-(CAS)-Securities/list-of-cas-securities.xls",
+      "absolute_url": "https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Redirect_List-of-Closing-Auction-Session-(CAS)-Securities/list-of-cas-securities.xls",
+      "downloaded_in_v2_12c": "no",
+      "normalization_allowed": "no",
+      "rebuild_allowed": "no"
+    },
+    {
+      "version": "v2.12C",
+      "discovery_source": "hkex_securities_lists_page",
+      "family": "hkex_discovered_workbook_candidate",
+      "link_text": "",
+      "href": "/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Redirect_List-of-Volatility-Control-Mechanism-(VCM)-Securities/list-of-vcm-securities.xls",
+      "absolute_url": "https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Redirect_List-of-Volatility-Control-Mechanism-(VCM)-Securities/list-of-vcm-securities.xls",
+      "downloaded_in_v2_12c": "no",
+      "normalization_allowed": "no",
+      "rebuild_allowed": "no"
+    },
+    {
+      "version": "v2.12C",
+      "discovery_source": "hkex_securities_lists_page",
+      "family": "hkex_discovered_workbook_candidate",
+      "link_text": "",
+      "href": "/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/ISINs-assigned-by-HKEX/isinsehk.xls",
+      "absolute_url": "https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/ISINs-assigned-by-HKEX/isinsehk.xls",
+      "downloaded_in_v2_12c": "no",
+      "normalization_allowed": "no",
+      "rebuild_allowed": "no"
+    },
+    {
+      "version": "v2.12C",
+      "discovery_source": "hkex_securities_lists_page",
+      "family": "hkex_discovered_workbook_candidate",
+      "link_text": "",
+      "href": "/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/ISINs-assigned-by-Other-Numbering-Agencies/isino.xls",
+      "absolute_url": "https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/ISINs-assigned-by-Other-Numbering-Agencies/isino.xls",
+      "downloaded_in_v2_12c": "no",
+      "normalization_allowed": "no",
+      "rebuild_allowed": "no"
+    },
+    {
+      "version": "v2.12C",
+      "discovery_source": "hkex_securities_lists_page",
+      "family": "hkex_discovered_workbook_candidate",
+      "link_text": "",
+      "href": "/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Securities-Using-Standard-Transfer-Form-(including-GEM)-By-Stock-Code-Order/secstkorder.xls",
+      "absolute_url": "https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Securities-Using-Standard-Transfer-Form-(including-GEM)-By-Stock-Code-Order/secstkorder.xls",
+      "downloaded_in_v2_12c": "no",
+      "normalization_allowed": "no",
+      "rebuild_allowed": "no"
+    },
+    {
+      "version": "v2.12C",
+      "discovery_source": "hkex_securities_lists_page",
+      "family": "hkex_discovered_workbook_candidate",
+      "link_text": "",
+      "href": "/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Securities-Using-Standard-Transfer-Form-(including-GEM)-By-English-Stock-Short-Name-Order/englishstk.xls",
+      "absolute_url": "https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Securities-Using-Standard-Transfer-Form-(including-GEM)-By-English-Stock-Short-Name-Order/englishstk.xls",
+      "downloaded_in_v2_12c": "no",
+      "normalization_allowed": "no",
+      "rebuild_allowed": "no"
+    },
+    {
+      "version": "v2.12C",
+      "discovery_source": "hkex_securities_lists_page",
+      "family": "hkex_discovered_workbook_candidate",
+      "link_text": "Full List of Securities",
+      "href": "/eng/services/trading/securities/securitieslists/ListOfSecurities.xlsx",
+      "absolute_url": "https://www.hkex.com.hk/eng/services/trading/securities/securitieslists/ListOfSecurities.xlsx",
+      "downloaded_in_v2_12c": "no",
+      "normalization_allowed": "no",
+      "rebuild_allowed": "no"
+    },
+    {
+      "version": "v2.12C",
+      "discovery_source": "hkex_securities_lists_page",
+      "family": "hkex_discovered_workbook_candidate",
+      "link_text": "List of Dual Counter Securities",
+      "href": "/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Dual_Counter_Security_List.xlsx",
+      "absolute_url": "https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Dual_Counter_Security_List.xlsx",
+      "downloaded_in_v2_12c": "no",
+      "normalization_allowed": "no",
+      "rebuild_allowed": "no"
+    }
+  ],
+  "important_scope_note": "v2.12C performs acquisition only. It does not parse workbook sheets, classify securities, normalize rows, filter net-new rows, rebuild expanded universe, score, call OpenAI, call broker APIs or launch full 59k."
+}
