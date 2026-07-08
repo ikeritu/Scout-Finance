@@ -1,0 +1,110 @@
+{
+  "version": "v2.11E",
+  "phase": "Rebuild Expanded Source With Cboe Europe",
+  "phase_type": "rebuild-only",
+  "status": "CBOE_EUROPE_REBUILD_COMPLETED",
+  "generated_at_utc": "2026-07-08T08:17:54.038436+00:00",
+  "hard_guards": {
+    "network_download_performed": false,
+    "raw_files_modified": false,
+    "normalization_performed": true,
+    "net_new_filtering_performed": true,
+    "expanded_universe_rebuilt": true,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "input_sources": {
+    "baseline_universe": "data\\raw\\expanded_universe\\expanded_universe_v2_8e.csv",
+    "validation_decision": "outputs\\full_universe_source_acquisition\\cboe_europe_validation_decision_v2_11d.csv",
+    "validation_profile": "outputs\\full_universe_source_acquisition\\cboe_europe_csv_profile_v2_11d.csv",
+    "raw_dir": "outputs\\full_universe_source_acquisition\\raw\\cboe_europe_v2_11c"
+  },
+  "validation_gate": {
+    "decision": "CBOE_EUROPE_CANDIDATE_SOURCE_VALIDATION_PASSED_FOR_REBUILD_REVIEW",
+    "recommended_next_phase": "v2.11E_REBUILD_EXPANDED_SOURCE_WITH_CBOE_EUROPE_REQUIRES_EXPLICIT_APPROVAL",
+    "rebuild_allowed_by_validation": "True",
+    "parsed_csv_files": "16",
+    "total_csv_rows_excluding_headers_all_csvs": "89651",
+    "large_csv_rows_excluding_headers_files_ge_100kb": "88243",
+    "tiny_files_lt_1kb": "2",
+    "small_files_lt_10kb": "7",
+    "files_with_symbol_like_header": "6",
+    "files_with_name_like_header": "6",
+    "files_with_mic_or_venue_like_header": "6",
+    "candidate_unique_symbols_diagnostic_only": "21288",
+    "baseline_tickers_loaded": "8920",
+    "candidate_symbol_overlap_diagnostic_only": "133",
+    "candidate_symbol_not_in_baseline_diagnostic_only": "21155",
+    "current_expanded_rows": "9200",
+    "rows_needed_first_expansion": "5800",
+    "rows_needed_full_source": "40800",
+    "first_expansion_unlocked_by_raw_rows": "True",
+    "full_source_unlocked_by_raw_rows": "True",
+    "normalization_performed": "False",
+    "net_new_filtering_performed": "False",
+    "expanded_universe_rebuilt": "False",
+    "scoring_recalculated": "False",
+    "openai_called": "False",
+    "broker_called": "False",
+    "full_59k_universe_launched": "False"
+  },
+  "counts": {
+    "baseline_rows": 9200,
+    "selected_cboe_csv_files": 6,
+    "candidate_rows_reviewed": 88243,
+    "cboe_rows_added": 21154,
+    "exclusions": 67089,
+    "new_expanded_rows": 30354,
+    "duplicate_exchange_ticker_keys": 0,
+    "first_expansion_threshold": 15000,
+    "full_source_threshold": 50000,
+    "first_expansion_unlocked": true,
+    "full_source_unlocked": false
+  },
+  "exclusion_counter": {
+    "NOT_LIVE": 175,
+    "BASELINE_TICKER_ALREADY_PRESENT": 552,
+    "DUPLICATE_CBOE_BATS_NAME": 66362
+  },
+  "selected_profiles": [
+    {
+      "source_link_text": "BXE",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\cboe_europe_v2_11c\\csv\\001_csv.csv",
+      "rows": "9384",
+      "bytes": "2221835"
+    },
+    {
+      "source_link_text": "CXE",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\cboe_europe_v2_11c\\csv\\002_csv.csv",
+      "rows": "9384",
+      "bytes": "2219464"
+    },
+    {
+      "source_link_text": "DXE",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\cboe_europe_v2_11c\\csv\\003_csv.csv",
+      "rows": "5731",
+      "bytes": "1371610"
+    },
+    {
+      "source_link_text": "TRF EU",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\cboe_europe_v2_11c\\csv\\004_csv.csv",
+      "rows": "21287",
+      "bytes": "4082561"
+    },
+    {
+      "source_link_text": "TRF UK",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\cboe_europe_v2_11c\\csv\\005_csv.csv",
+      "rows": "21287",
+      "bytes": "4064048"
+    },
+    {
+      "source_link_text": "SIS",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\cboe_europe_v2_11c\\csv\\006_csv.csv",
+      "rows": "21170",
+      "bytes": "3658704"
+    }
+  ]
+}
