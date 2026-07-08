@@ -1,0 +1,151 @@
+{
+  "version": "v2.14A",
+  "phase": "Next Provider Route For Remaining Full Source Gap",
+  "phase_type": "route-selection-only",
+  "status": "NEXT_PROVIDER_ROUTE_SELECTED_FULL_SOURCE_STILL_BLOCKED",
+  "route_decision": "DEUTSCHE_BOERSE_XETRA_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+  "selected_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+  "generated_at_utc": "2026-07-08T22:18:31.982588+00:00",
+  "current_state": {
+    "current_expanded_rows": 36863,
+    "full_source_threshold": 50000,
+    "rows_needed_full_source": 13137,
+    "source_to_50k_completed_percent": 73.7,
+    "source_to_50k_pending_percent": 26.3,
+    "first_expansion_unlocked": true,
+    "full_source_unlocked": false,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED",
+    "previous_jpx_closure_status": "JPX_CLOSED_CONSERVATIVE_REBUILD_VALIDATED_FULL_SOURCE_BLOCKED",
+    "previous_commit": "ef14563"
+  },
+  "hard_guards": {
+    "phase_type": "route-selection-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified": false,
+    "workbook_or_csv_parsed": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "selection_rationale": {
+    "why_selected": "The remaining gap is still 13,137 rows. Deutsche Börse/Xetra has the strongest gross row potential among remaining official provider routes, while still offering an official reference surface. Because it includes non-common-equity instruments and likely overlaps with existing Cboe Europe coverage, v2.14B/v2.14C/v2.14D must use strict raw preservation, shares-only validation and conservative rebuild gates.",
+    "why_not_asx_first": "ASX has a cleaner official CSV and low complexity, but its expected row contribution is too small to materially close the remaining 13,137-row gap by itself.",
+    "why_not_tmx_first": "TMX is a strong backup and may be preferable if Xetra acquisition is blocked, but Xetra has higher immediate row potential."
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "provider": "deutsche_boerse_xetra_all_tradable_instruments",
+      "route_status": "SELECTED_AS_NEXT_PROVIDER_ROUTE",
+      "readiness_score": 93,
+      "official_surface": "Deutsche Börse / Xetra All Tradable Instruments",
+      "expected_format": "html_plus_download_or_csv",
+      "expected_row_range": "5000-15000_gross",
+      "expected_net_new_range": "3000-10000_after_conservative_filters",
+      "expected_overlap_risk": "medium_high_due_to_existing_cboe_europe_reference_data",
+      "main_strength": "highest_remaining_row_potential_and_official_instrument_reference_surface",
+      "main_risk": "contains ETFs, ETCs, ETNs, active ETFs and possible overlap; requires strict shares-only validation",
+      "recommended_role": "primary_route_for_v2_14",
+      "selected": "yes"
+    },
+    {
+      "rank": 2,
+      "provider": "tsx_tmx_listed_company_directory",
+      "route_status": "BACKUP_ROUTE_READY",
+      "readiness_score": 88,
+      "official_surface": "TMX TSX/TSXV Listed Company Directory",
+      "expected_format": "html_or_directory_endpoint",
+      "expected_row_range": "3000-5000_gross",
+      "expected_net_new_range": "2500-4500_after_conservative_filters",
+      "expected_overlap_risk": "low_medium",
+      "main_strength": "good geographic diversification_and_official_directory",
+      "main_risk": "may require careful acquisition path if directory is dynamic",
+      "recommended_role": "backup_route_if_xetra_acquisition_fails_or_underperforms",
+      "selected": "no"
+    },
+    {
+      "rank": 3,
+      "provider": "asx_listed_companies_csv",
+      "route_status": "BACKUP_ROUTE_READY_LOW_COMPLEXITY",
+      "readiness_score": 87,
+      "official_surface": "ASX Listed Companies CSV",
+      "expected_format": "csv",
+      "expected_row_range": "1500-2500_gross",
+      "expected_net_new_range": "1500-2500_after_conservative_filters",
+      "expected_overlap_risk": "low",
+      "main_strength": "very clean official CSV and low complexity",
+      "main_risk": "too small to materially close 13,137-row gap alone",
+      "recommended_role": "fast_follow_provider_after_xetra_or_tmx",
+      "selected": "no"
+    },
+    {
+      "rank": 4,
+      "provider": "euronext_equities_live_directory",
+      "route_status": "DEFERRED_ROUTE_CANDIDATE",
+      "readiness_score": 79,
+      "official_surface": "Euronext live equities directory",
+      "expected_format": "html_or_discovered_endpoint",
+      "expected_row_range": "1500-8000_gross",
+      "expected_net_new_range": "unknown_due_to_cboe_europe_overlap",
+      "expected_overlap_risk": "high_due_to_existing_cboe_europe_reference_data",
+      "main_strength": "potential European coverage",
+      "main_risk": "large overlap risk after Cboe Europe provider already added 21,154 rows",
+      "recommended_role": "defer_until_non_european_or_xetra_paths_are_exhausted",
+      "selected": "no"
+    }
+  ],
+  "planned_outputs": [
+    {
+      "phase": "v2.14B",
+      "path": "scripts/deutsche_boerse_xetra_acquisition_plan_v2_14b.py",
+      "type": "script",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.14B",
+      "path": "outputs/full_universe_source_acquisition/deutsche_boerse_xetra_acquisition_plan_v2_14b.json",
+      "type": "plan_json",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.14B",
+      "path": "outputs/full_universe_source_acquisition/deutsche_boerse_xetra_acquisition_plan_v2_14b.md",
+      "type": "plan_report",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.14B",
+      "path": "outputs/full_universe_source_acquisition/deutsche_boerse_xetra_acquisition_contract_v2_14b.csv",
+      "type": "contract_csv",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.14C",
+      "path": "outputs/full_universe_source_acquisition/raw/deutsche_boerse_xetra_v2_14c/",
+      "type": "future_raw_directory",
+      "required": "planned_only",
+      "overwrite_policy": "new_directory_or_fail_in_v2_14c"
+    }
+  ],
+  "recommended_next_phase": "v2.14B - Deutsche Börse Xetra Acquisition Plan",
+  "project_percentages": {
+    "global_completed": 41,
+    "global_pending": 59,
+    "source_to_50k_completed": 73.7,
+    "source_to_50k_pending": 26.3,
+    "full_source_gate_completed": 0,
+    "full_source_gate_pending": 100,
+    "full_59k_dry_run_completed": 0,
+    "full_59k_dry_run_pending": 100
+  }
+}
