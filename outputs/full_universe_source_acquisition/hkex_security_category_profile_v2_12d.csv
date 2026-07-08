@@ -1,0 +1,14 @@
+category,subcategory,diagnostic_security_class,rows
+Derivative Warrants,,NON_ORDINARY_OR_REVIEW_REQUIRED,7420
+Callable Bull/Bear Contracts,,UNKNOWN_REVIEW_REQUIRED,5595
+Equity,Equity Securities (Main Board),EQUITY_CANDIDATE_DIAGNOSTIC_ONLY,2467
+Debt Securities,,NON_ORDINARY_OR_REVIEW_REQUIRED,1339
+Exchange Traded Products,Exchange Traded Funds,NON_ORDINARY_OR_REVIEW_REQUIRED,372
+Equity,Equity Securities (GEM),EQUITY_CANDIDATE_DIAGNOSTIC_ONLY,309
+Exchange Traded Products,Leveraged and Inverse,NON_ORDINARY_OR_REVIEW_REQUIRED,40
+Equity,Investment Companies,EQUITY_CANDIDATE_DIAGNOSTIC_ONLY,22
+Real Estate Investment Trusts,,NON_ORDINARY_OR_REVIEW_REQUIRED,11
+Equity,Trading Only Securities,EQUITY_CANDIDATE_DIAGNOSTIC_ONLY,6
+Equity Warrants (Main Board),,NON_ORDINARY_OR_REVIEW_REQUIRED,5
+Equity,Depositary Receipts,NON_ORDINARY_OR_REVIEW_REQUIRED,2
+Equity Warrants (GEM),,NON_ORDINARY_OR_REVIEW_REQUIRED,1

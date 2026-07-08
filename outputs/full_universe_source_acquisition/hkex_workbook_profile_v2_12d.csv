@@ -1,0 +1,2 @@
+sheet_name,sheet_id,xml_path,total_rows_read,header_row_index_zero_based,header_score,detected_columns,original_column_labels_json,data_rows_after_header,candidate_rows_with_stock_code
+ListOfSecurities,1,xl/worksheets/sheet1.xml,17596,2,15,board_lot|category|currency|isin|name_of_securities|stock_code|subcategory,"{""stock_code"": ""Stock Code"", ""name_of_securities"": ""Name of Securities"", ""category"": ""Category"", ""subcategory"": ""Sub-Category"", ""board_lot"": ""Board Lot"", ""isin"": ""ISIN"", ""currency"": ""Trading Currency""}",17593,17589
