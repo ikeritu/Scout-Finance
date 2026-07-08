@@ -1,0 +1,95 @@
+{
+  "version": "v2.12E",
+  "phase": "Rebuild Expanded Source With HKEX",
+  "phase_type": "rebuild-only",
+  "status": "HKEX_REBUILD_COMPLETED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-07-08T11:28:29.237510+00:00",
+  "validation_gate": {
+    "decision_file": "outputs\\full_universe_source_acquisition\\hkex_validation_decision_v2_12d.csv",
+    "validation_decision": "HKEX_CANDIDATE_SOURCE_VALIDATION_PASSED_FOR_REBUILD_REVIEW_FULL_SOURCE_STILL_BLOCKED",
+    "rebuild_allowed_by_validation": "True"
+  },
+  "selected_sheet": {
+    "sheet_name": "ListOfSecurities",
+    "sheet_id": "1",
+    "xml_path": "xl/worksheets/sheet1.xml",
+    "total_rows_read": 17596,
+    "header_row_index_zero_based": 2,
+    "header_score": 15,
+    "detected_columns": "board_lot|category|currency|isin|name_of_securities|stock_code|subcategory",
+    "candidate_rows": 17589
+  },
+  "accepted_hkex_equity_subcategories": [
+    "Equity Securities (GEM)",
+    "Equity Securities (Main Board)",
+    "Investment Companies",
+    "Trading Only Securities"
+  ],
+  "counts": {
+    "baseline_rows": 30354,
+    "hkex_candidate_rows_reviewed": 17589,
+    "hkex_rows_added": 2804,
+    "exclusions": 14785,
+    "new_expanded_rows": 33158,
+    "duplicate_exchange_ticker_keys": 0,
+    "first_expansion_threshold": 15000,
+    "first_expansion_unlocked": true,
+    "full_source_threshold": 50000,
+    "full_source_unlocked": false,
+    "rows_needed_full_source": 16842
+  },
+  "accepted_subcategory_breakdown": [
+    {
+      "category": "Equity",
+      "subcategory": "Equity Securities (Main Board)",
+      "rows": 2467
+    },
+    {
+      "category": "Equity",
+      "subcategory": "Equity Securities (GEM)",
+      "rows": 309
+    },
+    {
+      "category": "Equity",
+      "subcategory": "Investment Companies",
+      "rows": 22
+    },
+    {
+      "category": "Equity",
+      "subcategory": "Trading Only Securities",
+      "rows": 6
+    }
+  ],
+  "exclusion_reason_breakdown": [
+    {
+      "reason": "NON_EQUITY_CATEGORY_EXCLUDED",
+      "rows": 14783
+    },
+    {
+      "reason": "EQUITY_SUBCATEGORY_NOT_IN_ALLOWLIST",
+      "rows": 2
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "rebuild-only",
+    "network_download_performed": false,
+    "raw_files_modified": false,
+    "workbook_parsed_from_existing_raw": true,
+    "normalization_performed": true,
+    "net_new_filtering_performed": true,
+    "expanded_universe_rebuilt": true,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "outputs": {
+    "expanded_universe": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_12e.csv",
+    "exclusions": "outputs\\full_universe_source_acquisition\\expanded_universe_exclusions_v2_12e.csv",
+    "normalized_candidates": "outputs\\full_universe_source_acquisition\\hkex_normalized_candidates_v2_12e.csv",
+    "report_json": "outputs\\full_universe_source_acquisition\\hkex_rebuild_report_v2_12e.json",
+    "report_md": "outputs\\full_universe_source_acquisition\\hkex_rebuild_report_v2_12e.md"
+  },
+  "important_scope_note": "v2.12E rebuilds expanded source with a conservative HKEX equity allowlist. It does not score, call OpenAI, call broker APIs or launch full 59k."
+}
