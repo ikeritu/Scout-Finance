@@ -1,0 +1,172 @@
+{
+  "version": "v2.13G",
+  "phase": "JPX Closure Report",
+  "phase_type": "closure-only",
+  "closure_status": "JPX_CLOSED_CONSERVATIVE_REBUILD_VALIDATED_FULL_SOURCE_BLOCKED",
+  "source_decision": "JPX_ACCEPTED_FOR_CONSERVATIVE_EXPANDED_SOURCE",
+  "generated_at_utc": "2026-07-08T20:54:25.179248+00:00",
+  "hard_guards": {
+    "phase_type": "closure-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified": false,
+    "workbook_or_csv_parsed": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "critical_checks": {
+    "v2_13d_validation_passed": true,
+    "v2_13e_rebuild_completed": true,
+    "v2_13f_validation_passed": true,
+    "expanded_rows_match_expected": true,
+    "duplicate_exchange_ticker_keys_zero": true,
+    "critical_failed_checks_zero": true,
+    "warning_failed_checks_zero": true,
+    "full_source_unlocked_false": true,
+    "full_59k_universe_not_launched": true
+  },
+  "counts": {
+    "baseline_before_jpx": 33158,
+    "jpx_rows_added": 3705,
+    "jpx_rows_excluded": 732,
+    "expanded_after_jpx": 36863,
+    "duplicate_exchange_ticker_keys": 0,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "full_source_threshold": 50000,
+    "full_source_unlocked": false,
+    "rows_needed_after_jpx": 13137,
+    "full_59k_universe_launched": false
+  },
+  "accepted_jpx_breakdown": {
+    "Prime Market (Domestic)": 1551,
+    "Growth Market(Domestic)": 593,
+    "Standard Market(Domestic)": 1561
+  },
+  "excluded_jpx_breakdown": {
+    "ETF_ETN_MARKET_SEGMENT_EXCLUDED": 468,
+    "PRO_MARKET_REVIEW_EXCLUDED": 183,
+    "NON_COMMON_EQUITY_REVIEW_EXCLUDED": 11,
+    "FOREIGN_MARKET_SEGMENT_EXCLUDED": 5,
+    "REIT_OR_FUND_MARKET_SEGMENT_EXCLUDED": 63,
+    "MARKET_SEGMENT_NOT_IN_ALLOWLIST": 2
+  },
+  "provider_breakdown": [
+    {
+      "provider": "cboe_europe_reference_data",
+      "rows": 21154
+    },
+    {
+      "provider": "jpx_listed_securities",
+      "rows": 3705
+    },
+    {
+      "provider": "nasdaq_trader_nasdaqlisted",
+      "rows": 3244
+    },
+    {
+      "provider": "hkex_securities_list",
+      "rows": 2804
+    },
+    {
+      "provider": "nasdaq_trader_otherlisted",
+      "rows": 2404
+    },
+    {
+      "provider": "sec_company_tickers_exchange",
+      "rows": 2359
+    },
+    {
+      "provider": "cboe_listed_symbols",
+      "rows": 1193
+    }
+  ],
+  "project_percentages": {
+    "v2_13_jpx_completed_after_commit": 100,
+    "v2_13_jpx_pending_after_commit": 0,
+    "expanded_real_source_completed": 93,
+    "expanded_real_source_pending": 7,
+    "full_source_50k_59k_completed": 0,
+    "full_source_50k_59k_pending": 100,
+    "full_59k_dry_run_completed": 0,
+    "full_59k_dry_run_pending": 100,
+    "global_completed": 96,
+    "global_pending": 4
+  },
+  "decision": {
+    "version": "v2.13G",
+    "phase_type": "closure-only",
+    "closure_status": "JPX_CLOSED_CONSERVATIVE_REBUILD_VALIDATED_FULL_SOURCE_BLOCKED",
+    "source_decision": "JPX_ACCEPTED_FOR_CONSERVATIVE_EXPANDED_SOURCE",
+    "baseline_before_jpx": 33158,
+    "jpx_rows_added": 3705,
+    "jpx_rows_excluded": 732,
+    "expanded_after_jpx": 36863,
+    "duplicate_exchange_ticker_keys": 0,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "full_source_threshold": 50000,
+    "full_source_unlocked": false,
+    "rows_needed_after_jpx": 13137,
+    "full_59k_universe_launched": false,
+    "recommended_next_phase": "v2.14A - Next Provider Route For Remaining Full Source Gap"
+  },
+  "roadmap": [
+    {
+      "phase": "v2.13A",
+      "name": "Next Provider Route For Full Source 50k",
+      "status": "closed",
+      "commit": "642de26"
+    },
+    {
+      "phase": "v2.13B",
+      "name": "JPX Acquisition Plan",
+      "status": "closed",
+      "commit": "28ba59f"
+    },
+    {
+      "phase": "v2.13C",
+      "name": "JPX Acquisition Real",
+      "status": "closed",
+      "commit": "2348a84"
+    },
+    {
+      "phase": "v2.13D",
+      "name": "JPX Validation",
+      "status": "closed",
+      "commit": "51e66dd"
+    },
+    {
+      "phase": "v2.13E",
+      "name": "Rebuild Expanded Source With JPX",
+      "status": "closed",
+      "commit": "feaa354"
+    },
+    {
+      "phase": "v2.13F",
+      "name": "Validate Expanded Source With JPX",
+      "status": "closed",
+      "commit": "6c680ca"
+    },
+    {
+      "phase": "v2.13G",
+      "name": "JPX Closure Report",
+      "status": "ready_to_commit_after_validation",
+      "commit": ""
+    },
+    {
+      "phase": "v2.14A",
+      "name": "Next Provider Route For Remaining Full Source Gap",
+      "status": "recommended_next",
+      "commit": ""
+    }
+  ],
+  "recommended_next_phase": "v2.14A - Next Provider Route For Remaining Full Source Gap",
+  "scope_note": "v2.13G is closure-only. It summarizes already validated JPX phases and does not download, parse raw workbooks, normalize, filter net-new rows, rebuild, score, call OpenAI, call broker APIs or launch full 59k."
+}

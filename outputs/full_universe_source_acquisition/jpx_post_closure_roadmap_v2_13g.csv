@@ -1,0 +1,9 @@
+phase,name,status,commit
+v2.13A,Next Provider Route For Full Source 50k,closed,642de26
+v2.13B,JPX Acquisition Plan,closed,28ba59f
+v2.13C,JPX Acquisition Real,closed,2348a84
+v2.13D,JPX Validation,closed,51e66dd
+v2.13E,Rebuild Expanded Source With JPX,closed,feaa354
+v2.13F,Validate Expanded Source With JPX,closed,6c680ca
+v2.13G,JPX Closure Report,ready_to_commit_after_validation,
+v2.14A,Next Provider Route For Remaining Full Source Gap,recommended_next,

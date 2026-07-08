@@ -1,0 +1,2 @@
+version,phase_type,closure_status,source_decision,baseline_before_jpx,jpx_rows_added,jpx_rows_excluded,expanded_after_jpx,duplicate_exchange_ticker_keys,critical_failed_checks,warning_failed_checks,full_source_threshold,full_source_unlocked,rows_needed_after_jpx,full_59k_universe_launched,recommended_next_phase
+v2.13G,closure-only,JPX_CLOSED_CONSERVATIVE_REBUILD_VALIDATED_FULL_SOURCE_BLOCKED,JPX_ACCEPTED_FOR_CONSERVATIVE_EXPANDED_SOURCE,33158,3705,732,36863,0,0,0,50000,False,13137,False,v2.14A - Next Provider Route For Remaining Full Source Gap
