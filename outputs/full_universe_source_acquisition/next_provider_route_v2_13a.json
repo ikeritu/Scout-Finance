@@ -1,0 +1,178 @@
+{
+  "version": "v2.13A",
+  "phase": "Next Provider Route For Full Source 50k",
+  "phase_type": "route-selection-only",
+  "status": "NEXT_PROVIDER_ROUTE_READY",
+  "route_decision": "JPX_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+  "selected_provider": "jpx_listed_securities_csv",
+  "selected_provider_readiness_score": 94,
+  "recommended_next_phase": "v2.13B - JPX Acquisition Plan",
+  "generated_at_utc": "2026-07-08T13:29:08.709004+00:00",
+  "current_state": {
+    "current_expanded_rows": 33158,
+    "full_source_threshold": 50000,
+    "rows_needed_full_source": 16842,
+    "first_expansion_unlocked": true,
+    "full_source_unlocked": false,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED",
+    "previous_hkex_closure_status": "HKEX_CLOSED_CONSERVATIVE_REBUILD_VALIDATED_FULL_SOURCE_BLOCKED",
+    "previous_commit": "c904c10"
+  },
+  "hard_guards": {
+    "phase_type": "route-selection-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "expanded_universe_rebuilt": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "route_candidates": [
+    {
+      "rank": 1,
+      "provider": "jpx_listed_securities_csv",
+      "route_status": "SELECTED_AS_NEXT_PROVIDER_ROUTE",
+      "readiness_score": 94,
+      "provider_type": "official_exchange_csv_or_data_portal_download",
+      "primary_url": "https://www.jpx.co.jp/english/markets/data-catalog/index.html",
+      "fallback_url": "https://www.jpx.co.jp/english/listing/co-search/index.html",
+      "expected_format": "csv",
+      "expected_schema_candidates": "code,company_name,market_segment,industry,listing_date,isin_possible",
+      "expected_row_range": "3500-5000",
+      "expected_overlap_risk": "low_geographic_overlap_after_hkex_and_cboe_europe",
+      "strengths": "Official JPX route, likely low overlap with existing Europe/HKEX/Nasdaq/SEC/Cboe sources, useful clean geographic expansion.",
+      "risks": "Actual CSV endpoint may require discovery from data portal; market-segment filtering needed before rebuild.",
+      "planned_phase_b": "v2.13B_JPX_ACQUISITION_PLAN",
+      "route_decision_reason": "Best next route because it is official, geographically complementary and likely lower-overlap than Xetra/Euronext after Cboe Europe."
+    },
+    {
+      "rank": 2,
+      "provider": "deutsche_boerse_xetra_all_tradable_instruments",
+      "route_status": "BACKUP_ROUTE_READY_HIGH_ROW_POTENTIAL",
+      "readiness_score": 90,
+      "provider_type": "official_exchange_download_or_directory",
+      "primary_url": "https://www.cashmarket.deutsche-boerse.com/cash-en/trading/Tradable-Instruments-Xetra/Downloads",
+      "fallback_url": "https://www.cashmarket.deutsche-boerse.com/cash-en/trading/Tradable-Instruments-Xetra",
+      "expected_format": "csv_or_download_link",
+      "expected_schema_candidates": "name,isin,wkn,symbol,instrument_type,currency",
+      "expected_row_range": "5000-15000",
+      "expected_overlap_risk": "medium_high_due_to_existing_cboe_europe_reference_data",
+      "strengths": "Official Deutsche Börse route with high instrument count and clear fields such as ISIN, symbol, instrument type and currency.",
+      "risks": "Likely heavy overlap with Cboe Europe; includes ETFs/ETNs and other instruments needing conservative filtering.",
+      "planned_phase_b": "v2.13B_XETRA_ACQUISITION_PLAN_IF_JPX_BLOCKED_OR_AFTER_JPX",
+      "route_decision_reason": "Strong backup if JPX acquisition is blocked or insufficient."
+    },
+    {
+      "rank": 3,
+      "provider": "asx_listed_companies",
+      "route_status": "BACKUP_ROUTE_READY_LOW_COMPLEXITY",
+      "readiness_score": 88,
+      "provider_type": "official_exchange_csv",
+      "primary_url": "https://www.asx.com.au/asx/research/ASXListedCompanies.csv",
+      "fallback_url": "https://www.asx.com.au/markets/trade-our-cash-market/directory",
+      "expected_format": "csv",
+      "expected_schema_candidates": "company_name,asx_code,gics_industry_group",
+      "expected_row_range": "1500-2500",
+      "expected_overlap_risk": "low",
+      "strengths": "Official direct CSV route and low acquisition complexity.",
+      "risks": "Likely too small alone for the remaining 16,842-row gap and may lack ISIN.",
+      "planned_phase_b": "v2.13B_ASX_ACQUISITION_PLAN_IF_JPX_BLOCKED_OR_AS_ADDON",
+      "route_decision_reason": "Excellent backup/add-on route but smaller than JPX."
+    },
+    {
+      "rank": 4,
+      "provider": "tsx_tmx_listed_company_directory",
+      "route_status": "BACKUP_ROUTE_READY",
+      "readiness_score": 84,
+      "provider_type": "official_exchange_directory",
+      "primary_url": "https://www.tsx.com/en/listings/listing-with-us/listed-company-directory",
+      "fallback_url": "https://www.tsx.com/en/listings",
+      "expected_format": "html_or_download_link",
+      "expected_schema_candidates": "company_name,symbol,exchange,issuer_status",
+      "expected_row_range": "3000-5000",
+      "expected_overlap_risk": "low_medium",
+      "strengths": "Official TSX/TSXV issuer directory with useful Canadian coverage.",
+      "risks": "Download/export route may require discovery; must separate TSX and TSXV carefully.",
+      "planned_phase_b": "v2.13B_TMX_ROUTE_IF_JPX_OR_ASX_NOT_ENOUGH",
+      "route_decision_reason": "Good candidate but less direct than JPX/ASX."
+    },
+    {
+      "rank": 5,
+      "provider": "euronext_equities_live_directory",
+      "route_status": "DEFERRED_ROUTE_CANDIDATE",
+      "readiness_score": 80,
+      "provider_type": "official_exchange_directory_or_endpoint",
+      "primary_url": "https://live.euronext.com/en/products/equities/list",
+      "fallback_url": "https://www.euronext.com/en/data",
+      "expected_format": "html_or_discovered_endpoint",
+      "expected_schema_candidates": "name,symbol,isin,market,currency",
+      "expected_row_range": "1500-8000",
+      "expected_overlap_risk": "high_due_to_existing_cboe_europe_reference_data",
+      "strengths": "Official Euronext equity route with broad European market coverage.",
+      "risks": "Likely overlap with Cboe Europe; endpoint/pagination discovery may be required.",
+      "planned_phase_b": "v2.13B_EURONEXT_ROUTE_IF_LOW_OVERLAP_STRATEGY_DEFINED",
+      "route_decision_reason": "Deferred because Cboe Europe already covers much of Europe."
+    }
+  ],
+  "planned_outputs_for_v2_13b": [
+    {
+      "phase": "v2.13B",
+      "path": "scripts/jpx_acquisition_plan_v2_13b.py",
+      "type": "script",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.13B",
+      "path": "outputs/full_universe_source_acquisition/jpx_acquisition_plan_v2_13b.json",
+      "type": "plan_json",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.13B",
+      "path": "outputs/full_universe_source_acquisition/jpx_acquisition_plan_v2_13b.md",
+      "type": "plan_report",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.13B",
+      "path": "outputs/full_universe_source_acquisition/jpx_acquisition_contract_v2_13b.csv",
+      "type": "contract",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.13B",
+      "path": "outputs/full_universe_source_acquisition/jpx_planned_outputs_v2_13b.csv",
+      "type": "planned_outputs",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    }
+  ],
+  "validation_questions_for_v2_13": [
+    "Does JPX expose a directly downloadable listed securities CSV through the official data portal?",
+    "Does the file contain code, company name, market segment and security/instrument classification?",
+    "How many rows exist before filtering?",
+    "How many rows are ordinary listed companies versus ETFs, REITs, preferred shares, funds or other instruments?",
+    "How many candidate identifiers are net-new against expanded_universe_v2_12e?",
+    "Can JPX rows be normalized conservatively without brittle scraping?",
+    "Does JPX materially reduce the 16,842-row gap to 50k?",
+    "Should JPX be source provider, candidate provider, enrichment, reference-only or deferred?"
+  ],
+  "project_percentages": {
+    "v2_13a_route_completed_after_commit": 100,
+    "v2_13a_route_pending_after_commit": 0,
+    "expanded_real_source_completed": 91,
+    "expanded_real_source_pending": 9,
+    "full_source_50k_59k_completed": 0,
+    "full_source_50k_59k_pending": 100,
+    "global_completed": 95,
+    "global_pending": 5
+  }
+}
