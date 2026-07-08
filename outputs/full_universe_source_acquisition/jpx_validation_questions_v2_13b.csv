@@ -1,0 +1,11 @@
+question_id,question,validation_phase
+Q01,Does JPX expose a directly downloadable List of TSE-listed Issues file from official pages?,v2.13D
+Q02,"Is the downloaded file Excel, CSV or another structured format?",v2.13D
+Q03,Which sheet/table contains the listed securities table?,v2.13D
+Q04,"Does the dataset contain local code, company name, market segment, security type, industry and ISIN?",v2.13D
+Q05,How many rows exist before filtering?,v2.13D
+Q06,"How many rows are ordinary listed companies versus ETFs, REITs, preferred securities, funds, foreign stocks or other instruments?",v2.13D
+Q07,How many candidate identifiers are net-new against expanded_universe_v2_12e?,v2.13D
+Q08,Can JPX rows be normalized conservatively without brittle scraping?,v2.13D
+Q09,"Does JPX materially reduce the 16,842-row gap to 50k?",v2.13D
+Q10,"Should JPX be source provider, candidate provider, enrichment, reference-only or deferred?",v2.13D

@@ -1,0 +1,212 @@
+{
+  "version": "v2.13B",
+  "phase": "JPX Acquisition Plan",
+  "phase_type": "plan-only",
+  "status": "JPX_ACQUISITION_PLAN_READY",
+  "decision": "PROCEED_TO_V2_13C_JPX_ACQUISITION_ONLY_AFTER_V2_13B_VALIDATION_AND_COMMIT",
+  "selected_provider": "jpx_listed_securities_csv",
+  "generated_at_utc": "2026-07-08T13:51:59.269092+00:00",
+  "current_state": {
+    "current_expanded_rows": 33158,
+    "full_source_threshold": 50000,
+    "rows_needed_full_source": 16842,
+    "first_expansion_unlocked": true,
+    "full_source_unlocked": false,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED",
+    "v2_13a_route_decision": "JPX_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+    "v2_13a_commit": "642de26"
+  },
+  "hard_guards": {
+    "phase_type": "plan-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "expanded_universe_rebuilt": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "acquisition_contract_for_v2_13c": [
+    {
+      "step_id": "01",
+      "route_type": "official_data_portal_catalog",
+      "target": "jpxdata_portal_catalog",
+      "url_or_discovery_rule": "https://www.jpx.co.jp/english/markets/data-catalog/index.html",
+      "expected_format": "html",
+      "purpose": "Acquire JPX official data portal page for provenance and discovery of listed securities dataset.",
+      "allowed_in_v2_13c": "HTTP GET raw HTML only, preserve bytes, compute SHA256, record metadata and candidate links.",
+      "prohibited_in_v2_13c": "No parsing decision, no normalization, no net-new filtering, no rebuild, no scoring.",
+      "raw_preservation_policy": "Save raw HTML exactly as received under raw/jpx_v2_13c/.",
+      "validation_owner": "v2.13D"
+    },
+    {
+      "step_id": "02",
+      "route_type": "official_client_portal_catalog_entry",
+      "target": "jpx_list_of_tse_listed_issues_catalog_entry",
+      "url_or_discovery_rule": "https://clientportal.jpx.co.jp/ClientPortalEN/s/datacatalog/DataCatalog__c",
+      "expected_format": "html_or_dynamic_catalog",
+      "purpose": "Acquire official catalog entry/search surface where List of TSE-listed Issues is listed as free monthly Excel data.",
+      "allowed_in_v2_13c": "HTTP GET raw HTML if accessible, preserve bytes, discover workbook/download links without accepting rows.",
+      "prohibited_in_v2_13c": "No browser automation unless explicitly approved, no fragile scraping, no rebuild.",
+      "raw_preservation_policy": "Save raw HTML exactly as received under raw/jpx_v2_13c/.",
+      "validation_owner": "v2.13D"
+    },
+    {
+      "step_id": "03",
+      "route_type": "official_dataset_download_candidate",
+      "target": "jpx_list_of_tse_listed_issues_workbook",
+      "url_or_discovery_rule": "Discover only from official JPX data portal/catalog entry. Expected dataset title: List of TSE-listed Issues.",
+      "expected_format": "xlsx_or_csv",
+      "purpose": "Acquire official listed issues file as raw bytes if a direct official download link is discovered in v2.13C.",
+      "allowed_in_v2_13c": "Download only direct official workbook/CSV discovered from JPX pages; preserve exact bytes, compute SHA256.",
+      "prohibited_in_v2_13c": "No accepted filtering, no normalization, no net-new filtering, no rebuild.",
+      "raw_preservation_policy": "Save raw workbook/CSV exactly as received under raw/jpx_v2_13c/.",
+      "validation_owner": "v2.13D"
+    },
+    {
+      "step_id": "04",
+      "route_type": "official_fallback_search_page",
+      "target": "jpx_listed_company_search",
+      "url_or_discovery_rule": "https://www.jpx.co.jp/english/listing/co-search/index.html",
+      "expected_format": "html_or_search_page",
+      "purpose": "Acquire official listed company search page as fallback/provenance if the data portal route is dynamic or blocked.",
+      "allowed_in_v2_13c": "HTTP GET raw HTML only, preserve bytes and candidate links.",
+      "prohibited_in_v2_13c": "No scraping accepted rows from dynamic search UI, no rebuild.",
+      "raw_preservation_policy": "Save raw HTML exactly as received under raw/jpx_v2_13c/.",
+      "validation_owner": "v2.13D"
+    },
+    {
+      "step_id": "05",
+      "route_type": "semantic_caution",
+      "target": "jpx_security_type_and_market_segment_semantics",
+      "url_or_discovery_rule": "Derived only from official JPX listed issues file during validation.",
+      "expected_format": "validation_rule",
+      "purpose": "Prevent inclusion of ETFs, REITs, funds, preferred securities, foreign stocks or other non-common-equity instruments without review.",
+      "allowed_in_v2_13c": "Record raw files and metadata only.",
+      "prohibited_in_v2_13c": "No equity classification decision during acquisition.",
+      "raw_preservation_policy": "Do not mutate source fields.",
+      "validation_owner": "v2.13D"
+    },
+    {
+      "step_id": "06",
+      "route_type": "identifier_caution",
+      "target": "jpx_local_code_format",
+      "url_or_discovery_rule": "Preserve JPX/TSE local security codes exactly as text.",
+      "expected_format": "validation_rule",
+      "purpose": "Avoid numeric conversion and preserve leading zeros or special suffixes if present.",
+      "allowed_in_v2_13c": "Store source file exactly and leave parsing decisions to validation.",
+      "prohibited_in_v2_13c": "No conversion of local code to integer.",
+      "raw_preservation_policy": "Raw official file remains source of truth.",
+      "validation_owner": "v2.13D"
+    }
+  ],
+  "planned_outputs_for_v2_13c": [
+    {
+      "phase": "v2.13C",
+      "path": "scripts/jpx_acquisition_v2_13c.py",
+      "type": "script",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.13C",
+      "path": "outputs/full_universe_source_acquisition/raw/jpx_v2_13c/",
+      "type": "raw_directory",
+      "required": "yes",
+      "overwrite_policy": "new_directory_or_fail"
+    },
+    {
+      "phase": "v2.13C",
+      "path": "outputs/full_universe_source_acquisition/jpx_download_manifest_v2_13c.json",
+      "type": "manifest_json",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.13C",
+      "path": "outputs/full_universe_source_acquisition/jpx_download_manifest_v2_13c.csv",
+      "type": "manifest_csv",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.13C",
+      "path": "outputs/full_universe_source_acquisition/jpx_discovered_links_v2_13c.csv",
+      "type": "discovery_manifest",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.13C",
+      "path": "outputs/full_universe_source_acquisition/jpx_acquisition_report_v2_13c.md",
+      "type": "report",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    }
+  ],
+  "validation_questions_for_v2_13d": [
+    {
+      "question_id": "Q01",
+      "question": "Does JPX expose a directly downloadable List of TSE-listed Issues file from official pages?",
+      "validation_phase": "v2.13D"
+    },
+    {
+      "question_id": "Q02",
+      "question": "Is the downloaded file Excel, CSV or another structured format?",
+      "validation_phase": "v2.13D"
+    },
+    {
+      "question_id": "Q03",
+      "question": "Which sheet/table contains the listed securities table?",
+      "validation_phase": "v2.13D"
+    },
+    {
+      "question_id": "Q04",
+      "question": "Does the dataset contain local code, company name, market segment, security type, industry and ISIN?",
+      "validation_phase": "v2.13D"
+    },
+    {
+      "question_id": "Q05",
+      "question": "How many rows exist before filtering?",
+      "validation_phase": "v2.13D"
+    },
+    {
+      "question_id": "Q06",
+      "question": "How many rows are ordinary listed companies versus ETFs, REITs, preferred securities, funds, foreign stocks or other instruments?",
+      "validation_phase": "v2.13D"
+    },
+    {
+      "question_id": "Q07",
+      "question": "How many candidate identifiers are net-new against expanded_universe_v2_12e?",
+      "validation_phase": "v2.13D"
+    },
+    {
+      "question_id": "Q08",
+      "question": "Can JPX rows be normalized conservatively without brittle scraping?",
+      "validation_phase": "v2.13D"
+    },
+    {
+      "question_id": "Q09",
+      "question": "Does JPX materially reduce the 16,842-row gap to 50k?",
+      "validation_phase": "v2.13D"
+    },
+    {
+      "question_id": "Q10",
+      "question": "Should JPX be source provider, candidate provider, enrichment, reference-only or deferred?",
+      "validation_phase": "v2.13D"
+    }
+  ],
+  "project_percentages": {
+    "v2_13b_jpx_acquisition_plan_completed_after_commit": 100,
+    "v2_13b_jpx_acquisition_plan_pending_after_commit": 0,
+    "expanded_real_source_completed": 91,
+    "expanded_real_source_pending": 9,
+    "full_source_50k_59k_completed": 0,
+    "full_source_50k_59k_pending": 100,
+    "global_completed": 95,
+    "global_pending": 5
+  }
+}
