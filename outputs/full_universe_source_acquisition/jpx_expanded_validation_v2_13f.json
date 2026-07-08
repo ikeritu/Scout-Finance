@@ -1,0 +1,245 @@
+{
+  "version": "v2.13F",
+  "phase": "Validate Expanded Source With JPX",
+  "phase_type": "validation-only",
+  "status": "JPX_EXPANDED_VALIDATION_PASSED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-07-08T20:38:54.149599+00:00",
+  "input_expanded": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_13e.csv",
+  "baseline_input": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_12e.csv",
+  "source_rebuild_commit": "feaa354",
+  "hard_guards": {
+    "phase_type": "validation-only",
+    "network_download_performed": false,
+    "raw_files_modified": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "counts": {
+    "baseline_rows": 33158,
+    "expanded_rows": 36863,
+    "expanded_delta": 3705,
+    "jpx_provider_rows": 3705,
+    "accepted_jpx_rows": 3705,
+    "excluded_jpx_rows": 732,
+    "duplicate_exchange_ticker_keys": 0,
+    "jpx_blank_ticker": 0,
+    "jpx_blank_exchange": 0,
+    "jpx_blank_company": 0,
+    "jpx_exchange_not_jpx": 0,
+    "full_source_threshold": 50000,
+    "full_source_unlocked": false,
+    "rows_needed_after_jpx": 13137,
+    "full_59k_universe_launched": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0
+  },
+  "provider_breakdown": [
+    {
+      "provider": "cboe_europe_reference_data",
+      "rows": 21154
+    },
+    {
+      "provider": "jpx_listed_securities",
+      "rows": 3705
+    },
+    {
+      "provider": "nasdaq_trader_nasdaqlisted",
+      "rows": 3244
+    },
+    {
+      "provider": "hkex_securities_list",
+      "rows": 2804
+    },
+    {
+      "provider": "nasdaq_trader_otherlisted",
+      "rows": 2404
+    },
+    {
+      "provider": "sec_company_tickers_exchange",
+      "rows": 2359
+    },
+    {
+      "provider": "cboe_listed_symbols",
+      "rows": 1193
+    }
+  ],
+  "jpx_market_segment_breakdown": {},
+  "jpx_country_breakdown": {
+    "JP": 3705
+  },
+  "jpx_currency_breakdown": {
+    "JPY": 3705
+  },
+  "critical_failed_checks": [],
+  "warning_failed_checks": [],
+  "checks": [
+    {
+      "check_name": "baseline_file_exists",
+      "severity": "critical",
+      "expected": "True",
+      "actual": "True",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "expanded_file_exists",
+      "severity": "critical",
+      "expected": "True",
+      "actual": "True",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "schema_matches_baseline",
+      "severity": "critical",
+      "expected": "True",
+      "actual": "True",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "baseline_rows_match_expected",
+      "severity": "critical",
+      "expected": "33158",
+      "actual": "33158",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "expanded_rows_match_expected",
+      "severity": "critical",
+      "expected": "36863",
+      "actual": "36863",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "expanded_delta_equals_expected_jpx_added",
+      "severity": "critical",
+      "expected": "3705",
+      "actual": "3705",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "accepted_jpx_rows_match_expected",
+      "severity": "critical",
+      "expected": "3705",
+      "actual": "3705",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "excluded_jpx_rows_match_expected",
+      "severity": "critical",
+      "expected": "732",
+      "actual": "732",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "jpx_provider_rows_match_expected",
+      "severity": "critical",
+      "expected": "3705",
+      "actual": "3705",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "duplicate_exchange_ticker_keys_zero",
+      "severity": "critical",
+      "expected": "0",
+      "actual": "0",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "jpx_blank_ticker_zero",
+      "severity": "critical",
+      "expected": "0",
+      "actual": "0",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "jpx_blank_exchange_zero",
+      "severity": "critical",
+      "expected": "0",
+      "actual": "0",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "jpx_blank_company_zero",
+      "severity": "critical",
+      "expected": "0",
+      "actual": "0",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "jpx_exchange_is_jpx",
+      "severity": "critical",
+      "expected": "0",
+      "actual": "0",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "full_source_unlocked_false",
+      "severity": "critical",
+      "expected": "False",
+      "actual": "False",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "rows_needed_after_jpx_expected",
+      "severity": "critical",
+      "expected": "13137",
+      "actual": "13137",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "full_59k_universe_not_launched",
+      "severity": "critical",
+      "expected": "False",
+      "actual": "False",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "rebuild_status_is_expected",
+      "severity": "critical",
+      "expected": "JPX_REBUILD_COMPLETED_FULL_SOURCE_STILL_BLOCKED",
+      "actual": "JPX_REBUILD_COMPLETED_FULL_SOURCE_STILL_BLOCKED",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "rebuild_json_expanded_rows_matches_validation",
+      "severity": "critical",
+      "expected": "36863",
+      "actual": "36863",
+      "passed": "True",
+      "note": ""
+    },
+    {
+      "check_name": "rebuild_json_jpx_added_matches_validation",
+      "severity": "critical",
+      "expected": "3705",
+      "actual": "3705",
+      "passed": "True",
+      "note": ""
+    }
+  ],
+  "recommended_next_phase": "v2.13G - JPX Closure Report",
+  "scope_note": "v2.13F validates expanded_universe_v2_13e.csv only. It does not download, modify raw files, normalize, rebuild, score, call OpenAI, call broker APIs or launch full 59k."
+}
