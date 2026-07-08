@@ -1,0 +1,189 @@
+{
+  "version": "v2.12A",
+  "phase": "Next Provider Route For Full Source 50k",
+  "phase_type": "route-selection-only",
+  "status": "NEXT_PROVIDER_ROUTE_READY",
+  "route_decision": "HKEX_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+  "selected_provider": "hkex_securities_list",
+  "selected_provider_readiness_score": 96,
+  "recommended_next_phase": "v2.12B — HKEX Acquisition Plan",
+  "generated_at_utc": "2026-07-08T09:57:15.032225+00:00",
+  "current_state": {
+    "current_expanded_rows": 30354,
+    "full_source_threshold": 50000,
+    "rows_needed_full_source": 19646,
+    "first_expansion_unlocked": true,
+    "full_source_unlocked": false,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED",
+    "previous_closure_status": "CBOE_EUROPE_CLOSED_FIRST_EXPANSION_UNLOCKED_FULL_SOURCE_BLOCKED",
+    "previous_commit": "4aa1928"
+  },
+  "hard_guards": {
+    "phase_type": "route-selection-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "expanded_universe_rebuilt": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "route_candidates": [
+    {
+      "rank": 1,
+      "provider": "hkex_securities_list",
+      "route_status": "SELECTED_AS_NEXT_PROVIDER_ROUTE",
+      "readiness_score": 96,
+      "provider_type": "official_exchange_file",
+      "primary_url": "https://www.hkex.com.hk/eng/services/trading/securities/securitieslists/ListOfSecurities.xlsx",
+      "fallback_url": "https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists?sc_lang=en",
+      "expected_format": "xlsx",
+      "expected_schema_candidates": "stock_code,name_of_securities,category,sub_category,isin,board_lot",
+      "expected_row_range": "3000-8000",
+      "strengths": "Official direct XLSX route, includes security names and ISIN, low scraping risk.",
+      "risks": "May include non-common-equity instruments; needs conservative filtering in validation.",
+      "planned_phase_b": "v2.12B_HKEX_ACQUISITION_PLAN",
+      "route_decision_reason": "Best next route because it is official, direct-file, schema-rich and low brittleness."
+    },
+    {
+      "rank": 2,
+      "provider": "asx_listed_companies",
+      "route_status": "BACKUP_ROUTE_READY",
+      "readiness_score": 92,
+      "provider_type": "official_exchange_csv",
+      "primary_url": "https://www.asx.com.au/asx/research/ASXListedCompanies.csv",
+      "fallback_url": "https://www.asx.com.au/markets/trade-our-cash-market/directory",
+      "expected_format": "csv",
+      "expected_schema_candidates": "company_name,asx_code,gics_industry_group",
+      "expected_row_range": "1500-2500",
+      "strengths": "Official direct CSV route, very low acquisition complexity.",
+      "risks": "Likely too small alone for 50k; may lack ISIN.",
+      "planned_phase_b": "v2.12B_ASX_ACQUISITION_PLAN_IF_HKEX_BLOCKED_OR_AFTER_HKEX",
+      "route_decision_reason": "Excellent low-risk backup and possible add-on provider."
+    },
+    {
+      "rank": 3,
+      "provider": "tsx_tmx_listed_company_directory",
+      "route_status": "BACKUP_ROUTE_READY",
+      "readiness_score": 86,
+      "provider_type": "official_exchange_directory",
+      "primary_url": "https://www.tsx.com/en/listings/listing-with-us/listed-company-directory",
+      "fallback_url": "https://www.tsx.com/en/listings",
+      "expected_format": "html_or_download_link",
+      "expected_schema_candidates": "company_name,symbol,exchange,issuer_status",
+      "expected_row_range": "3000-5000",
+      "strengths": "Official issuer directory; may expose full issuer list download.",
+      "risks": "Download link may require discovery; may mix TSX and TSXV.",
+      "planned_phase_b": "v2.12B_TMX_ROUTE_IF_HKEX_OR_ASX_NOT_ENOUGH",
+      "route_decision_reason": "Useful later route but not the cleanest immediate direct-file target."
+    },
+    {
+      "rank": 4,
+      "provider": "euronext_equities_live_directory",
+      "route_status": "DEFERRED_ROUTE_CANDIDATE",
+      "readiness_score": 82,
+      "provider_type": "official_exchange_directory",
+      "primary_url": "https://live.euronext.com/en/products/equities/list",
+      "fallback_url": "https://live.euronext.com/en/products/equities",
+      "expected_format": "html_or_discovered_endpoint",
+      "expected_schema_candidates": "name,symbol,isin,market,currency",
+      "expected_row_range": "1500-8000",
+      "strengths": "Official Euronext equity directory; potentially useful EU expansion.",
+      "risks": "May require pagination or endpoint discovery; avoid brittle scraping.",
+      "planned_phase_b": "v2.12B_EURONEXT_ROUTE_IF_DIRECT_ENDPOINT_FOUND",
+      "route_decision_reason": "Promising but less direct than HKEX/ASX."
+    },
+    {
+      "rank": 5,
+      "provider": "deutsche_boerse_xetra_tradable_instruments",
+      "route_status": "DEFERRED_ROUTE_CANDIDATE",
+      "readiness_score": 78,
+      "provider_type": "official_exchange_directory_or_downloads",
+      "primary_url": "https://www.cashmarket.deutsche-boerse.com/cash-en/trading/Tradable-Instruments-Xetra",
+      "fallback_url": "https://www.cashmarket.deutsche-boerse.com/cash-en/trading/Tradable-Instruments-Xetra/Downloads",
+      "expected_format": "html_or_downloads",
+      "expected_schema_candidates": "instrument,name,isin,currency,market_segment",
+      "expected_row_range": "5000-15000",
+      "strengths": "Official Xetra tradable instruments route.",
+      "risks": "Reference files may require document-guided discovery; avoid brittle parsing.",
+      "planned_phase_b": "v2.12B_XETRA_ROUTE_IF_DIRECT_FILE_FOUND",
+      "route_decision_reason": "High potential, but direct-file path needs more careful route discovery."
+    },
+    {
+      "rank": 6,
+      "provider": "jpx_listed_company_search",
+      "route_status": "DEFERRED_ROUTE_CANDIDATE",
+      "readiness_score": 74,
+      "provider_type": "official_exchange_search_page",
+      "primary_url": "https://www.jpx.co.jp/english/listing/co-search/index.html",
+      "fallback_url": "https://www.jpx.co.jp/english/listing/",
+      "expected_format": "html_or_search_export",
+      "expected_schema_candidates": "code,company_name,market_segment,isin_possible",
+      "expected_row_range": "3500-4500",
+      "strengths": "Official JPX listed company route.",
+      "risks": "Export availability must be confirmed; may require HTML parsing.",
+      "planned_phase_b": "v2.12B_JPX_ROUTE_IF_EXPORT_CONFIRMED",
+      "route_decision_reason": "Good candidate but not selected first because HKEX has a clearer direct file."
+    }
+  ],
+  "planned_outputs_for_v2_12b": [
+    {
+      "phase": "v2.12B",
+      "path": "scripts/hkex_acquisition_plan_v2_12b.py",
+      "type": "script",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.12B",
+      "path": "outputs/full_universe_source_acquisition/hkex_acquisition_plan_v2_12b.json",
+      "type": "plan_json",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.12B",
+      "path": "outputs/full_universe_source_acquisition/hkex_acquisition_plan_v2_12b.md",
+      "type": "plan_report",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.12B",
+      "path": "outputs/full_universe_source_acquisition/hkex_acquisition_contract_v2_12b.csv",
+      "type": "contract",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.12B",
+      "path": "outputs/full_universe_source_acquisition/hkex_planned_outputs_v2_12b.csv",
+      "type": "planned_outputs",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    }
+  ],
+  "validation_questions_for_v2_12": [
+    "Does HKEX ListOfSecurities.xlsx remain directly downloadable?",
+    "Does it contain securities name, stock code, category and ISIN?",
+    "How many rows exist before filtering?",
+    "How many rows are ordinary equities versus ETFs, REITs, warrants, derivatives or other instruments?",
+    "How many candidate symbols are net-new against expanded_universe_v2_11e?",
+    "Can HKEX rows be normalized conservatively without brittle scraping?",
+    "Does HKEX materially reduce the 19,646-row gap to 50k?",
+    "Should HKEX be source provider, candidate provider, enrichment, reference-only or deferred?"
+  ],
+  "project_percentages": {
+    "v2_12a_route_completed_after_commit": 100,
+    "v2_12a_route_pending_after_commit": 0,
+    "expanded_real_source_completed": 88,
+    "expanded_real_source_pending": 12,
+    "full_source_50k_59k_completed": 0,
+    "full_source_50k_59k_pending": 100,
+    "global_completed": 94,
+    "global_pending": 6
+  }
+}
