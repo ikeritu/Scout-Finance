@@ -1,0 +1,184 @@
+{
+  "version": "v2.11G",
+  "phase": "Cboe Europe Closure Report",
+  "phase_type": "closure-only",
+  "status": "CBOE_EUROPE_CLOSED_FIRST_EXPANSION_UNLOCKED_FULL_SOURCE_BLOCKED",
+  "generated_at_utc": "2026-07-08T08:46:45.736763+00:00",
+  "source_decision": "CBOE_EUROPE_ACCEPTED_FOR_FIRST_EXPANSION_SOURCE",
+  "next_recommended_phase": "v2.12A_NEXT_PROVIDER_ROUTE_FOR_FULL_SOURCE_50K",
+  "hard_guards": {
+    "network_download_performed_in_closure": false,
+    "raw_files_modified": false,
+    "normalization_performed_in_closure": false,
+    "net_new_filtering_performed_in_closure": false,
+    "expanded_universe_rebuilt_in_closure": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "summary": {
+    "closure_status": "CBOE_EUROPE_CLOSED_FIRST_EXPANSION_UNLOCKED_FULL_SOURCE_BLOCKED",
+    "source_decision": "CBOE_EUROPE_ACCEPTED_FOR_FIRST_EXPANSION_SOURCE",
+    "baseline_rows": 9200,
+    "cboe_rows_added": 21154,
+    "current_expanded_rows": 30354,
+    "exclusions": 67089,
+    "duplicate_exchange_ticker_keys": 0,
+    "first_expansion_unlocked": true,
+    "full_source_unlocked": false,
+    "rows_needed_full_source": 19646,
+    "full_59k_universe_launched": false,
+    "next_recommended_phase": "v2.12A_NEXT_PROVIDER_ROUTE_FOR_FULL_SOURCE_50K"
+  },
+  "phase_history": [
+    {
+      "phase": "v2.11A",
+      "name": "Cboe Europe Route",
+      "type": "route-selection-only",
+      "status": "CBOE_EUROPE_ROUTE_READY",
+      "commit": "581fff8",
+      "key_result": "Cboe Europe selected as next provider route."
+    },
+    {
+      "phase": "v2.11B",
+      "name": "Cboe Europe Acquisition Plan",
+      "type": "plan-only",
+      "status": "CBOE_EUROPE_ACQUISITION_PLAN_READY",
+      "commit": "51ef5f0",
+      "key_result": "Controlled acquisition contract defined."
+    },
+    {
+      "phase": "v2.11C",
+      "name": "Cboe Europe Acquisition Real",
+      "type": "acquisition-only",
+      "status": "CBOE_EUROPE_ACQUISITION_COMPLETED_RAW_ONLY",
+      "commit": "c90213a",
+      "key_result": "Raw acquisition completed; discovered CSV links: 16."
+    },
+    {
+      "phase": "v2.11D",
+      "name": "Cboe Europe Validation",
+      "type": "validation-only",
+      "status": "CBOE_EUROPE_CANDIDATE_SOURCE_VALIDATION_PASSED_FOR_REBUILD_REVIEW",
+      "commit": "06ee9cc",
+      "key_result": "Metadata header skip corrected; rebuild review allowed by validation."
+    },
+    {
+      "phase": "v2.11E",
+      "name": "Rebuild Expanded Source With Cboe Europe",
+      "type": "rebuild-only",
+      "status": "CBOE_EUROPE_REBUILD_COMPLETED",
+      "commit": "593b143",
+      "key_result": "Expanded universe rebuilt to 30354 rows."
+    },
+    {
+      "phase": "v2.11F",
+      "name": "Validate Expanded Source With Cboe Europe",
+      "type": "validation-only",
+      "status": "CBOE_EUROPE_EXPANDED_SOURCE_VALIDATED_FIRST_EXPANSION_READY",
+      "commit": "4517e60",
+      "key_result": "Critical checks passed; first expansion ready; full source remains blocked."
+    }
+  ],
+  "provider_breakdown": [
+    {
+      "provider": "cboe_europe_reference_data",
+      "rows": 21154
+    },
+    {
+      "provider": "cboe_listed_symbols",
+      "rows": 1193
+    },
+    {
+      "provider": "nasdaq_trader_nasdaqlisted",
+      "rows": 3244
+    },
+    {
+      "provider": "nasdaq_trader_otherlisted",
+      "rows": 2404
+    },
+    {
+      "provider": "sec_company_tickers_exchange",
+      "rows": 2359
+    }
+  ],
+  "roadmap": [
+    {
+      "item": "v2.11A — Cboe Europe Route",
+      "status": "done",
+      "completed_pct": 100,
+      "pending_pct": 0
+    },
+    {
+      "item": "v2.11B — Cboe Europe Acquisition Plan",
+      "status": "done",
+      "completed_pct": 100,
+      "pending_pct": 0
+    },
+    {
+      "item": "v2.11C — Cboe Europe Acquisition Real",
+      "status": "done",
+      "completed_pct": 100,
+      "pending_pct": 0
+    },
+    {
+      "item": "v2.11D — Cboe Europe Validation",
+      "status": "done",
+      "completed_pct": 100,
+      "pending_pct": 0
+    },
+    {
+      "item": "v2.11E — Rebuild Expanded Source With Cboe Europe",
+      "status": "done",
+      "completed_pct": 100,
+      "pending_pct": 0
+    },
+    {
+      "item": "v2.11F — Validate Expanded Source With Cboe Europe",
+      "status": "done",
+      "completed_pct": 100,
+      "pending_pct": 0
+    },
+    {
+      "item": "v2.11G — Cboe Europe Closure Report",
+      "status": "in_progress",
+      "completed_pct": 90,
+      "pending_pct": 10
+    },
+    {
+      "item": "v2.12A — Next Provider Route For Full Source 50k",
+      "status": "next",
+      "completed_pct": 0,
+      "pending_pct": 100
+    },
+    {
+      "item": "Full 59k dry-run real",
+      "status": "blocked",
+      "completed_pct": 0,
+      "pending_pct": 100
+    }
+  ],
+  "project_percentages": {
+    "v2_11_cboe_europe_completed": 100,
+    "v2_11_cboe_europe_pending": 0,
+    "expanded_real_source_completed": 88,
+    "expanded_real_source_pending": 12,
+    "full_source_50k_59k_completed": 0,
+    "full_source_50k_59k_pending": 100,
+    "full_59k_dry_run_real_completed": 0,
+    "full_59k_dry_run_real_pending": 100,
+    "global_completed": 94,
+    "global_pending": 6
+  },
+  "important_constraints": [
+    "First expansion threshold is unlocked by v2.11E/v2.11F.",
+    "Full source 50k remains blocked.",
+    "Full 59k dry-run remains blocked until source is >=50k and gate is explicitly approved.",
+    "No scoring was recalculated in v2.11.",
+    "No OpenAI calls were made in v2.11 source phases.",
+    "No broker/API trading calls were made.",
+    "Auditoria_Scout_Finance.docx must remain unversioned unless explicitly requested."
+  ]
+}

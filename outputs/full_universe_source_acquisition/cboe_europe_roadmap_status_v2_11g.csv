@@ -1,0 +1,10 @@
+item,status,completed_pct,pending_pct
+v2.11A — Cboe Europe Route,done,100,0
+v2.11B — Cboe Europe Acquisition Plan,done,100,0
+v2.11C — Cboe Europe Acquisition Real,done,100,0
+v2.11D — Cboe Europe Validation,done,100,0
+v2.11E — Rebuild Expanded Source With Cboe Europe,done,100,0
+v2.11F — Validate Expanded Source With Cboe Europe,done,100,0
+v2.11G — Cboe Europe Closure Report,in_progress,90,10
+v2.12A — Next Provider Route For Full Source 50k,next,0,100
+Full 59k dry-run real,blocked,0,100
