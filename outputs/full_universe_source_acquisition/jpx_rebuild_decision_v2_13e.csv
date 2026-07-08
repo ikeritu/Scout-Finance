@@ -1,0 +1,2 @@
+version,phase_type,status,baseline_rows,jpx_source_rows_reviewed,jpx_rows_added,jpx_rows_excluded,expanded_rows,duplicate_exchange_ticker_keys,full_source_threshold,full_source_unlocked,rows_needed_after_jpx,full_59k_universe_launched,recommended_next_phase
+v2.13E,rebuild-only,JPX_REBUILD_COMPLETED_FULL_SOURCE_STILL_BLOCKED,33158,4437,3705,732,36863,0,50000,False,13137,False,v2.13F - Validate Expanded Source With JPX

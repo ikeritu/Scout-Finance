@@ -1,0 +1,148 @@
+{
+  "version": "v2.13E",
+  "phase": "Rebuild Expanded Source With JPX",
+  "phase_type": "rebuild-only",
+  "status": "JPX_REBUILD_COMPLETED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-07-08T19:09:39.987929+00:00",
+  "source_validation_commit": "51e66dd",
+  "baseline_input": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_12e.csv",
+  "expanded_output": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_13e.csv",
+  "selected_jpx_dataset": "outputs\\full_universe_source_acquisition\\raw\\jpx_v2_13c\\datasets\\001_jpx_dataset_candidate_jpx_discovered_workbook_candidate.xls",
+  "jpx_profile": {
+    "dataset_path": "outputs\\full_universe_source_acquisition\\raw\\jpx_v2_13c\\datasets\\001_jpx_dataset_candidate_jpx_discovered_workbook_candidate.xls",
+    "sheet_index": 0,
+    "header_row_index_zero_based": 0,
+    "header_score": 15,
+    "detected_columns": "company_name|date|industry|local_code|market_segment",
+    "original_columns": {
+      "date": "Effective Date",
+      "local_code": "Local Code",
+      "company_name": "Name (English)",
+      "market_segment": "Section/Products",
+      "industry": "33 Sector(Code)"
+    },
+    "rows_extracted": 4437
+  },
+  "hard_guards": {
+    "phase_type": "rebuild-only",
+    "network_download_performed": false,
+    "raw_files_modified": false,
+    "normalization_performed": true,
+    "net_new_filtering_performed": true,
+    "expanded_universe_rebuilt": true,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "critical_checks": {
+    "v2_13d_rebuild_allowed": true,
+    "baseline_rows_match_expected": true,
+    "accepted_rows_gt_zero": true,
+    "expanded_rows_equals_baseline_plus_added": true,
+    "duplicate_exchange_ticker_keys_zero": true,
+    "full_59k_universe_not_launched": true
+  },
+  "field_mapping": {
+    "ticker": "ticker",
+    "symbol": null,
+    "company_name": "company_name",
+    "name": null,
+    "security_name": null,
+    "exchange": "exchange",
+    "mic": "mic",
+    "country": "country",
+    "country_code": null,
+    "currency": "currency",
+    "market_segment": null,
+    "market": null,
+    "industry": "industry",
+    "sector": "sector",
+    "security_type": null,
+    "asset_type": null,
+    "instrument_type": "instrument_type",
+    "provider": null,
+    "source_provider": "source_provider",
+    "data_provider": null,
+    "source": null,
+    "source_url": "source_url",
+    "source_file": "source_file",
+    "source_version": "source_version",
+    "acquisition_version": null,
+    "listing_date": null,
+    "date": null
+  },
+  "counts": {
+    "baseline_rows": 33158,
+    "jpx_source_rows_reviewed": 4437,
+    "jpx_rows_added": 3705,
+    "jpx_rows_excluded": 732,
+    "expanded_rows": 36863,
+    "duplicate_exchange_ticker_keys": 0,
+    "full_source_threshold": 50000,
+    "full_source_unlocked": false,
+    "rows_needed_after_jpx": 13137,
+    "full_59k_universe_launched": false
+  },
+  "accepted_by_market_segment": {
+    "Prime Market (Domestic)": 1551,
+    "Growth Market(Domestic)": 593,
+    "Standard Market(Domestic)": 1561
+  },
+  "excluded_by_reason": {
+    "ETF_ETN_MARKET_SEGMENT_EXCLUDED": 468,
+    "PRO_MARKET_REVIEW_EXCLUDED": 183,
+    "NON_COMMON_EQUITY_REVIEW_EXCLUDED": 11,
+    "FOREIGN_MARKET_SEGMENT_EXCLUDED": 5,
+    "REIT_OR_FUND_MARKET_SEGMENT_EXCLUDED": 63,
+    "MARKET_SEGMENT_NOT_IN_ALLOWLIST": 2
+  },
+  "provider_breakdown": [
+    {
+      "provider": "cboe_europe_reference_data",
+      "rows": 21154
+    },
+    {
+      "provider": "jpx_listed_securities",
+      "rows": 3705
+    },
+    {
+      "provider": "nasdaq_trader_nasdaqlisted",
+      "rows": 3244
+    },
+    {
+      "provider": "hkex_securities_list",
+      "rows": 2804
+    },
+    {
+      "provider": "nasdaq_trader_otherlisted",
+      "rows": 2404
+    },
+    {
+      "provider": "sec_company_tickers_exchange",
+      "rows": 2359
+    },
+    {
+      "provider": "cboe_listed_symbols",
+      "rows": 1193
+    }
+  ],
+  "decision": {
+    "version": "v2.13E",
+    "phase_type": "rebuild-only",
+    "status": "JPX_REBUILD_COMPLETED_FULL_SOURCE_STILL_BLOCKED",
+    "baseline_rows": 33158,
+    "jpx_source_rows_reviewed": 4437,
+    "jpx_rows_added": 3705,
+    "jpx_rows_excluded": 732,
+    "expanded_rows": 36863,
+    "duplicate_exchange_ticker_keys": 0,
+    "full_source_threshold": 50000,
+    "full_source_unlocked": false,
+    "rows_needed_after_jpx": 13137,
+    "full_59k_universe_launched": false,
+    "recommended_next_phase": "v2.13F - Validate Expanded Source With JPX"
+  },
+  "scope_note": "v2.13E rebuilds the expanded source by appending conservative JPX domestic Prime/Standard/Growth equity candidates only. It does not perform scoring, OpenAI calls, broker calls, network downloads or full 59k launch."
+}
