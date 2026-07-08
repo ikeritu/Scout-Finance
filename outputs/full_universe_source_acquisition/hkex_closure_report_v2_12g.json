@@ -1,0 +1,126 @@
+{
+  "version": "v2.12G",
+  "phase": "HKEX Closure Report",
+  "phase_type": "closure-only",
+  "closure_status": "HKEX_CLOSED_CONSERVATIVE_REBUILD_VALIDATED_FULL_SOURCE_BLOCKED",
+  "source_decision": "HKEX_ACCEPTED_FOR_CONSERVATIVE_EXPANDED_SOURCE",
+  "generated_at_utc": "2026-07-08T12:28:47.628499+00:00",
+  "previous_commits": {
+    "v2_12a": "9856571",
+    "v2_12b": "abbbc0f",
+    "v2_12c": "cd277d4",
+    "v2_12d": "5bf9ada",
+    "v2_12e": "dc58678",
+    "v2_12f": "3f8872e"
+  },
+  "phase_inputs": {
+    "route_status": "NEXT_PROVIDER_ROUTE_READY",
+    "route_decision": "HKEX_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+    "plan_status": "HKEX_ACQUISITION_PLAN_READY",
+    "acquisition_status": "HKEX_ACQUISITION_COMPLETED_RAW_ONLY",
+    "validation_status": "HKEX_CANDIDATE_SOURCE_VALIDATION_PASSED_FOR_REBUILD_REVIEW_FULL_SOURCE_STILL_BLOCKED",
+    "rebuild_status": "HKEX_REBUILD_COMPLETED_FULL_SOURCE_STILL_BLOCKED",
+    "expanded_validation_status": "HKEX_EXPANDED_VALIDATION_PASSED_FULL_SOURCE_STILL_BLOCKED",
+    "expanded_validation_passed": true
+  },
+  "counts": {
+    "baseline_rows_before_hkex": 30354,
+    "hkex_candidate_rows_reviewed": 17589,
+    "hkex_rows_added": 2804,
+    "hkex_exclusions": 14785,
+    "current_expanded_rows": 33158,
+    "duplicate_exchange_ticker_keys": 0,
+    "first_expansion_threshold": 15000,
+    "first_expansion_unlocked": true,
+    "full_source_threshold": 50000,
+    "full_source_unlocked": false,
+    "rows_needed_full_source": 16842,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0
+  },
+  "accepted_hkex_breakdown": [
+    {
+      "category": "Equity",
+      "subcategory": "Equity Securities (Main Board)",
+      "rows": 2467
+    },
+    {
+      "category": "Equity",
+      "subcategory": "Equity Securities (GEM)",
+      "rows": 309
+    },
+    {
+      "category": "Equity",
+      "subcategory": "Investment Companies",
+      "rows": 22
+    },
+    {
+      "category": "Equity",
+      "subcategory": "Trading Only Securities",
+      "rows": 6
+    }
+  ],
+  "exclusion_breakdown": [
+    {
+      "reason": "NON_EQUITY_CATEGORY_EXCLUDED",
+      "rows": 14783
+    },
+    {
+      "reason": "EQUITY_SUBCATEGORY_NOT_IN_ALLOWLIST",
+      "rows": 2
+    }
+  ],
+  "provider_breakdown": [
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "rows": 21154
+    },
+    {
+      "source_provider": "nasdaq_trader_nasdaqlisted",
+      "rows": 3244
+    },
+    {
+      "source_provider": "hkex_securities_list",
+      "rows": 2804
+    },
+    {
+      "source_provider": "nasdaq_trader_otherlisted",
+      "rows": 2404
+    },
+    {
+      "source_provider": "sec_company_tickers_exchange",
+      "rows": 2359
+    },
+    {
+      "source_provider": "cboe_listed_symbols",
+      "rows": 1193
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "closure-only",
+    "network_download_performed_in_closure": false,
+    "raw_files_modified": false,
+    "normalization_performed_in_closure": false,
+    "net_new_filtering_performed_in_closure": false,
+    "expanded_universe_rebuilt_in_closure": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "next_recommended_phase": "v2.13A_NEXT_PROVIDER_ROUTE_FOR_FULL_SOURCE_50K",
+  "project_percentages": {
+    "v2_12_hkex_completed": 100,
+    "v2_12_hkex_pending": 0,
+    "expanded_real_source_completed": 91,
+    "expanded_real_source_pending": 9,
+    "full_source_50k_59k_completed": 0,
+    "full_source_50k_59k_pending": 100,
+    "full_59k_dry_run_real_completed": 0,
+    "full_59k_dry_run_real_pending": 100,
+    "global_completed": 95,
+    "global_pending": 5
+  },
+  "important_scope_note": "v2.12G is closure-only. It does not download, modify raw files, normalize, filter net-new rows, rebuild, score, call OpenAI, call broker APIs, or launch full 59k."
+}

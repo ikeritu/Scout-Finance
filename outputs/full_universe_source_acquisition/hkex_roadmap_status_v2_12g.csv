@@ -1,0 +1,10 @@
+phase,name,status,completed_pct,pending_pct,commit
+v2.12A,Next Provider Route For Full Source 50k,done,100,0,9856571
+v2.12B,HKEX Acquisition Plan,done,100,0,abbbc0f
+v2.12C,HKEX Acquisition Real,done,100,0,cd277d4
+v2.12D,HKEX Validation,done,100,0,5bf9ada
+v2.12E,Rebuild Expanded Source With HKEX,done,100,0,dc58678
+v2.12F,Validate Expanded Source With HKEX,done,100,0,3f8872e
+v2.12G,HKEX Closure Report,in_progress_until_commit,90,10,
+v2.13A,Next Provider Route For Full Source 50k,next,0,100,
+Full 59k dry-run real,Blocked until source >=50k and explicit gate approval,blocked,0,100,

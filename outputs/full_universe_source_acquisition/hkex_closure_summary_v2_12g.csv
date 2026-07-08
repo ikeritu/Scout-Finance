@@ -1,0 +1,16 @@
+metric,value
+closure_status,HKEX_CLOSED_CONSERVATIVE_REBUILD_VALIDATED_FULL_SOURCE_BLOCKED
+source_decision,HKEX_ACCEPTED_FOR_CONSERVATIVE_EXPANDED_SOURCE
+baseline_rows_before_hkex,30354
+hkex_candidate_rows_reviewed,17589
+hkex_rows_added,2804
+hkex_exclusions,14785
+current_expanded_rows,33158
+duplicate_exchange_ticker_keys,0
+first_expansion_unlocked,True
+full_source_unlocked,False
+rows_needed_full_source,16842
+critical_failed_checks,0
+warning_failed_checks,0
+full_59k_universe_launched,False
+next_recommended_phase,v2.13A_NEXT_PROVIDER_ROUTE_FOR_FULL_SOURCE_50K
