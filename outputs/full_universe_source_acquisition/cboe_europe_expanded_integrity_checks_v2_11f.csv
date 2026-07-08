@@ -1,0 +1,14 @@
+check_name,expected,actual,passed,severity
+expanded_row_count_matches_rebuild_report,30354,30354,True,critical
+cboe_added_rows_match_rebuild_report,21154,21154,True,critical
+accepted_candidates_match_cboe_rows,21154,21154,True,critical
+duplicate_exchange_ticker_keys,0,0,True,critical
+duplicate_exchange_ticker_rows,0,0,True,critical
+first_expansion_threshold_unlocked,True,True,True,critical
+full_source_threshold_remains_blocked,False,False,True,info
+ticker_column_exists,exists,ticker,True,critical
+exchange_column_exists,exists,exchange,True,critical
+company_name_column_exists,exists,company_name,True,critical
+blank_ticker_rows,0,0,True,critical
+blank_exchange_rows,0,0,True,critical
+blank_company_name_rows,0,1193,False,warning

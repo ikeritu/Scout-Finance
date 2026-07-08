@@ -1,0 +1,240 @@
+{
+  "version": "v2.11F",
+  "phase": "Validate Expanded Source With Cboe Europe",
+  "phase_type": "validation-only",
+  "status": "CBOE_EUROPE_EXPANDED_VALIDATION_COMPLETED",
+  "generated_at_utc": "2026-07-08T08:33:21.861203+00:00",
+  "decision": {
+    "decision": "CBOE_EUROPE_EXPANDED_SOURCE_VALIDATED_FIRST_EXPANSION_READY",
+    "validation_passed": true,
+    "recommended_next_phase": "v2.11G_CBOE_EUROPE_CLOSURE_REPORT",
+    "first_expansion_unlocked": true,
+    "full_source_unlocked": false,
+    "rows_needed_full_source": 19646
+  },
+  "hard_guards": {
+    "network_download_performed": false,
+    "raw_files_modified": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "inputs": {
+    "expanded_universe": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_11e.csv",
+    "candidates": "outputs\\full_universe_source_acquisition\\cboe_europe_normalized_candidates_v2_11e.csv",
+    "exclusions": "outputs\\full_universe_source_acquisition\\expanded_universe_exclusions_v2_11e.csv",
+    "rebuild_report": "outputs\\full_universe_source_acquisition\\cboe_europe_rebuild_report_v2_11e.json"
+  },
+  "counts": {
+    "expected_baseline_rows_from_v2_11e": 9200,
+    "expected_cboe_added_from_v2_11e": 21154,
+    "expected_expanded_rows_from_v2_11e": 30354,
+    "actual_expanded_rows": 30354,
+    "actual_cboe_rows_detected": 21154,
+    "accepted_candidate_rows": 21154,
+    "actual_exclusion_rows": 67089,
+    "duplicate_exchange_ticker_keys": 0,
+    "duplicate_exchange_ticker_rows": 0,
+    "first_expansion_threshold": 15000,
+    "full_source_threshold": 50000,
+    "rows_needed_full_source": 19646,
+    "critical_failures": 0,
+    "warning_failures": 1
+  },
+  "resolved_columns": {
+    "ticker": "ticker",
+    "exchange": "exchange",
+    "company_name": "company_name",
+    "provider": "source_provider",
+    "isin": "",
+    "currency": "",
+    "mic": "",
+    "asset_class": "instrument_type"
+  },
+  "checks": [
+    {
+      "check_name": "expanded_row_count_matches_rebuild_report",
+      "expected": "30354",
+      "actual": "30354",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "cboe_added_rows_match_rebuild_report",
+      "expected": "21154",
+      "actual": "21154",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "accepted_candidates_match_cboe_rows",
+      "expected": "21154",
+      "actual": "21154",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "duplicate_exchange_ticker_keys",
+      "expected": "0",
+      "actual": "0",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "duplicate_exchange_ticker_rows",
+      "expected": "0",
+      "actual": "0",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "first_expansion_threshold_unlocked",
+      "expected": "True",
+      "actual": "True",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "full_source_threshold_remains_blocked",
+      "expected": "False",
+      "actual": "False",
+      "passed": true,
+      "severity": "info"
+    },
+    {
+      "check_name": "ticker_column_exists",
+      "expected": "exists",
+      "actual": "ticker",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "exchange_column_exists",
+      "expected": "exists",
+      "actual": "exchange",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "company_name_column_exists",
+      "expected": "exists",
+      "actual": "company_name",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "blank_ticker_rows",
+      "expected": "0",
+      "actual": "0",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "blank_exchange_rows",
+      "expected": "0",
+      "actual": "0",
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_name": "blank_company_name_rows",
+      "expected": "0",
+      "actual": "1193",
+      "passed": false,
+      "severity": "warning"
+    }
+  ],
+  "provider_breakdown": [
+    {
+      "provider": "cboe_europe_reference_data",
+      "rows": 21154
+    },
+    {
+      "provider": "cboe_listed_symbols",
+      "rows": 1193
+    },
+    {
+      "provider": "nasdaq_trader_nasdaqlisted",
+      "rows": 3244
+    },
+    {
+      "provider": "nasdaq_trader_otherlisted",
+      "rows": 2404
+    },
+    {
+      "provider": "sec_company_tickers_exchange",
+      "rows": 2359
+    }
+  ],
+  "column_quality": [
+    {
+      "logical_column": "ticker",
+      "resolved_column": "ticker",
+      "exists": true,
+      "non_blank_rows": 30354,
+      "blank_rows": 0,
+      "total_rows": 30354
+    },
+    {
+      "logical_column": "exchange",
+      "resolved_column": "exchange",
+      "exists": true,
+      "non_blank_rows": 30354,
+      "blank_rows": 0,
+      "total_rows": 30354
+    },
+    {
+      "logical_column": "company_name",
+      "resolved_column": "company_name",
+      "exists": true,
+      "non_blank_rows": 29161,
+      "blank_rows": 1193,
+      "total_rows": 30354
+    },
+    {
+      "logical_column": "provider",
+      "resolved_column": "source_provider",
+      "exists": true,
+      "non_blank_rows": 30354,
+      "blank_rows": 0,
+      "total_rows": 30354
+    },
+    {
+      "logical_column": "isin",
+      "resolved_column": "",
+      "exists": false,
+      "non_blank_rows": 0,
+      "blank_rows": 30354,
+      "total_rows": 30354
+    },
+    {
+      "logical_column": "currency",
+      "resolved_column": "",
+      "exists": false,
+      "non_blank_rows": 0,
+      "blank_rows": 30354,
+      "total_rows": 30354
+    },
+    {
+      "logical_column": "mic",
+      "resolved_column": "",
+      "exists": false,
+      "non_blank_rows": 0,
+      "blank_rows": 30354,
+      "total_rows": 30354
+    },
+    {
+      "logical_column": "asset_class",
+      "resolved_column": "instrument_type",
+      "exists": true,
+      "non_blank_rows": 30354,
+      "blank_rows": 0,
+      "total_rows": 30354
+    }
+  ]
+}

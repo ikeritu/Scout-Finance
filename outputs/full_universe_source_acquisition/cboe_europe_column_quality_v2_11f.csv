@@ -1,0 +1,9 @@
+logical_column,resolved_column,exists,non_blank_rows,blank_rows,total_rows
+ticker,ticker,True,30354,0,30354
+exchange,exchange,True,30354,0,30354
+company_name,company_name,True,29161,1193,30354
+provider,source_provider,True,30354,0,30354
+isin,,False,0,30354,30354
+currency,,False,0,30354,30354
+mic,,False,0,30354,30354
+asset_class,instrument_type,True,30354,0,30354
