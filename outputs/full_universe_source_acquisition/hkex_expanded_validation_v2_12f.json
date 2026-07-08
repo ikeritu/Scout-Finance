@@ -1,0 +1,196 @@
+{
+  "version": "v2.12F",
+  "phase": "Validate Expanded Source With HKEX",
+  "phase_type": "validation-only",
+  "status": "HKEX_EXPANDED_VALIDATION_PASSED_FULL_SOURCE_STILL_BLOCKED",
+  "validation_passed": true,
+  "generated_at_utc": "2026-07-08T12:14:24.347704+00:00",
+  "recommended_next_phase": "v2.12G - HKEX Closure Report",
+  "counts": {
+    "baseline_rows": 30354,
+    "expanded_rows": 33158,
+    "hkex_rows_in_expanded": 2804,
+    "accepted_normalized_hkex_candidates": 2804,
+    "exclusions": 14785,
+    "duplicate_exchange_ticker_keys": 0,
+    "duplicate_exchange_ticker_rows": 0,
+    "blank_ticker_rows": 0,
+    "blank_exchange_rows": 0,
+    "blank_company_name_rows": 1193,
+    "baseline_blank_company_name_rows": 1193,
+    "first_expansion_unlocked": true,
+    "full_source_unlocked": false,
+    "rows_needed_full_source": 16842,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0
+  },
+  "provider_breakdown": [
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "rows": 21154
+    },
+    {
+      "source_provider": "nasdaq_trader_nasdaqlisted",
+      "rows": 3244
+    },
+    {
+      "source_provider": "hkex_securities_list",
+      "rows": 2804
+    },
+    {
+      "source_provider": "nasdaq_trader_otherlisted",
+      "rows": 2404
+    },
+    {
+      "source_provider": "sec_company_tickers_exchange",
+      "rows": 2359
+    },
+    {
+      "source_provider": "cboe_listed_symbols",
+      "rows": 1193
+    }
+  ],
+  "integrity_checks": [
+    {
+      "check_id": "C001",
+      "description": "Baseline row count matches v2.12E rebuild report",
+      "expected": 30354,
+      "actual": 30354,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C002",
+      "description": "Expanded row count matches v2.12E rebuild report",
+      "expected": 33158,
+      "actual": 33158,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C003",
+      "description": "HKEX rows in expanded match v2.12E rebuild report",
+      "expected": 2804,
+      "actual": 2804,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C004",
+      "description": "Accepted normalized HKEX candidates match HKEX rows added",
+      "expected": 2804,
+      "actual": 2804,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C005",
+      "description": "Exclusions count matches v2.12E rebuild report",
+      "expected": 14785,
+      "actual": 14785,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C006",
+      "description": "Excluded normalized rows match exclusions file",
+      "expected": 14785,
+      "actual": 14785,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C007",
+      "description": "Duplicate exchange+ticker keys remain zero",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C008",
+      "description": "Blank ticker rows remain zero",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C009",
+      "description": "Blank exchange rows remain zero",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C010",
+      "description": "Known blank company_name warning did not increase versus baseline",
+      "expected": "<= 1193",
+      "actual": 1193,
+      "passed": true,
+      "severity": "warning"
+    },
+    {
+      "check_id": "C011",
+      "description": "HKEX expanded rows respect conservative equity allowlist",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C012",
+      "description": "First expansion threshold remains unlocked",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C013",
+      "description": "Full source threshold remains blocked",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C014",
+      "description": "Rows needed full source matches v2.12E rebuild report",
+      "expected": 16842,
+      "actual": 16842,
+      "passed": true,
+      "severity": "critical"
+    },
+    {
+      "check_id": "C015",
+      "description": "Full 59k universe was not launched",
+      "expected": false,
+      "actual": false,
+      "passed": true,
+      "severity": "critical"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "validation-only",
+    "network_download_performed": false,
+    "raw_files_modified": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "outputs": {
+    "validation_json": "outputs\\full_universe_source_acquisition\\hkex_expanded_validation_v2_12f.json",
+    "validation_report": "outputs\\full_universe_source_acquisition\\hkex_expanded_validation_report_v2_12f.md",
+    "integrity_checks_csv": "outputs\\full_universe_source_acquisition\\hkex_expanded_integrity_checks_v2_12f.csv",
+    "provider_breakdown_csv": "outputs\\full_universe_source_acquisition\\hkex_provider_breakdown_v2_12f.csv",
+    "column_quality_csv": "outputs\\full_universe_source_acquisition\\hkex_column_quality_v2_12f.csv",
+    "hkex_acceptance_breakdown_csv": "outputs\\full_universe_source_acquisition\\hkex_acceptance_breakdown_v2_12f.csv"
+  }
+}

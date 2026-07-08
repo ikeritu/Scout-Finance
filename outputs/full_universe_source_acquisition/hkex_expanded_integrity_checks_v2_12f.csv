@@ -1,0 +1,16 @@
+check_id,description,expected,actual,passed,severity
+C001,Baseline row count matches v2.12E rebuild report,30354,30354,True,critical
+C002,Expanded row count matches v2.12E rebuild report,33158,33158,True,critical
+C003,HKEX rows in expanded match v2.12E rebuild report,2804,2804,True,critical
+C004,Accepted normalized HKEX candidates match HKEX rows added,2804,2804,True,critical
+C005,Exclusions count matches v2.12E rebuild report,14785,14785,True,critical
+C006,Excluded normalized rows match exclusions file,14785,14785,True,critical
+C007,Duplicate exchange+ticker keys remain zero,0,0,True,critical
+C008,Blank ticker rows remain zero,0,0,True,critical
+C009,Blank exchange rows remain zero,0,0,True,critical
+C010,Known blank company_name warning did not increase versus baseline,<= 1193,1193,True,warning
+C011,HKEX expanded rows respect conservative equity allowlist,0,0,True,critical
+C012,First expansion threshold remains unlocked,True,True,True,critical
+C013,Full source threshold remains blocked,False,False,True,critical
+C014,Rows needed full source matches v2.12E rebuild report,16842,16842,True,critical
+C015,Full 59k universe was not launched,False,False,True,critical
