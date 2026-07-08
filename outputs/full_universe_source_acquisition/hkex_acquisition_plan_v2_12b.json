@@ -1,0 +1,195 @@
+{
+  "version": "v2.12B",
+  "phase": "HKEX Acquisition Plan",
+  "phase_type": "plan-only",
+  "status": "HKEX_ACQUISITION_PLAN_READY",
+  "decision": "PROCEED_TO_V2_12C_HKEX_ACQUISITION_ONLY_AFTER_V2_12B_VALIDATION_AND_COMMIT",
+  "selected_provider": "hkex_securities_list",
+  "generated_at_utc": "2026-07-08T10:21:50.800428+00:00",
+  "current_state": {
+    "current_expanded_rows": 30354,
+    "full_source_threshold": 50000,
+    "rows_needed_full_source": 19646,
+    "first_expansion_unlocked": true,
+    "full_source_unlocked": false,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED",
+    "v2_12a_route_decision": "HKEX_SELECTED_AS_NEXT_PROVIDER_ROUTE",
+    "v2_12a_commit": "9856571"
+  },
+  "hard_guards": {
+    "phase_type": "plan-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "expanded_universe_rebuilt": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "acquisition_contract_for_v2_12c": [
+    {
+      "step_id": "01",
+      "route_type": "official_direct_file",
+      "target": "hkex_list_of_securities_xlsx_en",
+      "url_or_discovery_rule": "https://www.hkex.com.hk/eng/services/trading/securities/securitieslists/ListOfSecurities.xlsx",
+      "expected_format": "xlsx",
+      "purpose": "Acquire official HKEX List of Securities file as raw bytes.",
+      "allowed_in_v2_12c": "HTTP GET raw XLSX, preserve exact bytes, compute SHA256, record metadata.",
+      "prohibited_in_v2_12c": "No parsing decision, no normalization, no net-new filtering, no rebuild, no scoring.",
+      "raw_preservation_policy": "Save raw XLSX exactly as received under raw/hkex_v2_12c/.",
+      "validation_owner": "v2.12D"
+    },
+    {
+      "step_id": "02",
+      "route_type": "official_landing_page",
+      "target": "hkex_securities_lists_page",
+      "url_or_discovery_rule": "https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists?sc_lang=en",
+      "expected_format": "html",
+      "purpose": "Acquire official Securities Lists page for provenance and fallback link discovery.",
+      "allowed_in_v2_12c": "HTTP GET raw HTML, preserve exact bytes, compute SHA256, record metadata and discovered candidate links.",
+      "prohibited_in_v2_12c": "No brittle scraping, no table parsing for accepted rows, no rebuild.",
+      "raw_preservation_policy": "Save raw HTML exactly as received under raw/hkex_v2_12c/.",
+      "validation_owner": "v2.12D"
+    },
+    {
+      "step_id": "03",
+      "route_type": "optional_official_fallback_file",
+      "target": "hkex_list_of_securities_xlsx_zh",
+      "url_or_discovery_rule": "https://www.hkex.com.hk/chi/services/trading/securities/securitieslists/ListOfSecurities_c.xlsx",
+      "expected_format": "xlsx",
+      "purpose": "Optional fallback/provenance file if English XLSX acquisition fails or schema comparison is needed.",
+      "allowed_in_v2_12c": "Download only if explicit fallback branch is triggered by acquisition script; preserve raw bytes.",
+      "prohibited_in_v2_12c": "No mixing English/Chinese rows into accepted source during acquisition.",
+      "raw_preservation_policy": "Save as separate fallback raw file and mark fallback status in manifest.",
+      "validation_owner": "v2.12D"
+    },
+    {
+      "step_id": "04",
+      "route_type": "semantic_caution",
+      "target": "hkex_security_category_and_stock_code_semantics",
+      "url_or_discovery_rule": "Derived from official XLSX only; do not assume every row is ordinary equity.",
+      "expected_format": "validation_rule",
+      "purpose": "Prevent incorrect inclusion of ETFs, REITs, warrants, debt, derivatives, structured products or non-equity instruments.",
+      "allowed_in_v2_12c": "Record source fields exactly and preserve raw workbook.",
+      "prohibited_in_v2_12c": "No accepted filtering, no equity classification decision, no rebuild.",
+      "raw_preservation_policy": "Do not mutate source fields.",
+      "validation_owner": "v2.12D"
+    },
+    {
+      "step_id": "05",
+      "route_type": "identifier_caution",
+      "target": "hkex_stock_code_format",
+      "url_or_discovery_rule": "Preserve stock codes exactly as text, including leading zeros.",
+      "expected_format": "validation_rule",
+      "purpose": "Avoid losing leading zeros and avoid ticker-key collisions.",
+      "allowed_in_v2_12c": "Store metadata and raw workbook only.",
+      "prohibited_in_v2_12c": "No conversion of stock_code to integer.",
+      "raw_preservation_policy": "Raw workbook is source of truth.",
+      "validation_owner": "v2.12D"
+    }
+  ],
+  "planned_outputs_for_v2_12c": [
+    {
+      "phase": "v2.12C",
+      "path": "scripts/hkex_acquisition_v2_12c.py",
+      "type": "script",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.12C",
+      "path": "outputs/full_universe_source_acquisition/raw/hkex_v2_12c/",
+      "type": "raw_directory",
+      "required": "yes",
+      "overwrite_policy": "new_directory_or_fail"
+    },
+    {
+      "phase": "v2.12C",
+      "path": "outputs/full_universe_source_acquisition/hkex_download_manifest_v2_12c.json",
+      "type": "manifest_json",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.12C",
+      "path": "outputs/full_universe_source_acquisition/hkex_download_manifest_v2_12c.csv",
+      "type": "manifest_csv",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.12C",
+      "path": "outputs/full_universe_source_acquisition/hkex_discovered_links_v2_12c.csv",
+      "type": "discovery_manifest",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.12C",
+      "path": "outputs/full_universe_source_acquisition/hkex_acquisition_report_v2_12c.md",
+      "type": "report",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    }
+  ],
+  "validation_questions_for_v2_12d": [
+    {
+      "question_id": "Q01",
+      "question": "Does HKEX ListOfSecurities.xlsx remain directly downloadable?",
+      "validation_phase": "v2.12D"
+    },
+    {
+      "question_id": "Q02",
+      "question": "Which workbook sheet contains the actual securities table?",
+      "validation_phase": "v2.12D"
+    },
+    {
+      "question_id": "Q03",
+      "question": "Does the workbook contain stock code, name of securities, category, sub-category, board lot, currency and ISIN?",
+      "validation_phase": "v2.12D"
+    },
+    {
+      "question_id": "Q04",
+      "question": "How many rows exist before filtering?",
+      "validation_phase": "v2.12D"
+    },
+    {
+      "question_id": "Q05",
+      "question": "How many rows are ordinary equities versus ETFs, REITs, warrants, debt, derivatives or other instruments?",
+      "validation_phase": "v2.12D"
+    },
+    {
+      "question_id": "Q06",
+      "question": "How many candidate identifiers are net-new against expanded_universe_v2_11e?",
+      "validation_phase": "v2.12D"
+    },
+    {
+      "question_id": "Q07",
+      "question": "Can HKEX rows be normalized conservatively without brittle scraping?",
+      "validation_phase": "v2.12D"
+    },
+    {
+      "question_id": "Q08",
+      "question": "Does HKEX materially reduce the 19,646-row gap to 50k?",
+      "validation_phase": "v2.12D"
+    },
+    {
+      "question_id": "Q09",
+      "question": "Should HKEX be source provider, candidate provider, enrichment, reference-only or deferred?",
+      "validation_phase": "v2.12D"
+    }
+  ],
+  "project_percentages": {
+    "v2_12b_hkex_acquisition_plan_completed_after_commit": 100,
+    "v2_12b_hkex_acquisition_plan_pending_after_commit": 0,
+    "expanded_real_source_completed": 88,
+    "expanded_real_source_pending": 12,
+    "full_source_50k_59k_completed": 0,
+    "full_source_50k_59k_pending": 100,
+    "global_completed": 94,
+    "global_pending": 6
+  }
+}

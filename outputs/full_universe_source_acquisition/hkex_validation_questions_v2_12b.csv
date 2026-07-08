@@ -1,0 +1,10 @@
+question_id,question,validation_phase
+Q01,Does HKEX ListOfSecurities.xlsx remain directly downloadable?,v2.12D
+Q02,Which workbook sheet contains the actual securities table?,v2.12D
+Q03,"Does the workbook contain stock code, name of securities, category, sub-category, board lot, currency and ISIN?",v2.12D
+Q04,How many rows exist before filtering?,v2.12D
+Q05,"How many rows are ordinary equities versus ETFs, REITs, warrants, debt, derivatives or other instruments?",v2.12D
+Q06,How many candidate identifiers are net-new against expanded_universe_v2_11e?,v2.12D
+Q07,Can HKEX rows be normalized conservatively without brittle scraping?,v2.12D
+Q08,"Does HKEX materially reduce the 19,646-row gap to 50k?",v2.12D
+Q09,"Should HKEX be source provider, candidate provider, enrichment, reference-only or deferred?",v2.12D
