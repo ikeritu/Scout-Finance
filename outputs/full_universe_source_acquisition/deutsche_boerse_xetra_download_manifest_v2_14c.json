@@ -1,0 +1,122 @@
+{
+  "version": "v2.14C",
+  "phase": "Deutsche Börse Xetra Acquisition Real",
+  "phase_type": "acquisition-only",
+  "status": "DEUTSCHE_BOERSE_XETRA_ACQUISITION_COMPLETED_REQUIRES_VALIDATION",
+  "generated_at_utc": "2026-07-09T10:56:00.577991+00:00",
+  "selected_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+  "current_state": {
+    "current_expanded_rows": 36863,
+    "full_source_threshold": 50000,
+    "rows_needed_full_source": 13137,
+    "full_source_unlocked": false,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED",
+    "previous_phase_commit": "6f716dd"
+  },
+  "counts": {
+    "official_pages_attempted": 4,
+    "official_pages_fetched_successfully": 4,
+    "official_pages_with_errors": 0,
+    "discovered_links": 1389,
+    "dataset_candidates_discovered": 2,
+    "dataset_candidates_download_attempted": 2,
+    "dataset_candidates_downloaded_with_bytes": 2,
+    "manifest_rows": 6
+  },
+  "hard_guards": {
+    "phase_type": "acquisition-only",
+    "network_download_performed": true,
+    "raw_files_downloaded": true,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "official_page_manifest": [
+    {
+      "kind": "official_page",
+      "page_id": "downloads_en",
+      "url": "https://www.cashmarket.deutsche-boerse.com/cash-en/trading/Tradable-Instruments-Xetra/Downloads",
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 120585,
+      "sha256": "d37095c830a316c4b40f1eb459bb7527f2cd391d5ae22b29faba5c57d08c81b0",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\downloads_en.html",
+      "error": "",
+      "fetched_at_utc": "2026-07-09T10:55:50.527309+00:00"
+    },
+    {
+      "kind": "official_page",
+      "page_id": "tradable_instruments_en",
+      "url": "https://www.cashmarket.deutsche-boerse.com/cash-en/trading/Tradable-Instruments-Xetra",
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 140083,
+      "sha256": "9a7e34255f34d2bc4a5eb30262df82715f54eecb73e3d50ca9e1ca9962fa499e",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\tradable_instruments_en.html",
+      "error": "",
+      "fetched_at_utc": "2026-07-09T10:55:51.851501+00:00"
+    },
+    {
+      "kind": "official_page",
+      "page_id": "shares_reference_en",
+      "url": "https://www.cashmarket.deutsche-boerse.com/cash-en/trading/Equities/list-of-tradable-shares",
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 152202,
+      "sha256": "e39adceaaae76c289a3abfe3648d6b0504c8ea4482e9f92389ede58a6fa6ccd5",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\shares_reference_en.html",
+      "error": "",
+      "fetched_at_utc": "2026-07-09T10:55:53.296314+00:00"
+    },
+    {
+      "kind": "official_page",
+      "page_id": "downloads_de",
+      "url": "https://www.cashmarket.deutsche-boerse.com/cash-de/Handel/Handelbare-Werte-Xetra/Downloads",
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 122332,
+      "sha256": "31e5527d75083c823468dd7c2f8608a3a26f6b717e661337eb77a760ef1f4526",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\downloads_de.html",
+      "error": "",
+      "fetched_at_utc": "2026-07-09T10:55:54.665690+00:00"
+    }
+  ],
+  "dataset_candidate_manifest": [
+    {
+      "kind": "dataset_candidate",
+      "candidate_index": 1,
+      "source_page_id": "downloads_en",
+      "link_text": "Download",
+      "url": "https://www.cashmarket.deutsche-boerse.com/resource/blob/1528/e27408597bf5ba4a39ab4c743109791c/data/t7-xetr-allTradableInstruments.csv",
+      "status_code": 200,
+      "content_type": "text/csv;charset=UTF-8",
+      "bytes": 4480626,
+      "sha256": "7807928fcc47441f33ff522950cb7077c6b751c4b181de7ab91a83643f1582a9",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\datasets\\001_downloads_en_t7-xetr-allTradableInstruments.csv",
+      "error": "",
+      "fetched_at_utc": "2026-07-09T10:55:56.811718+00:00"
+    },
+    {
+      "kind": "dataset_candidate",
+      "candidate_index": 2,
+      "source_page_id": "downloads_en",
+      "link_text": "Download",
+      "url": "https://www.cashmarket.deutsche-boerse.com/resource/blob/1542/bce3cd019a38d3f758f3a1cecfc98f63/data/RDF_StaticData_xetr.zip",
+      "status_code": 200,
+      "content_type": "application/zip;charset=UTF-8",
+      "bytes": 6974014,
+      "sha256": "e69d3f6d8e0ad3fe19ee60106a683c79c32e6a0bb8afee88d87bec2c9360035b",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\datasets\\002_downloads_en_RDF_StaticData_xetr.zip",
+      "error": "",
+      "fetched_at_utc": "2026-07-09T10:55:59.577403+00:00"
+    }
+  ],
+  "recommended_next_phase": "v2.14D - Deutsche Börse Xetra Validation"
+}
