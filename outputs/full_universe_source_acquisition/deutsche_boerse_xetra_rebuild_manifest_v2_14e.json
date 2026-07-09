@@ -1,0 +1,52 @@
+{
+  "version": "v2.14E",
+  "phase": "Deutsche Boerse Xetra Expanded Source Rebuild",
+  "phase_type": "rebuild-only",
+  "status": "DEUTSCHE_BOERSE_XETRA_REBUILD_COMPLETED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-07-09T14:11:12.398622+00:00",
+  "selected_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+  "source_decision": "DEUTSCHE_BOERSE_XETRA_ACCEPTED_FOR_CONSERVATIVE_EXPANDED_SOURCE",
+  "baseline": {
+    "baseline_path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_13e.csv",
+    "baseline_rows": 36863,
+    "baseline_isins": 2748,
+    "baseline_exchange_ticker_keys": 36863
+  },
+  "xetra_source": {
+    "raw_path": "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\datasets\\001_downloads_en_t7-xetr-allTradableInstruments.csv",
+    "member": "001_downloads_en_t7-xetr-allTradableInstruments.csv",
+    "gross_rows": 5069,
+    "header_line_number_one_based": 3,
+    "instrument_type_rule": "Only Instrument Type CS accepted."
+  },
+  "counts": {
+    "baseline_rows": 36863,
+    "xetra_gross_rows_reviewed": 5069,
+    "xetra_rows_added": 1424,
+    "xetra_rows_excluded": 3645,
+    "expanded_rows": 38287,
+    "expanded_delta": 1424,
+    "duplicate_exchange_ticker_keys": 0,
+    "full_source_threshold": 50000,
+    "full_source_unlocked": false,
+    "rows_needed_after_xetra": 11713,
+    "source_to_50k_after_xetra_percent": 76.6
+  },
+  "hard_guards": {
+    "phase_type": "rebuild-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed_for_rebuild": true,
+    "normalization_performed": true,
+    "net_new_filtering_performed": true,
+    "expanded_universe_rebuilt": true,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "previous_phase_commit": "8ef6af6",
+  "recommended_next_phase": "v2.14F - Deutsche Boerse Xetra Expanded Validation"
+}
