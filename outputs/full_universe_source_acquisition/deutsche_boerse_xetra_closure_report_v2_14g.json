@@ -1,0 +1,86 @@
+{
+  "version": "v2.14G",
+  "phase": "Deutsche Boerse Xetra Closure Report",
+  "phase_type": "closure-only",
+  "closure_status": "DEUTSCHE_BOERSE_XETRA_CLOSED_CONSERVATIVE_REBUILD_VALIDATED_FULL_SOURCE_BLOCKED",
+  "generated_at_utc": "2026-07-09T22:46:25.542973+00:00",
+  "selected_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+  "source_decision": "DEUTSCHE_BOERSE_XETRA_ACCEPTED_FOR_CONSERVATIVE_EXPANDED_SOURCE",
+  "current_state": {
+    "baseline_before_xetra": 36863,
+    "xetra_rows_added": 1424,
+    "xetra_rows_excluded": 3645,
+    "expanded_after_xetra": 38287,
+    "expanded_delta": 1424,
+    "duplicate_exchange_ticker_keys": 0,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "full_source_threshold": 50000,
+    "full_source_unlocked": false,
+    "rows_needed_after_xetra": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "source_to_50k_pending_percent": 23.4,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED"
+  },
+  "project_percentages": {
+    "global_completed": 42,
+    "global_pending": 58,
+    "source_to_50k_completed": 76.6,
+    "source_to_50k_pending": 23.4,
+    "full_source_gate_completed": 0,
+    "full_source_gate_pending": 100,
+    "full_59k_dry_run_completed": 0,
+    "full_59k_dry_run_pending": 100
+  },
+  "provider_breakdown": [
+    {
+      "provider": "cboe_europe_reference_data",
+      "rows": "21154"
+    },
+    {
+      "provider": "jpx_listed_securities",
+      "rows": "3705"
+    },
+    {
+      "provider": "nasdaq_trader_nasdaqlisted",
+      "rows": "3244"
+    },
+    {
+      "provider": "hkex_securities_list",
+      "rows": "2804"
+    },
+    {
+      "provider": "nasdaq_trader_otherlisted",
+      "rows": "2404"
+    },
+    {
+      "provider": "sec_company_tickers_exchange",
+      "rows": "2359"
+    },
+    {
+      "provider": "deutsche_boerse_xetra_all_tradable_instruments",
+      "rows": "1424"
+    },
+    {
+      "provider": "cboe_listed_symbols",
+      "rows": "1193"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "closure-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "previous_phase_commit": "f3ccc8c",
+  "recommended_next_phase": "v2.15A - Next Provider Route For Remaining Full Source Gap"
+}
