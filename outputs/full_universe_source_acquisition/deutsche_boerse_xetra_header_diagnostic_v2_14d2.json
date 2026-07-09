@@ -1,0 +1,49 @@
+{
+  "version": "v2.14D2",
+  "phase": "Deutsche Boerse Xetra Header Diagnostic",
+  "phase_type": "validation-diagnostic-only",
+  "generated_at_utc": "2026-07-09T12:16:01.044215+00:00",
+  "status": "DEUTSCHE_BOERSE_XETRA_HEADER_DIAGNOSTIC_COMPLETED",
+  "main_all_tradable_header_detected_with_identifiers": true,
+  "diagnostic_payloads": 11,
+  "main_all_tradable_candidates": [
+    {
+      "source_file": "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\datasets\\001_downloads_en_t7-xetr-allTradableInstruments.csv",
+      "member": "001_downloads_en_t7-xetr-allTradableInstruments.csv",
+      "header_score": 67,
+      "header_line_index_zero_based": 2,
+      "header_line_number_one_based": 3,
+      "delimiter": "';'",
+      "header_preview": "Product Status | Instrument Status | Instrument | ISIN | Product ID | Instrument ID | WKN | Mnemonic | MIC Code | CCP eligible Code | Trading Model Type | Product Assignment Group | Product Assignment Group Description | Designated Sponsor Member ID | Designated Sponsor | Price Range Value | Price Range Percentage | Minimum Quote Size | Instrument Type | Tick Size 1 | Upper Price Limit Max | Tick Size 2 | Upper Price Limit 2 | Tick Size 3 | Upper Price Limit 3 | Tick Size 4 | Upper Price Limit 4 | Tick Size 5 | Upper Price Limit 5 | Tick Size 6 | Upper Price Limit 6 | Tick Size 7 | Upper Price Limit 7 | Tick Size 8 | Upper Price Limit 8 | Tick Size 9 | Upper Price Limit 9 | Tick Size 10 | Upper Price Limit 10 | Tick Size 11 | Upper Price Limit 11 | Tick Size 12 | Upper Price Limit 12 | Tick Size 13 | Upper Price Limit 13 | Tick Size 14 | Upper Price Limit 14 | Tick Size 15 | Upper Price Limit 15 | Tick Size 16 | Upper Price Limit 16 | Tick Size 17 | Upper Price Limit 17 | Tick Size 18 | Upper Price Limit 18 | Tick Size 19 | Upper Price Limit 19 | Tick Size 20 | Upper Price Limit 20 | Number of Decimal Digits | Unit of Quotation | Market Segment | Market Segment Supplement | Clearing Location | Primary Market MIC Code | Reporting Market | Settlement Period | Settlement Currency | Closed Book Indicator | Market Imbalance Indicator | CUM/EX Indicator | Minimum Iceberg Total Volume | Minimum Iceberg Display Volume | EMDI Incremental A - Unnetted | EMDI Incremental A - Unnetted Port | EMDI Incremental B - Unnetted | EMDI Incremental B - Unnetted Port | EMDI Snapshot A - Unnetted | EMDI Snapshot A - Unnetted Port | EMDI Snapshot B - Unnetted",
+      "detected_headers_count": 153,
+      "row_count_from_detected_header": 5069,
+      "isin_col": "ISIN",
+      "mnemonic_col": "Mnemonic",
+      "instrument_id_col": "Instrument ID",
+      "name_col": "Product Assignment Group Description",
+      "type_col": "Instrument Type",
+      "rows_with_isin": 5069,
+      "rows_with_mnemonic": 5066,
+      "rows_with_instrument_id": 5069,
+      "rows_with_name": 5069,
+      "rows_with_type": 5069,
+      "first_detected_header_line": "Product Status;Instrument Status;Instrument;ISIN;Product ID;Instrument ID;WKN;Mnemonic;MIC Code;CCP eligible Code;Trading Model Type;Product Assignment Group;Product Assignment Group Description;Designated Sponsor Member ID;Designated Sponsor;Price Range Value;Price Range Percentage;Minimum Quote Size;Instrument Type;Tick Size 1;Upper Price Limit Max;Tick Size 2;Upper Price Limit 2;Tick Size 3;Upper Price Limit 3;Tick Size 4;Upper Price Limit 4;Tick Size 5;Upper Price Limit 5;Tick Size 6;Upper P"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "validation-diagnostic-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed_for_diagnostic": true,
+    "normalization_performed": false,
+    "net_new_filtering_finalized": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_step": "Create corrected v2.14D validation parser using detected header line"
+}

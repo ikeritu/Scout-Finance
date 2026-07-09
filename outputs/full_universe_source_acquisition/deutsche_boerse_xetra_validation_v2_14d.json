@@ -1,0 +1,114 @@
+{
+  "version": "v2.14D",
+  "phase": "Deutsche Boerse Xetra Validation",
+  "phase_type": "validation-only",
+  "status": "DEUTSCHE_BOERSE_XETRA_VALIDATION_NEEDS_MANUAL_REVIEW_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-07-09T11:53:57.093677+00:00",
+  "selected_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+  "rebuild_allowed_by_validation": false,
+  "recommended_next_phase": "v2.14D-review - Manual Review Before Rebuild",
+  "current_state": {
+    "current_expanded_rows": 36863,
+    "full_source_threshold": 50000,
+    "rows_needed_full_source": 13137,
+    "full_source_unlocked": false,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED",
+    "previous_phase_commit": "ac7f238"
+  },
+  "baseline": {
+    "baseline_path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_13e.csv",
+    "baseline_rows": 36863,
+    "baseline_isins": 2748,
+    "baseline_exchange_ticker_keys": 36863
+  },
+  "counts": {
+    "dataset_candidates_from_manifest": 2,
+    "structured_payloads_parsed_for_validation": 11,
+    "gross_structured_rows_read": 212014,
+    "equity_like_candidates": 0,
+    "excluded_non_common_equity_or_non_share": 12,
+    "manual_review_unknown_type": 212002,
+    "diagnostic_not_found_in_baseline": 200900,
+    "already_in_baseline_by_isin": 307,
+    "already_in_baseline_by_exchange_ticker": 0,
+    "critical_failed_checks": 1,
+    "warning_failed_checks": 0
+  },
+  "exclusion_reason_counts": {
+    "insufficient_type_signal": 212002,
+    "etf": 6,
+    "etc": 1,
+    "etn": 5
+  },
+  "checks": [
+    {
+      "check": "v2_14c_manifest_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\deutsche_boerse_xetra_download_manifest_v2_14c.json"
+    },
+    {
+      "check": "dataset_candidates_downloaded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "dataset_candidate_manifest=2"
+    },
+    {
+      "check": "structured_payloads_parsed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "parse_successes=11"
+    },
+    {
+      "check": "structured_rows_found",
+      "passed": true,
+      "severity": "critical",
+      "detail": "structured_rows=212014"
+    },
+    {
+      "check": "baseline_detected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "baseline_path=outputs\\full_universe_source_acquisition\\expanded_universe_v2_13e.csv; baseline_rows=36863"
+    },
+    {
+      "check": "equity_like_candidates_found",
+      "passed": false,
+      "severity": "critical",
+      "detail": "equity_like_candidates=0"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full_source_unlocked=False"
+    },
+    {
+      "check": "no_rebuild_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_universe_rebuilt=False"
+    },
+    {
+      "check": "non_equity_filter_needed",
+      "passed": true,
+      "severity": "warning",
+      "detail": "non_equity=12; unknown=212002"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "validation-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed_for_validation": true,
+    "normalization_performed": false,
+    "net_new_filtering_finalized": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  }
+}
