@@ -1,0 +1,214 @@
+{
+  "version": "v2.14B",
+  "phase": "Deutsche Börse Xetra Acquisition Plan",
+  "phase_type": "plan-only",
+  "status": "DEUTSCHE_BOERSE_XETRA_ACQUISITION_PLAN_READY",
+  "decision": "PROCEED_TO_V2_14C_XETRA_ACQUISITION_ONLY_AFTER_V2_14B_VALIDATION_AND_COMMIT",
+  "selected_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+  "generated_at_utc": "2026-07-08T23:09:58.840085+00:00",
+  "current_state": {
+    "current_expanded_rows": 36863,
+    "full_source_threshold": 50000,
+    "rows_needed_full_source": 13137,
+    "source_to_50k_completed_percent": 73.7,
+    "source_to_50k_pending_percent": 26.3,
+    "full_source_unlocked": false,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED",
+    "v2_14a_commit": "64cef21"
+  },
+  "hard_guards": {
+    "phase_type": "plan-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified": false,
+    "workbook_or_csv_parsed": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "acquisition_contract_for_v2_14c": [
+    {
+      "step_id": "01",
+      "route_type": "official_primary_downloads_page",
+      "target": "deutsche_boerse_xetra_downloads_page",
+      "url_or_discovery_rule": "https://www.cashmarket.deutsche-boerse.com/cash-en/trading/Tradable-Instruments-Xetra/Downloads",
+      "expected_format": "html",
+      "purpose": "Acquire official Xetra downloads page and discover T7 XETR all tradable instruments links.",
+      "allowed_in_v2_14c": "HTTP GET raw HTML only, preserve bytes, compute SHA256, record links.",
+      "prohibited_in_v2_14c": "No parsing acceptance, no normalization, no net-new filtering, no rebuild, no scoring.",
+      "raw_preservation_policy": "Save raw HTML exactly as received under raw/deutsche_boerse_xetra_v2_14c/.",
+      "validation_owner": "v2.14D"
+    },
+    {
+      "step_id": "02",
+      "route_type": "official_primary_all_tradable_instruments_page",
+      "target": "deutsche_boerse_xetra_all_tradable_instruments_page",
+      "url_or_discovery_rule": "https://www.cashmarket.deutsche-boerse.com/cash-en/trading/Tradable-Instruments-Xetra",
+      "expected_format": "html",
+      "purpose": "Acquire official all tradable instruments page for provenance and discovery.",
+      "allowed_in_v2_14c": "HTTP GET raw HTML only, preserve bytes, compute SHA256, record candidate links.",
+      "prohibited_in_v2_14c": "No accepted filtering, no row normalization, no rebuild.",
+      "raw_preservation_policy": "Save raw HTML exactly as received under raw/deutsche_boerse_xetra_v2_14c/.",
+      "validation_owner": "v2.14D"
+    },
+    {
+      "step_id": "03",
+      "route_type": "official_dataset_download_candidate",
+      "target": "t7_xetr_all_tradable_instruments",
+      "url_or_discovery_rule": "Discover only from official Deutsche Börse Xetra pages. Expected label: T7 (XETR) All tradable instruments.",
+      "expected_format": "csv_or_download_file",
+      "purpose": "Acquire official XETR all tradable instruments file as raw bytes if a direct official link is discovered.",
+      "allowed_in_v2_14c": "Download only official direct file links discovered from official pages; preserve exact bytes and hashes.",
+      "prohibited_in_v2_14c": "No parsing acceptance, no instrument type decisions, no rebuild.",
+      "raw_preservation_policy": "Save raw file exactly as received under raw/deutsche_boerse_xetra_v2_14c/datasets/.",
+      "validation_owner": "v2.14D"
+    },
+    {
+      "step_id": "04",
+      "route_type": "official_shares_reference_page",
+      "target": "deutsche_boerse_xetra_list_of_tradable_shares_page",
+      "url_or_discovery_rule": "https://www.cashmarket.deutsche-boerse.com/cash-en/trading/Equities/list-of-tradable-shares",
+      "expected_format": "html_or_dynamic_table",
+      "purpose": "Acquire official shares reference page as shares-only fallback/provenance source.",
+      "allowed_in_v2_14c": "HTTP GET raw HTML only; no dynamic scraping unless explicitly approved later.",
+      "prohibited_in_v2_14c": "No fragile UI scraping, no accepted row extraction, no rebuild.",
+      "raw_preservation_policy": "Save raw HTML exactly as received under raw/deutsche_boerse_xetra_v2_14c/.",
+      "validation_owner": "v2.14D"
+    },
+    {
+      "step_id": "05",
+      "route_type": "semantic_caution",
+      "target": "xetra_instrument_type_semantics",
+      "url_or_discovery_rule": "Derived only during v2.14D from official source fields.",
+      "expected_format": "validation_rule",
+      "purpose": "Prevent inclusion of ETFs, ETCs, ETNs, active ETFs, funds, bonds, certificates and other non-common-equity instruments.",
+      "allowed_in_v2_14c": "Record raw files and metadata only.",
+      "prohibited_in_v2_14c": "No shares/equity acceptance decision during acquisition.",
+      "raw_preservation_policy": "Do not mutate source fields.",
+      "validation_owner": "v2.14D"
+    },
+    {
+      "step_id": "06",
+      "route_type": "overlap_caution",
+      "target": "cboe_europe_overlap_risk",
+      "url_or_discovery_rule": "Compare only during v2.14D against expanded_universe_v2_13e.",
+      "expected_format": "validation_rule",
+      "purpose": "Xetra likely overlaps with Cboe Europe and must be baseline-compared before rebuild.",
+      "allowed_in_v2_14c": "No baseline compare during acquisition.",
+      "prohibited_in_v2_14c": "No net-new filtering in acquisition phase.",
+      "raw_preservation_policy": "Raw official files remain source of truth.",
+      "validation_owner": "v2.14D"
+    }
+  ],
+  "planned_outputs_for_v2_14c": [
+    {
+      "phase": "v2.14C",
+      "path": "scripts/deutsche_boerse_xetra_acquisition_v2_14c.py",
+      "type": "script",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.14C",
+      "path": "outputs/full_universe_source_acquisition/raw/deutsche_boerse_xetra_v2_14c/",
+      "type": "raw_directory",
+      "required": "yes",
+      "overwrite_policy": "new_directory_or_fail"
+    },
+    {
+      "phase": "v2.14C",
+      "path": "outputs/full_universe_source_acquisition/deutsche_boerse_xetra_download_manifest_v2_14c.json",
+      "type": "manifest_json",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.14C",
+      "path": "outputs/full_universe_source_acquisition/deutsche_boerse_xetra_download_manifest_v2_14c.csv",
+      "type": "manifest_csv",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.14C",
+      "path": "outputs/full_universe_source_acquisition/deutsche_boerse_xetra_discovered_links_v2_14c.csv",
+      "type": "discovery_manifest",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    },
+    {
+      "phase": "v2.14C",
+      "path": "outputs/full_universe_source_acquisition/deutsche_boerse_xetra_acquisition_report_v2_14c.md",
+      "type": "report",
+      "required": "yes",
+      "overwrite_policy": "must_not_overwrite_existing_file"
+    }
+  ],
+  "validation_questions_for_v2_14d": [
+    {
+      "question_id": "Q01",
+      "question": "Does the official Xetra downloads page expose a direct T7 XETR all tradable instruments file?",
+      "validation_phase": "v2.14D"
+    },
+    {
+      "question_id": "Q02",
+      "question": "Is the downloaded file CSV, ZIP, XLSX or another structured format?",
+      "validation_phase": "v2.14D"
+    },
+    {
+      "question_id": "Q03",
+      "question": "Which fields provide ISIN, WKN, mnemonic/symbol, name, currency, market and instrument type?",
+      "validation_phase": "v2.14D"
+    },
+    {
+      "question_id": "Q04",
+      "question": "How many gross instruments are present before filtering?",
+      "validation_phase": "v2.14D"
+    },
+    {
+      "question_id": "Q05",
+      "question": "How many are shares/equities versus ETFs, ETCs, ETNs, active ETFs, funds, bonds, certificates or other instruments?",
+      "validation_phase": "v2.14D"
+    },
+    {
+      "question_id": "Q06",
+      "question": "How many share/equity candidates are net-new against expanded_universe_v2_13e?",
+      "validation_phase": "v2.14D"
+    },
+    {
+      "question_id": "Q07",
+      "question": "How much overlap exists with existing Cboe Europe reference data?",
+      "validation_phase": "v2.14D"
+    },
+    {
+      "question_id": "Q08",
+      "question": "Can the provider be normalized conservatively without brittle scraping?",
+      "validation_phase": "v2.14D"
+    },
+    {
+      "question_id": "Q09",
+      "question": "Does Xetra materially reduce the remaining 13,137-row gap to 50k?",
+      "validation_phase": "v2.14D"
+    },
+    {
+      "question_id": "Q10",
+      "question": "Should Xetra be source provider, candidate provider, enrichment/reference-only or fallback/deferred?",
+      "validation_phase": "v2.14D"
+    }
+  ],
+  "project_percentages": {
+    "global_completed": 41,
+    "global_pending": 59,
+    "source_to_50k_completed": 73.7,
+    "source_to_50k_pending": 26.3,
+    "full_source_gate_completed": 0,
+    "full_source_gate_pending": 100,
+    "full_59k_dry_run_completed": 0,
+    "full_59k_dry_run_pending": 100
+  }
+}

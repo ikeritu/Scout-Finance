@@ -1,0 +1,11 @@
+question_id,question,validation_phase
+Q01,Does the official Xetra downloads page expose a direct T7 XETR all tradable instruments file?,v2.14D
+Q02,"Is the downloaded file CSV, ZIP, XLSX or another structured format?",v2.14D
+Q03,"Which fields provide ISIN, WKN, mnemonic/symbol, name, currency, market and instrument type?",v2.14D
+Q04,How many gross instruments are present before filtering?,v2.14D
+Q05,"How many are shares/equities versus ETFs, ETCs, ETNs, active ETFs, funds, bonds, certificates or other instruments?",v2.14D
+Q06,How many share/equity candidates are net-new against expanded_universe_v2_13e?,v2.14D
+Q07,How much overlap exists with existing Cboe Europe reference data?,v2.14D
+Q08,Can the provider be normalized conservatively without brittle scraping?,v2.14D
+Q09,"Does Xetra materially reduce the remaining 13,137-row gap to 50k?",v2.14D
+Q10,"Should Xetra be source provider, candidate provider, enrichment/reference-only or fallback/deferred?",v2.14D
