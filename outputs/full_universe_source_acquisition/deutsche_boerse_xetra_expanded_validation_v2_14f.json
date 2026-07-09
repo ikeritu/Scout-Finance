@@ -1,0 +1,198 @@
+{
+  "version": "v2.14F",
+  "phase": "Deutsche Boerse Xetra Expanded Validation",
+  "phase_type": "validation-only",
+  "status": "DEUTSCHE_BOERSE_XETRA_EXPANDED_VALIDATION_PASSED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-07-09T21:52:51.612635+00:00",
+  "selected_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+  "source_decision": "DEUTSCHE_BOERSE_XETRA_ACCEPTED_FOR_CONSERVATIVE_EXPANDED_SOURCE",
+  "current_state": {
+    "expanded_rows": 38287,
+    "full_source_threshold": 50000,
+    "source_to_50k_after_xetra_percent": 76.6,
+    "rows_needed_after_xetra": 11713,
+    "full_source_unlocked": false,
+    "full_59k_status": "BLOCKED_UNTIL_SOURCE_COMPLETE_AND_GATE_APPROVED",
+    "previous_phase_commit": "7959cfa"
+  },
+  "counts": {
+    "expanded_rows": 38287,
+    "xetra_additions": 1424,
+    "xetra_exclusions": 3645,
+    "expanded_delta_vs_expected_baseline": 1424,
+    "duplicate_exchange_ticker_keys": 0,
+    "blank_exchange": 0,
+    "blank_ticker": 0,
+    "blank_isin": 34091,
+    "blank_company_name": 1193,
+    "xetra_additions_blank_isin": 0,
+    "xetra_additions_blank_ticker": 0,
+    "xetra_additions_non_cs": 0,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0
+  },
+  "xetra_additions_by_instrument_type": {
+    "CS": 1424
+  },
+  "xetra_exclusion_reason_counts": {
+    "excluded_non_common_equity_instrument_type_ETF": 3048,
+    "excluded_non_common_equity_instrument_type_ETN": 382,
+    "excluded_non_common_equity_instrument_type_ETC": 205,
+    "already_in_baseline_by_isin": 9,
+    "missing_ticker": 1
+  },
+  "provider_breakdown": [
+    {
+      "provider": "cboe_europe_reference_data",
+      "rows": 21154
+    },
+    {
+      "provider": "jpx_listed_securities",
+      "rows": 3705
+    },
+    {
+      "provider": "nasdaq_trader_nasdaqlisted",
+      "rows": 3244
+    },
+    {
+      "provider": "hkex_securities_list",
+      "rows": 2804
+    },
+    {
+      "provider": "nasdaq_trader_otherlisted",
+      "rows": 2404
+    },
+    {
+      "provider": "sec_company_tickers_exchange",
+      "rows": 2359
+    },
+    {
+      "provider": "deutsche_boerse_xetra_all_tradable_instruments",
+      "rows": 1424
+    },
+    {
+      "provider": "cboe_listed_symbols",
+      "rows": 1193
+    }
+  ],
+  "checks": [
+    {
+      "check": "expanded_csv_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "additions_csv_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\deutsche_boerse_xetra_rebuild_additions_v2_14e.csv"
+    },
+    {
+      "check": "exclusions_csv_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\deutsche_boerse_xetra_rebuild_exclusions_v2_14e.csv"
+    },
+    {
+      "check": "rebuild_manifest_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\deutsche_boerse_xetra_rebuild_manifest_v2_14e.json"
+    },
+    {
+      "check": "expanded_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rows=38287; expected=38287"
+    },
+    {
+      "check": "xetra_additions_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "additions=1424; expected=1424"
+    },
+    {
+      "check": "expanded_delta_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "delta=1424"
+    },
+    {
+      "check": "xetra_additions_all_cs",
+      "passed": true,
+      "severity": "critical",
+      "detail": "non_cs_additions=0"
+    },
+    {
+      "check": "xetra_additions_have_isin",
+      "passed": true,
+      "severity": "critical",
+      "detail": "blank_isin=0"
+    },
+    {
+      "check": "xetra_additions_have_ticker",
+      "passed": true,
+      "severity": "critical",
+      "detail": "blank_ticker=0"
+    },
+    {
+      "check": "duplicate_exchange_ticker_keys_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "duplicate_exchange_ticker_keys=0"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rows=38287; threshold=50000"
+    },
+    {
+      "check": "full_59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full_59k_universe_launched=False"
+    },
+    {
+      "check": "no_scoring_openai_broker",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring=False; openai=False; broker=False"
+    },
+    {
+      "check": "global_blank_isin_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "blank_isin=34091"
+    },
+    {
+      "check": "global_blank_ticker_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "blank_ticker=0"
+    },
+    {
+      "check": "global_blank_company_name_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "blank_company_name=1193"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "validation-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed_for_validation": true,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.14G - Deutsche Boerse Xetra Closure Report"
+}
