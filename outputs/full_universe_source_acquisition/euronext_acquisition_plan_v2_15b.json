@@ -1,0 +1,144 @@
+{
+  "version": "v2.15B",
+  "phase": "Euronext Acquisition Plan",
+  "phase_type": "plan-only",
+  "status": "EURONEXT_ACQUISITION_PLAN_CREATED_NO_DOWNLOADS_PERFORMED",
+  "generated_at_utc": "2026-07-10T21:31:53.196313+00:00",
+  "selected_provider": {
+    "provider_id": "euronext_official_instruments_equities",
+    "provider_name": "Euronext official instruments / listed equities",
+    "previous_route_phase": "v2.15A",
+    "previous_route_commit": "f803505"
+  },
+  "current_state": {
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "current_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "official_source_candidates": [
+    {
+      "source_id": "euronext_live_all_equities",
+      "source_name": "Euronext Live - All Equities",
+      "source_url": "https://live.euronext.com/en/products/equities/list",
+      "source_type": "official_public_web",
+      "priority": 1,
+      "expected_use": "Primary public discovery source for listed equities across Euronext markets.",
+      "expected_formats": "html, possible embedded api/json/csv endpoints after inspection",
+      "target_fields": "isin, symbol, name, market, venue/mic, instrument type, currency if available",
+      "risk": "May require endpoint discovery from page assets or paginated requests."
+    },
+    {
+      "source_id": "euronext_live_market_equity_pages",
+      "source_name": "Euronext Live market-specific equity pages",
+      "source_url": "https://live.euronext.com/en/products/equities/list",
+      "source_type": "official_public_web",
+      "priority": 2,
+      "expected_use": "Fallback or segmentation source for markets such as Amsterdam, Brussels, Dublin, Lisbon, Milan, Oslo and Paris.",
+      "expected_formats": "html, market-specific query endpoints if discoverable",
+      "target_fields": "isin, symbol, name, market segment, exchange",
+      "risk": "Potential overlap and duplicate listings across segments."
+    },
+    {
+      "source_id": "euronext_advanced_reference_data",
+      "source_name": "Euronext Advanced Reference Data",
+      "source_url": "https://www.euronext.com/en/products-services/advanced-reference-data",
+      "source_type": "official_reference_data_product",
+      "priority": 3,
+      "expected_use": "Reference source for machine-readable daily CSV reference data if accessible or documented.",
+      "expected_formats": "csv via Euronext Datashop/SFTP according to product documentation",
+      "target_fields": "issuer, instrument, ISIN, market, instrument type, events if available",
+      "risk": "May be commercial or gated; should not be assumed freely downloadable."
+    },
+    {
+      "source_id": "euronext_static_reference_data",
+      "source_name": "Euronext Static Reference Data - Equities & Bonds",
+      "source_url": "https://www.euronext.com/en/products-services/static-reference-data",
+      "source_type": "official_reference_data_product",
+      "priority": 4,
+      "expected_use": "Secondary official reference data candidate if public documentation confirms useful equity coverage.",
+      "expected_formats": "structured machine-readable reference data, access may be commercial/gated",
+      "target_fields": "ISIN, instrument reference, corporate action mapping, instrument changes",
+      "risk": "May include unlisted instruments and bonds; requires strict taxonomy filters."
+    }
+  ],
+  "market_scope": [
+    "Amsterdam",
+    "Brussels",
+    "Dublin",
+    "Lisbon",
+    "Milan",
+    "Oslo",
+    "Paris"
+  ],
+  "taxonomy_rules": [
+    {
+      "rule_id": "include_common_equity_like",
+      "decision": "include",
+      "description": "Include ordinary/common listed equities where the instrument type or market segment clearly identifies equity shares."
+    },
+    {
+      "rule_id": "exclude_etf_etn_etc_funds_bonds_structured",
+      "decision": "exclude",
+      "description": "Exclude ETFs, ETNs, ETCs, funds, bonds, warrants, certificates, structured products and derivatives."
+    },
+    {
+      "rule_id": "exclude_ambiguous_without_manual_review",
+      "decision": "exclude_or_hold",
+      "description": "If instrument classification is ambiguous, do not add during rebuild; route to exclusions/manual review."
+    }
+  ],
+  "expected_outputs_next_phase": [
+    "raw official pages or endpoint payloads",
+    "source discovery manifest",
+    "download manifest with status codes and checksums",
+    "candidate files stored without parsing decisions"
+  ],
+  "validation_plan": [
+    "Confirm source accessibility and official origin.",
+    "Identify whether a public export/API exists for all equities.",
+    "Detect pagination, markets, endpoint parameters and rate limits.",
+    "Verify required fields: ISIN, symbol/ticker, name, market/exchange, instrument type.",
+    "Measure gross rows and market distribution.",
+    "Validate taxonomy filters before any rebuild phase.",
+    "Estimate net-new overlap against expanded_universe_v2_14e only in validation phase, not in this plan phase."
+  ],
+  "risks_and_mitigations": [
+    {
+      "risk": "Euronext public list may use dynamic endpoints not visible in static HTML.",
+      "mitigation": "v2.15C should save both HTML and discovered JS/API references for later validation."
+    },
+    {
+      "risk": "Reference data products may be gated/commercial.",
+      "mitigation": "Use public Euronext Live pages first; treat reference data product pages as documentation/fallback, not guaranteed input."
+    },
+    {
+      "risk": "Overlap with Cboe Europe and Xetra may be significant.",
+      "mitigation": "v2.15D must perform ISIN and exchange+ticker overlap checks before rebuild."
+    },
+    {
+      "risk": "Non-equity instruments may be mixed into source lists.",
+      "mitigation": "Strict taxonomy: exclude ETF, ETN, ETC, funds, bonds, structured products and derivatives."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "plan-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.15C - Euronext Raw Acquisition"
+}
