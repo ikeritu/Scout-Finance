@@ -1,0 +1,50 @@
+{
+  "version": "v2.14K",
+  "phase": ".gitattributes / EOL Guard",
+  "phase_type": "config-only",
+  "generated_at_utc": "2026-07-10T15:16:22.430076+00:00",
+  "status": "EOL_GUARD_POLICY_ADDED_RENORMALIZATION_NOT_PERFORMED",
+  "files_created": [
+    ".gitattributes",
+    "outputs\\audit\\eol_guard_v2_14k.json",
+    "outputs\\audit\\eol_guard_v2_14k.md"
+  ],
+  "policy": {
+    "default": "* text=auto eol=lf",
+    "source_text": "LF",
+    "office_documents": "binary",
+    "archives_raw_dumps_binary_data": "binary",
+    "media_images_pdfs": "binary"
+  },
+  "decision": {
+    "renormalization_performed": false,
+    "reason": "Avoid mass noisy commit. Repo-wide renormalization must be a separate explicit phase if needed.",
+    "safe_next_check": "git add --renormalize --dry-run ."
+  },
+  "current_project_state": {
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "expanded_rows": 38287,
+    "source_to_50k_completed_percent": 76.6,
+    "rows_needed": 11713,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "hard_guards": {
+    "phase_type": "config-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.15A - Next Provider Route For Remaining Full Source Gap",
+  "optional_future_phase": "v2.14L - Controlled Repo Renormalization Dry Run"
+}
