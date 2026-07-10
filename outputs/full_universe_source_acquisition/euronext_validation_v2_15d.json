@@ -1,0 +1,775 @@
+{
+  "version": "v2.15D",
+  "phase": "Euronext Validation",
+  "phase_type": "validation-only",
+  "status": "EURONEXT_VALIDATION_PASSED_CANDIDATES_DETECTED_REBUILD_STILL_BLOCKED",
+  "generated_at_utc": "2026-07-10T22:27:01.038023+00:00",
+  "selected_provider": {
+    "provider_id": "euronext_official_instruments_equities",
+    "provider_name": "Euronext official instruments / listed equities",
+    "previous_route_phase": "v2.15A",
+    "previous_route_commit": "f803505"
+  },
+  "current_state": {
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "current_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "validation_summary": {
+    "raw_files": 11,
+    "total_raw_bytes": 4001113,
+    "total_tables": 0,
+    "total_scripts": 0,
+    "total_isin_like_occurrences": 0,
+    "candidate_endpoints": 1361,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0
+  },
+  "checks": [
+    {
+      "check": "raw_dir_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c"
+    },
+    {
+      "check": "raw_files_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_files=11"
+    },
+    {
+      "check": "acquisition_manifest_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_raw_acquisition_manifest_v2_15c.json"
+    },
+    {
+      "check": "discovered_links_manifest_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_discovered_links_v2_15c.json"
+    },
+    {
+      "check": "plan_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_acquisition_plan_v2_15b.json"
+    },
+    {
+      "check": "downloads_ok_in_manifest",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ok_count=11"
+    },
+    {
+      "check": "candidate_endpoints_detected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_endpoints=1361"
+    },
+    {
+      "check": "source_candidate_usable_for_validation",
+      "passed": true,
+      "severity": "critical",
+      "detail": "usable=True"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=38287"
+    },
+    {
+      "check": "no_rebuild_or_scoring",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rebuild=False; scoring=False; openai=False; broker=False; full59k=False"
+    },
+    {
+      "check": "tables_detected_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tables=0"
+    },
+    {
+      "check": "isin_like_detected_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "isin_like=0"
+    }
+  ],
+  "top_candidate_endpoints": [
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134",
+      "score": 95,
+      "matched_hints": "euronext|instrument|instruments|json|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/instrumentSearch/searchJSON",
+      "score": 85,
+      "matched_hints": "euronext|instrument|instruments|json|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://athens.euronext.com/en/market-data/instruments/stocks?page=1",
+      "score": 80,
+      "matched_hints": "data|euronext|instrument|instruments|stock|stocks"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/boursolive-2026-equity-markets-how-ai-reshaping-landscape",
+      "score": 75,
+      "matched_hints": "api|equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/equities/global-equity-market/list",
+      "score": 60,
+      "matched_hints": "equities|equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/equities/equity-espresso",
+      "score": 60,
+      "matched_hints": "equities|equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/education/stocks",
+      "score": 60,
+      "matched_hints": "euronext|live.euronext.com|stock|stocks"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/milan/equities/global-equity-market/list",
+      "score": 60,
+      "matched_hints": "equities|equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/what-difference-between-stocks-and-bonds",
+      "score": 60,
+      "matched_hints": "euronext|live.euronext.com|stock|stocks"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/how-protect-stocks-if-market-goes-down",
+      "score": 60,
+      "matched_hints": "euronext|live.euronext.com|stock|stocks"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/how-generate-income-stocks",
+      "score": 60,
+      "matched_hints": "euronext|live.euronext.com|stock|stocks"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/how-invest-stocks",
+      "score": 60,
+      "matched_hints": "euronext|live.euronext.com|stock|stocks"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/how-are-stocks-priced",
+      "score": 60,
+      "matched_hints": "euronext|live.euronext.com|stock|stocks"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_advanced_reference_data.html",
+      "source_url": "https://www.euronext.com/en/products-services/advanced-reference-data",
+      "candidate_url": "https://www.euronext.com/en/csd/oslo/equities-and-equity-certificates",
+      "score": 50,
+      "matched_hints": "equities|equity|euronext"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_advanced_reference_data.html",
+      "source_url": "https://www.euronext.com/en/products-services/advanced-reference-data",
+      "candidate_url": "https://www.euronext.com/en/csd/oslo/equities-and-equity-certificates/shareholder-register",
+      "score": 50,
+      "matched_hints": "equities|equity|euronext"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_advanced_reference_data.html",
+      "source_url": "https://www.euronext.com/en/products-services/advanced-reference-data",
+      "candidate_url": "https://www.euronext.com/en/csd/oslo/equities-and-equity-certificates/general-meetings",
+      "score": 50,
+      "matched_hints": "equities|equity|euronext"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_advanced_reference_data.html",
+      "source_url": "https://www.euronext.com/en/products-services/advanced-reference-data",
+      "candidate_url": "https://www.euronext.com/en/csd/oslo/equities-and-equity-certificates/employee-share-savings",
+      "score": 50,
+      "matched_hints": "equities|equity|euronext"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_advanced_reference_data.html",
+      "source_url": "https://www.euronext.com/en/products-services/advanced-reference-data",
+      "candidate_url": "https://www.euronext.com/en/csd/oslo/equities-and-equity-certificates/corporate-actions",
+      "score": 50,
+      "matched_hints": "equities|equity|euronext"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_advanced_reference_data.html",
+      "source_url": "https://www.euronext.com/en/products-services/advanced-reference-data",
+      "candidate_url": "https://www.euronext.com/en/csd/oslo/equities-and-equity-certificates/registration",
+      "score": 50,
+      "matched_hints": "equities|equity|euronext"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_advanced_reference_data.html",
+      "source_url": "https://www.euronext.com/en/products-services/advanced-reference-data",
+      "candidate_url": "https://www.euronext.com/en/csd/oslo/equities-and-equity-certificates/vps-issuer-services",
+      "score": 50,
+      "matched_hints": "equities|equity|euronext"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_advanced_reference_data.html",
+      "source_url": "https://www.euronext.com/en/products-services/advanced-reference-data",
+      "candidate_url": "https://www.euronext.com/en/csd/oslo/equities-and-equity-certificates/virtual-general-meeting",
+      "score": 50,
+      "matched_hints": "equities|equity|euronext"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/equity-derivatives/news",
+      "score": 50,
+      "matched_hints": "equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/stock-futures/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/stock-futures/trading",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/stock-options/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/stock-options/mini/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/stock-options/trading",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/dividend-stock-futures/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/dividend-stock-futures/trading",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/equity-derivatives/esg-derivatives",
+      "score": 50,
+      "matched_hints": "equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/products/equity-derivatives/sector-index-derivatives",
+      "score": 50,
+      "matched_hints": "equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/amsterdam/stock-futures/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/amsterdam/stock-options/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/brussels/stock-futures/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/brussels/stock-options/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/lisbon/stock-options/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/lisbon/stock-futures/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/milan/stock-options/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/milan/stock-futures/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/oslo/stock-futures/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/oslo/stock-options/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/paris/stock-futures/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "candidate_url": "https://live.euronext.com/en/markets/paris/stock-options/list",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/what-is-a-stock",
+      "score": 50,
+      "matched_hints": "euronext|live.euronext.com|stock"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/euronexts-global-equity-market-gem-equity-expands-its-offering-and-strengthens-its-role",
+      "score": 50,
+      "matched_hints": "equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/vincent-boquillon-and-nathalie-ruiz-sat-down-trade-discuss-equity-market-innovation",
+      "score": 50,
+      "matched_hints": "equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/us-election-impact-equity-trading-euronext-global-equity-market-volumes-have-tripled",
+      "score": 50,
+      "matched_hints": "equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://live.euronext.com/en/news/strength-made-italy-equity-trading",
+      "score": 50,
+      "matched_hints": "equity|euronext|live.euronext.com"
+    },
+    {
+      "raw_file": "(v2.15C_discovered_links_manifest)",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "/en/news/boursolive-2026-equity-markets-how-ai-reshaping-landscape",
+      "score": 50,
+      "matched_hints": "api|equity"
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "candidate_url": "https://www.euronext.com/en/media/4054/download",
+      "score": 45,
+      "matched_hints": "download|euronext"
+    }
+  ],
+  "raw_file_diagnostics": [
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_advanced_reference_data.html",
+      "name": "euronext_advanced_reference_data.html",
+      "bytes": 409557,
+      "source_url": "https://www.euronext.com/en/products-services/advanced-reference-data",
+      "title": "Advanced Reference Data | euronext.com",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 578,
+      "marker_isin": 15,
+      "marker_symbol": 0,
+      "marker_ticker": 2,
+      "marker_name": 577,
+      "marker_instrument": 5,
+      "marker_equity": 19,
+      "marker_shares": 4,
+      "marker_market": 194,
+      "marker_mic": 2,
+      "marker_currency": 2,
+      "marker_company": 11,
+      "marker_issuer": 39,
+      "marker_listing": 165,
+      "marker_stock": 0
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_amsterdam_equities_list.html",
+      "name": "euronext_amsterdam_equities_list.html",
+      "bytes": 342057,
+      "source_url": "https://live.euronext.com/en/markets/amsterdam/equities/list?page=0",
+      "title": "Stocks Amsterdam - Euronext exchange Live quotes",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 398,
+      "marker_isin": 12,
+      "marker_symbol": 3,
+      "marker_ticker": 2,
+      "marker_name": 534,
+      "marker_instrument": 6,
+      "marker_equity": 18,
+      "marker_shares": 0,
+      "marker_market": 292,
+      "marker_mic": 12,
+      "marker_currency": 0,
+      "marker_company": 52,
+      "marker_issuer": 4,
+      "marker_listing": 4,
+      "marker_stock": 179
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_brussels_equities_list.html",
+      "name": "euronext_brussels_equities_list.html",
+      "bytes": 338285,
+      "source_url": "https://live.euronext.com/en/markets/brussels/equities/list?page=0",
+      "title": "Stocks Brussels - Euronext exchange Live quotes",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 398,
+      "marker_isin": 12,
+      "marker_symbol": 3,
+      "marker_ticker": 2,
+      "marker_name": 522,
+      "marker_instrument": 6,
+      "marker_equity": 18,
+      "marker_shares": 0,
+      "marker_market": 318,
+      "marker_mic": 12,
+      "marker_currency": 0,
+      "marker_company": 52,
+      "marker_issuer": 4,
+      "marker_listing": 4,
+      "marker_stock": 181
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_dublin_equities_list.html",
+      "name": "euronext_dublin_equities_list.html",
+      "bytes": 296723,
+      "source_url": "https://live.euronext.com/en/markets/dublin/equities/list?page=0",
+      "title": "Stocks Dublin - Euronext exchange Live quotes",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 399,
+      "marker_isin": 12,
+      "marker_symbol": 3,
+      "marker_ticker": 2,
+      "marker_name": 437,
+      "marker_instrument": 6,
+      "marker_equity": 18,
+      "marker_shares": 0,
+      "marker_market": 294,
+      "marker_mic": 7,
+      "marker_currency": 0,
+      "marker_company": 48,
+      "marker_issuer": 4,
+      "marker_listing": 4,
+      "marker_stock": 180
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_lisbon_equities_list.html",
+      "name": "euronext_lisbon_equities_list.html",
+      "bytes": 313044,
+      "source_url": "https://live.euronext.com/en/markets/lisbon/equities/list?page=0",
+      "title": "Stocks Lisbon - Euronext exchange Live quotes",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 398,
+      "marker_isin": 12,
+      "marker_symbol": 3,
+      "marker_ticker": 2,
+      "marker_name": 469,
+      "marker_instrument": 6,
+      "marker_equity": 18,
+      "marker_shares": 0,
+      "marker_market": 294,
+      "marker_mic": 7,
+      "marker_currency": 0,
+      "marker_company": 52,
+      "marker_issuer": 4,
+      "marker_listing": 4,
+      "marker_stock": 179
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_all_equities.html",
+      "name": "euronext_live_all_equities.html",
+      "bytes": 423012,
+      "source_url": "https://live.euronext.com/en/products/equities/list",
+      "title": "Stocks all markets - Euronext exchange Live quotes",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 397,
+      "marker_isin": 12,
+      "marker_symbol": 3,
+      "marker_ticker": 2,
+      "marker_name": 692,
+      "marker_instrument": 6,
+      "marker_equity": 24,
+      "marker_shares": 0,
+      "marker_market": 386,
+      "marker_mic": 12,
+      "marker_currency": 1,
+      "marker_company": 48,
+      "marker_issuer": 4,
+      "marker_listing": 4,
+      "marker_stock": 181
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_live_equities_overview.html",
+      "name": "euronext_live_equities_overview.html",
+      "bytes": 346293,
+      "source_url": "https://live.euronext.com/en/products/equities",
+      "title": "Equities - Stocks - Shares | Euronext Markets",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 466,
+      "marker_isin": 15,
+      "marker_symbol": 1,
+      "marker_ticker": 5,
+      "marker_name": 438,
+      "marker_instrument": 53,
+      "marker_equity": 64,
+      "marker_shares": 6,
+      "marker_market": 298,
+      "marker_mic": 40,
+      "marker_currency": 0,
+      "marker_company": 142,
+      "marker_issuer": 8,
+      "marker_listing": 10,
+      "marker_stock": 224
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_milan_equities_list.html",
+      "name": "euronext_milan_equities_list.html",
+      "bytes": 380685,
+      "source_url": "https://live.euronext.com/en/markets/milan/equities/list?page=0",
+      "title": "Stocks Milan - Euronext exchange Live quotes",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 398,
+      "marker_isin": 12,
+      "marker_symbol": 3,
+      "marker_ticker": 2,
+      "marker_name": 626,
+      "marker_instrument": 6,
+      "marker_equity": 23,
+      "marker_shares": 0,
+      "marker_market": 321,
+      "marker_mic": 13,
+      "marker_currency": 0,
+      "marker_company": 48,
+      "marker_issuer": 4,
+      "marker_listing": 4,
+      "marker_stock": 187
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_oslo_equities_list.html",
+      "name": "euronext_oslo_equities_list.html",
+      "bytes": 350439,
+      "source_url": "https://live.euronext.com/en/markets/oslo/equities/list?page=0",
+      "title": "Stocks Oslo - Euronext exchange Live quotes",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 399,
+      "marker_isin": 12,
+      "marker_symbol": 3,
+      "marker_ticker": 2,
+      "marker_name": 546,
+      "marker_instrument": 6,
+      "marker_equity": 18,
+      "marker_shares": 0,
+      "marker_market": 314,
+      "marker_mic": 13,
+      "marker_currency": 0,
+      "marker_company": 52,
+      "marker_issuer": 4,
+      "marker_listing": 4,
+      "marker_stock": 186
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_paris_equities_list.html",
+      "name": "euronext_paris_equities_list.html",
+      "bytes": 385397,
+      "source_url": "https://live.euronext.com/en/markets/paris/equities/list?page=0",
+      "title": "Stocks Paris - Euronext exchange Live quotes",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 399,
+      "marker_isin": 12,
+      "marker_symbol": 3,
+      "marker_ticker": 2,
+      "marker_name": 630,
+      "marker_instrument": 6,
+      "marker_equity": 19,
+      "marker_shares": 0,
+      "marker_market": 323,
+      "marker_mic": 12,
+      "marker_currency": 1,
+      "marker_company": 52,
+      "marker_issuer": 4,
+      "marker_listing": 4,
+      "marker_stock": 182
+    },
+    {
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c\\euronext_static_reference_data.html",
+      "name": "euronext_static_reference_data.html",
+      "bytes": 415621,
+      "source_url": "https://www.euronext.com/en/products-services/static-reference-data",
+      "title": "Static Reference Data | euronext.com",
+      "table_count": 0,
+      "script_count": 0,
+      "form_count": 0,
+      "drupal_settings_count": 0,
+      "isin_like_count": 0,
+      "candidate_endpoint_count": 595,
+      "marker_isin": 18,
+      "marker_symbol": 0,
+      "marker_ticker": 2,
+      "marker_name": 563,
+      "marker_instrument": 17,
+      "marker_equity": 20,
+      "marker_shares": 4,
+      "marker_market": 191,
+      "marker_mic": 3,
+      "marker_currency": 2,
+      "marker_company": 10,
+      "marker_issuer": 39,
+      "marker_listing": 171,
+      "marker_stock": 0
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "validation-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed_for_validation": true,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.15E - Euronext Expanded Rebuild Candidate Preparation",
+  "fallback_next_phase_if_endpoint_not_sufficient": "v2.15D2 - Euronext Endpoint Discovery Validation"
+}
