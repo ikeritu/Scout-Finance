@@ -1,0 +1,136 @@
+{
+  "version": "v2.15A",
+  "phase": "Next Provider Route For Remaining Full Source Gap",
+  "phase_type": "route-selection-only",
+  "status": "NEXT_PROVIDER_ROUTE_SELECTED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-07-10T20:58:22.859385+00:00",
+  "current_state": {
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "current_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "previous_provider_closures": [
+    "cboe_listed_symbols",
+    "sec_company_tickers_exchange",
+    "nasdaq_trader_nasdaqlisted",
+    "nasdaq_trader_otherlisted",
+    "cboe_europe_reference_data",
+    "hkex_securities_list",
+    "jpx_listed_securities",
+    "deutsche_boerse_xetra_all_tradable_instruments"
+  ],
+  "selected_provider": {
+    "provider_id": "euronext_official_instruments_equities",
+    "provider_name": "Euronext official instruments / listed equities",
+    "region": "Europe",
+    "expected_impact": "high",
+    "official_source_likelihood": "high",
+    "duplicate_risk": "medium",
+    "taxonomy_complexity": "medium",
+    "access_complexity": "medium",
+    "reason": "Large official European venue group; likely to add listings not fully covered by previous providers while complementing Xetra, HKEX and JPX.",
+    "route_score": 94
+  },
+  "candidate_ranking": [
+    {
+      "provider_id": "euronext_official_instruments_equities",
+      "provider_name": "Euronext official instruments / listed equities",
+      "region": "Europe",
+      "expected_impact": "high",
+      "official_source_likelihood": "high",
+      "duplicate_risk": "medium",
+      "taxonomy_complexity": "medium",
+      "access_complexity": "medium",
+      "reason": "Large official European venue group; likely to add listings not fully covered by previous providers while complementing Xetra, HKEX and JPX.",
+      "route_score": 94
+    },
+    {
+      "provider_id": "tmx_tsx_tsxv_listed_issuers",
+      "provider_name": "TMX / TSX / TSXV listed issuers",
+      "region": "Canada",
+      "expected_impact": "medium_high",
+      "official_source_likelihood": "high",
+      "duplicate_risk": "low_medium",
+      "taxonomy_complexity": "medium",
+      "access_complexity": "medium",
+      "reason": "Canada can add a meaningful block of common equities and ETFs require filtering; good diversification outside US/Europe/Asia already covered.",
+      "route_score": 88
+    },
+    {
+      "provider_id": "asx_official_listed_companies",
+      "provider_name": "ASX official listed companies",
+      "region": "Australia",
+      "expected_impact": "medium",
+      "official_source_likelihood": "high",
+      "duplicate_risk": "low",
+      "taxonomy_complexity": "low_medium",
+      "access_complexity": "low_medium",
+      "reason": "Clear official exchange candidate with likely clean symbol/company data and manageable taxonomy.",
+      "route_score": 84
+    },
+    {
+      "provider_id": "krx_kind_listed_companies",
+      "provider_name": "KRX / KIND listed companies",
+      "region": "South Korea",
+      "expected_impact": "medium",
+      "official_source_likelihood": "high",
+      "duplicate_risk": "low",
+      "taxonomy_complexity": "medium_high",
+      "access_complexity": "medium_high",
+      "reason": "Large Asian market candidate; language/access/taxonomy may be more complex than ASX/TMX.",
+      "route_score": 79
+    },
+    {
+      "provider_id": "sgx_securities_list",
+      "provider_name": "SGX securities list",
+      "region": "Singapore",
+      "expected_impact": "low_medium",
+      "official_source_likelihood": "high",
+      "duplicate_risk": "low",
+      "taxonomy_complexity": "medium",
+      "access_complexity": "medium",
+      "reason": "Good official venue candidate but likely smaller net-new contribution than Euronext/TMX/ASX.",
+      "route_score": 73
+    },
+    {
+      "provider_id": "bme_spanish_listed_instruments",
+      "provider_name": "BME Spanish listed instruments",
+      "region": "Spain",
+      "expected_impact": "low_medium",
+      "official_source_likelihood": "high",
+      "duplicate_risk": "medium_high",
+      "taxonomy_complexity": "medium",
+      "access_complexity": "medium",
+      "reason": "Relevant European source but may overlap heavily with Cboe Europe and other European coverage.",
+      "route_score": 69
+    }
+  ],
+  "decision": {
+    "selected_provider_id": "euronext_official_instruments_equities",
+    "selected_provider_name": "Euronext official instruments / listed equities",
+    "reason": "Large official European venue group; likely to add listings not fully covered by previous providers while complementing Xetra, HKEX and JPX.",
+    "why_now": "Highest route score among remaining candidates; broad official exchange coverage; suitable next attempt to reduce the 11,713-row remaining gap.",
+    "next_phase": "v2.15B - Euronext Acquisition Plan"
+  },
+  "hard_guards": {
+    "phase_type": "route-selection-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.15B - Euronext Acquisition Plan"
+}

@@ -1,0 +1,7 @@
+provider_id,provider_name,region,expected_impact,official_source_likelihood,duplicate_risk,taxonomy_complexity,access_complexity,route_score,reason
+euronext_official_instruments_equities,Euronext official instruments / listed equities,Europe,high,high,medium,medium,medium,94,"Large official European venue group; likely to add listings not fully covered by previous providers while complementing Xetra, HKEX and JPX."
+tmx_tsx_tsxv_listed_issuers,TMX / TSX / TSXV listed issuers,Canada,medium_high,high,low_medium,medium,medium,88,Canada can add a meaningful block of common equities and ETFs require filtering; good diversification outside US/Europe/Asia already covered.
+asx_official_listed_companies,ASX official listed companies,Australia,medium,high,low,low_medium,low_medium,84,Clear official exchange candidate with likely clean symbol/company data and manageable taxonomy.
+krx_kind_listed_companies,KRX / KIND listed companies,South Korea,medium,high,low,medium_high,medium_high,79,Large Asian market candidate; language/access/taxonomy may be more complex than ASX/TMX.
+sgx_securities_list,SGX securities list,Singapore,low_medium,high,low,medium,medium,73,Good official venue candidate but likely smaller net-new contribution than Euronext/TMX/ASX.
+bme_spanish_listed_instruments,BME Spanish listed instruments,Spain,low_medium,high,medium_high,medium,medium,69,Relevant European source but may overlap heavily with Cboe Europe and other European coverage.
