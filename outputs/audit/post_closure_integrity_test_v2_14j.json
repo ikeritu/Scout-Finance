@@ -1,0 +1,235 @@
+{
+  "version": "v2.14J",
+  "phase": "Post-Closure Integrity Test",
+  "phase_type": "test-only",
+  "status": "POST_CLOSURE_INTEGRITY_TEST_PASSED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-07-10T14:49:58.687733+00:00",
+  "canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+  "summary": {
+    "headers": [
+      "ticker",
+      "company_name",
+      "exchange",
+      "country",
+      "source_provider",
+      "source_file",
+      "instrument_type",
+      "instrument_scope",
+      "classification_confidence",
+      "classification_reason",
+      "sector",
+      "industry",
+      "market_cap",
+      "raw_cik",
+      "raw_exchange",
+      "provider_precedence",
+      "merge_action",
+      "merge_reason",
+      "isin",
+      "currency",
+      "mic",
+      "source_version",
+      "source_url",
+      "hkex_category",
+      "hkex_subcategory",
+      "hkex_board_lot",
+      "provider",
+      "source_phase",
+      "symbol",
+      "security_name",
+      "instrument_id",
+      "product_assignment_group_description",
+      "asset_type"
+    ],
+    "columns": {
+      "ticker_col": "ticker",
+      "exchange_col": "exchange",
+      "provider_col": "source_provider",
+      "company_col": "company_name",
+      "isin_col": "isin"
+    },
+    "counts": {
+      "rows": 38287,
+      "rows_needed_to_50k": 11713,
+      "source_to_50k_percent": 76.6,
+      "duplicate_exchange_ticker_keys": 0,
+      "blank_ticker": 0,
+      "blank_exchange": 0,
+      "blank_provider": 0,
+      "blank_company_name": 1193,
+      "blank_isin": 34091
+    },
+    "provider_counts": {
+      "nasdaq_trader_nasdaqlisted": 3244,
+      "nasdaq_trader_otherlisted": 2404,
+      "sec_company_tickers_exchange": 2359,
+      "cboe_listed_symbols": 1193,
+      "cboe_europe_reference_data": 21154,
+      "hkex_securities_list": 2804,
+      "jpx_listed_securities": 3705,
+      "deutsche_boerse_xetra_all_tradable_instruments": 1424
+    },
+    "duplicate_exchange_ticker_sample": []
+  },
+  "checks": [
+    {
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "validation_json_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\deutsche_boerse_xetra_expanded_validation_v2_14f.json"
+    },
+    {
+      "check": "closure_json_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\deutsche_boerse_xetra_closure_report_v2_14g.json"
+    },
+    {
+      "check": "row_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows=38287; expected=38287"
+    },
+    {
+      "check": "rows_needed_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed=11713; expected=11713"
+    },
+    {
+      "check": "source_to_50k_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "source_to_50k=76.6; expected=76.6"
+    },
+    {
+      "check": "ticker_column_found",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ticker_col=ticker"
+    },
+    {
+      "check": "exchange_column_found",
+      "passed": true,
+      "severity": "critical",
+      "detail": "exchange_col=exchange"
+    },
+    {
+      "check": "provider_column_found",
+      "passed": true,
+      "severity": "critical",
+      "detail": "provider_col=source_provider"
+    },
+    {
+      "check": "company_column_found",
+      "passed": true,
+      "severity": "warning",
+      "detail": "company_col=company_name"
+    },
+    {
+      "check": "isin_column_found",
+      "passed": true,
+      "severity": "warning",
+      "detail": "isin_col=isin"
+    },
+    {
+      "check": "blank_ticker_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "blank_ticker=0"
+    },
+    {
+      "check": "blank_exchange_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "blank_exchange=0"
+    },
+    {
+      "check": "blank_provider_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "blank_provider=0"
+    },
+    {
+      "check": "duplicate_exchange_ticker_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "duplicate_exchange_ticker_keys=0"
+    },
+    {
+      "check": "provider_breakdown_exact",
+      "passed": true,
+      "severity": "critical",
+      "detail": "provider_counts={'nasdaq_trader_nasdaqlisted': 3244, 'nasdaq_trader_otherlisted': 2404, 'sec_company_tickers_exchange': 2359, 'cboe_listed_symbols': 1193, 'cboe_europe_reference_data': 21154, 'hkex_securities_list': 2804, 'jpx_listed_securities': 3705, 'deutsche_boerse_xetra_all_tradable_instruments': 1424}"
+    },
+    {
+      "check": "xetra_provider_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "xetra_count=1424"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows=38287; threshold=50000"
+    },
+    {
+      "check": "closure_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "closure_status=DEUTSCHE_BOERSE_XETRA_CLOSED_CONSERVATIVE_REBUILD_VALIDATED_FULL_SOURCE_BLOCKED"
+    },
+    {
+      "check": "validation_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validation_status=DEUTSCHE_BOERSE_XETRA_EXPANDED_VALIDATION_PASSED_FULL_SOURCE_STILL_BLOCKED"
+    },
+    {
+      "check": "global_blank_company_name_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "blank_company_name=1193"
+    },
+    {
+      "check": "global_blank_isin_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "blank_isin=34091"
+    },
+    {
+      "check": "no_scoring_openai_broker_full59k",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring=False; openai=False; broker=False; full59k=False"
+    }
+  ],
+  "counts": {
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0
+  },
+  "hard_guards": {
+    "phase_type": "test-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed_for_test": true,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.14K - .gitattributes / EOL Guard",
+  "alternative_next_phase": "v2.15A - Next Provider Route For Remaining Full Source Gap"
+}
