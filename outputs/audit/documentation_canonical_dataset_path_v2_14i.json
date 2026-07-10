@@ -1,0 +1,47 @@
+{
+  "version": "v2.14I",
+  "phase": "Documentation and Canonical Dataset Path",
+  "phase_type": "documentation-only",
+  "generated_at_utc": "2026-07-10T08:50:18.111883+00:00",
+  "files_updated": [
+    "README.md",
+    "VERSION.md",
+    "CHANGELOG.md"
+  ],
+  "files_created": [
+    "docs\\technical\\data_pipeline_current_state_v2_14i.md",
+    "docs\\technical\\expanded_universe_canonical_path_v2_14i.md",
+    "outputs\\audit\\documentation_canonical_dataset_path_v2_14i.json",
+    "outputs\\audit\\documentation_canonical_dataset_path_v2_14i.md"
+  ],
+  "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+  "current_state": {
+    "app_mvp_track": "v1.1C - MVP Final Freeze",
+    "data_pipeline_track": "v2.14H - Audit Triage / Stability Gate",
+    "last_provider_closure": "v2.14G - Deutsche Boerse Xetra Closure Report",
+    "expanded_rows": 38287,
+    "full_source_threshold": 50000,
+    "source_to_50k_completed_percent": 76.6,
+    "source_to_50k_pending_percent": 23.4,
+    "rows_needed": 11713,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "hard_guards": {
+    "phase_type": "documentation-only",
+    "network_download_performed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "workbook_or_csv_parsed": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.14J - Post-Closure Integrity Test",
+  "alternative_next_phase": "v2.15A - Next Provider Route For Remaining Full Source Gap"
+}

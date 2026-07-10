@@ -1,3 +1,16 @@
+<!-- SCOUT_FINANCE_V2_14I_STATE_START -->
+## Estado real actual / Current Real State
+
+Estado real del repositorio tras auditoría y cierre Xetra.
+
+- App/MVP: `v1.1C — MVP Final Freeze`
+- Pipeline de datos: `v2.14H — Audit Triage / Stability Gate`
+- Dataset canónico vigente: `outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv`
+- Siguiente fase recomendada: `v2.14J — Post-Closure Integrity Test` o `v2.15A — Next Provider Route`, según prioridad operativa.
+
+
+<!-- SCOUT_FINANCE_V2_14I_STATE_END -->
+
 # Scout Finance — VERSION
 
 ## Versión actual

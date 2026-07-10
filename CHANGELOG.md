@@ -1,3 +1,17 @@
+<!-- SCOUT_FINANCE_V2_14I_STATE_START -->
+## Entrada documental v2.14I
+
+### v2.14I — Documentation and Canonical Dataset Path
+
+- Documenta la separación entre app/MVP `v1.1C` y pipeline de datos `v2.14H`.
+- Fija la ruta canónica vigente del expanded universe: `outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv`.
+- Documenta estado actual: `38,287` filas, `76.6%` hacia 50k, `11,713` filas pendientes.
+- Mantiene full source gate y full 59k dry-run bloqueados.
+- Fase documental: no modifica datos, no rebuild, no scoring, no OpenAI, no broker.
+
+
+<!-- SCOUT_FINANCE_V2_14I_STATE_END -->
+
 # CHANGELOG
 
 ## Sin tag — Simplificación de la interfaz para pruebas
