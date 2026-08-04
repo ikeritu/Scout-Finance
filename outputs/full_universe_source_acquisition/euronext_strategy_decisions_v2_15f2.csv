@@ -1,0 +1,5 @@
+decision_id,decision,evidence,impact
+public_html_rebuild_path,reject_for_rebuild,dry_quality=low; table_based_count=0; context_only_count=7; unique_isins=7,Do not proceed from public HTML tables to expanded universe rebuild.
+context_only_candidates,keep_as_evidence_only,deduped_candidates=7; quality=low; source_kind=isin_context,Context-only ISINs are not sufficient for net-new filtering or canonical integration.
+endpoint_probe_path,prepare_controlled_probe,executable_probe_rows=95; total_probe_rows=1184,Next phase may probe candidate endpoints for metadata only; no rebuild allowed.
+full_source_gate,remain_blocked,current_rows=38287; threshold=50000; rows_needed=11713,Full source and full59k remain blocked.
