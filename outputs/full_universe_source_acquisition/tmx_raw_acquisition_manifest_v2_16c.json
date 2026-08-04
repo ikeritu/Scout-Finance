@@ -1,0 +1,418 @@
+{
+  "version": "v2.16C",
+  "phase": "TMX Raw Acquisition",
+  "phase_type": "raw-acquisition-only",
+  "status": "TMX_RAW_ACQUISITION_COMPLETED_WITH_DOWNLOADS_REBUILD_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-04T22:26:53.757645+00:00",
+  "current_state": {
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "current_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "raw_acquisition_summary": {
+    "plan_artifact": "outputs\\full_universe_source_acquisition\\tmx_acquisition_plan_v2_16b.json",
+    "source_candidates_artifact": "outputs\\full_universe_source_acquisition\\tmx_source_candidates_v2_16b.csv",
+    "raw_dir": "outputs\\full_universe_source_acquisition\\raw\\tmx_v2_16c",
+    "source_candidates": 7,
+    "download_allowed_sources": 6,
+    "download_attempted": 6,
+    "raw_files_written": 4,
+    "http_ok_count": 4,
+    "skipped_sources": 1,
+    "paid_or_controlled_sources_skipped": 1,
+    "error_count": 2,
+    "bytes_total": 440295,
+    "max_bytes_per_source": 8000000,
+    "critical_failed_checks": 0
+  },
+  "manifest": [
+    {
+      "source_id": "tmx_listed_company_directory",
+      "source_name": "TSX/TSXV Listed Company Directory",
+      "priority": "1",
+      "source_type": "official_public_directory",
+      "decision": "primary_candidate_source",
+      "url": "https://www.tsx.com/en/listings/listing-with-us/listed-company-directory",
+      "action": "download_public_directory_html_and_linked_assets_if_allowed",
+      "download_attempted": true,
+      "download_allowed": true,
+      "skipped_reason": "",
+      "status_code": 200,
+      "ok": true,
+      "final_url": "https://www.tsx.com/en/listings/listing-with-us/listed-company-directory",
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_header": "13120",
+      "bytes_written": 69545,
+      "sha256": "2e6aa51e7a80eb77c35e2197de0f2e7661583e2c31fb4e1a1e9eca96906585ea",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\tmx_v2_16c\\01_tmx_listed_company_directory.raw",
+      "error": ""
+    },
+    {
+      "source_id": "tmx_equity_symbol_lookup",
+      "source_name": "TMX apps equity search quick view",
+      "priority": "2",
+      "source_type": "official_public_search_endpoint_or_html",
+      "decision": "primary_probe_seed",
+      "url": "https://apps.tmx.com/HttpController?GetPage=SearchEquitiesQuickViewPage&language=en",
+      "action": "download_controller_landing_response_only",
+      "download_attempted": true,
+      "download_allowed": true,
+      "skipped_reason": "",
+      "status_code": "",
+      "ok": false,
+      "final_url": "",
+      "content_type": "",
+      "content_length_header": "",
+      "bytes_written": 0,
+      "sha256": "",
+      "raw_path": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='apps.tmx.com', port=443): Max retries exceeded with url: /HttpController?GetPage=SearchEquitiesQuickViewPage&language=en (Caused by ConnectTimeoutError(<HTTPSConnection(host='apps.tmx.com', port=443) at 0x1d1974c9810>, 'Connection to apps.tmx.com timed out. (connect timeout=45)'))"
+    },
+    {
+      "source_id": "tmx_tsxv_lcdb_search",
+      "source_name": "TSX Venture Listed Company Database Search",
+      "priority": "3",
+      "source_type": "official_public_tsxv_database_search",
+      "decision": "tsxv_supplement_probe_seed",
+      "url": "https://apps.tmx.com/TSXVenture/TSXVentureHttpController?GetPage=LcdbSearch",
+      "action": "download_landing_response_only",
+      "download_attempted": true,
+      "download_allowed": true,
+      "skipped_reason": "",
+      "status_code": "",
+      "ok": false,
+      "final_url": "",
+      "content_type": "",
+      "content_length_header": "",
+      "bytes_written": 0,
+      "sha256": "",
+      "raw_path": "",
+      "error": "ConnectTimeout: HTTPSConnectionPool(host='apps.tmx.com', port=443): Max retries exceeded with url: /TSXVenture/TSXVentureHttpController?GetPage=LcdbSearch (Caused by ConnectTimeoutError(<HTTPSConnection(host='apps.tmx.com', port=443) at 0x1d1974ca210>, 'Connection to apps.tmx.com timed out. (connect timeout=45)'))"
+    },
+    {
+      "source_id": "tmx_money_stocklists",
+      "source_name": "TMX Money Stocklists",
+      "priority": "4",
+      "source_type": "official_public_stocklists",
+      "decision": "supporting_probe_seed",
+      "url": "https://money.tmx.com/stock-lists",
+      "action": "download_stocklist_landing_html",
+      "download_attempted": true,
+      "download_allowed": true,
+      "skipped_reason": "",
+      "status_code": 200,
+      "ok": true,
+      "final_url": "https://money.tmx.com/stock-lists",
+      "content_type": "text/html; charset=utf-8",
+      "content_length_header": "",
+      "bytes_written": 180958,
+      "sha256": "07446cd25b176b5cdbc752c13e803b8ff85625cfc0e94616b2dc71c39d32008f",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\tmx_v2_16c\\04_tmx_money_stocklists.raw",
+      "error": ""
+    },
+    {
+      "source_id": "tmx_money_recent_listings",
+      "source_name": "TMX Money Recent Listings",
+      "priority": "5",
+      "source_type": "official_public_recent_listings_stocklist",
+      "decision": "supporting_recent_changes_source",
+      "url": "https://money.tmx.com/stock-list/RECENT_LISTINGS_SYMBOLS",
+      "action": "download_recent_listings_html",
+      "download_attempted": true,
+      "download_allowed": true,
+      "skipped_reason": "",
+      "status_code": 200,
+      "ok": true,
+      "final_url": "https://money.tmx.com/stock-list/RECENT_LISTINGS_SYMBOLS",
+      "content_type": "text/html; charset=utf-8",
+      "content_length_header": "",
+      "bytes_written": 121028,
+      "sha256": "56cae9432445f66bb2b8e60347237298b582b2c7e5eb701f0217aa91ecd24b14",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\tmx_v2_16c\\05_tmx_money_recent_listings.raw",
+      "error": ""
+    },
+    {
+      "source_id": "tmx_newsroom_equity_financing_statistics",
+      "source_name": "TMX Equity Financing Statistics",
+      "priority": "6",
+      "source_type": "official_public_monthly_statistics",
+      "decision": "supporting_sanity_check_source",
+      "url": "https://www.tmx.com/en/newsroom/press-releases",
+      "action": "download_latest_relevant_statistics_pages_if_explicitly_selected",
+      "download_attempted": true,
+      "download_allowed": true,
+      "skipped_reason": "",
+      "status_code": 200,
+      "ok": true,
+      "final_url": "https://www.tmx.com/en/newsroom/press-releases",
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_header": "12235",
+      "bytes_written": 68764,
+      "sha256": "2c6f585e4746c92c48ee7071a040f4b74dc19ff5fd07fe51ba64c8ddca0f7277",
+      "raw_path": "outputs\\full_universe_source_acquisition\\raw\\tmx_v2_16c\\06_tmx_newsroom_equity_financing_statistics.raw",
+      "error": ""
+    },
+    {
+      "source_id": "tmx_datalinx_reference_data",
+      "source_name": "TMX Datalinx / TMX Info Services reference data",
+      "priority": "7",
+      "source_type": "official_data_product_or_paid_reference_data",
+      "decision": "documented_fallback_not_executed_by_default",
+      "url": "https://www.tmxinfoservices.com/",
+      "action": "do_not_download_unless_public_access_confirmed",
+      "download_attempted": false,
+      "download_allowed": false,
+      "skipped_reason": "paid_or_controlled_source_not_downloaded",
+      "status_code": "",
+      "ok": false,
+      "final_url": "",
+      "content_type": "",
+      "content_length_header": "",
+      "bytes_written": 0,
+      "sha256": "",
+      "raw_path": "",
+      "error": ""
+    }
+  ],
+  "source_actions": [
+    {
+      "source_id": "tmx_listed_company_directory",
+      "source_name": "TSX/TSXV Listed Company Directory",
+      "priority": "1",
+      "decision": "primary_candidate_source",
+      "source_url": "https://www.tsx.com/en/listings/listing-with-us/listed-company-directory",
+      "planned_v2_16c_action": "download_public_directory_html_and_linked_assets_if_allowed",
+      "executed_action": "download_landing_response_only",
+      "allowed": true,
+      "reason": "allowed_public_planned_source"
+    },
+    {
+      "source_id": "tmx_equity_symbol_lookup",
+      "source_name": "TMX apps equity search quick view",
+      "priority": "2",
+      "decision": "primary_probe_seed",
+      "source_url": "https://apps.tmx.com/HttpController?GetPage=SearchEquitiesQuickViewPage&language=en",
+      "planned_v2_16c_action": "download_controller_landing_response_only",
+      "executed_action": "download_landing_response_only",
+      "allowed": true,
+      "reason": "allowed_public_planned_source"
+    },
+    {
+      "source_id": "tmx_tsxv_lcdb_search",
+      "source_name": "TSX Venture Listed Company Database Search",
+      "priority": "3",
+      "decision": "tsxv_supplement_probe_seed",
+      "source_url": "https://apps.tmx.com/TSXVenture/TSXVentureHttpController?GetPage=LcdbSearch",
+      "planned_v2_16c_action": "download_landing_response_only",
+      "executed_action": "download_landing_response_only",
+      "allowed": true,
+      "reason": "allowed_public_planned_source"
+    },
+    {
+      "source_id": "tmx_money_stocklists",
+      "source_name": "TMX Money Stocklists",
+      "priority": "4",
+      "decision": "supporting_probe_seed",
+      "source_url": "https://money.tmx.com/stock-lists",
+      "planned_v2_16c_action": "download_stocklist_landing_html",
+      "executed_action": "download_landing_response_only",
+      "allowed": true,
+      "reason": "allowed_public_planned_source"
+    },
+    {
+      "source_id": "tmx_money_recent_listings",
+      "source_name": "TMX Money Recent Listings",
+      "priority": "5",
+      "decision": "supporting_recent_changes_source",
+      "source_url": "https://money.tmx.com/stock-list/RECENT_LISTINGS_SYMBOLS",
+      "planned_v2_16c_action": "download_recent_listings_html",
+      "executed_action": "download_landing_response_only",
+      "allowed": true,
+      "reason": "allowed_public_planned_source"
+    },
+    {
+      "source_id": "tmx_newsroom_equity_financing_statistics",
+      "source_name": "TMX Equity Financing Statistics",
+      "priority": "6",
+      "decision": "supporting_sanity_check_source",
+      "source_url": "https://www.tmx.com/en/newsroom/press-releases",
+      "planned_v2_16c_action": "download_latest_relevant_statistics_pages_if_explicitly_selected",
+      "executed_action": "download_landing_response_only",
+      "allowed": true,
+      "reason": "allowed_public_planned_source"
+    },
+    {
+      "source_id": "tmx_datalinx_reference_data",
+      "source_name": "TMX Datalinx / TMX Info Services reference data",
+      "priority": "7",
+      "decision": "documented_fallback_not_executed_by_default",
+      "source_url": "https://www.tmxinfoservices.com/",
+      "planned_v2_16c_action": "do_not_download_unless_public_access_confirmed",
+      "executed_action": "skip",
+      "allowed": false,
+      "reason": "paid_or_controlled_source_not_downloaded"
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_16b_plan_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_acquisition_plan_v2_16b.json"
+    },
+    {
+      "check": "v2_16b_source_candidates_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_source_candidates_v2_16b.csv"
+    },
+    {
+      "check": "v2_16b_status_valid",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TMX_ACQUISITION_PLAN_CREATED_NO_DOWNLOADS_PERFORMED_FULL_SOURCE_BLOCKED"
+    },
+    {
+      "check": "v2_16b_recommended_v2_16c",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.16C - TMX Raw Acquisition"
+    },
+    {
+      "check": "raw_dir_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\raw\\tmx_v2_16c"
+    },
+    {
+      "check": "source_candidates_loaded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "sources=7"
+    },
+    {
+      "check": "public_sources_attempted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "attempted=6"
+    },
+    {
+      "check": "raw_files_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_files_written=4"
+    },
+    {
+      "check": "controller_timeouts_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "controller_errors_or_timeouts=2"
+    },
+    {
+      "check": "at_least_one_http_ok",
+      "passed": true,
+      "severity": "warning",
+      "detail": "ok_count=4"
+    },
+    {
+      "check": "paid_controlled_source_skipped",
+      "passed": true,
+      "severity": "critical",
+      "detail": "paid_skipped_count=1"
+    },
+    {
+      "check": "errors_review",
+      "passed": false,
+      "severity": "warning",
+      "detail": "error_count=2"
+    },
+    {
+      "check": "current_rows_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=38287"
+    },
+    {
+      "check": "rows_needed_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed=11713"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "38287 < 50000"
+    },
+    {
+      "check": "canonical_dataset_not_read",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "no_parsing",
+      "passed": true,
+      "severity": "critical",
+      "detail": "parsing_performed=False"
+    },
+    {
+      "check": "no_security_extraction",
+      "passed": true,
+      "severity": "critical",
+      "detail": "security_rows_extracted=False"
+    },
+    {
+      "check": "no_normalization",
+      "passed": true,
+      "severity": "critical",
+      "detail": "normalization_performed=False"
+    },
+    {
+      "check": "no_net_new_filtering",
+      "passed": true,
+      "severity": "critical",
+      "detail": "net_new_filtering=False"
+    },
+    {
+      "check": "no_expanded_universe_rebuild",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_universe_rebuilt=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "raw-acquisition-only",
+    "network_download_performed": true,
+    "raw_files_downloaded": true,
+    "raw_files_modified_after_write": false,
+    "landing_responses_only": true,
+    "query_sweep_performed": false,
+    "paid_or_controlled_data_accessed": false,
+    "parsing_performed": false,
+    "security_rows_extracted": false,
+    "candidate_rows_extracted": false,
+    "canonical_dataset_read": false,
+    "canonical_dataset_modified": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.16D - TMX Validation"
+}
