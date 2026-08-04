@@ -1,0 +1,219 @@
+{
+  "version": "v2.15F4",
+  "phase": "Euronext Endpoint Payload Shape Validation",
+  "phase_type": "payload-shape-validation-only",
+  "status": "EURONEXT_ENDPOINT_PAYLOAD_SHAPE_VALIDATED_EXTRACTION_DRY_RUN_ALLOWED_REBUILD_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-04T14:52:57.597226+00:00",
+  "current_state": {
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "current_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "shape_config": {
+    "max_endpoints": 5,
+    "max_bytes_per_endpoint": 1000000,
+    "timeout_seconds": 35,
+    "payload_storage": "disabled",
+    "security_value_extraction": "disabled"
+  },
+  "shape_summary": {
+    "f3_status": "EURONEXT_CONTROLLED_ENDPOINT_PROBE_COMPLETED_PROMISING_ENDPOINTS_REBUILD_STILL_BLOCKED",
+    "f3_recommended_next_phase": "v2.15F4 - Euronext Endpoint Payload Shape Validation",
+    "f3_result_rows": 30,
+    "selected_json_promising_endpoints": 2,
+    "shape_rows": 2,
+    "json_parsed_for_shape_count": 2,
+    "security_like_container_count": 2,
+    "medium_or_high_shape_count": 2,
+    "extraction_dry_run_allowed_count": 2,
+    "shape_quality_counts": {
+      "high": 2
+    },
+    "shape_validation_status_counts": {
+      "json_shape_validated_security_container_strong": 2
+    },
+    "http_status_counts": {
+      "200": 2
+    },
+    "key_path_rows": 14,
+    "critical_failed_checks": 0
+  },
+  "checks": [
+    {
+      "check": "v2_15f3_probe_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_controlled_endpoint_probe_v2_15f3.json"
+    },
+    {
+      "check": "v2_15f3_results_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_controlled_endpoint_probe_results_v2_15f3.csv"
+    },
+    {
+      "check": "json_promising_endpoints_selected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "selected=2"
+    },
+    {
+      "check": "shape_validation_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "shape_rows=2"
+    },
+    {
+      "check": "json_parsed_for_shape",
+      "passed": true,
+      "severity": "warning",
+      "detail": "parsed_count=2"
+    },
+    {
+      "check": "security_like_container_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "security_like_container_count=2"
+    },
+    {
+      "check": "medium_or_high_shape_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "medium_or_high_shape_count=2"
+    },
+    {
+      "check": "no_payload_saved_to_disk",
+      "passed": true,
+      "severity": "critical",
+      "detail": "payload_saved_to_disk=False"
+    },
+    {
+      "check": "no_security_values_extracted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "security_values_extracted=False"
+    },
+    {
+      "check": "canonical_dataset_not_read",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "no_normalization",
+      "passed": true,
+      "severity": "critical",
+      "detail": "normalization_performed=False"
+    },
+    {
+      "check": "no_net_new_filtering",
+      "passed": true,
+      "severity": "critical",
+      "detail": "net_new_filtering=False"
+    },
+    {
+      "check": "no_expanded_universe_rebuild",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_universe_rebuilt=False"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=38287"
+    }
+  ],
+  "shape_results": [
+    {
+      "endpoint_id": "fadba7b6f3060cf1",
+      "probe_id": "fadba7b6f3060cf1",
+      "probe_type": "json_or_ajax_metadata_probe",
+      "url": "https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134",
+      "status_code": 200,
+      "ok": true,
+      "final_url": "https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134",
+      "content_type": "application/json",
+      "content_length_header": "80",
+      "sampled_bytes": 80,
+      "sample_sha256": "3b9f49132c7d253353bd5efd4200c079c9a2a7695483f8c583d29f2a786117bb",
+      "payload_saved_to_disk": false,
+      "json_parsed_for_shape_only": true,
+      "json_parse_error": "",
+      "json_top_level_type": "list",
+      "top_level_keys": "value|isin|mic|label|link|name",
+      "list_container_count": 1,
+      "dict_container_count": 0,
+      "key_path_count": 7,
+      "field_marker_hits": "isin|mic|name",
+      "field_marker_hit_count": 3,
+      "security_like_container_count": 1,
+      "shape_validation_status": "json_shape_validated_security_container_strong",
+      "shape_quality": "high",
+      "recommended_extraction_route": "candidate_extraction_dry_run_allowed_next_phase",
+      "error": ""
+    },
+    {
+      "endpoint_id": "d9534f9c8846e89c",
+      "probe_id": "d9534f9c8846e89c",
+      "probe_type": "json_or_ajax_metadata_probe",
+      "url": "https://live.euronext.com/en/instrumentSearch/searchJSON",
+      "status_code": 200,
+      "ok": true,
+      "final_url": "https://live.euronext.com/en/instrumentSearch/searchJSON",
+      "content_type": "application/json",
+      "content_length_header": "80",
+      "sampled_bytes": 80,
+      "sample_sha256": "3b9f49132c7d253353bd5efd4200c079c9a2a7695483f8c583d29f2a786117bb",
+      "payload_saved_to_disk": false,
+      "json_parsed_for_shape_only": true,
+      "json_parse_error": "",
+      "json_top_level_type": "list",
+      "top_level_keys": "value|isin|mic|label|link|name",
+      "list_container_count": 1,
+      "dict_container_count": 0,
+      "key_path_count": 7,
+      "field_marker_hits": "isin|mic|name",
+      "field_marker_hit_count": 3,
+      "security_like_container_count": 1,
+      "shape_validation_status": "json_shape_validated_security_container_strong",
+      "shape_quality": "high",
+      "recommended_extraction_route": "candidate_extraction_dry_run_allowed_next_phase",
+      "error": ""
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "payload-shape-validation-only",
+    "network_download_performed": true,
+    "endpoint_payload_shape_validated": true,
+    "http_body_sampled_in_memory_only": true,
+    "raw_payload_saved_to_disk": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "json_payload_parsed_for_shape_only": true,
+    "security_values_extracted": false,
+    "security_rows_extracted": false,
+    "canonical_dataset_read": false,
+    "canonical_dataset_modified": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.15F5 - Euronext Endpoint Candidate Extraction Dry Run"
+}

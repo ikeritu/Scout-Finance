@@ -1,0 +1,15 @@
+endpoint_id,url,path,value_type,example_container_type,field_marker_hit
+fadba7b6f3060cf1,https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134,$[],list,list_len_1,
+fadba7b6f3060cf1,https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134,$[0].value,str,dict,
+fadba7b6f3060cf1,https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134,$[0].isin,str,dict,isin
+fadba7b6f3060cf1,https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134,$[0].mic,str,dict,mic
+fadba7b6f3060cf1,https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134,$[0].label,str,dict,
+fadba7b6f3060cf1,https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134,$[0].link,str,dict,
+fadba7b6f3060cf1,https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134,$[0].name,str,dict,name
+d9534f9c8846e89c,https://live.euronext.com/en/instrumentSearch/searchJSON,$[],list,list_len_1,
+d9534f9c8846e89c,https://live.euronext.com/en/instrumentSearch/searchJSON,$[0].value,str,dict,
+d9534f9c8846e89c,https://live.euronext.com/en/instrumentSearch/searchJSON,$[0].isin,str,dict,isin
+d9534f9c8846e89c,https://live.euronext.com/en/instrumentSearch/searchJSON,$[0].mic,str,dict,mic
+d9534f9c8846e89c,https://live.euronext.com/en/instrumentSearch/searchJSON,$[0].label,str,dict,
+d9534f9c8846e89c,https://live.euronext.com/en/instrumentSearch/searchJSON,$[0].link,str,dict,
+d9534f9c8846e89c,https://live.euronext.com/en/instrumentSearch/searchJSON,$[0].name,str,dict,name
