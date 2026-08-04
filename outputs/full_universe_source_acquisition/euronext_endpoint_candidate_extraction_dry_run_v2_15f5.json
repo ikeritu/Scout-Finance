@@ -1,0 +1,205 @@
+{
+  "version": "v2.15F5",
+  "phase": "Euronext Endpoint Candidate Extraction Dry Run",
+  "phase_type": "endpoint-candidate-dry-run-only",
+  "status": "EURONEXT_ENDPOINT_CANDIDATE_EXTRACTION_DRY_RUN_COMPLETED_NO_VALID_CANDIDATES_REBUILD_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-04T16:49:27.323027+00:00",
+  "current_state": {
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "current_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "extraction_config": {
+    "max_endpoints": 5,
+    "max_bytes_per_endpoint": 8000000,
+    "timeout_seconds": 45,
+    "payload_storage": "disabled",
+    "canonical_dataset_read": "disabled",
+    "net_new_filtering": "disabled",
+    "rebuild": "disabled"
+  },
+  "extraction_summary": {
+    "f4_status": "EURONEXT_ENDPOINT_PAYLOAD_SHAPE_VALIDATED_EXTRACTION_DRY_RUN_ALLOWED_REBUILD_STILL_BLOCKED",
+    "f4_recommended_next_phase": "v2.15F5 - Euronext Endpoint Candidate Extraction Dry Run",
+    "shape_rows_from_v2_15f4": 2,
+    "key_path_rows_from_v2_15f4": 14,
+    "selected_shape_validated_endpoints": 2,
+    "endpoint_quality_rows": 2,
+    "raw_candidates_before_dedupe": 0,
+    "deduped_raw_candidates": 0,
+    "unique_isins": 0,
+    "unique_isin_mic_pairs": 0,
+    "quality_bucket_counts": {},
+    "endpoint_candidate_counts": {},
+    "mic_counts": {},
+    "extraction_quality": "none",
+    "critical_failed_checks": 0
+  },
+  "checks": [
+    {
+      "check": "v2_15f4_shape_validation_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_endpoint_payload_shape_validation_v2_15f4.json"
+    },
+    {
+      "check": "v2_15f4_shape_results_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_endpoint_payload_shape_results_v2_15f4.csv"
+    },
+    {
+      "check": "shape_validated_endpoints_selected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "selected=2"
+    },
+    {
+      "check": "endpoint_extraction_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "quality_rows=2"
+    },
+    {
+      "check": "raw_candidates_extracted_review",
+      "passed": false,
+      "severity": "warning",
+      "detail": "deduped_candidates=0"
+    },
+    {
+      "check": "unique_isins_detected_review",
+      "passed": false,
+      "severity": "warning",
+      "detail": "unique_isins=0"
+    },
+    {
+      "check": "medium_or_high_candidates_review",
+      "passed": false,
+      "severity": "warning",
+      "detail": "medium=0; high=0"
+    },
+    {
+      "check": "candidate_count_vs_gap_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "candidates=0; rows_needed=11713"
+    },
+    {
+      "check": "no_raw_payload_saved_to_disk",
+      "passed": true,
+      "severity": "critical",
+      "detail": "payload_saved_to_disk=False"
+    },
+    {
+      "check": "canonical_dataset_not_read",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "no_normalization",
+      "passed": true,
+      "severity": "critical",
+      "detail": "normalization_performed=False"
+    },
+    {
+      "check": "no_net_new_filtering",
+      "passed": true,
+      "severity": "critical",
+      "detail": "net_new_filtering=False"
+    },
+    {
+      "check": "no_expanded_universe_rebuild",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_universe_rebuilt=False"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=38287"
+    }
+  ],
+  "top_candidates": [],
+  "quality_by_endpoint": [
+    {
+      "endpoint_id": "d9534f9c8846e89c",
+      "endpoint_url": "https://live.euronext.com/en/instrumentSearch/searchJSON",
+      "status_code": 200,
+      "ok": true,
+      "content_type": "application/json",
+      "sampled_bytes": 80,
+      "payload_saved_to_disk": false,
+      "json_top_level_type": "list",
+      "candidate_container_path": "$",
+      "raw_rows_seen": 1,
+      "candidate_rows_extracted": 0,
+      "valid_isin_rows": 0,
+      "rows_with_mic": 0,
+      "rows_with_name": 0,
+      "rows_with_symbol": 0,
+      "rows_with_currency": 0,
+      "high_quality": 0,
+      "medium_quality": 0,
+      "low_quality": 0,
+      "unique_isins": 0,
+      "quality_notes": "OK_DRY_RUN_RAW_CANDIDATES_ONLY_NO_CANONICAL_READ_NO_NET_NEW_NO_REBUILD"
+    },
+    {
+      "endpoint_id": "fadba7b6f3060cf1",
+      "endpoint_url": "https://live.euronext.com/en/instrumentSearch/searchJsonByMic?listMics&amp;instruType=Stock&amp;idBlockSearchBox=134",
+      "status_code": 200,
+      "ok": true,
+      "content_type": "application/json",
+      "sampled_bytes": 80,
+      "payload_saved_to_disk": false,
+      "json_top_level_type": "list",
+      "candidate_container_path": "$",
+      "raw_rows_seen": 1,
+      "candidate_rows_extracted": 0,
+      "valid_isin_rows": 0,
+      "rows_with_mic": 0,
+      "rows_with_name": 0,
+      "rows_with_symbol": 0,
+      "rows_with_currency": 0,
+      "high_quality": 0,
+      "medium_quality": 0,
+      "low_quality": 0,
+      "unique_isins": 0,
+      "quality_notes": "OK_DRY_RUN_RAW_CANDIDATES_ONLY_NO_CANONICAL_READ_NO_NET_NEW_NO_REBUILD"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "endpoint-candidate-dry-run-only",
+    "network_download_performed": true,
+    "endpoint_candidate_extraction_executed": true,
+    "json_payload_parsed_for_candidate_dry_run": true,
+    "raw_payload_saved_to_disk": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "candidate_rows_extracted_to_dry_run_csv": false,
+    "canonical_dataset_read": false,
+    "canonical_dataset_modified": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.15G - Euronext Closure Report"
+}
