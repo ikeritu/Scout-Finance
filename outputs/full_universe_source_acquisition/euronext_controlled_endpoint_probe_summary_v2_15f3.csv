@@ -1,0 +1,13 @@
+metric,value
+probe_plan_rows,1184
+selected_probe_rows,30
+results,30
+ok_count,30
+error_count,0
+promising_count,30
+medium_or_better_evidence_count,2
+controlled_probe_quality,medium
+status_counter,"{""200"": 30}"
+shape_counter,"{""json_like"": 2, ""html_like"": 28}"
+probe_type_counter,"{""json_or_ajax_metadata_probe"": 2, ""live_listing_dynamic_probe"": 28}"
+evidence_counter,"{""medium"": 2, ""low"": 28}"
