@@ -1,0 +1,252 @@
+{
+  "version": "v2.16A",
+  "phase": "TMX Provider Route Confirmation",
+  "phase_type": "provider-route-confirmation-only",
+  "status": "TMX_PROVIDER_ROUTE_CONFIRMED_PLAN_ONLY_FULL_SOURCE_BLOCKED",
+  "generated_at_utc": "2026-08-04T19:30:52.859409+00:00",
+  "current_state": {
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "current_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "previous_provider_closure": {
+    "provider": "Euronext",
+    "closure_artifact": "outputs\\full_universe_source_acquisition\\euronext_closure_report_v2_15g.json",
+    "closure_status": "EURONEXT_CLOSED_PUBLIC_AND_ENDPOINT_ROUTE_ZERO_VALID_CANDIDATES_FULL_SOURCE_BLOCKED",
+    "closure_recommended_next_phase": "v2.16A - TMX Provider Route Confirmation",
+    "rows_added_to_expanded_universe": 0,
+    "current_rows_after_closure": 38287,
+    "rows_needed_after_closure": 11713
+  },
+  "route_confirmation": {
+    "next_provider_id": "tmx_tsx_tsxv_official_equities",
+    "next_provider_name": "TMX / TSX / TSXV official equities",
+    "next_provider_country": "Canada",
+    "next_provider_scope": "TSX and TSXV listed equities",
+    "route_status": "CONFIRMED",
+    "phase_scope": "confirmation_only",
+    "network_allowed": false,
+    "download_allowed": false,
+    "canonical_read_allowed": false,
+    "canonical_modify_allowed": false,
+    "recommended_next_phase": "v2.16B - TMX Acquisition Plan",
+    "optional_v2_15a_route_artifacts_detected": [
+      "outputs\\full_universe_source_acquisition\\next_official_provider_route_v2_6a.json",
+      "outputs\\full_universe_source_acquisition\\next_official_provider_route_v2_9a.json",
+      "outputs\\full_universe_source_acquisition\\next_provider_route_v2_10a.json",
+      "outputs\\full_universe_source_acquisition\\next_provider_route_v2_12a.json",
+      "outputs\\full_universe_source_acquisition\\next_provider_route_v2_13a.json",
+      "outputs\\full_universe_source_acquisition\\next_provider_route_v2_14a.json",
+      "outputs\\full_universe_source_acquisition\\next_provider_route_v2_15a.json"
+    ]
+  },
+  "decision_matrix": [
+    {
+      "decision_id": "provider_after_euronext",
+      "decision": "confirm_tmx_tsx_tsxv_as_next_route",
+      "basis": "v2.15G recommended_next_phase=v2.16A - TMX Provider Route Confirmation; euronext_rows_added=0; euronext_unique_candidates=0",
+      "impact": "Open TMX route as v2.16 without touching canonical dataset."
+    },
+    {
+      "decision_id": "phase_scope",
+      "decision": "route_confirmation_only",
+      "basis": "v2.16A confirms provider and scope only.",
+      "impact": "No network, no download, no parsing, no rebuild."
+    },
+    {
+      "decision_id": "tmx_initial_scope",
+      "decision": "tsx_and_tsxv_listed_equities",
+      "basis": "TMX route is intended to cover Canadian listed equities after Euronext produced zero valid candidates.",
+      "impact": "Focus next acquisition plan on official TMX / TSX / TSXV equity sources."
+    },
+    {
+      "decision_id": "instrument_scope",
+      "decision": "equities_first_exclude_funds_by_default",
+      "basis": "Existing source-acquisition policy excludes ETFs, ETNs, ETCs, funds, bonds and non-equity instruments unless explicitly approved.",
+      "impact": "v2.16B must define exclusion logic before acquisition or parsing."
+    },
+    {
+      "decision_id": "full_source_gate",
+      "decision": "remain_blocked",
+      "basis": "current_rows=38287; threshold=50000; rows_needed=11713",
+      "impact": "Full source, full59k, scoring, OpenAI and broker layers remain blocked."
+    }
+  ],
+  "checklist": [
+    {
+      "phase": "v2.16A",
+      "item": "confirm_tmx_provider_route",
+      "status": "done_in_this_phase",
+      "guard": "plan_only"
+    },
+    {
+      "phase": "v2.16A",
+      "item": "confirm_current_rows_unchanged",
+      "status": "done_in_this_phase",
+      "guard": "current_rows=38287"
+    },
+    {
+      "phase": "v2.16A",
+      "item": "keep_full_source_blocked",
+      "status": "done_in_this_phase",
+      "guard": "full_source_gate=BLOCKED"
+    },
+    {
+      "phase": "v2.16B",
+      "item": "identify_official_tmx_sources",
+      "status": "next",
+      "guard": "plan_only_until_approved"
+    },
+    {
+      "phase": "v2.16B",
+      "item": "define_tmx_source_taxonomy",
+      "status": "next",
+      "guard": "no_download_yet"
+    },
+    {
+      "phase": "v2.16B",
+      "item": "define_equity_vs_etf_fund_exclusion_policy",
+      "status": "next",
+      "guard": "no_parsing_yet"
+    },
+    {
+      "phase": "v2.16C",
+      "item": "tmx_raw_acquisition",
+      "status": "future",
+      "guard": "only_after_v2_16b"
+    },
+    {
+      "phase": "v2.16D",
+      "item": "tmx_validation",
+      "status": "future",
+      "guard": "no_rebuild"
+    },
+    {
+      "phase": "v2.16E",
+      "item": "tmx_candidate_extraction_dry_run",
+      "status": "future",
+      "guard": "no_canonical_read"
+    },
+    {
+      "phase": "v2.16F",
+      "item": "tmx_candidate_validation_against_canonical_dry_run",
+      "status": "future",
+      "guard": "read_only_canonical"
+    }
+  ],
+  "checks": [
+    {
+      "check": "euronext_closure_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_closure_report_v2_15g.json"
+    },
+    {
+      "check": "euronext_closed_with_zero_valid_candidates",
+      "passed": true,
+      "severity": "critical",
+      "detail": "EURONEXT_CLOSED_PUBLIC_AND_ENDPOINT_ROUTE_ZERO_VALID_CANDIDATES_FULL_SOURCE_BLOCKED"
+    },
+    {
+      "check": "euronext_recommended_tmx_route",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.16A - TMX Provider Route Confirmation"
+    },
+    {
+      "check": "euronext_rows_added_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_added=0"
+    },
+    {
+      "check": "tmx_provider_id_confirmed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "tmx_tsx_tsxv_official_equities"
+    },
+    {
+      "check": "current_rows_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=38287"
+    },
+    {
+      "check": "rows_needed_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed=11713"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "38287 < 50000"
+    },
+    {
+      "check": "canonical_dataset_not_read",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "no_network",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "no_raw_downloads",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_files_downloaded=False"
+    },
+    {
+      "check": "no_normalization",
+      "passed": true,
+      "severity": "critical",
+      "detail": "normalization_performed=False"
+    },
+    {
+      "check": "no_net_new_filtering",
+      "passed": true,
+      "severity": "critical",
+      "detail": "net_new_filtering=False"
+    },
+    {
+      "check": "no_expanded_universe_rebuild",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_universe_rebuilt=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "provider-route-confirmation-only",
+    "network_download_performed": false,
+    "endpoint_probe_executed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "canonical_dataset_read": false,
+    "canonical_dataset_modified": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.16B - TMX Acquisition Plan"
+}

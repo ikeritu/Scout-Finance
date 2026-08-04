@@ -1,0 +1,6 @@
+decision_id,decision,basis,impact
+provider_after_euronext,confirm_tmx_tsx_tsxv_as_next_route,v2.15G recommended_next_phase=v2.16A - TMX Provider Route Confirmation; euronext_rows_added=0; euronext_unique_candidates=0,Open TMX route as v2.16 without touching canonical dataset.
+phase_scope,route_confirmation_only,v2.16A confirms provider and scope only.,"No network, no download, no parsing, no rebuild."
+tmx_initial_scope,tsx_and_tsxv_listed_equities,TMX route is intended to cover Canadian listed equities after Euronext produced zero valid candidates.,Focus next acquisition plan on official TMX / TSX / TSXV equity sources.
+instrument_scope,equities_first_exclude_funds_by_default,"Existing source-acquisition policy excludes ETFs, ETNs, ETCs, funds, bonds and non-equity instruments unless explicitly approved.",v2.16B must define exclusion logic before acquisition or parsing.
+full_source_gate,remain_blocked,current_rows=38287; threshold=50000; rows_needed=11713,"Full source, full59k, scoring, OpenAI and broker layers remain blocked."
