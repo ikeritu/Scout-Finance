@@ -1,0 +1,6 @@
+decision_id,decision,evidence,impact
+euronext_public_html_route,closed_no_rebuild,v2.15F extraction_quality=low; unique_isins=7,Do not use public HTML tables for expanded universe rebuild.
+euronext_json_endpoint_route,closed_no_valid_candidates,v2.15F4 medium/high shape=2; v2.15F5 unique_isins=0; deduped_candidates=0,"Do not proceed to canonical dry-run, net-new filtering or rebuild for Euronext."
+euronext_rows_added,zero_rows_added,No valid endpoint candidates; canonical dataset intentionally not read or modified.,"Current rows remain 38,287."
+full_source_gate,remain_blocked,current_rows=38287; threshold=50000; rows_needed=11713,Full source gate and full59k remain blocked.
+next_provider,open_tmx_route_next,Euronext closed with zero valid candidates; v2.15A ranking had TMX/TSX/TSXV as next strong route.,Recommended next phase: v2.16A - TMX Provider Route Confirmation.

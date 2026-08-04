@@ -1,0 +1,297 @@
+{
+  "version": "v2.15G",
+  "phase": "Euronext Closure Report",
+  "phase_type": "closure-report-only",
+  "status": "EURONEXT_CLOSED_PUBLIC_AND_ENDPOINT_ROUTE_ZERO_VALID_CANDIDATES_FULL_SOURCE_BLOCKED",
+  "generated_at_utc": "2026-08-04T19:08:44.634705+00:00",
+  "current_state": {
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "current_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "closure_summary": {
+    "provider": "Euronext",
+    "provider_route": "official public pages and controlled JSON/AJAX endpoints",
+    "phases_reviewed": [
+      "v2.15B",
+      "v2.15C",
+      "v2.15D",
+      "v2.15E",
+      "v2.15F",
+      "v2.15F2",
+      "v2.15F3",
+      "v2.15F4",
+      "v2.15F5"
+    ],
+    "artifacts_reviewed": 9,
+    "public_html_rebuild_route": "closed_insufficient",
+    "json_endpoint_route": "closed_zero_valid_candidates",
+    "rows_added_to_expanded_universe": 0,
+    "current_rows_after_closure": 38287,
+    "rows_needed_after_closure": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED",
+    "critical_failed_checks": 0,
+    "next_provider_id": "tmx_tsx_tsxv_official_equities",
+    "next_provider_name": "TMX / TSX / TSXV official equities",
+    "recommended_next_phase": "v2.16A - TMX Provider Route Confirmation"
+  },
+  "evidence_matrix": [
+    {
+      "phase": "v2.15B",
+      "artifact": "outputs\\full_universe_source_acquisition\\euronext_acquisition_plan_v2_15b.json",
+      "status": "EURONEXT_ACQUISITION_PLAN_CREATED_NO_DOWNLOADS_PERFORMED",
+      "finding": "Euronext selected as next official provider route.",
+      "numeric_evidence": "current_rows=38287; rows_needed=11713",
+      "closure_relevance": "Opened Euronext route after v2.15A provider ranking."
+    },
+    {
+      "phase": "v2.15C",
+      "artifact": "outputs\\full_universe_source_acquisition\\euronext_raw_acquisition_manifest_v2_15c.json",
+      "status": "EURONEXT_RAW_ACQUISITION_COMPLETED_WITH_DOWNLOADS",
+      "finding": "Official Euronext raw sources acquired.",
+      "numeric_evidence": "attempted=11; ok_count=11; raw_dir=outputs\\full_universe_source_acquisition\\raw\\euronext_v2_15c",
+      "closure_relevance": "Confirmed public Euronext pages could be collected for inspection."
+    },
+    {
+      "phase": "v2.15D",
+      "artifact": "outputs\\full_universe_source_acquisition\\euronext_validation_v2_15d.json",
+      "status": "EURONEXT_VALIDATION_PASSED_CANDIDATES_DETECTED_REBUILD_STILL_BLOCKED",
+      "finding": "Raw Euronext artifacts validated and candidate endpoints detected.",
+      "numeric_evidence": "raw_files=11; candidate_endpoints=1361",
+      "closure_relevance": "Established enough structure to continue beyond simple raw acquisition."
+    },
+    {
+      "phase": "v2.15E",
+      "artifact": "outputs\\full_universe_source_acquisition\\euronext_rebuild_candidate_prep_v2_15e.json",
+      "status": "EURONEXT_REBUILD_CANDIDATE_PREP_PASSED_REBUILD_STILL_BLOCKED",
+      "finding": "Rebuild candidate preparation generated strategy rows and table candidates.",
+      "numeric_evidence": "source_strategy_rows=1361; html_table_candidates=11; allowed_next_phase_endpoints=254",
+      "closure_relevance": "Prepared controlled extraction path while keeping rebuild blocked."
+    },
+    {
+      "phase": "v2.15F",
+      "artifact": "outputs\\full_universe_source_acquisition\\euronext_candidate_extraction_dry_run_v2_15f.json",
+      "status": "EURONEXT_CANDIDATE_EXTRACTION_DRY_RUN_COMPLETED_LOW_QUALITY_REBUILD_STILL_BLOCKED",
+      "finding": "HTML/public-page extraction dry-run was low quality.",
+      "numeric_evidence": "deduped_candidates=7; unique_isins=7; extraction_quality=low",
+      "closure_relevance": "Rejected public HTML tables as a rebuild source."
+    },
+    {
+      "phase": "v2.15F2",
+      "artifact": "outputs\\full_universe_source_acquisition\\euronext_extraction_strategy_revision_v2_15f2.json",
+      "status": "EURONEXT_EXTRACTION_STRATEGY_REVISION_ENDPOINT_PROBE_RECOMMENDED_REBUILD_STILL_BLOCKED",
+      "finding": "Strategy revision rejected HTML route and prepared controlled probes.",
+      "numeric_evidence": "public_html_failed_as_rebuild_source=True; executable_probe_rows=95",
+      "closure_relevance": "Allowed only controlled endpoint probing, not rebuild."
+    },
+    {
+      "phase": "v2.15F3",
+      "artifact": "outputs\\full_universe_source_acquisition\\euronext_controlled_endpoint_probe_v2_15f3.json",
+      "status": "EURONEXT_CONTROLLED_ENDPOINT_PROBE_COMPLETED_PROMISING_ENDPOINTS_REBUILD_STILL_BLOCKED",
+      "finding": "Controlled endpoint probe found medium-signal JSON/AJAX endpoints.",
+      "numeric_evidence": "results=30; promising_count=30; medium_or_better=2",
+      "closure_relevance": "Euronext was not closed prematurely; endpoint path was tested."
+    },
+    {
+      "phase": "v2.15F4",
+      "artifact": "outputs\\full_universe_source_acquisition\\euronext_endpoint_payload_shape_validation_v2_15f4.json",
+      "status": "EURONEXT_ENDPOINT_PAYLOAD_SHAPE_VALIDATED_EXTRACTION_DRY_RUN_ALLOWED_REBUILD_STILL_BLOCKED",
+      "finding": "Payload shape validation found strong JSON shape with structural keys.",
+      "numeric_evidence": "selected_json_endpoints=2; security_like_container_count=2; medium_or_high_shape_count=2; key_path_rows=14",
+      "closure_relevance": "Confirmed apparent JSON structure, but still without extracting securities."
+    },
+    {
+      "phase": "v2.15F5",
+      "artifact": "outputs\\full_universe_source_acquisition\\euronext_endpoint_candidate_extraction_dry_run_v2_15f5.json",
+      "status": "EURONEXT_ENDPOINT_CANDIDATE_EXTRACTION_DRY_RUN_COMPLETED_NO_VALID_CANDIDATES_REBUILD_STILL_BLOCKED",
+      "finding": "Endpoint candidate extraction dry-run produced no valid candidates.",
+      "numeric_evidence": "raw_candidates_before_dedupe=0; deduped_raw_candidates=0; unique_isins=0; critical_failed_checks=0",
+      "closure_relevance": "Final evidence: public/probed Euronext route adds zero valid rows."
+    }
+  ],
+  "decisions": [
+    {
+      "decision_id": "euronext_public_html_route",
+      "decision": "closed_no_rebuild",
+      "evidence": "v2.15F extraction_quality=low; unique_isins=7",
+      "impact": "Do not use public HTML tables for expanded universe rebuild."
+    },
+    {
+      "decision_id": "euronext_json_endpoint_route",
+      "decision": "closed_no_valid_candidates",
+      "evidence": "v2.15F4 medium/high shape=2; v2.15F5 unique_isins=0; deduped_candidates=0",
+      "impact": "Do not proceed to canonical dry-run, net-new filtering or rebuild for Euronext."
+    },
+    {
+      "decision_id": "euronext_rows_added",
+      "decision": "zero_rows_added",
+      "evidence": "No valid endpoint candidates; canonical dataset intentionally not read or modified.",
+      "impact": "Current rows remain 38,287."
+    },
+    {
+      "decision_id": "full_source_gate",
+      "decision": "remain_blocked",
+      "evidence": "current_rows=38287; threshold=50000; rows_needed=11713",
+      "impact": "Full source gate and full59k remain blocked."
+    },
+    {
+      "decision_id": "next_provider",
+      "decision": "open_tmx_route_next",
+      "evidence": "Euronext closed with zero valid candidates; v2.15A ranking had TMX/TSX/TSXV as next strong route.",
+      "impact": "Recommended next phase: v2.16A - TMX Provider Route Confirmation."
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2.15B_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_acquisition_plan_v2_15b.json"
+    },
+    {
+      "check": "v2.15C_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_raw_acquisition_manifest_v2_15c.json"
+    },
+    {
+      "check": "v2.15D_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_validation_v2_15d.json"
+    },
+    {
+      "check": "v2.15E_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_rebuild_candidate_prep_v2_15e.json"
+    },
+    {
+      "check": "v2.15F_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_candidate_extraction_dry_run_v2_15f.json"
+    },
+    {
+      "check": "v2.15F2_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_extraction_strategy_revision_v2_15f2.json"
+    },
+    {
+      "check": "v2.15F3_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_controlled_endpoint_probe_v2_15f3.json"
+    },
+    {
+      "check": "v2.15F4_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_endpoint_payload_shape_validation_v2_15f4.json"
+    },
+    {
+      "check": "v2.15F5_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\euronext_endpoint_candidate_extraction_dry_run_v2_15f5.json"
+    },
+    {
+      "check": "v2_15f5_zero_valid_candidates_confirmed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "unique_isins=0"
+    },
+    {
+      "check": "v2_15f5_no_critical_failures",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "current_rows_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=38287"
+    },
+    {
+      "check": "rows_needed_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed=11713"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=38287; threshold=50000"
+    },
+    {
+      "check": "next_provider_selected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TMX / TSX / TSXV official equities"
+    },
+    {
+      "check": "canonical_dataset_not_read",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "no_network",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "no_normalization",
+      "passed": true,
+      "severity": "critical",
+      "detail": "normalization_performed=False"
+    },
+    {
+      "check": "no_net_new_filtering",
+      "passed": true,
+      "severity": "critical",
+      "detail": "net_new_filtering=False"
+    },
+    {
+      "check": "no_expanded_universe_rebuild",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_universe_rebuilt=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "closure-report-only",
+    "network_download_performed": false,
+    "endpoint_probe_executed": false,
+    "raw_files_downloaded": false,
+    "raw_files_modified_after_write": false,
+    "canonical_dataset_read": false,
+    "canonical_dataset_modified": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.16A - TMX Provider Route Confirmation"
+}
