@@ -1,0 +1,9 @@
+risk_id,risk,severity,mitigation
+dynamic_html,Directory pages may be rendered dynamically.,high,v2.16C raw acquisition captures landing HTML only; v2.16D validates whether endpoint discovery is needed.
+no_isin_in_public_directory,TMX public pages may expose symbol/name/exchange but not ISIN.,high,Use ISIN where available; otherwise validate canonical matching policy in later dry-run before rebuild.
+instrument_type_ambiguity,"Public lists may mix common equity, ETFs, CDRs, warrants, rights, receipts or funds.",high,Keep taxonomy exclusions explicit and validate type markers before candidate extraction.
+symbol_suffixes,"Canadian symbols can include suffixes/classes such as .A, .B, .H, preferred series, or special forms.",medium,Do not normalize symbols in v2.16B/C; defer symbol normalization to a specific dry-run validation phase.
+tsx_vs_tsxv_vs_nex,"TSX, TSXV and NEX may require different treatment.",medium,Record exchange/market as raw field and keep NEX excluded or review-only unless approved.
+paid_reference_data,Best official reference data may be behind TMX Datalinx licensing.,medium,Document paid/controlled route but do not access it without authorization.
+recent_lists_not_comprehensive,TMX Money stocklists and recent listings are partial lists.,medium,"Use them only for discovery/sanity checks, not as primary universe source."
+duplicate_share_classes,Multiple classes or preferred lines may create duplicates at issuer level.,medium,"Later canonical dry-run must define duplicate key policy: ISIN first, then exchange+symbol, then issuer review."

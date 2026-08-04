@@ -1,0 +1,9 @@
+category,instrument_pattern,examples,policy,reason
+include,common_shares_or_ordinary_shares,Common Shares|Ordinary Shares|Class A/B common equity,include_if_company_equity_and_listed_on_tsx_or_tsxv,Core full-universe target is listed equities.
+include_review,preferred_shares,Preferred Shares|Rate Reset Preferred,include_only_if_existing_project_policy_allows_preferred_equity,Equity-like but may inflate universe with share classes; needs explicit validation.
+include_review,capital_pool_companies,CPC issuers on TSXV,review_in_v2_16d_before_inclusion,Listed TSXV issuer type; may be valid equity but should be flagged.
+exclude_by_default,etf_etp_fund,ETF|ETP|Fund|Index Fund|Closed End Fund,exclude,Existing universe policy excludes ETFs/funds/non-operating vehicles.
+exclude_by_default,cdr,Canadian Depositary Receipt|CDR,exclude,Depositary products are not primary operating company equities.
+exclude_by_default,warrants_rights_units_receipts,Warrant|Right|Unit|Subscription Receipt,exclude,Non-common securities can duplicate issuers and distort universe.
+exclude_by_default,debt_and_fixed_income,Debenture|Bond|Note,exclude,"Project target is equities, not fixed income."
+exclude_or_review,nex_inactive_issuers,NEX symbols often ending .H,exclude_unless_explicitly_approved,NEX can include issuers below TSXV ongoing listing standards; likely not desired for clean full universe.
