@@ -1,0 +1,12 @@
+raw_file_name,raw_file,html_tables_detected,table_based_candidates,context_only_candidates,total_candidates,high_quality,medium_quality,low_quality,source_kind_counts,notes
+euronext_advanced_reference_data.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_advanced_reference_data.html,0,0,0,0,0,0,0,{},dry_run_counts_only_no_net_new_no_rebuild
+euronext_amsterdam_equities_list.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_amsterdam_equities_list.html,1,0,0,0,0,0,0,{},dry_run_counts_only_no_net_new_no_rebuild
+euronext_brussels_equities_list.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_brussels_equities_list.html,1,0,0,0,0,0,0,{},dry_run_counts_only_no_net_new_no_rebuild
+euronext_dublin_equities_list.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_dublin_equities_list.html,1,0,0,0,0,0,0,{},dry_run_counts_only_no_net_new_no_rebuild
+euronext_lisbon_equities_list.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_lisbon_equities_list.html,1,0,0,0,0,0,0,{},dry_run_counts_only_no_net_new_no_rebuild
+euronext_live_all_equities.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_live_all_equities.html,1,0,0,0,0,0,0,{},dry_run_counts_only_no_net_new_no_rebuild
+euronext_live_equities_overview.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_live_equities_overview.html,3,0,27,27,0,0,27,"{""isin_context"": 27}",dry_run_counts_only_no_net_new_no_rebuild
+euronext_milan_equities_list.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_milan_equities_list.html,1,0,0,0,0,0,0,{},dry_run_counts_only_no_net_new_no_rebuild
+euronext_oslo_equities_list.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_oslo_equities_list.html,1,0,0,0,0,0,0,{},dry_run_counts_only_no_net_new_no_rebuild
+euronext_paris_equities_list.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_paris_equities_list.html,1,0,0,0,0,0,0,{},dry_run_counts_only_no_net_new_no_rebuild
+euronext_static_reference_data.html,outputs\full_universe_source_acquisition\raw\euronext_v2_15c\euronext_static_reference_data.html,0,0,0,0,0,0,0,{},dry_run_counts_only_no_net_new_no_rebuild
