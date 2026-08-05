@@ -1,0 +1,25 @@
+metric,value
+canonical_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv
+candidate_dataset,outputs\full_universe_source_acquisition\expanded_universe_candidate_tmx_v2_16g.csv
+canonical_rows,38287
+candidate_rows,38288
+delta,1
+canonical_field_count,33
+candidate_field_count,33
+symbol_col,ticker
+exchange_col,exchange
+name_col,company_name
+expected_symbol,IRR
+expected_exchange,TSXV
+expected_name,Irruptive Metals Corp.
+canonical_expected_key_count,0
+candidate_expected_key_count,1
+appended_rows,1
+appended_expected_key_count,1
+prefix_mismatch_count,0
+full_source_threshold,50000
+rows_needed_after_candidate,11712
+source_to_50k_completed_percent_after_candidate,76.58
+canonical_sha256,cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f
+candidate_sha256,e1d4934a5d01d64cac78c23621c0f791b3d1e48377169ea35e24b3bb278b1d4c
+critical_failed_checks,0

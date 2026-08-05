@@ -1,0 +1,314 @@
+{
+  "version": "v2.16H",
+  "phase": "TMX Expanded Validation",
+  "phase_type": "expanded-candidate-validation-only",
+  "status": "TMX_EXPANDED_VALIDATION_COMPLETED_CANDIDATE_ADD1_VALID_CANONICAL_STILL_UNCHANGED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-05T21:01:24.384062+00:00",
+  "current_state": {
+    "canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_tmx_v2_16g.csv",
+    "canonical_rows": 38287,
+    "candidate_rows": 38288,
+    "delta": 1,
+    "full_source_threshold": 50000,
+    "rows_needed_after_candidate": 11712,
+    "source_to_50k_completed_percent_after_candidate": 76.58,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "validation_summary": {
+    "v2_16g_status": "TMX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_ADD1_FULL_SOURCE_STILL_BLOCKED",
+    "v2_16g_recommended_next_phase": "v2.16H - TMX Expanded Validation",
+    "canonical_rows": 38287,
+    "candidate_rows": 38288,
+    "delta": 1,
+    "fieldnames_match": true,
+    "symbol_col": "ticker",
+    "exchange_col": "exchange",
+    "name_col": "company_name",
+    "canonical_prefix_mismatch_count": 0,
+    "canonical_expected_key_count": 0,
+    "candidate_expected_key_count": 1,
+    "appended_rows": 1,
+    "appended_expected_key_count": 1,
+    "expected_candidate_names": [
+      "Irruptive Metals Corp."
+    ],
+    "critical_failed_checks": 0
+  },
+  "addition_preview": [
+    {
+      "symbol": "IRR",
+      "name": "Irruptive Metals Corp.",
+      "exchange": "TSXV",
+      "compact_row": "ticker=IRR; company_name=Irruptive Metals Corp.; exchange=TSXV"
+    }
+  ],
+  "checks": [
+    {
+      "check_id": "2e07567c14c5e357",
+      "scope": "inputs",
+      "check": "v2_16g_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_expanded_rebuild_candidate_v2_16g.json"
+    },
+    {
+      "check_id": "cfa64c49dab90c0c",
+      "scope": "inputs",
+      "check": "v2_16g_additions_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_expanded_rebuild_candidate_additions_v2_16g.csv"
+    },
+    {
+      "check_id": "8d74ccd323c5140d",
+      "scope": "inputs",
+      "check": "v2_16g_audit_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_expanded_rebuild_candidate_row_audit_v2_16g.csv"
+    },
+    {
+      "check_id": "abf4e5761e8f2389",
+      "scope": "inputs",
+      "check": "v2_16g_status_valid",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TMX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_ADD1_FULL_SOURCE_STILL_BLOCKED"
+    },
+    {
+      "check_id": "30dbd7eeb6370b2c",
+      "scope": "inputs",
+      "check": "v2_16g_recommended_h",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.16H - TMX Expanded Validation"
+    },
+    {
+      "check_id": "ffa83c435dbb5cb4",
+      "scope": "inputs",
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check_id": "1eb00c3210b43510",
+      "scope": "inputs",
+      "check": "candidate_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_tmx_v2_16g.csv"
+    },
+    {
+      "check_id": "17c5d791c35144e2",
+      "scope": "schema",
+      "check": "fieldnames_match",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_fields=33 candidate_fields=33"
+    },
+    {
+      "check_id": "3ccaa783131a2f30",
+      "scope": "schema",
+      "check": "symbol_column_detected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "symbol_col=ticker"
+    },
+    {
+      "check_id": "cef6d9d0ee1f2390",
+      "scope": "schema",
+      "check": "exchange_column_detected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "exchange_col=exchange"
+    },
+    {
+      "check_id": "3bc0fb5b3b2c6ade",
+      "scope": "schema",
+      "check": "name_column_detected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "name_col=company_name"
+    },
+    {
+      "check_id": "58a0a0aba3d643c0",
+      "scope": "counts",
+      "check": "canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_rows=38287 expected=38287"
+    },
+    {
+      "check_id": "810fb415bf397a14",
+      "scope": "counts",
+      "check": "candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_rows=38288 expected=38288"
+    },
+    {
+      "check_id": "4cd7eb901e3547ae",
+      "scope": "counts",
+      "check": "delta_expected_plus_one",
+      "passed": true,
+      "severity": "critical",
+      "detail": "delta=1 expected=1"
+    },
+    {
+      "check_id": "0120edb9a6a59d1f",
+      "scope": "counts",
+      "check": "additions_count_expected_one",
+      "passed": true,
+      "severity": "critical",
+      "detail": "additions=1"
+    },
+    {
+      "check_id": "1e861181bf53d137",
+      "scope": "counts",
+      "check": "audit_rows_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "audit_rows=1"
+    },
+    {
+      "check_id": "437674cbe6a8be05",
+      "scope": "prefix",
+      "check": "canonical_prefix_unchanged_in_candidate",
+      "passed": true,
+      "severity": "critical",
+      "detail": "prefix_mismatch_count=0; examples=[]"
+    },
+    {
+      "check_id": "c57a7f60cd1a2015",
+      "scope": "addition",
+      "check": "canonical_expected_key_absent",
+      "passed": true,
+      "severity": "critical",
+      "detail": "('IRR', 'TSXV') canonical_count=0"
+    },
+    {
+      "check_id": "e06ab28e2ffb99c1",
+      "scope": "addition",
+      "check": "candidate_expected_key_present_once",
+      "passed": true,
+      "severity": "critical",
+      "detail": "('IRR', 'TSXV') candidate_count=1"
+    },
+    {
+      "check_id": "33f04d22c4aab013",
+      "scope": "addition",
+      "check": "appended_expected_key_present_once",
+      "passed": true,
+      "severity": "critical",
+      "detail": "('IRR', 'TSXV') appended_count=1"
+    },
+    {
+      "check_id": "bfbfa52d4fe4dbeb",
+      "scope": "addition",
+      "check": "appended_rows_count_expected_one",
+      "passed": true,
+      "severity": "critical",
+      "detail": "appended_rows=1"
+    },
+    {
+      "check_id": "dfab7d042edda0b5",
+      "scope": "addition",
+      "check": "expected_name_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "names=['Irruptive Metals Corp.']"
+    },
+    {
+      "check_id": "ad9e593312f7397f",
+      "scope": "source_gate",
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "38288 < 50000"
+    },
+    {
+      "check_id": "9020c4983cfed498",
+      "scope": "guards",
+      "check": "canonical_dataset_not_modified_by_phase",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check_id": "d257b52502e71906",
+      "scope": "guards",
+      "check": "candidate_not_promoted_to_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_replacement_performed=False"
+    },
+    {
+      "check_id": "161183694470fc36",
+      "scope": "guards",
+      "check": "network_not_used",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check_id": "c5ddfbb4edd1bacc",
+      "scope": "guards",
+      "check": "endpoint_calls_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "endpoint_calls_performed=False"
+    },
+    {
+      "check_id": "3f57a8eb59f122c8",
+      "scope": "guards",
+      "check": "query_sweep_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "query_sweep_performed=False"
+    },
+    {
+      "check_id": "992c3f3c75f07aa1",
+      "scope": "guards",
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check_id": "b50d5b6544862baa",
+      "scope": "guards",
+      "check": "full_59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full_59k_universe_launched=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "expanded-candidate-validation-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "v2_16g_report_read": true,
+    "v2_16g_additions_read": true,
+    "canonical_dataset_read": true,
+    "candidate_dataset_read": true,
+    "candidate_dataset_validated": true,
+    "canonical_dataset_modified": false,
+    "canonical_replacement_performed": false,
+    "candidate_promoted_to_canonical": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "new_expanded_dataset_written": false,
+    "net_new_filtering_applied_to_canonical": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "full_source_gate_unblocked": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.16I - TMX Closure Report"
+}

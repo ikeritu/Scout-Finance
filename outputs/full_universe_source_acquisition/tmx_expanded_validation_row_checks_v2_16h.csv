@@ -1,0 +1,31 @@
+check_id,scope,check,passed,severity,detail
+2e07567c14c5e357,inputs,v2_16g_report_exists,True,critical,outputs\full_universe_source_acquisition\tmx_expanded_rebuild_candidate_v2_16g.json
+cfa64c49dab90c0c,inputs,v2_16g_additions_exists,True,critical,outputs\full_universe_source_acquisition\tmx_expanded_rebuild_candidate_additions_v2_16g.csv
+8d74ccd323c5140d,inputs,v2_16g_audit_exists,True,critical,outputs\full_universe_source_acquisition\tmx_expanded_rebuild_candidate_row_audit_v2_16g.csv
+abf4e5761e8f2389,inputs,v2_16g_status_valid,True,critical,TMX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_ADD1_FULL_SOURCE_STILL_BLOCKED
+30dbd7eeb6370b2c,inputs,v2_16g_recommended_h,True,critical,v2.16H - TMX Expanded Validation
+ffa83c435dbb5cb4,inputs,canonical_dataset_exists,True,critical,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv
+1eb00c3210b43510,inputs,candidate_dataset_exists,True,critical,outputs\full_universe_source_acquisition\expanded_universe_candidate_tmx_v2_16g.csv
+17c5d791c35144e2,schema,fieldnames_match,True,critical,canonical_fields=33 candidate_fields=33
+3ccaa783131a2f30,schema,symbol_column_detected,True,critical,symbol_col=ticker
+cef6d9d0ee1f2390,schema,exchange_column_detected,True,critical,exchange_col=exchange
+3bc0fb5b3b2c6ade,schema,name_column_detected,True,critical,name_col=company_name
+58a0a0aba3d643c0,counts,canonical_rows_expected,True,critical,canonical_rows=38287 expected=38287
+810fb415bf397a14,counts,candidate_rows_expected,True,critical,candidate_rows=38288 expected=38288
+4cd7eb901e3547ae,counts,delta_expected_plus_one,True,critical,delta=1 expected=1
+0120edb9a6a59d1f,counts,additions_count_expected_one,True,critical,additions=1
+1e861181bf53d137,counts,audit_rows_present,True,critical,audit_rows=1
+437674cbe6a8be05,prefix,canonical_prefix_unchanged_in_candidate,True,critical,prefix_mismatch_count=0; examples=[]
+c57a7f60cd1a2015,addition,canonical_expected_key_absent,True,critical,"('IRR', 'TSXV') canonical_count=0"
+e06ab28e2ffb99c1,addition,candidate_expected_key_present_once,True,critical,"('IRR', 'TSXV') candidate_count=1"
+33f04d22c4aab013,addition,appended_expected_key_present_once,True,critical,"('IRR', 'TSXV') appended_count=1"
+bfbfa52d4fe4dbeb,addition,appended_rows_count_expected_one,True,critical,appended_rows=1
+dfab7d042edda0b5,addition,expected_name_present,True,critical,names=['Irruptive Metals Corp.']
+ad9e593312f7397f,source_gate,full_source_still_blocked,True,critical,38288 < 50000
+9020c4983cfed498,guards,canonical_dataset_not_modified_by_phase,True,critical,canonical_dataset_modified=False
+d257b52502e71906,guards,candidate_not_promoted_to_canonical,True,critical,canonical_replacement_performed=False
+161183694470fc36,guards,network_not_used,True,critical,network_download_performed=False
+c5ddfbb4edd1bacc,guards,endpoint_calls_not_performed,True,critical,endpoint_calls_performed=False
+3f57a8eb59f122c8,guards,query_sweep_not_performed,True,critical,query_sweep_performed=False
+992c3f3c75f07aa1,guards,scoring_not_recalculated,True,critical,scoring_recalculated=False
+b50d5b6544862baa,guards,full_59k_not_launched,True,critical,full_59k_universe_launched=False
