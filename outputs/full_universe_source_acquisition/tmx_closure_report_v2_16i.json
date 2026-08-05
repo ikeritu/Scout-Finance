@@ -1,0 +1,347 @@
+{
+  "version": "v2.16I",
+  "phase": "TMX Closure Report",
+  "phase_type": "provider-closure-report-only",
+  "status": "TMX_CLOSURE_REPORT_COMPLETED_PLUS1_CANDIDATE_VALIDATED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-05T21:07:08.007322+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_tmx_v2_16g.csv",
+    "validated_candidate_rows": 38288,
+    "validated_candidate_delta": 1,
+    "full_source_threshold": 50000,
+    "rows_needed_active_canonical": 11713,
+    "rows_needed_if_candidate_promoted_later": 11712,
+    "active_canonical_source_to_50k_completed_percent": 76.57,
+    "candidate_source_to_50k_completed_percent": 76.58,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "tmx_result": {
+    "raw_route_attempted": true,
+    "endpoint_probe_attempted": true,
+    "candidate_extraction_performed": true,
+    "candidate_validation_performed": true,
+    "expanded_candidate_generated": true,
+    "expanded_candidate_validated": true,
+    "accepted_candidate_count": 1,
+    "validated_additions": [
+      {
+        "symbol": "IRR",
+        "name": "Irruptive Metals Corp.",
+        "exchange": "TSXV",
+        "confidence_bucket": "high",
+        "source_id": "tmx_money_recent_listings",
+        "validation_status": "net_new_candidate_high_confidence_dry_run",
+        "rebuild_candidate_reason": "symbol_absent_from_canonical_high_confidence"
+      }
+    ],
+    "canonical_promoted": false,
+    "canonical_rows_added_in_this_phase": 0,
+    "provider_closed": true
+  },
+  "schema_observation": {
+    "symbol_col": "ticker",
+    "exchange_col": "exchange",
+    "name_col": "company_name",
+    "canonical_field_count": 33,
+    "candidate_field_count": 33
+  },
+  "checks": [
+    {
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "candidate_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_tmx_v2_16g.csv"
+    },
+    {
+      "check": "v2_16e_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_candidate_extraction_dry_run_v2_16e.json"
+    },
+    {
+      "check": "v2_16f_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_candidate_validation_against_canonical_v2_16f.json"
+    },
+    {
+      "check": "v2_16g_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_expanded_rebuild_candidate_v2_16g.json"
+    },
+    {
+      "check": "v2_16h_artifact_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_expanded_validation_v2_16h.json"
+    },
+    {
+      "check": "v2_16e_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TMX_CANDIDATE_EXTRACTION_DRY_RUN_COMPLETED_CANDIDATES_FOUND_REBUILD_STILL_BLOCKED"
+    },
+    {
+      "check": "v2_16f_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TMX_CANDIDATE_VALIDATION_DRY_RUN_COMPLETED_REBUILD_CANDIDATES_FOUND_REBUILD_STILL_BLOCKED"
+    },
+    {
+      "check": "v2_16g_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TMX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_ADD1_FULL_SOURCE_STILL_BLOCKED"
+    },
+    {
+      "check": "v2_16h_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TMX_EXPANDED_VALIDATION_COMPLETED_CANDIDATE_ADD1_VALID_CANONICAL_STILL_UNCHANGED_FULL_SOURCE_STILL_BLOCKED"
+    },
+    {
+      "check": "canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_rows=38287"
+    },
+    {
+      "check": "candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_rows=38288"
+    },
+    {
+      "check": "candidate_delta_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "delta=1"
+    },
+    {
+      "check": "validated_addition_found",
+      "passed": true,
+      "severity": "critical",
+      "detail": "[{'symbol': 'IRR', 'name': 'Irruptive Metals Corp.', 'exchange': 'TSXV', 'confidence_bucket': 'high', 'source_id': 'tmx_money_recent_listings', 'validation_status': 'net_new_candidate_high_confidence_dry_run', 'rebuild_candidate_reason': 'symbol_absent_from_canonical_high_confidence'}]"
+    },
+    {
+      "check": "full_source_still_blocked_active_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "38287 < 50000"
+    },
+    {
+      "check": "full_source_still_blocked_candidate",
+      "passed": true,
+      "severity": "critical",
+      "detail": "38288 < 50000"
+    },
+    {
+      "check": "next_phase_selected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.17A - Next Provider Route Selection"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "candidate_not_promoted_to_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_promoted_to_canonical=False"
+    },
+    {
+      "check": "network_not_used",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "endpoint_calls_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "endpoint_calls_performed=False"
+    },
+    {
+      "check": "query_sweep_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "query_sweep_performed=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "full_59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full_59k_universe_launched=False"
+    }
+  ],
+  "phase_inventory": [
+    {
+      "phase": "v2.16A",
+      "title": "TMX Provider Route Confirmation",
+      "expected_artifact": "committed phase record / route confirmation",
+      "artifact_found": "not independently asserted by closure script",
+      "status": "closed_in_git_history",
+      "recommended_next_phase": "v2.16B - TMX Acquisition Plan",
+      "key_result": "TMX selected as next provider route after Euronext closure.",
+      "closure_assessment": "closed_by_git_history"
+    },
+    {
+      "phase": "v2.16B",
+      "title": "TMX Acquisition Plan",
+      "expected_artifact": "committed phase record / acquisition plan",
+      "artifact_found": "not independently asserted by closure script",
+      "status": "closed_in_git_history",
+      "recommended_next_phase": "v2.16C - TMX Raw Acquisition",
+      "key_result": "TMX source candidates defined.",
+      "closure_assessment": "closed_by_git_history"
+    },
+    {
+      "phase": "v2.16C",
+      "title": "TMX Raw Acquisition",
+      "expected_artifact": "outputs\\full_universe_source_acquisition\\tmx_raw_acquisition_manifest_v2_16c.json",
+      "artifact_found": "True",
+      "status": "TMX_RAW_ACQUISITION_COMPLETED_WITH_DOWNLOADS_REBUILD_STILL_BLOCKED",
+      "recommended_next_phase": "v2.16D - TMX Validation",
+      "key_result": "Raw TMX landing/source responses acquired; controlled/paid sources not downloaded.",
+      "closure_assessment": "ok"
+    },
+    {
+      "phase": "v2.16D",
+      "title": "TMX Validation",
+      "expected_artifact": "committed validation artifacts",
+      "artifact_found": "not independently asserted by closure script",
+      "status": "closed_in_git_history",
+      "recommended_next_phase": "v2.16D2 - TMX Controlled Endpoint Probe",
+      "key_result": "Raw source validation completed; controlled endpoint probe recommended.",
+      "closure_assessment": "closed_by_git_history"
+    },
+    {
+      "phase": "v2.16D2",
+      "title": "TMX Controlled Endpoint Probe",
+      "expected_artifact": "committed controlled probe artifacts",
+      "artifact_found": "not independently asserted by closure script",
+      "status": "closed_in_git_history",
+      "recommended_next_phase": "v2.16E - TMX Candidate Extraction Dry Run",
+      "key_result": "No promising endpoint path found; candidate extraction moved to local raw extraction.",
+      "closure_assessment": "closed_by_git_history"
+    },
+    {
+      "phase": "v2.16E",
+      "title": "TMX Candidate Extraction Dry Run",
+      "expected_artifact": "outputs\\full_universe_source_acquisition\\tmx_candidate_extraction_dry_run_v2_16e.json",
+      "artifact_found": "True",
+      "status": "TMX_CANDIDATE_EXTRACTION_DRY_RUN_COMPLETED_CANDIDATES_FOUND_REBUILD_STILL_BLOCKED",
+      "recommended_next_phase": "v2.16F - TMX Candidate Validation Against Canonical Dry Run",
+      "key_result": "13 conservative candidates extracted; newsroom false positives removed.",
+      "closure_assessment": "ok"
+    },
+    {
+      "phase": "v2.16F",
+      "title": "TMX Candidate Validation Against Canonical Dry Run",
+      "expected_artifact": "outputs\\full_universe_source_acquisition\\tmx_candidate_validation_against_canonical_v2_16f.json",
+      "artifact_found": "True",
+      "status": "TMX_CANDIDATE_VALIDATION_DRY_RUN_COMPLETED_REBUILD_CANDIDATES_FOUND_REBUILD_STILL_BLOCKED",
+      "recommended_next_phase": "v2.16G - TMX Expanded Rebuild Candidate",
+      "key_result": "13 candidates validated; 1 rebuild candidate selected: IRR / Irruptive Metals Corp. / TSXV.",
+      "closure_assessment": "ok"
+    },
+    {
+      "phase": "v2.16G",
+      "title": "TMX Expanded Rebuild Candidate",
+      "expected_artifact": "outputs\\full_universe_source_acquisition\\tmx_expanded_rebuild_candidate_v2_16g.json",
+      "artifact_found": "True",
+      "status": "TMX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_ADD1_FULL_SOURCE_STILL_BLOCKED",
+      "recommended_next_phase": "v2.16H - TMX Expanded Validation",
+      "key_result": "Separate candidate dataset generated with +1 row; canonical not replaced.",
+      "closure_assessment": "ok"
+    },
+    {
+      "phase": "v2.16H",
+      "title": "TMX Expanded Validation",
+      "expected_artifact": "outputs\\full_universe_source_acquisition\\tmx_expanded_validation_v2_16h.json",
+      "artifact_found": "True",
+      "status": "TMX_EXPANDED_VALIDATION_COMPLETED_CANDIDATE_ADD1_VALID_CANONICAL_STILL_UNCHANGED_FULL_SOURCE_STILL_BLOCKED",
+      "recommended_next_phase": "v2.16I - TMX Closure Report",
+      "key_result": "Candidate dataset validated: canonical +1, IRR/TSXV, full source still blocked.",
+      "closure_assessment": "ok"
+    }
+  ],
+  "decision_log": [
+    {
+      "decision_id": "8cb55378f3cdd8b3",
+      "topic": "Canonical dataset",
+      "decision": "Do not modify expanded_universe_v2_14e.csv in TMX closure.",
+      "reason": "v2.16I is a closure report, not a promotion/rebuild phase.",
+      "impact": "Active canonical remains 38,287 rows."
+    },
+    {
+      "decision_id": "835671d049e02ecb",
+      "topic": "TMX candidate dataset",
+      "decision": "Preserve expanded_universe_candidate_tmx_v2_16g.csv as validated candidate artifact.",
+      "reason": "v2.16G/H produced and validated a separate candidate dataset with one additional row.",
+      "impact": "Candidate dataset remains available for later controlled promotion if explicitly opened."
+    },
+    {
+      "decision_id": "0bd38aab7f68a24e",
+      "topic": "TMX source yield",
+      "decision": "Close TMX with +1 validated candidate but no full-source unlock.",
+      "reason": "The validated candidate improves candidate coverage by one row only; threshold remains far away.",
+      "impact": "Full source gate remains BLOCKED."
+    },
+    {
+      "decision_id": "1a80553e6d929d70",
+      "topic": "Next route",
+      "decision": "Move to next provider/source route selection.",
+      "reason": "TMX route is exhausted enough for closure under current controlled pipeline.",
+      "impact": "v2.17A - Next Provider Route Selection"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "provider-closure-report-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "phase_artifacts_read": true,
+    "canonical_dataset_read": true,
+    "candidate_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "candidate_promoted_to_canonical": false,
+    "canonical_replacement_performed": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "new_expanded_dataset_written": false,
+    "net_new_filtering_applied_to_canonical": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "full_source_gate_unblocked": false,
+    "overwrite_allowed": false
+  },
+  "artifact_hashes": {
+    "canonical_sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "candidate_sha256": "e1d4934a5d01d64cac78c23621c0f791b3d1e48377169ea35e24b3bb278b1d4c",
+    "v2_16h_sha256": "4f805fe17d48355f4e251239718a99d5068469458457c24576f20fc421f2193f"
+  },
+  "recommended_next_phase": "v2.17A - Next Provider Route Selection"
+}

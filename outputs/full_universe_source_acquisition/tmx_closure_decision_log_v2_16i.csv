@@ -1,0 +1,5 @@
+decision_id,topic,decision,reason,impact
+8cb55378f3cdd8b3,Canonical dataset,Do not modify expanded_universe_v2_14e.csv in TMX closure.,"v2.16I is a closure report, not a promotion/rebuild phase.","Active canonical remains 38,287 rows."
+835671d049e02ecb,TMX candidate dataset,Preserve expanded_universe_candidate_tmx_v2_16g.csv as validated candidate artifact.,v2.16G/H produced and validated a separate candidate dataset with one additional row.,Candidate dataset remains available for later controlled promotion if explicitly opened.
+0bd38aab7f68a24e,TMX source yield,Close TMX with +1 validated candidate but no full-source unlock.,The validated candidate improves candidate coverage by one row only; threshold remains far away.,Full source gate remains BLOCKED.
+1a80553e6d929d70,Next route,Move to next provider/source route selection.,TMX route is exhausted enough for closure under current controlled pipeline.,v2.17A - Next Provider Route Selection
