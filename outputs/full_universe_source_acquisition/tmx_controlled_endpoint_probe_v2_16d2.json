@@ -1,0 +1,221 @@
+{
+  "version": "v2.16D2",
+  "phase": "TMX Controlled Endpoint Probe",
+  "phase_type": "controlled-endpoint-probe-only",
+  "status": "TMX_CONTROLLED_ENDPOINT_PROBE_COMPLETED_NO_PROMISING_ENDPOINTS_REBUILD_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-05T08:31:45.369483+00:00",
+  "current_state": {
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "current_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "probe_summary": {
+    "v2_16d_status": "TMX_VALIDATION_COMPLETED_ENDPOINT_SEEDS_DETECTED_REBUILD_STILL_BLOCKED",
+    "v2_16d_recommended_next_phase": "v2.16D2 - TMX Controlled Endpoint Probe",
+    "seed_rows_loaded": 873,
+    "selected_probe_seeds": 1,
+    "probe_results": 1,
+    "max_probes": 40,
+    "ok_count": 1,
+    "error_count": 0,
+    "promising_count": 0,
+    "medium_or_better_evidence_count": 0,
+    "json_like_count": 0,
+    "html_like_count": 1,
+    "js_like_count": 0,
+    "status_counts": {
+      "200": 1
+    },
+    "shape_counts": {
+      "html_like": 1
+    },
+    "evidence_counts": {
+      "low": 1
+    },
+    "critical_failed_checks": 0
+  },
+  "checks": [
+    {
+      "check": "v2_16d_validation_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_validation_v2_16d.json"
+    },
+    {
+      "check": "v2_16d_seeds_csv_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_candidate_endpoint_seeds_v2_16d.csv"
+    },
+    {
+      "check": "v2_16d_status_valid",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TMX_VALIDATION_COMPLETED_ENDPOINT_SEEDS_DETECTED_REBUILD_STILL_BLOCKED"
+    },
+    {
+      "check": "v2_16d_recommended_d2",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.16D2 - TMX Controlled Endpoint Probe"
+    },
+    {
+      "check": "allowed_seeds_loaded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "seed_rows=873"
+    },
+    {
+      "check": "probe_seeds_selected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "selected=1"
+    },
+    {
+      "check": "controlled_probe_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "results=1"
+    },
+    {
+      "check": "at_least_one_http_ok",
+      "passed": true,
+      "severity": "warning",
+      "detail": "ok_count=1"
+    },
+    {
+      "check": "medium_or_better_evidence_review",
+      "passed": false,
+      "severity": "warning",
+      "detail": "medium_or_better=0"
+    },
+    {
+      "check": "promising_endpoint_review",
+      "passed": false,
+      "severity": "warning",
+      "detail": "promising_count=0"
+    },
+    {
+      "check": "error_count_review",
+      "passed": true,
+      "severity": "warning",
+      "detail": "error_count=0"
+    },
+    {
+      "check": "no_raw_payload_saved_to_disk",
+      "passed": true,
+      "severity": "critical",
+      "detail": "payload_saved_to_disk=False"
+    },
+    {
+      "check": "query_sweep_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "query_sweep_performed=False"
+    },
+    {
+      "check": "candidate_rows_not_extracted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_rows_extracted=False"
+    },
+    {
+      "check": "security_rows_not_extracted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "security_rows_extracted=False"
+    },
+    {
+      "check": "canonical_dataset_not_read",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "normalization_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "normalization_performed=False"
+    },
+    {
+      "check": "net_new_filtering_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "net_new_filtering_performed=False"
+    },
+    {
+      "check": "expanded_universe_not_rebuilt",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_universe_rebuilt=False"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "38287 < 50000"
+    }
+  ],
+  "probe_results_preview": [
+    {
+      "probe_id": "52492a2a188c4330",
+      "probe_order": 1,
+      "source_id": "tmx_listed_company_directory",
+      "source_name": "TSX/TSXV Listed Company Directory",
+      "seed_type": "anchor_href",
+      "seed_signal": "high",
+      "seed_marker_hits": "controller|httpcontroller|search|tsx|tsxventure",
+      "url": "https://www.tmx.com/TSXVenture/TSXVentureHttpController?GetPage=LcdbSearch",
+      "host": "www.tmx.com",
+      "path": "/TSXVenture/TSXVentureHttpController",
+      "query_present": true,
+      "status_code": 200,
+      "ok": true,
+      "final_url": "http://apps.tmx.com/TSXVenture/TSXVentureHttpController?GetPage=LcdbSearch",
+      "content_type": "text/html",
+      "content_length_header": "",
+      "sampled_bytes": 65154,
+      "sample_sha256": "936e48e3d785f0f1549099b2f5d8b41e9e15c010d5f3e093a0033429d47f0162",
+      "payload_saved_to_disk": false,
+      "shape_classification": "html_like",
+      "evidence_level": "low",
+      "promising_for_next_phase": false,
+      "probe_notes": "html_like_with_markers_review_only",
+      "error": ""
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "controlled-endpoint-probe-only",
+    "network_download_performed": true,
+    "controlled_endpoint_probe_executed": true,
+    "raw_payload_saved_to_disk": false,
+    "http_body_sampled_in_memory_only": true,
+    "new_raw_files_downloaded": false,
+    "query_sweep_performed": false,
+    "generated_urls_or_parameter_sweep": false,
+    "candidate_rows_extracted": false,
+    "security_rows_extracted": false,
+    "canonical_dataset_read": false,
+    "canonical_dataset_modified": false,
+    "normalization_performed": false,
+    "net_new_filtering_performed": false,
+    "expanded_universe_rebuilt": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.16E - TMX Candidate Extraction Dry Run"
+}
