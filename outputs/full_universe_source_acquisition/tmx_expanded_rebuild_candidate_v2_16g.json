@@ -1,0 +1,238 @@
+{
+  "version": "v2.16G",
+  "phase": "TMX Expanded Rebuild Candidate",
+  "phase_type": "expanded-rebuild-candidate-only",
+  "status": "TMX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_ADD1_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-05T20:17:18.044859+00:00",
+  "current_state": {
+    "canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "canonical_rows_before": 38287,
+    "candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_tmx_v2_16g.csv",
+    "candidate_rows_after": 38288,
+    "additions": 1,
+    "full_source_threshold": 50000,
+    "rows_needed_before": 11713,
+    "rows_needed_after_candidate": 11712,
+    "source_to_50k_completed_percent_before": 76.6,
+    "source_to_50k_completed_percent_after_candidate": 76.58,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "schema_mapping": {
+    "symbol_col": "ticker",
+    "name_col": "company_name",
+    "exchange_col": "exchange",
+    "source_col": "source_provider",
+    "country_col": "country",
+    "currency_col": "currency",
+    "field_count": 33
+  },
+  "rebuild_candidate_summary": {
+    "v2_16f_status": "TMX_CANDIDATE_VALIDATION_DRY_RUN_COMPLETED_REBUILD_CANDIDATES_FOUND_REBUILD_STILL_BLOCKED",
+    "v2_16f_recommended_next_phase": "v2.16G - TMX Expanded Rebuild Candidate",
+    "selected_rebuild_candidates": 1,
+    "additions_created": 1,
+    "canonical_rows_before": 38287,
+    "candidate_rows_after": 38288,
+    "rows_needed_after_candidate": 11712,
+    "source_to_50k_completed_percent_after_candidate": 76.58,
+    "source_counts": {
+      "tmx_money_recent_listings": 1
+    },
+    "exchange_counts": {
+      "TSXV": 1
+    },
+    "confidence_counts": {
+      "high": 1
+    },
+    "candidate_dataset_sha256": "e1d4934a5d01d64cac78c23621c0f791b3d1e48377169ea35e24b3bb278b1d4c",
+    "additions_sha256": "cf6ae581a4905a5c0fd342ef3382c3b6732879045ccd778a684470b234dec910",
+    "critical_failed_checks": 0
+  },
+  "checks": [
+    {
+      "check": "v2_16f_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_candidate_validation_against_canonical_v2_16f.json"
+    },
+    {
+      "check": "v2_16f_rows_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_candidate_validation_rows_v2_16f.csv"
+    },
+    {
+      "check": "v2_16f_status_valid",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TMX_CANDIDATE_VALIDATION_DRY_RUN_COMPLETED_REBUILD_CANDIDATES_FOUND_REBUILD_STILL_BLOCKED"
+    },
+    {
+      "check": "v2_16f_recommended_g",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.16G - TMX Expanded Rebuild Candidate"
+    },
+    {
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_rows=38287 expected=38287"
+    },
+    {
+      "check": "canonical_symbol_column_detected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "symbol_col=ticker"
+    },
+    {
+      "check": "canonical_name_column_detected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "name_col=company_name"
+    },
+    {
+      "check": "canonical_exchange_column_detected",
+      "passed": true,
+      "severity": "warning",
+      "detail": "exchange_col=exchange"
+    },
+    {
+      "check": "selected_rebuild_candidates_loaded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "selected=1"
+    },
+    {
+      "check": "additions_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "additions=1"
+    },
+    {
+      "check": "expected_single_tmx_addition",
+      "passed": true,
+      "severity": "critical",
+      "detail": "additions=1"
+    },
+    {
+      "check": "candidate_dataset_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_rows=38288 expected=38288"
+    },
+    {
+      "check": "candidate_dataset_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_tmx_v2_16g.csv"
+    },
+    {
+      "check": "additions_csv_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_expanded_rebuild_candidate_additions_v2_16g.csv"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "new_expanded_candidate_dataset_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_tmx_v2_16g.csv"
+    },
+    {
+      "check": "canonical_replacement_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_universe_v2_14e.csv untouched"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "38288 < 50000"
+    },
+    {
+      "check": "network_not_used",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "endpoint_calls_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "endpoint_calls_performed=False"
+    },
+    {
+      "check": "query_sweep_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "query_sweep_performed=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "full_59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full_59k_universe_launched=False"
+    }
+  ],
+  "additions": [
+    {
+      "addition_id": "79906c06e40ef687",
+      "raw_symbol": "IRR",
+      "raw_name": "Irruptive Metals Corp.",
+      "raw_exchange": "TSXV",
+      "confidence_bucket": "high",
+      "source_id": "tmx_money_recent_listings",
+      "validation_status": "net_new_candidate_high_confidence_dry_run",
+      "dry_run_decision": "review_net_new_candidate",
+      "rebuild_candidate_reason": "symbol_absent_from_canonical_high_confidence",
+      "mapped_symbol_column": "ticker",
+      "mapped_name_column": "company_name",
+      "mapped_exchange_column": "exchange",
+      "candidate_dataset_row_index": 38288,
+      "evidence": "{\"symbol\":\"IRR\",\"longName\":\"Irruptive Metals Corp.\",\"rank\":29,\"metric\":\"TSXV\",\"price\":1.5,\"priceChange\":0,\"percentChange\":0,\"volume\":63410,\"__typename\":\"StockListItem\"}",
+      "notes": "json_like_embedded_object"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "expanded-rebuild-candidate-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "candidate_validation_rows_read": true,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "new_expanded_candidate_dataset_written": true,
+    "canonical_replacement_performed": false,
+    "net_new_filtering_applied_to_canonical": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "full_source_gate_unblocked": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.16H - TMX Expanded Validation"
+}
