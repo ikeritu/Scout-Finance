@@ -1,0 +1,5 @@
+decision_id,topic,decision,reason,impact
+937ea97d3a89b675,Selected provider route,Select NSE India as the next provider route.,NSE has official bulk-like security files and a better expected yield/structure balance than the just-closed TMX route.,v2.17B - NSE India Acquisition Plan
+cdc95b9a1eff9052,Reserve route,Keep TWSE + TPEx Taiwan as first reserve route.,"TWSE/TPEx ISIN lists are official and structured, but filtering non-equity instruments must be strict.",Use if NSE acquisition is blocked or low-yield.
+8bd971481ab0f37b,Quick win route,Keep ASX Australia as a clean quick-win fallback.,ASX official CSV/ISIN routes are likely easier but lower-yield than India.,Use after NSE/Taiwan or if quick low-risk acquisition is preferred.
+37c646d2cb7d636d,Canonical dataset,Do not modify the canonical dataset in v2.17A.,This is provider route selection only.,"Active canonical remains 38,287 rows and full source gate remains blocked."

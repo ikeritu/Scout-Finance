@@ -1,0 +1,329 @@
+{
+  "version": "v2.17A",
+  "phase": "Next Provider Route Selection",
+  "phase_type": "provider-route-selection-only",
+  "status": "NEXT_PROVIDER_ROUTE_SELECTION_COMPLETED_NSE_INDIA_SELECTED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-05T21:20:23.214716+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.57,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "tmx_closure_reference": {
+    "artifact": "outputs\\full_universe_source_acquisition\\tmx_closure_report_v2_16i.json",
+    "status": "TMX_CLOSURE_REPORT_COMPLETED_PLUS1_CANDIDATE_VALIDATED_FULL_SOURCE_STILL_BLOCKED",
+    "recommended_next_phase": "v2.17A - Next Provider Route Selection"
+  },
+  "selected_route": {
+    "rank": 1,
+    "route_id": "nse_india",
+    "provider": "NSE India",
+    "market": "India",
+    "primary_sources": "NSE All Reports; CM - MII - Security File; Securities available for Trading",
+    "official_evidence_urls": "https://www.nseindia.com/all-reports | https://www.nseindia.com/static/market-data/securities-available-for-trading",
+    "expected_yield_bucket": "high",
+    "technical_complexity": "medium",
+    "licensing_or_access_risk": "medium",
+    "instrument_noise_risk": "medium",
+    "pipeline_fit_score": 5,
+    "volume_potential_score": 5,
+    "access_score": 4,
+    "filtering_score": 4,
+    "decision": "selected",
+    "recommended_next_phase": "v2.17B - NSE India Acquisition Plan",
+    "rationale": "Best balance of official bulk-like files, security master structure, volume potential and compatibility with the existing raw acquisition -> validation -> extraction -> canonical dry-run pipeline.",
+    "total_score": 18
+  },
+  "route_candidates": [
+    {
+      "rank": 1,
+      "route_id": "nse_india",
+      "provider": "NSE India",
+      "market": "India",
+      "primary_sources": "NSE All Reports; CM - MII - Security File; Securities available for Trading",
+      "official_evidence_urls": "https://www.nseindia.com/all-reports | https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_yield_bucket": "high",
+      "technical_complexity": "medium",
+      "licensing_or_access_risk": "medium",
+      "instrument_noise_risk": "medium",
+      "pipeline_fit_score": 5,
+      "volume_potential_score": 5,
+      "access_score": 4,
+      "filtering_score": 4,
+      "decision": "selected",
+      "recommended_next_phase": "v2.17B - NSE India Acquisition Plan",
+      "rationale": "Best balance of official bulk-like files, security master structure, volume potential and compatibility with the existing raw acquisition -> validation -> extraction -> canonical dry-run pipeline.",
+      "total_score": 18
+    },
+    {
+      "rank": 2,
+      "route_id": "twse_tpex_taiwan",
+      "provider": "TWSE + TPEx",
+      "market": "Taiwan",
+      "primary_sources": "TWSE/TPEx ISIN public lists for listed equities",
+      "official_evidence_urls": "https://isin.twse.com.tw/isin/e_C_public.jsp?strMode=2 | https://isin.twse.com.tw/isin/e_C_public.jsp?strMode=4 | https://isin.twse.com.tw/isin/e_C_public.jsp?strMode=5",
+      "expected_yield_bucket": "high",
+      "technical_complexity": "medium_low",
+      "licensing_or_access_risk": "low_medium",
+      "instrument_noise_risk": "high",
+      "pipeline_fit_score": 5,
+      "volume_potential_score": 4,
+      "access_score": 4,
+      "filtering_score": 3,
+      "decision": "reserve_route",
+      "recommended_next_phase": "future - Taiwan Acquisition Plan",
+      "rationale": "Strong official structured ISIN route, but requires strict filtering for ETFs, warrants, notes, bonds and other non-common-equity instruments.",
+      "total_score": 16
+    },
+    {
+      "rank": 3,
+      "route_id": "asx_australia",
+      "provider": "ASX",
+      "market": "Australia",
+      "primary_sources": "ASX listed companies CSV; ASX ISIN directory",
+      "official_evidence_urls": "https://www.asx.com.au/markets/trade-our-cash-market/overview/indices/ | https://www.asx.com.au/markets/market-resources/asx-codes-and-descriptors",
+      "expected_yield_bucket": "medium",
+      "technical_complexity": "low",
+      "licensing_or_access_risk": "low",
+      "instrument_noise_risk": "medium",
+      "pipeline_fit_score": 5,
+      "volume_potential_score": 3,
+      "access_score": 5,
+      "filtering_score": 4,
+      "decision": "reserve_quick_win",
+      "recommended_next_phase": "future - ASX Acquisition Plan",
+      "rationale": "Very clean official route and likely quick win, but expected yield is lower than India/Taiwan/Korea.",
+      "total_score": 17
+    },
+    {
+      "rank": 4,
+      "route_id": "krx_korea",
+      "provider": "KRX",
+      "market": "Korea",
+      "primary_sources": "KRX listed company search/download",
+      "official_evidence_urls": "https://global.krx.co.kr/contents/GLB/03/0308/0308010000/GLB0308010000.jsp",
+      "expected_yield_bucket": "high",
+      "technical_complexity": "medium_high",
+      "licensing_or_access_risk": "medium",
+      "instrument_noise_risk": "medium",
+      "pipeline_fit_score": 4,
+      "volume_potential_score": 5,
+      "access_score": 3,
+      "filtering_score": 4,
+      "decision": "reserve_route",
+      "recommended_next_phase": "future - KRX Acquisition Plan",
+      "rationale": "High market potential, but likely more dynamic and may require a controlled endpoint/download probe.",
+      "total_score": 16
+    },
+    {
+      "rank": 5,
+      "route_id": "hkex_hong_kong",
+      "provider": "HKEX",
+      "market": "Hong Kong",
+      "primary_sources": "HKEX Securities Lists; Full List of Securities",
+      "official_evidence_urls": "https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists?sc_lang=en",
+      "expected_yield_bucket": "medium_high",
+      "technical_complexity": "medium_high",
+      "licensing_or_access_risk": "medium_high",
+      "instrument_noise_risk": "high",
+      "pipeline_fit_score": 4,
+      "volume_potential_score": 4,
+      "access_score": 3,
+      "filtering_score": 2,
+      "decision": "reserve_route",
+      "recommended_next_phase": "future - HKEX Acquisition Plan",
+      "rationale": "Important market and official securities list, but high instrument noise due to structured products, warrants, CBBCs, units and other non-common-equity instruments.",
+      "total_score": 13
+    },
+    {
+      "rank": 6,
+      "route_id": "lseg_london",
+      "provider": "LSEG / London Stock Exchange",
+      "market": "United Kingdom / London",
+      "primary_sources": "Daily Tradeable Instruments Report; Daily Official List",
+      "official_evidence_urls": "https://www.londonstockexchange.com/equities-trading/market-data/historical-and-analytics-data-products",
+      "expected_yield_bucket": "medium_high",
+      "technical_complexity": "high",
+      "licensing_or_access_risk": "high",
+      "instrument_noise_risk": "high",
+      "pipeline_fit_score": 3,
+      "volume_potential_score": 4,
+      "access_score": 2,
+      "filtering_score": 2,
+      "decision": "defer",
+      "recommended_next_phase": "future - LSEG Access Review",
+      "rationale": "Relevant instrument products exist, but licensing/access and mixed instrument scope make it less attractive as the immediate next route.",
+      "total_score": 11
+    },
+    {
+      "rank": 7,
+      "route_id": "sgx_singapore",
+      "provider": "SGX",
+      "market": "Singapore",
+      "primary_sources": "Potential SGX securities/lists route to be researched later",
+      "official_evidence_urls": "",
+      "expected_yield_bucket": "medium",
+      "technical_complexity": "medium",
+      "licensing_or_access_risk": "medium",
+      "instrument_noise_risk": "medium",
+      "pipeline_fit_score": 3,
+      "volume_potential_score": 3,
+      "access_score": 3,
+      "filtering_score": 3,
+      "decision": "defer_pending_research",
+      "recommended_next_phase": "future - SGX Route Research",
+      "rationale": "Potentially useful, but not enough current evidence to prioritize over NSE/TWSE/ASX/KRX.",
+      "total_score": 12
+    }
+  ],
+  "decision_log": [
+    {
+      "decision_id": "937ea97d3a89b675",
+      "topic": "Selected provider route",
+      "decision": "Select NSE India as the next provider route.",
+      "reason": "NSE has official bulk-like security files and a better expected yield/structure balance than the just-closed TMX route.",
+      "impact": "v2.17B - NSE India Acquisition Plan"
+    },
+    {
+      "decision_id": "cdc95b9a1eff9052",
+      "topic": "Reserve route",
+      "decision": "Keep TWSE + TPEx Taiwan as first reserve route.",
+      "reason": "TWSE/TPEx ISIN lists are official and structured, but filtering non-equity instruments must be strict.",
+      "impact": "Use if NSE acquisition is blocked or low-yield."
+    },
+    {
+      "decision_id": "8bd971481ab0f37b",
+      "topic": "Quick win route",
+      "decision": "Keep ASX Australia as a clean quick-win fallback.",
+      "reason": "ASX official CSV/ISIN routes are likely easier but lower-yield than India.",
+      "impact": "Use after NSE/Taiwan or if quick low-risk acquisition is preferred."
+    },
+    {
+      "decision_id": "37c646d2cb7d636d",
+      "topic": "Canonical dataset",
+      "decision": "Do not modify the canonical dataset in v2.17A.",
+      "reason": "This is provider route selection only.",
+      "impact": "Active canonical remains 38,287 rows and full source gate remains blocked."
+    }
+  ],
+  "checks": [
+    {
+      "check": "tmx_closure_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\tmx_closure_report_v2_16i.json"
+    },
+    {
+      "check": "tmx_closure_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TMX_CLOSURE_REPORT_COMPLETED_PLUS1_CANDIDATE_VALIDATED_FULL_SOURCE_STILL_BLOCKED"
+    },
+    {
+      "check": "tmx_closure_recommends_v217a",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.17A - Next Provider Route Selection"
+    },
+    {
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_rows=38287"
+    },
+    {
+      "check": "route_candidates_count",
+      "passed": true,
+      "severity": "critical",
+      "detail": "routes=7"
+    },
+    {
+      "check": "selected_route_is_nse",
+      "passed": true,
+      "severity": "critical",
+      "detail": "nse_india"
+    },
+    {
+      "check": "selected_next_phase_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.17B - NSE India Acquisition Plan"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "38287 < 50000"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "network_not_used",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "endpoint_calls_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "endpoint_calls_performed=False"
+    },
+    {
+      "check": "query_sweep_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "query_sweep_performed=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "full_59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full_59k_universe_launched=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "provider-route-selection-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "tmx_closure_report_read": true,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "provider_route_selected": true,
+    "raw_acquisition_performed": false,
+    "candidate_extraction_performed": false,
+    "canonical_comparison_performed": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "net_new_filtering_applied_to_canonical": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "full_source_gate_unblocked": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.17B - NSE India Acquisition Plan"
+}
