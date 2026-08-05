@@ -1,0 +1,45 @@
+source_id,source_name,marker,count,marker_group
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,symbol|symbols|ticker|tickers,31,symbol
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,company|companies|issuer|issuers|name,214,company
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,tsx|toronto stock exchange,237,tsx
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,tsxv|tsx venture|tsx venture exchange,91,tsxv
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,stock|stocks|stock-list|stock list,79,stock
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,quote|quotes,19,quote
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,equity|equities,4,equity
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,api|ajax|controller|httpcontroller|endpoint,10,api
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,listing|listed|listed company|listed companies,160,listing
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,sector|industry|classification,18,sector
+tmx_listed_company_directory,TSX/TSXV Listed Company Directory,exchange|market|venue,285,exchange
+tmx_money_stocklists,TMX Money Stocklists,symbol|symbols|ticker|tickers,1205,symbol
+tmx_money_stocklists,TMX Money Stocklists,company|companies|issuer|issuers|name,1397,company
+tmx_money_stocklists,TMX Money Stocklists,tsx|toronto stock exchange,325,tsx
+tmx_money_stocklists,TMX Money Stocklists,tsxv|tsx venture|tsx venture exchange,179,tsxv
+tmx_money_stocklists,TMX Money Stocklists,stock|stocks|stock-list|stock list,2050,stock
+tmx_money_stocklists,TMX Money Stocklists,quote|quotes,19,quote
+tmx_money_stocklists,TMX Money Stocklists,equity|equities,7,equity
+tmx_money_stocklists,TMX Money Stocklists,api|ajax|controller|httpcontroller|endpoint,4,api
+tmx_money_stocklists,TMX Money Stocklists,listing|listed|listed company|listed companies,72,listing
+tmx_money_stocklists,TMX Money Stocklists,sector|industry|classification,10,sector
+tmx_money_stocklists,TMX Money Stocklists,exchange|market|venue,162,exchange
+tmx_money_recent_listings,TMX Money Recent Listings,symbol|symbols|ticker|tickers,89,symbol
+tmx_money_recent_listings,TMX Money Recent Listings,company|companies|issuer|issuers|name,230,company
+tmx_money_recent_listings,TMX Money Recent Listings,tsx|toronto stock exchange,396,tsx
+tmx_money_recent_listings,TMX Money Recent Listings,tsxv|tsx venture|tsx venture exchange,190,tsxv
+tmx_money_recent_listings,TMX Money Recent Listings,stock|stocks|stock-list|stock list,792,stock
+tmx_money_recent_listings,TMX Money Recent Listings,quote|quotes,16,quote
+tmx_money_recent_listings,TMX Money Recent Listings,equity|equities,11,equity
+tmx_money_recent_listings,TMX Money Recent Listings,api|ajax|controller|httpcontroller|endpoint,16,api
+tmx_money_recent_listings,TMX Money Recent Listings,listing|listed|listed company|listed companies,66,listing
+tmx_money_recent_listings,TMX Money Recent Listings,sector|industry|classification,4,sector
+tmx_money_recent_listings,TMX Money Recent Listings,exchange|market|venue,227,exchange
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,symbol|symbols|ticker|tickers,11,symbol
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,company|companies|issuer|issuers|name,43,company
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,tsx|toronto stock exchange,157,tsx
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,tsxv|tsx venture|tsx venture exchange,76,tsxv
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,stock|stocks|stock-list|stock list,43,stock
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,quote|quotes,9,quote
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,equity|equities,8,equity
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,api|ajax|controller|httpcontroller|endpoint,5,api
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,listing|listed|listed company|listed companies,6,listing
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,sector|industry|classification,1,sector
+tmx_newsroom_equity_financing_statistics,TMX Equity Financing Statistics,exchange|market|venue,170,exchange
