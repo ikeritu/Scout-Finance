@@ -1,0 +1,19 @@
+profile_key,profile_value,notes
+canonical_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv,"active canonical, unchanged"
+expanded_candidate_dataset,outputs\full_universe_source_acquisition\expanded_universe_candidate_nse_india_v2_17g.csv,"candidate only, not active canonical"
+canonical_rows,38287,active canonical rows
+delta_rows,2013,rows appended in candidate dataset
+promotions,2013,promotion rows
+expanded_candidate_rows,40300,canonical + delta
+rows_needed_after_candidate,9700,still below full-source threshold
+completion_after_candidate_percent,80.6,candidate completion only
+canonical_sha256_before,cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f,before validation
+canonical_sha256_after,cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f,after validation
+expanded_candidate_sha256,a6d93e89c2c26ae49bde7aa923ec42c385a4885602bcafa7a0bdfc50f2801ac6,candidate dataset
+delta_rows_sha256,be6e8cfdf4a73cc65cc3639d63dbddfe1d69b6edcd79393e517384b089d994e8,delta rows
+promotions_sha256,c6bbcde952b03d77bc7a6f934da4f5346e223440e759bf5c05bc8b2a8cab2f47,promotions
+schema_mapping_sha256,b77795c143264c8dba19898ff24e078a2bcb8d3ee32f58924d0c005a71d9992d,schema mapping
+source_counts,"{""nse_securities_available_equity_segment"": 2013}",promoted rows by source
+series_counts,"{""EQ"": 2013}",promoted rows by NSE series
+confidence_counts,"{""high"": 2013}",promoted rows by confidence
+policy_counts,"{""include_safe_high_confidence_equity_segment_eq_only_in_candidate_dataset"": 2013}",promotion policy

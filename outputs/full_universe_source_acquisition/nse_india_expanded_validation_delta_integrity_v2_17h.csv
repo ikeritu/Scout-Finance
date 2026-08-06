@@ -1,0 +1,6 @@
+check_id,passed,severity,detail
+canonical_prefix_fully_matches_expanded_candidate,True,critical,matched=38287/38287
+delta_rows_match_expanded_tail,True,critical,matched=2013/2013
+delta_rows_equal_promotions,True,critical,delta=2013 promotions=2013
+no_duplicate_delta_rows,True,critical,duplicate_delta_rows=0
+no_duplicate_promotion_candidate_ids,True,critical,duplicate_promotion_candidate_ids=0
