@@ -1,0 +1,11 @@
+profile_key,profile_value,notes
+canonical_rows,38287,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv
+canonical_columns,ticker | company_name | exchange | country | source_provider | source_file | instrument_type | instrument_scope | classification_confidence | classification_reason | sector | industry | market_cap | raw_cik | raw_exchange | provider_precedence | merge_action | merge_reason | isin | currency | mic | source_version | source_url | hkex_category | hkex_subcategory | hkex_board_lot | provider | source_phase | symbol | security_name | instrument_id | product_assignment_group_description | asset_type,raw canonical CSV header
+nonempty_symbol_rows,1424,derived by symbol column detection
+nonempty_isin_rows,4196,derived by ISIN column detection
+nonempty_exchange_rows,38287,derived by exchange column detection
+nonempty_country_rows,17133,derived by country column detection
+symbol_base_index_keys,1424,unique canonical symbol base keys
+isin_index_keys,4172,unique canonical ISIN keys
+symbol_exchange_index_keys,1424,unique symbol/exchange keys
+symbol_country_index_keys,1424,unique symbol/country keys
