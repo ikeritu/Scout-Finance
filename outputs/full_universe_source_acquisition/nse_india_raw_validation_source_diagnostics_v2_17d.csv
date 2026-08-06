@@ -1,0 +1,18 @@
+source_id,artifact_count,downloaded_count,valid_raw_file_count,csv_ok_count,gzip_ok_count,html_count,total_csv_rows,max_csv_columns,validation_bucket,notes
+nse_all_reports_cm_mii_security_file_nse_and_bse_exclusive,1,1,1,1,1,0,36243,120,valid_raw_source,action_status=downloaded; issues=
+nse_all_reports_cm_mii_security_file_nse_listed,1,1,1,1,1,0,36243,120,valid_raw_source,action_status=downloaded; issues=
+nse_all_reports_landing,1,1,0,0,0,1,0,0,landing_or_html_only,action_status=downloaded; issues=
+nse_changes_company_names,1,1,1,1,0,0,2321,4,valid_raw_source,action_status=downloaded; issues=
+nse_changes_symbols,1,1,1,1,0,0,1053,4,valid_raw_source,action_status=downloaded; issues=
+nse_close_ended_mf,1,1,1,1,0,0,119,8,valid_raw_source,action_status=downloaded; issues=
+nse_debt_instruments,1,1,1,1,0,0,6066,15,valid_raw_source,action_status=downloaded; issues=
+nse_etfs,1,1,1,1,0,0,341,7,valid_raw_source,action_status=downloaded; issues=
+nse_home_session_seed,1,0,0,0,0,1,0,0,landing_or_html_only,action_status=; issues=
+nse_idrs,1,1,1,1,0,0,4,8,valid_raw_source,action_status=downloaded; issues=
+nse_invits,1,1,1,1,0,0,7,8,valid_raw_source,action_status=downloaded; issues=
+nse_preference_shares,1,1,1,1,0,0,4,15,valid_raw_source,action_status=downloaded; issues=
+nse_reits,1,1,1,1,0,0,5,8,valid_raw_source,action_status=downloaded; issues=
+nse_securities_available_equity_segment,1,1,1,1,0,0,2397,8,valid_raw_source,action_status=downloaded; issues=
+nse_securities_available_for_trading_landing,1,1,0,0,0,1,0,0,landing_or_html_only,action_status=downloaded; issues=
+nse_securities_available_sme,1,1,1,1,0,0,560,8,valid_raw_source,action_status=downloaded; issues=
+nse_warrants,1,1,1,1,0,0,1,6,valid_raw_source,action_status=downloaded; issues=
