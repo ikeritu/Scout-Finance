@@ -1,0 +1,34 @@
+canonical_column,mapped_from,mapped_value_preview,mapping_strategy,notes
+ticker,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+company_name,raw_name,20 Microns Limited,name mapping,mapped for NSE v2.17G appended rows
+exchange,raw_exchange,NSE,exchange mapping,mapped for NSE v2.17G appended rows
+country,country,India,country mapping,mapped for NSE v2.17G appended rows
+source_provider,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+source_file,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+instrument_type,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+instrument_scope,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+classification_confidence,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+classification_reason,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+sector,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+industry,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+market_cap,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+raw_cik,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+raw_exchange,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+provider_precedence,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+merge_action,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+merge_reason,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+isin,raw_isin,INE144J01027,isin mapping,mapped for NSE v2.17G appended rows
+currency,currency,INR,currency mapping,mapped for NSE v2.17G appended rows
+mic,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+source_version,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+source_url,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+hkex_category,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+hkex_subcategory,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+hkex_board_lot,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+provider,source_id/provider,nse_india_v2_17g,source provenance mapping,mapped for NSE v2.17G appended rows
+source_phase,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+symbol,raw_symbol,20MICRONS,symbol mapping,mapped for NSE v2.17G appended rows
+security_name,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+instrument_id,candidate_id,1f169ecd9b06fc9a,stable generated id mapping,mapped for NSE v2.17G appended rows
+product_assignment_group_description,,,left_blank_for_appended_rows,no safe deterministic mapping inferred
+asset_type,asset_type,equity,asset type mapping,mapped for NSE v2.17G appended rows

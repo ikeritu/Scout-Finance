@@ -1,0 +1,278 @@
+{
+  "version": "v2.17G",
+  "phase": "NSE India Expanded Rebuild Candidate",
+  "phase_type": "expanded-rebuild-candidate-only",
+  "status": "NSE_INDIA_EXPANDED_REBUILD_CANDIDATE_COMPLETED_VALIDATION_READY_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-06T14:09:41.891669+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed_before_nse": 11713,
+    "source_to_50k_completed_percent_before_nse_candidate": 76.57,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "route_reference": {
+    "v2_17f_artifact": "outputs\\full_universe_source_acquisition\\nse_india_candidate_validation_against_canonical_dry_run_v2_17f.json",
+    "v2_17f_status": "NSE_INDIA_CANDIDATE_VALIDATION_AGAINST_CANONICAL_DRY_RUN_COMPLETED_NET_NEW_FOUND_REBUILD_CANDIDATE_READY_FULL_SOURCE_STILL_BLOCKED",
+    "v2_17f_recommended_next_phase": "v2.17G - NSE India Expanded Rebuild Candidate",
+    "provider": "NSE India",
+    "market": "India"
+  },
+  "rebuild_candidate_summary": {
+    "canonical_rows_read": 38287,
+    "classified_candidates_read": 11802,
+    "potential_net_new_rows_raw": 4435,
+    "potential_net_new_rows_unique_before_promotion_policy": 4435,
+    "promotion_policy_deferred_rows": 2422,
+    "promotion_defer_reason_counts": {
+      "defer_non_primary_equity_segment_source": 2380,
+      "defer_name_keyword:bank": 42
+    },
+    "potential_net_new_rows_promoted": 2013,
+    "existing_matches_read": 47,
+    "source_diagnostics_read": 2,
+    "canonical_profile_read": 10,
+    "rows_added_to_candidate_dataset": 2013,
+    "expanded_candidate_rows": 40300,
+    "rows_needed_after_candidate_dataset": 9700,
+    "source_to_50k_completed_percent_after_candidate": 80.6,
+    "would_reach_full_source_threshold": false,
+    "potential_net_new_source_counts": {
+      "nse_securities_available_equity_segment": 2013
+    },
+    "potential_net_new_series_counts": {
+      "EQ": 2013
+    },
+    "potential_net_new_confidence_counts": {
+      "high": 2013
+    },
+    "potential_net_new_bucket_counts": {
+      "potential_net_new_high": 2013
+    },
+    "canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "expanded_candidate_sha256": "a6d93e89c2c26ae49bde7aa923ec42c385a4885602bcafa7a0bdfc50f2801ac6",
+    "delta_rows_sha256": "be6e8cfdf4a73cc65cc3639d63dbddfe1d69b6edcd79393e517384b089d994e8",
+    "critical_failed_checks": 0
+  },
+  "schema_mapping": {
+    "symbol_col": "symbol",
+    "name_col": "company_name",
+    "exchange_col": "exchange",
+    "country_col": "country",
+    "currency_col": "currency",
+    "isin_col": "isin",
+    "source_col": "provider",
+    "asset_type_col": "asset_type",
+    "id_col": "instrument_id",
+    "series_col": "",
+    "status_col": ""
+  },
+  "checks": [
+    {
+      "check": "v2_17f_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\nse_india_candidate_validation_against_canonical_dry_run_v2_17f.json"
+    },
+    {
+      "check": "v2_17f_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "NSE_INDIA_CANDIDATE_VALIDATION_AGAINST_CANONICAL_DRY_RUN_COMPLETED_NET_NEW_FOUND_REBUILD_CANDIDATE_READY_FULL_SOURCE_STILL_BLOCKED"
+    },
+    {
+      "check": "v2_17f_recommended_g",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.17G - NSE India Expanded Rebuild Candidate"
+    },
+    {
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_rows=38287"
+    },
+    {
+      "check": "canonical_header_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "columns=33"
+    },
+    {
+      "check": "potential_net_new_rows_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_potential=4435"
+    },
+    {
+      "check": "safe_promotable_rows_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "safe_promotable_rows=2013"
+    },
+    {
+      "check": "promotion_policy_deferred_rows_recorded",
+      "passed": true,
+      "severity": "warning",
+      "detail": "deferred_rows=2422"
+    },
+    {
+      "check": "rows_added_matches_unique_potential",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_added=2013 unique_potential=2013"
+    },
+    {
+      "check": "expanded_rows_projected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "projected=40300"
+    },
+    {
+      "check": "expanded_candidate_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_nse_india_v2_17g.csv"
+    },
+    {
+      "check": "delta_rows_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\nse_india_expanded_rebuild_candidate_delta_rows_v2_17g.csv"
+    },
+    {
+      "check": "promotions_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\nse_india_expanded_rebuild_candidate_promotions_v2_17g.csv"
+    },
+    {
+      "check": "schema_mapping_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\nse_india_expanded_rebuild_candidate_schema_mapping_v2_17g.csv"
+    },
+    {
+      "check": "expanded_dataset_schema_matches_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "same header used for canonical + appended rows"
+    },
+    {
+      "check": "symbol_column_mapped",
+      "passed": true,
+      "severity": "critical",
+      "detail": "symbol_col=symbol"
+    },
+    {
+      "check": "name_column_mapped",
+      "passed": true,
+      "severity": "critical",
+      "detail": "name_col=company_name"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical sha unchanged"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "40300 < 50000"
+    },
+    {
+      "check": "network_not_used",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "canonical_dataset_read",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_read=True"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "expanded_candidate_dataset_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_expanded_candidate_dataset_written=True"
+    },
+    {
+      "check": "expanded_universe_not_rebuilt_as_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_universe_rebuilt_as_canonical=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full_59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full_59k_universe_launched=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "expanded-rebuild-candidate-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "v2_17f_report_read": true,
+    "potential_net_new_rows_read": true,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "new_expanded_candidate_dataset_written": true,
+    "delta_rows_written": true,
+    "promotions_written": true,
+    "schema_mapping_written": true,
+    "safe_promotion_policy_applied": true,
+    "deferred_review_rows_not_promoted": 2422,
+    "net_new_rows_applied_to_candidate_dataset": true,
+    "net_new_rows_applied_to_canonical": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "active_canonical_replaced": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "full_source_gate_unblocked": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.17H - NSE India Expanded Validation"
+}
