@@ -1,0 +1,329 @@
+{
+  "version": "v2.17I",
+  "phase": "NSE India Closure Report",
+  "phase_type": "provider-closure-report-only",
+  "status": "NSE_INDIA_CLOSURE_COMPLETED_VALIDATED_CANDIDATE_RETAINED_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-06T14:44:11.550838+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_nse_india_v2_17g.csv",
+    "validated_candidate_rows": 40300,
+    "safe_delta_rows": 2013,
+    "full_source_threshold": 50000,
+    "rows_needed_after_candidate": 9700,
+    "candidate_completion_percent": 80.6,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "provider_closure_summary": {
+    "provider": "NSE India",
+    "market": "India",
+    "closure_result": "validated_candidate_retained_not_promoted_to_active_canonical",
+    "canonical_rows_before_provider": 38287,
+    "safe_delta_rows": 2013,
+    "validated_candidate_rows": 40300,
+    "candidate_completion_percent": 80.6,
+    "rows_needed_after_candidate": 9700,
+    "would_reach_full_source_threshold": false,
+    "active_canonical_replaced": false,
+    "canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "v2_17h_status": "NSE_INDIA_EXPANDED_VALIDATION_COMPLETED_CANDIDATE_VALID_CLOSURE_READY_FULL_SOURCE_STILL_BLOCKED",
+    "v2_17h_summary": {
+      "canonical_rows": 38287,
+      "delta_rows": 2013,
+      "promotions": 2013,
+      "expanded_candidate_rows": 40300,
+      "rows_needed_after_candidate": 9700,
+      "completion_after_candidate_percent": 80.6,
+      "canonical_prefix_match_count": 38287,
+      "delta_tail_match_count": 2013,
+      "promotion_policy_failures": 0,
+      "duplicate_delta_rows": 0,
+      "duplicate_promotion_candidate_ids": 0,
+      "source_counts": {
+        "nse_securities_available_equity_segment": 2013
+      },
+      "series_counts": {
+        "EQ": 2013
+      },
+      "confidence_counts": {
+        "high": 2013
+      },
+      "net_new_bucket_counts": {
+        "potential_net_new_high": 2013
+      },
+      "policy_counts": {
+        "include_safe_high_confidence_equity_segment_eq_only_in_candidate_dataset": 2013
+      },
+      "canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "expanded_candidate_sha256": "a6d93e89c2c26ae49bde7aa923ec42c385a4885602bcafa7a0bdfc50f2801ac6",
+      "critical_failed_checks": 0
+    },
+    "critical_failed_checks": 0
+  },
+  "closure_ledger": [
+    {
+      "phase": "v2.17B",
+      "status": "NSE_INDIA_ACQUISITION_PLAN_COMPLETED_RAW_ACQUISITION_READY_FULL_SOURCE_STILL_BLOCKED",
+      "recommended_next_phase": "v2.17C - NSE India Raw Acquisition",
+      "artifact": "outputs\\full_universe_source_acquisition\\nse_india_acquisition_plan_v2_17b.json",
+      "phase_type": "provider-acquisition-plan-only",
+      "critical_failed_checks": "",
+      "closure_assessment": "PASS",
+      "notes": "expected_status_ok=True; expected_next_ok=True; critical_checks_ok=True"
+    },
+    {
+      "phase": "v2.17C",
+      "status": "NSE_INDIA_RAW_ACQUISITION_COMPLETED_RAW_FILES_CAPTURED_VALIDATION_READY_FULL_SOURCE_STILL_BLOCKED",
+      "recommended_next_phase": "v2.17D - NSE India Raw Validation",
+      "artifact": "outputs\\full_universe_source_acquisition\\nse_india_raw_acquisition_v2_17c.json",
+      "phase_type": "provider-raw-acquisition-only",
+      "critical_failed_checks": 0,
+      "closure_assessment": "PASS",
+      "notes": "expected_status_ok=True; expected_next_ok=True; critical_checks_ok=True"
+    },
+    {
+      "phase": "v2.17D",
+      "status": "NSE_INDIA_RAW_VALIDATION_COMPLETED_RAW_FILES_VALID_CANDIDATE_EXTRACTION_READY_FULL_SOURCE_STILL_BLOCKED",
+      "recommended_next_phase": "v2.17E - NSE India Candidate Extraction Dry Run",
+      "artifact": "outputs\\full_universe_source_acquisition\\nse_india_raw_validation_v2_17d.json",
+      "phase_type": "provider-raw-validation-only",
+      "critical_failed_checks": 0,
+      "closure_assessment": "PASS",
+      "notes": "expected_status_ok=True; expected_next_ok=True; critical_checks_ok=True"
+    },
+    {
+      "phase": "v2.17E",
+      "status": "NSE_INDIA_CANDIDATE_EXTRACTION_DRY_RUN_COMPLETED_CANDIDATES_FOUND_CANONICAL_COMPARISON_STILL_BLOCKED",
+      "recommended_next_phase": "v2.17F - NSE India Candidate Validation Against Canonical Dry Run",
+      "artifact": "outputs\\full_universe_source_acquisition\\nse_india_candidate_extraction_dry_run_v2_17e.json",
+      "phase_type": "candidate-extraction-dry-run-only",
+      "critical_failed_checks": 0,
+      "closure_assessment": "PASS",
+      "notes": "expected_status_ok=True; expected_next_ok=True; critical_checks_ok=True"
+    },
+    {
+      "phase": "v2.17F",
+      "status": "NSE_INDIA_CANDIDATE_VALIDATION_AGAINST_CANONICAL_DRY_RUN_COMPLETED_NET_NEW_FOUND_REBUILD_CANDIDATE_READY_FULL_SOURCE_STILL_BLOCKED",
+      "recommended_next_phase": "v2.17G - NSE India Expanded Rebuild Candidate",
+      "artifact": "outputs\\full_universe_source_acquisition\\nse_india_candidate_validation_against_canonical_dry_run_v2_17f.json",
+      "phase_type": "candidate-validation-against-canonical-dry-run-only",
+      "critical_failed_checks": 0,
+      "closure_assessment": "PASS",
+      "notes": "expected_status_ok=True; expected_next_ok=True; critical_checks_ok=True"
+    },
+    {
+      "phase": "v2.17G",
+      "status": "NSE_INDIA_EXPANDED_REBUILD_CANDIDATE_COMPLETED_VALIDATION_READY_FULL_SOURCE_STILL_BLOCKED",
+      "recommended_next_phase": "v2.17H - NSE India Expanded Validation",
+      "artifact": "outputs\\full_universe_source_acquisition\\nse_india_expanded_rebuild_candidate_v2_17g.json",
+      "phase_type": "expanded-rebuild-candidate-only",
+      "critical_failed_checks": 0,
+      "closure_assessment": "PASS",
+      "notes": "expected_status_ok=True; expected_next_ok=True; critical_checks_ok=True"
+    },
+    {
+      "phase": "v2.17H",
+      "status": "NSE_INDIA_EXPANDED_VALIDATION_COMPLETED_CANDIDATE_VALID_CLOSURE_READY_FULL_SOURCE_STILL_BLOCKED",
+      "recommended_next_phase": "v2.17I - NSE India Closure Report",
+      "artifact": "outputs\\full_universe_source_acquisition\\nse_india_expanded_validation_v2_17h.json",
+      "phase_type": "expanded-candidate-validation-only",
+      "critical_failed_checks": 0,
+      "closure_assessment": "PASS",
+      "notes": "expected_status_ok=True; expected_next_ok=True; critical_checks_ok=True"
+    }
+  ],
+  "checks": [
+    {
+      "check": "all_phase_reports_exist",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.17B-H JSON reports"
+    },
+    {
+      "check": "all_phase_reports_pass_closure_assessment",
+      "passed": true,
+      "severity": "critical",
+      "detail": "{'v2.17B': 'PASS', 'v2.17C': 'PASS', 'v2.17D': 'PASS', 'v2.17E': 'PASS', 'v2.17F': 'PASS', 'v2.17G': 'PASS', 'v2.17H': 'PASS'}"
+    },
+    {
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_rows=38287"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical sha unchanged during closure"
+    },
+    {
+      "check": "expanded_candidate_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_nse_india_v2_17g.csv"
+    },
+    {
+      "check": "expanded_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_rows=40300"
+    },
+    {
+      "check": "safe_delta_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "delta_rows=2013"
+    },
+    {
+      "check": "delta_rows_equal_promotions",
+      "passed": true,
+      "severity": "critical",
+      "detail": "delta=2013 promotions=2013"
+    },
+    {
+      "check": "candidate_schema_matches_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_cols=33 candidate_cols=33"
+    },
+    {
+      "check": "h_report_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "NSE_INDIA_EXPANDED_VALIDATION_COMPLETED_CANDIDATE_VALID_CLOSURE_READY_FULL_SOURCE_STILL_BLOCKED"
+    },
+    {
+      "check": "h_report_recommends_closure",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.17I - NSE India Closure Report"
+    },
+    {
+      "check": "promotion_policy_qa_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promotion_policy_qa_rows=2013"
+    },
+    {
+      "check": "delta_integrity_rows_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "delta_integrity_rows=5"
+    },
+    {
+      "check": "schema_mapping_rows_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "schema_mapping_rows=33"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "40300 < 50000"
+    },
+    {
+      "check": "rows_needed_after_candidate_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_after_candidate=9700"
+    },
+    {
+      "check": "network_not_used",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "canonical_dataset_read",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_read=True"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "new_expanded_dataset_not_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_expanded_dataset_written=False"
+    },
+    {
+      "check": "expanded_universe_not_rebuilt_as_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_universe_rebuilt_as_canonical=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full_59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full_59k_universe_launched=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "provider-closure-report-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "phase_reports_v2_17b_to_v2_17h_read": true,
+    "canonical_dataset_read": true,
+    "candidate_dataset_read": true,
+    "closure_report_written": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "validated_candidate_retained": true,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "full_source_gate_unblocked": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.18A - Next Provider Route Selection",
+  "recommended_next_provider_candidate": "TWSE + TPEx Taiwan",
+  "reserve_provider_candidate": "ASX Australia"
+}

@@ -1,0 +1,4 @@
+priority,next_step,recommended_phase,provider_candidate,rationale,blocked_until
+1,Select next provider route after NSE India closure,v2.18A - Next Provider Route Selection,TWSE + TPEx Taiwan,"NSE India validated candidate adds 2,013 safe rows but still leaves 9,700 rows needed to reach 50,000.",v2.17I committed and pushed
+2,Keep NSE India candidate dataset as validated candidate only,No active canonical replacement in v2.17I,NSE India,"Candidate dataset is valid but full-source gate remains blocked, so canonical promotion should remain a separately controlled decision.","Future promotion phase, if explicitly opened"
+3,Reserve quick-win provider route,Fallback after v2.18A if needed,ASX Australia,Previously listed as quick-win fallback/reserve route.,Next provider route decision
