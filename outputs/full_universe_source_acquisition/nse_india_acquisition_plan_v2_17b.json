@@ -1,0 +1,627 @@
+{
+  "version": "v2.17B",
+  "phase": "NSE India Acquisition Plan",
+  "phase_type": "provider-acquisition-plan-only",
+  "status": "NSE_INDIA_ACQUISITION_PLAN_COMPLETED_RAW_ACQUISITION_READY_FULL_SOURCE_STILL_BLOCKED",
+  "generated_at_utc": "2026-08-06T09:02:34.859999+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "full_source_threshold": 50000,
+    "rows_needed": 11713,
+    "source_to_50k_completed_percent": 76.57,
+    "full_source_gate": "BLOCKED",
+    "full_59k_dry_run": "BLOCKED"
+  },
+  "route_reference": {
+    "v2_17a_artifact": "outputs\\full_universe_source_acquisition\\next_provider_route_selection_v2_17a.json",
+    "v2_17a_status": "NEXT_PROVIDER_ROUTE_SELECTION_COMPLETED_NSE_INDIA_SELECTED_FULL_SOURCE_STILL_BLOCKED",
+    "v2_17a_recommended_next_phase": "v2.17B - NSE India Acquisition Plan",
+    "selected_route": "nse_india"
+  },
+  "acquisition_plan_summary": {
+    "provider": "NSE India",
+    "market": "India",
+    "source_count": 14,
+    "primary_source_count": 2,
+    "exclusion_reference_source_count": 8,
+    "filter_policy_count": 11,
+    "action_count": 14,
+    "network_allowed_in_this_phase": false,
+    "network_allowed_next_phase": true,
+    "raw_acquisition_ready": true,
+    "critical_failed_checks": 0
+  },
+  "source_plan": [
+    {
+      "source_id": "nse_all_reports_cm_mii_security_file_nse_listed",
+      "priority": 1,
+      "source_name": "CM - MII - Security File (.gz) (NSE Listed securities)",
+      "source_url": "https://www.nseindia.com/all-reports",
+      "expected_format": "csv.gz",
+      "source_role": "primary_bulk_candidate_source",
+      "planned_action": "download raw .gz only in v2.17C; preserve raw artifact; no parsing in acquisition phase",
+      "inclusion_scope": "NSE listed capital market securities; later filter to ordinary/listed equity candidates only",
+      "expected_noise": "medium",
+      "risk_level": "medium",
+      "notes": "Main NSE route. File naming appears date-stamped as NSE_CM_security_ddmmyyyy.csv.gz. v2.17C should capture exact downloaded filename and date."
+    },
+    {
+      "source_id": "nse_all_reports_cm_mii_security_file_nse_and_bse_exclusive",
+      "priority": 2,
+      "source_name": "CM - MII - Security File (.gz) (NSE Listed and BSE Exclusive securities)",
+      "source_url": "https://www.nseindia.com/all-reports",
+      "expected_format": "csv.gz",
+      "source_role": "secondary_bulk_candidate_source_review",
+      "planned_action": "download raw .gz only in v2.17C if available; mark BSE-exclusive rows for review/exclusion until policy is explicit",
+      "inclusion_scope": "review only; avoid silently importing BSE-exclusive as NSE-listed",
+      "expected_noise": "medium_high",
+      "risk_level": "medium_high",
+      "notes": "Useful for coverage comparison but must not blur NSE route with BSE-exclusive universe."
+    },
+    {
+      "source_id": "nse_securities_available_equity_segment",
+      "priority": 3,
+      "source_name": "Securities available for Equity segment (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "cross_check_and_candidate_source",
+      "planned_action": "download raw csv only in v2.17C; use later to confirm tradable equity segment and compare against security file",
+      "inclusion_scope": "equity segment securities; later filter out ETF/REIT/INVIT/IDR/preference/partly-paid if present",
+      "expected_noise": "medium",
+      "risk_level": "medium",
+      "notes": "Important cross-check because NSE page separates multiple non-common-equity categories."
+    },
+    {
+      "source_id": "nse_securities_available_sme",
+      "priority": 4,
+      "source_name": "Securities available for trading in SME (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "review_candidate_source",
+      "planned_action": "download raw csv only in v2.17C; classify SME equity separately for later review",
+      "inclusion_scope": "SME ordinary equity candidates may be allowed only after validation",
+      "expected_noise": "medium",
+      "risk_level": "medium",
+      "notes": "Potentially useful for listed equities but should remain review bucket before canonical impact."
+    },
+    {
+      "source_id": "nse_changes_company_names",
+      "priority": 5,
+      "source_name": "Changes in Company Names (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "reference_only",
+      "planned_action": "download raw csv only in v2.17C; use later as supporting metadata, not as candidate source",
+      "inclusion_scope": "reference only",
+      "expected_noise": "low",
+      "risk_level": "low",
+      "notes": "Useful to reconcile canonical name differences and avoid false duplicates."
+    },
+    {
+      "source_id": "nse_changes_symbols",
+      "priority": 6,
+      "source_name": "Changes in Symbols (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "reference_only",
+      "planned_action": "download raw csv only in v2.17C; use later as supporting metadata, not as candidate source",
+      "inclusion_scope": "reference only",
+      "expected_noise": "low",
+      "risk_level": "low",
+      "notes": "Useful to reconcile symbol changes before duplicate checks."
+    },
+    {
+      "source_id": "nse_idrs",
+      "priority": 7,
+      "source_name": "Indian Depository Receipts (IDRs) (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "explicit_exclusion_reference",
+      "planned_action": "download raw csv only in v2.17C if tiny/available; use as exclusion list",
+      "inclusion_scope": "exclude from ordinary equity candidate additions",
+      "expected_noise": "low",
+      "risk_level": "low",
+      "notes": "Depository receipts are not ordinary local equity rows for this route."
+    },
+    {
+      "source_id": "nse_preference_shares",
+      "priority": 8,
+      "source_name": "Preference Shares (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "explicit_exclusion_reference",
+      "planned_action": "download raw csv only in v2.17C if available; use as exclusion list",
+      "inclusion_scope": "exclude or manual review only",
+      "expected_noise": "low",
+      "risk_level": "low",
+      "notes": "Preference shares should not be mixed with common/ordinary equity candidates."
+    },
+    {
+      "source_id": "nse_warrants",
+      "priority": 9,
+      "source_name": "Warrants (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "explicit_exclusion_reference",
+      "planned_action": "download raw csv only in v2.17C if available; use as exclusion list",
+      "inclusion_scope": "exclude",
+      "expected_noise": "low",
+      "risk_level": "low",
+      "notes": "Warrants are derivative-like/security rights instruments and must not enter equity candidate additions."
+    },
+    {
+      "source_id": "nse_etfs",
+      "priority": 10,
+      "source_name": "Securities available for trading in ETF (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "explicit_exclusion_reference",
+      "planned_action": "download raw csv only in v2.17C; use as exclusion list",
+      "inclusion_scope": "exclude",
+      "expected_noise": "low",
+      "risk_level": "low",
+      "notes": "ETFs are excluded from the ordinary equity universe."
+    },
+    {
+      "source_id": "nse_close_ended_mf",
+      "priority": 11,
+      "source_name": "Close Ended MF Schemes (Listed) (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "explicit_exclusion_reference",
+      "planned_action": "download raw csv only in v2.17C if available; use as exclusion list",
+      "inclusion_scope": "exclude",
+      "expected_noise": "low",
+      "risk_level": "low",
+      "notes": "Mutual fund schemes are excluded."
+    },
+    {
+      "source_id": "nse_reits",
+      "priority": 12,
+      "source_name": "Units available for REITs (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "explicit_exclusion_reference",
+      "planned_action": "download raw csv only in v2.17C if available; use as exclusion list",
+      "inclusion_scope": "exclude",
+      "expected_noise": "low",
+      "risk_level": "low",
+      "notes": "REIT units are excluded from ordinary equity candidate additions."
+    },
+    {
+      "source_id": "nse_invits",
+      "priority": 13,
+      "source_name": "Units available for INVITs (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "explicit_exclusion_reference",
+      "planned_action": "download raw csv only in v2.17C if available; use as exclusion list",
+      "inclusion_scope": "exclude",
+      "expected_noise": "low",
+      "risk_level": "low",
+      "notes": "Infrastructure investment trust units are excluded."
+    },
+    {
+      "source_id": "nse_debt_instruments",
+      "priority": 14,
+      "source_name": "Debt Instruments (.csv)",
+      "source_url": "https://www.nseindia.com/static/market-data/securities-available-for-trading",
+      "expected_format": "csv",
+      "source_role": "explicit_exclusion_reference",
+      "planned_action": "do not prioritize due size/noise; download only if needed as exclusion evidence",
+      "inclusion_scope": "exclude",
+      "expected_noise": "high",
+      "risk_level": "medium",
+      "notes": "Debt file is explicitly not an equity candidate source."
+    }
+  ],
+  "filter_policy": [
+    {
+      "policy_id": "include_nse_listed_ordinary_equity",
+      "instrument_or_source_type": "NSE listed ordinary/fully paid equity shares",
+      "decision": "include_after_validation",
+      "reason": "Target universe is listed equity companies/securities, not funds/debt/derivative instruments.",
+      "planned_detection_fields": "symbol, company/security name, series/instrument type, source_id",
+      "notes": "Do not add directly in v2.17C; only later after extraction and canonical dry-run validation."
+    },
+    {
+      "policy_id": "review_sme_equity",
+      "instrument_or_source_type": "NSE SME/Emerge equity",
+      "decision": "review",
+      "reason": "May be valid equity but should be classified separately before canonical impact.",
+      "planned_detection_fields": "source_id, series, instrument type, SME source file",
+      "notes": "Can become candidate rows after v2.17D/E validation if evidence is clean."
+    },
+    {
+      "policy_id": "exclude_bse_exclusive_until_explicit_scope",
+      "instrument_or_source_type": "BSE Exclusive securities inside NSE file route",
+      "decision": "exclude_or_review",
+      "reason": "This phase is NSE route selection; BSE-exclusive rows should not silently enter NSE-derived universe.",
+      "planned_detection_fields": "source file label, exchange/listing flag, security file columns",
+      "notes": "Could be a future BSE route, but not silently included here."
+    },
+    {
+      "policy_id": "exclude_etf",
+      "instrument_or_source_type": "ETF",
+      "decision": "exclude",
+      "reason": "ETF is fund/product exposure, not ordinary company equity.",
+      "planned_detection_fields": "ETF source file, series, instrument type, name keywords",
+      "notes": "Use NSE ETF CSV as exclusion evidence."
+    },
+    {
+      "policy_id": "exclude_reit_invit",
+      "instrument_or_source_type": "REIT / INVIT units",
+      "decision": "exclude",
+      "reason": "Trust units are not ordinary operating-company equity shares.",
+      "planned_detection_fields": "REIT/INVIT source files, instrument type, name keywords",
+      "notes": "Use NSE REIT/INVIT CSVs as exclusion evidence."
+    },
+    {
+      "policy_id": "exclude_mutual_funds",
+      "instrument_or_source_type": "Close-ended mutual fund schemes",
+      "decision": "exclude",
+      "reason": "Funds are out of scope.",
+      "planned_detection_fields": "MF source file, instrument type, name keywords",
+      "notes": "Use close-ended MF CSV as exclusion evidence."
+    },
+    {
+      "policy_id": "exclude_debt",
+      "instrument_or_source_type": "Debt instruments",
+      "decision": "exclude",
+      "reason": "Debt/fixed income instruments are out of scope.",
+      "planned_detection_fields": "debt source file, instrument type, ISIN prefix/context, name keywords",
+      "notes": "Debt file may be large and should not drive candidate extraction."
+    },
+    {
+      "policy_id": "exclude_warrants",
+      "instrument_or_source_type": "Warrants",
+      "decision": "exclude",
+      "reason": "Warrants are not ordinary equity shares.",
+      "planned_detection_fields": "warrants source file, symbol/name keywords, instrument type",
+      "notes": "Use warrants CSV as exclusion evidence."
+    },
+    {
+      "policy_id": "exclude_idr",
+      "instrument_or_source_type": "Indian Depository Receipts",
+      "decision": "exclude",
+      "reason": "Depository receipts are not local ordinary equity rows for this route.",
+      "planned_detection_fields": "IDR source file, instrument type, name keywords",
+      "notes": "Explicitly keep separate from equity candidates."
+    },
+    {
+      "policy_id": "review_preference_shares",
+      "instrument_or_source_type": "Preference shares",
+      "decision": "exclude_or_manual_review",
+      "reason": "Preferred/preference shares should not be mixed with ordinary equity.",
+      "planned_detection_fields": "preference shares source file, series, instrument type, name keywords",
+      "notes": "Default exclude unless a future explicit policy permits separate share classes."
+    },
+    {
+      "policy_id": "reference_symbol_name_changes",
+      "instrument_or_source_type": "Company name/symbol changes",
+      "decision": "reference_only",
+      "reason": "Useful for duplicate resolution but not a candidate source.",
+      "planned_detection_fields": "changes in company names, changes in symbols",
+      "notes": "Use later to improve canonical comparison and avoid false negatives."
+    }
+  ],
+  "acquisition_actions": [
+    {
+      "action_id": "6a728488c5d9da34",
+      "phase": "v2.17C",
+      "source_id": "nse_all_reports_cm_mii_security_file_nse_listed",
+      "action": "download raw .gz only in v2.17C; preserve raw artifact; no parsing in acquisition phase",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw source artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "bc8dffd35ee315d8",
+      "phase": "v2.17C",
+      "source_id": "nse_all_reports_cm_mii_security_file_nse_and_bse_exclusive",
+      "action": "download raw .gz only in v2.17C if available; mark BSE-exclusive rows for review/exclusion until policy is explicit",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw source artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "fd3a58bb01fa0439",
+      "phase": "v2.17C",
+      "source_id": "nse_securities_available_equity_segment",
+      "action": "download raw csv only in v2.17C; use later to confirm tradable equity segment and compare against security file",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw source artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "0b27d3d4b266dba2",
+      "phase": "v2.17C",
+      "source_id": "nse_securities_available_sme",
+      "action": "download raw csv only in v2.17C; classify SME equity separately for later review",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw source artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "f7609669b273d443",
+      "phase": "v2.17C",
+      "source_id": "nse_changes_company_names",
+      "action": "download raw csv only in v2.17C; use later as supporting metadata, not as candidate source",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw reference artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "0d424d0217a17290",
+      "phase": "v2.17C",
+      "source_id": "nse_changes_symbols",
+      "action": "download raw csv only in v2.17C; use later as supporting metadata, not as candidate source",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw reference artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "4146731009a3a9ad",
+      "phase": "v2.17C",
+      "source_id": "nse_idrs",
+      "action": "download raw csv only in v2.17C if tiny/available; use as exclusion list",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw exclusion/reference artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "b310899c096b72c5",
+      "phase": "v2.17C",
+      "source_id": "nse_preference_shares",
+      "action": "download raw csv only in v2.17C if available; use as exclusion list",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw exclusion/reference artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "2c6bbed725c0e4f9",
+      "phase": "v2.17C",
+      "source_id": "nse_warrants",
+      "action": "download raw csv only in v2.17C if available; use as exclusion list",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw exclusion/reference artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "35b36c10c324bd73",
+      "phase": "v2.17C",
+      "source_id": "nse_etfs",
+      "action": "download raw csv only in v2.17C; use as exclusion list",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw exclusion/reference artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "aa475ffebfcaa94f",
+      "phase": "v2.17C",
+      "source_id": "nse_close_ended_mf",
+      "action": "download raw csv only in v2.17C if available; use as exclusion list",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw exclusion/reference artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "7c7e99376a0de507",
+      "phase": "v2.17C",
+      "source_id": "nse_reits",
+      "action": "download raw csv only in v2.17C if available; use as exclusion list",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw exclusion/reference artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "f2002c88d02e8f58",
+      "phase": "v2.17C",
+      "source_id": "nse_invits",
+      "action": "download raw csv only in v2.17C if available; use as exclusion list",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw exclusion/reference artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    },
+    {
+      "action_id": "8beac1c4091f1437",
+      "phase": "v2.17C",
+      "source_id": "nse_debt_instruments",
+      "action": "do not prioritize due size/noise; download only if needed as exclusion evidence",
+      "network_allowed_in_v2_17b": false,
+      "network_allowed_in_v2_17c": true,
+      "canonical_read_allowed": false,
+      "canonical_modify_allowed": false,
+      "output_expected_in_v2_17c": "raw exclusion/reference artifact under outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/",
+      "guard_notes": "v2.17C may download raw source files only; no parsing, no candidate extraction, no canonical comparison, no rebuild."
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_17a_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\next_provider_route_selection_v2_17a.json"
+    },
+    {
+      "check": "v2_17a_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "NEXT_PROVIDER_ROUTE_SELECTION_COMPLETED_NSE_INDIA_SELECTED_FULL_SOURCE_STILL_BLOCKED"
+    },
+    {
+      "check": "v2_17a_recommended_b",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.17B - NSE India Acquisition Plan"
+    },
+    {
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_rows=38287"
+    },
+    {
+      "check": "nse_primary_source_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "primary NSE MII security file"
+    },
+    {
+      "check": "nse_equity_crosscheck_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "equity segment CSV"
+    },
+    {
+      "check": "exclusion_sources_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "exclusion_sources=8"
+    },
+    {
+      "check": "source_plan_count",
+      "passed": true,
+      "severity": "critical",
+      "detail": "sources=14"
+    },
+    {
+      "check": "filter_policy_count",
+      "passed": true,
+      "severity": "critical",
+      "detail": "policies=11"
+    },
+    {
+      "check": "actions_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "actions=14 sources=14"
+    },
+    {
+      "check": "full_source_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "38287 < 50000"
+    },
+    {
+      "check": "network_not_used_in_plan",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "endpoint_calls_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "endpoint_calls_performed=False"
+    },
+    {
+      "check": "query_sweep_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "query_sweep_performed=False"
+    },
+    {
+      "check": "raw_acquisition_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_acquisition_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "new_expanded_dataset_not_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_expanded_dataset_written=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "full_59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full_59k_universe_launched=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "provider-acquisition-plan-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "v2_17a_report_read": true,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "provider_route_confirmed": true,
+    "acquisition_plan_created": true,
+    "raw_acquisition_performed": false,
+    "raw_files_downloaded": false,
+    "candidate_extraction_performed": false,
+    "canonical_comparison_performed": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "net_new_filtering_applied_to_canonical": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full_59k_universe_launched": false,
+    "full_source_gate_unblocked": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.17C - NSE India Raw Acquisition"
+}
