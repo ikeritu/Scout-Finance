@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,HKEX,run_expanded_validation,high,Expanded candidate dataset has been built and must be validated before closure or further use.,v2.19Q - HKEX Expanded Validation,"validate row counts, schema, duplicates and SHA; do not replace active canonical"
+2,50k,preserve_50k_gate_blocked,high,"HKEX rebuild projects 41,392 rows, still below the 50,000 target.",v2.19Q - HKEX Expanded Validation,no full59k; no scoring; no canonical replacement

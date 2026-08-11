@@ -1,0 +1,283 @@
+{
+  "version": "v2.19P",
+  "phase": "HKEX Expanded Rebuild Candidate",
+  "phase_type": "expanded-rebuild-candidate-only",
+  "status": "HKEX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_41392_ROWS_EXPANDED_VALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-11T21:14:46.929834+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "current_validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_twse_tpex_v2_18g.csv",
+    "current_validated_candidate_rows": 40996,
+    "expanded_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_hkex_v2_19p.csv",
+    "expanded_candidate_rows": 41392,
+    "final_target_candidates": 50000,
+    "rows_needed_before_rebuild": 9004,
+    "rows_needed_after_rebuild": 8608,
+    "final_50k_candidate_gate_after_rebuild": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "v2_19o_context": {
+    "status": "HKEX_CANDIDATE_VALIDATION_DRY_RUN_COMPLETED_NET_NEW_CLASSIFIED_EXPANDED_REBUILD_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+    "phase_type": "candidate-validation-against-canonical-dry-run-only",
+    "net_new_pending_expanded_rebuild": 396,
+    "current_validated_candidate_rows": 40996,
+    "projected_candidate_rows_if_rebuilt": 41392,
+    "projected_rows_needed_to_50k": 8608,
+    "projected_50k_gate_after_hkex": "BLOCKED",
+    "recommended_next_phase": "v2.19P - HKEX Expanded Rebuild Candidate"
+  },
+  "rebuild_summary": {
+    "active_canonical_rows": 38287,
+    "current_validated_candidate_rows": 40996,
+    "net_new_rows_appended": 396,
+    "expanded_candidate_rows": 41392,
+    "rows_needed_before_rebuild": 9004,
+    "rows_needed_after_rebuild": 8608,
+    "final_50k_candidate_gate_after_rebuild": "BLOCKED",
+    "expanded_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_hkex_v2_19p.csv",
+    "expanded_candidate_sha256": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c",
+    "current_validated_candidate_sha256_before": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2",
+    "current_validated_candidate_sha256_after": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2",
+    "active_canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "active_canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "duplicate_appended_ticker_count": 0,
+    "duplicate_appended_isin_count": 109,
+    "appended_tickers_already_in_current_count": 0,
+    "appended_isins_already_in_current_count": 0,
+    "critical_failed_checks": 0,
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "checks": [
+    {
+      "check": "v2_19o_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\hkex_candidate_validation_against_canonical_dry_run_v2_19o.json"
+    },
+    {
+      "check": "v2_19o_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX_CANDIDATE_VALIDATION_DRY_RUN_COMPLETED_NET_NEW_CLASSIFIED_EXPANDED_REBUILD_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_19o_net_new_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\hkex_candidate_validation_against_canonical_dry_run_net_new_candidates_v2_19o.csv"
+    },
+    {
+      "check": "net_new_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "net_new_rows=396"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "current_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_rows=40996"
+    },
+    {
+      "check": "expanded_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_candidate_rows=41392"
+    },
+    {
+      "check": "rowcount_arithmetic_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "40996+396=41392"
+    },
+    {
+      "check": "rows_needed_after_rebuild_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_after=8608"
+    },
+    {
+      "check": "final_50k_gate_after_rebuild_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "BLOCKED"
+    },
+    {
+      "check": "current_headers_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "header_count=33"
+    },
+    {
+      "check": "appended_rows_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "appended_rows=396"
+    },
+    {
+      "check": "appended_full_audit_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "appended_full_rows=396"
+    },
+    {
+      "check": "duplicate_appended_tickers_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "duplicate_appended_tickers=0"
+    },
+    {
+      "check": "duplicate_appended_isins_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "duplicate_appended_isins=109"
+    },
+    {
+      "check": "appended_tickers_not_in_current",
+      "passed": true,
+      "severity": "critical",
+      "detail": "appended_tickers_already_in_current=0"
+    },
+    {
+      "check": "appended_isins_not_in_current",
+      "passed": true,
+      "severity": "warning",
+      "detail": "appended_isins_already_in_current=0"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "current_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current validated candidate sha unchanged"
+    },
+    {
+      "check": "new_expanded_candidate_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_hkex_v2_19p.csv"
+    },
+    {
+      "check": "expanded_dataset_is_new_candidate_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical not replaced"
+    },
+    {
+      "check": "network_not_used_by_rebuild",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "candidate_validation_against_canonical_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_validation_against_canonical_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_candidate_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_candidate_performed=True"
+    },
+    {
+      "check": "expanded_validation_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_validation_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "current_candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "expanded-rebuild-candidate-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "route_selection_performed": false,
+    "acquisition_plan_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_acquisition_repair_performed": false,
+    "raw_validation_performed": false,
+    "repaired_raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_canonical_performed": false,
+    "expanded_rebuild_candidate_performed": true,
+    "expanded_rebuild_candidate_only": true,
+    "expanded_validation_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_comparison_performed": false,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_candidate_dataset_read": true,
+    "current_candidate_dataset_modified": false,
+    "current_candidate_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": true,
+    "new_expanded_dataset_path": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_hkex_v2_19p.csv",
+    "expanded_universe_rebuilt_as_canonical": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "final_target_50k_active": true,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.19Q - HKEX Expanded Validation"
+}

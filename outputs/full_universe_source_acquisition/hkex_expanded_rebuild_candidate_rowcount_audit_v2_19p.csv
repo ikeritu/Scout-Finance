@@ -1,0 +1,14 @@
+metric,value,detail
+active_canonical_rows,38287,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv
+current_validated_candidate_rows,40996,outputs\full_universe_source_acquisition\expanded_universe_candidate_twse_tpex_v2_18g.csv
+net_new_rows_input,396,outputs\full_universe_source_acquisition\hkex_candidate_validation_against_canonical_dry_run_net_new_candidates_v2_19o.csv
+expanded_candidate_rows,41392,outputs\full_universe_source_acquisition\expanded_universe_candidate_hkex_v2_19p.csv
+rows_needed_before_rebuild,9004,current candidate vs 50k
+rows_needed_after_rebuild,8608,expanded candidate vs 50k
+final_50k_gate_after_rebuild,BLOCKED,expanded candidate projection
+duplicate_appended_ticker_count,0,
+duplicate_appended_isin_count,109,"HK0000051877,HK0000057395,HK0000071313,HK0000098449,HK0000123577,HK0000125598,HK0000127412,HK0000151925,HK0000151933,HK0000159977,HK0000172681,HK0000182987,HK0000221389,HK0000226149,HK0000248234,HK0000280989,HK0000286804,HK0000297652,HK0000297777,HK0000308293,HK0000313426,HK0000316767,HK0000366176,HK0000366184,HK0000422805,HK0000426384,HK0000433398,HK0000433414,HK0000473303,HK0000507407,HK0000515855,HK0000515871,HK0000516697,HK0000516713,HK0000562634,HK0000562659,HK0000562675,HK0000578549,HK0000591641,HK0000637832,HK0000637857,HK0000643327,HK0000651213,HK0000656956,HK0000701661,HK0000711199,HK0000723178,HK0000736758,HK0000761400,HK0000782851"
+appended_tickers_already_in_current_count,0,
+appended_isins_already_in_current_count,0,
+appended_instrument_families,3,"[[""fund_or_etp"", 361], [""equity_like"", 21], [""reit"", 14]]"
+appended_trading_currencies,3,"[[""HKD"", 247], [""USD"", 89], [""RMB"", 60]]"

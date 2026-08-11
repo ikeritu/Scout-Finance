@@ -1,0 +1,15 @@
+target_header,source_field,mapping_rule,mapped_row_count
+company_name,name,direct_or_constant_mapping,396
+country,constant:Hong Kong,direct_or_constant_mapping,396
+currency,trading_currency,direct_or_constant_mapping,396
+exchange,constant:HKEX,direct_or_constant_mapping,396
+isin,isin,direct_or_constant_mapping,396
+mic,constant:XHKG,direct_or_constant_mapping,396
+provider,constant:HKEX,direct_or_constant_mapping,396
+raw_exchange,constant:HKEX,direct_or_constant_mapping,396
+security_name,name,direct_or_constant_mapping,396
+source_file,source_file,direct_or_constant_mapping,396
+source_phase,constant:v2.19P,direct_or_constant_mapping,396
+source_provider,constant:HKEX,direct_or_constant_mapping,396
+symbol,ticker,direct_or_constant_mapping,396
+ticker,ticker,direct_or_constant_mapping,396
