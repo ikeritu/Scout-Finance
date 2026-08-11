@@ -1,0 +1,6 @@
+rule_order,filter_type,rule_id,applies_to,logic,reason
+1,keep_candidate,keep_common_operating_company_equity,candidate_extraction_v2_19e,Keep ordinary listed operating-company equities after source schema confirms instrument group.,Scout Finance candidate universe should prioritize investigable common equity.
+2,market_scope,include_krx_equity_markets_with_review,candidate_extraction_v2_19e,"Capture KOSPI, KOSDAQ and KONEX in raw; later classify liquidity/review flags before auto-add.",KONEX may be valid but lower liquidity; do not discard at raw acquisition stage.
+3,exclude,exclude_etf_etn_elw_fund_bond_derivative,candidate_extraction_v2_19e,"Exclude ETF, ETN, ELW, funds, bonds, derivatives, warrants and structured products.",These are not operating-company equity candidates.
+4,exclude_or_review,preferred_spac_reit_rights_review,candidate_extraction_v2_19e,"Exclude preferred/preference shares by default; review SPAC, REIT, rights and special-purpose vehicles.",These can inflate universe quality risk and duplicate common issuers.
+5,dedupe,symbol_isin_name_dedupe,candidate_validation_v2_19f,"Use KRX short code, ISIN, company name, English/Korean name and market as dedupe evidence against canonical.",KRX issuers may already exist via ADR/global listings or previous routes.

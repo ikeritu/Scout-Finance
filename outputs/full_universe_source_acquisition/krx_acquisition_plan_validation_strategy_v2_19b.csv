@@ -1,0 +1,8 @@
+stage,stage_name,validation_focus,must_pass,failure_action
+v2.19C,KRX Raw Acquisition,capture official raw data only,official domains only; raw files or error payloads captured; manifest written; no candidate extraction,repair acquisition or switch to backup source inside KRX route
+v2.19D,KRX Raw Validation,"file existence, bytes, sha256, parse readiness and source role",at least one primary KRX source parse-ready for candidate extraction,create repair phase before extraction
+v2.19E,KRX Candidate Extraction Dry Run,common-equity extraction without canonical comparison,"candidate-shaped rows, no duplicate KRX identifiers, instrument filters applied",patch extraction rules before validation against canonical
+v2.19F,KRX Candidate Validation Against Canonical Dry Run,"classify existing, possible_existing and potential_net_new",do not auto-add possible_existing; count only high-confidence potential_net_new,review matching rules before expanded rebuild
+v2.19G,KRX Expanded Rebuild Candidate,append only validated potential_net_new KRX rows to current candidate,"schema preserved, current candidate unchanged, canonical unchanged",do not commit expanded rebuild
+v2.19H,KRX Expanded Validation,validate expanded candidate integrity,no critical failed checks; no symbol conflicts; 50k gate status explicit,repair before closure report
+v2.19I,KRX Closure Report,formal closure and next-route decision,document rows added and remaining to 50k,review route before selecting next provider

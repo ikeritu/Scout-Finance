@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,KRX,perform_raw_acquisition,high,KRX official sources are planned and ready for raw acquisition.,v2.19C - KRX Raw Acquisition,download/capture raw artifacts only; no candidate extraction; official KRX/data.go.kr sources only
+2,KRX,capture_manifest_and_error_payloads,high,KRX sources may require dynamic endpoints or service keys; every attempt must be auditable.,v2.19C - KRX Raw Acquisition,"record status, bytes, sha256, content type and parse hint for every source"
+3,50k,maintain_quality_target,medium,9004 rows remain; KRX is expected to help but may not close the whole gap.,v2.19C - KRX Raw Acquisition,keep 45k-47.5k intermediate quality target and 50k stretch target
