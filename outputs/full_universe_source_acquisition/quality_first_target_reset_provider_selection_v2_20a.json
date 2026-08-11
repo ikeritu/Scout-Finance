@@ -1,0 +1,493 @@
+{
+  "version": "v2.20A",
+  "phase": "Quality-First Target Reset and Provider Selection",
+  "phase_type": "strategy-reset-and-provider-selection-only",
+  "status": "QUALITY_FIRST_TARGET_RESET_COMPLETED_42K_45K_OPERATIONAL_ASX_SELECTED_50K_ASPIRATIONAL_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-11T22:22:11.661036+00:00",
+  "target_summary": {
+    "active_canonical_rows": 38287,
+    "current_validated_candidate_rows": 40996,
+    "hkex_validated_candidate_rows": 41392,
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "aspirational_target": 50000,
+    "rows_needed_to_quality_floor": 608,
+    "rows_needed_to_quality_ceiling": 3608,
+    "rows_needed_to_aspirational_50k": 8608,
+    "quality_floor_gate": "BLOCKED",
+    "quality_ceiling_gate": "BLOCKED",
+    "aspirational_50k_gate": "BLOCKED",
+    "selected_next_provider": "ASX",
+    "selected_next_phase": "v2.20B - ASX Quality-First Acquisition Plan",
+    "critical_failed_checks": 0,
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "decision": [
+    {
+      "decision": "reset_operational_target",
+      "previous_target": 50000,
+      "new_operational_target_floor": 42000,
+      "new_operational_target_ceiling": 45000,
+      "current_validated_candidate_rows": 41392,
+      "rows_needed_to_floor": 608,
+      "rows_needed_to_ceiling": 3608,
+      "rationale": "Prefer fewer high-quality candidates over reaching 50k by adding noisy instruments.",
+      "status": "approved"
+    },
+    {
+      "decision": "keep_50k_as_aspirational_only",
+      "previous_target": 50000,
+      "new_operational_target_floor": 42000,
+      "new_operational_target_ceiling": 45000,
+      "current_validated_candidate_rows": 41392,
+      "rows_needed_to_floor": 608,
+      "rows_needed_to_ceiling": 3608,
+      "rationale": "50k remains useful only if a clean provider produces quality net-new rows without relaxing instrument criteria.",
+      "status": "approved"
+    },
+    {
+      "decision": "select_next_provider",
+      "previous_target": 50000,
+      "new_operational_target_floor": 42000,
+      "new_operational_target_ceiling": 45000,
+      "current_validated_candidate_rows": 41392,
+      "rows_needed_to_floor": 608,
+      "rows_needed_to_ceiling": 3608,
+      "rationale": "ASX is selected first because it has high expected equity quality and enough plausible breadth to cross 42k without lowering quality.",
+      "status": "selected:ASX"
+    }
+  ],
+  "provider_ranking": [
+    {
+      "rank": 1,
+      "provider": "ASX",
+      "route": "Australia quality-first official source route",
+      "quality_score": 92,
+      "expected_net_new_quality": "medium_high",
+      "noise_risk": "medium",
+      "volume_fit_for_42k_45k": "high",
+      "recommended_action": "select_next",
+      "include_scope": "ordinary shares; liquid REITs; high-quality listed equities; index-backed subsets if available",
+      "exclude_scope": "warrants; options; rights; preference shares; debt; structured products; illiquid speculative microcaps",
+      "reason": "Best balance between quality, breadth and likely contribution toward 42k-45k without chasing 50k."
+    },
+    {
+      "rank": 2,
+      "provider": "TMX_TSX_ONLY",
+      "route": "Canada TSX main market only",
+      "quality_score": 88,
+      "expected_net_new_quality": "medium_high",
+      "noise_risk": "medium_high_if_tsvx_included",
+      "volume_fit_for_42k_45k": "high",
+      "recommended_action": "backup_1",
+      "include_scope": "TSX main market equities; liquid REITs; established issuers",
+      "exclude_scope": "TSX Venture by default; capital pool companies; shells; penny stocks; illiquid junior miners",
+      "reason": "Good quality in TSX, but Venture must stay excluded unless a later quality filter is approved."
+    },
+    {
+      "rank": 3,
+      "provider": "NASDAQ_NORDIC_MAIN_MARKET",
+      "route": "Nordic main market quality route",
+      "quality_score": 86,
+      "expected_net_new_quality": "medium",
+      "noise_risk": "medium_if_first_north_included",
+      "volume_fit_for_42k_45k": "medium",
+      "recommended_action": "backup_2",
+      "include_scope": "main market large/mid/small with liquidity; Sweden, Denmark, Finland, Norway, Iceland and Baltic only if clean",
+      "exclude_scope": "First North by default; illiquid microcaps; duplicates across markets",
+      "reason": "Strong quality profile, especially industrials, health, banks, software and Nordic compounders."
+    },
+    {
+      "rank": 4,
+      "provider": "SIX",
+      "route": "Switzerland quality route",
+      "quality_score": 90,
+      "expected_net_new_quality": "low_medium",
+      "noise_risk": "low",
+      "volume_fit_for_42k_45k": "medium_low",
+      "recommended_action": "backup_quality",
+      "include_scope": "primary equity listings; SPI/SMI/SMIM style universe if source supports it",
+      "exclude_scope": "structured products; warrants; GDR duplicates; funds unless explicitly approved",
+      "reason": "Very high average quality, but probably fewer net-new rows."
+    },
+    {
+      "rank": 5,
+      "provider": "NSE_BSE_INDIA_INDEX_ONLY",
+      "route": "India special block, index-first only",
+      "quality_score": 89,
+      "expected_net_new_quality": "high",
+      "noise_risk": "high_if_all_market_included",
+      "volume_fit_for_42k_45k": "high",
+      "recommended_action": "special_phase_only",
+      "include_scope": "Nifty 50/100/200/500 or BSE 500 style index-backed universe",
+      "exclude_scope": "full NSE/BSE universe; SME; illiquid microcaps; duplicates between NSE and BSE",
+      "reason": "Excellent opportunity set, but complex enough to require its own controlled phase."
+    },
+    {
+      "rank": 6,
+      "provider": "B3",
+      "route": "Brazil selective quality route",
+      "quality_score": 78,
+      "expected_net_new_quality": "medium",
+      "noise_risk": "medium_high",
+      "volume_fit_for_42k_45k": "medium",
+      "recommended_action": "defer",
+      "include_scope": "Ibovespa/IBrX-like liquid equities",
+      "exclude_scope": "duplicated common/preferred classes without explicit mapping; illiquid listings",
+      "reason": "Useful but macro/currency/class-share complexity makes it less attractive than ASX/TMX/Nordic."
+    },
+    {
+      "rank": 7,
+      "provider": "SGX",
+      "route": "Singapore selective quality route",
+      "quality_score": 76,
+      "expected_net_new_quality": "low_medium",
+      "noise_risk": "medium",
+      "volume_fit_for_42k_45k": "medium_low",
+      "recommended_action": "defer",
+      "include_scope": "ordinary shares; liquid REITs; selected business trusts",
+      "exclude_scope": "structured warrants; certificates; leverage/inverse products; secondary duplicates",
+      "reason": "Good REIT/bank/infrastructure exposure but less likely to add many strong net-new equities."
+    },
+    {
+      "rank": 8,
+      "provider": "BME_AND_EUROPE_MINOR_MARKETS",
+      "route": "Spain and minor Europe complement",
+      "quality_score": 75,
+      "expected_net_new_quality": "low",
+      "noise_risk": "low_medium",
+      "volume_fit_for_42k_45k": "low",
+      "recommended_action": "complement_only",
+      "include_scope": "main continuous market; liquid BME Growth only if filtered",
+      "exclude_scope": "illiquid listings; duplicates; non-equity instruments",
+      "reason": "Good complement but not a primary route for filling the 42k-45k quality band."
+    },
+    {
+      "rank": 9,
+      "provider": "JSE",
+      "route": "South Africa selective route",
+      "quality_score": 70,
+      "expected_net_new_quality": "low_medium",
+      "noise_risk": "medium_high",
+      "volume_fit_for_42k_45k": "low",
+      "recommended_action": "defer",
+      "include_scope": "liquid large/mid caps; relevant mining, banks, insurance, retail",
+      "exclude_scope": "illiquid names; duplicated dual listings; weak liquidity candidates",
+      "reason": "Interesting market, but lower priority due to macro/currency/liquidity risk."
+    }
+  ],
+  "stop_rules": [
+    {
+      "rule_id": "STOP_001",
+      "rule": "do_not_add_rows_for_volume_only",
+      "threshold": "always",
+      "action": "reject_provider_or_subset",
+      "reason": "The project now prioritizes 42k-45k high-quality candidates over 50k inflated candidates."
+    },
+    {
+      "rule_id": "STOP_002",
+      "rule": "provider_minimum_quality_net_new",
+      "threshold": ">= 500 clean net-new rows preferred; < 250 triggers fast closure unless quality is exceptional",
+      "action": "continue_only_if_quality_justifies_effort",
+      "reason": "Avoid long acquisition cycles with poor quality yield."
+    },
+    {
+      "rule_id": "STOP_003",
+      "rule": "quality_ceiling_stop",
+      "threshold": "45,000 validated candidates",
+      "action": "freeze_expansion_and_move_to_product_scoring",
+      "reason": "45k is the operational ceiling; beyond that only exceptional clean sources justify expansion."
+    },
+    {
+      "rule_id": "STOP_004",
+      "rule": "instrument_scope_guard",
+      "threshold": "no warrants/options/rights/debt/structured products by default",
+      "action": "exclude_before_canonical_validation",
+      "reason": "Protect scoring quality and avoid HKEX-style large raw counts with low usable yield."
+    },
+    {
+      "rule_id": "STOP_005",
+      "rule": "microcap_liquidity_guard",
+      "threshold": "exclude or flag illiquid speculative microcaps where source allows",
+      "action": "do_not_count_as quality net-new unless approved",
+      "reason": "Candidate quality is more important than raw universe size."
+    },
+    {
+      "rule_id": "STOP_006",
+      "rule": "50k_aspirational_only",
+      "threshold": "50,000",
+      "action": "do_not_force_route_selection_to_reach_50k",
+      "reason": "50k is no longer the operational success criterion."
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_19r_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\hkex_closure_report_v2_19r.json"
+    },
+    {
+      "check": "v2_19r_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX_CLOSURE_REPORT_COMPLETED_41392_ROWS_396_NET_NEW_50K_GATE_STILL_BLOCKED_NEXT_PROVIDER_SELECTION_READY_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "current_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_rows=40996"
+    },
+    {
+      "check": "hkex_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "hkex_rows=41392"
+    },
+    {
+      "check": "active_canonical_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "current_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+    },
+    {
+      "check": "hkex_validated_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c"
+    },
+    {
+      "check": "active_canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "current_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current candidate sha unchanged"
+    },
+    {
+      "check": "hkex_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX validated candidate sha unchanged"
+    },
+    {
+      "check": "quality_floor_target_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "quality_floor=42000"
+    },
+    {
+      "check": "quality_ceiling_target_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "quality_ceiling=45000"
+    },
+    {
+      "check": "aspirational_50k_not_operational",
+      "passed": true,
+      "severity": "critical",
+      "detail": "50k retained as aspirational only"
+    },
+    {
+      "check": "rows_needed_to_quality_floor_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_42k=608"
+    },
+    {
+      "check": "rows_needed_to_quality_ceiling_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_45k=3608"
+    },
+    {
+      "check": "rows_needed_to_aspirational_50k_expected",
+      "passed": true,
+      "severity": "warning",
+      "detail": "rows_needed_to_50k=8608"
+    },
+    {
+      "check": "selected_next_provider_asx",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX"
+    },
+    {
+      "check": "selected_next_phase_asx_plan",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.20B - ASX Quality-First Acquisition Plan"
+    },
+    {
+      "check": "quality_first_stop_rules_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "stop_rules=6"
+    },
+    {
+      "check": "provider_ranking_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "providers_ranked=9"
+    },
+    {
+      "check": "strategy_reset_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "strategy reset only"
+    },
+    {
+      "check": "dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "no dataset writes in v2.20A"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "current_candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_dataset_modified=False"
+    },
+    {
+      "check": "hkex_candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "hkex_candidate_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "acquisition_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_acquisition_performed=False"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "target_strategy",
+      "action": "adopt_42k_45k_quality_band",
+      "priority": "high",
+      "reason": "The project should prefer fewer high-quality candidates over inflated 50k coverage.",
+      "recommended_phase": "v2.20B - ASX Quality-First Acquisition Plan",
+      "guardrails": "50k is aspirational only; full59k remains deprecated"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "provider_route",
+      "action": "open_asx_quality_first_acquisition_plan",
+      "priority": "high",
+      "reason": "ASX is the best next balance of quality and likely useful breadth.",
+      "recommended_phase": "v2.20B - ASX Quality-First Acquisition Plan",
+      "guardrails": "ordinary equities and liquid REITs only; no derivatives, debt, rights or structured products"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "fallback_route",
+      "action": "prepare_tmx_tsx_only_as_backup",
+      "priority": "medium",
+      "reason": "TSX main market is a good backup; TSXV must remain excluded by default.",
+      "recommended_phase": "post-ASX route decision",
+      "guardrails": "no TSX Venture unless explicitly approved with strict filters"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "strategy-reset-and-provider-selection-only",
+    "strategy_reset_only": true,
+    "target_reset_performed": true,
+    "old_operational_target_50000_replaced": true,
+    "new_operational_target_floor": 42000,
+    "new_operational_target_ceiling": 45000,
+    "aspirational_target_50000_retained": true,
+    "selected_next_provider": "ASX",
+    "selected_next_phase": "v2.20B - ASX Quality-First Acquisition Plan",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "route_selection_performed": true,
+    "acquisition_plan_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_canonical_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_candidate_dataset_read": true,
+    "current_candidate_dataset_modified": false,
+    "current_candidate_sha_unchanged": true,
+    "hkex_validated_candidate_dataset_read": true,
+    "hkex_validated_candidate_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.20B - ASX Quality-First Acquisition Plan"
+}

@@ -1,0 +1,4 @@
+decision,previous_target,new_operational_target_floor,new_operational_target_ceiling,current_validated_candidate_rows,rows_needed_to_floor,rows_needed_to_ceiling,rationale,status
+reset_operational_target,50000,42000,45000,41392,608,3608,Prefer fewer high-quality candidates over reaching 50k by adding noisy instruments.,approved
+keep_50k_as_aspirational_only,50000,42000,45000,41392,608,3608,50k remains useful only if a clean provider produces quality net-new rows without relaxing instrument criteria.,approved
+select_next_provider,50000,42000,45000,41392,608,3608,ASX is selected first because it has high expected equity quality and enough plausible breadth to cross 42k without lowering quality.,selected:ASX

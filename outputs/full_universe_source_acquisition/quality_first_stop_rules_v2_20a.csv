@@ -1,0 +1,7 @@
+rule_id,rule,threshold,action,reason
+STOP_001,do_not_add_rows_for_volume_only,always,reject_provider_or_subset,The project now prioritizes 42k-45k high-quality candidates over 50k inflated candidates.
+STOP_002,provider_minimum_quality_net_new,>= 500 clean net-new rows preferred; < 250 triggers fast closure unless quality is exceptional,continue_only_if_quality_justifies_effort,Avoid long acquisition cycles with poor quality yield.
+STOP_003,quality_ceiling_stop,"45,000 validated candidates",freeze_expansion_and_move_to_product_scoring,45k is the operational ceiling; beyond that only exceptional clean sources justify expansion.
+STOP_004,instrument_scope_guard,no warrants/options/rights/debt/structured products by default,exclude_before_canonical_validation,Protect scoring quality and avoid HKEX-style large raw counts with low usable yield.
+STOP_005,microcap_liquidity_guard,exclude or flag illiquid speculative microcaps where source allows,do_not_count_as quality net-new unless approved,Candidate quality is more important than raw universe size.
+STOP_006,50k_aspirational_only,"50,000",do_not_force_route_selection_to_reach_50k,50k is no longer the operational success criterion.

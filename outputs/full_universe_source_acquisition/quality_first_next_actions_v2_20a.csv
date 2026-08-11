@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,target_strategy,adopt_42k_45k_quality_band,high,The project should prefer fewer high-quality candidates over inflated 50k coverage.,v2.20B - ASX Quality-First Acquisition Plan,50k is aspirational only; full59k remains deprecated
+2,provider_route,open_asx_quality_first_acquisition_plan,high,ASX is the best next balance of quality and likely useful breadth.,v2.20B - ASX Quality-First Acquisition Plan,"ordinary equities and liquid REITs only; no derivatives, debt, rights or structured products"
+3,fallback_route,prepare_tmx_tsx_only_as_backup,medium,TSX main market is a good backup; TSXV must remain excluded by default.,post-ASX route decision,no TSX Venture unless explicitly approved with strict filters
