@@ -1,0 +1,6 @@
+gate,passed,detail
+artifact_integrity,True,exists=18/18; bytes=18/18; sha256=18/18
+official_scope,True,official_scope_violations=0
+primary_candidate_data,False,primary_candidate_ready_count=0
+extraction_ready,False,extraction_ready=False
+krx_route_blocked_before_extraction,True,blocked=True; candidate_ready_count=0; primary_candidate_ready_count=0

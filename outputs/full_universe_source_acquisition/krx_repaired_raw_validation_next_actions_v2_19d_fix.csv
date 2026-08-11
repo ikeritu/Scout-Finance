@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,KRX,close_krx_route_or_extract_if_gate_passed,high,Repaired validation determines whether KRX has primary parse-ready candidate data.,v2.19I - KRX Closure Report,only proceed to v2.19E if primary_candidate_ready_count >= 1
+2,KRX,document_repair_limitations,high,KRX official web/download flows did not produce a primary structured candidate file if extraction_ready is false.,v2.19I - KRX Closure Report,"closure must document HTTP 403, invalid OTP, HTML-only and missing service key facts"
+3,50k,select_next_provider_route_if_krx_blocked,high,"Current candidate remains 40,996; if KRX is blocked, the next route must continue toward 50k without quality degradation.",next provider route selection after KRX closure,do not launch full59k; keep official 50k target and quality gate
