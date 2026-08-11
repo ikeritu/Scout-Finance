@@ -1,0 +1,2 @@
+route_id,route_name,route_final_result,route_closed,candidate_extraction_allowed,candidate_extraction_performed,candidate_rows_extracted,candidate_rows_added,current_validated_candidate_rows,rows_needed_to_50k,closure_reason,recommended_next_phase
+KRX_KOREA_EXCHANGE,KRX — Korea Exchange Official Listed Securities Route,blocked_before_extraction,True,False,False,0,0,40996,9004,Official KRX acquisition and repair did not produce a primary parse-ready candidate source.,v2.19J - Next Provider Route Selection After KRX Block

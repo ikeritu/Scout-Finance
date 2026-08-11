@@ -1,0 +1,9 @@
+evidence_id,category,finding,value,source_phase,interpretation
+KRX_EVIDENCE_001,route_result,KRX route blocked before extraction,True,v2.19D_FIX,KRX cannot proceed to candidate extraction under current official-source constraints.
+KRX_EVIDENCE_002,extraction_gate,extraction_ready,False,v2.19D_FIX,Extraction is not allowed because no primary candidate artifact is ready.
+KRX_EVIDENCE_003,extraction_gate,primary_candidate_ready_count,0,v2.19D_FIX,No primary KRX artifact met candidate-readiness rules.
+KRX_EVIDENCE_004,artifact_integrity,repaired_artifact_integrity,exists=18/18; bytes=18/18; sha256=18/18,v2.19D_FIX,Repaired raw artifacts are auditable and integrity-checked.
+KRX_EVIDENCE_005,official_scope,official_scope_violations,0,v2.19D_FIX,Only official-scope KRX/data.go.kr artifacts are included.
+KRX_EVIDENCE_006,candidate_universe,current_validated_candidate_rows,40996,v2.19I,KRX adds zero rows; current validated candidate universe remains unchanged.
+KRX_EVIDENCE_007,target_gap,rows_needed_to_50k,9004,v2.19I,The 50k gate remains blocked; another provider route is required.
+KRX_EVIDENCE_008,data_access,data.go.kr optional API key missing,DATA_GO_KR_SERVICE_KEY not configured in repair phase,v2.19C_FIX/v2.19D_FIX,The supporting data.go.kr route remains optional and unavailable without a service key.

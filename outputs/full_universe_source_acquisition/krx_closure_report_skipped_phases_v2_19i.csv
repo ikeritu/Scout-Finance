@@ -1,0 +1,5 @@
+phase,phase_name,status,reason,dependency
+v2.19E,KRX Candidate Extraction Dry Run,SKIPPED,primary_candidate_ready_count=0 and extraction_ready=False in v2.19D_FIX,v2.19D_FIX extraction gate
+v2.19F,KRX Candidate Validation Against Canonical Dry Run,SKIPPED,No KRX candidate extraction output exists to validate.,v2.19E
+v2.19G,KRX Expanded Rebuild Candidate,SKIPPED,No validated KRX net-new candidates exist to append.,v2.19F
+v2.19H,KRX Expanded Validation,SKIPPED,No KRX expanded candidate dataset was produced.,v2.19G

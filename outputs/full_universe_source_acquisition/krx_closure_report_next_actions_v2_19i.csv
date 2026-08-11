@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,50k,select_next_provider_route_after_krx_block,high,"KRX is closed as blocked before extraction and the candidate universe remains at 40,996 rows.",v2.19J - Next Provider Route Selection After KRX Block,official or auditable sources only; keep 50k quality gate; do not launch full59k
+2,KRX,keep_krx_artifacts_as_audit_evidence,medium,KRX raw and repaired artifacts explain why the route was blocked.,archive_with_current_project_history,do not delete raw evidence; do not treat HTML/reference artifacts as candidate data
+3,data.go.kr,optional_service_key_revisit_only_if_available,low,Supporting API may require DATA_GO_KR_SERVICE_KEY; KRX route should not block the wider 50k roadmap.,future repair only if key is explicitly configured,do not use unofficial mirrors; do not bypass official access constraints
