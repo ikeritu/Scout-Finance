@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,TWSE,validate_expanded_candidate,high,A new expanded candidate dataset was generated with TWSE potential net-new rows.,v2.18H - TWSE + TPEx Expanded Validation,validation only; no active canonical replacement; no scoring; no full59k
+2,TWSE,keep_possible_existing_excluded,medium,Possible-existing TWSE rows were not auto-added and remain available for later review.,v2.18H - TWSE + TPEx Expanded Validation,do not auto-add possible_existing unless explicitly reviewed
+3,50k,plan_next_provider_after_twse_closure,medium,"After adding TWSE net-new rows, projected rows needed to 50k remain 9004.",v2.19A - Next Provider Route Selection,do not launch full59k; keep 50k target route only
