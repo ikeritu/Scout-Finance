@@ -1,0 +1,4 @@
+decision_key,decision_value,rationale
+repair_phase_status,TWSE_TPEX_RAW_ACQUISITION_REPAIR_COMPLETED_ROW_DATA_CAPTURED_REVALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED,Repair attempted official TWSE SSL/client acquisition and TPEx endpoint discovery without extracting candidates.
+row_data_candidate_count,2,Candidate extraction remains blocked unless repaired raw validation confirms row-data suitability.
+recommended_next_phase,v2.18D_FIX - TWSE + TPEx Repaired Raw Validation,Proceed to repaired raw validation if row-data was captured; otherwise continue raw repair.

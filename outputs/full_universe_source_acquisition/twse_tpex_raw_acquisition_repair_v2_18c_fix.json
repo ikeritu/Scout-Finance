@@ -1,0 +1,313 @@
+{
+  "version": "v2.18C_FIX",
+  "phase": "TWSE + TPEx Raw Acquisition Repair",
+  "phase_type": "raw-acquisition-repair-only",
+  "status": "TWSE_TPEX_RAW_ACQUISITION_REPAIR_COMPLETED_ROW_DATA_CAPTURED_REVALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-11T10:05:08.668888+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_nse_india_v2_17g.csv",
+    "validated_candidate_rows": 40300,
+    "final_target_candidates": 50000,
+    "rows_needed_to_50k": 9700,
+    "candidate_completion_percent": 80.6,
+    "canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "validated_candidate_sha256": "a6d93e89c2c26ae49bde7aa923ec42c385a4885602bcafa7a0bdfc50f2801ac6",
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "repair_summary": {
+    "repair_raw_directory": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_v2_18c_fix",
+    "download_attempts": 6,
+    "http_200_count": 4,
+    "fallback_success_count": 4,
+    "row_data_candidate_count": 2,
+    "json_like_count": 2,
+    "csv_like_count": 0,
+    "html_count": 2,
+    "error_count": 2,
+    "total_bytes_captured": 1847797,
+    "endpoint_discovery_rows": 8,
+    "critical_failed_checks": 0,
+    "download_status_counts": {
+      "downloaded_200": 4,
+      "network_error_payload_captured": 2
+    },
+    "http_status_counts": {
+      "200": 4,
+      "NO_HTTP_STATUS": 2
+    },
+    "detected_format_counts": {
+      "html": 2,
+      "json_like": 2,
+      "error_text": 2
+    }
+  },
+  "repair_scope": {
+    "network_download_performed": true,
+    "network_scope": "official TWSE/TPEx sources from v2.18B plus official TPEx Swagger/discovered official links",
+    "twse_ssl_repair": true,
+    "tpex_endpoint_discovery": true,
+    "candidate_extraction_performed": false,
+    "canonical_comparison_performed": false,
+    "canonical_dataset_modified": false
+  },
+  "source_references": {
+    "v2_18d_report": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_validation_v2_18d.json",
+    "v2_18d_diagnostics": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_validation_source_diagnostics_v2_18d.csv",
+    "v2_18d_next_actions": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_validation_next_actions_v2_18d.csv",
+    "v2_18c_manifest": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_manifest_v2_18c.csv",
+    "v2_18b_source_plan": "outputs\\full_universe_source_acquisition\\twse_tpex_source_plan_v2_18b.csv",
+    "source_plan_rows": 9,
+    "filter_policy_rows": 7,
+    "next_action_rows": 2
+  },
+  "checks": [
+    {
+      "check": "v2_18d_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_validation_v2_18d.json"
+    },
+    {
+      "check": "v2_18d_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TWSE_TPEX_RAW_VALIDATION_COMPLETED_RAW_FILES_VALID_REPAIR_REQUIRED_BEFORE_CANDIDATE_EXTRACTION_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_18c_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_v2_18c.json"
+    },
+    {
+      "check": "v2_18c_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TWSE_TPEX_RAW_ACQUISITION_COMPLETED_RAW_FILES_CAPTURED_VALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_18d_diagnostics_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_validation_source_diagnostics_v2_18d.csv"
+    },
+    {
+      "check": "v2_18d_next_actions_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_validation_next_actions_v2_18d.csv"
+    },
+    {
+      "check": "source_plan_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_source_plan_v2_18b.csv"
+    },
+    {
+      "check": "filter_policy_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_filter_policy_v2_18b.csv"
+    },
+    {
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "validated_candidate_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_nse_india_v2_17g.csv"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated_candidate_rows=40300"
+    },
+    {
+      "check": "rows_needed_to_50k_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_50k=9700"
+    },
+    {
+      "check": "candidate_schema_matches_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_cols=33 candidate_cols=33"
+    },
+    {
+      "check": "repair_raw_directory_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_v2_18c_fix"
+    },
+    {
+      "check": "repair_download_attempts_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "download_attempts=6"
+    },
+    {
+      "check": "repair_raw_artifacts_exist",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_artifacts_exist=True"
+    },
+    {
+      "check": "repair_sha256_valid",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_sha_valid=True"
+    },
+    {
+      "check": "network_used_in_repair_phase",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=True"
+    },
+    {
+      "check": "network_scope_official_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "non_official_downloaded=0"
+    },
+    {
+      "check": "twse_ssl_repair_attempted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TWSE repair attempts present"
+    },
+    {
+      "check": "tpex_endpoint_discovery_attempted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TPEx swagger JSON attempted"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical sha unchanged"
+    },
+    {
+      "check": "raw_validation_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_validation_performed=False"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "canonical_comparison_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_comparison_performed=False"
+    },
+    {
+      "check": "new_expanded_dataset_not_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_expanded_dataset_written=False"
+    },
+    {
+      "check": "final_50k_gate_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "40300 < 50000"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "row_data_candidate_captured",
+      "passed": true,
+      "severity": "warning",
+      "detail": "row_data_candidate_count=2"
+    },
+    {
+      "check": "twse_ssl_fallback_success",
+      "passed": true,
+      "severity": "warning",
+      "detail": "fallback_success_count=4"
+    },
+    {
+      "check": "tpex_discovered_endpoints_found",
+      "passed": true,
+      "severity": "warning",
+      "detail": "endpoint_discovery_rows=8"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "raw-acquisition-repair-only",
+    "network_download_performed": true,
+    "endpoint_calls_performed": true,
+    "query_sweep_performed": false,
+    "network_scope": "official_sources_and_official_endpoint_discovery_only",
+    "raw_acquisition_repair_performed": true,
+    "raw_files_written": true,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "canonical_comparison_performed": false,
+    "canonical_dataset_read": true,
+    "validated_candidate_dataset_read": true,
+    "v2_18d_diagnostics_read": true,
+    "v2_18c_manifest_read": true,
+    "repair_manifest_written": true,
+    "endpoint_discovery_written": true,
+    "repair_decision_written": true,
+    "source_actions_written": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "final_target_50k_active": true,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.18D_FIX - TWSE + TPEx Repaired Raw Validation"
+}
