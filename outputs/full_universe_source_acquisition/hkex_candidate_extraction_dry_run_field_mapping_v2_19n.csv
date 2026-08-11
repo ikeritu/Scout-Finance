@@ -1,0 +1,23 @@
+canonical_field,source_column_index_zero_based,source_column_index_one_based,source_header
+stock_code,0,1,Stock Code
+name_of_securities,1,2,Name of Securities
+category,2,3,Category
+sub_category,3,4,Sub-Category
+board_lot,4,5,Board Lot
+isin,5,6,ISIN
+expiry_date,6,7,Expiry Date
+subject_to_stamp_duty,7,8,Subject to Stamp Duty
+shortsell_eligible,8,9,Shortsell Eligible
+cas_eligible,9,10,CAS Eligible
+vcm_eligible,10,11,VCM Eligible
+admitted_to_ccass,11,12,Admitted to CCASS
+debt_securities_board_lot_nominal,12,13,Debt Securities Board Lot (Nominal)
+debt_securities_investor_type,13,14,Debt Securities Investor Type
+pos_eligible,14,15,POS Eligible
+spread_table,15,16,"Spread Table
+1 = Part A
+3 = Part B
+5 = Part D
+4 & 6 = Part E"
+trading_currency,16,17,Trading Currency
+rmb_counter,17,18,RMB Counter

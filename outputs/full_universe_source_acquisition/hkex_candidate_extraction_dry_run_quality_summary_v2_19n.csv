@@ -1,0 +1,12 @@
+metric,value,detail
+xlsx_rows_loaded,17633,non-empty worksheet rows loaded
+header_row_number,3,detected header row number
+mapped_fields,18,"{""admitted_to_ccass"": 11, ""board_lot"": 4, ""cas_eligible"": 9, ""category"": 2, ""debt_securities_board_lot_nominal"": 12, ""debt_securities_investor_type"": 13, ""expiry_date"": 6, ""isin"": 5, ""name_of_securities"": 1, ""pos_eligible"": 14, ""rmb_counter"": 17, ""shortsell_eligible"": 8, ""spread_table"": 15, ""stock_code"": 0, ""sub_category"": 3, ""subject_to_stamp_duty"": 7, ""trading_currency"": 16, ""vcm_eligible"": 10}"
+candidate_rows_extracted,17630,rows with valid stock code and name
+rejected_rows,0,rows rejected before candidate dry run output
+unique_stock_codes,17630,unique normalized HKEX stock codes
+duplicate_stock_code_count,0,
+potential_candidate_pending_canonical_validation,3180,not yet canonical-validated
+extracted_reference_security_likely_excluded_later,14411,not filtered here; dry run only
+top_categories,8,"[[""Derivative Warrants"", 7181], [""Callable Bull/Bear Contracts"", 5894], [""Equity"", 2805], [""Debt Securities"", 1321], [""Exchange Traded Products"", 412], [""Real Estate Investment Trusts"", 11], [""Equity Warrants (Main Board)"", 5], [""Equity Warrants (GEM)"", 1]]"
+trading_currencies,8,"[[""HKD"", 16220], [""USD"", 932], [""RMB"", 413], [""EUR"", 41], [""JPY"", 9], [""AUD"", 7], [""SGD"", 6], [""GBP"", 2]]"

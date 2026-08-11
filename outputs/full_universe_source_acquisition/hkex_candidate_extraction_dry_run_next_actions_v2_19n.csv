@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,HKEX,run_candidate_validation_against_canonical_dry_run,high,HKEX candidates have been extracted in dry run and now require dedupe/canonical validation.,v2.19O - HKEX Candidate Validation Against Canonical Dry Run,compare only; do not modify canonical; do not rebuild expanded candidate yet
+2,HKEX,separate_candidate_scope_flags,high,Extraction includes all parseable HKEX securities; canonical validation should decide inclusion/exclusion.,v2.19O - HKEX Candidate Validation Against Canonical Dry Run,preserve dry-run evidence and instrument_family classifications
+3,50k,preserve_quality_gate,high,"Current candidate universe remains 40,996; rows needed to 50k remain 9,004.",v2.19O - HKEX Candidate Validation Against Canonical Dry Run,do not launch full59k; no rebuild before validation
