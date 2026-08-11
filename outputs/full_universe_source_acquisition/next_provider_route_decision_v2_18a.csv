@@ -1,0 +1,8 @@
+decision_key,decision_value,rationale
+new_final_target,"50,000 candidates",User confirmed that 50k candidates is sufficient and 59k is no longer necessary.
+current_validated_candidate_rows,40300,"Validated NSE India candidate dataset contains 40,300 rows."
+remaining_gap,9700,"Only 9,700 additional validated candidate rows are needed to reach the new final target."
+selected_next_provider,TWSE + TPEx Taiwan,Selected as primary next route in v2.17I and still appropriate under the 50k-only target.
+reserve_provider,ASX Australia,"Kept as fallback if Taiwan does not close the 9,700-row gap."
+full59k_status,deprecated/deferred,"No full59k execution, dry run or target pursuit unless explicitly reopened later."
+recommended_next_phase,v2.18B - TWSE + TPEx Acquisition Plan,"Proceed with Taiwan acquisition planning only, without downloads yet."

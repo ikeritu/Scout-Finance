@@ -1,0 +1,7 @@
+policy_key,policy_value,status,notes
+final_target_candidates,50000,ACTIVE,New final operational target. The project no longer needs 59k candidates.
+validated_candidate_rows_after_nse_india,40300,REFERENCE,Validated candidate dataset from NSE India route.
+rows_needed_to_final_target,9700,ACTIVE,Remaining rows needed to reach the 50k candidate target.
+full59k_target,deprecated,DEPRECATED,No full59k dry run or 59k objective should be launched unless explicitly reopened later.
+stop_condition,candidate_dataset_rows >= 50000,ACTIVE,"Provider acquisition can stop once a validated candidate dataset reaches at least 50,000 rows."
+canonical_promotion,requires_explicit_controlled_promotion_phase,BLOCKED,Validated candidate datasets are not automatically promoted to active canonical.
