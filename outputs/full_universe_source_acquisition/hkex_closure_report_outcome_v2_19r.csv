@@ -1,0 +1,15 @@
+metric,value,detail
+hkex_raw_repair_artifacts,,v2.19L_FIX structured raw downloads captured
+hkex_primary_parseable_stock_code_rows,17630,v2.19M_FIX primary ListOfSecurities parse readiness
+hkex_candidate_rows_extracted,17630,v2.19N extraction dry run
+hkex_unique_stock_codes_extracted,17630,v2.19N extraction dry run
+hkex_net_new_rows,396,v2.19O canonical validation dry run
+hkex_duplicate_existing_universe,2782,v2.19O canonical validation dry run
+hkex_possible_duplicate_name_review,2,v2.19O canonical validation dry run
+hkex_excluded_before_canonical_match,14450,v2.19O canonical validation dry run
+current_validated_candidate_rows_before_hkex,40996,outputs\full_universe_source_acquisition\expanded_universe_candidate_twse_tpex_v2_18g.csv
+hkex_expanded_candidate_rows,41392,outputs\full_universe_source_acquisition\expanded_universe_candidate_hkex_v2_19p.csv
+rows_added_by_hkex,396,expanded rows minus current candidate rows
+rows_needed_after_hkex,8608,"50,000 target minus HKEX expanded candidate rows"
+final_50k_gate_after_hkex,BLOCKED,HKEX does not unlock 50k gate
+full59k,DEPRECATED_DEFERRED,not launched

@@ -1,0 +1,519 @@
+{
+  "version": "v2.19R",
+  "phase": "HKEX Closure Report",
+  "phase_type": "closure-report-only",
+  "status": "HKEX_CLOSURE_REPORT_COMPLETED_41392_ROWS_396_NET_NEW_50K_GATE_STILL_BLOCKED_NEXT_PROVIDER_SELECTION_READY_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-11T21:45:01.221215+00:00",
+  "closure_summary": {
+    "active_canonical_rows": 38287,
+    "current_validated_candidate_rows_before_hkex": 40996,
+    "hkex_expanded_candidate_rows": 41392,
+    "rows_added_by_hkex": 396,
+    "rows_needed_after_hkex": 8608,
+    "final_target_candidates": 50000,
+    "final_50k_candidate_gate_after_hkex": "BLOCKED",
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "current_validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_twse_tpex_v2_18g.csv",
+    "hkex_expanded_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_hkex_v2_19p.csv",
+    "active_canonical_sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "current_validated_candidate_sha256": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2",
+    "hkex_expanded_candidate_sha256": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c",
+    "critical_failed_checks": 0,
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "phase_summary": [
+    {
+      "phase": "v2.19K - HKEX Acquisition Plan",
+      "artifact": "outputs\\full_universe_source_acquisition\\hkex_acquisition_plan_v2_19k.json",
+      "artifact_exists": true,
+      "status": "HKEX_ACQUISITION_PLAN_COMPLETED_OFFICIAL_SOURCES_READY_FOR_RAW_ACQUISITION_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+      "phase_type": "acquisition-plan-only",
+      "recommended_next_phase": "v2.19L - HKEX Raw Acquisition"
+    },
+    {
+      "phase": "v2.19L - HKEX Raw Acquisition",
+      "artifact": "outputs\\full_universe_source_acquisition\\hkex_raw_acquisition_v2_19l.json",
+      "artifact_exists": true,
+      "status": "HKEX_RAW_ACQUISITION_COMPLETED_RAW_FILES_CAPTURED_VALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+      "phase_type": "raw-acquisition-only",
+      "recommended_next_phase": "v2.19M - HKEX Raw Validation"
+    },
+    {
+      "phase": "v2.19M - HKEX Raw Validation",
+      "artifact": "outputs\\full_universe_source_acquisition\\hkex_raw_validation_v2_19m.json",
+      "artifact_exists": true,
+      "status": "HKEX_RAW_VALIDATION_COMPLETED_REPAIR_REQUIRED_BEFORE_CANDIDATE_EXTRACTION_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+      "phase_type": "raw-validation-only",
+      "recommended_next_phase": "v2.19L_FIX - HKEX Raw Acquisition Repair"
+    },
+    {
+      "phase": "v2.19L_FIX - HKEX Raw Acquisition Repair",
+      "artifact": "outputs\\full_universe_source_acquisition\\hkex_raw_acquisition_repair_v2_19l_fix.json",
+      "artifact_exists": true,
+      "status": "HKEX_RAW_ACQUISITION_REPAIR_COMPLETED_STRUCTURED_DOWNLOADS_CAPTURED_RAW_VALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+      "phase_type": "raw-acquisition-repair-only",
+      "recommended_next_phase": "v2.19M_FIX - HKEX Repaired Raw Validation"
+    },
+    {
+      "phase": "v2.19M_FIX - HKEX Repaired Raw Validation",
+      "artifact": "outputs\\full_universe_source_acquisition\\hkex_repaired_raw_validation_v2_19m_fix.json",
+      "artifact_exists": true,
+      "status": "HKEX_REPAIRED_RAW_VALIDATION_COMPLETED_PARSE_READY_EXTRACTION_DRY_RUN_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+      "phase_type": "repaired-raw-validation-only",
+      "recommended_next_phase": "v2.19N - HKEX Candidate Extraction Dry Run"
+    },
+    {
+      "phase": "v2.19N - HKEX Candidate Extraction Dry Run",
+      "artifact": "outputs\\full_universe_source_acquisition\\hkex_candidate_extraction_dry_run_v2_19n.json",
+      "artifact_exists": true,
+      "status": "HKEX_CANDIDATE_EXTRACTION_DRY_RUN_COMPLETED_CANDIDATES_EXTRACTED_CANONICAL_VALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+      "phase_type": "candidate-extraction-dry-run-only",
+      "recommended_next_phase": "v2.19O - HKEX Candidate Validation Against Canonical Dry Run"
+    },
+    {
+      "phase": "v2.19O - HKEX Candidate Validation Against Canonical Dry Run",
+      "artifact": "outputs\\full_universe_source_acquisition\\hkex_candidate_validation_against_canonical_dry_run_v2_19o.json",
+      "artifact_exists": true,
+      "status": "HKEX_CANDIDATE_VALIDATION_DRY_RUN_COMPLETED_NET_NEW_CLASSIFIED_EXPANDED_REBUILD_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+      "phase_type": "candidate-validation-against-canonical-dry-run-only",
+      "recommended_next_phase": "v2.19P - HKEX Expanded Rebuild Candidate"
+    },
+    {
+      "phase": "v2.19P - HKEX Expanded Rebuild Candidate",
+      "artifact": "outputs\\full_universe_source_acquisition\\hkex_expanded_rebuild_candidate_v2_19p.json",
+      "artifact_exists": true,
+      "status": "HKEX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_41392_ROWS_EXPANDED_VALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+      "phase_type": "expanded-rebuild-candidate-only",
+      "recommended_next_phase": "v2.19Q - HKEX Expanded Validation"
+    },
+    {
+      "phase": "v2.19Q - HKEX Expanded Validation",
+      "artifact": "outputs\\full_universe_source_acquisition\\hkex_expanded_validation_v2_19q.json",
+      "artifact_exists": true,
+      "status": "HKEX_EXPANDED_VALIDATION_COMPLETED_41392_ROWS_VALIDATED_CLOSURE_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+      "phase_type": "expanded-validation-only",
+      "recommended_next_phase": "v2.19R - HKEX Closure Report"
+    },
+    {
+      "phase": "v2.19R - HKEX Closure Report",
+      "artifact": "outputs\\full_universe_source_acquisition\\hkex_closure_report_v2_19r.json",
+      "artifact_exists": true,
+      "status": "generated_by_this_phase",
+      "phase_type": "closure-report-only",
+      "recommended_next_phase": "post-v2.19R - Next Provider Route Selection After HKEX"
+    }
+  ],
+  "dataset_summary": [
+    {
+      "dataset_role": "active_canonical",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "rows": 38287,
+      "sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "modified_in_v2_19r": false
+    },
+    {
+      "dataset_role": "current_validated_candidate_before_hkex",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_twse_tpex_v2_18g.csv",
+      "rows": 40996,
+      "sha256_before": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2",
+      "sha256_after": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2",
+      "modified_in_v2_19r": false
+    },
+    {
+      "dataset_role": "hkex_expanded_candidate_validated",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_hkex_v2_19p.csv",
+      "rows": 41392,
+      "sha256_before": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c",
+      "sha256_after": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c",
+      "modified_in_v2_19r": false
+    }
+  ],
+  "outcome": [
+    {
+      "metric": "hkex_raw_repair_artifacts",
+      "value": "",
+      "detail": "v2.19L_FIX structured raw downloads captured"
+    },
+    {
+      "metric": "hkex_primary_parseable_stock_code_rows",
+      "value": 17630,
+      "detail": "v2.19M_FIX primary ListOfSecurities parse readiness"
+    },
+    {
+      "metric": "hkex_candidate_rows_extracted",
+      "value": 17630,
+      "detail": "v2.19N extraction dry run"
+    },
+    {
+      "metric": "hkex_unique_stock_codes_extracted",
+      "value": 17630,
+      "detail": "v2.19N extraction dry run"
+    },
+    {
+      "metric": "hkex_net_new_rows",
+      "value": 396,
+      "detail": "v2.19O canonical validation dry run"
+    },
+    {
+      "metric": "hkex_duplicate_existing_universe",
+      "value": 2782,
+      "detail": "v2.19O canonical validation dry run"
+    },
+    {
+      "metric": "hkex_possible_duplicate_name_review",
+      "value": 2,
+      "detail": "v2.19O canonical validation dry run"
+    },
+    {
+      "metric": "hkex_excluded_before_canonical_match",
+      "value": 14450,
+      "detail": "v2.19O canonical validation dry run"
+    },
+    {
+      "metric": "current_validated_candidate_rows_before_hkex",
+      "value": 40996,
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_twse_tpex_v2_18g.csv"
+    },
+    {
+      "metric": "hkex_expanded_candidate_rows",
+      "value": 41392,
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_hkex_v2_19p.csv"
+    },
+    {
+      "metric": "rows_added_by_hkex",
+      "value": 396,
+      "detail": "expanded rows minus current candidate rows"
+    },
+    {
+      "metric": "rows_needed_after_hkex",
+      "value": 8608,
+      "detail": "50,000 target minus HKEX expanded candidate rows"
+    },
+    {
+      "metric": "final_50k_gate_after_hkex",
+      "value": "BLOCKED",
+      "detail": "HKEX does not unlock 50k gate"
+    },
+    {
+      "metric": "full59k",
+      "value": "DEPRECATED_DEFERRED",
+      "detail": "not launched"
+    }
+  ],
+  "roadmap": [
+    {
+      "phase": "v2.19A",
+      "title": "Next Provider Route Selection",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19B",
+      "title": "KRX Korea Exchange Acquisition Plan",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19C",
+      "title": "KRX Raw Acquisition",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19D",
+      "title": "KRX Raw Validation",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19C_FIX",
+      "title": "KRX Raw Acquisition Repair",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19D_FIX",
+      "title": "KRX Repaired Raw Validation",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19E",
+      "title": "KRX Candidate Extraction Dry Run",
+      "status": "skipped_blocked"
+    },
+    {
+      "phase": "v2.19F",
+      "title": "KRX Candidate Validation Against Canonical Dry Run",
+      "status": "skipped_blocked"
+    },
+    {
+      "phase": "v2.19G",
+      "title": "KRX Expanded Rebuild Candidate",
+      "status": "skipped_blocked"
+    },
+    {
+      "phase": "v2.19H",
+      "title": "KRX Expanded Validation",
+      "status": "skipped_blocked"
+    },
+    {
+      "phase": "v2.19I",
+      "title": "KRX Closure Report",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19J",
+      "title": "Next Provider Route Selection After KRX Block",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19K",
+      "title": "HKEX Acquisition Plan",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19L",
+      "title": "HKEX Raw Acquisition",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19M",
+      "title": "HKEX Raw Validation",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19L_FIX",
+      "title": "HKEX Raw Acquisition Repair",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19M_FIX",
+      "title": "HKEX Repaired Raw Validation",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19N",
+      "title": "HKEX Candidate Extraction Dry Run",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19O",
+      "title": "HKEX Candidate Validation Against Canonical Dry Run",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19P",
+      "title": "HKEX Expanded Rebuild Candidate",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19Q",
+      "title": "HKEX Expanded Validation",
+      "status": "closed"
+    },
+    {
+      "phase": "v2.19R",
+      "title": "HKEX Closure Report",
+      "status": "closed_by_this_report"
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_19q_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\hkex_expanded_validation_v2_19q.json"
+    },
+    {
+      "check": "v2_19q_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX_EXPANDED_VALIDATION_COMPLETED_41392_ROWS_VALIDATED_CLOSURE_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "current_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_rows=40996"
+    },
+    {
+      "check": "hkex_expanded_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "hkex_expanded_rows=41392"
+    },
+    {
+      "check": "hkex_net_new_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_added_by_hkex=396"
+    },
+    {
+      "check": "rows_needed_after_hkex_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_after_hkex=8608"
+    },
+    {
+      "check": "final_50k_gate_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "BLOCKED"
+    },
+    {
+      "check": "active_canonical_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "current_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+    },
+    {
+      "check": "hkex_expanded_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c"
+    },
+    {
+      "check": "active_canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "current_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current candidate sha unchanged"
+    },
+    {
+      "check": "hkex_expanded_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX expanded candidate sha unchanged"
+    },
+    {
+      "check": "phase_2_19_hkex_reports_available",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.19N/O/P/Q reports available"
+    },
+    {
+      "check": "closure_report_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "closure report only"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "candidate_validation_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_validation_against_canonical_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_candidate_performed=False"
+    },
+    {
+      "check": "expanded_validation_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_validation_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "current_candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "closure-report-only",
+    "closure_report_only": true,
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "route_selection_performed": false,
+    "acquisition_plan_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_acquisition_repair_performed": false,
+    "raw_validation_performed": false,
+    "repaired_raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_canonical_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_comparison_performed": false,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_candidate_dataset_read": true,
+    "current_candidate_dataset_modified": false,
+    "current_candidate_sha_unchanged": true,
+    "hkex_expanded_candidate_dataset_read": true,
+    "hkex_expanded_candidate_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "final_target_50k_active": true,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "post-v2.19R - Next Provider Route Selection After HKEX"
+}

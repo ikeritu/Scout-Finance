@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,provider_route,select_next_provider_route_after_hkex,high,"HKEX route is closed and 50k gate remains blocked with 8,608 rows still needed.",post-v2.19R - Next Provider Route Selection After HKEX,quality-first route selection; no full59k; no scoring
+2,dataset,keep_hkex_expanded_candidate_as_validated_candidate_option,medium,HKEX expanded candidate is validated but not promoted to canonical in v2.19R.,post-v2.19R - Next Provider Route Selection After HKEX,no canonical replacement without explicit later decision

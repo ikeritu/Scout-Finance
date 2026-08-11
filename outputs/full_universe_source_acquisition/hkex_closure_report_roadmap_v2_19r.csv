@@ -1,0 +1,23 @@
+phase,title,status
+v2.19A,Next Provider Route Selection,closed
+v2.19B,KRX Korea Exchange Acquisition Plan,closed
+v2.19C,KRX Raw Acquisition,closed
+v2.19D,KRX Raw Validation,closed
+v2.19C_FIX,KRX Raw Acquisition Repair,closed
+v2.19D_FIX,KRX Repaired Raw Validation,closed
+v2.19E,KRX Candidate Extraction Dry Run,skipped_blocked
+v2.19F,KRX Candidate Validation Against Canonical Dry Run,skipped_blocked
+v2.19G,KRX Expanded Rebuild Candidate,skipped_blocked
+v2.19H,KRX Expanded Validation,skipped_blocked
+v2.19I,KRX Closure Report,closed
+v2.19J,Next Provider Route Selection After KRX Block,closed
+v2.19K,HKEX Acquisition Plan,closed
+v2.19L,HKEX Raw Acquisition,closed
+v2.19M,HKEX Raw Validation,closed
+v2.19L_FIX,HKEX Raw Acquisition Repair,closed
+v2.19M_FIX,HKEX Repaired Raw Validation,closed
+v2.19N,HKEX Candidate Extraction Dry Run,closed
+v2.19O,HKEX Candidate Validation Against Canonical Dry Run,closed
+v2.19P,HKEX Expanded Rebuild Candidate,closed
+v2.19Q,HKEX Expanded Validation,closed
+v2.19R,HKEX Closure Report,closed_by_this_report
