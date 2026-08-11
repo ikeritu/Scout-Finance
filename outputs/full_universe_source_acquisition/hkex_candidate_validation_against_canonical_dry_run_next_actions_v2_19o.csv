@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,HKEX,run_expanded_rebuild_candidate,high,HKEX canonical validation dry run identified net-new candidates.,v2.19P - HKEX Expanded Rebuild Candidate,build candidate dataset only; do not replace active canonical
+2,HKEX,include_net_new_only,high,Only net_new_pending_expanded_rebuild rows should be appended in the rebuild candidate.,v2.19P - HKEX Expanded Rebuild Candidate,"exclude duplicate_existing_universe, possible_duplicate_name_review and reference securities"
+3,50k,recalculate_projected_gate_after_rebuild,high,Projected candidate row count is available only as dry-run evidence.,v2.19P - HKEX Expanded Rebuild Candidate,no full59k; no scoring

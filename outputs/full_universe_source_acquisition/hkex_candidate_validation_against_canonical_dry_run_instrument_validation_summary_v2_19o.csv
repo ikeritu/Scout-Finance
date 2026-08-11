@@ -1,0 +1,10 @@
+instrument_family,validation_status,candidate_rows
+debt_security,excluded_before_canonical_match,1330
+derivative_or_warrant,excluded_before_canonical_match,13081
+equity_like,duplicate_existing_universe,2780
+equity_like,net_new_pending_expanded_rebuild,21
+equity_like,possible_duplicate_name_review,2
+fund_or_etp,net_new_pending_expanded_rebuild,361
+other_or_unclassified,excluded_before_canonical_match,39
+reit,net_new_pending_expanded_rebuild,14
+spac,duplicate_existing_universe,2

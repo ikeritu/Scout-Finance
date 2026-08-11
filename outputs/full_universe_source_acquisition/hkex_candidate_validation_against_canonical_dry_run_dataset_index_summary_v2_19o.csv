@@ -1,0 +1,3 @@
+dataset_label,path,row_count,ticker_index_count,isin_index_count,name_index_count,hkex_stock_code_index_count,hkex_like_rows,ticker_headers,isin_headers,name_headers,market_headers
+active_canonical,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv,38287,37853,4172,24687,2804,2814,ticker|symbol,isin,company_name|security_name,exchange|country|source_provider|market_cap|raw_exchange|provider_precedence|currency|mic|provider
+current_validated_candidate,outputs\full_universe_source_acquisition\expanded_universe_candidate_twse_tpex_v2_18g.csv,40996,41204,6185,26693,2804,2814,ticker|symbol,isin,company_name|security_name,exchange|country|source_provider|market_cap|raw_exchange|provider_precedence|currency|mic|provider

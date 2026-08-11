@@ -1,0 +1,17 @@
+metric,value,detail
+hkex_candidate_rows_input,17630,v2.19N dry-run candidates
+potential_scope_rows,3180,potential_candidate_pending_canonical_validation
+reference_scope_rows,14450,excluded before canonical match
+net_new_pending_expanded_rebuild,396,eligible HKEX candidates not matched to active/current indexes
+duplicate_existing_universe,2782,hard duplicates by ticker/code/ISIN
+possible_duplicate_name_review,2,name-only possible duplicates
+excluded_before_canonical_match,14450,reference/non-candidate scope
+duplicate_match_rows,16528,all recorded match signals
+net_new_equity_like_count,21,net new equity-like rows
+net_new_fund_or_etp_count,361,net new fund/ETP rows
+net_new_reit_count,14,net new REIT rows
+net_new_spac_count,0,net new SPAC rows
+current_validated_candidate_rows,40996,unchanged current validated candidate universe
+projected_candidate_rows_if_rebuilt,41392,dry-run projection only
+projected_rows_needed_to_50k,8608,dry-run projection only
+projected_50k_gate_after_hkex,BLOCKED,dry-run projection only
