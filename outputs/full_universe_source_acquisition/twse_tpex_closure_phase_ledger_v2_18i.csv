@@ -1,0 +1,12 @@
+phase,name,status,primary_output,dataset_rows_after_phase,gate_status,next
+v2.18A,50k Target Route Selection,closed,TWSE + TPEx selected as next route; full59k deprecated/deferred,40300,50k blocked,v2.18B
+v2.18B,TWSE + TPEx Acquisition Plan,closed,official-source acquisition plan,40300,50k blocked,v2.18C
+v2.18C,TWSE + TPEx Raw Acquisition,closed,raw acquisition attempted; repair required,40300,50k blocked,v2.18D
+v2.18D,TWSE + TPEx Raw Validation,closed,raw files validated; repair required,40300,50k blocked,v2.18C_FIX
+v2.18C_FIX,TWSE + TPEx Raw Acquisition Repair,closed,TWSE row-data captured; TPEx deferred,40300,50k blocked,v2.18D_FIX
+v2.18D_FIX,TWSE + TPEx Repaired Raw Validation,closed,2 TWSE row-data sources ready for extraction,40300,50k blocked,v2.18E
+v2.18E,TWSE + TPEx Candidate Extraction Dry Run,TWSE_TPEX_CANDIDATE_EXTRACTION_DRY_RUN_COMPLETED_TWSE_CANDIDATES_READY_FOR_CANONICAL_VALIDATION_DRY_RUN_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED,1075 TWSE candidates extracted; DR and non-common-equity excluded,40300,50k blocked,v2.18F
+v2.18F,TWSE + TPEx Candidate Validation Against Canonical Dry Run,TWSE_TPEX_CANDIDATE_VALIDATION_DRY_RUN_COMPLETED_CANONICAL_BUCKETS_READY_FOR_EXPANDED_REBUILD_CANDIDATE_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED,696 potential net-new; 379 possible existing,40300,50k blocked,v2.18G
+v2.18G,TWSE + TPEx Expanded Rebuild Candidate,TWSE_TPEX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_40996_ROWS_VALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED,candidate rebuilt with 40996 rows,40996,50k blocked,v2.18H
+v2.18H,TWSE + TPEx Expanded Validation,TWSE_TPEX_EXPANDED_VALIDATION_COMPLETED_40996_ROWS_VALIDATED_CLOSURE_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED,expanded candidate validated with 40996 rows,40996,50k blocked,v2.18I
+v2.18I,TWSE + TPEx Closure Report,current_phase,formal closure and next-provider handoff,40996,50k blocked,v2.19A - Next Provider Route Selection

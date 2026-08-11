@@ -1,0 +1,5 @@
+source,role,status,rows_or_candidates,result,decision
+TWSE listed company profile,primary_candidate_source,completed_used,1075,source produced validated TWSE candidates,used for v2.18E extraction and v2.18G candidate rebuild
+TWSE stock day all,symbol_name_crosscheck,completed_used,crosscheck,used as crosscheck during extraction,supporting source only
+TPEx,primary_tpex_candidate_source,deferred_or_repair_later,0,TPEx repair still pending after TWSE route succeeded partially,do not block TWSE closure; revisit in a future provider/repair route if needed
+full59k,deprecated_target_route,deprecated_deferred_not_active,0,not launched,keep 50k target route only

@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,50k,start_next_provider_route_selection,high,TWSE added 696 net-new rows but 9004 rows are still needed for 50k.,v2.19A - Next Provider Route Selection,do not launch full59k; keep final target 50k; no scoring/OpenAI/broker during route selection
+2,TPEx,defer_or_repair_later,medium,TPEx did not contribute validated candidate rows in this route and should not block TWSE closure.,v2.19A - Next Provider Route Selection,only revisit TPEx if selected as a future repair route
+3,candidate_dataset,preserve_twse_tpex_candidate_as_validated_candidate,medium,"expanded_universe_candidate_twse_tpex_v2_18g.csv is validated at 40,996 rows.",v2.19A - Next Provider Route Selection,do not replace active canonical without explicit future promotion phase

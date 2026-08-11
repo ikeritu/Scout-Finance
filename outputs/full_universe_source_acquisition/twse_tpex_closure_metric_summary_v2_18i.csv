@@ -1,0 +1,13 @@
+metric,value,expected,unit
+active_canonical_rows,38287,38287,rows
+base_nse_candidate_rows,40300,40300,rows
+twse_candidates_extracted,1075,1075,candidates
+twse_potential_net_new,696,696,candidates
+twse_possible_existing_not_added,379,379,candidates
+twse_existing_not_added,0,0,candidates
+twse_added_rows,696,696,rows
+twse_withheld_rows,0,0,rows
+twse_tpex_expanded_candidate_rows,40996,40996,rows
+schema_columns,33,33,columns
+final_target_candidates,50000,50000,rows
+rows_needed_after_twse,9004,9004,rows
