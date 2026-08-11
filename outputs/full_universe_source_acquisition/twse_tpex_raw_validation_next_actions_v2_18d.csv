@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,TWSE,repair_ssl_or_client_acquisition_for_twse_sources,high,TWSE official sources were attempted but captured SSL certificate verification errors instead of row data.,v2.18C_FIX - TWSE + TPEx Raw Acquisition Repair,repair acquisition only; no candidate extraction; preserve official source scope
+2,TPEx,resolve_static_csv_or_json_endpoint_from_html_landing_page,high,At least one primary candidate source was captured as an HTML landing page rather than row-data CSV/JSON.,v2.18C_FIX - TWSE + TPEx Raw Acquisition Repair,endpoint enrichment only from already planned official TPEx pages; no extraction yet
