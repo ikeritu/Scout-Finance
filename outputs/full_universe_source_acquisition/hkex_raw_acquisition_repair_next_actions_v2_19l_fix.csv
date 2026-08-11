@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,HKEX,run_repaired_raw_validation,high,Structured HKEX repair downloads have been captured and need validation before extraction.,v2.19M_FIX - HKEX Repaired Raw Validation,raw validation only; no candidate extraction; no canonical modification
+2,HKEX,validate_list_of_securities_xlsx_parse_readiness,high,ListOfSecurities.xlsx is the primary official HKEX structured source candidate.,v2.19M_FIX - HKEX Repaired Raw Validation,inspect workbook schema; do not append rows
+3,50k,preserve_quality_gate,high,"Current candidate universe remains 40,996; rows needed to 50k remain 9,004.",v2.19M_FIX - HKEX Repaired Raw Validation,do not launch full59k; no HKEX rows before extraction and canonical validation
