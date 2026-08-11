@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,TWSE,proceed_to_candidate_extraction_dry_run,high,At least one repaired TWSE row-data source is validated and ready for candidate extraction dry run.,v2.18E - TWSE + TPEx Candidate Extraction Dry Run,dry run only; no canonical modification; no scoring; no full59k
+2,TPEx,defer_or_repair_tpex_later,medium,TPEx official OpenAPI endpoints still captured technical SSL errors and are not needed if TWSE delta is sufficient for this route step.,v2.18E - TWSE + TPEx Candidate Extraction Dry Run,do not block TWSE dry run if repaired TWSE row-data is valid; keep TPEx as deferred/support unless needed

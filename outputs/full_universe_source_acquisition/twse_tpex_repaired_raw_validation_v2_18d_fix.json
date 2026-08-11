@@ -1,0 +1,319 @@
+{
+  "version": "v2.18D_FIX",
+  "phase": "TWSE + TPEx Repaired Raw Validation",
+  "phase_type": "repaired-raw-validation-only",
+  "status": "TWSE_TPEX_REPAIRED_RAW_VALIDATION_COMPLETED_ROW_DATA_VALID_CANDIDATE_EXTRACTION_DRY_RUN_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-11T10:17:55.101857+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_nse_india_v2_17g.csv",
+    "validated_candidate_rows": 40300,
+    "final_target_candidates": 50000,
+    "rows_needed_to_50k": 9700,
+    "candidate_completion_percent": 80.6,
+    "canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "validated_candidate_sha256": "a6d93e89c2c26ae49bde7aa923ec42c385a4885602bcafa7a0bdfc50f2801ac6",
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "repaired_raw_validation_summary": {
+    "repair_manifest_rows": 6,
+    "raw_files_exist_count": 6,
+    "bytes_match_count": 6,
+    "sha256_match_count": 6,
+    "manifest_row_data_count": 2,
+    "validated_row_data_count": 2,
+    "ready_for_extraction_count": 2,
+    "schema_ready_count": 2,
+    "twse_ready_count": 2,
+    "tpex_still_error_count": 2,
+    "non_official_selected_downloads": 0,
+    "critical_failed_checks": 0
+  },
+  "readiness_decision": {
+    "candidate_extraction_dry_run_ready": true,
+    "primary_ready_provider": "TWSE",
+    "tpex_status": "deferred_or_repair_later",
+    "recommended_next_phase": "v2.18E - TWSE + TPEx Candidate Extraction Dry Run"
+  },
+  "source_references": {
+    "v2_18c_fix_report": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_v2_18c_fix.json",
+    "v2_18c_fix_manifest": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_manifest_v2_18c_fix.csv",
+    "v2_18c_fix_decision": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_decision_v2_18c_fix.csv",
+    "v2_18c_fix_endpoint_discovery": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_endpoint_discovery_v2_18c_fix.csv",
+    "v2_18c_fix_source_actions": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_source_actions_v2_18c_fix.csv",
+    "v2_18d_report": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_validation_v2_18d.json",
+    "v2_18d_source_diagnostics": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_validation_source_diagnostics_v2_18d.csv",
+    "repair_decision_rows": 3,
+    "endpoint_discovery_rows": 8,
+    "repair_source_actions_rows": 8,
+    "previous_diagnostics_rows": 9
+  },
+  "checks": [
+    {
+      "check": "v2_18c_fix_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_v2_18c_fix.json"
+    },
+    {
+      "check": "v2_18c_fix_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TWSE_TPEX_RAW_ACQUISITION_REPAIR_COMPLETED_ROW_DATA_CAPTURED_REVALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_18d_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_validation_v2_18d.json"
+    },
+    {
+      "check": "v2_18d_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TWSE_TPEX_RAW_VALIDATION_COMPLETED_RAW_FILES_VALID_REPAIR_REQUIRED_BEFORE_CANDIDATE_EXTRACTION_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "repair_manifest_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_manifest_v2_18c_fix.csv"
+    },
+    {
+      "check": "repair_decision_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_decision_v2_18c_fix.csv"
+    },
+    {
+      "check": "endpoint_discovery_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_endpoint_discovery_v2_18c_fix.csv"
+    },
+    {
+      "check": "repair_source_actions_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_acquisition_repair_source_actions_v2_18c_fix.csv"
+    },
+    {
+      "check": "previous_raw_diagnostics_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\twse_tpex_raw_validation_source_diagnostics_v2_18d.csv"
+    },
+    {
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "validated_candidate_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_nse_india_v2_17g.csv"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated_candidate_rows=40300"
+    },
+    {
+      "check": "rows_needed_to_50k_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_50k=9700"
+    },
+    {
+      "check": "candidate_schema_matches_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_cols=33 candidate_cols=33"
+    },
+    {
+      "check": "repair_manifest_rows_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "repair_manifest_rows=6"
+    },
+    {
+      "check": "repair_raw_files_exist",
+      "passed": true,
+      "severity": "critical",
+      "detail": "6/6"
+    },
+    {
+      "check": "repair_raw_bytes_match_manifest",
+      "passed": true,
+      "severity": "critical",
+      "detail": "6/6"
+    },
+    {
+      "check": "repair_raw_sha256_match_manifest",
+      "passed": true,
+      "severity": "critical",
+      "detail": "6/6"
+    },
+    {
+      "check": "manifest_row_data_candidates_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "manifest_row_data_count=2"
+    },
+    {
+      "check": "validated_row_data_candidates_detected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated_row_data_count=2"
+    },
+    {
+      "check": "ready_for_extraction_sources_detected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ready_for_extraction_count=2"
+    },
+    {
+      "check": "twse_repaired_row_data_detected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "twse_ready_count=2"
+    },
+    {
+      "check": "network_not_used_in_repaired_validation",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "raw_acquisition_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_acquisition_performed=False"
+    },
+    {
+      "check": "raw_files_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_files_modified=False"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "canonical_comparison_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_comparison_performed=False"
+    },
+    {
+      "check": "new_expanded_dataset_not_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_expanded_dataset_written=False"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical sha unchanged"
+    },
+    {
+      "check": "network_scope_official_discovery_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "non_official_selected_downloads=0"
+    },
+    {
+      "check": "final_50k_gate_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "40300 < 50000"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "tpex_still_requires_repair_or_deferral",
+      "passed": true,
+      "severity": "warning",
+      "detail": "tpex_still_error_count=2"
+    },
+    {
+      "check": "schema_ready_sources_detected",
+      "passed": true,
+      "severity": "warning",
+      "detail": "schema_ready_count=2"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "repaired-raw-validation-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_acquisition_repair_performed": false,
+    "repaired_raw_validation_performed": true,
+    "raw_files_read": true,
+    "raw_files_written": false,
+    "raw_files_modified": false,
+    "repair_manifest_read": true,
+    "file_profile_written": true,
+    "schema_profile_written": true,
+    "source_diagnostics_written": true,
+    "next_actions_written": true,
+    "candidate_extraction_performed": false,
+    "canonical_comparison_performed": false,
+    "canonical_dataset_read": true,
+    "validated_candidate_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "final_target_50k_active": true,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.18E - TWSE + TPEx Candidate Extraction Dry Run"
+}
