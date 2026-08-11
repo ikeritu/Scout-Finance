@@ -1,0 +1,9 @@
+source_id,provider,source_role,target_field,raw_field,mapping_status,notes
+twse_ssl_repair_twse_listed_company_profile,TWSE,primary,symbol,公司代號,mapped,
+twse_ssl_repair_twse_listed_company_profile,TWSE,primary,name,公司名稱,mapped,
+twse_ssl_repair_twse_listed_company_profile,TWSE,primary,short_name,公司簡稱,mapped,
+twse_ssl_repair_twse_listed_company_profile,TWSE,primary,industry,產業別,mapped,
+twse_ssl_repair_twse_listed_company_profile,TWSE,primary,listing_date,上市日期,mapped,
+twse_ssl_repair_twse_listed_company_profile,TWSE,primary,isin,,not_available_in_source,ISIN not detected in TWSE listed company profile raw schema.
+twse_ssl_repair_twse_stock_day_all,TWSE,crosscheck,symbol,Code,mapped,
+twse_ssl_repair_twse_stock_day_all,TWSE,crosscheck,name,Name,mapped,
