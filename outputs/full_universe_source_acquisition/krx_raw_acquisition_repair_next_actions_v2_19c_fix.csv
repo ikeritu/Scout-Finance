@@ -1,0 +1,5 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,KRX,validate_repaired_raw_artifacts,high,KRX repair artifacts have been captured and require revalidation.,v2.19D_FIX - KRX Repaired Raw Validation,validate repaired raw only; no candidate extraction until v2.19E
+2,KRX Global,evaluate_html_table_probe,high,KRX Global HTML table probe may or may not contain usable row data.,v2.19D_FIX - KRX Repaired Raw Validation,v2.19D_FIX decides parse-readiness; do not map candidate fields yet
+3,KRX Data Marketplace,evaluate_otp_and_csv_repair,medium,Repair attempted multiple official OTP market scopes and download follow-ups.,v2.19D_FIX - KRX Repaired Raw Validation,only structured successful downloads may advance to extraction
+4,50k,maintain_candidate_baseline,medium,"Current candidate remains 40,996; no rows added in repair phase.",v2.19D_FIX - KRX Repaired Raw Validation,"no canonical promotion, no candidate rebuild, no full59k"

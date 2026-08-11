@@ -1,0 +1,2 @@
+source_id,source_artifact,row_index,cell_count,cell_1,cell_2,cell_3,cell_4,cell_5,cell_6
+krx_global_listed_company,outputs\full_universe_source_acquisition\raw\krx_v2_19c\krx_global_listed_company_page_v2_19c.html,1,6,Total No. of Listed Cos.,,Total No. of Listed Issues,,Search Result,{{tot_cnt}}

@@ -1,0 +1,286 @@
+{
+  "version": "v2.19C_FIX",
+  "phase": "KRX Raw Acquisition Repair",
+  "phase_type": "raw-acquisition-repair-only",
+  "status": "KRX_RAW_ACQUISITION_REPAIR_COMPLETED_REPAIRED_RAW_FILES_CAPTURED_REVALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-11T16:15:55.682202+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "current_validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_twse_tpex_v2_18g.csv",
+    "current_validated_candidate_rows": 40996,
+    "final_target_candidates": 50000,
+    "rows_needed_to_50k": 9004,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED",
+    "active_canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "active_canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "current_candidate_sha256_before": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2",
+    "current_candidate_sha256_after": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+  },
+  "repair_summary": {
+    "v2_19d_artifact_rows": 7,
+    "v2_19d_readiness_rows": 4,
+    "v2_19d_issue_rows": 7,
+    "v2_19c_manifest_rows": 7,
+    "html_signal_rows": 1,
+    "html_table_probe_rows": 1,
+    "html_table_probe_possible": false,
+    "discovered_urls": 327,
+    "discovered_selected_for_fetch": 2,
+    "repair_manifest_rows": 18,
+    "raw_repair_files_written": 18,
+    "official_scope_violations": 0,
+    "captured_rows": 13,
+    "http_200_rows": 5,
+    "structured_rows": 1,
+    "primary_structured_rows": 0,
+    "critical_failed_checks": 0
+  },
+  "checks": [
+    {
+      "check": "v2_19d_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\krx_raw_validation_v2_19d.json"
+    },
+    {
+      "check": "v2_19d_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "KRX_RAW_VALIDATION_COMPLETED_REPAIR_REQUIRED_BEFORE_CANDIDATE_EXTRACTION_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_19d_artifact_audit_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\krx_raw_validation_artifact_audit_v2_19d.csv"
+    },
+    {
+      "check": "v2_19d_source_readiness_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\krx_raw_validation_source_readiness_v2_19d.csv"
+    },
+    {
+      "check": "v2_19d_issue_audit_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\krx_raw_validation_issue_audit_v2_19d.csv"
+    },
+    {
+      "check": "v2_19c_manifest_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\krx_raw_acquisition_manifest_v2_19c.csv"
+    },
+    {
+      "check": "v2_19d_repair_required",
+      "passed": true,
+      "severity": "critical",
+      "detail": "True"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "current_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_rows=40996"
+    },
+    {
+      "check": "rows_needed_to_50k_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_50k=9004"
+    },
+    {
+      "check": "raw_repair_dir_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\raw\\krx_v2_19c_fix"
+    },
+    {
+      "check": "html_probe_completed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "html_signal_rows=1"
+    },
+    {
+      "check": "html_table_probe_written",
+      "passed": true,
+      "severity": "warning",
+      "detail": "html_table_probe_rows=1"
+    },
+    {
+      "check": "discovered_url_inventory_written",
+      "passed": true,
+      "severity": "warning",
+      "detail": "discovered_urls=327"
+    },
+    {
+      "check": "repair_manifest_rows_minimum",
+      "passed": true,
+      "severity": "critical",
+      "detail": "repair_manifest_rows=18"
+    },
+    {
+      "check": "raw_repair_files_written_minimum",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_repair_files_written=18"
+    },
+    {
+      "check": "official_scope_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "official_scope_violations=0"
+    },
+    {
+      "check": "http_200_rows_present",
+      "passed": true,
+      "severity": "warning",
+      "detail": "http_200_rows=5"
+    },
+    {
+      "check": "structured_rows_present",
+      "passed": true,
+      "severity": "warning",
+      "detail": "structured_rows=1"
+    },
+    {
+      "check": "primary_structured_rows_present",
+      "passed": false,
+      "severity": "warning",
+      "detail": "primary_structured_rows=0"
+    },
+    {
+      "check": "html_table_probe_possible",
+      "passed": false,
+      "severity": "warning",
+      "detail": "html_table_probe_possible=False; rows=1"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current validated candidate sha unchanged"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_dataset_modified=False"
+    },
+    {
+      "check": "raw_acquisition_repair_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_acquisition_repair_performed=True"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "canonical_comparison_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_comparison_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_candidate_performed=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "final_50k_gate_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "40996 < 50000"
+    },
+    {
+      "check": "krx_repaired_raw_validation_next_needed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.19D_FIX - KRX Repaired Raw Validation"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "raw-acquisition-repair-only",
+    "network_download_performed": true,
+    "endpoint_calls_performed": true,
+    "query_sweep_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_acquisition_repair_performed": true,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_canonical_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "closure_report_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_comparison_performed": false,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_candidate_dataset_read": true,
+    "current_candidate_dataset_modified": false,
+    "current_candidate_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "final_target_50k_active": true,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.19D_FIX - KRX Repaired Raw Validation"
+}

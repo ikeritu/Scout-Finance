@@ -1,0 +1,12 @@
+OTP token did not look valid; CSV download not attempted.
+source_otp_artifact=krx_data_marketplace_otp_mdcstat01901_all
+token_sample=<html>
+<head>
+  <title>Error - KRX | Market Data System</title>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="?????" />
+  <meta name="description" content="??????? ????(Marketdata), ?????, ??????(SMILE) ? ?????? ?????? ???? ?? ???" />
+  <meta name="keywords" content

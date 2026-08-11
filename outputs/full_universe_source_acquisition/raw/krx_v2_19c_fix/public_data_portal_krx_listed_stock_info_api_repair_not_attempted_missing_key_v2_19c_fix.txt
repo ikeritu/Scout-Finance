@@ -1,0 +1,3 @@
+DATA_GO_KR_SERVICE_KEY is not set.
+Optional data.go.kr API repair call was not attempted.
+KRX primary repair remains based on official KRX sources.
