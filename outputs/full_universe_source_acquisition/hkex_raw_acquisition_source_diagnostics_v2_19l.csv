@@ -1,0 +1,6 @@
+source_id,artifact_id,http_status,http_success,byte_count,content_type,title,html_like,anchor_count,script_count,form_count,table_count,official_link_count,candidate_related_link_count,download_like_link_count,raw_path
+hkex_securities_lists,hkex_securities_lists_page,200,True,398508,text/html; charset=utf-8,Securities Lists,True,205,43,1,8,226,89,8,outputs\full_universe_source_acquisition\raw\hkex_v2_19l\01_hkex_securities_lists_page.html
+hkex_equities,hkex_equities_page,200,True,457338,text/html; charset=utf-8,Equities,True,267,42,1,9,278,144,7,outputs\full_universe_source_acquisition\raw\hkex_v2_19l\02_hkex_equities_page.html
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,200,True,257012,text/html; charset=utf-8,Newly Listed Securities,True,197,43,1,10,211,90,0,outputs\full_universe_source_acquisition\raw\hkex_v2_19l\03_hkex_newly_listed_securities_page.html
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,200,True,378551,text/html; charset=utf-8,HKEX Market Search Result,True,163,43,1,9,183,55,0,outputs\full_universe_source_acquisition\raw\hkex_v2_19l\04_hkex_market_search_listing_result_page.html
+hkexnews_issuer_search,hkexnews_index_page,200,True,9169,text/html,HKEXnews,True,5,16,0,0,21,3,0,outputs\full_universe_source_acquisition\raw\hkex_v2_19l\05_hkexnews_index_page.htm

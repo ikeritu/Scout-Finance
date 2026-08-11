@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,HKEX,run_hkex_raw_validation,high,HKEX raw artifacts have been captured and need validation before any extraction.,v2.19M - HKEX Raw Validation,raw validation only; do not extract candidates; do not modify canonical
+2,HKEX,review_discovered_links_for_official_download_candidates,high,HTML pages may expose official downloadable files or API-like resources.,v2.19M - HKEX Raw Validation,only official HKEX/HKEXnews links; no unofficial mirrors
+3,50k,preserve_quality_gate,high,"Current candidate universe remains 40,996; rows needed to 50k remain 9,004.",v2.19M - HKEX Raw Validation,no candidate append before extraction + canonical validation; no full59k

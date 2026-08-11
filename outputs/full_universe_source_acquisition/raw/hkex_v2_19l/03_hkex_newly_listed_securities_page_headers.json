@@ -1,0 +1,33 @@
+{
+  "version": "v2.19L",
+  "source_id": "hkex_newly_listed_securities",
+  "artifact_id": "hkex_newly_listed_securities_page",
+  "requested_url": "https://www.hkex.com.hk/Services/Trading/Securities/Trading-News/Newly-Listed-Securities?sc_lang=en",
+  "final_url": "https://www.hkex.com.hk/Services/Trading/Securities/Trading-News/Newly-Listed-Securities?sc_lang=en",
+  "status_code": 200,
+  "ok": true,
+  "error_type": "",
+  "error_message": "",
+  "headers": {
+    "Cache-Control": "no-cache, no-store,no-cache, no-store",
+    "Pragma": "no-cache,no-cache",
+    "Content-Type": "text/html; charset=utf-8",
+    "Expires": "-1",
+    "X-Content-Type-Options": "nosniff",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "Access-Control-Allow-Origin": "*",
+    "Content-Security-Policy": "frame-ancestors 'self' https://www.hkex.com.hk https://sc.hkex.com.hk/ http://sc.hkex.com.hk/ http://www.hkgem.com http://www.hkex.com.hk http://www.hkexgroup.com http://sc.hkex.com.hk http://sc.hkexnews.hk http://www.hkexnews.hk https://google.com.hk https://www.recaptcha.net/ https://www1.hkex.com.hk https://assets.adobedtm.com https://hkexchanges.demdex.net https://dpm.demdex.net https://hkexchanges.data.adobedc.net https://hkexchanges.sc.omtrdc.net https://cm.everesttech.net https://hkexchanges.2o7.net https://*.mktoweb.com https://markets.hkex.com.hk https://piid.hkex.com.hk; frame-src 'self' http://www.hkgem.com http://www.hkex.com.hk http://www.hkexgroup.com http://sc.hkex.com.hk https://sc.hkex.com.hk http://sc.hkexnews.hk http://www.hkexnews.hk http://asia.tools.euroland.com https://google.com.hk https://www.hkexgroup.com https://view.vzaar.com https://video.vzaar.com https://www.google.com https://www.recaptcha.net/ https://www1.hkex.com.hk https://assets.adobedtm.com https://hkexchanges.demdex.net https://dpm.demdex.net https://hkexchanges.data.adobedc.net https://hkexchanges.sc.omtrdc.net https://cm.everesttech.net https://hkexchanges.2o7.net https://*.mktoweb.com https://markets.hkex.com.hk https://piid.hkex.com.hk; ",
+    "X-XSS-Protection": "1; mode=block",
+    "X-Frame-Options": "SameOrigin",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, DELETE",
+    "X-Akamai-Transformed": "0 - 0 -",
+    "Date": "Tue, 11 Aug 2026 18:35:15 GMT",
+    "Transfer-Encoding": "chunked",
+    "Connection": "Transfer-Encoding",
+    "Set-Cookie": "bm_so=34333ED9800EF52BB10209B8E91D44039638535ADE1B23378B4718770104C3E5~YAAQZGwUAu2rCrCfAQAAeXsb8gjGdZA+23Kd8xkcVOMrF0XUMEe5TnlR7fr33jQW7SvvKlvsOM4sCi+RMFXlFT4oZf4X43ERmWq5pFtWfJrhSDAOl9IAlvGGmJ+axgiVsBwIVSdywmnd32kkICYU94KzpJjQ9HJXLX9+q9c4BxUEo+aZ6MTO5RFTwWsvxs8u7D6gHUqwsWkQH+p8Xm1hK6k1pUdyfY5/f7eiUOByrpy4PJRsR92M6dD6wFfMQmI18RbDDLXY8FfhhTGDI/WSV49X+9Z7gUWZ+gpBPQDUEHQ9TpQRKqRxFvzz+gJu3rCThZCGoMnPz7ytFwbCNq6ddtSczjvLtGRCiGy42bTNpG7ChaJOour9JZ/jdZfSz71rpWTh2y90m+r/VBqqGN/rNJqWw4qjZjbkJXM5iTm5V7mBa52MKIb65Cdw7NUrORNS75u4BcXQhpeEdFPMv3dg4jL/tg==; Domain=.hkex.com.hk; Path=/; Expires=Wed, 12 Aug 2026 18:35:15 GMT; Max-Age=86400; Secure"
+  },
+  "content_type": "text/html; charset=utf-8",
+  "elapsed_ms": 4525,
+  "fetched_at_utc": "2026-08-11T18:35:10.994061+00:00"
+}

@@ -1,0 +1,299 @@
+{
+  "version": "v2.19L",
+  "phase": "HKEX Raw Acquisition",
+  "phase_type": "raw-acquisition-only",
+  "status": "HKEX_RAW_ACQUISITION_COMPLETED_RAW_FILES_CAPTURED_VALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-11T18:35:23.438397+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "current_validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_twse_tpex_v2_18g.csv",
+    "current_validated_candidate_rows": 40996,
+    "final_target_candidates": 50000,
+    "rows_needed_to_50k": 9004,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED",
+    "active_canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "active_canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "current_candidate_sha256_before": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2",
+    "current_candidate_sha256_after": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+  },
+  "v2_19k_context": {
+    "status": "HKEX_ACQUISITION_PLAN_COMPLETED_OFFICIAL_SOURCES_READY_FOR_RAW_ACQUISITION_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+    "selected_route_id": "HKEX_HONG_KONG_EXCHANGE",
+    "selected_provider": "HKEX",
+    "source_inventory_rows": 5,
+    "raw_artifact_plan_rows": 5,
+    "validation_strategy_rows": 5,
+    "filtering_policy_rows": 4
+  },
+  "acquisition_summary": {
+    "source_inventory_rows": 5,
+    "raw_artifact_plan_rows": 5,
+    "artifacts_written_count": 5,
+    "raw_files_exist_count": 5,
+    "header_files_exist_count": 5,
+    "nonempty_raw_count": 5,
+    "http_success_count": 5,
+    "http_error_count": 0,
+    "official_scope_violations": 0,
+    "discovered_links_count": 1028,
+    "official_discovered_links_count": 919,
+    "candidate_related_links_count": 381,
+    "download_like_links_count": 15,
+    "html_signal_rows": 95,
+    "html_signal_present_count": 53,
+    "current_validated_candidate_rows": 40996,
+    "rows_needed_to_50k": 9004,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0
+  },
+  "checks": [
+    {
+      "check": "v2_19k_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\hkex_acquisition_plan_v2_19k.json"
+    },
+    {
+      "check": "v2_19k_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX_ACQUISITION_PLAN_COMPLETED_OFFICIAL_SOURCES_READY_FOR_RAW_ACQUISITION_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "source_inventory_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\hkex_acquisition_plan_source_inventory_v2_19k.csv"
+    },
+    {
+      "check": "raw_artifact_plan_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\hkex_acquisition_plan_raw_artifacts_v2_19k.csv"
+    },
+    {
+      "check": "source_inventory_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "source_inventory_rows=5"
+    },
+    {
+      "check": "raw_artifact_plan_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_artifact_plan_rows=5"
+    },
+    {
+      "check": "validation_strategy_loaded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validation_strategy_rows=5"
+    },
+    {
+      "check": "filtering_policy_loaded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "filtering_policy_rows=4"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "current_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_rows=40996"
+    },
+    {
+      "check": "rows_needed_to_50k_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_50k=9004"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current validated candidate sha unchanged"
+    },
+    {
+      "check": "raw_directory_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\raw\\hkex_v2_19l"
+    },
+    {
+      "check": "planned_artifacts_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "artifacts_written=5; planned=5"
+    },
+    {
+      "check": "raw_files_exist",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_files_exist=5/5"
+    },
+    {
+      "check": "header_files_exist",
+      "passed": true,
+      "severity": "critical",
+      "detail": "header_files_exist=5/5"
+    },
+    {
+      "check": "raw_files_nonempty",
+      "passed": true,
+      "severity": "critical",
+      "detail": "nonempty_raw_count=5/5"
+    },
+    {
+      "check": "official_scope_no_violations",
+      "passed": true,
+      "severity": "critical",
+      "detail": "official_scope_violations=0"
+    },
+    {
+      "check": "http_success_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "http_success_count=5; http_error_count=0"
+    },
+    {
+      "check": "discovered_links_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "discovered_links_count=1028"
+    },
+    {
+      "check": "candidate_related_links_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "candidate_related_links_count=381"
+    },
+    {
+      "check": "download_like_links_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "download_like_links_count=15"
+    },
+    {
+      "check": "html_signals_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "html_signal_present_count=53"
+    },
+    {
+      "check": "final_50k_gate_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "40996 < 50000"
+    },
+    {
+      "check": "network_used_by_raw_acquisition",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=True"
+    },
+    {
+      "check": "raw_acquisition_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_acquisition_performed=True"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "canonical_comparison_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_comparison_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_candidate_performed=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "next_phase_hkex_raw_validation",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.19M - HKEX Raw Validation"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "raw-acquisition-only",
+    "network_download_performed": true,
+    "endpoint_calls_performed": true,
+    "query_sweep_performed": false,
+    "route_selection_performed": false,
+    "acquisition_plan_performed": false,
+    "raw_acquisition_performed": true,
+    "raw_acquisition_repair_performed": false,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_canonical_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_comparison_performed": false,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_candidate_dataset_read": true,
+    "current_candidate_dataset_modified": false,
+    "current_candidate_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "final_target_50k_active": true,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.19M - HKEX Raw Validation"
+}

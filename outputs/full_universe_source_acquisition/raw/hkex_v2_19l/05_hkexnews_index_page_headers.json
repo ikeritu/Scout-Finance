@@ -1,0 +1,32 @@
+{
+  "version": "v2.19L",
+  "source_id": "hkexnews_issuer_search",
+  "artifact_id": "hkexnews_index_page",
+  "requested_url": "https://www.hkexnews.hk/index.htm",
+  "final_url": "https://www.hkexnews.hk/index.htm",
+  "status_code": 200,
+  "ok": true,
+  "error_type": "",
+  "error_message": "",
+  "headers": {
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "X-Frame-Options": "SAMEORIGIN, ALLOW-FROM https://sc.hkexnews.hk/",
+    "Content-Security-Policy": "frame-ancestors 'self' http://sc.hkexnews.hk; frame-src 'self' http://sc.hkexnews.hk;",
+    "Access-Control-Allow-Origin": "https://sc.hkexnews.hk",
+    "Last-Modified": "Mon, 18 Aug 2025 12:01:31 GMT",
+    "Accept-Ranges": "bytes",
+    "X-Content-Type-Options": "nosniff",
+    "X-XSS-Protection": "1; mode=block",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=()",
+    "Content-Type": "text/html",
+    "X-Akamai-Transformed": "0 - 0 -",
+    "Date": "Tue, 11 Aug 2026 18:35:22 GMT",
+    "Content-Length": "9169",
+    "Connection": "close",
+    "Set-Cookie": "bm_so=F894476EBB39D9D7551C95ACD266292DBA852879771185F8EC9EF32490FC202E~YAAQUvPTF6oDw7WfAQAAu5gb8gitXQoPJweeDhNPMAsvxFHMl82TKmqD5EsTaTf8h1IHZo+tmHQ6+osoNLhf9vfhPSbQRQuqCvCdInwUxAh01EIaknF6nRNHmGY6K8sO+0PTR0xJf41aRAK72EH0ldeE4SfIGNL14IHvCVfzEcuhHcdThZG8s+8uaQmTEygiroLWMV+GDJWlTKjj10ikUHWrI3lrJM9dKkDRkkH/JQ7aZNptjKE2hKuPb6w0HN1Rq0y5NUdvrOQ2s0DVMGkffH2mTpMZv/oDwrMpUV/1+XUfwAcUfd08bBTo7kLQPj95vAhYeQoNENrHdFUB2PFwPOwtOslRxPTJkWUSECf35wcAdCSGPbOxz1ecwcoZVnoZDQyOmW2HLixql04gcodSXlaFDHQl6gjZKaPwmSk8p3LHIqJB5zvgbPJaLoACKFWMIB1tRn/xCKwjkYILasLOb5ZlqQ==; Domain=.hkexnews.hk; Path=/; Expires=Wed, 12 Aug 2026 18:35:22 GMT; Max-Age=86400; Secure"
+  },
+  "content_type": "text/html",
+  "elapsed_ms": 2433,
+  "fetched_at_utc": "2026-08-11T18:35:20.301603+00:00"
+}

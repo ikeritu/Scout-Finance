@@ -1,0 +1,1029 @@
+source_id,artifact_id,link_order,link_type,label,url,host,official_scope_allowed,looks_download,looks_candidate_related
+hkex_securities_lists,hkex_securities_lists_page,1,anchor,,https://www.hkex.com.hk/?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,2,anchor,,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists?sc_lang=en#,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,5,anchor,简,https://www.hkex.com.hk/Global/Disclaimer-For-HanWeb,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,6,anchor,About HKEX,https://www.hkexgroup.com/about-hkex/about-hkex?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,7,anchor,Investor Relations,http://www.hkexgroup.com/Investor-Relations?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,8,anchor,Corporate Governance,http://www.hkexgroup.com/Corporate-Governance?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,9,anchor,Sustainability,https://www.hkexgroup.com/Sustainability?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,10,anchor,Media Centre,https://www.hkexgroup.com/Media-Centre?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,11,anchor,Careers,https://www.hkexgroup.com/about-hkex/careers-at-hkex?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,12,anchor,HKEX Group,http://www.hkexgroup.com/,www.hkexgroup.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,13,anchor,LME,https://www.lme.com/,www.lme.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,14,anchor,Bond Connect,https://www.chinabondconnect.com/en/index.html,www.chinabondconnect.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,15,anchor,QME,https://www.qme.com/zh-hans,www.qme.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,16,anchor,HKEXnews,http://www.hkexnews.hk/,www.hkexnews.hk,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,17,anchor,CESC,https://www.cesc.com/en/index.html,www.cesc.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,18,anchor,Client Connect,https://connect.hkex.com.hk,connect.hkex.com.hk,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,22,anchor,Equities,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,23,anchor,Exchange Traded Products,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,24,anchor,Structured Products,https://www.hkex.com.hk/Products/Securities/Structured-Products/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,25,anchor,Real Estate Investment Trusts,https://www.hkex.com.hk/Products/Securities/Real-Estate-Investment-Trusts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,26,anchor,Debt Securities,https://www.hkex.com.hk/Products/Securities/Debt-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,28,anchor,Equity Index,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Index-(HSI)/Hang-Seng-Index-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,29,anchor,Single Stock,https://www.hkex.com.hk/Products/Listed-Derivatives/Single-Stock/Stock-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,30,anchor,Foreign Exchange,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange/USD-CNH-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,31,anchor,Interest Rate,https://www.hkex.com.hk/Products/Listed-Derivatives/Interest-Rate/HKEX-China-Government-Bond-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,32,anchor,Commodities,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/USD-Gold?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,34,anchor,Eligible OTC Clear Products,https://www.hkex.com.hk/Products/OTC-Derivatives/Eligible-OTC-Clear-Products?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,35,anchor,Interest Rate Swaps,https://www.hkex.com.hk/Products/OTC-Derivatives/Interest-Rate-Swaps?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,36,anchor,Non Deliverable Forwards,https://www.hkex.com.hk/Products/OTC-Derivatives/Non-Deliverable-Forwards?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,37,anchor,Cross Currency Swaps,https://www.hkex.com.hk/Products/OTC-Derivatives/Cross-Currency-Swaps?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,38,anchor,Deliverable FX,https://www.hkex.com.hk/Products/OTC-Derivatives/Deliverable-FX?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,39,anchor,Find a Partner,https://www.hkex.com.hk/Products/Find-a-Partner?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,40,anchor,MSCI Index Futures & Options,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/MSCI-Indexes/MSCI-Indexes?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,41,anchor,HKEX Sustainable & Green Exchange,https://www.hkex.com.hk/stage,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,45,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,46,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,48,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Derivatives/Overview/Trading-Mechanism?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,49,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Derivatives/Infrastructure/HKATS?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,51,anchor,Hosting Services,https://www.hkex.com.hk/Services/Connectivity/Hosting-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,52,anchor,SDNet/2,https://www.hkex.com.hk/Services/Connectivity/SDNet_2?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,54,anchor,Real Time Data Services,https://www.hkex.com.hk/Services/Market-Data-Services/Real-Time-Data-Services/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,55,anchor,Historical Data Services,https://www.hkex.com.hk/Services/Market-Data-Services/Historical-Data-Services/HKEX-Data-Marketplace?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,56,anchor,Infrastructure,https://www.hkex.com.hk/Services/Market-Data-Services/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,57,anchor,Index Services,https://www.hkex.com.hk/Services/Market-Data-Services/Index-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,59,anchor,Rules,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Rules/Overview?sc_lang=en#hello,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,60,anchor,Forms,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Forms/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,61,anchor,Fees,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Fees/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,64,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/Securities/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,65,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/Securities/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,66,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/Securities/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,67,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/Securities/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,69,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,70,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,71,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,72,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,74,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Overview/Clearing-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,75,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,76,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,77,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,79,anchor,Settlement - Securities,https://www.hkex.com.hk/Services/Settlement-and-Depository/Settlement?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,80,anchor,Depository,https://www.hkex.com.hk/Services/Settlement-and-Depository/Depository?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,81,anchor,Uncertificated Securities Market,https://www.hkex.com.hk/Services/Settlement-and-Depository/USM?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,82,anchor,Common Nominee Services,https://www.hkex.com.hk/Services/Settlement-and-Depository/Common-Nominee-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,83,anchor,Securities Admission into CCASS,https://www.hkex.com.hk/Services/Settlement-and-Depository/Securities-Admission-into-CCASS?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,85,anchor,Unclaimed Entitlements Held by HKSCC Nominees Limited,https://www.hkex.com.hk/Services/Settlement-and-Depository/Unclaimed-Entitlements-Held-by-HKSCC-Nominees-Limited?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,87,anchor,Client Connect,https://www.hkex.com.hk/Services/Platform-Services/Client-Connect?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,88,anchor,Corporate Action Messaging Standardisation,https://www.hkex.com.hk/Services/Settlement-and-Depository/Common-Nominee-Services/Corporate-Action-Message-Standardisation-(CAMS)?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,89,anchor,FINI - A New Era for Hong Kong’s IPO market,https://www.hkex.com.hk/Services/Platform-Services/FINI?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,90,anchor,Orion Cash Platform,https://www.hkex.com.hk/Services/Platform-Services/Orion-Cash-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,91,anchor,Orion Derivatives Platform,https://www.hkex.com.hk/Services/Platform-Services/Orion-Derivatives-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,92,anchor,HKEX Issuer Access Platform,https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,93,anchor,Integrated Fund Platform,https://www.hkex.com.hk/Services/Platform-Services/Integrated-Fund-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,94,anchor,Digital Payment Adoption for After-Hours Trading,https://www.hkex.com.hk/Services/Platform-Services/Digital-Payment-Adoption-for-After-Hours-Trading?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,95,anchor,Circulars & Notices,https://www.hkex.com.hk/Services/Circulars-and-Notices/Participant-and-Members-Circulars?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,96,anchor,Become a Participant,https://www.hkex.com.hk/Services/Become-a-Participant?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,97,anchor,HKEX Connect Hall,https://www.hkex.com.hk/Services/HKEX-Connect-Hall?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,98,anchor,Join Our Markets,https://www.hkex.com.hk/Join-Our-Market/IPO/Listing-with-HKEX?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,101,anchor,GEM,https://www.hkex.com.hk/Join-Our-Market/IPO/GEM?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,102,anchor,Southeast Asia Listing Insights,https://www.hkex.com.hk/Join-Our-Market/IPO/Listing-with-HKEX/Southeast-Asia-Hub?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,104,anchor,Stock Connect,https://www.hkex.com.hk/Mutual-Market/Stock-Connect?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,107,anchor,LME,http://www.lme.com,www.lme.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,108,anchor,QME,http://www.qme.com,www.qme.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,109,anchor,Sustainable Finance at HKEX,https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,110,anchor,Core Climate,https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance/Core-Climate?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,111,anchor,Sustainable & Green Exchange (STAGE),https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance/HKEX-STAGE?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,112,anchor,Biotech @ HKEX,https://www.hkex.com.hk/Join-Our-Market/Biotech?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,113,anchor,Listing of Specialist Technology Companies,https://www.hkex.com.hk/Listing/Rules-and-Guidance/Listing-of-Specialist-Technology-Companies?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,115,anchor,Listing Regulations,https://www.hkex.com.hk/Listing/Listing-Regulations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,116,anchor,Explore By Role,https://www.hkex.com.hk/Listing/Explore-By-Role/Potential-Applicants?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,118,anchor,Listed Issuers,https://www.hkex.com.hk/Listing/Explore-By-Role/Listed-Issuers?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,119,anchor,Directors,https://www.hkex.com.hk/Listing/Explore-By-Role/Directors?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,120,anchor,Rules & Resources,https://www.hkex.com.hk/Listing/Rules-and-Resources/Rules-and-Resources?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,121,anchor,Listing Rules,https://www.hkex.com.hk/Listing/Rules-and-Resources/Listing-Rules?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,122,anchor,Guidance,https://www.hkex.com.hk/Listing/Rules-and-Resources/Guidance?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,123,anchor,"Checklists, forms & templates",https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,124,anchor,Enforcement,https://www.hkex.com.hk/Listing/Disciplinary-and-Enforcement/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,125,anchor,News & Publications,https://www.hkex.com.hk/Listing/News-and-Publications/News-and-Publications?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,126,anchor,What's New,https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,127,anchor,Listing Newsletters,https://www.hkex.com.hk/Listing/News-and-Publications/Newsletters/All-newsletters?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,128,anchor,Reports,https://www.hkex.com.hk/Listing/News-and-Publications/Reports?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,129,anchor,Listing Consultations,https://www.hkex.com.hk/Listing/News-and-Publications/Listing-Consultations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,130,anchor,Sustainability & Corporate Governance,https://www.hkex.com.hk/Listing/Sustainability/ESG-Academy?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,132,anchor,Board Diversity Hub,https://www.hkex.com.hk/Listing/Sustainability/Board-Diversity-hub/Board-Diversity-Home?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,133,anchor,Corporate Governance Practices,https://www.hkex.com.hk/Listing/Sustainability/Corporate-Governance-Practices?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,134,anchor,Shareholder Value in Focus,https://www.hkex.com.hk/Listing/Sustainability/Shareholder-Value-in-Focus/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,135,anchor,INED Corner,https://www.hkex.com.hk/Listing/Sustainability/INED-Corner/INED-Corner-Home?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,136,anchor,Education Centre,https://www.hkex.com.hk/Listing/Education-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,137,anchor,About Listing & Contacts,https://www.hkex.com.hk/Listing/About-Listing-and-Contacts/About-Listing-and-Contacts?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,138,anchor,News Centre,https://www.hkex.com.hk/News/News-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,139,anchor,Corporate News Releases,https://www.hkex.com.hk/News/News-Release?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,140,anchor,Regulatory Announcements,https://www.hkex.com.hk/News/Regulatory-Announcements?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,141,anchor,Market Communications,https://www.hkex.com.hk/News/Market-Communications?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,142,anchor,Market Consultations,https://www.hkex.com.hk/News/Market-Consultations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,144,anchor,HKEX Calendar,https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,145,anchor,Research Reports,https://www.hkex.com.hk/News/Research-Reports?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,147,anchor,Connect Hub,https://www.hkex.com.hk/Mutual-Market/Connect-Hub?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,149,anchor,Bond Connect,http://www.chinabondconnect.com,www.chinabondconnect.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,150,anchor,Swap Connect,https://www.hkex.com.hk/Mutual-Market/Swap-Connect/Swap-Connect?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,151,anchor,Daily Statistics,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Historical-Daily?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,152,anchor,Market Highlights,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Hong-Kong-and-Mainland-Market-Highlights?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,153,anchor,Eligible Securities,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Eligible-Stocks/View-All-Eligible-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,156,anchor,Equities,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,157,anchor,Exchange Traded Products,https://www.hkex.com.hk/Market-Data/Securities-Prices/Exchange-Traded-Products?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,158,anchor,Derivative Warrants,https://www.hkex.com.hk/Market-Data/Securities-Prices/Derivative-Warrants?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,159,anchor,Inline Warrants,https://www.hkex.com.hk/Market-Data/Securities-Prices/Inline-Warrants?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,160,anchor,Callable Bull / Bear Contracts,https://www.hkex.com.hk/Market-Data/Securities-Prices/Callable-Bull-Bear-Contracts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,161,anchor,Real Estate Investment Trusts,https://www.hkex.com.hk/Market-Data/Securities-Prices/Real-Estate-Investment-Trusts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,162,anchor,Debt Securities,https://www.hkex.com.hk/Market-Data/Securities-Prices/Debt-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,164,anchor,Equity Index,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Equity-Index?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,165,anchor,Single Stock,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Single-Stock?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,166,anchor,Foreign Exchange,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Foreign-Exchange?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,167,anchor,Interest Rate,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Interest-Rate?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,168,anchor,Commodities,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Commodities?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,170,anchor,Consolidated Reports,https://www.hkex.com.hk/Market-Data/Statistics/Consolidated-Reports/HKEX-Monthly-Market-Highlights?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,171,anchor,Securities Market,https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,172,anchor,Derivatives Market,https://www.hkex.com.hk/Market-Data/Statistics/Derivatives-Market?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,173,anchor,Participant,https://www.hkex.com.hk/Market-Data/Statistics/Participant/Stock-Exchange-Participants_-Market-Share-Report?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,174,anchor,"Clearing, Settlement and Depository",https://www.hkex.com.hk/Market-Data/Statistics/Clearing-and-Settlement-and-Depository?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,175,anchor,HKEXnews,https://www.hkex.com.hk/Market-Data/HKEX-News?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,176,anchor,News Alerts,https://www.hkex.com.hk/Market-Data/News-Alerts?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,177,anchor,Market Data Services,https://www.hkex.com.hk/Services/Market-Data-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,361,anchor,Securities Lists,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,362,anchor,Securities,https://www.hkex.com.hk/Services/Trading/Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,363,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Securities/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,365,anchor,Regulated Short Selling,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Regulated-Short-Selling?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,366,anchor,Exchange Rates for RMB Equity Trading Support Facility (TSF),https://www.hkex.com.hk/Services/Trading/Securities/Overview/Exchange-Rates-for-RMB-Equity-Trading-Support-Facility-(TSF)?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,367,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,369,anchor,OCG-C,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/OCGC?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,370,anchor,Testing Services,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/Testing-Services?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,371,anchor,SDNet/2,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/Connectivity?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,372,anchor,Stamp Duty Reporting and Payment,https://www.hkex.com.hk/Services/Trading/Securities/Stamp-Duty-Reporting-and-Payment?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,373,anchor,ECP & Documentation,https://www.hkex.com.hk/Services/Trading/Securities/Stamp-Duty-Reporting-and-Payment/ECP_Documentation?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,374,anchor,Exchange Rates for Stamp Duty Calculation,https://www.hkex.com.hk/Services/Trading/Securities/Stamp-Duty-Reporting-and-Payment/Exchange-rates-for-stamp-duty-Calculation?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,375,anchor,Securities exempt from Hong Kong stamp duty,https://www.hkex.com.hk/Services/Trading/Securities/Stamp-Duty-Reporting-and-Payment/Securities-exempt-from-Hong-Kong-stamp-duty?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,376,anchor,Derivatives,https://www.hkex.com.hk/Services/Trading/Derivatives?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,377,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Derivatives/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,379,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Derivatives/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,381,anchor,SDNet/2,https://www.hkex.com.hk/Services/Trading/Derivatives/Infrastructure/SDNet2?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,382,anchor,Market Maker Programmes,https://www.hkex.com.hk/Services/Trading/Derivatives/Market-Maker-Programmes?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,383,anchor,Primary Market Maker Program,https://www.hkex.com.hk/Services/Trading/Derivatives/Market-Maker-Programmes/Primary-Market-Maker-Program?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,384,anchor,List of Market/Makers/Liquidity Providers,https://www.hkex.com.hk/Services/Trading/Derivatives/Market-Maker-Programmes/List-of-Market_Makers_Liquidity-Providers?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,385,anchor,Market Maker Obligations and Incentives,https://www.hkex.com.hk/Services/Trading/Derivatives/Market-Maker-Programmes/Market-Maker-Obligations-and-Incentives?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,386,anchor,Final Settlement Prices,https://www.hkex.com.hk/Services/Trading/Derivatives/Final-Settlement-Prices?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,387,anchor,HKEX Derivatives Information for Overseas Investors,https://www.hkex.com.hk/Services/Trading/HKEX-Derivatives-Information-for-Overseas-Investors?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,388,anchor,,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Closing-Auction-Session-(CAS)-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,390,anchor,,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Redirect_List-of-Closing-Auction-Session-(CAS)-Securities/list-of-cas-securities.xls,www.hkex.com.hk,True,True,True
+hkex_securities_lists,hkex_securities_lists_page,392,anchor,,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Volatility-Control-Mechanism-(VCM)-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,394,anchor,,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Redirect_List-of-Volatility-Control-Mechanism-(VCM)-Securities/list-of-vcm-securities.xls,www.hkex.com.hk,True,True,True
+hkex_securities_lists,hkex_securities_lists_page,396,anchor,,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/ISINs-assigned-by-HKEX/isinsehk.xls,www.hkex.com.hk,True,True,True
+hkex_securities_lists,hkex_securities_lists_page,398,anchor,,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/ISINs-assigned-by-Other-Numbering-Agencies/isino.xls,www.hkex.com.hk,True,True,True
+hkex_securities_lists,hkex_securities_lists_page,400,anchor,,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Copy-of-Securities-Using-Standard-Transfer-Form-(including-GEM)-By-Stock-Code-Order?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,402,anchor,,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Securities-Using-Standard-Transfer-Form-(including-GEM)-By-Stock-Code-Order/secstkorder.xls,www.hkex.com.hk,True,True,True
+hkex_securities_lists,hkex_securities_lists_page,404,anchor,,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Copy-of-Securities-Using-Standard-Transfer-Form-(including-GEM)-By-English-Stock-Short-Name-Order?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,406,anchor,,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Securities-Using-Standard-Transfer-Form-(including-GEM)-By-English-Stock-Short-Name-Order/englishstk.xls,www.hkex.com.hk,True,True,True
+hkex_securities_lists,hkex_securities_lists_page,408,anchor,,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Designated-Securities-Eligible-for-Short-Selling?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,410,anchor,,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Designated-Securities-Eligible-for-Short-Selling/20170920?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,412,anchor,Trading Hours,https://www.hkex.com.hk/Services/Trading-hours-and-Severe-Weather-Arrangements/Trading-Hours?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,413,anchor,Severe Weather Arrangements,https://www.hkex.com.hk/Services/Trading-hours-and-Severe-Weather-Arrangements/Severe-Weather-Arrangements?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,414,anchor,HKEX Calendar,https://www.hkex.com.hk/News/Highlight/HKEX-Calendar?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,415,anchor,Trading Notices,https://www.hkex.com.hk/Services/Trading/Securities/Trading-News/Trading-Notices?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,416,anchor,Newly Listed Securities,https://www.hkex.com.hk/Services/Trading/Securities/Trading-News/Newly-Listed-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,417,anchor,Trading Arrangement Table (TAT),https://www.hkex.com.hk/Services/Trading/Securities/Trading-News/Trading-Arrangement-Table-(TAT)?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,418,anchor,Trading Arrangement Notices,https://www.hkex.com.hk/Services/Trading/Securities/Trading-News/Trading-Arrangement-Notices?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,419,anchor,VCM (Securities Market) Cooling-off Period Trigger History,https://www.hkex.com.hk/eng/vcm/vcmtriggersecurity.aspx,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,420,anchor,Full List of Securities,https://www.hkex.com.hk/eng/services/trading/securities/securitieslists/ListOfSecurities.xlsx,www.hkex.com.hk,True,True,True
+hkex_securities_lists,hkex_securities_lists_page,423,anchor,List of Dual Counter Securities,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Dual_Counter_Security_List.xlsx,www.hkex.com.hk,True,True,True
+hkex_securities_lists,hkex_securities_lists_page,430,anchor,,https://twitter.com/hkexgroup,twitter.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,431,anchor,,https://www.linkedin.com/company/hkex,www.linkedin.com,False,False,True
+hkex_securities_lists,hkex_securities_lists_page,432,anchor,,https://www.hkex.com.hk/Global/Follow-Us-on-WeChat?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,433,anchor,,https://www.youtube.com/user/hkexgroup,www.youtube.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,434,anchor,,https://www.weibo.com/6508212764,www.weibo.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,435,anchor,Alert,https://www.hkex.com.hk/Global/Exchange/Alert?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,436,anchor,Contact,https://www.hkex.com.hk/Global/Exchange/Contact?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,437,anchor,Career,https://www.hkexgroup.com/About-HKEX/Careers-at-HKEX?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,438,anchor,FAQ,https://www.hkex.com.hk/Global/Exchange/FAQ/Top-Questions?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,439,anchor,Investor Product Videos,https://www.hkex.com.hk/Products/Product-Videos?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,440,anchor,Market System Status,https://www.hkex.com.hk/Global/Exchange/Market-System-Status?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,441,anchor,Sitemap,https://www.hkex.com.hk/Global/Exchange/Sitemap?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,442,anchor,Glossary,https://www.hkex.com.hk/Global/Exchange/Glossary?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,443,anchor,HKEX Subscription Centre,https://www.hkex.com.hk/Global/Exchange/Subscription-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,444,anchor,Terms of Use,https://www.hkex.com.hk/Global/Exchange/Terms-of-Use?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,445,anchor,HKEX Privacy Notices,https://www.hkex.com.hk/Global/Exchange/HKEX-Privacy-Notices?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,446,anchor,Cookie Notice,https://www.hkex.com.hk/Global/Exchange/Cookie-Notice?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,447,anchor,RSS,https://www.hkex.com.hk/Services/RSS-Feeds?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,448,anchor,,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists?sc_lang=en#hkex_page_header,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,1,script,,https://www.googletagmanager.com/gtag/js?id=UA-51785376-1,www.googletagmanager.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,2,script,,https://assets.adobedtm.com/fbccf582fbe1/8fbefc7f35d2/launch-5e83ee102cdb.min.js,assets.adobedtm.com,False,False,False
+hkex_securities_lists,hkex_securities_lists_page,3,script,,https://www.hkex.com.hk/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZO4t08T6HmhnDGbjX96oZdPaMh8lD2t8x85rkS62NDQlWwa4-ghWuZIAi_nPQx-cCAeCbu3IA5NzIU5UHeyEQ9Q3sexmG-UayYvbywRkl5Yk0&t=638628495619783110,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,4,script,,https://www.hkex.com.hk/Scripts/HKEX/HKEX Market/scMainMarket.js?v=20260508105816,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,5,script,,https://www.hkex.com.hk/assets/js/jquery.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,6,script,,https://www.hkex.com.hk/assets/js/bootstrap.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,7,script,,https://www.hkex.com.hk/assets/js/bootstrap-restrict.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,8,script,,https://www.hkex.com.hk/assets/js/vendor.js?v=20211220103950,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,9,script,,https://www.hkex.com.hk/Scripts/GLOBAL/polyfill.min.js?v=20211105150722,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,10,script,,https://www.hkex.com.hk/Scripts/GLOBAL/SearchResultAnalytics.js?v=20221206091346,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,11,script,,https://www.hkex.com.hk/assets/js/jquery.fancybox.pack.js?v=20230512122203,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,12,script,,https://www.hkex.com.hk/Scripts/HKEX/HKEX Market/jquery.ba-throttle-debounce.min.js?v=20211105150724,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,13,script,,https://www.hkex.com.hk/assets/js/jquery.stickysort.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,14,script,,https://www.hkex.com.hk/assets/js/validator.js?v=20220307134728,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,15,script,,https://www.hkex.com.hk/assets/js/jquery-ui.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,16,script,,https://www.hkex.com.hk/assets/js/js.cookie.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,17,script,,https://www.hkex.com.hk/assets/js/jquery.scrolltabs.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,18,script,,https://www.hkex.com.hk/lhkexw/js/misc/date.js,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,19,script,,https://www.hkex.com.hk/lhkexw/js/misc/numberformat.js,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,20,script,,https://www.hkex.com.hk/lhkexw/js/lib/abstractpageobj.js,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,21,script,,https://www.hkex.com.hk/lhkexw/js/lib/utils.js,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,22,script,,https://www.hkex.com.hk/lhkexw/js/lib/financialdataformat.js,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,23,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlconfig.js,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,24,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlcore.js,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,25,script,,https://www.hkex.com.hk/lhkexw/js/commonrc.js,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,26,script,,https://www.hkex.com.hk/lhkexw/js/marketmarquee.js?_=20210721a,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,27,script,,https://www.hkex.com.hk/lhkexw/js/chkcookies.js?_=20230626,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,28,script,,https://www.hkex.com.hk/lhkexw/js/misc/date.js?_=20200814a,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,33,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlconfig.js?_=20180903a,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,36,script,,https://www.hkex.com.hk/lhkexw/js/marketdetail.js?_=20220831a,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,37,script,,https://www.hkex.com.hk/lhkexw/js/marketturnover.js?_=20240502a,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,38,script,,https://www.hkex.com.hk/lhkexw/js/marketsecurities.js?_=20200814a,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,39,script,,https://www.hkex.com.hk/lhkexw/js/marketsearch.js?_=20200814a,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,40,script,,https://www.hkex.com.hk/lhkexw/js/marketderivatives.js?_=20240722a,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,41,script,,https://www.hkex.com.hk/lhkexw/js/highcharts/moment.min.js,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,42,script,,https://www.hkex.com.hk/lhkexw/js/highcharts/moment-timezone-with-data-2010-2020.min.js,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,43,script,,https://www.hkex.com.hk/assets/js/main.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,44,script,,https://www.hkex.com.hk/assets/js/market.js?v=20240816180040,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,45,script,,https://www.hkex.com.hk/assets/js/hkex-market-site.js?v=20220601165214,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,46,script,,https://www.hkex.com.hk/assets/js/hkex-config-market.js?v=20221124175240,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,47,script,,https://www.hkex.com.hk/assets/js/gti-Market-common-jquery.js?v=20241219161624,www.hkex.com.hk,True,False,True
+hkex_securities_lists,hkex_securities_lists_page,48,script,,https://www.hkex.com.hk/assets/js/LoadDeferredStyles.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,49,script,,https://www.hkex.com.hk/Q4h8sMDR/reh/Hov/YYNfOFECLh/pwtipw1Dk97X/U1glS1Jc/WjFQN/GwaMwcT?v=4051d516-5388-117a-79a7-73d482a70214,www.hkex.com.hk,True,False,False
+hkex_securities_lists,hkex_securities_lists_page,1,form,,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,1,anchor,,https://www.hkex.com.hk/?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,2,anchor,,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en#,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,5,anchor,简,https://www.hkex.com.hk/Global/Disclaimer-For-HanWeb,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,6,anchor,About HKEX,https://www.hkexgroup.com/about-hkex/about-hkex?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_equities,hkex_equities_page,7,anchor,Investor Relations,http://www.hkexgroup.com/Investor-Relations?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_equities,hkex_equities_page,8,anchor,Corporate Governance,http://www.hkexgroup.com/Corporate-Governance?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_equities,hkex_equities_page,9,anchor,Sustainability,https://www.hkexgroup.com/Sustainability?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_equities,hkex_equities_page,10,anchor,Media Centre,https://www.hkexgroup.com/Media-Centre?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_equities,hkex_equities_page,11,anchor,Careers,https://www.hkexgroup.com/about-hkex/careers-at-hkex?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_equities,hkex_equities_page,12,anchor,HKEX Group,http://www.hkexgroup.com/,www.hkexgroup.com,False,False,False
+hkex_equities,hkex_equities_page,13,anchor,LME,https://www.lme.com/,www.lme.com,False,False,False
+hkex_equities,hkex_equities_page,14,anchor,Bond Connect,https://www.chinabondconnect.com/en/index.html,www.chinabondconnect.com,False,False,False
+hkex_equities,hkex_equities_page,15,anchor,QME,https://www.qme.com/zh-hans,www.qme.com,False,False,False
+hkex_equities,hkex_equities_page,16,anchor,HKEXnews,http://www.hkexnews.hk/,www.hkexnews.hk,False,False,False
+hkex_equities,hkex_equities_page,17,anchor,CESC,https://www.cesc.com/en/index.html,www.cesc.com,False,False,False
+hkex_equities,hkex_equities_page,18,anchor,Client Connect,https://connect.hkex.com.hk,connect.hkex.com.hk,False,False,False
+hkex_equities,hkex_equities_page,22,anchor,Equities,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,23,anchor,Exchange Traded Products,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,24,anchor,Structured Products,https://www.hkex.com.hk/Products/Securities/Structured-Products/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,25,anchor,Real Estate Investment Trusts,https://www.hkex.com.hk/Products/Securities/Real-Estate-Investment-Trusts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,26,anchor,Debt Securities,https://www.hkex.com.hk/Products/Securities/Debt-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,28,anchor,Equity Index,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Index-(HSI)/Hang-Seng-Index-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,29,anchor,Single Stock,https://www.hkex.com.hk/Products/Listed-Derivatives/Single-Stock/Stock-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,30,anchor,Foreign Exchange,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange/USD-CNH-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,31,anchor,Interest Rate,https://www.hkex.com.hk/Products/Listed-Derivatives/Interest-Rate/HKEX-China-Government-Bond-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,32,anchor,Commodities,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/USD-Gold?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,34,anchor,Eligible OTC Clear Products,https://www.hkex.com.hk/Products/OTC-Derivatives/Eligible-OTC-Clear-Products?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,35,anchor,Interest Rate Swaps,https://www.hkex.com.hk/Products/OTC-Derivatives/Interest-Rate-Swaps?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,36,anchor,Non Deliverable Forwards,https://www.hkex.com.hk/Products/OTC-Derivatives/Non-Deliverable-Forwards?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,37,anchor,Cross Currency Swaps,https://www.hkex.com.hk/Products/OTC-Derivatives/Cross-Currency-Swaps?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,38,anchor,Deliverable FX,https://www.hkex.com.hk/Products/OTC-Derivatives/Deliverable-FX?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,39,anchor,Find a Partner,https://www.hkex.com.hk/Products/Find-a-Partner?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,40,anchor,MSCI Index Futures & Options,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/MSCI-Indexes/MSCI-Indexes?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,41,anchor,HKEX Sustainable & Green Exchange,https://www.hkex.com.hk/stage,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,45,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,46,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,48,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Derivatives/Overview/Trading-Mechanism?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,49,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Derivatives/Infrastructure/HKATS?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,51,anchor,Hosting Services,https://www.hkex.com.hk/Services/Connectivity/Hosting-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,52,anchor,SDNet/2,https://www.hkex.com.hk/Services/Connectivity/SDNet_2?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,54,anchor,Real Time Data Services,https://www.hkex.com.hk/Services/Market-Data-Services/Real-Time-Data-Services/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,55,anchor,Historical Data Services,https://www.hkex.com.hk/Services/Market-Data-Services/Historical-Data-Services/HKEX-Data-Marketplace?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,56,anchor,Infrastructure,https://www.hkex.com.hk/Services/Market-Data-Services/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,57,anchor,Index Services,https://www.hkex.com.hk/Services/Market-Data-Services/Index-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,59,anchor,Rules,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Rules/Overview?sc_lang=en#hello,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,60,anchor,Forms,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Forms/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,61,anchor,Fees,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Fees/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,64,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/Securities/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,65,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/Securities/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,66,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/Securities/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,67,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/Securities/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,69,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,70,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,71,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,72,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,74,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Overview/Clearing-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,75,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,76,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,77,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,79,anchor,Settlement - Securities,https://www.hkex.com.hk/Services/Settlement-and-Depository/Settlement?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,80,anchor,Depository,https://www.hkex.com.hk/Services/Settlement-and-Depository/Depository?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,81,anchor,Uncertificated Securities Market,https://www.hkex.com.hk/Services/Settlement-and-Depository/USM?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,82,anchor,Common Nominee Services,https://www.hkex.com.hk/Services/Settlement-and-Depository/Common-Nominee-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,83,anchor,Securities Admission into CCASS,https://www.hkex.com.hk/Services/Settlement-and-Depository/Securities-Admission-into-CCASS?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,85,anchor,Unclaimed Entitlements Held by HKSCC Nominees Limited,https://www.hkex.com.hk/Services/Settlement-and-Depository/Unclaimed-Entitlements-Held-by-HKSCC-Nominees-Limited?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,87,anchor,Client Connect,https://www.hkex.com.hk/Services/Platform-Services/Client-Connect?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,88,anchor,Corporate Action Messaging Standardisation,https://www.hkex.com.hk/Services/Settlement-and-Depository/Common-Nominee-Services/Corporate-Action-Message-Standardisation-(CAMS)?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,89,anchor,FINI - A New Era for Hong Kong’s IPO market,https://www.hkex.com.hk/Services/Platform-Services/FINI?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,90,anchor,Orion Cash Platform,https://www.hkex.com.hk/Services/Platform-Services/Orion-Cash-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,91,anchor,Orion Derivatives Platform,https://www.hkex.com.hk/Services/Platform-Services/Orion-Derivatives-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,92,anchor,HKEX Issuer Access Platform,https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,93,anchor,Integrated Fund Platform,https://www.hkex.com.hk/Services/Platform-Services/Integrated-Fund-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,94,anchor,Digital Payment Adoption for After-Hours Trading,https://www.hkex.com.hk/Services/Platform-Services/Digital-Payment-Adoption-for-After-Hours-Trading?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,95,anchor,Circulars & Notices,https://www.hkex.com.hk/Services/Circulars-and-Notices/Participant-and-Members-Circulars?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,96,anchor,Become a Participant,https://www.hkex.com.hk/Services/Become-a-Participant?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,97,anchor,HKEX Connect Hall,https://www.hkex.com.hk/Services/HKEX-Connect-Hall?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,98,anchor,Join Our Markets,https://www.hkex.com.hk/Join-Our-Market/IPO/Listing-with-HKEX?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,101,anchor,GEM,https://www.hkex.com.hk/Join-Our-Market/IPO/GEM?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,102,anchor,Southeast Asia Listing Insights,https://www.hkex.com.hk/Join-Our-Market/IPO/Listing-with-HKEX/Southeast-Asia-Hub?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,104,anchor,Stock Connect,https://www.hkex.com.hk/Mutual-Market/Stock-Connect?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,107,anchor,LME,http://www.lme.com,www.lme.com,False,False,False
+hkex_equities,hkex_equities_page,108,anchor,QME,http://www.qme.com,www.qme.com,False,False,False
+hkex_equities,hkex_equities_page,109,anchor,Sustainable Finance at HKEX,https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,110,anchor,Core Climate,https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance/Core-Climate?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,111,anchor,Sustainable & Green Exchange (STAGE),https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance/HKEX-STAGE?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,112,anchor,Biotech @ HKEX,https://www.hkex.com.hk/Join-Our-Market/Biotech?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,113,anchor,Listing of Specialist Technology Companies,https://www.hkex.com.hk/Listing/Rules-and-Guidance/Listing-of-Specialist-Technology-Companies?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,115,anchor,Listing Regulations,https://www.hkex.com.hk/Listing/Listing-Regulations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,116,anchor,Explore By Role,https://www.hkex.com.hk/Listing/Explore-By-Role/Potential-Applicants?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,118,anchor,Listed Issuers,https://www.hkex.com.hk/Listing/Explore-By-Role/Listed-Issuers?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,119,anchor,Directors,https://www.hkex.com.hk/Listing/Explore-By-Role/Directors?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,120,anchor,Rules & Resources,https://www.hkex.com.hk/Listing/Rules-and-Resources/Rules-and-Resources?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,121,anchor,Listing Rules,https://www.hkex.com.hk/Listing/Rules-and-Resources/Listing-Rules?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,122,anchor,Guidance,https://www.hkex.com.hk/Listing/Rules-and-Resources/Guidance?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,123,anchor,"Checklists, forms & templates",https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,124,anchor,Enforcement,https://www.hkex.com.hk/Listing/Disciplinary-and-Enforcement/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,125,anchor,News & Publications,https://www.hkex.com.hk/Listing/News-and-Publications/News-and-Publications?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,126,anchor,What's New,https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,127,anchor,Listing Newsletters,https://www.hkex.com.hk/Listing/News-and-Publications/Newsletters/All-newsletters?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,128,anchor,Reports,https://www.hkex.com.hk/Listing/News-and-Publications/Reports?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,129,anchor,Listing Consultations,https://www.hkex.com.hk/Listing/News-and-Publications/Listing-Consultations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,130,anchor,Sustainability & Corporate Governance,https://www.hkex.com.hk/Listing/Sustainability/ESG-Academy?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,132,anchor,Board Diversity Hub,https://www.hkex.com.hk/Listing/Sustainability/Board-Diversity-hub/Board-Diversity-Home?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,133,anchor,Corporate Governance Practices,https://www.hkex.com.hk/Listing/Sustainability/Corporate-Governance-Practices?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,134,anchor,Shareholder Value in Focus,https://www.hkex.com.hk/Listing/Sustainability/Shareholder-Value-in-Focus/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,135,anchor,INED Corner,https://www.hkex.com.hk/Listing/Sustainability/INED-Corner/INED-Corner-Home?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,136,anchor,Education Centre,https://www.hkex.com.hk/Listing/Education-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,137,anchor,About Listing & Contacts,https://www.hkex.com.hk/Listing/About-Listing-and-Contacts/About-Listing-and-Contacts?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,138,anchor,News Centre,https://www.hkex.com.hk/News/News-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,139,anchor,Corporate News Releases,https://www.hkex.com.hk/News/News-Release?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,140,anchor,Regulatory Announcements,https://www.hkex.com.hk/News/Regulatory-Announcements?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,141,anchor,Market Communications,https://www.hkex.com.hk/News/Market-Communications?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,142,anchor,Market Consultations,https://www.hkex.com.hk/News/Market-Consultations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,144,anchor,HKEX Calendar,https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,145,anchor,Research Reports,https://www.hkex.com.hk/News/Research-Reports?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,147,anchor,Connect Hub,https://www.hkex.com.hk/Mutual-Market/Connect-Hub?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,149,anchor,Bond Connect,http://www.chinabondconnect.com,www.chinabondconnect.com,False,False,False
+hkex_equities,hkex_equities_page,150,anchor,Swap Connect,https://www.hkex.com.hk/Mutual-Market/Swap-Connect/Swap-Connect?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,151,anchor,Daily Statistics,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Historical-Daily?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,152,anchor,Market Highlights,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Hong-Kong-and-Mainland-Market-Highlights?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,153,anchor,Eligible Securities,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Eligible-Stocks/View-All-Eligible-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,156,anchor,Equities,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,157,anchor,Exchange Traded Products,https://www.hkex.com.hk/Market-Data/Securities-Prices/Exchange-Traded-Products?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,158,anchor,Derivative Warrants,https://www.hkex.com.hk/Market-Data/Securities-Prices/Derivative-Warrants?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,159,anchor,Inline Warrants,https://www.hkex.com.hk/Market-Data/Securities-Prices/Inline-Warrants?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,160,anchor,Callable Bull / Bear Contracts,https://www.hkex.com.hk/Market-Data/Securities-Prices/Callable-Bull-Bear-Contracts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,161,anchor,Real Estate Investment Trusts,https://www.hkex.com.hk/Market-Data/Securities-Prices/Real-Estate-Investment-Trusts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,162,anchor,Debt Securities,https://www.hkex.com.hk/Market-Data/Securities-Prices/Debt-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,164,anchor,Equity Index,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Equity-Index?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,165,anchor,Single Stock,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Single-Stock?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,166,anchor,Foreign Exchange,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Foreign-Exchange?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,167,anchor,Interest Rate,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Interest-Rate?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,168,anchor,Commodities,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Commodities?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,170,anchor,Consolidated Reports,https://www.hkex.com.hk/Market-Data/Statistics/Consolidated-Reports/HKEX-Monthly-Market-Highlights?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,171,anchor,Securities Market,https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,172,anchor,Derivatives Market,https://www.hkex.com.hk/Market-Data/Statistics/Derivatives-Market?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,173,anchor,Participant,https://www.hkex.com.hk/Market-Data/Statistics/Participant/Stock-Exchange-Participants_-Market-Share-Report?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,174,anchor,"Clearing, Settlement and Depository",https://www.hkex.com.hk/Market-Data/Statistics/Clearing-and-Settlement-and-Depository?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,175,anchor,HKEXnews,https://www.hkex.com.hk/Market-Data/HKEX-News?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,176,anchor,News Alerts,https://www.hkex.com.hk/Market-Data/News-Alerts?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,177,anchor,Market Data Services,https://www.hkex.com.hk/Services/Market-Data-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,361,anchor,Securities,https://www.hkex.com.hk/Products/Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,363,anchor,Equity Warrants,https://www.hkex.com.hk/Products/Securities/Equities/Equity-Warrants?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,364,anchor,Exchange Traded Products,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,366,anchor,Products,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products/Products?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,367,anchor,Investors,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products/Investors?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,368,anchor,ETF Tax Calculator,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products/TaxCalculator?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,369,anchor,Issuers,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products/Issuers?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,370,anchor,Market Makers,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products/Market-Makers?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,371,anchor,Education and Resources,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products/Education-and-Resources?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,372,anchor,Structured Products,https://www.hkex.com.hk/Products/Securities/Structured-Products?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,374,anchor,Trading Information and Historical Reports,https://www.hkex.com.hk/Products/Securities/Structured-Products/Trading-Information-and-Historical-Data?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,375,anchor,Education and Resources,https://www.hkex.com.hk/Products/Securities/Structured-Products/Investor-Education?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,378,anchor,Information for Debt Issues to Professional Investors,https://www.hkex.com.hk/Products/Securities/Debt-Securities/Information-for-Debt-Issues-to-Professional-Investors?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,379,anchor,iBond,https://www.hkex.com.hk/Products/Securities/Debt-Securities/iBond?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,380,anchor,Retail Green Bonds,https://www.hkex.com.hk/Products/Securities/Debt-Securities/Retail-Green-Bonds?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,381,anchor,Frequently Asked Questions,https://www.hkex.com.hk/Products/Securities/Debt-Securities/Frequently-Asked-Questions?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,382,anchor,Glossary,https://www.hkex.com.hk/Products/Securities/Debt-Securities/Glossary?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,383,anchor,Naming Conventions of Stock Short Name by Product Types,https://www.hkex.com.hk/Products/Securities/Naming-Conventions-of-Stock-Short-Name-by-Product-Types?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,384,anchor,Stock Code Allocation Plan,https://www.hkex.com.hk/Products/Securities/Stock-Code-Allocation-Plan?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,385,anchor,Listed Derivatives,https://www.hkex.com.hk/Products/Listed-Derivatives?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,386,anchor,Equity Index,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,387,anchor,Hang Seng Index (HSI),https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Index-(HSI)?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,388,anchor,Hang Seng China Enterprises Index,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-China-Enterprises-Index?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,389,anchor,Hang Seng TECH Index Futures and Options,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-TECH-Index-Futures-and-Options?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,390,anchor,Hang Seng Biotech Index,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Biotech-index?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,391,anchor,MSCI Index,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/MSCI-Indexes?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,392,anchor,Sector Index,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Sector-Index?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,393,anchor,CES China 120 Index,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/CES-China-120-Index?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,394,anchor,Single Stock,https://www.hkex.com.hk/Products/Listed-Derivatives/Single-Stock?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,396,anchor,Stock Options,https://www.hkex.com.hk/Products/Listed-Derivatives/Single-Stock/Stock-Options?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,397,anchor,Foreign Exchange,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,399,anchor,USD/CNH Options,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange/USD-CNH-Options?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,400,anchor,Mini USD/CNH Futures,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange/Mini-USD-CNH-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,401,anchor,EUR/CNH Futures,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange/EUR-CNH-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,402,anchor,JPY/CNH Futures,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange/JPY-CNH-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,403,anchor,AUD/CNH Futures,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange/AUD-CNH-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,404,anchor,CNH/USD Futures,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange/CNH-USD-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,405,anchor,Interest Rate,https://www.hkex.com.hk/Products/Listed-Derivatives/Interest-Rate?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,407,anchor,One-Month HIBOR Futures,https://www.hkex.com.hk/Products/Listed-Derivatives/Interest-Rate/One-Month-of-HIBOR-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,408,anchor,Three-Month HIBOR Futures,https://www.hkex.com.hk/Products/Listed-Derivatives/Interest-Rate/Three-Month-HIBOR-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,409,anchor,Commodities,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,411,anchor,CNH Gold,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/CNH-Gold?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,412,anchor,USD Silver,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/USD-Silver?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,413,anchor,CNH Silver,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/CNH-Sliver?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,414,anchor,USD London Metal Mini,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/USD-London-Metal-Mini?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,415,anchor,CNH London Metal Mini,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/CNH-London-Metal-Mini?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,416,anchor,LME Asia Week,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/LME-Asia-Week?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,417,anchor,Reciprocal Membership Arrangement (RMA),https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/Reciprocal-Membership-Arrangement-(RMA)?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,418,anchor,Commodities - Need to Know,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/Commodities-Need-to-Know?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,419,anchor,Training Courses,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/Training-Courses?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,420,anchor,Market Maker Program,https://www.hkex.com.hk/Products/Listed-Derivatives/Market-Maker-Program?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,421,anchor,List of Market Makers/Liquidity Providers,https://www.hkex.com.hk/Products/Listed-Derivatives/Market-Maker-Program/List-of-Market-Makers_Liquidity-Providers?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,422,anchor,Market Making/Liquidity Providing Obligations and Incentives,https://www.hkex.com.hk/Products/Listed-Derivatives/Market-Maker-Program/Market-Maker-Obligations-and-Incentives?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,423,anchor,Primary Market Maker Program,https://www.hkex.com.hk/Products/Listed-Derivatives/Market-Maker-Program/Primary-Market-Maker-Program?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,424,anchor,OTC Derivatives,https://www.hkex.com.hk/Products/OTC-Derivatives?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,427,anchor,Northbound Interest Rate Swaps,https://www.hkex.com.hk/Products/OTC-Derivatives/Northbound-Interest-Rate-Swaps?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,431,anchor,Investor Product Videos,https://www.hkex.com.hk/Products/Product-Videos?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,432,anchor,Securities,https://www.hkex.com.hk/Products/Product-Videos/Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,433,anchor,Listed Derivatives,https://www.hkex.com.hk/Products/Product-Videos/Derivatives?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,434,anchor,Stock Connect,https://www.hkex.com.hk/Products/Product-Videos/Stock-Connect?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,436,anchor,Information Vendor List,https://www.hkex.com.hk/Products/Find-a-Partner/Information-Vendor-List?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,437,anchor,Search for Participants and Trading Right Holders,https://www.hkex.com.hk/Products/Find-a-Partner/Search-for-Participants-and-Trading-Right-Holders?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,438,anchor,List of Approved SPAC Exchange Participants,https://www.hkex.com.hk/Products/Find-a-Partner/List-of-Approved-SPAC-Exchange-Participants?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,439,anchor,Participant Information Changes,https://www.hkex.com.hk/Products/Find-a-Partner/Participant-Information-Changes?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,440,anchor,The Stock Exchange of Hong Kong Limited (SEHK),https://www.hkex.com.hk/Products/Find-a-Partner/Participant-Information-Changes/The-Stock-Exchange-of-Hong-Kong-Limited-(SEHK)?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,441,anchor,Hong Kong Securities Clearing Company Limited (HKSCC),https://www.hkex.com.hk/Products/Find-a-Partner/Participant-Information-Changes/Hong-Kong-Securities-Clearing-Company-Limited-(HKSCC)?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,442,anchor,Hong Kong Futures Exchange Limited (HKFE),https://www.hkex.com.hk/Products/Find-a-Partner/Participant-Information-Changes/Hong-Kong-Futures-Exchange-Limited-(HKFE)?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,443,anchor,HKFE Clearing Corporation Limited (HKCC),https://www.hkex.com.hk/Products/Find-a-Partner/Participant-Information-Changes/HKFE-Clearing-Corporation-Limited-(HKCC)?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,444,anchor,The SEHK Options Clearing House Limited (SEOCH),https://www.hkex.com.hk/Products/Find-a-Partner/Participant-Information-Changes/The-SEHK-Options-Clearing-House-Limited-(SEOCH)?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,445,anchor,SFC Alert List on Unlicensed Entities and Suspicious Websites,https://www.hkex.com.hk/Products/Find-a-Partner/SFC-Alert-List-on-Unlicensed-Entities-and-Suspicious-Websites?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,446,anchor,Alert List on People or Organisations Falsely Claiming to be Associated with HKEX,https://www.hkex.com.hk/Products/Find-a-Partner/Alert?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,448,anchor,Risk Statement,https://www.hkex.com.hk/Products/Securities/Understanding-Risks-of-Securities-Traded-on-the-Exchange?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,449,anchor,Frequently Asked Questions,https://www.hkex.com.hk/Global/Exchange/FAQ/Products/Securities/Equity-Securites?sc_lang=en&Equity Securities,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,450,anchor,Stock Code Balloting Scheme,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Stock-Code-Balloting-Scheme?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,451,anchor,HKD-RMB Dual Counter Securities,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en#collapse0,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,452,anchor,DEPOSITARY RECEIPTS,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en#collapse1,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,453,anchor,List of Depositary Receipts,http://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en&subcat=1,www.hkex.com.hk,False,False,True
+hkex_equities,hkex_equities_page,454,anchor,"Depositary Receipt Rules, Guidance and Frequently Asked Questions",https://www.hkex.com.hk/Listing/Rules-and-Resources/Guidance/IPO/Listing-of-Overseas-Companies/Depositary-Receipt-Framework/Depositary-Receipt-Rules-and-Guidelines?sc_lang=en&search=HDR,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,455,anchor,STAPLED SECURITIES,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en#collapse2,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,456,anchor,List of Stapled Securities,http://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en&preset=6,www.hkex.com.hk,False,False,True
+hkex_equities,hkex_equities_page,457,anchor,SPAC Shares and SPAC Warrants,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en#collapse3,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,458,anchor,List of SPAC Shares,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en&subcat=5,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,459,anchor,List of SPAC Warrants,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en&subcat=6,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,460,anchor,List of Approved SPAC Exchange Participants,https://www.hkex.com.hk/-/media/HKEX-Market/Products/Securities/Equities/SPAC/List-of-Approved-SPAC-EP.xls,www.hkex.com.hk,True,True,True
+hkex_equities,hkex_equities_page,461,anchor,Listing Rule 8.05,https://en-rules.hkex.com.hk/node/2308,en-rules.hkex.com.hk,False,False,False
+hkex_equities,hkex_equities_page,462,anchor,Listing Rule 18C.03(4),https://en-rules.hkex.com.hk/rulebook/18c03,en-rules.hkex.com.hk,False,False,False
+hkex_equities,hkex_equities_page,463,anchor,here,https://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Other-Resources/Listing-of-Overseas-Companies/Understanding-the-Risks-of-Investing-in-Overseas-Issuers/Regulation_S_e.pdf,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,464,anchor,Main Board Listing Rule 13.32F,https://en-rules.hkex.com.hk/rulebook/1332f,en-rules.hkex.com.hk,False,False,False
+hkex_equities,hkex_equities_page,465,anchor,GEM Listing Rule 17.37F,https://en-rules.hkex.com.hk/rulebook/1737f,en-rules.hkex.com.hk,False,False,False
+hkex_equities,hkex_equities_page,466,anchor,Main Board Listing Rule 13.32B,https://en-rules.hkex.com.hk/rulebook/1332b,en-rules.hkex.com.hk,False,False,False
+hkex_equities,hkex_equities_page,467,anchor,GEM Rule 17.37B,https://en-rules.hkex.com.hk/rulebook/1737b,en-rules.hkex.com.hk,False,False,False
+hkex_equities,hkex_equities_page,468,anchor,here,http://www.hkex.com.hk/-/media/HKEX-Market/Listing/Rules-and-Guidance/Other-Resources/Listing-of-Overseas-Companies/Understanding-the-Risks-of-Investing-in-Overseas-Issuers/Regulation_S_e.pdf?la=en&hash=D2908C05C368DBE9C0E563F55AF94D588DD9A4CD2FA4AFA4A48D08318AB6D516,www.hkex.com.hk,False,False,True
+hkex_equities,hkex_equities_page,478,anchor,Trading Hours,https://www.hkex.com.hk/Services/Trading-hours-and-Severe-Weather-Arrangements/Trading-Hours?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,479,anchor,Severe Weather Arrangements,https://www.hkex.com.hk/Services/Trading-hours-and-Severe-Weather-Arrangements/Severe-Weather-Arrangements/Trading?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,481,anchor,Full List of Securities,https://www.hkex.com.hk/eng/services/trading/securities/securitieslists/ListOfSecurities.xlsx,www.hkex.com.hk,True,True,True
+hkex_equities,hkex_equities_page,482,anchor,Closing Auction Session (CAS) Securities,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Closing-Auction-Session-(CAS)-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,483,anchor,Volatility Control Mechanism (VCM) Securities,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Volatility-Control-Mechanism-(VCM)-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,484,anchor,List of Dual Counter Securities,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Dual_Counter_Security_List.xlsx,www.hkex.com.hk,True,True,True
+hkex_equities,hkex_equities_page,485,anchor,Designated Securities Eligible for Short Selling,https://www.hkex.com.hk/Services/Trading/Securities/Securities-Lists/Designated-Securities-Eligible-for-Short-Selling?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,486,anchor,ISINs Assigned by HKEX,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/ISINs-assigned-by-HKEX/isinsehk.xls,www.hkex.com.hk,True,True,True
+hkex_equities,hkex_equities_page,487,anchor,ISINs Assigned by Other Numbering Agencies,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/ISINs-assigned-by-Other-Numbering-Agencies/isino.xls,www.hkex.com.hk,True,True,True
+hkex_equities,hkex_equities_page,488,anchor,Securities Using Standard Transfer Form (including GEM) By English Stock Short Name Order,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Securities-Using-Standard-Transfer-Form-(including-GEM)-By-English-Stock-Short-Name-Order/englishstk.xls,www.hkex.com.hk,True,True,True
+hkex_equities,hkex_equities_page,489,anchor,Securities Using Standard Transfer Form (including GEM) By Stock Code Order,https://www.hkex.com.hk/-/media/HKEX-Market/Services/Trading/Securities/Securities-Lists/Securities-Using-Standard-Transfer-Form-(including-GEM)-By-Stock-Code-Order/secstkorder.xls,www.hkex.com.hk,True,True,True
+hkex_equities,hkex_equities_page,490,anchor,What are equity securities? What are the differences between ordinary shares and preferred shares?,https://www.hkex.com.hk/Global/Exchange/FAQ/Products/Securities/Equity-Securites?sc_lang=en&target=%7BD241ECE8-DC30-40A9-8E36-5BE3B3B502C9%7D#selected-faq,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,491,anchor,What factors would affect share price movements? What risk factors should investors consider before buying shares?,https://www.hkex.com.hk/Global/Exchange/FAQ/Products/Securities/Equity-Securites?sc_lang=en&target=%7BF0C3D13F-7B25-4DB1-B3CD-4F2405849606%7D#selected-faq,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,492,anchor,What are P/E Ratio and dividend yield?,https://www.hkex.com.hk/Global/Exchange/FAQ/Products/Securities/Equity-Securites?sc_lang=en&target=%7BF5C245ED-358D-4DFC-AE63-B356DBADE342%7D#selected-faq,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,493,anchor,What is ex-dividend? How does it affect the share price?,https://www.hkex.com.hk/Global/Exchange/FAQ/Products/Securities/Equity-Securites?sc_lang=en&target=%7BDBD1F87E-5726-4C24-B7EF-9EC635E8ECCE%7D#selected-faq,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,494,anchor,"What are the differences between the par value, book value and market price of a share?",https://www.hkex.com.hk/Global/Exchange/FAQ/Products/Securities/Equity-Securites?sc_lang=en&target=%7B22E64924-3379-4611-B3E3-594AF569BD01%7D#selected-faq,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,495,anchor,View All FAQs,https://www.hkex.com.hk/Global/Exchange/FAQ/Top-Questions?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,497,anchor,,https://twitter.com/hkexgroup,twitter.com,False,False,False
+hkex_equities,hkex_equities_page,498,anchor,,https://www.linkedin.com/company/hkex,www.linkedin.com,False,False,True
+hkex_equities,hkex_equities_page,499,anchor,,https://www.hkex.com.hk/Global/Follow-Us-on-WeChat?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,500,anchor,,https://www.youtube.com/user/hkexgroup,www.youtube.com,False,False,False
+hkex_equities,hkex_equities_page,501,anchor,,https://www.weibo.com/6508212764,www.weibo.com,False,False,False
+hkex_equities,hkex_equities_page,502,anchor,Alert,https://www.hkex.com.hk/Global/Exchange/Alert?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,503,anchor,Contact,https://www.hkex.com.hk/Global/Exchange/Contact?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,504,anchor,Career,https://www.hkexgroup.com/About-HKEX/Careers-at-HKEX?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_equities,hkex_equities_page,507,anchor,Market System Status,https://www.hkex.com.hk/Global/Exchange/Market-System-Status?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,508,anchor,Sitemap,https://www.hkex.com.hk/Global/Exchange/Sitemap?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,509,anchor,Glossary,https://www.hkex.com.hk/Global/Exchange/Glossary?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,510,anchor,HKEX Subscription Centre,https://www.hkex.com.hk/Global/Exchange/Subscription-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,511,anchor,Terms of Use,https://www.hkex.com.hk/Global/Exchange/Terms-of-Use?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,512,anchor,HKEX Privacy Notices,https://www.hkex.com.hk/Global/Exchange/HKEX-Privacy-Notices?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,513,anchor,Cookie Notice,https://www.hkex.com.hk/Global/Exchange/Cookie-Notice?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,514,anchor,RSS,https://www.hkex.com.hk/Services/RSS-Feeds?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,515,anchor,,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en#hkex_page_header,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,1,script,,https://www.googletagmanager.com/gtag/js?id=UA-51785376-1,www.googletagmanager.com,False,False,False
+hkex_equities,hkex_equities_page,2,script,,https://assets.adobedtm.com/fbccf582fbe1/8fbefc7f35d2/launch-5e83ee102cdb.min.js,assets.adobedtm.com,False,False,False
+hkex_equities,hkex_equities_page,3,script,,https://www.hkex.com.hk/Scripts/HKEX/HKEX Market/scMainMarket.js?v=20260508105816,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,4,script,,https://www.hkex.com.hk/assets/js/jquery.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,5,script,,https://www.hkex.com.hk/assets/js/bootstrap.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,6,script,,https://www.hkex.com.hk/assets/js/bootstrap-restrict.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,7,script,,https://www.hkex.com.hk/assets/js/vendor.js?v=20211220103950,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,8,script,,https://www.hkex.com.hk/Scripts/GLOBAL/polyfill.min.js?v=20211105150722,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,9,script,,https://www.hkex.com.hk/Scripts/GLOBAL/SearchResultAnalytics.js?v=20221206091346,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,10,script,,https://www.hkex.com.hk/assets/js/jquery.fancybox.pack.js?v=20230512122203,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,11,script,,https://www.hkex.com.hk/Scripts/HKEX/HKEX Market/jquery.ba-throttle-debounce.min.js?v=20211105150724,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,12,script,,https://www.hkex.com.hk/assets/js/jquery.stickysort.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,13,script,,https://www.hkex.com.hk/assets/js/validator.js?v=20220307134728,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,14,script,,https://www.hkex.com.hk/assets/js/jquery-ui.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,15,script,,https://www.hkex.com.hk/assets/js/js.cookie.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,16,script,,https://www.hkex.com.hk/assets/js/jquery.scrolltabs.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,17,script,,https://www.hkex.com.hk/lhkexw/js/misc/date.js,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,18,script,,https://www.hkex.com.hk/lhkexw/js/misc/numberformat.js,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,19,script,,https://www.hkex.com.hk/lhkexw/js/lib/abstractpageobj.js,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,20,script,,https://www.hkex.com.hk/lhkexw/js/lib/utils.js,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,21,script,,https://www.hkex.com.hk/lhkexw/js/lib/financialdataformat.js,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,22,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlconfig.js,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,23,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlcore.js,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,24,script,,https://www.hkex.com.hk/lhkexw/js/commonrc.js,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,25,script,,https://www.hkex.com.hk/lhkexw/js/marketmarquee.js?_=20210721a,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,26,script,,https://www.hkex.com.hk/lhkexw/js/chkcookies.js?_=20230626,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,27,script,,https://www.hkex.com.hk/lhkexw/js/misc/date.js?_=20200814a,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,32,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlconfig.js?_=20180903a,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,35,script,,https://www.hkex.com.hk/lhkexw/js/marketdetail.js?_=20220831a,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,36,script,,https://www.hkex.com.hk/lhkexw/js/marketturnover.js?_=20240502a,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,37,script,,https://www.hkex.com.hk/lhkexw/js/marketsecurities.js?_=20200814a,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,38,script,,https://www.hkex.com.hk/lhkexw/js/marketsearch.js?_=20200814a,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,39,script,,https://www.hkex.com.hk/lhkexw/js/marketderivatives.js?_=20240722a,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,40,script,,https://www.hkex.com.hk/lhkexw/js/highcharts/moment.min.js,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,41,script,,https://www.hkex.com.hk/lhkexw/js/highcharts/moment-timezone-with-data-2010-2020.min.js,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,42,script,,https://www.hkex.com.hk/assets/js/main.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,43,script,,https://www.hkex.com.hk/assets/js/market.js?v=20240816180040,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,44,script,,https://www.hkex.com.hk/assets/js/hkex-market-site.js?v=20220601165214,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,45,script,,https://www.hkex.com.hk/assets/js/hkex-config-market.js?v=20221124175240,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,46,script,,https://www.hkex.com.hk/assets/js/gti-Market-common-jquery.js?v=20241219161624,www.hkex.com.hk,True,False,True
+hkex_equities,hkex_equities_page,47,script,,https://www.hkex.com.hk/assets/js/LoadDeferredStyles.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,48,script,,https://www.hkex.com.hk/Q4h8sMDR/reh/Hov/YYNfOFECLh/pwtipw1Dk97X/U1glS1Jc/WjFQN/GwaMwcT?v=483c687a-f966-b748-4237-b2c554b00214,www.hkex.com.hk,True,False,False
+hkex_equities,hkex_equities_page,1,form,,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,1,anchor,,https://www.hkex.com.hk/?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,2,anchor,,https://www.hkex.com.hk/Services/Trading/Securities/Trading-News/Newly-Listed-Securities?sc_lang=en#,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,5,anchor,简,https://www.hkex.com.hk/Global/Disclaimer-For-HanWeb,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,6,anchor,About HKEX,https://www.hkexgroup.com/about-hkex/about-hkex?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,7,anchor,Investor Relations,http://www.hkexgroup.com/Investor-Relations?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,8,anchor,Corporate Governance,http://www.hkexgroup.com/Corporate-Governance?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,9,anchor,Sustainability,https://www.hkexgroup.com/Sustainability?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,10,anchor,Media Centre,https://www.hkexgroup.com/Media-Centre?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,11,anchor,Careers,https://www.hkexgroup.com/about-hkex/careers-at-hkex?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,12,anchor,HKEX Group,http://www.hkexgroup.com/,www.hkexgroup.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,13,anchor,LME,https://www.lme.com/,www.lme.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,14,anchor,Bond Connect,https://www.chinabondconnect.com/en/index.html,www.chinabondconnect.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,15,anchor,QME,https://www.qme.com/zh-hans,www.qme.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,16,anchor,HKEXnews,http://www.hkexnews.hk/,www.hkexnews.hk,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,17,anchor,CESC,https://www.cesc.com/en/index.html,www.cesc.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,18,anchor,Client Connect,https://connect.hkex.com.hk,connect.hkex.com.hk,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,22,anchor,Equities,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,23,anchor,Exchange Traded Products,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,24,anchor,Structured Products,https://www.hkex.com.hk/Products/Securities/Structured-Products/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,25,anchor,Real Estate Investment Trusts,https://www.hkex.com.hk/Products/Securities/Real-Estate-Investment-Trusts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,26,anchor,Debt Securities,https://www.hkex.com.hk/Products/Securities/Debt-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,28,anchor,Equity Index,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Index-(HSI)/Hang-Seng-Index-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,29,anchor,Single Stock,https://www.hkex.com.hk/Products/Listed-Derivatives/Single-Stock/Stock-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,30,anchor,Foreign Exchange,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange/USD-CNH-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,31,anchor,Interest Rate,https://www.hkex.com.hk/Products/Listed-Derivatives/Interest-Rate/HKEX-China-Government-Bond-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,32,anchor,Commodities,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/USD-Gold?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,34,anchor,Eligible OTC Clear Products,https://www.hkex.com.hk/Products/OTC-Derivatives/Eligible-OTC-Clear-Products?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,35,anchor,Interest Rate Swaps,https://www.hkex.com.hk/Products/OTC-Derivatives/Interest-Rate-Swaps?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,36,anchor,Non Deliverable Forwards,https://www.hkex.com.hk/Products/OTC-Derivatives/Non-Deliverable-Forwards?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,37,anchor,Cross Currency Swaps,https://www.hkex.com.hk/Products/OTC-Derivatives/Cross-Currency-Swaps?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,38,anchor,Deliverable FX,https://www.hkex.com.hk/Products/OTC-Derivatives/Deliverable-FX?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,39,anchor,Find a Partner,https://www.hkex.com.hk/Products/Find-a-Partner?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,40,anchor,MSCI Index Futures & Options,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/MSCI-Indexes/MSCI-Indexes?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,41,anchor,HKEX Sustainable & Green Exchange,https://www.hkex.com.hk/stage,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,45,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,46,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,48,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Derivatives/Overview/Trading-Mechanism?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,49,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Derivatives/Infrastructure/HKATS?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,51,anchor,Hosting Services,https://www.hkex.com.hk/Services/Connectivity/Hosting-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,52,anchor,SDNet/2,https://www.hkex.com.hk/Services/Connectivity/SDNet_2?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,54,anchor,Real Time Data Services,https://www.hkex.com.hk/Services/Market-Data-Services/Real-Time-Data-Services/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,55,anchor,Historical Data Services,https://www.hkex.com.hk/Services/Market-Data-Services/Historical-Data-Services/HKEX-Data-Marketplace?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,56,anchor,Infrastructure,https://www.hkex.com.hk/Services/Market-Data-Services/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,57,anchor,Index Services,https://www.hkex.com.hk/Services/Market-Data-Services/Index-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,59,anchor,Rules,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Rules/Overview?sc_lang=en#hello,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,60,anchor,Forms,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Forms/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,61,anchor,Fees,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Fees/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,64,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/Securities/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,65,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/Securities/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,66,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/Securities/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,67,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/Securities/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,69,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,70,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,71,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,72,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,74,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Overview/Clearing-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,75,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,76,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,77,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,79,anchor,Settlement - Securities,https://www.hkex.com.hk/Services/Settlement-and-Depository/Settlement?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,80,anchor,Depository,https://www.hkex.com.hk/Services/Settlement-and-Depository/Depository?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,81,anchor,Uncertificated Securities Market,https://www.hkex.com.hk/Services/Settlement-and-Depository/USM?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,82,anchor,Common Nominee Services,https://www.hkex.com.hk/Services/Settlement-and-Depository/Common-Nominee-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,83,anchor,Securities Admission into CCASS,https://www.hkex.com.hk/Services/Settlement-and-Depository/Securities-Admission-into-CCASS?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,85,anchor,Unclaimed Entitlements Held by HKSCC Nominees Limited,https://www.hkex.com.hk/Services/Settlement-and-Depository/Unclaimed-Entitlements-Held-by-HKSCC-Nominees-Limited?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,87,anchor,Client Connect,https://www.hkex.com.hk/Services/Platform-Services/Client-Connect?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,88,anchor,Corporate Action Messaging Standardisation,https://www.hkex.com.hk/Services/Settlement-and-Depository/Common-Nominee-Services/Corporate-Action-Message-Standardisation-(CAMS)?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,89,anchor,FINI - A New Era for Hong Kong’s IPO market,https://www.hkex.com.hk/Services/Platform-Services/FINI?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,90,anchor,Orion Cash Platform,https://www.hkex.com.hk/Services/Platform-Services/Orion-Cash-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,91,anchor,Orion Derivatives Platform,https://www.hkex.com.hk/Services/Platform-Services/Orion-Derivatives-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,92,anchor,HKEX Issuer Access Platform,https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,93,anchor,Integrated Fund Platform,https://www.hkex.com.hk/Services/Platform-Services/Integrated-Fund-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,94,anchor,Digital Payment Adoption for After-Hours Trading,https://www.hkex.com.hk/Services/Platform-Services/Digital-Payment-Adoption-for-After-Hours-Trading?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,95,anchor,Circulars & Notices,https://www.hkex.com.hk/Services/Circulars-and-Notices/Participant-and-Members-Circulars?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,96,anchor,Become a Participant,https://www.hkex.com.hk/Services/Become-a-Participant?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,97,anchor,HKEX Connect Hall,https://www.hkex.com.hk/Services/HKEX-Connect-Hall?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,98,anchor,Join Our Markets,https://www.hkex.com.hk/Join-Our-Market/IPO/Listing-with-HKEX?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,101,anchor,GEM,https://www.hkex.com.hk/Join-Our-Market/IPO/GEM?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,102,anchor,Southeast Asia Listing Insights,https://www.hkex.com.hk/Join-Our-Market/IPO/Listing-with-HKEX/Southeast-Asia-Hub?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,104,anchor,Stock Connect,https://www.hkex.com.hk/Mutual-Market/Stock-Connect?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,107,anchor,LME,http://www.lme.com,www.lme.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,108,anchor,QME,http://www.qme.com,www.qme.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,109,anchor,Sustainable Finance at HKEX,https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,110,anchor,Core Climate,https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance/Core-Climate?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,111,anchor,Sustainable & Green Exchange (STAGE),https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance/HKEX-STAGE?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,112,anchor,Biotech @ HKEX,https://www.hkex.com.hk/Join-Our-Market/Biotech?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,113,anchor,Listing of Specialist Technology Companies,https://www.hkex.com.hk/Listing/Rules-and-Guidance/Listing-of-Specialist-Technology-Companies?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,115,anchor,Listing Regulations,https://www.hkex.com.hk/Listing/Listing-Regulations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,116,anchor,Explore By Role,https://www.hkex.com.hk/Listing/Explore-By-Role/Potential-Applicants?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,118,anchor,Listed Issuers,https://www.hkex.com.hk/Listing/Explore-By-Role/Listed-Issuers?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,119,anchor,Directors,https://www.hkex.com.hk/Listing/Explore-By-Role/Directors?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,120,anchor,Rules & Resources,https://www.hkex.com.hk/Listing/Rules-and-Resources/Rules-and-Resources?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,121,anchor,Listing Rules,https://www.hkex.com.hk/Listing/Rules-and-Resources/Listing-Rules?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,122,anchor,Guidance,https://www.hkex.com.hk/Listing/Rules-and-Resources/Guidance?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,123,anchor,"Checklists, forms & templates",https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,124,anchor,Enforcement,https://www.hkex.com.hk/Listing/Disciplinary-and-Enforcement/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,125,anchor,News & Publications,https://www.hkex.com.hk/Listing/News-and-Publications/News-and-Publications?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,126,anchor,What's New,https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,127,anchor,Listing Newsletters,https://www.hkex.com.hk/Listing/News-and-Publications/Newsletters/All-newsletters?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,128,anchor,Reports,https://www.hkex.com.hk/Listing/News-and-Publications/Reports?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,129,anchor,Listing Consultations,https://www.hkex.com.hk/Listing/News-and-Publications/Listing-Consultations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,130,anchor,Sustainability & Corporate Governance,https://www.hkex.com.hk/Listing/Sustainability/ESG-Academy?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,132,anchor,Board Diversity Hub,https://www.hkex.com.hk/Listing/Sustainability/Board-Diversity-hub/Board-Diversity-Home?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,133,anchor,Corporate Governance Practices,https://www.hkex.com.hk/Listing/Sustainability/Corporate-Governance-Practices?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,134,anchor,Shareholder Value in Focus,https://www.hkex.com.hk/Listing/Sustainability/Shareholder-Value-in-Focus/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,135,anchor,INED Corner,https://www.hkex.com.hk/Listing/Sustainability/INED-Corner/INED-Corner-Home?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,136,anchor,Education Centre,https://www.hkex.com.hk/Listing/Education-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,137,anchor,About Listing & Contacts,https://www.hkex.com.hk/Listing/About-Listing-and-Contacts/About-Listing-and-Contacts?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,138,anchor,News Centre,https://www.hkex.com.hk/News/News-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,139,anchor,Corporate News Releases,https://www.hkex.com.hk/News/News-Release?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,140,anchor,Regulatory Announcements,https://www.hkex.com.hk/News/Regulatory-Announcements?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,141,anchor,Market Communications,https://www.hkex.com.hk/News/Market-Communications?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,142,anchor,Market Consultations,https://www.hkex.com.hk/News/Market-Consultations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,144,anchor,HKEX Calendar,https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,145,anchor,Research Reports,https://www.hkex.com.hk/News/Research-Reports?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,147,anchor,Connect Hub,https://www.hkex.com.hk/Mutual-Market/Connect-Hub?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,149,anchor,Bond Connect,http://www.chinabondconnect.com,www.chinabondconnect.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,150,anchor,Swap Connect,https://www.hkex.com.hk/Mutual-Market/Swap-Connect/Swap-Connect?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,151,anchor,Daily Statistics,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Historical-Daily?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,152,anchor,Market Highlights,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Hong-Kong-and-Mainland-Market-Highlights?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,153,anchor,Eligible Securities,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Eligible-Stocks/View-All-Eligible-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,156,anchor,Equities,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,157,anchor,Exchange Traded Products,https://www.hkex.com.hk/Market-Data/Securities-Prices/Exchange-Traded-Products?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,158,anchor,Derivative Warrants,https://www.hkex.com.hk/Market-Data/Securities-Prices/Derivative-Warrants?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,159,anchor,Inline Warrants,https://www.hkex.com.hk/Market-Data/Securities-Prices/Inline-Warrants?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,160,anchor,Callable Bull / Bear Contracts,https://www.hkex.com.hk/Market-Data/Securities-Prices/Callable-Bull-Bear-Contracts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,161,anchor,Real Estate Investment Trusts,https://www.hkex.com.hk/Market-Data/Securities-Prices/Real-Estate-Investment-Trusts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,162,anchor,Debt Securities,https://www.hkex.com.hk/Market-Data/Securities-Prices/Debt-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,164,anchor,Equity Index,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Equity-Index?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,165,anchor,Single Stock,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Single-Stock?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,166,anchor,Foreign Exchange,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Foreign-Exchange?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,167,anchor,Interest Rate,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Interest-Rate?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,168,anchor,Commodities,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Commodities?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,170,anchor,Consolidated Reports,https://www.hkex.com.hk/Market-Data/Statistics/Consolidated-Reports/HKEX-Monthly-Market-Highlights?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,171,anchor,Securities Market,https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,172,anchor,Derivatives Market,https://www.hkex.com.hk/Market-Data/Statistics/Derivatives-Market?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,173,anchor,Participant,https://www.hkex.com.hk/Market-Data/Statistics/Participant/Stock-Exchange-Participants_-Market-Share-Report?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,174,anchor,"Clearing, Settlement and Depository",https://www.hkex.com.hk/Market-Data/Statistics/Clearing-and-Settlement-and-Depository?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,175,anchor,HKEXnews,https://www.hkex.com.hk/Market-Data/HKEX-News?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,176,anchor,News Alerts,https://www.hkex.com.hk/Market-Data/News-Alerts?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,177,anchor,Market Data Services,https://www.hkex.com.hk/Services/Market-Data-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,361,anchor,Trading News,https://www.hkex.com.hk/eng/market/sec_tradinfo/tradnews/tradnews.htm,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,362,anchor,Newly Listed Securities,https://www.hkex.com.hk/Services/Trading/Securities/Trading-News/Newly-Listed-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,363,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Securities/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,365,anchor,Reduction of Minimum Spreads,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism/Reduction-of-Minimum-Spreads?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,366,anchor,HKIDR,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism/HKIDR?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,367,anchor,HKD-RMB Dual Counter Model,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism/HKD-RMB-Dual-Counter-Model?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,368,anchor,Self-Match Prevention (SMP),https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism/Self-Match-Prevention?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,369,anchor,SPAC,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism/SPAC?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,370,anchor,POS Enhancements Initiative,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism/POS-Enhancements-Initiative?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,371,anchor,VCM Enhancements Initiative,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism/VCM-Enhancements-Initiative?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,372,anchor,Regulated Short Selling,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Regulated-Short-Selling?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,373,anchor,Exchange Rates for RMB Equity Trading Support Facility (TSF),https://www.hkex.com.hk/Services/Trading/Securities/Overview/Exchange-Rates-for-RMB-Equity-Trading-Support-Facility-(TSF)?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,374,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,376,anchor,OCG-C,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/OCGC?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,377,anchor,Testing Services,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/Testing-Services?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,378,anchor,SDNet/2,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/Connectivity?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,379,anchor,Stamp Duty Reporting and Payment,https://www.hkex.com.hk/Services/Trading/Securities/Stamp-Duty-Reporting-and-Payment?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,380,anchor,ECP & Documentation,https://www.hkex.com.hk/Services/Trading/Securities/Stamp-Duty-Reporting-and-Payment/ECP_Documentation?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,381,anchor,Exchange Rates for Stamp Duty Calculation,https://www.hkex.com.hk/Services/Trading/Securities/Stamp-Duty-Reporting-and-Payment/Exchange-rates-for-stamp-duty-Calculation?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,382,anchor,Securities exempt from Hong Kong stamp duty,https://www.hkex.com.hk/Services/Trading/Securities/Stamp-Duty-Reporting-and-Payment/Securities-exempt-from-Hong-Kong-stamp-duty?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,383,anchor,https://www.hkexnews.hk/index.htm,https://www.hkexnews.hk/index.htm,www.hkexnews.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,384,anchor,https://www2.hkexnews.hk/new-listings/new-listing-information/main-board?sc_lang=en,https://www2.hkexnews.hk/new-listings/new-listing-information/main-board?sc_lang=en,www2.hkexnews.hk,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,385,anchor,https://www2.hkexnews.hk/New-Listings/New-Listing-Information/GEM?sc_lang=en,https://www2.hkexnews.hk/New-Listings/New-Listing-Information/GEM?sc_lang=en,www2.hkexnews.hk,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,386,anchor,CMON RTS,https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0811/2026081100017.pdf,www1.hkexnews.hk,False,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,388,anchor,CN CULTURE-20K,https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0722/2026072200724.pdf,www1.hkexnews.hk,False,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,390,anchor,YLDKING N2908,https://www.hkex.com.hk/Market-Data/Securities-Prices/Debt-Securities/Debt-Securities-Quote?sym=40647&sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,392,anchor,NASN TECH,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sym=2261&sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,394,anchor,BRIGHTSTAR TECH,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sym=8577&sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,396,anchor,XIANJIN B2908-R,https://www.hkex.com.hk/Market-Data/Securities-Prices/Debt-Securities/Debt-Securities-Quote?sym=85147&sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,398,anchor,BIOSYSEN RTS,https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0804/2026080400001.pdf,www1.hkexnews.hk,False,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,400,anchor,SUNCORP TECH,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sym=2903&sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,402,anchor,IMPERIUM T RTS,https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0728/2026072800462.pdf,www1.hkexnews.hk,False,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,404,anchor,A CSOP KOSPICC,https://www.hkex.com.hk/Market-Data/Securities-Prices/Exchange-Traded-Products/Exchange-Traded-Products-Quote?sym=3537&sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,406,anchor,MYS SSB C3204,https://www.hkex.com.hk/Market-Data/Securities-Prices/Debt-Securities/Debt-Securities-Quote?sym=40619&sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,408,anchor,MYS SSB C3607,https://www.hkex.com.hk/Market-Data/Securities-Prices/Debt-Securities/Debt-Securities-Quote?sym=40637&sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,410,anchor,MOG DIGITEC RTS,https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0727/2026072701293.pdf,www1.hkexnews.hk,False,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,412,anchor,ZJ INNOLIGHT,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sym=3308&sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,415,anchor,,https://twitter.com/hkexgroup,twitter.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,416,anchor,,https://www.linkedin.com/company/hkex,www.linkedin.com,False,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,417,anchor,,https://www.hkex.com.hk/Global/Follow-Us-on-WeChat?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,418,anchor,,https://www.youtube.com/user/hkexgroup,www.youtube.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,419,anchor,,https://www.weibo.com/6508212764,www.weibo.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,420,anchor,Alert,https://www.hkex.com.hk/Global/Exchange/Alert?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,421,anchor,Contact,https://www.hkex.com.hk/Global/Exchange/Contact?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,422,anchor,Career,https://www.hkexgroup.com/About-HKEX/Careers-at-HKEX?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,423,anchor,FAQ,https://www.hkex.com.hk/Global/Exchange/FAQ/Top-Questions?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,424,anchor,Investor Product Videos,https://www.hkex.com.hk/Products/Product-Videos?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,425,anchor,Market System Status,https://www.hkex.com.hk/Global/Exchange/Market-System-Status?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,426,anchor,Sitemap,https://www.hkex.com.hk/Global/Exchange/Sitemap?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,427,anchor,Glossary,https://www.hkex.com.hk/Global/Exchange/Glossary?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,428,anchor,HKEX Subscription Centre,https://www.hkex.com.hk/Global/Exchange/Subscription-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,429,anchor,Terms of Use,https://www.hkex.com.hk/Global/Exchange/Terms-of-Use?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,430,anchor,HKEX Privacy Notices,https://www.hkex.com.hk/Global/Exchange/HKEX-Privacy-Notices?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,431,anchor,Cookie Notice,https://www.hkex.com.hk/Global/Exchange/Cookie-Notice?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,432,anchor,RSS,https://www.hkex.com.hk/Services/RSS-Feeds?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,433,anchor,,https://www.hkex.com.hk/Services/Trading/Securities/Trading-News/Newly-Listed-Securities?sc_lang=en#hkex_page_header,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,1,script,,https://www.googletagmanager.com/gtag/js?id=UA-51785376-1,www.googletagmanager.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,2,script,,https://assets.adobedtm.com/fbccf582fbe1/8fbefc7f35d2/launch-5e83ee102cdb.min.js,assets.adobedtm.com,False,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,3,script,,https://www.hkex.com.hk/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZO4t08T6HmhnDGbjX96oZdPaMh8lD2t8x85rkS62NDQlWwa4-ghWuZIAi_nPQx-cCAeCbu3IA5NzIU5UHeyEQ9Q3sexmG-UayYvbywRkl5Yk0&t=638628495619783110,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,4,script,,https://www.hkex.com.hk/Scripts/HKEX/HKEX Market/scMainMarket.js?v=20260508105816,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,5,script,,https://www.hkex.com.hk/assets/js/jquery.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,6,script,,https://www.hkex.com.hk/assets/js/bootstrap.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,7,script,,https://www.hkex.com.hk/assets/js/bootstrap-restrict.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,8,script,,https://www.hkex.com.hk/assets/js/vendor.js?v=20211220103950,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,9,script,,https://www.hkex.com.hk/Scripts/GLOBAL/polyfill.min.js?v=20211105150722,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,10,script,,https://www.hkex.com.hk/Scripts/GLOBAL/SearchResultAnalytics.js?v=20221206091346,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,11,script,,https://www.hkex.com.hk/assets/js/jquery.fancybox.pack.js?v=20230512122203,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,12,script,,https://www.hkex.com.hk/Scripts/HKEX/HKEX Market/jquery.ba-throttle-debounce.min.js?v=20211105150724,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,13,script,,https://www.hkex.com.hk/assets/js/jquery.stickysort.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,14,script,,https://www.hkex.com.hk/assets/js/validator.js?v=20220307134728,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,15,script,,https://www.hkex.com.hk/assets/js/jquery-ui.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,16,script,,https://www.hkex.com.hk/assets/js/js.cookie.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,17,script,,https://www.hkex.com.hk/assets/js/jquery.scrolltabs.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,18,script,,https://www.hkex.com.hk/lhkexw/js/misc/date.js,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,19,script,,https://www.hkex.com.hk/lhkexw/js/misc/numberformat.js,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,20,script,,https://www.hkex.com.hk/lhkexw/js/lib/abstractpageobj.js,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,21,script,,https://www.hkex.com.hk/lhkexw/js/lib/utils.js,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,22,script,,https://www.hkex.com.hk/lhkexw/js/lib/financialdataformat.js,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,23,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlconfig.js,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,24,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlcore.js,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,25,script,,https://www.hkex.com.hk/lhkexw/js/commonrc.js,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,26,script,,https://www.hkex.com.hk/lhkexw/js/marketmarquee.js?_=20210721a,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,27,script,,https://www.hkex.com.hk/lhkexw/js/chkcookies.js?_=20230626,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,28,script,,https://www.hkex.com.hk/lhkexw/js/misc/date.js?_=20200814a,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,33,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlconfig.js?_=20180903a,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,36,script,,https://www.hkex.com.hk/lhkexw/js/marketdetail.js?_=20220831a,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,37,script,,https://www.hkex.com.hk/lhkexw/js/marketturnover.js?_=20240502a,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,38,script,,https://www.hkex.com.hk/lhkexw/js/marketsecurities.js?_=20200814a,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,39,script,,https://www.hkex.com.hk/lhkexw/js/marketsearch.js?_=20200814a,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,40,script,,https://www.hkex.com.hk/lhkexw/js/marketderivatives.js?_=20240722a,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,41,script,,https://www.hkex.com.hk/lhkexw/js/highcharts/moment.min.js,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,42,script,,https://www.hkex.com.hk/lhkexw/js/highcharts/moment-timezone-with-data-2010-2020.min.js,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,43,script,,https://www.hkex.com.hk/assets/js/main.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,44,script,,https://www.hkex.com.hk/assets/js/market.js?v=20240816180040,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,45,script,,https://www.hkex.com.hk/assets/js/hkex-market-site.js?v=20220601165214,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,46,script,,https://www.hkex.com.hk/assets/js/hkex-config-market.js?v=20221124175240,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,47,script,,https://www.hkex.com.hk/assets/js/gti-Market-common-jquery.js?v=20241219161624,www.hkex.com.hk,True,False,True
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,48,script,,https://www.hkex.com.hk/assets/js/LoadDeferredStyles.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,49,script,,https://www.hkex.com.hk/Q4h8sMDR/reh/Hov/YYNfOFECLh/pwtipw1Dk97X/U1glS1Jc/WjFQN/GwaMwcT?v=f3014fc0-48ab-7c63-1753-565bbe760214,www.hkex.com.hk,True,False,False
+hkex_newly_listed_securities,hkex_newly_listed_securities_page,1,form,,https://www.hkex.com.hk/Services/Trading/Securities/Trading-News/Newly-Listed-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,1,anchor,,https://www.hkex.com.hk/?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,2,anchor,,https://www.hkex.com.hk/Global/HKEX-Market-Search-Listing-Result?sc_lang=en#,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,5,anchor,简,https://www.hkex.com.hk/Global/Disclaimer-For-HanWeb,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,6,anchor,About HKEX,https://www.hkexgroup.com/about-hkex/about-hkex?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,7,anchor,Investor Relations,http://www.hkexgroup.com/Investor-Relations?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,8,anchor,Corporate Governance,http://www.hkexgroup.com/Corporate-Governance?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,9,anchor,Sustainability,https://www.hkexgroup.com/Sustainability?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,10,anchor,Media Centre,https://www.hkexgroup.com/Media-Centre?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,11,anchor,Careers,https://www.hkexgroup.com/about-hkex/careers-at-hkex?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,12,anchor,HKEX Group,http://www.hkexgroup.com/,www.hkexgroup.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,13,anchor,LME,https://www.lme.com/,www.lme.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,14,anchor,Bond Connect,https://www.chinabondconnect.com/en/index.html,www.chinabondconnect.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,15,anchor,QME,https://www.qme.com/zh-hans,www.qme.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,16,anchor,HKEXnews,http://www.hkexnews.hk/,www.hkexnews.hk,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,17,anchor,CESC,https://www.cesc.com/en/index.html,www.cesc.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,18,anchor,Client Connect,https://connect.hkex.com.hk,connect.hkex.com.hk,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,22,anchor,Equities,https://www.hkex.com.hk/Products/Securities/Equities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,23,anchor,Exchange Traded Products,https://www.hkex.com.hk/Products/Securities/Exchange-Traded-Products/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,24,anchor,Structured Products,https://www.hkex.com.hk/Products/Securities/Structured-Products/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,25,anchor,Real Estate Investment Trusts,https://www.hkex.com.hk/Products/Securities/Real-Estate-Investment-Trusts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,26,anchor,Debt Securities,https://www.hkex.com.hk/Products/Securities/Debt-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,28,anchor,Equity Index,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Index-(HSI)/Hang-Seng-Index-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,29,anchor,Single Stock,https://www.hkex.com.hk/Products/Listed-Derivatives/Single-Stock/Stock-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,30,anchor,Foreign Exchange,https://www.hkex.com.hk/Products/Listed-Derivatives/Foreign-Exchange/USD-CNH-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,31,anchor,Interest Rate,https://www.hkex.com.hk/Products/Listed-Derivatives/Interest-Rate/HKEX-China-Government-Bond-Futures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,32,anchor,Commodities,https://www.hkex.com.hk/Products/Listed-Derivatives/Commodities/USD-Gold?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,34,anchor,Eligible OTC Clear Products,https://www.hkex.com.hk/Products/OTC-Derivatives/Eligible-OTC-Clear-Products?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,35,anchor,Interest Rate Swaps,https://www.hkex.com.hk/Products/OTC-Derivatives/Interest-Rate-Swaps?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,36,anchor,Non Deliverable Forwards,https://www.hkex.com.hk/Products/OTC-Derivatives/Non-Deliverable-Forwards?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,37,anchor,Cross Currency Swaps,https://www.hkex.com.hk/Products/OTC-Derivatives/Cross-Currency-Swaps?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,38,anchor,Deliverable FX,https://www.hkex.com.hk/Products/OTC-Derivatives/Deliverable-FX?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,39,anchor,Find a Partner,https://www.hkex.com.hk/Products/Find-a-Partner?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,40,anchor,MSCI Index Futures & Options,https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/MSCI-Indexes/MSCI-Indexes?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,41,anchor,HKEX Sustainable & Green Exchange,https://www.hkex.com.hk/stage,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,45,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Securities/Overview/Trading-Mechanism?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,46,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Securities/Infrastructure/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,48,anchor,Overview,https://www.hkex.com.hk/Services/Trading/Derivatives/Overview/Trading-Mechanism?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,49,anchor,Infrastructure,https://www.hkex.com.hk/Services/Trading/Derivatives/Infrastructure/HKATS?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,51,anchor,Hosting Services,https://www.hkex.com.hk/Services/Connectivity/Hosting-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,52,anchor,SDNet/2,https://www.hkex.com.hk/Services/Connectivity/SDNet_2?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,54,anchor,Real Time Data Services,https://www.hkex.com.hk/Services/Market-Data-Services/Real-Time-Data-Services/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,55,anchor,Historical Data Services,https://www.hkex.com.hk/Services/Market-Data-Services/Historical-Data-Services/HKEX-Data-Marketplace?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,56,anchor,Infrastructure,https://www.hkex.com.hk/Services/Market-Data-Services/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,57,anchor,Index Services,https://www.hkex.com.hk/Services/Market-Data-Services/Index-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,59,anchor,Rules,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Rules/Overview?sc_lang=en#hello,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,60,anchor,Forms,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Forms/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,61,anchor,Fees,https://www.hkex.com.hk/Services/Rules-and-Forms-and-Fees/Fees/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,64,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/Securities/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,65,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/Securities/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,66,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/Securities/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,67,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/Securities/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,69,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Overview?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,70,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,71,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,72,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/Listed-Derivatives/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,74,anchor,Overview,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Overview/Clearing-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,75,anchor,Infrastructure,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Infrastructure?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,76,anchor,Risk Management,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/Risk-Management?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,77,anchor,CCP Disclosures,https://www.hkex.com.hk/Services/Clearing/OTC-Clear/CCP-Disclosures?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,79,anchor,Settlement - Securities,https://www.hkex.com.hk/Services/Settlement-and-Depository/Settlement?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,80,anchor,Depository,https://www.hkex.com.hk/Services/Settlement-and-Depository/Depository?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,81,anchor,Uncertificated Securities Market,https://www.hkex.com.hk/Services/Settlement-and-Depository/USM?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,82,anchor,Common Nominee Services,https://www.hkex.com.hk/Services/Settlement-and-Depository/Common-Nominee-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,83,anchor,Securities Admission into CCASS,https://www.hkex.com.hk/Services/Settlement-and-Depository/Securities-Admission-into-CCASS?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,85,anchor,Unclaimed Entitlements Held by HKSCC Nominees Limited,https://www.hkex.com.hk/Services/Settlement-and-Depository/Unclaimed-Entitlements-Held-by-HKSCC-Nominees-Limited?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,87,anchor,Client Connect,https://www.hkex.com.hk/Services/Platform-Services/Client-Connect?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,88,anchor,Corporate Action Messaging Standardisation,https://www.hkex.com.hk/Services/Settlement-and-Depository/Common-Nominee-Services/Corporate-Action-Message-Standardisation-(CAMS)?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,89,anchor,FINI - A New Era for Hong Kong’s IPO market,https://www.hkex.com.hk/Services/Platform-Services/FINI?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,90,anchor,Orion Cash Platform,https://www.hkex.com.hk/Services/Platform-Services/Orion-Cash-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,91,anchor,Orion Derivatives Platform,https://www.hkex.com.hk/Services/Platform-Services/Orion-Derivatives-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,92,anchor,HKEX Issuer Access Platform,https://www.hkex.com.hk/Services/Platform-Services/Issuer-Access-Platform?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,93,anchor,Integrated Fund Platform,https://www.hkex.com.hk/Services/Platform-Services/Integrated-Fund-Platform?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,94,anchor,Digital Payment Adoption for After-Hours Trading,https://www.hkex.com.hk/Services/Platform-Services/Digital-Payment-Adoption-for-After-Hours-Trading?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,95,anchor,Circulars & Notices,https://www.hkex.com.hk/Services/Circulars-and-Notices/Participant-and-Members-Circulars?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,96,anchor,Become a Participant,https://www.hkex.com.hk/Services/Become-a-Participant?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,97,anchor,HKEX Connect Hall,https://www.hkex.com.hk/Services/HKEX-Connect-Hall?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,98,anchor,Join Our Markets,https://www.hkex.com.hk/Join-Our-Market/IPO/Listing-with-HKEX?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,101,anchor,GEM,https://www.hkex.com.hk/Join-Our-Market/IPO/GEM?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,102,anchor,Southeast Asia Listing Insights,https://www.hkex.com.hk/Join-Our-Market/IPO/Listing-with-HKEX/Southeast-Asia-Hub?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,104,anchor,Stock Connect,https://www.hkex.com.hk/Mutual-Market/Stock-Connect?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,107,anchor,LME,http://www.lme.com,www.lme.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,108,anchor,QME,http://www.qme.com,www.qme.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,109,anchor,Sustainable Finance at HKEX,https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,110,anchor,Core Climate,https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance/Core-Climate?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,111,anchor,Sustainable & Green Exchange (STAGE),https://www.hkex.com.hk/Join-Our-Market/Sustainable-Finance/HKEX-STAGE?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,112,anchor,Biotech @ HKEX,https://www.hkex.com.hk/Join-Our-Market/Biotech?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,113,anchor,Listing of Specialist Technology Companies,https://www.hkex.com.hk/Listing/Rules-and-Guidance/Listing-of-Specialist-Technology-Companies?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,115,anchor,Listing Regulations,https://www.hkex.com.hk/Listing/Listing-Regulations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,116,anchor,Explore By Role,https://www.hkex.com.hk/Listing/Explore-By-Role/Potential-Applicants?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,118,anchor,Listed Issuers,https://www.hkex.com.hk/Listing/Explore-By-Role/Listed-Issuers?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,119,anchor,Directors,https://www.hkex.com.hk/Listing/Explore-By-Role/Directors?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,120,anchor,Rules & Resources,https://www.hkex.com.hk/Listing/Rules-and-Resources/Rules-and-Resources?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,121,anchor,Listing Rules,https://www.hkex.com.hk/Listing/Rules-and-Resources/Listing-Rules?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,122,anchor,Guidance,https://www.hkex.com.hk/Listing/Rules-and-Resources/Guidance?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,123,anchor,"Checklists, forms & templates",https://www.hkex.com.hk/Listing/Rules-and-Resources/Checklist-forms-and-templates?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,124,anchor,Enforcement,https://www.hkex.com.hk/Listing/Disciplinary-and-Enforcement/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,125,anchor,News & Publications,https://www.hkex.com.hk/Listing/News-and-Publications/News-and-Publications?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,126,anchor,What's New,https://www.hkex.com.hk/Listing/News-and-Publications/Whats-New?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,127,anchor,Listing Newsletters,https://www.hkex.com.hk/Listing/News-and-Publications/Newsletters/All-newsletters?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,128,anchor,Reports,https://www.hkex.com.hk/Listing/News-and-Publications/Reports?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,129,anchor,Listing Consultations,https://www.hkex.com.hk/Listing/News-and-Publications/Listing-Consultations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,130,anchor,Sustainability & Corporate Governance,https://www.hkex.com.hk/Listing/Sustainability/ESG-Academy?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,132,anchor,Board Diversity Hub,https://www.hkex.com.hk/Listing/Sustainability/Board-Diversity-hub/Board-Diversity-Home?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,133,anchor,Corporate Governance Practices,https://www.hkex.com.hk/Listing/Sustainability/Corporate-Governance-Practices?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,134,anchor,Shareholder Value in Focus,https://www.hkex.com.hk/Listing/Sustainability/Shareholder-Value-in-Focus/Overview?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,135,anchor,INED Corner,https://www.hkex.com.hk/Listing/Sustainability/INED-Corner/INED-Corner-Home?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,136,anchor,Education Centre,https://www.hkex.com.hk/Listing/Education-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,137,anchor,About Listing & Contacts,https://www.hkex.com.hk/Listing/About-Listing-and-Contacts/About-Listing-and-Contacts?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,138,anchor,News Centre,https://www.hkex.com.hk/News/News-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,139,anchor,Corporate News Releases,https://www.hkex.com.hk/News/News-Release?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,140,anchor,Regulatory Announcements,https://www.hkex.com.hk/News/Regulatory-Announcements?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,141,anchor,Market Communications,https://www.hkex.com.hk/News/Market-Communications?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,142,anchor,Market Consultations,https://www.hkex.com.hk/News/Market-Consultations?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,144,anchor,HKEX Calendar,https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,145,anchor,Research Reports,https://www.hkex.com.hk/News/Research-Reports?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,147,anchor,Connect Hub,https://www.hkex.com.hk/Mutual-Market/Connect-Hub?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,149,anchor,Bond Connect,http://www.chinabondconnect.com,www.chinabondconnect.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,150,anchor,Swap Connect,https://www.hkex.com.hk/Mutual-Market/Swap-Connect/Swap-Connect?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,151,anchor,Daily Statistics,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Historical-Daily?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,152,anchor,Market Highlights,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Hong-Kong-and-Mainland-Market-Highlights?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,153,anchor,Eligible Securities,https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Eligible-Stocks/View-All-Eligible-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,156,anchor,Equities,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,157,anchor,Exchange Traded Products,https://www.hkex.com.hk/Market-Data/Securities-Prices/Exchange-Traded-Products?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,158,anchor,Derivative Warrants,https://www.hkex.com.hk/Market-Data/Securities-Prices/Derivative-Warrants?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,159,anchor,Inline Warrants,https://www.hkex.com.hk/Market-Data/Securities-Prices/Inline-Warrants?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,160,anchor,Callable Bull / Bear Contracts,https://www.hkex.com.hk/Market-Data/Securities-Prices/Callable-Bull-Bear-Contracts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,161,anchor,Real Estate Investment Trusts,https://www.hkex.com.hk/Market-Data/Securities-Prices/Real-Estate-Investment-Trusts?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,162,anchor,Debt Securities,https://www.hkex.com.hk/Market-Data/Securities-Prices/Debt-Securities?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,164,anchor,Equity Index,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Equity-Index?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,165,anchor,Single Stock,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Single-Stock?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,166,anchor,Foreign Exchange,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Foreign-Exchange?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,167,anchor,Interest Rate,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Interest-Rate?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,168,anchor,Commodities,https://www.hkex.com.hk/Market-Data/Futures-and-Options-Prices/Commodities?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,170,anchor,Consolidated Reports,https://www.hkex.com.hk/Market-Data/Statistics/Consolidated-Reports/HKEX-Monthly-Market-Highlights?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,171,anchor,Securities Market,https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,172,anchor,Derivatives Market,https://www.hkex.com.hk/Market-Data/Statistics/Derivatives-Market?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,173,anchor,Participant,https://www.hkex.com.hk/Market-Data/Statistics/Participant/Stock-Exchange-Participants_-Market-Share-Report?sc_lang=en,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,174,anchor,"Clearing, Settlement and Depository",https://www.hkex.com.hk/Market-Data/Statistics/Clearing-and-Settlement-and-Depository?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,175,anchor,HKEXnews,https://www.hkex.com.hk/Market-Data/HKEX-News?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,176,anchor,News Alerts,https://www.hkex.com.hk/Market-Data/News-Alerts?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,177,anchor,Market Data Services,https://www.hkex.com.hk/Services/Market-Data-Services?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,358,anchor,HKEX - HKEX Market Search Result,https://www.hkex.com.hk/Global/HKEX-Market-Search-Listing-Result?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,360,anchor,Advanced Search,https://www.hkex.com.hk/Global/HKEX-Market-Search-Listing-Result?sc_lang=en#checkboxForm,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,361,anchor,"Search the Listing Rules, Amendments to Listing Rules, Guidance, FAQs and Listing Review Committee Decisions here.",https://en-rules.hkex.com.hk/search,en-rules.hkex.com.hk,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,363,anchor,,https://twitter.com/hkexgroup,twitter.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,364,anchor,,https://www.linkedin.com/company/hkex,www.linkedin.com,False,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,365,anchor,,https://www.hkex.com.hk/Global/Follow-Us-on-WeChat?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,366,anchor,,https://www.youtube.com/user/hkexgroup,www.youtube.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,367,anchor,,https://www.weibo.com/6508212764,www.weibo.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,368,anchor,Alert,https://www.hkex.com.hk/Global/Exchange/Alert?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,369,anchor,Contact,https://www.hkex.com.hk/Global/Exchange/Contact?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,370,anchor,Career,https://www.hkexgroup.com/About-HKEX/Careers-at-HKEX?sc_lang=en,www.hkexgroup.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,371,anchor,FAQ,https://www.hkex.com.hk/Global/Exchange/FAQ/Top-Questions?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,372,anchor,Investor Product Videos,https://www.hkex.com.hk/Products/Product-Videos?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,373,anchor,Market System Status,https://www.hkex.com.hk/Global/Exchange/Market-System-Status?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,374,anchor,Sitemap,https://www.hkex.com.hk/Global/Exchange/Sitemap?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,375,anchor,Glossary,https://www.hkex.com.hk/Global/Exchange/Glossary?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,376,anchor,HKEX Subscription Centre,https://www.hkex.com.hk/Global/Exchange/Subscription-Centre?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,377,anchor,Terms of Use,https://www.hkex.com.hk/Global/Exchange/Terms-of-Use?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,378,anchor,HKEX Privacy Notices,https://www.hkex.com.hk/Global/Exchange/HKEX-Privacy-Notices?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,379,anchor,Cookie Notice,https://www.hkex.com.hk/Global/Exchange/Cookie-Notice?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,380,anchor,RSS,https://www.hkex.com.hk/Services/RSS-Feeds?sc_lang=en,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,381,anchor,,https://www.hkex.com.hk/Global/HKEX-Market-Search-Listing-Result?sc_lang=en#hkex_page_header,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,1,script,,https://www.googletagmanager.com/gtag/js?id=UA-51785376-1,www.googletagmanager.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,2,script,,https://assets.adobedtm.com/fbccf582fbe1/8fbefc7f35d2/launch-5e83ee102cdb.min.js,assets.adobedtm.com,False,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,3,script,,https://www.hkex.com.hk/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZO4t08T6HmhnDGbjX96oZdPaMh8lD2t8x85rkS62NDQlWwa4-ghWuZIAi_nPQx-cCAeCbu3IA5NzIU5UHeyEQ9Q3sexmG-UayYvbywRkl5Yk0&t=638628495619783110,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,4,script,,https://www.hkex.com.hk/Scripts/HKEX/HKEX Market/scMainMarket.js?v=20260508105816,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,5,script,,https://www.hkex.com.hk/assets/js/jquery.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,6,script,,https://www.hkex.com.hk/assets/js/bootstrap.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,7,script,,https://www.hkex.com.hk/assets/js/bootstrap-restrict.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,8,script,,https://www.hkex.com.hk/assets/js/vendor.js?v=20211220103950,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,9,script,,https://www.hkex.com.hk/Scripts/GLOBAL/polyfill.min.js?v=20211105150722,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,10,script,,https://www.hkex.com.hk/Scripts/GLOBAL/SearchResultAnalytics.js?v=20221206091346,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,11,script,,https://www.hkex.com.hk/assets/js/jquery.fancybox.pack.js?v=20230512122203,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,12,script,,https://www.hkex.com.hk/Scripts/HKEX/HKEX Market/jquery.ba-throttle-debounce.min.js?v=20211105150724,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,13,script,,https://www.hkex.com.hk/assets/js/jquery.stickysort.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,14,script,,https://www.hkex.com.hk/assets/js/validator.js?v=20220307134728,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,15,script,,https://www.hkex.com.hk/assets/js/jquery-ui.min.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,16,script,,https://www.hkex.com.hk/assets/js/js.cookie.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,17,script,,https://www.hkex.com.hk/assets/js/jquery.scrolltabs.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,18,script,,https://www.hkex.com.hk/lhkexw/js/misc/date.js,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,19,script,,https://www.hkex.com.hk/lhkexw/js/misc/numberformat.js,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,20,script,,https://www.hkex.com.hk/lhkexw/js/lib/abstractpageobj.js,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,21,script,,https://www.hkex.com.hk/lhkexw/js/lib/utils.js,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,22,script,,https://www.hkex.com.hk/lhkexw/js/lib/financialdataformat.js,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,23,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlconfig.js,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,24,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlcore.js,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,25,script,,https://www.hkex.com.hk/lhkexw/js/commonrc.js,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,26,script,,https://www.hkex.com.hk/lhkexw/js/marketmarquee.js?_=20210721a,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,27,script,,https://www.hkex.com.hk/lhkexw/js/chkcookies.js?_=20230626,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,28,script,,https://www.hkex.com.hk/lhkexw/js/misc/date.js?_=20200814a,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,33,script,,https://www.hkex.com.hk/lhkexw/js/lib/ssdl/ssdlconfig.js?_=20180903a,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,36,script,,https://www.hkex.com.hk/lhkexw/js/marketdetail.js?_=20220831a,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,37,script,,https://www.hkex.com.hk/lhkexw/js/marketturnover.js?_=20240502a,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,38,script,,https://www.hkex.com.hk/lhkexw/js/marketsecurities.js?_=20200814a,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,39,script,,https://www.hkex.com.hk/lhkexw/js/marketsearch.js?_=20200814a,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,40,script,,https://www.hkex.com.hk/lhkexw/js/marketderivatives.js?_=20240722a,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,41,script,,https://www.hkex.com.hk/lhkexw/js/highcharts/moment.min.js,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,42,script,,https://www.hkex.com.hk/lhkexw/js/highcharts/moment-timezone-with-data-2010-2020.min.js,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,43,script,,https://www.hkex.com.hk/assets/js/main.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,44,script,,https://www.hkex.com.hk/assets/js/market.js?v=20240816180040,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,45,script,,https://www.hkex.com.hk/assets/js/hkex-market-site.js?v=20220601165214,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,46,script,,https://www.hkex.com.hk/assets/js/hkex-config-market.js?v=20221124175240,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,47,script,,https://www.hkex.com.hk/assets/js/gti-Market-common-jquery.js?v=20241219161624,www.hkex.com.hk,True,False,True
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,48,script,,https://www.hkex.com.hk/assets/js/LoadDeferredStyles.js?v=20211105150728,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,49,script,,https://www.hkex.com.hk/Q4h8sMDR/reh/Hov/YYNfOFECLh/pwtipw1Dk97X/U1glS1Jc/WjFQN/GwaMwcT?v=012e62d8-5920-a501-09fd-81cfdf960214,www.hkex.com.hk,True,False,False
+hkex_market_search_listing_result,hkex_market_search_listing_result_page,1,form,,https://www.hkex.com.hk/Global/HKEX-Market-Search-Listing-Result?sc_lang=en,www.hkex.com.hk,True,False,True
+hkexnews_issuer_search,hkexnews_index_page,1,anchor,LISTED COMPANY INFORMATION,https://www.hkexnews.hk/index.htm#listed-company,www.hkexnews.hk,True,False,True
+hkexnews_issuer_search,hkexnews_index_page,2,anchor,,https://www.hkexnews.hk/index.htm#,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,4,anchor,LISTED COMPANY INFORMATION,https://www.hkexnews.hk/index.htm#listed-company-collapse,www.hkexnews.hk,True,False,True
+hkexnews_issuer_search,hkexnews_index_page,5,anchor,CCASS SHAREHOLDING,https://www.hkexnews.hk/index.htm#ccass-shareholding,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,7,anchor,CCASS SHAREHOLDING,https://www.hkexnews.hk/index.htm#ccass-shareholding-collapse,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,1,script,,https://www.hkexnews.hk/ncms/script/hkex_app.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,2,script,,https://www.hkexnews.hk/ncms/script/hkex_settings.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,3,script,,https://www.hkexnews.hk/ncms/script/hkex_widget.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,4,script,,https://www.hkexnews.hk/ncms/script/vendor_index.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,5,script,,https://www.hkexnews.hk/ncms/script/hkex_ticker_index.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,6,script,,https://www.hkexnews.hk/ncms/script/hkex_head.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,7,script,,https://www.hkexnews.hk/ncms/script/hkex_banner_index.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,8,script,,https://www.hkexnews.hk/ncms/script/hkex_search_index.js,www.hkexnews.hk,True,False,True
+hkexnews_issuer_search,hkexnews_index_page,9,script,,https://www.hkexnews.hk/ncms/script/hkex_ipo_index.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,10,script,,https://www.hkexnews.hk/ncms/script/hkex_exchange_report_index.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,11,script,,https://www.hkexnews.hk/ncms/script/hkex_doc_submission_index.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,12,script,,https://www.hkexnews.hk/ncms/script/hkex_card_index.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,13,script,,https://www.hkexnews.hk/ncms/script/hkex_useful_info_index.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,14,script,,https://www.hkexnews.hk/ncms/script/hkex_foot.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,15,script,,https://www.hkexnews.hk/ncms/script/main_index.js,www.hkexnews.hk,True,False,False
+hkexnews_issuer_search,hkexnews_index_page,16,script,,https://www.hkexnews.hk/H2O_X5Ra/6G-fU_g/5VbM9hS/Ii/bDfiLb3O/YQUyclc/OgJ-R/0QuBlgS?v=ffaa65bd-bd4e-acc4-5f7c-387c495517d3,www.hkexnews.hk,True,False,False
