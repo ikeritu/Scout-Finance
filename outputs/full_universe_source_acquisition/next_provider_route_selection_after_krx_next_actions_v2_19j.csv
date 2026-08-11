@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,HKEX,prepare_hkex_acquisition_plan,high,HKEX selected as next provider route after KRX blocked before extraction.,v2.19K - HKEX Acquisition Plan,plan-only; official/auditable sources; no candidate extraction in plan phase
+2,50k,maintain_quality_gate,high,"Current candidate universe remains 40,996; 9,004 rows still needed for 50k.",v2.19K - HKEX Acquisition Plan,do not launch full59k; do not degrade quality for volume
+3,KRX,keep_krx_closed,medium,KRX closure completed with route blocked before extraction.,archive only,do not reopen KRX unless explicit service-key or official-flow repair phase is requested

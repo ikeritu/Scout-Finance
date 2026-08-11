@@ -1,0 +1,261 @@
+{
+  "version": "v2.19J",
+  "phase": "Next Provider Route Selection After KRX Block",
+  "phase_type": "route-selection-only",
+  "status": "NEXT_PROVIDER_ROUTE_SELECTION_AFTER_KRX_COMPLETED_HKEX_SELECTED_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-11T17:28:35.435391+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "current_validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_twse_tpex_v2_18g.csv",
+    "current_validated_candidate_rows": 40996,
+    "final_target_candidates": 50000,
+    "rows_needed_to_50k": 9004,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED",
+    "active_canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "active_canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "current_candidate_sha256_before": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2",
+    "current_candidate_sha256_after": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+  },
+  "krx_closure_context": {
+    "krx_closure_status": "KRX_CLOSURE_COMPLETED_ROUTE_BLOCKED_BEFORE_EXTRACTION_NEXT_PROVIDER_SELECTION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+    "krx_route_final_result": "blocked_before_extraction",
+    "krx_route_closed": true,
+    "krx_candidate_extraction_performed": false,
+    "krx_candidate_rows_added": 0,
+    "krx_route_decision_rows": 1,
+    "krx_skipped_phase_rows": 4,
+    "krx_evidence_rows": 8
+  },
+  "selection_summary": {
+    "selected_route_id": "HKEX_HONG_KONG_EXCHANGE",
+    "selected_route_name": "HKEX — Hong Kong Exchanges Official Listed Securities Route",
+    "selected_market": "Hong Kong",
+    "selected_provider": "HKEX",
+    "selection_score": 92,
+    "route_candidates_count": 5,
+    "backup_routes": "ASX_AUSTRALIAN_SECURITIES_EXCHANGE|TMX_TSX_TSXV_CANADA|SGX_SINGAPORE_EXCHANGE|SIX_SWISS_EXCHANGE",
+    "current_validated_candidate_rows": 40996,
+    "final_target_candidates": 50000,
+    "rows_needed_to_50k": 9004,
+    "expected_selected_route_net_new_band": "1500-2500",
+    "expected_selected_route_gross_rows_band": "2500-3500",
+    "expected_selected_route_contribution": "medium",
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0
+  },
+  "checks": [
+    {
+      "check": "krx_closure_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\krx_closure_report_v2_19i.json"
+    },
+    {
+      "check": "krx_closure_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "KRX_CLOSURE_COMPLETED_ROUTE_BLOCKED_BEFORE_EXTRACTION_NEXT_PROVIDER_SELECTION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "krx_route_decision_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\krx_closure_report_route_decision_v2_19i.csv"
+    },
+    {
+      "check": "krx_skipped_phases_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\krx_closure_report_skipped_phases_v2_19i.csv"
+    },
+    {
+      "check": "krx_evidence_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\krx_closure_report_evidence_matrix_v2_19i.csv"
+    },
+    {
+      "check": "krx_route_closed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "route_closed=True"
+    },
+    {
+      "check": "krx_final_result_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "route_final_result=blocked_before_extraction"
+    },
+    {
+      "check": "krx_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "krx_rows_added_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_rows_added=0"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "current_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_rows=40996"
+    },
+    {
+      "check": "rows_needed_to_50k_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_50k=9004"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current validated candidate sha unchanged"
+    },
+    {
+      "check": "route_candidates_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "route_candidates=5"
+    },
+    {
+      "check": "selected_route_is_hkex",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX_HONG_KONG_EXCHANGE"
+    },
+    {
+      "check": "selected_route_top_ranked_or_explicit_priority",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rank_1=HKEX_HONG_KONG_EXCHANGE"
+    },
+    {
+      "check": "selected_route_has_next_phase",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.19K - HKEX Acquisition Plan"
+    },
+    {
+      "check": "krx_in_blocklist",
+      "passed": true,
+      "severity": "critical",
+      "detail": "KRX_KOREA_EXCHANGE"
+    },
+    {
+      "check": "full59k_deprecated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k=DEPRECATED_DEFERRED"
+    },
+    {
+      "check": "final_50k_gate_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "40996 < 50000"
+    },
+    {
+      "check": "network_not_used_by_route_selection",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "canonical_comparison_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_comparison_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_candidate_performed=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "next_phase_hkex_plan",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.19K - HKEX Acquisition Plan"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "route-selection-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "route_selection_performed": true,
+    "raw_acquisition_performed": false,
+    "raw_acquisition_repair_performed": false,
+    "raw_validation_performed": false,
+    "repaired_raw_validation_performed": false,
+    "closure_report_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_canonical_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_comparison_performed": false,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_candidate_dataset_read": true,
+    "current_candidate_dataset_modified": false,
+    "current_candidate_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "final_target_50k_active": true,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.19K - HKEX Acquisition Plan"
+}

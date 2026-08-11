@@ -1,0 +1,4 @@
+route_id,route_name,block_status,blocked_by_phase,candidate_rows_added,reason,future_revisit_condition
+KRX_KOREA_EXCHANGE,KRX — Korea Exchange Official Listed Securities Route,blocked_before_extraction,v2.19D_FIX/v2.19I,0,Official KRX acquisition and repair did not produce a primary parse-ready candidate source.,Only revisit if DATA_GO_KR_SERVICE_KEY is configured or KRX official download flow becomes accessible.
+TWSE_TPEX_TAIWAN,TWSE + TPEx Taiwan,partially_completed_twse_used_tpex_deferred,v2.18I,696,TWSE used successfully; TPEx deferred/repair-later. Not the next route unless explicitly revisited.,Only revisit TPEx as repair-specific route if needed later.
+NSE_INDIA,NSE India,completed_used,v2.17I,already_in_current_candidate_baseline,Already used in the current candidate baseline.,Do not rerun unless explicit future refresh phase is opened.
