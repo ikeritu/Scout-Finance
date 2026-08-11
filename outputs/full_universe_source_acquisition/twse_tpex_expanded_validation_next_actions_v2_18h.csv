@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,TWSE,prepare_closure_report,high,Expanded candidate validation passed and is ready for TWSE + TPEx closure.,v2.18I - TWSE + TPEx Closure Report,closure/report only; no active canonical replacement; no scoring; no full59k
+2,50k,plan_next_provider_after_closure,medium,Expanded candidate has 40996 rows; 9004 remain to reach 50k.,v2.19A - Next Provider Route Selection,keep 50k target; do not relaunch full59k

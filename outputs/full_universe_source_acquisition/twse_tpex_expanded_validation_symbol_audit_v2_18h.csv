@@ -1,0 +1,9 @@
+audit_key,audit_value,expected_value,passed,detail
+potential_net_new_symbols,696,696,True,
+added_symbols,696,696,True,
+added_symbols_missing_from_potential,0,0,True,
+potential_symbols_missing_from_added,0,0,True,
+possible_existing_in_added,0,0,True,
+existing_in_added,0,0,True,
+added_ticker_conflicts_with_base,0,0,True,
+added_symbol_conflicts_with_base,0,0,True,

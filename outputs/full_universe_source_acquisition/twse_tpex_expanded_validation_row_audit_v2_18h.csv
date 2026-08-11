@@ -1,0 +1,8 @@
+audit_key,audit_value,expected_value,passed
+base_rows,40300,40300,True
+expanded_rows,40996,40996,True
+added_rows,696,696,True
+withheld_rows,0,0,True
+row_increment,696,696,True
+base_prefix_mismatches,0,0,True
+added_suffix_mismatches,0,0,True

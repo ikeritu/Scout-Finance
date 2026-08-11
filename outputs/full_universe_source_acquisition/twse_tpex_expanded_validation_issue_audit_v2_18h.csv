@@ -1,0 +1,50 @@
+issue_area,severity,passed,detail
+v2_18g_report_exists,critical,True,outputs\full_universe_source_acquisition\twse_tpex_expanded_rebuild_candidate_v2_18g.json
+v2_18g_status_expected,critical,True,TWSE_TPEX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_40996_ROWS_VALIDATION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED
+active_canonical_exists,critical,True,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv
+base_candidate_exists,critical,True,outputs\full_universe_source_acquisition\expanded_universe_candidate_nse_india_v2_17g.csv
+expanded_candidate_exists,critical,True,outputs\full_universe_source_acquisition\expanded_universe_candidate_twse_tpex_v2_18g.csv
+v2_18g_added_rows_exists,critical,True,outputs\full_universe_source_acquisition\twse_tpex_expanded_rebuild_added_rows_v2_18g.csv
+v2_18g_withheld_rows_exists,critical,True,outputs\full_universe_source_acquisition\twse_tpex_expanded_rebuild_withheld_rows_v2_18g.csv
+active_canonical_rows_expected,critical,True,active_canonical_rows=38287
+base_rows_expected,critical,True,base_rows=40300
+expanded_rows_expected,critical,True,expanded_rows=40996
+added_rows_expected,critical,True,added_rows=696
+withheld_rows_expected,critical,True,withheld_rows=0
+row_increment_expected,critical,True,row_increment=696
+schema_equal_base_expanded,critical,True,base header equals expanded header
+schema_equal_base_added,critical,True,base header equals added header
+schema_columns_33,critical,True,schema_columns=33
+base_prefix_unchanged_in_expanded,critical,True,first_mismatches=[]
+added_rows_are_expanded_suffix,critical,True,first_mismatches=[]
+potential_net_new_symbols_expected,critical,True,potential_net_new_symbols=696
+possible_existing_symbols_expected,critical,True,possible_existing_symbols=379
+existing_symbols_expected,critical,True,existing_symbols=0
+added_symbols_match_potential_net_new,critical,True,added_not_potential=0 potential_not_added=0
+possible_existing_not_added,critical,True,possible_existing_in_added=0
+existing_not_added,critical,True,existing_in_added=0
+added_tickers_unique,critical,True,added_ticker_duplicate_count=0
+added_symbols_unique,critical,True,added_symbol_duplicate_count=0
+added_tickers_no_base_conflict,critical,True,added_ticker_conflicts_with_base=0
+added_symbols_no_base_conflict,critical,True,added_symbol_conflicts_with_base=0
+added_tickers_tw_suffix,critical,True,non_tw_tickers=0
+added_exchange_twse,critical,True,non_twse_exchange=0
+added_country_taiwan,critical,True,non_taiwan_country=0
+added_provider_twse,critical,True,non_twse_provider=0
+added_instrument_type_equity,critical,True,non_equity_instrument_type=0
+added_instrument_scope_common_equity,critical,True,non_common_equity_scope=0
+added_source_phase_v2_18g,critical,True,wrong_source_phase=0
+added_required_columns_non_blank,critical,True,"{""classification_confidence"": 0, ""classification_reason"": 0, ""company_name"": 0, ""country"": 0, ""currency"": 0, ""exchange"": 0, ""instrument_scope"": 0, ""instrument_type"": 0, ""mic"": 0, ""provider"": 0, ""security_name"": 0, ""source_phase"": 0, ""source_provider"": 0, ""symbol"": 0, ""ticker"": 0}"
+projected_rows_needed_after_twse_expected,critical,True,projected_rows_needed_after_twse=9004
+canonical_sha_unchanged,critical,True,active canonical sha unchanged
+base_candidate_sha_unchanged,critical,True,base candidate sha unchanged
+expanded_candidate_sha_unchanged_during_validation,critical,True,expanded candidate sha unchanged during validation
+canonical_dataset_not_modified,critical,True,canonical_dataset_modified=False
+active_canonical_not_replaced,critical,True,active_canonical_replaced=False
+expanded_rebuild_not_performed,critical,True,expanded_rebuild_candidate_performed=False
+network_not_used,critical,True,network_download_performed=False
+scoring_not_recalculated,critical,True,scoring_recalculated=False
+openai_not_called,critical,True,openai_called=False
+broker_not_called,critical,True,broker_called=False
+full59k_not_launched,critical,True,full59k_universe_launched=False
+final_50k_gate_still_blocked,critical,True,40996 < 50000
