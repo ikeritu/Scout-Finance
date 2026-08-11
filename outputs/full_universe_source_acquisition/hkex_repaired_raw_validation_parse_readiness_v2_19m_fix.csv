@@ -1,0 +1,10 @@
+artifact_id,source_id,label,is_top_primary_full_list,primary_parse_ready,support_structured_valid,readiness_status,extension,xlsx_valid_zip,xls_ole_header_valid,primary_sheet_name,primary_header_score,primary_parseable_stock_code_rows,has_stock_code_column,has_name_column,extraction_dry_run_allowed,candidate_extraction_phase
+hkex_repair_01_full_list_of_securities,hkex_securities_lists,Full List of Securities,True,True,False,primary_parse_ready_for_candidate_extraction_dry_run,.xlsx,True,False,ListOfSecurities,11,17630,True,True,True,v2.19N
+hkex_repair_02_list_of_approved_spac_exchange_participants,hkex_equities,List of Approved SPAC Exchange Participants,False,False,True,supporting_structured_file_validated,.xls,False,True,,0,0,False,False,False,not_allowed_from_this_artifact
+hkex_repair_03_secstkorder_xls,hkex_securities_lists,,False,False,True,supporting_structured_file_validated,.xls,False,True,,0,0,False,False,False,not_allowed_from_this_artifact
+hkex_repair_04_englishstk_xls,hkex_securities_lists,,False,False,True,supporting_structured_file_validated,.xls,False,True,,0,0,False,False,False,not_allowed_from_this_artifact
+hkex_repair_05_list_of_vcm_securities_xls,hkex_securities_lists,,False,False,True,supporting_structured_file_validated,.xls,False,True,,0,0,False,False,False,not_allowed_from_this_artifact
+hkex_repair_06_list_of_cas_securities_xls,hkex_securities_lists,,False,False,True,supporting_structured_file_validated,.xls,False,True,,0,0,False,False,False,not_allowed_from_this_artifact
+hkex_repair_07_isino_xls,hkex_securities_lists,,False,False,True,supporting_structured_file_validated,.xls,False,True,,0,0,False,False,False,not_allowed_from_this_artifact
+hkex_repair_08_isinsehk_xls,hkex_securities_lists,,False,False,True,supporting_structured_file_validated,.xls,False,True,,0,0,False,False,False,not_allowed_from_this_artifact
+hkex_repair_09_list_of_dual_counter_securities,hkex_securities_lists,List of Dual Counter Securities,False,False,True,supporting_structured_file_validated,.xlsx,True,False,Stock_List,7,14,True,True,False,not_allowed_from_this_artifact

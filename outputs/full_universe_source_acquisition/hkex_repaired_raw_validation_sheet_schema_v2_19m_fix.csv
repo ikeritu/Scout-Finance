@@ -1,0 +1,7 @@
+artifact_id,source_id,label,sheet_name,sheet_path,data_rows,header_row_number,header_score,parseable_stock_code_rows,has_stock_code_column,has_stock_short_name_column,has_issuer_or_name_column,has_board_lot_column,has_security_type_column,has_isin_column,detected_columns_json,headers_joined
+hkex_repair_01_full_list_of_securities,hkex_securities_lists,Full List of Securities,ListOfSecurities,xl/worksheets/sheet1.xml,17633,3,11,17630,True,True,True,True,True,True,"{""board"": 4, ""board_lot"": 4, ""currency"": 16, ""isin"": 5, ""issuer_or_name"": 1, ""security_type"": 2, ""stock_code"": 0, ""stock_short_name"": 1}","Stock Code | Name of Securities | Category | Sub-Category | Board Lot | ISIN | Expiry Date | Subject to Stamp Duty | Shortsell Eligible | CAS Eligible | VCM Eligible | Admitted to CCASS | Debt Securities Board Lot (Nominal) | Debt Securities Investor Type | POS Eligible | Spread Table
+1 = Part A
+3 = Part B
+5 = Part D
+4 & 6 = Part E | Trading Currency | RMB Counter"
+hkex_repair_09_list_of_dual_counter_securities,hkex_securities_lists,List of Dual Counter Securities,Stock_List,xl/worksheets/sheet1.xml,29,6,7,14,True,True,True,False,False,False,"{""board"": 6, ""issuer_or_name"": 2, ""stock_code"": 0, ""stock_short_name"": 3}",HKD Counter Stock Code | RMB Counter Stock Code | Company Name (English) | Chinese Stock Short Name (if any) | RMB Counter Addition Date | Designation Effective Date | Dual Counter Market Making Obligation Group

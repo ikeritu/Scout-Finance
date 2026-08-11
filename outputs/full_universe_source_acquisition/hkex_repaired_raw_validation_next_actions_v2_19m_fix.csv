@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,HKEX,run_candidate_extraction_dry_run,high,ListOfSecurities.xlsx validated as primary parse-ready source.,v2.19N - HKEX Candidate Extraction Dry Run,dry run only; do not modify canonical; do not replace active universe
+2,HKEX,extract_from_primary_full_list_only_first,high,The primary full list has parseable stock-code rows and detected name/code schema.,v2.19N - HKEX Candidate Extraction Dry Run,separate extraction from canonical validation
+3,50k,preserve_quality_gate,high,"Current candidate universe remains 40,996; rows needed to 50k remain 9,004.",v2.19N - HKEX Candidate Extraction Dry Run,do not launch full59k

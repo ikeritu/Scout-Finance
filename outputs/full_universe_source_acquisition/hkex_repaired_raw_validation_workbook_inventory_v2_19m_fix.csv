@@ -1,0 +1,14 @@
+artifact_id,source_id,label,extension,xlsx_valid_zip,xlsx_error,xls_ole_header_valid,sheet_count,max_data_rows,total_data_rows,primary_sheet_name,primary_sheet_path,primary_header_row_number,primary_header_score,primary_parseable_stock_code_rows,primary_headers_joined
+hkex_repair_01_full_list_of_securities,hkex_securities_lists,Full List of Securities,.xlsx,True,,False,1,17633,17633,ListOfSecurities,xl/worksheets/sheet1.xml,3,11,17630,"Stock Code | Name of Securities | Category | Sub-Category | Board Lot | ISIN | Expiry Date | Subject to Stamp Duty | Shortsell Eligible | CAS Eligible | VCM Eligible | Admitted to CCASS | Debt Securities Board Lot (Nominal) | Debt Securities Investor Type | POS Eligible | Spread Table
+1 = Part A
+3 = Part B
+5 = Part D
+4 & 6 = Part E | Trading Currency | RMB Counter"
+hkex_repair_02_list_of_approved_spac_exchange_participants,hkex_equities,List of Approved SPAC Exchange Participants,.xls,False,,True,0,0,0,,,0,0,0,
+hkex_repair_03_secstkorder_xls,hkex_securities_lists,,.xls,False,,True,0,0,0,,,0,0,0,
+hkex_repair_04_englishstk_xls,hkex_securities_lists,,.xls,False,,True,0,0,0,,,0,0,0,
+hkex_repair_05_list_of_vcm_securities_xls,hkex_securities_lists,,.xls,False,,True,0,0,0,,,0,0,0,
+hkex_repair_06_list_of_cas_securities_xls,hkex_securities_lists,,.xls,False,,True,0,0,0,,,0,0,0,
+hkex_repair_07_isino_xls,hkex_securities_lists,,.xls,False,,True,0,0,0,,,0,0,0,
+hkex_repair_08_isinsehk_xls,hkex_securities_lists,,.xls,False,,True,0,0,0,,,0,0,0,
+hkex_repair_09_list_of_dual_counter_securities,hkex_securities_lists,List of Dual Counter Securities,.xlsx,True,,False,1,29,29,Stock_List,xl/worksheets/sheet1.xml,6,7,14,HKD Counter Stock Code | RMB Counter Stock Code | Company Name (English) | Chinese Stock Short Name (if any) | RMB Counter Addition Date | Designation Effective Date | Dual Counter Market Making Obligation Group
