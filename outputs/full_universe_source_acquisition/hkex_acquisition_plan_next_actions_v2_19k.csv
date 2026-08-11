@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,HKEX,run_hkex_raw_acquisition,high,HKEX acquisition plan is ready; raw official artifacts can be captured next.,v2.19L - HKEX Raw Acquisition,raw acquisition only; no candidate extraction; no canonical modification
+2,HKEX,capture_source_pages_before_linked_files,high,Official HKEX pages may expose downloadable files via links or scripts.,v2.19L - HKEX Raw Acquisition,only follow hkex.com.hk or hkexnews.hk official links
+3,50k,preserve_quality_gate,high,"HKEX may add useful volume but does not guarantee closing the 9,004-row gap.",v2.19L - HKEX Raw Acquisition,do not launch full59k; no volume-padding with non-equity instruments

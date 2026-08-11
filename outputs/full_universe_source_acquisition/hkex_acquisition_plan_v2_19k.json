@@ -1,0 +1,263 @@
+{
+  "version": "v2.19K",
+  "phase": "HKEX Acquisition Plan",
+  "phase_type": "acquisition-plan-only",
+  "status": "HKEX_ACQUISITION_PLAN_COMPLETED_OFFICIAL_SOURCES_READY_FOR_RAW_ACQUISITION_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-11T18:04:26.751101+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "current_validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_twse_tpex_v2_18g.csv",
+    "current_validated_candidate_rows": 40996,
+    "final_target_candidates": 50000,
+    "rows_needed_to_50k": 9004,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED",
+    "active_canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "active_canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "current_candidate_sha256_before": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2",
+    "current_candidate_sha256_after": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+  },
+  "v2_19j_context": {
+    "status": "NEXT_PROVIDER_ROUTE_SELECTION_AFTER_KRX_COMPLETED_HKEX_SELECTED_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+    "selected_route_id": "HKEX_HONG_KONG_EXCHANGE",
+    "selected_provider": "HKEX",
+    "selection_score": "92",
+    "decision_matrix_rows": 5
+  },
+  "plan_summary": {
+    "selected_route_id": "HKEX_HONG_KONG_EXCHANGE",
+    "selected_provider": "HKEX",
+    "selected_market": "Hong Kong",
+    "source_inventory_rows": 5,
+    "primary_sources": 2,
+    "raw_artifacts_planned_rows": 5,
+    "validation_strategy_rows": 5,
+    "filtering_policy_rows": 4,
+    "risk_register_rows": 4,
+    "expected_net_new_band": "1500-2500",
+    "expected_gross_rows_band": "2500-3500",
+    "current_validated_candidate_rows": 40996,
+    "rows_needed_to_50k": 9004,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0
+  },
+  "checks": [
+    {
+      "check": "v2_19j_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\next_provider_route_selection_after_krx_v2_19j.json"
+    },
+    {
+      "check": "v2_19j_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "NEXT_PROVIDER_ROUTE_SELECTION_AFTER_KRX_COMPLETED_HKEX_SELECTED_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "selected_route_csv_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\next_provider_route_selection_after_krx_selected_route_v2_19j.csv"
+    },
+    {
+      "check": "decision_matrix_csv_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\next_provider_route_selection_after_krx_decision_matrix_v2_19j.csv"
+    },
+    {
+      "check": "selected_route_is_hkex",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX_HONG_KONG_EXCHANGE"
+    },
+    {
+      "check": "selected_provider_is_hkex",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX"
+    },
+    {
+      "check": "v2_19j_recommended_next_phase_hkex",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.19K - HKEX Acquisition Plan"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "current_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_rows=40996"
+    },
+    {
+      "check": "rows_needed_to_50k_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_50k=9004"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current validated candidate sha unchanged"
+    },
+    {
+      "check": "source_inventory_minimum",
+      "passed": true,
+      "severity": "critical",
+      "detail": "sources=5"
+    },
+    {
+      "check": "primary_source_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "primary_candidate_source present"
+    },
+    {
+      "check": "all_sources_official_scope",
+      "passed": true,
+      "severity": "critical",
+      "detail": "all planned urls hkex/hkexnews official"
+    },
+    {
+      "check": "raw_artifact_plan_rows_match_sources",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_artifact_plan_rows=5"
+    },
+    {
+      "check": "validation_strategy_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validation_strategy_rows=5"
+    },
+    {
+      "check": "filtering_policy_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "filtering_policy_rows=4"
+    },
+    {
+      "check": "risk_register_present",
+      "passed": true,
+      "severity": "warning",
+      "detail": "risk_register_rows=4"
+    },
+    {
+      "check": "final_50k_gate_still_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "40996 < 50000"
+    },
+    {
+      "check": "network_not_used_by_plan",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "raw_acquisition_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_acquisition_performed=False"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "canonical_comparison_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_comparison_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_candidate_performed=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "next_phase_hkex_raw_acquisition",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.19L - HKEX Raw Acquisition"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "acquisition-plan-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "route_selection_performed": false,
+    "acquisition_plan_performed": true,
+    "raw_acquisition_performed": false,
+    "raw_acquisition_repair_performed": false,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_canonical_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_comparison_performed": false,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_candidate_dataset_read": true,
+    "current_candidate_dataset_modified": false,
+    "current_candidate_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "final_target_50k_active": true,
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.19L - HKEX Raw Acquisition"
+}

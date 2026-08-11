@@ -1,0 +1,6 @@
+validation_id,validation_scope,check,severity,blocks_extraction_if_failed
+HKEX_VAL_001,raw_artifact_integrity,"Every planned raw artifact must exist, have byte count > 0, and have recorded sha256.",critical,True
+HKEX_VAL_002,official_scope,All captured artifacts must resolve to hkex.com.hk or hkexnews.hk official hosts.,critical,True
+HKEX_VAL_003,candidate_parse_readiness,At least one primary/crosscheck artifact must contain parse-ready stock code and issuer/security name rows.,critical,True
+HKEX_VAL_004,instrument_type_filtering,"Raw validation must identify whether the source mixes equities with warrants, CBBCs, debt, ETFs, REITs, unit trusts or structured products.",warning,False
+HKEX_VAL_005,50k_guard,No HKEX rows may be appended until candidate extraction and validation against canonical are complete.,critical,True

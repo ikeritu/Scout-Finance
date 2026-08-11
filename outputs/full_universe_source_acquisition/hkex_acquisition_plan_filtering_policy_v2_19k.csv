@@ -1,0 +1,5 @@
+policy_id,category,rule,reason,phase_enforced
+HKEX_FILTER_001,include,Include ordinary equity/listed company securities only when stock code and issuer/security name are present.,Avoid adding broad HKEX instruments that are not equity candidates.,v2.19M extraction dry run and later
+HKEX_FILTER_002,exclude,"Exclude warrants, CBBCs, derivative warrants, debt securities, ETFs, REITs, unit trusts, structured products and similar non-operating-company instruments unless explicitly approved later.",HKEX lists many instrument types beyond common equities.,v2.19M extraction dry run and later
+HKEX_FILTER_003,review,"Review multiple counters, RMB/HKD dual counters, share classes and duplicate issuer codes before net-new append.",HKEX may include multiple counters or share classes for the same issuer.,v2.19N validation against canonical and later
+HKEX_FILTER_004,dedupe,"Canonical duplicate checks must compare stock code, ticker variants, issuer name normalization and ISIN when available.","Avoid double-counting Hong Kong listings already represented through ADRs, dual listings, TWSE/NSE/canonical sources or prior datasets.",v2.19N validation against canonical and later

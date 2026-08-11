@@ -1,0 +1,5 @@
+risk_id,risk,impact,likelihood,mitigation
+HKEX_RISK_001,"HKEX source may list broad securities, not only operating-company common equities.",Could inflate candidate universe with non-equity instruments.,high,Strict filtering policy in extraction dry run; no append before canonical validation.
+HKEX_RISK_002,Multiple counters/share classes may represent the same issuer.,Duplicate issuer rows or overcounting.,medium_high,"Deduplicate by stock code, normalized issuer name and ISIN when available."
+HKEX_RISK_003,Download links may be dynamic or hidden behind page scripts.,Raw acquisition may need page inspection/HTML signal inventory before structured capture.,medium,v2.19L captures pages first and inventories official links/scripts/forms before attempting linked files.
+HKEX_RISK_004,"HKEX expected net-new contribution may be insufficient for the full 9,004-row gap.",50k gate likely remains blocked after HKEX alone.,high,Use ASX/TMX backups after HKEX if quality gate remains blocked.
