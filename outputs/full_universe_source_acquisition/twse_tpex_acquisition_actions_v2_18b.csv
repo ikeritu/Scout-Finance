@@ -1,0 +1,5 @@
+action_order,action_id,source_id,action_type,allowed_in_v2_18c,allowed_in_v2_18b,expected_output,guardrails,notes
+1,prepare_raw_output_directory,all,filesystem_prepare,True,False,outputs/full_universe_source_acquisition/twse_tpex_raw_acquisition_v2_18c/,create directory only in v2.18C,No directory/raw output created in v2.18B.
+2,download_official_sources,all_included_sources,network_download,True,False,raw files + manifest,official TWSE/TPEx URLs only; preserve status codes and raw bytes,Network is explicitly blocked in v2.18B and allowed only in v2.18C.
+3,write_raw_manifest,all_included_sources,manifest,True,False,twse_tpex_raw_acquisition_manifest_v2_18c.csv/json,"record URL, method, status, bytes, sha256, content type, timestamp",No candidate parsing during acquisition.
+4,defer_candidate_extraction,all,phase_gate,False,True,candidate extraction blocked until v2.18E,no parsing into candidates in v2.18B or v2.18C,Extraction only after raw validation.

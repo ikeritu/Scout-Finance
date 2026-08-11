@@ -1,0 +1,212 @@
+{
+  "version": "v2.18B",
+  "phase": "TWSE + TPEx Acquisition Plan",
+  "phase_type": "acquisition-plan-only",
+  "status": "TWSE_TPEX_ACQUISITION_PLAN_COMPLETED_RAW_ACQUISITION_READY_50K_GATE_STILL_BLOCKED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-11T08:50:40.641434+00:00",
+  "current_state": {
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "validated_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_nse_india_v2_17g.csv",
+    "validated_candidate_rows": 40300,
+    "final_target_candidates": 50000,
+    "rows_needed_to_50k": 9700,
+    "candidate_completion_percent": 80.6,
+    "canonical_sha256_before": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "canonical_sha256_after": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "validated_candidate_sha256": "a6d93e89c2c26ae49bde7aa923ec42c385a4885602bcafa7a0bdfc50f2801ac6",
+    "final_50k_candidate_gate": "BLOCKED",
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "source_plan_summary": {
+    "planned_sources": 9,
+    "twse_sources": 4,
+    "tpex_sources": 5,
+    "included_in_v2_18c": 9,
+    "primary_candidate_sources": [
+      "twse_listed_company_profile",
+      "tpex_daily_stock_quotes"
+    ],
+    "review_only_sources": [
+      "tpex_mainboard_applicant_companies",
+      "tpex_gisa_company"
+    ]
+  },
+  "acquisition_plan": {
+    "selected_provider_route": "TWSE + TPEx Taiwan",
+    "plan_only": true,
+    "network_allowed_in_this_phase": false,
+    "network_allowed_next_phase": true,
+    "raw_acquisition_phase": "v2.18C",
+    "raw_validation_phase": "v2.18D",
+    "candidate_extraction_phase": "v2.18E",
+    "candidate_validation_against_canonical_phase": "v2.18F",
+    "expanded_rebuild_candidate_phase": "v2.18G",
+    "expanded_validation_phase": "v2.18H",
+    "closure_phase": "v2.18I"
+  },
+  "checks": [
+    {
+      "check": "v2_18a_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\next_provider_route_selection_v2_18a.json"
+    },
+    {
+      "check": "v2_18a_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "NEXT_PROVIDER_ROUTE_SELECTION_COMPLETED_TWSE_TPEX_SELECTED_50K_TARGET_ACTIVE_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "canonical_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv"
+    },
+    {
+      "check": "validated_candidate_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_nse_india_v2_17g.csv"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated_candidate_rows=40300"
+    },
+    {
+      "check": "rows_needed_to_50k_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_50k=9700"
+    },
+    {
+      "check": "candidate_schema_matches_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_cols=33 candidate_cols=33"
+    },
+    {
+      "check": "source_plan_has_twse_and_tpex",
+      "passed": true,
+      "severity": "critical",
+      "detail": "['TPEx', 'TWSE']"
+    },
+    {
+      "check": "selected_provider_matches_v2_18a",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TWSE + TPEx Taiwan"
+    },
+    {
+      "check": "final_target_50k_active",
+      "passed": true,
+      "severity": "critical",
+      "detail": "50000"
+    },
+    {
+      "check": "full59k_deprecated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DEPRECATED_DEFERRED_NOT_ACTIVE"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical sha unchanged"
+    },
+    {
+      "check": "network_not_used",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "raw_acquisition_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_acquisition_performed=False"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "canonical_comparison_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_comparison_performed=False"
+    },
+    {
+      "check": "new_expanded_dataset_not_written",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_expanded_dataset_written=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "acquisition-plan-only",
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_files_written": false,
+    "candidate_extraction_performed": false,
+    "canonical_comparison_performed": false,
+    "canonical_dataset_read": true,
+    "validated_candidate_dataset_read": true,
+    "source_plan_written": true,
+    "filter_policy_written": true,
+    "acquisition_actions_written": true,
+    "schema_plan_written": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "final_target_50k_active": true,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.18C - TWSE + TPEx Raw Acquisition"
+}

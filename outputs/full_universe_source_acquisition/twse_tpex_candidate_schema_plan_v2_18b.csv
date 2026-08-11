@@ -1,0 +1,9 @@
+target_field,candidate_source_fields,required,normalization,fallback,notes
+raw_symbol,Code | Securities Code | Stock Code | 公司代號,True,strip; uppercase if alphabetic; preserve Taiwan numeric code as string,,Primary identity field for Taiwan candidates.
+raw_name,Company | Company Name | Stock Name | 公司名稱 | 證券名稱,True,strip whitespace; preserve original script,short_name if long_name missing,Company/security name required for candidate extraction.
+raw_exchange,provider/source_id,True,TWSE or TPEx,derive from source_id,Used for exchange/market mapping.
+raw_country,constant,True,Taiwan,Taiwan,Country constant for this route.
+raw_currency,constant,False,TWD,TWD,Expected trading currency for ordinary Taiwan equities.
+raw_isin,ISIN if present,False,uppercase; blank if unavailable,,Taiwan official sources may not expose ISIN in primary rows.
+raw_instrument_type,instrument/security/category fields if present,False,normalize to ordinary_equity/review/excluded,infer from source + filter policy,Needed to exclude ETF/ETN/warrant/fund/bond products.
+confidence_bucket,source priority + filter policy,True,high/medium/low,medium,High only for primary listed/mainboard ordinary equity sources.
