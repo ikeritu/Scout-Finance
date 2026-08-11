@@ -1,0 +1,5 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,KRX,repair_official_raw_acquisition,high,No primary KRX artifact is parse-ready for candidate extraction.,v2.19C_FIX - KRX Raw Acquisition Repair,official KRX/data.go.kr sources only; no candidate extraction during repair
+2,KRX Global,inspect_html_download_flow,high,KRX Global returned HTTP 200 HTML and may contain download/session/form hints.,v2.19C_FIX - KRX Raw Acquisition Repair,use captured HTML and official KRX URLs only; capture any new raw response in manifest
+3,KRX Data Marketplace,repair_403_otp_flow,high,Data Marketplace and GenerateOTP returned HTTP 403; CSV download was not attempted due invalid OTP.,v2.19C_FIX - KRX Raw Acquisition Repair,do not use unofficial mirrors; preserve all error payloads
+4,data.go.kr,optionally_configure_service_key,medium,Public Data Portal API was not attempted because DATA_GO_KR_SERVICE_KEY is missing.,v2.19C_FIX - KRX Raw Acquisition Repair,optional supporting source only; do not block if no key is available
