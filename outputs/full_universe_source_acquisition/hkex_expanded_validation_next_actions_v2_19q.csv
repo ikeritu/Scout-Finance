@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,HKEX,write_hkex_closure_report,high,Expanded candidate dataset has been validated and HKEX route can be closed formally.,v2.19R - HKEX Closure Report,closure only; do not promote candidate to canonical without explicit later decision
+2,50k,select_next_provider_route_after_hkex,medium,"HKEX adds 396 rows but 50k gate remains blocked with 8,608 rows still needed.",post-v2.19R route selection,continue with quality-first provider route; full59k remains deprecated

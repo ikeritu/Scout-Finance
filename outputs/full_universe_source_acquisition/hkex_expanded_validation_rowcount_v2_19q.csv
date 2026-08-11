@@ -1,0 +1,9 @@
+metric,value,expected,passed,detail
+active_canonical_rows,38287,38287,True,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv
+current_validated_candidate_rows,40996,40996,True,outputs\full_universe_source_acquisition\expanded_universe_candidate_twse_tpex_v2_18g.csv
+expanded_candidate_rows,41392,41392,True,outputs\full_universe_source_acquisition\expanded_universe_candidate_hkex_v2_19p.csv
+appended_tail_rows,396,396,True,expanded tail rows
+appended_audit_rows,396,396,True,outputs\full_universe_source_acquisition\hkex_expanded_rebuild_candidate_appended_rows_v2_19p.csv
+rowcount_arithmetic,41392,41392,True,current + appended = expanded
+rows_needed_after_rebuild,8608,8608,True,expanded vs 50k
+final_50k_gate_after_validation,BLOCKED,BLOCKED,True,"41,392 < 50,000"

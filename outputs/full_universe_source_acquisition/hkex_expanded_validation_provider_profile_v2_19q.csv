@@ -1,0 +1,7 @@
+field,profile_json
+provider,"[[""HKEX"", 396]]"
+exchange,"[[""HKEX"", 396]]"
+mic,"[[""XHKG"", 396]]"
+source_phase,"[[""v2.19P"", 396]]"
+country,"[[""HONG KONG"", 396]]"
+currency,"[[""HKD"", 247], [""USD"", 89], [""RMB"", 60]]"

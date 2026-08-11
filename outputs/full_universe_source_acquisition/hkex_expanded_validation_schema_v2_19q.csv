@@ -1,0 +1,11 @@
+metric,value,expected,passed,detail
+schema_equal_to_current_candidate,True,True,True,expanded headers equal current candidate headers
+current_header_count,33,33,True,ticker|company_name|exchange|country|source_provider|source_file|instrument_type|instrument_scope|classification_confidence|classification_reason|sector|industry|market_cap|raw_cik|raw_exchange|provider_precedence|merge_action|merge_reason|isin|currency|mic|source_version|source_url|hkex_category|hkex_subcategory|hkex_board_lot|provider|source_phase|symbol|security_name|instrument_id|product_assignment_group_description|asset_type
+expanded_header_count,33,33,True,ticker|company_name|exchange|country|source_provider|source_file|instrument_type|instrument_scope|classification_confidence|classification_reason|sector|industry|market_cap|raw_cik|raw_exchange|provider_precedence|merge_action|merge_reason|isin|currency|mic|source_version|source_url|hkex_category|hkex_subcategory|hkex_board_lot|provider|source_phase|symbol|security_name|instrument_id|product_assignment_group_description|asset_type
+ticker_header,ticker,present,True,ticker header used for HKEX validation
+symbol_header,symbol,present,True,symbol header used for HKEX validation
+company_name_header,company_name,present,True,company/security name header
+provider_header,provider,present,True,provider/source provider header
+exchange_header,exchange,present,True,exchange header
+mic_header,mic,present,True,mic header
+source_phase_header,source_phase,present,True,source phase header

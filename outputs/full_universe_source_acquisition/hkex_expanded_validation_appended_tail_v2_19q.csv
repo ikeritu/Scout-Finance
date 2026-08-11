@@ -1,0 +1,11 @@
+metric,value,expected,passed,detail
+prefix_matches_current_candidate,True,True,True,"first 40,996 expanded rows match current candidate exactly by digest"
+tail_rows_count,396,396,True,tail rows are HKEX appended rows
+tail_tickers_match_appended_audit,True,True,True,tail ticker order equals v2.19P appended audit
+tail_nonempty_ticker_count,396,396,True,all appended rows have ticker
+tail_nonempty_name_count,396,396,True,all appended rows have company/security name
+tail_provider_hkex_count,396,396,True,"[[""HKEX"", 396]]"
+tail_exchange_hkex_count,396,396,True,"[[""HKEX"", 396]]"
+tail_mic_xhkg_count,396,396,True,"[[""XHKG"", 396]]"
+tail_source_phase_v219p_count,396,396,True,"[[""v2.19P"", 396]]"
+tail_currency_profile,3,documented,True,"[[""HKD"", 247], [""USD"", 89], [""RMB"", 60]]"
