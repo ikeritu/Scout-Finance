@@ -1,0 +1,7 @@
+gate,passed,severity,detail
+artifact_integrity,True,critical,critical_issue_count=0; artifacts=5/5; bytes=5/5; sha256=5/5
+official_scope,True,critical,official_scope_violations=0
+primary_candidate_ready_present,False,warning,primary_candidate_ready_count=0
+structured_extraction_allowed,False,warning,extraction_allowed_count=0
+official_download_candidates_available,True,warning,official_download_candidate_count=33; high_priority=24
+extraction_ready,False,warning,extraction_ready=False; repair_required=True; route_blocked_before_extraction=False

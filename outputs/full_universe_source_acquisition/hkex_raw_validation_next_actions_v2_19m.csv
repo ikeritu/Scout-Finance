@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,HKEX,capture_official_download_candidates,high,"Raw HTML pages expose official download-like/candidate-related links, but no structured primary raw file is captured yet.",v2.19L_FIX - HKEX Raw Acquisition Repair,official HKEX/HKEXnews links only; no extraction; no canonical modification
+2,HKEX,prioritize_xls_xlsx_full_list_equities_links,high,XLS/XLSX signals and official securities/equities links are the likely parse-ready candidates.,v2.19L_FIX - HKEX Raw Acquisition Repair,capture raw files and headers; record bytes and sha256
+3,50k,preserve_quality_gate,high,"Current candidate universe remains 40,996; rows needed to 50k remain 9,004.",v2.19L_FIX - HKEX Raw Acquisition Repair,do not launch full59k; do not add HKEX rows before extraction and canonical validation
