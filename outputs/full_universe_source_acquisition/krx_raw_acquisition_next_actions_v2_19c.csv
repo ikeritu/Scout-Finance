@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,KRX,validate_raw_artifacts,high,KRX raw artifacts and diagnostics have been captured.,v2.19D - KRX Raw Validation,validate raw files only; do not extract candidates until v2.19E
+2,KRX,classify_parse_readiness,high,"Some KRX responses may be HTML/dynamic pages, OTP responses, CSV downloads or key-required diagnostics.",v2.19D - KRX Raw Validation,decide whether v2.19D can proceed to extraction or needs repair
+3,50k,maintain_candidate_baseline,medium,"Current candidate remains 40,996; no rows are added in raw acquisition phase.",v2.19D - KRX Raw Validation,"no canonical promotion, no candidate rebuild, no full59k"

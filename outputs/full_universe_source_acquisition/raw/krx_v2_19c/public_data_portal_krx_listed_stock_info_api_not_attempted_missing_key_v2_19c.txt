@@ -1,0 +1,3 @@
+DATA_GO_KR_SERVICE_KEY environment variable is not set.
+Public Data Portal API call was not attempted.
+This supporting source is optional and must not block KRX primary source acquisition.
