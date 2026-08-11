@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,KRX,prepare_acquisition_plan,high,KRX selected as next official provider route after TWSE closure.,v2.19B - KRX Korea Exchange Acquisition Plan,plan only; identify official endpoints/downloads; no network acquisition in v2.19B unless explicitly scoped
+2,50k,maintain_50k_as_stretch_target,medium,9004 rows remain after TWSE; KRX likely will not close the whole gap alone.,v2.19B - KRX Korea Exchange Acquisition Plan,do not lower target yet; keep 45k intermediate and 50k stretch framing
+3,backup_routes,preserve_hkex_tmx_asx_backup_order,medium,"KRX may need to be followed by HKEX, TMX or ASX to continue toward 50k.",v2.20 or later if needed after KRX closure,do not run parallel provider acquisition in this route
