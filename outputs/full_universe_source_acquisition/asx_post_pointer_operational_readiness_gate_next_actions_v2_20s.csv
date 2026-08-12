@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,final-closure,run_final_asx_promotion_closure_report,high,Operational readiness gate passed; final closure should document the promoted base and rollback.,v2.20T - Final ASX Promotion Closure Report,closure report only; no scoring/OpenAI/broker/full59k
+2,rollback,preserve_v2_14e_rollback_reference,high,Rollback remains required until final closure is committed and verified.,v2.20T - Final ASX Promotion Closure Report,do not delete or overwrite rollback dataset
+3,scoring,keep_scoring_deferred,medium,Readiness gate does not authorize scoring.,post-v2.20T explicit decision,separate approval required

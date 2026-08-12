@@ -1,0 +1,705 @@
+{
+  "version": "v2.20S",
+  "phase": "Post-Pointer Operational Readiness Gate",
+  "phase_type": "post-pointer-operational-readiness-gate-only",
+  "status": "ASX_POST_POINTER_OPERATIONAL_READINESS_GATE_COMPLETED_OPERATIONAL_BASE_READY_42708_ROWS_ROLLBACK_AVAILABLE_SCORING_NOT_AUTHORIZED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-12T15:37:07.434099+00:00",
+  "readiness_summary": {
+    "selected_provider": "ASX",
+    "phase_type": "post-pointer-operational-readiness-gate-only",
+    "readiness_decision": "PROMOTED_CANONICAL_OPERATIONAL_BASE_READY_FOR_FINAL_CLOSURE",
+    "operational_base_ready": true,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "controlled_pointer_files_validated": 3,
+    "controlled_pointer_files_with_old_refs": 0,
+    "controlled_pointer_files_with_new_refs": 3,
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "quality_floor_crossed": true,
+    "quality_ceiling_not_exceeded": true,
+    "rows_above_quality_floor": 708,
+    "remaining_capacity_to_quality_ceiling": 2292,
+    "aspirational_target": 50000,
+    "rows_to_aspirational_50k": 7292,
+    "provider_expansion_frozen": true,
+    "scoring_authorized": false,
+    "openai_authorized": false,
+    "broker_authorized": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "next_phase": "v2.20T - Final ASX Promotion Closure Report"
+  },
+  "readiness_gate": [
+    {
+      "gate_id": "OP_READY_001",
+      "gate": "v2_20r_pointer_validation_passed",
+      "passed": true,
+      "detail": "pointer_update_validated=True",
+      "required_for_operational_base": true
+    },
+    {
+      "gate_id": "OP_READY_002",
+      "gate": "controlled_pointer_files_validated",
+      "passed": true,
+      "detail": "pointer_files_validated=3",
+      "required_for_operational_base": true
+    },
+    {
+      "gate_id": "OP_READY_003",
+      "gate": "no_old_refs_in_active_pointer_files",
+      "passed": true,
+      "detail": "pointer_files_with_old_refs=0",
+      "required_for_operational_base": true
+    },
+    {
+      "gate_id": "OP_READY_004",
+      "gate": "promoted_canonical_available_and_quality_target_met",
+      "passed": true,
+      "detail": "rows=42708;sha=892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127;floor=42000;ceiling=45000",
+      "required_for_operational_base": true
+    },
+    {
+      "gate_id": "OP_READY_005",
+      "gate": "rollback_canonical_available",
+      "passed": true,
+      "detail": "rows=38287;sha=cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "required_for_operational_base": true
+    },
+    {
+      "gate_id": "OP_READY_006",
+      "gate": "provider_expansion_frozen",
+      "passed": true,
+      "detail": "42k floor achieved; 45k ceiling respected; no new provider expansion authorized",
+      "required_for_operational_base": true
+    },
+    {
+      "gate_id": "OP_READY_007",
+      "gate": "scoring_not_authorized",
+      "passed": true,
+      "detail": "scoring requires separate post-closure decision",
+      "required_for_operational_base": true
+    },
+    {
+      "gate_id": "OP_READY_008",
+      "gate": "external_calls_not_authorized",
+      "passed": true,
+      "detail": "OpenAI=False;broker=False;full59k=False",
+      "required_for_operational_base": true
+    }
+  ],
+  "operational_decisions": [
+    {
+      "decision_id": "OP_READY_DECISION_001",
+      "decision": "Recognize promoted canonical as operational base candidate.",
+      "accepted": true,
+      "reason": "Pointers validated, promoted canonical available, rollback available, quality target met.",
+      "effect": "Allows final ASX closure report; does not launch scoring."
+    },
+    {
+      "decision_id": "OP_READY_DECISION_002",
+      "decision": "Keep v2_14e as rollback reference through final closure.",
+      "accepted": true,
+      "reason": "Rollback canonical SHA and rows remain unchanged.",
+      "effect": "Rollback remains available if final closure blocks activation."
+    },
+    {
+      "decision_id": "OP_READY_DECISION_003",
+      "decision": "Do not continue provider expansion by default.",
+      "accepted": true,
+      "reason": "42k operational floor achieved and 45k quality ceiling respected.",
+      "effect": "No additional provider acquisition before closure."
+    },
+    {
+      "decision_id": "OP_READY_DECISION_004",
+      "decision": "Do not authorize scoring in v2.20S.",
+      "accepted": true,
+      "reason": "Scoring requires a separate explicit phase after final closure.",
+      "effect": "No scoring, OpenAI or broker execution."
+    },
+    {
+      "decision_id": "OP_READY_DECISION_005",
+      "decision": "Keep full59k deprecated/deferred.",
+      "accepted": true,
+      "reason": "50k remains aspirational and outside the quality-first closure path.",
+      "effect": "No full59k/global renormalization launch."
+    }
+  ],
+  "dataset_controls": [
+    {
+      "artifact": "promoted_canonical_operational_base",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "expected_rows": 42708,
+      "expected_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "validated": true,
+      "role": "operational_base_candidate"
+    },
+    {
+      "artifact": "rollback_canonical_preserved",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "rows": 38287,
+      "sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "expected_rows": 38287,
+      "expected_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "validated": true,
+      "role": "rollback_reference"
+    },
+    {
+      "artifact": "asx_validated_source",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_asx_v2_20g.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "expected_rows": 42708,
+      "expected_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "validated": true,
+      "role": "immutable_source_reference"
+    }
+  ],
+  "pointer_controls": [
+    {
+      "path": "outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "exists": true,
+      "sha256": "4172515871ab5ddce00317b443a43b1b1fed101b53632cb34d5bfdc675758e83",
+      "old_refs": 0,
+      "new_refs": 1,
+      "validated": true,
+      "role": "controlled_active_pointer_file"
+    },
+    {
+      "path": "outputs/audit/eol_guard_v2_14k.json",
+      "exists": true,
+      "sha256": "b69d584b5fb35ce98942d5ce18a105bfadfe6057a129d22fe3e27ede1d6f02d6",
+      "old_refs": 0,
+      "new_refs": 1,
+      "validated": true,
+      "role": "controlled_active_pointer_file"
+    },
+    {
+      "path": "tests/test_expanded_universe_post_closure_v2_14j.py",
+      "exists": true,
+      "sha256": "d96b54e56ed3a3143661b772eeb8a1b9c66f5d1415cc314b73bb912c3990c636",
+      "old_refs": 0,
+      "new_refs": 1,
+      "validated": true,
+      "role": "controlled_active_pointer_file"
+    }
+  ],
+  "rollback_controls": [
+    {
+      "rollback_id": "ROLLBACK_001",
+      "scope": "canonical_rollback",
+      "reference_path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "reference_rows": 38287,
+      "reference_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "status": "AVAILABLE_UNCHANGED",
+      "rollback_action": "Use v2_14e if final closure does not approve operational recognition."
+    },
+    {
+      "rollback_id": "ROLLBACK_002",
+      "scope": "pointer_reversal",
+      "reference_path": "outputs/audit/documentation_canonical_dataset_path_v2_14i.json;outputs/audit/eol_guard_v2_14k.json;tests/test_expanded_universe_post_closure_v2_14j.py",
+      "reference_rows": 3,
+      "reference_sha": "",
+      "status": "REVERSIBLE_IF_EXPLICITLY_APPROVED",
+      "rollback_action": "Reverse `outputs/full_universe_source_acquisition/expanded_universe_v2_20m_asx_promoted.csv` back to `outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv` only in explicit rollback phase."
+    },
+    {
+      "rollback_id": "ROLLBACK_003",
+      "scope": "promoted_operational_base_candidate",
+      "reference_path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "reference_rows": 42708,
+      "reference_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "status": "READY_FOR_FINAL_CLOSURE",
+      "rollback_action": "Keep available; do not delete or overwrite."
+    }
+  ],
+  "scoring_gate": [
+    {
+      "gate_id": "SCORING_001",
+      "gate": "scoring_authorized",
+      "passed": false,
+      "detail": "scoring is not authorized by v2.20S",
+      "blocking_reason": "Requires separate post-v2.20T explicit decision."
+    },
+    {
+      "gate_id": "SCORING_002",
+      "gate": "openai_authorized",
+      "passed": false,
+      "detail": "OpenAI calls are not authorized by v2.20S",
+      "blocking_reason": "Requires separate explicit decision."
+    },
+    {
+      "gate_id": "SCORING_003",
+      "gate": "broker_authorized",
+      "passed": false,
+      "detail": "Broker calls are not authorized by v2.20S",
+      "blocking_reason": "Requires separate explicit decision."
+    },
+    {
+      "gate_id": "SCORING_004",
+      "gate": "full59k_authorized",
+      "passed": false,
+      "detail": "full59k remains DEPRECATED_DEFERRED",
+      "blocking_reason": "Outside quality-first closure scope."
+    }
+  ],
+  "final_closure_plan": [
+    {
+      "closure_step": 1,
+      "scope": "document_operational_base",
+      "planned_action": "Record promoted canonical as operational base after pointer validation.",
+      "target_phase": "v2.20T",
+      "allowed_in_v220s": false
+    },
+    {
+      "closure_step": 2,
+      "scope": "record_rollback",
+      "planned_action": "Record v2_14e as rollback reference.",
+      "target_phase": "v2.20T",
+      "allowed_in_v220s": false
+    },
+    {
+      "closure_step": 3,
+      "scope": "freeze_expansion",
+      "planned_action": "Confirm provider expansion frozen by default.",
+      "target_phase": "v2.20T",
+      "allowed_in_v220s": false
+    },
+    {
+      "closure_step": 4,
+      "scope": "scoring_decision",
+      "planned_action": "Keep scoring deferred unless a separate post-closure phase is explicitly approved.",
+      "target_phase": "post-v2.20T",
+      "allowed_in_v220s": false
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_20n_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_PROMOTED_CANONICAL_VALIDATION_COMPLETED_42708_ROWS_PROMOTED_FILE_VALIDATED_CANONICAL_UNCHANGED_POINTER_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20o_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_ACTIVE_POINTER_DECISION_GATE_COMPLETED_POINTER_UPDATE_PLAN_APPROVED_42708_ROWS_CANONICAL_UNCHANGED_POINTER_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20p_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_ACTIVE_POINTER_UPDATE_PLAN_COMPLETED_POINTER_UPDATE_READY_42708_ROWS_CANONICAL_UNCHANGED_POINTER_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20q_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_CONTROLLED_ACTIVE_POINTER_UPDATE_COMPLETED_3_FILES_UPDATED_42708_ROWS_CANONICAL_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20r_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_ACTIVE_POINTER_UPDATE_VALIDATION_COMPLETED_3_FILES_VALIDATED_42708_ROWS_POINTERS_ACTIVE_ROLLBACK_AVAILABLE_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20r_next_phase_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.20S - Post-Pointer Operational Readiness Gate"
+    },
+    {
+      "check": "v2_20r_validation_decision_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ACTIVE_POINTER_UPDATE_VALIDATED_READY_FOR_OPERATIONAL_READINESS_GATE"
+    },
+    {
+      "check": "v2_20r_pointer_update_validated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_validated=True"
+    },
+    {
+      "check": "v2_20r_validated_target_files_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated_target_files=3"
+    },
+    {
+      "check": "v2_20r_no_old_refs_in_targets",
+      "passed": true,
+      "severity": "critical",
+      "detail": "target_files_with_old_refs=0"
+    },
+    {
+      "check": "v2_20r_new_refs_in_targets",
+      "passed": true,
+      "severity": "critical",
+      "detail": "target_files_with_new_refs=3"
+    },
+    {
+      "check": "v2_20r_no_target_sha_drift",
+      "passed": true,
+      "severity": "critical",
+      "detail": "target_files_with_sha_drift=0"
+    },
+    {
+      "check": "v2_20r_historical_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "historical_changed=0"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "promoted_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted_rows=42708"
+    },
+    {
+      "check": "asx_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_rows=42708"
+    },
+    {
+      "check": "current_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=41392"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "promoted_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "asx_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "current_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c"
+    },
+    {
+      "check": "promoted_matches_asx_rows",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted=42708;asx=42708"
+    },
+    {
+      "check": "promoted_matches_asx_sha",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted=892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127;asx=892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "promoted_schema_matches_rollback",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted_columns=33;rollback_columns=33"
+    },
+    {
+      "check": "promoted_schema_matches_asx",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted_columns=33;asx_columns=33"
+    },
+    {
+      "check": "promoted_schema_matches_current_candidate",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted_columns=33;current_columns=33"
+    },
+    {
+      "check": "schema_column_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted_columns=33"
+    },
+    {
+      "check": "quality_floor_crossed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows=42708;floor=42000"
+    },
+    {
+      "check": "quality_ceiling_not_exceeded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows=42708;ceiling=45000"
+    },
+    {
+      "check": "pointer_file_exists::outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\audit\\documentation_canonical_dataset_path_v2_14i.json"
+    },
+    {
+      "check": "pointer_file_no_old_refs::outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "old_refs=0"
+    },
+    {
+      "check": "pointer_file_has_new_ref::outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_refs=1"
+    },
+    {
+      "check": "pointer_file_validated::outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated=True"
+    },
+    {
+      "check": "pointer_file_exists::outputs/audit/eol_guard_v2_14k.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\audit\\eol_guard_v2_14k.json"
+    },
+    {
+      "check": "pointer_file_no_old_refs::outputs/audit/eol_guard_v2_14k.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "old_refs=0"
+    },
+    {
+      "check": "pointer_file_has_new_ref::outputs/audit/eol_guard_v2_14k.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_refs=1"
+    },
+    {
+      "check": "pointer_file_validated::outputs/audit/eol_guard_v2_14k.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated=True"
+    },
+    {
+      "check": "pointer_file_exists::tests/test_expanded_universe_post_closure_v2_14j.py",
+      "passed": true,
+      "severity": "critical",
+      "detail": "tests\\test_expanded_universe_post_closure_v2_14j.py"
+    },
+    {
+      "check": "pointer_file_no_old_refs::tests/test_expanded_universe_post_closure_v2_14j.py",
+      "passed": true,
+      "severity": "critical",
+      "detail": "old_refs=0"
+    },
+    {
+      "check": "pointer_file_has_new_ref::tests/test_expanded_universe_post_closure_v2_14j.py",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_refs=1"
+    },
+    {
+      "check": "pointer_file_validated::tests/test_expanded_universe_post_closure_v2_14j.py",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated=True"
+    },
+    {
+      "check": "pointer_files_validated_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_files_validated=3"
+    },
+    {
+      "check": "pointer_files_with_old_refs_expected_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_files_with_old_refs=0"
+    },
+    {
+      "check": "pointer_files_with_new_refs_expected_three",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_files_with_new_refs=3"
+    },
+    {
+      "check": "operational_readiness_gate_all_passed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "readiness_failed=0"
+    },
+    {
+      "check": "readiness_gate_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "post-pointer operational readiness gate only"
+    },
+    {
+      "check": "file_edit_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_edit_performed=False"
+    },
+    {
+      "check": "file_copy_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_copy_performed=False"
+    },
+    {
+      "check": "file_rename_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_rename_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "final-closure",
+      "action": "run_final_asx_promotion_closure_report",
+      "priority": "high",
+      "reason": "Operational readiness gate passed; final closure should document the promoted base and rollback.",
+      "recommended_phase": "v2.20T - Final ASX Promotion Closure Report",
+      "guardrails": "closure report only; no scoring/OpenAI/broker/full59k"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "rollback",
+      "action": "preserve_v2_14e_rollback_reference",
+      "priority": "high",
+      "reason": "Rollback remains required until final closure is committed and verified.",
+      "recommended_phase": "v2.20T - Final ASX Promotion Closure Report",
+      "guardrails": "do not delete or overwrite rollback dataset"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "scoring",
+      "action": "keep_scoring_deferred",
+      "priority": "medium",
+      "reason": "Readiness gate does not authorize scoring.",
+      "recommended_phase": "post-v2.20T explicit decision",
+      "guardrails": "separate approval required"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "post-pointer-operational-readiness-gate-only",
+    "post_pointer_operational_readiness_gate_only": true,
+    "selected_provider": "ASX",
+    "operational_base_ready": true,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_available": true,
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "operational_target_floor": 42000,
+    "operational_target_ceiling": 45000,
+    "operational_42k_floor_achieved": true,
+    "operational_45k_ceiling_respected": true,
+    "aspirational_target_50000_retained": true,
+    "provider_expansion_frozen": true,
+    "controlled_pointer_files_validated": 3,
+    "controlled_pointer_files_with_old_refs": 0,
+    "controlled_pointer_files_with_new_refs": 3,
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_current_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "closure_report_performed": false,
+    "file_edit_performed": false,
+    "file_copy_performed": false,
+    "file_rename_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "promoted_canonical_dataset_read": true,
+    "promoted_canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "active_pointer_updated_from_v2_20q": true,
+    "pointer_update_validated_from_v2_20r": true,
+    "scoring_authorized": false,
+    "scoring_recalculated": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.20T - Final ASX Promotion Closure Report"
+}

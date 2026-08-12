@@ -1,0 +1,6 @@
+decision_id,decision,accepted,reason,effect
+OP_READY_DECISION_001,Recognize promoted canonical as operational base candidate.,True,"Pointers validated, promoted canonical available, rollback available, quality target met.",Allows final ASX closure report; does not launch scoring.
+OP_READY_DECISION_002,Keep v2_14e as rollback reference through final closure.,True,Rollback canonical SHA and rows remain unchanged.,Rollback remains available if final closure blocks activation.
+OP_READY_DECISION_003,Do not continue provider expansion by default.,True,42k operational floor achieved and 45k quality ceiling respected.,No additional provider acquisition before closure.
+OP_READY_DECISION_004,Do not authorize scoring in v2.20S.,True,Scoring requires a separate explicit phase after final closure.,"No scoring, OpenAI or broker execution."
+OP_READY_DECISION_005,Keep full59k deprecated/deferred.,True,50k remains aspirational and outside the quality-first closure path.,No full59k/global renormalization launch.

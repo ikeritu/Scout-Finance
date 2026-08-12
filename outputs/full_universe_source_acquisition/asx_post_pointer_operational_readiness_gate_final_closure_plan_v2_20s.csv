@@ -1,0 +1,5 @@
+closure_step,scope,planned_action,target_phase,allowed_in_v220s
+1,document_operational_base,Record promoted canonical as operational base after pointer validation.,v2.20T,False
+2,record_rollback,Record v2_14e as rollback reference.,v2.20T,False
+3,freeze_expansion,Confirm provider expansion frozen by default.,v2.20T,False
+4,scoring_decision,Keep scoring deferred unless a separate post-closure phase is explicitly approved.,post-v2.20T,False

@@ -1,0 +1,5 @@
+gate_id,gate,passed,detail,blocking_reason
+SCORING_001,scoring_authorized,False,scoring is not authorized by v2.20S,Requires separate post-v2.20T explicit decision.
+SCORING_002,openai_authorized,False,OpenAI calls are not authorized by v2.20S,Requires separate explicit decision.
+SCORING_003,broker_authorized,False,Broker calls are not authorized by v2.20S,Requires separate explicit decision.
+SCORING_004,full59k_authorized,False,full59k remains DEPRECATED_DEFERRED,Outside quality-first closure scope.

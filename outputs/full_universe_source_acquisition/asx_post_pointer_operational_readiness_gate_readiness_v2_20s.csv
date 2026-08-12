@@ -1,0 +1,9 @@
+gate_id,gate,passed,detail,required_for_operational_base
+OP_READY_001,v2_20r_pointer_validation_passed,True,pointer_update_validated=True,True
+OP_READY_002,controlled_pointer_files_validated,True,pointer_files_validated=3,True
+OP_READY_003,no_old_refs_in_active_pointer_files,True,pointer_files_with_old_refs=0,True
+OP_READY_004,promoted_canonical_available_and_quality_target_met,True,rows=42708;sha=892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127;floor=42000;ceiling=45000,True
+OP_READY_005,rollback_canonical_available,True,rows=38287;sha=cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f,True
+OP_READY_006,provider_expansion_frozen,True,42k floor achieved; 45k ceiling respected; no new provider expansion authorized,True
+OP_READY_007,scoring_not_authorized,True,scoring requires separate post-closure decision,True
+OP_READY_008,external_calls_not_authorized,True,OpenAI=False;broker=False;full59k=False,True
