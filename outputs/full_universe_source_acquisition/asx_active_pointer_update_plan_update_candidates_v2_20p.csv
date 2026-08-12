@@ -1,0 +1,4 @@
+path,category,old_ref_forward_count,old_ref_backslash_count,old_ref_total_count,new_ref_forward_count,new_ref_backslash_count,new_ref_total_count,recommended_action,planned_update_in_v220p
+outputs\audit\documentation_canonical_dataset_path_v2_14i.json,config_or_runtime_candidate,1,0,1,0,0,0,review_for_controlled_pointer_update,False
+outputs\audit\eol_guard_v2_14k.json,config_or_runtime_candidate,1,0,1,0,0,0,review_for_controlled_pointer_update,False
+tests\test_expanded_universe_post_closure_v2_14j.py,review_candidate,1,0,1,0,0,0,review_for_controlled_pointer_update,False

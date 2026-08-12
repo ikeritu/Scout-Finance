@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,pointer-update,execute_controlled_active_pointer_update,high,Plan completed; exact reference inventory and candidates are available.,v2.20Q - ASX Controlled Active Pointer Update,update only reviewed candidates; preserve historical artifacts; no scoring/OpenAI/broker/full59k
+2,post-update-validation,validate_active_pointer_update,high,Any pointer update must be validated before operational scoring.,v2.20R - ASX Active Pointer Update Validation,"verify references, SHA, rows and rollback path"
+3,quality,keep_provider_expansion_frozen,medium,Promoted canonical already meets 42k–45k operating target.,v2.20Q - ASX Controlled Active Pointer Update,50k aspirational only; full59k deprecated
