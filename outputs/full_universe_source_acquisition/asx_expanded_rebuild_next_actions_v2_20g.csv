@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,ASX,run_asx_expanded_validation,high,"Expanded ASX candidate has been rebuilt at 42,708 rows; next step is validation before any promotion decision.",v2.20H - ASX Expanded Validation,validate expanded candidate only; do not promote canonical; do not score
+2,quality_target,preserve_42k_45k_operational_band,high,ASX rebuild crosses 42k and remains below 45k.,v2.20H - ASX Expanded Validation,50k aspirational only; full59k deprecated
+3,canonical,defer_canonical_promotion_until_validation_pass,high,v2.20G writes candidate only. Canonical must remain unchanged until explicit promotion phase.,v2.20H - ASX Expanded Validation,no canonical replacement in v2.20G
