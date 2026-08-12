@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,ASX,append_all_clean_net_new_rows_in_rebuild_candidate,high,Clean ASX net-new rows fit inside the 45k quality ceiling.,v2.20G - ASX Expanded Rebuild Candidate,rebuild candidate only; do not promote canonical; do not score; preserve 42k-45k band
+2,ASX_duplicates,exclude_current_duplicates_and_internal_duplicates,high,v2.20F identified duplicate-current and internal-duplicate rows; these must not be appended.,v2.20G - ASX Expanded Rebuild Candidate,only rows with validation_decision=net_new_candidate are eligible
+3,quality_target,preserve_42k_45k_operational_band,high,"Goal is to cross 42k with good candidates, not chase 50k volume.",v2.20G - ASX Expanded Rebuild Candidate,50k aspirational only; full59k deprecated

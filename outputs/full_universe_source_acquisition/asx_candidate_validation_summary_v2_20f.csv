@@ -1,0 +1,14 @@
+metric,value
+current_validated_candidate_rows,41392
+asx_all_extracted_rows,14409
+asx_included_rows_input,1921
+asx_deduped_rows_validated,1920
+internal_duplicate_rows_dropped,1
+duplicate_current_rows,567
+review_rows,37
+net_new_candidate_rows,1316
+rows_needed_to_quality_floor,608
+rows_needed_to_quality_ceiling,3608
+net_new_covers_quality_floor_gap,True
+post_asx_dry_run_candidate_rows_if_rebuilt_all_net_new,42708
+would_exceed_quality_ceiling_if_rebuilt_all_net_new,False
