@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,canonical,prepare_asx_canonical_promotion_plan,high,"Decision gate recommends preparing a controlled promotion plan for the validated 42,708-row ASX candidate.",v2.20K - ASX Canonical Promotion Plan,plan first; no scoring/OpenAI/broker/full59k; preserve rollback path
+2,audit,define_rollback_and_sha_controls,high,Canonical promotion should have exact pre/post SHA checks and rollback references.,v2.20K - ASX Canonical Promotion Plan,do not overwrite without explicit copy/backup strategy
+3,quality_target,freeze_additional_provider_expansion,high,Operational target has been reached without exceeding the quality ceiling.,v2.20K - ASX Canonical Promotion Plan,avoid adding rows for volume only

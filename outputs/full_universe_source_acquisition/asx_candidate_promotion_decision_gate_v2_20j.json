@@ -1,0 +1,404 @@
+{
+  "version": "v2.20J",
+  "phase": "ASX Candidate Promotion Decision Gate",
+  "phase_type": "promotion-decision-gate-only",
+  "status": "ASX_CANDIDATE_PROMOTION_DECISION_GATE_COMPLETED_PROMOTION_RECOMMENDED_42708_ROWS_42K_ACHIEVED_CANONICAL_UNCHANGED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-12T11:23:36.219661+00:00",
+  "decision_summary": {
+    "selected_provider": "ASX",
+    "phase_type": "promotion-decision-gate-only",
+    "promotion_decision": "PROMOTION_RECOMMENDED_READY_FOR_PLAN",
+    "promotion_recommendation": "PREPARE_CANONICAL_PROMOTION_PLAN",
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "active_canonical_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "current_validated_candidate": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_hkex_v2_19p.csv",
+    "current_validated_candidate_rows": 41392,
+    "current_validated_candidate_sha": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c",
+    "validated_asx_candidate": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_asx_v2_20g.csv",
+    "validated_asx_candidate_rows": 42708,
+    "validated_asx_candidate_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "asx_net_new_rows_vs_current_candidate": 1316,
+    "uplift_vs_active_canonical_rows": 4421,
+    "uplift_vs_current_candidate_rows": 1316,
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "quality_floor_crossed": true,
+    "quality_ceiling_not_exceeded": true,
+    "rows_above_quality_floor": 708,
+    "remaining_capacity_to_quality_ceiling": 2292,
+    "aspirational_target": 50000,
+    "rows_to_aspirational_50k": 7292,
+    "decision_gate_result": "APPROVE_PREPARATION_OF_CANONICAL_PROMOTION",
+    "canonical_promotion_performed": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "next_phase": "v2.20K - ASX Canonical Promotion Plan",
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "decision_register": [
+    {
+      "decision_id": "ASX_PROMOTION_GATE_001",
+      "decision": "Recommend preparing canonical promotion plan",
+      "status": "accepted",
+      "evidence": "ASX candidate is validated at 42,708 rows with 0 critical and 0 warning failed checks.",
+      "guardrail": "Decision gate only; no canonical replacement in v2.20J."
+    },
+    {
+      "decision_id": "ASX_PROMOTION_GATE_002",
+      "decision": "Prefer validated ASX candidate over current HKEX candidate as next operational base",
+      "status": "accepted",
+      "evidence": "ASX candidate adds 1,316 net-new rows over the 41,392-row HKEX candidate and reaches 42,708 rows.",
+      "guardrail": "Promotion must preserve audit trail and original candidate files."
+    },
+    {
+      "decision_id": "ASX_PROMOTION_GATE_003",
+      "decision": "Do not continue provider expansion by default",
+      "status": "accepted",
+      "evidence": "Operational 42k floor is achieved and 45k ceiling respected.",
+      "guardrail": "No rows for volume only; 50k remains aspirational."
+    },
+    {
+      "decision_id": "ASX_PROMOTION_GATE_004",
+      "decision": "Keep full59k deprecated",
+      "status": "accepted",
+      "evidence": "Quality-first 42k-45k route supersedes full59k expansion.",
+      "guardrail": "Do not relaunch full59k unless explicitly opened as separate branch."
+    },
+    {
+      "decision_id": "ASX_PROMOTION_GATE_005",
+      "decision": "Require separate promotion phase before replacing canonical",
+      "status": "accepted",
+      "evidence": "v2.20J does not modify active canonical; active canonical SHA remains unchanged.",
+      "guardrail": "Canonical replacement requires explicit v2.20K+ phase."
+    }
+  ],
+  "promotion_readiness": [
+    {
+      "criterion": "v2.20G rebuild passed",
+      "ready": true,
+      "evidence": "ASX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_42708_ROWS_1316_NET_NEW_42K_CROSSED_45K_NOT_EXCEEDED_CANONICAL_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "criterion": "v2.20H validation passed",
+      "ready": true,
+      "evidence": "ASX_EXPANDED_VALIDATION_COMPLETED_42708_ROWS_1316_ASX_NET_NEW_VALIDATED_42K_CROSSED_45K_NOT_EXCEEDED_CLOSURE_REPORT_READY_FULL59K_DEPRECATED"
+    },
+    {
+      "criterion": "v2.20I closure passed",
+      "ready": true,
+      "evidence": "ASX_CLOSURE_REPORT_COMPLETED_42708_ROWS_1316_ASX_NET_NEW_42K_TARGET_ACHIEVED_45K_CEILING_RESPECTED_CANONICAL_PROMOTION_DECISION_READY_FULL59K_DEPRECATED"
+    },
+    {
+      "criterion": "42k floor achieved",
+      "ready": true,
+      "evidence": "42708 >= 42000"
+    },
+    {
+      "criterion": "45k ceiling respected",
+      "ready": true,
+      "evidence": "42708 <= 45000"
+    },
+    {
+      "criterion": "canonical unchanged",
+      "ready": true,
+      "evidence": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "criterion": "ASX candidate immutable during decision gate",
+      "ready": true,
+      "evidence": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "criterion": "promotion decision ready",
+      "ready": true,
+      "evidence": "critical_failed_checks=0;warning_failed_checks=0"
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_20g_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\asx_expanded_rebuild_candidate_v2_20g.json"
+    },
+    {
+      "check": "v2_20h_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\asx_expanded_validation_v2_20h.json"
+    },
+    {
+      "check": "v2_20i_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\asx_closure_report_v2_20i.json"
+    },
+    {
+      "check": "v2_20g_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_42708_ROWS_1316_NET_NEW_42K_CROSSED_45K_NOT_EXCEEDED_CANONICAL_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20h_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_EXPANDED_VALIDATION_COMPLETED_42708_ROWS_1316_ASX_NET_NEW_VALIDATED_42K_CROSSED_45K_NOT_EXCEEDED_CLOSURE_REPORT_READY_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20i_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_CLOSURE_REPORT_COMPLETED_42708_ROWS_1316_ASX_NET_NEW_42K_TARGET_ACHIEVED_45K_CEILING_RESPECTED_CANONICAL_PROMOTION_DECISION_READY_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20i_next_phase_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.20J - ASX Candidate Promotion Decision Gate"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "pre_hkex_current_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pre_hkex_rows=40996"
+    },
+    {
+      "check": "current_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_validated_rows=41392"
+    },
+    {
+      "check": "asx_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_validated_rows=42708"
+    },
+    {
+      "check": "asx_net_new_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_net_new_rows=1316"
+    },
+    {
+      "check": "active_canonical_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "pre_hkex_current_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+    },
+    {
+      "check": "current_validated_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c"
+    },
+    {
+      "check": "asx_validated_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "active_canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "pre_hkex_current_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pre-HKEX current candidate sha unchanged"
+    },
+    {
+      "check": "current_validated_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current validated candidate sha unchanged"
+    },
+    {
+      "check": "asx_validated_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX validated candidate sha unchanged"
+    },
+    {
+      "check": "quality_floor_crossed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_validated_rows=42708;floor=42000"
+    },
+    {
+      "check": "quality_ceiling_not_exceeded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_validated_rows=42708;ceiling=45000"
+    },
+    {
+      "check": "rows_above_quality_floor_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_above_floor=708"
+    },
+    {
+      "check": "remaining_capacity_to_quality_ceiling_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "capacity_to_ceiling=2292"
+    },
+    {
+      "check": "rows_to_aspirational_50k_expected",
+      "passed": true,
+      "severity": "warning",
+      "detail": "rows_to_50k=7292"
+    },
+    {
+      "check": "v2_20h_validation_clean",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical=0;warning=0"
+    },
+    {
+      "check": "v2_20i_closure_successful",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_PROVIDER_ROUTE_CLOSED_SUCCESSFULLY"
+    },
+    {
+      "check": "v2_20i_target_result_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "OPERATIONAL_42K_FLOOR_ACHIEVED_WITHOUT_EXCEEDING_45K"
+    },
+    {
+      "check": "v2_20i_canonical_promotion_status_ready",
+      "passed": true,
+      "severity": "critical",
+      "detail": "NOT_PROMOTED_DECISION_GATE_READY"
+    },
+    {
+      "check": "promotion_decision_gate_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promotion decision gate only"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "canonical_promotion_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_promotion_performed=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "canonical",
+      "action": "prepare_asx_canonical_promotion_plan",
+      "priority": "high",
+      "reason": "Decision gate recommends preparing a controlled promotion plan for the validated 42,708-row ASX candidate.",
+      "recommended_phase": "v2.20K - ASX Canonical Promotion Plan",
+      "guardrails": "plan first; no scoring/OpenAI/broker/full59k; preserve rollback path"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "audit",
+      "action": "define_rollback_and_sha_controls",
+      "priority": "high",
+      "reason": "Canonical promotion should have exact pre/post SHA checks and rollback references.",
+      "recommended_phase": "v2.20K - ASX Canonical Promotion Plan",
+      "guardrails": "do not overwrite without explicit copy/backup strategy"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "quality_target",
+      "action": "freeze_additional_provider_expansion",
+      "priority": "high",
+      "reason": "Operational target has been reached without exceeding the quality ceiling.",
+      "recommended_phase": "v2.20K - ASX Canonical Promotion Plan",
+      "guardrails": "avoid adding rows for volume only"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "promotion-decision-gate-only",
+    "promotion_decision_gate_only": true,
+    "selected_provider": "ASX",
+    "operational_target_floor": 42000,
+    "operational_target_ceiling": 45000,
+    "operational_42k_floor_achieved": true,
+    "operational_45k_ceiling_respected": true,
+    "aspirational_target_50000_retained": true,
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_current_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "closure_report_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_validated_candidate_dataset_read": true,
+    "current_validated_candidate_dataset_modified": false,
+    "current_validated_candidate_sha_unchanged": true,
+    "asx_validated_candidate_dataset_read": true,
+    "asx_validated_candidate_dataset_modified": false,
+    "asx_validated_candidate_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "canonical_promotion_performed": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.20K - ASX Canonical Promotion Plan"
+}

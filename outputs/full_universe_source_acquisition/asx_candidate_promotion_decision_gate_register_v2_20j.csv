@@ -1,0 +1,6 @@
+decision_id,decision,status,evidence,guardrail
+ASX_PROMOTION_GATE_001,Recommend preparing canonical promotion plan,accepted,"ASX candidate is validated at 42,708 rows with 0 critical and 0 warning failed checks.",Decision gate only; no canonical replacement in v2.20J.
+ASX_PROMOTION_GATE_002,Prefer validated ASX candidate over current HKEX candidate as next operational base,accepted,"ASX candidate adds 1,316 net-new rows over the 41,392-row HKEX candidate and reaches 42,708 rows.",Promotion must preserve audit trail and original candidate files.
+ASX_PROMOTION_GATE_003,Do not continue provider expansion by default,accepted,Operational 42k floor is achieved and 45k ceiling respected.,No rows for volume only; 50k remains aspirational.
+ASX_PROMOTION_GATE_004,Keep full59k deprecated,accepted,Quality-first 42k-45k route supersedes full59k expansion.,Do not relaunch full59k unless explicitly opened as separate branch.
+ASX_PROMOTION_GATE_005,Require separate promotion phase before replacing canonical,accepted,v2.20J does not modify active canonical; active canonical SHA remains unchanged.,Canonical replacement requires explicit v2.20K+ phase.
