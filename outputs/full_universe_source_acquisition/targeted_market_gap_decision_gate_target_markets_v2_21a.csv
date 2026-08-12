@@ -1,0 +1,3 @@
+market_id,country,country_codes,exchange_candidates,mic_candidates,currency_candidates,priority,expected_capacity_profile,currently_present,approved_for_planning,reason
+COLOMBIA_BVC,Colombia,CO|Colombia,BVC|Bolsa de Valores de Colombia,XBOG,COP,high,small,False,True,User-requested missing market; small targeted LatAm expansion.
+SINGAPORE_SGX,Singapore,SG|Singapore,SGX|Singapore Exchange,XSES,SGD,high,small_to_medium,False,True,User-requested missing market; high-quality Asian developed market coverage.

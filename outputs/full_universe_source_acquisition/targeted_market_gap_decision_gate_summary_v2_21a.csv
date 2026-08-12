@@ -1,0 +1,32 @@
+metric,value
+selected_route,Colombia + Singapore targeted expansion
+phase_type,targeted-market-gap-decision-gate-only
+gate_decision,COLOMBIA_SINGAPORE_TARGETED_EXPANSION_APPROVED_FOR_ACQUISITION_AND_RAW_VALIDATION
+approved_for_next_phase,True
+operational_base_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_20m_asx_promoted.csv
+operational_base_rows,42708
+operational_base_sha,892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127
+rollback_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv
+rollback_rows,38287
+rollback_sha,cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f
+quality_floor_target,42000
+quality_ceiling_target,45000
+remaining_capacity_to_quality_ceiling,2292
+target_markets,Colombia/BVC;Singapore/SGX
+target_markets_missing_in_current_base,True
+source_candidates_total,4
+country_values_total,29
+exchange_values_total,13
+mic_values_total,6
+currency_values_total,8
+provider_expansion_scope,targeted_only
+provider_expansion_frozen_except_targets,True
+scoring_authorized,False
+openai_authorized,False
+broker_authorized,False
+full59k,DEPRECATED_DEFERRED
+canonical_dataset_modified,False
+active_canonical_replaced,False
+critical_failed_checks,0
+warning_failed_checks,0
+recommended_next_phase,v2.21B - Colombia/BVC + Singapore/SGX Acquisition & Raw Validation

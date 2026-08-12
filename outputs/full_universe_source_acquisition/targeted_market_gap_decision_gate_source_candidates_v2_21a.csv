@@ -1,0 +1,5 @@
+market_id,source_id,provider,source_type,expected_fields,allowed_in_v2_21a,planned_for,notes
+COLOMBIA_BVC,BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES,BVC,official_exchange_issuer_information,"issuer_name,ticker_or_security_name,isin_if_available,instrument_type,country,currency",False,v2.21B,Use official BVC issuer/prospectus/results information; acquisition is not performed in this gate.
+COLOMBIA_BVC,BVC_RESULTS_AND_ISSUER_INFORMATION,BVC,official_exchange_results_and_issuer_information,"issuer_name,security_type,market_segment,listing_or_issue_reference",False,v2.21B,Candidate secondary official source for issuer/result cross-checking.
+SINGAPORE_SGX,SGX_SECURITIES_PRICES,SGX,official_exchange_securities_prices,"security_name,trading_code,exchange,primary_listing,currency,security_type",False,v2.21B,Use official SGX securities prices/listed securities information; acquisition is not performed in this gate.
+SINGAPORE_SGX,SGX_CORPORATE_INFORMATION,SGX,official_exchange_corporate_information,"company_name,stock_code,sector,listing_board,country,currency",False,v2.21B,Candidate secondary official source for company metadata enrichment.

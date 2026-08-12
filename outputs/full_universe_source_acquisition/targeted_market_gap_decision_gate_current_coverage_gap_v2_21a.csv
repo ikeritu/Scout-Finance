@@ -1,0 +1,3 @@
+market_id,country,country_hits,exchange_hits,mic_hits,currency_hits,market_present,gap_confirmed
+COLOMBIA_BVC,Colombia,0,0,0,0,False,True
+SINGAPORE_SGX,Singapore,0,0,0,0,False,True

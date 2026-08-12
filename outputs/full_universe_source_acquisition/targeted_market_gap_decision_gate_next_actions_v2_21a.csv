@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,acquisition,run_colombia_bvc_singapore_sgx_acquisition_and_raw_validation,high,Decision gate approves narrow acquisition planning for the two missing markets.,v2.21B - Colombia/BVC + Singapore/SGX Acquisition & Raw Validation,official sources only; no scoring/OpenAI/broker/full59k
+2,capacity,enforce_45k_quality_ceiling,high,"Operational base has 2,292 rows remaining before ceiling.",v2.21B - Colombia/BVC + Singapore/SGX Acquisition & Raw Validation,"if raw candidates exceed capacity, apply quality filters before rebuild"
+3,normalization,normalize_country_exchange_mic_currency,medium,New markets must enter as Colombia/BVC/XBOG/COP and Singapore/SGX/XSES/SGD.,v2.21B - Colombia/BVC + Singapore/SGX Acquisition & Raw Validation,no country-format fragmentation like USA/US or Australia/AU

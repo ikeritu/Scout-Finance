@@ -1,0 +1,5 @@
+control_id,control,value,limit,passed,detail
+CAPACITY_001,operational_base_current_rows,42708,45000,True,Current operational base remains under quality ceiling.
+CAPACITY_002,remaining_capacity_to_quality_ceiling,2292,45000,True,Capacity available for targeted Colombia + Singapore expansion.
+CAPACITY_003,expansion_scope,Colombia + Singapore only,no_global_expansion,True,"No full59k, no global provider sweep, no additional markets."
+CAPACITY_004,overflow_rule,apply_quality_filters_if_candidate_exceeds_ceiling,45000,True,"If expanded candidate exceeds 45k, prioritize common equities and exclude ETFs/funds/warrants/rights/structured products."

@@ -1,0 +1,6 @@
+decision_id,decision,accepted,reason,effect
+TARGET_GAP_001,Approve Colombia + Singapore targeted expansion planning.,True,User requested both markets; current operational base has capacity below 45k ceiling.,Open v2.21B acquisition/raw validation planning for BVC and SGX only.
+TARGET_GAP_002,Keep expansion narrow.,True,"This is a market gap patch, not a global expansion route.",No additional providers beyond Colombia/BVC and Singapore/SGX.
+TARGET_GAP_003,Do not authorize scoring.,True,Scoring remains deferred until after targeted markets closure.,"No scoring, OpenAI or broker calls in v2.21A."
+TARGET_GAP_004,Keep full59k deprecated/deferred.,True,50k remains aspirational and outside quality-first targeted expansion.,No full59k/global renormalization.
+TARGET_GAP_005,Preserve ASX operational base and v2_14e rollback.,True,This gate does not edit datasets or pointers.,"Operational base remains unchanged at 42,708 rows."

@@ -1,0 +1,476 @@
+{
+  "version": "v2.21A",
+  "phase": "Colombia + Singapore Targeted Expansion Gate",
+  "phase_type": "targeted-market-gap-decision-gate-only",
+  "status": "TARGETED_MARKET_GAP_DECISION_GATE_COMPLETED_COLOMBIA_SINGAPORE_APPROVED_FOR_PLANNING_42708_ROWS_NO_DATA_CHANGES_SCORING_DEFERRED",
+  "generated_at_utc": "2026-08-12T21:35:00.478195+00:00",
+  "summary": {
+    "selected_route": "Colombia + Singapore targeted expansion",
+    "phase_type": "targeted-market-gap-decision-gate-only",
+    "gate_decision": "COLOMBIA_SINGAPORE_TARGETED_EXPANSION_APPROVED_FOR_ACQUISITION_AND_RAW_VALIDATION",
+    "approved_for_next_phase": true,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "remaining_capacity_to_quality_ceiling": 2292,
+    "target_markets": "Colombia/BVC;Singapore/SGX",
+    "target_markets_missing_in_current_base": true,
+    "source_candidates_total": 4,
+    "country_values_total": 29,
+    "exchange_values_total": 13,
+    "mic_values_total": 6,
+    "currency_values_total": 8,
+    "provider_expansion_scope": "targeted_only",
+    "provider_expansion_frozen_except_targets": true,
+    "scoring_authorized": false,
+    "openai_authorized": false,
+    "broker_authorized": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.21B - Colombia/BVC + Singapore/SGX Acquisition & Raw Validation"
+  },
+  "target_markets": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "country": "Colombia",
+      "country_codes": "CO|Colombia",
+      "exchange_candidates": "BVC|Bolsa de Valores de Colombia",
+      "mic_candidates": "XBOG",
+      "currency_candidates": "COP",
+      "priority": "high",
+      "expected_capacity_profile": "small",
+      "currently_present": false,
+      "approved_for_planning": true,
+      "reason": "User-requested missing market; small targeted LatAm expansion."
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "country": "Singapore",
+      "country_codes": "SG|Singapore",
+      "exchange_candidates": "SGX|Singapore Exchange",
+      "mic_candidates": "XSES",
+      "currency_candidates": "SGD",
+      "priority": "high",
+      "expected_capacity_profile": "small_to_medium",
+      "currently_present": false,
+      "approved_for_planning": true,
+      "reason": "User-requested missing market; high-quality Asian developed market coverage."
+    }
+  ],
+  "source_candidates": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "source_id": "BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES",
+      "provider": "BVC",
+      "source_type": "official_exchange_issuer_information",
+      "expected_fields": "issuer_name,ticker_or_security_name,isin_if_available,instrument_type,country,currency",
+      "allowed_in_v2_21a": false,
+      "planned_for": "v2.21B",
+      "notes": "Use official BVC issuer/prospectus/results information; acquisition is not performed in this gate."
+    },
+    {
+      "market_id": "COLOMBIA_BVC",
+      "source_id": "BVC_RESULTS_AND_ISSUER_INFORMATION",
+      "provider": "BVC",
+      "source_type": "official_exchange_results_and_issuer_information",
+      "expected_fields": "issuer_name,security_type,market_segment,listing_or_issue_reference",
+      "allowed_in_v2_21a": false,
+      "planned_for": "v2.21B",
+      "notes": "Candidate secondary official source for issuer/result cross-checking."
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "source_id": "SGX_SECURITIES_PRICES",
+      "provider": "SGX",
+      "source_type": "official_exchange_securities_prices",
+      "expected_fields": "security_name,trading_code,exchange,primary_listing,currency,security_type",
+      "allowed_in_v2_21a": false,
+      "planned_for": "v2.21B",
+      "notes": "Use official SGX securities prices/listed securities information; acquisition is not performed in this gate."
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "source_id": "SGX_CORPORATE_INFORMATION",
+      "provider": "SGX",
+      "source_type": "official_exchange_corporate_information",
+      "expected_fields": "company_name,stock_code,sector,listing_board,country,currency",
+      "allowed_in_v2_21a": false,
+      "planned_for": "v2.21B",
+      "notes": "Candidate secondary official source for company metadata enrichment."
+    }
+  ],
+  "coverage_gap": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "country": "Colombia",
+      "country_hits": 0,
+      "exchange_hits": 0,
+      "mic_hits": 0,
+      "currency_hits": 0,
+      "market_present": false,
+      "gap_confirmed": true
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "country": "Singapore",
+      "country_hits": 0,
+      "exchange_hits": 0,
+      "mic_hits": 0,
+      "currency_hits": 0,
+      "market_present": false,
+      "gap_confirmed": true
+    }
+  ],
+  "capacity_controls": [
+    {
+      "control_id": "CAPACITY_001",
+      "control": "operational_base_current_rows",
+      "value": 42708,
+      "limit": 45000,
+      "passed": true,
+      "detail": "Current operational base remains under quality ceiling."
+    },
+    {
+      "control_id": "CAPACITY_002",
+      "control": "remaining_capacity_to_quality_ceiling",
+      "value": 2292,
+      "limit": 45000,
+      "passed": true,
+      "detail": "Capacity available for targeted Colombia + Singapore expansion."
+    },
+    {
+      "control_id": "CAPACITY_003",
+      "control": "expansion_scope",
+      "value": "Colombia + Singapore only",
+      "limit": "no_global_expansion",
+      "passed": true,
+      "detail": "No full59k, no global provider sweep, no additional markets."
+    },
+    {
+      "control_id": "CAPACITY_004",
+      "control": "overflow_rule",
+      "value": "apply_quality_filters_if_candidate_exceeds_ceiling",
+      "limit": 45000,
+      "passed": true,
+      "detail": "If expanded candidate exceeds 45k, prioritize common equities and exclude ETFs/funds/warrants/rights/structured products."
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "TARGET_GAP_001",
+      "decision": "Approve Colombia + Singapore targeted expansion planning.",
+      "accepted": true,
+      "reason": "User requested both markets; current operational base has capacity below 45k ceiling.",
+      "effect": "Open v2.21B acquisition/raw validation planning for BVC and SGX only."
+    },
+    {
+      "decision_id": "TARGET_GAP_002",
+      "decision": "Keep expansion narrow.",
+      "accepted": true,
+      "reason": "This is a market gap patch, not a global expansion route.",
+      "effect": "No additional providers beyond Colombia/BVC and Singapore/SGX."
+    },
+    {
+      "decision_id": "TARGET_GAP_003",
+      "decision": "Do not authorize scoring.",
+      "accepted": true,
+      "reason": "Scoring remains deferred until after targeted markets closure.",
+      "effect": "No scoring, OpenAI or broker calls in v2.21A."
+    },
+    {
+      "decision_id": "TARGET_GAP_004",
+      "decision": "Keep full59k deprecated/deferred.",
+      "accepted": true,
+      "reason": "50k remains aspirational and outside quality-first targeted expansion.",
+      "effect": "No full59k/global renormalization."
+    },
+    {
+      "decision_id": "TARGET_GAP_005",
+      "decision": "Preserve ASX operational base and v2_14e rollback.",
+      "accepted": true,
+      "reason": "This gate does not edit datasets or pointers.",
+      "effect": "Operational base remains unchanged at 42,708 rows."
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_20t_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_FINAL_PROMOTION_CLOSURE_REPORT_COMPLETED_OPERATIONAL_BASE_RECOGNIZED_42708_ROWS_ROLLBACK_AVAILABLE_SCORING_DEFERRED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20t_closure_decision_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_PROMOTION_CLOSED_PROMOTED_CANONICAL_RECOGNIZED_AS_OPERATIONAL_BASE_SCORING_DEFERRED"
+    },
+    {
+      "check": "v2_20t_asx_promotion_closed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_promotion_closed=True"
+    },
+    {
+      "check": "v2_20t_scoring_deferred",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "v2_20t_provider_expansion_was_frozen_before_new_gate",
+      "passed": true,
+      "severity": "critical",
+      "detail": "provider_expansion_frozen=True"
+    },
+    {
+      "check": "operational_base_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational_rows=42708"
+    },
+    {
+      "check": "operational_base_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "schema_column_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "columns=33"
+    },
+    {
+      "check": "required_country_column_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "country column present"
+    },
+    {
+      "check": "required_exchange_column_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "exchange column present"
+    },
+    {
+      "check": "required_mic_column_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "mic column present"
+    },
+    {
+      "check": "required_currency_column_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "currency column present"
+    },
+    {
+      "check": "operational_floor_already_achieved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows=42708;floor=42000"
+    },
+    {
+      "check": "operational_ceiling_capacity_available",
+      "passed": true,
+      "severity": "critical",
+      "detail": "remaining_capacity=2292"
+    },
+    {
+      "check": "remaining_capacity_at_least_100_rows",
+      "passed": true,
+      "severity": "warning",
+      "detail": "remaining_capacity=2292"
+    },
+    {
+      "check": "target_market_gap_confirmed::COLOMBIA_BVC",
+      "passed": true,
+      "severity": "warning",
+      "detail": "country_hits=0;exchange_hits=0;mic_hits=0;currency_hits=0"
+    },
+    {
+      "check": "target_market_gap_confirmed::SINGAPORE_SGX",
+      "passed": true,
+      "severity": "warning",
+      "detail": "country_hits=0;exchange_hits=0;mic_hits=0;currency_hits=0"
+    },
+    {
+      "check": "decision_gate_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "targeted market gap decision gate only"
+    },
+    {
+      "check": "network_download_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "raw_acquisition_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_acquisition_performed=False"
+    },
+    {
+      "check": "file_edit_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_edit_performed=False"
+    },
+    {
+      "check": "file_copy_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_copy_performed=False"
+    },
+    {
+      "check": "file_rename_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_rename_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "pointer_update_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_performed=False"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "acquisition",
+      "action": "run_colombia_bvc_singapore_sgx_acquisition_and_raw_validation",
+      "priority": "high",
+      "reason": "Decision gate approves narrow acquisition planning for the two missing markets.",
+      "recommended_phase": "v2.21B - Colombia/BVC + Singapore/SGX Acquisition & Raw Validation",
+      "guardrails": "official sources only; no scoring/OpenAI/broker/full59k"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "capacity",
+      "action": "enforce_45k_quality_ceiling",
+      "priority": "high",
+      "reason": "Operational base has 2,292 rows remaining before ceiling.",
+      "recommended_phase": "v2.21B - Colombia/BVC + Singapore/SGX Acquisition & Raw Validation",
+      "guardrails": "if raw candidates exceed capacity, apply quality filters before rebuild"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "normalization",
+      "action": "normalize_country_exchange_mic_currency",
+      "priority": "medium",
+      "reason": "New markets must enter as Colombia/BVC/XBOG/COP and Singapore/SGX/XSES/SGD.",
+      "recommended_phase": "v2.21B - Colombia/BVC + Singapore/SGX Acquisition & Raw Validation",
+      "guardrails": "no country-format fragmentation like USA/US or Australia/AU"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "targeted-market-gap-decision-gate-only",
+    "targeted_market_gap_decision_gate_only": true,
+    "selected_route": "Colombia + Singapore targeted expansion",
+    "target_markets": [
+      "Colombia/BVC",
+      "Singapore/SGX"
+    ],
+    "approved_for_next_phase": true,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_available": true,
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "operational_target_floor": 42000,
+    "operational_target_ceiling": 45000,
+    "remaining_capacity_to_quality_ceiling": 2292,
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "dedup_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "file_edit_performed": false,
+    "file_copy_performed": false,
+    "file_rename_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "promoted_canonical_dataset_read": true,
+    "promoted_canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "provider_expansion_scope": "targeted_only",
+    "additional_provider_expansion_frozen": true,
+    "scoring_authorized": false,
+    "scoring_recalculated": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.21B - Colombia/BVC + Singapore/SGX Acquisition & Raw Validation"
+}
