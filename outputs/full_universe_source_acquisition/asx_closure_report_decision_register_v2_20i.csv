@@ -1,0 +1,6 @@
+decision_id,decision,status,evidence,guardrail
+ASX_CLOSURE_001,Close ASX provider route as successful,accepted,"v2.20H validation passed with 42,708 rows, 1,316 ASX net-new rows, 0 critical failed checks.",Closure report only; no canonical promotion in v2.20I.
+ASX_CLOSURE_002,Record operational 42k floor achieved,accepted,42708 rows >= 42000; rows above floor = 708.,Do not chase 50k for volume; 50k remains aspirational.
+ASX_CLOSURE_003,Record 45k quality ceiling respected,accepted,42708 rows <= 45000; remaining capacity = 2292.,Do not add more providers unless quality-first justification exists.
+ASX_CLOSURE_004,Defer canonical promotion to explicit decision gate,accepted,v2.20I is closure-report-only; active canonical SHA remains unchanged.,Promotion requires separate phase and explicit approval.
+ASX_CLOSURE_005,Keep full59k deprecated,accepted,Quality-first 42k-45k operational band supersedes full59k route.,Do not relaunch full59k unless explicitly reopened as a separate research branch.

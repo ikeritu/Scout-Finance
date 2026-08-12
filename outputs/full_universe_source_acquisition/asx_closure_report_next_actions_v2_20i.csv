@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,canonical,open_candidate_promotion_decision_gate,high,ASX candidate is validated and crosses the operational 42k floor; canonical promotion decision can now be evaluated explicitly.,v2.20J - ASX Candidate Promotion Decision Gate,decision gate only unless explicit promotion is approved
+2,quality_target,freeze_provider_expansion_by_default,high,Operational 42k floor has been achieved and candidate remains below 45k.,v2.20J - ASX Candidate Promotion Decision Gate,avoid adding rows for volume only
+3,full59k,keep_full59k_deprecated_deferred,high,Quality-first target reset is complete; 50k remains aspirational only.,v2.20J - ASX Candidate Promotion Decision Gate,no full59k launch
