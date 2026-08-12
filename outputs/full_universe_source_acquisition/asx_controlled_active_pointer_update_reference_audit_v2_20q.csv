@@ -1,0 +1,4 @@
+path,scope,old_refs_before,old_refs_after,new_refs_before,new_refs_after,passed,detail
+outputs/audit/documentation_canonical_dataset_path_v2_14i.json,updated_candidate,1,0,0,1,True,old references removed and promoted canonical references present
+outputs/audit/eol_guard_v2_14k.json,updated_candidate,1,0,0,1,True,old references removed and promoted canonical references present
+tests/test_expanded_universe_post_closure_v2_14j.py,updated_candidate,1,0,0,1,True,old references removed and promoted canonical references present

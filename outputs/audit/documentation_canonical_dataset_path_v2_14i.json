@@ -14,7 +14,7 @@
     "outputs\\audit\\documentation_canonical_dataset_path_v2_14i.json",
     "outputs\\audit\\documentation_canonical_dataset_path_v2_14i.md"
   ],
-  "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+  "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_20m_asx_promoted.csv",
   "current_state": {
     "app_mvp_track": "v1.1C - MVP Final Freeze",
     "data_pipeline_track": "v2.14H - Audit Triage / Stability Gate",

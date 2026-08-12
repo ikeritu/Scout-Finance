@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,post-update-validation,validate_controlled_active_pointer_update,high,Controlled pointer references were updated and must be validated before any scoring.,v2.20R - ASX Active Pointer Update Validation,"validate exact 3 files, references, rows, SHA and rollback path"
+2,quality,keep_provider_expansion_frozen,medium,Promoted canonical already meets 42k–45k target.,v2.20R - ASX Active Pointer Update Validation,no provider expansion/full59k/scoring by default
+3,scoring,defer_scoring_until_pointer_validation_passes,high,Scoring must not run until v2.20R validates the pointer update.,post-v2.20R explicit scoring decision,separate approval required

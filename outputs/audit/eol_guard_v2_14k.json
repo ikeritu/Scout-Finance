@@ -22,7 +22,7 @@
     "safe_next_check": "git add --renormalize --dry-run ."
   },
   "current_project_state": {
-    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+    "canonical_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_20m_asx_promoted.csv",
     "expanded_rows": 38287,
     "source_to_50k_completed_percent": 76.6,
     "rows_needed": 11713,

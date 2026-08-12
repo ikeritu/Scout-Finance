@@ -7,7 +7,7 @@ from collections import Counter
 from pathlib import Path
 
 
-CANONICAL_DATASET = Path("outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv")
+CANONICAL_DATASET = Path("outputs/full_universe_source_acquisition/expanded_universe_v2_20m_asx_promoted.csv")
 VALIDATION_JSON = Path("outputs/full_universe_source_acquisition/deutsche_boerse_xetra_expanded_validation_v2_14f.json")
 CLOSURE_JSON = Path("outputs/full_universe_source_acquisition/deutsche_boerse_xetra_closure_report_v2_14g.json")
 
