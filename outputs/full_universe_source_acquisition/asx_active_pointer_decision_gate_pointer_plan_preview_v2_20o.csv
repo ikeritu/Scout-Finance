@@ -1,0 +1,5 @@
+plan_item,path,rows,sha256,planned_action,execute_in_v220o
+current_active_reference,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv,38287,cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f,preserve as rollback reference,False
+candidate_active_reference,outputs\full_universe_source_acquisition\expanded_universe_v2_20m_asx_promoted.csv,42708,892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127,prepare pointer update plan,False
+pointer_update,to_be_discovered_in_v2_20p,,,inventory and plan exact references that must point to promoted canonical,False
+post_pointer_validation,post_v2_20p_explicit_phase,,,validate any pointer update separately before scoring,False

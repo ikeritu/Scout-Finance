@@ -1,0 +1,4 @@
+rollback_id,scope,reference_path,reference_rows,reference_sha,status,rollback_action
+ROLLBACK_001,active_canonical,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv,38287,cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f,AVAILABLE_UNCHANGED,Keep using v2_14e if active pointer update is not approved or fails validation.
+ROLLBACK_002,promoted_canonical,outputs\full_universe_source_acquisition\expanded_universe_v2_20m_asx_promoted.csv,42708,892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127,VALIDATED_CANDIDATE_FOR_ACTIVATION,Do not activate unless pointer plan and pointer update pass explicit validation.
+ROLLBACK_003,active_pointer,not_changed_in_v2_20o,,,UNCHANGED,No rollback needed for v2.20O because no pointer was changed.

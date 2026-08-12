@@ -1,0 +1,5 @@
+gate_id,gate,passed,detail,required_before_pointer_plan
+READINESS_001,promoted_file_validated,True,rows=True;sha=True;schema=True,True
+READINESS_002,active_canonical_available_as_rollback,True,cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f,True
+READINESS_003,active_pointer_not_updated,True,active_pointer_updated=False,True
+READINESS_004,next_phase_is_plan_not_update,True,v2.20P - ASX Active Pointer Update Plan,True

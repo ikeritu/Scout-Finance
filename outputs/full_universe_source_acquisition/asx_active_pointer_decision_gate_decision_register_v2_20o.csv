@@ -1,0 +1,6 @@
+decision_id,decision,accepted,reason,effect
+ASX_POINTER_GATE_001,Approve preparation of active pointer update plan.,True,"Promoted canonical file is validated against ASX source rows, SHA and schema.",Allows planning phase only; does not update active pointers.
+ASX_POINTER_GATE_002,Keep active canonical v2_14e unchanged as rollback reference.,True,Active canonical SHA remains unchanged.,Rollback path remains available until explicit pointer update is approved and validated.
+ASX_POINTER_GATE_003,Do not perform pointer update in this decision gate.,True,Activation must be separated from decision gate.,No operational reference is changed in v2.20O.
+ASX_POINTER_GATE_004,Keep provider expansion frozen by default.,True,42k operational floor is achieved and 45k quality ceiling is respected.,No additional provider acquisition by default.
+ASX_POINTER_GATE_005,Keep full59k deprecated/deferred.,True,50k remains aspirational and outside current quality-first scope.,No full59k/global renormalization/scoring launch.

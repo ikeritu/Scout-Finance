@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,pointer-plan,prepare_active_pointer_update_plan,high,Decision gate approved preparation of a separate pointer update plan.,v2.20P - ASX Active Pointer Update Plan,plan only; discover exact references; do not update pointer yet
+2,activation,defer_actual_pointer_update,high,Operational activation must not be mixed with the decision gate.,post-v2.20P explicit controlled pointer update phase,separate approval required
+3,quality,freeze_provider_expansion,medium,Promoted canonical already meets 42k–45k operating target.,v2.20P - ASX Active Pointer Update Plan,no provider expansion/full59k/scoring by default
