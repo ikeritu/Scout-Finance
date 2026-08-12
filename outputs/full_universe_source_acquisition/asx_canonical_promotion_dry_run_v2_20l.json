@@ -1,0 +1,555 @@
+{
+  "version": "v2.20L",
+  "phase": "ASX Canonical Promotion Dry Run",
+  "phase_type": "canonical-promotion-dry-run-only",
+  "status": "ASX_CANONICAL_PROMOTION_DRY_RUN_COMPLETED_PROMOTION_EXECUTION_READY_42708_ROWS_CANONICAL_UNCHANGED_PROMOTED_FILE_NOT_CREATED_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-12T12:05:53.699956+00:00",
+  "dry_run_summary": {
+    "selected_provider": "ASX",
+    "phase_type": "canonical-promotion-dry-run-only",
+    "dry_run_decision": "PROMOTION_DRY_RUN_PASSED_EXECUTION_READY",
+    "promotion_source_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_asx_v2_20g.csv",
+    "promotion_source_rows": 42708,
+    "promotion_source_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "active_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "active_canonical_rows": 38287,
+    "active_canonical_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "planned_promoted_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "planned_promoted_canonical_dataset_exists_before": false,
+    "planned_promoted_canonical_dataset_exists_after": false,
+    "current_validated_candidate_rows": 41392,
+    "asx_net_new_rows_vs_current_candidate": 1316,
+    "uplift_vs_active_canonical_rows": 4421,
+    "schema_column_count": 33,
+    "schema_matches_active_canonical": true,
+    "schema_matches_current_candidate": true,
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "quality_floor_crossed": true,
+    "quality_ceiling_not_exceeded": true,
+    "rows_above_quality_floor": 708,
+    "remaining_capacity_to_quality_ceiling": 2292,
+    "aspirational_target": 50000,
+    "rows_to_aspirational_50k": 7292,
+    "promotion_strategy": "VERSIONED_CANONICAL_FILE_FIRST_WITH_EXPLICIT_POINTER_UPDATE_LATER",
+    "canonical_promotion_performed": false,
+    "promoted_file_created": false,
+    "active_pointer_updated": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "next_phase": "v2.20M - ASX Controlled Promoted File Creation",
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "preflight": [
+    {
+      "preflight_id": "PREFLIGHT_001",
+      "item": "source_candidate_exists",
+      "passed": true,
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_asx_v2_20g.csv",
+      "abort_if_failed": true
+    },
+    {
+      "preflight_id": "PREFLIGHT_002",
+      "item": "active_canonical_exists",
+      "passed": true,
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "abort_if_failed": true
+    },
+    {
+      "preflight_id": "PREFLIGHT_003",
+      "item": "planned_target_absent",
+      "passed": true,
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "abort_if_failed": true
+    },
+    {
+      "preflight_id": "PREFLIGHT_004",
+      "item": "promotion_source_rows_expected",
+      "passed": true,
+      "detail": "rows=42708",
+      "abort_if_failed": true
+    },
+    {
+      "preflight_id": "PREFLIGHT_005",
+      "item": "promotion_source_sha_expected",
+      "passed": true,
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "abort_if_failed": true
+    },
+    {
+      "preflight_id": "PREFLIGHT_006",
+      "item": "schema_compatible",
+      "passed": true,
+      "detail": "active=True;current=True",
+      "abort_if_failed": true
+    }
+  ],
+  "sha_controls": [
+    {
+      "artifact": "active_canonical",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "expected_rows": 38287,
+      "actual_rows": 38287,
+      "expected_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "actual_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "matched": true
+    },
+    {
+      "artifact": "current_validated_candidate",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_hkex_v2_19p.csv",
+      "expected_rows": 41392,
+      "actual_rows": 41392,
+      "expected_sha": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c",
+      "actual_sha": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c",
+      "matched": true
+    },
+    {
+      "artifact": "asx_validated_candidate",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_asx_v2_20g.csv",
+      "expected_rows": 42708,
+      "actual_rows": 42708,
+      "expected_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "actual_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "matched": true
+    },
+    {
+      "artifact": "planned_promoted_canonical",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "expected_rows": 42708,
+      "actual_rows": "",
+      "expected_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "actual_sha": "",
+      "matched": true
+    }
+  ],
+  "schema_controls": [
+    {
+      "schema_scope": "active_canonical",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "column_count": 33,
+      "matches_asx_candidate": true,
+      "columns": "ticker;company_name;exchange;country;source_provider;source_file;instrument_type;instrument_scope;classification_confidence;classification_reason;sector;industry;market_cap;raw_cik;raw_exchange;provider_precedence;merge_action;merge_reason;isin;currency;mic;source_version;source_url;hkex_category;hkex_subcategory;hkex_board_lot;provider;source_phase;symbol;security_name;instrument_id;product_assignment_group_description;asset_type"
+    },
+    {
+      "schema_scope": "current_validated_candidate",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_hkex_v2_19p.csv",
+      "column_count": 33,
+      "matches_asx_candidate": true,
+      "columns": "ticker;company_name;exchange;country;source_provider;source_file;instrument_type;instrument_scope;classification_confidence;classification_reason;sector;industry;market_cap;raw_cik;raw_exchange;provider_precedence;merge_action;merge_reason;isin;currency;mic;source_version;source_url;hkex_category;hkex_subcategory;hkex_board_lot;provider;source_phase;symbol;security_name;instrument_id;product_assignment_group_description;asset_type"
+    },
+    {
+      "schema_scope": "asx_validated_candidate",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_asx_v2_20g.csv",
+      "column_count": 33,
+      "matches_asx_candidate": true,
+      "columns": "ticker;company_name;exchange;country;source_provider;source_file;instrument_type;instrument_scope;classification_confidence;classification_reason;sector;industry;market_cap;raw_cik;raw_exchange;provider_precedence;merge_action;merge_reason;isin;currency;mic;source_version;source_url;hkex_category;hkex_subcategory;hkex_board_lot;provider;source_phase;symbol;security_name;instrument_id;product_assignment_group_description;asset_type"
+    }
+  ],
+  "rollback_controls": [
+    {
+      "rollback_id": "ROLLBACK_001",
+      "scope": "active_canonical",
+      "reference_path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "reference_rows": 38287,
+      "reference_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "dry_run_status": "AVAILABLE_UNCHANGED",
+      "execution_guard": "Abort promotion if active canonical SHA changes before v2.20M."
+    },
+    {
+      "rollback_id": "ROLLBACK_002",
+      "scope": "asx_validated_candidate",
+      "reference_path": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_asx_v2_20g.csv",
+      "reference_rows": 42708,
+      "reference_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "dry_run_status": "AVAILABLE_UNCHANGED",
+      "execution_guard": "Only create promoted file from this exact candidate SHA."
+    },
+    {
+      "rollback_id": "ROLLBACK_003",
+      "scope": "planned_promoted_target",
+      "reference_path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "reference_rows": "",
+      "reference_sha": "",
+      "dry_run_status": "NOT_CREATED_AS_EXPECTED",
+      "execution_guard": "v2.20M may create this path only after preflight passes."
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_20g_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\asx_expanded_rebuild_candidate_v2_20g.json"
+    },
+    {
+      "check": "v2_20h_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\asx_expanded_validation_v2_20h.json"
+    },
+    {
+      "check": "v2_20i_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\asx_closure_report_v2_20i.json"
+    },
+    {
+      "check": "v2_20j_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\asx_candidate_promotion_decision_gate_v2_20j.json"
+    },
+    {
+      "check": "v2_20k_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\asx_canonical_promotion_plan_v2_20k.json"
+    },
+    {
+      "check": "v2_20g_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_EXPANDED_REBUILD_CANDIDATE_COMPLETED_42708_ROWS_1316_NET_NEW_42K_CROSSED_45K_NOT_EXCEEDED_CANONICAL_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20h_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_EXPANDED_VALIDATION_COMPLETED_42708_ROWS_1316_ASX_NET_NEW_VALIDATED_42K_CROSSED_45K_NOT_EXCEEDED_CLOSURE_REPORT_READY_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20i_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_CLOSURE_REPORT_COMPLETED_42708_ROWS_1316_ASX_NET_NEW_42K_TARGET_ACHIEVED_45K_CEILING_RESPECTED_CANONICAL_PROMOTION_DECISION_READY_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20j_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_CANDIDATE_PROMOTION_DECISION_GATE_COMPLETED_PROMOTION_RECOMMENDED_42708_ROWS_42K_ACHIEVED_CANONICAL_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20k_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_CANONICAL_PROMOTION_PLAN_COMPLETED_DRY_RUN_READY_42708_ROWS_CANONICAL_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20k_next_phase_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.20L - ASX Canonical Promotion Dry Run"
+    },
+    {
+      "check": "v2_20k_plan_decision_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "PROMOTION_PLAN_READY_FOR_DRY_RUN"
+    },
+    {
+      "check": "v2_20k_promotion_source_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_asx_v2_20g.csv"
+    },
+    {
+      "check": "v2_20k_planned_target_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv"
+    },
+    {
+      "check": "v2_20k_canonical_promotion_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_promotion_performed=False"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "pre_hkex_current_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pre_hkex_rows=40996"
+    },
+    {
+      "check": "current_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_validated_rows=41392"
+    },
+    {
+      "check": "asx_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_validated_rows=42708"
+    },
+    {
+      "check": "asx_net_new_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_net_new_rows=1316"
+    },
+    {
+      "check": "uplift_vs_active_canonical_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "uplift_vs_active_canonical=4421"
+    },
+    {
+      "check": "active_canonical_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "pre_hkex_current_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+    },
+    {
+      "check": "current_validated_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c"
+    },
+    {
+      "check": "asx_validated_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "active_canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "pre_hkex_current_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pre-HKEX current candidate sha unchanged"
+    },
+    {
+      "check": "current_validated_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current validated candidate sha unchanged"
+    },
+    {
+      "check": "asx_validated_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX validated candidate sha unchanged"
+    },
+    {
+      "check": "schema_column_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_columns=33"
+    },
+    {
+      "check": "schema_matches_active_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "schema_matches_active_canonical=True"
+    },
+    {
+      "check": "schema_matches_current_candidate",
+      "passed": true,
+      "severity": "critical",
+      "detail": "schema_matches_current_candidate=True"
+    },
+    {
+      "check": "quality_floor_crossed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_validated_rows=42708;floor=42000"
+    },
+    {
+      "check": "quality_ceiling_not_exceeded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_validated_rows=42708;ceiling=45000"
+    },
+    {
+      "check": "rows_above_quality_floor_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_above_floor=708"
+    },
+    {
+      "check": "remaining_capacity_to_quality_ceiling_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "capacity_to_ceiling=2292"
+    },
+    {
+      "check": "rows_to_aspirational_50k_expected",
+      "passed": true,
+      "severity": "warning",
+      "detail": "rows_to_50k=7292"
+    },
+    {
+      "check": "planned_target_absent_before_dry_run",
+      "passed": true,
+      "severity": "critical",
+      "detail": "target_exists_before=False"
+    },
+    {
+      "check": "planned_target_absent_after_dry_run",
+      "passed": true,
+      "severity": "critical",
+      "detail": "target_exists_after=False"
+    },
+    {
+      "check": "dry_run_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "dry run only"
+    },
+    {
+      "check": "file_copy_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_copy_performed=False"
+    },
+    {
+      "check": "file_rename_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_rename_performed=False"
+    },
+    {
+      "check": "promoted_file_not_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "target_exists_after=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "canonical_promotion_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_promotion_performed=False"
+    },
+    {
+      "check": "active_pointer_not_updated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_pointer_updated=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "canonical",
+      "action": "create_versioned_asx_promoted_file",
+      "priority": "high",
+      "reason": "Dry run passed; controlled promoted file creation can proceed in a separate explicit phase.",
+      "recommended_phase": "v2.20M - ASX Controlled Promoted File Creation",
+      "guardrails": "create versioned file only; do not overwrite v2_14e; no scoring/OpenAI/broker/full59k"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "validation",
+      "action": "validate_promoted_file_after_creation",
+      "priority": "high",
+      "reason": "Promoted file must match ASX candidate rows, schema and SHA expectations after creation.",
+      "recommended_phase": "v2.20N - ASX Promoted Canonical Validation",
+      "guardrails": "post-promotion validation before any pointer update"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "pointer",
+      "action": "defer_active_pointer_update",
+      "priority": "high",
+      "reason": "Operational references must not be silently changed during file creation.",
+      "recommended_phase": "post-v2.20N explicit pointer phase",
+      "guardrails": "separate approval required"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "canonical-promotion-dry-run-only",
+    "canonical_promotion_dry_run_only": true,
+    "selected_provider": "ASX",
+    "operational_target_floor": 42000,
+    "operational_target_ceiling": 45000,
+    "operational_42k_floor_achieved": true,
+    "operational_45k_ceiling_respected": true,
+    "aspirational_target_50000_retained": true,
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_current_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "closure_report_performed": false,
+    "promotion_decision_gate_performed": false,
+    "promotion_plan_performed": false,
+    "file_copy_performed": false,
+    "file_rename_performed": false,
+    "promoted_file_created": false,
+    "planned_promoted_canonical_dataset_exists_before": false,
+    "planned_promoted_canonical_dataset_exists_after": false,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_validated_candidate_dataset_read": true,
+    "current_validated_candidate_dataset_modified": false,
+    "current_validated_candidate_sha_unchanged": true,
+    "asx_validated_candidate_dataset_read": true,
+    "asx_validated_candidate_dataset_modified": false,
+    "asx_validated_candidate_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "canonical_promotion_performed": false,
+    "active_pointer_updated": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.20M - ASX Controlled Promoted File Creation"
+}

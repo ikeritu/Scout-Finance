@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,canonical,create_versioned_asx_promoted_file,high,Dry run passed; controlled promoted file creation can proceed in a separate explicit phase.,v2.20M - ASX Controlled Promoted File Creation,create versioned file only; do not overwrite v2_14e; no scoring/OpenAI/broker/full59k
+2,validation,validate_promoted_file_after_creation,high,"Promoted file must match ASX candidate rows, schema and SHA expectations after creation.",v2.20N - ASX Promoted Canonical Validation,post-promotion validation before any pointer update
+3,pointer,defer_active_pointer_update,high,Operational references must not be silently changed during file creation.,post-v2.20N explicit pointer phase,separate approval required
