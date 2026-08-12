@@ -1,0 +1,5 @@
+market_id,country,provider,source_id,source_type,url,criticality,planned_use
+COLOMBIA_BVC,Colombia,BVC,BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES,official_exchange_issuer_information,https://www.bvc.com.co/prospectos,primary,raw_validation_now_candidate_extraction_later
+COLOMBIA_BVC,Colombia,BVC,BVC_RESULTS_AND_ISSUER_INFORMATION,official_exchange_results_and_issuer_information,https://www.bvc.com.co/resultados-e-informacion-sobre-emisores?tab=resultado-deemisiones,secondary,raw_validation_now_candidate_extraction_later
+SINGAPORE_SGX,Singapore,SGX,SGX_SECURITIES_PRICES,official_exchange_securities_prices,https://www.sgx.com/stock-exchange/securities-prices?code=stocks,primary,raw_validation_now_candidate_extraction_later
+SINGAPORE_SGX,Singapore,SGX,SGX_CORPORATE_INFORMATION,official_exchange_corporate_information,https://www.sgx.com/securities/corporate-information?pagesize=100,secondary,raw_validation_now_candidate_extraction_later

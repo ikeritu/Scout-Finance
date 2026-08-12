@@ -1,0 +1,34 @@
+metric,value
+selected_route,Colombia + Singapore targeted expansion
+phase_type,targeted-market-raw-acquisition-and-validation
+acquisition_decision,RAW_SOURCES_AVAILABLE_FOR_CANDIDATE_EXTRACTION_DRY_RUN
+approved_for_next_phase,True
+operational_base_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_20m_asx_promoted.csv
+operational_base_rows,42708
+operational_base_sha,892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127
+rollback_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv
+rollback_rows,38287
+rollback_sha,cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f
+quality_floor_target,42000
+quality_ceiling_target,45000
+remaining_capacity_to_quality_ceiling,2292
+target_markets,Colombia/BVC;Singapore/SGX
+sources_attempted,4
+sources_successful,4
+markets_raw_ready,2
+raw_dir,outputs\full_universe_source_acquisition\raw_targeted_markets_v2_21b
+raw_file_rows,8
+candidate_extraction_performed,False
+dedup_performed,False
+expanded_rebuild_performed,False
+provider_expansion_scope,targeted_only
+scoring_authorized,False
+openai_authorized,False
+broker_authorized,False
+full59k,DEPRECATED_DEFERRED
+canonical_dataset_modified,False
+active_canonical_replaced,False
+pointer_update_performed,False
+critical_failed_checks,0
+warning_failed_checks,0
+recommended_next_phase,v2.21C - Candidate Extraction + Dedup Dry Run

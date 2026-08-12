@@ -1,0 +1,513 @@
+{
+  "version": "v2.21B",
+  "phase": "Colombia/BVC + Singapore/SGX Acquisition & Raw Validation",
+  "phase_type": "targeted-market-raw-acquisition-and-validation",
+  "status": "TARGETED_MARKET_ACQUISITION_RAW_VALIDATION_COMPLETED_COLOMBIA_SINGAPORE_RAW_SOURCES_AVAILABLE_NO_DATASET_CHANGES_SCORING_DEFERRED",
+  "generated_at_utc": "2026-08-12T21:44:26.441015+00:00",
+  "summary": {
+    "selected_route": "Colombia + Singapore targeted expansion",
+    "phase_type": "targeted-market-raw-acquisition-and-validation",
+    "acquisition_decision": "RAW_SOURCES_AVAILABLE_FOR_CANDIDATE_EXTRACTION_DRY_RUN",
+    "approved_for_next_phase": true,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "remaining_capacity_to_quality_ceiling": 2292,
+    "target_markets": "Colombia/BVC;Singapore/SGX",
+    "sources_attempted": 4,
+    "sources_successful": 4,
+    "markets_raw_ready": 2,
+    "raw_dir": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b",
+    "raw_file_rows": 8,
+    "candidate_extraction_performed": false,
+    "dedup_performed": false,
+    "expanded_rebuild_performed": false,
+    "provider_expansion_scope": "targeted_only",
+    "scoring_authorized": false,
+    "openai_authorized": false,
+    "broker_authorized": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.21C - Candidate Extraction + Dedup Dry Run"
+  },
+  "source_fetches": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "country": "Colombia",
+      "provider": "BVC",
+      "source_id": "BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES",
+      "source_type": "official_exchange_issuer_information",
+      "url": "https://www.bvc.com.co/prospectos",
+      "criticality": "primary",
+      "expected_raw_kind": "html",
+      "fetch_attempted": true,
+      "fetch_success": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "raw_bytes": 38628,
+      "raw_sha256": "9d6251022406fdbe913a95af63e762049bdbc2e476d679cee004b8801a52ce8a",
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES.html",
+      "headers_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES.headers.json",
+      "error_file": "",
+      "marker_hits": 4,
+      "expected_markers_total": 4,
+      "marker_validation_passed": true,
+      "validation_status": "PASS",
+      "error": "",
+      "fetched_at_utc": "2026-08-12T21:44:22.550588+00:00",
+      "notes": "Official BVC prospectus/source page. Raw acquisition only; no candidate extraction in v2.21B."
+    },
+    {
+      "market_id": "COLOMBIA_BVC",
+      "country": "Colombia",
+      "provider": "BVC",
+      "source_id": "BVC_RESULTS_AND_ISSUER_INFORMATION",
+      "source_type": "official_exchange_results_and_issuer_information",
+      "url": "https://www.bvc.com.co/resultados-e-informacion-sobre-emisores?tab=resultado-deemisiones",
+      "criticality": "secondary",
+      "expected_raw_kind": "html",
+      "fetch_attempted": true,
+      "fetch_success": true,
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "raw_bytes": 38872,
+      "raw_sha256": "2418ab934cb662c5732f9756a146eb028aeec4805a49c0e1e87ebe4a2525d3ce",
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_RESULTS_AND_ISSUER_INFORMATION.html",
+      "headers_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_RESULTS_AND_ISSUER_INFORMATION.headers.json",
+      "error_file": "",
+      "marker_hits": 4,
+      "expected_markers_total": 4,
+      "marker_validation_passed": true,
+      "validation_status": "PASS",
+      "error": "",
+      "fetched_at_utc": "2026-08-12T21:44:23.681565+00:00",
+      "notes": "Official BVC issuer results/information page. Raw acquisition only."
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "country": "Singapore",
+      "provider": "SGX",
+      "source_id": "SGX_SECURITIES_PRICES",
+      "source_type": "official_exchange_securities_prices",
+      "url": "https://www.sgx.com/stock-exchange/securities-prices?code=stocks",
+      "criticality": "primary",
+      "expected_raw_kind": "html",
+      "fetch_attempted": true,
+      "fetch_success": true,
+      "http_status": 200,
+      "content_type": "text/html",
+      "raw_bytes": 14859,
+      "raw_sha256": "ffbb004bab166671f26416cc04199ac0a8adc43cf8a72f9689d23ef1632a6645",
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_SECURITIES_PRICES.html",
+      "headers_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_SECURITIES_PRICES.headers.json",
+      "error_file": "",
+      "marker_hits": 3,
+      "expected_markers_total": 4,
+      "marker_validation_passed": true,
+      "validation_status": "PASS",
+      "error": "",
+      "fetched_at_utc": "2026-08-12T21:44:24.429765+00:00",
+      "notes": "Official SGX securities prices page. Raw acquisition only."
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "country": "Singapore",
+      "provider": "SGX",
+      "source_id": "SGX_CORPORATE_INFORMATION",
+      "source_type": "official_exchange_corporate_information",
+      "url": "https://www.sgx.com/securities/corporate-information?pagesize=100",
+      "criticality": "secondary",
+      "expected_raw_kind": "html",
+      "fetch_attempted": true,
+      "fetch_success": true,
+      "http_status": 200,
+      "content_type": "text/html",
+      "raw_bytes": 14860,
+      "raw_sha256": "5cf56ce4c368e669e22a5d18ea5eb6752a2b9ef5a11a8c1898620bd19ee0a60b",
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_CORPORATE_INFORMATION.html",
+      "headers_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_CORPORATE_INFORMATION.headers.json",
+      "error_file": "",
+      "marker_hits": 1,
+      "expected_markers_total": 4,
+      "marker_validation_passed": true,
+      "validation_status": "PASS",
+      "error": "",
+      "fetched_at_utc": "2026-08-12T21:44:25.455145+00:00",
+      "notes": "Official SGX corporate information page. Raw acquisition only."
+    }
+  ],
+  "market_readiness": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "source_count": 2,
+      "success_count": 2,
+      "primary_success_count": 1,
+      "failed_count": 0,
+      "total_raw_bytes": 77500,
+      "raw_ready_for_candidate_extraction": true,
+      "primary_source_available": true,
+      "recommended_action": "proceed_to_v2_21c"
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "source_count": 2,
+      "success_count": 2,
+      "primary_success_count": 1,
+      "failed_count": 0,
+      "total_raw_bytes": 29719,
+      "raw_ready_for_candidate_extraction": true,
+      "primary_source_available": true,
+      "recommended_action": "proceed_to_v2_21c"
+    }
+  ],
+  "raw_files": [
+    {
+      "source_id": "BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES",
+      "market_id": "COLOMBIA_BVC",
+      "file_kind": "raw",
+      "path": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES.html",
+      "sha256": "9d6251022406fdbe913a95af63e762049bdbc2e476d679cee004b8801a52ce8a",
+      "bytes": 38628
+    },
+    {
+      "source_id": "BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES",
+      "market_id": "COLOMBIA_BVC",
+      "file_kind": "headers",
+      "path": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES.headers.json",
+      "sha256": "85c82bf409cf95481624ca50967932df505bc92ded8d78bdf6057df62eec6a7f",
+      "bytes": 1389
+    },
+    {
+      "source_id": "BVC_RESULTS_AND_ISSUER_INFORMATION",
+      "market_id": "COLOMBIA_BVC",
+      "file_kind": "raw",
+      "path": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_RESULTS_AND_ISSUER_INFORMATION.html",
+      "sha256": "2418ab934cb662c5732f9756a146eb028aeec4805a49c0e1e87ebe4a2525d3ce",
+      "bytes": 38872
+    },
+    {
+      "source_id": "BVC_RESULTS_AND_ISSUER_INFORMATION",
+      "market_id": "COLOMBIA_BVC",
+      "file_kind": "headers",
+      "path": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_RESULTS_AND_ISSUER_INFORMATION.headers.json",
+      "sha256": "079a1c290204d129635507490446ff8d40a134736cb1c0c3aa042aa1f1991f29",
+      "bytes": 1388
+    },
+    {
+      "source_id": "SGX_SECURITIES_PRICES",
+      "market_id": "SINGAPORE_SGX",
+      "file_kind": "raw",
+      "path": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_SECURITIES_PRICES.html",
+      "sha256": "ffbb004bab166671f26416cc04199ac0a8adc43cf8a72f9689d23ef1632a6645",
+      "bytes": 14859
+    },
+    {
+      "source_id": "SGX_SECURITIES_PRICES",
+      "market_id": "SINGAPORE_SGX",
+      "file_kind": "headers",
+      "path": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_SECURITIES_PRICES.headers.json",
+      "sha256": "30be6495f48e2f2b6438906fdeb97d67785ba50a4ee85c890b681c8c2536af4c",
+      "bytes": 1840
+    },
+    {
+      "source_id": "SGX_CORPORATE_INFORMATION",
+      "market_id": "SINGAPORE_SGX",
+      "file_kind": "raw",
+      "path": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_CORPORATE_INFORMATION.html",
+      "sha256": "5cf56ce4c368e669e22a5d18ea5eb6752a2b9ef5a11a8c1898620bd19ee0a60b",
+      "bytes": 14860
+    },
+    {
+      "source_id": "SGX_CORPORATE_INFORMATION",
+      "market_id": "SINGAPORE_SGX",
+      "file_kind": "headers",
+      "path": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_CORPORATE_INFORMATION.headers.json",
+      "sha256": "f417d494bdf155a84e1eb41f5e7d70c358919e7c4fc38fd376caa825c8267ec2",
+      "bytes": 1841
+    }
+  ],
+  "url_inventory": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "country": "Colombia",
+      "provider": "BVC",
+      "source_id": "BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES",
+      "source_type": "official_exchange_issuer_information",
+      "url": "https://www.bvc.com.co/prospectos",
+      "criticality": "primary",
+      "planned_use": "raw_validation_now_candidate_extraction_later"
+    },
+    {
+      "market_id": "COLOMBIA_BVC",
+      "country": "Colombia",
+      "provider": "BVC",
+      "source_id": "BVC_RESULTS_AND_ISSUER_INFORMATION",
+      "source_type": "official_exchange_results_and_issuer_information",
+      "url": "https://www.bvc.com.co/resultados-e-informacion-sobre-emisores?tab=resultado-deemisiones",
+      "criticality": "secondary",
+      "planned_use": "raw_validation_now_candidate_extraction_later"
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "country": "Singapore",
+      "provider": "SGX",
+      "source_id": "SGX_SECURITIES_PRICES",
+      "source_type": "official_exchange_securities_prices",
+      "url": "https://www.sgx.com/stock-exchange/securities-prices?code=stocks",
+      "criticality": "primary",
+      "planned_use": "raw_validation_now_candidate_extraction_later"
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "country": "Singapore",
+      "provider": "SGX",
+      "source_id": "SGX_CORPORATE_INFORMATION",
+      "source_type": "official_exchange_corporate_information",
+      "url": "https://www.sgx.com/securities/corporate-information?pagesize=100",
+      "criticality": "secondary",
+      "planned_use": "raw_validation_now_candidate_extraction_later"
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_21a_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TARGETED_MARKET_GAP_DECISION_GATE_COMPLETED_COLOMBIA_SINGAPORE_APPROVED_FOR_PLANNING_42708_ROWS_NO_DATA_CHANGES_SCORING_DEFERRED"
+    },
+    {
+      "check": "v2_21a_gate_decision_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "COLOMBIA_SINGAPORE_TARGETED_EXPANSION_APPROVED_FOR_ACQUISITION_AND_RAW_VALIDATION"
+    },
+    {
+      "check": "v2_21a_approved_for_next_phase",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_next_phase=True"
+    },
+    {
+      "check": "operational_base_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational_rows=42708"
+    },
+    {
+      "check": "operational_base_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "schema_column_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "columns=33"
+    },
+    {
+      "check": "operational_floor_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows=42708;floor=42000"
+    },
+    {
+      "check": "operational_ceiling_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows=42708;ceiling=45000"
+    },
+    {
+      "check": "raw_source_available::COLOMBIA_BVC",
+      "passed": true,
+      "severity": "critical",
+      "detail": "success_count=2;failed_count=0;total_raw_bytes=77500"
+    },
+    {
+      "check": "primary_source_available::COLOMBIA_BVC",
+      "passed": true,
+      "severity": "warning",
+      "detail": "primary_success_count=1"
+    },
+    {
+      "check": "raw_source_available::SINGAPORE_SGX",
+      "passed": true,
+      "severity": "critical",
+      "detail": "success_count=2;failed_count=0;total_raw_bytes=29719"
+    },
+    {
+      "check": "primary_source_available::SINGAPORE_SGX",
+      "passed": true,
+      "severity": "warning",
+      "detail": "primary_success_count=1"
+    },
+    {
+      "check": "at_least_two_sources_successful",
+      "passed": true,
+      "severity": "warning",
+      "detail": "successful_sources=4;total_sources=4"
+    },
+    {
+      "check": "raw_files_registered",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_file_rows=8"
+    },
+    {
+      "check": "raw_acquisition_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "official raw source fetches attempted"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "dedup_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "dedup_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "pointer_update_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_performed=False"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "candidate_extraction",
+      "action": "build_parser_candidates_from_successful_raw_sources",
+      "priority": "high",
+      "reason": "v2.21B only validates raw source availability; extraction is intentionally deferred.",
+      "recommended_phase": "v2.21C - Candidate Extraction + Dedup Dry Run",
+      "guardrails": "common equities first; exclude ETFs/funds/warrants/rights/structured products"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "dedup",
+      "action": "deduplicate_colombia_singapore_candidates_against_42708_operational_base",
+      "priority": "high",
+      "reason": "New market candidates must not duplicate existing ISIN/ticker/name records.",
+      "recommended_phase": "v2.21C - Candidate Extraction + Dedup Dry Run",
+      "guardrails": "no operational base modification; dry run only"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "normalization",
+      "action": "normalize_colombia_singapore_country_exchange_mic_currency",
+      "priority": "high",
+      "reason": "New records must enter with stable country/exchange/MIC/currency metadata.",
+      "recommended_phase": "v2.21C - Candidate Extraction + Dedup Dry Run",
+      "guardrails": "Colombia/BVC/XBOG/COP and Singapore/SGX/XSES/SGD"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "targeted-market-raw-acquisition-and-validation",
+    "selected_route": "Colombia + Singapore targeted expansion",
+    "target_markets": [
+      "Colombia/BVC",
+      "Singapore/SGX"
+    ],
+    "approved_for_next_phase": true,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "raw_acquisition_performed": true,
+    "raw_validation_performed": true,
+    "candidate_extraction_performed": false,
+    "dedup_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "file_edit_performed_on_operational_base": false,
+    "file_copy_performed_on_operational_base": false,
+    "file_rename_performed_on_operational_base": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "provider_expansion_scope": "targeted_only",
+    "additional_provider_expansion_frozen": true,
+    "scoring_authorized": false,
+    "scoring_recalculated": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.21C - Candidate Extraction + Dedup Dry Run"
+}

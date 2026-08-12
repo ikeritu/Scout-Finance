@@ -1,0 +1,17 @@
+{
+  "Content-Type": "text/html",
+  "Server": "server",
+  "Cache-Control": "no-cache",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Strict-Transport-Security": "max-age=63072000; includeSubdomains; preload",
+  "X-Content-Type-Options": "nosniff",
+  "Content-Security-Policy": "frame-ancestors 'self' https://investors.sgx.com/ https://investors.qasgx.com/; default-src 'none'; connect-src 'self' https://api.sgx.com https://api2.sgx.com https://api3.sgx.com https://api.qasgx.com https://api3.qasgx.com https://api2.qasgx.com https://api-dev.qasgx.com https://securepubads.g.doubleclick.net https://www.google-analytics.com https://pagead2.googlesyndication.com; frame-src 'self' https://swtools.sgx.com/ https://t1.trkd-hs.com/ https://www.youtube-nocookie.com https://www.google.com https://securepubads.g.doubleclick.net https://tpc.googlesyndication.com/; font-src 'self' https://api2.sgx.com https://api2.qasgx.com https://cdn.jsdelivr.net; img-src 'self' data: https://api2.sgx.com https://api2.qasgx.com https://i.ytimg.com https://www.google-analytics.com https://tpc.googlesyndication.com https://pagead2.googlesyndication.com; manifest-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.googletagservices.com https://www.googletagmanager.com https://securepubads.g.doubleclick.net https://www.google-analytics.com https://www.gstatic.com https://tpc.googlesyndication.com; style-src 'self' 'unsafe-inline';",
+  "X-Amz-Cf-Pop": "SIN3-P3",
+  "X-Amz-Cf-Id": "CE1tr5j6g8lZyx1eq8GO9xbj9NHOBsjWYj6FJLoasHYpzLnxjjwMOA==",
+  "X-Akamai-Transformed": "9 4104 0 pmb=mRUM,1",
+  "Vary": "Accept-Encoding",
+  "Date": "Wed, 12 Aug 2026 21:44:26 GMT",
+  "Content-Length": "14860",
+  "Connection": "close",
+  "Server-Timing": "ak_p; desc=\"1786571066133_389797780_289879365_64923_17595_20_147_-\";dur=1"
+}

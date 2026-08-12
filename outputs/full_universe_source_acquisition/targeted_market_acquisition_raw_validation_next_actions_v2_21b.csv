@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,candidate_extraction,build_parser_candidates_from_successful_raw_sources,high,v2.21B only validates raw source availability; extraction is intentionally deferred.,v2.21C - Candidate Extraction + Dedup Dry Run,common equities first; exclude ETFs/funds/warrants/rights/structured products
+2,dedup,deduplicate_colombia_singapore_candidates_against_42708_operational_base,high,New market candidates must not duplicate existing ISIN/ticker/name records.,v2.21C - Candidate Extraction + Dedup Dry Run,no operational base modification; dry run only
+3,normalization,normalize_colombia_singapore_country_exchange_mic_currency,high,New records must enter with stable country/exchange/MIC/currency metadata.,v2.21C - Candidate Extraction + Dedup Dry Run,Colombia/BVC/XBOG/COP and Singapore/SGX/XSES/SGD
