@@ -1,0 +1,6 @@
+decision_id,decision,accepted,reason,effect
+FP_REVIEW_001,Invalidate accepted candidates from v2.21C.,True,Accepted candidates are website/script tokens rather than listed companies.,Do not use v2.21C extracted_candidates as rebuild input.
+FP_REVIEW_002,Block v2.21D rebuild from current extraction output.,True,No valid Colombia/Singapore company candidates remain after false-positive review.,Expanded rebuild candidate remains blocked.
+FP_REVIEW_003,"Require official endpoint, API, CSV, XLS or structured downloadable listing.",True,Current raw pages are not sufficient as structured company listing inputs.,Open v2.21C3 official endpoint/downloadable listing discovery.
+FP_REVIEW_004,Preserve operational base and rollback.,True,Corrective review is audit-only and does not modify canonical data.,"Operational base remains 42,708 rows."
+FP_REVIEW_005,"Keep scoring, OpenAI, broker and full59k deferred.",True,No valid new candidates are available for rebuild or scoring.,No scoring or external enrichment is authorized.

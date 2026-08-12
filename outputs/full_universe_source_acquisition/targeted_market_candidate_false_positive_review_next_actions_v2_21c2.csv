@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,source_discovery,discover_official_bvc_sgx_endpoint_api_csv_xls_or_structured_download,high,Current accepted candidates are invalid false positives.,v2.21C3 - Official Endpoint / Downloadable Listing Discovery,official BVC/SGX sources only; no invented companies
+2,parser_hardening,disable_regex_only_candidate_acceptance_for_targeted_markets,high,Regex-only extraction accepted script/build tokens.,v2.21C3 - Official Endpoint / Downloadable Listing Discovery,require table/json/API fields with company/security identifiers
+3,rebuild_control,keep_v2_21d_blocked_until_valid_structured_candidates_exist,high,No approved candidates remain after review.,v2.21C3 - Official Endpoint / Downloadable Listing Discovery,"no rebuild, no promotion, no pointer update"

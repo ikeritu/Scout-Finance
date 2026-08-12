@@ -1,0 +1,446 @@
+{
+  "version": "v2.21C2",
+  "phase": "Candidate Extraction False Positive Review",
+  "phase_type": "targeted-market-candidate-extraction-false-positive-review",
+  "status": "TARGETED_MARKET_CANDIDATE_FALSE_POSITIVE_REVIEW_COMPLETED_ACCEPTED_CANDIDATES_INVALIDATED_REBUILD_BLOCKED_SOURCE_DISCOVERY_REQUIRED",
+  "generated_at_utc": "2026-08-12T22:15:25.121765+00:00",
+  "summary": {
+    "selected_route": "Colombia + Singapore targeted expansion",
+    "phase_type": "targeted-market-candidate-extraction-false-positive-review",
+    "review_decision": "V2_21C_ACCEPTED_CANDIDATES_INVALIDATED_V2_21D_BLOCKED_V2_21C3_REQUIRED",
+    "approved_for_v2_21c3": true,
+    "approved_for_v2_21d": false,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "target_markets": "Colombia/BVC;Singapore/SGX",
+    "v2_21c_accepted_candidates_reviewed": 3,
+    "v2_21c_accepted_candidates_invalidated": 3,
+    "manual_review_candidates_remaining": 0,
+    "approved_candidates_after_review": 0,
+    "v2_21c_rejected_candidates_preserved": 7,
+    "structured_candidate_sources": 0,
+    "regex_only_sources": 4,
+    "candidate_extraction_reexecuted": false,
+    "expanded_rebuild_performed": false,
+    "v2_21d_blocked": true,
+    "official_source_discovery_required": true,
+    "provider_expansion_scope": "targeted_only",
+    "scoring_authorized": false,
+    "openai_authorized": false,
+    "broker_authorized": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.21C3 - Official Endpoint / Downloadable Listing Discovery"
+  },
+  "invalidated_candidates": [
+    {
+      "candidate_id": "v2_21c_00001",
+      "market_id": "COLOMBIA_BVC",
+      "country": "Colombia",
+      "exchange": "BVC",
+      "mic": "XBOG",
+      "currency": "COP",
+      "source_id": "BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES",
+      "extraction_method": "regex_pattern_0_match_0",
+      "ticker": "GTM",
+      "symbol": "",
+      "trading_code": "",
+      "isin": "",
+      "name": "KSZ85XQ8')",
+      "previous_dedup_status": "accepted_new",
+      "review_status": "invalidated_false_positive",
+      "false_positive_signature": "GOOGLE_TAG_MANAGER_TOKEN",
+      "review_reason": "Google Tag Manager / website script token, not a listed company.",
+      "approved_for_rebuild": false
+    },
+    {
+      "candidate_id": "v2_21c_00002",
+      "market_id": "SINGAPORE_SGX",
+      "country": "Singapore",
+      "exchange": "SGX",
+      "mic": "XSES",
+      "currency": "SGD",
+      "source_id": "SGX_SECURITIES_PRICES",
+      "extraction_method": "regex_pattern_0_match_0",
+      "ticker": "UA",
+      "symbol": "",
+      "trading_code": "",
+      "isin": "",
+      "name": "Compatible",
+      "previous_dedup_status": "accepted_new",
+      "review_status": "invalidated_false_positive",
+      "false_positive_signature": "BROWSER_USER_AGENT_TOKEN",
+      "review_reason": "Browser/user-agent compatibility token, not a listed company.",
+      "approved_for_rebuild": false
+    },
+    {
+      "candidate_id": "v2_21c_00003",
+      "market_id": "SINGAPORE_SGX",
+      "country": "Singapore",
+      "exchange": "SGX",
+      "mic": "XSES",
+      "currency": "SGD",
+      "source_id": "SGX_SECURITIES_PRICES",
+      "extraction_method": "regex_pattern_0_match_1",
+      "ticker": "5DY4G",
+      "symbol": "",
+      "trading_code": "",
+      "isin": "",
+      "name": "LV8JN-2CLEK-T7VJU",
+      "previous_dedup_status": "accepted_new",
+      "review_status": "invalidated_false_positive",
+      "false_positive_signature": "HASH_OR_INTERNAL_BUILD_ID",
+      "review_reason": "Internal hash/build identifier pattern, not a listed company.",
+      "approved_for_rebuild": false
+    }
+  ],
+  "source_structure_review": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "source_id": "BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES.html",
+      "raw_bytes": "38628",
+      "contains_table_tag": "False",
+      "html_table_count": 0,
+      "next_data_object_count": 267,
+      "script_tag_count": "13",
+      "link_count": "0",
+      "table_candidates": 0,
+      "json_candidates": 0,
+      "regex_candidates": 3,
+      "structured_candidate_source": false,
+      "regex_only": true,
+      "source_review_status": "regex_only_unreliable_for_rebuild",
+      "approved_for_rebuild_input": false
+    },
+    {
+      "market_id": "COLOMBIA_BVC",
+      "source_id": "BVC_RESULTS_AND_ISSUER_INFORMATION",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_RESULTS_AND_ISSUER_INFORMATION.html",
+      "raw_bytes": "38872",
+      "contains_table_tag": "False",
+      "html_table_count": 0,
+      "next_data_object_count": 272,
+      "script_tag_count": "13",
+      "link_count": "0",
+      "table_candidates": 0,
+      "json_candidates": 0,
+      "regex_candidates": 3,
+      "structured_candidate_source": false,
+      "regex_only": true,
+      "source_review_status": "regex_only_unreliable_for_rebuild",
+      "approved_for_rebuild_input": false
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "source_id": "SGX_SECURITIES_PRICES",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_SECURITIES_PRICES.html",
+      "raw_bytes": "14859",
+      "contains_table_tag": "False",
+      "html_table_count": 0,
+      "next_data_object_count": 0,
+      "script_tag_count": "10",
+      "link_count": "10",
+      "table_candidates": 0,
+      "json_candidates": 0,
+      "regex_candidates": 2,
+      "structured_candidate_source": false,
+      "regex_only": true,
+      "source_review_status": "regex_only_unreliable_for_rebuild",
+      "approved_for_rebuild_input": false
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "source_id": "SGX_CORPORATE_INFORMATION",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_CORPORATE_INFORMATION.html",
+      "raw_bytes": "14860",
+      "contains_table_tag": "False",
+      "html_table_count": 0,
+      "next_data_object_count": 0,
+      "script_tag_count": "10",
+      "link_count": "10",
+      "table_candidates": 0,
+      "json_candidates": 0,
+      "regex_candidates": 2,
+      "structured_candidate_source": false,
+      "regex_only": true,
+      "source_review_status": "regex_only_unreliable_for_rebuild",
+      "approved_for_rebuild_input": false
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "FP_REVIEW_001",
+      "decision": "Invalidate accepted candidates from v2.21C.",
+      "accepted": true,
+      "reason": "Accepted candidates are website/script tokens rather than listed companies.",
+      "effect": "Do not use v2.21C extracted_candidates as rebuild input."
+    },
+    {
+      "decision_id": "FP_REVIEW_002",
+      "decision": "Block v2.21D rebuild from current extraction output.",
+      "accepted": true,
+      "reason": "No valid Colombia/Singapore company candidates remain after false-positive review.",
+      "effect": "Expanded rebuild candidate remains blocked."
+    },
+    {
+      "decision_id": "FP_REVIEW_003",
+      "decision": "Require official endpoint, API, CSV, XLS or structured downloadable listing.",
+      "accepted": true,
+      "reason": "Current raw pages are not sufficient as structured company listing inputs.",
+      "effect": "Open v2.21C3 official endpoint/downloadable listing discovery."
+    },
+    {
+      "decision_id": "FP_REVIEW_004",
+      "decision": "Preserve operational base and rollback.",
+      "accepted": true,
+      "reason": "Corrective review is audit-only and does not modify canonical data.",
+      "effect": "Operational base remains 42,708 rows."
+    },
+    {
+      "decision_id": "FP_REVIEW_005",
+      "decision": "Keep scoring, OpenAI, broker and full59k deferred.",
+      "accepted": true,
+      "reason": "No valid new candidates are available for rebuild or scoring.",
+      "effect": "No scoring or external enrichment is authorized."
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_21c_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TARGETED_MARKET_CANDIDATE_EXTRACTION_DEDUP_DRY_RUN_COMPLETED_NEW_CANDIDATES_READY_FOR_REBUILD_NO_DATASET_CHANGES_SCORING_DEFERRED"
+    },
+    {
+      "check": "v2_21b_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TARGETED_MARKET_ACQUISITION_RAW_VALIDATION_COMPLETED_COLOMBIA_SINGAPORE_RAW_SOURCES_AVAILABLE_NO_DATASET_CHANGES_SCORING_DEFERRED"
+    },
+    {
+      "check": "operational_base_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational_rows=42708"
+    },
+    {
+      "check": "operational_base_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "schema_column_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "columns=33"
+    },
+    {
+      "check": "v2_21c_extracted_candidates_loaded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "extracted_candidates=3"
+    },
+    {
+      "check": "all_v2_21c_accepted_candidates_invalidated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "invalidated=3;accepted_in_v2_21c=3"
+    },
+    {
+      "check": "no_candidates_approved_for_rebuild_after_review",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_candidates_after_review=0"
+    },
+    {
+      "check": "structured_candidate_sources_not_available",
+      "passed": true,
+      "severity": "warning",
+      "detail": "structured_sources=0"
+    },
+    {
+      "check": "regex_only_sources_detected",
+      "passed": true,
+      "severity": "warning",
+      "detail": "regex_only_sources=4"
+    },
+    {
+      "check": "v2_21d_rebuild_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.21D blocked until official structured candidates exist"
+    },
+    {
+      "check": "v2_21c3_source_discovery_required",
+      "passed": true,
+      "severity": "critical",
+      "detail": "official endpoint/downloadable listing discovery required"
+    },
+    {
+      "check": "operational_base_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational base SHA unchanged"
+    },
+    {
+      "check": "false_positive_review_is_audit_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "no artifact rewrite; no history rewrite; no force push"
+    },
+    {
+      "check": "candidate_extraction_not_reexecuted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "review uses v2.21C outputs only"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "pointer_update_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_performed=False"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "source_discovery",
+      "action": "discover_official_bvc_sgx_endpoint_api_csv_xls_or_structured_download",
+      "priority": "high",
+      "reason": "Current accepted candidates are invalid false positives.",
+      "recommended_phase": "v2.21C3 - Official Endpoint / Downloadable Listing Discovery",
+      "guardrails": "official BVC/SGX sources only; no invented companies"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "parser_hardening",
+      "action": "disable_regex_only_candidate_acceptance_for_targeted_markets",
+      "priority": "high",
+      "reason": "Regex-only extraction accepted script/build tokens.",
+      "recommended_phase": "v2.21C3 - Official Endpoint / Downloadable Listing Discovery",
+      "guardrails": "require table/json/API fields with company/security identifiers"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "rebuild_control",
+      "action": "keep_v2_21d_blocked_until_valid_structured_candidates_exist",
+      "priority": "high",
+      "reason": "No approved candidates remain after review.",
+      "recommended_phase": "v2.21C3 - Official Endpoint / Downloadable Listing Discovery",
+      "guardrails": "no rebuild, no promotion, no pointer update"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "targeted-market-candidate-extraction-false-positive-review",
+    "selected_route": "Colombia + Singapore targeted expansion",
+    "target_markets": [
+      "Colombia/BVC",
+      "Singapore/SGX"
+    ],
+    "audit_only_false_positive_review": true,
+    "approved_for_v2_21c3": true,
+    "approved_for_v2_21d": false,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "v2_21c_accepted_candidates_reviewed": 3,
+    "v2_21c_accepted_candidates_invalidated": 3,
+    "approved_candidates_after_review": 0,
+    "official_source_discovery_required": true,
+    "v2_21d_rebuild_blocked": true,
+    "candidate_extraction_reexecuted": false,
+    "dedup_reexecuted": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "file_edit_performed_on_operational_base": false,
+    "file_copy_performed_on_operational_base": false,
+    "file_rename_performed_on_operational_base": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "provider_expansion_scope": "targeted_only",
+    "additional_provider_expansion_frozen": true,
+    "scoring_authorized": false,
+    "scoring_recalculated": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.21C3 - Official Endpoint / Downloadable Listing Discovery"
+}
