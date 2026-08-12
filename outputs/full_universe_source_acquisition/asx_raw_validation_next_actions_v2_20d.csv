@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,ASX,open_asx_candidate_extraction_dry_run,high,ISIN XLS is captured and valid as an Excel container; extraction dry run can test whether it yields clean ASX candidates.,v2.20E - ASX Candidate Extraction Dry Run,dry run only; no append; no canonical replacement; ordinary equity/A-REIT scope rules only
+2,ASX_complete_list,defer_legacy_complete_list_repair_until_after_isin_extraction_yield,medium,"Legacy ASXListedCompanies.csv returned 404, but this was optional and ISIN XLS may be enough for extraction dry run.",v2.20E - ASX Candidate Extraction Dry Run,repair only if ISIN extraction is blocked or yields too few clean rows
+3,quality_target,preserve_42k_45k_operational_band,high,Only 608 clean net-new rows are needed to cross 42k.,v2.20E - ASX Candidate Extraction Dry Run,50k aspirational only; full59k deprecated; do not include instruments only for volume

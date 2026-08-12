@@ -1,0 +1,5 @@
+source_id,readiness,role,evidence,blocking_issue,recommended_action
+asx_required_pages,ready,official source evidence and scope context,required_pages_captured=True;html_required_signal_ready=True,,use as validation/context evidence
+asx_isin_xls_direct,ready,identifier enrichment and possible extraction backbone,captured=True;binary_valid_excel_container=True;optional_parse_ready=True,,use for v2.20E extraction dry run; install/repair XLS parser only if extraction script cannot parse it
+asx_complete_list_legacy_csv,not_ready_optional,legacy complete list CSV,captured=False;legacy_status=404,legacy endpoint returned 404 and was optional in v2.20C,do not block extraction if ISIN XLS is usable; repair only if extraction yield is poor
+asx_last_known_closing_price_csv,ready_context_only,"market statistics / price context, not primary candidate source",captured=True;parseable=True;rows=4603,,do not use as primary candidate universe; may support liquidity/context later

@@ -1,0 +1,2 @@
+source_id,path,encoding,delimiter,row_count,column_count,header,normalized_header,has_code_like_header,has_name_like_header,has_price_like_header,parse_error,parseable_as_csv
+asx_discovered_last_known_closing_price_fy26,outputs\full_universe_source_acquisition\raw\asx_v2_20c\downloads\asx_discovered_last_known_closing_price_fy26.csv,utf-8-sig,",",4603,6,ASX_CODE;LAST_PRICE;ISSUER_NAME_FULL;SECURITY_GROUP_CODE;PRODUCT_DESCRIPTION_ABBREV;BUSINESS_DATE,asx_code;last_price;issuer_name_full;security_group_code;product_description_abbrev;business_date,True,True,True,,True

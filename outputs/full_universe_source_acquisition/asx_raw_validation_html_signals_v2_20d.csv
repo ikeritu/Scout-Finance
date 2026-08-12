@@ -1,0 +1,6 @@
+source_id,path,encoding,bytes,contains_asx,contains_listed_companies,contains_complete_list,contains_download,contains_csv,contains_isin,contains_warrant,contains_options,contains_debt,contains_directory,contains_market_statistics,contains_last_known_closing_price,html_signal_score
+asx_indices_page,outputs\full_universe_source_acquisition\raw\asx_v2_20c\pages\asx_indices_page.html,utf-8-sig,192384,True,True,True,True,True,True,True,True,True,True,False,False,7
+asx_company_directory_page,outputs\full_universe_source_acquisition\raw\asx_v2_20c\pages\asx_company_directory_page.html,utf-8-sig,136144,True,True,False,True,False,True,True,True,True,True,False,False,5
+asx_isin_services_page,outputs\full_universe_source_acquisition\raw\asx_v2_20c\pages\asx_isin_services_page.html,utf-8-sig,143035,True,True,False,True,False,True,True,True,True,True,False,False,5
+asx_codes_and_descriptors_page,outputs\full_universe_source_acquisition\raw\asx_v2_20c\pages\asx_codes_and_descriptors_page.html,utf-8-sig,161332,True,True,True,True,False,True,True,True,True,True,False,False,6
+asx_market_statistics_page,outputs\full_universe_source_acquisition\raw\asx_v2_20c\pages\asx_market_statistics_page.html,utf-8-sig,179374,True,True,False,True,True,True,True,True,True,True,True,True,8
