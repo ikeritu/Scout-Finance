@@ -1,0 +1,6 @@
+risk_id,risk,severity,mitigation,status
+RISK_001,Accidental overwrite of active canonical dataset,high,Use versioned promoted output path; keep v2_14e unchanged; require SHA pre/post checks.,controlled_by_plan
+RISK_002,Promotion source drift,high,Abort if ASX candidate SHA is not exactly 892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127.,controlled_by_plan
+RISK_003,Operational references still point to old canonical after promoted file creation,medium,Separate pointer/update decision phase after promoted file validation.,deferred_explicitly
+RISK_004,Chasing 50k volume after 42k target achieved,medium,Freeze additional provider expansion by default; keep 50k aspirational only.,controlled_by_plan
+RISK_005,Unexpected scoring or broker side effects,high,"Promotion plan forbids scoring, OpenAI calls, broker calls and full59k launch.",controlled_by_plan

@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,canonical,run_asx_canonical_promotion_dry_run,high,Promotion plan is ready; next phase should simulate exact promotion controls before creating a promoted canonical file.,v2.20L - ASX Canonical Promotion Dry Run,dry run first; no canonical replacement; no scoring/OpenAI/broker/full59k
+2,rollback,verify_rollback_reference_before_execution,high,Active canonical v2_14e must remain available as rollback source.,v2.20L - ASX Canonical Promotion Dry Run,abort on active canonical SHA mismatch
+3,provider_expansion,keep_provider_expansion_frozen_by_default,medium,42k operational floor is achieved and 45k ceiling respected.,v2.20L - ASX Canonical Promotion Dry Run,50k aspirational only; full59k deprecated
