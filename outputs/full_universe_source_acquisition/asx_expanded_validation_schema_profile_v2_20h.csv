@@ -1,0 +1,6 @@
+metric,value
+current_schema_column_count,33
+expanded_schema_column_count,33
+appended_schema_column_count,33
+schema_preserved,True
+columns,ticker;company_name;exchange;country;source_provider;source_file;instrument_type;instrument_scope;classification_confidence;classification_reason;sector;industry;market_cap;raw_cik;raw_exchange;provider_precedence;merge_action;merge_reason;isin;currency;mic;source_version;source_url;hkex_category;hkex_subcategory;hkex_board_lot;provider;source_phase;symbol;security_name;instrument_id;product_assignment_group_description;asset_type

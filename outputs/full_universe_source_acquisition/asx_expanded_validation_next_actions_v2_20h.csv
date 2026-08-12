@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,ASX,prepare_asx_closure_report,high,"Expanded ASX candidate validation passed at 42,708 rows with 1,316 net-new ASX rows.",v2.20I - ASX Closure Report,closure report only; do not promote canonical unless an explicit promotion phase is opened
+2,canonical,keep_canonical_unchanged_until_explicit_promotion,high,v2.20H validates the candidate only; canonical remains the old stable dataset.,v2.20I - ASX Closure Report,no replacement of expanded_universe_v2_14e.csv in v2.20H or closure report
+3,quality_target,record_quality_first_target_achieved,high,The operational 42k floor has been crossed while remaining below 45k.,v2.20I - ASX Closure Report,50k aspirational only; full59k deprecated

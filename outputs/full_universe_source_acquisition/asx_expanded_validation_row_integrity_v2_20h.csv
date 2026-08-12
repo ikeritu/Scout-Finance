@@ -1,0 +1,9 @@
+metric,value
+current_validated_candidate_rows,41392
+asx_appended_rows,1316
+expanded_candidate_rows,42708
+row_arithmetic_expected,True
+current_prefix_preserved,True
+appended_tail_matches_appended_rows,True
+quality_floor_crossed,True
+quality_ceiling_not_exceeded,True

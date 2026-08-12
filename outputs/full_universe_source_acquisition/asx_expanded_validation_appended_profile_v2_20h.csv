@@ -1,0 +1,16 @@
+metric,value
+appended_rows,1316
+appended_audit_rows,1316
+ticker_non_empty,True
+name_non_empty,True
+isin_non_empty,True
+tickers_ax_suffix,True
+provider_counts,{'ASX': 1316}
+exchange_counts,{'ASX': 1316}
+country_counts,{'Australia': 1316}
+currency_counts,{'AUD': 1316}
+mic_counts,{'XASX': 1316}
+source_phase_counts,{'v2.20G': 1316}
+instrument_type_counts,"{'equity': 1211, 'reit': 12, 'equity_like': 86, 'listed_investment_vehicle': 7}"
+instrument_scope_counts,"{'ordinary_equity': 1211, 'a_reit_equity_like': 12, 'ordinary_or_equity_like_unclassified': 86, 'listed_investment_vehicle_conditional': 7}"
+merge_action_counts,{'append_net_new': 1316}
