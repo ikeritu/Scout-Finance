@@ -1,0 +1,5 @@
+route_id,route_name,approved,priority,effect,reason
+ROUTE_A_WAIT_FOR_COLOMBIA,Wait until Colombia/BVC has official structured endpoint,False,low,Blocks Singapore despite SGX readiness.,Unnecessarily blocks a validated market.
+ROUTE_B_USE_BVC_REGEX_OR_SHELL_HTML,Use current BVC shell/regex output,False,rejected,Would risk false positives and low-quality candidates.,v2.21C2 invalidated regex-only candidates and v2.21C3 found no BVC structured records.
+ROUTE_C_SPLIT_MARKETS,Split route: advance Singapore; keep Colombia pending,True,high,Allows SGX structured extraction without polluting Colombia data.,One market is ready and one market needs additional official/regulatory source discovery.
+ROUTE_D_COLOMBIA_REGULATORY_DISCOVERY,Open Colombia regulator-source discovery,True,high,Searches Superfinanciera/SIMEV/RNVE path without using BVC shell HTML.,Superfinanciera provides official issuer/security registration context and BVC registration fields.

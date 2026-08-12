@@ -1,0 +1,408 @@
+{
+  "version": "v2.21C3_REVIEW",
+  "phase": "Missing Official Structured Endpoint Review",
+  "phase_type": "targeted-market-missing-official-structured-endpoint-review",
+  "status": "TARGETED_MARKET_MISSING_ENDPOINT_REVIEW_COMPLETED_SPLIT_ROUTE_APPROVED_SGX_READY_COLOMBIA_REGULATORY_DISCOVERY_REQUIRED",
+  "generated_at_utc": "2026-08-12T22:49:50.902050+00:00",
+  "summary": {
+    "selected_route": "Colombia + Singapore targeted expansion",
+    "phase_type": "targeted-market-missing-official-structured-endpoint-review",
+    "review_decision": "SPLIT_ROUTE_APPROVED_SINGAPORE_READY_COLOMBIA_REGULATORY_DISCOVERY_REQUIRED",
+    "approved_for_singapore_structured_extraction": true,
+    "approved_for_colombia_regulatory_discovery": true,
+    "approved_for_global_v2_21c4": false,
+    "approved_for_v2_21d": false,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "colombia_bvc_endpoint_ready": false,
+    "singapore_sgx_endpoint_ready": true,
+    "v2_21d_blocked": true,
+    "candidate_extraction_performed": false,
+    "dedup_performed": false,
+    "expanded_rebuild_performed": false,
+    "provider_expansion_scope": "targeted_split_only",
+    "scoring_authorized": false,
+    "openai_authorized": false,
+    "broker_authorized": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.21C4S - Singapore Structured Candidate Extraction + Dedup Dry Run",
+    "secondary_next_phase": "v2.21C3B - Colombia Regulatory Source Discovery"
+  },
+  "market_review": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "country": "Colombia",
+      "provider": "BVC",
+      "v2_21c3_endpoint_ready": false,
+      "v2_21c3_structured_endpoint_count": 0,
+      "v2_21c3_fetch_success_count": 17,
+      "review_decision": "block_exchange_extraction_use_regulatory_discovery_next",
+      "approved_for_structured_extraction": false,
+      "approved_for_expanded_rebuild": false,
+      "recommended_next_phase": "v2.21C3B - Colombia Regulatory Source Discovery",
+      "reason": "BVC official pages were reachable but no structured candidate records were found."
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "country": "Singapore",
+      "provider": "SGX",
+      "v2_21c3_endpoint_ready": true,
+      "v2_21c3_structured_endpoint_count": 2,
+      "v2_21c3_fetch_success_count": 4,
+      "review_decision": "approve_singapore_only_structured_extraction_dry_run",
+      "approved_for_structured_extraction": true,
+      "approved_for_expanded_rebuild": false,
+      "recommended_next_phase": "v2.21C4S - Singapore Structured Candidate Extraction + Dedup Dry Run",
+      "reason": "SGX has validated structured endpoint candidates, but extraction/dedup must run before any rebuild."
+    }
+  ],
+  "route_options": [
+    {
+      "route_id": "ROUTE_A_WAIT_FOR_COLOMBIA",
+      "route_name": "Wait until Colombia/BVC has official structured endpoint",
+      "approved": false,
+      "priority": "low",
+      "effect": "Blocks Singapore despite SGX readiness.",
+      "reason": "Unnecessarily blocks a validated market."
+    },
+    {
+      "route_id": "ROUTE_B_USE_BVC_REGEX_OR_SHELL_HTML",
+      "route_name": "Use current BVC shell/regex output",
+      "approved": false,
+      "priority": "rejected",
+      "effect": "Would risk false positives and low-quality candidates.",
+      "reason": "v2.21C2 invalidated regex-only candidates and v2.21C3 found no BVC structured records."
+    },
+    {
+      "route_id": "ROUTE_C_SPLIT_MARKETS",
+      "route_name": "Split route: advance Singapore; keep Colombia pending",
+      "approved": true,
+      "priority": "high",
+      "effect": "Allows SGX structured extraction without polluting Colombia data.",
+      "reason": "One market is ready and one market needs additional official/regulatory source discovery."
+    },
+    {
+      "route_id": "ROUTE_D_COLOMBIA_REGULATORY_DISCOVERY",
+      "route_name": "Open Colombia regulator-source discovery",
+      "approved": true,
+      "priority": "high",
+      "effect": "Searches Superfinanciera/SIMEV/RNVE path without using BVC shell HTML.",
+      "reason": "Superfinanciera provides official issuer/security registration context and BVC registration fields."
+    }
+  ],
+  "colombia_alternative_sources": [
+    {
+      "source_id": "COLOMBIA_SUPERFINANCIERA_SIMEV_VALORES_INSCRITOS",
+      "source_type": "official_regulator_page_family",
+      "authority": "Superintendencia Financiera de Colombia",
+      "market_role": "Regulator / RNVE / SIMEV",
+      "candidate_url": "https://www.superfinanciera.gov.co/ReportesInformacionRelevante/faces/B_simevRelevantes/H_precioAcciones/repoPrecioAcciones.xhtml",
+      "evidence": "Valores Inscritos pages expose issuer/security registration fields including title name, Superfinanciera code, RNVEI registration and BVC registration date.",
+      "approved_for_candidate_extraction": false,
+      "approved_for_discovery": true,
+      "review_reason": "Official regulatory source candidate. Needs structured traversal or parameter discovery before extraction."
+    },
+    {
+      "source_id": "COLOMBIA_SUPERFINANCIERA_RNVE_OFERTAS_PUBLICAS",
+      "source_type": "official_regulator_information_page",
+      "authority": "Superintendencia Financiera de Colombia",
+      "market_role": "RNVE public offerings / issuer information",
+      "candidate_url": "https://www.superfinanciera.gov.co/publicaciones/12961/simevregistro-nacional-de-valores-y-emisores-rnveinformacion-emisoresofertas-publicas-12961/",
+      "evidence": "RNVE/SIMEV public-offerings page describes searchable registered securities and issuer information.",
+      "approved_for_candidate_extraction": false,
+      "approved_for_discovery": true,
+      "review_reason": "Official regulatory context. Needs structured source discovery before extraction."
+    },
+    {
+      "source_id": "COLOMBIA_BVC_MANUAL_DOWNLOAD_REVIEW",
+      "source_type": "official_exchange_manual_review",
+      "authority": "Bolsa de Valores de Colombia",
+      "market_role": "Exchange",
+      "candidate_url": "https://www.bvc.com.co/listado-de-emisores-mercado-local",
+      "evidence": "BVC page is official and reachable, but v2.21C3 found no structured endpoint or table records.",
+      "approved_for_candidate_extraction": false,
+      "approved_for_discovery": true,
+      "review_reason": "Keep as manual-download/hidden-endpoint review only. Do not extract from shell HTML."
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "MISSING_ENDPOINT_REVIEW_001",
+      "decision": "Keep v2.21D blocked.",
+      "accepted": true,
+      "reason": "No deduplicated candidate extraction has succeeded after false-positive review.",
+      "effect": "No expanded rebuild candidate can be created yet."
+    },
+    {
+      "decision_id": "MISSING_ENDPOINT_REVIEW_002",
+      "decision": "Do not use BVC shell HTML or regex extraction.",
+      "accepted": true,
+      "reason": "BVC pages were reachable but did not expose reliable structured company/security records.",
+      "effect": "Colombia remains blocked for extraction."
+    },
+    {
+      "decision_id": "MISSING_ENDPOINT_REVIEW_003",
+      "decision": "Approve split route.",
+      "accepted": true,
+      "reason": "SGX has structured endpoints while Colombia needs additional source discovery.",
+      "effect": "Singapore can move to structured extraction dry run separately."
+    },
+    {
+      "decision_id": "MISSING_ENDPOINT_REVIEW_004",
+      "decision": "Open Colombia regulatory source discovery.",
+      "accepted": true,
+      "reason": "Superfinanciera/SIMEV/RNVE is an official candidate source family for Colombian registered securities.",
+      "effect": "Colombia route continues as discovery-only, not extraction."
+    },
+    {
+      "decision_id": "MISSING_ENDPOINT_REVIEW_005",
+      "decision": "Keep operational base unchanged.",
+      "accepted": true,
+      "reason": "This phase is decision-review only.",
+      "effect": "Operational base remains 42,708 rows."
+    },
+    {
+      "decision_id": "MISSING_ENDPOINT_REVIEW_006",
+      "decision": "Keep scoring/OpenAI/broker/full59k deferred.",
+      "accepted": true,
+      "reason": "No valid expanded candidate universe exists yet.",
+      "effect": "No scoring or enrichment is authorized."
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_21c3_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TARGETED_MARKET_OFFICIAL_ENDPOINT_DISCOVERY_COMPLETED_PARTIAL_STRUCTURED_ENDPOINTS_FOUND_REVIEW_REQUIRED"
+    },
+    {
+      "check": "v2_21c3_partial_decision_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "PARTIAL_OR_NO_STRUCTURED_ENDPOINT_COVERAGE_REVIEW_REQUIRED"
+    },
+    {
+      "check": "v2_21c3_approved_for_v2_21c4_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_v2_21c4=False"
+    },
+    {
+      "check": "v2_21c3_approved_for_v2_21d_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_v2_21d=False"
+    },
+    {
+      "check": "operational_base_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational_rows=42708"
+    },
+    {
+      "check": "operational_base_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "schema_column_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "columns=33"
+    },
+    {
+      "check": "colombia_endpoint_not_ready_confirmed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "colombia_ready=False"
+    },
+    {
+      "check": "singapore_endpoint_ready_confirmed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "singapore_ready=True"
+    },
+    {
+      "check": "split_route_approved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "Singapore can advance separately; Colombia remains pending."
+    },
+    {
+      "check": "colombia_regulatory_discovery_approved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "Superfinanciera/SIMEV/RNVE discovery route approved."
+    },
+    {
+      "check": "global_v2_21c4_not_approved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "Global Colombia+Singapore extraction remains blocked."
+    },
+    {
+      "check": "v2_21d_rebuild_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.21D remains blocked."
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "dedup_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "dedup_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "pointer_update_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_performed=False"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "singapore_structured_extraction",
+      "action": "run_singapore_only_structured_candidate_extraction_dedup_dry_run",
+      "priority": "high",
+      "recommended_phase": "v2.21C4S - Singapore Structured Candidate Extraction + Dedup Dry Run",
+      "reason": "SGX has validated structured endpoint candidates.",
+      "guardrails": "Singapore only; no rebuild; no pointer update; no scoring"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "colombia_regulatory_discovery",
+      "action": "discover_superfinanciera_simev_rnve_structured_or_traversable_source",
+      "priority": "high",
+      "recommended_phase": "v2.21C3B - Colombia Regulatory Source Discovery",
+      "reason": "BVC has no structured endpoint from v2.21C3; regulator source family is the next official path.",
+      "guardrails": "Discovery only; no extraction until source is structured and validated"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "global_rebuild_control",
+      "action": "keep_v2_21d_blocked_until_structured_extraction_dedup_produces_valid_candidates",
+      "priority": "high",
+      "recommended_phase": "v2.21C4S - Singapore Structured Candidate Extraction + Dedup Dry Run",
+      "reason": "Endpoint readiness is not a validated candidate universe.",
+      "guardrails": "no promotion; no pointer update; no full59k"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "targeted-market-missing-official-structured-endpoint-review",
+    "selected_route": "Colombia + Singapore targeted expansion",
+    "missing_endpoint_review_only": true,
+    "approved_for_singapore_structured_extraction": true,
+    "approved_for_colombia_regulatory_discovery": true,
+    "approved_for_global_v2_21c4": false,
+    "approved_for_v2_21d": false,
+    "v2_21d_rebuild_blocked": true,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "candidate_extraction_performed": false,
+    "dedup_performed": false,
+    "regex_only_candidate_acceptance_allowed": false,
+    "structured_extraction_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "file_edit_performed_on_operational_base": false,
+    "file_copy_performed_on_operational_base": false,
+    "file_rename_performed_on_operational_base": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "provider_expansion_scope": "targeted_split_only",
+    "additional_provider_expansion_frozen": true,
+    "scoring_authorized": false,
+    "scoring_recalculated": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.21C4S - Singapore Structured Candidate Extraction + Dedup Dry Run",
+  "secondary_next_phase": "v2.21C3B - Colombia Regulatory Source Discovery"
+}

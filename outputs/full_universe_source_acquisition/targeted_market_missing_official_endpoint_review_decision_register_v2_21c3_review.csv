@@ -1,0 +1,7 @@
+decision_id,decision,accepted,reason,effect
+MISSING_ENDPOINT_REVIEW_001,Keep v2.21D blocked.,True,No deduplicated candidate extraction has succeeded after false-positive review.,No expanded rebuild candidate can be created yet.
+MISSING_ENDPOINT_REVIEW_002,Do not use BVC shell HTML or regex extraction.,True,BVC pages were reachable but did not expose reliable structured company/security records.,Colombia remains blocked for extraction.
+MISSING_ENDPOINT_REVIEW_003,Approve split route.,True,SGX has structured endpoints while Colombia needs additional source discovery.,Singapore can move to structured extraction dry run separately.
+MISSING_ENDPOINT_REVIEW_004,Open Colombia regulatory source discovery.,True,Superfinanciera/SIMEV/RNVE is an official candidate source family for Colombian registered securities.,"Colombia route continues as discovery-only, not extraction."
+MISSING_ENDPOINT_REVIEW_005,Keep operational base unchanged.,True,This phase is decision-review only.,"Operational base remains 42,708 rows."
+MISSING_ENDPOINT_REVIEW_006,Keep scoring/OpenAI/broker/full59k deferred.,True,No valid expanded candidate universe exists yet.,No scoring or enrichment is authorized.

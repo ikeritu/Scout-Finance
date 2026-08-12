@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,singapore_structured_extraction,run_singapore_only_structured_candidate_extraction_dedup_dry_run,high,v2.21C4S - Singapore Structured Candidate Extraction + Dedup Dry Run,SGX has validated structured endpoint candidates.,Singapore only; no rebuild; no pointer update; no scoring
+2,colombia_regulatory_discovery,discover_superfinanciera_simev_rnve_structured_or_traversable_source,high,v2.21C3B - Colombia Regulatory Source Discovery,BVC has no structured endpoint from v2.21C3; regulator source family is the next official path.,Discovery only; no extraction until source is structured and validated
+3,global_rebuild_control,keep_v2_21d_blocked_until_structured_extraction_dedup_produces_valid_candidates,high,v2.21C4S - Singapore Structured Candidate Extraction + Dedup Dry Run,Endpoint readiness is not a validated candidate universe.,no promotion; no pointer update; no full59k

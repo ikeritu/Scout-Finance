@@ -1,0 +1,3 @@
+market_id,country,provider,v2_21c3_endpoint_ready,v2_21c3_structured_endpoint_count,v2_21c3_fetch_success_count,review_decision,approved_for_structured_extraction,approved_for_expanded_rebuild,recommended_next_phase,reason
+COLOMBIA_BVC,Colombia,BVC,False,0,17,block_exchange_extraction_use_regulatory_discovery_next,False,False,v2.21C3B - Colombia Regulatory Source Discovery,BVC official pages were reachable but no structured candidate records were found.
+SINGAPORE_SGX,Singapore,SGX,True,2,4,approve_singapore_only_structured_extraction_dry_run,True,False,v2.21C4S - Singapore Structured Candidate Extraction + Dedup Dry Run,"SGX has validated structured endpoint candidates, but extraction/dedup must run before any rebuild."
