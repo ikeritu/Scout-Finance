@@ -1,0 +1,445 @@
+{
+  "version": "v2.20E",
+  "phase": "ASX Candidate Extraction Dry Run",
+  "phase_type": "candidate-extraction-dry-run-only",
+  "status": "ASX_CANDIDATE_EXTRACTION_DRY_RUN_COMPLETED_CANDIDATES_EXTRACTED_VALIDATION_DRY_RUN_READY_42K_45K_OPERATIONAL_50K_ASPIRATIONAL_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-12T09:27:11.258448+00:00",
+  "extraction_summary": {
+    "selected_provider": "ASX",
+    "source_file": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\downloads\\asx_isin_xls_direct.xls",
+    "context_file": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\downloads\\asx_discovered_last_known_closing_price_fy26.csv",
+    "sheets_loaded": 1,
+    "sheet_profiles": 1,
+    "context_codes": 4602,
+    "extracted_rows_total": 14409,
+    "included_rows": 1921,
+    "excluded_rows": 12488,
+    "review_rows": 0,
+    "duplicate_asx_codes": 1,
+    "duplicate_isins": 0,
+    "context_matched_rows": 4491,
+    "included_rows_with_context_match": 1808,
+    "current_hkex_validated_candidate_rows": 41392,
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "aspirational_target": 50000,
+    "rows_needed_to_quality_floor": 608,
+    "rows_needed_to_quality_ceiling": 3608,
+    "rows_needed_to_aspirational_50k": 8608,
+    "included_rows_cover_quality_floor_gap_before_duplicate_validation": true,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "next_phase": "v2.20F - ASX Candidate Validation Against Current Candidate Dry Run",
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "sheet_profile": [
+    {
+      "sheet_name": "ISIN",
+      "header_row_zero_based": 0,
+      "raw_rows": 14413,
+      "parsed_rows": 14409,
+      "column_count": 4,
+      "columns": "asx_code;company_name;security_type;isin_code",
+      "code_column": "asx_code",
+      "name_column": "company_name",
+      "isin_column": "isin_code",
+      "security_group_code_column": "",
+      "product_description_column": "security_type",
+      "status": "parseable"
+    }
+  ],
+  "scope_summary": [
+    {
+      "instrument_class": "a_reit_equity_like",
+      "include_decision": "include_conditional",
+      "rows": 17
+    },
+    {
+      "instrument_class": "excluded_non_core_instrument",
+      "include_decision": "exclude",
+      "rows": 10706
+    },
+    {
+      "instrument_class": "listed_investment_vehicle_conditional",
+      "include_decision": "include_conditional",
+      "rows": 7
+    },
+    {
+      "instrument_class": "missing_code",
+      "include_decision": "exclude",
+      "rows": 1
+    },
+    {
+      "instrument_class": "missing_identity",
+      "include_decision": "exclude",
+      "rows": 1
+    },
+    {
+      "instrument_class": "non_standard_asx_code_length",
+      "include_decision": "exclude",
+      "rows": 1780
+    },
+    {
+      "instrument_class": "ordinary_equity",
+      "include_decision": "include_candidate",
+      "rows": 1771
+    },
+    {
+      "instrument_class": "ordinary_or_equity_like_unclassified",
+      "include_decision": "include_candidate",
+      "rows": 126
+    }
+  ],
+  "context_match": [
+    {
+      "metric": "context_codes",
+      "value": 4602
+    },
+    {
+      "metric": "extracted_rows",
+      "value": 14409
+    },
+    {
+      "metric": "extracted_rows_with_context_match",
+      "value": 4491
+    },
+    {
+      "metric": "included_rows_with_context_match",
+      "value": 1808
+    }
+  ],
+  "duplicate_summary": [
+    {
+      "duplicate_type": "asx_code",
+      "value": "ICR",
+      "rows": 2
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_20d_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\asx_raw_validation_v2_20d.json"
+    },
+    {
+      "check": "v2_20d_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_RAW_VALIDATION_COMPLETED_REPAIR_RECOMMENDED_EXTRACTION_POSSIBLE_WITH_ISIN_XLS_42K_45K_OPERATIONAL_50K_ASPIRATIONAL_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20d_next_phase_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.20E - ASX Candidate Extraction Dry Run"
+    },
+    {
+      "check": "v2_20d_parse_ready_for_extraction",
+      "passed": true,
+      "severity": "critical",
+      "detail": "True"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "current_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_rows=40996"
+    },
+    {
+      "check": "hkex_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "hkex_rows=41392"
+    },
+    {
+      "check": "active_canonical_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "current_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+    },
+    {
+      "check": "hkex_validated_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c"
+    },
+    {
+      "check": "active_canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "current_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current candidate sha unchanged"
+    },
+    {
+      "check": "hkex_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX candidate sha unchanged"
+    },
+    {
+      "check": "quality_floor_target_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "quality_floor=42000"
+    },
+    {
+      "check": "quality_ceiling_target_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "quality_ceiling=45000"
+    },
+    {
+      "check": "rows_needed_to_quality_floor_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_42k=608"
+    },
+    {
+      "check": "rows_needed_to_quality_ceiling_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_45k=3608"
+    },
+    {
+      "check": "rows_needed_to_50k_aspirational_expected",
+      "passed": true,
+      "severity": "warning",
+      "detail": "rows_needed_to_50k=8608"
+    },
+    {
+      "check": "asx_isin_xls_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\downloads\\asx_isin_xls_direct.xls"
+    },
+    {
+      "check": "asx_isin_xls_non_empty",
+      "passed": true,
+      "severity": "critical",
+      "detail": "bytes=1985024"
+    },
+    {
+      "check": "asx_context_csv_exists",
+      "passed": true,
+      "severity": "warning",
+      "detail": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\downloads\\asx_discovered_last_known_closing_price_fy26.csv"
+    },
+    {
+      "check": "excel_sheets_loaded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "sheets=1"
+    },
+    {
+      "check": "sheet_profile_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "sheet_profiles=1"
+    },
+    {
+      "check": "extracted_rows_non_empty",
+      "passed": true,
+      "severity": "critical",
+      "detail": "extracted_rows=14409"
+    },
+    {
+      "check": "included_rows_non_empty",
+      "passed": true,
+      "severity": "critical",
+      "detail": "included_rows=1921"
+    },
+    {
+      "check": "included_rows_at_least_quality_floor_gap",
+      "passed": true,
+      "severity": "warning",
+      "detail": "included_rows=1921;needed_to_42k=608"
+    },
+    {
+      "check": "asx_code_extracted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "at least one ASX code extracted"
+    },
+    {
+      "check": "isin_extracted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "at least one ISIN extracted"
+    },
+    {
+      "check": "context_match_available",
+      "passed": true,
+      "severity": "warning",
+      "detail": "context_matches=4491"
+    },
+    {
+      "check": "duplicates_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "duplicate_rows=1"
+    },
+    {
+      "check": "candidate_extraction_dry_run_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate extraction dry run only"
+    },
+    {
+      "check": "network_download_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "candidate_validation_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_validation_against_canonical_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_candidate_performed=False"
+    },
+    {
+      "check": "expanded_validation_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_validation_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "current_candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_dataset_modified=False"
+    },
+    {
+      "check": "hkex_candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "hkex_candidate_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "ASX",
+      "action": "run_asx_candidate_validation_against_current_candidate_dry_run",
+      "priority": "high",
+      "reason": "ASX extraction dry run produced included/conditional candidates; next step is duplicate/net-new validation against the HKEX validated candidate.",
+      "recommended_phase": "v2.20F - ASX Candidate Validation Against Current Candidate Dry Run",
+      "guardrails": "dry run only; no append; no rebuild; no canonical replacement; no scoring"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "ASX_scope",
+      "action": "preserve_scope_filters_in_validation",
+      "priority": "high",
+      "reason": "Only ordinary equity and equity-like conditional instruments should survive the ASX validation route.",
+      "recommended_phase": "v2.20F - ASX Candidate Validation Against Current Candidate Dry Run",
+      "guardrails": "exclude warrants/options/debt/rights/ETFs/funds/structured products and non-standard code lengths"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "quality_target",
+      "action": "validate_net_new_rows_before_rebuild",
+      "priority": "high",
+      "reason": "Included rows are not yet net-new. v2.20F must compare against the current candidate before any rebuild.",
+      "recommended_phase": "v2.20F - ASX Candidate Validation Against Current Candidate Dry Run",
+      "guardrails": "do not treat gross ASX extracted rows as net-new rows"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "candidate-extraction-dry-run-only",
+    "candidate_extraction_dry_run_only": true,
+    "selected_provider": "ASX",
+    "operational_target_floor": 42000,
+    "operational_target_ceiling": 45000,
+    "aspirational_target_50000_retained": true,
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": true,
+    "candidate_extraction_dry_run": true,
+    "candidate_validation_against_canonical_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_candidate_dataset_read": true,
+    "current_candidate_dataset_modified": false,
+    "current_candidate_sha_unchanged": true,
+    "hkex_validated_candidate_dataset_read": true,
+    "hkex_validated_candidate_dataset_modified": false,
+    "hkex_validated_candidate_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.20F - ASX Candidate Validation Against Current Candidate Dry Run"
+}

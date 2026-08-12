@@ -1,0 +1,2 @@
+sheet_name,header_row_zero_based,raw_rows,parsed_rows,column_count,columns,code_column,name_column,isin_column,security_group_code_column,product_description_column,status
+ISIN,0,14413,14409,4,asx_code;company_name;security_type;isin_code,asx_code,company_name,isin_code,,security_type,parseable

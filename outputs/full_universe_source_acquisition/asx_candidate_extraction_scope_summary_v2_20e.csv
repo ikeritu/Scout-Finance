@@ -1,0 +1,9 @@
+instrument_class,include_decision,rows
+a_reit_equity_like,include_conditional,17
+excluded_non_core_instrument,exclude,10706
+listed_investment_vehicle_conditional,include_conditional,7
+missing_code,exclude,1
+missing_identity,exclude,1
+non_standard_asx_code_length,exclude,1780
+ordinary_equity,include_candidate,1771
+ordinary_or_equity_like_unclassified,include_candidate,126

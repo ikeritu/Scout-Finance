@@ -1,0 +1,5 @@
+metric,value
+context_codes,4602
+extracted_rows,14409
+extracted_rows_with_context_match,4491
+included_rows_with_context_match,1808
