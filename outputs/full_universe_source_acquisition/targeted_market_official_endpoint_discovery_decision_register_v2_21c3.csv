@@ -1,0 +1,6 @@
+decision_id,decision,accepted,reason,effect
+ENDPOINT_DISCOVERY_001,Do not use v2.21C regex-only candidates.,True,v2.21C2 invalidated all previously accepted candidates.,v2.21D remains blocked until structured extraction retry succeeds.
+ENDPOINT_DISCOVERY_002,Use only official-domain structured endpoints or downloadable files.,True,Targeted expansion must remain official-source based.,Candidate extraction from arbitrary regex/web text remains disallowed.
+ENDPOINT_DISCOVERY_003,Require structured extraction retry before rebuild.,True,Endpoint discovery alone is not candidate extraction.,Next phase is v2.21C4 if both markets have structured endpoints; otherwise review.
+ENDPOINT_DISCOVERY_004,Keep operational base unchanged.,True,v2.21C3 is discovery-only.,"Operational base remains 42,708 rows."
+ENDPOINT_DISCOVERY_005,Keep scoring/OpenAI/broker/full59k deferred.,True,No validated expanded universe exists yet.,No scoring or enrichment authorization.

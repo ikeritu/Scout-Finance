@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,structured_extraction,run_structured_candidate_extraction_from_validated_endpoints,blocked,Not all target markets have validated structured endpoints.,v2.21C3_REVIEW - Missing Official Structured Endpoint Review,no regex-only candidates; require structured fields; no rebuild
+2,missing_market_review,manually_review_missing_bvc_or_sgx_official_download_endpoint,high,Any market without structured endpoint remains blocked.,v2.21C3_REVIEW - Missing Official Structured Endpoint Review,official exchange/regulator source only
+3,rebuild_control,keep_v2_21d_blocked_until_structured_extraction_dedup_succeeds,high,Endpoint discovery is not enough to rebuild.,v2.21C3_REVIEW - Missing Official Structured Endpoint Review,"no promotion, no pointer update, no scoring"

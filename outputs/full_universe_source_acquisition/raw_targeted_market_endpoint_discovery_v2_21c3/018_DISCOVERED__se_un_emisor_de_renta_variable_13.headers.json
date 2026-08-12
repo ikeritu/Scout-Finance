@@ -1,0 +1,22 @@
+{
+  "Content-Type": "text/html; charset=utf-8",
+  "Content-Length": "46289",
+  "Connection": "close",
+  "Date": "Wed, 12 Aug 2026 22:32:28 GMT",
+  "Content-Security-Policy": "script-src 'self' https://www.google.com/recaptcha/api.js https://www.gstatic.com https://www.clarity.ms https://*.larasuite.com https://prod.larasuite.com https://plataformadev.bvc.com.co/ https://plataformatest.bvc.com.co https://plataformacert.bvc.com.co https://www.google-analytics.com http://static.hotjar.com https://static.hotjar.com https://script.hotjar.com tagmanager.google.com googletagmanager.com www.googletagmanager.com stats.g.doubleclick.net 'unsafe-inline'; frame-ancestors https://www.kumo360.com https://youtube.com;",
+  "X-DNS-Prefetch-Control": "on",
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+  "X-Content-Type-Options": "nosniff",
+  "X-XSS-Protection": "1; mode=block",
+  "Referrer-Policy": "same-origin",
+  "Permissions-Policy": "geolocation=*",
+  "Cache-Control": "private, no-cache, no-store, max-age=0, must-revalidate",
+  "ETag": "\"pdc172t5dzzgk\"",
+  "Vary": "Accept-Encoding",
+  "Server": "*",
+  "X-Cache": "Miss from cloudfront",
+  "Via": "1.1 5a9407a8135fc4485c7bda1bbd27a126.cloudfront.net (CloudFront)",
+  "X-Amz-Cf-Pop": "MAD56-P2",
+  "X-Amz-Cf-Id": "AxUOsBjVm6De8QswHyF2sDNMh5xAuf0L-hLB-rguFnUlgSvcSPvkTQ==",
+  "X-Frame-Options": "DENY"
+}

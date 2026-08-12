@@ -1,0 +1,3 @@
+market_id,country,provider,endpoint_candidates_tested,fetch_success_count,structured_endpoint_count,weak_endpoint_count,best_candidate_like_records,market_endpoint_ready,readiness_status,recommended_action,best_structured_source_id,best_structured_url
+COLOMBIA_BVC,Colombia,BVC,17,17,0,0,0,False,official_pages_fetched_but_no_structured_records,discover_download_or_api_endpoint,,
+SINGAPORE_SGX,Singapore,SGX,4,4,2,0,1278,True,structured_endpoint_ready_for_v2_21c4,proceed_to_structured_extraction_retry,SGX_SECURITIES_V1_1_JSON_MINIMAL,https://api.sgx.com/securities/v1.1?excludetypes=bonds&params=nc%2Ccn%2Cs%2Cp%2Cc%2Cchange_vs_pc%2Cchange_vs_pc_percentage%2Ccx%2Cdp%2Cdpc%2Ctrading_time

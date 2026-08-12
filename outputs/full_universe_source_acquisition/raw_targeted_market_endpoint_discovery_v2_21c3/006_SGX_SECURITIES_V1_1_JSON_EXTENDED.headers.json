@@ -1,0 +1,20 @@
+{
+  "Content-Type": "application/json",
+  "Pragma": "no-cache",
+  "x-amzn-RequestId": "26e1ca89-2a02-4976-aa5f-2b619af9cf68",
+  "Access-Control-Allow-Origin": "*",
+  "x-amz-apigw-id": "CAsbjGUtyQ0EMrA=",
+  "X-Amzn-Trace-Id": "Root=1-6a7cf449-59c69579429e32f2423de2e6",
+  "X-Amz-Cf-Pop": "SIN3-P4",
+  "X-Amz-Cf-Id": "EDSIUDL2kvWf0s_35dSYk3wwfE0GKsWTB5g2hw_v68H0uY0pwUwuvw==",
+  "Vary": "Accept-Encoding",
+  "Cache-Control": "no-cache",
+  "Expires": "Wed, 12 Aug 2026 22:32:19 GMT",
+  "Date": "Wed, 12 Aug 2026 22:32:19 GMT",
+  "Transfer-Encoding": "chunked",
+  "Connection": "Transfer-Encoding",
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Content-Security-Policy": "frame-ancestors 'self' sgx.com *.sgx.com qasgx.com *.qasgx.com; default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self'; form-action 'self'",
+  "Strict-Transport-Security": "max-age=63072000 ; includeSubDomains"
+}
