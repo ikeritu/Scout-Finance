@@ -1,0 +1,7 @@
+decision_id,decision,accepted,reason,effect
+ASX_CLOSURE_001,Close ASX promotion path.,True,"ASX promoted canonical passed validation, pointer update, pointer validation and operational readiness.",v2.20 can be closed after this report is committed and verified.
+ASX_CLOSURE_002,Recognize promoted canonical as operational base.,True,"42k floor achieved, 45k ceiling respected, active pointer files validated.",Operational base dataset is expanded_universe_v2_20m_asx_promoted.csv.
+ASX_CLOSURE_003,Preserve v2_14e as rollback.,True,Rollback rows and SHA remain unchanged.,Do not delete or overwrite rollback dataset.
+ASX_CLOSURE_004,Freeze provider expansion by default.,True,Quality-first operational target reached.,No further provider expansion unless a new explicit phase is approved.
+ASX_CLOSURE_005,Defer scoring/OpenAI/broker.,True,Final ASX closure does not authorize scoring.,Requires separate post-v2.20T explicit scoring decision gate.
+ASX_CLOSURE_006,Keep full59k deprecated/deferred.,True,50k remains aspirational and outside this quality-first closure.,No full59k/global renormalization launch.

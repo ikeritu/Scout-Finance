@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,commit,commit_and_push_final_asx_closure_report,high,Final closure report must be versioned and verified.,current,add v2.20T artifacts only; do not add Auditoria_Scout_Finance.docx
+2,post-closure,decide_whether_to_open_scoring_decision_gate,medium,"Operational base is ready, but scoring remains deferred.",v2.21A - Post-ASX Explicit Scoring Decision Gate,explicit user approval required before scoring/OpenAI/broker
+3,ops,use_operational_base_without_new_provider_expansion,medium,42k-45k quality target achieved.,operational usage,no full59k/global renormalization by default

@@ -1,0 +1,21 @@
+phase,title,status,closure_note
+v2.20A,Quality-First Target Reset and Provider Selection,closed,Quality-first route reset; ASX selected.
+v2.20B,ASX Quality-First Acquisition Plan,closed,ASX acquisition route planned.
+v2.20C,ASX Quality-First Raw Acquisition,closed,ASX raw acquisition completed.
+v2.20D,ASX Raw Validation,closed,ASX raw data validated.
+v2.20E,ASX Candidate Extraction Dry Run,closed,Candidate extraction dry run completed.
+v2.20F,ASX Candidate Validation Against Current Candidate Dry Run,closed,ASX candidate validated against current candidate path.
+v2.20G,ASX Expanded Rebuild Candidate,closed,Expanded rebuild candidate created.
+v2.20H,ASX Expanded Validation,closed,Expanded validation completed.
+v2.20I,ASX Closure Report,closed,Provider closure report completed.
+v2.20J,ASX Candidate Promotion Decision Gate,closed,Promotion decision approved.
+v2.20K,ASX Canonical Promotion Plan,closed,Canonical promotion planned.
+v2.20L,ASX Canonical Promotion Dry Run,closed,Promotion dry run passed.
+v2.20M,ASX Controlled Promoted File Creation,closed,Promoted file created.
+v2.20N,ASX Promoted Canonical Validation,closed,Promoted canonical validated.
+v2.20O,ASX Active Pointer Decision Gate,closed,Pointer update plan approved.
+v2.20P,ASX Active Pointer Update Plan,closed,Three active pointer candidates identified.
+v2.20Q,ASX Controlled Active Pointer Update,closed,Three controlled pointer files updated.
+v2.20R,ASX Active Pointer Update Validation,closed,Pointer update validated.
+v2.20S,Post-Pointer Operational Readiness Gate,closed,Operational base ready for final closure.
+v2.20T,Final ASX Promotion Closure Report,closed_if_this_report_passes,Final closure report for ASX promotion.

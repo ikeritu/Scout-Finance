@@ -1,0 +1,4 @@
+provider,status,rows_after_promotion,target_floor,target_ceiling,decision
+ASX,CLOSED_SUCCESS,42708,42000,45000,Accepted as operational base
+additional_provider_expansion,FROZEN_BY_DEFAULT,42708,42000,45000,Do not continue unless explicitly approved
+full59k,DEPRECATED_DEFERRED,42708,42000,45000,Do not launch

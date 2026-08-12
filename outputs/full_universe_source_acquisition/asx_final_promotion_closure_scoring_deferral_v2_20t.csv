@@ -1,0 +1,5 @@
+gate_id,scope,authorized,decision,reason,next_allowed_phase
+SCORING_DEFERRAL_001,scoring,False,Deferred,ASX final closure is not a scoring phase.,v2.21A - Post-ASX Explicit Scoring Decision Gate
+SCORING_DEFERRAL_002,openai,False,Deferred,OpenAI calls require a separate explicit decision.,v2.21A - Post-ASX Explicit Scoring Decision Gate
+SCORING_DEFERRAL_003,broker,False,Deferred,Broker calls require a separate explicit decision.,v2.21A - Post-ASX Explicit Scoring Decision Gate
+SCORING_DEFERRAL_004,full59k,False,Deprecated/deferred,50k remains aspirational and outside quality-first ASX closure.,explicit future route only
