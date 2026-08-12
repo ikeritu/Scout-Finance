@@ -1,0 +1,1275 @@
+{
+  "version": "v2.20C",
+  "phase": "ASX Quality-First Raw Acquisition",
+  "phase_type": "raw-acquisition-only",
+  "status": "ASX_QUALITY_FIRST_RAW_ACQUISITION_COMPLETED_RAW_FILES_CAPTURED_VALIDATION_READY_42K_45K_OPERATIONAL_50K_ASPIRATIONAL_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-12T08:49:33.914558+00:00",
+  "acquisition_summary": {
+    "selected_provider": "ASX",
+    "raw_dir": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c",
+    "pages_dir": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages",
+    "downloads_dir": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\downloads",
+    "attempts_total": 8,
+    "successful_attempts": 7,
+    "failed_attempts": 1,
+    "required_failed_attempts": 0,
+    "manifest_rows": 7,
+    "captured_page_count": 5,
+    "captured_download_count": 2,
+    "captured_csv_count": 1,
+    "captured_xls_count": 1,
+    "discovered_links_count": 60,
+    "discovered_download_candidate_count": 4,
+    "legacy_csv_status": 404,
+    "current_hkex_validated_candidate_rows": 41392,
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "aspirational_target": 50000,
+    "rows_needed_to_quality_floor": 608,
+    "rows_needed_to_quality_ceiling": 3608,
+    "rows_needed_to_aspirational_50k": 8608,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "next_phase": "v2.20D - ASX Raw Validation",
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "page_sources": [
+    {
+      "source_id": "asx_indices_page",
+      "url": "https://www.asx.com.au/markets/trade-our-cash-market/overview/indices",
+      "expected_role": "complete_list_csv_discovery_and_index_context",
+      "required": true
+    },
+    {
+      "source_id": "asx_company_directory_page",
+      "url": "https://www.asx.com.au/markets/trade-our-cash-market/directory",
+      "expected_role": "company_directory_context_and_exclusion_disclaimer",
+      "required": true
+    },
+    {
+      "source_id": "asx_isin_services_page",
+      "url": "https://www.asx.com.au/markets/market-resources/isin-services",
+      "expected_role": "isin_xls_discovery_and_identifier_context",
+      "required": true
+    },
+    {
+      "source_id": "asx_codes_and_descriptors_page",
+      "url": "https://www.asx.com.au/markets/market-resources/asx-codes-and-descriptors",
+      "expected_role": "instrument_scope_reference",
+      "required": true
+    },
+    {
+      "source_id": "asx_market_statistics_page",
+      "url": "https://www.asx.com.au/about/market-statistics",
+      "expected_role": "market_size_context",
+      "required": false
+    }
+  ],
+  "direct_download_candidates": [
+    {
+      "source_id": "asx_isin_xls_direct",
+      "url": "https://www.asx.com.au/content/dam/asx/issuers/ISIN.xls",
+      "expected_role": "isin_identifier_enrichment_download",
+      "required": false
+    },
+    {
+      "source_id": "asx_listed_companies_legacy_csv",
+      "url": "https://www.asx.com.au/asx/research/ASXListedCompanies.csv",
+      "expected_role": "legacy_complete_list_csv_candidate_optional",
+      "required": false
+    }
+  ],
+  "manifest": [
+    {
+      "source_id": "asx_indices_page",
+      "url": "https://www.asx.com.au/markets/trade-our-cash-market/overview/indices",
+      "expected_role": "complete_list_csv_discovery_and_index_context",
+      "required": true,
+      "capture_type": "raw_download",
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 192384,
+      "sha256": "2f467ab8a016b3de0fc1a6204a4dc777353248fc4171e6a8334c2a63e5e988ee",
+      "path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "captured_at_utc": "2026-08-12T08:49:12.891524+00:00"
+    },
+    {
+      "source_id": "asx_company_directory_page",
+      "url": "https://www.asx.com.au/markets/trade-our-cash-market/directory",
+      "expected_role": "company_directory_context_and_exclusion_disclaimer",
+      "required": true,
+      "capture_type": "raw_download",
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 136144,
+      "sha256": "707820f89a447e2398751aeff49c366dfd8e537654005b48a1d03d08ec0fd89c",
+      "path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "captured_at_utc": "2026-08-12T08:49:15.006909+00:00"
+    },
+    {
+      "source_id": "asx_isin_services_page",
+      "url": "https://www.asx.com.au/markets/market-resources/isin-services",
+      "expected_role": "isin_xls_discovery_and_identifier_context",
+      "required": true,
+      "capture_type": "raw_download",
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 143035,
+      "sha256": "6e3a39653a84bcc69a5c2bf506804c64b4395ccc35b83d376ea0d32d17b158ae",
+      "path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "captured_at_utc": "2026-08-12T08:49:18.085605+00:00"
+    },
+    {
+      "source_id": "asx_codes_and_descriptors_page",
+      "url": "https://www.asx.com.au/markets/market-resources/asx-codes-and-descriptors",
+      "expected_role": "instrument_scope_reference",
+      "required": true,
+      "capture_type": "raw_download",
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 161332,
+      "sha256": "b3396ed7a6586ce38b1eb000f66f1983564a4a7464bd9d1d029c384437816657",
+      "path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "captured_at_utc": "2026-08-12T08:49:20.919649+00:00"
+    },
+    {
+      "source_id": "asx_market_statistics_page",
+      "url": "https://www.asx.com.au/about/market-statistics",
+      "expected_role": "market_size_context",
+      "required": false,
+      "capture_type": "raw_download",
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 179374,
+      "sha256": "417df16680b86be90d43a93f23d5b82ad5fca7ba4caff40af3b63d95ad3ecfeb",
+      "path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "captured_at_utc": "2026-08-12T08:49:24.393564+00:00"
+    },
+    {
+      "source_id": "asx_isin_xls_direct",
+      "url": "https://www.asx.com.au/content/dam/asx/issuers/ISIN.xls",
+      "expected_role": "isin_identifier_enrichment_download",
+      "required": false,
+      "capture_type": "raw_download",
+      "status_code": 200,
+      "content_type": "application/vnd.ms-excel",
+      "bytes": 1985024,
+      "sha256": "eb2a547ef207ecdb7a0e55f917af93a85426d265496504a3022e4eb8fbd9ccf4",
+      "path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\downloads\\asx_isin_xls_direct.xls",
+      "captured_at_utc": "2026-08-12T08:49:27.960814+00:00"
+    },
+    {
+      "source_id": "asx_discovered_last_known_closing_price_fy26",
+      "url": "https://www.asx.com.au/content/dam/asx/about/last-known-closing-price-fy26.csv",
+      "expected_role": "discovered_download_candidate_from_asx_market_statistics_page",
+      "required": false,
+      "capture_type": "raw_download",
+      "status_code": 200,
+      "content_type": "text/csv; charset=ISO-8859-1",
+      "bytes": 326441,
+      "sha256": "043c592822e8cf31df08bd7f76c9b0d6f953c7925d0c55b3d99cab304b7e4133",
+      "path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\downloads\\asx_discovered_last_known_closing_price_fy26.csv",
+      "captured_at_utc": "2026-08-12T08:49:33.065071+00:00"
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "asx_indices_page",
+      "url": "https://www.asx.com.au/markets/trade-our-cash-market/overview/indices",
+      "expected_role": "complete_list_csv_discovery_and_index_context",
+      "required": true,
+      "started_at_utc": "2026-08-12T08:49:10.173982+00:00",
+      "finished_at_utc": "2026-08-12T08:49:12.891524+00:00",
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 192384,
+      "sha256": "2f467ab8a016b3de0fc1a6204a4dc777353248fc4171e6a8334c2a63e5e988ee",
+      "output_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "error_type": "",
+      "error": ""
+    },
+    {
+      "source_id": "asx_company_directory_page",
+      "url": "https://www.asx.com.au/markets/trade-our-cash-market/directory",
+      "expected_role": "company_directory_context_and_exclusion_disclaimer",
+      "required": true,
+      "started_at_utc": "2026-08-12T08:49:13.653159+00:00",
+      "finished_at_utc": "2026-08-12T08:49:15.006909+00:00",
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 136144,
+      "sha256": "707820f89a447e2398751aeff49c366dfd8e537654005b48a1d03d08ec0fd89c",
+      "output_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "error_type": "",
+      "error": ""
+    },
+    {
+      "source_id": "asx_isin_services_page",
+      "url": "https://www.asx.com.au/markets/market-resources/isin-services",
+      "expected_role": "isin_xls_discovery_and_identifier_context",
+      "required": true,
+      "started_at_utc": "2026-08-12T08:49:15.764722+00:00",
+      "finished_at_utc": "2026-08-12T08:49:18.085605+00:00",
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 143035,
+      "sha256": "6e3a39653a84bcc69a5c2bf506804c64b4395ccc35b83d376ea0d32d17b158ae",
+      "output_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "error_type": "",
+      "error": ""
+    },
+    {
+      "source_id": "asx_codes_and_descriptors_page",
+      "url": "https://www.asx.com.au/markets/market-resources/asx-codes-and-descriptors",
+      "expected_role": "instrument_scope_reference",
+      "required": true,
+      "started_at_utc": "2026-08-12T08:49:18.844490+00:00",
+      "finished_at_utc": "2026-08-12T08:49:20.919649+00:00",
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 161332,
+      "sha256": "b3396ed7a6586ce38b1eb000f66f1983564a4a7464bd9d1d029c384437816657",
+      "output_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "error_type": "",
+      "error": ""
+    },
+    {
+      "source_id": "asx_market_statistics_page",
+      "url": "https://www.asx.com.au/about/market-statistics",
+      "expected_role": "market_size_context",
+      "required": false,
+      "started_at_utc": "2026-08-12T08:49:21.679488+00:00",
+      "finished_at_utc": "2026-08-12T08:49:24.393564+00:00",
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/html;charset=utf-8",
+      "bytes": 179374,
+      "sha256": "417df16680b86be90d43a93f23d5b82ad5fca7ba4caff40af3b63d95ad3ecfeb",
+      "output_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "error_type": "",
+      "error": ""
+    },
+    {
+      "source_id": "asx_isin_xls_direct",
+      "url": "https://www.asx.com.au/content/dam/asx/issuers/ISIN.xls",
+      "expected_role": "isin_identifier_enrichment_download",
+      "required": false,
+      "started_at_utc": "2026-08-12T08:49:25.152886+00:00",
+      "finished_at_utc": "2026-08-12T08:49:27.960814+00:00",
+      "success": true,
+      "status_code": 200,
+      "content_type": "application/vnd.ms-excel",
+      "bytes": 1985024,
+      "sha256": "eb2a547ef207ecdb7a0e55f917af93a85426d265496504a3022e4eb8fbd9ccf4",
+      "output_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\downloads\\asx_isin_xls_direct.xls",
+      "error_type": "",
+      "error": ""
+    },
+    {
+      "source_id": "asx_listed_companies_legacy_csv",
+      "url": "https://www.asx.com.au/asx/research/ASXListedCompanies.csv",
+      "expected_role": "legacy_complete_list_csv_candidate_optional",
+      "required": false,
+      "started_at_utc": "2026-08-12T08:49:28.711572+00:00",
+      "finished_at_utc": "2026-08-12T08:49:30.537184+00:00",
+      "success": false,
+      "status_code": 404,
+      "content_type": "",
+      "bytes": 0,
+      "sha256": "",
+      "output_path": "",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 404: "
+    },
+    {
+      "source_id": "asx_discovered_last_known_closing_price_fy26",
+      "url": "https://www.asx.com.au/content/dam/asx/about/last-known-closing-price-fy26.csv",
+      "expected_role": "discovered_download_candidate_from_asx_market_statistics_page",
+      "required": false,
+      "started_at_utc": "2026-08-12T08:49:31.288202+00:00",
+      "finished_at_utc": "2026-08-12T08:49:33.065071+00:00",
+      "success": true,
+      "status_code": 200,
+      "content_type": "text/csv; charset=ISO-8859-1",
+      "bytes": 326441,
+      "sha256": "043c592822e8cf31df08bd7f76c9b0d6f953c7925d0c55b3d99cab304b7e4133",
+      "output_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\downloads\\asx_discovered_last_known_closing_price_fy26.csv",
+      "error_type": "",
+      "error": ""
+    }
+  ],
+  "discovered_links": [
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/trade-our-cash-market/directory.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/trade-our-cash-market/directory.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/market-resources/isin-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/market-resources/isin-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/blog/listed-at-asx.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/blog/listed-at-asx.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/debt-securities/listed-debt-securities.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/debt-securities/listed-debt-securities.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/investor-engagement.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/investor-engagement.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/education.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/education.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/tools-and-resources.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/tools-and-resources.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/contact-listed-company-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/contact-listed-company-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/content/asx/home//markets/trade-our-cash-market/directory.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home//markets/trade-our-cash-market/directory.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_indices_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_indices_page.html",
+      "url": "https://www.asx.com.au/asx/research/ASXListedCompanies.csv",
+      "netloc": "www.asx.com.au",
+      "path": "/asx/research/ASXListedCompanies.csv",
+      "query": "",
+      "extension_hint": ".csv",
+      "structured_candidate": true,
+      "download_candidate": true
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/markets/trade-our-cash-market/directory",
+      "netloc": "www.asx.com.au",
+      "path": "/markets/trade-our-cash-market/directory",
+      "query": "",
+      "extension_hint": "",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/trade-our-cash-market/directory.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/trade-our-cash-market/directory.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/market-resources/isin-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/market-resources/isin-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/blog/listed-at-asx.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/blog/listed-at-asx.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/debt-securities/listed-debt-securities.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/debt-securities/listed-debt-securities.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/investor-engagement.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/investor-engagement.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/education.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/education.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/tools-and-resources.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/tools-and-resources.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/contact-listed-company-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/contact-listed-company-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/listings/listing-considerations/guides-rules-and-resources/delisted-entities.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/listings/listing-considerations/guides-rules-and-resources/delisted-entities.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_company_directory_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_company_directory_page.html",
+      "url": "mailto:Listed&#64;asx.com.au",
+      "netloc": "",
+      "path": "Listed&",
+      "query": "",
+      "extension_hint": "",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/markets/market-resources/isin-services",
+      "netloc": "www.asx.com.au",
+      "path": "/markets/market-resources/isin-services",
+      "query": "",
+      "extension_hint": "",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/trade-our-cash-market/directory.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/trade-our-cash-market/directory.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/market-resources/isin-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/market-resources/isin-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/blog/listed-at-asx.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/blog/listed-at-asx.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/debt-securities/listed-debt-securities.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/debt-securities/listed-debt-securities.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/investor-engagement.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/investor-engagement.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/education.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/education.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/tools-and-resources.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/tools-and-resources.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/contact-listed-company-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/contact-listed-company-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/market-resources/isin-services/_jcr_content/root/responsivegrid/multicolumncontrol_1_1597547817/responsivegrid-0/image.coreimg{.width}.png/1579165168334/data-padlock.png",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/market-resources/isin-services/_jcr_content/root/responsivegrid/multicolumncontrol_1_1597547817/responsivegrid-0/image.coreimg{.width}.png/1579165168334/data-padlock.png",
+      "query": "",
+      "extension_hint": ".png",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/market-resources/isin-services/_jcr_content/root/responsivegrid/multicolumncontrol_1_1597547817/responsivegrid-0/image.coreimg.png/1579165168334/data-padlock.png",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/market-resources/isin-services/_jcr_content/root/responsivegrid/multicolumncontrol_1_1597547817/responsivegrid-0/image.coreimg.png/1579165168334/data-padlock.png",
+      "query": "",
+      "extension_hint": ".png",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/dam/asx/connectivity-and-data/isin-application-form.pdf",
+      "netloc": "www.asx.com.au",
+      "path": "/content/dam/asx/connectivity-and-data/isin-application-form.pdf",
+      "query": "",
+      "extension_hint": ".pdf",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "mailto:ISINS.AU&#64;asx.com.au",
+      "netloc": "",
+      "path": "ISINS.AU&",
+      "query": "",
+      "extension_hint": ".au&",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/market-resources/isin-services/_jcr_content/root/responsivegrid/multicolumncontrol_2/responsivegrid-0/image.coreimg{.width}.png/1579563795064/air-traffic-control.png",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/market-resources/isin-services/_jcr_content/root/responsivegrid/multicolumncontrol_2/responsivegrid-0/image.coreimg{.width}.png/1579563795064/air-traffic-control.png",
+      "query": "",
+      "extension_hint": ".png",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/market-resources/isin-services/_jcr_content/root/responsivegrid/multicolumncontrol_2/responsivegrid-0/image.coreimg.png/1579563795064/air-traffic-control.png",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/market-resources/isin-services/_jcr_content/root/responsivegrid/multicolumncontrol_2/responsivegrid-0/image.coreimg.png/1579563795064/air-traffic-control.png",
+      "query": "",
+      "extension_hint": ".png",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_isin_services_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_isin_services_page.html",
+      "url": "https://www.asx.com.au/content/dam/asx/issuers/ISIN.xls",
+      "netloc": "www.asx.com.au",
+      "path": "/content/dam/asx/issuers/ISIN.xls",
+      "query": "",
+      "extension_hint": ".xls",
+      "structured_candidate": true,
+      "download_candidate": true
+    },
+    {
+      "discovered_from_source_id": "asx_codes_and_descriptors_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/trade-our-cash-market/directory.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/trade-our-cash-market/directory.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_codes_and_descriptors_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/market-resources/isin-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/market-resources/isin-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_codes_and_descriptors_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_codes_and_descriptors_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/blog/listed-at-asx.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/blog/listed-at-asx.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_codes_and_descriptors_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/debt-securities/listed-debt-securities.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/debt-securities/listed-debt-securities.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_codes_and_descriptors_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/investor-engagement.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/investor-engagement.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_codes_and_descriptors_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/education.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/education.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_codes_and_descriptors_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/tools-and-resources.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/tools-and-resources.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_codes_and_descriptors_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/contact-listed-company-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/contact-listed-company-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_codes_and_descriptors_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_codes_and_descriptors_page.html",
+      "url": "https://www.asx.com.au/content/dam/asx/issuers/ISIN.xls",
+      "netloc": "www.asx.com.au",
+      "path": "/content/dam/asx/issuers/ISIN.xls",
+      "query": "",
+      "extension_hint": ".xls",
+      "structured_candidate": true,
+      "download_candidate": true
+    },
+    {
+      "discovered_from_source_id": "asx_market_statistics_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/trade-our-cash-market/directory.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/trade-our-cash-market/directory.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_market_statistics_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/markets/market-resources/isin-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/markets/market-resources/isin-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_market_statistics_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_market_statistics_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/blog/listed-at-asx.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/blog/listed-at-asx.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_market_statistics_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/debt-securities/listed-debt-securities.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/debt-securities/listed-debt-securities.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_market_statistics_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/investor-engagement.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/investor-engagement.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_market_statistics_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/education.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/education.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_market_statistics_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/tools-and-resources.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/tools-and-resources.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_market_statistics_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "url": "https://www.asx.com.au/content/asx/home/issuers/listed-company-services/contact-listed-company-services.html",
+      "netloc": "www.asx.com.au",
+      "path": "/content/asx/home/issuers/listed-company-services/contact-listed-company-services.html",
+      "query": "",
+      "extension_hint": ".html",
+      "structured_candidate": true,
+      "download_candidate": false
+    },
+    {
+      "discovered_from_source_id": "asx_market_statistics_page",
+      "discovered_from_path": "outputs\\full_universe_source_acquisition\\raw\\asx_v2_20c\\pages\\asx_market_statistics_page.html",
+      "url": "https://www.asx.com.au/content/dam/asx/about/last-known-closing-price-fy26.csv",
+      "netloc": "www.asx.com.au",
+      "path": "/content/dam/asx/about/last-known-closing-price-fy26.csv",
+      "query": "",
+      "extension_hint": ".csv",
+      "structured_candidate": true,
+      "download_candidate": true
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_20b_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\asx_quality_first_acquisition_plan_v2_20b.json"
+    },
+    {
+      "check": "v2_20b_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_QUALITY_FIRST_ACQUISITION_PLAN_COMPLETED_OFFICIAL_SOURCES_READY_RAW_ACQUISITION_READY_42K_45K_OPERATIONAL_50K_ASPIRATIONAL_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20b_next_phase_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.20C - ASX Quality-First Raw Acquisition"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "current_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_rows=40996"
+    },
+    {
+      "check": "hkex_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "hkex_rows=41392"
+    },
+    {
+      "check": "active_canonical_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "current_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+    },
+    {
+      "check": "hkex_validated_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c"
+    },
+    {
+      "check": "active_canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "current_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current candidate sha unchanged"
+    },
+    {
+      "check": "hkex_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX candidate sha unchanged"
+    },
+    {
+      "check": "quality_floor_target_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "quality_floor=42000"
+    },
+    {
+      "check": "quality_ceiling_target_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "quality_ceiling=45000"
+    },
+    {
+      "check": "rows_needed_to_quality_floor_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_42k=608"
+    },
+    {
+      "check": "rows_needed_to_quality_ceiling_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_45k=3608"
+    },
+    {
+      "check": "rows_needed_to_50k_aspirational_expected",
+      "passed": true,
+      "severity": "warning",
+      "detail": "rows_needed_to_50k=8608"
+    },
+    {
+      "check": "required_pages_captured",
+      "passed": true,
+      "severity": "critical",
+      "detail": "required_failed=0"
+    },
+    {
+      "check": "official_pages_captured_count",
+      "passed": true,
+      "severity": "critical",
+      "detail": "captured_pages=5"
+    },
+    {
+      "check": "raw_manifest_non_empty",
+      "passed": true,
+      "severity": "critical",
+      "detail": "manifest_rows=7"
+    },
+    {
+      "check": "attempts_recorded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "attempts=8"
+    },
+    {
+      "check": "discovered_links_recorded",
+      "passed": true,
+      "severity": "warning",
+      "detail": "discovered_links=60"
+    },
+    {
+      "check": "discovered_download_candidates_recorded",
+      "passed": true,
+      "severity": "warning",
+      "detail": "download_candidates=4"
+    },
+    {
+      "check": "structured_download_captured",
+      "passed": true,
+      "severity": "warning",
+      "detail": "captured_downloads=2"
+    },
+    {
+      "check": "csv_or_xls_captured",
+      "passed": true,
+      "severity": "warning",
+      "detail": "csv=1;xls=1"
+    },
+    {
+      "check": "legacy_csv_failure_non_critical",
+      "passed": true,
+      "severity": "warning",
+      "detail": "legacy_csv_status=404"
+    },
+    {
+      "check": "raw_acquisition_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw acquisition only"
+    },
+    {
+      "check": "network_download_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_attempts=8"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "candidate_validation_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_validation_against_canonical_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_candidate_performed=False"
+    },
+    {
+      "check": "expanded_validation_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_validation_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "current_candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_dataset_modified=False"
+    },
+    {
+      "check": "hkex_candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "hkex_candidate_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "ASX",
+      "action": "run_asx_raw_validation",
+      "priority": "high",
+      "reason": "Raw ASX pages/download attempts have been captured; validation should assess parse readiness and repair needs.",
+      "recommended_phase": "v2.20D - ASX Raw Validation",
+      "guardrails": "validate raw only; no candidate extraction; no canonical replacement; no scoring"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "ASX_download_repair",
+      "action": "repair_complete_list_csv_route_if_needed",
+      "priority": "medium",
+      "reason": "The legacy ASXListedCompanies.csv endpoint may fail; raw validation should decide whether page discovery or another official route is required.",
+      "recommended_phase": "v2.20D - ASX Raw Validation",
+      "guardrails": "repair source route only if raw validation shows missing structured candidate source"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "quality_target",
+      "action": "preserve_42k_45k_operational_band",
+      "priority": "high",
+      "reason": "Only 608 clean net-new rows are needed to cross 42k; do not add noisy rows for volume.",
+      "recommended_phase": "v2.20D - ASX Raw Validation",
+      "guardrails": "50k aspirational only; full59k deprecated"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "raw-acquisition-only",
+    "raw_acquisition_only": true,
+    "selected_provider": "ASX",
+    "operational_target_floor": 42000,
+    "operational_target_ceiling": 45000,
+    "aspirational_target_50000_retained": true,
+    "network_download_performed": true,
+    "endpoint_calls_performed": true,
+    "query_sweep_performed": false,
+    "raw_acquisition_performed": true,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_canonical_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_candidate_dataset_read": true,
+    "current_candidate_dataset_modified": false,
+    "current_candidate_sha_unchanged": true,
+    "hkex_validated_candidate_dataset_read": true,
+    "hkex_validated_candidate_dataset_modified": false,
+    "hkex_validated_candidate_sha_unchanged": true,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.20D - ASX Raw Validation"
+}

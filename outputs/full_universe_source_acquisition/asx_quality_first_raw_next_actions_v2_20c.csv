@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,ASX,run_asx_raw_validation,high,Raw ASX pages/download attempts have been captured; validation should assess parse readiness and repair needs.,v2.20D - ASX Raw Validation,validate raw only; no candidate extraction; no canonical replacement; no scoring
+2,ASX_download_repair,repair_complete_list_csv_route_if_needed,medium,The legacy ASXListedCompanies.csv endpoint may fail; raw validation should decide whether page discovery or another official route is required.,v2.20D - ASX Raw Validation,repair source route only if raw validation shows missing structured candidate source
+3,quality_target,preserve_42k_45k_operational_band,high,Only 608 clean net-new rows are needed to cross 42k; do not add noisy rows for volume.,v2.20D - ASX Raw Validation,50k aspirational only; full59k deprecated
