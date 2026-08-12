@@ -1,0 +1,10 @@
+phase,title,status,purpose
+v2.20A,Quality-First Target Reset and Provider Selection,closed,Set 42k-45k operational target and select ASX.
+v2.20B,ASX Quality-First Acquisition Plan,generated_by_this_phase,"Define official ASX sources, scope rules, yield expectations and raw acquisition route."
+v2.20C,ASX Quality-First Raw Acquisition,next,Capture ASX official pages and structured downloads without extraction.
+v2.20D,ASX Raw Validation,planned,Validate captured ASX raw files and determine extraction readiness.
+v2.20E,ASX Candidate Extraction Dry Run,planned_if_raw_ready,Extract ASX candidate rows with instrument-scope classification.
+v2.20F,ASX Candidate Validation Against Current Candidate Dry Run,planned_if_extraction_ready,"Classify net-new, duplicates and excluded scope against HKEX validated candidate."
+v2.20G,ASX Expanded Rebuild Candidate,conditional,Append only clean ASX net-new rows if quality and yield justify it.
+v2.20H,ASX Expanded Validation,conditional,Validate ASX expanded candidate if rebuild is performed.
+v2.20I,ASX Closure Report,conditional,"Close ASX route and decide whether to stop, freeze, or move to backup provider."

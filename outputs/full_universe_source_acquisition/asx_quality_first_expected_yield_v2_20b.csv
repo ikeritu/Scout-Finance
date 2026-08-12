@@ -1,0 +1,5 @@
+scenario,gross_official_rows_expected,clean_net_new_expected_min,clean_net_new_expected_mid,clean_net_new_expected_high,target_effect,decision_rule
+conservative_quality_floor,unknown_until_raw_acquisition,250,608,1000,may_cross_42k_if_mid_case,continue if >=500 clean net-new or if quality is exceptional
+base_quality_case,unknown_until_raw_acquisition,608,1200,1800,crosses_42k_and_moves_toward_45k,continue to canonical validation dry run if instrument scope remains clean
+strong_quality_case,unknown_until_raw_acquisition,1800,2500,3608,could_reach_or_approach_45k,stop at 45k ceiling unless exceptional clean source remains
+bad_yield_case,unknown_until_raw_acquisition,0,249,499,does_not_justify_long_route_unless_quality_exceptional,fast closure and switch to TMX_TSX_ONLY backup

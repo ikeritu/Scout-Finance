@@ -1,0 +1,592 @@
+{
+  "version": "v2.20B",
+  "phase": "ASX Quality-First Acquisition Plan",
+  "phase_type": "acquisition-plan-only",
+  "status": "ASX_QUALITY_FIRST_ACQUISITION_PLAN_COMPLETED_OFFICIAL_SOURCES_READY_RAW_ACQUISITION_READY_42K_45K_OPERATIONAL_50K_ASPIRATIONAL_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-12T08:12:00.079573+00:00",
+  "plan_summary": {
+    "selected_provider": "ASX",
+    "current_hkex_validated_candidate_rows": 41392,
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "aspirational_target": 50000,
+    "rows_needed_to_quality_floor": 608,
+    "rows_needed_to_quality_ceiling": 3608,
+    "rows_needed_to_aspirational_50k": 8608,
+    "primary_source": "asx_listed_companies_page",
+    "identifier_enrichment_source": "asx_isin_directory",
+    "instrument_scope_reference": "asx_codes_and_descriptors",
+    "source_count": 5,
+    "scope_rule_count": 9,
+    "expected_yield_scenario_count": 4,
+    "critical_failed_checks": 0,
+    "next_phase": "v2.20C - ASX Quality-First Raw Acquisition",
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "sources": [
+    {
+      "priority": 1,
+      "source_id": "asx_listed_companies_page",
+      "source_name": "ASX listed companies complete list page",
+      "source_type": "official_asx_page_with_csv_download",
+      "url": "https://www.asx.com.au/markets/trade-our-cash-market/overview/indices",
+      "planned_capture_mode": "html_page_plus_discovered_csv_link",
+      "direct_download_candidate_url": "",
+      "expected_format": "html_discovery_plus_csv",
+      "expected_fields": "asx_code;company_name;gics_sector_if_available",
+      "quality_role": "primary_universe_candidate_source",
+      "officiality": "official",
+      "freshness_note": "ASX page states the complete list CSV is updated after each trading day.",
+      "raw_phase_action": "capture_page_and_discover_download_complete_list_csv",
+      "risk": "download link may be dynamic or legacy endpoint may need repair"
+    },
+    {
+      "priority": 2,
+      "source_id": "asx_isin_directory",
+      "source_name": "ASX ISIN directory for ASX listed companies",
+      "source_type": "official_asx_excel_download",
+      "url": "https://www.asx.com.au/markets/market-resources/isin-services",
+      "planned_capture_mode": "html_page_plus_xls_download",
+      "direct_download_candidate_url": "https://www.asx.com.au/content/dam/asx/issuers/ISIN.xls",
+      "expected_format": "xls",
+      "expected_fields": "asx_code;isin;security_name;instrument_identifier",
+      "quality_role": "identifier_enrichment_and_duplicate_control",
+      "officiality": "official",
+      "freshness_note": "ASX page states the ISIN file is updated monthly.",
+      "raw_phase_action": "capture_page_and_download_isin_xls_if_accessible",
+      "risk": "xls parsing required; file may include non-equity instruments requiring scope filter"
+    },
+    {
+      "priority": 3,
+      "source_id": "asx_codes_and_descriptors",
+      "source_name": "ASX codes and descriptors",
+      "source_type": "official_asx_reference_page",
+      "url": "https://www.asx.com.au/markets/market-resources/asx-codes-and-descriptors",
+      "planned_capture_mode": "html_page",
+      "direct_download_candidate_url": "",
+      "expected_format": "html",
+      "expected_fields": "code_length_rules;secondary_issue_rules;debt_rules;etp_rules;derivative_rules;warrant_rules",
+      "quality_role": "instrument_scope_guard_rules",
+      "officiality": "official",
+      "freshness_note": "Reference page explains ASX code patterns and product-type distinctions.",
+      "raw_phase_action": "capture_page_for_scope_rules_and_filter_documentation",
+      "risk": "reference only; not a candidate source"
+    },
+    {
+      "priority": 4,
+      "source_id": "asx_market_statistics",
+      "source_name": "ASX market statistics and listed entities",
+      "source_type": "official_asx_statistics_page",
+      "url": "https://www.asx.com.au/about/market-statistics",
+      "planned_capture_mode": "html_page",
+      "direct_download_candidate_url": "",
+      "expected_format": "html",
+      "expected_fields": "listed_entities;market_cap_statistics;historical_stats_links",
+      "quality_role": "sanity_check_and_market_size_context",
+      "officiality": "official",
+      "freshness_note": "ASX publishes market statistics and linked listed-entity counts.",
+      "raw_phase_action": "capture_page_for_expected_universe_size_and_context",
+      "risk": "statistics only; not a primary candidate list"
+    },
+    {
+      "priority": 5,
+      "source_id": "asx_legacy_csv_candidate",
+      "source_name": "ASX listed companies legacy CSV endpoint candidate",
+      "source_type": "legacy_direct_csv_candidate",
+      "url": "https://www.asx.com.au/asx/research/ASXListedCompanies.csv",
+      "planned_capture_mode": "attempt_direct_csv_as_secondary_candidate",
+      "direct_download_candidate_url": "https://www.asx.com.au/asx/research/ASXListedCompanies.csv",
+      "expected_format": "csv",
+      "expected_fields": "asx_code;company_name;gics_sector_if_available",
+      "quality_role": "secondary_download_candidate_only",
+      "officiality": "official_url_candidate_but_unverified",
+      "freshness_note": "Use only if reachable in raw acquisition; otherwise rely on page discovery.",
+      "raw_phase_action": "attempt_download_but_do_not_fail_phase_if_404",
+      "risk": "known possible 404 or redirected endpoint; repair may be required"
+    }
+  ],
+  "scope_rules": [
+    {
+      "rule_id": "ASX_INCLUDE_001",
+      "scope": "include",
+      "instrument_group": "ordinary_equity",
+      "rule": "include ordinary listed company shares where code/name/descriptor supports equity scope",
+      "reason": "Core target for Scout Finance candidate quality.",
+      "raw_filter_hint": "prefer 3-character issuer/company codes; validate against descriptors and ISIN file",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "ASX_INCLUDE_002",
+      "scope": "include_conditional",
+      "instrument_group": "a_reit",
+      "rule": "include liquid A-REITs if clearly listed equity-like vehicles",
+      "reason": "A-REITs are common ASX equity-like instruments and useful for quality universe coverage.",
+      "raw_filter_hint": "include only if not duplicated and not structured product",
+      "severity": "warning"
+    },
+    {
+      "rule_id": "ASX_INCLUDE_003",
+      "scope": "include_conditional",
+      "instrument_group": "listed_investment_company_or_trust",
+      "rule": "include only if it behaves as listed equity and passes duplicate/instrument checks",
+      "reason": "Some LIC/LIT instruments may be useful, but they should not inflate the universe by default.",
+      "raw_filter_hint": "separate from ordinary shares; count separately",
+      "severity": "warning"
+    },
+    {
+      "rule_id": "ASX_EXCLUDE_001",
+      "scope": "exclude",
+      "instrument_group": "warrants",
+      "rule": "exclude warrants by default",
+      "reason": "Warrants are not operating-company equity candidates and were explicitly excluded in v2.20A stop rules.",
+      "raw_filter_hint": "use code/descriptors; ASX reference notes warrant code conventions",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "ASX_EXCLUDE_002",
+      "scope": "exclude",
+      "instrument_group": "exchange_traded_options",
+      "rule": "exclude options by default",
+      "reason": "Options are derivatives, not equity candidates.",
+      "raw_filter_hint": "use code length/descriptors; ASX reference explains option code structure",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "ASX_EXCLUDE_003",
+      "scope": "exclude",
+      "instrument_group": "debt_interest_rate_securities_notes_hybrids",
+      "rule": "exclude debt, notes, interest-rate securities and hybrids by default",
+      "reason": "Debt and hybrid securities are not core equity candidates.",
+      "raw_filter_hint": "flag 4/5/6-character debt/security codes and descriptor keywords",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "ASX_EXCLUDE_004",
+      "scope": "exclude",
+      "instrument_group": "rights_secondary_issues_partly_paid",
+      "rule": "exclude rights, special settlement, partly paid and other secondary issues by default",
+      "reason": "Avoid duplicating underlying equities or adding temporary instruments.",
+      "raw_filter_hint": "use ASX code suffix/descriptor documentation",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "ASX_EXCLUDE_005",
+      "scope": "exclude",
+      "instrument_group": "etf_managed_fund_structured_product",
+      "rule": "exclude ETFs, managed funds and structured products by default",
+      "reason": "Quality-first route is for good equity candidates, not fund products.",
+      "raw_filter_hint": "separate ETPs; do not include unless explicitly approved later",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "ASX_EXCLUDE_006",
+      "scope": "exclude_or_flag",
+      "instrument_group": "illiquid_speculative_microcap",
+      "rule": "exclude or flag speculative/illiquid microcaps where source allows",
+      "reason": "Avoid filling 42k-45k with low-quality speculative rows.",
+      "raw_filter_hint": "use market cap/sector/index membership if available; otherwise defer to validation phase",
+      "severity": "warning"
+    }
+  ],
+  "expected_yield": [
+    {
+      "scenario": "conservative_quality_floor",
+      "gross_official_rows_expected": "unknown_until_raw_acquisition",
+      "clean_net_new_expected_min": 250,
+      "clean_net_new_expected_mid": 608,
+      "clean_net_new_expected_high": 1000,
+      "target_effect": "may_cross_42k_if_mid_case",
+      "decision_rule": "continue if >=500 clean net-new or if quality is exceptional"
+    },
+    {
+      "scenario": "base_quality_case",
+      "gross_official_rows_expected": "unknown_until_raw_acquisition",
+      "clean_net_new_expected_min": 608,
+      "clean_net_new_expected_mid": 1200,
+      "clean_net_new_expected_high": 1800,
+      "target_effect": "crosses_42k_and_moves_toward_45k",
+      "decision_rule": "continue to canonical validation dry run if instrument scope remains clean"
+    },
+    {
+      "scenario": "strong_quality_case",
+      "gross_official_rows_expected": "unknown_until_raw_acquisition",
+      "clean_net_new_expected_min": 1800,
+      "clean_net_new_expected_mid": 2500,
+      "clean_net_new_expected_high": 3608,
+      "target_effect": "could_reach_or_approach_45k",
+      "decision_rule": "stop at 45k ceiling unless exceptional clean source remains"
+    },
+    {
+      "scenario": "bad_yield_case",
+      "gross_official_rows_expected": "unknown_until_raw_acquisition",
+      "clean_net_new_expected_min": 0,
+      "clean_net_new_expected_mid": 249,
+      "clean_net_new_expected_high": 499,
+      "target_effect": "does_not_justify_long_route_unless_quality_exceptional",
+      "decision_rule": "fast closure and switch to TMX_TSX_ONLY backup"
+    }
+  ],
+  "roadmap": [
+    {
+      "phase": "v2.20A",
+      "title": "Quality-First Target Reset and Provider Selection",
+      "status": "closed",
+      "purpose": "Set 42k-45k operational target and select ASX."
+    },
+    {
+      "phase": "v2.20B",
+      "title": "ASX Quality-First Acquisition Plan",
+      "status": "generated_by_this_phase",
+      "purpose": "Define official ASX sources, scope rules, yield expectations and raw acquisition route."
+    },
+    {
+      "phase": "v2.20C",
+      "title": "ASX Quality-First Raw Acquisition",
+      "status": "next",
+      "purpose": "Capture ASX official pages and structured downloads without extraction."
+    },
+    {
+      "phase": "v2.20D",
+      "title": "ASX Raw Validation",
+      "status": "planned",
+      "purpose": "Validate captured ASX raw files and determine extraction readiness."
+    },
+    {
+      "phase": "v2.20E",
+      "title": "ASX Candidate Extraction Dry Run",
+      "status": "planned_if_raw_ready",
+      "purpose": "Extract ASX candidate rows with instrument-scope classification."
+    },
+    {
+      "phase": "v2.20F",
+      "title": "ASX Candidate Validation Against Current Candidate Dry Run",
+      "status": "planned_if_extraction_ready",
+      "purpose": "Classify net-new, duplicates and excluded scope against HKEX validated candidate."
+    },
+    {
+      "phase": "v2.20G",
+      "title": "ASX Expanded Rebuild Candidate",
+      "status": "conditional",
+      "purpose": "Append only clean ASX net-new rows if quality and yield justify it."
+    },
+    {
+      "phase": "v2.20H",
+      "title": "ASX Expanded Validation",
+      "status": "conditional",
+      "purpose": "Validate ASX expanded candidate if rebuild is performed."
+    },
+    {
+      "phase": "v2.20I",
+      "title": "ASX Closure Report",
+      "status": "conditional",
+      "purpose": "Close ASX route and decide whether to stop, freeze, or move to backup provider."
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_20a_report_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\quality_first_target_reset_provider_selection_v2_20a.json"
+    },
+    {
+      "check": "v2_20a_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "QUALITY_FIRST_TARGET_RESET_COMPLETED_42K_45K_OPERATIONAL_ASX_SELECTED_50K_ASPIRATIONAL_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20a_selected_provider_asx",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX"
+    },
+    {
+      "check": "v2_20a_next_phase_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.20B - ASX Quality-First Acquisition Plan"
+    },
+    {
+      "check": "active_canonical_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_rows=38287"
+    },
+    {
+      "check": "current_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_rows=40996"
+    },
+    {
+      "check": "hkex_validated_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "hkex_rows=41392"
+    },
+    {
+      "check": "active_canonical_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "current_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "05047f03058c6d3d200b70f5f6e28e313dd9a98018b8ac44ea449989773c3aa2"
+    },
+    {
+      "check": "hkex_validated_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c"
+    },
+    {
+      "check": "active_canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active canonical sha unchanged"
+    },
+    {
+      "check": "current_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current candidate sha unchanged"
+    },
+    {
+      "check": "hkex_candidate_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "HKEX candidate sha unchanged"
+    },
+    {
+      "check": "quality_floor_target_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "quality_floor=42000"
+    },
+    {
+      "check": "quality_ceiling_target_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "quality_ceiling=45000"
+    },
+    {
+      "check": "rows_needed_to_quality_floor_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_42k=608"
+    },
+    {
+      "check": "rows_needed_to_quality_ceiling_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows_needed_to_45k=3608"
+    },
+    {
+      "check": "rows_needed_to_50k_aspirational_expected",
+      "passed": true,
+      "severity": "warning",
+      "detail": "rows_needed_to_50k=8608"
+    },
+    {
+      "check": "official_sources_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "sources=5"
+    },
+    {
+      "check": "primary_asx_source_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_listed_companies_page"
+    },
+    {
+      "check": "isin_enrichment_source_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_isin_directory"
+    },
+    {
+      "check": "scope_rules_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scope_rules=9"
+    },
+    {
+      "check": "exclude_derivatives_debt_structured_products",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical exclusions present"
+    },
+    {
+      "check": "yield_scenarios_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "yield_scenarios=4"
+    },
+    {
+      "check": "next_phase_raw_acquisition",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.20C - ASX Quality-First Raw Acquisition"
+    },
+    {
+      "check": "acquisition_plan_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "acquisition plan only"
+    },
+    {
+      "check": "network_download_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "network_download_performed=False"
+    },
+    {
+      "check": "raw_acquisition_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_acquisition_performed=False"
+    },
+    {
+      "check": "candidate_extraction_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_extraction_performed=False"
+    },
+    {
+      "check": "candidate_validation_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_validation_against_canonical_performed=False"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_candidate_performed=False"
+    },
+    {
+      "check": "expanded_validation_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_validation_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "current_candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_candidate_dataset_modified=False"
+    },
+    {
+      "check": "hkex_candidate_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "hkex_candidate_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "ASX",
+      "action": "open_asx_quality_first_raw_acquisition",
+      "priority": "high",
+      "reason": "Official ASX source plan is ready and raw capture should test page discovery plus structured downloads.",
+      "recommended_phase": "v2.20C - ASX Quality-First Raw Acquisition",
+      "guardrails": "raw acquisition only; no extraction; no canonical replacement; no scoring"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "quality_target",
+      "action": "preserve_42k_45k_operational_band",
+      "priority": "high",
+      "reason": "Current HKEX validated candidate has 41,392 rows; only 608 clean rows are needed for 42k.",
+      "recommended_phase": "v2.20C - ASX Quality-First Raw Acquisition",
+      "guardrails": "stop at 45k unless exceptional clean source appears"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "fallback",
+      "action": "keep_tmx_tsx_only_as_backup",
+      "priority": "medium",
+      "reason": "If ASX raw acquisition or yield fails, TSX main market is the preferred backup.",
+      "recommended_phase": "post-ASX closure or ASX block",
+      "guardrails": "TSXV excluded unless explicitly approved"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "acquisition-plan-only",
+    "acquisition_plan_only": true,
+    "selected_provider": "ASX",
+    "operational_target_floor": 42000,
+    "operational_target_ceiling": 45000,
+    "aspirational_target_50000_retained": true,
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_canonical_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "canonical_sha_unchanged": true,
+    "current_candidate_dataset_read": true,
+    "current_candidate_dataset_modified": false,
+    "current_candidate_sha_unchanged": true,
+    "hkex_validated_candidate_dataset_read": true,
+    "hkex_validated_candidate_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "new_expanded_dataset_written": false,
+    "expanded_universe_rebuilt_as_canonical": false,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.20C - ASX Quality-First Raw Acquisition"
+}

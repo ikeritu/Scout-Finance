@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,ASX,open_asx_quality_first_raw_acquisition,high,Official ASX source plan is ready and raw capture should test page discovery plus structured downloads.,v2.20C - ASX Quality-First Raw Acquisition,raw acquisition only; no extraction; no canonical replacement; no scoring
+2,quality_target,preserve_42k_45k_operational_band,high,"Current HKEX validated candidate has 41,392 rows; only 608 clean rows are needed for 42k.",v2.20C - ASX Quality-First Raw Acquisition,stop at 45k unless exceptional clean source appears
+3,fallback,keep_tmx_tsx_only_as_backup,medium,"If ASX raw acquisition or yield fails, TSX main market is the preferred backup.",post-ASX closure or ASX block,TSXV excluded unless explicitly approved
