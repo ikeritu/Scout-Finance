@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,operational-readiness,run_post_pointer_operational_readiness_gate,high,Pointer update validated; operational readiness must approve using promoted canonical as operational base.,v2.20S - Post-Pointer Operational Readiness Gate,decision/readiness only; no scoring/OpenAI/broker/full59k
+2,rollback,preserve_v2_14e_rollback_reference,high,Previous active canonical remains intact and must remain available through final closure.,v2.20S - Post-Pointer Operational Readiness Gate,do not delete or overwrite rollback dataset
+3,scoring,defer_scoring_until_readiness_gate_and_closure,medium,Pointer validation does not authorize scoring.,post-v2.20S/v2.20T explicit decision,separate approval required

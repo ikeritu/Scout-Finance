@@ -1,0 +1,1875 @@
+{
+  "version": "v2.20R",
+  "phase": "ASX Active Pointer Update Validation",
+  "phase_type": "active-pointer-update-validation-only",
+  "status": "ASX_ACTIVE_POINTER_UPDATE_VALIDATION_COMPLETED_3_FILES_VALIDATED_42708_ROWS_POINTERS_ACTIVE_ROLLBACK_AVAILABLE_FULL59K_DEPRECATED",
+  "generated_at_utc": "2026-08-12T15:31:45.920655+00:00",
+  "validation_summary": {
+    "selected_provider": "ASX",
+    "phase_type": "active-pointer-update-validation-only",
+    "validation_decision": "ACTIVE_POINTER_UPDATE_VALIDATED_READY_FOR_OPERATIONAL_READINESS_GATE",
+    "active_pointer_target_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "active_pointer_target_rows": 42708,
+    "active_pointer_target_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_canonical_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_canonical_rows": 38287,
+    "rollback_canonical_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "validated_target_files": 3,
+    "target_files_with_old_refs": 0,
+    "target_files_with_new_refs": 3,
+    "target_files_with_sha_drift": 0,
+    "historical_reference_files_checked": 137,
+    "historical_reference_files_changed": 0,
+    "historical_reference_files_missing": 0,
+    "active_pointer_updated_from_v2_20q": true,
+    "pointer_update_validated": true,
+    "active_canonical_replaced": false,
+    "canonical_dataset_modified": false,
+    "file_edit_performed": false,
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "quality_floor_crossed": true,
+    "quality_ceiling_not_exceeded": true,
+    "rows_above_quality_floor": 708,
+    "remaining_capacity_to_quality_ceiling": 2292,
+    "aspirational_target": 50000,
+    "rows_to_aspirational_50k": 7292,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "next_phase": "v2.20S - Post-Pointer Operational Readiness Gate",
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "target_file_validation": [
+    {
+      "path": "outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "4172515871ab5ddce00317b443a43b1b1fed101b53632cb34d5bfdc675758e83",
+      "current_sha": "4172515871ab5ddce00317b443a43b1b1fed101b53632cb34d5bfdc675758e83",
+      "sha_matches_v220q_after": true,
+      "old_refs_current": 0,
+      "new_refs_current": 1,
+      "old_refs_removed": true,
+      "new_refs_present": true,
+      "validated": true
+    },
+    {
+      "path": "outputs/audit/eol_guard_v2_14k.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "b69d584b5fb35ce98942d5ce18a105bfadfe6057a129d22fe3e27ede1d6f02d6",
+      "current_sha": "b69d584b5fb35ce98942d5ce18a105bfadfe6057a129d22fe3e27ede1d6f02d6",
+      "sha_matches_v220q_after": true,
+      "old_refs_current": 0,
+      "new_refs_current": 1,
+      "old_refs_removed": true,
+      "new_refs_present": true,
+      "validated": true
+    },
+    {
+      "path": "tests/test_expanded_universe_post_closure_v2_14j.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "d96b54e56ed3a3143661b772eeb8a1b9c66f5d1415cc314b73bb912c3990c636",
+      "current_sha": "d96b54e56ed3a3143661b772eeb8a1b9c66f5d1415cc314b73bb912c3990c636",
+      "sha_matches_v220q_after": true,
+      "old_refs_current": 0,
+      "new_refs_current": 1,
+      "old_refs_removed": true,
+      "new_refs_present": true,
+      "validated": true
+    }
+  ],
+  "historical_preservation_validation": [
+    {
+      "path": "CHANGELOG.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "7655b23f392101f2cdf91b5c3f618f168a67c5681e60190f39146b8ba12ce628",
+      "current_sha": "7655b23f392101f2cdf91b5c3f618f168a67c5681e60190f39146b8ba12ce628",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "README.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "cc02bb489616f7c51ca51fb3fe1f3b4f9c8c95f2543ce695bb9368d15baf2792",
+      "current_sha": "cc02bb489616f7c51ca51fb3fe1f3b4f9c8c95f2543ce695bb9368d15baf2792",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "VERSION.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "7ec4777d5fc31b770da92edd60583c1d2cf8a0d59c691c46640d75f51314cb4d",
+      "current_sha": "7ec4777d5fc31b770da92edd60583c1d2cf8a0d59c691c46640d75f51314cb4d",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "docs/technical/data_pipeline_current_state_v2_14i.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "beaea7b2aa6223645fc2fba1fc8d276a4e010114ef8a27edd4fc096e79e6bcfc",
+      "current_sha": "beaea7b2aa6223645fc2fba1fc8d276a4e010114ef8a27edd4fc096e79e6bcfc",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "docs/technical/expanded_universe_canonical_path_v2_14i.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "6c9d2a1c0afd938ad44f9327742f2f3d2a52744acbe16659ee09df5adad25ad8",
+      "current_sha": "6c9d2a1c0afd938ad44f9327742f2f3d2a52744acbe16659ee09df5adad25ad8",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/audit/auditoria_tecnica_scout_finance_v1.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "49b8baf43a21a30a98a24c2f944526327a706ab4490ef640e719472fcdb44777",
+      "current_sha": "49b8baf43a21a30a98a24c2f944526327a706ab4490ef640e719472fcdb44777",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/audit/documentation_canonical_dataset_path_v2_14i.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "5a9bc22dfc2e3a52ea9d0852e432d5342a3ec14525ee227c9424d532c298d246",
+      "current_sha": "5a9bc22dfc2e3a52ea9d0852e432d5342a3ec14525ee227c9424d532c298d246",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/audit/eol_guard_v2_14k.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "fac916d9441789f82fc1cde1ef2c7a0682da64beb0bac0653d9fabb72ea84703",
+      "current_sha": "fac916d9441789f82fc1cde1ef2c7a0682da64beb0bac0653d9fabb72ea84703",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/audit/post_closure_integrity_test_v2_14j.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "f332d1256edd2bd5a14917070fb0b199dbb89587579b6c08ef68f7501b9ccf5d",
+      "current_sha": "f332d1256edd2bd5a14917070fb0b199dbb89587579b6c08ef68f7501b9ccf5d",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_active_pointer_decision_gate_checks_v2_20o.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "36166043292b48f950eb05c8d636c0e141ac2253b60acb8c5bd55e43a24065a5",
+      "current_sha": "36166043292b48f950eb05c8d636c0e141ac2253b60acb8c5bd55e43a24065a5",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_active_pointer_decision_gate_pointer_plan_preview_v2_20o.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "7e73a621af8d70338be66545b8131b9d9d5f05aa894860e9f1a900889a197b91",
+      "current_sha": "7e73a621af8d70338be66545b8131b9d9d5f05aa894860e9f1a900889a197b91",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_active_pointer_decision_gate_rollback_controls_v2_20o.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "dc40b06eeb4ae76f12c49d518a9f39698045abd236f23fec104ba7435091417b",
+      "current_sha": "dc40b06eeb4ae76f12c49d518a9f39698045abd236f23fec104ba7435091417b",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_active_pointer_decision_gate_summary_v2_20o.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "5d69022d21a5bc42a865c3b5042056180be380cc3d1cfd9c779763a6f00d89ef",
+      "current_sha": "5d69022d21a5bc42a865c3b5042056180be380cc3d1cfd9c779763a6f00d89ef",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_active_pointer_decision_gate_v2_20o.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "8618594ce97ba0340165c66e4b9aea050f067e0d97917453b2d481e949a6db07",
+      "current_sha": "8618594ce97ba0340165c66e4b9aea050f067e0d97917453b2d481e949a6db07",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_candidate_promotion_decision_gate_summary_v2_20j.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "1cc354829c4e21d10ce00dda4710652e5203b878865f94c08af6dbf64752f583",
+      "current_sha": "1cc354829c4e21d10ce00dda4710652e5203b878865f94c08af6dbf64752f583",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_dry_run_checks_v2_20l.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "4c9c7a07811a95619346d3fb9dfe25aa0b5fc4d84b7ef6ec0de11ee61dfbe4f3",
+      "current_sha": "4c9c7a07811a95619346d3fb9dfe25aa0b5fc4d84b7ef6ec0de11ee61dfbe4f3",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_dry_run_preflight_v2_20l.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "c1e59f657d1c993105b7f2cfb42514a1a3fa7b9b572c2591dda2c44bf0248aab",
+      "current_sha": "c1e59f657d1c993105b7f2cfb42514a1a3fa7b9b572c2591dda2c44bf0248aab",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_dry_run_rollback_controls_v2_20l.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "3c0244a31d9d48c569a82d41d582193fd09c7346870a170c0eb101e0e3d27f8d",
+      "current_sha": "3c0244a31d9d48c569a82d41d582193fd09c7346870a170c0eb101e0e3d27f8d",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_dry_run_schema_controls_v2_20l.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "a650cd6118a9a2e92fe1bbbb2b385b6807796124fc220ca33b99f2f5233ae373",
+      "current_sha": "a650cd6118a9a2e92fe1bbbb2b385b6807796124fc220ca33b99f2f5233ae373",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_dry_run_sha_controls_v2_20l.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "017de681a32f2ed091f3d05040c1ff2c33e552ee6311dfb7d8a9028a82b78bdd",
+      "current_sha": "017de681a32f2ed091f3d05040c1ff2c33e552ee6311dfb7d8a9028a82b78bdd",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_dry_run_summary_v2_20l.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "54de27b0b88d6235d23a877c730aa616dc72e2f8aafb0f87675317c03e28baf9",
+      "current_sha": "54de27b0b88d6235d23a877c730aa616dc72e2f8aafb0f87675317c03e28baf9",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_dry_run_v2_20l.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "ecf8f9a9c78c66a031308c62c80d504afb1ee98538107536bbcfbab9e1f7ca36",
+      "current_sha": "ecf8f9a9c78c66a031308c62c80d504afb1ee98538107536bbcfbab9e1f7ca36",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_execution_plan_v2_20k.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "1320beb7a9c0af2a75e30ef7c56a79cf4c4dd924330f9011984f58cc9515123f",
+      "current_sha": "1320beb7a9c0af2a75e30ef7c56a79cf4c4dd924330f9011984f58cc9515123f",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_plan_checks_v2_20k.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "7063592c8807746ba975c911f69f84b61ded50621070ef11bd821ba4b67fe8e3",
+      "current_sha": "7063592c8807746ba975c911f69f84b61ded50621070ef11bd821ba4b67fe8e3",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_plan_summary_v2_20k.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "7afa30e23bbe2268b678731cd5758cf5a55935e4d982f9780c6ac84578707124",
+      "current_sha": "7afa30e23bbe2268b678731cd5758cf5a55935e4d982f9780c6ac84578707124",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_plan_v2_20k.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "aa48dda80594b46d14b7f4339abe7888ab6b798f1d116711697a4f033cacabda",
+      "current_sha": "aa48dda80594b46d14b7f4339abe7888ab6b798f1d116711697a4f033cacabda",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_canonical_promotion_rollback_plan_v2_20k.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "36013b984641cc2b9716b26c6d74eb95ad442e921ee56866b39fdc9c1a312232",
+      "current_sha": "36013b984641cc2b9716b26c6d74eb95ad442e921ee56866b39fdc9c1a312232",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_closure_report_summary_v2_20i.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "ac83ab19284fc6c011e726326dd135725cb7321700e87196f972658d5bc36de4",
+      "current_sha": "ac83ab19284fc6c011e726326dd135725cb7321700e87196f972658d5bc36de4",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_controlled_promoted_file_creation_checks_v2_20m.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "035de0e02a9f75ce374d7ac8b2957f914a52b602dd4775fe4193a4f581b07496",
+      "current_sha": "035de0e02a9f75ce374d7ac8b2957f914a52b602dd4775fe4193a4f581b07496",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_controlled_promoted_file_creation_copy_controls_v2_20m.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "b4d4cb13bc4a78dcd03397248ee1d49fb943374da5e633a8b06cb3e094b5575e",
+      "current_sha": "b4d4cb13bc4a78dcd03397248ee1d49fb943374da5e633a8b06cb3e094b5575e",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_controlled_promoted_file_creation_manifest_v2_20m.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "6b709a4e496f9d68c569fa1368e41edffde3888745a17549aaf09d67d5706401",
+      "current_sha": "6b709a4e496f9d68c569fa1368e41edffde3888745a17549aaf09d67d5706401",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_controlled_promoted_file_creation_rollback_controls_v2_20m.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "ab1b2055be5e33d83a10775d17c948bbc0fe834659479428ffcaedfac3d858ef",
+      "current_sha": "ab1b2055be5e33d83a10775d17c948bbc0fe834659479428ffcaedfac3d858ef",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_controlled_promoted_file_creation_summary_v2_20m.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "d6e7d7fd3ea7d579eb065f2f0860ea58c95dbef339ad21e731a4b10c01000290",
+      "current_sha": "d6e7d7fd3ea7d579eb065f2f0860ea58c95dbef339ad21e731a4b10c01000290",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_controlled_promoted_file_creation_v2_20m.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "76c8550e793519a48bfc588f3559bff6d47efadda9ab2ce4434bf5374b37c05d",
+      "current_sha": "76c8550e793519a48bfc588f3559bff6d47efadda9ab2ce4434bf5374b37c05d",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_promoted_canonical_validation_artifact_manifest_v2_20n.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "6c07388bd9d646e4d1d59a6c19117d27791cc54a3ad11e6b9f7cecef81d9f304",
+      "current_sha": "6c07388bd9d646e4d1d59a6c19117d27791cc54a3ad11e6b9f7cecef81d9f304",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_promoted_canonical_validation_checks_v2_20n.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "5c7b5cd1b55251affc372d3769cc089af50e25ff945e4e9de9b8b28095529557",
+      "current_sha": "5c7b5cd1b55251affc372d3769cc089af50e25ff945e4e9de9b8b28095529557",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_promoted_canonical_validation_rollback_controls_v2_20n.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "2068f6a07b5f18ea773c556b8db540e7acd84e0bcdd7482be62127591aee9c69",
+      "current_sha": "2068f6a07b5f18ea773c556b8db540e7acd84e0bcdd7482be62127591aee9c69",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_promoted_canonical_validation_summary_v2_20n.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "3bdb7cb61e2043e95f42f740daa890807b0152f7f2a0aaea491bbbce59d66e5a",
+      "current_sha": "3bdb7cb61e2043e95f42f740daa890807b0152f7f2a0aaea491bbbce59d66e5a",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/asx_promoted_canonical_validation_v2_20n.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "2a11ca2150ae1ff379f7d92c6bed5b833e516c2b8b8a95376ea5b00679b707e7",
+      "current_sha": "2a11ca2150ae1ff379f7d92c6bed5b833e516c2b8b8a95376ea5b00679b707e7",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/deutsche_boerse_xetra_expanded_validation_v2_14f.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "ccf829096dc3ebaca650517f2b1eda0db5f0c94192413b8ab49720405f466abb",
+      "current_sha": "ccf829096dc3ebaca650517f2b1eda0db5f0c94192413b8ab49720405f466abb",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_acquisition_plan_v2_15b.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "99ddad7e12f21d779340634f609fa013bec173e499b88a2c4320ecb2653ffb85",
+      "current_sha": "99ddad7e12f21d779340634f609fa013bec173e499b88a2c4320ecb2653ffb85",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_acquisition_plan_v2_15b.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "74775da1645680efc6f858edaf0ba93a2714e5059294e02dc4a1611489e0121f",
+      "current_sha": "74775da1645680efc6f858edaf0ba93a2714e5059294e02dc4a1611489e0121f",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_candidate_extraction_dry_run_v2_15f.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "60924cd4a26ed73b5eacfaa541864a94b0d8f015400055ecdbcffe8e87ecc259",
+      "current_sha": "60924cd4a26ed73b5eacfaa541864a94b0d8f015400055ecdbcffe8e87ecc259",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_candidate_extraction_dry_run_v2_15f.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "8536864e136ff030b01deb627fff5b468e76022cb6302afbb2489487a3b1ff51",
+      "current_sha": "8536864e136ff030b01deb627fff5b468e76022cb6302afbb2489487a3b1ff51",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_closure_report_v2_15g.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "5f0d0c9e64464349149b33646280830976a380bed4c4a96f5242501e8dcc7399",
+      "current_sha": "5f0d0c9e64464349149b33646280830976a380bed4c4a96f5242501e8dcc7399",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_closure_report_v2_15g.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "c4db3122a7b13d4fa0ba63cc1604baca3f9efd2aabf50ebc86440c1fa4d848a1",
+      "current_sha": "c4db3122a7b13d4fa0ba63cc1604baca3f9efd2aabf50ebc86440c1fa4d848a1",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_controlled_endpoint_probe_v2_15f3.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "a6e469ad1f6c3e062e5a646bf30f7850f20a024fd7a4ced15225a6171c22e45b",
+      "current_sha": "a6e469ad1f6c3e062e5a646bf30f7850f20a024fd7a4ced15225a6171c22e45b",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_controlled_endpoint_probe_v2_15f3.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "057e25caa069fafa85cc00c7ac238a46f006cb45258de330166c391b1d4ce0ab",
+      "current_sha": "057e25caa069fafa85cc00c7ac238a46f006cb45258de330166c391b1d4ce0ab",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_endpoint_candidate_extraction_dry_run_v2_15f5.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "5560bf59da29626e20487b7b618090ccfe9296eb249f0ad067623d3186947099",
+      "current_sha": "5560bf59da29626e20487b7b618090ccfe9296eb249f0ad067623d3186947099",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_endpoint_candidate_extraction_dry_run_v2_15f5.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "a8d9308ada556b018692e767fd2df894fde3fe99809a69f1efe6f87176124c32",
+      "current_sha": "a8d9308ada556b018692e767fd2df894fde3fe99809a69f1efe6f87176124c32",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_endpoint_payload_shape_validation_v2_15f4.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "a68f2ddf064920548aeb797f8c133f34bd54150cff3a56cb5b7f00bba3e46a2e",
+      "current_sha": "a68f2ddf064920548aeb797f8c133f34bd54150cff3a56cb5b7f00bba3e46a2e",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_endpoint_payload_shape_validation_v2_15f4.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "bc80d51fa53c89384881d3b783e770c2fec73af7f15f89d33a7068e1deb6825e",
+      "current_sha": "bc80d51fa53c89384881d3b783e770c2fec73af7f15f89d33a7068e1deb6825e",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_extraction_strategy_revision_v2_15f2.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "390613aaa890825b1e3bfb354c5606031cfd8f5ddd6bd6292def1a49fcc82dd8",
+      "current_sha": "390613aaa890825b1e3bfb354c5606031cfd8f5ddd6bd6292def1a49fcc82dd8",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_extraction_strategy_revision_v2_15f2.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "30614599aa15793ddd4b176dbd23e47af3e89de8e23719945b66e364ef9519ee",
+      "current_sha": "30614599aa15793ddd4b176dbd23e47af3e89de8e23719945b66e364ef9519ee",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_raw_acquisition_manifest_v2_15c.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "a65ec1dd1712d3720469a71dcbcecabc7c934b6a24cf33880b2b210228443c07",
+      "current_sha": "a65ec1dd1712d3720469a71dcbcecabc7c934b6a24cf33880b2b210228443c07",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_raw_acquisition_report_v2_15c.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "424eeee313920c85486277e2142288042205b29f537b529a2e7cb98bb7bbdb64",
+      "current_sha": "424eeee313920c85486277e2142288042205b29f537b529a2e7cb98bb7bbdb64",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_rebuild_candidate_prep_v2_15e.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "44de3df77e29887f911b107264f683c9fd63fba4aa14d85604364c6e59b426b7",
+      "current_sha": "44de3df77e29887f911b107264f683c9fd63fba4aa14d85604364c6e59b426b7",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_rebuild_candidate_prep_v2_15e.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "b049815640cf4ac8748f07941d11606949eca85a15f11d43cb00a9ba96a9090c",
+      "current_sha": "b049815640cf4ac8748f07941d11606949eca85a15f11d43cb00a9ba96a9090c",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_validation_v2_15d.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "83234d90be0d6d750b70ab65c68f2ecc1a6bb9fbef059d0248a21c72e901dd23",
+      "current_sha": "83234d90be0d6d750b70ab65c68f2ecc1a6bb9fbef059d0248a21c72e901dd23",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/euronext_validation_v2_15d.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "03ade33a97d81905c844cff809498fecffadb425dfc35e2a07fff85fa918c33f",
+      "current_sha": "03ade33a97d81905c844cff809498fecffadb425dfc35e2a07fff85fa918c33f",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/hkex_candidate_validation_against_canonical_dry_run_dataset_index_summary_v2_19o.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "2c38803ed9f8db703cd8c10ecbdae4dd1b03758a3f68dfad6bc5ced8a7315a61",
+      "current_sha": "2c38803ed9f8db703cd8c10ecbdae4dd1b03758a3f68dfad6bc5ced8a7315a61",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/hkex_closure_report_dataset_summary_v2_19r.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "ba03a977f457ec98af2140bbf68ceb75327fea03c20ce9c3845d5986e548133d",
+      "current_sha": "ba03a977f457ec98af2140bbf68ceb75327fea03c20ce9c3845d5986e548133d",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/hkex_closure_report_v2_19r.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "c8aec47db7e434c25d5550e00baec5f674c7e1ecb44742c1bb5be5400f229f66",
+      "current_sha": "c8aec47db7e434c25d5550e00baec5f674c7e1ecb44742c1bb5be5400f229f66",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/hkex_expanded_rebuild_candidate_rowcount_audit_v2_19p.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "538adc932692a22501c8836cb56e5aec20f71a9079cefb4ea15ff60c97a979cf",
+      "current_sha": "538adc932692a22501c8836cb56e5aec20f71a9079cefb4ea15ff60c97a979cf",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/hkex_expanded_rebuild_candidate_v2_19p.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "7a70b053e79897a956d1db281024eb8efcbfae74225ce9345a905e8bb17b875e",
+      "current_sha": "7a70b053e79897a956d1db281024eb8efcbfae74225ce9345a905e8bb17b875e",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/hkex_expanded_validation_rowcount_v2_19q.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "cdd9e0edd76e8c00705aa2ccad324a1cb95ac9e223804053ad8e24ab8e1427c2",
+      "current_sha": "cdd9e0edd76e8c00705aa2ccad324a1cb95ac9e223804053ad8e24ab8e1427c2",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/krx_acquisition_plan_checks_v2_19b.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "6c92a747fab4615397d71bc8dc04ec8b7eeec038c4c465bb5b2d1d07afe4e9f9",
+      "current_sha": "6c92a747fab4615397d71bc8dc04ec8b7eeec038c4c465bb5b2d1d07afe4e9f9",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/krx_acquisition_plan_v2_19b.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "41cc8a5243b0c6680a60ca81df78fce6a4904ac1c6cf8d9a2deffb6f214de2cf",
+      "current_sha": "41cc8a5243b0c6680a60ca81df78fce6a4904ac1c6cf8d9a2deffb6f214de2cf",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/next_provider_route_selection_checks_v2_19a.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "e9eb914fee28755583ddb4f16f644df76be3915c86d0f895db3504b50037c329",
+      "current_sha": "e9eb914fee28755583ddb4f16f644df76be3915c86d0f895db3504b50037c329",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/next_provider_route_selection_v2_17a.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "73c673ee1bd0f2745c0f6446438fee5f24391a227cbbb0aec13d70cedfb9fa84",
+      "current_sha": "73c673ee1bd0f2745c0f6446438fee5f24391a227cbbb0aec13d70cedfb9fa84",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/next_provider_route_selection_v2_18a.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "e5d075ccf67b32c577d424194663d8bf1276d0c6b8d819a5706cfeb7b668a00b",
+      "current_sha": "e5d075ccf67b32c577d424194663d8bf1276d0c6b8d819a5706cfeb7b668a00b",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/next_provider_route_selection_v2_19a.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "113627181efacf5f795f5b44dc3e677f05ae7baf11d41d4e63adf5ff9ffae233",
+      "current_sha": "113627181efacf5f795f5b44dc3e677f05ae7baf11d41d4e63adf5ff9ffae233",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/next_provider_route_v2_15a.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "386d6921ede34c2a27bb6815b24f98ea635b0e6f2156119e7e4080558ac7f420",
+      "current_sha": "386d6921ede34c2a27bb6815b24f98ea635b0e6f2156119e7e4080558ac7f420",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/next_provider_route_v2_15a.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "4e1154494ec043a918c8e498ca36aa7b43c28098c49f937376ae5c496667a41d",
+      "current_sha": "4e1154494ec043a918c8e498ca36aa7b43c28098c49f937376ae5c496667a41d",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_acquisition_plan_v2_17b.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "7752c50380c258494534a6da84bc6e84ccea684497df0ae5c80d0096be1f5c18",
+      "current_sha": "7752c50380c258494534a6da84bc6e84ccea684497df0ae5c80d0096be1f5c18",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_candidate_extraction_dry_run_v2_17e.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "509c9c3c1d2f200a9a3440ba7f34aea8f5e574fd94a729ea237208d10e729e37",
+      "current_sha": "509c9c3c1d2f200a9a3440ba7f34aea8f5e574fd94a729ea237208d10e729e37",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_candidate_extraction_dry_run_v2_17e.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "6c74fbaf182f4f0c8ff0c63dd5808dd54578ce4da82d121db9d87fee2125a52b",
+      "current_sha": "6c74fbaf182f4f0c8ff0c63dd5808dd54578ce4da82d121db9d87fee2125a52b",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_candidate_validation_against_canonical_dry_run_v2_17f.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "b5ffc5ab13f2d37959d6814b9d275fffb095b7a8ce9d26c88dd98a9d95cd1894",
+      "current_sha": "b5ffc5ab13f2d37959d6814b9d275fffb095b7a8ce9d26c88dd98a9d95cd1894",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_candidate_validation_canonical_profile_v2_17f.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "a3a5f8371a9cb946279e677ea221eb02ce78fea6723711022064138993216711",
+      "current_sha": "a3a5f8371a9cb946279e677ea221eb02ce78fea6723711022064138993216711",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_closure_artifacts_v2_17i.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "02a7079842a8314ea9ccece8762de9c3a9fb0c2ac6c8f4daaa7ce70b928edc03",
+      "current_sha": "02a7079842a8314ea9ccece8762de9c3a9fb0c2ac6c8f4daaa7ce70b928edc03",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_closure_report_v2_17i.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "0e58f9b0207051b45169402412a9809c2d9c7b6c2d841b7b60b918481ad07842",
+      "current_sha": "0e58f9b0207051b45169402412a9809c2d9c7b6c2d841b7b60b918481ad07842",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_expanded_rebuild_candidate_v2_17g.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "e8739a692eb654a70b29df306cd2598a97b5971471e68001ad6b2c05f8936f92",
+      "current_sha": "e8739a692eb654a70b29df306cd2598a97b5971471e68001ad6b2c05f8936f92",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_expanded_validation_dataset_profile_v2_17h.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "80bf300be7afd1dfa3e2d411d8e56b70d036b958b2598c9032c36be3dbac4319",
+      "current_sha": "80bf300be7afd1dfa3e2d411d8e56b70d036b958b2598c9032c36be3dbac4319",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_expanded_validation_v2_17h.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "10fbb0be6d83034895cc09a0ee0cb30c9218803e775967e19e810301931364a7",
+      "current_sha": "10fbb0be6d83034895cc09a0ee0cb30c9218803e775967e19e810301931364a7",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_raw_acquisition_v2_17c.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "72f5d15a91aaa631d4b3c84f8ee914c608c6cba8217cce83a38e2e04c4dd0348",
+      "current_sha": "72f5d15a91aaa631d4b3c84f8ee914c608c6cba8217cce83a38e2e04c4dd0348",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/nse_india_raw_validation_v2_17d.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "94dbdcc87dbcfe5b01b47d8497aa7ab1baa7222483adcbe6f883e59626ebb0fc",
+      "current_sha": "94dbdcc87dbcfe5b01b47d8497aa7ab1baa7222483adcbe6f883e59626ebb0fc",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_acquisition_plan_v2_16b.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "c34bd1220dc087afb1d5afacedba69a6b3cc1e2f513d045fa43607b76bec3895",
+      "current_sha": "c34bd1220dc087afb1d5afacedba69a6b3cc1e2f513d045fa43607b76bec3895",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_acquisition_plan_v2_16b.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "e42e7c0ea4cf0f65aaee20b059581790db0bbc6052cdd3e67d494f70647644e5",
+      "current_sha": "e42e7c0ea4cf0f65aaee20b059581790db0bbc6052cdd3e67d494f70647644e5",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_candidate_extraction_dry_run_v2_16e.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "2f3da10ed9d070129e09f58fe3e61594e4b21da6c4852373464a9dab8aadba96",
+      "current_sha": "2f3da10ed9d070129e09f58fe3e61594e4b21da6c4852373464a9dab8aadba96",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_candidate_extraction_dry_run_v2_16e.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "63ceb62ec74bbfd91f75357c572d9db34fa699fa726316401e7c1620b5d86cff",
+      "current_sha": "63ceb62ec74bbfd91f75357c572d9db34fa699fa726316401e7c1620b5d86cff",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_candidate_validation_against_canonical_v2_16f.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "41ee2ad86f5200538a07e96bd96625ddb4b862634d329bedac5b89e79e4e7796",
+      "current_sha": "41ee2ad86f5200538a07e96bd96625ddb4b862634d329bedac5b89e79e4e7796",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_closure_report_v2_16i.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "180b8c8251ee9ef2ea3653ff9f8546f8f02cd5312ea4c895337100c5257fb8d0",
+      "current_sha": "180b8c8251ee9ef2ea3653ff9f8546f8f02cd5312ea4c895337100c5257fb8d0",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_controlled_endpoint_probe_v2_16d2.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "e7284c3ebc6c2d484789e4c33650c6c99d5255151b607c0d40b38ea1e7446e3d",
+      "current_sha": "e7284c3ebc6c2d484789e4c33650c6c99d5255151b607c0d40b38ea1e7446e3d",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_controlled_endpoint_probe_v2_16d2.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "f4ca9faa0e7c17cbb281dfef37f232d2e1aa052a32996e713cd8abb24ed3540e",
+      "current_sha": "f4ca9faa0e7c17cbb281dfef37f232d2e1aa052a32996e713cd8abb24ed3540e",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_expanded_rebuild_candidate_v2_16g.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "4b05ce42ecb241297fc9ae2d9f39c789f7a892201a5e10a8be34bfefefbf36e0",
+      "current_sha": "4b05ce42ecb241297fc9ae2d9f39c789f7a892201a5e10a8be34bfefefbf36e0",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_expanded_validation_profile_v2_16h.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "e9819404f0752be08533822175a47584911d418b4933395b2441b2e5f12ae472",
+      "current_sha": "e9819404f0752be08533822175a47584911d418b4933395b2441b2e5f12ae472",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_expanded_validation_row_checks_v2_16h.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "b2eb973fba003fa05afc7cdf7a2c836f024becc21db7f730f87678827866e15d",
+      "current_sha": "b2eb973fba003fa05afc7cdf7a2c836f024becc21db7f730f87678827866e15d",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_expanded_validation_v2_16h.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "32b2a3d3664ecee9a00c48d400cb659b471b6051b61c32cb3bcb1340d245bf7d",
+      "current_sha": "32b2a3d3664ecee9a00c48d400cb659b471b6051b61c32cb3bcb1340d245bf7d",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_provider_route_confirmation_v2_16a.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "d58e54c3b6b3906214be96ef9bf002812563a6abd43e95b9d218bb4e28f2ed2f",
+      "current_sha": "d58e54c3b6b3906214be96ef9bf002812563a6abd43e95b9d218bb4e28f2ed2f",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_provider_route_confirmation_v2_16a.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "4d8af80d46701490d8843de9acfa254b66935a539cfdb3e078262a53a7814e53",
+      "current_sha": "4d8af80d46701490d8843de9acfa254b66935a539cfdb3e078262a53a7814e53",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_raw_acquisition_manifest_v2_16c.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "e1177b1e7e14c8a7a80187d990aa045a9b40210b581641255cd216f950f53791",
+      "current_sha": "e1177b1e7e14c8a7a80187d990aa045a9b40210b581641255cd216f950f53791",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_raw_acquisition_manifest_v2_16c.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "a9dc0d47b60680a1040c30f00fe2fdbc0828862d4b02ded4bd3c681c3fda379a",
+      "current_sha": "a9dc0d47b60680a1040c30f00fe2fdbc0828862d4b02ded4bd3c681c3fda379a",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_validation_v2_16d.json",
+      "exists": true,
+      "expected_after_sha_from_v220q": "baeab5d48b0cbc12c85c66260080aea773a4b21a4efed667fa4d1b52e316b294",
+      "current_sha": "baeab5d48b0cbc12c85c66260080aea773a4b21a4efed667fa4d1b52e316b294",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/tmx_validation_v2_16d.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "c653c446ce6adad997732b8d80968e10641ff5fda186c407c8abf5400989b2e2",
+      "current_sha": "c653c446ce6adad997732b8d80968e10641ff5fda186c407c8abf5400989b2e2",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_acquisition_plan_v2_18b.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "dc6e6920c701596cb3fdf55ffe4d8f9f43b72f5b29c4e3262706182358a08c39",
+      "current_sha": "dc6e6920c701596cb3fdf55ffe4d8f9f43b72f5b29c4e3262706182358a08c39",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_candidate_validation_against_canonical_dry_run_v2_18f.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "fa815e2d8c0db45fab6f4352810aff430a4f09e5882fe66f35fe3b5ea2641089",
+      "current_sha": "fa815e2d8c0db45fab6f4352810aff430a4f09e5882fe66f35fe3b5ea2641089",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_candidate_validation_canonical_profile_v2_18f.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "4d26d8fccfe749b471987ef1e9424fb9ec1ef50900913873da8fd7f188f13a46",
+      "current_sha": "4d26d8fccfe749b471987ef1e9424fb9ec1ef50900913873da8fd7f188f13a46",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_expanded_rebuild_candidate_v2_18g.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "da7d581bd64d509f64822d05fbedf79ba5b79a808a46cbcd6663053fb32041c4",
+      "current_sha": "da7d581bd64d509f64822d05fbedf79ba5b79a808a46cbcd6663053fb32041c4",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_expanded_validation_issue_audit_v2_18h.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "335e256c1c12aa9123527e7d04821707f607caa63bcc79e8e86e62d0f30a7593",
+      "current_sha": "335e256c1c12aa9123527e7d04821707f607caa63bcc79e8e86e62d0f30a7593",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_expanded_validation_profile_v2_18h.csv",
+      "exists": true,
+      "expected_after_sha_from_v220q": "8badbc380c34f92e7b575b506e70c16b0d7034e250b6dceebe679a1b1f63acf4",
+      "current_sha": "8badbc380c34f92e7b575b506e70c16b0d7034e250b6dceebe679a1b1f63acf4",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_expanded_validation_v2_18h.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "b7c5aeb0ab09c89945c3136c2a4ea4bcdc5dad082862715ba4c22a65a9ac05c5",
+      "current_sha": "b7c5aeb0ab09c89945c3136c2a4ea4bcdc5dad082862715ba4c22a65a9ac05c5",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_raw_acquisition_repair_v2_18c_fix.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "c1b8d7149059a3b9392c78d6503625527bd4aec8a1e6d009e7bf16e6ecb35d6b",
+      "current_sha": "c1b8d7149059a3b9392c78d6503625527bd4aec8a1e6d009e7bf16e6ecb35d6b",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_raw_acquisition_v2_18c.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "afefe35cb061d92a41c9cce2fd53bc4c9f740d8bf69f57989208186243a646bb",
+      "current_sha": "afefe35cb061d92a41c9cce2fd53bc4c9f740d8bf69f57989208186243a646bb",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_raw_validation_v2_18d.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "8b218b87667c96cd1c90e007f438ab7038c1cd89e2428233e1f59f56ef279c69",
+      "current_sha": "8b218b87667c96cd1c90e007f438ab7038c1cd89e2428233e1f59f56ef279c69",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/twse_tpex_repaired_raw_validation_v2_18d_fix.md",
+      "exists": true,
+      "expected_after_sha_from_v220q": "b6d5fdda95d7ea15b222476359005cec380b8a77e5a8212b7d2aceb6551e26a4",
+      "current_sha": "b6d5fdda95d7ea15b222476359005cec380b8a77e5a8212b7d2aceb6551e26a4",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/asx_active_pointer_update_plan_v2_20p.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "afd018e7eeca63174d5471cc797e4747a9f73eed8af7ee4e86b6f78aa9851319",
+      "current_sha": "afd018e7eeca63174d5471cc797e4747a9f73eed8af7ee4e86b6f78aa9851319",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/documentation_canonical_dataset_path_v2_14i.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "c236bb2ece26f7bb2db106b517dd43b11171c16fa9cacb5111a3655295473a60",
+      "current_sha": "c236bb2ece26f7bb2db106b517dd43b11171c16fa9cacb5111a3655295473a60",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/eol_guard_v2_14k.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "5feb14d219ca1d954156963f540c89661d6f90604d8368fdcb5071652c9b2a36",
+      "current_sha": "5feb14d219ca1d954156963f540c89661d6f90604d8368fdcb5071652c9b2a36",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/euronext_acquisition_plan_v2_15b.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "ac95f85c028947b173efb5fb85aa94c60efa51d0dcd733af3f74581f97ea06a1",
+      "current_sha": "ac95f85c028947b173efb5fb85aa94c60efa51d0dcd733af3f74581f97ea06a1",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/euronext_candidate_extraction_dry_run_v2_15f.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "63c3cc8b1e7af8d0818ca7419a79ee58c5e8e57caaea4112684a999568deba8b",
+      "current_sha": "63c3cc8b1e7af8d0818ca7419a79ee58c5e8e57caaea4112684a999568deba8b",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/euronext_closure_report_v2_15g.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "496a802c034e41369d47d414fce69f14a401e68dcfe85e851bd9679f1b05def9",
+      "current_sha": "496a802c034e41369d47d414fce69f14a401e68dcfe85e851bd9679f1b05def9",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/euronext_controlled_endpoint_probe_v2_15f3.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "7391cf660fa388fa73f083692ae9bc4ab9b8db6c88d1824f7451b67d813bfaf5",
+      "current_sha": "7391cf660fa388fa73f083692ae9bc4ab9b8db6c88d1824f7451b67d813bfaf5",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/euronext_endpoint_candidate_extraction_dry_run_v2_15f5.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "aa30fab63e270169c0c87dacb1c532fd3fbfeeacaaa86bad2a938c6fc01633cc",
+      "current_sha": "aa30fab63e270169c0c87dacb1c532fd3fbfeeacaaa86bad2a938c6fc01633cc",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/euronext_endpoint_payload_shape_validation_v2_15f4.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "92e0442d4c2bb826d230d1104ac4858ea2f01f0285c0c938393e5fd31b2dab8e",
+      "current_sha": "92e0442d4c2bb826d230d1104ac4858ea2f01f0285c0c938393e5fd31b2dab8e",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/euronext_extraction_strategy_revision_v2_15f2.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "70b8a0f713b5dceb033a33cd961ef964a49a0b272c95e7364d1defeb87a39902",
+      "current_sha": "70b8a0f713b5dceb033a33cd961ef964a49a0b272c95e7364d1defeb87a39902",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/euronext_raw_acquisition_v2_15c.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "9e206d8e5ba43381be0c1f8abf4ed688b60113de6d0d2aed4c1dd86ae5a67780",
+      "current_sha": "9e206d8e5ba43381be0c1f8abf4ed688b60113de6d0d2aed4c1dd86ae5a67780",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/euronext_rebuild_candidate_prep_v2_15e.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "47dbe1e5ad080b70a60e906c4895576c27e6d7a63cccb27f0ebae90b7c634ed4",
+      "current_sha": "47dbe1e5ad080b70a60e906c4895576c27e6d7a63cccb27f0ebae90b7c634ed4",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/euronext_validation_v2_15d.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "79c69d775ae3ebe793cb341920d4f98882d7b78746bfd3037b0eec58a3ca7530",
+      "current_sha": "79c69d775ae3ebe793cb341920d4f98882d7b78746bfd3037b0eec58a3ca7530",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/next_provider_route_v2_15a.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "c347f8280a8c251f39b56672f78cff95ca1124669f949d6bad068b4fdf1bbb00",
+      "current_sha": "c347f8280a8c251f39b56672f78cff95ca1124669f949d6bad068b4fdf1bbb00",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/nse_india_candidate_extraction_dry_run_v2_17e.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "d5e13a91f5c7e30a672648d0d95548eb124861240b108c915a47b2cb6c15ca10",
+      "current_sha": "d5e13a91f5c7e30a672648d0d95548eb124861240b108c915a47b2cb6c15ca10",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/post_closure_integrity_test_v2_14j.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "5fea66bece6ebdf6c8a48a12f5e3c304047de439e011dd8d245aea8707d7aab3",
+      "current_sha": "5fea66bece6ebdf6c8a48a12f5e3c304047de439e011dd8d245aea8707d7aab3",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/tmx_acquisition_plan_v2_16b.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "39812cfb60dd9e905882b2be2eb30a032b3f8a6fe08313e7af188767450239a1",
+      "current_sha": "39812cfb60dd9e905882b2be2eb30a032b3f8a6fe08313e7af188767450239a1",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/tmx_candidate_extraction_dry_run_v2_16e.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "fe8aff3658a16c45848c3033c3814d2dc082012a3402412178b57203fce22f48",
+      "current_sha": "fe8aff3658a16c45848c3033c3814d2dc082012a3402412178b57203fce22f48",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/tmx_controlled_endpoint_probe_v2_16d2.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "79c03e4147c22642b4c3d16a031db321720b9c7163b16b4e544286f91e170098",
+      "current_sha": "79c03e4147c22642b4c3d16a031db321720b9c7163b16b4e544286f91e170098",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/tmx_provider_route_confirmation_v2_16a.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "7820c7ab77f6f3e9eac57fcead8ddc4131fb08ad9db0ae7dd555d2b35f56ee4d",
+      "current_sha": "7820c7ab77f6f3e9eac57fcead8ddc4131fb08ad9db0ae7dd555d2b35f56ee4d",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/tmx_raw_acquisition_v2_16c.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "8d8538dfe646f90ab1874f75919aba6e2b9a9b22d9bc88d9ce39347b6e96702b",
+      "current_sha": "8d8538dfe646f90ab1874f75919aba6e2b9a9b22d9bc88d9ce39347b6e96702b",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    },
+    {
+      "path": "scripts/tmx_validation_v2_16d.py",
+      "exists": true,
+      "expected_after_sha_from_v220q": "c4302ec96b8cd26a8fa175856649f1ca4685bf079b7c179ab51c2d05af6ea455",
+      "current_sha": "c4302ec96b8cd26a8fa175856649f1ca4685bf079b7c179ab51c2d05af6ea455",
+      "changed_in_v220q": false,
+      "changed_since_v220q": false,
+      "preserved": true
+    }
+  ],
+  "dataset_controls": [
+    {
+      "artifact": "active_canonical_rollback",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "rows": 38287,
+      "sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "expected_rows": 38287,
+      "expected_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "validated": true,
+      "role": "rollback_reference_preserved"
+    },
+    {
+      "artifact": "promoted_canonical_active_target",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "expected_rows": 42708,
+      "expected_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "validated": true,
+      "role": "active_pointer_target"
+    },
+    {
+      "artifact": "asx_validated_candidate_source",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_candidate_asx_v2_20g.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "expected_rows": 42708,
+      "expected_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "validated": true,
+      "role": "immutable_source_reference"
+    }
+  ],
+  "rollback_controls": [
+    {
+      "rollback_id": "ROLLBACK_001",
+      "scope": "active_canonical_rollback",
+      "reference_path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "reference_rows": 38287,
+      "reference_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "status": "AVAILABLE_UNCHANGED",
+      "rollback_action": "Use v2_14e if active pointer validation fails or operational readiness is not approved."
+    },
+    {
+      "rollback_id": "ROLLBACK_002",
+      "scope": "pointer_update_reverse_path",
+      "reference_path": "outputs/audit/documentation_canonical_dataset_path_v2_14i.json;outputs/audit/eol_guard_v2_14k.json;tests/test_expanded_universe_post_closure_v2_14j.py",
+      "reference_rows": 3,
+      "reference_sha": "",
+      "status": "REVERSIBLE_REFERENCES_VALIDATED",
+      "rollback_action": "Reverse `outputs/full_universe_source_acquisition/expanded_universe_v2_20m_asx_promoted.csv` back to `outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv` only through an explicit rollback phase."
+    },
+    {
+      "rollback_id": "ROLLBACK_003",
+      "scope": "promoted_canonical_target",
+      "reference_path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "reference_rows": 42708,
+      "reference_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "status": "AVAILABLE_VALIDATED",
+      "rollback_action": "Keep as active target only if operational readiness gate passes."
+    }
+  ],
+  "readiness_gate": [
+    {
+      "gate_id": "READINESS_001",
+      "gate": "controlled_pointer_files_validated",
+      "passed": true,
+      "detail": "validated_target_files=3",
+      "required_for_v220s": true
+    },
+    {
+      "gate_id": "READINESS_002",
+      "gate": "no_old_refs_in_active_pointer_files",
+      "passed": true,
+      "detail": "target_files_with_old_refs=0",
+      "required_for_v220s": true
+    },
+    {
+      "gate_id": "READINESS_003",
+      "gate": "promoted_canonical_available",
+      "passed": true,
+      "detail": "rows=42708;sha=892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "required_for_v220s": true
+    },
+    {
+      "gate_id": "READINESS_004",
+      "gate": "rollback_canonical_available",
+      "passed": true,
+      "detail": "rows=38287;sha=cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "required_for_v220s": true
+    },
+    {
+      "gate_id": "READINESS_005",
+      "gate": "historical_references_preserved",
+      "passed": true,
+      "detail": "historical_changed=0",
+      "required_for_v220s": true
+    },
+    {
+      "gate_id": "READINESS_006",
+      "gate": "no_scoring_or_external_calls",
+      "passed": true,
+      "detail": "scoring=False;openai=False;broker=False;full59k=False",
+      "required_for_v220s": true
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_20m_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_CONTROLLED_PROMOTED_FILE_CREATION_COMPLETED_42708_ROWS_PROMOTED_FILE_CREATED_CANONICAL_UNCHANGED_POINTER_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20n_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_PROMOTED_CANONICAL_VALIDATION_COMPLETED_42708_ROWS_PROMOTED_FILE_VALIDATED_CANONICAL_UNCHANGED_POINTER_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20o_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_ACTIVE_POINTER_DECISION_GATE_COMPLETED_POINTER_UPDATE_PLAN_APPROVED_42708_ROWS_CANONICAL_UNCHANGED_POINTER_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20p_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_ACTIVE_POINTER_UPDATE_PLAN_COMPLETED_POINTER_UPDATE_READY_42708_ROWS_CANONICAL_UNCHANGED_POINTER_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20q_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ASX_CONTROLLED_ACTIVE_POINTER_UPDATE_COMPLETED_3_FILES_UPDATED_42708_ROWS_CANONICAL_UNCHANGED_FULL59K_DEPRECATED"
+    },
+    {
+      "check": "v2_20q_next_phase_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.20R - ASX Active Pointer Update Validation"
+    },
+    {
+      "check": "v2_20q_update_decision_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "CONTROLLED_ACTIVE_POINTER_UPDATE_COMPLETED_READY_FOR_VALIDATION"
+    },
+    {
+      "check": "v2_20q_updated_files_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "updated_files=3"
+    },
+    {
+      "check": "v2_20q_old_refs_replaced_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "total_old_refs_replaced=3"
+    },
+    {
+      "check": "v2_20q_historical_references_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "historical_changed=0"
+    },
+    {
+      "check": "v2_20q_pointer_update_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_performed=True"
+    },
+    {
+      "check": "v2_20q_active_pointer_updated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_pointer_updated=True"
+    },
+    {
+      "check": "v2_20q_active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "q_manifest_candidate_set_exact",
+      "passed": true,
+      "severity": "critical",
+      "detail": "q_manifest_paths=['outputs/audit/documentation_canonical_dataset_path_v2_14i.json', 'outputs/audit/eol_guard_v2_14k.json', 'tests/test_expanded_universe_post_closure_v2_14j.py']"
+    },
+    {
+      "check": "q_manifest_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "manifest_rows=3"
+    },
+    {
+      "check": "active_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_rows=38287"
+    },
+    {
+      "check": "promoted_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted_rows=42708"
+    },
+    {
+      "check": "current_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=41392"
+    },
+    {
+      "check": "asx_candidate_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "asx_rows=42708"
+    },
+    {
+      "check": "active_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "promoted_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "current_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "3f864f1fc0196d9ec3b9ed1b2e8fa3f11c6a109933e0c07c212dc8e89d8b571c"
+    },
+    {
+      "check": "asx_candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "promoted_matches_asx_rows",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted=42708;asx=42708"
+    },
+    {
+      "check": "promoted_matches_asx_sha",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted=892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127;asx=892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "promoted_schema_matches_active",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted_columns=33;active_columns=33"
+    },
+    {
+      "check": "promoted_schema_matches_asx",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted_columns=33;asx_columns=33"
+    },
+    {
+      "check": "schema_column_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promoted_columns=33"
+    },
+    {
+      "check": "quality_floor_crossed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows=42708;floor=42000"
+    },
+    {
+      "check": "quality_ceiling_not_exceeded",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rows=42708;ceiling=45000"
+    },
+    {
+      "check": "target_file_exists::outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\audit\\documentation_canonical_dataset_path_v2_14i.json"
+    },
+    {
+      "check": "target_file_sha_matches_v2_20q_after::outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expected=4172515871ab5ddce00317b443a43b1b1fed101b53632cb34d5bfdc675758e83;current=4172515871ab5ddce00317b443a43b1b1fed101b53632cb34d5bfdc675758e83"
+    },
+    {
+      "check": "target_file_old_refs_removed::outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "old_refs_current=0"
+    },
+    {
+      "check": "target_file_new_refs_present::outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_refs_current=1"
+    },
+    {
+      "check": "target_file_validated::outputs/audit/documentation_canonical_dataset_path_v2_14i.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated=True"
+    },
+    {
+      "check": "target_file_exists::outputs/audit/eol_guard_v2_14k.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\audit\\eol_guard_v2_14k.json"
+    },
+    {
+      "check": "target_file_sha_matches_v2_20q_after::outputs/audit/eol_guard_v2_14k.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expected=b69d584b5fb35ce98942d5ce18a105bfadfe6057a129d22fe3e27ede1d6f02d6;current=b69d584b5fb35ce98942d5ce18a105bfadfe6057a129d22fe3e27ede1d6f02d6"
+    },
+    {
+      "check": "target_file_old_refs_removed::outputs/audit/eol_guard_v2_14k.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "old_refs_current=0"
+    },
+    {
+      "check": "target_file_new_refs_present::outputs/audit/eol_guard_v2_14k.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_refs_current=1"
+    },
+    {
+      "check": "target_file_validated::outputs/audit/eol_guard_v2_14k.json",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated=True"
+    },
+    {
+      "check": "target_file_exists::tests/test_expanded_universe_post_closure_v2_14j.py",
+      "passed": true,
+      "severity": "critical",
+      "detail": "tests\\test_expanded_universe_post_closure_v2_14j.py"
+    },
+    {
+      "check": "target_file_sha_matches_v2_20q_after::tests/test_expanded_universe_post_closure_v2_14j.py",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expected=d96b54e56ed3a3143661b772eeb8a1b9c66f5d1415cc314b73bb912c3990c636;current=d96b54e56ed3a3143661b772eeb8a1b9c66f5d1415cc314b73bb912c3990c636"
+    },
+    {
+      "check": "target_file_old_refs_removed::tests/test_expanded_universe_post_closure_v2_14j.py",
+      "passed": true,
+      "severity": "critical",
+      "detail": "old_refs_current=0"
+    },
+    {
+      "check": "target_file_new_refs_present::tests/test_expanded_universe_post_closure_v2_14j.py",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_refs_current=1"
+    },
+    {
+      "check": "target_file_validated::tests/test_expanded_universe_post_closure_v2_14j.py",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated=True"
+    },
+    {
+      "check": "all_target_files_validated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "validated_target_files=3"
+    },
+    {
+      "check": "no_old_refs_in_target_files",
+      "passed": true,
+      "severity": "critical",
+      "detail": "target_files_with_old_refs=0"
+    },
+    {
+      "check": "new_refs_present_in_all_target_files",
+      "passed": true,
+      "severity": "critical",
+      "detail": "target_files_with_new_refs=3"
+    },
+    {
+      "check": "no_target_file_sha_drift_since_v2_20q",
+      "passed": true,
+      "severity": "critical",
+      "detail": "target_files_with_sha_drift=0"
+    },
+    {
+      "check": "historical_preservation_checked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "historical_checked=137"
+    },
+    {
+      "check": "historical_references_preserved_since_v2_20q",
+      "passed": true,
+      "severity": "critical",
+      "detail": "historical_changed=0"
+    },
+    {
+      "check": "historical_references_not_missing",
+      "passed": true,
+      "severity": "critical",
+      "detail": "historical_missing=0"
+    },
+    {
+      "check": "validation_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active pointer update validation only"
+    },
+    {
+      "check": "file_edit_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_edit_performed=False"
+    },
+    {
+      "check": "file_copy_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_copy_performed=False"
+    },
+    {
+      "check": "file_rename_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "file_rename_performed=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "scoring_not_recalculated",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_recalculated=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "operational-readiness",
+      "action": "run_post_pointer_operational_readiness_gate",
+      "priority": "high",
+      "reason": "Pointer update validated; operational readiness must approve using promoted canonical as operational base.",
+      "recommended_phase": "v2.20S - Post-Pointer Operational Readiness Gate",
+      "guardrails": "decision/readiness only; no scoring/OpenAI/broker/full59k"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "rollback",
+      "action": "preserve_v2_14e_rollback_reference",
+      "priority": "high",
+      "reason": "Previous active canonical remains intact and must remain available through final closure.",
+      "recommended_phase": "v2.20S - Post-Pointer Operational Readiness Gate",
+      "guardrails": "do not delete or overwrite rollback dataset"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "scoring",
+      "action": "defer_scoring_until_readiness_gate_and_closure",
+      "priority": "medium",
+      "reason": "Pointer validation does not authorize scoring.",
+      "recommended_phase": "post-v2.20S/v2.20T explicit decision",
+      "guardrails": "separate approval required"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "active-pointer-update-validation-only",
+    "active_pointer_update_validation_only": true,
+    "selected_provider": "ASX",
+    "operational_target_floor": 42000,
+    "operational_target_ceiling": 45000,
+    "operational_42k_floor_achieved": true,
+    "operational_45k_ceiling_respected": true,
+    "aspirational_target_50000_retained": true,
+    "target_files_validated": 3,
+    "target_files_with_old_refs": 0,
+    "target_files_with_new_refs": 3,
+    "historical_reference_files_changed": 0,
+    "rollback_canonical_available": true,
+    "promoted_canonical_available": true,
+    "network_download_performed": false,
+    "endpoint_calls_performed": false,
+    "query_sweep_performed": false,
+    "raw_acquisition_performed": false,
+    "raw_validation_performed": false,
+    "candidate_extraction_performed": false,
+    "candidate_validation_against_current_performed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "closure_report_performed": false,
+    "promotion_decision_gate_performed": false,
+    "promotion_plan_performed": false,
+    "promotion_dry_run_performed": false,
+    "controlled_promoted_file_creation_performed": false,
+    "promoted_canonical_validation_performed": false,
+    "active_pointer_decision_gate_performed": false,
+    "active_pointer_update_plan_performed": false,
+    "controlled_active_pointer_update_performed": false,
+    "file_edit_performed": false,
+    "file_copy_performed": false,
+    "file_rename_performed": false,
+    "canonical_dataset_read": true,
+    "canonical_dataset_modified": false,
+    "promoted_canonical_dataset_read": true,
+    "promoted_canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "active_pointer_updated_from_v2_20q": true,
+    "pointer_update_validated": true,
+    "scoring_recalculated": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.20S - Post-Pointer Operational Readiness Gate"
+}

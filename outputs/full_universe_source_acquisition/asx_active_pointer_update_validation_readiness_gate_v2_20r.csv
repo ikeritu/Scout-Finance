@@ -1,0 +1,7 @@
+gate_id,gate,passed,detail,required_for_v220s
+READINESS_001,controlled_pointer_files_validated,True,validated_target_files=3,True
+READINESS_002,no_old_refs_in_active_pointer_files,True,target_files_with_old_refs=0,True
+READINESS_003,promoted_canonical_available,True,rows=42708;sha=892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127,True
+READINESS_004,rollback_canonical_available,True,rows=38287;sha=cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f,True
+READINESS_005,historical_references_preserved,True,historical_changed=0,True
+READINESS_006,no_scoring_or_external_calls,True,scoring=False;openai=False;broker=False;full59k=False,True
