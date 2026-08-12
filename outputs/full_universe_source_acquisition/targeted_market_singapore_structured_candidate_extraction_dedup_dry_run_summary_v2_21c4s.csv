@@ -1,0 +1,46 @@
+metric,value
+selected_route,Singapore split route from Colombia + Singapore targeted expansion
+phase_type,targeted-market-singapore-structured-candidate-extraction-dedup-dry-run
+extraction_decision,SINGAPORE_ELIGIBLE_CANDIDATES_READY_FOR_EXPANDED_REBUILD_CANDIDATE
+approved_for_singapore_rebuild_candidate,True
+approved_for_global_v2_21d,False
+approved_for_colombia_extraction,False
+operational_base_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_20m_asx_promoted.csv
+operational_base_rows,42708
+operational_base_sha,892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127
+rollback_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv
+rollback_rows,38287
+rollback_sha,cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f
+quality_floor_target,42000
+quality_ceiling_target,45000
+remaining_capacity_before_addition,2292
+market_id,SINGAPORE_SGX
+country,Singapore
+exchange,SGX
+mic,XSES
+currency,SGD
+structured_sgx_endpoints_used,2
+raw_candidates_extracted,1554
+raw_candidates_accepted_by_quality,1180
+raw_candidates_rejected_by_quality,374
+eligible_new_candidates,358
+rejected_candidates,1196
+instrument_bucket_counts,"{'equity_common_or_equity_like': 322, 'equity_like_trust': 11, 'equity_like_reit': 25}"
+projected_rows_after_addition,43066
+remaining_capacity_after_addition,1934
+candidate_extraction_performed,True
+dedup_performed,True
+schema_projection_performed,True
+expanded_rebuild_performed,False
+provider_expansion_scope,singapore_split_only
+scoring_authorized,False
+openai_authorized,False
+broker_authorized,False
+full59k,DEPRECATED_DEFERRED
+canonical_dataset_modified,False
+active_canonical_replaced,False
+pointer_update_performed,False
+critical_failed_checks,0
+warning_failed_checks,0
+recommended_next_phase,v2.21D_S - Singapore Expanded Rebuild Candidate
+secondary_next_phase,v2.21C3B - Colombia Regulatory Source Discovery

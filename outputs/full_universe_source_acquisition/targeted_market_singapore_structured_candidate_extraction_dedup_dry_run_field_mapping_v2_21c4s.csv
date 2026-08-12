@@ -1,0 +1,8 @@
+target_field,source_keys_priority,rule
+symbol/ticker/trading_code,s|symbol|ticker|code|stockCode|stock_code|tradingCode|trading_code|securityCode|security_code,first non-empty value; must match compact exchange symbol pattern
+name,fn|companyName|company_name|securityName|security_name|counterName|counter_name|issuerName|issuer_name|name|cn|nc,first non-empty company/security name; technical tokens rejected
+isin,isin|isinCode|isin_code,kept only if valid ISIN format
+instrument_type,type|securityType|security_type|instrumentType|instrument_type|assetClass|asset_class,used for filtering and bucket assignment
+sector,sector|industry|gicsSector|gics_sector,optional
+price,lt|p|pv|last|lastPrice|last_price,optional metadata only
+country/exchange/mic/currency,constant,Singapore / SGX / XSES / SGD

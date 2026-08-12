@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,singapore_rebuild_candidate,build_singapore_only_expanded_rebuild_candidate_from_eligible_candidates,high,v2.21D_S - Singapore Expanded Rebuild Candidate,Eligible Singapore candidates are available after structured extraction and dedup.,Singapore only; no Colombia; no pointer update; no scoring
+2,colombia_regulatory_discovery,continue_colombia_superfinanciera_simev_rnve_discovery,high,v2.21C3B - Colombia Regulatory Source Discovery,Colombia remains blocked from BVC exchange extraction and needs official regulatory-source discovery.,discovery only; no extraction from shell HTML
+3,global_rebuild_control,keep_global_v2_21d_blocked_until_split_outputs_are_validated,high,v2.21D_S - Singapore Expanded Rebuild Candidate,This phase is dry-run only and does not promote or update active pointers.,no promotion; no pointer update; no full59k

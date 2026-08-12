@@ -1,0 +1,350 @@
+{
+  "version": "v2.21C4S",
+  "phase": "Singapore Structured Candidate Extraction + Dedup Dry Run",
+  "phase_type": "targeted-market-singapore-structured-candidate-extraction-dedup-dry-run",
+  "status": "SINGAPORE_STRUCTURED_CANDIDATE_EXTRACTION_DEDUP_DRY_RUN_COMPLETED_ELIGIBLE_CANDIDATES_AVAILABLE_NO_DATASET_CHANGES_SCORING_DEFERRED",
+  "generated_at_utc": "2026-08-12T22:58:45.079701+00:00",
+  "summary": {
+    "selected_route": "Singapore split route from Colombia + Singapore targeted expansion",
+    "phase_type": "targeted-market-singapore-structured-candidate-extraction-dedup-dry-run",
+    "extraction_decision": "SINGAPORE_ELIGIBLE_CANDIDATES_READY_FOR_EXPANDED_REBUILD_CANDIDATE",
+    "approved_for_singapore_rebuild_candidate": true,
+    "approved_for_global_v2_21d": false,
+    "approved_for_colombia_extraction": false,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "remaining_capacity_before_addition": 2292,
+    "market_id": "SINGAPORE_SGX",
+    "country": "Singapore",
+    "exchange": "SGX",
+    "mic": "XSES",
+    "currency": "SGD",
+    "structured_sgx_endpoints_used": 2,
+    "raw_candidates_extracted": 1554,
+    "raw_candidates_accepted_by_quality": 1180,
+    "raw_candidates_rejected_by_quality": 374,
+    "eligible_new_candidates": 358,
+    "rejected_candidates": 1196,
+    "instrument_bucket_counts": {
+      "equity_common_or_equity_like": 322,
+      "equity_like_trust": 11,
+      "equity_like_reit": 25
+    },
+    "projected_rows_after_addition": 43066,
+    "remaining_capacity_after_addition": 1934,
+    "candidate_extraction_performed": true,
+    "dedup_performed": true,
+    "schema_projection_performed": true,
+    "expanded_rebuild_performed": false,
+    "provider_expansion_scope": "singapore_split_only",
+    "scoring_authorized": false,
+    "openai_authorized": false,
+    "broker_authorized": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.21D_S - Singapore Expanded Rebuild Candidate",
+    "secondary_next_phase": "v2.21C3B - Colombia Regulatory Source Discovery"
+  },
+  "source_endpoints": [
+    {
+      "market_id": "SINGAPORE_SGX",
+      "provider": "SGX",
+      "source_id": "SGX_SECURITIES_V1_1_JSON_MINIMAL",
+      "url": "https://api.sgx.com/securities/v1.1?excludetypes=bonds&params=nc%2Ccn%2Cs%2Cp%2Cc%2Cchange_vs_pc%2Cchange_vs_pc_percentage%2Ccx%2Cdp%2Cdpc%2Ctrading_time",
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw_targeted_market_endpoint_discovery_v2_21c3\\005_SGX_SECURITIES_V1_1_JSON_MINIMAL.json",
+      "parse_mode": "json",
+      "candidate_like_records": 1278,
+      "structured_endpoint_candidate": true,
+      "endpoint_validation_status": "STRUCTURED_ENDPOINT_CANDIDATE_FOUND",
+      "selected_for_extraction": true
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "provider": "SGX",
+      "source_id": "SGX_SECURITIES_V1_1_JSON_EXTENDED",
+      "url": "https://api.sgx.com/securities/v1.1?excludetypes=bonds&params=nc%2Cadjusted-vwap%2Cb%2Cbv%2Cp%2Cc%2Cchange_vs_pc%2Cchange_vs_pc_percentage%2Ccx%2Ccn%2Cdp%2Cdpc%2Cdu%2Ced%2Cfn%2Ch%2Ciiv%2Ciopv%2Clt%2Cl%2Co%2Cp_%2Cpv%2Cptd%2Cs%2Csv%2Ctrading_time%2Cv_%2Cv%2Cvl%2Cvwap%2Cvwap-currency",
+      "raw_file": "outputs\\full_universe_source_acquisition\\raw_targeted_market_endpoint_discovery_v2_21c3\\006_SGX_SECURITIES_V1_1_JSON_EXTENDED.json",
+      "parse_mode": "json",
+      "candidate_like_records": 1278,
+      "structured_endpoint_candidate": true,
+      "endpoint_validation_status": "STRUCTURED_ENDPOINT_CANDIDATE_FOUND",
+      "selected_for_extraction": true
+    }
+  ],
+  "dedup_summary": [
+    {
+      "market_id": "SINGAPORE_SGX",
+      "raw_candidates": 1554,
+      "raw_accepted_by_quality": 1180,
+      "raw_rejected_by_quality": 374,
+      "eligible_new_candidates": 358,
+      "rejected_candidates": 1196,
+      "duplicate_or_rejected_by_dedup": 822,
+      "rejected_by_quality_filter": 374,
+      "rejected_by_capacity_filter": 0,
+      "projected_rows_after_addition": 43066,
+      "remaining_capacity_after_addition": 1934,
+      "ready_for_singapore_rebuild_candidate": true
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_21c3_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TARGETED_MARKET_OFFICIAL_ENDPOINT_DISCOVERY_COMPLETED_PARTIAL_STRUCTURED_ENDPOINTS_FOUND_REVIEW_REQUIRED"
+    },
+    {
+      "check": "v2_21c3_review_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TARGETED_MARKET_MISSING_ENDPOINT_REVIEW_COMPLETED_SPLIT_ROUTE_APPROVED_SGX_READY_COLOMBIA_REGULATORY_DISCOVERY_REQUIRED"
+    },
+    {
+      "check": "singapore_structured_extraction_approved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_singapore_structured_extraction=True"
+    },
+    {
+      "check": "colombia_not_in_scope",
+      "passed": true,
+      "severity": "critical",
+      "detail": "Colombia remains discovery-only and is not extracted in v2.21C4S."
+    },
+    {
+      "check": "global_v2_21c4_not_approved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_global_v2_21c4=False"
+    },
+    {
+      "check": "v2_21d_not_approved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_v2_21d=False"
+    },
+    {
+      "check": "operational_base_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational_rows=42708"
+    },
+    {
+      "check": "operational_base_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "schema_column_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "columns=33"
+    },
+    {
+      "check": "structured_sgx_endpoints_available",
+      "passed": true,
+      "severity": "critical",
+      "detail": "structured_sgx_endpoints=2"
+    },
+    {
+      "check": "raw_candidates_extracted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_candidates=1554"
+    },
+    {
+      "check": "eligible_candidates_available",
+      "passed": true,
+      "severity": "warning",
+      "detail": "eligible_candidates=358"
+    },
+    {
+      "check": "projected_rows_under_quality_ceiling",
+      "passed": true,
+      "severity": "critical",
+      "detail": "projected_rows=43066;ceiling=45000"
+    },
+    {
+      "check": "capacity_remaining_non_negative",
+      "passed": true,
+      "severity": "critical",
+      "detail": "remaining_capacity_after_addition=1934"
+    },
+    {
+      "check": "operational_base_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational base SHA unchanged"
+    },
+    {
+      "check": "rollback_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback SHA unchanged"
+    },
+    {
+      "check": "singapore_only_scope",
+      "passed": true,
+      "severity": "critical",
+      "detail": "all candidate rows are Singapore/SGX scoped"
+    },
+    {
+      "check": "regex_only_candidate_acceptance_not_allowed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "only structured JSON endpoint objects are parsed"
+    },
+    {
+      "check": "dedup_dry_run_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "dedup dry run performed against operational base"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "pointer_update_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_performed=False"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "singapore_rebuild_candidate",
+      "action": "build_singapore_only_expanded_rebuild_candidate_from_eligible_candidates",
+      "priority": "high",
+      "recommended_phase": "v2.21D_S - Singapore Expanded Rebuild Candidate",
+      "reason": "Eligible Singapore candidates are available after structured extraction and dedup.",
+      "guardrails": "Singapore only; no Colombia; no pointer update; no scoring"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "colombia_regulatory_discovery",
+      "action": "continue_colombia_superfinanciera_simev_rnve_discovery",
+      "priority": "high",
+      "recommended_phase": "v2.21C3B - Colombia Regulatory Source Discovery",
+      "reason": "Colombia remains blocked from BVC exchange extraction and needs official regulatory-source discovery.",
+      "guardrails": "discovery only; no extraction from shell HTML"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "global_rebuild_control",
+      "action": "keep_global_v2_21d_blocked_until_split_outputs_are_validated",
+      "priority": "high",
+      "recommended_phase": "v2.21D_S - Singapore Expanded Rebuild Candidate",
+      "reason": "This phase is dry-run only and does not promote or update active pointers.",
+      "guardrails": "no promotion; no pointer update; no full59k"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "targeted-market-singapore-structured-candidate-extraction-dedup-dry-run",
+    "selected_route": "Singapore split route",
+    "market_scope": [
+      "SINGAPORE_SGX"
+    ],
+    "colombia_scope_excluded": true,
+    "approved_for_singapore_rebuild_candidate": true,
+    "approved_for_global_v2_21d": false,
+    "approved_for_colombia_extraction": false,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "candidate_extraction_performed": true,
+    "dedup_dry_run_performed": true,
+    "schema_projection_performed": true,
+    "regex_only_candidate_acceptance_allowed": false,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "file_edit_performed_on_operational_base": false,
+    "file_copy_performed_on_operational_base": false,
+    "file_rename_performed_on_operational_base": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "provider_expansion_scope": "singapore_split_only",
+    "additional_provider_expansion_frozen": true,
+    "scoring_authorized": false,
+    "scoring_recalculated": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.21D_S - Singapore Expanded Rebuild Candidate",
+  "secondary_next_phase": "v2.21C3B - Colombia Regulatory Source Discovery"
+}
