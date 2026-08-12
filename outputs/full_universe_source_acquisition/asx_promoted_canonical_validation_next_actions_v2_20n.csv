@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,pointer,run_active_pointer_decision_gate,high,Promoted file has been validated; activation still requires an explicit decision gate.,v2.20O - ASX Active Pointer Decision Gate,decision only; no silent pointer update; no scoring/OpenAI/broker/full59k
+2,rollback,preserve_active_canonical_rollback_reference,high,Active canonical remains unchanged and should remain available until pointer activation is explicitly approved.,v2.20O - ASX Active Pointer Decision Gate,abort if active canonical SHA drifts
+3,quality,keep_provider_expansion_frozen,medium,Promoted file achieves 42k floor and respects 45k ceiling.,v2.20O - ASX Active Pointer Decision Gate,50k aspirational only; full59k deprecated

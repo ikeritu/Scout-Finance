@@ -1,0 +1,5 @@
+gate_id,gate,passed,detail,required_before_pointer_update
+ACTIVATION_001,promoted_file_validated,True,critical_failed_checks=0;warning_failed_checks=0,True
+ACTIVATION_002,active_canonical_still_rollback,True,cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f,True
+ACTIVATION_003,pointer_update_not_yet_performed,True,active_pointer_updated=False,True
+ACTIVATION_004,next_phase_must_be_decision_gate,True,v2.20O - ASX Active Pointer Decision Gate,True
