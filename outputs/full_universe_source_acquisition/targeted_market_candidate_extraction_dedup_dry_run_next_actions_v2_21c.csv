@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,rebuild,build_expanded_candidate_with_accepted_colombia_singapore_candidates,high,Accepted new candidates are available for dry-run rebuild.,v2.21D - Expanded Rebuild Candidate,no pointer update; no canonical replacement; preserve rollback
+2,source_access,identify_official_downloadable_listing_or_api_endpoint,medium,"If current raw sources are JS shells or navigation pages, candidate extraction needs official downloadable lists or embedded API endpoints.",v2.21D - Expanded Rebuild Candidate,official BVC/SGX sources only
+3,capacity,enforce_45k_ceiling_before_rebuild,high,Projected rows after accepted additions: 42711; remaining capacity: 2289.,v2.21D - Expanded Rebuild Candidate,exclude ETFs/funds/warrants/rights/structured products if needed

@@ -1,0 +1,383 @@
+{
+  "version": "v2.21C",
+  "phase": "Candidate Extraction + Dedup Dry Run",
+  "phase_type": "targeted-market-candidate-extraction-dedup-dry-run",
+  "status": "TARGETED_MARKET_CANDIDATE_EXTRACTION_DEDUP_DRY_RUN_COMPLETED_NEW_CANDIDATES_READY_FOR_REBUILD_NO_DATASET_CHANGES_SCORING_DEFERRED",
+  "generated_at_utc": "2026-08-12T21:55:35.445622+00:00",
+  "summary": {
+    "selected_route": "Colombia + Singapore targeted expansion",
+    "phase_type": "targeted-market-candidate-extraction-dedup-dry-run",
+    "extraction_decision": "NEW_CANDIDATES_AVAILABLE_FOR_EXPANDED_REBUILD_CANDIDATE",
+    "approved_for_next_phase": true,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "remaining_capacity_to_quality_ceiling_before_addition": 2292,
+    "target_markets": "Colombia/BVC;Singapore/SGX",
+    "successful_raw_sources": 4,
+    "candidate_attempts_total": 10,
+    "accepted_new_candidates": 3,
+    "rejected_candidates": 7,
+    "projected_rows_after_addition": 42711,
+    "remaining_capacity_after_addition": 2289,
+    "dedup_is_dry_run_only": true,
+    "candidate_extraction_performed": true,
+    "dedup_performed": true,
+    "expanded_rebuild_performed": false,
+    "provider_expansion_scope": "targeted_only",
+    "scoring_authorized": false,
+    "openai_authorized": false,
+    "broker_authorized": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.21D - Expanded Rebuild Candidate"
+  },
+  "dedup_summary": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "candidate_attempts": 6,
+      "accepted_new_candidates": 1,
+      "rejected_candidates": 5,
+      "ready_for_rebuild": true,
+      "reason": "new_candidates_available"
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "candidate_attempts": 4,
+      "accepted_new_candidates": 2,
+      "rejected_candidates": 2,
+      "ready_for_rebuild": true,
+      "reason": "new_candidates_available"
+    }
+  ],
+  "source_parser_findings": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "source_id": "BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES.html",
+      "raw_file_exists": true,
+      "html_tables": 0,
+      "next_data_objects": 267,
+      "table_candidates": 0,
+      "json_candidates": 0,
+      "regex_candidates": 3,
+      "total_candidate_attempts": 3,
+      "parser_status": "CANDIDATES_FOUND",
+      "notes": "Strict parser avoids menu/navigation items and requires candidate name plus identifier."
+    },
+    {
+      "market_id": "COLOMBIA_BVC",
+      "source_id": "BVC_RESULTS_AND_ISSUER_INFORMATION",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_RESULTS_AND_ISSUER_INFORMATION.html",
+      "raw_file_exists": true,
+      "html_tables": 0,
+      "next_data_objects": 272,
+      "table_candidates": 0,
+      "json_candidates": 0,
+      "regex_candidates": 3,
+      "total_candidate_attempts": 3,
+      "parser_status": "CANDIDATES_FOUND",
+      "notes": "Strict parser avoids menu/navigation items and requires candidate name plus identifier."
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "source_id": "SGX_SECURITIES_PRICES",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_SECURITIES_PRICES.html",
+      "raw_file_exists": true,
+      "html_tables": 0,
+      "next_data_objects": 0,
+      "table_candidates": 0,
+      "json_candidates": 0,
+      "regex_candidates": 2,
+      "total_candidate_attempts": 2,
+      "parser_status": "CANDIDATES_FOUND",
+      "notes": "Strict parser avoids menu/navigation items and requires candidate name plus identifier."
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "source_id": "SGX_CORPORATE_INFORMATION",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_CORPORATE_INFORMATION.html",
+      "raw_file_exists": true,
+      "html_tables": 0,
+      "next_data_objects": 0,
+      "table_candidates": 0,
+      "json_candidates": 0,
+      "regex_candidates": 2,
+      "total_candidate_attempts": 2,
+      "parser_status": "CANDIDATES_FOUND",
+      "notes": "Strict parser avoids menu/navigation items and requires candidate name plus identifier."
+    }
+  ],
+  "raw_structure_inventory": [
+    {
+      "market_id": "COLOMBIA_BVC",
+      "source_id": "BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_OFFICIAL_ISSUERS_AND_PROSPECTUSES.html",
+      "raw_bytes": 38628,
+      "sha256": "9d6251022406fdbe913a95af63e762049bdbc2e476d679cee004b8801a52ce8a",
+      "contains_table_tag": false,
+      "html_table_count": 0,
+      "next_data_object_count": 267,
+      "script_tag_count": 13,
+      "link_count": 0,
+      "candidate_relevant_marker_count": 2
+    },
+    {
+      "market_id": "COLOMBIA_BVC",
+      "source_id": "BVC_RESULTS_AND_ISSUER_INFORMATION",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\BVC_RESULTS_AND_ISSUER_INFORMATION.html",
+      "raw_bytes": 38872,
+      "sha256": "2418ab934cb662c5732f9756a146eb028aeec4805a49c0e1e87ebe4a2525d3ce",
+      "contains_table_tag": false,
+      "html_table_count": 0,
+      "next_data_object_count": 272,
+      "script_tag_count": 13,
+      "link_count": 0,
+      "candidate_relevant_marker_count": 2
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "source_id": "SGX_SECURITIES_PRICES",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_SECURITIES_PRICES.html",
+      "raw_bytes": 14859,
+      "sha256": "ffbb004bab166671f26416cc04199ac0a8adc43cf8a72f9689d23ef1632a6645",
+      "contains_table_tag": false,
+      "html_table_count": 0,
+      "next_data_object_count": 0,
+      "script_tag_count": 10,
+      "link_count": 10,
+      "candidate_relevant_marker_count": 2
+    },
+    {
+      "market_id": "SINGAPORE_SGX",
+      "source_id": "SGX_CORPORATE_INFORMATION",
+      "source_file": "outputs\\full_universe_source_acquisition\\raw_targeted_markets_v2_21b\\SGX_CORPORATE_INFORMATION.html",
+      "raw_bytes": 14860,
+      "sha256": "5cf56ce4c368e669e22a5d18ea5eb6752a2b9ef5a11a8c1898620bd19ee0a60b",
+      "contains_table_tag": false,
+      "html_table_count": 0,
+      "next_data_object_count": 0,
+      "script_tag_count": 10,
+      "link_count": 10,
+      "candidate_relevant_marker_count": 2
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_21b_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "TARGETED_MARKET_ACQUISITION_RAW_VALIDATION_COMPLETED_COLOMBIA_SINGAPORE_RAW_SOURCES_AVAILABLE_NO_DATASET_CHANGES_SCORING_DEFERRED"
+    },
+    {
+      "check": "v2_21b_acquisition_decision_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "RAW_SOURCES_AVAILABLE_FOR_CANDIDATE_EXTRACTION_DRY_RUN"
+    },
+    {
+      "check": "v2_21b_approved_for_next_phase",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_next_phase=True"
+    },
+    {
+      "check": "operational_base_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational_rows=42708"
+    },
+    {
+      "check": "operational_base_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "schema_column_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "columns=33"
+    },
+    {
+      "check": "successful_raw_sources_available",
+      "passed": true,
+      "severity": "critical",
+      "detail": "successful_raw_sources=4"
+    },
+    {
+      "check": "candidate_extraction_attempted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate extraction attempted from v2.21B raw files"
+    },
+    {
+      "check": "dedup_dry_run_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "dedup dry run performed against operational base"
+    },
+    {
+      "check": "new_candidates_extracted",
+      "passed": true,
+      "severity": "warning",
+      "detail": "accepted_new_candidates=3"
+    },
+    {
+      "check": "projected_rows_under_ceiling",
+      "passed": true,
+      "severity": "critical",
+      "detail": "projected_rows=42711;ceiling=45000"
+    },
+    {
+      "check": "operational_base_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational base SHA unchanged"
+    },
+    {
+      "check": "candidate_output_is_dry_run_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "no rebuild/promotion/pointer update in v2.21C"
+    },
+    {
+      "check": "expanded_rebuild_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expanded_rebuild_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "pointer_update_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_performed=False"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "rebuild",
+      "action": "build_expanded_candidate_with_accepted_colombia_singapore_candidates",
+      "priority": "high",
+      "reason": "Accepted new candidates are available for dry-run rebuild.",
+      "recommended_phase": "v2.21D - Expanded Rebuild Candidate",
+      "guardrails": "no pointer update; no canonical replacement; preserve rollback"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "source_access",
+      "action": "identify_official_downloadable_listing_or_api_endpoint",
+      "priority": "medium",
+      "reason": "If current raw sources are JS shells or navigation pages, candidate extraction needs official downloadable lists or embedded API endpoints.",
+      "recommended_phase": "v2.21D - Expanded Rebuild Candidate",
+      "guardrails": "official BVC/SGX sources only"
+    },
+    {
+      "action_order": 3,
+      "action_scope": "capacity",
+      "action": "enforce_45k_ceiling_before_rebuild",
+      "priority": "high",
+      "reason": "Projected rows after accepted additions: 42711; remaining capacity: 2289.",
+      "recommended_phase": "v2.21D - Expanded Rebuild Candidate",
+      "guardrails": "exclude ETFs/funds/warrants/rights/structured products if needed"
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "targeted-market-candidate-extraction-dedup-dry-run",
+    "selected_route": "Colombia + Singapore targeted expansion",
+    "target_markets": [
+      "Colombia/BVC",
+      "Singapore/SGX"
+    ],
+    "approved_for_next_phase": true,
+    "operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "operational_base_rows": 42708,
+    "operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "candidate_extraction_performed": true,
+    "dedup_dry_run_performed": true,
+    "accepted_new_candidates": 3,
+    "projected_rows_after_addition": 42711,
+    "expanded_rebuild_candidate_performed": false,
+    "expanded_validation_performed": false,
+    "file_edit_performed_on_operational_base": false,
+    "file_copy_performed_on_operational_base": false,
+    "file_rename_performed_on_operational_base": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "provider_expansion_scope": "targeted_only",
+    "additional_provider_expansion_frozen": true,
+    "scoring_authorized": false,
+    "scoring_recalculated": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false
+  },
+  "recommended_next_phase": "v2.21D - Expanded Rebuild Candidate"
+}
