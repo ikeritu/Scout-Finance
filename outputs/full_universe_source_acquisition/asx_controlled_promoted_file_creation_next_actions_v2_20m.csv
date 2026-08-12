@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,reason,recommended_phase,guardrails
+1,validation,validate_promoted_canonical_file,high,Promoted file was created and must be validated against the ASX source before any pointer decision.,v2.20N - ASX Promoted Canonical Validation,validate rows/SHA/schema; no scoring/OpenAI/broker/full59k
+2,pointer,keep_active_pointer_unchanged,high,File creation does not imply operational activation.,post-v2.20N explicit pointer phase,separate approval required
+3,rollback,preserve_v2_14e_as_rollback_reference,high,Active canonical remains unchanged and available as rollback source.,v2.20N - ASX Promoted Canonical Validation,abort if active canonical SHA changes unexpectedly
