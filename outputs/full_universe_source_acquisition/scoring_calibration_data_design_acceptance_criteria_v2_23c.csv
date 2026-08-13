@@ -1,0 +1,6 @@
+criteria_id,criteria,threshold,blocking
+ACCEPT_001,Manual calibration sample must include every score bucket with available rows.,all_non_empty_buckets_covered,True
+ACCEPT_002,"Manual calibration sample must include high-gap providers, especially CBOE Europe and major missing-metadata groups.",top_provider_gap_strata_covered,True
+ACCEPT_003,Scoring redesign must separate data-quality score from attractiveness score.,separate_components_required,True
+ACCEPT_004,No production scoring may be authorized from unlabelled dry-run scores.,production_scoring_authorized_false,True
+ACCEPT_005,Any future formula must remain deterministic unless a separate external enrichment gate is approved.,no_openai_no_broker_no_full59k,True

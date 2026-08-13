@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,formula_redesign,redesign_scoring_formula_as_dry_run_only,high,v2.23D - Scoring Formula Redesign Dry Run,Calibration data design exists and can guide formula redesign.,Dry run only; no production scoring; no canonical replacement.
+2,calibration_review,review_redesigned_formula_against_acceptance_criteria,medium,v2.23E - Calibration Review / Freeze Decision,Any redesigned formula must still pass a freeze/promotion decision gate.,No promotion without explicit future gate.

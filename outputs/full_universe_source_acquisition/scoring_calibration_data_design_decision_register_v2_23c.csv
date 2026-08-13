@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_23C_CALDATA_001,Design calibration data schema and sample plan only.,True,Manual labels do not exist yet and must not be invented.,No labels are created in v2.23C.
+V2_23C_CALDATA_002,Require separation of data-quality and attractiveness labels.,True,v2.22D score is metadata-sensitive and can over-reward complete provider data.,Future formula redesign must use separate components.
+V2_23C_CALDATA_003,"Include score bucket, provider-gap and boundary-case strata.",True,"Calibration must test ranking order, metadata gaps and threshold behavior.","Sample plan covers buckets, providers and boundaries."
+V2_23C_CALDATA_004,"Do not execute new scoring, backfill metadata, or promote any output.",True,v2.23C is a design phase.,canonical_dataset_modified=False; production_scoring_authorized=False.

@@ -1,0 +1,697 @@
+{
+  "version": "v2.23C",
+  "phase": "Scoring Calibration Data Design",
+  "phase_type": "scoring-calibration-data-design",
+  "status": "SCORING_CALIBRATION_DATA_DESIGN_COMPLETED_NO_LABELS_NO_SCORING_NO_PROMOTION",
+  "generated_at_utc": "2026-08-13T14:33:08.333360+00:00",
+  "summary": {
+    "selected_route": "Scoring calibration data design before formula redesign",
+    "phase_type": "scoring-calibration-data-design",
+    "calibration_data_decision": "CALIBRATION_DATA_DESIGN_CREATED_NO_LABELS_NO_SCORING",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "dry_run_scoring_output": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+    "dry_run_scoring_output_rows": 33498,
+    "dry_run_scoring_output_sha": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "dry_run_score_min": 44.7,
+    "dry_run_score_max": 87.2,
+    "label_schema_rows": 6,
+    "sample_plan_rows": 16,
+    "strata_profile_rows": 16,
+    "acceptance_criteria_rows": 5,
+    "target_manual_review_rows": 350,
+    "manual_labels_created": false,
+    "production_scoring_authorized": false,
+    "new_scoring_executed": false,
+    "metadata_backfill_executed": false,
+    "canonical_dataset_modified": false,
+    "dry_run_score_output_modified": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.23D - Scoring Formula Redesign Dry Run",
+    "secondary_next_phase": "v2.23E - Calibration Review / Freeze Decision"
+  },
+  "label_schema": [
+    {
+      "field": "manual_label",
+      "allowed_values": "good_candidate|borderline_candidate|bad_candidate|not_common_equity|insufficient_metadata",
+      "required": true,
+      "purpose": "Human judgement label for calibration."
+    },
+    {
+      "field": "manual_data_quality_label",
+      "allowed_values": "high|medium|low|unusable",
+      "required": true,
+      "purpose": "Separate data-quality assessment from attractiveness."
+    },
+    {
+      "field": "manual_attractiveness_label",
+      "allowed_values": "high|medium|low|unknown",
+      "required": true,
+      "purpose": "Human judgement of investment/selection attractiveness, separate from metadata completeness."
+    },
+    {
+      "field": "instrument_validity_label",
+      "allowed_values": "common_equity|fund_like|fixed_income|preferred|warrant_right_certificate|unknown",
+      "required": true,
+      "purpose": "Validate whether v2.22C2 exclusion policy and future scoring scope are correct."
+    },
+    {
+      "field": "reviewer_notes",
+      "allowed_values": "free_text",
+      "required": false,
+      "purpose": "Capture reviewer reasoning and edge cases."
+    },
+    {
+      "field": "review_status",
+      "allowed_values": "pending|reviewed|needs_second_review|rejected_from_calibration",
+      "required": true,
+      "purpose": "Workflow status for the manual calibration sample."
+    }
+  ],
+  "sample_plan": [
+    {
+      "sample_plan_id": "SAMPLE_A_85_100",
+      "sample_type": "score_bucket",
+      "score_bucket": "A_85_100",
+      "source_provider": "__ANY__",
+      "population_rows": 1282,
+      "target_manual_review_rows": 30,
+      "selection_rule": "stratified_evenly_across_top_providers_and_missing_metadata_cases",
+      "purpose": "Check whether score bucket ordering matches manual quality judgement."
+    },
+    {
+      "sample_plan_id": "SAMPLE_B_70_84",
+      "sample_type": "score_bucket",
+      "score_bucket": "B_70_84",
+      "source_provider": "__ANY__",
+      "population_rows": 8980,
+      "target_manual_review_rows": 40,
+      "selection_rule": "stratified_evenly_across_top_providers_and_missing_metadata_cases",
+      "purpose": "Check whether score bucket ordering matches manual quality judgement."
+    },
+    {
+      "sample_plan_id": "SAMPLE_C_55_69",
+      "sample_type": "score_bucket",
+      "score_bucket": "C_55_69",
+      "source_provider": "__ANY__",
+      "population_rows": 6023,
+      "target_manual_review_rows": 40,
+      "selection_rule": "stratified_evenly_across_top_providers_and_missing_metadata_cases",
+      "purpose": "Check whether score bucket ordering matches manual quality judgement."
+    },
+    {
+      "sample_plan_id": "SAMPLE_D_40_54",
+      "sample_type": "score_bucket",
+      "score_bucket": "D_40_54",
+      "source_provider": "__ANY__",
+      "population_rows": 17213,
+      "target_manual_review_rows": 40,
+      "selection_rule": "stratified_evenly_across_top_providers_and_missing_metadata_cases",
+      "purpose": "Check whether score bucket ordering matches manual quality judgement."
+    },
+    {
+      "sample_plan_id": "SAMPLE_E_0_39",
+      "sample_type": "score_bucket",
+      "score_bucket": "E_0_39",
+      "source_provider": "__ANY__",
+      "population_rows": 0,
+      "target_manual_review_rows": 0,
+      "selection_rule": "skip_empty_bucket",
+      "purpose": "Bucket has no rows in dry-run output."
+    },
+    {
+      "sample_plan_id": "SAMPLE_PROVIDER_GAP_01",
+      "sample_type": "provider_gap",
+      "score_bucket": "D_40_54",
+      "source_provider": "cboe_europe_reference_data",
+      "population_rows": 11790,
+      "target_manual_review_rows": 15,
+      "selection_rule": "prioritize_rows_with_missing_country_or_asset_type",
+      "purpose": "Validate metadata-sensitive score behavior for high-gap providers."
+    },
+    {
+      "sample_plan_id": "SAMPLE_PROVIDER_GAP_02",
+      "sample_type": "provider_gap",
+      "score_bucket": "B_70_84",
+      "source_provider": "jpx_listed_securities",
+      "population_rows": 3704,
+      "target_manual_review_rows": 15,
+      "selection_rule": "prioritize_rows_with_missing_country_or_asset_type",
+      "purpose": "Validate metadata-sensitive score behavior for high-gap providers."
+    },
+    {
+      "sample_plan_id": "SAMPLE_PROVIDER_GAP_03",
+      "sample_type": "provider_gap",
+      "score_bucket": "C_55_69",
+      "source_provider": "nasdaq_trader_nasdaqlisted",
+      "population_rows": 3241,
+      "target_manual_review_rows": 15,
+      "selection_rule": "prioritize_rows_with_missing_country_or_asset_type",
+      "purpose": "Validate metadata-sensitive score behavior for high-gap providers."
+    },
+    {
+      "sample_plan_id": "SAMPLE_PROVIDER_GAP_04",
+      "sample_type": "provider_gap",
+      "score_bucket": "B_70_84",
+      "source_provider": "hkex_securities_list",
+      "population_rows": 2772,
+      "target_manual_review_rows": 15,
+      "selection_rule": "prioritize_rows_with_missing_country_or_asset_type",
+      "purpose": "Validate metadata-sensitive score behavior for high-gap providers."
+    },
+    {
+      "sample_plan_id": "SAMPLE_PROVIDER_GAP_05",
+      "sample_type": "provider_gap",
+      "score_bucket": "C_55_69",
+      "source_provider": "nasdaq_trader_otherlisted",
+      "population_rows": 2371,
+      "target_manual_review_rows": 15,
+      "selection_rule": "prioritize_rows_with_missing_country_or_asset_type",
+      "purpose": "Validate metadata-sensitive score behavior for high-gap providers."
+    },
+    {
+      "sample_plan_id": "SAMPLE_PROVIDER_GAP_06",
+      "sample_type": "provider_gap",
+      "score_bucket": "D_40_54",
+      "source_provider": "sec_company_tickers_exchange",
+      "population_rows": 2217,
+      "target_manual_review_rows": 15,
+      "selection_rule": "prioritize_rows_with_missing_country_or_asset_type",
+      "purpose": "Validate metadata-sensitive score behavior for high-gap providers."
+    },
+    {
+      "sample_plan_id": "SAMPLE_PROVIDER_GAP_07",
+      "sample_type": "provider_gap",
+      "score_bucket": "D_40_54",
+      "source_provider": "cboe_listed_symbols",
+      "population_rows": 1193,
+      "target_manual_review_rows": 15,
+      "selection_rule": "prioritize_rows_with_missing_country_or_asset_type",
+      "purpose": "Validate metadata-sensitive score behavior for high-gap providers."
+    },
+    {
+      "sample_plan_id": "SAMPLE_PROVIDER_GAP_08",
+      "sample_type": "provider_gap",
+      "score_bucket": "B_70_84",
+      "source_provider": "TWSE",
+      "population_rows": 696,
+      "target_manual_review_rows": 15,
+      "selection_rule": "prioritize_rows_with_missing_country_or_asset_type",
+      "purpose": "Validate metadata-sensitive score behavior for high-gap providers."
+    },
+    {
+      "sample_plan_id": "SAMPLE_PROVIDER_GAP_09",
+      "sample_type": "provider_gap",
+      "score_bucket": "C_55_69",
+      "source_provider": "HKEX",
+      "population_rows": 379,
+      "target_manual_review_rows": 15,
+      "selection_rule": "prioritize_rows_with_missing_country_or_asset_type",
+      "purpose": "Validate metadata-sensitive score behavior for high-gap providers."
+    },
+    {
+      "sample_plan_id": "SAMPLE_PROVIDER_GAP_10",
+      "sample_type": "provider_gap",
+      "score_bucket": "C_55_69",
+      "source_provider": "hkex_securities_list",
+      "population_rows": 32,
+      "target_manual_review_rows": 15,
+      "selection_rule": "prioritize_rows_with_missing_country_or_asset_type",
+      "purpose": "Validate metadata-sensitive score behavior for high-gap providers."
+    },
+    {
+      "sample_plan_id": "SAMPLE_BOUNDARY_CASES",
+      "sample_type": "score_boundary",
+      "score_bucket": "__MULTI__",
+      "source_provider": "__ANY__",
+      "population_rows": 33498,
+      "target_manual_review_rows": 50,
+      "selection_rule": "select_scores_near_55_70_85_thresholds",
+      "purpose": "Validate score threshold behavior around bucket boundaries."
+    }
+  ],
+  "strata_profile": [
+    {
+      "score_bucket": "D_40_54",
+      "source_provider": "cboe_europe_reference_data",
+      "rows": 11790,
+      "country_missing_rows": 11790,
+      "country_missing_pct": 100.0,
+      "asset_type_missing_rows": 11790,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "B_70_84",
+      "source_provider": "jpx_listed_securities",
+      "rows": 3704,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 3704,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "C_55_69",
+      "source_provider": "nasdaq_trader_nasdaqlisted",
+      "rows": 3241,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 3241,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "B_70_84",
+      "source_provider": "hkex_securities_list",
+      "rows": 2772,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 2772,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "C_55_69",
+      "source_provider": "nasdaq_trader_otherlisted",
+      "rows": 2371,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 2371,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "D_40_54",
+      "source_provider": "sec_company_tickers_exchange",
+      "rows": 2217,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 2217,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "D_40_54",
+      "source_provider": "__MISSING_PROVIDER__",
+      "rows": 2013,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 0,
+      "asset_type_missing_pct": 0.0,
+      "recommended_manual_review_priority": "medium"
+    },
+    {
+      "score_bucket": "B_70_84",
+      "source_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+      "rows": 1424,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 0,
+      "asset_type_missing_pct": 0.0,
+      "recommended_manual_review_priority": "medium"
+    },
+    {
+      "score_bucket": "A_85_100",
+      "source_provider": "ASX",
+      "rows": 1282,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 0,
+      "asset_type_missing_pct": 0.0,
+      "recommended_manual_review_priority": "medium"
+    },
+    {
+      "score_bucket": "D_40_54",
+      "source_provider": "cboe_listed_symbols",
+      "rows": 1193,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 1193,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "B_70_84",
+      "source_provider": "TWSE",
+      "rows": 696,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 696,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "C_55_69",
+      "source_provider": "HKEX",
+      "rows": 379,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 379,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "B_70_84",
+      "source_provider": "sgx_structured_endpoint",
+      "rows": 358,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 0,
+      "asset_type_missing_pct": 0.0,
+      "recommended_manual_review_priority": "medium"
+    },
+    {
+      "score_bucket": "C_55_69",
+      "source_provider": "hkex_securities_list",
+      "rows": 32,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 32,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "B_70_84",
+      "source_provider": "SFC_SIMEV_RNVE",
+      "rows": 19,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 19,
+      "asset_type_missing_pct": 100.0,
+      "recommended_manual_review_priority": "high"
+    },
+    {
+      "score_bucket": "B_70_84",
+      "source_provider": "ASX",
+      "rows": 7,
+      "country_missing_rows": 0,
+      "country_missing_pct": 0.0,
+      "asset_type_missing_rows": 0,
+      "asset_type_missing_pct": 0.0,
+      "recommended_manual_review_priority": "medium"
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "criteria_id": "ACCEPT_001",
+      "criteria": "Manual calibration sample must include every score bucket with available rows.",
+      "threshold": "all_non_empty_buckets_covered",
+      "blocking": true
+    },
+    {
+      "criteria_id": "ACCEPT_002",
+      "criteria": "Manual calibration sample must include high-gap providers, especially CBOE Europe and major missing-metadata groups.",
+      "threshold": "top_provider_gap_strata_covered",
+      "blocking": true
+    },
+    {
+      "criteria_id": "ACCEPT_003",
+      "criteria": "Scoring redesign must separate data-quality score from attractiveness score.",
+      "threshold": "separate_components_required",
+      "blocking": true
+    },
+    {
+      "criteria_id": "ACCEPT_004",
+      "criteria": "No production scoring may be authorized from unlabelled dry-run scores.",
+      "threshold": "production_scoring_authorized_false",
+      "blocking": true
+    },
+    {
+      "criteria_id": "ACCEPT_005",
+      "criteria": "Any future formula must remain deterministic unless a separate external enrichment gate is approved.",
+      "threshold": "no_openai_no_broker_no_full59k",
+      "blocking": true
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "artifact": "metadata_plan_input",
+      "path": "outputs\\full_universe_source_acquisition\\metadata_coverage_improvement_plan_v2_23b.json",
+      "rows": 1,
+      "sha256": "c3d74b1e81eac10517f63e260c6277d4d5870407d76f461687978e31a61761d3",
+      "role": "input_metadata_plan"
+    },
+    {
+      "artifact": "current_operational_pointer_input",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "rows": 1,
+      "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+      "role": "input_pointer"
+    },
+    {
+      "artifact": "current_dataset_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "input_dataset_no_modification"
+    },
+    {
+      "artifact": "dry_run_scores_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+      "rows": 33498,
+      "sha256": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+      "role": "input_scores_no_modification"
+    },
+    {
+      "artifact": "label_schema_output",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_calibration_data_design_label_schema_v2_23c.csv",
+      "rows": 6,
+      "sha256": "c7eeaba9a3b163231b03e3d6890db8a13e1c1911ecca7a0d6bb40113b59261b2",
+      "role": "calibration_label_schema_output"
+    },
+    {
+      "artifact": "sample_plan_output",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_calibration_data_design_sample_plan_v2_23c.csv",
+      "rows": 16,
+      "sha256": "7b252dfad9b87bea05549a3a438116a62559ea3e9a961e61d7902ce9471b0b9f",
+      "role": "calibration_sample_plan_output"
+    },
+    {
+      "artifact": "strata_profile_output",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_calibration_data_design_strata_profile_v2_23c.csv",
+      "rows": 16,
+      "sha256": "94ad5da0f0dcec930d1ad9ac9064cd78adcc1db3eb43c12db8199848a51811cb",
+      "role": "calibration_strata_profile_output"
+    },
+    {
+      "artifact": "acceptance_criteria_output",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_calibration_data_design_acceptance_criteria_v2_23c.csv",
+      "rows": 5,
+      "sha256": "aa0bdea5c2855c4a9e78439ecd8ccd2fdf31254e746ce395c5003f904f3f0311",
+      "role": "calibration_acceptance_criteria_output"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_23C_CALDATA_001",
+      "decision": "Design calibration data schema and sample plan only.",
+      "accepted": true,
+      "reason": "Manual labels do not exist yet and must not be invented.",
+      "effect": "No labels are created in v2.23C."
+    },
+    {
+      "decision_id": "V2_23C_CALDATA_002",
+      "decision": "Require separation of data-quality and attractiveness labels.",
+      "accepted": true,
+      "reason": "v2.22D score is metadata-sensitive and can over-reward complete provider data.",
+      "effect": "Future formula redesign must use separate components."
+    },
+    {
+      "decision_id": "V2_23C_CALDATA_003",
+      "decision": "Include score bucket, provider-gap and boundary-case strata.",
+      "accepted": true,
+      "reason": "Calibration must test ranking order, metadata gaps and threshold behavior.",
+      "effect": "Sample plan covers buckets, providers and boundaries."
+    },
+    {
+      "decision_id": "V2_23C_CALDATA_004",
+      "decision": "Do not execute new scoring, backfill metadata, or promote any output.",
+      "accepted": true,
+      "reason": "v2.23C is a design phase.",
+      "effect": "canonical_dataset_modified=False; production_scoring_authorized=False."
+    }
+  ],
+  "checks": [
+    {
+      "check": "metadata_plan_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "METADATA_COVERAGE_IMPROVEMENT_PLAN_COMPLETED_NO_DATASET_MODIFICATION"
+    },
+    {
+      "check": "metadata_plan_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "pointer_current_dataset_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv"
+    },
+    {
+      "check": "current_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089"
+    },
+    {
+      "check": "current_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "scoring_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_rows=33498"
+    },
+    {
+      "check": "scoring_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1"
+    },
+    {
+      "check": "score_range_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "min=44.7;max=87.2"
+    },
+    {
+      "check": "label_schema_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "label_schema_rows=6"
+    },
+    {
+      "check": "sample_plan_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "sample_plan_rows=16"
+    },
+    {
+      "check": "strata_profile_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "strata_rows=16"
+    },
+    {
+      "check": "acceptance_criteria_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "acceptance_criteria_rows=5"
+    },
+    {
+      "check": "manual_labels_not_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "manual_labels_created=False"
+    },
+    {
+      "check": "production_scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "production_scoring_authorized=False"
+    },
+    {
+      "check": "new_scoring_not_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_scoring_executed=False"
+    },
+    {
+      "check": "metadata_backfill_not_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "metadata_backfill_executed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_sha_after=9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "dry_run_score_output_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_sha_after=a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "formula_redesign",
+      "action": "redesign_scoring_formula_as_dry_run_only",
+      "priority": "high",
+      "recommended_phase": "v2.23D - Scoring Formula Redesign Dry Run",
+      "reason": "Calibration data design exists and can guide formula redesign.",
+      "guardrails": "Dry run only; no production scoring; no canonical replacement."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "calibration_review",
+      "action": "review_redesigned_formula_against_acceptance_criteria",
+      "priority": "medium",
+      "recommended_phase": "v2.23E - Calibration Review / Freeze Decision",
+      "reason": "Any redesigned formula must still pass a freeze/promotion decision gate.",
+      "guardrails": "No promotion without explicit future gate."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "scoring-calibration-data-design",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "dry_run_score_output": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+    "dry_run_score_output_rows": 33498,
+    "dry_run_score_output_sha": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "manual_labels_created": false,
+    "production_scoring_authorized": false,
+    "new_scoring_executed": false,
+    "metadata_backfill_executed": false,
+    "canonical_dataset_modified": false,
+    "dry_run_score_output_modified": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.23D - Scoring Formula Redesign Dry Run",
+  "secondary_next_phase": "v2.23E - Calibration Review / Freeze Decision"
+}

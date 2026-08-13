@@ -1,0 +1,7 @@
+field,allowed_values,required,purpose
+manual_label,good_candidate|borderline_candidate|bad_candidate|not_common_equity|insufficient_metadata,True,Human judgement label for calibration.
+manual_data_quality_label,high|medium|low|unusable,True,Separate data-quality assessment from attractiveness.
+manual_attractiveness_label,high|medium|low|unknown,True,"Human judgement of investment/selection attractiveness, separate from metadata completeness."
+instrument_validity_label,common_equity|fund_like|fixed_income|preferred|warrant_right_certificate|unknown,True,Validate whether v2.22C2 exclusion policy and future scoring scope are correct.
+reviewer_notes,free_text,False,Capture reviewer reasoning and edge cases.
+review_status,pending|reviewed|needs_second_review|rejected_from_calibration,True,Workflow status for the manual calibration sample.
