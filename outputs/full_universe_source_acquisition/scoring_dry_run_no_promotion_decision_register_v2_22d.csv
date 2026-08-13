@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_22D_SCORE_001,Run local heuristic scoring as dry run only.,True,v2.22C2 approved a scoring dry run decision but not production scoring.,Creates dry-run scores without promotion.
+V2_22D_SCORE_002,Exclude v2.22C2 non-common-equity policy rows from the scoring dry run.,True,Residual instrument classification identified non-common-equity/fund/fixed-income rows.,excluded_from_common_equity_scoring_rows=9591.
+V2_22D_SCORE_003,Do not promote dry-run score output.,True,Promotion/freeze decision belongs to v2.22E.,approved_for_promotion=False.
+V2_22D_SCORE_004,"Do not call OpenAI, broker APIs, or full59k.",True,v2.22D is a local deterministic dry run.,External calls remain disabled.

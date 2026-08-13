@@ -1,0 +1,17 @@
+policy_match,excluded_rows,pct_of_excluded
+exclude_etf,7381,76.9576
+exclude_fixed_income_bond;exclude_etf,1826,19.0387
+exclude_fund_like,209,2.1791
+exclude_etf;exclude_fund_like,61,0.636
+exclude_fixed_income_debenture,22,0.2294
+exclude_preferred_or_preference;exclude_etf,17,0.1772
+exclude_preferred_or_preference;exclude_fund_like,14,0.146
+exclude_fixed_income_bond,14,0.146
+exclude_fixed_income_bond;exclude_etf;exclude_fund_like,13,0.1355
+exclude_fixed_income_note,12,0.1251
+exclude_certificate,9,0.0938
+exclude_fixed_income_bond;exclude_fund_like,6,0.0626
+exclude_preferred_or_preference,3,0.0313
+exclude_right,2,0.0209
+exclude_fixed_income_debenture;exclude_fund_like,1,0.0104
+exclude_warrant,1,0.0104

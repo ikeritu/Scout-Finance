@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,promotion_freeze_decision,review_scoring_dry_run_and_decide_promote_or_freeze,high,v2.22E - Scoring Promotion / Freeze Decision,Dry-run scores exist but are not promoted.,No canonical replacement without explicit v2.22E decision.
+2,repo_hygiene,review_untracked_audit_and_country_breakdown_files,medium,v2.22F - Repo Hygiene / Untracked Files Review,Repo still has unrelated untracked files.,Do not add unrelated files automatically.

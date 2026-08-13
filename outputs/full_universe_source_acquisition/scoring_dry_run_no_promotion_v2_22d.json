@@ -1,0 +1,487 @@
+{
+  "version": "v2.22D",
+  "phase": "Scoring Dry Run / No Promotion",
+  "phase_type": "scoring-dry-run-no-promotion",
+  "status": "SCORING_DRY_RUN_NO_PROMOTION_COMPLETED_LOCAL_HEURISTIC_SCORES_CREATED_PROMOTION_DEFERRED",
+  "generated_at_utc": "2026-08-13T11:15:17.686464+00:00",
+  "summary": {
+    "selected_route": "Local heuristic scoring dry run using v2.22C2 exclusion overlay",
+    "phase_type": "scoring-dry-run-no-promotion",
+    "dry_run_decision": "SCORING_DRY_RUN_CREATED_PROMOTION_DEFERRED",
+    "current_operational_pointer": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+    "current_operational_pointer_sha": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "classification_review": "outputs\\full_universe_source_acquisition\\residual_instrument_classification_review_v2_22c2.json",
+    "classification_review_sha": "c50e537589699960d791ab4c0b660250d7956c08c19ae306ee23d3f416e667e4",
+    "classification_overlay": "outputs\\full_universe_source_acquisition\\residual_instrument_classification_review_classification_v2_22c2.csv",
+    "classification_overlay_rows": 9857,
+    "classification_overlay_sha": "b9830ee5c6781e414508fcb166779e84324244182889c8b681e610a397d61b26",
+    "excluded_from_common_equity_scoring_rows": 9591,
+    "scorable_rows": 33498,
+    "scoring_output": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+    "scoring_output_rows": 33498,
+    "scoring_output_sha": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "score_min": 44.7,
+    "score_p25": 45.1,
+    "score_median": 52.2,
+    "score_p75": 74.7667,
+    "score_max": 87.2,
+    "score_mean": 58.2468,
+    "top_exchange_by_scorable_rows": "CBOE_EUROPE",
+    "top_country_by_scorable_rows": "__MISSING__",
+    "top_source_provider_by_scorable_rows": "cboe_europe_reference_data",
+    "dry_run_scoring_authorized": true,
+    "dry_run_scoring_executed": true,
+    "approved_for_promotion": false,
+    "scoring_promoted": false,
+    "production_scoring_authorized": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.22E - Scoring Promotion / Freeze Decision",
+    "secondary_next_phase": "v2.22F - Repo Hygiene / Untracked Files Review"
+  },
+  "score_distribution": [
+    {
+      "bucket": "A_85_100",
+      "count": 1282,
+      "pct": 3.8271
+    },
+    {
+      "bucket": "B_70_84",
+      "count": 8980,
+      "pct": 26.8076
+    },
+    {
+      "bucket": "C_55_69",
+      "count": 6023,
+      "pct": 17.9802
+    },
+    {
+      "bucket": "D_40_54",
+      "count": 17213,
+      "pct": 51.3852
+    },
+    {
+      "bucket": "E_0_39",
+      "count": 0,
+      "pct": 0.0
+    }
+  ],
+  "score_component_summary": [
+    {
+      "metric": "score_min",
+      "value": 44.7
+    },
+    {
+      "metric": "score_p25",
+      "value": 45.1
+    },
+    {
+      "metric": "score_median",
+      "value": 52.2
+    },
+    {
+      "metric": "score_p75",
+      "value": 74.7667
+    },
+    {
+      "metric": "score_max",
+      "value": 87.2
+    },
+    {
+      "metric": "score_mean",
+      "value": 58.2468
+    }
+  ],
+  "excluded_summary": [
+    {
+      "policy_match": "exclude_etf",
+      "excluded_rows": 7381,
+      "pct_of_excluded": 76.9576
+    },
+    {
+      "policy_match": "exclude_fixed_income_bond;exclude_etf",
+      "excluded_rows": 1826,
+      "pct_of_excluded": 19.0387
+    },
+    {
+      "policy_match": "exclude_fund_like",
+      "excluded_rows": 209,
+      "pct_of_excluded": 2.1791
+    },
+    {
+      "policy_match": "exclude_etf;exclude_fund_like",
+      "excluded_rows": 61,
+      "pct_of_excluded": 0.636
+    },
+    {
+      "policy_match": "exclude_fixed_income_debenture",
+      "excluded_rows": 22,
+      "pct_of_excluded": 0.2294
+    },
+    {
+      "policy_match": "exclude_preferred_or_preference;exclude_etf",
+      "excluded_rows": 17,
+      "pct_of_excluded": 0.1772
+    },
+    {
+      "policy_match": "exclude_preferred_or_preference;exclude_fund_like",
+      "excluded_rows": 14,
+      "pct_of_excluded": 0.146
+    },
+    {
+      "policy_match": "exclude_fixed_income_bond",
+      "excluded_rows": 14,
+      "pct_of_excluded": 0.146
+    },
+    {
+      "policy_match": "exclude_fixed_income_bond;exclude_etf;exclude_fund_like",
+      "excluded_rows": 13,
+      "pct_of_excluded": 0.1355
+    },
+    {
+      "policy_match": "exclude_fixed_income_note",
+      "excluded_rows": 12,
+      "pct_of_excluded": 0.1251
+    },
+    {
+      "policy_match": "exclude_certificate",
+      "excluded_rows": 9,
+      "pct_of_excluded": 0.0938
+    },
+    {
+      "policy_match": "exclude_fixed_income_bond;exclude_fund_like",
+      "excluded_rows": 6,
+      "pct_of_excluded": 0.0626
+    },
+    {
+      "policy_match": "exclude_preferred_or_preference",
+      "excluded_rows": 3,
+      "pct_of_excluded": 0.0313
+    },
+    {
+      "policy_match": "exclude_right",
+      "excluded_rows": 2,
+      "pct_of_excluded": 0.0209
+    },
+    {
+      "policy_match": "exclude_fixed_income_debenture;exclude_fund_like",
+      "excluded_rows": 1,
+      "pct_of_excluded": 0.0104
+    },
+    {
+      "policy_match": "exclude_warrant",
+      "excluded_rows": 1,
+      "pct_of_excluded": 0.0104
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "artifact": "current_operational_pointer_input",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "rows": 1,
+      "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+      "role": "input_pointer"
+    },
+    {
+      "artifact": "current_dataset_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "input_dataset_no_modification"
+    },
+    {
+      "artifact": "classification_review_input",
+      "path": "outputs\\full_universe_source_acquisition\\residual_instrument_classification_review_v2_22c2.json",
+      "rows": 1,
+      "sha256": "c50e537589699960d791ab4c0b660250d7956c08c19ae306ee23d3f416e667e4",
+      "role": "input_classification_gate"
+    },
+    {
+      "artifact": "classification_overlay_input",
+      "path": "outputs\\full_universe_source_acquisition\\residual_instrument_classification_review_classification_v2_22c2.csv",
+      "rows": 9857,
+      "sha256": "b9830ee5c6781e414508fcb166779e84324244182889c8b681e610a397d61b26",
+      "role": "input_exclusion_overlay"
+    },
+    {
+      "artifact": "scoring_output",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+      "rows": 33498,
+      "sha256": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+      "role": "dry_run_scores_not_promoted"
+    },
+    {
+      "artifact": "score_distribution",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_score_distribution_v2_22d.csv",
+      "rows": 5,
+      "sha256": "d27673b435f31621082e670ce282e8a67d612a87bbf8437574244267282fb634",
+      "role": "dry_run_score_distribution"
+    },
+    {
+      "artifact": "score_components",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_score_components_v2_22d.csv",
+      "rows": 6,
+      "sha256": "4173877a98d3ea6bc3a3083925f76efc1b947c5ba0e8c2bc688f90b6393e33c5",
+      "role": "dry_run_score_component_summary"
+    },
+    {
+      "artifact": "excluded_summary",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_excluded_summary_v2_22d.csv",
+      "rows": 16,
+      "sha256": "e30717ab7421f604fbb6fa42bccc5e76e2656c8f18afa8c04110cf31e3d90257",
+      "role": "excluded_rows_policy_summary"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_22D_SCORE_001",
+      "decision": "Run local heuristic scoring as dry run only.",
+      "accepted": true,
+      "reason": "v2.22C2 approved a scoring dry run decision but not production scoring.",
+      "effect": "Creates dry-run scores without promotion."
+    },
+    {
+      "decision_id": "V2_22D_SCORE_002",
+      "decision": "Exclude v2.22C2 non-common-equity policy rows from the scoring dry run.",
+      "accepted": true,
+      "reason": "Residual instrument classification identified non-common-equity/fund/fixed-income rows.",
+      "effect": "excluded_from_common_equity_scoring_rows=9591."
+    },
+    {
+      "decision_id": "V2_22D_SCORE_003",
+      "decision": "Do not promote dry-run score output.",
+      "accepted": true,
+      "reason": "Promotion/freeze decision belongs to v2.22E.",
+      "effect": "approved_for_promotion=False."
+    },
+    {
+      "decision_id": "V2_22D_SCORE_004",
+      "decision": "Do not call OpenAI, broker APIs, or full59k.",
+      "accepted": true,
+      "reason": "v2.22D is a local deterministic dry run.",
+      "effect": "External calls remain disabled."
+    }
+  ],
+  "checks": [
+    {
+      "check": "classification_review_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "RESIDUAL_INSTRUMENT_CLASSIFICATION_REVIEW_COMPLETED_FULL_DATASET_POLICY_OVERLAY_READY_FOR_SCORING_DRY_RUN_DECISION"
+    },
+    {
+      "check": "classification_review_approved_for_scoring_dry_run_decision",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved=True"
+    },
+    {
+      "check": "classification_review_not_approved_for_scoring_execution",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_scoring_execution=False"
+    },
+    {
+      "check": "pointer_current_dataset_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv"
+    },
+    {
+      "check": "current_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089"
+    },
+    {
+      "check": "current_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "previous_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "previous_rows=42708"
+    },
+    {
+      "check": "previous_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "classification_overlay_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "overlay_rows=9857;expected=9857"
+    },
+    {
+      "check": "excluded_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "excluded_rows=9591;expected=9591"
+    },
+    {
+      "check": "scorable_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scorable_rows=33498;expected=33498"
+    },
+    {
+      "check": "excluded_plus_scorable_equals_current",
+      "passed": true,
+      "severity": "critical",
+      "detail": "excluded=9591;scorable=33498;current=43089"
+    },
+    {
+      "check": "score_output_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv"
+    },
+    {
+      "check": "score_output_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "score_rows=33498"
+    },
+    {
+      "check": "score_values_within_0_100",
+      "passed": true,
+      "severity": "critical",
+      "detail": "all_scores_between_0_and_100=True"
+    },
+    {
+      "check": "within_quality_floor",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089;floor=42000"
+    },
+    {
+      "check": "within_quality_ceiling",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089;ceiling=45000"
+    },
+    {
+      "check": "dry_run_scoring_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "dry_run_scoring_executed=True"
+    },
+    {
+      "check": "production_scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "production_scoring_authorized=False"
+    },
+    {
+      "check": "promotion_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_promoted=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_sha_after=9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "promotion_freeze_decision",
+      "action": "review_scoring_dry_run_and_decide_promote_or_freeze",
+      "priority": "high",
+      "recommended_phase": "v2.22E - Scoring Promotion / Freeze Decision",
+      "reason": "Dry-run scores exist but are not promoted.",
+      "guardrails": "No canonical replacement without explicit v2.22E decision."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "repo_hygiene",
+      "action": "review_untracked_audit_and_country_breakdown_files",
+      "priority": "medium",
+      "recommended_phase": "v2.22F - Repo Hygiene / Untracked Files Review",
+      "reason": "Repo still has unrelated untracked files.",
+      "guardrails": "Do not add unrelated files automatically."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "scoring-dry-run-no-promotion",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "classification_overlay": "outputs\\full_universe_source_acquisition\\residual_instrument_classification_review_classification_v2_22c2.csv",
+    "scoring_output": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+    "scoring_output_rows": 33498,
+    "dry_run_scoring_authorized": true,
+    "dry_run_scoring_executed": true,
+    "approved_for_promotion": false,
+    "scoring_promoted": false,
+    "production_scoring_authorized": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.22E - Scoring Promotion / Freeze Decision",
+  "secondary_next_phase": "v2.22F - Repo Hygiene / Untracked Files Review"
+}
