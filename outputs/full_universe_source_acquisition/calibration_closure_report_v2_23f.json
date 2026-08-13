@@ -1,0 +1,561 @@
+{
+  "version": "v2.23F",
+  "phase": "Calibration Closure Report",
+  "phase_type": "calibration-closure-report",
+  "status": "CALIBRATION_CLOSURE_REPORT_COMPLETED_V2_23_CLOSED_PRODUCTION_SCORING_DEFERRED",
+  "generated_at_utc": "2026-08-13T15:50:34.524483+00:00",
+  "summary": {
+    "selected_route": "Close v2.23 calibration block and hand off to metadata gap audit",
+    "phase_type": "calibration-closure-report",
+    "closure_decision": "V2_23_CLOSED_PRODUCTION_SCORING_DEFERRED",
+    "closed_phase_range": "v2.23A-v2.23F",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "legacy_dry_run_scoring_output": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+    "legacy_dry_run_scoring_output_rows": 33498,
+    "legacy_dry_run_scoring_output_sha": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "redesigned_scoring_output": "outputs\\full_universe_source_acquisition\\scoring_formula_redesign_dry_run_scores_v2_23d.csv",
+    "redesigned_scoring_output_rows": 33498,
+    "redesigned_scoring_output_sha": "096ab26fc05bf9f37d80d99ea934f41be12126b10295e506180bb5eb8ebb7edb",
+    "v23a_completed": true,
+    "v23b_completed": true,
+    "v23c_completed": true,
+    "v23d_completed": true,
+    "v23e_completed": true,
+    "v23_completed_phases": 5,
+    "phase_rollup_rows": 5,
+    "remaining_blockers": 5,
+    "handoff_rows": 4,
+    "freeze_decision": "FREEZE_REDESIGNED_DRY_RUN_AS_NON_PROMOTED_REFERENCE",
+    "promotion_approved": false,
+    "production_scoring_authorized": false,
+    "scoring_promoted": false,
+    "canonical_dataset_modified": false,
+    "active_pointer_modified": false,
+    "legacy_score_output_modified": false,
+    "redesigned_score_output_modified": false,
+    "manual_labels_created": false,
+    "attractiveness_score_available": false,
+    "attractiveness_score_invented": false,
+    "metadata_backfill_executed": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "gitignore_modified": false,
+    "git_info_exclude_modified": false,
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.24A - Metadata Gap Audit",
+    "secondary_next_phase": "v2.24B - Country / MIC / Currency Backfill Plan"
+  },
+  "phase_rollup": [
+    {
+      "phase_id": "v2.23A",
+      "phase_name": "Scoring Model Calibration Roadmap",
+      "status": "SCORING_MODEL_CALIBRATION_ROADMAP_COMPLETED_PRODUCTION_SCORING_DEFERRED",
+      "critical_failed_checks": 0,
+      "result": "Calibration roadmap created; production scoring deferred.",
+      "promotion_performed": false,
+      "canonical_modified": false
+    },
+    {
+      "phase_id": "v2.23B",
+      "phase_name": "Metadata Coverage Improvement Plan",
+      "status": "METADATA_COVERAGE_IMPROVEMENT_PLAN_COMPLETED_NO_DATASET_MODIFICATION",
+      "critical_failed_checks": 0,
+      "result": "Metadata gaps identified; no backfill executed.",
+      "promotion_performed": false,
+      "canonical_modified": false
+    },
+    {
+      "phase_id": "v2.23C",
+      "phase_name": "Scoring Calibration Data Design",
+      "status": "SCORING_CALIBRATION_DATA_DESIGN_COMPLETED_NO_LABELS_NO_SCORING_NO_PROMOTION",
+      "critical_failed_checks": 0,
+      "result": "Label schema and sample plan designed; no manual labels created.",
+      "promotion_performed": false,
+      "canonical_modified": false
+    },
+    {
+      "phase_id": "v2.23D",
+      "phase_name": "Scoring Formula Redesign Dry Run",
+      "status": "SCORING_FORMULA_REDESIGN_DRY_RUN_COMPLETED_NO_PROMOTION_NO_CANONICAL_CHANGE",
+      "critical_failed_checks": 0,
+      "result": "Redesigned dry-run scores created; attractiveness not invented.",
+      "promotion_performed": false,
+      "canonical_modified": false
+    },
+    {
+      "phase_id": "v2.23E",
+      "phase_name": "Calibration Review / Freeze Decision",
+      "status": "CALIBRATION_REVIEW_FREEZE_DECISION_COMPLETED_REDESIGNED_DRY_RUN_FROZEN_NOT_PROMOTED",
+      "critical_failed_checks": 0,
+      "result": "Redesigned dry-run scores frozen as non-promoted reference.",
+      "promotion_performed": false,
+      "canonical_modified": false
+    }
+  ],
+  "remaining_blockers": [
+    {
+      "blocker_id": "V23_BLOCKER_001",
+      "blocker": "manual_calibration_labels_missing",
+      "blocking_for_production_scoring": true,
+      "source_phase": "v2.23C/v2.23E",
+      "resolution_phase": "future calibration execution phase"
+    },
+    {
+      "blocker_id": "V23_BLOCKER_002",
+      "blocker": "attractiveness_score_unavailable",
+      "blocking_for_production_scoring": true,
+      "source_phase": "v2.23D/v2.23E",
+      "resolution_phase": "future manual labels or authorized fundamentals/enrichment gate"
+    },
+    {
+      "blocker_id": "V23_BLOCKER_003",
+      "blocker": "metadata_gap_remediation_not_executed",
+      "blocking_for_production_scoring": true,
+      "source_phase": "v2.23B/v2.23E",
+      "resolution_phase": "v2.24A/v2.24B/v2.24C"
+    },
+    {
+      "blocker_id": "V23_BLOCKER_004",
+      "blocker": "production_scoring_gate_not_approved",
+      "blocking_for_production_scoring": true,
+      "source_phase": "v2.23E",
+      "resolution_phase": "future explicit production scoring gate"
+    },
+    {
+      "blocker_id": "V23_BLOCKER_005",
+      "blocker": "external_enrichment_not_authorized",
+      "blocking_for_production_scoring": false,
+      "source_phase": "project_guardrails",
+      "resolution_phase": "optional v2.30 external enrichment gate"
+    }
+  ],
+  "handoff_to_v2_24": [
+    {
+      "handoff_id": "V24_HANDOFF_001",
+      "target_phase": "v2.24A - Metadata Gap Audit",
+      "handoff_item": "Start metadata gap audit from v2.23B findings.",
+      "input_artifact": "outputs\\full_universe_source_acquisition\\metadata_coverage_improvement_plan_v2_23b.json",
+      "reason": "Metadata gaps remain the main blocker before any scoring promotion."
+    },
+    {
+      "handoff_id": "V24_HANDOFF_002",
+      "target_phase": "v2.24B - Country / MIC / Currency Backfill Plan",
+      "handoff_item": "Prioritize deterministic mapping for country, MIC and currency.",
+      "input_artifact": "outputs\\full_universe_source_acquisition\\metadata_coverage_improvement_plan_v2_23b.json",
+      "reason": "Scorable country top value remained __MISSING__ in v2.23B."
+    },
+    {
+      "handoff_id": "V24_HANDOFF_003",
+      "target_phase": "v2.24C - Asset Type Normalization Plan",
+      "handoff_item": "Normalize asset_type, instrument_type and instrument_scope before production scoring.",
+      "input_artifact": "outputs\\full_universe_source_acquisition\\metadata_coverage_improvement_plan_v2_23b.json",
+      "reason": "Production scoring needs reliable separation of common equity and excluded instruments."
+    },
+    {
+      "handoff_id": "V24_HANDOFF_004",
+      "target_phase": "future production scoring gate",
+      "handoff_item": "Keep v2.23D redesigned scores as non-promoted reference only.",
+      "input_artifact": "outputs\\full_universe_source_acquisition\\calibration_review_freeze_decision_v2_23e.json",
+      "reason": "v2.23E froze redesigned dry-run scoring."
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "artifact": "v2.23a_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_model_calibration_roadmap_v2_23a.json",
+      "rows": 1,
+      "sha256": "9e6dbaefbe95fac4656c214ef9201c341ce38a5658cd0989f51770306e65417a",
+      "role": "input_phase_report"
+    },
+    {
+      "artifact": "v2.23b_input",
+      "path": "outputs\\full_universe_source_acquisition\\metadata_coverage_improvement_plan_v2_23b.json",
+      "rows": 1,
+      "sha256": "c3d74b1e81eac10517f63e260c6277d4d5870407d76f461687978e31a61761d3",
+      "role": "input_phase_report"
+    },
+    {
+      "artifact": "v2.23c_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_calibration_data_design_v2_23c.json",
+      "rows": 1,
+      "sha256": "fcdf106c3e7c371cd300de418dee6c852015294e0f37a537a82682b1a2f42243",
+      "role": "input_phase_report"
+    },
+    {
+      "artifact": "v2.23d_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_formula_redesign_dry_run_v2_23d.json",
+      "rows": 1,
+      "sha256": "9fc79ee60d4272e50e5868bd3265243d99c32cfa31a29eb515f21ef2d53b8491",
+      "role": "input_phase_report"
+    },
+    {
+      "artifact": "v2.23e_input",
+      "path": "outputs\\full_universe_source_acquisition\\calibration_review_freeze_decision_v2_23e.json",
+      "rows": 1,
+      "sha256": "aea0473df5cfb6daf3f619bc6c637fa0c0018cd6cf6d7b3cd4ab19f6542a9bc2",
+      "role": "input_phase_report"
+    },
+    {
+      "artifact": "current_operational_pointer_input",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "rows": 1,
+      "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+      "role": "input_pointer_no_modification"
+    },
+    {
+      "artifact": "current_dataset_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "input_dataset_no_modification"
+    },
+    {
+      "artifact": "legacy_dry_run_scores_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+      "rows": 33498,
+      "sha256": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+      "role": "input_legacy_scores_no_modification"
+    },
+    {
+      "artifact": "redesigned_dry_run_scores_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_formula_redesign_dry_run_scores_v2_23d.csv",
+      "rows": 33498,
+      "sha256": "096ab26fc05bf9f37d80d99ea934f41be12126b10295e506180bb5eb8ebb7edb",
+      "role": "input_redesigned_scores_no_modification_not_promoted"
+    },
+    {
+      "artifact": "phase_rollup_output",
+      "path": "outputs\\full_universe_source_acquisition\\calibration_closure_report_phase_rollup_v2_23f.csv",
+      "rows": 5,
+      "sha256": "b584a0e8e66a0282553dc4e080684a4fec2fa7e96dd773e0ce08e56d53e4fba4",
+      "role": "closure_phase_rollup_output"
+    },
+    {
+      "artifact": "remaining_blockers_output",
+      "path": "outputs\\full_universe_source_acquisition\\calibration_closure_report_remaining_blockers_v2_23f.csv",
+      "rows": 5,
+      "sha256": "67b1c00d0287b6b7264a8624ab9d56a8cdef07ff47272deda09e5cad954adef4",
+      "role": "closure_remaining_blockers_output"
+    },
+    {
+      "artifact": "handoff_to_v2_24_output",
+      "path": "outputs\\full_universe_source_acquisition\\calibration_closure_report_handoff_to_v2_24_v2_23f.csv",
+      "rows": 4,
+      "sha256": "42dbd5d0cbc53e793468ff030fe314f784b232f830e0c842a7424a7a74641031",
+      "role": "closure_handoff_output"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_23F_CLOSURE_001",
+      "decision": "Close v2.23 calibration block.",
+      "accepted": true,
+      "reason": "v2.23A-E completed with zero critical failed checks.",
+      "effect": "v2.23 is closed as calibration/design/dry-run/freeze block."
+    },
+    {
+      "decision_id": "V2_23F_CLOSURE_002",
+      "decision": "Keep both v2.22D and v2.23D scoring outputs non-promoted.",
+      "accepted": true,
+      "reason": "No manual labels, no attractiveness score, and metadata blockers remain.",
+      "effect": "production_scoring_authorized=False."
+    },
+    {
+      "decision_id": "V2_23F_CLOSURE_003",
+      "decision": "Move next work to v2.24A metadata gap audit.",
+      "accepted": true,
+      "reason": "v2.23B/v2.23E identified metadata quality as the next blocking area.",
+      "effect": "recommended_next_phase=v2.24A."
+    },
+    {
+      "decision_id": "V2_23F_CLOSURE_004",
+      "decision": "Do not modify canonical dataset, active pointer, dry-run scores, .gitignore or repo exclusions.",
+      "accepted": true,
+      "reason": "Closure report is documentation only.",
+      "effect": "canonical_dataset_modified=False; active_pointer_modified=False."
+    },
+    {
+      "decision_id": "V2_23F_CLOSURE_005",
+      "decision": "Keep OpenAI, broker APIs and full59k disabled.",
+      "accepted": true,
+      "reason": "No separate authorization exists.",
+      "effect": "openai_called=False; broker_called=False; full59k=DEPRECATED_DEFERRED."
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2.23A_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "SCORING_MODEL_CALIBRATION_ROADMAP_COMPLETED_PRODUCTION_SCORING_DEFERRED"
+    },
+    {
+      "check": "v2.23A_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "v2.23B_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "METADATA_COVERAGE_IMPROVEMENT_PLAN_COMPLETED_NO_DATASET_MODIFICATION"
+    },
+    {
+      "check": "v2.23B_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "v2.23C_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "SCORING_CALIBRATION_DATA_DESIGN_COMPLETED_NO_LABELS_NO_SCORING_NO_PROMOTION"
+    },
+    {
+      "check": "v2.23C_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "v2.23D_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "SCORING_FORMULA_REDESIGN_DRY_RUN_COMPLETED_NO_PROMOTION_NO_CANONICAL_CHANGE"
+    },
+    {
+      "check": "v2.23D_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "v2.23E_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "CALIBRATION_REVIEW_FREEZE_DECISION_COMPLETED_REDESIGNED_DRY_RUN_FROZEN_NOT_PROMOTED"
+    },
+    {
+      "check": "v2.23E_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "pointer_current_dataset_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv"
+    },
+    {
+      "check": "current_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089"
+    },
+    {
+      "check": "current_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "legacy_scoring_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "legacy_rows=33498"
+    },
+    {
+      "check": "legacy_scoring_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1"
+    },
+    {
+      "check": "redesigned_scoring_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "redesigned_rows=33498"
+    },
+    {
+      "check": "redesigned_scoring_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "096ab26fc05bf9f37d80d99ea934f41be12126b10295e506180bb5eb8ebb7edb"
+    },
+    {
+      "check": "v23e_freeze_decision_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "FREEZE_REDESIGNED_DRY_RUN_AS_NON_PROMOTED_REFERENCE"
+    },
+    {
+      "check": "v23e_promotion_not_approved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promotion_approved=False"
+    },
+    {
+      "check": "manual_labels_not_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "manual_labels_created=False"
+    },
+    {
+      "check": "attractiveness_not_available",
+      "passed": true,
+      "severity": "critical",
+      "detail": "attractiveness_score_available=False"
+    },
+    {
+      "check": "production_scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "production_scoring_authorized=False"
+    },
+    {
+      "check": "scoring_not_promoted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_promoted=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_sha_after=9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "active_pointer_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_sha_after=61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "legacy_score_output_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "legacy_sha_after=a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1"
+    },
+    {
+      "check": "redesigned_score_output_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "redesigned_sha_after=096ab26fc05bf9f37d80d99ea934f41be12126b10295e506180bb5eb8ebb7edb"
+    },
+    {
+      "check": "phase_rollup_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "phase_rollup_rows=5"
+    },
+    {
+      "check": "remaining_blockers_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "blockers_rows=5"
+    },
+    {
+      "check": "handoff_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "handoff_rows=4"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "gitignore_not_modified_by_phase",
+      "passed": true,
+      "severity": "critical",
+      "detail": "gitignore_modified=False"
+    },
+    {
+      "check": "git_info_exclude_not_modified_by_phase",
+      "passed": true,
+      "severity": "critical",
+      "detail": "git_info_exclude_modified=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "metadata_quality",
+      "action": "open_metadata_gap_audit",
+      "priority": "high",
+      "recommended_phase": "v2.24A - Metadata Gap Audit",
+      "reason": "v2.23 closed with scoring frozen and metadata gaps blocking promotion.",
+      "guardrails": "Deterministic audit only; no canonical replacement unless later gate authorizes it."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "metadata_backfill_planning",
+      "action": "prepare_country_mic_currency_backfill_plan",
+      "priority": "medium",
+      "recommended_phase": "v2.24B - Country / MIC / Currency Backfill Plan",
+      "reason": "Country, MIC and currency coverage remain weak.",
+      "guardrails": "No OpenAI/broker/full59k unless separately approved."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "calibration-closure-report",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "legacy_dry_run_score_output": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+    "legacy_dry_run_score_output_rows": 33498,
+    "legacy_dry_run_score_output_sha": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "redesigned_scoring_output": "outputs\\full_universe_source_acquisition\\scoring_formula_redesign_dry_run_scores_v2_23d.csv",
+    "redesigned_scoring_output_rows": 33498,
+    "redesigned_scoring_output_sha": "096ab26fc05bf9f37d80d99ea934f41be12126b10295e506180bb5eb8ebb7edb",
+    "v2_23_closed": true,
+    "promotion_approved": false,
+    "production_scoring_authorized": false,
+    "scoring_promoted": false,
+    "canonical_dataset_modified": false,
+    "active_pointer_modified": false,
+    "legacy_score_output_modified": false,
+    "redesigned_score_output_modified": false,
+    "manual_labels_created": false,
+    "attractiveness_score_available": false,
+    "attractiveness_score_invented": false,
+    "metadata_backfill_executed": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false,
+    "gitignore_modified": false,
+    "git_info_exclude_modified": false
+  },
+  "recommended_next_phase": "v2.24A - Metadata Gap Audit",
+  "secondary_next_phase": "v2.24B - Country / MIC / Currency Backfill Plan"
+}

@@ -1,0 +1,6 @@
+decision_id,decision,accepted,reason,effect
+V2_23F_CLOSURE_001,Close v2.23 calibration block.,True,v2.23A-E completed with zero critical failed checks.,v2.23 is closed as calibration/design/dry-run/freeze block.
+V2_23F_CLOSURE_002,Keep both v2.22D and v2.23D scoring outputs non-promoted.,True,"No manual labels, no attractiveness score, and metadata blockers remain.",production_scoring_authorized=False.
+V2_23F_CLOSURE_003,Move next work to v2.24A metadata gap audit.,True,v2.23B/v2.23E identified metadata quality as the next blocking area.,recommended_next_phase=v2.24A.
+V2_23F_CLOSURE_004,"Do not modify canonical dataset, active pointer, dry-run scores, .gitignore or repo exclusions.",True,Closure report is documentation only.,canonical_dataset_modified=False; active_pointer_modified=False.
+V2_23F_CLOSURE_005,"Keep OpenAI, broker APIs and full59k disabled.",True,No separate authorization exists.,openai_called=False; broker_called=False; full59k=DEPRECATED_DEFERRED.

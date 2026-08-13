@@ -1,0 +1,5 @@
+handoff_id,target_phase,handoff_item,input_artifact,reason
+V24_HANDOFF_001,v2.24A - Metadata Gap Audit,Start metadata gap audit from v2.23B findings.,outputs\full_universe_source_acquisition\metadata_coverage_improvement_plan_v2_23b.json,Metadata gaps remain the main blocker before any scoring promotion.
+V24_HANDOFF_002,v2.24B - Country / MIC / Currency Backfill Plan,"Prioritize deterministic mapping for country, MIC and currency.",outputs\full_universe_source_acquisition\metadata_coverage_improvement_plan_v2_23b.json,Scorable country top value remained __MISSING__ in v2.23B.
+V24_HANDOFF_003,v2.24C - Asset Type Normalization Plan,"Normalize asset_type, instrument_type and instrument_scope before production scoring.",outputs\full_universe_source_acquisition\metadata_coverage_improvement_plan_v2_23b.json,Production scoring needs reliable separation of common equity and excluded instruments.
+V24_HANDOFF_004,future production scoring gate,Keep v2.23D redesigned scores as non-promoted reference only.,outputs\full_universe_source_acquisition\calibration_review_freeze_decision_v2_23e.json,v2.23E froze redesigned dry-run scoring.

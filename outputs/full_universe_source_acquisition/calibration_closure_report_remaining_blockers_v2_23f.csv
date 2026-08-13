@@ -1,0 +1,6 @@
+blocker_id,blocker,blocking_for_production_scoring,source_phase,resolution_phase
+V23_BLOCKER_001,manual_calibration_labels_missing,True,v2.23C/v2.23E,future calibration execution phase
+V23_BLOCKER_002,attractiveness_score_unavailable,True,v2.23D/v2.23E,future manual labels or authorized fundamentals/enrichment gate
+V23_BLOCKER_003,metadata_gap_remediation_not_executed,True,v2.23B/v2.23E,v2.24A/v2.24B/v2.24C
+V23_BLOCKER_004,production_scoring_gate_not_approved,True,v2.23E,future explicit production scoring gate
+V23_BLOCKER_005,external_enrichment_not_authorized,False,project_guardrails,optional v2.30 external enrichment gate

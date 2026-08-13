@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,metadata_quality,open_metadata_gap_audit,high,v2.24A - Metadata Gap Audit,v2.23 closed with scoring frozen and metadata gaps blocking promotion.,Deterministic audit only; no canonical replacement unless later gate authorizes it.
+2,metadata_backfill_planning,prepare_country_mic_currency_backfill_plan,medium,v2.24B - Country / MIC / Currency Backfill Plan,"Country, MIC and currency coverage remain weak.",No OpenAI/broker/full59k unless separately approved.
