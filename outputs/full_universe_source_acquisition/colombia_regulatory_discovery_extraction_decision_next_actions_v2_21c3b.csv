@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,colombia_conditional_build,run_colombia_conditional_build_from_structured_regulatory_sources,high,v2.21D_C - Colombia Conditional Build / Freeze,Structured regulatory source exists.,No BVC shell HTML; no regex-only candidates; no scoring
+2,singapore_reference,preserve_singapore_promoted_artifact_as_v2_21_successful_output,high,v2.21D_C - Colombia Conditional Build / Freeze,Singapore promoted artifact was already verified.,Do not alter Singapore artifact during Colombia decision.
+3,pointer_control,keep_active_pointer_unchanged_until_final_v2_21_closure,high,v2.21D_C - Colombia Conditional Build / Freeze,Pointer update remains outside Colombia discovery.,No active pointer mutation in v2.21C3B.

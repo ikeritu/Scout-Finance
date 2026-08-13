@@ -1,0 +1,6 @@
+decision_id,decision,accepted,reason,effect
+COLOMBIA_REG_DISCOVERY_001,Do not extract from BVC shell HTML or regex output.,True,v2.21C2/v2.21C3 already showed BVC shell pages were not reliable structured inputs.,BVC shell HTML remains excluded.
+COLOMBIA_REG_DISCOVERY_002,Use only official Superfinanciera/SIMEV/RNVE sources for Colombia review.,True,Colombia route needs official regulatory source family.,All seed URLs are restricted to superfinanciera.gov.co.
+COLOMBIA_REG_DISCOVERY_003,Approve Colombia structured extraction only if table/field structure is sufficient.,True,Structured candidates found.,v2.21D_C - Colombia Conditional Build / Freeze
+COLOMBIA_REG_DISCOVERY_004,Keep Singapore promoted artifact unchanged.,True,Singapore was closed in v2.21E_S.,Singapore promoted artifact remains the v2.21 successful output.
+COLOMBIA_REG_DISCOVERY_005,Keep scoring/OpenAI/broker/full59k deferred.,True,No scoring/enrichment authorization has been given.,"No scoring, OpenAI, broker, or full59k actions are performed."

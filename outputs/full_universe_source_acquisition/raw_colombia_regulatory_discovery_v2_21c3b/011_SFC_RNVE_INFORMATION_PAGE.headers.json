@@ -1,0 +1,18 @@
+{
+  "Date": "Thu, 13 Aug 2026 08:23:09 GMT",
+  "Content-Type": "text/html; charset=UTF-8",
+  "Transfer-Encoding": "chunked",
+  "Connection": "close",
+  "Set-Cookie": "nexuraSID=fqnsu00stmiug0elau1bnakvtc; path=/; secure; HttpOnly; SameSite=None",
+  "Vary": "Accept-Encoding",
+  "Expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+  "Cache-Control": "no-store, no-cache, must-revalidate",
+  "Pragma": "no-cache",
+  "X-Frame-Options": "SAMEORIGIN",
+  "Strict-Transport-Security": "max-age=15768000",
+  "X-XSS-Protection": "1; mode=block",
+  "X-Content-Type-Options": "nosniff",
+  "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://code.highcharts.com http://translate.google.com https://clientes-582626286766.us-central1.run.app https://www.google-analytics.com/ https://translate.googleapis.com/ https://translate-pa.googleapis.com/ https://cse.google.com/ https://*.google.com https://platform.twitter.com; style-src 'self' 'unsafe-inline' https://clientes-582626286766.us-central1.run.app https://fonts.googleapis.com https://www.gstatic.com/ https://cse.google.com/  https://*.google.com; img-src 'self' data: https://placeholdit.imgix.net https://*.gstatic.com/ https://*.google.com.co/ https://*.google.com/ https://fonts.gstatic.com/ https://www.gstatic.com/ https://firebasestorage.googleapis.com/ https://www.google-analytics.com/; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com/ https://firestore.googleapis.com/ https://firestore.googleapis.com/ https://translate.googleapis.com/ wss://clientes-582626286766.us-central1.run.app/ https://us-central1-chat-asesores-3.cloudfunctions.net/ https://clientes-582626286766.us-central1.run.app/ http://www.googleapis.com/; frame-src 'self' https://app.powerbi.com/ https://www.facebook.com/ https://www.youtube.com/ https://wl.superfinanciera.gov.co/ https://open.spotify.com/;",
+  "x-azure-ref": "20260813T082309Z-16b964c4f88gbt48hC1MADtsq000000003q0000000000sb6",
+  "X-Cache": "CONFIG_NOCACHE"
+}
