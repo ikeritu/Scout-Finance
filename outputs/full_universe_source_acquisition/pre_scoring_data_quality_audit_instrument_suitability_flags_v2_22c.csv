@@ -1,0 +1,1001 @@
+row_number,matched_terms,isin,symbol,name,country,exchange,mic,currency,source_provider,severity
+231,fund,,,Ares Capital Corporation - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+337,fund,,,ArrowMark Financial Corp. - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+357,fund,,,BCP Investment Corporation - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+545,fund,,,Calamos Dynamic Convertible & Income Fund - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+566,cdt,,,CDT Equity Inc. - Common Stock,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+567,cdt,,,CDT Environmental Technology Investment Holdings Limited - ordinary shares,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+594,fund,,,"Carlyle Secured Lending, Inc. - Closed End Fund",USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+600,fund,,,Calamos Global Total Return Fund - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+611,fund,,,Calamos Convertible Opportunities and Income Fund - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+623,fund,,,Calamos Global Dynamic Income Fund - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+624,fund,,,Calamos Convertible and High Income Fund - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+714,fund,,,Calamos Long/Short Equity & Dynamic Income Trust - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+754,fund,,,Calamos Strategic Total Return Fund - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+899,fund,,,Daxor Corporation - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+1052,fund,,,Fidus Investment Corporation - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+1161,fund,,,"Sprott Focus Trust, Inc. - Closed End Fund",USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+1183,fund,,,"Golub Capital BDC, Inc. - Closed End Fund",USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+1198,fund,,,Great Elm Capital Corp. - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+1225,fund,,,Gladstone Capital Corporation - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+1331,fund,,,"Herzfeld Credit Income Fund, Inc. - Closed End Fund",USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+1710,preference share,,,Liberty Latin America Ltd. - 9.0% Fixed Rate Cumulative Perpetual Redeemable Series A Preference Shares,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+1731,fund,,,"LM Funding America, Inc. - Common Stock",USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+1852,fund,,,MidCap Financial Investment Corporation - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2014,etf,,,"Netflix, Inc. - Common Stock",USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2052,fund,,,Neostellar Capital Corp. - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2115,fund,,,"OFS Credit Company, Inc. - Closed End Fund",USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2120,fund,,,Oaktree Specialty Lending Corporation - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2131,fund,,,OFS Capital Corporation - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2201,fund,,,Oxford Lane Capital Corp. - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2202,fund,,,Oxford Square Capital Corp. - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2358,fund,,,Prospect Capital Corporation - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2406,fund,,,Nuveen NASDAQ 100 Dynamic Overwrite Fund - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2425,fund,,,Rand Capital Corporation - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2681,fund,,,SLR Investment Corp. - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2834,fund,,,Thornburg Income Builder Opportunities Trust - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+2841,fund,,,BlackRock TCP Capital Corp. - Closed End Fund,USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+3120,fund,,,"WhiteHorse Finance, Inc. - Closed End Fund",USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+3175,note;notes,,,"Xcel Energy Inc. - 6.25% Junior Subordinated Notes, Series due 2085",USA,NASDAQ,,,nasdaq_trader_nasdaqlisted,review
+3269,fund,,,abrdn Income Credit Strategies Fund Common Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3272,fund,,,Virtus Diversified Income & Convertible Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3280,fund,,,Adams Diversified Equity Fund Inc.,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3282,fund,,,"abrdn Emerging Markets ex-China Fund, Inc. Common Stock",USA,NYSE American,,,nasdaq_trader_otherlisted,review
+3291,fund,,,AllianceBernstein National Municipal Income Fund Inc,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3293,debenture;debentures,,,"American Financial Group, Inc. 5.875% Subordinated Debentures due 2059",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3294,debenture;debentures,,,"American Financial Group, Inc. 5.125% Subordinated Debentures due 2059",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3295,debenture;debentures,,,"American Financial Group, Inc. 5.625% Subordinated Debentures due 2060",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3296,debenture;debentures,,,"American Financial Group, Inc. 4.500% Subordinated Debentures due 2060",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3301,fund,,,abrdn Global Dynamic Dividend Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3310,preference share,,,Aspen Insurance Holdings Limited 5.625% Perpetual Non-Cumulative Preference Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3319,note,,,AIM ImmunoTech Inc. Common Stock,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+3321,fund,,,Virtus Artificial Intelligence & Technology Opportunities Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3339,debenture;debentures,,,Allstate Corporation (The) 5.100% Fixed-to-Floating Rate Subordinated Debentures due 2053,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3377,fund,,,abrdn Total Dynamic Dividend Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3393,note;notes,,,"Algonquin Power & Utilities Corp. 6.20% Fixed-to-Floating Subordinated Notes Series 2019-A due July 1, 2079",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3396,fund,,,"Ares Dynamic Credit Allocation Fund, Inc. Common Shares",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3416,fund,,,"Liberty All-Star Growth Fund, Inc.",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3417,fund,,,abrdn Global Infrastructure Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3426,debenture;debentures,,,Athene Holding Ltd. 7.250% Fixed-Rate Reset Junior Subordinated Debentures due 2064,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3444,fund,,,Advent Convertible and Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3449,fund,,,Alliancebernstein Global High Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3452,fund,,,abrdn Global Premier Properties Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3501,fund,,,"Bancroft Fund, Ltd.",USA,NYSE American,,,nasdaq_trader_otherlisted,review
+3513,note;notes,,,Brookfield BRP Holdings (Canada) Inc. 4.625% Perpetual Subordinated Notes,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3514,note;notes,,,Brookfield BRP Holdings (Canada) Inc. 4.875% Perpetual Subordinated Notes,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3515,note;notes,,,Brookfield BRP Holdings (Canada) Inc. 7.250% Perpetual Subordinated Notes,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3524,fund,,,Blackstone Strategic Credit 2027 Term Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3525,fund,,,Barings Global Short Duration High Yield Fund Common Shares of Beneficial Interests,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3532,fund,,,Blackstone Long Short Credit Income Fund Common Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3547,note;notes,,,BIP Bermuda Holdings I Limited 5.125% Perpetual Subordinated Notes,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3577,note;notes,,,Brookfield Finance Inc. 4.50% Perpetual Subordinated Notes,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3590,fund,,,Bluerock Private Real Estate Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3604,fund,,,Saba Capital Income & Opportunities Fund SBI,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3607,fund,,,Blackstone Senior Floating Rate 2027 Term Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3615,fund,,,John Hancock Financial Opportunities Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3629,fund,,,BrandywineGLOBAL Global Income Opportunities Fund Inc.,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3639,fund,,,Blackstone Secured Lending Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3648,fund,,,Morgan Stanley China A Share Fund Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3673,fund,,,Carlyle Credit Income Fund Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3686,fund,,,"The Central and Eastern Europe Fund, Inc. (The) Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3691,fund,,,C1 Fund Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3708,fund,,,"BlackRock Enhanced Large Cap Core Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3709,fund,,,"Credit Suisse Asset Management Income Fund, Inc. Common Stock",USA,NYSE American,,,nasdaq_trader_otherlisted,review
+3723,fund,,,"Cornerstone Strategic Investment Fund, Inc. Common Shares",USA,NYSE American,,,nasdaq_trader_otherlisted,review
+3751,debenture;debentures,,,"CNO Financial Group, Inc. 5.125% Subordinated Debentures due 2060",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3788,fund,,,"Cornerstone Total Return Fund, Inc. (The) Common Stock",USA,NYSE American,,,nasdaq_trader_otherlisted,review
+3846,fund,,,DoubleLine Opportunistic Credit Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3852,note;notes,,,"Dime Commercial Bancshares, Inc. 9.000% Junior Subordinated Notes",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3875,fund,,,BNY Mellon High Yield Strategies Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3880,fund,,,Credit Suisse High Yield Credit Fund Common Stock,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+3891,fund,,,DoubleLine Yield Opportunities Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3892,fund,,,Destra Multi-Alternative Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3894,fund,,,Western Asset Mortgage Opportunity Fund Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3898,fund,,,"DNP Select Income Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3907,fund,,,Duff & Phelps Utility and Infrastructure Fund Inc.,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3909,fund,,,DoubleLine Income Solutions Fund Common Shares of Beneficial Interests,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3911,fund,,,"Blackrock Debt Strategies Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3914,debenture;debentures,,,DTE Energy Company 2020 Series G 4.375% Junior Subordinated Debentures due 2080,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3916,fund,,,DTF Tax-Free Income 2028 Term Fund Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3917,debenture;debentures,,,DTE Energy Company 2021 Series E 4.375% Junior Subordinated Debentures,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3918,debenture;debentures,,,DTE Energy Company 2025 Series H 6.25% Junior Subordinated Debentures due 2085,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3920,debenture;debentures,,,DTE Energy Company 2017 Series E 5.25% Junior Subordinated Debentures due 2077,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3922,debenture;debentures,,,Duke Energy Corporation 5.625% Junior Subordinated Debentures due 2078,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3932,fund,,,Allspring Income Opportunities Fund Common Shares,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+3940,fund,,,Ellsworth Growth and Income Fund Ltd.,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+3946,fund,,,"Morgan Stanley Emerging Markets Domestic Debt Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3947,fund,,,Virtus Stone Harbor Emerging Markets Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3950,fund,,,"The European Equity Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+3954,fund,,,Eaton Vance Senior Floating-Rate Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3964,fund,,,Western Asset Global High Income Fund Inc Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3979,fund,,,Western Asset Emerging Markets Debt Fund Inc Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3981,fund,,,Templeton Emerging Markets Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3983,fund,,,ClearBridge Energy Midstream Opportunity Fund Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3991,fund,,,Allspring Global Dividend Opportunity Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3993,fund,,,Eaton Vance Enhance Equity Income Fund Eaton Vance Enhanced Equity Income Fund Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+3995,fund,,,Eaton Vance Enhance Equity Income Fund II Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4012,fund,,,Allspring Multi-Sector Income Fund Common Stock,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4013,fund,,,Allspring Utilities and High Income Fund Common Shares,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4026,fund,,,Eaton Vance Tax-Managed Buy-Write Income Fund Eaton Vance Tax-Managed Buy-Write Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4028,fund,,,Eaton Vance Tax-Advantaged Global Dividend Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4029,fund,,,Eaton Vance Risk-Managed Diversified Equity Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4035,fund,,,Eaton Vance Corporation Eaton Vance Tax-Managed Buy-Write Opportunities Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4036,fund,,,Eaton Vance Corporation Eaton Vance Tax-Managed Global Buy-Write Opportunites Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4038,fund,,,"Eaton Vance Tax-Managed Diversified Equity Income Fund Common Shares of Beneficial Interest,",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4043,fund,,,Eaton Vance Short Diversified Income Fund Eaton Vance Short Duration Diversified Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4049,fund,,,Eaton Vance Tax Advantaged Dividend Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4052,fund,,,Eaton Vance Limited Duration Income Fund Common Shares of Beneficial Interest,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4054,fund,,,Eaton Vance Tax-Managed Global Diversified Equity Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4062,fund,,,"abrdn Asia-Pacific Income Fund, Inc. Common Stock",USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4073,fund,,,First Trust Senior Floating Rate Income Fund II Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4082,fund,,,First Trust Enhanced Equity Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4095,fund,,,Flaherty & Crumrine Total Return Fund Inc Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4105,fund,,,Federated Hermes Premier Municipal Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4107,fund,,,First Trust Mortgage Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4116,fund,,,"Cohen & Steers Closed-End Opportunity Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4123,fund,,,Blackrock Floating Rate Income Strategies Fund Inc Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4132,fund,,,FS Specialty Lending Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4135,fund,,,First Trust High Yield Opportunities 2027 Term Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4157,cdt,,,Green Circle Decarbonize Technology Limited Ordinary Shares,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4160,fund,,,"Gabelli Convertible and Income Securities Fund, Inc. (The) Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4163,fund,,,"GDL Fund, The Common Shares of Beneficial Interest",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4164,fund,,,Western Asset Global Corporate Opportunity Fund Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4175,fund,,,"New Germany Fund, Inc. (The) Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4187,fund,,,"PGIM Global High Yield Fund, Inc.",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4194,certificate,,,"Synthetic Fixed-Income Securities, Inc. on behalf of STRATS (SM) Trust for Dominion Resources, Inc. Securities, Series 2005-6, Floating Rate Structured Repackaged Asset-Backed Trust Securities (STRATS) Certificates",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4197,certificate,,,"Synthetic Fixed-Income Securities, Inc. Floating Rate Structured Repackaged Asset-Backed Trust Securities Certificates, Series 2006-3",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4200,debenture;debentures,,,Globe Life Inc. 4.25% Junior Subordinated Debentures due 2061,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4204,fund,,,Clough Global Opportunities Fund Common Stock,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4206,fund,,,Clough Global Equity Fund Clough Global Equity Fund Common Shares of Beneficial Interest,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4208,fund,,,Clough Global Dividend and Income Fund Common Shares of beneficial interest,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4222,fund,,,Guggenheim Strategic Opportunities Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4240,fund,,,"Eagle Capital Growth Fund, Inc. Common Stock",USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4242,note;notes,,,iPath Series B Carbon Exchange-Traded Notes,USA,NYSE Arca,,,nasdaq_trader_otherlisted,review
+4258,fund,,,Guggenheim Active Allocation Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4283,fund,,,John Hancock Diversified Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4285,fund,,,Highland Opportunities and Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4287,fund,,,Highland Global Allocation Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4294,fund,,,"Western Asset High Income Opportunity Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4297,fund,,,Western Asset High Income Fund II Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4329,fund,,,John Hancock Tax Advantaged Dividend Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4341,fund,,,Western Asset High Yield Opportunity Fund Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4343,fund,,,"Blackrock Corporate High Yield Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4345,fund,,,Voya Asia Pacific High Dividend Equity Income Fund ING Asia Pacific High Dividend Equity Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4346,fund,,,"abrdn Australia Equity Fund, Inc. Common Stock",USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4357,fund,,,"Voya Infrastructure, Industrials and Materials Fund Common Shares of Beneficial Interest",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4363,fund,,,"Aberdeen India Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4365,fund,,,Voya Global Advantage and Premium Opportunity Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4367,fund,,,Voya Global Equity Dividend and Premium Opportunity Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4369,fund,,,CBRE Global Real Estate Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4370,fund,,,Voya Emerging Markets High Income Dividend Equity Fund Common Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4373,fund,,,"Morgan Stanley India Investment Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4425,fund,,,Nuveen Core Equity Alpha Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4430,fund,,,Nuveen Floating Rate Income Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4431,fund,,,Nuveen Global High Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4437,fund,,,Nuveen Mortgage and Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4438,fund,,,Nuveen Multi-Market Income Fund (MA),USA,NYSE,,,nasdaq_trader_otherlisted,review
+4443,fund,,,Japan Smaller Capitalization Fund Inc Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4445,fund,,,Nuveen Credit Strategies Income Fund Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4446,fund,,,Nuveen Real Asset Income and Growth Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4447,fund,,,Nuveen Real Estate Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4461,fund,,,"Korea Fund, Inc. (The) New Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4467,fund,,,KKR Income Opportunities Fund Common Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4472,debenture;debentures,,,Kemper Corporation 5.875% Fixed-Rate Reset Junior Subordinated Debentures due 2062,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4505,fund,,,"Kayne Anderson Energy Infrastructure Fund, Inc.",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4531,fund,,,Lazard Global Total Return and Income Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4596,fund,,,XAI Madison Equity Premium Income Fund Common Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4608,fund,,,NYLI CBRE Global Infrastructure Megatrends Term Fund Common Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4610,note;notes,,,"Bank of America Corporation Income Capital Obligation Notes initially due December 15, 2066",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4615,fund,,,Aberdeen Municipal Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4623,fund,,,"Blackrock MuniHoldings Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4624,fund,,,"Western Asset Municipal High Income Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4636,fund,,,"Blackrock MuniYield Michigan Quality Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4647,fund,,,NYLI MacKay DefinedTerm Muni Opportunities Fund Common Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4651,fund,,,Aberdeen Multi-Market Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4652,fund,,,"Western Asset Managed Municipals Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4662,fund,,,Blackrock MuniYield Pennsylvania Quality Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4668,fund,,,"Blackrock MuniYield Quality Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4678,fund,,,"Morgan Stanley Emerging Markets Debt Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4679,fund,,,Morgan Stanley Direct Lending Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4683,fund,,,"MSC Income Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4703,fund,,,"Blackrock MuniAssets Fund, Inc Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4704,fund,,,"Blackrock MuniHoldings California Quality Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4706,fund,,,"Blackrock MuniHoldings New Jersey Quality Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4714,fund,,,"Mexico Equity and Income Fund, Inc. (The) Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4715,fund,,,"Mexico Fund, Inc. (The) Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4717,fund,,,"Blackrock MuniYield Quality Fund III, Inc Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4718,fund,,,"Blackrock MuniYield New York Quality Fund, Inc.Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4722,fund,,,Nuveen California Quality Municipal Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4723,fund,,,Nuveen Quality Municipal Income Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4725,fund,,,Nuveen New York Quality Municipal Income Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4728,fund,,,Nuveen Arizona Quality Municipal Income Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4729,fund,,,Nuveen Taxable Municipal Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4730,fund,,,Neuberger Municipal Fund Inc. Common Stock,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4733,fund,,,Neuberger Next Generation Connectivity Fund Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4735,fund,,,Nuveen California Municipal Value Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4739,fund,,,Virtus Convertible & Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4740,fund,,,Virtus Convertible & Income Fund II Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4741,fund,,,Nuveen Dynamic Municipal Opportunities Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4743,fund,,,Nuveen AMT-Free Quality Municipal Income Fund Common Shares of Beneficial Interest Par Value $.01,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4745,debenture;debentures,,,"NextEra Energy Capital Holdings Inc. Series N Junior Subordinated Debentures due March 1, 2079",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4746,debenture;debentures,,,"NextEra Energy, Inc. Series U Junior Subordinated Debentures due June 1, 2085",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4747,debenture;debentures,,,"NextEra Energy Capital Holdings Inc. Series Z Junior Subordinated Debentures due April 15, 2086",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4755,fund,,,"Virtus Dividend, Interest & Premium Strategy Fund Common Shares of Beneficial Interest",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4762,fund,,,Neuberger High Yield Strategies Fund Inc. Common Stock,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4765,fund,,,Virtus Equity & Convertible Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4766,fund,,,Nuveen Select Maturities Municipal Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4771,fund,,,Nuveen California AMT-Free Quality Municipal Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4776,fund,,,Nuveen Multi-Asset Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4778,fund,,,Nuveen Municipal Credit Opportunities Fund Common Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4780,fund,,,"Nuveen Municipal Income Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4781,fund,,,Neuberger Energy Infrastructure and Income Fund Inc. Common Stock,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4782,fund,,,Nuveen Minnesota Quality Municipal Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4783,fund,,,Nuveen Massachusetts Quality Municipal Income Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4784,fund,,,"Nuveen Municipal High Income Opportunity Fund Common Stock, $0.01 par value, per share",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4788,fund,,,Nuveen New York Municipal Value Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4797,fund,,,Nuveen Core Plus Impact Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4801,fund,,,Nuveen Virginia Quality Municipal Income Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4807,fund,,,Nuveen New York AMT-Free Quality Municipal Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4808,fund,,,Neuberger Real Estate Securities Income Fund Inc. Common Stock,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+4824,fund,,,"Nuveen Municipal Value Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4826,fund,,,Nuveen AMT-Free Municipal Value Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4828,fund,,,Nuveen AMT-Free Municipal Credit Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4843,fund,,,NXG NextGen Infrastructure Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4848,fund,,,Nuveen Municipal Credit Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4885,fund,,,"RiverNorth/DoubleLine Strategic Opportunity Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4916,fund,,,Western Asset Investment Grade Income Fund Inc.,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4923,fund,,,PIMCO Access Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4933,fund,,,High Income Securities Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4935,fund,,,"PCM Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4936,fund,,,Pimco Corporate & Income Strategy Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4938,fund,,,PIMCO California Municipal Income Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4941,fund,,,PIMCO Dynamic Income Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4943,fund,,,PIMCO Dynamic Income Opportunities Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4945,fund,,,John Hancock Premium Dividend Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4946,fund,,,PIMCO Dynamic Income Strategy Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4951,fund,,,"Adams Natural Resources Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+4956,fund,,,PIMCO Income Strategy Fund Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4958,fund,,,PIMCO Income Strategy Fund II,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4962,fund,,,Pimco Global StocksPlus & Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4964,fund,,,Principal Real Estate Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4970,fund,,,Pimco High Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4993,fund,,,Pimco Municipal Income Fund II Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+4999,fund,,,Pimco New York Municipal Income Fund II Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5032,fund,,,Pimco Corporate & Income Opportunity Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5052,fund,,,Brookfield Real Assets Income Fund Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5062,fund,,,"RENN Fund, Inc Common Stock",USA,NYSE American,,,nasdaq_trader_otherlisted,review
+5065,fund,,,"PIMCO Strategic Income Fund, Inc.",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5080,fund,,,"Cohen & Steers Total Return Realty Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5082,fund,,,"RiverNorth Flexible Municipal Income Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5083,fund,,,"RiverNorth Flexible Municipal Income Fund II, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5095,fund,,,"RiverNorth Opportunities Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5102,fund,,,Cohen & Steers Real Estate Opportunities and Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5106,fund,,,"RiverNorth Opportunistic Municipal Income Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5107,fund,,,"RiverNorth Managed Duration Municipal Income Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5108,fund,,,"RiverNorth Managed Duration Municipal Income Fund II, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5121,fund,,,Cohen & Steers Quality Income Realty Fund Inc Common Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5125,fund,,,RiverNorth Capital and Income Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5130,fund,,,Robinhood Ventures Fund I Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5143,debenture;debentures,,,"Reinsurance Group of America, Incorporated 7.125% Fixed-Rate Reset Subordinated Debentures due 2052",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5146,fund,,,Saba Capital Income & Opportunities Fund II Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5160,fund,,,Western Asset Intermediate Muni Fund Inc Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5168,fund,,,LMP Capital and Income Fund Inc. Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5179,fund,,,PGIM Short Duration High Yield Opportunities Fund Common Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5253,fund,,,"Special Opportunities Fund, Inc Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5264,fund,,,Nuveen S&P 500 Dynamic Overwrite Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5272,fund,,,NXG Cushing Midstream Energy Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5284,fund,,,"SRH Total Return Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5285,fund,,,Columbia Seligman Premium Technology Growth Fund Inc,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5305,fund,,,Total Return Securities Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5326,fund,,,"Templeton Dragon Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5334,fund,,,"Templeton Emerging Markets Income Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5355,fund,,,abrdn Healthcare Opportunities Fund Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5356,fund,,,abrdn World Healthcare Fund Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5401,preference share,,,Triton International Limited 8.50% Series A Cumulative Redeemable Perpetual Preference Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5402,preference share,,,Triton International Limited 8.00% Series B Cumulative Redeemable Perpetual Preference Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5403,preference share,,,Triton International Limited 7.375% Series C Cumulative Redeemable Perpetual Preference Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5404,preference share,,,Triton International Limited 6.875% Series D Cumulative Redeemable Perpetual Preference Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5405,preference share,,,Triton International Limited 5.75% Series E Cumulative Redeemable Perpetual Preference Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5406,preference share,,,Triton International Limited 7.625% Series F Cumulative Redeemable Perpetual Preference Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5407,preference share,,,Triton International Limited 7.500% Series G Cumulative Redeemable Perpetual Preference Shares,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5412,fund,,,"TCW Strategic Income Fund, Inc. Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5428,fund,,,"Taiwan Fund, Inc. (The) Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5469,fund,,,Liberty All-Star Equity Fund Common Stock,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5476,fund,,,"Cohen & Steers Infrastructure Fund, Inc Common Stock",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5477,fund,,,Reaves Utility Income Fund Common Shares of Beneficial Interest,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+5492,fund,,,"Fundrise Innovation Fund, LLC Common Shares of Limited Liability Company Interests",USA,NYSE,,,nasdaq_trader_otherlisted,review
+5499,fund,,,abrdn National Municipal Income Fund Common Stock,USA,NYSE American,,,nasdaq_trader_otherlisted,review
+5501,fund,,,Virtus Global Multi-Sector Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5558,fund,,,Western Asset Diversified Income Fund Common Shares of Beneficial Interest,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5572,fund,,,Western Asset Inflation-Linked Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5574,fund,,,Western Asset Inflation-Linked Opportunities & Income Fund,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5591,debenture;debentures,,,W.R. Berkley Corporation 5.70% Subordinated Debentures due 2058,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5592,debenture;debentures,,,W.R. Berkley Corporation 5.10% Subordinated Debentures due 2059,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5593,debenture;debentures,,,W.R. Berkley Corporation 4.25% Subordinated Debentures due 2060,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5594,debenture;debentures,,,W.R. Berkley Corporation 4.125% Subordinated Debentures due 2061,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5646,fund,,,Virtus Total Return Fund Inc.,USA,NYSE,,,nasdaq_trader_otherlisted,review
+5694,right,,,CURTISS WRIGHT CORP,USA,NYSE,,,sec_company_tickers_exchange,review
+5720,right;rights,,,"BrightSpring Health Services, Inc.",USA,NASDAQ,,,sec_company_tickers_exchange,review
+5763,right,,,BRIGHT HORIZONS FAMILY SOLUTIONS INC.,USA,NYSE,,,sec_company_tickers_exchange,review
+5767,right,,,"Brighthouse Financial, Inc.",USA,NASDAQ,,,sec_company_tickers_exchange,review
+5768,fund,,,REAVES UTILITY INCOME FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+5782,fund;preferred,,,Nuveen Preferred & Income Opportunities Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+5796,fund,,,"Cornerstone Strategic Investment Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+5802,right;rights,,,Brightstar Lottery PLC,USA,NYSE,,,sec_company_tickers_exchange,review
+5827,right,,,"BrightView Holdings, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+5831,preferred,,,Preferred Bank,USA,NASDAQ,,,sec_company_tickers_exchange,review
+5839,fund,,,CORNERSTONE TOTAL RETURN FUND INC,USA,NYSE,,,sec_company_tickers_exchange,review
+5846,fund;preferred,,,First Trust Intermediate Duration Preferred & Income Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+5847,fund,,,Eaton Vance Ltd Duration Income Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+5848,fund;preferred,,,Cohen & Steers Tax-Advantaged Preferred Securities & Income Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+5856,bond,,,BlackRock Taxable Municipal Bond Trust,USA,NYSE,,,sec_company_tickers_exchange,review
+5857,fund;preferred,,,COHEN & STEERS REIT & PREFERRED & INCOME FUND INC,USA,NYSE,,,sec_company_tickers_exchange,review
+5872,fund;preferred,,,Flaherty & Crumrine PREFERRED & INCOME SECURITIES FUND INC,USA,NYSE,,,sec_company_tickers_exchange,review
+5880,right;rights,,,"BrightSpire Capital, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+5886,bond,,,BLACKROCK CORE BOND TRUST,USA,NYSE,,,sec_company_tickers_exchange,review
+5889,right,,,BRIGHT MINDS BIOSCIENCES INC.,USA,NASDAQ,,,sec_company_tickers_exchange,review
+5893,fund;preferred,,,"Cohen & Steers Ltd Duration Preferred & Income Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+5896,fund,,,"ABRDN ASIA-PACIFIC INCOME FUND, INC.",USA,NYSE,,,sec_company_tickers_exchange,review
+5898,fund,,,Neuberger Energy Infrastructure & Income Fund Inc.,USA,NYSE,,,sec_company_tickers_exchange,review
+5909,bond;fund,,,Eaton Vance Municipal Bond Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+5914,fund;preferred,,,JOHN HANCOCK PREFERRED INCOME FUND III,USA,NYSE,,,sec_company_tickers_exchange,review
+5916,fund;preferred,,,Nuveen Variable Rate Preferred & Income Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+5920,fund;preferred,,,JOHN HANCOCK PREFERRED INCOME FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+5922,bond;fund,,,"PGIM High Yield Bond Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+5924,fund;preferred,,,Flaherty & Crumrine Dynamic Preferred & Income Fund Inc,USA,NYSE,,,sec_company_tickers_exchange,review
+5930,bond,,,Guggenheim Taxable Municipal Bond & Investment Grade Debt Trust,USA,NYSE,,,sec_company_tickers_exchange,review
+5933,fund,,,ALLSPRING INCOME OPPORTUNITIES FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+5936,fund,,,"abrdn Emerging Markets ex-China Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+5943,fund;preferred,,,JOHN HANCOCK PREFERRED INCOME FUND II,USA,NYSE,,,sec_company_tickers_exchange,review
+5954,fund,,,NEUBERGER MUNICIPAL FUND INC.,USA,NYSE,,,sec_company_tickers_exchange,review
+5959,bond;fund,,,"BNY MELLON STRATEGIC MUNICIPAL BOND FUND, INC.",USA,NYSE,,,sec_company_tickers_exchange,review
+5969,fund,,,Clough Global Opportunities Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+5971,fund,,,ALLSPRING MULTI-SECTOR INCOME FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+5972,fund,,,CREDIT SUISSE HIGH YIELD CREDIT FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+5974,fund;preferred,,,"Cohen & Steers Select Preferred & Income Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+5984,bond;fund,,,"BNY Mellon Municipal Bond Infrastructure Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+5992,fund,,,Neuberger High Yield Strategies Fund Inc.,USA,NYSE,,,sec_company_tickers_exchange,review
+5994,fund,,,NEUBERGER REAL ESTATE SECURITIES INCOME FUND INC,USA,NYSE,,,sec_company_tickers_exchange,review
+6005,fund,,,ELLSWORTH GROWTH & INCOME FUND LTD,USA,NYSE,,,sec_company_tickers_exchange,review
+6010,bond;fund,,,Invesco Bond Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+6015,fund,,,Clough Global Equity Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+6024,fund;preferred,,,FLAHERTY & CRUMRINE PREFERRED & INCOME FUND INC,USA,NYSE,,,sec_company_tickers_exchange,review
+6029,fund,,,BANCROFT FUND LTD,USA,NYSE,,,sec_company_tickers_exchange,review
+6035,fund,,,"CREDIT SUISSE ASSET MANAGEMENT INCOME FUND, INC.",USA,NYSE,,,sec_company_tickers_exchange,review
+6038,fund,,,abrdn National Municipal Income Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+6041,bond;fund,,,WESTERN ASSET PREMIER BOND FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+6045,fund;preferred,,,Flaherty & Crumrine PREFERRED & INCOME OPPORTUNITY FUND INC,USA,NYSE,,,sec_company_tickers_exchange,review
+6046,fund,,,"ABRDN AUSTRALIA EQUITY FUND, INC.",USA,NYSE,,,sec_company_tickers_exchange,review
+6056,fund,,,ALLSPRING UTILITIES & HIGH INCOME FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+6070,fund,,,Clough Global Dividend & Income Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+6133,fund,,,"EAGLE CAPITAL GROWTH FUND, INC.",USA,NYSE,,,sec_company_tickers_exchange,review
+6175,fund,,,"RENN Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+6178,bond,,,BLACKROCK VIRGINIA MUNICIPAL BOND TRUST,USA,NYSE,,,sec_company_tickers_exchange,review
+6193,bond,,,"Our Bond, Inc.",USA,NASDAQ,,,sec_company_tickers_exchange,review
+6228,note,,,AIM ImmunoTech Inc.,USA,NYSE,,,sec_company_tickers_exchange,review
+6233,cdt,,,Green Circle Decarbonize Technology Ltd,USA,NYSE,,,sec_company_tickers_exchange,review
+6238,right,,,Everbright Digital Holding Ltd.,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6282,etf,,,SPDR S&P 500 ETF TRUST,USA,NYSE,,,sec_company_tickers_exchange,review
+6284,etf,,,SPDR S&P MIDCAP 400 ETF TRUST,USA,NYSE,,,sec_company_tickers_exchange,review
+6285,etf,,,SPDR DOW JONES INDUSTRIAL AVERAGE ETF TRUST,USA,NYSE,,,sec_company_tickers_exchange,review
+6291,fund,,,"United States Oil Fund, LP",USA,NYSE,,,sec_company_tickers_exchange,review
+6292,fund,,,Invesco DB Commodity Index Tracking Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+6302,fund,,,"United States Natural Gas Fund, LP",USA,NYSE,,,sec_company_tickers_exchange,review
+6303,fund,,,Invesco DB Precious Metals Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+6304,fund,,,Invesco DB Oil Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+6305,fund,,,Invesco DB Energy Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+6306,fund,,,INVESCO DB AGRICULTURE FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+6307,fund,,,INVESCO DB BASE METALS FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+6308,fund,,,INVESCO DB US DOLLAR INDEX BEARISH FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+6309,fund,,,"United States Gasoline Fund, LP",USA,NYSE,,,sec_company_tickers_exchange,review
+6311,fund,,,"United States 12 Month Natural Gas Fund, LP",USA,NYSE,,,sec_company_tickers_exchange,review
+6312,fund,,,"United States 12 Month Oil Fund, LP",USA,NYSE,,,sec_company_tickers_exchange,review
+6315,etf,,,abrdn Silver ETF Trust,USA,NYSE,,,sec_company_tickers_exchange,review
+6316,etf,,,abrdn Gold ETF Trust,USA,NYSE,,,sec_company_tickers_exchange,review
+6317,etf,,,abrdn Palladium ETF Trust,USA,NYSE,,,sec_company_tickers_exchange,review
+6318,etf,,,abrdn Platinum ETF Trust,USA,NYSE,,,sec_company_tickers_exchange,review
+6319,fund,,,"United States Brent Oil Fund, LP",USA,NYSE,,,sec_company_tickers_exchange,review
+6320,fund,,,United States Commodity Index Funds Trust,USA,NYSE,,,sec_company_tickers_exchange,review
+6321,etf,,,abrdn Precious Metals Basket ETF Trust,USA,NYSE,,,sec_company_tickers_exchange,review
+6324,etf,,,VanEck Merk Gold ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6326,etf,,,Grayscale Bitcoin Trust ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6332,etf,,,Goldman Sachs Physical Gold ETF,USA,CBOE,,,sec_company_tickers_exchange,review
+6333,etf,,,Bitwise 10 Crypto Index ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6334,etf,,,Grayscale Ethereum Staking ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6335,etf,,,Grayscale CoinDesk Crypto 5 ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6337,etf,,,Bitwise Bitcoin ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6341,etf,,,VanEck Bitcoin ETF,USA,CBOE,,,sec_company_tickers_exchange,review
+6342,etf,,,CoinShares Bitcoin ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6344,fund,,,WisdomTree Bitcoin Fund,USA,CBOE,,,sec_company_tickers_exchange,review
+6345,etf,,,Grayscale Chainlink Trust ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6346,fund,,,Fidelity Wise Origin Bitcoin Fund,USA,CBOE,,,sec_company_tickers_exchange,review
+6347,etf,,,Invesco Galaxy Bitcoin ETF,USA,CBOE,,,sec_company_tickers_exchange,review
+6349,etf,,,VanEck Ethereum ETF,USA,CBOE,,,sec_company_tickers_exchange,review
+6350,etf,,,Ark 21Shares Bitcoin ETF,USA,CBOE,,,sec_company_tickers_exchange,review
+6351,fund,,,Eagle Point Institutional Income Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+6352,etf,,,Grayscale Solana Staking ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6353,right,,,"Forbright, Inc.",USA,NASDAQ,,,sec_company_tickers_exchange,review
+6356,etf,,,iShares Bitcoin Trust ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6358,etf,,,21Shares Ethereum ETF,USA,CBOE,,,sec_company_tickers_exchange,review
+6360,etf,,,Invesco Galaxy Ethereum ETF,USA,CBOE,,,sec_company_tickers_exchange,review
+6361,fund,,,Fidelity Ethereum Fund,USA,CBOE,,,sec_company_tickers_exchange,review
+6362,etf,,,iShares Ethereum Trust ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6364,etf,,,Bitwise Ethereum ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6365,etf,,,Grayscale Bitcoin Mini Trust ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6366,etf,,,Grayscale Ethereum Staking Mini ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6367,etf,,,VanEck Solana ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6368,etf,,,21Shares Solana ETF,USA,CBOE,,,sec_company_tickers_exchange,review
+6369,etf,,,21Shares XRP ETF,USA,CBOE,,,sec_company_tickers_exchange,review
+6370,etf,,,Hashdex Nasdaq CME Crypto Index ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6372,etf,,,Grayscale Sui Staking ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6373,etf,,,Grayscale Avalanche Staking ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6374,etf,,,Grayscale XRP Trust ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6375,etf,,,Bitwise XRP ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6376,etf,,,Canary Marinade Solana ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6377,etf,,,Bitwise Solana Staking ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6378,etf,,,Bitwise Dogecoin ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6379,etf,,,Grayscale Dogecoin Trust ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6382,etf,,,Canary Staked SUI ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6383,etf,,,VanEck Avalanche ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6384,etf,,,21Shares Sui ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6385,fund,,,Fidelity Solana Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+6386,etf,,,21Shares Dogecoin ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6387,etf,,,VanEck BNB ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6388,etf,,,Invesco Galaxy Solana ETF,USA,CBOE,,,sec_company_tickers_exchange,review
+6389,etf,,,Bitwise Chainlink ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6390,etf,,,Bitwise Avalanche ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6391,etf,,,Bitwise Hyperliquid ETF,USA,NYSE,,,sec_company_tickers_exchange,review
+6392,etf,,,iShares Bitcoin Premium Income ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6393,etf,,,21Shares Hyperliquid ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6394,etf,,,iShares Staked Ethereum Trust ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6397,etf,,,Grayscale Hyperliquid Staking ETF,USA,NASDAQ,,,sec_company_tickers_exchange,review
+6514,fund,,,Virtus Convertible & Income Fund II,USA,NYSE,,,sec_company_tickers_exchange,review
+6522,fund,,,BANCROFT FUND LTD,USA,NYSE,,,sec_company_tickers_exchange,review
+6666,fund,,,ELLSWORTH GROWTH & INCOME FUND LTD,USA,NYSE,,,sec_company_tickers_exchange,review
+6714,fund,,,"SPECIAL OPPORTUNITIES FUND, INC.",USA,NYSE,,,sec_company_tickers_exchange,review
+6843,fund,,,COHEN & STEERS QUALITY INCOME REALTY FUND INC,USA,NYSE,,,sec_company_tickers_exchange,review
+6853,fund,,,Virtus Convertible & Income Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+7017,fund,,,United States Commodity Index Funds Trust,USA,NYSE,,,sec_company_tickers_exchange,review
+7035,fund,,,"RIVERNORTH OPPORTUNITIES FUND, INC.",USA,NYSE,,,sec_company_tickers_exchange,review
+7037,fund,,,abrdn Income Credit Strategies Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+7051,fund,,,Carlyle Credit Income Fund,USA,NYSE,,,sec_company_tickers_exchange,review
+7078,fund,,,"Priority Income Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+7079,fund,,,"Priority Income Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+7080,fund,,,"Priority Income Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+7159,fund,,,"RiverNorth/DoubleLine Strategic Opportunity Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+7160,fund,,,"RiverNorth/DoubleLine Strategic Opportunity Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+7161,fund,,,"RiverNorth/DoubleLine Strategic Opportunity Fund, Inc.",USA,NYSE,,,sec_company_tickers_exchange,review
+7170,right,,,"Brighthouse Financial, Inc.",USA,NASDAQ,,,sec_company_tickers_exchange,review
+7171,right,,,"Brighthouse Financial, Inc.",USA,NASDAQ,,,sec_company_tickers_exchange,review
+7172,right,,,"Brighthouse Financial, Inc.",USA,NASDAQ,,,sec_company_tickers_exchange,review
+7173,right,,,"Brighthouse Financial, Inc.",USA,NASDAQ,,,sec_company_tickers_exchange,review
+7174,right,,,"Brighthouse Financial, Inc.",USA,NASDAQ,,,sec_company_tickers_exchange,review
+7179,fund,,,HIGHLAND OPPORTUNITIES & INCOME FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+7180,fund,,,HIGHLAND OPPORTUNITIES & INCOME FUND,USA,NYSE,,,sec_company_tickers_exchange,review
+7337,right;rights,,,"BrightSpring Health Services, Inc.",USA,NASDAQ,,,sec_company_tickers_exchange,review
+7376,cdt,,,CDT Equity Inc.,USA,NASDAQ,,,sec_company_tickers_exchange,review
+9208,bond;etf,,,iShares EUR Govt Bond 20yr Target Duration UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9209,bond;bonds;etf,,,OSSIAM EURO GOVERNMENT BONDS 7-10Y,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9212,etf,,,iShares USD TIPS UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9213,bond;etf,,,iShares EUR Corp Bond Financials UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9214,etf,,,UBS FTSE 100 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9215,etf,,,UBS FTSE 100 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9216,etf,,,UBS FTSE 100 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9217,etf,,,Amundi Core FTSE 100 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9218,etf,,,Amundi Core MSCI Europe UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9219,etf,,,Amundi FTSE EPRA NAREIT Global UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9220,bond;etf,,,Amundi Core Euro Government Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9223,bond;etf,,,Amundi Euro Government Bond 0-6 M UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9224,etf,,,Amundi MSCI EMU High Dividend UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9225,etf,,,Amundi MSCI USA Daily (2x) Leveraged UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9226,etf,,,Amundi MSCI India Swap II UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9227,etf,,,Amundi MSCI Pacific Ex Japan SRI Climate Paris Aligned ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9228,etf,,,Amundi Msci Switzerland UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9272,bond;bonds;etf,,,iShares iBonds Dec 2026 Term EUR Italy Govt Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9273,bond;bonds;etf,,,iShares iBonds Dec 2028 Term EUR Italy Govt Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9274,bond;bonds;etf,,,iShares iBonds Dec 2029 Term EUR Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9275,bond;bonds;etf,,,iShares iBonds Dec 2029 Term USD Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9276,bond;bonds;etf,,,iShares iBonds Dec 2029 Term USD Treasury UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9278,etf,,,iShares Nasdaq US Biotechnology UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9279,etf,,,iShares Automation & Robotics UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9280,etf,,,iShares Healthcare Innovation UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9281,etf,,,iShares Digitalisation UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9282,etf,,,iShares S&P 500 Utilities Sector UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9283,etf,,,iShares S&P 500 Materials Sector UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9284,etf,,,iShares S&P 500 Industrials Sector UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9285,etf,,,iShares MSCI World SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9286,etf,,,iShares MSCI World SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9287,bond;etf,,,iShares USD Treasury Bond 1-3yr UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9295,etf,,,Amundi IBEX 35 Doble Inverso Diario -2x UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9300,etf,,,Leverage Shares 2x Netflix ETP,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9312,bond;bonds;etf,,,iShares iBonds Dec 2030 Term USD Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9313,bond;bonds;etf,,,iShares iBonds Dec 2030 Term EUR Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9314,bond;bonds;etf,,,iShares iBonds Dec 2030 Term USD Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9315,bond;bonds;etf,,,iShares iBonds Dec 2032 Term USD Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9317,etf,,,iShares MSCI Europe SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9318,etf,,,iShares IV Public Limited Company - iShares MSCI Japan SRI UCITS ETF USD,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9319,etf,,,iShares MSCI EM SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9320,etf,,,iShares MSCI USA SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9321,bond;etf,,,iShares USD Corp Bond ESG SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9322,etf,,,iShares MSCI World Consumer Discretionary Sector Advanced UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9323,bond;etf,,,iShares USD Corp Bond ESG SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9324,etf,,,iShares MSCI China A UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9359,etf,,,Robeco 3D EUR Enhanced Index Credits UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9366,etf,,,Robeco 3D Global Equity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9482,bond;etf,,,iShares J.P. Morgan USD EM Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9483,etf,,,iShares MSCI World Consumer Staples Sector Advanced UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9485,etf,,,iShares MSCI USA Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9486,etf,,,iShares MSCI USA Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9499,etf,,,WisdomTree FTSE 100 3x Daily Leveraged,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9500,etf,,,WisdomTree FTSE 100 3x Daily Short,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9514,etf,,,iShares MSCI Brazil UCITS ETF DE,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9515,etf,,,iShares MSCI Brazil UCITS ETF DE,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9516,etf,,,Global X Copper Miners UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9520,etf,,,GLOBAL X DEFENCE TECH UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9524,etf,,,UBS MSCI World Socially Responsible UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9525,etf,,,UBS MSCI USA Socially Responsible UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9526,etf,,,UBS MSCI World Socially Responsible UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9527,etf,,,UBS MSCI USA Socially Responsible UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9528,etf,,,UBS MSCI USA Socially Responsible UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9529,etf,,,UBS S&P 500 Scored & Screened UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9530,etf,,,Amundi S&P 500 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9531,etf,,,Franklin S&P 500 Paris Aligned Climate UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9532,etf,,,Amundi S&P 500 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9533,etf,,,SS SPDR S&P 500 Leaders UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9534,etf,,,SS SPDR S&P 500 Leaders UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9535,etf,,,SS SPDR S&P 500 Leaders UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9536,etf,,,SS SPDR S&P 500 Leaders UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9537,etf,,,Amundi S&P 500 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9538,etf,,,HSBC EURO STOXX 50 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9539,etf,,,Amundi Msci Switzerland UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9540,etf,,,Invesco S&P 500 Scored & Screened UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9541,etf,,,UBS S&P 500 Scored & Screened UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9542,etf,,,UBS S&P 500 Scored & Screened UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9543,etf,,,Invesco S&P 500 Scored & Screened UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9544,etf,,,Invesco S&P 500 Scored & Screened UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9545,etf,,,iShares MSCI World Energy Sector UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9546,etf,,,Global X S&P 500 Annual Buffer UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9547,etf,,,Global X S&P 500 Annual Tail Hedge UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9549,etf,,,Invesco S&P 500 Scored & Screened UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9550,bond;etf,,,iShares USD Corp Bond ESG SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9552,etf,,,SS SPDR STOXX Europe 600 SRI UCIT,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9553,etf,,,SS SPDR STOXX Europe 600 SRI UCIT,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9556,etf;fund,,,Invesco RAFI US Fundamental Value UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9557,etf;fund,,,Invesco RAFI Europe Fundamental Value UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9558,etf,,,Amundi STOXX Europe 600 Consumer Discretionary UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9559,etf,,,Amundi Core S&P 500 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9564,bond;etf,,,Amundi US Treasury Bond 7-10Y UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9565,etf,,,iShares MSCI EM EX-China UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9569,etf,,,Amundi MSCI Japan SRI Climate Paris Aligned ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9573,etf,,,Global X US Infrastructure Development UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9574,etf,,,BNP Paribas Easy MSCI China Min TE/ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9575,etf,,,BNP Paribas Easy MSCI China Min TE/ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9576,etf,,,BNP PARIBAS EASY II Bloomberg US Treasury 0-1Y UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9580,bond;etf,,,Amundi Core Euro Government Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9581,etf,,,Amundi S&P 500 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9583,bond;etf,,,Amundi Euro Highest Rated Macro-Weighted Government Bond 1-3Y UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9584,bond;etf,,,Amundi Euro Highest Rated Macro-Weighted Government Bond 3-5Y UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9590,fund,,,Aberdeen Asian Income Fund Ltd,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9596,etf,,,Amundi Msci EM Asia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9597,etf,,,Amundi Msci EM Asia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9598,etf,,,Amundi Msci EM Asia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9599,etf,,,Amundi Msci EM Asia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9637,bond;etf,,,BNP Paribas Easy ESG Enhanced EUR Corp Bond December 2032 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9641,etf,,,UBS MSCI ACWI SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9644,etf,,,Amundi MSCI World Ex EMU UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9652,etf,,,Amundi MSCI Emerging Markets SRI Climate Paris Aligned ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9653,etf,,,Amundi MSCI AC Far East Ex Japan ESG Selection - UCITS ETF DR,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9654,etf,,,SS SPDR MSCI All Country World UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9655,etf,,,SS SPDR MSCI All Country World UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9656,etf,,,SS SPDR MSCI All Country World UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9657,etf,,,UBS MSCI ACWI SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9658,etf,,,UBS MSCI ACWI SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9659,etf,,,UBS MSCI ACWI SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9660,etf,,,UBS MSCI ACWI SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9661,etf,,,SS SPDR MSCI All Country World UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9662,etf,,,Amundi MSCI All Country World UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9663,etf,,,Amundi MSCI All Country World UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9664,etf,,,SS SPDR MSCI All Country World UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9665,etf,,,Amundi MSCI All Country World UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9687,etf,,,Amundi Core MSCI Emerging Markets Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9688,etf,,,Amundi MSCI Europe Action UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9693,etf,,,Amundi MSCI Emerging Markets Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9694,etf,,,Amundi MSCI Emerging Markets Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9695,etf,,,Amundi MSCI Emerging Markets Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9697,bond;etf,,,iShares Global Aggregate Bond ESG SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9700,etf,,,Amundi MSCI AC Asia Pacific Ex Japan UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9701,etf,,,Amundi MSCI AC Asia Pacific Ex Japan UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9702,etf,,,Amundi MSCI AC Asia Pacific Ex Japan UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9703,etf,,,Amundi MSCI AC Asia Pacific Ex Japan UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9704,etf,,,Amundi Core MSCI Emerging Markets UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9705,etf,,,Amundi Core MSCI Emerging Markets UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9706,etf,,,Amundi Core MSCI Emerging Markets UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9707,etf,,,Amundi Core MSCI Emerging Markets UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9725,bond;etf,,,Amundi USD Floating Rate Corporate Bond ESG,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9726,bond;etf,,,Amundi USD Floating Rate Corporate Bond ESG UCITS ETF MXN Hedged Acc,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9727,bond;etf,,,Amundi USD Floating Rate Corporate Bond ESG,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9729,etf,,,Amundi Floating Rate Euro Corporate ESG UCITS ETF DR,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9730,etf,,,Amundi Floating Rate Euro Corporate ESG UCITS ETF DR,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9735,bond;etf,,,iShares Core Global Aggregate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9737,bond;etf,,,iShares Global Aggregate Bond ESG SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9738,bond;etf,,,iShares Core Global Aggregate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9740,etf,,,Fineco AM Longevity 2040 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9741,etf,,,Fineco AM Longevity 2050 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9742,etf,,,Fineco AM Longevity 2060 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9743,bond;etf,,,Amundi USD Emerging Markets Government Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9744,bond;etf,,,Amundi USD Emerging Markets Government Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9745,etf,,,iShares Ageing Population UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9746,etf,,,iShares Ageing Population UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9747,etf,,,iShares Ageing Population UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9748,bond;etf,,,iShares Global Aggregate Bond ESG SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9751,bond;etf,,,iShares Global Aggregate Bond ESG SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9752,bond;etf,,,iShares Core Global Aggregate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9753,bond;etf,,,iShares Core Global Aggregate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9754,bond;etf,,,iShares Core Global Aggregate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9755,bond;etf,,,iShares Core Global Aggregate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9756,bond;etf,,,iShares Core Global Aggregate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9761,bond;etf,,,iShares Core Global Aggregate Bond UCITS ETF SGD Hedged (Acc),,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9762,bond;etf,,,iShares Core Global Aggregate Bond UCITS ETF SEK Hedged (Acc),,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9763,bond;etf,,,iShares Global Aggregate Bond ESG SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9766,bond;etf,,,iShares Core Global Aggregate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9767,etf,,,Xtrackers Harvest CSI A500 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9768,etf,,,Xtrackers Harvest CSI A500 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9770,bond;etf,,,Amundi Euro High Yield Bond ESG,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9771,bond;etf,,,Amundi Euro High Yield Bond ESG,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9772,bond;etf,,,Amundi Euro High Yield Bond ESG,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9773,etf,,,Amundi Core MSCI World Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9774,etf,,,Amundi Core MSCI World Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9775,etf,,,Amundi Core MSCI World Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9776,etf,,,Amundi MSCI Japan ESG Broad Transition UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9777,etf,,,iShares AI Adopters & Applications UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9778,etf,,,L&G Artificial Intelligence UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9779,etf,,,L&G Artificial Intelligence UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9780,etf,,,L&G Artificial Intelligence UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9782,fund,,,Ashoka India Equity Investment Trust PLC/Fund,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9783,etf,,,iShares AI Infrastructure UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9799,etf,,,iShares AI Infrastructure UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9800,etf,,,BNP PARIBAS EASY II EUR Credit PAB Opportunities UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9801,etf,,,BNP PARIBAS EASY II USD Credit PAB Opportunities UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9802,etf,,,GLOBAL X ARTIFICIAL INTELLIGENCE UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9809,etf,,,BNP PARIBAS EASY ESG ENHANCED JAPAN UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9810,etf,,,BNP PARIBAS EASY ESG ENHANCED JAPAN UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9811,etf,,,BNP PARIBAS EASY ESG ENHANCED JAPAN UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9814,etf,,,UBS MSCI AC Asia ex Japan SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9815,etf,,,UBS MSCI AC Asia ex Japan SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9816,fund,,,AVI Japan Opportunity Trust PLC/Fund,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9817,bond;etf,,,Amundi Fixed Maturity 2027 German Bund Government Bond,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9827,etf,,,Global X Clean Water UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9830,etf,,,Amundi Msci EM Latin America UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9831,etf,,,Amundi Msci EM Latin America UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9832,etf,,,Amundi Msci EM Latin America UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9833,etf,,,Amundi Msci EM Latin America UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9834,etf,,,Amundi Msci EM Latin America UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9850,fund,,,Allfunds Group Plc,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9874,bond;etf,,,Amundi Euro Government Bond Highest Rated Investment Grade UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9875,bond;etf,,,Amundi Euro Government Bond Highest Rated Investment Grade UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9877,etf,,,Saturna Al-Kawthar Global Focused Equity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9883,etf,,,Amundi Msci EM Asia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9884,etf,,,Amundi MSCI Smart Cities UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9885,etf,,,Amundi MSCI EMU ESG Selection - UCITS ETF DR,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9886,etf,,,Amundi Global Hydrogen UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9887,etf,,,Amundi MSCI Emerging Markets SRI Climate Paris Aligned ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9888,etf,,,Amundi Msci EM Latin America UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9889,etf,,,Amundi MSCI Emerging Markets Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9890,etf,,,Amundi Msci Europe Quality Factor UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9910,etf,,,BNP PARIBAS EASY II Nasdaq 100 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9911,etf,,,BNP PARIBAS EASY II Nasdaq 100 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9915,etf;fund,,,UBS Property Fund - Swiss Residential Anfos,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9923,etf,,,Amundi Global Hydrogen UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9924,etf,,,Amundi Global Hydrogen UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9927,etf,,,Amundi Nasdaq-100 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9928,etf,,,Amundi Nasdaq-100 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9929,etf,,,Amundi Nasdaq-100 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9930,etf,,,Amundi Nasdaq-100 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9931,etf,,,Amundi Nasdaq-100 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9942,etf,,,Amundi MSCI AC Asia Ex Japan UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9945,etf,,,iShares MSCI Pacific ex-Japan ESG Enhanced CTB UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9952,etf,,,Amundi MSCI Pacific Ex Japan SRI Climate Paris Aligned ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9953,etf,,,Amundi MSCI AC Asia Ex Japan UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9955,etf,,,Global X Clean Water UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9956,etf,,,Global X Clean Water UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9957,etf,,,Global X Clean Water UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9960,etf,,,abrdn Future Raw Materials UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9971,etf,,,ARK Artificial Intelligence & Robotics UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9973,etf,,,GLOBAL X DEFENCE TECH UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9974,etf,,,Future of European Defence Screened UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9975,etf,,,GLOBAL X DEFENCE TECH UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9992,etf,,,SS SPDR S&P Pan Asia Dividend Aristocrats UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9993,bond;etf,,,iShares $ Asia Investment Grade Corp Bond UCITS ETF SGD Hedged (Acc),,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9995,etf,,,Xtrackers Harvest CSI300 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9996,bond;etf,,,iShares Asia Investment Grade Corp Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9997,etf,,,Amundi MSCI China ESG Selection Extra UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+9998,etf,,,Amundi MSCI China ESG Selection Extra UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10008,bond;etf,,,BNP Paribas Easy EUR Corp Bond SRI PAB 1-3Y UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10009,etf,,,BNP Paribas Easy JPM Screened EMBI Global Diversified Composite,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10010,etf,,,UBS MSCI USA Socially Responsible UCITS ETF/Lux,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10011,bond;etf,,,BNP Paribas Easy JPM Tilted EMU Government Bond IG 3-5Y,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10012,etf,,,BNP Paribas Easy EUR High Yield SRI Fossil Free UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10013,bond;etf,,,BNP Paribas Easy EUR Corp Bond SRI PAB UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10015,etf,,,UBS MSCI USA Socially Responsible UCITS ETF/Lux,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10017,etf,,,Future of Defence UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10018,etf,,,Kotak Indo-Pacific Defence UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10019,etf,,,Rex Tech Innovation Premium Income UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10020,etf,,,Rex Crypto Equity Income & Growth UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10021,etf;preferred,,,Infrastructure Capital Preferred Income UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10025,bond;etf,,,Invesco USD AT1 CoCo Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10049,etf,,,UBS MSCI Australia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10051,etf,,,UBS Gold hCHF ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10052,etf,,,L&G Gold Mining UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10053,etf,,,L&G Gold Mining UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10054,etf,,,L&G Gold Mining UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10055,etf,,,L&G Gold Mining UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10057,etf,,,Amundi MSCI Emerging Markets Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10058,etf,,,Amundi MSCI Emerging Markets Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10059,etf,,,Amundi MSCI Emerging Markets Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10060,etf,,,UBS MSCI Australia Universal UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10061,etf,,,UBS Gold hEUR ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10064,etf,,,UBS MSCI Australia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10065,etf,,,UBS MSCI Australia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10066,etf,,,UBS MSCI Australia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10067,etf,,,UBS MSCI Australia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10070,etf,,,UBS MSCI Australia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10071,etf,,,UBS MSCI Australia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10072,etf,,,UBS MSCI Australia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10073,etf,,,UBS MSCI Australia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10075,etf,,,BNP PARIBAS EASY ESG ENHANCED US UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10077,etf,,,UBS MSCI Australia UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10078,etf,,,Amundi Australia S&P/ASX 200 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10084,etf,,,UBS Gold ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10088,etf,,,Avantis Global Small Cap Value UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10095,etf,,,Avantis Global Small Cap Value UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10097,etf,,,UBS MSCI World ex USA Climate Paris Aligned UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10098,etf,,,UBS MSCI EM Climate Paris Aligned UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10099,etf,,,UBS MSCI Japan Climate Paris Aligned UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10100,etf,,,UBS S&P 500 ESG Elite UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10101,etf,,,UBS S&P 500 ESG Elite UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10102,etf,,,UBS MSCI EMU Universal UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10103,etf,,,UBS MSCI Japan Universal UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10104,etf,,,UBS MSCI ACWI Socially Responsible UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10105,etf,,,UBS MSCI EMU Climate Paris Aligned UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10106,etf,,,Amundi PEA Eau (MSCI Water) UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10107,etf,,,BNP PARIBAS EASY II MSCI World PAB UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10108,etf,,,BNP Paribas Easy ESG Enhanced World UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10109,etf,,,UBS MSCI ACWI Universal UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10110,etf,,,UBS MSCI ACWI Universal UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10111,etf,,,UBS MSCI ACWI Universal UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10112,etf,,,UBS MSCI ACWI Universal UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10113,etf,,,UBS MSCI ACWI Socially Responsible UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10114,etf,,,UBS MSCI ACWI Socially Responsible UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10116,etf,,,iShares Asia ex Japan Equity Enhanced Active UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10117,etf,,,iShares Asia ex Japan Equity Enhanced Active UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10125,bond;etf,,,iShares EUR High Yield Corp Bond ESG SRI UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10126,etf,,,iShares MSCI EM IMI Screened UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10127,etf,,,iShares Asia Property Yield UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10128,etf,,,iShares Smart City Infrastructure UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10129,etf,,,iShares Smart City Infrastructure UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10130,etf,,,iShares MSCI World Information Technology Sector Advanced UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10140,bond;bonds;etf,,,iShares iBonds Dec 2026 Term EUR Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10141,bond;bonds;etf,,,iShares iBonds Dec 2028 Term EUR Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10144,etf,,,GLOBAL X EUROPEAN INFRASTRUCTURE DEVELOPMENT UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10146,etf,,,Amundi S&P 500 Buyback UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10147,etf,,,Amundi S&P 500 Buyback UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10172,etf,,,L&G Battery Value-Chain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10173,etf,,,L&G Battery Value-Chain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10175,etf,,,L&G Battery Value-Chain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10179,bond;etf,,,JPMorgan Betabuilders US Treasury Bond 0-3 Months UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10180,etf,,,JPMorgan Betabuilders US Small Cap Equity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10181,bond;etf,,,JPMorgan BetaBuilders EUR Govt Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10182,bond;etf,,,JPMorgan BetaBuilders EUR Govt Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10183,bond;etf,,,JPMorgan BetaBuilders EUR Govt Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10184,bond;etf,,,JPMorgan BetaBuilders US Treasury Bond 0-1 YR UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10185,bond;etf,,,JPMorgan BetaBuilders US Treasury Bond 0-1 YR UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10186,bond;etf,,,JPMorgan BetaBuilders US Treasury Bond 0-1 YR UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10189,bond;etf,,,JPMorgan BetaBuilders US Treasury Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10190,etf,,,JPMorgan Betabuilders US Small Cap Equity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10191,bond;etf,,,JPMorgan BetaBuilders US Treasury Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10192,bond;etf,,,JPMorgan BetaBuilders US Treasury Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10193,bond;etf,,,JPMorgan BetaBuilders US Treasury Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10194,bond;etf,,,JPMorgan BetaBuilders US Treasury Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10195,etf,,,JPMorgan Betabuilders US Equity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10196,etf,,,BBVA Accion Dow Jones Euro STOXX 50,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10197,etf,,,Accion Ibex 35 ETF FI Cotizado Armonizado,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10203,etf,,,UBS BBG Commodity CMCI SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10204,etf,,,UBS Solactive US Listed Gold & Silver Miners UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10207,etf,,,Invesco CoinShares Global Blockchain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10208,etf,,,Invesco CoinShares Global Blockchain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10210,etf,,,Invesco CoinShares Global Blockchain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10211,etf,,,L&G All Commodities UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10229,etf,,,Amundi BEL 20 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10235,etf,,,Amundi FTSE MIB Daily -1X Inverse UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10276,etf,,,Bonhote-Immobilier SICAV-BIM,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10287,etf,,,L&G Pharma Breakthrough UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10288,etf,,,L&G Pharma Breakthrough UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10290,bond,,,Invesco Bond Income Plus Ltd,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10302,etf,,,BNP Paribas Easy JPM Screened EMBI Global Diversified Composite,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10303,etf,,,BNP Paribas Easy JPM Screened EMBI Global Diversified Composite,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10304,etf,,,BNP Paribas Easy ECPI Global ESG Blue Economy UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10305,etf,,,Global X Blockchain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10306,etf,,,Global X Blockchain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10307,etf,,,Global X Blockchain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10308,etf,,,Global X Blockchain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10309,etf,,,Wisdomtree Blockchain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10317,etf,,,Global X Blockchain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10321,etf,,,iShares Blockchain Technology UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10322,etf,,,iShares Blockchain Technology UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10324,etf,,,First Trust Indxx Innovative Transaction & Process UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10325,etf,,,First Trust Indxx Innovative Transaction & Process UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10326,etf,,,iShares Blockchain Technology UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10327,bond;etf,,,iShares Brazil LTN BRL Govt Bond UCITS ETF DE,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10342,etf,,,Amundi Euro Stoxx Banks UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10344,etf,,,iShares S&P US Banks UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10345,etf,,,iShares S&P US Banks UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10346,etf,,,Amundi Stoxx Europe 600 Banks UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10347,etf,,,Amundi Stoxx Europe 600 Banks UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10353,etf,,,Invesco CoinShares Global Blockchain UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10366,bond,,,Bonduelle SCA,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10376,etf,,,Global X Robotics & Artificial Intelligence UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10377,etf,,,Global X Robotics & Artificial Intelligence UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10378,etf,,,Global X Robotics & Artificial Intelligence UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10379,etf,,,Global X Robotics & Artificial Intelligence UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10385,fund,,,BioPharma Credit PLC/The Fund,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10386,fund,,,BioPharma Credit PLC/The Fund,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10390,etf,,,Nordea ETF ICAV - BetaPlus Enhanced European Select Equity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10394,etf,,,Amundi MSCI Brazil UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10399,etf,,,Amundi Stoxx Europe 600 Basic Resources UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10400,etf,,,Amundi Stoxx Europe 600 Basic Resources UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10405,etf,,,iShares BIC 50 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10406,etf,,,GLOBAL X EUROPEAN INFRASTRUCTURE DEVELOPMENT UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10423,bond;etf,,,Invesco BulletShares 2026 USD Corporate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10425,bond;etf,,,Invesco BulletShares 2030 EUR Corporate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10426,bond;etf,,,Invesco BulletShares 2026 EUR Corporate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10427,bond;etf,,,Invesco BulletShares 2027 EUR Corporate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10428,bond;etf,,,Invesco BulletShares 2028 EUR Corporate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10429,bond;etf,,,Invesco BulletShares 2029 EUR Corporate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10430,fund,,,Bluefield Solar Income Fund Ltd,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10437,etf,,,Amundi EURO STOXX 50 Daily -1X Inverse UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10438,etf,,,Amundi EURO STOXX 50 Daily -1X Inverse UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10459,etf,,,Fineco AM MarketVectorTM Bioproduction Tech and Tools Sustainable UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10460,etf,,,iShares Nasdaq US Biotechnology UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10461,etf,,,iShares Nasdaq US Biotechnology UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10462,etf,,,iShares Nasdaq US Biotechnology UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10469,bond;etf,,,iShares USD Treasury Bond 7-10yr UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10470,bond;etf,,,Amundi Italy BTP Government Bond 10Y UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10471,bond;etf,,,Amundi Italy BTP Government Bond 1-3Y UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10472,etf,,,Amundi Italy BTP Daily -2x Inverse UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10473,etf,,,Amundi Italy BTP Daily -2x Inverse UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10479,etf,,,Global X Cybersecurity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10480,etf,,,Global X Cybersecurity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10481,etf,,,Global X Cybersecurity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10482,etf,,,Global X Cybersecurity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10483,etf,,,Global X Cybersecurity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10487,etf,,,Amundi German Bund Daily -2x Inverse UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10491,etf,,,Invesco Global Buyback Achievers UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10492,etf,,,Invesco Global Buyback Achievers UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10493,etf,,,Invesco Global Buyback Achievers UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10504,etf,,,Amundi CAC 40 Daily -2X Inverse UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10505,etf,,,Amundi EURO STOXX 50 Daily -2X Inverse UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10506,etf,,,Amundi EURO STOXX 50 Daily -2X Inverse UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10507,etf,,,Amundi S&P 500 Buyback UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10515,etf,,,Amundi Core DAX UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10516,etf,,,Amundi Core DAX UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10517,etf,,,Amundi DivDAX UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10518,etf,,,Amundi SDAX UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10519,etf,,,Amundi FAZ 100 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10520,etf,,,Amundi MDAX ESG UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10521,etf,,,Amundi Core MSCI China A Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10522,etf,,,Amundi Core MSCI China A Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10523,etf,,,Amundi DJ Switzerland Titans 30 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10524,etf,,,Amundi MSCI UK IMI SRI Climate Paris Aligned ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10525,etf,,,OSSIAM EUROPE ESG MACHINE LEARNING,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10526,etf,,,Invesco S&P China A 300 Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10527,bond;etf,,,Amundi Euro Government Bond 0-6 M UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10528,bond;etf,,,Amundi Euro Government Bond 0-6 M UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10529,etf,,,Amundi CAC 40 ESG UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10530,etf,,,Amundi CAC 40 ESG UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10531,etf,,,Amundi CAC 40 ESG UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10532,etf,,,Amundi CAC 40 ESG UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10533,etf,,,Amundi Core EURO STOXX 50 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10534,etf,,,Amundi Core EURO STOXX 50 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10535,etf,,,Amundi Core EURO STOXX 50 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10536,etf,,,Amundi Core EURO STOXX 50 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10537,etf,,,Amundi Core EURO STOXX 50 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10538,etf,,,Amundi Stoxx Europe 50 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10540,etf,,,AMUNDI STOXX EUROPE 600 ESG,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10541,etf,,,AMUNDI STOXX EUROPE 600 ESG,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10545,etf,,,Amundi CAC 40 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10546,etf,,,Amundi CAC 40 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10550,etf,,,UBS MSCI Canada UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10551,etf,,,UBS MSCI Canada UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10552,etf,,,UBS MSCI Canada UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10561,etf,,,UBS MSCI Canada UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10562,etf,,,UBS MSCI Canada UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10563,etf,,,UBS MSCI Canada UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10564,etf,,,UBS MSCI Canada UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10568,etf,,,Ossiam Lux-Ossiam Shiller Barclays Cape Europe Sector Value TR,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10571,etf,,,OSSIAM SHILLER BARCLAYS CAPE US SECTOR VALUE TR,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10589,etf,,,Franklin Emerging Markets Sovereign Debt Values UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10590,etf,,,Amundi MSCI World Catholic Principles UCITS ETF Acc,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10591,etf,,,Amundi MSCI World Catholic Principles UCITS ETF Acc,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10593,etf,,,Global X China Electric Vehicle & Battery UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10597,bond;etf,,,Amundi Euro Government Tilted Green Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10598,bond;etf,,,Amundi Euro Government Tilted Green Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10599,bond;etf,,,Amundi Euro Government Tilted Green Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10600,bond;etf,,,Amundi Euro Government Tilted Green Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10603,bond;etf,,,iShares EUR Govt Bond 1-3yr UCITS ETF EUR Acc,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10604,bond;etf,,,iShares EUR Govt Bond 3-7yr UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10605,bond;etf,,,Amundi EUR Corporate Bond ex-Financials ESG UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10606,etf,,,UBS SBI2) 47/64 Corporate ESG ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10607,etf,,,UBS BBG Euro Area Liquid Corp 1-5 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10608,etf,,,First Trust Nasdaq Cybersecurity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10609,etf,,,UBS BBG Euro Area Liquid Corp 1-5 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10611,etf;fund,,,Amundi USD Fed Funds Rate UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10612,etf,,,Amundi Gold Miners UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10616,etf,,,Amundi Core MSCI Emerging Markets Swap UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10617,etf,,,Amundi MSCI Pacific ESG Broad Transition UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10621,etf,,,First Trust Nasdaq Cybersecurity UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10622,etf,,,UBS BBG MSCI Euro Area Liquid Corp Sustainable UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10623,etf,,,UBS BBG MSCI Euro Area Liquid Corp Sustainable UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10624,etf,,,UBS BBG MSCI Euro Area Liquid Corp Sustainable UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10626,etf,,,UBS BBG MSCI US Liquid Corp Sustainable UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10627,etf,,,UBS BBG MSCI US Liquid Corp Sustainable UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10628,etf,,,UBS BBG MSCI US Liquid Corp Sustainable UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10634,bond;etf,,,iShares USD Treasury Bond 7-10yr UCITS ETF USD Acc,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10635,etf,,,UBS BBG US Liquid Corp 1-5 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10636,bond;etf,,,iShares Broad USD High Yield Corp Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10637,bond;etf,,,iShares USD Treasury Bond 1-3yr UCITS ETF USD Acc B,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10638,etf,,,UBS BBG US Liquid Corp 1-5 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10639,bond;etf,,,iShares USD Treasury Bond 3-7yr UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10640,bond;etf,,,iShares USD Treasury Bond 3-7yr UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10641,etf,,,iShares MSCI USA ESG Enhanced CTB UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10642,bond;etf,,,iShares USD Treasury Bond 3-7yr UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10643,etf,,,iShares MSCI World Health Care Sector Advanced UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10644,bond;etf,,,iShares USD Treasury Bond 3-7yr UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10645,etf,,,iShares MSCI World Small Cap ESG Enhanced CTB UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10646,bond;etf,,,iShares USD Treasury Bond 3-7yr UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10647,etf,,,iShares MSCI World Momentum Factor Advanced UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10648,etf,,,iShares MSCI World Value Factor Advanced UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10649,etf,,,iShares MSCI China Tech UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10650,etf,,,iShares II plc - iShares USD Tips 0-5 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10651,etf,,,iShares S&P 500 Scored and Screened UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10652,etf,,,UBS BBG US Liquid Corp 1-5 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10653,etf,,,UBS BBG US Liquid Corp 1-5 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10654,etf,,,UBS BBG US Liquid Corp 1-5 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10655,etf,,,UBS Core BBG US Liquid Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10656,etf,,,UBS Core BBG US Liquid Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10657,etf,,,UBS Core BBG US Liquid Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10658,etf,,,UBS Core BBG US Liquid Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10659,etf,,,UBS Core BBG US Liquid Corp UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10660,etf,,,iShares Core UK Gilts UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10661,etf,,,iShares Metaverse UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10662,etf,,,iShares Global Infrastructure UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10663,etf,,,Amundi MSCI China Tech UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10664,etf,,,Amundi MSCI China Tech UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10665,etf,,,Amundi MSCI China Tech UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10666,etf,,,Amundi MSCI China Tech UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10667,etf,,,Amundi MSCI China Tech UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10668,bond;etf,,,Amundi EUR Corporate Bond ESG UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10671,etf,,,iShares MSCI Canada UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10672,bond;etf,,,WisdomTree AT1 CoCo Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10674,etf,,,UBS CMCI Composite SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10679,etf,,,UBS CMCI Composite SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10680,etf,,,UBS CMCI Composite SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10681,etf,,,UBS CMCI Composite SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10684,etf,,,onemarkets MSCI Europe Universal UCITS ETF EUR,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10685,etf,,,onemarkets MSCI USA Universal UCITS ETF EUR,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10686,etf,,,onemarkets MSCI World Universal UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10687,etf,,,onemarkets MSCI Emerging Markets Universal UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10688,bond;etf,,,onemarkets MSCI Euro Government Bond 1M - 1Y UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10689,bond;etf,,,onemarkets MSCI Euro IG Universal Corporate Bond UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10692,etf,,,UBS CMCI Composite SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10693,etf,,,UBS CMCI Composite SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10694,etf,,,UBS CMCI ex-Agriculture SF UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10695,etf,,,Amundi Core EURO STOXX 50 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10696,etf,,,Amundi MSCI EMU High Dividend UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10697,etf,,,Amundi MSCI Europe High Dividend Factor UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10699,etf,,,SS SPDR MSCI Europe Consumer Discretionary UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10703,bond;etf,,,iShares EUR Govt Bond 7-10yr UCITS ETF EUR Acc,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10704,etf,,,Amundi Core MSCI Europe UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10705,bond;etf,,,iShares EUR Govt Bond 1-3yr UCITS ETF EUR Acc,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10706,etf,,,Amundi MSCI World EX Europe UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10707,etf,,,Amundi MSCI World EX Europe UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review
+10708,etf,,,iShares plc - iShares Core FTSE 100 UCITS ETF,,CBOE_EUROPE,,,cboe_europe_reference_data,review

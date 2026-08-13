@@ -1,0 +1,379 @@
+{
+  "version": "v2.22C",
+  "phase": "Pre-Scoring Data Quality Audit",
+  "phase_type": "pre-scoring-data-quality-audit",
+  "status": "PRE_SCORING_DATA_QUALITY_AUDIT_COMPLETED_REVIEW_FINDINGS_DOCUMENTED_SCORING_DRY_RUN_DEFERRED",
+  "generated_at_utc": "2026-08-13T10:33:06.193510+00:00",
+  "summary": {
+    "selected_route": "Pre-scoring data quality audit via current operational pointer",
+    "phase_type": "pre-scoring-data-quality-audit",
+    "audit_decision": "AUDIT_COMPLETED_REVIEW_FINDINGS_DOCUMENTED",
+    "current_operational_pointer": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+    "current_operational_pointer_sha": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "previous_operational_base_rows": 42708,
+    "previous_operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "remaining_capacity": 1911,
+    "new_rows_vs_previous_operational_base": 381,
+    "expected_new_rows_vs_previous_operational_base": 381,
+    "current_column_count": 33,
+    "bad_width_rows_current": 0,
+    "bad_width_rows_previous": 0,
+    "bad_width_rows_rollback": 0,
+    "duplicate_full_row_groups": 0,
+    "duplicate_full_row_extra_rows": 0,
+    "duplicate_primary_key_groups": 9,
+    "duplicate_primary_key_extra_rows": 34082,
+    "instrument_suitability_flag_rows": 9957,
+    "instrument_suitability_flag_sample_rows": 1000,
+    "blocking_quality_findings": 1,
+    "resolved_isin_column": "isin",
+    "resolved_symbol_column": "symbol",
+    "resolved_name_column": "company_name",
+    "resolved_country_column": "country",
+    "resolved_exchange_column": "exchange",
+    "resolved_mic_column": "mic",
+    "resolved_currency_column": "currency",
+    "resolved_source_provider_column": "source_provider",
+    "resolved_asset_type_column": "asset_type",
+    "approved_for_scoring_dry_run": false,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "scoring_output_created": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.22C_REVIEW - Pre-Scoring Quality Findings Review",
+    "secondary_next_phase": "v2.22D - Scoring Dry Run / No Promotion"
+  },
+  "resolved_columns": {
+    "isin": "isin",
+    "symbol": "symbol",
+    "name": "company_name",
+    "country": "country",
+    "exchange": "exchange",
+    "mic": "mic",
+    "currency": "currency",
+    "source_provider": "source_provider",
+    "asset_type": "asset_type"
+  },
+  "artifact_manifest": [
+    {
+      "artifact": "current_operational_pointer",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "rows": 1,
+      "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+      "role": "audit_input_pointer"
+    },
+    {
+      "artifact": "current_operational_dataset",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "audited_dataset_no_modification"
+    },
+    {
+      "artifact": "previous_operational_base",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "role": "new_row_comparison_reference"
+    },
+    {
+      "artifact": "rollback_dataset",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "rows": 38287,
+      "sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "role": "rollback_reference_unchanged"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_22C_AUDIT_001",
+      "decision": "Use current operational universe pointer as audit source.",
+      "accepted": true,
+      "reason": "v2.22B created the single live operational pointer.",
+      "effect": "Audit reads current_operational_universe_pointer.json."
+    },
+    {
+      "decision_id": "V2_22C_AUDIT_002",
+      "decision": "Do not run scoring in v2.22C.",
+      "accepted": true,
+      "reason": "v2.22C is a data quality audit phase.",
+      "effect": "No scoring output is created."
+    },
+    {
+      "decision_id": "V2_22C_AUDIT_003",
+      "decision": "Document duplicates, identifier coverage, value coverage, new rows, and instrument suitability flags.",
+      "accepted": true,
+      "reason": "Pre-scoring requires auditable quality evidence.",
+      "effect": "Creates quality audit CSVs and JSON/MD report."
+    },
+    {
+      "decision_id": "V2_22C_AUDIT_004",
+      "decision": "Approve scoring dry run only if no critical failures and no blocking quality findings.",
+      "accepted": true,
+      "reason": "Scoring should not run over unresolved blocking findings.",
+      "effect": "approved_for_scoring_dry_run=False."
+    }
+  ],
+  "checks": [
+    {
+      "check": "pointer_hardening_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "OPERATIONAL_POINTER_CONVENTION_HARDENING_COMPLETED_CURRENT_OPERATIONAL_POINTER_CREATED_SCORING_DEFERRED"
+    },
+    {
+      "check": "pointer_json_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json"
+    },
+    {
+      "check": "pointer_current_dataset_path_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv"
+    },
+    {
+      "check": "pointer_declared_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_rows=43089"
+    },
+    {
+      "check": "pointer_declared_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "current_dataset_exists",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv"
+    },
+    {
+      "check": "current_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089"
+    },
+    {
+      "check": "current_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "previous_operational_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "previous_rows=42708"
+    },
+    {
+      "check": "previous_operational_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "headers_consistent_current_previous",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_columns=33;previous_columns=33"
+    },
+    {
+      "check": "headers_consistent_current_rollback",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_columns=33;rollback_columns=33"
+    },
+    {
+      "check": "current_bad_width_rows_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "bad_width_rows=0"
+    },
+    {
+      "check": "previous_bad_width_rows_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "bad_width_rows=0"
+    },
+    {
+      "check": "rollback_bad_width_rows_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "bad_width_rows=0"
+    },
+    {
+      "check": "within_quality_floor",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089;floor=42000"
+    },
+    {
+      "check": "within_quality_ceiling",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089;ceiling=45000"
+    },
+    {
+      "check": "remaining_capacity_non_negative",
+      "passed": true,
+      "severity": "critical",
+      "detail": "remaining_capacity=1911"
+    },
+    {
+      "check": "new_rows_vs_previous_expected",
+      "passed": true,
+      "severity": "warning",
+      "detail": "new_rows=381;expected=381"
+    },
+    {
+      "check": "full_row_duplicates_zero",
+      "passed": true,
+      "severity": "warning",
+      "detail": "duplicate_full_row_extra_rows=0;groups=0"
+    },
+    {
+      "check": "primary_key_duplicates_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "duplicate_primary_key_extra_rows=34082;groups=9"
+    },
+    {
+      "check": "instrument_suitability_flags_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "instrument_flag_total=9957;sample_rows=1000"
+    },
+    {
+      "check": "identifier_columns_resolved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "resolved_columns={'isin': 'isin', 'symbol': 'symbol', 'name': 'company_name', 'country': 'country', 'exchange': 'exchange', 'mic': 'mic', 'currency': 'currency', 'source_provider': 'source_provider', 'asset_type': 'asset_type'}"
+    },
+    {
+      "check": "country_or_exchange_dimension_resolved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "country=country;exchange=exchange;mic=mic"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "scoring_not_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_executed=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "quality_review",
+      "action": "review_pre_scoring_quality_findings",
+      "priority": "high",
+      "recommended_phase": "v2.22C_REVIEW - Pre-Scoring Quality Findings Review",
+      "reason": "Blocking or review findings exist.",
+      "guardrails": "No scoring in review phase."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "full59k",
+      "action": "keep_full59k_deprecated_deferred",
+      "priority": "low",
+      "recommended_phase": "none",
+      "reason": "Quality target remains 42k-45k.",
+      "guardrails": "No full59k without separate roadmap."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "pre-scoring-data-quality-audit",
+    "current_operational_pointer": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "approved_for_scoring_dry_run": false,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "scoring_output_created": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.22C_REVIEW - Pre-Scoring Quality Findings Review",
+  "secondary_next_phase": "v2.22D - Scoring Dry Run / No Promotion"
+}

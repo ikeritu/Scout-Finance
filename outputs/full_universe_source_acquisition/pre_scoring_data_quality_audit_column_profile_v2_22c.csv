@@ -1,0 +1,34 @@
+column,non_missing,missing,missing_pct,unique_non_empty,sample_values
+ticker,41076,2013,4.6717,40653,AACB; AACI; AACO; AACP; AAL
+company_name,41896,1193,2.7687,29881,"Artius II Acquisition Inc. - Class A Ordinary Shares; Armada Acquisition Corp. III - Class A Ordinary Share; Abony Acquisition Corp. I - Class A Ordinary Share; Apogee Acquisition Corp - Class A Ordinary Shares; American Airlines Group, Inc. - Common Stock"
+exchange,43089,0,0.0,15,NASDAQ; NYSE; NYSE American; NYSE Arca; Cboe BZX
+country,21935,21154,49.0937,30,USA; Hong Kong; JP; AT; AU
+source_provider,41076,2013,4.6717,13,nasdaq_trader_nasdaqlisted; nasdaq_trader_otherlisted; sec_company_tickers_exchange; cboe_listed_symbols; cboe_europe_reference_data
+source_file,19899,23190,53.8188,11,data/raw/source_providers/nasdaq_trader_nasdaqlisted/nasdaq_trader_nasdaqlisted.csv; data/raw/source_providers/nasdaq_trader_otherlisted/nasdaq_trader_otherlisted.csv; data/raw/source_providers/sec_company_tickers_exchange/company_tickers_exchange.json; data/raw/source_providers/cboe_listed_symbols/cboe_symbols_traded_raw.csv; outputs\full_universe_source_acquisition\raw\hkex_v2_12c\ListOfSecurities.xlsx
+instrument_type,37876,5213,12.0982,19,COMMON_STOCK; ADR; UNKNOWN_PENDING_CLASSIFICATION; ETC; ETF
+instrument_scope,11570,31519,73.1486,12,IN_SCOPE; IN_SCOPE_ADR; UNKNOWN_PENDING_CLASSIFICATION; CANDIDATE_PROVIDER_ROW_PENDING_POST_REBUILD_VALIDATION; common_equity
+classification_confidence,11212,31877,73.9794,5,HIGH; MEDIUM; LOW; high; medium
+classification_reason,11212,31877,73.9794,716,Security name indicates common equity: ORDINARY SHARES.; Security name indicates common equity: CLASS A.; Security name indicates common equity: COMMON STOCK.; Security name indicates ADR/ADS: AMERICAN DEPOSITORY.; No exclusion keyword detected; treated as common equity candidate.
+sector,3705,39384,91.4015,33,50; 3250; 5250; 6100; 2050
+industry,4401,38688,89.7863,65,50; 3250; 5250; 6100; 2050
+market_cap,23,43066,99.9466,1,COLOMBIA_BVC_REGULATORY
+raw_cik,2359,40730,94.5253,1610,1067983; 1973239; 1577552; 1306965; 811809
+raw_exchange,2789,40300,93.5274,5,TWSE; HKEX; ASX; SGX; BVC
+provider_precedence,10377,32712,75.9173,5,1; 2; twse_tpex_v2_18g; ASX_AFTER_HKEX_V2_20G; sgx_structured_endpoint
+merge_action,9323,33766,78.3634,3,PRESERVE_EXISTING; ADD_SEC_PRIMARY_NET_NEW; append_net_new
+merge_reason,9323,33766,78.3634,3,Existing validated expanded_universe_v2_4b row preserved as base source.; SEC primary exchange+ticker key not present in expanded_universe_v2_4b.; ASX v2.20F validation_decision=net_new_candidate; no_current_match
+isin,7942,35147,81.5684,7776,KYG217651051; HK0002007356; HK0003000038; HK0004000045; GB0005405286
+currency,11311,31778,73.7497,9,HKD; USD; RMB; JPY; INR
+mic,10722,32367,75.1166,7,XHKG; XTKS; XETR; XTAI; XASX
+source_version,10303,32786,76.089,6,v2.12E; v2.13E; v2.14E; v2.18G; v2.20G
+source_url,10303,32786,76.089,6,https://www.hkex.com.hk/eng/services/trading/securities/securitieslists/ListOfSecurities.xlsx; https://www.jpx.co.jp/english/markets/statistics-equities/misc/01.html; deutsche_boerse_xetra_all_tradable_instruments_raw_v2_14c; https://openapi.twse.com.tw/v1/opendata/t187ap03_L; https://www.asx.com.au/markets/market-resources/isin-services
+hkex_category,2804,40285,93.4925,1,Equity
+hkex_subcategory,2804,40285,93.4925,4,Equity Securities (Main Board); Investment Companies; Trading Only Securities; Equity Securities (GEM)
+hkex_board_lot,2804,40285,93.4925,48,"500; 1,000; 400; 10,000; 2,000"
+provider,6203,36886,85.6042,6,deutsche_boerse_xetra; nse_india_v2_17g; TWSE; HKEX; ASX
+source_phase,4190,38899,90.2759,5,v2.14E; v2.18G; v2.19P; v2.20G; sgx_structured_endpoint
+symbol,6203,36886,85.6042,6203,XD4; RAW; ABS2; EBO; AZ2
+security_name,4190,38899,90.2759,2783,AST0; SDX1; AUS0; LUX0; NEWX
+instrument_id,5111,37978,88.1385,4756,7026002; 2504165; 2504166; 2504169; 2504174
+product_assignment_group_description,2740,40349,93.6411,81,AST0; SDX1; AUS0; LUX0; NEWX
+asset_type,5111,37978,88.1385,9,equity_like; equity; ordinary_equity; a_reit_equity_like; ordinary_or_equity_like_unclassified

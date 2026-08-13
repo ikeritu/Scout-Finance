@@ -1,0 +1,10 @@
+role,column,column_resolved,non_empty,missing,missing_pct,unique_non_empty
+isin,isin,True,7942,35147,81.5684,7776
+symbol,symbol,True,6203,36886,85.6042,6203
+name,company_name,True,41896,1193,2.7687,29881
+country,country,True,21935,21154,49.0937,30
+exchange,exchange,True,43089,0,0.0,15
+mic,mic,True,10722,32367,75.1166,7
+currency,currency,True,11311,31778,73.7497,9
+source_provider,source_provider,True,41076,2013,4.6717,13
+asset_type,asset_type,True,5111,37978,88.1385,9

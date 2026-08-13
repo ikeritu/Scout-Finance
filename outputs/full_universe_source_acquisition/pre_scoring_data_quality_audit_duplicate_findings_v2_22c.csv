@@ -1,0 +1,10 @@
+finding_type,key,count,extra_rows,severity
+primary_key_duplicate,nasdaq,4336,4335,review
+primary_key_duplicate,nyse,3362,3361,review
+primary_key_duplicate,nyse american,265,264,review
+primary_key_duplicate,nyse arca,13,12,review
+primary_key_duplicate,cboe bzx,4,3,review
+primary_key_duplicate,cboe,1220,1219,review
+primary_key_duplicate,cboe_europe,21154,21153,review
+primary_key_duplicate,xhkg|hkd,32,31,review
+primary_key_duplicate,xtks|jpy,3705,3704,review

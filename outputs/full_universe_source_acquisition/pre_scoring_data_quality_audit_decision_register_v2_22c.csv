@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_22C_AUDIT_001,Use current operational universe pointer as audit source.,True,v2.22B created the single live operational pointer.,Audit reads current_operational_universe_pointer.json.
+V2_22C_AUDIT_002,Do not run scoring in v2.22C.,True,v2.22C is a data quality audit phase.,No scoring output is created.
+V2_22C_AUDIT_003,"Document duplicates, identifier coverage, value coverage, new rows, and instrument suitability flags.",True,Pre-scoring requires auditable quality evidence.,Creates quality audit CSVs and JSON/MD report.
+V2_22C_AUDIT_004,Approve scoring dry run only if no critical failures and no blocking quality findings.,True,Scoring should not run over unresolved blocking findings.,approved_for_scoring_dry_run=False.

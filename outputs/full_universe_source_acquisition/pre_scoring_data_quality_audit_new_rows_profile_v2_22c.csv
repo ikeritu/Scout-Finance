@@ -1,0 +1,16 @@
+scope,dimension,column,value,count,pct
+new_rows_vs_previous_operational_base,__total__,,__total_new_rows__,381,100.0
+new_rows_vs_previous_operational_base,country,country,Singapore,358,93.9633
+new_rows_vs_previous_operational_base,country,country,Colombia,23,6.0367
+new_rows_vs_previous_operational_base,exchange,exchange,SGX,358,93.9633
+new_rows_vs_previous_operational_base,exchange,exchange,BVC,23,6.0367
+new_rows_vs_previous_operational_base,mic,mic,XSES,358,93.9633
+new_rows_vs_previous_operational_base,mic,mic,XBOG,23,6.0367
+new_rows_vs_previous_operational_base,currency,currency,SGD,358,93.9633
+new_rows_vs_previous_operational_base,currency,currency,COP,23,6.0367
+new_rows_vs_previous_operational_base,source_provider,source_provider,sgx_structured_endpoint,358,93.9633
+new_rows_vs_previous_operational_base,source_provider,source_provider,SFC_SIMEV_RNVE,23,6.0367
+new_rows_vs_previous_operational_base,asset_type,asset_type,equity_common_or_equity_like,322,84.5144
+new_rows_vs_previous_operational_base,asset_type,asset_type,equity_like_reit,25,6.5617
+new_rows_vs_previous_operational_base,asset_type,asset_type,__MISSING__,23,6.0367
+new_rows_vs_previous_operational_base,asset_type,asset_type,equity_like_trust,11,2.8871

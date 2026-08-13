@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,quality_review,review_pre_scoring_quality_findings,high,v2.22C_REVIEW - Pre-Scoring Quality Findings Review,Blocking or review findings exist.,No scoring in review phase.
+2,full59k,keep_full59k_deprecated_deferred,low,none,Quality target remains 42k-45k.,No full59k without separate roadmap.
