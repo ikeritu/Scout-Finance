@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_22B_POINTER_001,Create a single current operational universe pointer.,True,v2.22A required pointer convention hardening before audit/scoring.,Creates current_operational_universe_pointer.json.
+V2_22B_POINTER_002,Point the convention to the v2.21H activated operational reference.,True,v2.21H is the latest validated activated operational artifact.,Audit and scoring gates can use one explicit pointer.
+V2_22B_POINTER_003,Do not modify dataset files.,True,Pointer hardening should not rewrite the universe.,All dataset SHAs remain unchanged.
+V2_22B_POINTER_004,Keep scoring/OpenAI/broker/full59k deferred.,True,Pointer hardening is not a scoring or enrichment phase.,Next phase remains pre-scoring audit.

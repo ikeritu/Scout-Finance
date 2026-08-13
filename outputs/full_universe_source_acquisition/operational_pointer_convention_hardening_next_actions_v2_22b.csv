@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,pre_scoring_audit,audit_current_operational_universe_via_pointer,high,v2.22C - Pre-Scoring Data Quality Audit,Pointer convention is now defined; the next required gate is data quality audit.,Audit only; no scoring; no OpenAI; no broker.
+2,scoring_dry_run,prepare_scoring_dry_run_after_pre_scoring_audit_passes,medium,v2.22D - Scoring Dry Run / No Promotion,Scoring remains conditional on audit success.,No promotion; no canonical replacement; no full59k.

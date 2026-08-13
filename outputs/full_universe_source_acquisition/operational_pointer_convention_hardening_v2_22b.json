@@ -1,0 +1,442 @@
+{
+  "version": "v2.22B",
+  "phase": "Operational Pointer Convention Hardening",
+  "phase_type": "operational-pointer-convention-hardening",
+  "status": "OPERATIONAL_POINTER_CONVENTION_HARDENING_COMPLETED_CURRENT_OPERATIONAL_POINTER_CREATED_SCORING_DEFERRED",
+  "generated_at_utc": "2026-08-13T10:11:50.104880+00:00",
+  "summary": {
+    "selected_route": "Operational pointer convention hardening after v2.22A",
+    "phase_type": "operational-pointer-convention-hardening",
+    "pointer_decision": "CURRENT_OPERATIONAL_POINTER_CREATED",
+    "current_operational_pointer_json": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+    "current_operational_pointer_json_sha": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+    "current_operational_pointer_md": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.md",
+    "current_operational_pointer_md_sha": "c9c59d46e89957cf403572d174faf1e78b091d91902061265234a49f246e1cf6",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "previous_operational_base_rows": 42708,
+    "previous_operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "remaining_capacity": 1911,
+    "total_added_rows_vs_previous_operational_base": 381,
+    "pointer_convention_hardened": true,
+    "single_live_pointer_defined": true,
+    "current_pointer_created": true,
+    "existing_dataset_files_modified": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "approved_for_pre_scoring_data_quality_audit": true,
+    "approved_for_scoring_dry_run": false,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.22C - Pre-Scoring Data Quality Audit",
+    "secondary_next_phase": "v2.22D - Scoring Dry Run / No Promotion"
+  },
+  "pointer_payload": {
+    "pointer_schema_version": "1.0",
+    "created_by_phase": "v2.22B",
+    "created_at_utc": "2026-08-13T10:11:50.008727+00:00",
+    "pointer_name": "current_operational_universe",
+    "pointer_type": "single_live_operational_universe_reference",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "current_dataset_source_phase": "v2.21H",
+    "current_dataset_source_role": "activated_operational_reference_artifact",
+    "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "previous_operational_base_rows": 42708,
+    "previous_operational_base_sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "remaining_capacity": 1911,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "update_policy": {
+      "only_update_after_explicit_gate": true,
+      "require_row_count_and_sha_validation": true,
+      "require_rollback_reference": true,
+      "do_not_overwrite_datasets": true,
+      "do_not_force_push": true,
+      "do_not_rewrite_history": true
+    },
+    "consumer_policy": {
+      "pre_scoring_audit_input": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "scoring_dry_run_input": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "human_readable_pointer": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.md"
+    }
+  },
+  "artifact_manifest": [
+    {
+      "artifact": "current_operational_pointer_json",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "rows": 1,
+      "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+      "role": "single_live_operational_universe_pointer"
+    },
+    {
+      "artifact": "current_operational_pointer_md",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.md",
+      "rows": 1,
+      "sha256": "c9c59d46e89957cf403572d174faf1e78b091d91902061265234a49f246e1cf6",
+      "role": "human_readable_pointer_convention"
+    },
+    {
+      "artifact": "activated_operational_reference",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "current_pointer_target_unchanged"
+    },
+    {
+      "artifact": "final_v2_21_reference",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21g_final_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "source_reference_unchanged"
+    },
+    {
+      "artifact": "previous_operational_base",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "role": "previous_reference_unchanged"
+    },
+    {
+      "artifact": "rollback_reference",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "rows": 38287,
+      "sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "role": "rollback_reference_unchanged"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_22B_POINTER_001",
+      "decision": "Create a single current operational universe pointer.",
+      "accepted": true,
+      "reason": "v2.22A required pointer convention hardening before audit/scoring.",
+      "effect": "Creates current_operational_universe_pointer.json."
+    },
+    {
+      "decision_id": "V2_22B_POINTER_002",
+      "decision": "Point the convention to the v2.21H activated operational reference.",
+      "accepted": true,
+      "reason": "v2.21H is the latest validated activated operational artifact.",
+      "effect": "Audit and scoring gates can use one explicit pointer."
+    },
+    {
+      "decision_id": "V2_22B_POINTER_003",
+      "decision": "Do not modify dataset files.",
+      "accepted": true,
+      "reason": "Pointer hardening should not rewrite the universe.",
+      "effect": "All dataset SHAs remain unchanged."
+    },
+    {
+      "decision_id": "V2_22B_POINTER_004",
+      "decision": "Keep scoring/OpenAI/broker/full59k deferred.",
+      "accepted": true,
+      "reason": "Pointer hardening is not a scoring or enrichment phase.",
+      "effect": "Next phase remains pre-scoring audit."
+    }
+  ],
+  "convention_register": [
+    {
+      "convention_id": "CONVENTION_CURRENT_OPERATIONAL_POINTER",
+      "name": "current_operational_universe_pointer",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "status": "created",
+      "required_for": "pre_scoring_audit_and_scoring_dry_run",
+      "rule": "Consumers must resolve the current operational universe through this pointer."
+    },
+    {
+      "convention_id": "CONVENTION_POINTER_TARGET",
+      "name": "current_dataset",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "status": "validated",
+      "required_for": "v2.22C",
+      "rule": "Target dataset must match expected rows and SHA before use."
+    },
+    {
+      "convention_id": "CONVENTION_ROLLBACK",
+      "name": "rollback_dataset",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "status": "validated",
+      "required_for": "all_future_pointer_updates",
+      "rule": "Rollback dataset must be recorded in pointer metadata."
+    },
+    {
+      "convention_id": "CONVENTION_UPDATE_POLICY",
+      "name": "explicit_update_gate",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "status": "documented",
+      "required_for": "future_pointer_changes",
+      "rule": "Future pointer updates require explicit gate, row count validation, SHA validation, and no force push."
+    }
+  ],
+  "checks": [
+    {
+      "check": "scoring_gate_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "POST_TARGETED_MARKETS_SCORING_DECISION_GATE_COMPLETED_SCORING_DEFERRED_POINTER_HARDENING_AND_PRE_SCORING_AUDIT_REQUIRED"
+    },
+    {
+      "check": "scoring_gate_approved_pointer_hardening",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_pointer_convention_hardening=True"
+    },
+    {
+      "check": "scoring_gate_not_approved_for_scoring_dry_run",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_scoring_dry_run=False"
+    },
+    {
+      "check": "activated_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated_rows=43089"
+    },
+    {
+      "check": "activated_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "final_reference_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "final_reference_rows=43089"
+    },
+    {
+      "check": "final_reference_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "previous_operational_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "previous_operational_rows=42708"
+    },
+    {
+      "check": "previous_operational_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "headers_consistent",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated_columns=33;final_columns=33;previous_columns=33"
+    },
+    {
+      "check": "pointer_json_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json"
+    },
+    {
+      "check": "pointer_md_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.md"
+    },
+    {
+      "check": "pointer_target_path_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv"
+    },
+    {
+      "check": "pointer_target_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_rows=43089"
+    },
+    {
+      "check": "pointer_target_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "within_quality_floor",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated_rows=43089;floor=42000"
+    },
+    {
+      "check": "within_quality_ceiling",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated_rows=43089;ceiling=45000"
+    },
+    {
+      "check": "remaining_capacity_non_negative",
+      "passed": true,
+      "severity": "critical",
+      "detail": "remaining_capacity=1911"
+    },
+    {
+      "check": "activated_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated_sha_after=9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "final_reference_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "final_reference_sha_after=9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "previous_operational_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "previous_operational_sha_after=892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_sha_after=cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "scoring_not_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_executed=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "convention_register_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "conventions=4"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "pre_scoring_audit",
+      "action": "audit_current_operational_universe_via_pointer",
+      "priority": "high",
+      "recommended_phase": "v2.22C - Pre-Scoring Data Quality Audit",
+      "reason": "Pointer convention is now defined; the next required gate is data quality audit.",
+      "guardrails": "Audit only; no scoring; no OpenAI; no broker."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "scoring_dry_run",
+      "action": "prepare_scoring_dry_run_after_pre_scoring_audit_passes",
+      "priority": "medium",
+      "recommended_phase": "v2.22D - Scoring Dry Run / No Promotion",
+      "reason": "Scoring remains conditional on audit success.",
+      "guardrails": "No promotion; no canonical replacement; no full59k."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "operational-pointer-convention-hardening",
+    "selected_route": "single live operational pointer convention",
+    "current_operational_pointer_json": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "pointer_convention_hardened": true,
+    "single_live_pointer_defined": true,
+    "current_pointer_created": true,
+    "existing_dataset_files_modified": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "approved_for_pre_scoring_data_quality_audit": true,
+    "approved_for_scoring_dry_run": false,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "scoring_output_created": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.22C - Pre-Scoring Data Quality Audit",
+  "secondary_next_phase": "v2.22D - Scoring Dry Run / No Promotion"
+}

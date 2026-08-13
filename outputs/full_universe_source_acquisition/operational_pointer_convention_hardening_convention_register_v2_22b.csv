@@ -1,0 +1,5 @@
+convention_id,name,path,status,required_for,rule
+CONVENTION_CURRENT_OPERATIONAL_POINTER,current_operational_universe_pointer,outputs\full_universe_source_acquisition\current_operational_universe_pointer.json,created,pre_scoring_audit_and_scoring_dry_run,Consumers must resolve the current operational universe through this pointer.
+CONVENTION_POINTER_TARGET,current_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_21h_activated_operational_reference.csv,validated,v2.22C,Target dataset must match expected rows and SHA before use.
+CONVENTION_ROLLBACK,rollback_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_14e.csv,validated,all_future_pointer_updates,Rollback dataset must be recorded in pointer metadata.
+CONVENTION_UPDATE_POLICY,explicit_update_gate,outputs\full_universe_source_acquisition\current_operational_universe_pointer.json,documented,future_pointer_changes,"Future pointer updates require explicit gate, row count validation, SHA validation, and no force push."

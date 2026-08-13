@@ -1,0 +1,41 @@
+{
+  "pointer_schema_version": "1.0",
+  "created_by_phase": "v2.22B",
+  "created_at_utc": "2026-08-13T10:11:50.008727+00:00",
+  "pointer_name": "current_operational_universe",
+  "pointer_type": "single_live_operational_universe_reference",
+  "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+  "current_dataset_rows": 43089,
+  "current_dataset_sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+  "current_dataset_source_phase": "v2.21H",
+  "current_dataset_source_role": "activated_operational_reference_artifact",
+  "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+  "previous_operational_base_rows": 42708,
+  "previous_operational_base_sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+  "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+  "rollback_rows": 38287,
+  "rollback_sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+  "quality_floor_target": 42000,
+  "quality_ceiling_target": 45000,
+  "remaining_capacity": 1911,
+  "scoring_authorized": false,
+  "scoring_executed": false,
+  "openai_authorized": false,
+  "openai_called": false,
+  "broker_authorized": false,
+  "broker_called": false,
+  "full59k": "DEPRECATED_DEFERRED",
+  "update_policy": {
+    "only_update_after_explicit_gate": true,
+    "require_row_count_and_sha_validation": true,
+    "require_rollback_reference": true,
+    "do_not_overwrite_datasets": true,
+    "do_not_force_push": true,
+    "do_not_rewrite_history": true
+  },
+  "consumer_policy": {
+    "pre_scoring_audit_input": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+    "scoring_dry_run_input": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+    "human_readable_pointer": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.md"
+  }
+}
