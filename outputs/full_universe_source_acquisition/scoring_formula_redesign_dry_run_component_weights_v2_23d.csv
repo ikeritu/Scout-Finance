@@ -1,0 +1,5 @@
+component,weight,included_in_redesigned_score,reason
+data_quality_score,0.7,True,Primary component while manual/financial attractiveness labels are unavailable.
+scope_confidence_score,0.2,True,Keeps common-equity scope confidence separate from metadata completeness.
+provider_quality_score,0.1,True,Low-weight deterministic provider baseline from observed metadata quality.
+attractiveness_score,0.0,False,Not invented because no manual labels or financial/fundamental inputs exist yet.

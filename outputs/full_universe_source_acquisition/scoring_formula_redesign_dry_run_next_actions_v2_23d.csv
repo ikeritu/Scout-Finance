@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,calibration_review,review_redesigned_formula_dry_run_and_freeze_or_defer,high,v2.23E - Calibration Review / Freeze Decision,Redesigned dry-run scores exist and require explicit review.,No promotion without explicit future gate.
+2,calibration_closure,close_v2_23_calibration_block_after_review,medium,v2.23F - Calibration Closure Report,v2.23 should end with a closure report after review/freeze.,Production scoring remains unauthorized unless separately approved.

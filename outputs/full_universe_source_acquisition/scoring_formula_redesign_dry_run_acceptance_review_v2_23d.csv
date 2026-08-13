@@ -1,0 +1,6 @@
+criteria_id,criteria,passed,detail
+ACCEPT_001,Manual calibration sample must include every score bucket with available rows.,True,v2.23C sample plan exists; v2.23D does not create labels.
+ACCEPT_002,Manual calibration sample must include high-gap providers.,True,v2.23C sample plan includes provider-gap strata; v2.23D keeps them as review input.
+ACCEPT_003,Scoring redesign must separate data-quality score from attractiveness score.,True,"data_quality_score is explicit; attractiveness_score is separate and unavailable, not invented."
+ACCEPT_004,No production scoring may be authorized from unlabelled dry-run scores.,True,production_scoring_authorized=False.
+ACCEPT_005,Future formula must remain deterministic unless external enrichment gate is approved.,True,"No OpenAI, broker APIs or full59k are used."

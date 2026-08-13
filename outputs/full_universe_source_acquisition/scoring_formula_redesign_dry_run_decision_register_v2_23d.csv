@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_23D_FORMULA_001,Execute redesigned scoring as dry run only.,True,v2.23C permits formula redesign dry run but not production promotion.,redesigned scores are created but not promoted.
+V2_23D_FORMULA_002,Separate data-quality score from attractiveness score.,True,Attractiveness cannot be inferred safely without manual labels or fundamentals.,attractiveness_score_available=False.
+V2_23D_FORMULA_003,Do not modify canonical dataset or active pointer.,True,This phase is dry-run only.,canonical_dataset_modified=False.
+V2_23D_FORMULA_004,"Keep OpenAI, broker APIs and full59k disabled.",True,No separate enrichment gate exists.,openai_called=False; broker_called=False; full59k=DEPRECATED_DEFERRED.
