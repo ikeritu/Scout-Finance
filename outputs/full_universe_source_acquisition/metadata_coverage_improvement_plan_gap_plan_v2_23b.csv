@@ -1,0 +1,6 @@
+gap_id,area,priority,problem,planned_resolution,phase_to_execute,promotion_allowed
+META_GAP_001,country,critical,Country coverage is insufficient for production scoring if missing values dominate scoreable rows.,"Design deterministic country backfill from exchange, MIC, source provider or listing suffix.",v2.24B - Country / MIC / Currency Backfill Plan,False
+META_GAP_002,mic,high,MIC is needed to normalize venue-level identification and country mapping.,Design exchange-to-MIC and provider-specific MIC mapping tables.,v2.24B - Country / MIC / Currency Backfill Plan,False
+META_GAP_003,currency,high,Currency gaps reduce comparability and weaken future scoring interpretability.,Backfill currency from exchange/MIC/provider where deterministic.,v2.24B - Country / MIC / Currency Backfill Plan,False
+META_GAP_004,asset_type/instrument_type/instrument_scope,critical,"Production scoring needs reliable separation of common equity, fund-like, fixed income and residual instruments.",Promote a normalized taxonomy design before scoring promotion.,v2.24C - Asset Type Normalization Plan,False
+META_GAP_005,source_provider,medium,Provider-specific gap patterns should guide deterministic cleanup order.,Create provider quality matrix and prioritize providers with largest missing metadata burden.,v2.24D - Provider Quality Matrix,False

@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_23B_METADATA_001,Create metadata coverage plan before formula redesign.,True,v2.23A prioritized metadata coverage before production scoring.,v2.23B remains planning/audit only.
+V2_23B_METADATA_002,Do not backfill or mutate metadata in this phase.,True,"This phase is an improvement plan, not an execution phase.",canonical_dataset_modified=False.
+V2_23B_METADATA_003,"Treat country, MIC, currency and asset taxonomy as blocking production-scoring readiness areas.",True,v2.22D/v2.23A identified metadata sensitivity and missing country dominance.,Production scoring remains unauthorized.
+V2_23B_METADATA_004,"Keep OpenAI, broker APIs and full59k disabled.",True,No separate authorization exists for external enrichment.,openai_called=False; broker_called=False; full59k=DEPRECATED_DEFERRED.

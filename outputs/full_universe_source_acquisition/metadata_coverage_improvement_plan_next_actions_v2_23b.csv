@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,calibration_data,design_manual_labelled_calibration_sample,high,v2.23C - Scoring Calibration Data Design,Coverage plan exists; calibration data design is needed before formula redesign.,No production scoring; no canonical replacement.
+2,metadata_execution,prepare_future_country_mic_currency_backfill_plan,medium,v2.24B - Country / MIC / Currency Backfill Plan,Metadata backfill should be designed separately and deterministically.,No full59k; no broker/OpenAI unless separately approved.
