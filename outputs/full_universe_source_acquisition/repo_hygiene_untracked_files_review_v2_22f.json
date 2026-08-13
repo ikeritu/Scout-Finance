@@ -1,0 +1,339 @@
+{
+  "version": "v2.22F",
+  "phase": "Repo Hygiene / Untracked Files Review",
+  "phase_type": "repo-hygiene-untracked-files-review",
+  "status": "REPO_HYGIENE_UNTRACKED_FILES_REVIEW_COMPLETED_UNTRACKED_FILES_CLASSIFIED_NO_AUTO_ADD",
+  "generated_at_utc": "2026-08-13T11:44:09.522775+00:00",
+  "summary": {
+    "selected_route": "Repo hygiene review of persistent untracked files",
+    "phase_type": "repo-hygiene-untracked-files-review",
+    "hygiene_decision": "UNTRACKED_FILES_CLASSIFIED_NO_AUTO_ADD",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "scoring_output": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+    "scoring_output_rows": 33498,
+    "scoring_output_sha": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "expected_untracked_targets": 6,
+    "expected_untracked_targets_existing": 6,
+    "docx_targets": 1,
+    "country_breakdown_csv_targets": 5,
+    "auto_add_recommended": 0,
+    "defer_do_not_add_automatically": 6,
+    "manual_review_required": 0,
+    "tracked_modifications": 0,
+    "unexpected_untracked_before_outputs": 0,
+    "untracked_files_committed": false,
+    "gitignore_modified": false,
+    "git_info_exclude_modified": false,
+    "canonical_dataset_modified": false,
+    "scoring_output_modified": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.23A - Scoring Model Calibration Roadmap",
+    "secondary_next_phase": "v2.23B - Metadata Coverage Improvement Plan"
+  },
+  "git_status_porcelain_before_outputs": [
+    "?? Auditoria_Scout_Finance.docx",
+    "?? outputs/full_universe_source_acquisition/country_breakdown_by_country.csv",
+    "?? outputs/full_universe_source_acquisition/country_breakdown_by_currency.csv",
+    "?? outputs/full_universe_source_acquisition/country_breakdown_by_exchange.csv",
+    "?? outputs/full_universe_source_acquisition/country_breakdown_by_mic.csv",
+    "?? outputs/full_universe_source_acquisition/country_breakdown_by_source_provider.csv",
+    "?? scripts/repo_hygiene_untracked_files_review_v2_22f.py"
+  ],
+  "tracked_modifications": [],
+  "unexpected_untracked_before_outputs": [],
+  "untracked_classification": [
+    {
+      "path": "Auditoria_Scout_Finance.docx",
+      "exists": true,
+      "file_kind": "document",
+      "size_bytes": 23090,
+      "rows": "",
+      "sha256": "15233c5e9d7cb698701754a1df016b3a9d29ef93aef42129ba2b94d2adcc9cb9",
+      "recommendation": "defer_do_not_add_automatically",
+      "reason": "Manual audit document. Not part of deterministic pipeline outputs and should not be committed without explicit review."
+    },
+    {
+      "path": "outputs\\full_universe_source_acquisition\\country_breakdown_by_country.csv",
+      "exists": true,
+      "file_kind": "ad_hoc_country_breakdown_csv",
+      "size_bytes": 663,
+      "rows": 29,
+      "sha256": "c6006c07d23a8777d350580f38d45785a5539e925ccb79c9e92f5758a6c68382",
+      "recommendation": "defer_do_not_add_automatically",
+      "reason": "Ad hoc breakdown artifact. Useful for local inspection but not currently part of versioned v2.22 pipeline."
+    },
+    {
+      "path": "outputs\\full_universe_source_acquisition\\country_breakdown_by_currency.csv",
+      "exists": true,
+      "file_kind": "ad_hoc_country_breakdown_csv",
+      "size_bytes": 221,
+      "rows": 8,
+      "sha256": "931046704fd41bb551b12324b3e4126d3aa1232e3668fdfce1c67c430b96bf12",
+      "recommendation": "defer_do_not_add_automatically",
+      "reason": "Ad hoc breakdown artifact. Useful for local inspection but not currently part of versioned v2.22 pipeline."
+    },
+    {
+      "path": "outputs\\full_universe_source_acquisition\\country_breakdown_by_exchange.csv",
+      "exists": true,
+      "file_kind": "ad_hoc_country_breakdown_csv",
+      "size_bytes": 384,
+      "rows": 13,
+      "sha256": "1b00c4351dd5753955e150418766c56afe1788d7426633b3dcc96eca2eca55bd",
+      "recommendation": "defer_do_not_add_automatically",
+      "reason": "Ad hoc breakdown artifact. Useful for local inspection but not currently part of versioned v2.22 pipeline."
+    },
+    {
+      "path": "outputs\\full_universe_source_acquisition\\country_breakdown_by_mic.csv",
+      "exists": true,
+      "file_kind": "ad_hoc_country_breakdown_csv",
+      "size_bytes": 150,
+      "rows": 6,
+      "sha256": "0d729ba4f21f0bba14a71a08c365479415ab95f383440ed2aeb1491e6afb06ca",
+      "recommendation": "defer_do_not_add_automatically",
+      "reason": "Ad hoc breakdown artifact. Useful for local inspection but not currently part of versioned v2.22 pipeline."
+    },
+    {
+      "path": "outputs\\full_universe_source_acquisition\\country_breakdown_by_source_provider.csv",
+      "exists": true,
+      "file_kind": "ad_hoc_country_breakdown_csv",
+      "size_bytes": 597,
+      "rows": 12,
+      "sha256": "581ea58d8a562299b1cff2f7de84cbe4cc9d95febb919c09a0fd50716fe6119d",
+      "recommendation": "defer_do_not_add_automatically",
+      "reason": "Ad hoc breakdown artifact. Useful for local inspection but not currently part of versioned v2.22 pipeline."
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "artifact": "freeze_report_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_promotion_freeze_decision_v2_22e.json",
+      "rows": 1,
+      "sha256": "738fd7f08cd9a26cdcafa7e48f7592ca7f821f5c68b280da77c96c1a061941a3",
+      "role": "input_freeze_report"
+    },
+    {
+      "artifact": "current_operational_pointer_input",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "rows": 1,
+      "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+      "role": "input_pointer"
+    },
+    {
+      "artifact": "current_dataset_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "input_dataset_no_modification"
+    },
+    {
+      "artifact": "scoring_output_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+      "rows": 33498,
+      "sha256": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+      "role": "input_scoring_output_no_modification"
+    },
+    {
+      "artifact": "untracked_classification_output",
+      "path": "outputs\\full_universe_source_acquisition\\repo_hygiene_untracked_files_review_untracked_classification_v2_22f.csv",
+      "rows": 6,
+      "sha256": "93b6ed89edc1dcf9299ed62ce95ed5aa02978cc075f430b9d52b344e996832ab",
+      "role": "repo_hygiene_classification_output"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_22F_HYGIENE_001",
+      "decision": "Classify persistent untracked files but do not add them automatically.",
+      "accepted": true,
+      "reason": "The files are ad hoc/manual review artifacts outside the deterministic v2.22 pipeline.",
+      "effect": "No automatic git add for docx or country_breakdown files."
+    },
+    {
+      "decision_id": "V2_22F_HYGIENE_002",
+      "decision": "Keep Auditoria_Scout_Finance.docx out of the repo unless explicitly requested.",
+      "accepted": true,
+      "reason": "Manual document; could be useful, but it is not a required pipeline artifact.",
+      "effect": "Recommendation is defer_do_not_add_automatically."
+    },
+    {
+      "decision_id": "V2_22F_HYGIENE_003",
+      "decision": "Keep country_breakdown_by_*.csv files out of this commit unless converted into a formal phase output later.",
+      "accepted": true,
+      "reason": "They are ad hoc breakdowns, not part of the versioned v2.22 outputs.",
+      "effect": "Recommendation is defer_do_not_add_automatically."
+    },
+    {
+      "decision_id": "V2_22F_HYGIENE_004",
+      "decision": "Do not modify .gitignore or .git/info/exclude in this phase.",
+      "accepted": true,
+      "reason": "The safest hygiene action is explicit classification first, not silently hiding files.",
+      "effect": "gitignore_modified=False; git_info_exclude_modified=False."
+    }
+  ],
+  "checks": [
+    {
+      "check": "freeze_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "SCORING_PROMOTION_FREEZE_DECISION_COMPLETED_DRY_RUN_FROZEN_NOT_PROMOTED"
+    },
+    {
+      "check": "freeze_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "pointer_current_dataset_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv"
+    },
+    {
+      "check": "current_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089"
+    },
+    {
+      "check": "current_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "scoring_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_rows=33498"
+    },
+    {
+      "check": "scoring_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1"
+    },
+    {
+      "check": "expected_untracked_targets_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "present=6;expected=6"
+    },
+    {
+      "check": "tracked_modifications_absent",
+      "passed": true,
+      "severity": "critical",
+      "detail": "tracked_modifications=[]"
+    },
+    {
+      "check": "unexpected_untracked_absent_before_outputs",
+      "passed": true,
+      "severity": "critical",
+      "detail": "unexpected_untracked=[]"
+    },
+    {
+      "check": "auto_add_not_recommended",
+      "passed": true,
+      "severity": "critical",
+      "detail": "auto_add_recommended=0"
+    },
+    {
+      "check": "defer_recommendations_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "defer_recommended=6"
+    },
+    {
+      "check": "manual_review_required_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "manual_review_required=0"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_sha_after=9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "scoring_output_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_sha_after=a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "scoring_model",
+      "action": "plan_scoring_model_calibration_before_any_production_promotion",
+      "priority": "high",
+      "recommended_phase": "v2.23A - Scoring Model Calibration Roadmap",
+      "reason": "v2.22E froze dry-run scoring as non-promoted reference.",
+      "guardrails": "No production scoring or canonical replacement without explicit future gate."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "metadata_coverage",
+      "action": "improve_country_currency_mic_asset_type_coverage_before_production_scoring",
+      "priority": "medium",
+      "recommended_phase": "v2.23B - Metadata Coverage Improvement Plan",
+      "reason": "v2.22D showed top_country_by_scorable_rows=__MISSING__.",
+      "guardrails": "No full59k; no broker/OpenAI unless separately approved."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "repo-hygiene-untracked-files-review",
+    "untracked_files_committed": false,
+    "auto_add_recommended": 0,
+    "gitignore_modified": false,
+    "git_info_exclude_modified": false,
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "scoring_output": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+    "scoring_output_rows": 33498,
+    "scoring_output_sha": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "canonical_dataset_modified": false,
+    "scoring_output_modified": false,
+    "production_scoring_authorized": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.23A - Scoring Model Calibration Roadmap",
+  "secondary_next_phase": "v2.23B - Metadata Coverage Improvement Plan"
+}

@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,scoring_model,plan_scoring_model_calibration_before_any_production_promotion,high,v2.23A - Scoring Model Calibration Roadmap,v2.22E froze dry-run scoring as non-promoted reference.,No production scoring or canonical replacement without explicit future gate.
+2,metadata_coverage,improve_country_currency_mic_asset_type_coverage_before_production_scoring,medium,v2.23B - Metadata Coverage Improvement Plan,v2.22D showed top_country_by_scorable_rows=__MISSING__.,No full59k; no broker/OpenAI unless separately approved.

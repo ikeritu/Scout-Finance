@@ -1,0 +1,33 @@
+metric,value
+selected_route,Repo hygiene review of persistent untracked files
+phase_type,repo-hygiene-untracked-files-review
+hygiene_decision,UNTRACKED_FILES_CLASSIFIED_NO_AUTO_ADD
+current_dataset,outputs\full_universe_source_acquisition\expanded_universe_v2_21h_activated_operational_reference.csv
+current_dataset_rows,43089
+current_dataset_sha,9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707
+scoring_output,outputs\full_universe_source_acquisition\scoring_dry_run_no_promotion_scores_v2_22d.csv
+scoring_output_rows,33498
+scoring_output_sha,a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1
+expected_untracked_targets,6
+expected_untracked_targets_existing,6
+docx_targets,1
+country_breakdown_csv_targets,5
+auto_add_recommended,0
+defer_do_not_add_automatically,6
+manual_review_required,0
+tracked_modifications,0
+unexpected_untracked_before_outputs,0
+untracked_files_committed,False
+gitignore_modified,False
+git_info_exclude_modified,False
+canonical_dataset_modified,False
+scoring_output_modified,False
+openai_authorized,False
+openai_called,False
+broker_authorized,False
+broker_called,False
+full59k,DEPRECATED_DEFERRED
+critical_failed_checks,0
+warning_failed_checks,0
+recommended_next_phase,v2.23A - Scoring Model Calibration Roadmap
+secondary_next_phase,v2.23B - Metadata Coverage Improvement Plan

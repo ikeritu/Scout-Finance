@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_22F_HYGIENE_001,Classify persistent untracked files but do not add them automatically.,True,The files are ad hoc/manual review artifacts outside the deterministic v2.22 pipeline.,No automatic git add for docx or country_breakdown files.
+V2_22F_HYGIENE_002,Keep Auditoria_Scout_Finance.docx out of the repo unless explicitly requested.,True,"Manual document; could be useful, but it is not a required pipeline artifact.",Recommendation is defer_do_not_add_automatically.
+V2_22F_HYGIENE_003,Keep country_breakdown_by_*.csv files out of this commit unless converted into a formal phase output later.,True,"They are ad hoc breakdowns, not part of the versioned v2.22 outputs.",Recommendation is defer_do_not_add_automatically.
+V2_22F_HYGIENE_004,Do not modify .gitignore or .git/info/exclude in this phase.,True,"The safest hygiene action is explicit classification first, not silently hiding files.",gitignore_modified=False; git_info_exclude_modified=False.
