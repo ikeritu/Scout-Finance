@@ -1,0 +1,5 @@
+policy_id,rule,decision
+PROMOTION_POLICY_001,Dry-run score output may be reviewed but not used as production scoring.,freeze_not_promote
+PROMOTION_POLICY_002,No canonical replacement without explicit future promotion gate.,no_canonical_replacement
+PROMOTION_POLICY_003,Future production scoring requires model calibration and metadata coverage review.,defer_to_v2_23a_or_later
+PROMOTION_POLICY_004,Untracked repo hygiene files remain excluded from this phase.,defer_to_v2_22f

@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,repo_hygiene,review_untracked_audit_and_country_breakdown_files,high,v2.22F - Repo Hygiene / Untracked Files Review,Only unrelated untracked files remain in git status.,Do not add docx/country_breakdown files automatically.
+2,scoring_model,plan_scoring_model_calibration_before_any_production_promotion,medium,v2.23A - Scoring Model Calibration Roadmap,Dry-run score is useful but heuristic.,No production scoring without explicit future gate.

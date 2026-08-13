@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_22E_FREEZE_001,Freeze v2.22D scoring dry run as non-promoted reference.,True,v2.22D was explicitly dry-run/no-promotion.,Dry-run scores remain available for review but are not promoted.
+V2_22E_FREEZE_002,Do not replace canonical or active operational dataset.,True,v2.22D is heuristic and not calibrated for production scoring.,canonical_dataset_modified=False; active_canonical_replaced=False.
+V2_22E_FREEZE_003,Defer production scoring authorization.,True,Scoring model calibration and metadata coverage should be reviewed separately.,production_scoring_authorized=False.
+V2_22E_FREEZE_004,"Keep OpenAI, broker APIs and full59k disabled.",True,No external enrichment was authorized for this roadmap segment.,openai_called=False; broker_called=False; full59k=DEPRECATED_DEFERRED.
