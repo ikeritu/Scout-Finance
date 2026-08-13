@@ -1,0 +1,397 @@
+{
+  "version": "v2.22A",
+  "phase": "Post-Targeted-Markets Explicit Scoring Decision Gate",
+  "phase_type": "post-targeted-markets-explicit-scoring-decision-gate",
+  "status": "POST_TARGETED_MARKETS_SCORING_DECISION_GATE_COMPLETED_SCORING_DEFERRED_POINTER_HARDENING_AND_PRE_SCORING_AUDIT_REQUIRED",
+  "generated_at_utc": "2026-08-13T10:04:01.904223+00:00",
+  "summary": {
+    "selected_route": "Post-targeted-markets explicit scoring decision gate",
+    "phase_type": "post-targeted-markets-explicit-scoring-decision-gate",
+    "scoring_decision": "SCORING_DEFERRED_POINTER_HARDENING_AND_PRE_SCORING_AUDIT_REQUIRED",
+    "activated_operational_reference_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "activated_operational_reference_rows": 43089,
+    "activated_operational_reference_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "previous_operational_base_rows": 42708,
+    "previous_operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "final_reference_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21g_final_reference.csv",
+    "final_reference_rows": 43089,
+    "final_reference_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "remaining_capacity": 1911,
+    "total_added_rows_vs_previous_operational_base": 381,
+    "approved_for_pointer_convention_hardening": true,
+    "approved_for_pre_scoring_data_quality_audit": true,
+    "approved_for_scoring_dry_run": false,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "scoring_output_created": false,
+    "scoring_promotion_authorized": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.22B - Operational Pointer Convention Hardening",
+    "secondary_next_phase": "v2.22C - Pre-Scoring Data Quality Audit",
+    "conditional_next_phase": "v2.22D - Scoring Dry Run / No Promotion"
+  },
+  "artifact_manifest": [
+    {
+      "artifact": "activated_operational_reference_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "scoring_decision_input_no_scoring_executed"
+    },
+    {
+      "artifact": "previous_operational_base_reference",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "role": "comparison_reference_unchanged"
+    },
+    {
+      "artifact": "rollback_reference",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "rows": 38287,
+      "sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "role": "rollback_reference_unchanged"
+    },
+    {
+      "artifact": "final_v2_21_reference",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21g_final_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "source_reference_unchanged"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_22A_SCORING_001",
+      "decision": "Do not run scoring in v2.22A.",
+      "accepted": true,
+      "reason": "v2.22A is an explicit decision gate, not an execution phase.",
+      "effect": "No scoring output is created."
+    },
+    {
+      "decision_id": "V2_22A_SCORING_002",
+      "decision": "Require operational pointer convention hardening before scoring.",
+      "accepted": true,
+      "reason": "v2.21H created an activated operational reference artifact without mutating unknown pointer files.",
+      "effect": "Next phase is v2.22B."
+    },
+    {
+      "decision_id": "V2_22A_SCORING_003",
+      "decision": "Require pre-scoring data quality audit before scoring dry run.",
+      "accepted": true,
+      "reason": "The expanded universe contains new Singapore and Colombia rows and needs targeted quality review before ranking.",
+      "effect": "v2.22C must pass before v2.22D scoring dry run."
+    },
+    {
+      "decision_id": "V2_22A_SCORING_004",
+      "decision": "Keep OpenAI, broker, and full59k blocked.",
+      "accepted": true,
+      "reason": "No explicit authorization has been given for OpenAI enrichment, broker data, or full59k expansion.",
+      "effect": "No external enrichment or full59k workflow is launched."
+    }
+  ],
+  "requirements_register": [
+    {
+      "requirement_id": "REQ_POINTER_CONVENTION",
+      "requirement": "Define single operational pointer/canonical convention.",
+      "required_before_scoring_dry_run": true,
+      "current_status": "pending",
+      "recommended_phase": "v2.22B - Operational Pointer Convention Hardening",
+      "reason": "Avoid ambiguity between previous base, final reference, and activated operational reference."
+    },
+    {
+      "requirement_id": "REQ_PRE_SCORING_AUDIT",
+      "requirement": "Run pre-scoring data quality audit.",
+      "required_before_scoring_dry_run": true,
+      "current_status": "pending",
+      "recommended_phase": "v2.22C - Pre-Scoring Data Quality Audit",
+      "reason": "Validate duplicates, identifiers, country/exchange/MIC/currency, and instrument suitability before ranking."
+    },
+    {
+      "requirement_id": "REQ_SCORING_CONFIG",
+      "requirement": "Confirm local scoring configuration and output naming.",
+      "required_before_scoring_dry_run": true,
+      "current_status": "pending",
+      "recommended_phase": "v2.22D - Scoring Dry Run / No Promotion",
+      "reason": "Prevent accidental overwrites, renormalization, or historical mutation."
+    },
+    {
+      "requirement_id": "REQ_EXTERNAL_CALLS",
+      "requirement": "Keep OpenAI/broker/external enrichment unauthorized unless separately approved.",
+      "required_before_scoring_dry_run": true,
+      "current_status": "blocked_by_default",
+      "recommended_phase": "none",
+      "reason": "The user has not authorized external enrichment."
+    },
+    {
+      "requirement_id": "REQ_FULL59K",
+      "requirement": "Keep full59k deprecated/deferred.",
+      "required_before_scoring_dry_run": true,
+      "current_status": "blocked_by_default",
+      "recommended_phase": "none",
+      "reason": "The quality target remains 42k-45k."
+    }
+  ],
+  "checks": [
+    {
+      "check": "activation_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "FINAL_REFERENCE_ACTIVATION_GATE_COMPLETED_OPERATIONAL_REFERENCE_ARTIFACT_READY_EXISTING_POINTERS_UNCHANGED_SCORING_DEFERRED"
+    },
+    {
+      "check": "activation_zero_critical_failed_checks",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "activation_zero_warning_failed_checks",
+      "passed": true,
+      "severity": "critical",
+      "detail": "warning_failed_checks=0"
+    },
+    {
+      "check": "activation_approved_operational_reference",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_as_current_operational_reference_artifact=True"
+    },
+    {
+      "check": "activated_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated_rows=43089"
+    },
+    {
+      "check": "activated_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "previous_operational_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "previous_operational_rows=42708"
+    },
+    {
+      "check": "previous_operational_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "final_reference_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "final_reference_rows=43089"
+    },
+    {
+      "check": "final_reference_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "activated_matches_final_reference",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated=43089/9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707;final=43089/9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "headers_consistent",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated_columns=33;previous_columns=33;final_columns=33"
+    },
+    {
+      "check": "within_quality_floor",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated_rows=43089;floor=42000"
+    },
+    {
+      "check": "within_quality_ceiling",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated_rows=43089;ceiling=45000"
+    },
+    {
+      "check": "remaining_capacity_non_negative",
+      "passed": true,
+      "severity": "critical",
+      "detail": "remaining_capacity=1911"
+    },
+    {
+      "check": "scoring_not_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_executed=False"
+    },
+    {
+      "check": "scoring_not_authorized_in_gate",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "openai_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_authorized=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_authorized=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "no_canonical_mutation",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "no_pointer_mutation",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_performed=False"
+    },
+    {
+      "check": "activated_reference_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "activated_sha_after_read=9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "previous_operational_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "previous_operational_sha_after_read=892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_sha_after_read=cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "final_reference_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "final_reference_sha_after_read=9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "pre_scoring_requirements_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "requirements=5"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "pointer_convention",
+      "action": "define_and_harden_single_live_operational_pointer_convention",
+      "priority": "high",
+      "recommended_phase": "v2.22B - Operational Pointer Convention Hardening",
+      "reason": "Scoring should target one explicit operational reference.",
+      "guardrails": "No scoring; no OpenAI; no broker; no full59k."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "pre_scoring_audit",
+      "action": "audit_activated_operational_reference_before_scoring",
+      "priority": "high",
+      "recommended_phase": "v2.22C - Pre-Scoring Data Quality Audit",
+      "reason": "Validate the 43,089-row activated universe before scoring.",
+      "guardrails": "Audit only; no score promotion; no external enrichment."
+    },
+    {
+      "action_order": 3,
+      "action_scope": "scoring_dry_run",
+      "action": "prepare_scoring_dry_run_only_after_pointer_and_audit_pass",
+      "priority": "medium",
+      "recommended_phase": "v2.22D - Scoring Dry Run / No Promotion",
+      "reason": "Scoring dry run should be conditional on prior gates.",
+      "guardrails": "No promotion in dry run; no canonical replacement."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "post-targeted-markets-explicit-scoring-decision-gate",
+    "selected_route": "Explicit scoring decision gate after v2.21 targeted markets",
+    "activated_operational_reference_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "activated_operational_reference_rows": 43089,
+    "activated_operational_reference_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "approved_for_pointer_convention_hardening": true,
+    "approved_for_pre_scoring_data_quality_audit": true,
+    "approved_for_scoring_dry_run": false,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "scoring_output_created": false,
+    "scoring_promotion_authorized": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.22B - Operational Pointer Convention Hardening",
+  "secondary_next_phase": "v2.22C - Pre-Scoring Data Quality Audit",
+  "conditional_next_phase": "v2.22D - Scoring Dry Run / No Promotion"
+}

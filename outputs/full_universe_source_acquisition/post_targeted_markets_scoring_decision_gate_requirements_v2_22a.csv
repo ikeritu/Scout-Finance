@@ -1,0 +1,6 @@
+requirement_id,requirement,required_before_scoring_dry_run,current_status,recommended_phase,reason
+REQ_POINTER_CONVENTION,Define single operational pointer/canonical convention.,True,pending,v2.22B - Operational Pointer Convention Hardening,"Avoid ambiguity between previous base, final reference, and activated operational reference."
+REQ_PRE_SCORING_AUDIT,Run pre-scoring data quality audit.,True,pending,v2.22C - Pre-Scoring Data Quality Audit,"Validate duplicates, identifiers, country/exchange/MIC/currency, and instrument suitability before ranking."
+REQ_SCORING_CONFIG,Confirm local scoring configuration and output naming.,True,pending,v2.22D - Scoring Dry Run / No Promotion,"Prevent accidental overwrites, renormalization, or historical mutation."
+REQ_EXTERNAL_CALLS,Keep OpenAI/broker/external enrichment unauthorized unless separately approved.,True,blocked_by_default,none,The user has not authorized external enrichment.
+REQ_FULL59K,Keep full59k deprecated/deferred.,True,blocked_by_default,none,The quality target remains 42k-45k.

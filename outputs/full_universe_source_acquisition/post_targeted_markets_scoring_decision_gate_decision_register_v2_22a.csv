@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_22A_SCORING_001,Do not run scoring in v2.22A.,True,"v2.22A is an explicit decision gate, not an execution phase.",No scoring output is created.
+V2_22A_SCORING_002,Require operational pointer convention hardening before scoring.,True,v2.21H created an activated operational reference artifact without mutating unknown pointer files.,Next phase is v2.22B.
+V2_22A_SCORING_003,Require pre-scoring data quality audit before scoring dry run.,True,The expanded universe contains new Singapore and Colombia rows and needs targeted quality review before ranking.,v2.22C must pass before v2.22D scoring dry run.
+V2_22A_SCORING_004,"Keep OpenAI, broker, and full59k blocked.",True,"No explicit authorization has been given for OpenAI enrichment, broker data, or full59k expansion.",No external enrichment or full59k workflow is launched.

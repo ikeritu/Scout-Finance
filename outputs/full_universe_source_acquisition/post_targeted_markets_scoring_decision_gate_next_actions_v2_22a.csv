@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,pointer_convention,define_and_harden_single_live_operational_pointer_convention,high,v2.22B - Operational Pointer Convention Hardening,Scoring should target one explicit operational reference.,No scoring; no OpenAI; no broker; no full59k.
+2,pre_scoring_audit,audit_activated_operational_reference_before_scoring,high,v2.22C - Pre-Scoring Data Quality Audit,"Validate the 43,089-row activated universe before scoring.",Audit only; no score promotion; no external enrichment.
+3,scoring_dry_run,prepare_scoring_dry_run_only_after_pointer_and_audit_pass,medium,v2.22D - Scoring Dry Run / No Promotion,Scoring dry run should be conditional on prior gates.,No promotion in dry run; no canonical replacement.
