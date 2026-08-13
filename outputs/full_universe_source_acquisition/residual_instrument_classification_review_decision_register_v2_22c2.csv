@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_22C2_CLASSIFICATION_001,"Reclassify residual instruments from the full 43,089-row dataset instead of using the sampled CSV.",True,The previous CSV was a sample/capped review artifact and not a complete residual universe.,v2.22C2 now validates against the full residual count from v2.22C_REVIEW.
+V2_22C2_CLASSIFICATION_002,"Create a policy overlay, not a mutated dataset.",True,Rows should not be deleted before scoring dry run.,Classification overlay is available for v2.22D.
+V2_22C2_CLASSIFICATION_003,Exclude explicit fixed-income/fund/preferred/warrant/right/certificate/ETF instruments from common-equity scoring dry run.,True,These are not common-equity candidates under current policy.,excluded_from_common_equity_scoring_rows=9591.
+V2_22C2_CLASSIFICATION_004,Do not execute scoring.,True,This is a classification review phase.,Scoring remains not executed.

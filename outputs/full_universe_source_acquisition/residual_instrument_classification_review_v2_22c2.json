@@ -1,0 +1,330 @@
+{
+  "version": "v2.22C2",
+  "phase": "Residual Instrument Classification Review",
+  "phase_type": "residual-instrument-classification-review",
+  "status": "RESIDUAL_INSTRUMENT_CLASSIFICATION_REVIEW_COMPLETED_FULL_DATASET_POLICY_OVERLAY_READY_FOR_SCORING_DRY_RUN_DECISION",
+  "generated_at_utc": "2026-08-13T11:01:21.646807+00:00",
+  "summary": {
+    "selected_route": "Full-dataset residual instrument classification review before scoring dry run",
+    "phase_type": "residual-instrument-classification-review",
+    "classification_decision": "FULL_DATASET_POLICY_OVERLAY_READY",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "refined_full_dataset_no_flag_rows": 33232,
+    "refined_full_dataset_non_blocking_equity_context_rows": 265,
+    "refined_full_dataset_non_blocking_in_scope_context_rows": 1,
+    "refined_full_dataset_residual_review_required_rows": 9591,
+    "expected_residual_review_required_rows": 9591,
+    "classification_overlay_rows": 9857,
+    "excluded_from_common_equity_scoring_rows": 9591,
+    "classification_unknown_missing_instrument_metadata_rows": 0,
+    "classification_unknown_manual_review_required_rows": 0,
+    "classification_unknown_total_rows": 0,
+    "approved_for_scoring_dry_run_decision": true,
+    "approved_for_scoring_execution": false,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "scoring_output_created": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.22D - Scoring Dry Run / No Promotion",
+    "secondary_next_phase": "v2.22D - Scoring Dry Run / No Promotion"
+  },
+  "policy_counts": {
+    "not_residual_prior_non_blocking_or_no_flag": 33498,
+    "exclude_from_common_equity_scoring": 9591
+  },
+  "refined_counts": {
+    "no_refined_flag": 33232,
+    "non_blocking_equity_context": 265,
+    "residual_review_required": 9591,
+    "non_blocking_in_scope_context": 1
+  },
+  "policy_matches": {
+    "no_refined_flag": 33232,
+    "non_blocking_equity_context": 265,
+    "exclude_certificate": 9,
+    "non_blocking_in_scope_context": 1,
+    "exclude_fixed_income_note": 12,
+    "exclude_fixed_income_debenture": 22,
+    "exclude_fund_like": 209,
+    "exclude_preferred_or_preference;exclude_fund_like": 14,
+    "exclude_preferred_or_preference": 3,
+    "exclude_fixed_income_bond": 14,
+    "exclude_fixed_income_bond;exclude_fund_like": 6,
+    "exclude_etf": 7381,
+    "exclude_fixed_income_bond;exclude_etf": 1826,
+    "exclude_etf;exclude_fund_like": 61,
+    "exclude_preferred_or_preference;exclude_etf": 17,
+    "exclude_fixed_income_debenture;exclude_fund_like": 1,
+    "exclude_fixed_income_bond;exclude_etf;exclude_fund_like": 13,
+    "exclude_right": 2,
+    "exclude_warrant": 1
+  },
+  "artifact_manifest": [
+    {
+      "artifact": "review_report_input",
+      "path": "outputs\\full_universe_source_acquisition\\pre_scoring_quality_findings_review_v2_22c_review.json",
+      "rows": 1,
+      "sha256": "e73d66ccc3b05a1563df0bf29345b4b61101e3dd7c281ec7f9fa3fdbcb08795f",
+      "role": "input_review_report"
+    },
+    {
+      "artifact": "current_operational_pointer_input",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "rows": 1,
+      "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+      "role": "input_pointer"
+    },
+    {
+      "artifact": "current_dataset_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "full_dataset_reviewed_no_modification"
+    },
+    {
+      "artifact": "classification_overlay_output",
+      "path": "outputs\\full_universe_source_acquisition\\residual_instrument_classification_review_classification_v2_22c2.csv",
+      "rows": 9857,
+      "sha256": "b9830ee5c6781e414508fcb166779e84324244182889c8b681e610a397d61b26",
+      "role": "full_dataset_policy_overlay_for_future_scoring_dry_run"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_22C2_CLASSIFICATION_001",
+      "decision": "Reclassify residual instruments from the full 43,089-row dataset instead of using the sampled CSV.",
+      "accepted": true,
+      "reason": "The previous CSV was a sample/capped review artifact and not a complete residual universe.",
+      "effect": "v2.22C2 now validates against the full residual count from v2.22C_REVIEW."
+    },
+    {
+      "decision_id": "V2_22C2_CLASSIFICATION_002",
+      "decision": "Create a policy overlay, not a mutated dataset.",
+      "accepted": true,
+      "reason": "Rows should not be deleted before scoring dry run.",
+      "effect": "Classification overlay is available for v2.22D."
+    },
+    {
+      "decision_id": "V2_22C2_CLASSIFICATION_003",
+      "decision": "Exclude explicit fixed-income/fund/preferred/warrant/right/certificate/ETF instruments from common-equity scoring dry run.",
+      "accepted": true,
+      "reason": "These are not common-equity candidates under current policy.",
+      "effect": "excluded_from_common_equity_scoring_rows=9591."
+    },
+    {
+      "decision_id": "V2_22C2_CLASSIFICATION_004",
+      "decision": "Do not execute scoring.",
+      "accepted": true,
+      "reason": "This is a classification review phase.",
+      "effect": "Scoring remains not executed."
+    }
+  ],
+  "checks": [
+    {
+      "check": "review_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "PRE_SCORING_QUALITY_FINDINGS_REVIEW_COMPLETED_RESIDUAL_REVIEW_REQUIRED_SCORING_DRY_RUN_DEFERRED"
+    },
+    {
+      "check": "review_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "pointer_current_dataset_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv"
+    },
+    {
+      "check": "current_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089"
+    },
+    {
+      "check": "current_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "previous_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "previous_rows=42708"
+    },
+    {
+      "check": "previous_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "full_dataset_residual_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "residual_rows=9591;expected=9591"
+    },
+    {
+      "check": "full_dataset_no_flag_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "no_flag_rows=33232;expected=33232"
+    },
+    {
+      "check": "non_blocking_equity_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "non_blocking_equity=265;expected=265"
+    },
+    {
+      "check": "non_blocking_scope_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "non_blocking_scope=1;expected=1"
+    },
+    {
+      "check": "classification_overlay_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "overlay_rows=9857"
+    },
+    {
+      "check": "excluded_rows_documented",
+      "passed": true,
+      "severity": "critical",
+      "detail": "excluded_rows=9591"
+    },
+    {
+      "check": "unknown_rows_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "unknown_total=0;missing_metadata=0;manual=0"
+    },
+    {
+      "check": "within_quality_floor",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089;floor=42000"
+    },
+    {
+      "check": "within_quality_ceiling",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089;ceiling=45000"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "scoring_not_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_executed=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_sha_after=9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "scoring_dry_run",
+      "action": "prepare_scoring_dry_run_using_classification_overlay",
+      "priority": "high",
+      "recommended_phase": "v2.22D - Scoring Dry Run / No Promotion",
+      "reason": "Full residual policy overlay is ready.",
+      "guardrails": "Dry run only; exclude non-common-equity rows; no OpenAI; no broker."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "full59k",
+      "action": "keep_full59k_deprecated_deferred",
+      "priority": "low",
+      "recommended_phase": "none",
+      "reason": "Quality target remains 42k-45k.",
+      "guardrails": "No full59k without separate roadmap."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "residual-instrument-classification-review",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "classification_overlay": "outputs\\full_universe_source_acquisition\\residual_instrument_classification_review_classification_v2_22c2.csv",
+    "approved_for_scoring_dry_run_decision": true,
+    "approved_for_scoring_execution": false,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "scoring_output_created": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.22D - Scoring Dry Run / No Promotion",
+  "secondary_next_phase": "v2.22D - Scoring Dry Run / No Promotion"
+}
