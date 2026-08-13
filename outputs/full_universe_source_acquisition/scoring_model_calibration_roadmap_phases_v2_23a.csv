@@ -1,0 +1,5 @@
+phase_id,phase_name,purpose,output_type,promotion_allowed,canonical_modification_allowed
+v2.23B,Metadata Coverage Improvement Plan,"Design improvements for country, MIC, currency, asset_type, source_provider and classification coverage.",roadmap_and_validation_plan,False,False
+v2.23C,Scoring Calibration Data Design,"Define manual benchmark sample, labelled cases and score acceptance criteria.",calibration_dataset_design,False,False
+v2.23D,Scoring Formula Redesign Dry Run,Create a redesigned deterministic scoring formula in dry-run mode only.,dry_run_scores,False,False
+v2.23E,Calibration Review / Freeze Decision,Decide whether redesigned dry-run scoring is still frozen or ready for a future promotion gate.,decision_gate,False,False

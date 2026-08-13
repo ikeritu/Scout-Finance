@@ -1,0 +1,5 @@
+risk_id,risk,severity,mitigation
+CAL_RISK_001,Current score can over-reward providers with complete metadata rather than genuinely better assets.,high,Split data-quality score from investment/selection score.
+CAL_RISK_002,Missing country values dominate scorable rows.,high,Run metadata coverage improvement before production scoring.
+CAL_RISK_003,Dry-run output could be mistaken for production ranking.,critical,Keep promotion_approved=False and production_scoring_authorized=False.
+CAL_RISK_004,External enrichment may change score semantics if introduced without a gate.,medium,Keep OpenAI and broker APIs disabled unless separately approved.

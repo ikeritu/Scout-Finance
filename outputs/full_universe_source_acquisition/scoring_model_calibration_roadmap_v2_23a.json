@@ -1,0 +1,457 @@
+{
+  "version": "v2.23A",
+  "phase": "Scoring Model Calibration Roadmap",
+  "phase_type": "scoring-model-calibration-roadmap",
+  "status": "SCORING_MODEL_CALIBRATION_ROADMAP_COMPLETED_PRODUCTION_SCORING_DEFERRED",
+  "generated_at_utc": "2026-08-13T12:19:33.111262+00:00",
+  "summary": {
+    "selected_route": "Scoring model calibration roadmap before production scoring",
+    "phase_type": "scoring-model-calibration-roadmap",
+    "calibration_decision": "PRODUCTION_SCORING_DEFERRED_CALIBRATION_REQUIRED",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "dry_run_scoring_report": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_v2_22d.json",
+    "dry_run_scoring_report_sha": "bda7bf87eb5038606887cb97a3011c7d3bda1909864e94189001873bb0f773ae",
+    "dry_run_scoring_output": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+    "dry_run_scoring_output_rows": 33498,
+    "dry_run_scoring_output_sha": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "dry_run_score_min": 44.7,
+    "dry_run_score_p25": 45.1,
+    "dry_run_score_median": 52.2,
+    "dry_run_score_p75": 74.7667,
+    "dry_run_score_max": 87.2,
+    "dry_run_score_mean": 58.2468,
+    "top_exchange_by_scorable_rows": "CBOE_EUROPE",
+    "top_country_by_scorable_rows": "__MISSING__",
+    "top_source_provider_by_scorable_rows": "cboe_europe_reference_data",
+    "requirements_defined": 6,
+    "calibration_phases_defined": 4,
+    "risks_defined": 4,
+    "production_scoring_authorized": false,
+    "new_scoring_executed": false,
+    "scoring_promoted": false,
+    "canonical_dataset_modified": false,
+    "dry_run_score_output_modified": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.23B - Metadata Coverage Improvement Plan",
+    "secondary_next_phase": "v2.23C - Scoring Calibration Data Design"
+  },
+  "calibration_requirements": [
+    {
+      "requirement_id": "CAL_REQ_001",
+      "requirement": "Define target scoring objective before production.",
+      "priority": "critical",
+      "current_status": "missing_explicit_objective",
+      "reason": "v2.22D created local heuristic scores but did not define a production ranking objective.",
+      "required_before_production": true
+    },
+    {
+      "requirement_id": "CAL_REQ_002",
+      "requirement": "Improve metadata coverage for country, MIC, currency, asset_type and source_provider before production scoring.",
+      "priority": "critical",
+      "current_status": "metadata_coverage_gap_known",
+      "reason": "v2.22D top_country_by_scorable_rows was __MISSING__.",
+      "required_before_production": true
+    },
+    {
+      "requirement_id": "CAL_REQ_003",
+      "requirement": "Create benchmark sample with manually reviewed good/bad scoring examples.",
+      "priority": "critical",
+      "current_status": "not_created",
+      "reason": "No labelled calibration set exists yet.",
+      "required_before_production": true
+    },
+    {
+      "requirement_id": "CAL_REQ_004",
+      "requirement": "Separate data-quality score from investment/attractiveness score.",
+      "priority": "high",
+      "current_status": "not_separated",
+      "reason": "v2.22D local heuristic mostly measures data completeness/provenance, not financial attractiveness.",
+      "required_before_production": true
+    },
+    {
+      "requirement_id": "CAL_REQ_005",
+      "requirement": "Define exclusion overlay as reusable production input if accepted.",
+      "priority": "high",
+      "current_status": "dry_run_overlay_exists",
+      "reason": "v2.22C2 created a non-common-equity exclusion overlay that worked for v2.22D.",
+      "required_before_production": true
+    },
+    {
+      "requirement_id": "CAL_REQ_006",
+      "requirement": "Keep OpenAI, broker APIs and full59k disabled unless a separate future gate authorizes them.",
+      "priority": "critical",
+      "current_status": "disabled",
+      "reason": "Current roadmap did not authorize external enrichment or full59k.",
+      "required_before_production": true
+    }
+  ],
+  "calibration_phases": [
+    {
+      "phase_id": "v2.23B",
+      "phase_name": "Metadata Coverage Improvement Plan",
+      "purpose": "Design improvements for country, MIC, currency, asset_type, source_provider and classification coverage.",
+      "output_type": "roadmap_and_validation_plan",
+      "promotion_allowed": false,
+      "canonical_modification_allowed": false
+    },
+    {
+      "phase_id": "v2.23C",
+      "phase_name": "Scoring Calibration Data Design",
+      "purpose": "Define manual benchmark sample, labelled cases and score acceptance criteria.",
+      "output_type": "calibration_dataset_design",
+      "promotion_allowed": false,
+      "canonical_modification_allowed": false
+    },
+    {
+      "phase_id": "v2.23D",
+      "phase_name": "Scoring Formula Redesign Dry Run",
+      "purpose": "Create a redesigned deterministic scoring formula in dry-run mode only.",
+      "output_type": "dry_run_scores",
+      "promotion_allowed": false,
+      "canonical_modification_allowed": false
+    },
+    {
+      "phase_id": "v2.23E",
+      "phase_name": "Calibration Review / Freeze Decision",
+      "purpose": "Decide whether redesigned dry-run scoring is still frozen or ready for a future promotion gate.",
+      "output_type": "decision_gate",
+      "promotion_allowed": false,
+      "canonical_modification_allowed": false
+    }
+  ],
+  "calibration_risks": [
+    {
+      "risk_id": "CAL_RISK_001",
+      "risk": "Current score can over-reward providers with complete metadata rather than genuinely better assets.",
+      "severity": "high",
+      "mitigation": "Split data-quality score from investment/selection score."
+    },
+    {
+      "risk_id": "CAL_RISK_002",
+      "risk": "Missing country values dominate scorable rows.",
+      "severity": "high",
+      "mitigation": "Run metadata coverage improvement before production scoring."
+    },
+    {
+      "risk_id": "CAL_RISK_003",
+      "risk": "Dry-run output could be mistaken for production ranking.",
+      "severity": "critical",
+      "mitigation": "Keep promotion_approved=False and production_scoring_authorized=False."
+    },
+    {
+      "risk_id": "CAL_RISK_004",
+      "risk": "External enrichment may change score semantics if introduced without a gate.",
+      "severity": "medium",
+      "mitigation": "Keep OpenAI and broker APIs disabled unless separately approved."
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "artifact": "hygiene_report_input",
+      "path": "outputs\\full_universe_source_acquisition\\repo_hygiene_untracked_files_review_v2_22f.json",
+      "rows": 1,
+      "sha256": "c45d5dc3c9f4b0c69b00fa57237c8cd16f76849552fc3a91fda02a576ec8a544",
+      "role": "input_repo_hygiene_gate"
+    },
+    {
+      "artifact": "freeze_report_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_promotion_freeze_decision_v2_22e.json",
+      "rows": 1,
+      "sha256": "738fd7f08cd9a26cdcafa7e48f7592ca7f821f5c68b280da77c96c1a061941a3",
+      "role": "input_scoring_freeze_gate"
+    },
+    {
+      "artifact": "dry_run_report_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_v2_22d.json",
+      "rows": 1,
+      "sha256": "bda7bf87eb5038606887cb97a3011c7d3bda1909864e94189001873bb0f773ae",
+      "role": "input_scoring_dry_run_report"
+    },
+    {
+      "artifact": "current_operational_pointer_input",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "rows": 1,
+      "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+      "role": "input_pointer"
+    },
+    {
+      "artifact": "current_dataset_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "input_dataset_no_modification"
+    },
+    {
+      "artifact": "dry_run_scores_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+      "rows": 33498,
+      "sha256": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+      "role": "input_scores_no_modification"
+    },
+    {
+      "artifact": "dry_run_distribution_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_score_distribution_v2_22d.csv",
+      "rows": 5,
+      "sha256": "d27673b435f31621082e670ce282e8a67d612a87bbf8437574244267282fb634",
+      "role": "input_distribution_no_modification"
+    },
+    {
+      "artifact": "dry_run_components_input",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_score_components_v2_22d.csv",
+      "rows": 6,
+      "sha256": "4173877a98d3ea6bc3a3083925f76efc1b947c5ba0e8c2bc688f90b6393e33c5",
+      "role": "input_components_no_modification"
+    },
+    {
+      "artifact": "calibration_requirements_output",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_model_calibration_roadmap_requirements_v2_23a.csv",
+      "rows": 6,
+      "sha256": "6e0d3c40390a674a239b1802da7b97fd1c9f3a05015534001312a321e8df1735",
+      "role": "roadmap_requirements_output"
+    },
+    {
+      "artifact": "calibration_phases_output",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_model_calibration_roadmap_phases_v2_23a.csv",
+      "rows": 4,
+      "sha256": "7c23cd1f860fa7d2a4c8443a7201c5478cbda763ba8f42182187f459ed27a74e",
+      "role": "roadmap_phases_output"
+    },
+    {
+      "artifact": "calibration_risks_output",
+      "path": "outputs\\full_universe_source_acquisition\\scoring_model_calibration_roadmap_risks_v2_23a.csv",
+      "rows": 4,
+      "sha256": "875d9946b515f455fbab16d05ffcc12c043d7954133dd2fd133c7583163c607c",
+      "role": "roadmap_risks_output"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_23A_CALIBRATION_001",
+      "decision": "Do not promote v2.22D dry-run scoring.",
+      "accepted": true,
+      "reason": "v2.22E already froze the dry run as non-promoted reference.",
+      "effect": "production_scoring_authorized=False."
+    },
+    {
+      "decision_id": "V2_23A_CALIBRATION_002",
+      "decision": "Create a calibration roadmap before any production scoring.",
+      "accepted": true,
+      "reason": "The current score is heuristic and metadata-sensitive.",
+      "effect": "v2.23B/v2.23C are required before any future scoring promotion."
+    },
+    {
+      "decision_id": "V2_23A_CALIBRATION_003",
+      "decision": "Prioritize metadata coverage before formula redesign.",
+      "accepted": true,
+      "reason": "top_country_by_scorable_rows=__MISSING__ in v2.22D.",
+      "effect": "Recommended next phase is v2.23B."
+    },
+    {
+      "decision_id": "V2_23A_CALIBRATION_004",
+      "decision": "Keep OpenAI, broker APIs and full59k disabled.",
+      "accepted": true,
+      "reason": "No separate authorization exists.",
+      "effect": "No external enrichment or full59k launch."
+    }
+  ],
+  "checks": [
+    {
+      "check": "hygiene_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "REPO_HYGIENE_UNTRACKED_FILES_REVIEW_COMPLETED_UNTRACKED_FILES_CLASSIFIED_NO_AUTO_ADD"
+    },
+    {
+      "check": "hygiene_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "freeze_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "SCORING_PROMOTION_FREEZE_DECISION_COMPLETED_DRY_RUN_FROZEN_NOT_PROMOTED"
+    },
+    {
+      "check": "freeze_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "dry_run_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "SCORING_DRY_RUN_NO_PROMOTION_COMPLETED_LOCAL_HEURISTIC_SCORES_CREATED_PROMOTION_DEFERRED"
+    },
+    {
+      "check": "dry_run_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "pointer_current_dataset_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv"
+    },
+    {
+      "check": "current_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089"
+    },
+    {
+      "check": "current_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "scoring_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_rows=33498"
+    },
+    {
+      "check": "scoring_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1"
+    },
+    {
+      "check": "distribution_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "distribution_rows=5"
+    },
+    {
+      "check": "components_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "components_rows=6"
+    },
+    {
+      "check": "calibration_requirements_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "requirements=6"
+    },
+    {
+      "check": "calibration_phases_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "phases=4"
+    },
+    {
+      "check": "calibration_risks_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "risks=4"
+    },
+    {
+      "check": "production_scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "production_scoring_authorized=False"
+    },
+    {
+      "check": "scoring_not_executed_in_this_phase",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_scoring_executed=False"
+    },
+    {
+      "check": "promotion_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promotion_performed=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_sha_after=9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "dry_run_score_output_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_sha_after=a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "metadata_coverage",
+      "action": "design_metadata_coverage_improvement_plan",
+      "priority": "high",
+      "recommended_phase": "v2.23B - Metadata Coverage Improvement Plan",
+      "reason": "Metadata coverage must improve before production scoring.",
+      "guardrails": "No canonical replacement; no full59k; no OpenAI/broker."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "calibration_data",
+      "action": "design_manual_labelled_calibration_sample",
+      "priority": "medium",
+      "recommended_phase": "v2.23C - Scoring Calibration Data Design",
+      "reason": "Production scoring needs labelled benchmark cases.",
+      "guardrails": "Calibration design only; no production scoring."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "scoring-model-calibration-roadmap",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "dry_run_score_output": "outputs\\full_universe_source_acquisition\\scoring_dry_run_no_promotion_scores_v2_22d.csv",
+    "dry_run_score_output_rows": 33498,
+    "dry_run_score_output_sha": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "production_scoring_authorized": false,
+    "new_scoring_executed": false,
+    "scoring_promoted": false,
+    "canonical_dataset_modified": false,
+    "dry_run_score_output_modified": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.23B - Metadata Coverage Improvement Plan",
+  "secondary_next_phase": "v2.23C - Scoring Calibration Data Design"
+}

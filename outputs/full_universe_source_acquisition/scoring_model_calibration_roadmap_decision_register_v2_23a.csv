@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_23A_CALIBRATION_001,Do not promote v2.22D dry-run scoring.,True,v2.22E already froze the dry run as non-promoted reference.,production_scoring_authorized=False.
+V2_23A_CALIBRATION_002,Create a calibration roadmap before any production scoring.,True,The current score is heuristic and metadata-sensitive.,v2.23B/v2.23C are required before any future scoring promotion.
+V2_23A_CALIBRATION_003,Prioritize metadata coverage before formula redesign.,True,top_country_by_scorable_rows=__MISSING__ in v2.22D.,Recommended next phase is v2.23B.
+V2_23A_CALIBRATION_004,"Keep OpenAI, broker APIs and full59k disabled.",True,No separate authorization exists.,No external enrichment or full59k launch.

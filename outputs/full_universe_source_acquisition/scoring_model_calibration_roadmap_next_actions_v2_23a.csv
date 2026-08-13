@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,metadata_coverage,design_metadata_coverage_improvement_plan,high,v2.23B - Metadata Coverage Improvement Plan,Metadata coverage must improve before production scoring.,No canonical replacement; no full59k; no OpenAI/broker.
+2,calibration_data,design_manual_labelled_calibration_sample,medium,v2.23C - Scoring Calibration Data Design,Production scoring needs labelled benchmark cases.,Calibration design only; no production scoring.

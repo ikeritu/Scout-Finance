@@ -1,0 +1,7 @@
+requirement_id,requirement,priority,current_status,reason,required_before_production
+CAL_REQ_001,Define target scoring objective before production.,critical,missing_explicit_objective,v2.22D created local heuristic scores but did not define a production ranking objective.,True
+CAL_REQ_002,"Improve metadata coverage for country, MIC, currency, asset_type and source_provider before production scoring.",critical,metadata_coverage_gap_known,v2.22D top_country_by_scorable_rows was __MISSING__.,True
+CAL_REQ_003,Create benchmark sample with manually reviewed good/bad scoring examples.,critical,not_created,No labelled calibration set exists yet.,True
+CAL_REQ_004,Separate data-quality score from investment/attractiveness score.,high,not_separated,"v2.22D local heuristic mostly measures data completeness/provenance, not financial attractiveness.",True
+CAL_REQ_005,Define exclusion overlay as reusable production input if accepted.,high,dry_run_overlay_exists,v2.22C2 created a non-common-equity exclusion overlay that worked for v2.22D.,True
+CAL_REQ_006,"Keep OpenAI, broker APIs and full59k disabled unless a separate future gate authorizes them.",critical,disabled,Current roadmap did not authorize external enrichment or full59k.,True
