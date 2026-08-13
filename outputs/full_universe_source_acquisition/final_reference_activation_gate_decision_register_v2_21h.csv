@@ -1,0 +1,4 @@
+decision_id,decision,accepted,reason,effect
+V2_21H_ACTIVATION_001,Activate final v2.21 reference as operational reference artifact.,True,v2.21G final reference is validated and within the 42k-45k quality target.,Creates expanded_universe_v2_21h_activated_operational_reference.csv.
+V2_21H_ACTIVATION_002,Do not mutate unknown existing pointer/canonical files automatically.,True,Repository pointer convention should be hardened explicitly before live mutation.,Creates activation pointer manifest only.
+V2_21H_ACTIVATION_003,Keep scoring/OpenAI/broker/full59k deferred.,True,Activation is separate from scoring/enrichment.,Next phase is explicit scoring decision gate.

@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,scoring_gate,decide_explicitly_whether_to_run_scoring_on_v2_21h_activated_operational_reference,high,v2.22A - Post-Targeted-Markets Explicit Scoring Decision Gate,Operational reference artifact is ready; scoring remains intentionally deferred.,No scoring/OpenAI/broker without explicit approval.
+2,pointer_convention,define_and_harden_single_live_pointer_convention_if_needed,medium,v2.22B - Operational Pointer Convention Hardening,v2.21H did not mutate unknown pointer/canonical files automatically.,Only update one known pointer target after convention is documented.
+3,full59k,keep_full59k_deprecated_deferred,low,none,"Final reference has 43,089 rows and remains within target capacity.",No full59k without separate explicit roadmap.

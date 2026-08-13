@@ -1,0 +1,23 @@
+{
+  "version": "v2.21H",
+  "manifest_type": "explicit_final_reference_activation_pointer_manifest",
+  "generated_at_utc": "2026-08-13T09:34:39.388467+00:00",
+  "activation_decision": "FINAL_V2_21_REFERENCE_ACTIVATED_AS_OPERATIONAL_REFERENCE_ARTIFACT",
+  "activated_operational_reference_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+  "activated_operational_reference_rows": 43089,
+  "activated_operational_reference_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+  "source_final_reference_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21g_final_reference.csv",
+  "source_final_reference_rows": 43089,
+  "source_final_reference_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+  "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+  "previous_operational_base_rows": 42708,
+  "previous_operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+  "existing_pointer_files_modified": false,
+  "canonical_dataset_modified": false,
+  "active_canonical_replaced": false,
+  "scoring_authorized": false,
+  "openai_authorized": false,
+  "broker_authorized": false,
+  "full59k": "DEPRECATED_DEFERRED",
+  "note": "v2.21H creates an activated operational reference artifact and a manifest. It does not mutate unknown existing pointer/canonical files."
+}
