@@ -1,0 +1,6 @@
+blocker_id,blocker,blocking,resolution_path
+BLOCKER_001,manual_calibration_labels_missing,True,Create and review labelled calibration sample in a future execution phase.
+BLOCKER_002,attractiveness_score_unavailable,True,Add manual labels or authorized financial/fundamental data source through a future gate.
+BLOCKER_003,metadata_gap_remediation_not_executed,True,Run v2.24 metadata gap audit and deterministic backfill planning/execution.
+BLOCKER_004,no_production_scoring_gate_approved,True,Use a future explicit production scoring promotion gate only after blockers are resolved.
+BLOCKER_005,external_enrichment_not_authorized,False,Optional future external enrichment gate; not needed for deterministic closure.

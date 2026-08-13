@@ -1,0 +1,6 @@
+decision_id,decision,accepted,reason,effect
+V2_23E_FREEZE_001,Freeze redesigned v2.23D dry-run scoring as non-promoted reference.,True,The redesigned score is useful for analysis but lacks manual labels and attractiveness validation.,scoring_promoted=False; production_scoring_authorized=False.
+V2_23E_FREEZE_002,"Do not modify canonical dataset, active pointer or legacy dry-run score output.",True,This is a review/freeze decision phase.,canonical_dataset_modified=False.
+V2_23E_FREEZE_003,Close the calibration block next with v2.23F.,True,"v2.23A-D produced roadmap, metadata plan, calibration-data design and redesigned dry run.",recommended_next_phase=v2.23F.
+V2_23E_FREEZE_004,Send metadata quality work to v2.24 instead of promoting scoring.,True,v2.23B identified blocking metadata gaps.,secondary_next_phase=v2.24A.
+V2_23E_FREEZE_005,"Keep OpenAI, broker APIs and full59k disabled.",True,No separate authorization exists.,openai_called=False; broker_called=False; full59k=DEPRECATED_DEFERRED.

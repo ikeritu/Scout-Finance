@@ -1,0 +1,3 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,calibration_closure,close_v2_23_calibration_block,high,v2.23F - Calibration Closure Report,v2.23E freezes redesigned dry-run scoring as non-promoted reference.,No production scoring; no canonical replacement.
+2,metadata_quality,start_metadata_gap_audit_after_v2_23_closure,medium,v2.24A - Metadata Gap Audit,Metadata gaps remain the primary blocker before scoring promotion.,Deterministic only; no full59k; no broker/OpenAI unless separately approved.

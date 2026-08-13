@@ -1,0 +1,6 @@
+reason_id,reason,severity,source_phase,effect
+FREEZE_001,Redesigned scoring was explicitly created as dry-run only.,critical,v2.23D,Do not promote redesigned scores.
+FREEZE_002,Manual labels do not exist yet.,critical,v2.23C/v2.23D,No production calibration can be validated.
+FREEZE_003,Attractiveness score is unavailable and was correctly not invented.,critical,v2.23D,"Ranking remains data-quality/scope/provider oriented, not an investment attractiveness ranking."
+FREEZE_004,Metadata gaps remain blocking for production scoring readiness.,high,v2.23B,Run metadata gap audit/improvement phases before any production promotion.
+FREEZE_005,"No separate authorization exists for OpenAI, broker APIs, full59k or external enrichment.",critical,project_guardrails,Keep external enrichment disabled.
