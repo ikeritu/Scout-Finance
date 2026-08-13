@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,singapore_promotion_freeze_decision,decide_whether_to_promote_or_freeze_singapore_candidate_dataset,high,v2.21E_S - Singapore Promotion / Freeze Decision,Candidate dataset is valid and within quality ceiling.,explicit promotion decision required; no scoring; no OpenAI; no broker
+2,colombia_regulatory_discovery,continue_colombia_superfinanciera_simev_rnve_discovery,high,v2.21C3B - Colombia Regulatory Source Discovery,Colombia remains pending outside Singapore candidate route.,discovery only; no BVC shell HTML extraction
+3,pointer_control,keep_active_pointer_unchanged_until_v2_21e_s_decision,high,v2.21E_S - Singapore Promotion / Freeze Decision,v2.21D_S creates candidate dataset only.,no pointer update in v2.21D_S

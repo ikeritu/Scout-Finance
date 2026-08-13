@@ -1,0 +1,16 @@
+metric,value
+operational_rows,42708
+projection_rows,358
+eligible_rows,358
+candidate_rows,43066
+candidate_sha256,8b6aa52eca0b7e5625aaeb8875d3806157fe30f7595cd698b5d0071ea2187c2f
+remaining_capacity_after_candidate,1934
+eligible_approved_count,358
+eligible_market_count,358
+duplicate_eligible_symbols,0
+duplicate_eligible_names,0
+duplicate_eligible_isins,0
+appended_country_confirmed,358
+appended_exchange_confirmed,358
+appended_mic_confirmed,358
+appended_currency_confirmed,358
