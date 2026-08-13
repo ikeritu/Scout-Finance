@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,final_closure,prepare_final_v2_21_closure_report_with_singapore_and_colombia_promoted_artifacts,high,v2.21G - Final v2.21 Closure Report,Colombia promoted artifact is ready.,Final closure only; no scoring; no OpenAI; no broker
+2,pointer_control,keep_active_pointer_unchanged_until_final_closure_decision,high,v2.21G - Final v2.21 Closure Report,v2.21E_C creates promoted artifact and pointer manifest only.,No active pointer mutation in v2.21E_C
+3,scoring_gate,keep_scoring_deferred_until_explicit_post_v2_21_decision,medium,v2.22A - Post-Targeted-Markets Explicit Scoring Decision Gate,Scoring remains outside v2.21.,No scoring/OpenAI/broker without explicit approval

@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+COLOMBIA_PROMOTION_001,Promote Colombia candidate as v2.21E_C promoted artifact.,True,v2.21D_C created a valid Colombia candidate with eligible official regulatory-source candidates.,"Creates promoted artifact with 43,089 rows."
+COLOMBIA_PROMOTION_002,Do not update active pointer in v2.21E_C.,True,Final pointer/base decision belongs to final closure.,Creates pointer manifest only.
+COLOMBIA_PROMOTION_003,Preserve Singapore promoted artifact unchanged.,True,Singapore was already closed and used as the base for Colombia.,Singapore artifact SHA remains unchanged.
+COLOMBIA_PROMOTION_004,Keep scoring/OpenAI/broker/full59k deferred.,True,No explicit authorization has been given for scoring or enrichment.,"No scoring, OpenAI, broker, or full59k actions are performed."
