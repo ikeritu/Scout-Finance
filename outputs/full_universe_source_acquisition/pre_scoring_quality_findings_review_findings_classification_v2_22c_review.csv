@@ -1,0 +1,7 @@
+finding,audit_value,review_classification,blocking,reason
+new_rows_vs_previous,381,accepted_expected_delta,False,381 new rows exactly match expected Singapore + Colombia expansion.
+full_row_duplicates,0,no_blocker,False,No full-row duplicate extra rows were found.
+primary_key_duplicates,34082,weak_key_false_positive,False,The audit primary key collapsed rows where identifier columns were missing; full-row duplicates are zero.
+instrument_suitability_flags_original,9957,broad_substring_scan_overflagged,False,Original scan used broad substrings and overflagged cases such as Netflix containing 'etf'.
+instrument_suitability_refined_residual,9591,residual_review_required,True,Refined word-boundary scan isolates likely non-common-equity/fund-like instruments.
+colombia_asset_type_missing,23,accepted_source_limitation_reviewed,False,"The 23 Colombia rows are expected regulatory-source additions; missing asset_type should be handled by scoring config/audit metadata, not treated as a structural failure."

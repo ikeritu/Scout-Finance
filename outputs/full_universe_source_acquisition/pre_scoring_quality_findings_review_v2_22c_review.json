@@ -1,0 +1,372 @@
+{
+  "version": "v2.22C_REVIEW",
+  "phase": "Pre-Scoring Quality Findings Review",
+  "phase_type": "pre-scoring-quality-findings-review",
+  "status": "PRE_SCORING_QUALITY_FINDINGS_REVIEW_COMPLETED_RESIDUAL_REVIEW_REQUIRED_SCORING_DRY_RUN_DEFERRED",
+  "generated_at_utc": "2026-08-13T10:41:15.090308+00:00",
+  "summary": {
+    "selected_route": "Pre-scoring quality findings review",
+    "phase_type": "pre-scoring-quality-findings-review",
+    "review_decision": "FINDINGS_CLASSIFIED_RESIDUAL_REVIEW_REQUIRED",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "new_rows_vs_previous": 381,
+    "new_rows_singapore": 358,
+    "new_rows_colombia": 23,
+    "duplicate_full_row_groups": 0,
+    "duplicate_full_row_extra_rows": 0,
+    "primary_key_duplicates_classified": "weak_key_false_positive",
+    "original_instrument_flags": 9957,
+    "original_instrument_flags_classification": "broad_substring_scan_overflagged",
+    "refined_instrument_no_flag": 33232,
+    "refined_instrument_non_blocking_equity_context": 265,
+    "refined_instrument_non_blocking_in_scope_context": 1,
+    "refined_instrument_residual_review_required": 9591,
+    "colombia_asset_type_missing_rows": 23,
+    "colombia_asset_type_missing_classification": "accepted_source_limitation_reviewed",
+    "approved_for_scoring_dry_run_decision": true,
+    "approved_for_scoring_execution": false,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "scoring_output_created": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.22C2 - Residual Instrument Classification Review",
+    "secondary_next_phase": "v2.22D - Scoring Dry Run / No Promotion"
+  },
+  "resolved_columns": {
+    "isin": "isin",
+    "ticker": "ticker",
+    "name": "company_name",
+    "exchange": "exchange",
+    "country": "country",
+    "mic": "mic",
+    "currency": "currency",
+    "source_provider": "source_provider",
+    "asset_type": "asset_type",
+    "instrument_type": "instrument_type",
+    "instrument_scope": "instrument_scope"
+  },
+  "artifact_manifest": [
+    {
+      "artifact": "audit_report_input",
+      "path": "outputs\\full_universe_source_acquisition\\pre_scoring_data_quality_audit_v2_22c.json",
+      "rows": 1,
+      "sha256": "14221e48a37362b595ea355ae7af23ae5dadbf2eb1e3500decd03f27cff531ee",
+      "role": "input_audit_report"
+    },
+    {
+      "artifact": "current_operational_pointer_input",
+      "path": "outputs\\full_universe_source_acquisition\\current_operational_universe_pointer.json",
+      "rows": 1,
+      "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+      "role": "input_pointer"
+    },
+    {
+      "artifact": "current_operational_dataset_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "reviewed_dataset_no_modification"
+    },
+    {
+      "artifact": "previous_operational_base_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "role": "comparison_reference_unchanged"
+    },
+    {
+      "artifact": "rollback_dataset_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "rows": 38287,
+      "sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "role": "rollback_reference_unchanged"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_22C_REVIEW_001",
+      "decision": "Accept 381 new rows as expected Singapore + Colombia delta.",
+      "accepted": true,
+      "reason": "New rows split is Singapore 358 and Colombia 23.",
+      "effect": "No row-count blocker remains."
+    },
+    {
+      "decision_id": "V2_22C_REVIEW_002",
+      "decision": "Classify primary-key duplicates as non-blocking weak-key false positives.",
+      "accepted": true,
+      "reason": "Full-row duplicates are zero; weak key collapsed broad exchange-level rows.",
+      "effect": "No duplicate blocker remains."
+    },
+    {
+      "decision_id": "V2_22C_REVIEW_003",
+      "decision": "Replace broad substring instrument scan with refined word-boundary review.",
+      "accepted": true,
+      "reason": "Broad scan overflagged false positives such as Netflix containing 'etf'.",
+      "effect": "Residual review list is isolated in refined instrument flags."
+    },
+    {
+      "decision_id": "V2_22C_REVIEW_004",
+      "decision": "Do not execute scoring in review phase.",
+      "accepted": true,
+      "reason": "This phase classifies findings only.",
+      "effect": "Scoring remains not executed."
+    }
+  ],
+  "findings_classification": [
+    {
+      "finding": "new_rows_vs_previous",
+      "audit_value": 381,
+      "review_classification": "accepted_expected_delta",
+      "blocking": false,
+      "reason": "381 new rows exactly match expected Singapore + Colombia expansion."
+    },
+    {
+      "finding": "full_row_duplicates",
+      "audit_value": 0,
+      "review_classification": "no_blocker",
+      "blocking": false,
+      "reason": "No full-row duplicate extra rows were found."
+    },
+    {
+      "finding": "primary_key_duplicates",
+      "audit_value": 34082,
+      "review_classification": "weak_key_false_positive",
+      "blocking": false,
+      "reason": "The audit primary key collapsed rows where identifier columns were missing; full-row duplicates are zero."
+    },
+    {
+      "finding": "instrument_suitability_flags_original",
+      "audit_value": 9957,
+      "review_classification": "broad_substring_scan_overflagged",
+      "blocking": false,
+      "reason": "Original scan used broad substrings and overflagged cases such as Netflix containing 'etf'."
+    },
+    {
+      "finding": "instrument_suitability_refined_residual",
+      "audit_value": 9591,
+      "review_classification": "residual_review_required",
+      "blocking": true,
+      "reason": "Refined word-boundary scan isolates likely non-common-equity/fund-like instruments."
+    },
+    {
+      "finding": "colombia_asset_type_missing",
+      "audit_value": 23,
+      "review_classification": "accepted_source_limitation_reviewed",
+      "blocking": false,
+      "reason": "The 23 Colombia rows are expected regulatory-source additions; missing asset_type should be handled by scoring config/audit metadata, not treated as a structural failure."
+    }
+  ],
+  "checks": [
+    {
+      "check": "audit_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "PRE_SCORING_DATA_QUALITY_AUDIT_COMPLETED_REVIEW_FINDINGS_DOCUMENTED_SCORING_DRY_RUN_DEFERRED"
+    },
+    {
+      "check": "audit_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "critical_failed_checks=0"
+    },
+    {
+      "check": "pointer_current_dataset_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv"
+    },
+    {
+      "check": "current_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089"
+    },
+    {
+      "check": "current_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "previous_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "previous_rows=42708"
+    },
+    {
+      "check": "previous_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "headers_consistent_current_previous",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_columns=33;previous_columns=33"
+    },
+    {
+      "check": "headers_consistent_current_rollback",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_columns=33;rollback_columns=33"
+    },
+    {
+      "check": "new_rows_total_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "new_rows=381"
+    },
+    {
+      "check": "new_rows_singapore_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "singapore=358"
+    },
+    {
+      "check": "new_rows_colombia_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "colombia=23"
+    },
+    {
+      "check": "full_row_duplicates_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "extra_rows=0;groups=0"
+    },
+    {
+      "check": "primary_key_duplicates_classified_non_blocking",
+      "passed": true,
+      "severity": "critical",
+      "detail": "weak_key_false_positive=True"
+    },
+    {
+      "check": "original_instrument_flags_classified_as_overbroad",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broad_substring_scan_overflagged=True"
+    },
+    {
+      "check": "refined_instrument_residual_documented",
+      "passed": true,
+      "severity": "warning",
+      "detail": "residual_review_required=9591"
+    },
+    {
+      "check": "within_quality_floor",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089;floor=42000"
+    },
+    {
+      "check": "within_quality_ceiling",
+      "passed": true,
+      "severity": "critical",
+      "detail": "current_rows=43089;ceiling=45000"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "scoring_not_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_executed=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "residual_review",
+      "action": "review_refined_residual_instrument_flags",
+      "priority": "high",
+      "recommended_phase": "v2.22C2 - Residual Instrument Classification Review",
+      "reason": "residual_review_required=9591",
+      "guardrails": "No scoring until residual flags are handled."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "full59k",
+      "action": "keep_full59k_deprecated_deferred",
+      "priority": "low",
+      "recommended_phase": "none",
+      "reason": "Quality target remains 42k-45k.",
+      "guardrails": "No full59k without separate roadmap."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "pre-scoring-quality-findings-review",
+    "current_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21h_activated_operational_reference.csv",
+    "current_dataset_rows": 43089,
+    "current_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "approved_for_scoring_dry_run_decision": true,
+    "approved_for_scoring_execution": false,
+    "scoring_authorized": false,
+    "scoring_executed": false,
+    "scoring_output_created": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.22C2 - Residual Instrument Classification Review",
+  "secondary_next_phase": "v2.22D - Scoring Dry Run / No Promotion"
+}

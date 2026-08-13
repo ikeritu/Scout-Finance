@@ -1,0 +1,15 @@
+dimension,value,count
+country,Singapore,358
+country,Colombia,23
+exchange,SGX,358
+exchange,BVC,23
+mic,XSES,358
+mic,XBOG,23
+currency,SGD,358
+currency,COP,23
+source_provider,sgx_structured_endpoint,358
+source_provider,SFC_SIMEV_RNVE,23
+asset_type,equity_common_or_equity_like,322
+asset_type,equity_like_reit,25
+asset_type,__MISSING__,23
+asset_type,equity_like_trust,11

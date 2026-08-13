@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+V2_22C_REVIEW_001,Accept 381 new rows as expected Singapore + Colombia delta.,True,New rows split is Singapore 358 and Colombia 23.,No row-count blocker remains.
+V2_22C_REVIEW_002,Classify primary-key duplicates as non-blocking weak-key false positives.,True,Full-row duplicates are zero; weak key collapsed broad exchange-level rows.,No duplicate blocker remains.
+V2_22C_REVIEW_003,Replace broad substring instrument scan with refined word-boundary review.,True,Broad scan overflagged false positives such as Netflix containing 'etf'.,Residual review list is isolated in refined instrument flags.
+V2_22C_REVIEW_004,Do not execute scoring in review phase.,True,This phase classifies findings only.,Scoring remains not executed.
