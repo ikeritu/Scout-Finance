@@ -1,0 +1,608 @@
+{
+  "version": "v2.21G",
+  "phase": "Final v2.21 Closure Report",
+  "phase_type": "final-v2-21-closure-report",
+  "status": "FINAL_V2_21_CLOSURE_COMPLETED_TARGETED_MARKETS_PROMOTED_ARTIFACT_READY_POINTER_NOT_UPDATED_SCORING_DEFERRED",
+  "generated_at_utc": "2026-08-13T09:17:07.032713+00:00",
+  "summary": {
+    "selected_route": "Final v2.21 targeted expansion closure",
+    "phase_type": "final-v2-21-closure-report",
+    "closure_decision": "V2_21_CLOSED_FINAL_REFERENCE_READY",
+    "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "previous_operational_base_rows": 42708,
+    "previous_operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "singapore_promoted_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21e_s_singapore_promoted.csv",
+    "singapore_promoted_rows": 43066,
+    "singapore_promoted_sha": "8b6aa52eca0b7e5625aaeb8875d3806157fe30f7595cd698b5d0071ea2187c2f",
+    "colombia_promoted_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21e_c_colombia_promoted.csv",
+    "colombia_promoted_rows": 43089,
+    "colombia_promoted_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "final_reference_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21g_final_reference.csv",
+    "final_reference_rows": 43089,
+    "final_reference_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "remaining_capacity_after_final_reference": 1911,
+    "singapore_added_rows": 358,
+    "colombia_added_rows": 23,
+    "total_added_rows_vs_previous_operational_base": 381,
+    "final_reference_created": true,
+    "final_reference_promoted_as_artifact": true,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "scoring_authorized": false,
+    "openai_authorized": false,
+    "broker_authorized": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.21H - Explicit Final Reference Activation Gate",
+    "secondary_next_phase": "v2.22A - Post-Targeted-Markets Explicit Scoring Decision Gate"
+  },
+  "phase_register": [
+    {
+      "phase_id": "v2.21A",
+      "label": "Expansion Gate",
+      "role": "historical_gate",
+      "report_path": "",
+      "report_exists": "",
+      "required_for_closure": false,
+      "status": "historical_phase_not_required_by_final_local_closure_register",
+      "expected_status": "",
+      "expected_status_passed": true,
+      "critical_failed_checks": "",
+      "warning_failed_checks": "",
+      "recommended_next_phase": "",
+      "pointer_update_performed": "",
+      "scoring_authorized": "",
+      "openai_authorized": "",
+      "broker_authorized": "",
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21B",
+      "label": "Raw Acquisition",
+      "role": "historical_raw_acquisition",
+      "report_path": "",
+      "report_exists": "",
+      "required_for_closure": false,
+      "status": "historical_phase_not_required_by_final_local_closure_register",
+      "expected_status": "",
+      "expected_status_passed": true,
+      "critical_failed_checks": "",
+      "warning_failed_checks": "",
+      "recommended_next_phase": "",
+      "pointer_update_performed": "",
+      "scoring_authorized": "",
+      "openai_authorized": "",
+      "broker_authorized": "",
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21C",
+      "label": "Initial Extraction, corrected",
+      "role": "historical_superseded_extraction",
+      "report_path": "",
+      "report_exists": "",
+      "required_for_closure": false,
+      "status": "historical_phase_not_required_by_final_local_closure_register",
+      "expected_status": "",
+      "expected_status_passed": true,
+      "critical_failed_checks": "",
+      "warning_failed_checks": "",
+      "recommended_next_phase": "",
+      "pointer_update_performed": "",
+      "scoring_authorized": "",
+      "openai_authorized": "",
+      "broker_authorized": "",
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21C2",
+      "label": "False Positive Review",
+      "role": "historical_correction",
+      "report_path": "",
+      "report_exists": "",
+      "required_for_closure": false,
+      "status": "historical_phase_not_required_by_final_local_closure_register",
+      "expected_status": "",
+      "expected_status_passed": true,
+      "critical_failed_checks": "",
+      "warning_failed_checks": "",
+      "recommended_next_phase": "",
+      "pointer_update_performed": "",
+      "scoring_authorized": "",
+      "openai_authorized": "",
+      "broker_authorized": "",
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21C3",
+      "label": "Official Endpoint Discovery",
+      "role": "historical_endpoint_discovery",
+      "report_path": "",
+      "report_exists": "",
+      "required_for_closure": false,
+      "status": "historical_phase_not_required_by_final_local_closure_register",
+      "expected_status": "",
+      "expected_status_passed": true,
+      "critical_failed_checks": "",
+      "warning_failed_checks": "",
+      "recommended_next_phase": "",
+      "pointer_update_performed": "",
+      "scoring_authorized": "",
+      "openai_authorized": "",
+      "broker_authorized": "",
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21C3_REVIEW",
+      "label": "Split Route Decision",
+      "role": "historical_split_route",
+      "report_path": "",
+      "report_exists": "",
+      "required_for_closure": false,
+      "status": "historical_phase_not_required_by_final_local_closure_register",
+      "expected_status": "",
+      "expected_status_passed": true,
+      "critical_failed_checks": "",
+      "warning_failed_checks": "",
+      "recommended_next_phase": "",
+      "pointer_update_performed": "",
+      "scoring_authorized": "",
+      "openai_authorized": "",
+      "broker_authorized": "",
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21C4S",
+      "label": "Singapore Structured Extraction",
+      "role": "historical_singapore_extraction",
+      "report_path": "",
+      "report_exists": "",
+      "required_for_closure": false,
+      "status": "historical_phase_not_required_by_final_local_closure_register",
+      "expected_status": "",
+      "expected_status_passed": true,
+      "critical_failed_checks": "",
+      "warning_failed_checks": "",
+      "recommended_next_phase": "",
+      "pointer_update_performed": "",
+      "scoring_authorized": "",
+      "openai_authorized": "",
+      "broker_authorized": "",
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21D_S",
+      "label": "Singapore Rebuild + Validation Candidate",
+      "role": "singapore_candidate_build",
+      "report_path": "outputs\\full_universe_source_acquisition\\singapore_expanded_rebuild_validation_candidate_v2_21d_s.json",
+      "report_exists": true,
+      "required_for_closure": true,
+      "status": "SINGAPORE_REBUILD_VALIDATION_CANDIDATE_COMPLETED_43066_ROWS_READY_FOR_PROMOTION_DECISION_NO_POINTER_UPDATE_SCORING_DEFERRED",
+      "expected_status": "SINGAPORE_REBUILD_VALIDATION_CANDIDATE_COMPLETED_43066_ROWS_READY_FOR_PROMOTION_DECISION_NO_POINTER_UPDATE_SCORING_DEFERRED",
+      "expected_status_passed": true,
+      "critical_failed_checks": 0,
+      "warning_failed_checks": 0,
+      "recommended_next_phase": "v2.21E_S - Singapore Promotion / Freeze Decision",
+      "pointer_update_performed": false,
+      "scoring_authorized": false,
+      "openai_authorized": false,
+      "broker_authorized": false,
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21E_S",
+      "label": "Singapore Promotion / Freeze Decision",
+      "role": "singapore_promotion_decision",
+      "report_path": "outputs\\full_universe_source_acquisition\\singapore_promotion_freeze_decision_v2_21e_s.json",
+      "report_exists": true,
+      "required_for_closure": true,
+      "status": "SINGAPORE_PROMOTION_FREEZE_DECISION_COMPLETED_PROMOTED_ARTIFACT_READY_POINTER_NOT_UPDATED_SCORING_DEFERRED",
+      "expected_status": "SINGAPORE_PROMOTION_FREEZE_DECISION_COMPLETED_PROMOTED_ARTIFACT_READY_POINTER_NOT_UPDATED_SCORING_DEFERRED",
+      "expected_status_passed": true,
+      "critical_failed_checks": 0,
+      "warning_failed_checks": 0,
+      "recommended_next_phase": "v2.21C3B - Colombia Regulatory Discovery + Extraction Decision",
+      "pointer_update_performed": false,
+      "scoring_authorized": false,
+      "openai_authorized": false,
+      "broker_authorized": false,
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21C3B",
+      "label": "Colombia Regulatory Discovery + Extraction Decision",
+      "role": "colombia_regulatory_discovery",
+      "report_path": "outputs\\full_universe_source_acquisition\\colombia_regulatory_discovery_extraction_decision_v2_21c3b.json",
+      "report_exists": true,
+      "required_for_closure": true,
+      "status": "COLOMBIA_REGULATORY_DISCOVERY_EXTRACTION_DECISION_COMPLETED_STRUCTURED_SOURCE_READY_EXTRACTION_APPROVED_NO_DATASET_CHANGES_SCORING_DEFERRED",
+      "expected_status": "COLOMBIA_REGULATORY_DISCOVERY_EXTRACTION_DECISION_COMPLETED_STRUCTURED_SOURCE_READY_EXTRACTION_APPROVED_NO_DATASET_CHANGES_SCORING_DEFERRED",
+      "expected_status_passed": true,
+      "critical_failed_checks": 0,
+      "warning_failed_checks": 0,
+      "recommended_next_phase": "v2.21D_C - Colombia Conditional Build / Freeze",
+      "pointer_update_performed": false,
+      "scoring_authorized": false,
+      "openai_authorized": false,
+      "broker_authorized": false,
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21D_C",
+      "label": "Colombia Conditional Build / Freeze",
+      "role": "colombia_candidate_build",
+      "report_path": "outputs\\full_universe_source_acquisition\\colombia_conditional_build_freeze_v2_21d_c.json",
+      "report_exists": true,
+      "required_for_closure": true,
+      "status": "COLOMBIA_CONDITIONAL_BUILD_COMPLETED_CANDIDATE_CREATED_NO_PROMOTION_NO_POINTER_UPDATE_SCORING_DEFERRED",
+      "expected_status": "COLOMBIA_CONDITIONAL_BUILD_COMPLETED_CANDIDATE_CREATED_NO_PROMOTION_NO_POINTER_UPDATE_SCORING_DEFERRED",
+      "expected_status_passed": true,
+      "critical_failed_checks": 0,
+      "warning_failed_checks": 0,
+      "recommended_next_phase": "v2.21E_C - Colombia Promotion / Freeze Decision",
+      "pointer_update_performed": false,
+      "scoring_authorized": false,
+      "openai_authorized": false,
+      "broker_authorized": false,
+      "full59k": "DEPRECATED_DEFERRED"
+    },
+    {
+      "phase_id": "v2.21E_C",
+      "label": "Colombia Promotion / Freeze Decision",
+      "role": "colombia_promotion_decision",
+      "report_path": "outputs\\full_universe_source_acquisition\\colombia_promotion_freeze_decision_v2_21e_c.json",
+      "report_exists": true,
+      "required_for_closure": true,
+      "status": "COLOMBIA_PROMOTION_FREEZE_DECISION_COMPLETED_PROMOTED_ARTIFACT_READY_POINTER_NOT_UPDATED_SCORING_DEFERRED",
+      "expected_status": "COLOMBIA_PROMOTION_FREEZE_DECISION_COMPLETED_PROMOTED_ARTIFACT_READY_POINTER_NOT_UPDATED_SCORING_DEFERRED",
+      "expected_status_passed": true,
+      "critical_failed_checks": 0,
+      "warning_failed_checks": 0,
+      "recommended_next_phase": "v2.21G - Final v2.21 Closure Report",
+      "pointer_update_performed": false,
+      "scoring_authorized": false,
+      "openai_authorized": false,
+      "broker_authorized": false,
+      "full59k": "DEPRECATED_DEFERRED"
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "artifact": "previous_operational_base_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "role": "unchanged_pre_v2_21_operational_base"
+    },
+    {
+      "artifact": "rollback_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "rows": 38287,
+      "sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "role": "rollback_reference_unchanged"
+    },
+    {
+      "artifact": "singapore_promoted_artifact",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21e_s_singapore_promoted.csv",
+      "rows": 43066,
+      "sha256": "8b6aa52eca0b7e5625aaeb8875d3806157fe30f7595cd698b5d0071ea2187c2f",
+      "role": "promoted_artifact_intermediate"
+    },
+    {
+      "artifact": "colombia_promoted_artifact",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21e_c_colombia_promoted.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "final_promoted_artifact_source"
+    },
+    {
+      "artifact": "final_v2_21_reference_dataset",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21g_final_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "final_reference_artifact_not_active_pointer_update"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "FINAL_V2_21_001",
+      "decision": "Close v2.21 targeted market expansion.",
+      "accepted": true,
+      "reason": "Singapore and Colombia promoted artifacts are validated with zero failed checks.",
+      "effect": "Creates final v2.21 closure report and final reference artifact."
+    },
+    {
+      "decision_id": "FINAL_V2_21_002",
+      "decision": "Use Colombia promoted artifact as final v2.21 reference artifact.",
+      "accepted": true,
+      "reason": "Colombia artifact includes Singapore promoted rows plus Colombia eligible rows.",
+      "effect": "Final reference dataset has 43,089 rows."
+    },
+    {
+      "decision_id": "FINAL_V2_21_003",
+      "decision": "Do not modify active pointer/canonical dataset in final closure report.",
+      "accepted": true,
+      "reason": "Closure is auditable and does not blindly mutate active pointer convention.",
+      "effect": "Pointer manifest is created; active pointer update remains false."
+    },
+    {
+      "decision_id": "FINAL_V2_21_004",
+      "decision": "Keep scoring/OpenAI/broker/full59k deferred.",
+      "accepted": true,
+      "reason": "No explicit authorization was given for scoring/enrichment.",
+      "effect": "Next phase is explicit activation/scoring decision, not automatic scoring."
+    }
+  ],
+  "checks": [
+    {
+      "check": "operational_base_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational_rows=42708"
+    },
+    {
+      "check": "operational_base_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "singapore_promoted_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "singapore_rows=43066"
+    },
+    {
+      "check": "singapore_promoted_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "8b6aa52eca0b7e5625aaeb8875d3806157fe30f7595cd698b5d0071ea2187c2f"
+    },
+    {
+      "check": "colombia_promoted_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "colombia_rows=43089"
+    },
+    {
+      "check": "colombia_promoted_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "final_reference_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "final_rows=43089"
+    },
+    {
+      "check": "final_reference_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "headers_consistent",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational=33;singapore=33;colombia=33"
+    },
+    {
+      "check": "final_reference_under_quality_ceiling",
+      "passed": true,
+      "severity": "critical",
+      "detail": "final_rows=43089;ceiling=45000"
+    },
+    {
+      "check": "final_reference_above_quality_floor",
+      "passed": true,
+      "severity": "critical",
+      "detail": "final_rows=43089;floor=42000"
+    },
+    {
+      "check": "remaining_capacity_non_negative",
+      "passed": true,
+      "severity": "critical",
+      "detail": "remaining_capacity=1911"
+    },
+    {
+      "check": "required_phase_reports_exist",
+      "passed": true,
+      "severity": "critical",
+      "detail": "required_phase_reports_present=5/5"
+    },
+    {
+      "check": "required_phase_expected_statuses_passed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "expected statuses validated for required closure phases"
+    },
+    {
+      "check": "required_phase_critical_failures_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "required phase critical_failed_checks are blank or zero"
+    },
+    {
+      "check": "required_phase_warning_failures_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "required phase warning_failed_checks are blank or zero"
+    },
+    {
+      "check": "historical_phase_register_is_advisory",
+      "passed": true,
+      "severity": "critical",
+      "detail": "older v2.21 phases are documented as historical and not required by final local closure register"
+    },
+    {
+      "check": "operational_base_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational base SHA unchanged after closure"
+    },
+    {
+      "check": "rollback_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback SHA unchanged after closure"
+    },
+    {
+      "check": "singapore_artifact_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "Singapore promoted SHA unchanged after closure"
+    },
+    {
+      "check": "colombia_artifact_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "Colombia promoted SHA unchanged after closure"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "pointer_update_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_performed=False"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "activation_gate",
+      "action": "decide_explicitly_whether_to_activate_final_v2_21_reference_as_current_operational_base",
+      "priority": "high",
+      "recommended_phase": "v2.21H - Explicit Final Reference Activation Gate",
+      "reason": "Final v2.21 reference artifact is ready but active pointer remains unchanged.",
+      "guardrails": "Only update known pointer/canonical target after explicit approval."
+    },
+    {
+      "action_order": 2,
+      "action_scope": "scoring_gate",
+      "action": "decide_explicitly_whether_to_run_scoring_after_targeted_market_expansion",
+      "priority": "medium",
+      "recommended_phase": "v2.22A - Post-Targeted-Markets Explicit Scoring Decision Gate",
+      "reason": "v2.21 intentionally deferred scoring/OpenAI/broker enrichment.",
+      "guardrails": "No scoring/OpenAI/broker without explicit authorization."
+    },
+    {
+      "action_order": 3,
+      "action_scope": "full59k",
+      "action": "keep_full59k_deprecated_deferred",
+      "priority": "low",
+      "recommended_phase": "none",
+      "reason": "Quality target remains 42k-45k, not full59k.",
+      "guardrails": "Do not launch full59k without separate explicit roadmap."
+    }
+  ],
+  "pointer_manifest": {
+    "version": "v2.21G",
+    "manifest_type": "final_v2_21_pointer_manifest",
+    "generated_at_utc": "2026-08-13T09:17:06.933705+00:00",
+    "final_reference_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21g_final_reference.csv",
+    "final_reference_rows": 43089,
+    "final_reference_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "previous_operational_base_rows": 42708,
+    "previous_operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "active_pointer_update_performed": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "decision": "Final v2.21 reference artifact is ready; active pointer is not modified in closure report.",
+    "next_required_if_activation_desired": "v2.21H - Explicit Final Reference Activation Gate"
+  },
+  "hard_guards": {
+    "phase_type": "final-v2-21-closure-report",
+    "selected_route": "Final v2.21 closure",
+    "final_reference_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21g_final_reference.csv",
+    "final_reference_rows": 43089,
+    "final_reference_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "previous_operational_base_rows": 42708,
+    "previous_operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "rollback_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+    "rollback_rows": 38287,
+    "rollback_sha": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+    "singapore_promoted_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21e_s_singapore_promoted.csv",
+    "singapore_promoted_rows": 43066,
+    "singapore_promoted_sha": "8b6aa52eca0b7e5625aaeb8875d3806157fe30f7595cd698b5d0071ea2187c2f",
+    "colombia_promoted_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21e_c_colombia_promoted.csv",
+    "colombia_promoted_rows": 43089,
+    "colombia_promoted_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "final_reference_promoted_as_artifact": true,
+    "active_pointer_update_performed": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "scoring_authorized": false,
+    "scoring_recalculated": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.21H - Explicit Final Reference Activation Gate",
+  "secondary_next_phase": "v2.22A - Post-Targeted-Markets Explicit Scoring Decision Gate"
+}

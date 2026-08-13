@@ -1,0 +1,16 @@
+{
+  "version": "v2.21G",
+  "manifest_type": "final_v2_21_pointer_manifest",
+  "generated_at_utc": "2026-08-13T09:17:06.933705+00:00",
+  "final_reference_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21g_final_reference.csv",
+  "final_reference_rows": 43089,
+  "final_reference_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+  "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+  "previous_operational_base_rows": 42708,
+  "previous_operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+  "active_pointer_update_performed": false,
+  "canonical_dataset_modified": false,
+  "active_canonical_replaced": false,
+  "decision": "Final v2.21 reference artifact is ready; active pointer is not modified in closure report.",
+  "next_required_if_activation_desired": "v2.21H - Explicit Final Reference Activation Gate"
+}

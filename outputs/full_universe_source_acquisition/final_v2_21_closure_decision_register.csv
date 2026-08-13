@@ -1,0 +1,5 @@
+decision_id,decision,accepted,reason,effect
+FINAL_V2_21_001,Close v2.21 targeted market expansion.,True,Singapore and Colombia promoted artifacts are validated with zero failed checks.,Creates final v2.21 closure report and final reference artifact.
+FINAL_V2_21_002,Use Colombia promoted artifact as final v2.21 reference artifact.,True,Colombia artifact includes Singapore promoted rows plus Colombia eligible rows.,"Final reference dataset has 43,089 rows."
+FINAL_V2_21_003,Do not modify active pointer/canonical dataset in final closure report.,True,Closure is auditable and does not blindly mutate active pointer convention.,Pointer manifest is created; active pointer update remains false.
+FINAL_V2_21_004,Keep scoring/OpenAI/broker/full59k deferred.,True,No explicit authorization was given for scoring/enrichment.,"Next phase is explicit activation/scoring decision, not automatic scoring."

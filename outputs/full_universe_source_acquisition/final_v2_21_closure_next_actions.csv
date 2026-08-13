@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,activation_gate,decide_explicitly_whether_to_activate_final_v2_21_reference_as_current_operational_base,high,v2.21H - Explicit Final Reference Activation Gate,Final v2.21 reference artifact is ready but active pointer remains unchanged.,Only update known pointer/canonical target after explicit approval.
+2,scoring_gate,decide_explicitly_whether_to_run_scoring_after_targeted_market_expansion,medium,v2.22A - Post-Targeted-Markets Explicit Scoring Decision Gate,v2.21 intentionally deferred scoring/OpenAI/broker enrichment.,No scoring/OpenAI/broker without explicit authorization.
+3,full59k,keep_full59k_deprecated_deferred,low,none,"Quality target remains 42k-45k, not full59k.",Do not launch full59k without separate explicit roadmap.
