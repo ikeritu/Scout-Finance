@@ -1,0 +1,341 @@
+{
+  "version": "v2.21D_C",
+  "phase": "Colombia Conditional Build / Freeze",
+  "phase_type": "colombia-conditional-build-freeze",
+  "status": "COLOMBIA_CONDITIONAL_BUILD_COMPLETED_CANDIDATE_CREATED_NO_PROMOTION_NO_POINTER_UPDATE_SCORING_DEFERRED",
+  "generated_at_utc": "2026-08-13T08:45:37.467587+00:00",
+  "summary": {
+    "selected_route": "Colombia conditional build after Singapore promoted artifact",
+    "phase_type": "colombia-conditional-build-freeze",
+    "build_decision": "COLOMBIA_CANDIDATE_CREATED_READY_FOR_PROMOTION_OR_FREEZE_DECISION",
+    "approved_for_colombia_promotion_decision": true,
+    "previous_operational_base_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+    "previous_operational_base_rows": 42708,
+    "previous_operational_base_sha": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+    "singapore_promoted_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21e_s_singapore_promoted.csv",
+    "singapore_promoted_rows": 43066,
+    "singapore_promoted_sha": "8b6aa52eca0b7e5625aaeb8875d3806157fe30f7595cd698b5d0071ea2187c2f",
+    "colombia_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21d_c_colombia_candidate.csv",
+    "colombia_candidate_dataset_rows": 43089,
+    "colombia_candidate_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "colombia_raw_candidate_rows_seen": 36,
+    "colombia_raw_candidates_accepted_by_quality": 27,
+    "colombia_eligible_new_candidates": 23,
+    "colombia_rejected_candidates": 13,
+    "duplicate_within_colombia_candidate_set": 4,
+    "duplicate_against_existing_singapore_promoted_universe": 0,
+    "rejected_by_capacity_filter": 0,
+    "remaining_capacity_after_colombia_candidate": 1911,
+    "quality_floor_target": 42000,
+    "quality_ceiling_target": 45000,
+    "candidate_dataset_created": true,
+    "candidate_extraction_performed": true,
+    "dedup_performed": true,
+    "expanded_rebuild_candidate_performed": true,
+    "colombia_dataset_promoted": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "scoring_authorized": false,
+    "openai_authorized": false,
+    "broker_authorized": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "warning_failed_checks": 0,
+    "recommended_next_phase": "v2.21E_C - Colombia Promotion / Freeze Decision"
+  },
+  "dedup_summary": [
+    {
+      "market_id": "COLOMBIA_BVC_REGULATORY",
+      "raw_candidate_rows_seen": 36,
+      "raw_candidates_accepted_by_quality": 27,
+      "raw_candidates_rejected_by_quality": 9,
+      "eligible_new_candidates": 23,
+      "duplicate_within_colombia_candidate_set": 4,
+      "duplicate_against_existing_singapore_promoted_universe": 0,
+      "rejected_by_capacity_filter": 0,
+      "candidate_dataset_rows": 43089,
+      "remaining_capacity_after_candidate": 1911,
+      "candidate_dataset_created": true
+    }
+  ],
+  "append_manifest": [
+    {
+      "artifact": "singapore_promoted_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21e_s_singapore_promoted.csv",
+      "rows": 43066,
+      "sha256": "8b6aa52eca0b7e5625aaeb8875d3806157fe30f7595cd698b5d0071ea2187c2f",
+      "role": "base_for_colombia_candidate_input_unchanged"
+    },
+    {
+      "artifact": "colombia_schema_projection",
+      "path": "outputs\\full_universe_source_acquisition\\colombia_conditional_build_freeze_schema_projection_v2_21d_c.csv",
+      "rows": 23,
+      "sha256": "245b9f8c5c8ee46f0471972fbefd92b62d478171c5e6e80e7e7eab0cd4e23094",
+      "role": "append_projection_source"
+    },
+    {
+      "artifact": "colombia_candidate_dataset",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21d_c_colombia_candidate.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "role": "candidate_output_not_promoted"
+    },
+    {
+      "artifact": "previous_operational_base_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_20m_asx_promoted.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "role": "input_only_unchanged"
+    },
+    {
+      "artifact": "rollback_input",
+      "path": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_14e.csv",
+      "rows": 38287,
+      "sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "role": "input_only_unchanged"
+    }
+  ],
+  "checks": [
+    {
+      "check": "colombia_discovery_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "COLOMBIA_REGULATORY_DISCOVERY_EXTRACTION_DECISION_COMPLETED_STRUCTURED_SOURCE_READY_EXTRACTION_APPROVED_NO_DATASET_CHANGES_SCORING_DEFERRED"
+    },
+    {
+      "check": "colombia_structured_extraction_approved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "approved_for_colombia_structured_extraction=True"
+    },
+    {
+      "check": "singapore_promotion_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "SINGAPORE_PROMOTION_FREEZE_DECISION_COMPLETED_PROMOTED_ARTIFACT_READY_POINTER_NOT_UPDATED_SCORING_DEFERRED"
+    },
+    {
+      "check": "operational_base_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational_rows=42708"
+    },
+    {
+      "check": "operational_base_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127"
+    },
+    {
+      "check": "rollback_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback_rows=38287"
+    },
+    {
+      "check": "rollback_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f"
+    },
+    {
+      "check": "singapore_promoted_rows_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "singapore_promoted_rows=43066"
+    },
+    {
+      "check": "singapore_promoted_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "8b6aa52eca0b7e5625aaeb8875d3806157fe30f7595cd698b5d0071ea2187c2f"
+    },
+    {
+      "check": "schema_column_count_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "columns=33"
+    },
+    {
+      "check": "structured_sources_available",
+      "passed": true,
+      "severity": "critical",
+      "detail": "structured_sources=8"
+    },
+    {
+      "check": "raw_candidate_rows_seen",
+      "passed": true,
+      "severity": "critical",
+      "detail": "raw_candidate_rows_seen=36"
+    },
+    {
+      "check": "raw_candidates_accepted_by_quality_available",
+      "passed": true,
+      "severity": "warning",
+      "detail": "raw_candidates_accepted_by_quality=27"
+    },
+    {
+      "check": "eligible_colombia_candidates_available",
+      "passed": true,
+      "severity": "warning",
+      "detail": "eligible_new_candidates=23"
+    },
+    {
+      "check": "candidate_dataset_created_if_eligible",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_dataset_created=True;eligible=23"
+    },
+    {
+      "check": "candidate_dataset_under_quality_ceiling",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_dataset_rows=43089;ceiling=45000"
+    },
+    {
+      "check": "candidate_dataset_above_quality_floor",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_dataset_rows=43089;floor=42000"
+    },
+    {
+      "check": "candidate_rows_equal_singapore_plus_eligible_if_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "candidate_rows=43089;base_plus_eligible=43089"
+    },
+    {
+      "check": "singapore_promoted_artifact_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "Singapore promoted artifact SHA unchanged"
+    },
+    {
+      "check": "operational_base_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "operational base SHA unchanged"
+    },
+    {
+      "check": "rollback_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "rollback SHA unchanged"
+    },
+    {
+      "check": "candidate_dataset_not_promoted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "colombia_candidate_dataset_promoted=False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical_dataset_modified=False"
+    },
+    {
+      "check": "active_canonical_not_replaced",
+      "passed": true,
+      "severity": "critical",
+      "detail": "active_canonical_replaced=False"
+    },
+    {
+      "check": "pointer_update_not_performed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer_update_performed=False"
+    },
+    {
+      "check": "scoring_not_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "scoring_authorized=False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "openai_called=False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "broker_called=False"
+    },
+    {
+      "check": "full59k_not_launched",
+      "passed": true,
+      "severity": "critical",
+      "detail": "full59k_universe_launched=False"
+    }
+  ],
+  "next_actions": [
+    {
+      "action_order": 1,
+      "action_scope": "colombia_promotion_freeze_decision",
+      "action": "decide_whether_to_promote_or_freeze_colombia_candidate_dataset",
+      "priority": "high",
+      "recommended_phase": "v2.21E_C - Colombia Promotion / Freeze Decision",
+      "reason": "Colombia candidate dataset was created from official regulatory sources.",
+      "guardrails": "No scoring; no OpenAI; no broker; no pointer update"
+    },
+    {
+      "action_order": 2,
+      "action_scope": "singapore_reference",
+      "action": "preserve_singapore_promoted_artifact",
+      "priority": "high",
+      "recommended_phase": "v2.21E_C - Colombia Promotion / Freeze Decision",
+      "reason": "Singapore promoted artifact remains the v2.21 successful output.",
+      "guardrails": "Do not alter Singapore artifact."
+    },
+    {
+      "action_order": 3,
+      "action_scope": "final_closure",
+      "action": "prepare_final_v2_21_closure_after_colombia_decision",
+      "priority": "medium",
+      "recommended_phase": "v2.21G - Final v2.21 Closure Report",
+      "reason": "Final closure follows Colombia promote/freeze decision.",
+      "guardrails": "Document final promoted/frozen status."
+    }
+  ],
+  "hard_guards": {
+    "phase_type": "colombia-conditional-build-freeze",
+    "selected_route": "Colombia conditional build",
+    "official_regulatory_sources_only": true,
+    "bvc_shell_html_extraction_allowed": false,
+    "regex_only_candidate_acceptance_allowed": false,
+    "candidate_extraction_performed": true,
+    "dedup_performed": true,
+    "expanded_rebuild_candidate_performed": true,
+    "candidate_dataset_created": true,
+    "colombia_candidate_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21d_c_colombia_candidate.csv",
+    "colombia_candidate_dataset_rows": 43089,
+    "colombia_candidate_dataset_sha": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "approved_for_colombia_promotion_decision": true,
+    "singapore_promoted_dataset": "outputs\\full_universe_source_acquisition\\expanded_universe_v2_21e_s_singapore_promoted.csv",
+    "singapore_promoted_rows": 43066,
+    "singapore_promoted_sha": "8b6aa52eca0b7e5625aaeb8875d3806157fe30f7595cd698b5d0071ea2187c2f",
+    "file_edit_performed_on_operational_base": false,
+    "file_edit_performed_on_singapore_promoted_artifact": false,
+    "colombia_dataset_promoted": false,
+    "canonical_dataset_modified": false,
+    "active_canonical_replaced": false,
+    "pointer_update_performed": false,
+    "scoring_authorized": false,
+    "scoring_recalculated": false,
+    "openai_authorized": false,
+    "openai_called": false,
+    "broker_authorized": false,
+    "broker_called": false,
+    "full59k_target_deprecated": true,
+    "full59k_universe_launched": false,
+    "repo_wide_renormalization_performed": false,
+    "overwrite_allowed": false,
+    "history_rewrite_performed": false,
+    "force_push_required": false
+  },
+  "recommended_next_phase": "v2.21E_C - Colombia Promotion / Freeze Decision"
+}

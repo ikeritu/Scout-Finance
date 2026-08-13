@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,colombia_promotion_freeze_decision,decide_whether_to_promote_or_freeze_colombia_candidate_dataset,high,v2.21E_C - Colombia Promotion / Freeze Decision,Colombia candidate dataset was created from official regulatory sources.,No scoring; no OpenAI; no broker; no pointer update
+2,singapore_reference,preserve_singapore_promoted_artifact,high,v2.21E_C - Colombia Promotion / Freeze Decision,Singapore promoted artifact remains the v2.21 successful output.,Do not alter Singapore artifact.
+3,final_closure,prepare_final_v2_21_closure_after_colombia_decision,medium,v2.21G - Final v2.21 Closure Report,Final closure follows Colombia promote/freeze decision.,Document final promoted/frozen status.
