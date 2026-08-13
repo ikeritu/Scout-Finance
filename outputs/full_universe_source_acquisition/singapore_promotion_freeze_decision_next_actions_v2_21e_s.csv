@@ -1,0 +1,4 @@
+action_order,action_scope,action,priority,recommended_phase,reason,guardrails
+1,colombia_regulatory_discovery,continue_colombia_superfinanciera_simev_rnve_discovery,high,v2.21C3B - Colombia Regulatory Discovery + Extraction Decision,Singapore promoted artifact is ready; Colombia remains the unresolved part of v2.21.,Colombia discovery only; no BVC shell HTML extraction
+2,final_closure,prepare_final_v2_21_closure_after_colombia_decision,medium,v2.21G - Final v2.21 Closure Report,Final closure should happen after Colombia is resolved or explicitly frozen.,document Singapore promoted artifact and Colombia status
+3,pointer_control,use_promotion_pointer_manifest_as_reference_do_not_modify_existing_pointer_blindly,high,v2.21C3B - Colombia Regulatory Discovery + Extraction Decision,v2.21E_S creates promoted artifact and pointer manifest but does not edit an unknown active pointer convention.,no active pointer mutation without explicit known pointer target

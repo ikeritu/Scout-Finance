@@ -1,0 +1,6 @@
+decision_id,decision,accepted,reason,effect
+PROMOTION_DECISION_001,Promote Singapore candidate as v2.21E_S promoted artifact.,True,v2.21D_S candidate passed validation and remains within the 45k quality ceiling.,"Creates promoted artifact with 43,066 rows."
+PROMOTION_DECISION_002,Normalize Singapore country_code before promoted artifact creation.,True,v2.21D_S audit showed country_code confirmation gap while country/exchange/MIC/currency were valid.,Only appended Singapore rows are patched in the v2.21E_S promoted artifact when country_code columns exist.
+PROMOTION_DECISION_003,Do not modify existing active pointer files blindly.,True,Promotion should remain controlled and auditable.,Creates pointer manifest; existing operational base remains unchanged.
+PROMOTION_DECISION_004,Keep Colombia outside this phase.,True,Colombia remains on the regulatory discovery path.,No Colombia extraction or rebuild occurs.
+PROMOTION_DECISION_005,Keep scoring/OpenAI/broker/full59k deferred.,True,Scoring and enrichment have not been explicitly authorized.,"No scoring, OpenAI, broker, or full59k actions are run."
