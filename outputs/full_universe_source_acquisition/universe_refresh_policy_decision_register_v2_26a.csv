@@ -1,0 +1,9 @@
+decision_id,decision,result
+V2_26A_001,"Use a staged, immutable, fail-closed refresh lifecycle.",APPROVED
+V2_26A_002,Keep identity and enriched-metadata baselines distinct and pinned.,APPROVED
+V2_26A_003,Reserve any operational pointer mutation for v2.26E.,ENFORCED
+V2_26A_004,Quarantine first-cycle deletions instead of removing immediately.,ENFORCED
+V2_26A_005,Block automated refresh for missing-provider rows.,ENFORCED
+V2_26A_006,Require complete delta and provenance ledgers.,ENFORCED
+V2_26A_007,Keep production scoring frozen throughout v2.26.,ENFORCED
+V2_26A_008,Defer actual schedules to v2.26F while defining policy cadences now.,APPROVED

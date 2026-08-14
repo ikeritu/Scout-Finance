@@ -1,0 +1,9 @@
+order,stage,input,output,pointer_write_allowed,failure_action
+1,SNAPSHOT,provider endpoint/file,immutable raw artifact + SHA256 + timestamp,false,STOP
+2,NORMALIZE,immutable raw snapshot,provider candidate with canonical schema,false,REJECT_PROVIDER_CANDIDATE
+3,VALIDATE_PROVIDER,normalized provider candidate,provider checks and metrics,false,QUARANTINE_PROVIDER
+4,BUILD_UNIVERSE_CANDIDATE,accepted provider candidates + frozen baselines,isolated universe candidate,false,REJECT_GLOBAL_CANDIDATE
+5,DETECT_DELTA,candidate vs identity and metadata baselines,adds/removes/changes/conflicts,false,MANUAL_REVIEW
+6,ROLLBACK_VALIDATE,candidate + current + rollback generations,recovery evidence,false,BLOCK_PROMOTION
+7,PROMOTION_GATE,all signed artifacts/checks,PROMOTE or FREEZE,false,KEEP_CURRENT_POINTER
+8,ATOMIC_POINTER_SWAP,approved candidate SHA/rows + rollback reference,new operational pointer,true,ROLL_BACK_POINTER

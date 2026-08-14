@@ -1,0 +1,13 @@
+gate_id,gate,required,evidence
+REFRESH_G01,Raw snapshot immutable,true,"path, timestamp, bytes, SHA256"
+REFRESH_G02,Provider route authorized,true,provider present in cadence registry and not HOLD
+REFRESH_G03,Schema contract valid,true,required columns/types and encoding
+REFRESH_G04,Provider row-count thresholds pass,true,before/after/added/removed
+REFRESH_G05,Canonical identity uniqueness,true,zero unresolved duplicates
+REFRESH_G06,Delta ledger complete,true,every add/remove/change classified
+REFRESH_G07,Metadata non-regression,true,no unauthorized blanking/overwrite
+REFRESH_G08,Derived provenance complete,true,100% row-level rule/source evidence
+REFRESH_G09,Deletion quarantine respected,true,first absence not immediately deleted
+REFRESH_G10,Rollback artifacts validated,true,current and previous generation readable and hash-valid
+REFRESH_G11,Scoring freeze preserved,true,scoring pointer unchanged and inactive
+REFRESH_G12,Explicit promotion approval,true,v2.26E decision before atomic pointer swap

@@ -1,0 +1,8 @@
+control,requirement,failure_effect
+Immutable current generation,Never overwrite the active dataset,BLOCK_REFRESH
+Previous generations,Retain at least three promoted generations,BLOCK_PROMOTION
+Raw source retention,Retain immutable provider snapshots for 12 months,BLOCK_AUDIT_CLOSURE
+Pointer history,"Record from/to dataset, rows, SHA256, commit and timestamp",BLOCK_POINTER_SWAP
+Atomic update,Pointer changes only after candidate artifact exists and hashes match,KEEP_CURRENT_POINTER
+Recovery test,v2.26D must prove restoration without rewriting datasets,BLOCK_V2_26E
+Scoring isolation,Universe rollback cannot alter or activate scoring pointer,FAIL_CLOSED

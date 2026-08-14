@@ -1,0 +1,571 @@
+{
+  "version": "v2.26A",
+  "phase": "Universe Refresh Policy",
+  "status": "UNIVERSE_REFRESH_POLICY_COMPLETED_NO_REFRESH_EXECUTED",
+  "policy_decision": "CONTROLLED_STAGED_REFRESH_FAIL_CLOSED",
+  "operational_identity_baseline": "outputs/full_universe_source_acquisition/expanded_universe_v2_21h_activated_operational_reference.csv",
+  "operational_identity_rows": 43089,
+  "operational_identity_sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+  "metadata_comparison_baseline": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+  "metadata_comparison_rows": 43089,
+  "metadata_comparison_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+  "provider_buckets": 14,
+  "refresh_executed": false,
+  "candidate_dataset_created": false,
+  "operational_pointer_modified": false,
+  "metadata_baseline_modified": false,
+  "scoring_pointer_modified": false,
+  "production_scoring_authorized": false,
+  "scoring_promoted": false,
+  "promotion_reserved_for_phase": "v2.26E",
+  "rollback_validation_reserved_for_phase": "v2.26D",
+  "default_failure_behavior": "REJECT_CANDIDATE_KEEP_CURRENT_POINTER",
+  "raw_snapshot_retention_months": 12,
+  "minimum_promoted_generations_retained": 3,
+  "deletion_quarantine_cycles": 1,
+  "openai_called": false,
+  "broker_called": false,
+  "full59k": "DEPRECATED_DEFERRED",
+  "critical_failed_checks": 0,
+  "recommended_next_phase": "v2.26B - Provider Refresh Dry Run",
+  "lifecycle": [
+    {
+      "order": 1,
+      "stage": "SNAPSHOT",
+      "input": "provider endpoint/file",
+      "output": "immutable raw artifact + SHA256 + timestamp",
+      "pointer_write_allowed": false,
+      "failure_action": "STOP"
+    },
+    {
+      "order": 2,
+      "stage": "NORMALIZE",
+      "input": "immutable raw snapshot",
+      "output": "provider candidate with canonical schema",
+      "pointer_write_allowed": false,
+      "failure_action": "REJECT_PROVIDER_CANDIDATE"
+    },
+    {
+      "order": 3,
+      "stage": "VALIDATE_PROVIDER",
+      "input": "normalized provider candidate",
+      "output": "provider checks and metrics",
+      "pointer_write_allowed": false,
+      "failure_action": "QUARANTINE_PROVIDER"
+    },
+    {
+      "order": 4,
+      "stage": "BUILD_UNIVERSE_CANDIDATE",
+      "input": "accepted provider candidates + frozen baselines",
+      "output": "isolated universe candidate",
+      "pointer_write_allowed": false,
+      "failure_action": "REJECT_GLOBAL_CANDIDATE"
+    },
+    {
+      "order": 5,
+      "stage": "DETECT_DELTA",
+      "input": "candidate vs identity and metadata baselines",
+      "output": "adds/removes/changes/conflicts",
+      "pointer_write_allowed": false,
+      "failure_action": "MANUAL_REVIEW"
+    },
+    {
+      "order": 6,
+      "stage": "ROLLBACK_VALIDATE",
+      "input": "candidate + current + rollback generations",
+      "output": "recovery evidence",
+      "pointer_write_allowed": false,
+      "failure_action": "BLOCK_PROMOTION"
+    },
+    {
+      "order": 7,
+      "stage": "PROMOTION_GATE",
+      "input": "all signed artifacts/checks",
+      "output": "PROMOTE or FREEZE",
+      "pointer_write_allowed": false,
+      "failure_action": "KEEP_CURRENT_POINTER"
+    },
+    {
+      "order": 8,
+      "stage": "ATOMIC_POINTER_SWAP",
+      "input": "approved candidate SHA/rows + rollback reference",
+      "output": "new operational pointer",
+      "pointer_write_allowed": true,
+      "failure_action": "ROLL_BACK_POINTER"
+    }
+  ],
+  "provider_cadence_registry": [
+    {
+      "source_provider": "ASX",
+      "baseline_rows": 1316,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "basis": "official structured list",
+      "risk_class": "CONTROL"
+    },
+    {
+      "source_provider": "sgx_structured_endpoint",
+      "baseline_rows": 358,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "basis": "official structured endpoint",
+      "risk_class": "CONTROL"
+    },
+    {
+      "source_provider": "nasdaq_trader_nasdaqlisted",
+      "baseline_rows": 3244,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "basis": "official exchange list",
+      "risk_class": "HIGH_CHANGE_MONITOR"
+    },
+    {
+      "source_provider": "nasdaq_trader_otherlisted",
+      "baseline_rows": 2404,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "basis": "official exchange list",
+      "risk_class": "HIGH_CHANGE_MONITOR"
+    },
+    {
+      "source_provider": "sec_company_tickers_exchange",
+      "baseline_rows": 2359,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "basis": "official SEC reference",
+      "risk_class": "HIGH_CHANGE_MONITOR"
+    },
+    {
+      "source_provider": "cboe_listed_symbols",
+      "baseline_rows": 1193,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "basis": "official listed symbols",
+      "risk_class": "HIGH_CHANGE_MONITOR"
+    },
+    {
+      "source_provider": "jpx_listed_securities",
+      "baseline_rows": 3705,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "basis": "official listed securities",
+      "risk_class": "HIGH_CHANGE_MONITOR"
+    },
+    {
+      "source_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+      "baseline_rows": 1424,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "basis": "official Xetra instrument list",
+      "risk_class": "HIGH_CHANGE_MONITOR"
+    },
+    {
+      "source_provider": "TWSE",
+      "baseline_rows": 696,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "basis": "official exchange list",
+      "risk_class": "HIGH_CHANGE_MONITOR"
+    },
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "baseline_rows": 21154,
+      "policy_cadence": "MONTHLY",
+      "refresh_lane": "CONTROLLED_CANDIDATE",
+      "basis": "large ambiguous geography population",
+      "risk_class": "CRITICAL_METADATA"
+    },
+    {
+      "source_provider": "hkex_securities_list",
+      "baseline_rows": 2804,
+      "policy_cadence": "MONTHLY",
+      "refresh_lane": "CONTROLLED_CANDIDATE",
+      "basis": "taxonomy review required",
+      "risk_class": "REVIEW_REQUIRED"
+    },
+    {
+      "source_provider": "HKEX",
+      "baseline_rows": 396,
+      "policy_cadence": "MONTHLY",
+      "refresh_lane": "CONTROLLED_CANDIDATE",
+      "basis": "legacy taxonomy-empty bucket",
+      "risk_class": "REVIEW_REQUIRED"
+    },
+    {
+      "source_provider": "SFC_SIMEV_RNVE",
+      "baseline_rows": 23,
+      "policy_cadence": "MONTHLY",
+      "refresh_lane": "MANUAL_REVIEW_CANDIDATE",
+      "basis": "small population; percentage deltas unstable",
+      "risk_class": "SMALL_BUCKET"
+    },
+    {
+      "source_provider": "__MISSING_PROVIDER__",
+      "baseline_rows": 2013,
+      "policy_cadence": "NO_AUTOMATED_REFRESH",
+      "refresh_lane": "PROVENANCE_HOLD",
+      "basis": "provider provenance absent",
+      "risk_class": "HOLD"
+    }
+  ],
+  "delta_thresholds": [
+    {
+      "scope": "global",
+      "metric": "row count delta",
+      "pass": "<=2%",
+      "warn": ">2% and <=5%",
+      "block": ">5% unless approved market event",
+      "minimum_absolute_rows": "n/a"
+    },
+    {
+      "scope": "provider",
+      "metric": "row count delta",
+      "pass": "<=max(25 rows,5%)",
+      "warn": ">max(25,5%) and <=max(100,15%)",
+      "block": ">max(100 rows,15%)",
+      "minimum_absolute_rows": "25/100"
+    },
+    {
+      "scope": "identity",
+      "metric": "duplicate canonical identities",
+      "pass": "0",
+      "warn": "n/a",
+      "block": ">0 unresolved",
+      "minimum_absolute_rows": "0"
+    },
+    {
+      "scope": "schema",
+      "metric": "missing/extra required columns",
+      "pass": "0",
+      "warn": "additive optional column documented",
+      "block": "required schema drift",
+      "minimum_absolute_rows": "0"
+    },
+    {
+      "scope": "metadata",
+      "metric": "previously populated audited cells blanked",
+      "pass": "0",
+      "warn": "n/a",
+      "block": ">0 without approved evidence",
+      "minimum_absolute_rows": "0"
+    },
+    {
+      "scope": "provenance",
+      "metric": "new or changed cells with row-level provenance",
+      "pass": "100%",
+      "warn": "n/a",
+      "block": "<100%",
+      "minimum_absolute_rows": "n/a"
+    },
+    {
+      "scope": "deletions",
+      "metric": "provider-missing instruments",
+      "pass": "quarantine one cycle",
+      "warn": "second consecutive absence",
+      "block": "immediate deletion from first absence",
+      "minimum_absolute_rows": "1 cycle"
+    },
+    {
+      "scope": "quality",
+      "metric": "critical validation failures",
+      "pass": "0",
+      "warn": "noncritical warnings documented",
+      "block": ">0",
+      "minimum_absolute_rows": "0"
+    }
+  ],
+  "acceptance_gates": [
+    {
+      "gate_id": "REFRESH_G01",
+      "gate": "Raw snapshot immutable",
+      "required": true,
+      "evidence": "path, timestamp, bytes, SHA256"
+    },
+    {
+      "gate_id": "REFRESH_G02",
+      "gate": "Provider route authorized",
+      "required": true,
+      "evidence": "provider present in cadence registry and not HOLD"
+    },
+    {
+      "gate_id": "REFRESH_G03",
+      "gate": "Schema contract valid",
+      "required": true,
+      "evidence": "required columns/types and encoding"
+    },
+    {
+      "gate_id": "REFRESH_G04",
+      "gate": "Provider row-count thresholds pass",
+      "required": true,
+      "evidence": "before/after/added/removed"
+    },
+    {
+      "gate_id": "REFRESH_G05",
+      "gate": "Canonical identity uniqueness",
+      "required": true,
+      "evidence": "zero unresolved duplicates"
+    },
+    {
+      "gate_id": "REFRESH_G06",
+      "gate": "Delta ledger complete",
+      "required": true,
+      "evidence": "every add/remove/change classified"
+    },
+    {
+      "gate_id": "REFRESH_G07",
+      "gate": "Metadata non-regression",
+      "required": true,
+      "evidence": "no unauthorized blanking/overwrite"
+    },
+    {
+      "gate_id": "REFRESH_G08",
+      "gate": "Derived provenance complete",
+      "required": true,
+      "evidence": "100% row-level rule/source evidence"
+    },
+    {
+      "gate_id": "REFRESH_G09",
+      "gate": "Deletion quarantine respected",
+      "required": true,
+      "evidence": "first absence not immediately deleted"
+    },
+    {
+      "gate_id": "REFRESH_G10",
+      "gate": "Rollback artifacts validated",
+      "required": true,
+      "evidence": "current and previous generation readable and hash-valid"
+    },
+    {
+      "gate_id": "REFRESH_G11",
+      "gate": "Scoring freeze preserved",
+      "required": true,
+      "evidence": "scoring pointer unchanged and inactive"
+    },
+    {
+      "gate_id": "REFRESH_G12",
+      "gate": "Explicit promotion approval",
+      "required": true,
+      "evidence": "v2.26E decision before atomic pointer swap"
+    }
+  ],
+  "rollback_controls": [
+    {
+      "control": "Immutable current generation",
+      "requirement": "Never overwrite the active dataset",
+      "failure_effect": "BLOCK_REFRESH"
+    },
+    {
+      "control": "Previous generations",
+      "requirement": "Retain at least three promoted generations",
+      "failure_effect": "BLOCK_PROMOTION"
+    },
+    {
+      "control": "Raw source retention",
+      "requirement": "Retain immutable provider snapshots for 12 months",
+      "failure_effect": "BLOCK_AUDIT_CLOSURE"
+    },
+    {
+      "control": "Pointer history",
+      "requirement": "Record from/to dataset, rows, SHA256, commit and timestamp",
+      "failure_effect": "BLOCK_POINTER_SWAP"
+    },
+    {
+      "control": "Atomic update",
+      "requirement": "Pointer changes only after candidate artifact exists and hashes match",
+      "failure_effect": "KEEP_CURRENT_POINTER"
+    },
+    {
+      "control": "Recovery test",
+      "requirement": "v2.26D must prove restoration without rewriting datasets",
+      "failure_effect": "BLOCK_V2_26E"
+    },
+    {
+      "control": "Scoring isolation",
+      "requirement": "Universe rollback cannot alter or activate scoring pointer",
+      "failure_effect": "FAIL_CLOSED"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_26A_001",
+      "decision": "Use a staged, immutable, fail-closed refresh lifecycle.",
+      "result": "APPROVED"
+    },
+    {
+      "decision_id": "V2_26A_002",
+      "decision": "Keep identity and enriched-metadata baselines distinct and pinned.",
+      "result": "APPROVED"
+    },
+    {
+      "decision_id": "V2_26A_003",
+      "decision": "Reserve any operational pointer mutation for v2.26E.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26A_004",
+      "decision": "Quarantine first-cycle deletions instead of removing immediately.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26A_005",
+      "decision": "Block automated refresh for missing-provider rows.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26A_006",
+      "decision": "Require complete delta and provenance ledgers.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26A_007",
+      "decision": "Keep production scoring frozen throughout v2.26.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26A_008",
+      "decision": "Defer actual schedules to v2.26F while defining policy cadences now.",
+      "result": "APPROVED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "operational_identity_baseline_pinned",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "metadata_comparison_baseline_pinned",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "both_baselines_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089/43089"
+    },
+    {
+      "check": "provider_buckets_14",
+      "passed": true,
+      "severity": "critical",
+      "detail": "14"
+    },
+    {
+      "check": "provider_rows_sum_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "lifecycle_fail_closed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "REJECT_CANDIDATE_KEEP_CURRENT_POINTER"
+    },
+    {
+      "check": "pointer_write_only_final_stage",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ATOMIC_POINTER_SWAP only"
+    },
+    {
+      "check": "promotion_reserved_v2_26e",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.26E"
+    },
+    {
+      "check": "rollback_reserved_v2_26d",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.26D"
+    },
+    {
+      "check": "deletion_quarantine_defined",
+      "passed": true,
+      "severity": "critical",
+      "detail": "1 cycle"
+    },
+    {
+      "check": "provenance_requirement_100pct",
+      "passed": true,
+      "severity": "critical",
+      "detail": "100%"
+    },
+    {
+      "check": "missing_provider_automation_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "PROVENANCE_HOLD"
+    },
+    {
+      "check": "refresh_not_executed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "candidate_not_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "operational_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "metadata_baseline_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "scoring_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "c55df8e39dd78f3edbdee26d0e2d63c333aca639"
+    },
+    {
+      "check": "production_scoring_authorized_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "scoring_promoted_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "full59k_deferred",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DEPRECATED_DEFERRED"
+    }
+  ],
+  "consumer_contract": {
+    "candidate_is_never_operational_by_presence": true,
+    "active_pointer_is_only_authority": true,
+    "on_missing_evidence": "REJECT_CANDIDATE",
+    "on_gate_failure": "KEEP_CURRENT_POINTER",
+    "scoring_state_must_remain": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+  }
+}

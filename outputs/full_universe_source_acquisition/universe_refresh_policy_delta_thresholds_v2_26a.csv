@@ -1,0 +1,9 @@
+scope,metric,pass,warn,block,minimum_absolute_rows
+global,row count delta,<=2%,>2% and <=5%,>5% unless approved market event,n/a
+provider,row count delta,"<=max(25 rows,5%)",">max(25,5%) and <=max(100,15%)",">max(100 rows,15%)",25/100
+identity,duplicate canonical identities,0,n/a,>0 unresolved,0
+schema,missing/extra required columns,0,additive optional column documented,required schema drift,0
+metadata,previously populated audited cells blanked,0,n/a,>0 without approved evidence,0
+provenance,new or changed cells with row-level provenance,100%,n/a,<100%,n/a
+deletions,provider-missing instruments,quarantine one cycle,second consecutive absence,immediate deletion from first absence,1 cycle
+quality,critical validation failures,0,noncritical warnings documented,>0,0
