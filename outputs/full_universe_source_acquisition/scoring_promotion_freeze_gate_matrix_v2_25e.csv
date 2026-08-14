@@ -1,0 +1,6 @@
+gate,result,evidence,promotion_condition_met
+v2.25A readiness,BLOCK_PRODUCTION,4 unmet production criteria; dry run only,false
+v2.25B controlled dry run,COMPLETED_NO_PROMOTION,33498 scored; attractiveness unavailable,false
+v2.25C stability,HOLD,46.0326% changed band; 9022 crossed upward through 70,false
+v2.25D explainability,NOT_INVESTMENT_READY,67.3848% of mean from metadata quality; attractiveness=0,false
+v2.25E final decision,FREEZE,Preserve as DATA_READINESS_ONLY; no operational activation,false

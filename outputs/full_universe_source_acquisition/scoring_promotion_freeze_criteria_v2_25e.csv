@@ -1,0 +1,8 @@
+criterion,required,observed,met,effect
+Deterministic reproducibility,true,33498/33498 exact; max error 0,true,Supports diagnostic retention
+Critical integrity checks,true,0 critical failures across v2.25A-D,true,Supports controlled preservation
+Stable score bands,true,53.9674% retained; 46.0326% migrated,false,Blocks promotion
+Investment-attractiveness signal,true,Unavailable; contribution 0,false,Blocks promotion
+Financial inputs and validation labels,true,Not available / not authorized,false,Blocks promotion
+Adequate discrimination,true,10523 rows share score 44.5,false,Blocks promotion
+Semantic suitability for investment ranking,true,Score measures data readiness,false,Blocks promotion

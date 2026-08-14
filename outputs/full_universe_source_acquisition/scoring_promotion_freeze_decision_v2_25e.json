@@ -1,0 +1,281 @@
+{
+  "version": "v2.25E",
+  "phase": "Scoring Promotion / Freeze Decision",
+  "status": "SCORING_FROZEN_NO_PRODUCTION_PROMOTION",
+  "decision": "FREEZE_CURRENT_FORMULA_AS_DATA_READINESS_DIAGNOSTIC",
+  "decision_basis": "Stable enough to preserve as a deterministic diagnostic; not stable or semantically valid for production investment ranking.",
+  "input_metadata_rows": 43089,
+  "scored_rows": 33498,
+  "excluded_rows": 9591,
+  "input_metadata_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+  "dry_run_scores_sha256": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f",
+  "readiness_gate_status": "PRODUCTION_SCORING_READINESS_GATE_COMPLETED_DRY_RUN_AUTHORIZED_PRODUCTION_BLOCKED",
+  "dry_run_status": "PRODUCTION_SCORING_DRY_RUN_V2_COMPLETED_NO_PROMOTION",
+  "stability_status": "SCORE_STABILITY_AUDIT_COMPLETED_HOLD_FOR_EXPLAINABILITY",
+  "explainability_status": "SCORE_EXPLAINABILITY_COMPLETED_NOT_INVESTMENT_READY",
+  "score_correlation_vs_v2_23d": 0.890572,
+  "same_bucket_pct": 53.9674,
+  "bucket_changed_pct": 46.0326,
+  "mathematically_explainable": true,
+  "investment_attractiveness_available": false,
+  "data_quality_share_of_mean_score_pct": 67.3848,
+  "complete_seven_field_pct": 39.065,
+  "diagnostic_score_retained": true,
+  "diagnostic_score_role": "DATA_READINESS_ONLY",
+  "production_scoring_authorized": false,
+  "scoring_promoted": false,
+  "operational_scoring_pointer_created": false,
+  "promoted_metadata_artifact_modified": false,
+  "active_universe_pointer_modified": false,
+  "historical_score_outputs_modified": false,
+  "future_investment_score_requires_redesign": true,
+  "manual_labels_required": true,
+  "authorized_financial_inputs_required": true,
+  "openai_called": false,
+  "broker_called": false,
+  "full59k": "DEPRECATED_DEFERRED",
+  "critical_failed_checks": 0,
+  "recommended_next_phase": "v2.25F - Operational Scoring Pointer Hardening",
+  "gate_matrix": [
+    {
+      "gate": "v2.25A readiness",
+      "result": "BLOCK_PRODUCTION",
+      "evidence": "4 unmet production criteria; dry run only",
+      "promotion_condition_met": false
+    },
+    {
+      "gate": "v2.25B controlled dry run",
+      "result": "COMPLETED_NO_PROMOTION",
+      "evidence": "33498 scored; attractiveness unavailable",
+      "promotion_condition_met": false
+    },
+    {
+      "gate": "v2.25C stability",
+      "result": "HOLD",
+      "evidence": "46.0326% changed band; 9022 crossed upward through 70",
+      "promotion_condition_met": false
+    },
+    {
+      "gate": "v2.25D explainability",
+      "result": "NOT_INVESTMENT_READY",
+      "evidence": "67.3848% of mean from metadata quality; attractiveness=0",
+      "promotion_condition_met": false
+    },
+    {
+      "gate": "v2.25E final decision",
+      "result": "FREEZE",
+      "evidence": "Preserve as DATA_READINESS_ONLY; no operational activation",
+      "promotion_condition_met": false
+    }
+  ],
+  "promotion_criteria": [
+    {
+      "criterion": "Deterministic reproducibility",
+      "required": true,
+      "observed": "33498/33498 exact; max error 0",
+      "met": true,
+      "effect": "Supports diagnostic retention"
+    },
+    {
+      "criterion": "Critical integrity checks",
+      "required": true,
+      "observed": "0 critical failures across v2.25A-D",
+      "met": true,
+      "effect": "Supports controlled preservation"
+    },
+    {
+      "criterion": "Stable score bands",
+      "required": true,
+      "observed": "53.9674% retained; 46.0326% migrated",
+      "met": false,
+      "effect": "Blocks promotion"
+    },
+    {
+      "criterion": "Investment-attractiveness signal",
+      "required": true,
+      "observed": "Unavailable; contribution 0",
+      "met": false,
+      "effect": "Blocks promotion"
+    },
+    {
+      "criterion": "Financial inputs and validation labels",
+      "required": true,
+      "observed": "Not available / not authorized",
+      "met": false,
+      "effect": "Blocks promotion"
+    },
+    {
+      "criterion": "Adequate discrimination",
+      "required": true,
+      "observed": "10523 rows share score 44.5",
+      "met": false,
+      "effect": "Blocks promotion"
+    },
+    {
+      "criterion": "Semantic suitability for investment ranking",
+      "required": true,
+      "observed": "Score measures data readiness",
+      "met": false,
+      "effect": "Blocks promotion"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_25E_001",
+      "decision": "Do not promote v2.25B scores to production.",
+      "result": "ENFORCED",
+      "effect": "production_scoring_authorized=False; scoring_promoted=False"
+    },
+    {
+      "decision_id": "V2_25E_002",
+      "decision": "Freeze the current formula as a data-readiness diagnostic.",
+      "result": "ENFORCED",
+      "effect": "diagnostic_score_role=DATA_READINESS_ONLY"
+    },
+    {
+      "decision_id": "V2_25E_003",
+      "decision": "Do not create or repoint an operational scoring pointer.",
+      "result": "ENFORCED",
+      "effect": "operational_scoring_pointer_created=False"
+    },
+    {
+      "decision_id": "V2_25E_004",
+      "decision": "Require a separate redesign before any investment score.",
+      "result": "ENFORCED",
+      "effect": "Manual labels and authorized financial inputs required"
+    },
+    {
+      "decision_id": "V2_25E_005",
+      "decision": "Preserve metadata, universe pointer and historical scoring artifacts.",
+      "result": "ENFORCED",
+      "effect": "No input or operational artifact modified"
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_25a_production_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "PRODUCTION_SCORING_READINESS_GATE_COMPLETED_DRY_RUN_AUTHORIZED_PRODUCTION_BLOCKED"
+    },
+    {
+      "check": "v2_25b_no_promotion",
+      "passed": true,
+      "severity": "critical",
+      "detail": "PRODUCTION_SCORING_DRY_RUN_V2_COMPLETED_NO_PROMOTION"
+    },
+    {
+      "check": "v2_25c_hold_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "SCORE_STABILITY_AUDIT_COMPLETED_HOLD_FOR_EXPLAINABILITY"
+    },
+    {
+      "check": "v2_25d_not_investment_ready",
+      "passed": true,
+      "severity": "critical",
+      "detail": "SCORE_EXPLAINABILITY_COMPLETED_NOT_INVESTMENT_READY"
+    },
+    {
+      "check": "all_prior_critical_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.25A=0;v2.25B=0;v2.25C=0;v2.25D=0"
+    },
+    {
+      "check": "freeze_decision_explicit",
+      "passed": true,
+      "severity": "critical",
+      "detail": "FREEZE_CURRENT_FORMULA_AS_DATA_READINESS_DIAGNOSTIC"
+    },
+    {
+      "check": "diagnostic_role_explicit",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DATA_READINESS_ONLY"
+    },
+    {
+      "check": "production_authorization_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "scoring_promoted_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "no_operational_scoring_pointer_created",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "promoted_metadata_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "active_universe_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "dry_run_scores_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f"
+    },
+    {
+      "check": "historical_outputs_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "True"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "full59k_deferred",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DEPRECATED_DEFERRED"
+    }
+  ],
+  "freeze_contract": {
+    "allowed_use": [
+      "metadata QA",
+      "provider QA",
+      "universe readiness diagnostics",
+      "controlled research comparison"
+    ],
+    "forbidden_use": [
+      "investment recommendation",
+      "buy/sell signal",
+      "production ranking",
+      "broker action",
+      "portfolio allocation"
+    ],
+    "activation_rule": "No operational scoring pointer may reference v2.25B as production scoring.",
+    "reopen_conditions": [
+      "authorized financial/fundamental inputs",
+      "validated manual labels or accepted proxy labels",
+      "separate formula redesign",
+      "stability and explainability gates rerun",
+      "explicit promotion decision"
+    ]
+  }
+}

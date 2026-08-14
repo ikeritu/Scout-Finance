@@ -1,0 +1,6 @@
+decision_id,decision,result,effect
+V2_25E_001,Do not promote v2.25B scores to production.,ENFORCED,production_scoring_authorized=False; scoring_promoted=False
+V2_25E_002,Freeze the current formula as a data-readiness diagnostic.,ENFORCED,diagnostic_score_role=DATA_READINESS_ONLY
+V2_25E_003,Do not create or repoint an operational scoring pointer.,ENFORCED,operational_scoring_pointer_created=False
+V2_25E_004,Require a separate redesign before any investment score.,ENFORCED,Manual labels and authorized financial inputs required
+V2_25E_005,"Preserve metadata, universe pointer and historical scoring artifacts.",ENFORCED,No input or operational artifact modified
