@@ -1,0 +1,6 @@
+decision_id,decision,result,effect
+V2_25F_001,Create an authoritative operational scoring pointer with no active artifact.,ENFORCED,active_scoring_artifact=null
+V2_25F_002,Make pointer consumption fail closed.,ENFORCED,Any invalid or inactive state returns SCORING_UNAVAILABLE
+V2_25F_003,Separate the diagnostic artifact from the active scoring slot.,ENFORCED,v2.25B remains DATA_READINESS_ONLY
+V2_25F_004,Reject implicit activation by file discovery.,ENFORCED,Consumers must use and validate the pointer
+V2_25F_005,Preserve universe pointer and all prior artifacts.,ENFORCED,No existing artifact modified

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "pointer_type": "operational_scoring",
+  "version": "v2.25F",
+  "status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED",
+  "active_scoring_available": false,
+  "active_scoring_artifact": null,
+  "active_scoring_sha256": null,
+  "active_formula_version": null,
+  "production_scoring_authorized": false,
+  "scoring_promoted": false,
+  "promotion_status": "FROZEN_NOT_PROMOTED",
+  "freeze_decision": "FREEZE_CURRENT_FORMULA_AS_DATA_READINESS_DIAGNOSTIC",
+  "freeze_decision_artifact": "outputs/full_universe_source_acquisition/scoring_promotion_freeze_decision_v2_25e.json",
+  "freeze_decision_commit": "20972dedddbaac5a25b1ead1558074127e31926a",
+  "diagnostic_artifact": {
+    "path": "outputs/full_universe_source_acquisition/production_scoring_dry_run_v2_scores_v2_25b.csv",
+    "sha256": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f",
+    "rows": 33498,
+    "role": "DATA_READINESS_ONLY",
+    "production_eligible": false
+  },
+  "consumer_contract": {
+    "default_behavior": "FAIL_CLOSED",
+    "allow_ranking": false,
+    "allow_investment_recommendations": false,
+    "allow_buy_sell_signals": false,
+    "allow_broker_actions": false,
+    "allow_portfolio_allocation": false,
+    "required_checks": [
+      "schema_version_supported",
+      "status_is_active",
+      "active_scoring_available_true",
+      "production_scoring_authorized_true",
+      "scoring_promoted_true",
+      "active_scoring_artifact_non_null",
+      "active_scoring_sha256_matches"
+    ],
+    "on_any_failure": "RETURN_SCORING_UNAVAILABLE"
+  },
+  "reopen_requirements": [
+    "authorized financial or fundamental inputs",
+    "validated labels",
+    "separate formula redesign",
+    "stability gate passed",
+    "explainability gate passed",
+    "explicit promotion decision"
+  ],
+  "openai_called": false,
+  "broker_called": false,
+  "full59k": "DEPRECATED_DEFERRED"
+}

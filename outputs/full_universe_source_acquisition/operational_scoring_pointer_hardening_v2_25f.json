@@ -1,0 +1,298 @@
+{
+  "version": "v2.25F",
+  "phase": "Operational Scoring Pointer Hardening",
+  "status": "OPERATIONAL_SCORING_POINTER_HARDENED_FAIL_CLOSED",
+  "pointer_path": "outputs/full_universe_source_acquisition/current_operational_scoring_pointer.json",
+  "pointer_schema_version": "1.0",
+  "pointer_state": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED",
+  "active_scoring_available": false,
+  "active_scoring_artifact": "",
+  "production_scoring_authorized": false,
+  "scoring_promoted": false,
+  "diagnostic_artifact_retained": true,
+  "diagnostic_artifact_role": "DATA_READINESS_ONLY",
+  "diagnostic_rows": 33498,
+  "diagnostic_sha256": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f",
+  "consumer_default_behavior": "FAIL_CLOSED",
+  "consumer_failure_result": "RETURN_SCORING_UNAVAILABLE",
+  "forbidden_action_count": 5,
+  "required_activation_checks": 7,
+  "freeze_decision_commit": "20972dedddbaac5a25b1ead1558074127e31926a",
+  "freeze_decision_preserved": true,
+  "promoted_metadata_artifact_modified": false,
+  "active_universe_pointer_modified": false,
+  "historical_score_outputs_modified": false,
+  "openai_called": false,
+  "broker_called": false,
+  "full59k": "DEPRECATED_DEFERRED",
+  "critical_failed_checks": 0,
+  "recommended_next_phase": "v2.25G - Scoring Closure Report",
+  "pointer_contract": {
+    "schema_version": "1.0",
+    "pointer_type": "operational_scoring",
+    "version": "v2.25F",
+    "status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED",
+    "active_scoring_available": false,
+    "active_scoring_artifact": null,
+    "active_scoring_sha256": null,
+    "active_formula_version": null,
+    "production_scoring_authorized": false,
+    "scoring_promoted": false,
+    "promotion_status": "FROZEN_NOT_PROMOTED",
+    "freeze_decision": "FREEZE_CURRENT_FORMULA_AS_DATA_READINESS_DIAGNOSTIC",
+    "freeze_decision_artifact": "outputs/full_universe_source_acquisition/scoring_promotion_freeze_decision_v2_25e.json",
+    "freeze_decision_commit": "20972dedddbaac5a25b1ead1558074127e31926a",
+    "diagnostic_artifact": {
+      "path": "outputs/full_universe_source_acquisition/production_scoring_dry_run_v2_scores_v2_25b.csv",
+      "sha256": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f",
+      "rows": 33498,
+      "role": "DATA_READINESS_ONLY",
+      "production_eligible": false
+    },
+    "consumer_contract": {
+      "default_behavior": "FAIL_CLOSED",
+      "allow_ranking": false,
+      "allow_investment_recommendations": false,
+      "allow_buy_sell_signals": false,
+      "allow_broker_actions": false,
+      "allow_portfolio_allocation": false,
+      "required_checks": [
+        "schema_version_supported",
+        "status_is_active",
+        "active_scoring_available_true",
+        "production_scoring_authorized_true",
+        "scoring_promoted_true",
+        "active_scoring_artifact_non_null",
+        "active_scoring_sha256_matches"
+      ],
+      "on_any_failure": "RETURN_SCORING_UNAVAILABLE"
+    },
+    "reopen_requirements": [
+      "authorized financial or fundamental inputs",
+      "validated labels",
+      "separate formula redesign",
+      "stability gate passed",
+      "explainability gate passed",
+      "explicit promotion decision"
+    ],
+    "openai_called": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "consumer_rules": [
+    {
+      "rule_id": "PTR_001",
+      "condition": "pointer missing or unreadable",
+      "result": "RETURN_SCORING_UNAVAILABLE",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "PTR_002",
+      "condition": "unsupported schema_version",
+      "result": "RETURN_SCORING_UNAVAILABLE",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "PTR_003",
+      "condition": "status != ACTIVE_PRODUCTION_SCORING",
+      "result": "RETURN_SCORING_UNAVAILABLE",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "PTR_004",
+      "condition": "active_scoring_available != true",
+      "result": "RETURN_SCORING_UNAVAILABLE",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "PTR_005",
+      "condition": "production_scoring_authorized != true",
+      "result": "RETURN_SCORING_UNAVAILABLE",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "PTR_006",
+      "condition": "scoring_promoted != true",
+      "result": "RETURN_SCORING_UNAVAILABLE",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "PTR_007",
+      "condition": "active_scoring_artifact is null or empty",
+      "result": "RETURN_SCORING_UNAVAILABLE",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "PTR_008",
+      "condition": "active_scoring_sha256 missing or mismatch",
+      "result": "RETURN_SCORING_UNAVAILABLE",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "PTR_009",
+      "condition": "diagnostic artifact requested as production",
+      "result": "REJECT_DATA_READINESS_ONLY",
+      "severity": "critical"
+    },
+    {
+      "rule_id": "PTR_010",
+      "condition": "all future activation checks pass",
+      "result": "ALLOW_ONLY_AFTER_EXPLICIT_PROMOTION_COMMIT",
+      "severity": "critical"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_25F_001",
+      "decision": "Create an authoritative operational scoring pointer with no active artifact.",
+      "result": "ENFORCED",
+      "effect": "active_scoring_artifact=null"
+    },
+    {
+      "decision_id": "V2_25F_002",
+      "decision": "Make pointer consumption fail closed.",
+      "result": "ENFORCED",
+      "effect": "Any invalid or inactive state returns SCORING_UNAVAILABLE"
+    },
+    {
+      "decision_id": "V2_25F_003",
+      "decision": "Separate the diagnostic artifact from the active scoring slot.",
+      "result": "ENFORCED",
+      "effect": "v2.25B remains DATA_READINESS_ONLY"
+    },
+    {
+      "decision_id": "V2_25F_004",
+      "decision": "Reject implicit activation by file discovery.",
+      "result": "ENFORCED",
+      "effect": "Consumers must use and validate the pointer"
+    },
+    {
+      "decision_id": "V2_25F_005",
+      "decision": "Preserve universe pointer and all prior artifacts.",
+      "result": "ENFORCED",
+      "effect": "No existing artifact modified"
+    }
+  ],
+  "checks": [
+    {
+      "check": "freeze_decision_commit_pinned",
+      "passed": true,
+      "severity": "critical",
+      "detail": "20972dedddbaac5a25b1ead1558074127e31926a"
+    },
+    {
+      "check": "pointer_schema_version_explicit",
+      "passed": true,
+      "severity": "critical",
+      "detail": "1.0"
+    },
+    {
+      "check": "pointer_status_fail_closed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+    },
+    {
+      "check": "active_scoring_available_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "active_scoring_artifact_null",
+      "passed": true,
+      "severity": "critical",
+      "detail": "null"
+    },
+    {
+      "check": "active_scoring_sha_null",
+      "passed": true,
+      "severity": "critical",
+      "detail": "null"
+    },
+    {
+      "check": "production_authorization_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "scoring_promoted_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "diagnostic_role_data_readiness_only",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DATA_READINESS_ONLY"
+    },
+    {
+      "check": "diagnostic_production_eligible_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "diagnostic_sha_pinned",
+      "passed": true,
+      "severity": "critical",
+      "detail": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f"
+    },
+    {
+      "check": "consumer_contract_fail_closed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "FAIL_CLOSED"
+    },
+    {
+      "check": "all_failure_paths_return_unavailable",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9 guarded failure paths"
+    },
+    {
+      "check": "no_implicit_file_discovery_activation",
+      "passed": true,
+      "severity": "critical",
+      "detail": "pointer validation required"
+    },
+    {
+      "check": "promoted_metadata_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "active_universe_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "historical_outputs_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "True"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "full59k_deferred",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DEPRECATED_DEFERRED"
+    }
+  ]
+}

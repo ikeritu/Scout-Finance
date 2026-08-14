@@ -1,0 +1,11 @@
+rule_id,condition,result,severity
+PTR_001,pointer missing or unreadable,RETURN_SCORING_UNAVAILABLE,critical
+PTR_002,unsupported schema_version,RETURN_SCORING_UNAVAILABLE,critical
+PTR_003,status != ACTIVE_PRODUCTION_SCORING,RETURN_SCORING_UNAVAILABLE,critical
+PTR_004,active_scoring_available != true,RETURN_SCORING_UNAVAILABLE,critical
+PTR_005,production_scoring_authorized != true,RETURN_SCORING_UNAVAILABLE,critical
+PTR_006,scoring_promoted != true,RETURN_SCORING_UNAVAILABLE,critical
+PTR_007,active_scoring_artifact is null or empty,RETURN_SCORING_UNAVAILABLE,critical
+PTR_008,active_scoring_sha256 missing or mismatch,RETURN_SCORING_UNAVAILABLE,critical
+PTR_009,diagnostic artifact requested as production,REJECT_DATA_READINESS_ONLY,critical
+PTR_010,all future activation checks pass,ALLOW_ONLY_AFTER_EXPLICIT_PROMOTION_COMMIT,critical
