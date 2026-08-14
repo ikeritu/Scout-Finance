@@ -1,0 +1,12 @@
+path,packs,description,required
+"README.md","All","Human description and limitations","yes"
+"manifest.json","All","Provenance and hashes","yes"
+"data_dictionary.csv","All","Columns and null semantics","yes"
+"catalog.csv","P01/P02/P05","Identity plus metadata","conditional"
+"segment_summary.csv","P03/P05","Counts and coverage","conditional"
+"watchlist_template.csv","P04","Import-ready identities","conditional"
+"diagnostic_quality.csv","P06","Data-readiness components","conditional"
+"diagnostic_coverage.csv","P06","Coverage ledger","conditional"
+"ranking.csv","P07","Production score rows","blocked"
+"ranking.xlsx","P07","Presentation workbook","blocked"
+"comparison.json","P08","Selected-asset comparison","conditional"

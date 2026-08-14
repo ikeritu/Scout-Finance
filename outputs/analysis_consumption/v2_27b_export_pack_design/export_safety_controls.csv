@@ -1,0 +1,11 @@
+control_id,risk,control,status
+"S01","CSV formula injection","Prefix apostrophe for text beginning =, +, -, @","required"
+"S02","UTF-8 interoperability","UTF-8 header; BOM optional by client","required"
+"S03","Delimiter/newlines","RFC 4180 quoting and CRLF","required"
+"S04","Null semantics","Empty cell plus dictionary declaration","required"
+"S05","Path safety","Relative allowlisted ZIP names; reject traversal","required"
+"S06","ZIP integrity","SHA-256 and byte size per member","required"
+"S07","PII/secrets","Approved instrument fields only","required"
+"S08","Size controls","Stream rows; deterministic columns","required"
+"S09","Scoring fail-closed","Omit score/rank unless pointer checks pass","required"
+"S10","Stale export","Disclose timestamp and source/formula versions","required"

@@ -1,0 +1,63 @@
+{
+  "export_schema_version": "1.0",
+  "export_id": "catalog_full_20260814T120000Z_9d33b0e4",
+  "pack_id": "P01",
+  "consumer_state": "CATALOG_AVAILABLE",
+  "generated_at_utc": "2026-08-14T12:00:00Z",
+  "source_pointer_path": "outputs/full_universe_source_acquisition/current_operational_universe_pointer.json",
+  "source_pointer_sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+  "source_dataset_path": "outputs/full_universe_source_acquisition/expanded_universe_v2_21h_activated_operational_reference.csv",
+  "source_dataset_sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+  "source_rows": 43089,
+  "export_rows": 43089,
+  "filters": {},
+  "sort": [
+    "name:asc",
+    "identity_key:asc"
+  ],
+  "columns": [
+    "identity_key",
+    "name",
+    "ticker",
+    "exchange",
+    "mic",
+    "country",
+    "currency",
+    "asset_type",
+    "source_provider",
+    "metadata_quality_status"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 0,
+      "rows": null,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 0,
+      "rows": null,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "path": "data_dictionary.csv",
+      "bytes": 0,
+      "rows": 10,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "path": "catalog.csv",
+      "bytes": 0,
+      "rows": 43089,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "scoring_pointer_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED",
+  "scoring_artifact": null,
+  "formula_version": null,
+  "safety_label": "Universe explorer export — no production score",
+  "warnings": [
+    "Score, rank and investment signals are intentionally omitted."
+  ]
+}

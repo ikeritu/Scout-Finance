@@ -1,0 +1,13 @@
+criterion_id,criterion,status
+"A01","README, manifest and dictionary in every bundle","PASS_BY_DESIGN"
+"A02","Catalog available while scoring inactive","PASS_BY_DESIGN"
+"A03","Score/rank absent outside production state","PASS_BY_DESIGN"
+"A04","Diagnostic pack not selected by default","PASS_BY_DESIGN"
+"A05","Every member records SHA-256 and bytes","PASS_BY_DESIGN"
+"A06","Filters and sort reproducible","PASS_BY_DESIGN"
+"A07","Unknown metadata retained unless explicitly filtered","PASS_BY_DESIGN"
+"A08","CSV formula injection neutralized","PASS_BY_DESIGN"
+"A09","ZIP traversal rejected","PASS_BY_DESIGN"
+"A10","Production ranking pack generation","BLOCKED_BY_SCORING_POINTER"
+"A11","XLSX visual QA","DEFERRED_TO_IMPLEMENTATION"
+"A12","Watchlist template matches v2.27C identity contract","HANDOFF_REQUIRED"

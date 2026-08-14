@@ -1,0 +1,423 @@
+{
+  "phase": "v2.27B",
+  "title": "Export Pack Design",
+  "status": "EXPORT_PACK_CONTRACT_APPROVED_CATALOG_EXPORTS_AUTHORIZED_RANKING_EXPORTS_BLOCKED",
+  "executed_at_utc": "2026-08-14",
+  "source_contract": {
+    "operational_universe_rows": 43089,
+    "operational_universe_pointer_sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+    "promoted_metadata_rows": 43089,
+    "promoted_metadata_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+    "scoring_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED",
+    "allow_ranking": false
+  },
+  "package_catalog": [
+    {
+      "id": "P01",
+      "name": "universe_catalog_full",
+      "state": "CATALOG_AVAILABLE",
+      "format": "CSV UTF-8",
+      "rows": "43089 max",
+      "contents": "All active identities plus approved metadata",
+      "status": "AUTHORIZED",
+      "guard": "No score/rank columns"
+    },
+    {
+      "id": "P02",
+      "name": "universe_catalog_filtered",
+      "state": "CATALOG_AVAILABLE",
+      "format": "CSV UTF-8",
+      "rows": "filtered result",
+      "contents": "Applied filters plus approved metadata",
+      "status": "AUTHORIZED",
+      "guard": "Manifest records filters"
+    },
+    {
+      "id": "P03",
+      "name": "segment_summary",
+      "state": "CATALOG_AVAILABLE",
+      "format": "CSV UTF-8",
+      "rows": "aggregated",
+      "contents": "Counts/coverage by segment",
+      "status": "AUTHORIZED",
+      "guard": "No best/worst semantics"
+    },
+    {
+      "id": "P04",
+      "name": "watchlist_template",
+      "state": "CATALOG_AVAILABLE",
+      "format": "CSV UTF-8",
+      "rows": "selected identities",
+      "contents": "Stable identity and user note fields",
+      "status": "AUTHORIZED",
+      "guard": "Score fields absent"
+    },
+    {
+      "id": "P05",
+      "name": "analyst_catalog_bundle",
+      "state": "CATALOG_AVAILABLE",
+      "format": "ZIP",
+      "rows": "bundle",
+      "contents": "README, manifest, catalog, segments, dictionary",
+      "status": "AUTHORIZED",
+      "guard": "Hashes required"
+    },
+    {
+      "id": "P06",
+      "name": "diagnostic_quality_pack",
+      "state": "DIAGNOSTIC_LOCKED",
+      "format": "ZIP/CSV",
+      "rows": "33498 rows",
+      "contents": "Quality components and coverage",
+      "status": "GATED",
+      "guard": "Internal mode; not investment analysis"
+    },
+    {
+      "id": "P07",
+      "name": "production_ranking_pack",
+      "state": "PRODUCTION_RANKING",
+      "format": "ZIP/CSV/XLSX",
+      "rows": "active scored set",
+      "contents": "Rank, score, components, confidence",
+      "status": "BLOCKED",
+      "guard": "All scoring pointer checks required"
+    },
+    {
+      "id": "P08",
+      "name": "asset_comparison_pack",
+      "state": "CATALOG_AVAILABLE or PRODUCTION_RANKING",
+      "format": "CSV/JSON",
+      "rows": "2-5 assets",
+      "contents": "Metadata always; score conditionally",
+      "status": "PLANNED",
+      "guard": "State recorded"
+    }
+  ],
+  "required_manifest_fields": [
+    {
+      "field": "export_schema_version",
+      "type": "string",
+      "required": "yes",
+      "description": "Contract version"
+    },
+    {
+      "field": "export_id",
+      "type": "string",
+      "required": "yes",
+      "description": "Unique deterministic identifier"
+    },
+    {
+      "field": "pack_id",
+      "type": "string",
+      "required": "yes",
+      "description": "P01-P08"
+    },
+    {
+      "field": "consumer_state",
+      "type": "enum",
+      "required": "yes",
+      "description": "v2.27A state"
+    },
+    {
+      "field": "generated_at_utc",
+      "type": "datetime",
+      "required": "yes",
+      "description": "Export timestamp"
+    },
+    {
+      "field": "source_pointer_path",
+      "type": "string",
+      "required": "yes",
+      "description": "Operational universe pointer"
+    },
+    {
+      "field": "source_pointer_sha256",
+      "type": "sha256",
+      "required": "yes",
+      "description": "Pointer content pin"
+    },
+    {
+      "field": "source_dataset_path",
+      "type": "string",
+      "required": "yes",
+      "description": "Resolved dataset"
+    },
+    {
+      "field": "source_dataset_sha256",
+      "type": "sha256",
+      "required": "yes",
+      "description": "Dataset pin"
+    },
+    {
+      "field": "source_rows",
+      "type": "integer",
+      "required": "yes",
+      "description": "Rows before filters"
+    },
+    {
+      "field": "export_rows",
+      "type": "integer",
+      "required": "yes",
+      "description": "Rows written"
+    },
+    {
+      "field": "filters",
+      "type": "object",
+      "required": "yes",
+      "description": "Normalized filters"
+    },
+    {
+      "field": "sort",
+      "type": "array",
+      "required": "yes",
+      "description": "Ordered sort contract"
+    },
+    {
+      "field": "columns",
+      "type": "array",
+      "required": "yes",
+      "description": "Ordered columns"
+    },
+    {
+      "field": "files",
+      "type": "array",
+      "required": "yes",
+      "description": "Member path, bytes, rows and SHA-256"
+    },
+    {
+      "field": "scoring_pointer_status",
+      "type": "string",
+      "required": "yes",
+      "description": "Scoring state"
+    },
+    {
+      "field": "scoring_artifact",
+      "type": "string/null",
+      "required": "yes",
+      "description": "Null outside production"
+    },
+    {
+      "field": "formula_version",
+      "type": "string/null",
+      "required": "yes",
+      "description": "Required with score"
+    },
+    {
+      "field": "safety_label",
+      "type": "string",
+      "required": "yes",
+      "description": "Use constraint"
+    },
+    {
+      "field": "warnings",
+      "type": "array",
+      "required": "yes",
+      "description": "Coverage disclosures"
+    }
+  ],
+  "standard_bundle_layout": [
+    {
+      "path": "README.md",
+      "packs": "All",
+      "description": "Human description and limitations",
+      "required": "yes"
+    },
+    {
+      "path": "manifest.json",
+      "packs": "All",
+      "description": "Provenance and hashes",
+      "required": "yes"
+    },
+    {
+      "path": "data_dictionary.csv",
+      "packs": "All",
+      "description": "Columns and null semantics",
+      "required": "yes"
+    },
+    {
+      "path": "catalog.csv",
+      "packs": "P01/P02/P05",
+      "description": "Identity plus metadata",
+      "required": "conditional"
+    },
+    {
+      "path": "segment_summary.csv",
+      "packs": "P03/P05",
+      "description": "Counts and coverage",
+      "required": "conditional"
+    },
+    {
+      "path": "watchlist_template.csv",
+      "packs": "P04",
+      "description": "Import-ready identities",
+      "required": "conditional"
+    },
+    {
+      "path": "diagnostic_quality.csv",
+      "packs": "P06",
+      "description": "Data-readiness components",
+      "required": "conditional"
+    },
+    {
+      "path": "diagnostic_coverage.csv",
+      "packs": "P06",
+      "description": "Coverage ledger",
+      "required": "conditional"
+    },
+    {
+      "path": "ranking.csv",
+      "packs": "P07",
+      "description": "Production score rows",
+      "required": "blocked"
+    },
+    {
+      "path": "ranking.xlsx",
+      "packs": "P07",
+      "description": "Presentation workbook",
+      "required": "blocked"
+    },
+    {
+      "path": "comparison.json",
+      "packs": "P08",
+      "description": "Selected-asset comparison",
+      "required": "conditional"
+    }
+  ],
+  "safety_controls": [
+    {
+      "id": "S01",
+      "risk": "CSV formula injection",
+      "control": "Prefix apostrophe for text beginning =, +, -, @",
+      "status": "required"
+    },
+    {
+      "id": "S02",
+      "risk": "UTF-8 interoperability",
+      "control": "UTF-8 header; BOM optional by client",
+      "status": "required"
+    },
+    {
+      "id": "S03",
+      "risk": "Delimiter/newlines",
+      "control": "RFC 4180 quoting and CRLF",
+      "status": "required"
+    },
+    {
+      "id": "S04",
+      "risk": "Null semantics",
+      "control": "Empty cell plus dictionary declaration",
+      "status": "required"
+    },
+    {
+      "id": "S05",
+      "risk": "Path safety",
+      "control": "Relative allowlisted ZIP names; reject traversal",
+      "status": "required"
+    },
+    {
+      "id": "S06",
+      "risk": "ZIP integrity",
+      "control": "SHA-256 and byte size per member",
+      "status": "required"
+    },
+    {
+      "id": "S07",
+      "risk": "PII/secrets",
+      "control": "Approved instrument fields only",
+      "status": "required"
+    },
+    {
+      "id": "S08",
+      "risk": "Size controls",
+      "control": "Stream rows; deterministic columns",
+      "status": "required"
+    },
+    {
+      "id": "S09",
+      "risk": "Scoring fail-closed",
+      "control": "Omit score/rank unless pointer checks pass",
+      "status": "required"
+    },
+    {
+      "id": "S10",
+      "risk": "Stale export",
+      "control": "Disclose timestamp and source/formula versions",
+      "status": "required"
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "A01",
+      "criterion": "README, manifest and dictionary in every bundle",
+      "status": "PASS_BY_DESIGN"
+    },
+    {
+      "id": "A02",
+      "criterion": "Catalog available while scoring inactive",
+      "status": "PASS_BY_DESIGN"
+    },
+    {
+      "id": "A03",
+      "criterion": "Score/rank absent outside production state",
+      "status": "PASS_BY_DESIGN"
+    },
+    {
+      "id": "A04",
+      "criterion": "Diagnostic pack not selected by default",
+      "status": "PASS_BY_DESIGN"
+    },
+    {
+      "id": "A05",
+      "criterion": "Every member records SHA-256 and bytes",
+      "status": "PASS_BY_DESIGN"
+    },
+    {
+      "id": "A06",
+      "criterion": "Filters and sort reproducible",
+      "status": "PASS_BY_DESIGN"
+    },
+    {
+      "id": "A07",
+      "criterion": "Unknown metadata retained unless explicitly filtered",
+      "status": "PASS_BY_DESIGN"
+    },
+    {
+      "id": "A08",
+      "criterion": "CSV formula injection neutralized",
+      "status": "PASS_BY_DESIGN"
+    },
+    {
+      "id": "A09",
+      "criterion": "ZIP traversal rejected",
+      "status": "PASS_BY_DESIGN"
+    },
+    {
+      "id": "A10",
+      "criterion": "Production ranking pack generation",
+      "status": "BLOCKED_BY_SCORING_POINTER"
+    },
+    {
+      "id": "A11",
+      "criterion": "XLSX visual QA",
+      "status": "DEFERRED_TO_IMPLEMENTATION"
+    },
+    {
+      "id": "A12",
+      "criterion": "Watchlist template matches v2.27C identity contract",
+      "status": "HANDOFF_REQUIRED"
+    }
+  ],
+  "naming": {
+    "pattern": "scout_finance_{pack_name}_{state}_{YYYYMMDDTHHMMSSZ}_{short_source_sha}.zip",
+    "member_pattern": "{logical_name}_v{schema_version}.{extension}",
+    "collision_policy": "never overwrite; append deterministic export_id"
+  },
+  "decisions": {
+    "catalog_exports_authorized": true,
+    "diagnostic_export_default": false,
+    "production_ranking_exports_authorized": false,
+    "score_columns_outside_production": false,
+    "dataset_or_pointer_modified": false
+  },
+  "next_phase": "v2.27C - Watchlist Builder"
+}

@@ -1,0 +1,9 @@
+pack_id,name,state,format,row_scope,contents,status,guard
+"P01","universe_catalog_full","CATALOG_AVAILABLE","CSV UTF-8","43089 max","All active identities plus approved metadata","AUTHORIZED","No score/rank columns"
+"P02","universe_catalog_filtered","CATALOG_AVAILABLE","CSV UTF-8","filtered result","Applied filters plus approved metadata","AUTHORIZED","Manifest records filters"
+"P03","segment_summary","CATALOG_AVAILABLE","CSV UTF-8","aggregated","Counts/coverage by segment","AUTHORIZED","No best/worst semantics"
+"P04","watchlist_template","CATALOG_AVAILABLE","CSV UTF-8","selected identities","Stable identity and user note fields","AUTHORIZED","Score fields absent"
+"P05","analyst_catalog_bundle","CATALOG_AVAILABLE","ZIP","bundle","README, manifest, catalog, segments, dictionary","AUTHORIZED","Hashes required"
+"P06","diagnostic_quality_pack","DIAGNOSTIC_LOCKED","ZIP/CSV","33498 rows","Quality components and coverage","GATED","Internal mode; not investment analysis"
+"P07","production_ranking_pack","PRODUCTION_RANKING","ZIP/CSV/XLSX","active scored set","Rank, score, components, confidence","BLOCKED","All scoring pointer checks required"
+"P08","asset_comparison_pack","CATALOG_AVAILABLE or PRODUCTION_RANKING","CSV/JSON","2-5 assets","Metadata always; score conditionally","PLANNED","State recorded"

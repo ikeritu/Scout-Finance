@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scout Finance export manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "export_schema_version",
+    "export_id",
+    "pack_id",
+    "consumer_state",
+    "generated_at_utc",
+    "source_pointer_path",
+    "source_pointer_sha256",
+    "source_dataset_path",
+    "source_dataset_sha256",
+    "source_rows",
+    "export_rows",
+    "filters",
+    "sort",
+    "columns",
+    "files",
+    "scoring_pointer_status",
+    "scoring_artifact",
+    "formula_version",
+    "safety_label",
+    "warnings"
+  ],
+  "properties": {
+    "export_schema_version": {
+      "type": "string"
+    },
+    "export_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pack_id": {
+      "type": "string",
+      "pattern": "^P0[1-8]$"
+    },
+    "consumer_state": {
+      "enum": [
+        "CATALOG_AVAILABLE",
+        "DIAGNOSTIC_LOCKED",
+        "PRODUCTION_RANKING",
+        "SCORING_UNAVAILABLE"
+      ]
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_pointer_path": {
+      "type": "string"
+    },
+    "source_pointer_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_dataset_path": {
+      "type": "string"
+    },
+    "source_dataset_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_rows": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "export_rows": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "filters": {
+      "type": "object"
+    },
+    "sort": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "columns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "bytes",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rows": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "scoring_pointer_status": {
+      "type": "string"
+    },
+    "scoring_artifact": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "formula_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "safety_label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
