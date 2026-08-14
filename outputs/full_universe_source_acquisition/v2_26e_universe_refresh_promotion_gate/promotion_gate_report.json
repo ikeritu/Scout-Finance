@@ -1,0 +1,146 @@
+{
+  "phase": "v2.26E",
+  "title": "Universe Refresh Promotion Gate",
+  "status": "UNIVERSE_REFRESH_PROMOTION_HELD_NO_ELIGIBLE_CANDIDATE_POINTER_UNCHANGED",
+  "decision": "HOLD",
+  "promotion_authorized": false,
+  "promotion_executed": false,
+  "executed_at_utc": "2026-08-14",
+  "current_pointer_before": {
+    "path": "outputs/full_universe_source_acquisition/current_operational_universe_pointer.json",
+    "git_blob": "d7f35a9b5b8a1446b7165783afc319ea8910f360",
+    "content_sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+    "dataset_rows": 43089,
+    "dataset_sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+  },
+  "current_pointer_after": {
+    "path": "outputs/full_universe_source_acquisition/current_operational_universe_pointer.json",
+    "git_blob": "d7f35a9b5b8a1446b7165783afc319ea8910f360",
+    "content_sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+    "dataset_rows": 43089,
+    "dataset_sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+  },
+  "evidence": {
+    "refresh_policy": "v2.26A completed",
+    "provider_refresh_dry_run": {
+      "providers_replayed": 13,
+      "providers_expected": 14,
+      "rows_replayed": 41076,
+      "rows_expected": 43089,
+      "missing_rows": 2013,
+      "result": "HOLD_INCOMPLETE_PROVIDER_REPLAY"
+    },
+    "delta_detection": {
+      "operational_rows": 43089,
+      "unique_identities": 43089,
+      "real_added": 0,
+      "real_removed": 0,
+      "real_changed": 0,
+      "controlled_fixtures_passed": 6,
+      "controlled_fixtures_total": 6,
+      "result": "NO_REAL_NONZERO_DELTA_OBSERVED"
+    },
+    "rollback_validation": {
+      "generations_available": 3,
+      "generations_expected": 3,
+      "simulations_passed": 6,
+      "simulations_total": 6,
+      "result": "PASS"
+    }
+  },
+  "blocking_reasons": [
+    "Provider replay coverage is incomplete: 13/14 providers and 2,013 rows absent.",
+    "No independently materialized refresh candidate exists.",
+    "No real nonzero delta has been observed and classified."
+  ],
+  "gates": [
+    {
+      "id": "G01",
+      "name": "Refresh policy defined",
+      "result": "PASS",
+      "evidence": "v2.26A"
+    },
+    {
+      "id": "G02",
+      "name": "Provider replay completed",
+      "result": "HOLD",
+      "evidence": "13/14 providers; 41076/43089 rows"
+    },
+    {
+      "id": "G03",
+      "name": "Provider coverage complete",
+      "result": "FAIL",
+      "evidence": "1 provider and 2013 rows missing"
+    },
+    {
+      "id": "G04",
+      "name": "Candidate artifact exists",
+      "result": "FAIL",
+      "evidence": "No independently materialized refresh candidate"
+    },
+    {
+      "id": "G05",
+      "name": "Candidate identity uniqueness",
+      "result": "NOT_RUN",
+      "evidence": "No candidate artifact"
+    },
+    {
+      "id": "G06",
+      "name": "Real delta detected and classified",
+      "result": "HOLD",
+      "evidence": "0 real nonzero delta; only controlled fixtures"
+    },
+    {
+      "id": "G07",
+      "name": "Candidate row count within quality bounds",
+      "result": "NOT_RUN",
+      "evidence": "No candidate artifact"
+    },
+    {
+      "id": "G08",
+      "name": "Candidate SHA-256 independently verified",
+      "result": "NOT_RUN",
+      "evidence": "No candidate artifact"
+    },
+    {
+      "id": "G09",
+      "name": "Metadata quality non-regression",
+      "result": "NOT_RUN",
+      "evidence": "No candidate artifact"
+    },
+    {
+      "id": "G10",
+      "name": "Rollback readiness",
+      "result": "PASS",
+      "evidence": "v2.26D: 3/3 generations; 6/6 simulations"
+    },
+    {
+      "id": "G11",
+      "name": "Pointer update is fast-forward and atomic",
+      "result": "READY",
+      "evidence": "Control available; write not authorized"
+    },
+    {
+      "id": "G12",
+      "name": "Scoring isolation maintained",
+      "result": "PASS",
+      "evidence": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+    }
+  ],
+  "reentry_requirements": [
+    "Replay all 14/14 providers or formally waive a provider with documented row-level disposition.",
+    "Materialize an immutable candidate artifact with row count and SHA-256.",
+    "Run delta detection against the current 43,089-row operational universe.",
+    "Pass identity uniqueness, quality bounds, metadata non-regression, and rollback checks.",
+    "Re-run v2.26E and require every blocking gate to PASS before pointer mutation."
+  ],
+  "controls": {
+    "operational_pointer_modified": false,
+    "dataset_overwritten": false,
+    "force_push": false,
+    "history_rewritten": false,
+    "scoring_authorized": false,
+    "scoring_promoted": false
+  },
+  "next_phase": "v2.26F - Scheduled Maintenance Plan"
+}

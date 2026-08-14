@@ -1,0 +1,13 @@
+gate_id,gate,result,evidence,blocking
+"G01","Refresh policy defined","PASS","v2.26A","false"
+"G02","Provider replay completed","HOLD","13/14 providers; 41076/43089 rows","true"
+"G03","Provider coverage complete","FAIL","1 provider and 2013 rows missing","true"
+"G04","Candidate artifact exists","FAIL","No independently materialized refresh candidate","true"
+"G05","Candidate identity uniqueness","NOT_RUN","No candidate artifact","false"
+"G06","Real delta detected and classified","HOLD","0 real nonzero delta; only controlled fixtures","true"
+"G07","Candidate row count within quality bounds","NOT_RUN","No candidate artifact","false"
+"G08","Candidate SHA-256 independently verified","NOT_RUN","No candidate artifact","false"
+"G09","Metadata quality non-regression","NOT_RUN","No candidate artifact","false"
+"G10","Rollback readiness","PASS","v2.26D: 3/3 generations; 6/6 simulations","false"
+"G11","Pointer update is fast-forward and atomic","READY","Control available; write not authorized","false"
+"G12","Scoring isolation maintained","PASS","NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED","false"

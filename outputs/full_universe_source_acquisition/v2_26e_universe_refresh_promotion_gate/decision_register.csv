@@ -1,0 +1,6 @@
+decision_id,decision,status,rationale
+D-01,Promote refresh candidate,NOT_AUTHORIZED,No eligible immutable candidate exists
+D-02,Modify operational universe pointer,NOT_AUTHORIZED,Blocking gates G02-G06 are not all PASS
+D-03,Retain current 43089-row universe,APPROVED,Current pointer and rollback chain remain valid
+D-04,Proceed to scheduled maintenance planning,APPROVED,Maintenance design can close the refresh block without promotion
+D-05,Activate scoring,NOT_AUTHORIZED,Scoring remains a separate fail-closed control

@@ -1,0 +1,8 @@
+event_id,action,result,pointer_write,evidence
+E01,Read current operational pointer,PASS,false,43089 rows and pointer SHA recorded
+E02,Evaluate provider replay,HOLD,false,13/14 providers; 2013 rows missing
+E03,Resolve immutable candidate,FAIL_CLOSED,false,No candidate artifact
+E04,Evaluate real delta,HOLD,false,Zero real nonzero delta
+E05,Verify rollback readiness,PASS,false,3/3 generations and 6/6 simulations
+E06,Authorize promotion,NOT_AUTHORIZED,false,Blocking gates remain
+E07,Retain current pointer,PASS,false,Pointer byte-identical
