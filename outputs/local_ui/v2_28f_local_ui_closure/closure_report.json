@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "phase": "v2.28F",
+  "title": "Local UI Closure",
+  "status": "CLOSED_STABLE_POINTER_SAFE_FAIL_CLOSED",
+  "executed_at_utc": "2026-08-14",
+  "roadmap": {
+    "v2.28A": "COMPLETE",
+    "v2.28B": "COMPLETE",
+    "v2.28C": "COMPLETE",
+    "v2.28D": "COMPLETE",
+    "v2.28E": "COMPLETE",
+    "v2.28F": "COMPLETE"
+  },
+  "stable_entrypoint": "app_v2_28.py",
+  "windows_launcher": "run_local_ui_v2_28.bat",
+  "user_guide": "LOCAL_UI_V2_28.md",
+  "operational_state": {
+    "universe_rows": 43089,
+    "universe_pointer_modified": false,
+    "scoring_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED",
+    "allow_ranking": false,
+    "production_scoring_authorized": false,
+    "legacy_app_modified": false
+  },
+  "capabilities": ["catalog", "asset_detail", "watchlists", "safe_csv", "confirmed_data_readiness_diagnostic", "markdown_html_reports", "provenance_manifests", "responsive_accessible_ui"],
+  "external_calls_on_startup": 0,
+  "broker_actions": false,
+  "qa": "PASS: inventory/launcher/guide/private-watchlists/v2.28C-D-E-regression/stable-freeze"
+}

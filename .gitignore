@@ -23,6 +23,10 @@ outputs/exports/*
 data/cache/demo/*
 data/cache/real/*
 
+# Local v2.28 user data (never commit personal watchlists)
+data/watchlists/*.json
+data/watchlists/*.json.bak
+
 # Keep folders
 !outputs/logs/.gitkeep
 !outputs/exports/.gitkeep
