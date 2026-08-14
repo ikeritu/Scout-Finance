@@ -1,0 +1,5 @@
+limitation_id,severity,limitation,effect,mitigation
+LIM_001,warning,No live provider endpoint was called.,Freshness and endpoint availability are not demonstrated.,v2.26F schedule implementation must execute live fetches before any future promotion.
+LIM_002,info,Candidate reuses the immutable v2.24F artifact by reference.,Expected delta is zero.,v2.26C must validate zero-delta handling plus controlled fixtures.
+LIM_003,info,__MISSING_PROVIDER__ remains on provenance hold.,2013 rows are excluded from automated provider replay.,Require deterministic provenance restoration before automation.
+LIM_004,critical_guardrail,Replay is not promotion evidence.,promotion_eligible=False.,Only v2.26E may decide promotion after live/validated evidence and rollback testing.

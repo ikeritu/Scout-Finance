@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "candidate_name": "provider_refresh_dry_run_replay_v2_26b",
+  "status": "LOGICAL_REPLAY_CANDIDATE_NOT_OPERATIONAL",
+  "candidate_materialization": "REFERENCE_EXISTING_IMMUTABLE_ARTIFACT",
+  "candidate_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+  "candidate_rows": 43089,
+  "candidate_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+  "comparison_baseline": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+  "comparison_rows": 43089,
+  "comparison_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+  "replay_provider_buckets": 13,
+  "replay_rows": 41076,
+  "held_provider_buckets": 1,
+  "held_rows": 2013,
+  "live_fetch_attempted": false,
+  "live_freshness_verified": false,
+  "delta_expected": "ZERO_FOR_REPLAY",
+  "promotion_eligible": false,
+  "operational_pointer_update_allowed": false,
+  "purpose": "Validate refresh orchestration and policy gates before implementing live scheduled fetches.",
+  "next_consumer": "v2.26C - Delta Detection System"
+}

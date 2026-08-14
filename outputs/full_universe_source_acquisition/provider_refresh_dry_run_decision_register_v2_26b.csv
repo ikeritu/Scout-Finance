@@ -1,0 +1,7 @@
+decision_id,decision,result
+V2_26B_001,Run a repository-artifact replay rather than claim a live refresh.,ENFORCED
+V2_26B_002,Reuse v2.24F by immutable reference instead of duplicating an identical 10 MB file.,ENFORCED
+V2_26B_003,Exclude __MISSING_PROVIDER__ from automated replay.,ENFORCED
+V2_26B_004,"Treat zero delta as expected replay behavior, not proof of market freshness.",ENFORCED
+V2_26B_005,Make the logical candidate available only to v2.26C testing.,APPROVED
+V2_26B_006,Do not modify universe or scoring pointers.,ENFORCED

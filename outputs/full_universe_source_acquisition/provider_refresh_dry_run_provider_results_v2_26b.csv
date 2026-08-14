@@ -1,0 +1,15 @@
+source_provider,baseline_rows,policy_cadence,refresh_lane,execution_mode,source_evidence,live_fetch_attempted,live_freshness_verified,candidate_rows,added_rows,removed_rows,changed_rows,row_delta_pct,threshold_result,dry_run_result
+ASX,1316,WEEKLY,AUTOMATED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,ASX acquisition/validation artifacts,false,false,1316,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+sgx_structured_endpoint,358,WEEKLY,AUTOMATED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,Singapore structured endpoint artifacts,false,false,358,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+nasdaq_trader_nasdaqlisted,3244,WEEKLY,AUTOMATED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,Nasdaq Trader listed artifacts,false,false,3244,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+nasdaq_trader_otherlisted,2404,WEEKLY,AUTOMATED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,Nasdaq Trader other-listed artifacts,false,false,2404,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+sec_company_tickers_exchange,2359,WEEKLY,AUTOMATED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,SEC company tickers exchange artifacts,false,false,2359,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+cboe_listed_symbols,1193,WEEKLY,AUTOMATED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,Cboe listed-symbol artifacts,false,false,1193,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+jpx_listed_securities,3705,WEEKLY,AUTOMATED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,JPX listed-securities artifacts,false,false,3705,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+deutsche_boerse_xetra_all_tradable_instruments,1424,WEEKLY,AUTOMATED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,Xetra all-tradable artifacts,false,false,1424,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+TWSE,696,WEEKLY,AUTOMATED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,TWSE repaired raw and validation artifacts,false,false,696,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+cboe_europe_reference_data,21154,MONTHLY,CONTROLLED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,Cboe Europe reference artifacts,false,false,21154,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+hkex_securities_list,2804,MONTHLY,CONTROLLED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,HKEX securities-list artifacts,false,false,2804,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+HKEX,396,MONTHLY,CONTROLLED_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,HKEX legacy acquisition artifacts,false,false,396,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+SFC_SIMEV_RNVE,23,MONTHLY,MANUAL_REVIEW_CANDIDATE,REPOSITORY_ARTIFACT_REPLAY,SFC/SIMEV/RNVE targeted-market artifacts,false,false,23,0,0,0,0,PASS,REPLAY_PASS_NO_LIVE_FETCH
+__MISSING_PROVIDER__,2013,NO_AUTOMATED_REFRESH,PROVENANCE_HOLD,SKIPPED_PROVENANCE_HOLD,No authorized provider route,false,false,2013,0,0,0,0,NOT_APPLICABLE_HOLD,SKIPPED_HOLD

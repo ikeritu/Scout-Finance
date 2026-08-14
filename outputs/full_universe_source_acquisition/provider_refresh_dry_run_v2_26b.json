@@ -1,0 +1,651 @@
+{
+  "version": "v2.26B",
+  "phase": "Provider Refresh Dry Run",
+  "status": "PROVIDER_REFRESH_DRY_RUN_COMPLETED_REPLAY_NO_LIVE_FETCH_NO_PROMOTION",
+  "dry_run_decision": "CONTROLLED_REPOSITORY_REPLAY_ACCEPTED_FOR_DELTA_SYSTEM_TESTING",
+  "policy_commit": "d54c6b6f05e7e7c1d7628e7fb3ffda80ba88c1be",
+  "baseline_rows": 43089,
+  "baseline_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+  "provider_buckets": 14,
+  "replayed_provider_buckets": 13,
+  "replayed_rows": 41076,
+  "replayed_row_coverage_pct": 95.3283,
+  "held_provider_buckets": 1,
+  "held_rows": 2013,
+  "live_fetch_attempted": false,
+  "live_freshness_verified": false,
+  "logical_candidate_rows": 43089,
+  "logical_candidate_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+  "candidate_is_new_physical_copy": false,
+  "candidate_is_operational": false,
+  "promotion_eligible": false,
+  "added_rows": 0,
+  "removed_rows": 0,
+  "changed_rows": 0,
+  "unresolved_duplicates": 0,
+  "critical_provider_failures": 0,
+  "operational_pointer_modified": false,
+  "metadata_baseline_modified": false,
+  "scoring_pointer_modified": false,
+  "production_scoring_authorized": false,
+  "scoring_promoted": false,
+  "openai_called": false,
+  "broker_called": false,
+  "full59k": "DEPRECATED_DEFERRED",
+  "critical_failed_checks": 0,
+  "warning_checks": 1,
+  "recommended_next_phase": "v2.26C - Delta Detection System",
+  "candidate_reference": {
+    "schema_version": "1.0",
+    "candidate_name": "provider_refresh_dry_run_replay_v2_26b",
+    "status": "LOGICAL_REPLAY_CANDIDATE_NOT_OPERATIONAL",
+    "candidate_materialization": "REFERENCE_EXISTING_IMMUTABLE_ARTIFACT",
+    "candidate_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+    "candidate_rows": 43089,
+    "candidate_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+    "comparison_baseline": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+    "comparison_rows": 43089,
+    "comparison_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+    "replay_provider_buckets": 13,
+    "replay_rows": 41076,
+    "held_provider_buckets": 1,
+    "held_rows": 2013,
+    "live_fetch_attempted": false,
+    "live_freshness_verified": false,
+    "delta_expected": "ZERO_FOR_REPLAY",
+    "promotion_eligible": false,
+    "operational_pointer_update_allowed": false,
+    "purpose": "Validate refresh orchestration and policy gates before implementing live scheduled fetches.",
+    "next_consumer": "v2.26C - Delta Detection System"
+  },
+  "provider_results": [
+    {
+      "source_provider": "ASX",
+      "baseline_rows": 1316,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "ASX acquisition/validation artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 1316,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "sgx_structured_endpoint",
+      "baseline_rows": 358,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "Singapore structured endpoint artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 358,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "nasdaq_trader_nasdaqlisted",
+      "baseline_rows": 3244,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "Nasdaq Trader listed artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 3244,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "nasdaq_trader_otherlisted",
+      "baseline_rows": 2404,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "Nasdaq Trader other-listed artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 2404,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "sec_company_tickers_exchange",
+      "baseline_rows": 2359,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "SEC company tickers exchange artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 2359,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "cboe_listed_symbols",
+      "baseline_rows": 1193,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "Cboe listed-symbol artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 1193,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "jpx_listed_securities",
+      "baseline_rows": 3705,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "JPX listed-securities artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 3705,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+      "baseline_rows": 1424,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "Xetra all-tradable artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 1424,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "TWSE",
+      "baseline_rows": 696,
+      "policy_cadence": "WEEKLY",
+      "refresh_lane": "AUTOMATED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "TWSE repaired raw and validation artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 696,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "baseline_rows": 21154,
+      "policy_cadence": "MONTHLY",
+      "refresh_lane": "CONTROLLED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "Cboe Europe reference artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 21154,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "hkex_securities_list",
+      "baseline_rows": 2804,
+      "policy_cadence": "MONTHLY",
+      "refresh_lane": "CONTROLLED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "HKEX securities-list artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 2804,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "HKEX",
+      "baseline_rows": 396,
+      "policy_cadence": "MONTHLY",
+      "refresh_lane": "CONTROLLED_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "HKEX legacy acquisition artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 396,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "SFC_SIMEV_RNVE",
+      "baseline_rows": 23,
+      "policy_cadence": "MONTHLY",
+      "refresh_lane": "MANUAL_REVIEW_CANDIDATE",
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "source_evidence": "SFC/SIMEV/RNVE targeted-market artifacts",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 23,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "PASS",
+      "dry_run_result": "REPLAY_PASS_NO_LIVE_FETCH"
+    },
+    {
+      "source_provider": "__MISSING_PROVIDER__",
+      "baseline_rows": 2013,
+      "policy_cadence": "NO_AUTOMATED_REFRESH",
+      "refresh_lane": "PROVENANCE_HOLD",
+      "execution_mode": "SKIPPED_PROVENANCE_HOLD",
+      "source_evidence": "No authorized provider route",
+      "live_fetch_attempted": false,
+      "live_freshness_verified": false,
+      "candidate_rows": 2013,
+      "added_rows": 0,
+      "removed_rows": 0,
+      "changed_rows": 0,
+      "row_delta_pct": 0,
+      "threshold_result": "NOT_APPLICABLE_HOLD",
+      "dry_run_result": "SKIPPED_HOLD"
+    }
+  ],
+  "route_manifest": [
+    {
+      "source_provider": "ASX",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "ASX acquisition/validation artifacts",
+      "rows_covered": 1316,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "sgx_structured_endpoint",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "Singapore structured endpoint artifacts",
+      "rows_covered": 358,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "nasdaq_trader_nasdaqlisted",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "Nasdaq Trader listed artifacts",
+      "rows_covered": 3244,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "nasdaq_trader_otherlisted",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "Nasdaq Trader other-listed artifacts",
+      "rows_covered": 2404,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "sec_company_tickers_exchange",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "SEC company tickers exchange artifacts",
+      "rows_covered": 2359,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "cboe_listed_symbols",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "Cboe listed-symbol artifacts",
+      "rows_covered": 1193,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "jpx_listed_securities",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "JPX listed-securities artifacts",
+      "rows_covered": 3705,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "Xetra all-tradable artifacts",
+      "rows_covered": 1424,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "TWSE",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "TWSE repaired raw and validation artifacts",
+      "rows_covered": 696,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "Cboe Europe reference artifacts",
+      "rows_covered": 21154,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "hkex_securities_list",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "HKEX securities-list artifacts",
+      "rows_covered": 2804,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "HKEX",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "HKEX legacy acquisition artifacts",
+      "rows_covered": 396,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "SFC_SIMEV_RNVE",
+      "route_authorized": true,
+      "execution_mode": "REPOSITORY_ARTIFACT_REPLAY",
+      "evidence": "SFC/SIMEV/RNVE targeted-market artifacts",
+      "rows_covered": 23,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "LOGICAL_CANDIDATE_REFERENCE"
+    },
+    {
+      "source_provider": "__MISSING_PROVIDER__",
+      "route_authorized": false,
+      "execution_mode": "SKIPPED_PROVENANCE_HOLD",
+      "evidence": "No authorized provider route",
+      "rows_covered": 2013,
+      "immutable_input": true,
+      "network_dependency": false,
+      "output_mode": "NO_OUTPUT_HOLD"
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_id": "LIM_001",
+      "severity": "warning",
+      "limitation": "No live provider endpoint was called.",
+      "effect": "Freshness and endpoint availability are not demonstrated.",
+      "mitigation": "v2.26F schedule implementation must execute live fetches before any future promotion."
+    },
+    {
+      "limitation_id": "LIM_002",
+      "severity": "info",
+      "limitation": "Candidate reuses the immutable v2.24F artifact by reference.",
+      "effect": "Expected delta is zero.",
+      "mitigation": "v2.26C must validate zero-delta handling plus controlled fixtures."
+    },
+    {
+      "limitation_id": "LIM_003",
+      "severity": "info",
+      "limitation": "__MISSING_PROVIDER__ remains on provenance hold.",
+      "effect": "2013 rows are excluded from automated provider replay.",
+      "mitigation": "Require deterministic provenance restoration before automation."
+    },
+    {
+      "limitation_id": "LIM_004",
+      "severity": "critical_guardrail",
+      "limitation": "Replay is not promotion evidence.",
+      "effect": "promotion_eligible=False.",
+      "mitigation": "Only v2.26E may decide promotion after live/validated evidence and rollback testing."
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_26B_001",
+      "decision": "Run a repository-artifact replay rather than claim a live refresh.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26B_002",
+      "decision": "Reuse v2.24F by immutable reference instead of duplicating an identical 10 MB file.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26B_003",
+      "decision": "Exclude __MISSING_PROVIDER__ from automated replay.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26B_004",
+      "decision": "Treat zero delta as expected replay behavior, not proof of market freshness.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26B_005",
+      "decision": "Make the logical candidate available only to v2.26C testing.",
+      "result": "APPROVED"
+    },
+    {
+      "decision_id": "V2_26B_006",
+      "decision": "Do not modify universe or scoring pointers.",
+      "result": "ENFORCED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_26a_policy_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "d54c6b6f05e7e7c1d7628e7fb3ffda80ba88c1be"
+    },
+    {
+      "check": "baseline_rows_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "baseline_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "provider_buckets_14",
+      "passed": true,
+      "severity": "critical",
+      "detail": "14"
+    },
+    {
+      "check": "provider_rows_sum_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "replayed_buckets_13",
+      "passed": true,
+      "severity": "critical",
+      "detail": "13"
+    },
+    {
+      "check": "replayed_rows_41076",
+      "passed": true,
+      "severity": "critical",
+      "detail": "41076"
+    },
+    {
+      "check": "missing_provider_hold_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "2013 rows"
+    },
+    {
+      "check": "all_replayed_provider_thresholds_pass",
+      "passed": true,
+      "severity": "critical",
+      "detail": "13/13"
+    },
+    {
+      "check": "logical_candidate_rows_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "logical_candidate_sha_matches_baseline",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "zero_delta_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "added=0;removed=0;changed=0"
+    },
+    {
+      "check": "unresolved_duplicates_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "candidate_not_operational",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "no_new_physical_copy",
+      "passed": true,
+      "severity": "critical",
+      "detail": "immutable reference only"
+    },
+    {
+      "check": "operational_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "metadata_baseline_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "scoring_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "c55df8e39dd78f3edbdee26d0e2d63c333aca639"
+    },
+    {
+      "check": "production_scoring_authorized_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "scoring_promoted_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "full59k_deferred",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DEPRECATED_DEFERRED"
+    },
+    {
+      "check": "live_freshness_not_verified",
+      "passed": false,
+      "severity": "warning",
+      "detail": "No live fetch; replay evidence only"
+    }
+  ]
+}
