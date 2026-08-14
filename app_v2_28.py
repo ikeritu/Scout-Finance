@@ -1,53 +1,103 @@
-"""Scout Finance v2.28 local UI foundation. Safe parallel entrypoint."""
+"""Scout Finance v2.28 local analyst UI. Safe parallel entrypoint."""
 from pathlib import Path
+import pandas as pd
 import streamlit as st
 from src.ui_v2_28 import ConsumerState,SCREENS,build_app_state
+from src.ui_v2_28.catalog import DISPLAY_FIELDS,asset_by_identity,distinct_values,load_catalog,query_catalog
+from src.ui_v2_28.watchlists import add,atomic_write,create,export_csv_bytes,list_watchlists,read,remove,update_item,update_metadata
 
 st.set_page_config(page_title="Scout Finance — Local Analyst UI",page_icon="📊",layout="wide")
 ROOT=Path(__file__).resolve().parent
 
 @st.cache_data(ttl=60,show_spinner=False)
-def state_snapshot():
- return build_app_state(ROOT)
-
-def status_chip(label,value,tone="neutral"):
- colors={"ok":"#0E7C86","warn":"#B76E00","bad":"#B42318","neutral":"#526173"}
- color=colors[tone]
+def state_snapshot():return build_app_state(ROOT)
+@st.cache_data(show_spinner="Cargando catálogo operativo…")
+def catalog_snapshot(path,sha):return load_catalog(Path(path))
+def go(screen,identity=None):
+ if identity:st.session_state.asset_identity=identity
+ st.session_state.screen=screen;st.rerun()
+def table(rows):
+ fields=["name","ticker","exchange","isin","country","currency","asset_type","provider","identity_key"]
+ st.dataframe(pd.DataFrame(rows,columns=fields),use_container_width=True,hide_index=True)
+def chip(label,value,tone="neutral"):
+ colors={"ok":"#0E7C86","warn":"#B76E00","bad":"#B42318","neutral":"#526173"};color=colors[tone]
  st.markdown(f'<div style="border:1px solid #E1E7EE;border-radius:12px;padding:12px;background:white"><small>{label}</small><div style="font-size:18px;font-weight:750;color:{color}">{value}</div></div>',unsafe_allow_html=True)
-
 def render_status(s):
- st.title("Scout Finance")
- st.caption("Interfaz local de análisis · Estado operativo verificado por pointers")
- a,b,c,d=st.columns(4)
- with a:status_chip("Universo",f"{s.universe.rows:,} activos" if s.universe.available else "No disponible","ok" if s.universe.available else "bad")
- with b:status_chip("Scoring","No disponible" if not s.scoring.allow_ranking else "Productivo","warn" if not s.scoring.allow_ranking else "ok")
- with c:status_chip("Refresh",s.maintenance.refresh_status or "UNKNOWN","warn")
- with d:status_chip("Proveedores",f"{s.maintenance.providers_complete}/{s.maintenance.providers_expected}","warn")
+ st.title("Scout Finance");st.caption("Interfaz local de análisis · Estado operativo verificado por pointers")
+ values=(("Universo",f"{s.universe.rows:,} activos" if s.universe.available else "No disponible","ok" if s.universe.available else "bad"),("Scoring","No disponible" if not s.scoring.allow_ranking else "Productivo","warn"),("Refresh",s.maintenance.refresh_status or "UNKNOWN","warn"),("Proveedores",f"{s.maintenance.providers_complete}/{s.maintenance.providers_expected}","warn"))
+ for col,args in zip(st.columns(4),values):
+  with col:chip(*args)
  if not s.scoring.allow_ranking:st.warning("Scoring productivo no autorizado. Rankings, recomendaciones y señales permanecen ocultos.")
  st.info("El catálogo, las watchlists y los informes siguen disponibles. Esta herramienta no ofrece asesoramiento financiero.")
-
-def placeholder(title,message):
- st.header(title);st.info(message);st.caption("Esta pantalla se implementará en las siguientes fases v2.28.")
-
+def render_catalog(rows):
+ st.header("Universo operativo");st.caption("Exploración de metadatos. No contiene scores, rankings ni recomendaciones.")
+ search=st.text_input("Buscar",placeholder="Nombre, ticker, ISIN o identidad estable");filters={};fields=("country","exchange","currency","asset_type","provider")
+ for col,field in zip(st.columns(5),fields):
+  with col:filters[field]=st.multiselect(field.replace("_"," ").title(),distinct_values(rows,field))
+ a,b=st.columns([1,3]);page_size=a.selectbox("Filas",[25,50,100,250],index=1);initial=query_catalog(rows,search,filters,1,page_size)
+ page=b.number_input("Página",1,initial.pages,1);result=query_catalog(rows,search,filters,page,page_size)
+ st.caption(f"{result.total:,} resultados · página {result.page} de {result.pages}");table(result.rows)
+ options={f'{x["ticker"]} · {x["exchange"]} · {x["name"]}':x["identity_key"] for x in result.rows}
+ if options:
+  label=st.selectbox("Activo seleccionado",options)
+  if st.button("Abrir detalle",type="primary"):go("asset",options[label])
+def choose_watchlist():
+ available=list_watchlists(ROOT)
+ if not available:return None,None
+ labels={f'{data["name"]} ({len(data["items"])})':path for path,data in available};path=labels[st.selectbox("Watchlist",labels)];return path,read(path)
+def render_watchlists(rows):
+ st.header("Watchlists");st.caption("Listas locales basadas únicamente en identidad y metadatos.")
+ with st.expander("Crear watchlist"):
+  name=st.text_input("Nombre",key="new_wl_name");description=st.text_input("Descripción",key="new_wl_description")
+  if st.button("Crear"):
+   try:create(ROOT,name,description);st.success("Watchlist creada");st.rerun()
+   except ValueError as exc:st.error(str(exc))
+ path,data=choose_watchlist()
+ if not data:st.info("Todavía no hay watchlists locales.");return
+ with st.expander("Editar datos de la lista"):
+  name=st.text_input("Nombre",data["name"],key="edit_wl_name");description=st.text_input("Descripción",data.get("description",""),key="edit_wl_desc")
+  if st.button("Guardar datos"):update_metadata(path,data,name,description);st.rerun()
+ st.subheader("Añadir activo");query=st.text_input("Buscar activo para añadir",key="wl_search");matches=query_catalog(rows,query,page_size=25).rows if query else ()
+ if matches:
+  labels={f'{x["ticker"]} · {x["exchange"]} · {x["name"]}':x for x in matches};label=st.selectbox("Resultado",labels);tags=st.text_input("Etiquetas separadas por comas");note=st.text_area("Nota")
+  if st.button("Añadir a watchlist",type="primary"):
+   try:add(data,labels[label],tags,note);atomic_write(path,data);st.rerun()
+   except ValueError as exc:st.error(str(exc))
+ st.subheader(f'Activos ({len(data["items"])})');table(data["items"])
+ if data["items"]:
+  choices={f'{x["ticker"]} · {x["exchange"]}':x for x in data["items"]};item=choices[st.selectbox("Editar activo",choices)]
+  tags=st.text_input("Etiquetas",",".join(item.get("tags",[])),key="item_tags");note=st.text_area("Nota",item.get("note",""),key="item_note");a,b,c=st.columns(3)
+  if a.button("Guardar nota y etiquetas"):update_item(data,item["identity_key"],tags,note);atomic_write(path,data);st.rerun()
+  if b.button("Abrir detalle"):go("asset",item["identity_key"])
+  if c.button("Eliminar de la lista"):remove(data,item["identity_key"]);atomic_write(path,data);st.rerun()
+ st.download_button("Descargar CSV",export_csv_bytes(data),file_name=f'{path.stem}.csv',mime="text/csv")
+def render_asset(rows):
+ st.header("Detalle de activo");identity=st.session_state.get("asset_identity","")
+ if not identity:st.info("Selecciona un activo desde Universo o una watchlist.");return
+ try:asset=asset_by_identity(rows,identity)
+ except ValueError as exc:st.error(str(exc));return
+ st.subheader(f'{asset["name"]} · {asset["ticker"]}');st.caption(asset["identity_key"])
+ for col,field in zip(st.columns(4),("exchange","country","currency","asset_type")):
+  with col:chip(field.replace("_"," ").title(),asset[field])
+ st.markdown("#### Identidad y linaje");st.json({key:asset[key] for key in DISPLAY_FIELDS},expanded=True)
+ memberships=[data["name"] for _,data in list_watchlists(ROOT) if any(x["identity_key"]==identity for x in data["items"])]
+ st.write("Watchlists:",", ".join(memberships) if memberships else "Ninguna");unknown=[key for key,value in asset.items() if value=="Unknown"]
+ if unknown:st.warning("Metadatos desconocidos: "+", ".join(unknown))
+ st.info("Vista descriptiva. Sin recomendación, señal, score ni ranking.")
+def placeholder(title,message):st.header(title);st.info(message);st.caption("Esta pantalla se implementará en las siguientes fases v2.28.")
 def main():
- s=state_snapshot()
+ s=state_snapshot();rows=catalog_snapshot(str(s.universe.dataset),s.universe.dataset_sha256) if s.universe.available else []
+ if "screen" not in st.session_state:st.session_state.screen="status"
  with st.sidebar:
-  st.markdown("### Scout Finance")
-  st.caption("Local Analyst UI · v2.28B")
-  selected=st.radio("Navegación",options=[x.id for x in SCREENS],format_func=lambda i:next(f"{x.icon} {x.label}" for x in SCREENS if x.id==i),label_visibility="collapsed")
-  st.divider();st.caption(f"Estado: {s.scoring.consumer_state.value}");st.caption("No es asesoramiento financiero")
+  st.markdown("### Scout Finance");st.caption("Local Analyst UI · v2.28C");ids=[x.id for x in SCREENS]
+  selected=st.radio("Navegación",ids,index=ids.index(st.session_state.screen),format_func=lambda i:next(f"{x.icon} {x.label}" for x in SCREENS if x.id==i),label_visibility="collapsed")
+  st.session_state.screen=selected;st.divider();st.caption(f"Estado: {s.scoring.consumer_state.value}");st.caption("No es asesoramiento financiero")
  if selected=="status":render_status(s)
- elif selected=="universe":placeholder("Universo","Explorador de 43.089 instrumentos con filtros y paginación.")
- elif selected=="watchlists":placeholder("Watchlists","Gestión visual basada en el contrato v2.27C.")
- elif selected=="scores":
-  st.header("Score Explorer")
-  if s.scoring.consumer_state==ConsumerState.PRODUCTION_RANKING:st.success("Scoring productivo autorizado por pointer.")
-  else:st.warning("SCORING UNAVAILABLE · FAIL-CLOSED");st.write("El diagnóstico solo podrá abrirse mediante confirmación explícita.")
+ elif selected=="universe":render_catalog(rows) if rows else st.error("Catálogo no disponible")
+ elif selected=="watchlists":render_watchlists(rows) if rows else st.error("Catálogo no disponible")
+ elif selected=="asset":render_asset(rows)
+ elif selected=="scores":st.header("Score Explorer");st.warning("SCORING UNAVAILABLE · FAIL-CLOSED")
  elif selected=="reports":placeholder("Informes y exports","Generación de informes y paquetes con manifiesto.")
- elif selected=="asset":placeholder("Detalle de activo","Metadatos, identidad, linaje y pertenencia a watchlists.")
- elif selected=="maintenance":
-  st.header("Mantenimiento");st.warning("Vista avanzada · solo lectura")
-  st.write({"refresh":s.maintenance.refresh_status,"providers":f"{s.maintenance.providers_complete}/{s.maintenance.providers_expected}","missing_rows":s.maintenance.missing_rows})
- else:
-  st.header("Ayuda y límites");st.markdown("- Catálogo y watchlists: disponibles\n- Ranking productivo: bloqueado\n- Broker y señales: no disponibles")
+ elif selected=="maintenance":st.header("Mantenimiento");st.warning("Vista avanzada · solo lectura");st.write({"refresh":s.maintenance.refresh_status,"providers":f"{s.maintenance.providers_complete}/{s.maintenance.providers_expected}","missing_rows":s.maintenance.missing_rows})
+ else:st.header("Ayuda y límites");st.markdown("- Catálogo y watchlists: disponibles\n- Ranking productivo: bloqueado\n- Broker y señales: no disponibles")
 if __name__=="__main__":main()
