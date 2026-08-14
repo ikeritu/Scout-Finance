@@ -7,9 +7,11 @@ from src.ui_v2_28.catalog import DISPLAY_FIELDS,asset_by_identity,distinct_value
 from src.ui_v2_28.watchlists import add,atomic_write,create,export_csv_bytes,list_watchlists,read,remove,update_item,update_metadata
 from src.ui_v2_28.scoring import diagnostic_contract,distribution_rows,load_diagnostic
 from src.ui_v2_28.reports import diagnostic_markdown,package_report,universe_markdown,watchlist_markdown
+from src.ui_v2_28.ui import apply as apply_ui,screen_context
 
 st.set_page_config(page_title="Scout Finance — Local Analyst UI",page_icon="📊",layout="wide")
 ROOT=Path(__file__).resolve().parent
+apply_ui(st)
 
 @st.cache_data(ttl=60,show_spinner=False)
 def state_snapshot():return build_app_state(ROOT)
@@ -32,7 +34,7 @@ def render_status(s):
  if not s.scoring.allow_ranking:st.warning("Scoring productivo no autorizado. Rankings, recomendaciones y señales permanecen ocultos.")
  st.info("El catálogo, las watchlists y los informes siguen disponibles. Esta herramienta no ofrece asesoramiento financiero.")
 def render_catalog(rows):
- st.header("Universo operativo");st.caption("Exploración de metadatos. No contiene scores, rankings ni recomendaciones.")
+ screen_context(st,"Universo operativo","Exploración de metadatos. No contiene scores, rankings ni recomendaciones.")
  search=st.text_input("Buscar",placeholder="Nombre, ticker, ISIN o identidad estable");filters={};fields=("country","exchange","currency","asset_type","provider")
  for col,field in zip(st.columns(5),fields):
   with col:filters[field]=st.multiselect(field.replace("_"," ").title(),distinct_values(rows,field))
@@ -48,7 +50,7 @@ def choose_watchlist():
  if not available:return None,None
  labels={f'{data["name"]} ({len(data["items"])})':path for path,data in available};path=labels[st.selectbox("Watchlist",labels)];return path,read(path)
 def render_watchlists(rows):
- st.header("Watchlists");st.caption("Listas locales basadas únicamente en identidad y metadatos.")
+ screen_context(st,"Watchlists","Listas locales basadas únicamente en identidad y metadatos.")
  with st.expander("Crear watchlist"):
   name=st.text_input("Nombre",key="new_wl_name");description=st.text_input("Descripción",key="new_wl_description")
   if st.button("Crear"):
@@ -74,7 +76,7 @@ def render_watchlists(rows):
   if c.button("Eliminar de la lista"):remove(data,item["identity_key"]);atomic_write(path,data);st.rerun()
  st.download_button("Descargar CSV",export_csv_bytes(data),file_name=f'{path.stem}.csv',mime="text/csv")
 def render_asset(rows):
- st.header("Detalle de activo");identity=st.session_state.get("asset_identity","")
+ screen_context(st,"Detalle de activo","Identidad, metadatos, linaje y pertenencia a watchlists.");identity=st.session_state.get("asset_identity","")
  if not identity:st.info("Selecciona un activo desde Universo o una watchlist.");return
  try:asset=asset_by_identity(rows,identity)
  except ValueError as exc:st.error(str(exc));return
@@ -87,7 +89,7 @@ def render_asset(rows):
  if unknown:st.warning("Metadatos desconocidos: "+", ".join(unknown))
  st.info("Vista descriptiva. Sin recomendación, señal, score ni ranking.")
 def render_scores(s):
- st.header("Score Explorer")
+ screen_context(st,"Score Explorer","Estado de scoring y diagnóstico opcional de preparación de datos.")
  if s.scoring.allow_ranking:
   st.success("Scoring productivo autorizado por el pointer operativo.");return
  contract=diagnostic_contract(ROOT);st.warning("SCORING UNAVAILABLE · FAIL-CLOSED")
@@ -113,7 +115,7 @@ def report_downloads(markdown,kind,stem,sources):
  st.download_button("Descargar informe",payload,file_name=f"{stem}.{fmt}",mime="text/markdown" if fmt=="md" else "text/html")
  st.download_button("Descargar manifiesto",manifest,file_name=f"{stem}.{fmt}.manifest.json",mime="application/json")
 def render_reports(s):
- st.header("Informes y exports");st.caption("Descargas descriptivas con manifiesto de procedencia y sin acciones de broker.")
+ screen_context(st,"Informes y exports","Descargas descriptivas con manifiesto de procedencia y sin acciones de broker.")
  kind=st.selectbox("Tipo de informe",["Universo","Watchlist","Diagnóstico de datos"])
  if kind=="Universo":
   md=universe_markdown(s.universe,s.scoring);st.markdown(md);report_downloads(md,"universe","scout_finance_universe",[{"dataset_sha256":s.universe.dataset_sha256}])
@@ -130,7 +132,7 @@ def main():
  s=state_snapshot();rows=catalog_snapshot(str(s.universe.dataset),s.universe.dataset_sha256) if s.universe.available else []
  if "screen" not in st.session_state:st.session_state.screen="status"
  with st.sidebar:
-  st.markdown("### Scout Finance");st.caption("Local Analyst UI · v2.28D");ids=[x.id for x in SCREENS]
+  st.markdown("### Scout Finance");st.caption("Local Analyst UI · v2.28E");ids=[x.id for x in SCREENS]
   selected=st.radio("Navegación",ids,index=ids.index(st.session_state.screen),format_func=lambda i:next(f"{x.icon} {x.label}" for x in SCREENS if x.id==i),label_visibility="collapsed")
   st.session_state.screen=selected;st.divider();st.caption(f"Estado: {s.scoring.consumer_state.value}");st.caption("No es asesoramiento financiero")
  if selected=="status":render_status(s)
@@ -139,6 +141,6 @@ def main():
  elif selected=="asset":render_asset(rows)
  elif selected=="scores":render_scores(s)
  elif selected=="reports":render_reports(s)
- elif selected=="maintenance":st.header("Mantenimiento");st.warning("Vista avanzada · solo lectura");st.write({"refresh":s.maintenance.refresh_status,"providers":f"{s.maintenance.providers_complete}/{s.maintenance.providers_expected}","missing_rows":s.maintenance.missing_rows})
- else:st.header("Ayuda y límites");st.markdown("- Catálogo y watchlists: disponibles\n- Ranking productivo: bloqueado\n- Broker y señales: no disponibles")
+ elif selected=="maintenance":screen_context(st,"Mantenimiento","Estado operativo avanzado y estrictamente de solo lectura.");st.warning("Vista avanzada · solo lectura");st.write({"refresh":s.maintenance.refresh_status,"providers":f"{s.maintenance.providers_complete}/{s.maintenance.providers_expected}","missing_rows":s.maintenance.missing_rows})
+ else:screen_context(st,"Ayuda y límites","Qué puedes hacer, qué permanece bloqueado y cómo interpretar la herramienta.");st.markdown("- Catálogo y watchlists: disponibles\n- Informes descriptivos: disponibles\n- Diagnóstico: requiere confirmación explícita\n- Ranking productivo: bloqueado\n- Broker, recomendaciones y señales: no disponibles\n\n**Navegación:** usa el menú lateral. Todos los controles conservan etiqueta y foco de teclado visible.")
 if __name__=="__main__":main()

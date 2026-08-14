@@ -1,0 +1,16 @@
+criterion,status,evidence
+Text contrast,PASS,Primary text on surface exceeds WCAG AAA
+Semantic contrast,PASS,Primary dark warning and danger exceed WCAG AA
+Keyboard focus,PASS,Global focus-visible outline
+Skip navigation,PASS,Skip-to-content link
+Touch targets,PASS,Buttons and core inputs minimum 44px
+Reduced motion,PASS,prefers-reduced-motion override
+High contrast preference,PASS,prefers-contrast override
+Responsive desktop,PASS,1440px content cap and flexible columns
+Responsive tablet,PASS,900px two-column adaptation
+Responsive mobile,PASS,640px single-column adaptation
+Navigation labels,PASS,Programmatic radio label retained
+Screen context,PASS,Title plus concise purpose on functional screens
+Help and limits,PASS,Capabilities and fail-closed boundaries documented
+Regression v2.28C,PASS,Catalog and watchlist QA
+Regression v2.28D,PASS,Score and reports QA
