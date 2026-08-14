@@ -1,0 +1,12 @@
+threshold_id,metric,limit,severity,response
+"T01","current dataset exists","true","P1","Freeze consumers; investigate immediately"
+"T02","current pointer SHA drift","0 tolerated","P1","Stop maintenance writes; restore verified pointer"
+"T03","current dataset SHA drift","0 tolerated","P1","Quarantine dataset; validate rollback"
+"T04","provider coverage","14/14 or explicit waiver","P2","HOLD promotion; open provider remediation"
+"T05","row disposition coverage","100%","P2","HOLD candidate"
+"T06","identity duplicate groups","0","P2","Quarantine candidate"
+"T07","unclassified real deltas","0","P2","HOLD candidate"
+"T08","rows outside quality band","<42000 or >45000","P2","Human review; no promotion"
+"T09","metadata critical regression","0 tolerated","P2","Quarantine candidate"
+"T10","rollback simulations","100% PASS","P1","Suspend promotions"
+"T11","scoring pointer active","false until separate authorization","P1","Fail closed"

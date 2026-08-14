@@ -1,0 +1,8 @@
+severity,trigger,response_time,target_action,exit_condition
+P1,Current pointer/dataset missing or hash drift,Immediate,Freeze writes and validate rollback,Verified pointer and dataset restored
+P1,Rollback path fails,Immediate,Suspend all promotion activity,All declared rollback paths pass
+P1,Scoring becomes active without authorization,Immediate,Fail closed and investigate,Inactive pointer reconfirmed
+P2,Provider coverage below 14/14,1 business day,HOLD refresh and remediate,Provider restored or waiver approved
+P2,Duplicate identities or unclassified delta,1 business day,Quarantine candidate,Zero duplicates and full classification
+P2,Quality band or metadata regression,1 business day,Quarantine candidate,All quality gates pass
+P3,Reporting or noncritical schedule delay,5 business days,Reschedule and document,Maintenance evidence complete

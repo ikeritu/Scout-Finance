@@ -1,0 +1,9 @@
+task_id,cadence,schedule_utc,task,owner,automation,write_scope,success_condition,failure_action
+"M01","weekly","Monday 06:00 UTC","Pointer and artifact integrity check","operator","recommended","none","pointer, dataset and rollback hashes match","P1 if current missing; P2 on hash drift"
+"M02","weekly","Monday 06:15 UTC","Provider availability probe","operator","recommended","logs only","14/14 providers reachable or explicitly waived","P2 on any unexpected provider loss"
+"M03","monthly","First Monday 07:00 UTC","Full provider refresh dry run","operator","supervised","candidate staging only","14/14 providers; every row dispositioned","HOLD; no pointer write"
+"M04","monthly","After M03","Delta and metadata non-regression audit","operator","supervised","reports only","unique identities; classified delta; quality floors pass","quarantine candidate"
+"M05","quarterly","Jan/Apr/Jul/Oct first Monday","Promotion gate review","human approver","manual gate","pointer only after approval","all blocking gates PASS","retain current pointer"
+"M06","quarterly","After M05","Rollback simulation","operator","supervised","none","all restore paths PASS","P1; suspend promotion"
+"M07","annual","January first maintenance window","Policy and retention review","human approver","manual","policy docs only","cadence, providers and thresholds reconfirmed","open remediation plan"
+"M08","event-driven","Provider/schema/hash/pointer incident","Emergency validation and rollback decision","incident lead","alert only","fail closed","containment and verified recovery","keep system frozen"

@@ -1,0 +1,214 @@
+{
+  "phase": "v2.26F",
+  "title": "Scheduled Maintenance Plan",
+  "status": "SCHEDULED_MAINTENANCE_PLAN_APPROVED_V2_26_BLOCK_CLOSED_WITH_PROMOTION_HOLD",
+  "executed_at_utc": "2026-08-14",
+  "operating_state": {
+    "universe_rows": 43089,
+    "operational_pointer_sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+    "refresh_promotion_status": "HOLD_NO_ELIGIBLE_CANDIDATE",
+    "open_provider_gap": {
+      "providers_complete": 13,
+      "providers_expected": 14,
+      "missing_rows": 2013
+    },
+    "scoring_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+  },
+  "schedule": [
+    {
+      "id": "M01",
+      "cadence": "weekly",
+      "schedule": "Monday 06:00 UTC",
+      "task": "Pointer and artifact integrity check",
+      "owner": "operator",
+      "automation": "recommended",
+      "write_scope": "none",
+      "success": "pointer, dataset and rollback hashes match",
+      "failure": "P1 if current missing; P2 on hash drift"
+    },
+    {
+      "id": "M02",
+      "cadence": "weekly",
+      "schedule": "Monday 06:15 UTC",
+      "task": "Provider availability probe",
+      "owner": "operator",
+      "automation": "recommended",
+      "write_scope": "logs only",
+      "success": "14/14 providers reachable or explicitly waived",
+      "failure": "P2 on any unexpected provider loss"
+    },
+    {
+      "id": "M03",
+      "cadence": "monthly",
+      "schedule": "First Monday 07:00 UTC",
+      "task": "Full provider refresh dry run",
+      "owner": "operator",
+      "automation": "supervised",
+      "write_scope": "candidate staging only",
+      "success": "14/14 providers; every row dispositioned",
+      "failure": "HOLD; no pointer write"
+    },
+    {
+      "id": "M04",
+      "cadence": "monthly",
+      "schedule": "After M03",
+      "task": "Delta and metadata non-regression audit",
+      "owner": "operator",
+      "automation": "supervised",
+      "write_scope": "reports only",
+      "success": "unique identities; classified delta; quality floors pass",
+      "failure": "quarantine candidate"
+    },
+    {
+      "id": "M05",
+      "cadence": "quarterly",
+      "schedule": "Jan/Apr/Jul/Oct first Monday",
+      "task": "Promotion gate review",
+      "owner": "human approver",
+      "automation": "manual gate",
+      "write_scope": "pointer only after approval",
+      "success": "all blocking gates PASS",
+      "failure": "retain current pointer"
+    },
+    {
+      "id": "M06",
+      "cadence": "quarterly",
+      "schedule": "After M05",
+      "task": "Rollback simulation",
+      "owner": "operator",
+      "automation": "supervised",
+      "write_scope": "none",
+      "success": "all restore paths PASS",
+      "failure": "P1; suspend promotion"
+    },
+    {
+      "id": "M07",
+      "cadence": "annual",
+      "schedule": "January first maintenance window",
+      "task": "Policy and retention review",
+      "owner": "human approver",
+      "automation": "manual",
+      "write_scope": "policy docs only",
+      "success": "cadence, providers and thresholds reconfirmed",
+      "failure": "open remediation plan"
+    },
+    {
+      "id": "M08",
+      "cadence": "event-driven",
+      "schedule": "Provider/schema/hash/pointer incident",
+      "task": "Emergency validation and rollback decision",
+      "owner": "incident lead",
+      "automation": "alert only",
+      "write_scope": "fail closed",
+      "success": "containment and verified recovery",
+      "failure": "keep system frozen"
+    }
+  ],
+  "alert_thresholds": [
+    {
+      "id": "T01",
+      "metric": "current dataset exists",
+      "limit": "true",
+      "severity": "P1",
+      "response": "Freeze consumers; investigate immediately"
+    },
+    {
+      "id": "T02",
+      "metric": "current pointer SHA drift",
+      "limit": "0 tolerated",
+      "severity": "P1",
+      "response": "Stop maintenance writes; restore verified pointer"
+    },
+    {
+      "id": "T03",
+      "metric": "current dataset SHA drift",
+      "limit": "0 tolerated",
+      "severity": "P1",
+      "response": "Quarantine dataset; validate rollback"
+    },
+    {
+      "id": "T04",
+      "metric": "provider coverage",
+      "limit": "14/14 or explicit waiver",
+      "severity": "P2",
+      "response": "HOLD promotion; open provider remediation"
+    },
+    {
+      "id": "T05",
+      "metric": "row disposition coverage",
+      "limit": "100%",
+      "severity": "P2",
+      "response": "HOLD candidate"
+    },
+    {
+      "id": "T06",
+      "metric": "identity duplicate groups",
+      "limit": "0",
+      "severity": "P2",
+      "response": "Quarantine candidate"
+    },
+    {
+      "id": "T07",
+      "metric": "unclassified real deltas",
+      "limit": "0",
+      "severity": "P2",
+      "response": "HOLD candidate"
+    },
+    {
+      "id": "T08",
+      "metric": "rows outside quality band",
+      "limit": "<42000 or >45000",
+      "severity": "P2",
+      "response": "Human review; no promotion"
+    },
+    {
+      "id": "T09",
+      "metric": "metadata critical regression",
+      "limit": "0 tolerated",
+      "severity": "P2",
+      "response": "Quarantine candidate"
+    },
+    {
+      "id": "T10",
+      "metric": "rollback simulations",
+      "limit": "100% PASS",
+      "severity": "P1",
+      "response": "Suspend promotions"
+    },
+    {
+      "id": "T11",
+      "metric": "scoring pointer active",
+      "limit": "false until separate authorization",
+      "severity": "P1",
+      "response": "Fail closed"
+    }
+  ],
+  "retention": {
+    "operational_generations_minimum": 3,
+    "candidate_artifacts": "retain until next successful promotion or formal rejection",
+    "maintenance_reports_months": 24,
+    "incident_evidence": "retain permanently with closure record",
+    "overwrite_datasets": false
+  },
+  "promotion_policy": "Scheduled jobs may stage candidates and reports but may never mutate the operational pointer. Promotion remains an explicit human gate.",
+  "closure": {
+    "phases": [
+      "v2.26A",
+      "v2.26B",
+      "v2.26C",
+      "v2.26D",
+      "v2.26E",
+      "v2.26F"
+    ],
+    "completed": 6,
+    "total": 6,
+    "refresh_system_ready_for_supervised_maintenance": true,
+    "refresh_promotion_authorized": false,
+    "unresolved_items": [
+      "Recover or explicitly waive the 14th provider.",
+      "Disposition the missing 2,013 rows.",
+      "Materialize an immutable refresh candidate and observe a real classified delta before re-running v2.26E."
+    ]
+  },
+  "next_phase": "v2.27A - Ranking Consumption Plan"
+}
