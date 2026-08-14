@@ -1,0 +1,428 @@
+{
+  "phase": "v2.27A",
+  "title": "Ranking Consumption Plan",
+  "status": "RANKING_CONSUMPTION_CONTRACT_APPROVED_IMPLEMENTATION_GATED_BY_SCORING_POINTER",
+  "executed_at_utc": "2026-08-14",
+  "current_inputs": {
+    "operational_universe": {
+      "rows": 43089,
+      "status": "ACTIVE_REFERENCE"
+    },
+    "scoring_pointer": {
+      "status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED",
+      "active_scoring_available": false,
+      "production_scoring_authorized": false,
+      "scoring_promoted": false,
+      "allow_ranking": false
+    },
+    "diagnostic_artifact": {
+      "rows": 33498,
+      "uncovered_rows": 9591,
+      "coverage_pct": 77.74,
+      "role": "DATA_READINESS_ONLY",
+      "production_eligible": false
+    },
+    "diagnostic_formula": {
+      "data_quality_score": 0.7,
+      "scope_confidence_score": 0.2,
+      "provider_quality_score": 0.1,
+      "attractiveness_score": 0
+    }
+  },
+  "design_principles": [
+    "Catalog exploration must work without scoring.",
+    "Every score-derived output must be authorized by the operational scoring pointer.",
+    "Diagnostic quality scores must never be presented as investment attractiveness.",
+    "Unknown and unscored instruments remain visible.",
+    "Ranking scope, formula version, timestamp, ties and coverage must be explicit.",
+    "No investment recommendation, buy/sell signal, broker action or portfolio allocation is produced."
+  ],
+  "consumer_states": [
+    {
+      "state": "CATALOG_AVAILABLE",
+      "trigger": "operational universe valid; scoring inactive",
+      "allowed": "search, filter, group, inspect metadata, build watchlist",
+      "forbidden": "score ordering, rank labels, recommendations, signals",
+      "label": "Universe explorer — no production score"
+    },
+    {
+      "state": "DIAGNOSTIC_LOCKED",
+      "trigger": "explicit analyst diagnostic mode plus immutable v2.25B artifact",
+      "allowed": "quality-component inspection and coverage analysis",
+      "forbidden": "investment ranking, top picks, buy/sell, portfolio allocation",
+      "label": "Data-readiness diagnostic — not investment analysis"
+    },
+    {
+      "state": "PRODUCTION_RANKING",
+      "trigger": "all scoring pointer required_checks PASS",
+      "allowed": "ranking, score sort, components, confidence, exports",
+      "forbidden": "broker action unless separately authorized",
+      "label": "Production ranking — formula and timestamp disclosed"
+    },
+    {
+      "state": "SCORING_UNAVAILABLE",
+      "trigger": "any pointer check fails or artifact/hash mismatch",
+      "allowed": "catalog fallback and status explanation",
+      "forbidden": "all score-derived output",
+      "label": "Scoring unavailable"
+    }
+  ],
+  "ranking_views": [
+    {
+      "id": "V01",
+      "name": "Universe explorer",
+      "state": "CATALOG_AVAILABLE",
+      "scope": "all 43089",
+      "fields": "name/ticker/exchange/country/MIC/currency/asset type/provider",
+      "guard": "metadata quality flags",
+      "status": "available now"
+    },
+    {
+      "id": "V02",
+      "name": "Segment overview",
+      "state": "CATALOG_AVAILABLE",
+      "scope": "current filtered set",
+      "fields": "count and coverage by country/exchange/asset/provider",
+      "guard": "no rank semantics",
+      "status": "available now"
+    },
+    {
+      "id": "V03",
+      "name": "Diagnostic coverage",
+      "state": "DIAGNOSTIC_LOCKED",
+      "scope": "33498 scored / 9591 unscored",
+      "fields": "data-quality components and missingness",
+      "guard": "prominent non-investment label",
+      "status": "gated"
+    },
+    {
+      "id": "V04",
+      "name": "Production leaderboard",
+      "state": "PRODUCTION_RANKING",
+      "scope": "active scoring artifact only",
+      "fields": "rank/score/components/confidence/formula timestamp",
+      "guard": "pointer checks required",
+      "status": "blocked"
+    },
+    {
+      "id": "V05",
+      "name": "Asset comparison",
+      "state": "CATALOG_AVAILABLE or PRODUCTION_RANKING",
+      "scope": "2-5 selected assets",
+      "fields": "metadata always; score only when authorized",
+      "guard": "missing fields explicit",
+      "status": "planned"
+    },
+    {
+      "id": "V06",
+      "name": "Saved ranking view",
+      "state": "PRODUCTION_RANKING",
+      "scope": "user filter/sort definition",
+      "fields": "query contract and version pin",
+      "guard": "no stale silent reuse",
+      "status": "blocked"
+    }
+  ],
+  "fields": [
+    {
+      "field": "identity_key",
+      "type": "string",
+      "requirement": "required",
+      "purpose": "stable asset identity; primary ISIN+exchange+ticker, fallback provider key",
+      "availability": "all"
+    },
+    {
+      "field": "name",
+      "type": "string",
+      "requirement": "recommended",
+      "purpose": "display name",
+      "availability": "catalog"
+    },
+    {
+      "field": "ticker",
+      "type": "string",
+      "requirement": "required",
+      "purpose": "display and search",
+      "availability": "catalog"
+    },
+    {
+      "field": "exchange",
+      "type": "string",
+      "requirement": "required",
+      "purpose": "filter/group",
+      "availability": "catalog"
+    },
+    {
+      "field": "mic",
+      "type": "string",
+      "requirement": "nullable",
+      "purpose": "normalized market identifier",
+      "availability": "catalog"
+    },
+    {
+      "field": "country",
+      "type": "string",
+      "requirement": "nullable",
+      "purpose": "filter/group",
+      "availability": "catalog"
+    },
+    {
+      "field": "currency",
+      "type": "string",
+      "requirement": "nullable",
+      "purpose": "filter/group",
+      "availability": "catalog"
+    },
+    {
+      "field": "asset_type",
+      "type": "string",
+      "requirement": "nullable",
+      "purpose": "filter/group",
+      "availability": "catalog"
+    },
+    {
+      "field": "instrument_type",
+      "type": "string",
+      "requirement": "nullable",
+      "purpose": "detail/filter",
+      "availability": "catalog"
+    },
+    {
+      "field": "instrument_scope",
+      "type": "string",
+      "requirement": "nullable",
+      "purpose": "scope disclosure",
+      "availability": "catalog"
+    },
+    {
+      "field": "source_provider",
+      "type": "string",
+      "requirement": "required",
+      "purpose": "lineage and quality disclosure",
+      "availability": "catalog"
+    },
+    {
+      "field": "metadata_quality_status",
+      "type": "enum",
+      "requirement": "derived",
+      "purpose": "missingness/quality badge",
+      "availability": "catalog"
+    },
+    {
+      "field": "score",
+      "type": "number",
+      "requirement": "conditionally required",
+      "purpose": "sort/rank only in PRODUCTION_RANKING",
+      "availability": "production"
+    },
+    {
+      "field": "rank",
+      "type": "integer",
+      "requirement": "derived",
+      "purpose": "computed after active filters with deterministic ties",
+      "availability": "production"
+    },
+    {
+      "field": "score_components",
+      "type": "object",
+      "requirement": "conditionally required",
+      "purpose": "component contribution disclosure",
+      "availability": "production"
+    },
+    {
+      "field": "score_confidence",
+      "type": "number/enum",
+      "requirement": "conditionally required",
+      "purpose": "coverage and confidence disclosure",
+      "availability": "production"
+    },
+    {
+      "field": "formula_version",
+      "type": "string",
+      "requirement": "required with score",
+      "purpose": "version pin",
+      "availability": "production"
+    },
+    {
+      "field": "scored_at_utc",
+      "type": "datetime",
+      "requirement": "required with score",
+      "purpose": "freshness disclosure",
+      "availability": "production"
+    },
+    {
+      "field": "scoring_status",
+      "type": "enum",
+      "requirement": "required",
+      "purpose": "CATALOG_AVAILABLE/DIAGNOSTIC_LOCKED/PRODUCTION_RANKING/SCORING_UNAVAILABLE",
+      "availability": "all"
+    }
+  ],
+  "filters": [
+    {
+      "filter": "search",
+      "type": "text",
+      "operator": "contains/prefix",
+      "fields": "name,ticker,ISIN",
+      "rule": "case-insensitive; trim whitespace"
+    },
+    {
+      "filter": "country",
+      "type": "multi-select",
+      "operator": "IN",
+      "fields": "country",
+      "rule": "include Unknown explicitly"
+    },
+    {
+      "filter": "exchange_mic",
+      "type": "multi-select",
+      "operator": "IN",
+      "fields": "exchange,MIC",
+      "rule": "preserve exchange/MIC distinction"
+    },
+    {
+      "filter": "currency",
+      "type": "multi-select",
+      "operator": "IN",
+      "fields": "currency",
+      "rule": "include Unknown explicitly"
+    },
+    {
+      "filter": "asset_type",
+      "type": "multi-select",
+      "operator": "IN",
+      "fields": "asset_type,instrument_type",
+      "rule": "normalized values only"
+    },
+    {
+      "filter": "provider",
+      "type": "multi-select",
+      "operator": "IN",
+      "fields": "source_provider",
+      "rule": "show provider lineage"
+    },
+    {
+      "filter": "metadata_quality",
+      "type": "multi-select",
+      "operator": "IN",
+      "fields": "metadata_quality_status",
+      "rule": "catalog and diagnostic"
+    },
+    {
+      "filter": "score_range",
+      "type": "numeric range",
+      "operator": "between",
+      "fields": "score",
+      "rule": "production only"
+    },
+    {
+      "filter": "component_range",
+      "type": "numeric range",
+      "operator": "between",
+      "fields": "score_components",
+      "rule": "production only"
+    },
+    {
+      "filter": "scored_coverage",
+      "type": "enum",
+      "operator": "equals",
+      "fields": "scored/unscored",
+      "rule": "diagnostic or production"
+    },
+    {
+      "filter": "sort",
+      "type": "enum",
+      "operator": "ordered",
+      "fields": "name,ticker,country,exchange; score/rank conditionally",
+      "rule": "stable secondary tie-break identity_key"
+    },
+    {
+      "filter": "page_size",
+      "type": "enum",
+      "operator": "25/50/100/250",
+      "fields": "result window",
+      "rule": "server-side pagination target"
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "A01",
+      "criterion": "Scoring pointer is read before score consumption",
+      "status": "PASS_BY_DESIGN",
+      "evidence": "fail closed on any required check"
+    },
+    {
+      "id": "A02",
+      "criterion": "Catalog remains usable when scoring unavailable",
+      "status": "PASS_BY_DESIGN",
+      "evidence": "no score dependency"
+    },
+    {
+      "id": "A03",
+      "criterion": "No rank/top-pick language in catalog or diagnostic mode",
+      "status": "PASS_BY_DESIGN",
+      "evidence": "safety copy contract"
+    },
+    {
+      "id": "A04",
+      "criterion": "Diagnostic coverage is disclosed",
+      "status": "PASS_BY_DESIGN",
+      "evidence": "33498/43089; 9591 unavailable"
+    },
+    {
+      "id": "A05",
+      "criterion": "Diagnostic formula purpose is disclosed",
+      "status": "PASS_BY_DESIGN",
+      "evidence": "data readiness; attractiveness weight 0"
+    },
+    {
+      "id": "A06",
+      "criterion": "Unknown metadata remains filterable and visible",
+      "status": "PASS_BY_DESIGN",
+      "evidence": "no silent row drop"
+    },
+    {
+      "id": "A07",
+      "criterion": "Tie ordering is deterministic",
+      "status": "PASS_BY_DESIGN",
+      "evidence": "identity_key final tie-break"
+    },
+    {
+      "id": "A08",
+      "criterion": "Filtered rank scope is explicit",
+      "status": "PASS_BY_DESIGN",
+      "evidence": "rank within current result set"
+    },
+    {
+      "id": "A09",
+      "criterion": "Score includes formula version and timestamp",
+      "status": "BLOCKED_PENDING_PRODUCTION",
+      "evidence": "no active artifact"
+    },
+    {
+      "id": "A10",
+      "criterion": "Production leaderboard uses only promoted artifact",
+      "status": "BLOCKED_PENDING_PRODUCTION",
+      "evidence": "pointer allow_ranking false"
+    },
+    {
+      "id": "A11",
+      "criterion": "Investment recommendations and broker actions remain prohibited",
+      "status": "PASS_BY_DESIGN",
+      "evidence": "separate authorization required"
+    },
+    {
+      "id": "A12",
+      "criterion": "Export consumers inherit identical state and safety rules",
+      "status": "PASS_BY_DESIGN",
+      "evidence": "handoff to v2.27B"
+    }
+  ],
+  "decision": {
+    "catalog_consumption_authorized": true,
+    "diagnostic_ranking_authorized": false,
+    "production_ranking_authorized": false,
+    "implementation_scope_next": "v2.27B export contracts may use catalog state only; watchlists may store identities; score views remain gated"
+  },
+  "next_phase": "v2.27B - Export Pack Design"
+}

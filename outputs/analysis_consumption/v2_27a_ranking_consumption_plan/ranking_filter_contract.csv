@@ -1,0 +1,13 @@
+filter,type,operator,fields,rule
+"search","text","contains/prefix","name,ticker,ISIN","case-insensitive; trim whitespace"
+"country","multi-select","IN","country","include Unknown explicitly"
+"exchange_mic","multi-select","IN","exchange,MIC","preserve exchange/MIC distinction"
+"currency","multi-select","IN","currency","include Unknown explicitly"
+"asset_type","multi-select","IN","asset_type,instrument_type","normalized values only"
+"provider","multi-select","IN","source_provider","show provider lineage"
+"metadata_quality","multi-select","IN","metadata_quality_status","catalog and diagnostic"
+"score_range","numeric range","between","score","production only"
+"component_range","numeric range","between","score_components","production only"
+"scored_coverage","enum","equals","scored/unscored","diagnostic or production"
+"sort","enum","ordered","name,ticker,country,exchange; score/rank conditionally","stable secondary tie-break identity_key"
+"page_size","enum","25/50/100/250","result window","server-side pagination target"

@@ -1,0 +1,5 @@
+state,trigger,allowed,forbidden,label
+"CATALOG_AVAILABLE","operational universe valid; scoring inactive","search, filter, group, inspect metadata, build watchlist","score ordering, rank labels, recommendations, signals","Universe explorer — no production score"
+"DIAGNOSTIC_LOCKED","explicit analyst diagnostic mode plus immutable v2.25B artifact","quality-component inspection and coverage analysis","investment ranking, top picks, buy/sell, portfolio allocation","Data-readiness diagnostic — not investment analysis"
+"PRODUCTION_RANKING","all scoring pointer required_checks PASS","ranking, score sort, components, confidence, exports","broker action unless separately authorized","Production ranking — formula and timestamp disclosed"
+"SCORING_UNAVAILABLE","any pointer check fails or artifact/hash mismatch","catalog fallback and status explanation","all score-derived output","Scoring unavailable"

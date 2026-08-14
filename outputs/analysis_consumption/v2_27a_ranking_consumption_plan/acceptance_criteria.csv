@@ -1,0 +1,13 @@
+criterion_id,criterion,status,evidence
+"A01","Scoring pointer is read before score consumption","PASS_BY_DESIGN","fail closed on any required check"
+"A02","Catalog remains usable when scoring unavailable","PASS_BY_DESIGN","no score dependency"
+"A03","No rank/top-pick language in catalog or diagnostic mode","PASS_BY_DESIGN","safety copy contract"
+"A04","Diagnostic coverage is disclosed","PASS_BY_DESIGN","33498/43089; 9591 unavailable"
+"A05","Diagnostic formula purpose is disclosed","PASS_BY_DESIGN","data readiness; attractiveness weight 0"
+"A06","Unknown metadata remains filterable and visible","PASS_BY_DESIGN","no silent row drop"
+"A07","Tie ordering is deterministic","PASS_BY_DESIGN","identity_key final tie-break"
+"A08","Filtered rank scope is explicit","PASS_BY_DESIGN","rank within current result set"
+"A09","Score includes formula version and timestamp","BLOCKED_PENDING_PRODUCTION","no active artifact"
+"A10","Production leaderboard uses only promoted artifact","BLOCKED_PENDING_PRODUCTION","pointer allow_ranking false"
+"A11","Investment recommendations and broker actions remain prohibited","PASS_BY_DESIGN","separate authorization required"
+"A12","Export consumers inherit identical state and safety rules","PASS_BY_DESIGN","handoff to v2.27B"

@@ -1,0 +1,7 @@
+view_id,name,state,scope,fields,guard,status
+"V01","Universe explorer","CATALOG_AVAILABLE","all 43089","name/ticker/exchange/country/MIC/currency/asset type/provider","metadata quality flags","available now"
+"V02","Segment overview","CATALOG_AVAILABLE","current filtered set","count and coverage by country/exchange/asset/provider","no rank semantics","available now"
+"V03","Diagnostic coverage","DIAGNOSTIC_LOCKED","33498 scored / 9591 unscored","data-quality components and missingness","prominent non-investment label","gated"
+"V04","Production leaderboard","PRODUCTION_RANKING","active scoring artifact only","rank/score/components/confidence/formula timestamp","pointer checks required","blocked"
+"V05","Asset comparison","CATALOG_AVAILABLE or PRODUCTION_RANKING","2-5 selected assets","metadata always; score only when authorized","missing fields explicit","planned"
+"V06","Saved ranking view","PRODUCTION_RANKING","user filter/sort definition","query contract and version pin","no stale silent reuse","blocked"
