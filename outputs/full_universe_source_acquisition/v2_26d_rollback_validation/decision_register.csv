@@ -1,0 +1,5 @@
+decision_id,decision,status,rationale
+D-01,Declare rollback paths ready,APPROVED,Three declared generations and restore paths validated
+D-02,Modify operational pointer,NOT_AUTHORIZED,Validation was deliberately non-mutating
+D-03,Promote refresh candidate,NOT_AUTHORIZED,Requires v2.26E promotion gate
+D-04,Activate production scoring,NOT_AUTHORIZED,Scoring remains fail-closed

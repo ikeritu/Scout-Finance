@@ -1,0 +1,10 @@
+event_id,from_slot,to_slot,mode,precondition,outcome,real_pointer_write
+S1A,current,previous,simulation,artifact+rows+sha256 valid,PASS,false
+S1B,previous,current,simulation,artifact+rows+sha256 valid,PASS,false
+S2A,current,rollback,simulation,artifact+rows+sha256 valid,PASS,false
+S2B,rollback,current,simulation,artifact+rows+sha256 valid,PASS,false
+S3A,current,candidate,logical_replay,candidate not authorized,PASS_FAIL_CLOSED,false
+S3B,candidate,current,logical_restore,current inventory valid,PASS,false
+S4,current,missing,negative_control,artifact absent,PASS_FAIL_CLOSED,false
+S5,current,sha_mismatch,negative_control,sha256 mismatch,PASS_FAIL_CLOSED,false
+S6,current,row_mismatch,negative_control,row count mismatch,PASS_FAIL_CLOSED,false

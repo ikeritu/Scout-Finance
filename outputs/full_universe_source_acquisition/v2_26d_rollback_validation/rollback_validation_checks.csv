@@ -1,0 +1,12 @@
+check_id,check,result,evidence
+"CHK-01","Current generation exists and inventory matches","PASS","43089 rows; SHA-256 9d33…4707"
+"CHK-02","Previous generation exists and inventory matches","PASS","42708 rows; SHA-256 892a…127"
+"CHK-03","Rollback generation exists and inventory matches","PASS","38287 rows; SHA-256 cf88…353f"
+"CHK-04","Current → previous → current simulation","PASS","pointer restored logically"
+"CHK-05","Current → rollback → current simulation","PASS","pointer restored logically"
+"CHK-06","Candidate logical replay → current","PASS","no promotion"
+"CHK-07","Missing artifact fails closed","PASS","pointer unchanged"
+"CHK-08","SHA mismatch fails closed","PASS","pointer unchanged"
+"CHK-09","Row mismatch fails closed","PASS","pointer unchanged"
+"CHK-10","Operational pointer remains byte-identical","PASS","61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+"CHK-11","Scoring remains isolated and inactive","PASS","NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"

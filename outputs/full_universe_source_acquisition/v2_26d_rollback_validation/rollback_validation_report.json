@@ -1,0 +1,96 @@
+{
+  "phase": "v2.26D",
+  "title": "Rollback Validation",
+  "status": "ROLLBACK_VALIDATION_COMPLETED_ALL_PATHS_PASS_NO_POINTER_CHANGE",
+  "executed_at_utc": "2026-08-14",
+  "mode": "non-mutating pointer simulation",
+  "pointer_before": {
+    "path": "outputs/full_universe_source_acquisition/current_operational_universe_pointer.json",
+    "git_blob": "d7f35a9b5b8a1446b7165783afc319ea8910f360",
+    "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+  },
+  "pointer_after": {
+    "path": "outputs/full_universe_source_acquisition/current_operational_universe_pointer.json",
+    "git_blob": "d7f35a9b5b8a1446b7165783afc319ea8910f360",
+    "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+  },
+  "generations": [
+    {
+      "role": "current",
+      "path": "outputs/full_universe_source_acquisition/expanded_universe_v2_21h_activated_operational_reference.csv",
+      "rows": 43089,
+      "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+      "git_blob": "900d89bb6e420f540b494a97348609bac9c25bd2",
+      "bytes": 9515644
+    },
+    {
+      "role": "previous",
+      "path": "outputs/full_universe_source_acquisition/expanded_universe_v2_20m_asx_promoted.csv",
+      "rows": 42708,
+      "sha256": "892aaadd2fb87026fa63a935534afe851cbadfb420d48f28b90fd6aedd3f0127",
+      "git_blob": "0b7579b5967e4c18ed6388d01f4d797ad112200a",
+      "bytes": 9389852
+    },
+    {
+      "role": "rollback",
+      "path": "outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv",
+      "rows": 38287,
+      "sha256": "cf88f95efc0f8c9dd58a1a00dc755db1aca7a713bc799eebc8ce6a0bda5f353f",
+      "git_blob": "f6266931c9286cf19a1eb8e0b7943ad4d453e545",
+      "bytes": 7915990
+    }
+  ],
+  "simulation_summary": {
+    "passed": 6,
+    "total": 6,
+    "scenarios": [
+      {
+        "id": "S1",
+        "transition": "current -> previous -> current",
+        "expected": "restore current",
+        "result": "PASS"
+      },
+      {
+        "id": "S2",
+        "transition": "current -> rollback -> current",
+        "expected": "restore current",
+        "result": "PASS"
+      },
+      {
+        "id": "S3",
+        "transition": "candidate (logical only) -> current",
+        "expected": "candidate not promoted; restore current",
+        "result": "PASS"
+      },
+      {
+        "id": "S4",
+        "transition": "missing artifact",
+        "expected": "fail closed; pointer unchanged",
+        "result": "PASS"
+      },
+      {
+        "id": "S5",
+        "transition": "SHA-256 mismatch",
+        "expected": "fail closed; pointer unchanged",
+        "result": "PASS"
+      },
+      {
+        "id": "S6",
+        "transition": "row-count mismatch",
+        "expected": "fail closed; pointer unchanged",
+        "result": "PASS"
+      }
+    ]
+  },
+  "controls": {
+    "artifact_exists": true,
+    "row_count_matches": true,
+    "sha256_matches_declared_inventory": true,
+    "fast_forward_only": true,
+    "real_pointer_modified": false,
+    "candidate_promoted": false,
+    "scoring_pointer_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+  },
+  "conclusion": "All declared rollback paths are available and restore the current operational generation under the validation model. Negative controls fail closed.",
+  "next_phase": "v2.26E - Universe Refresh Promotion Gate"
+}
