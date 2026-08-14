@@ -1,0 +1,630 @@
+{
+  "version": "v2.24E",
+  "phase": "Metadata Improvement Dry Run",
+  "generated_at_utc": "2026-08-14T08:23:12.729604+00:00",
+  "status": "METADATA_IMPROVEMENT_DRY_RUN_COMPLETED_NO_PROMOTION",
+  "baseline": {
+    "country": {
+      "present": 21935,
+      "missing": 21154,
+      "coverage_pct": 50.9063
+    },
+    "mic": {
+      "present": 10722,
+      "missing": 32367,
+      "coverage_pct": 24.8834
+    },
+    "currency": {
+      "present": 11311,
+      "missing": 31778,
+      "coverage_pct": 26.2503
+    },
+    "asset_type": {
+      "present": 5111,
+      "missing": 37978,
+      "coverage_pct": 11.8615
+    },
+    "instrument_type": {
+      "present": 37876,
+      "missing": 5213,
+      "coverage_pct": 87.9018
+    },
+    "instrument_scope": {
+      "present": 11570,
+      "missing": 31519,
+      "coverage_pct": 26.8514
+    }
+  },
+  "post_dry_run": {
+    "country": {
+      "present": 21935,
+      "missing": 21154,
+      "coverage_pct": 50.9063
+    },
+    "mic": {
+      "present": 19922,
+      "missing": 23167,
+      "coverage_pct": 46.2345
+    },
+    "currency": {
+      "present": 21935,
+      "missing": 21154,
+      "coverage_pct": 50.9063
+    },
+    "asset_type": {
+      "present": 25660,
+      "missing": 17429,
+      "coverage_pct": 59.5512
+    },
+    "instrument_type": {
+      "present": 37876,
+      "missing": 5213,
+      "coverage_pct": 87.9018
+    },
+    "instrument_scope": {
+      "present": 27199,
+      "missing": 15890,
+      "coverage_pct": 63.1228
+    }
+  },
+  "summary": {
+    "version": "v2.24E",
+    "phase": "Metadata Improvement Dry Run",
+    "status": "METADATA_IMPROVEMENT_DRY_RUN_COMPLETED_NO_PROMOTION",
+    "canonical_rows": 43089,
+    "canonical_sha256_before": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "canonical_sha256_after": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "canonical_materialized_sha256_before": "72a02a82851c6b6e14a43944e817700010516286defd8f9984991fb4d1ea50d4",
+    "canonical_materialized_sha256_after": "72a02a82851c6b6e14a43944e817700010516286defd8f9984991fb4d1ea50d4",
+    "derived_cells": 56002,
+    "provenance_coverage_pct": 100.0,
+    "overwrite_attempts": 0,
+    "conflicts": 0,
+    "control_changed_rows": 0,
+    "critical_failed_checks": 0,
+    "canonical_dataset_modified": false,
+    "active_pointer_modified": false,
+    "production_scoring_authorized": false,
+    "scoring_promoted": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "provider_metrics": [
+    {
+      "source_provider": "ASX",
+      "rows_before": 1316,
+      "rows_after": 1316,
+      "missing_cells_before": 0,
+      "missing_cells_after": 0,
+      "filled_cells": 0,
+      "six_field_completeness_before_pct": 100.0,
+      "six_field_completeness_after_pct": 100.0,
+      "changed_rows": 0
+    },
+    {
+      "source_provider": "HKEX",
+      "rows_before": 396,
+      "rows_after": 396,
+      "missing_cells_before": 1188,
+      "missing_cells_after": 1188,
+      "filled_cells": 0,
+      "six_field_completeness_before_pct": 50.0,
+      "six_field_completeness_after_pct": 50.0,
+      "changed_rows": 0
+    },
+    {
+      "source_provider": "SFC_SIMEV_RNVE",
+      "rows_before": 23,
+      "rows_after": 23,
+      "missing_cells_before": 46,
+      "missing_cells_after": 40,
+      "filled_cells": 6,
+      "six_field_completeness_before_pct": 66.6667,
+      "six_field_completeness_after_pct": 71.0145,
+      "changed_rows": 3
+    },
+    {
+      "source_provider": "TWSE",
+      "rows_before": 696,
+      "rows_after": 696,
+      "missing_cells_before": 696,
+      "missing_cells_after": 0,
+      "filled_cells": 696,
+      "six_field_completeness_before_pct": 83.3333,
+      "six_field_completeness_after_pct": 100.0,
+      "changed_rows": 696
+    },
+    {
+      "source_provider": "__MISSING_PROVIDER__",
+      "rows_before": 2013,
+      "rows_after": 2013,
+      "missing_cells_before": 6039,
+      "missing_cells_after": 6039,
+      "filled_cells": 0,
+      "six_field_completeness_before_pct": 50.0,
+      "six_field_completeness_after_pct": 50.0,
+      "changed_rows": 0
+    },
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "rows_before": 21154,
+      "rows_after": 21154,
+      "missing_cells_before": 105770,
+      "missing_cells_after": 84776,
+      "filled_cells": 20994,
+      "six_field_completeness_before_pct": 16.6667,
+      "six_field_completeness_after_pct": 33.2073,
+      "changed_rows": 10497
+    },
+    {
+      "source_provider": "cboe_listed_symbols",
+      "rows_before": 1193,
+      "rows_after": 1193,
+      "missing_cells_before": 3579,
+      "missing_cells_after": 1193,
+      "filled_cells": 2386,
+      "six_field_completeness_before_pct": 50.0,
+      "six_field_completeness_after_pct": 83.3333,
+      "changed_rows": 1193
+    },
+    {
+      "source_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+      "rows_before": 1424,
+      "rows_after": 1424,
+      "missing_cells_before": 2848,
+      "missing_cells_after": 0,
+      "filled_cells": 2848,
+      "six_field_completeness_before_pct": 66.6667,
+      "six_field_completeness_after_pct": 100.0,
+      "changed_rows": 1424
+    },
+    {
+      "source_provider": "hkex_securities_list",
+      "rows_before": 2804,
+      "rows_after": 2804,
+      "missing_cells_before": 8412,
+      "missing_cells_after": 8412,
+      "filled_cells": 0,
+      "six_field_completeness_before_pct": 50.0,
+      "six_field_completeness_after_pct": 50.0,
+      "changed_rows": 0
+    },
+    {
+      "source_provider": "jpx_listed_securities",
+      "rows_before": 3705,
+      "rows_after": 3705,
+      "missing_cells_before": 7410,
+      "missing_cells_after": 0,
+      "filled_cells": 7410,
+      "six_field_completeness_before_pct": 66.6667,
+      "six_field_completeness_after_pct": 100.0,
+      "changed_rows": 3705
+    },
+    {
+      "source_provider": "nasdaq_trader_nasdaqlisted",
+      "rows_before": 3244,
+      "rows_after": 3244,
+      "missing_cells_before": 9732,
+      "missing_cells_after": 0,
+      "filled_cells": 9732,
+      "six_field_completeness_before_pct": 50.0,
+      "six_field_completeness_after_pct": 100.0,
+      "changed_rows": 3244
+    },
+    {
+      "source_provider": "nasdaq_trader_otherlisted",
+      "rows_before": 2404,
+      "rows_after": 2404,
+      "missing_cells_before": 7212,
+      "missing_cells_after": 0,
+      "filled_cells": 7212,
+      "six_field_completeness_before_pct": 50.0,
+      "six_field_completeness_after_pct": 100.0,
+      "changed_rows": 2404
+    },
+    {
+      "source_provider": "sec_company_tickers_exchange",
+      "rows_before": 2359,
+      "rows_after": 2359,
+      "missing_cells_before": 7077,
+      "missing_cells_after": 2359,
+      "filled_cells": 4718,
+      "six_field_completeness_before_pct": 50.0,
+      "six_field_completeness_after_pct": 83.3333,
+      "changed_rows": 2359
+    },
+    {
+      "source_provider": "sgx_structured_endpoint",
+      "rows_before": 358,
+      "rows_after": 358,
+      "missing_cells_before": 0,
+      "missing_cells_after": 0,
+      "filled_cells": 0,
+      "six_field_completeness_before_pct": 100.0,
+      "six_field_completeness_after_pct": 100.0,
+      "changed_rows": 0
+    }
+  ],
+  "rule_metrics": [
+    {
+      "rule_id": "GEO_NASDAQ_MIC_001",
+      "target_field": "mic",
+      "target_value": "XNAS",
+      "filled_cells": 3244
+    },
+    {
+      "rule_id": "GEO_NASDAQ_CCY_001",
+      "target_field": "currency",
+      "target_value": "USD",
+      "filled_cells": 3244
+    },
+    {
+      "rule_id": "GEO_OTHER_NYSE_MIC_001",
+      "target_field": "mic",
+      "target_value": "XNYS",
+      "filled_cells": 2122
+    },
+    {
+      "rule_id": "GEO_OTHER_XASE_MIC_001",
+      "target_field": "mic",
+      "target_value": "XASE",
+      "filled_cells": 265
+    },
+    {
+      "rule_id": "GEO_OTHER_ARCX_MIC_001",
+      "target_field": "mic",
+      "target_value": "ARCX",
+      "filled_cells": 13
+    },
+    {
+      "rule_id": "GEO_OTHER_BATS_MIC_001",
+      "target_field": "mic",
+      "target_value": "BATS",
+      "filled_cells": 4
+    },
+    {
+      "rule_id": "GEO_OTHER_USD_001",
+      "target_field": "currency",
+      "target_value": "USD",
+      "filled_cells": 2404
+    },
+    {
+      "rule_id": "GEO_SEC_NASDAQ_MIC_001",
+      "target_field": "mic",
+      "target_value": "XNAS",
+      "filled_cells": 1092
+    },
+    {
+      "rule_id": "GEO_SEC_NYSE_MIC_001",
+      "target_field": "mic",
+      "target_value": "XNYS",
+      "filled_cells": 1240
+    },
+    {
+      "rule_id": "GEO_SEC_CBOE_MIC_001",
+      "target_field": "mic",
+      "target_value": "BATS",
+      "filled_cells": 27
+    },
+    {
+      "rule_id": "GEO_SEC_USD_001",
+      "target_field": "currency",
+      "target_value": "USD",
+      "filled_cells": 2359
+    },
+    {
+      "rule_id": "GEO_CBOE_US_MIC_001",
+      "target_field": "mic",
+      "target_value": "BATS",
+      "filled_cells": 1193
+    },
+    {
+      "rule_id": "GEO_CBOE_US_CCY_001",
+      "target_field": "currency",
+      "target_value": "USD",
+      "filled_cells": 1193
+    },
+    {
+      "rule_id": "GEO_XETRA_CCY_001",
+      "target_field": "currency",
+      "target_value": "EUR",
+      "filled_cells": 1424
+    },
+    {
+      "rule_id": "TAX_NASDAQ_COMMON_001",
+      "target_field": "asset_type",
+      "target_value": "common_equity",
+      "filled_cells": 3201
+    },
+    {
+      "rule_id": "TAX_NASDAQ_ADR_001",
+      "target_field": "asset_type",
+      "target_value": "adr_equity",
+      "filled_cells": 43
+    },
+    {
+      "rule_id": "TAX_OTHER_COMMON_001",
+      "target_field": "asset_type",
+      "target_value": "common_equity",
+      "filled_cells": 2377
+    },
+    {
+      "rule_id": "TAX_OTHER_ADR_001",
+      "target_field": "asset_type",
+      "target_value": "adr_equity",
+      "filled_cells": 27
+    },
+    {
+      "rule_id": "TAX_JPX_ASSET_001",
+      "target_field": "asset_type",
+      "target_value": "common_equity",
+      "filled_cells": 3705
+    },
+    {
+      "rule_id": "TAX_JPX_SCOPE_001",
+      "target_field": "instrument_scope",
+      "target_value": "common_equity",
+      "filled_cells": 3705
+    },
+    {
+      "rule_id": "TAX_TWSE_ASSET_001",
+      "target_field": "asset_type",
+      "target_value": "common_equity",
+      "filled_cells": 696
+    },
+    {
+      "rule_id": "TAX_XETRA_SCOPE_001",
+      "target_field": "instrument_scope",
+      "target_value": "common_equity",
+      "filled_cells": 1424
+    },
+    {
+      "rule_id": "TAX_CBOEEU_ETF_ASSET_001",
+      "target_field": "asset_type",
+      "target_value": "etf",
+      "filled_cells": 9218
+    },
+    {
+      "rule_id": "TAX_CBOEEU_ETF_SCOPE_001",
+      "target_field": "instrument_scope",
+      "target_value": "exchange_traded_fund",
+      "filled_cells": 9218
+    },
+    {
+      "rule_id": "TAX_CBOEEU_ETC_ASSET_001",
+      "target_field": "asset_type",
+      "target_value": "certificate_structured",
+      "filled_cells": 710
+    },
+    {
+      "rule_id": "TAX_CBOEEU_ETC_SCOPE_001",
+      "target_field": "instrument_scope",
+      "target_value": "exchange_traded_commodity",
+      "filled_cells": 710
+    },
+    {
+      "rule_id": "TAX_CBOEEU_ETN_ASSET_001",
+      "target_field": "asset_type",
+      "target_value": "fixed_income",
+      "filled_cells": 481
+    },
+    {
+      "rule_id": "TAX_CBOEEU_ETN_SCOPE_001",
+      "target_field": "instrument_scope",
+      "target_value": "exchange_traded_note",
+      "filled_cells": 481
+    },
+    {
+      "rule_id": "TAX_CBOEEU_DR_ASSET_001",
+      "target_field": "asset_type",
+      "target_value": "depository_receipt_equity",
+      "filled_cells": 88
+    },
+    {
+      "rule_id": "TAX_CBOEEU_DR_SCOPE_001",
+      "target_field": "instrument_scope",
+      "target_value": "depository_receipt",
+      "filled_cells": 88
+    },
+    {
+      "rule_id": "TAX_SFC_EQUITY_ASSET_001",
+      "target_field": "asset_type",
+      "target_value": "common_equity",
+      "filled_cells": 3
+    },
+    {
+      "rule_id": "TAX_SFC_EQUITY_SCOPE_001",
+      "target_field": "instrument_scope",
+      "target_value": "common_equity",
+      "filled_cells": 3
+    }
+  ],
+  "unresolved_summary": [
+    {
+      "source_provider": "HKEX",
+      "field": "asset_type",
+      "unresolved_rows": 396,
+      "reason": "REVIEW_REQUIRED_PROVIDER_HOLD"
+    },
+    {
+      "source_provider": "HKEX",
+      "field": "instrument_type",
+      "unresolved_rows": 396,
+      "reason": "REVIEW_REQUIRED_PROVIDER_HOLD"
+    },
+    {
+      "source_provider": "HKEX",
+      "field": "instrument_scope",
+      "unresolved_rows": 396,
+      "reason": "REVIEW_REQUIRED_PROVIDER_HOLD"
+    },
+    {
+      "source_provider": "SFC_SIMEV_RNVE",
+      "field": "asset_type",
+      "unresolved_rows": 20,
+      "reason": "NO_APPROVED_DETERMINISTIC_RULE"
+    },
+    {
+      "source_provider": "SFC_SIMEV_RNVE",
+      "field": "instrument_scope",
+      "unresolved_rows": 20,
+      "reason": "NO_APPROVED_DETERMINISTIC_RULE"
+    },
+    {
+      "source_provider": "__MISSING_PROVIDER__",
+      "field": "mic",
+      "unresolved_rows": 2013,
+      "reason": "REVIEW_REQUIRED_PROVIDER_HOLD"
+    },
+    {
+      "source_provider": "__MISSING_PROVIDER__",
+      "field": "instrument_type",
+      "unresolved_rows": 2013,
+      "reason": "REVIEW_REQUIRED_PROVIDER_HOLD"
+    },
+    {
+      "source_provider": "__MISSING_PROVIDER__",
+      "field": "instrument_scope",
+      "unresolved_rows": 2013,
+      "reason": "REVIEW_REQUIRED_PROVIDER_HOLD"
+    },
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "field": "country",
+      "unresolved_rows": 21154,
+      "reason": "VENUE_OR_LISTING_DETAIL_INSUFFICIENT"
+    },
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "field": "mic",
+      "unresolved_rows": 21154,
+      "reason": "VENUE_OR_LISTING_DETAIL_INSUFFICIENT"
+    },
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "field": "currency",
+      "unresolved_rows": 21154,
+      "reason": "VENUE_OR_LISTING_DETAIL_INSUFFICIENT"
+    },
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "field": "asset_type",
+      "unresolved_rows": 10657,
+      "reason": "BROAD_EQTY_CLASS_REMAINS_AMBIGUOUS"
+    },
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "field": "instrument_scope",
+      "unresolved_rows": 10657,
+      "reason": "BROAD_EQTY_CLASS_REMAINS_AMBIGUOUS"
+    },
+    {
+      "source_provider": "cboe_listed_symbols",
+      "field": "asset_type",
+      "unresolved_rows": 1193,
+      "reason": "NO_APPROVED_DETERMINISTIC_RULE"
+    },
+    {
+      "source_provider": "hkex_securities_list",
+      "field": "asset_type",
+      "unresolved_rows": 2804,
+      "reason": "REVIEW_REQUIRED_PROVIDER_HOLD"
+    },
+    {
+      "source_provider": "hkex_securities_list",
+      "field": "instrument_type",
+      "unresolved_rows": 2804,
+      "reason": "REVIEW_REQUIRED_PROVIDER_HOLD"
+    },
+    {
+      "source_provider": "hkex_securities_list",
+      "field": "instrument_scope",
+      "unresolved_rows": 2804,
+      "reason": "REVIEW_REQUIRED_PROVIDER_HOLD"
+    },
+    {
+      "source_provider": "sec_company_tickers_exchange",
+      "field": "asset_type",
+      "unresolved_rows": 2359,
+      "reason": "NO_APPROVED_DETERMINISTIC_RULE"
+    }
+  ],
+  "checks": [
+    {
+      "check": "canonical_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "canonical_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "canonical_materialized_sha_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "72a02a82851c6b6e14a43944e817700010516286defd8f9984991fb4d1ea50d4"
+    },
+    {
+      "check": "row_count_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical=43089;overlay=43089"
+    },
+    {
+      "check": "pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "zero_overwrites",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "derived_provenance_100pct",
+      "passed": true,
+      "severity": "critical",
+      "detail": "derived=56002;provenance=56002"
+    },
+    {
+      "check": "control_rows_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "provider_rows_reconcile",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "zero_rule_conflicts",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "coverage_improved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "56002"
+    }
+  ],
+  "guardrails": {
+    "canonical_dataset_modified": false,
+    "active_pointer_modified": false,
+    "production_scoring_authorized": false,
+    "scoring_promoted": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED"
+  }
+}

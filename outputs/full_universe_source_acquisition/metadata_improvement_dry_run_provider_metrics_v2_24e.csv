@@ -1,0 +1,15 @@
+source_provider,rows_before,rows_after,missing_cells_before,missing_cells_after,filled_cells,six_field_completeness_before_pct,six_field_completeness_after_pct,changed_rows
+ASX,1316,1316,0,0,0,100.0,100.0,0
+HKEX,396,396,1188,1188,0,50.0,50.0,0
+SFC_SIMEV_RNVE,23,23,46,40,6,66.6667,71.0145,3
+TWSE,696,696,696,0,696,83.3333,100.0,696
+__MISSING_PROVIDER__,2013,2013,6039,6039,0,50.0,50.0,0
+cboe_europe_reference_data,21154,21154,105770,84776,20994,16.6667,33.2073,10497
+cboe_listed_symbols,1193,1193,3579,1193,2386,50.0,83.3333,1193
+deutsche_boerse_xetra_all_tradable_instruments,1424,1424,2848,0,2848,66.6667,100.0,1424
+hkex_securities_list,2804,2804,8412,8412,0,50.0,50.0,0
+jpx_listed_securities,3705,3705,7410,0,7410,66.6667,100.0,3705
+nasdaq_trader_nasdaqlisted,3244,3244,9732,0,9732,50.0,100.0,3244
+nasdaq_trader_otherlisted,2404,2404,7212,0,7212,50.0,100.0,2404
+sec_company_tickers_exchange,2359,2359,7077,2359,4718,50.0,83.3333,2359
+sgx_structured_endpoint,358,358,0,0,0,100.0,100.0,0

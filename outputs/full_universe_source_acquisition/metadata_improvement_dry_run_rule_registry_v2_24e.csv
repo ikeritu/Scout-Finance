@@ -1,0 +1,33 @@
+rule_id,source_provider,source_field,source_value,exchange_constraint,target_field,target_value,rule_basis,rule_confidence,source_evidence,overwrite_allowed,active
+GEO_NASDAQ_MIC_001,nasdaq_trader_nasdaqlisted,exchange,NASDAQ,NASDAQ,mic,XNAS,NASDAQ-listed venue mapping,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_NASDAQ_CCY_001,nasdaq_trader_nasdaqlisted,exchange,NASDAQ,NASDAQ,currency,USD,NASDAQ listing currency,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_OTHER_NYSE_MIC_001,nasdaq_trader_otherlisted,exchange,NYSE,NYSE,mic,XNYS,NYSE venue mapping,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_OTHER_XASE_MIC_001,nasdaq_trader_otherlisted,exchange,NYSE American,NYSE American,mic,XASE,NYSE American venue mapping,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_OTHER_ARCX_MIC_001,nasdaq_trader_otherlisted,exchange,NYSE Arca,NYSE Arca,mic,ARCX,NYSE Arca venue mapping,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_OTHER_BATS_MIC_001,nasdaq_trader_otherlisted,exchange,Cboe BZX,Cboe BZX,mic,BATS,Cboe BZX venue mapping,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_OTHER_USD_001,nasdaq_trader_otherlisted,exchange,*,*,currency,USD,validated US listed feed currency,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_SEC_NASDAQ_MIC_001,sec_company_tickers_exchange,exchange,NASDAQ,NASDAQ,mic,XNAS,SEC exchange label mapping,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_SEC_NYSE_MIC_001,sec_company_tickers_exchange,exchange,NYSE,NYSE,mic,XNYS,SEC exchange label mapping,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_SEC_CBOE_MIC_001,sec_company_tickers_exchange,exchange,CBOE,CBOE,mic,BATS,SEC CBOE listed-equity venue mapping,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_SEC_USD_001,sec_company_tickers_exchange,exchange,*,*,currency,USD,validated US exchange feed currency,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_CBOE_US_MIC_001,cboe_listed_symbols,exchange,CBOE,CBOE,mic,BATS,Cboe listed-symbol venue mapping,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_CBOE_US_CCY_001,cboe_listed_symbols,exchange,CBOE,CBOE,currency,USD,Cboe US listing currency,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+GEO_XETRA_CCY_001,deutsche_boerse_xetra_all_tradable_instruments,exchange,XETR,XETR,currency,EUR,Xetra trading currency for this source extract,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_NASDAQ_COMMON_001,nasdaq_trader_nasdaqlisted,instrument_type,COMMON_STOCK,*,asset_type,common_equity,explicit common-stock classification,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_NASDAQ_ADR_001,nasdaq_trader_nasdaqlisted,instrument_type,ADR,*,asset_type,adr_equity,explicit ADR classification,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_OTHER_COMMON_001,nasdaq_trader_otherlisted,instrument_type,COMMON_STOCK,*,asset_type,common_equity,explicit common-stock classification,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_OTHER_ADR_001,nasdaq_trader_otherlisted,instrument_type,ADR,*,asset_type,adr_equity,explicit ADR classification,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_JPX_ASSET_001,jpx_listed_securities,instrument_type,equity,JPX,asset_type,common_equity,provider-native JPX equity population,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_JPX_SCOPE_001,jpx_listed_securities,instrument_type,equity,JPX,instrument_scope,common_equity,provider-native JPX equity population,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_TWSE_ASSET_001,TWSE,instrument_scope,common_equity,TWSE,asset_type,common_equity,explicit existing common-equity scope,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_XETRA_SCOPE_001,deutsche_boerse_xetra_all_tradable_instruments,instrument_type,CS,XETR,instrument_scope,common_equity,provider-native common-share code,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_CBOEEU_ETF_ASSET_001,cboe_europe_reference_data,instrument_type,ETF,CBOE_EUROPE,asset_type,etf,explicit ETF provider type,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_CBOEEU_ETF_SCOPE_001,cboe_europe_reference_data,instrument_type,ETF,CBOE_EUROPE,instrument_scope,exchange_traded_fund,explicit ETF provider type,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_CBOEEU_ETC_ASSET_001,cboe_europe_reference_data,instrument_type,ETC,CBOE_EUROPE,asset_type,certificate_structured,explicit ETC provider type,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_CBOEEU_ETC_SCOPE_001,cboe_europe_reference_data,instrument_type,ETC,CBOE_EUROPE,instrument_scope,exchange_traded_commodity,explicit ETC provider type,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_CBOEEU_ETN_ASSET_001,cboe_europe_reference_data,instrument_type,ETN,CBOE_EUROPE,asset_type,fixed_income,explicit exchange-traded note type,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_CBOEEU_ETN_SCOPE_001,cboe_europe_reference_data,instrument_type,ETN,CBOE_EUROPE,instrument_scope,exchange_traded_note,explicit exchange-traded note type,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_CBOEEU_DR_ASSET_001,cboe_europe_reference_data,instrument_type,DR,CBOE_EUROPE,asset_type,depository_receipt_equity,explicit depositary-receipt type,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_CBOEEU_DR_SCOPE_001,cboe_europe_reference_data,instrument_type,DR,CBOE_EUROPE,instrument_scope,depository_receipt,explicit depositary-receipt type,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_SFC_EQUITY_ASSET_001,SFC_SIMEV_RNVE,instrument_type,colombia_equity_price_security,BVC,asset_type,common_equity,explicit Colombia equity price security,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
+TAX_SFC_EQUITY_SCOPE_001,SFC_SIMEV_RNVE,instrument_type,colombia_equity_price_security,BVC,instrument_scope,common_equity,explicit Colombia equity price security,deterministic,v2.24B/v2.24C/v2.24D approved provider-specific rule,False,True
