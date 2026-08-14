@@ -1,0 +1,13 @@
+criterion_id,criterion,result
+"A01","Operational catalog workflow remains usable without scoring","PASS"
+"A02","Asset identities resolve deterministically","PASS"
+"A03","Watchlists support add/remove/import/export/validate","PASS"
+"A04","Watchlists contain no score or rank fields","PASS"
+"A05","Score Explorer fails closed by default","PASS"
+"A06","Diagnostic mode is aggregate and explicitly acknowledged","PASS"
+"A07","Universe and watchlist reports include provenance manifests","PASS"
+"A08","End-to-end fixture workflow passes","PASS"
+"A09","Production ranking workflow available","BLOCKED_EXPECTED"
+"A10","Export ZIP pack assembled end-to-end","PARTIAL_DEFERRED"
+"A11","Unified local graphical interface","DEFERRED_TO_V2_28"
+"A12","No recommendation/signal/allocation/broker leakage","PASS"

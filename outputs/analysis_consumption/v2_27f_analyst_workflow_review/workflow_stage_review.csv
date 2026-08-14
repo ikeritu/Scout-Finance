@@ -1,0 +1,9 @@
+step_id,stage,action,state,guard,readiness,note
+"W01","Discover","Open/filter operational universe catalog","CATALOG_AVAILABLE","metadata only","READY","UI deferred; data contract ready"
+"W02","Select","Resolve assets by stable identity, ISIN or ticker+exchange","CATALOG_AVAILABLE","reject unknown/ambiguous","READY","CLI implemented"
+"W03","Organize","Create watchlist; add tags and notes","CATALOG_AVAILABLE","scoring_used=false","READY","JSON + CSV export"
+"W04","Assess score state","Open Score Explorer","SCORING_UNAVAILABLE","fail-closed locked view","READY","diagnostic requires acknowledgement"
+"W05","Review diagnostic","Inspect aggregate data-readiness metrics","DIAGNOSTIC_LOCKED","no ranks or assets ordered","READY_GATED","optional internal workflow"
+"W06","Document","Generate universe/watchlist report","CATALOG_AVAILABLE","source/output hashes","READY","Markdown + HTML"
+"W07","Export","Assemble analyst export bundle","CATALOG_AVAILABLE","manifest/security contract","PARTIAL","design complete; bundle assembler not implemented"
+"W08","Rank investments","Consume promoted production score","PRODUCTION_RANKING","all pointer checks","BLOCKED","no active scoring artifact"

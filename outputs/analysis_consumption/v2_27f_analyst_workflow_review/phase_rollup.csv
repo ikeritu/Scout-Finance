@@ -1,0 +1,7 @@
+phase,name,status,evidence
+"v2.27A","Ranking Consumption Plan","COMPLETED","Four-state fail-closed consumption contract"
+"v2.27B","Export Pack Design","COMPLETED_DESIGN","Eight package contracts; assembler deferred"
+"v2.27C","Watchlist Builder","COMPLETED_IMPLEMENTATION","Functional CLI and QA"
+"v2.27D","Score Explorer Prototype","COMPLETED_IMPLEMENTATION","Locked default; aggregate diagnostic gated"
+"v2.27E","Report Generator","COMPLETED_IMPLEMENTATION","Markdown/HTML + manifests"
+"v2.27F","Analyst Workflow Review","COMPLETED","Integrated QA and closure"

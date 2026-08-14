@@ -1,0 +1,8 @@
+issue_id,issue,classification,severity,response
+"I01","No active production scoring","BLOCKER_FOR_RANKING","HIGH","Retain fail-closed behavior; reopen scoring only after authorized inputs and promotion"
+"I02","Export pack assembler not implemented","NONBLOCKER_FOR_CORE_WORKFLOW","MEDIUM","Implement through v2.28 UI/backend integration using v2.27B contract"
+"I03","Catalog explorer has no unified graphical UI","NONBLOCKER_FOR_CLI_WORKFLOW","MEDIUM","Address in v2.28"
+"I04","PDF reports not implemented","NONBLOCKER","LOW","Add after HTML/Markdown workflow validation"
+"I05","Provider refresh gap: 1 provider / 2013 rows","MAINTENANCE_BLOCKER","MEDIUM","Resolve under v2.26 maintenance before refresh promotion"
+"I06","Diagnostic covers 33498/43089 instruments","EXPECTED_DIAGNOSTIC_LIMIT","MEDIUM","Disclose 9591 uncovered instruments; never impute scores"
+"I07","No broker integration or portfolio allocation","INTENTIONAL_SAFETY_BOUNDARY","NONE","Keep prohibited unless separately authorized"

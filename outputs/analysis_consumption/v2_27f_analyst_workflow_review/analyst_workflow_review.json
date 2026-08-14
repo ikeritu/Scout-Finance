@@ -1,0 +1,261 @@
+{
+  "phase": "v2.27F",
+  "title": "Analyst Workflow Review",
+  "status": "ANALYST_WORKFLOW_REVIEW_PASS_V2_27_CLOSED_CATALOG_READY_SCORING_GATED",
+  "executed_at_utc": "2026-08-14",
+  "closure": {
+    "phases_completed": 6,
+    "phases_total": 6,
+    "block_closed": true,
+    "catalog_analysis_ready": true,
+    "watchlist_ready": true,
+    "reporting_ready": true,
+    "diagnostic_ready_gated": true,
+    "production_ranking_ready": false
+  },
+  "operational_state": {
+    "universe_rows": 43089,
+    "diagnostic_rows": 33498,
+    "diagnostic_coverage_pct": 77.74,
+    "unscored_rows": 9591,
+    "scoring_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED",
+    "allow_ranking": false
+  },
+  "workflow": [
+    {
+      "id": "W01",
+      "stage": "Discover",
+      "action": "Open/filter operational universe catalog",
+      "state": "CATALOG_AVAILABLE",
+      "guard": "metadata only",
+      "readiness": "READY",
+      "note": "UI deferred; data contract ready"
+    },
+    {
+      "id": "W02",
+      "stage": "Select",
+      "action": "Resolve assets by stable identity, ISIN or ticker+exchange",
+      "state": "CATALOG_AVAILABLE",
+      "guard": "reject unknown/ambiguous",
+      "readiness": "READY",
+      "note": "CLI implemented"
+    },
+    {
+      "id": "W03",
+      "stage": "Organize",
+      "action": "Create watchlist; add tags and notes",
+      "state": "CATALOG_AVAILABLE",
+      "guard": "scoring_used=false",
+      "readiness": "READY",
+      "note": "JSON + CSV export"
+    },
+    {
+      "id": "W04",
+      "stage": "Assess score state",
+      "action": "Open Score Explorer",
+      "state": "SCORING_UNAVAILABLE",
+      "guard": "fail-closed locked view",
+      "readiness": "READY",
+      "note": "diagnostic requires acknowledgement"
+    },
+    {
+      "id": "W05",
+      "stage": "Review diagnostic",
+      "action": "Inspect aggregate data-readiness metrics",
+      "state": "DIAGNOSTIC_LOCKED",
+      "guard": "no ranks or assets ordered",
+      "readiness": "READY_GATED",
+      "note": "optional internal workflow"
+    },
+    {
+      "id": "W06",
+      "stage": "Document",
+      "action": "Generate universe/watchlist report",
+      "state": "CATALOG_AVAILABLE",
+      "guard": "source/output hashes",
+      "readiness": "READY",
+      "note": "Markdown + HTML"
+    },
+    {
+      "id": "W07",
+      "stage": "Export",
+      "action": "Assemble analyst export bundle",
+      "state": "CATALOG_AVAILABLE",
+      "guard": "manifest/security contract",
+      "readiness": "PARTIAL",
+      "note": "design complete; bundle assembler not implemented"
+    },
+    {
+      "id": "W08",
+      "stage": "Rank investments",
+      "action": "Consume promoted production score",
+      "state": "PRODUCTION_RANKING",
+      "guard": "all pointer checks",
+      "readiness": "BLOCKED",
+      "note": "no active scoring artifact"
+    }
+  ],
+  "issue_register": [
+    {
+      "id": "I01",
+      "issue": "No active production scoring",
+      "classification": "BLOCKER_FOR_RANKING",
+      "severity": "HIGH",
+      "response": "Retain fail-closed behavior; reopen scoring only after authorized inputs and promotion"
+    },
+    {
+      "id": "I02",
+      "issue": "Export pack assembler not implemented",
+      "classification": "NONBLOCKER_FOR_CORE_WORKFLOW",
+      "severity": "MEDIUM",
+      "response": "Implement through v2.28 UI/backend integration using v2.27B contract"
+    },
+    {
+      "id": "I03",
+      "issue": "Catalog explorer has no unified graphical UI",
+      "classification": "NONBLOCKER_FOR_CLI_WORKFLOW",
+      "severity": "MEDIUM",
+      "response": "Address in v2.28"
+    },
+    {
+      "id": "I04",
+      "issue": "PDF reports not implemented",
+      "classification": "NONBLOCKER",
+      "severity": "LOW",
+      "response": "Add after HTML/Markdown workflow validation"
+    },
+    {
+      "id": "I05",
+      "issue": "Provider refresh gap: 1 provider / 2013 rows",
+      "classification": "MAINTENANCE_BLOCKER",
+      "severity": "MEDIUM",
+      "response": "Resolve under v2.26 maintenance before refresh promotion"
+    },
+    {
+      "id": "I06",
+      "issue": "Diagnostic covers 33498/43089 instruments",
+      "classification": "EXPECTED_DIAGNOSTIC_LIMIT",
+      "severity": "MEDIUM",
+      "response": "Disclose 9591 uncovered instruments; never impute scores"
+    },
+    {
+      "id": "I07",
+      "issue": "No broker integration or portfolio allocation",
+      "classification": "INTENTIONAL_SAFETY_BOUNDARY",
+      "severity": "NONE",
+      "response": "Keep prohibited unless separately authorized"
+    }
+  ],
+  "phase_rollup": [
+    {
+      "phase": "v2.27A",
+      "name": "Ranking Consumption Plan",
+      "status": "COMPLETED",
+      "evidence": "Four-state fail-closed consumption contract"
+    },
+    {
+      "phase": "v2.27B",
+      "name": "Export Pack Design",
+      "status": "COMPLETED_DESIGN",
+      "evidence": "Eight package contracts; assembler deferred"
+    },
+    {
+      "phase": "v2.27C",
+      "name": "Watchlist Builder",
+      "status": "COMPLETED_IMPLEMENTATION",
+      "evidence": "Functional CLI and QA"
+    },
+    {
+      "phase": "v2.27D",
+      "name": "Score Explorer Prototype",
+      "status": "COMPLETED_IMPLEMENTATION",
+      "evidence": "Locked default; aggregate diagnostic gated"
+    },
+    {
+      "phase": "v2.27E",
+      "name": "Report Generator",
+      "status": "COMPLETED_IMPLEMENTATION",
+      "evidence": "Markdown/HTML + manifests"
+    },
+    {
+      "phase": "v2.27F",
+      "name": "Analyst Workflow Review",
+      "status": "COMPLETED",
+      "evidence": "Integrated QA and closure"
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "A01",
+      "criterion": "Operational catalog workflow remains usable without scoring",
+      "result": "PASS"
+    },
+    {
+      "id": "A02",
+      "criterion": "Asset identities resolve deterministically",
+      "result": "PASS"
+    },
+    {
+      "id": "A03",
+      "criterion": "Watchlists support add/remove/import/export/validate",
+      "result": "PASS"
+    },
+    {
+      "id": "A04",
+      "criterion": "Watchlists contain no score or rank fields",
+      "result": "PASS"
+    },
+    {
+      "id": "A05",
+      "criterion": "Score Explorer fails closed by default",
+      "result": "PASS"
+    },
+    {
+      "id": "A06",
+      "criterion": "Diagnostic mode is aggregate and explicitly acknowledged",
+      "result": "PASS"
+    },
+    {
+      "id": "A07",
+      "criterion": "Universe and watchlist reports include provenance manifests",
+      "result": "PASS"
+    },
+    {
+      "id": "A08",
+      "criterion": "End-to-end fixture workflow passes",
+      "result": "PASS"
+    },
+    {
+      "id": "A09",
+      "criterion": "Production ranking workflow available",
+      "result": "BLOCKED_EXPECTED"
+    },
+    {
+      "id": "A10",
+      "criterion": "Export ZIP pack assembled end-to-end",
+      "result": "PARTIAL_DEFERRED"
+    },
+    {
+      "id": "A11",
+      "criterion": "Unified local graphical interface",
+      "result": "DEFERRED_TO_V2_28"
+    },
+    {
+      "id": "A12",
+      "criterion": "No recommendation/signal/allocation/broker leakage",
+      "result": "PASS"
+    }
+  ],
+  "integrated_qa": {
+    "script": "tests/qa_analyst_workflow_v2_27f.py",
+    "expected": "PASS: catalog-resolve/watchlist/export/locked-explorer/reports/manifests/no-score-leakage"
+  },
+  "decision": {
+    "approve_metadata_analyst_workflow": true,
+    "approve_diagnostic_workflow": true,
+    "approve_production_ranking_workflow": false,
+    "move_to_local_ui_requirements": true,
+    "pointer_or_dataset_modified": false
+  },
+  "next_phase": "v2.28A - Local UI Requirements"
+}
