@@ -1,0 +1,13 @@
+criterion_id,criterion,status
+A01,Create an empty watchlist,PASS_IMPLEMENTED
+A02,Resolve stable identity / ISIN / ticker+exchange,PASS_IMPLEMENTED
+A03,Reject ambiguous or unknown assets,PASS_IMPLEMENTED
+A04,Prevent duplicate identities,PASS_IMPLEMENTED
+A05,Support tags and notes,PASS_IMPLEMENTED
+A06,Bulk import CSV,PASS_IMPLEMENTED
+A07,Remove and list items,PASS_IMPLEMENTED
+A08,Validate against optional catalog,PASS_IMPLEMENTED
+A09,Atomic JSON write and backup,PASS_IMPLEMENTED
+A10,Injection-safe CSV export,PASS_IMPLEMENTED
+A11,Exclude score/rank/recommendation fields,PASS_IMPLEMENTED
+A12,Graphical interface,DEFERRED_TO_V2_28

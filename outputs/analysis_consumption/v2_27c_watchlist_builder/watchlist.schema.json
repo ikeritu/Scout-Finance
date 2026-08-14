@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scout Finance watchlist",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "watchlist_id",
+    "name",
+    "description",
+    "created_at_utc",
+    "updated_at_utc",
+    "consumer_state",
+    "scoring_used",
+    "items"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "watchlist_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "created_at_utc": {
+      "type": "string"
+    },
+    "updated_at_utc": {
+      "type": "string"
+    },
+    "consumer_state": {
+      "const": "CATALOG_AVAILABLE"
+    },
+    "scoring_used": {
+      "const": false
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "identity_key",
+          "name",
+          "ticker",
+          "exchange",
+          "isin",
+          "country",
+          "currency",
+          "asset_type",
+          "source_provider",
+          "tags",
+          "note",
+          "added_at_utc",
+          "status"
+        ],
+        "properties": {
+          "identity_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string"
+          },
+          "ticker": {
+            "type": "string"
+          },
+          "exchange": {
+            "type": "string"
+          },
+          "isin": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "asset_type": {
+            "type": "string"
+          },
+          "source_provider": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "note": {
+            "type": "string"
+          },
+          "added_at_utc": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "active",
+              "archived"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "phase": "v2.27C",
+  "title": "Watchlist Builder",
+  "status": "WATCHLIST_BUILDER_IMPLEMENTED_METADATA_ONLY_SCORING_INDEPENDENT",
+  "executed_at_utc": "2026-08-14",
+  "capabilities": [
+    "initialize watchlist",
+    "resolve asset by stable identity, ISIN, or ticker+exchange",
+    "add one asset",
+    "bulk import CSV",
+    "remove asset",
+    "list items",
+    "validate structure and optional catalog membership",
+    "export injection-safe CSV",
+    "atomic writes with backup",
+    "duplicate prevention",
+    "tags and notes"
+  ],
+  "storage": {
+    "format": "JSON",
+    "schema_version": "1.0",
+    "consumer_state": "CATALOG_AVAILABLE",
+    "scoring_used": false,
+    "identity_strategy": "explicit identity_key; otherwise ISIN+exchange+ticker; provider fallback",
+    "overwrite_policy": "atomic replacement plus .bak backup"
+  },
+  "safety": {
+    "score_fields_forbidden": true,
+    "recommendations_forbidden": true,
+    "broker_actions": false,
+    "csv_formula_injection_protected": true,
+    "unknown_assets_rejected": true,
+    "ambiguous_tickers_rejected": true
+  },
+  "tests": {
+    "script": "tests/qa_watchlist_builder_v2_27c.py",
+    "cases": 6,
+    "expected": "PASS: init/add/dedup/export-injection/remove/validate"
+  },
+  "inputs": {
+    "operational_universe_rows": 43089,
+    "scoring_pointer_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+  },
+  "source_or_pointer_modified": false,
+  "next_phase": "v2.27D - Score Explorer Prototype"
+}
