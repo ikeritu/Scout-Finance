@@ -1,0 +1,11 @@
+source_row_number,ticker,name,exchange,provider,score,data_quality_contribution,scope_contribution,provider_contribution,attractiveness_contribution,plain_language_explanation
+41826,10X.AX,EXULTANT MINING LIMITED,ASX,ASX,98.5,70,19,9.5,0,Score 98.5: metadata 70 + scope 19 + provider 9.5; no financial-attractiveness input.
+41413,1AD.AX,ADALTA LIMITED,ASX,ASX,98.5,70,19,9.5,0,Score 98.5: metadata 70 + scope 19 + provider 9.5; no financial-attractiveness input.
+2,AACB,Artius II Acquisition Inc. - Class A Ordinary Shares,NASDAQ,nasdaq_trader_nasdaqlisted,96,70,19,7,0,Score 96: metadata 70 + scope 19 + provider 7; no financial-attractiveness input.
+3,AACI,Armada Acquisition Corp. III - Class A Ordinary Share,NASDAQ,nasdaq_trader_nasdaqlisted,96,70,19,7,0,Score 96: metadata 70 + scope 19 + provider 7; no financial-attractiveness input.
+6620,ATMP,BARCLAYS BANK PLC,CBOE,sec_company_tickers_exchange,78.4,58.8,13,6.6,0,Score 78.4: metadata 58.8 + scope 13 + provider 6.6; no financial-attractiveness input.
+5697,CBOE,"Cboe Global Markets, Inc.",CBOE,sec_company_tickers_exchange,78.4,58.8,13,6.6,0,Score 78.4: metadata 58.8 + scope 13 + provider 6.6; no financial-attractiveness input.
+30356,00001,CKH HOLDINGS,HKEX,hkex_securities_list,60.4,43.4,9,8,0,Score 60.4: metadata 43.4 + scope 9 + provider 8; no financial-attractiveness input.
+30357,00002,CLP HOLDINGS,HKEX,hkex_securities_list,60.4,43.4,9,8,0,Score 60.4: metadata 43.4 + scope 9 + provider 8; no financial-attractiveness input.
+18530,013Ad,JD.com Inc,CBOE_EUROPE,cboe_europe_reference_data,44.5,21,19,4.5,0,Score 44.5: metadata 21 + scope 19 + provider 4.5; no financial-attractiveness input.
+18531,013Cd,JD.com Inc,CBOE_EUROPE,cboe_europe_reference_data,44.5,21,19,4.5,0,Score 44.5: metadata 21 + scope 19 + provider 4.5; no financial-attractiveness input.

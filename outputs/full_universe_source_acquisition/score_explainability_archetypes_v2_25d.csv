@@ -1,0 +1,20 @@
+archetype_id,score,score_bucket,rows,pct,data_quality_score,data_quality_contribution,scope_confidence_score,scope_contribution,provider_quality_score,provider_contribution,attractiveness_contribution,providers,formula_explanation
+EXP_019,44.5,D_40_54,10523,31.4138,30,21,95,19,45,4.5,0,cboe_europe_reference_data,21 data_quality + 19 scope + 4.5 provider + 0 attractiveness = 44.5
+EXP_004,97.2,A_85_100,3704,11.0574,100,70,95,19,82,8.2,0,jpx_listed_securities,70 data_quality + 19 scope + 8.2 provider + 0 attractiveness = 97.2
+EXP_007,96,A_85_100,3241,9.6752,100,70,95,19,70,7,0,nasdaq_trader_nasdaqlisted,70 data_quality + 19 scope + 7 provider + 0 attractiveness = 96
+EXP_015,60.4,C_55_69,2804,8.3706,62,43.4,45,9,80,8,0,hkex_securities_list,43.4 data_quality + 9 scope + 8 provider + 0 attractiveness = 60.4
+EXP_008,95.8,A_85_100,2371,7.078,100,70,95,19,68,6.8,0,nasdaq_trader_otherlisted,70 data_quality + 19 scope + 6.8 provider + 0 attractiveness = 95.8
+EXP_011,78.4,B_70_84,2217,6.6183,84,58.8,65,13,66,6.6,0,sec_company_tickers_exchange,58.8 data_quality + 13 scope + 6.6 provider + 0 attractiveness = 78.4
+EXP_017,57.7,C_55_69,2013,6.0093,51,35.7,95,19,30,3,0,__MISSING__,35.7 data_quality + 19 scope + 3 provider + 0 attractiveness = 57.7
+EXP_006,96.6,A_85_100,1424,4.251,100,70,95,19,76,7.6,0,deutsche_boerse_xetra_all_tradable_instruments,70 data_quality + 19 scope + 7.6 provider + 0 attractiveness = 96.6
+EXP_001,98.5,A_85_100,1282,3.8271,100,70,95,19,95,9.5,0,ASX,70 data_quality + 19 scope + 9.5 provider + 0 attractiveness = 98.5
+EXP_012,74.5,B_70_84,1193,3.5614,79,55.3,65,13,62,6.2,0,cboe_listed_symbols,55.3 data_quality + 13 scope + 6.2 provider + 0 attractiveness = 74.5
+EXP_018,45.7,D_40_54,1180,3.5226,56,39.2,10,2,45,4.5,0,cboe_europe_reference_data,39.2 data_quality + 2 scope + 4.5 provider + 0 attractiveness = 45.7
+EXP_005,96.8,A_85_100,696,2.0777,100,70,95,19,78,7.8,0,TWSE,70 data_quality + 19 scope + 7.8 provider + 0 attractiveness = 96.8
+EXP_016,60.2,C_55_69,379,1.1314,62,43.4,45,9,78,7.8,0,HKEX,43.4 data_quality + 9 scope + 7.8 provider + 0 attractiveness = 60.2
+EXP_002,98.2,A_85_100,347,1.0359,100,70,95,19,92,9.2,0,sgx_structured_endpoint,70 data_quality + 19 scope + 9.2 provider + 0 attractiveness = 98.2
+EXP_014,62.7,C_55_69,87,0.2597,56,39.2,95,19,45,4.5,0,cboe_europe_reference_data,39.2 data_quality + 19 scope + 4.5 provider + 0 attractiveness = 62.7
+EXP_013,73.6,B_70_84,16,0.0478,74,51.8,65,13,88,8.8,0,SFC_SIMEV_RNVE,51.8 data_quality + 13 scope + 8.8 provider + 0 attractiveness = 73.6
+EXP_010,81.2,B_70_84,11,0.0328,100,70,10,2,92,9.2,0,sgx_structured_endpoint,70 data_quality + 2 scope + 9.2 provider + 0 attractiveness = 81.2
+EXP_009,92.5,A_85_100,7,0.0209,100,70,65,13,95,9.5,0,ASX,70 data_quality + 13 scope + 9.5 provider + 0 attractiveness = 92.5
+EXP_003,97.8,A_85_100,3,0.009,100,70,95,19,88,8.8,0,SFC_SIMEV_RNVE,70 data_quality + 19 scope + 8.8 provider + 0 attractiveness = 97.8

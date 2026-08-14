@@ -1,0 +1,19 @@
+check,passed,severity,detail
+input_rows_33498,true,critical,33498
+input_scores_sha_expected,true,critical,4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f
+formula_reconstructed_all_rows,true,critical,33498/33498
+formula_reconstruction_exact,true,critical,0
+component_weights_accounted,true,critical,0.70+0.20+0.10+0.00=1.00
+archetypes_cover_all_rows,true,critical,33498
+attractiveness_not_invented,true,critical,weight=0; contribution=0
+no_production_authorization,true,critical,False
+no_promotion,true,critical,False
+promoted_artifact_unchanged,true,critical,01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c
+active_pointer_unchanged,true,critical,61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4
+openai_not_called,true,critical,False
+broker_not_called,true,critical,False
+full59k_deferred,true,critical,DEPRECATED_DEFERRED
+investment_signal_absent,false,warning,attractiveness contribution is 0 for every row
+metadata_dominance,false,warning,67.3848% of mean score comes from data quality
+incomplete_metadata_population,false,warning,60.935% lack at least one of seven audited fields
+large_archetype_cluster,false,warning,10523 rows share archetype 44.5

@@ -1,0 +1,8 @@
+missing_pattern,rows,pct
+COMPLETE,13086,39.065
+country|mic|currency|asset_type|instrument_scope,10523,31.4138
+asset_type,3410,10.1797
+asset_type|instrument_type|instrument_scope,3183,9.5021
+mic|source_provider|instrument_type|instrument_scope,2013,6.0093
+country|mic|currency,1267,3.7823
+asset_type|instrument_scope,16,0.0478

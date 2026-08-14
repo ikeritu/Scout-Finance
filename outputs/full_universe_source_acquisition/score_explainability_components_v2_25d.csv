@@ -1,0 +1,5 @@
+component,weight,mean_raw,mean_contribution,share_of_mean_score_pct,min_contribution,max_contribution
+data_quality_score,0.7,67.9715,47.5801,67.3848,21,70
+scope_confidence_score,0.2,84.1523,16.8305,23.836,2,19
+provider_quality_score,0.1,61.9891,6.1989,8.7792,3,9.5
+attractiveness_score,0,0,0,0,0,0
