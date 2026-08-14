@@ -1,0 +1,13 @@
+criterion_id,criterion,status
+A01,Default mode fails closed with current pointer,PASS_IMPLEMENTED
+A02,No score artifact is opened in default inactive state,PASS_IMPLEMENTED
+A03,Diagnostic requires explicit acknowledgement,PASS_IMPLEMENTED
+A04,Diagnostic SHA-256 and rows match pointer,PASS_IMPLEMENTED
+A05,DATA_READINESS_ONLY role enforced,PASS_IMPLEMENTED
+A06,dry_run_rank ignored and not rendered,PASS_IMPLEMENTED
+A07,Aggregate components and coverage rendered,PASS_IMPLEMENTED
+A08,No recommendations/signals/broker actions,PASS_IMPLEMENTED
+A09,Responsive static HTML with no network dependency,PASS_IMPLEMENTED
+A10,Production mode requires complete pointer gate,PASS_IMPLEMENTED
+A11,Production explorer available now,BLOCKED_BY_SCORING_POINTER
+A12,Interactive dashboard integration,DEFERRED_TO_V2_28

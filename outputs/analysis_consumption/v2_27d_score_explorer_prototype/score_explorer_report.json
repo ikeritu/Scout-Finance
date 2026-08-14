@@ -1,0 +1,71 @@
+{
+  "phase": "v2.27D",
+  "title": "Score Explorer Prototype",
+  "status": "SCORE_EXPLORER_PROTOTYPE_IMPLEMENTED_FAIL_CLOSED_DIAGNOSTIC_ONLY",
+  "executed_at_utc": "2026-08-14",
+  "modes": {
+    "auto": {
+      "current_result": "FAIL_CLOSED_LOCKED_VIEW",
+      "requires_scoring": false,
+      "ranking_visible": false
+    },
+    "diagnostic": {
+      "requires": [
+        "explicit --mode diagnostic",
+        "--acknowledge-data-readiness-only",
+        "artifact SHA-256 match",
+        "33498 row match",
+        "DATA_READINESS_ONLY role",
+        "production authorization false"
+      ],
+      "shows": [
+        "coverage",
+        "score buckets",
+        "component means",
+        "provider distribution",
+        "country distribution"
+      ],
+      "hides": [
+        "dry_run_rank",
+        "top/bottom assets",
+        "recommendations",
+        "signals"
+      ]
+    },
+    "production": {
+      "current_availability": false,
+      "requirements": "all operational scoring pointer checks plus artifact SHA-256",
+      "broker_actions": false
+    }
+  },
+  "diagnostic_context": {
+    "rows": 33498,
+    "operational_rows": 43089,
+    "coverage_pct": 77.74,
+    "uncovered_rows": 9591,
+    "formula_version": "v2.23D_reapplied_v2.25B",
+    "attractiveness_available": false,
+    "production_scoring_authorized": false,
+    "promotion_status": "NOT_PROMOTED"
+  },
+  "implementation": {
+    "script": "scripts/score_explorer_v2_27d.py",
+    "output": "static responsive HTML",
+    "dependencies": "Python standard library only",
+    "network_required": false
+  },
+  "safety": {
+    "default_fail_closed": true,
+    "dry_run_rank_ignored": true,
+    "asset_score_ordering": false,
+    "investment_recommendations": false,
+    "buy_sell_signals": false,
+    "broker_actions": false,
+    "pointer_or_dataset_modified": false
+  },
+  "tests": {
+    "script": "tests/qa_score_explorer_v2_27d.py",
+    "expected": "PASS: locked-default/ack-required/hash+rows/diagnostic-no-ranking"
+  },
+  "next_phase": "v2.27E - Report Generator"
+}

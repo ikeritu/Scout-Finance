@@ -1,0 +1,8 @@
+element,current mode,diagnostic mode,production mode
+Status banner,FAIL-CLOSED,DIAGNOSTIC NOT PRODUCTION,AUTHORIZED PRODUCTION
+Score cards,hidden,aggregate component means,aggregate score summary
+Asset ranking,hidden,forbidden,conditional future
+Bucket distribution,hidden,visible,visible
+Provider/country coverage,metadata fallback,visible,visible
+Recommendation language,forbidden,forbidden,forbidden without separate authorization
+Broker actions,forbidden,forbidden,forbidden
