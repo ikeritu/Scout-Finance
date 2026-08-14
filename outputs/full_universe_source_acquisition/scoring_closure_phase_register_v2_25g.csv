@@ -1,0 +1,7 @@
+phase,name,status,commit,critical_failed_checks,outcome
+v2.25A,Production Scoring Readiness Gate,PRODUCTION_SCORING_READINESS_GATE_COMPLETED_DRY_RUN_AUTHORIZED_PRODUCTION_BLOCKED,01e982cac16faacb5acc41606982d25ffc0ebe7a,0,Controlled dry run only; production blocked
+v2.25B,Production Scoring Dry Run v2,PRODUCTION_SCORING_DRY_RUN_V2_COMPLETED_NO_PROMOTION,08e7cade82f5b7ddf7d7b14cf489342c52313fd2,0,33498 scores created in isolation
+v2.25C,Score Stability Audit,SCORE_STABILITY_AUDIT_COMPLETED_HOLD_FOR_EXPLAINABILITY,e7a6771d9c14208fe8e5d3e90d0a7af3ca175e89,0,46.0326% band migration; hold
+v2.25D,Score Explainability Report,SCORE_EXPLAINABILITY_COMPLETED_NOT_INVESTMENT_READY,6536b957b7ad1d48aa47f3adfe56150fc77950f0 + 975b82ec8df12a3f80005f18ae6674dcefeb30c8,0,Exact reconstruction; attractiveness absent
+v2.25E,Scoring Promotion / Freeze Decision,SCORING_FROZEN_NO_PRODUCTION_PROMOTION,20972dedddbaac5a25b1ead1558074127e31926a,0,Frozen as DATA_READINESS_ONLY
+v2.25F,Operational Scoring Pointer Hardening,OPERATIONAL_SCORING_POINTER_HARDENED_FAIL_CLOSED,fbd6145d2a7003d6fa3ad0b4fd20d0a29d7c42ae,0,No active artifact; fail closed

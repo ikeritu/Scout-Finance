@@ -1,0 +1,325 @@
+{
+  "version": "v2.25G",
+  "phase": "Scoring Closure Report",
+  "status": "SCORING_BLOCK_V2_25_CLOSED_FROZEN_NO_PRODUCTION_SCORING",
+  "block": "v2.25A-v2.25G",
+  "completed_phases": 7,
+  "prior_phase_reports_verified": 6,
+  "total_prior_critical_failed_checks": 0,
+  "input_metadata_rows": 43089,
+  "input_metadata_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+  "scored_rows": 33498,
+  "excluded_rows": 9591,
+  "dry_run_scores_sha256": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f",
+  "score_role": "DATA_READINESS_ONLY",
+  "final_scoring_decision": "FROZEN_NOT_PROMOTED",
+  "active_scoring_pointer_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED",
+  "active_scoring_available": false,
+  "production_scoring_authorized": false,
+  "scoring_promoted": false,
+  "investment_attractiveness_available": false,
+  "formula_reproducible": true,
+  "formula_reconstruction_error": 0,
+  "score_band_retention_pct": 53.9674,
+  "data_quality_share_of_mean_score_pct": 67.3848,
+  "operational_failure_behavior": "RETURN_SCORING_UNAVAILABLE",
+  "promoted_metadata_artifact_modified": false,
+  "active_universe_pointer_modified": false,
+  "historical_score_outputs_modified": false,
+  "openai_called": false,
+  "broker_called": false,
+  "full59k": "DEPRECATED_DEFERRED",
+  "critical_failed_checks": 0,
+  "closure_decision": "CLOSE_BLOCK_WITH_SCORING_FROZEN",
+  "recommended_next_phase": "v2.26A - Universe Refresh Policy",
+  "phase_register": [
+    {
+      "phase": "v2.25A",
+      "name": "Production Scoring Readiness Gate",
+      "status": "PRODUCTION_SCORING_READINESS_GATE_COMPLETED_DRY_RUN_AUTHORIZED_PRODUCTION_BLOCKED",
+      "commit": "01e982cac16faacb5acc41606982d25ffc0ebe7a",
+      "critical_failed_checks": 0,
+      "outcome": "Controlled dry run only; production blocked"
+    },
+    {
+      "phase": "v2.25B",
+      "name": "Production Scoring Dry Run v2",
+      "status": "PRODUCTION_SCORING_DRY_RUN_V2_COMPLETED_NO_PROMOTION",
+      "commit": "08e7cade82f5b7ddf7d7b14cf489342c52313fd2",
+      "critical_failed_checks": 0,
+      "outcome": "33498 scores created in isolation"
+    },
+    {
+      "phase": "v2.25C",
+      "name": "Score Stability Audit",
+      "status": "SCORE_STABILITY_AUDIT_COMPLETED_HOLD_FOR_EXPLAINABILITY",
+      "commit": "e7a6771d9c14208fe8e5d3e90d0a7af3ca175e89",
+      "critical_failed_checks": 0,
+      "outcome": "46.0326% band migration; hold"
+    },
+    {
+      "phase": "v2.25D",
+      "name": "Score Explainability Report",
+      "status": "SCORE_EXPLAINABILITY_COMPLETED_NOT_INVESTMENT_READY",
+      "commit": "6536b957b7ad1d48aa47f3adfe56150fc77950f0 + 975b82ec8df12a3f80005f18ae6674dcefeb30c8",
+      "critical_failed_checks": 0,
+      "outcome": "Exact reconstruction; attractiveness absent"
+    },
+    {
+      "phase": "v2.25E",
+      "name": "Scoring Promotion / Freeze Decision",
+      "status": "SCORING_FROZEN_NO_PRODUCTION_PROMOTION",
+      "commit": "20972dedddbaac5a25b1ead1558074127e31926a",
+      "critical_failed_checks": 0,
+      "outcome": "Frozen as DATA_READINESS_ONLY"
+    },
+    {
+      "phase": "v2.25F",
+      "name": "Operational Scoring Pointer Hardening",
+      "status": "OPERATIONAL_SCORING_POINTER_HARDENED_FAIL_CLOSED",
+      "commit": "fbd6145d2a7003d6fa3ad0b4fd20d0a29d7c42ae",
+      "critical_failed_checks": 0,
+      "outcome": "No active artifact; fail closed"
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "artifact": "production_scoring_readiness_gate_v2_25a.json",
+      "role": "v2.25A gate",
+      "blob_sha": "d5b72029c964755fca84d4492892399fe38370bd"
+    },
+    {
+      "artifact": "production_scoring_dry_run_v2_v2_25b.json",
+      "role": "v2.25B report",
+      "blob_sha": "c987b4bd133b5dd8cf0d32692ab1cc38a8344173"
+    },
+    {
+      "artifact": "production_scoring_dry_run_v2_scores_v2_25b.csv",
+      "role": "frozen diagnostic DATA_READINESS_ONLY",
+      "blob_sha": "5cb98cd0370246b883085cd55c42f4e420e4c56f"
+    },
+    {
+      "artifact": "score_stability_audit_v2_25c.json",
+      "role": "v2.25C report",
+      "blob_sha": "1a93817ea42914e56a7e7b12e454d2d663711a8f"
+    },
+    {
+      "artifact": "score_explainability_v2_25d.json",
+      "role": "v2.25D report",
+      "blob_sha": "152eb0967205c796f42fbb9906dacbd6599a9ad9"
+    },
+    {
+      "artifact": "scoring_promotion_freeze_decision_v2_25e.json",
+      "role": "v2.25E freeze contract",
+      "blob_sha": "8f10a27aeaa99e0b27dc0f1a0cc8d021513820b2"
+    },
+    {
+      "artifact": "operational_scoring_pointer_hardening_v2_25f.json",
+      "role": "v2.25F report",
+      "blob_sha": "a6b6567eb9481e591202260285307e5de37bf3bd"
+    },
+    {
+      "artifact": "current_operational_scoring_pointer.json",
+      "role": "authoritative fail-closed pointer",
+      "blob_sha": "c55df8e39dd78f3edbdee26d0e2d63c333aca639"
+    }
+  ],
+  "handoff_to_v2_26": [
+    {
+      "item": "Operational universe",
+      "state": "43,089-row promoted metadata artifact retained",
+      "constraint": "Refresh must be deterministic and validated"
+    },
+    {
+      "item": "Scoring",
+      "state": "No active production scoring",
+      "constraint": "Do not activate during v2.26"
+    },
+    {
+      "item": "Diagnostic score",
+      "state": "v2.25B retained as DATA_READINESS_ONLY",
+      "constraint": "No investment or broker use"
+    },
+    {
+      "item": "Scoring pointer",
+      "state": "Fail closed; active artifact null",
+      "constraint": "Consumers return SCORING_UNAVAILABLE"
+    },
+    {
+      "item": "Refresh baseline",
+      "state": "SHA256 01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+      "constraint": "Use as immutable comparison baseline"
+    },
+    {
+      "item": "Deferred universe",
+      "state": "full59k=DEPRECATED_DEFERRED",
+      "constraint": "Must remain deferred unless separately authorized"
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_25G_001",
+      "decision": "Close v2.25A-v2.25G as complete.",
+      "result": "CLOSED",
+      "effect": "Scoring readiness block finished"
+    },
+    {
+      "decision_id": "V2_25G_002",
+      "decision": "Carry forward no active production scoring.",
+      "result": "ENFORCED",
+      "effect": "SCORING_UNAVAILABLE remains operational result"
+    },
+    {
+      "decision_id": "V2_25G_003",
+      "decision": "Retain v2.25B only as DATA_READINESS_ONLY.",
+      "result": "ENFORCED",
+      "effect": "No financial interpretation permitted"
+    },
+    {
+      "decision_id": "V2_25G_004",
+      "decision": "Keep the current operational scoring pointer fail closed.",
+      "result": "ENFORCED",
+      "effect": "No implicit activation"
+    },
+    {
+      "decision_id": "V2_25G_005",
+      "decision": "Hand off to v2.26A Universe Refresh Policy.",
+      "result": "APPROVED",
+      "effect": "Next block addresses refresh and rollback, not scoring promotion"
+    }
+  ],
+  "checks": [
+    {
+      "check": "all_prior_phases_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "6"
+    },
+    {
+      "check": "all_prior_critical_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0 across v2.25A-F"
+    },
+    {
+      "check": "phase_chain_complete",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.25A->B->C->D->E->F->G"
+    },
+    {
+      "check": "freeze_decision_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "FROZEN_NOT_PROMOTED"
+    },
+    {
+      "check": "diagnostic_role_preserved",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DATA_READINESS_ONLY"
+    },
+    {
+      "check": "active_scoring_unavailable",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "active_scoring_artifact_null",
+      "passed": true,
+      "severity": "critical",
+      "detail": "null"
+    },
+    {
+      "check": "production_authorization_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "scoring_promoted_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "pointer_fail_closed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "RETURN_SCORING_UNAVAILABLE"
+    },
+    {
+      "check": "input_metadata_sha_pinned",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "dry_run_scores_sha_pinned",
+      "passed": true,
+      "severity": "critical",
+      "detail": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f"
+    },
+    {
+      "check": "promoted_metadata_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "active_universe_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "historical_outputs_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "True"
+    },
+    {
+      "check": "no_scoring_reopen_in_v2_26",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.26 handoff explicitly excludes activation"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "full59k_deferred",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DEPRECATED_DEFERRED"
+    },
+    {
+      "check": "next_phase_v2_26a",
+      "passed": true,
+      "severity": "critical",
+      "detail": "Universe Refresh Policy"
+    }
+  ],
+  "closure_contract": {
+    "scoring_state": "FROZEN",
+    "operational_state": "UNAVAILABLE",
+    "diagnostic_state": "RETAINED_DATA_READINESS_ONLY",
+    "reopen_scoring_requires_separate_authorization": true,
+    "v2_26_scope": "refresh policy, provider refresh dry run, delta detection, rollback and maintenance",
+    "v2_26_forbidden_scope": [
+      "implicit scoring promotion",
+      "broker activation",
+      "investment ranking from v2.25B diagnostic"
+    ]
+  }
+}

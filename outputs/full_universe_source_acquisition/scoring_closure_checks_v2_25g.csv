@@ -1,0 +1,21 @@
+check,passed,severity,detail
+all_prior_phases_present,true,critical,6
+all_prior_critical_checks_zero,true,critical,0 across v2.25A-F
+phase_chain_complete,true,critical,v2.25A->B->C->D->E->F->G
+freeze_decision_preserved,true,critical,FROZEN_NOT_PROMOTED
+diagnostic_role_preserved,true,critical,DATA_READINESS_ONLY
+active_scoring_unavailable,true,critical,False
+active_scoring_artifact_null,true,critical,null
+production_authorization_false,true,critical,False
+scoring_promoted_false,true,critical,False
+pointer_fail_closed,true,critical,RETURN_SCORING_UNAVAILABLE
+input_metadata_sha_pinned,true,critical,01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c
+dry_run_scores_sha_pinned,true,critical,4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f
+promoted_metadata_unchanged,true,critical,01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c
+active_universe_pointer_unchanged,true,critical,61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4
+historical_outputs_unchanged,true,critical,True
+no_scoring_reopen_in_v2_26,true,critical,v2.26 handoff explicitly excludes activation
+openai_not_called,true,critical,False
+broker_not_called,true,critical,False
+full59k_deferred,true,critical,DEPRECATED_DEFERRED
+next_phase_v2_26a,true,critical,Universe Refresh Policy

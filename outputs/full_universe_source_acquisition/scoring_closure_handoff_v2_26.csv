@@ -1,0 +1,7 @@
+item,state,constraint
+Operational universe,"43,089-row promoted metadata artifact retained",Refresh must be deterministic and validated
+Scoring,No active production scoring,Do not activate during v2.26
+Diagnostic score,v2.25B retained as DATA_READINESS_ONLY,No investment or broker use
+Scoring pointer,Fail closed; active artifact null,Consumers return SCORING_UNAVAILABLE
+Refresh baseline,SHA256 01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c,Use as immutable comparison baseline
+Deferred universe,full59k=DEPRECATED_DEFERRED,Must remain deferred unless separately authorized

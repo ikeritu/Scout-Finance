@@ -1,0 +1,6 @@
+decision_id,decision,result,effect
+V2_25G_001,Close v2.25A-v2.25G as complete.,CLOSED,Scoring readiness block finished
+V2_25G_002,Carry forward no active production scoring.,ENFORCED,SCORING_UNAVAILABLE remains operational result
+V2_25G_003,Retain v2.25B only as DATA_READINESS_ONLY.,ENFORCED,No financial interpretation permitted
+V2_25G_004,Keep the current operational scoring pointer fail closed.,ENFORCED,No implicit activation
+V2_25G_005,Hand off to v2.26A Universe Refresh Policy.,APPROVED,"Next block addresses refresh and rollback, not scoring promotion"
