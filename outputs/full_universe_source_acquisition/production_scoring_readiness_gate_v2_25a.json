@@ -1,0 +1,291 @@
+{
+  "version": "v2.25A",
+  "phase": "Production Scoring Readiness Gate",
+  "status": "PRODUCTION_SCORING_READINESS_GATE_COMPLETED_DRY_RUN_AUTHORIZED_PRODUCTION_BLOCKED",
+  "generated_at_utc": "2026-08-14T09:06:52.466595+00:00",
+  "summary": {
+    "version": "v2.25A",
+    "phase": "Production Scoring Readiness Gate",
+    "status": "PRODUCTION_SCORING_READINESS_GATE_COMPLETED_DRY_RUN_AUTHORIZED_PRODUCTION_BLOCKED",
+    "gate_decision": "READY_FOR_CONTROLLED_DRY_RUN_NOT_READY_FOR_PRODUCTION",
+    "input_metadata_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+    "input_metadata_rows": 43089,
+    "input_metadata_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+    "historical_scoring_rows": 33498,
+    "legacy_scoring_sha256": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "redesigned_scoring_sha256": "096ab26fc05bf9f37d80d99ea934f41be12126b10295e506180bb5eb8ebb7edb",
+    "metadata_blocker_resolved": true,
+    "manual_labels_available": false,
+    "attractiveness_score_available": false,
+    "controlled_dry_run_authorized": true,
+    "production_scoring_authorized": false,
+    "scoring_promoted": false,
+    "canonical_dataset_modified": false,
+    "promoted_metadata_artifact_modified": false,
+    "active_pointer_modified": false,
+    "active_pointer_sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+    "critical_failed_checks": 0,
+    "production_readiness_unmet_criteria": 4,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "recommended_next_phase": "v2.25B - Production Scoring Dry Run v2"
+  },
+  "readiness_criteria": [
+    {
+      "criterion_id": "V25A_CRIT_001",
+      "criterion": "metadata_artifact_promoted_and_integrity_verified",
+      "required_for": "dry_run_and_production",
+      "met": true,
+      "severity": "critical",
+      "evidence": "43089 rows; sha256=01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "criterion_id": "V25A_CRIT_002",
+      "criterion": "metadata_provenance_complete_for_derived_cells",
+      "required_for": "dry_run_and_production",
+      "met": true,
+      "severity": "critical",
+      "evidence": "56002/56002 derived cells traced; zero overwrites"
+    },
+    {
+      "criterion_id": "V25A_CRIT_003",
+      "criterion": "scoring_formula_reference_available",
+      "required_for": "dry_run_and_production",
+      "met": true,
+      "severity": "critical",
+      "evidence": "v2.23D non-promoted reference; sha256=096ab26fc05bf9f37d80d99ea934f41be12126b10295e506180bb5eb8ebb7edb"
+    },
+    {
+      "criterion_id": "V25A_CRIT_004",
+      "criterion": "row_level_scoring_execution_previously_reproducible",
+      "required_for": "dry_run",
+      "met": true,
+      "severity": "critical",
+      "evidence": "33498-row legacy and redesigned dry-run outputs exist"
+    },
+    {
+      "criterion_id": "V25A_CRIT_005",
+      "criterion": "manual_calibration_labels_available",
+      "required_for": "production",
+      "met": false,
+      "severity": "blocking",
+      "evidence": "manual_labels_created=False"
+    },
+    {
+      "criterion_id": "V25A_CRIT_006",
+      "criterion": "investment_attractiveness_signal_validated",
+      "required_for": "production",
+      "met": false,
+      "severity": "blocking",
+      "evidence": "attractiveness_score_available=False; not invented"
+    },
+    {
+      "criterion_id": "V25A_CRIT_007",
+      "criterion": "explicit_production_promotion_decision_approved",
+      "required_for": "production",
+      "met": false,
+      "severity": "blocking",
+      "evidence": "deferred to v2.25E after v2.25B-D"
+    },
+    {
+      "criterion_id": "V25A_CRIT_008",
+      "criterion": "active_pointer_activation_approved",
+      "required_for": "production",
+      "met": false,
+      "severity": "blocking",
+      "evidence": "activation_deferred=True; active pointer unchanged"
+    }
+  ],
+  "blockers": [
+    {
+      "blocker_id": "V25A_BLOCKER_001",
+      "blocker": "manual_calibration_labels_missing",
+      "blocking_for_controlled_dry_run": false,
+      "blocking_for_production": true,
+      "state": "OPEN",
+      "resolution_path": "Create/review labels only in a separately defined calibration execution path; do not fabricate labels."
+    },
+    {
+      "blocker_id": "V25A_BLOCKER_002",
+      "blocker": "attractiveness_score_unavailable",
+      "blocking_for_controlled_dry_run": false,
+      "blocking_for_production": true,
+      "state": "OPEN",
+      "resolution_path": "Validate an authorized attractiveness signal or explicitly limit the score's semantics."
+    },
+    {
+      "blocker_id": "V25A_BLOCKER_003",
+      "blocker": "production_promotion_gate_not_completed",
+      "blocking_for_controlled_dry_run": false,
+      "blocking_for_production": true,
+      "state": "EXPECTED",
+      "resolution_path": "v2.25C-v2.25E after controlled dry run."
+    },
+    {
+      "blocker_id": "V25A_BLOCKER_004",
+      "blocker": "metadata_gap_remediation_not_executed",
+      "blocking_for_controlled_dry_run": false,
+      "blocking_for_production": false,
+      "state": "RESOLVED_BY_V2_24",
+      "resolution_path": "Promoted metadata artifact retained as immutable input."
+    },
+    {
+      "blocker_id": "V25A_BLOCKER_005",
+      "blocker": "external_enrichment_not_authorized",
+      "blocking_for_controlled_dry_run": false,
+      "blocking_for_production": false,
+      "state": "DEFERRED_OPTIONAL",
+      "resolution_path": "Optional v2.30 only; not required for v2.25B."
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_24g_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "METADATA_CLOSURE_REPORT_COMPLETED_V2_24_CLOSED_SCORING_READINESS_DEFERRED"
+    },
+    {
+      "check": "promoted_rows_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "promoted_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "metadata_improvements_56002",
+      "passed": true,
+      "severity": "critical",
+      "detail": "56002"
+    },
+    {
+      "check": "metadata_provenance_100pct",
+      "passed": true,
+      "severity": "critical",
+      "detail": "100.0"
+    },
+    {
+      "check": "metadata_overwrites_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "legacy_scoring_reference_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1"
+    },
+    {
+      "check": "redesigned_scoring_reference_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "096ab26fc05bf9f37d80d99ea934f41be12126b10295e506180bb5eb8ebb7edb"
+    },
+    {
+      "check": "active_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "controlled_dry_run_allowed_without_pointer_change",
+      "passed": true,
+      "severity": "critical",
+      "detail": "v2.25B authorization scope only"
+    },
+    {
+      "check": "production_scoring_remains_unauthorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "scoring_remains_unpromoted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "canonical_dataset_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "promoted_metadata_artifact_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "scoring_outputs_not_modified",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "full59k_deferred",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DEPRECATED_DEFERRED"
+    }
+  ],
+  "decisions": [
+    {
+      "decision_id": "V2_25A_001",
+      "decision": "Authorize v2.25B as a controlled non-promoted scoring dry run over the promoted metadata artifact.",
+      "result": "APPROVED",
+      "effect": "controlled_dry_run_authorized=True"
+    },
+    {
+      "decision_id": "V2_25A_002",
+      "decision": "Authorize production scoring.",
+      "result": "REJECTED_NOT_READY",
+      "effect": "production_scoring_authorized=False"
+    },
+    {
+      "decision_id": "V2_25A_003",
+      "decision": "Treat the v2.24 metadata-remediation blocker as resolved.",
+      "result": "APPROVED",
+      "effect": "metadata blocker closed; frozen exceptions remain explicit"
+    },
+    {
+      "decision_id": "V2_25A_004",
+      "decision": "Preserve both historical scoring outputs as non-promoted references.",
+      "result": "ENFORCED",
+      "effect": "legacy_score_output_modified=False; redesigned_score_output_modified=False"
+    },
+    {
+      "decision_id": "V2_25A_005",
+      "decision": "Preserve datasets and active pointer unchanged during this gate.",
+      "result": "ENFORCED",
+      "effect": "canonical_dataset_modified=False; active_pointer_modified=False"
+    },
+    {
+      "decision_id": "V2_25A_006",
+      "decision": "Keep external enrichment disabled.",
+      "result": "ENFORCED",
+      "effect": "openai_called=False; broker_called=False; full59k=DEPRECATED_DEFERRED"
+    }
+  ],
+  "next_phase": "v2.25B - Production Scoring Dry Run v2"
+}

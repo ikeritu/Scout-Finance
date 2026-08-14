@@ -1,0 +1,7 @@
+decision_id,decision,result,effect
+V2_25A_001,Authorize v2.25B as a controlled non-promoted scoring dry run over the promoted metadata artifact.,APPROVED,controlled_dry_run_authorized=True
+V2_25A_002,Authorize production scoring.,REJECTED_NOT_READY,production_scoring_authorized=False
+V2_25A_003,Treat the v2.24 metadata-remediation blocker as resolved.,APPROVED,metadata blocker closed; frozen exceptions remain explicit
+V2_25A_004,Preserve both historical scoring outputs as non-promoted references.,ENFORCED,legacy_score_output_modified=False; redesigned_score_output_modified=False
+V2_25A_005,Preserve datasets and active pointer unchanged during this gate.,ENFORCED,canonical_dataset_modified=False; active_pointer_modified=False
+V2_25A_006,Keep external enrichment disabled.,ENFORCED,openai_called=False; broker_called=False; full59k=DEPRECATED_DEFERRED

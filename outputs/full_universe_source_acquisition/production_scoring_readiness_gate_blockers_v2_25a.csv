@@ -1,0 +1,6 @@
+blocker_id,blocker,blocking_for_controlled_dry_run,blocking_for_production,state,resolution_path
+V25A_BLOCKER_001,manual_calibration_labels_missing,False,True,OPEN,Create/review labels only in a separately defined calibration execution path; do not fabricate labels.
+V25A_BLOCKER_002,attractiveness_score_unavailable,False,True,OPEN,Validate an authorized attractiveness signal or explicitly limit the score's semantics.
+V25A_BLOCKER_003,production_promotion_gate_not_completed,False,True,EXPECTED,v2.25C-v2.25E after controlled dry run.
+V25A_BLOCKER_004,metadata_gap_remediation_not_executed,False,False,RESOLVED_BY_V2_24,Promoted metadata artifact retained as immutable input.
+V25A_BLOCKER_005,external_enrichment_not_authorized,False,False,DEFERRED_OPTIONAL,Optional v2.30 only; not required for v2.25B.
