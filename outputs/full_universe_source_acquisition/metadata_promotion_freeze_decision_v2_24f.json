@@ -1,0 +1,171 @@
+{
+  "version": "v2.24F",
+  "phase": "Metadata Promotion / Freeze Decision",
+  "status": "METADATA_PROMOTION_FREEZE_DECISION_COMPLETED_PROMOTED_ARTIFACT_CREATED_POINTER_UNCHANGED",
+  "generated_at_utc": "2026-08-14T08:46:15.231246+00:00",
+  "decision": "PROMOTE_METADATA_ARTIFACT",
+  "summary": {
+    "version": "v2.24F",
+    "phase": "Metadata Promotion / Freeze Decision",
+    "status": "METADATA_PROMOTION_FREEZE_DECISION_COMPLETED_PROMOTED_ARTIFACT_CREATED_POINTER_UNCHANGED",
+    "canonical_rows": 43089,
+    "promoted_rows": 43089,
+    "promoted_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+    "derived_cells": 56002,
+    "provenance_coverage_pct": 100.0,
+    "overwrite_attempts": 0,
+    "critical_failed_checks": 0,
+    "metadata_artifact_promoted": true,
+    "canonical_dataset_modified": false,
+    "active_pointer_modified": false,
+    "production_scoring_authorized": false,
+    "scoring_promoted": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED"
+  },
+  "checks": [
+    {
+      "check": "dry_run_status_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "METADATA_IMPROVEMENT_DRY_RUN_COMPLETED_NO_PROMOTION"
+    },
+    {
+      "check": "dry_run_critical_failed_checks_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "canonical_contract_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "row_count_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "canonical=43089;overlay=43089"
+    },
+    {
+      "check": "row_identity_exact",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "overlay_originals_match_canonical",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "zero_overwrites",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "derived_cells_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "56002"
+    },
+    {
+      "check": "derived_provenance_100pct",
+      "passed": true,
+      "severity": "critical",
+      "detail": "derived=56002;missing_provenance=0"
+    },
+    {
+      "check": "promoted_header_exact",
+      "passed": true,
+      "severity": "critical",
+      "detail": "columns=33"
+    },
+    {
+      "check": "promoted_rows_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "only_metadata_fields_changed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "promoted_changes_match_overlay",
+      "passed": true,
+      "severity": "critical",
+      "detail": "56002"
+    },
+    {
+      "check": "canonical_file_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "72a02a82851c6b6e14a43944e817700010516286defd8f9984991fb4d1ea50d4"
+    },
+    {
+      "check": "canonical_contract_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707"
+    },
+    {
+      "check": "active_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    }
+  ],
+  "decisions": [
+    {
+      "decision_id": "V2_24F_001",
+      "decision": "Promote the deterministic v2.24E overlay as a new immutable metadata artifact.",
+      "result": "APPROVED",
+      "effect": "56002 traced metadata cells; 43,089 rows."
+    },
+    {
+      "decision_id": "V2_24F_002",
+      "decision": "Preserve the existing canonical dataset and active pointer unchanged.",
+      "result": "ENFORCED",
+      "effect": "No in-place mutation and no blind operational activation."
+    },
+    {
+      "decision_id": "V2_24F_003",
+      "decision": "Freeze unresolved HKEX, missing-provider and ambiguous CBOE Europe metadata.",
+      "result": "ENFORCED",
+      "effect": "Unresolved values remain blank instead of being guessed."
+    },
+    {
+      "decision_id": "V2_24F_004",
+      "decision": "Keep production scoring blocked pending v2.25 readiness gates.",
+      "result": "ENFORCED",
+      "effect": "Metadata promotion does not authorize or promote scoring."
+    }
+  ],
+  "inputs": {
+    "canonical": "outputs/full_universe_source_acquisition/expanded_universe_v2_21h_activated_operational_reference.csv",
+    "canonical_sha256": "72a02a82851c6b6e14a43944e817700010516286defd8f9984991fb4d1ea50d4",
+    "canonical_contract_sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "dry_run": "outputs/full_universe_source_acquisition/metadata_improvement_dry_run_v2_24e.json",
+    "overlay": "outputs/full_universe_source_acquisition/metadata_improvement_dry_run_overlay_v2_24e.csv",
+    "overlay_sha256": "f32da06eb3b1a930d46d5d2627f216390ad0eb2e2763c1dc658bf4ce4d56e152"
+  },
+  "outputs": {
+    "promoted_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+    "promoted_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+    "pointer_manifest": "outputs/full_universe_source_acquisition/metadata_promotion_pointer_manifest_v2_24f.json"
+  },
+  "holds": [
+    "hkex_securities_list",
+    "HKEX",
+    "__MISSING_PROVIDER__",
+    "cboe_europe_ambiguous_geography"
+  ],
+  "next_phase": "v2.24G - Metadata Closure Report"
+}

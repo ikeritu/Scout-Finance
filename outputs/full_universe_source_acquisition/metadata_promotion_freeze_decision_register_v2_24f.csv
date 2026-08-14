@@ -1,0 +1,5 @@
+decision_id,decision,result,effect
+V2_24F_001,Promote the deterministic v2.24E overlay as a new immutable metadata artifact.,APPROVED,"56002 traced metadata cells; 43,089 rows."
+V2_24F_002,Preserve the existing canonical dataset and active pointer unchanged.,ENFORCED,No in-place mutation and no blind operational activation.
+V2_24F_003,"Freeze unresolved HKEX, missing-provider and ambiguous CBOE Europe metadata.",ENFORCED,Unresolved values remain blank instead of being guessed.
+V2_24F_004,Keep production scoring blocked pending v2.25 readiness gates.,ENFORCED,Metadata promotion does not authorize or promote scoring.
