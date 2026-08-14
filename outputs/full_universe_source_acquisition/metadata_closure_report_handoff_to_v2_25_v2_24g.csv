@@ -1,0 +1,4 @@
+handoff_id,target_phase,handoff_item,input_artifact,guardrail
+V25_HANDOFF_001,v2.25A - Production Scoring Readiness Gate,Evaluate explicit production-scoring readiness against the promoted metadata artifact.,outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv,Read-only gate; no scoring or pointer promotion unless separately approved.
+V25_HANDOFF_002,v2.25A - Production Scoring Readiness Gate,Reconcile inherited v2.23 blockers with the improved metadata baseline.,metadata_closure_report_remaining_blockers_v2_24g.csv,Metadata improvement does not create calibration labels or attractiveness data.
+V25_HANDOFF_003,v2.25B - Production Scoring Dry Run v2,Use the promoted artifact only after v2.25A explicitly authorizes the dry run.,outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv,No operational pointer mutation and no scoring promotion during dry run.

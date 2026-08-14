@@ -1,0 +1,7 @@
+decision_id,decision,accepted,effect
+V2_24G_001,Close the complete v2.24 metadata block.,True,closed_phase_range=v2.24A-v2.24G
+V2_24G_002,Recognize the v2.24F dataset as the promoted immutable metadata artifact.,True,promoted_sha256=01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c
+V2_24G_003,Preserve the original canonical dataset and active pointer unchanged.,True,canonical_dataset_modified=False; active_pointer_modified=False
+V2_24G_004,"Keep unresolved HKEX, missing-provider and ambiguous CBOE Europe fields frozen.",True,No inference or guessed values.
+V2_24G_005,Keep production scoring blocked until v2.25 gates pass.,True,production_scoring_authorized=False; scoring_promoted=False
+V2_24G_006,"Keep OpenAI, broker enrichment and full59k disabled.",True,openai_called=False; broker_called=False; full59k=DEPRECATED_DEFERRED
