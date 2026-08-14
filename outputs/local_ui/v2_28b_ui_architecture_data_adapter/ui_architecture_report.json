@@ -1,0 +1,51 @@
+{
+  "phase": "v2.28B",
+  "title": "UI Architecture & Data Adapter",
+  "status": "UI_FOUNDATION_IMPLEMENTED_POINTER_SAFE_FAIL_CLOSED_LEGACY_APP_UNTOUCHED",
+  "executed_at_utc": "2026-08-14",
+  "implementation": {
+    "entrypoint": "app_v2_28.py",
+    "legacy_entrypoint": "app.py",
+    "legacy_modified": false,
+    "package": "src/ui_v2_28",
+    "modules": [
+      "state.py",
+      "paths.py",
+      "adapters.py",
+      "navigation.py"
+    ],
+    "screens": 8,
+    "framework": "Streamlit",
+    "initial_external_calls": 0,
+    "initial_pipeline_runs": 0
+  },
+  "contracts": {
+    "universe": "pointer -> safe repository path -> artifact existence -> SHA-256 -> row count",
+    "scoring": "pointer required checks -> active artifact existence/SHA -> PRODUCTION_RANKING; otherwise SCORING_UNAVAILABLE",
+    "maintenance": "read-only v2.26F summary",
+    "navigation": "static eight-screen registry with advanced maintenance flag"
+  },
+  "current_expected_state": {
+    "universe_rows": 43089,
+    "consumer_state": "SCORING_UNAVAILABLE",
+    "allow_ranking": false,
+    "refresh_status": "HOLD_NO_ELIGIBLE_CANDIDATE",
+    "providers": "13/14",
+    "missing_rows": 2013
+  },
+  "safety": {
+    "path_traversal_rejected": true,
+    "score_diagnostic_not_auto_loaded": true,
+    "legacy_ranking_not_called": true,
+    "provider_calls_on_startup": false,
+    "openai_calls_on_startup": false,
+    "yfinance_calls_on_startup": false,
+    "broker_actions": false
+  },
+  "qa": {
+    "script": "tests/qa_ui_architecture_v2_28b.py",
+    "expected": "PASS: pointer/hash/path/state/navigation/maintenance/fail-closed"
+  },
+  "pointer_or_dataset_modified": false,
+  "next_phase": "v2.28C - Catalog & Watchlist UI"
+}

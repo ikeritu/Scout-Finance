@@ -1,0 +1,5 @@
+adapter,input,validation,output,failure
+universe,current universe pointer,path containment + dataset exists + SHA-256 + positive rows,UniverseState,UNAVAILABLE_FAIL_CLOSED
+scoring,current scoring pointer,all active checks + artifact exists + SHA-256,ScoringState,SCORING_UNAVAILABLE
+maintenance,v2.26F report,read-only JSON parse,MaintenanceState,UNKNOWN
+navigation,static registry,known screen id,Screen,KeyError

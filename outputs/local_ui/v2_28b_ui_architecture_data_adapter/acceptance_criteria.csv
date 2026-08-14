@@ -1,0 +1,13 @@
+criterion_id,criterion,status
+A01,New isolated Streamlit entrypoint,PASS_IMPLEMENTED
+A02,Legacy app.py left untouched,PASS
+A03,Universe pointer and SHA validated,PASS_IMPLEMENTED
+A04,Windows-style pointer paths normalized safely,PASS_IMPLEMENTED
+A05,Path traversal rejected,PASS_IMPLEMENTED
+A06,Scoring state fails closed,PASS_IMPLEMENTED
+A07,Diagnostic artifact not auto-loaded,PASS_IMPLEMENTED
+A08,Eight-screen navigation registry,PASS_IMPLEMENTED
+A09,No provider/OpenAI/yfinance/pipeline call on startup,PASS_BY_ARCHITECTURE
+A10,Maintenance status read-only,PASS_IMPLEMENTED
+A11,Integrated UI component screens,DEFERRED_TO_V2_28C_D
+A12,Production ranking visible,BLOCKED_BY_SCORING_POINTER
