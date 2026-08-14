@@ -1,0 +1,14 @@
+metric,value
+reference_rows,33498
+dry_run_v2_rows,33498
+changed_score_rows,16116
+unchanged_score_rows,17382
+mean_delta_vs_v2_23d,10.0086
+mean_absolute_delta_vs_v2_23d,10.0086
+max_absolute_delta_vs_v2_23d,35.4
+score_min,44.5
+score_p25,44.5
+score_median,60.4
+score_p75,96.0
+score_max,98.5
+score_mean,70.6094

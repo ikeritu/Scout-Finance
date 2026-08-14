@@ -1,0 +1,5 @@
+decision_id,decision,result,effect
+V2_25B_001,Execute the v2.23D deterministic formula over the promoted v2.24F metadata artifact.,COMPLETED,New isolated v2.25B score output created.
+V2_25B_002,Keep attractiveness unavailable rather than inventing an investment signal.,ENFORCED,attractiveness_score_available=False.
+V2_25B_003,Do not promote or operationally activate the dry-run scores.,ENFORCED,production_scoring_authorized=False; scoring_promoted=False.
+V2_25B_004,"Preserve all input datasets, pointers and historical scoring outputs.",ENFORCED,All input SHA256 values unchanged.

@@ -1,0 +1,5 @@
+component,weight,included,reason
+data_quality_score,0.7,True,Deterministic v2.23D component reapplied to promoted metadata.
+scope_confidence_score,0.2,True,Deterministic v2.23D component reapplied to promoted metadata.
+provider_quality_score,0.1,True,Deterministic v2.23D component reapplied to promoted metadata.
+attractiveness_score,0.0,False,Attractiveness remains unavailable and is not invented.

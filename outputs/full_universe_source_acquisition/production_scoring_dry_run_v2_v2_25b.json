@@ -1,0 +1,369 @@
+{
+  "version": "v2.25B",
+  "phase": "Production Scoring Dry Run v2",
+  "status": "PRODUCTION_SCORING_DRY_RUN_V2_COMPLETED_NO_PROMOTION",
+  "generated_at_utc": "2026-08-14T09:37:11.148057+00:00",
+  "summary": {
+    "version": "v2.25B",
+    "phase": "Production Scoring Dry Run v2",
+    "status": "PRODUCTION_SCORING_DRY_RUN_V2_COMPLETED_NO_PROMOTION",
+    "dry_run_decision": "CONTROLLED_DRY_RUN_V2_CREATED_NO_PROMOTION",
+    "input_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+    "input_rows": 43089,
+    "input_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+    "legacy_contract_sha256": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1",
+    "reference_v2_23d_contract_sha256": "096ab26fc05bf9f37d80d99ea934f41be12126b10295e506180bb5eb8ebb7edb",
+    "excluded_rows": 9591,
+    "scored_rows": 33498,
+    "scoring_output": "outputs/full_universe_source_acquisition/production_scoring_dry_run_v2_scores_v2_25b.csv",
+    "scoring_output_sha256": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f",
+    "score_min": 44.5,
+    "score_p25": 44.5,
+    "score_median": 60.4,
+    "score_p75": 96.0,
+    "score_max": 98.5,
+    "score_mean": 70.6094,
+    "changed_score_rows_vs_v2_23d": 16116,
+    "mean_delta_vs_v2_23d": 10.0086,
+    "mean_absolute_delta_vs_v2_23d": 10.0086,
+    "max_absolute_delta_vs_v2_23d": 35.4,
+    "attractiveness_score_available": false,
+    "attractiveness_score_invented": false,
+    "production_scoring_authorized": false,
+    "scoring_promoted": false,
+    "promoted_metadata_artifact_modified": false,
+    "active_pointer_modified": false,
+    "legacy_score_output_modified": false,
+    "reference_score_output_modified": false,
+    "openai_called": false,
+    "broker_called": false,
+    "full59k": "DEPRECATED_DEFERRED",
+    "critical_failed_checks": 0,
+    "recommended_next_phase": "v2.25C - Score Stability Audit"
+  },
+  "component_weights": [
+    {
+      "component": "data_quality_score",
+      "weight": 0.7,
+      "included": true,
+      "reason": "Deterministic v2.23D component reapplied to promoted metadata."
+    },
+    {
+      "component": "scope_confidence_score",
+      "weight": 0.2,
+      "included": true,
+      "reason": "Deterministic v2.23D component reapplied to promoted metadata."
+    },
+    {
+      "component": "provider_quality_score",
+      "weight": 0.1,
+      "included": true,
+      "reason": "Deterministic v2.23D component reapplied to promoted metadata."
+    },
+    {
+      "component": "attractiveness_score",
+      "weight": 0.0,
+      "included": false,
+      "reason": "Attractiveness remains unavailable and is not invented."
+    }
+  ],
+  "distribution": [
+    {
+      "score_bucket": "A_85_100",
+      "rows": 13075,
+      "pct": 39.0322
+    },
+    {
+      "score_bucket": "B_70_84",
+      "rows": 3437,
+      "pct": 10.2603
+    },
+    {
+      "score_bucket": "C_55_69",
+      "rows": 5283,
+      "pct": 15.7711
+    },
+    {
+      "score_bucket": "D_40_54",
+      "rows": 11703,
+      "pct": 34.9364
+    },
+    {
+      "score_bucket": "E_0_39",
+      "rows": 0,
+      "pct": 0.0
+    }
+  ],
+  "comparison": [
+    {
+      "metric": "reference_rows",
+      "value": 33498
+    },
+    {
+      "metric": "dry_run_v2_rows",
+      "value": 33498
+    },
+    {
+      "metric": "changed_score_rows",
+      "value": 16116
+    },
+    {
+      "metric": "unchanged_score_rows",
+      "value": 17382
+    },
+    {
+      "metric": "mean_delta_vs_v2_23d",
+      "value": 10.0086
+    },
+    {
+      "metric": "mean_absolute_delta_vs_v2_23d",
+      "value": 10.0086
+    },
+    {
+      "metric": "max_absolute_delta_vs_v2_23d",
+      "value": 35.4
+    },
+    {
+      "metric": "score_min",
+      "value": 44.5
+    },
+    {
+      "metric": "score_p25",
+      "value": 44.5
+    },
+    {
+      "metric": "score_median",
+      "value": 60.4
+    },
+    {
+      "metric": "score_p75",
+      "value": 96.0
+    },
+    {
+      "metric": "score_max",
+      "value": 98.5
+    },
+    {
+      "metric": "score_mean",
+      "value": 70.6094
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_25a_dry_run_authorized",
+      "passed": true,
+      "severity": "critical",
+      "detail": "True"
+    },
+    {
+      "check": "v2_25a_production_blocked",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "promoted_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "promoted_rows_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "legacy_contract_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "a93d48e4bdead6ca8e378a9949cf056c4970e9c1f6a2e8963d7ddbb170e358d1"
+    },
+    {
+      "check": "reference_contract_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "096ab26fc05bf9f37d80d99ea934f41be12126b10295e506180bb5eb8ebb7edb"
+    },
+    {
+      "check": "excluded_rows_9591",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9591"
+    },
+    {
+      "check": "scorable_rows_33498",
+      "passed": true,
+      "severity": "critical",
+      "detail": "33498"
+    },
+    {
+      "check": "row_partition_exact",
+      "passed": true,
+      "severity": "critical",
+      "detail": "9591+33498=43089"
+    },
+    {
+      "check": "reference_row_identity_complete",
+      "passed": true,
+      "severity": "critical",
+      "detail": "reference=33498;scored=33498;legacy=33498"
+    },
+    {
+      "check": "all_scores_in_range",
+      "passed": true,
+      "severity": "critical",
+      "detail": "min=44.5;max=98.5"
+    },
+    {
+      "check": "formula_weights_sum_one",
+      "passed": true,
+      "severity": "critical",
+      "detail": "1.0"
+    },
+    {
+      "check": "attractiveness_not_invented",
+      "passed": true,
+      "severity": "critical",
+      "detail": "all rows false/blank"
+    },
+    {
+      "check": "promoted_artifact_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "legacy_output_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "3eb0bc54d8f84e685274bb65e014010792ca76516996143e2f5c6c6be6420a76"
+    },
+    {
+      "check": "reference_output_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "6ad303cb01bac2c222e072bea4926e066b0c396364b973a67bc91b335d6e6757"
+    },
+    {
+      "check": "no_production_authorization",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False for all rows"
+    },
+    {
+      "check": "no_promotion",
+      "passed": true,
+      "severity": "critical",
+      "detail": "NOT_PROMOTED for all rows"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "full59k_deferred",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DEPRECATED_DEFERRED"
+    }
+  ],
+  "decisions": [
+    {
+      "decision_id": "V2_25B_001",
+      "decision": "Execute the v2.23D deterministic formula over the promoted v2.24F metadata artifact.",
+      "result": "COMPLETED",
+      "effect": "New isolated v2.25B score output created."
+    },
+    {
+      "decision_id": "V2_25B_002",
+      "decision": "Keep attractiveness unavailable rather than inventing an investment signal.",
+      "result": "ENFORCED",
+      "effect": "attractiveness_score_available=False."
+    },
+    {
+      "decision_id": "V2_25B_003",
+      "decision": "Do not promote or operationally activate the dry-run scores.",
+      "result": "ENFORCED",
+      "effect": "production_scoring_authorized=False; scoring_promoted=False."
+    },
+    {
+      "decision_id": "V2_25B_004",
+      "decision": "Preserve all input datasets, pointers and historical scoring outputs.",
+      "result": "ENFORCED",
+      "effect": "All input SHA256 values unchanged."
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "artifact": "expanded_universe_v2_24f_metadata_promoted.csv",
+      "path": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+      "rows": 43089,
+      "sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+      "role": "input_promoted_metadata"
+    },
+    {
+      "artifact": "current_operational_universe_pointer.json",
+      "path": "outputs/full_universe_source_acquisition/current_operational_universe_pointer.json",
+      "rows": 1,
+      "sha256": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4",
+      "role": "input_pointer_unchanged"
+    },
+    {
+      "artifact": "scoring_dry_run_no_promotion_scores_v2_22d.csv",
+      "path": "outputs/full_universe_source_acquisition/scoring_dry_run_no_promotion_scores_v2_22d.csv",
+      "rows": 33498,
+      "sha256": "3eb0bc54d8f84e685274bb65e014010792ca76516996143e2f5c6c6be6420a76",
+      "role": "input_legacy_scores_unchanged"
+    },
+    {
+      "artifact": "scoring_formula_redesign_dry_run_scores_v2_23d.csv",
+      "path": "outputs/full_universe_source_acquisition/scoring_formula_redesign_dry_run_scores_v2_23d.csv",
+      "rows": 33498,
+      "sha256": "6ad303cb01bac2c222e072bea4926e066b0c396364b973a67bc91b335d6e6757",
+      "role": "input_reference_scores_unchanged"
+    },
+    {
+      "artifact": "production_scoring_dry_run_v2_scores_v2_25b.csv",
+      "path": "outputs/full_universe_source_acquisition/production_scoring_dry_run_v2_scores_v2_25b.csv",
+      "rows": 33498,
+      "sha256": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f",
+      "role": "output_scores_not_promoted"
+    },
+    {
+      "artifact": "production_scoring_dry_run_v2_distribution_v2_25b.csv",
+      "path": "outputs/full_universe_source_acquisition/production_scoring_dry_run_v2_distribution_v2_25b.csv",
+      "rows": 5,
+      "sha256": "bdb466687c2364be5e47fb94d6ec8e3614ac44e209305d1b14d52f587d5ae649",
+      "role": "output_distribution"
+    },
+    {
+      "artifact": "production_scoring_dry_run_v2_component_weights_v2_25b.csv",
+      "path": "outputs/full_universe_source_acquisition/production_scoring_dry_run_v2_component_weights_v2_25b.csv",
+      "rows": 4,
+      "sha256": "8ed4d5ea893e16520816cbda2f17b7eba8f86f2cc10ca814be5e85b96f29ea48",
+      "role": "output_components"
+    },
+    {
+      "artifact": "production_scoring_dry_run_v2_comparison_v2_25b.csv",
+      "path": "outputs/full_universe_source_acquisition/production_scoring_dry_run_v2_comparison_v2_25b.csv",
+      "rows": 13,
+      "sha256": "003dffe8b142fdafd2421b8a512603fbb7985fd23b1c2f0ab367df7d19da1be1",
+      "role": "output_comparison"
+    }
+  ]
+}
