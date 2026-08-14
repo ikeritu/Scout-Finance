@@ -1,0 +1,5 @@
+priority,condition,key_template,purpose
+1,isin present,ISIN|normalized(isin)|normalized(exchange)|normalized(ticker),Cross-provider security identity with listing discrimination
+2,isin missing and ticker present,PETIS|normalized(source_provider)|normalized(exchange)|normalized(ticker)|normalized(instrument_id)|normalized(symbol),Provider/listing fallback
+3,isin and ticker missing,PEIS|normalized(source_provider)|normalized(exchange)|normalized(instrument_id)|normalized(symbol),Last deterministic fallback
+4,resulting key incomplete or duplicated,CONFLICT,Never invent or silently merge identity

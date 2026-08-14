@@ -1,0 +1,652 @@
+{
+  "version": "v2.26C",
+  "phase": "Delta Detection System",
+  "status": "DELTA_DETECTION_SYSTEM_COMPLETED_ZERO_DELTA_CONTROL_FIXTURES_PASS",
+  "system_decision": "DETERMINISTIC_FIELD_LEVEL_DELTA_ENGINE_ACCEPTED",
+  "baseline_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+  "baseline_rows": 43089,
+  "baseline_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+  "candidate_reference": "outputs/full_universe_source_acquisition/provider_refresh_dry_run_candidate_reference_v2_26b.json",
+  "candidate_rows": 43089,
+  "candidate_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+  "identity_strategy": "ISIN+exchange+ticker; fallback source_provider+exchange+ticker+instrument_id+symbol",
+  "baseline_unique_identities": 43089,
+  "baseline_identity_collisions": 0,
+  "added_rows": 0,
+  "removed_rows": 0,
+  "quarantined_removals": 0,
+  "modified_rows": 0,
+  "unchanged_rows": 43089,
+  "conflict_rows": 0,
+  "reordered_only_rows": 0,
+  "field_changes": 0,
+  "real_delta_status": "ZERO_DELTA_REPLAY_CONTROL",
+  "fixtures_executed": 6,
+  "fixtures_passed": 6,
+  "fixture_failures": 0,
+  "deletion_quarantine_cycles": 1,
+  "candidate_promotion_eligible": false,
+  "operational_pointer_modified": false,
+  "metadata_baseline_modified": false,
+  "scoring_pointer_modified": false,
+  "production_scoring_authorized": false,
+  "scoring_promoted": false,
+  "openai_called": false,
+  "broker_called": false,
+  "full59k": "DEPRECATED_DEFERRED",
+  "critical_failed_checks": 0,
+  "warning_checks": 1,
+  "recommended_next_phase": "v2.26D - Rollback Validation",
+  "delta_categories": [
+    {
+      "category": "ADDED",
+      "definition": "Identity present only in candidate",
+      "action": "STAGE_ADDITION",
+      "promotion_effect": "REVIEW_THRESHOLDS"
+    },
+    {
+      "category": "REMOVED",
+      "definition": "Identity present only in baseline",
+      "action": "QUARANTINE_ONE_CYCLE",
+      "promotion_effect": "NO_IMMEDIATE_DELETION"
+    },
+    {
+      "category": "MODIFIED",
+      "definition": "Same identity; one or more tracked fields differ",
+      "action": "FIELD_LEVEL_LEDGER",
+      "promotion_effect": "REVIEW_PROVENANCE_AND_REGRESSION"
+    },
+    {
+      "category": "UNCHANGED",
+      "definition": "Same identity and tracked fields",
+      "action": "NO_ACTION",
+      "promotion_effect": "PASS"
+    },
+    {
+      "category": "REORDERED_ONLY",
+      "definition": "Same identities/content but different row order",
+      "action": "IGNORE_ORDER",
+      "promotion_effect": "PASS"
+    },
+    {
+      "category": "CONFLICT",
+      "definition": "Duplicate identity or contradictory candidate records",
+      "action": "QUARANTINE_CONFLICT",
+      "promotion_effect": "BLOCK_UNTIL_RESOLVED"
+    }
+  ],
+  "identity_contract": [
+    {
+      "priority": 1,
+      "condition": "isin present",
+      "key_template": "ISIN|normalized(isin)|normalized(exchange)|normalized(ticker)",
+      "purpose": "Cross-provider security identity with listing discrimination"
+    },
+    {
+      "priority": 2,
+      "condition": "isin missing and ticker present",
+      "key_template": "PETIS|normalized(source_provider)|normalized(exchange)|normalized(ticker)|normalized(instrument_id)|normalized(symbol)",
+      "purpose": "Provider/listing fallback"
+    },
+    {
+      "priority": 3,
+      "condition": "isin and ticker missing",
+      "key_template": "PEIS|normalized(source_provider)|normalized(exchange)|normalized(instrument_id)|normalized(symbol)",
+      "purpose": "Last deterministic fallback"
+    },
+    {
+      "priority": 4,
+      "condition": "resulting key incomplete or duplicated",
+      "key_template": "CONFLICT",
+      "purpose": "Never invent or silently merge identity"
+    }
+  ],
+  "tracked_field_registry": [
+    {
+      "field": "ticker",
+      "identity_field": true,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "company_name",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "exchange",
+      "identity_field": true,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "country",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": true
+    },
+    {
+      "field": "source_provider",
+      "identity_field": true,
+      "tracked_for_change": true,
+      "blank_regression_blocking": true
+    },
+    {
+      "field": "source_file",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "instrument_type",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": true
+    },
+    {
+      "field": "instrument_scope",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": true
+    },
+    {
+      "field": "classification_confidence",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "classification_reason",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "sector",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "industry",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "market_cap",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "raw_cik",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "raw_exchange",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "provider_precedence",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "merge_action",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "merge_reason",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "isin",
+      "identity_field": true,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "currency",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": true
+    },
+    {
+      "field": "mic",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": true
+    },
+    {
+      "field": "source_version",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "source_url",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "hkex_category",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "hkex_subcategory",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "hkex_board_lot",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "provider",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "source_phase",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "symbol",
+      "identity_field": true,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "security_name",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "instrument_id",
+      "identity_field": true,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "product_assignment_group_description",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": false
+    },
+    {
+      "field": "asset_type",
+      "identity_field": false,
+      "tracked_for_change": true,
+      "blank_regression_blocking": true
+    }
+  ],
+  "real_delta_summary": [
+    {
+      "delta_type": "ADDED",
+      "rows": 0,
+      "action": "NONE"
+    },
+    {
+      "delta_type": "REMOVED",
+      "rows": 0,
+      "action": "NONE"
+    },
+    {
+      "delta_type": "QUARANTINED_REMOVAL",
+      "rows": 0,
+      "action": "NONE"
+    },
+    {
+      "delta_type": "MODIFIED",
+      "rows": 0,
+      "action": "NONE"
+    },
+    {
+      "delta_type": "UNCHANGED",
+      "rows": 43089,
+      "action": "PRESERVE"
+    },
+    {
+      "delta_type": "CONFLICT",
+      "rows": 0,
+      "action": "NONE"
+    }
+  ],
+  "fixture_results": [
+    {
+      "fixture_id": "FIX_001",
+      "scenario": "identical candidate",
+      "expected": "unchanged=2",
+      "observed": "unchanged=2",
+      "passed": true
+    },
+    {
+      "fixture_id": "FIX_002",
+      "scenario": "row order reversed",
+      "expected": "reordered only; no semantic delta",
+      "observed": "zero semantic delta",
+      "passed": true
+    },
+    {
+      "fixture_id": "FIX_003",
+      "scenario": "one unique addition",
+      "expected": "added=1",
+      "observed": "added=1",
+      "passed": true
+    },
+    {
+      "fixture_id": "FIX_004",
+      "scenario": "one missing baseline identity",
+      "expected": "removed=1;quarantine=1",
+      "observed": "removed=1;quarantine=1",
+      "passed": true
+    },
+    {
+      "fixture_id": "FIX_005",
+      "scenario": "country field changed on stable identity",
+      "expected": "modified=1;field=country",
+      "observed": "modified=1;field=country",
+      "passed": true
+    },
+    {
+      "fixture_id": "FIX_006",
+      "scenario": "duplicate candidate identity with contradictory values",
+      "expected": "conflict=1;promotion blocked",
+      "observed": "conflict=1;promotion blocked",
+      "passed": true
+    }
+  ],
+  "gate_results": [
+    {
+      "gate": "Identity uniqueness",
+      "result": "PASS",
+      "detail": "43089 unique identities; 0 collisions"
+    },
+    {
+      "gate": "Baseline/candidate SHA comparison",
+      "result": "PASS_ZERO_DELTA",
+      "detail": "identical SHA256"
+    },
+    {
+      "gate": "Added rows classified",
+      "result": "PASS",
+      "detail": "0"
+    },
+    {
+      "gate": "Removed rows quarantined",
+      "result": "PASS",
+      "detail": "0 real; fixture proves quarantine"
+    },
+    {
+      "gate": "Modified rows field-ledgered",
+      "result": "PASS",
+      "detail": "0 real; fixture proves country change"
+    },
+    {
+      "gate": "Conflicts fail closed",
+      "result": "PASS",
+      "detail": "0 real; fixture proves block"
+    },
+    {
+      "gate": "Order independence",
+      "result": "PASS",
+      "detail": "fixture proves reorder ignored"
+    },
+    {
+      "gate": "Promotion eligibility",
+      "result": "BLOCKED",
+      "detail": "v2.26B replay has no live freshness evidence"
+    }
+  ],
+  "limitations": [
+    {
+      "limitation_id": "LIM_001",
+      "severity": "warning",
+      "limitation": "Real candidate is byte-identical to baseline.",
+      "effect": "Production-like nonzero deltas are not observed.",
+      "mitigation": "Six controlled fixtures validate nonzero paths; live run required before promotion."
+    },
+    {
+      "limitation_id": "LIM_002",
+      "severity": "guardrail",
+      "limitation": "v2.26B did not verify live provider freshness.",
+      "effect": "candidate_promotion_eligible=False.",
+      "mitigation": "Keep pointer unchanged and proceed only to rollback validation."
+    }
+  ],
+  "decision_register": [
+    {
+      "decision_id": "V2_26C_001",
+      "decision": "Use order-independent composite identity keys.",
+      "result": "APPROVED"
+    },
+    {
+      "decision_id": "V2_26C_002",
+      "decision": "Treat duplicate identities as conflicts rather than auto-merge.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26C_003",
+      "decision": "Create field-level ledgers for modified rows.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26C_004",
+      "decision": "Quarantine first-cycle removals.",
+      "result": "ENFORCED"
+    },
+    {
+      "decision_id": "V2_26C_005",
+      "decision": "Validate nonzero paths with controlled fixtures.",
+      "result": "COMPLETED"
+    },
+    {
+      "decision_id": "V2_26C_006",
+      "decision": "Do not infer promotion eligibility from zero delta.",
+      "result": "ENFORCED"
+    }
+  ],
+  "checks": [
+    {
+      "check": "v2_26b_candidate_reference_present",
+      "passed": true,
+      "severity": "critical",
+      "detail": "06823549ee328df60e508bddbc4ee1e3f3b32e86"
+    },
+    {
+      "check": "baseline_rows_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "candidate_rows_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "baseline_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "candidate_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "identity_strategy_documented",
+      "passed": true,
+      "severity": "critical",
+      "detail": "ISIN+exchange+ticker; fallback source_provider+exchange+ticker+instrument_id+symbol"
+    },
+    {
+      "check": "baseline_identity_unique",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089/43089"
+    },
+    {
+      "check": "baseline_identity_collisions_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "zero_delta_fast_path_valid",
+      "passed": true,
+      "severity": "critical",
+      "detail": "identical SHA256"
+    },
+    {
+      "check": "real_added_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "real_removed_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "real_modified_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "real_conflicts_zero",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0"
+    },
+    {
+      "check": "real_unchanged_43089",
+      "passed": true,
+      "severity": "critical",
+      "detail": "43089"
+    },
+    {
+      "check": "fixtures_6_of_6",
+      "passed": true,
+      "severity": "critical",
+      "detail": "6/6"
+    },
+    {
+      "check": "addition_fixture_pass",
+      "passed": true,
+      "severity": "critical",
+      "detail": "1"
+    },
+    {
+      "check": "removal_quarantine_fixture_pass",
+      "passed": true,
+      "severity": "critical",
+      "detail": "1/1"
+    },
+    {
+      "check": "field_change_fixture_pass",
+      "passed": true,
+      "severity": "critical",
+      "detail": "country"
+    },
+    {
+      "check": "conflict_fixture_fail_closed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "promotion blocked"
+    },
+    {
+      "check": "reorder_fixture_pass",
+      "passed": true,
+      "severity": "critical",
+      "detail": "zero semantic delta"
+    },
+    {
+      "check": "candidate_not_promotion_eligible",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "operational_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "metadata_baseline_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "scoring_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "c55df8e39dd78f3edbdee26d0e2d63c333aca639"
+    },
+    {
+      "check": "production_scoring_authorized_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "scoring_promoted_false",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "full59k_deferred",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DEPRECATED_DEFERRED"
+    },
+    {
+      "check": "nonzero_real_delta_not_observed",
+      "passed": false,
+      "severity": "warning",
+      "detail": "controlled fixtures used"
+    }
+  ]
+}

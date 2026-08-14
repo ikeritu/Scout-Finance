@@ -1,0 +1,7 @@
+category,definition,action,promotion_effect
+ADDED,Identity present only in candidate,STAGE_ADDITION,REVIEW_THRESHOLDS
+REMOVED,Identity present only in baseline,QUARANTINE_ONE_CYCLE,NO_IMMEDIATE_DELETION
+MODIFIED,Same identity; one or more tracked fields differ,FIELD_LEVEL_LEDGER,REVIEW_PROVENANCE_AND_REGRESSION
+UNCHANGED,Same identity and tracked fields,NO_ACTION,PASS
+REORDERED_ONLY,Same identities/content but different row order,IGNORE_ORDER,PASS
+CONFLICT,Duplicate identity or contradictory candidate records,QUARANTINE_CONFLICT,BLOCK_UNTIL_RESOLVED

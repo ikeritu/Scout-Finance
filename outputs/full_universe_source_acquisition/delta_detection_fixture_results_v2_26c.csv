@@ -1,0 +1,7 @@
+fixture_id,scenario,expected,observed,passed
+FIX_001,identical candidate,unchanged=2,unchanged=2,true
+FIX_002,row order reversed,reordered only; no semantic delta,zero semantic delta,true
+FIX_003,one unique addition,added=1,added=1,true
+FIX_004,one missing baseline identity,removed=1;quarantine=1,removed=1;quarantine=1,true
+FIX_005,country field changed on stable identity,modified=1;field=country,modified=1;field=country,true
+FIX_006,duplicate candidate identity with contradictory values,conflict=1;promotion blocked,conflict=1;promotion blocked,true

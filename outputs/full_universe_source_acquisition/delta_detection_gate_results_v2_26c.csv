@@ -1,0 +1,9 @@
+gate,result,detail
+Identity uniqueness,PASS,43089 unique identities; 0 collisions
+Baseline/candidate SHA comparison,PASS_ZERO_DELTA,identical SHA256
+Added rows classified,PASS,0
+Removed rows quarantined,PASS,0 real; fixture proves quarantine
+Modified rows field-ledgered,PASS,0 real; fixture proves country change
+Conflicts fail closed,PASS,0 real; fixture proves block
+Order independence,PASS,fixture proves reorder ignored
+Promotion eligibility,BLOCKED,v2.26B replay has no live freshness evidence
