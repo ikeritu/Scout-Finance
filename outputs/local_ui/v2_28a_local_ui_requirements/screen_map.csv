@@ -1,0 +1,9 @@
+screen_id,name,priority,state,contents,guard
+"S01","Inicio / Estado","default","CATALOG_AVAILABLE","43,089 universe state, pointer health, scoring lock, refresh HOLD, recent artifacts","No pipeline mutation on load"
+"S02","Universo","primary","CATALOG_AVAILABLE","search, filters, pagination, metadata detail, add to watchlist","No score/rank columns"
+"S03","Watchlists","primary","CATALOG_AVAILABLE","create, import, add/remove, tags, notes, validate, CSV export","Use v2.27C identity contract"
+"S04","Score Explorer","primary","SCORING_UNAVAILABLE / DIAGNOSTIC_LOCKED / PRODUCTION_RANKING","locked state; explicit diagnostic aggregates; future production view","Read scoring pointer before rendering"
+"S05","Informes y exports","primary","CATALOG_AVAILABLE","universe/watchlist reports, manifests, export pack status","Ranking pack hidden while blocked"
+"S06","Detalle de activo","secondary","CATALOG_AVAILABLE","identity, metadata, lineage, quality flags, watchlist membership","No investment recommendation"
+"S07","Mantenimiento","advanced","CATALOG_AVAILABLE","provider gap, pointer integrity, refresh/rollback status","Read-only by default; explicit gates for writes"
+"S08","Ayuda y límites","secondary","all","quickstart, terminology, data limitations, FAQ, safety disclosure","Always reachable"

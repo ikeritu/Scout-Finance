@@ -1,0 +1,11 @@
+criterion_id,criterion,result
+"A01","Existing UI stack and legacy paths audited","PASS"
+"A02","Every screen has a consumer state and safety guard","PASS"
+"A03","Scoring fail-closed behavior is a P1 requirement","PASS"
+"A04","Catalog/watchlist/report requirements cover v2.27 outputs","PASS"
+"A05","Maintenance and provider gaps visible","PASS"
+"A06","Accessibility/responsive/performance requirements defined","PASS"
+"A07","Legacy ranking bypass explicitly prohibited","PASS"
+"A08","No UI code changed in requirements phase","PASS"
+"A09","Full v2.28 implementation roadmap defined","PASS"
+"A10","Production ranking UI authorized","BLOCKED_BY_SCORING_POINTER"

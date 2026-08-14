@@ -1,0 +1,7 @@
+phase,name,status,deliverable
+"v2.28A","Local UI Requirements","COMPLETED_THIS_PHASE","Requirements, gaps, screen map and acceptance contract"
+"v2.28B","UI Architecture & Data Adapter","PENDING","Pointer-safe services, state machine and navigation foundation"
+"v2.28C","Catalog & Watchlist UI","PENDING","43,089-row explorer, filters, detail and watchlist controls"
+"v2.28D","Score Explorer & Reports Integration","PENDING","Locked/diagnostic UI, reports and export surfaces"
+"v2.28E","UX / Responsive / Accessibility QA","PENDING","Visual polish, mobile, keyboard, performance and error states"
+"v2.28F","Local UI Closure","PENDING","Integrated QA, documentation and stable local checkpoint"

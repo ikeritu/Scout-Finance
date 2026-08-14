@@ -1,0 +1,10 @@
+gap_id,gap,severity,response
+"G01","Legacy Ranking tab may expose old scores without v2.25F pointer","CRITICAL","Do not reuse render path; introduce guarded score adapter"
+"G02","README shows obsolete 38,287-row v2.14 state","HIGH","Update documentation after UI foundation"
+"G03","app.py mixes data, business logic, CSS and navigation","HIGH","Extract adapters/services/views before feature integration"
+"G04","Legacy pipeline execution appears in default Dashboard","HIGH","Move to advanced maintenance; no execution on page load"
+"G05","Legacy download buttons do not implement v2.27B manifest contract","MEDIUM","Replace with export service adapter"
+"G06","Legacy manual feedback workflow differs from v2.27C watchlist schema","MEDIUM","Keep historical feedback separate; do not silently merge"
+"G07","External Google Fonts import weakens offline behavior","LOW","Use system font stack or local asset"
+"G08","App title/version and README describe older MVP line","MEDIUM","Introduce current operational state header and version source"
+"G09","Streamlit remains suitable for local prototype but not full multi-user product","ACCEPTED","Keep local/single-user scope in v2.28"

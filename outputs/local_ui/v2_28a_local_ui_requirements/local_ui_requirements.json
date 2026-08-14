@@ -1,0 +1,588 @@
+{
+  "phase": "v2.28A",
+  "title": "Local UI Requirements",
+  "status": "LOCAL_UI_REQUIREMENTS_APPROVED_STREAMLIT_REUSE_WITH_POINTER_SAFE_REFACTOR_REQUIRED",
+  "executed_at_utc": "2026-08-14",
+  "architecture_decision": {
+    "framework": "Streamlit",
+    "decision": "REUSE_WITH_REFACTOR",
+    "rationale": [
+      "already installed and operational",
+      "existing visual theme and local launch path",
+      "Python-native integration with v2.27 tools"
+    ],
+    "prohibited_shortcut": "Do not wire new screens directly to legacy ranking/pipeline helpers without pointer-safe adapters.",
+    "scope": "local single-user analytical dashboard"
+  },
+  "users": [
+    {
+      "persona": "Owner analyst",
+      "goals": [
+        "search universe",
+        "maintain watchlists",
+        "review provenance",
+        "generate reports"
+      ]
+    },
+    {
+      "persona": "Advanced maintainer",
+      "goals": [
+        "inspect provider/pointer/rollback health",
+        "run separately gated maintenance"
+      ]
+    }
+  ],
+  "navigation": {
+    "pattern": "persistent sidebar",
+    "default_screen": "S01",
+    "primary": [
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05"
+    ],
+    "secondary": [
+      "S06",
+      "S08"
+    ],
+    "advanced": [
+      "S07"
+    ]
+  },
+  "screens": [
+    {
+      "id": "S01",
+      "name": "Inicio / Estado",
+      "priority": "default",
+      "state": "CATALOG_AVAILABLE",
+      "contents": "43,089 universe state, pointer health, scoring lock, refresh HOLD, recent artifacts",
+      "guard": "No pipeline mutation on load"
+    },
+    {
+      "id": "S02",
+      "name": "Universo",
+      "priority": "primary",
+      "state": "CATALOG_AVAILABLE",
+      "contents": "search, filters, pagination, metadata detail, add to watchlist",
+      "guard": "No score/rank columns"
+    },
+    {
+      "id": "S03",
+      "name": "Watchlists",
+      "priority": "primary",
+      "state": "CATALOG_AVAILABLE",
+      "contents": "create, import, add/remove, tags, notes, validate, CSV export",
+      "guard": "Use v2.27C identity contract"
+    },
+    {
+      "id": "S04",
+      "name": "Score Explorer",
+      "priority": "primary",
+      "state": "SCORING_UNAVAILABLE / DIAGNOSTIC_LOCKED / PRODUCTION_RANKING",
+      "contents": "locked state; explicit diagnostic aggregates; future production view",
+      "guard": "Read scoring pointer before rendering"
+    },
+    {
+      "id": "S05",
+      "name": "Informes y exports",
+      "priority": "primary",
+      "state": "CATALOG_AVAILABLE",
+      "contents": "universe/watchlist reports, manifests, export pack status",
+      "guard": "Ranking pack hidden while blocked"
+    },
+    {
+      "id": "S06",
+      "name": "Detalle de activo",
+      "priority": "secondary",
+      "state": "CATALOG_AVAILABLE",
+      "contents": "identity, metadata, lineage, quality flags, watchlist membership",
+      "guard": "No investment recommendation"
+    },
+    {
+      "id": "S07",
+      "name": "Mantenimiento",
+      "priority": "advanced",
+      "state": "CATALOG_AVAILABLE",
+      "contents": "provider gap, pointer integrity, refresh/rollback status",
+      "guard": "Read-only by default; explicit gates for writes"
+    },
+    {
+      "id": "S08",
+      "name": "Ayuda y límites",
+      "priority": "secondary",
+      "state": "all",
+      "contents": "quickstart, terminology, data limitations, FAQ, safety disclosure",
+      "guard": "Always reachable"
+    }
+  ],
+  "functional_requirements": [
+    {
+      "id": "F01",
+      "requirement": "Load operational universe only through current universe pointer",
+      "priority": "MUST",
+      "screens": "all",
+      "severity": "P1"
+    },
+    {
+      "id": "F02",
+      "requirement": "Load scoring only through current scoring pointer contract",
+      "priority": "MUST",
+      "screens": "S01/S04",
+      "severity": "P1"
+    },
+    {
+      "id": "F03",
+      "requirement": "Fail closed and render catalog fallback on any scoring check failure",
+      "priority": "MUST",
+      "screens": "S01/S04",
+      "severity": "P1"
+    },
+    {
+      "id": "F04",
+      "requirement": "Never auto-load the v2.25B diagnostic artifact",
+      "priority": "MUST",
+      "screens": "S04",
+      "severity": "P1"
+    },
+    {
+      "id": "F05",
+      "requirement": "Require explicit diagnostic acknowledgement per session",
+      "priority": "MUST",
+      "screens": "S04",
+      "severity": "P1"
+    },
+    {
+      "id": "F06",
+      "requirement": "Hide dry_run_rank, top/bottom and score sorting in diagnostic mode",
+      "priority": "MUST",
+      "screens": "S04",
+      "severity": "P1"
+    },
+    {
+      "id": "F07",
+      "requirement": "Search by name, ticker and ISIN",
+      "priority": "MUST",
+      "screens": "S02",
+      "severity": "P2"
+    },
+    {
+      "id": "F08",
+      "requirement": "Filter country, exchange/MIC, currency, asset type, provider and metadata quality",
+      "priority": "MUST",
+      "screens": "S02",
+      "severity": "P2"
+    },
+    {
+      "id": "F09",
+      "requirement": "Paginate/virtualize the 43,089-row catalog",
+      "priority": "MUST",
+      "screens": "S02",
+      "severity": "P2"
+    },
+    {
+      "id": "F10",
+      "requirement": "Preserve unknown metadata as explicit filter values",
+      "priority": "MUST",
+      "screens": "S02",
+      "severity": "P2"
+    },
+    {
+      "id": "F11",
+      "requirement": "Open an asset detail without losing filter context",
+      "priority": "SHOULD",
+      "screens": "S02/S06",
+      "severity": "P2"
+    },
+    {
+      "id": "F12",
+      "requirement": "Create, load, rename and describe watchlists",
+      "priority": "MUST",
+      "screens": "S03",
+      "severity": "P2"
+    },
+    {
+      "id": "F13",
+      "requirement": "Add asset using stable identity and prevent duplicates",
+      "priority": "MUST",
+      "screens": "S02/S03",
+      "severity": "P1"
+    },
+    {
+      "id": "F14",
+      "requirement": "Reject ambiguous ticker selection until exchange is chosen",
+      "priority": "MUST",
+      "screens": "S02/S03",
+      "severity": "P1"
+    },
+    {
+      "id": "F15",
+      "requirement": "Support CSV watchlist import with row-level result summary",
+      "priority": "MUST",
+      "screens": "S03",
+      "severity": "P2"
+    },
+    {
+      "id": "F16",
+      "requirement": "Support tags, notes, remove, archive and validation",
+      "priority": "MUST",
+      "screens": "S03",
+      "severity": "P2"
+    },
+    {
+      "id": "F17",
+      "requirement": "Export injection-safe watchlist CSV",
+      "priority": "MUST",
+      "screens": "S03",
+      "severity": "P1"
+    },
+    {
+      "id": "F18",
+      "requirement": "Generate universe and watchlist reports in Markdown/HTML",
+      "priority": "MUST",
+      "screens": "S05",
+      "severity": "P2"
+    },
+    {
+      "id": "F19",
+      "requirement": "Create and expose provenance manifest for every report",
+      "priority": "MUST",
+      "screens": "S05",
+      "severity": "P1"
+    },
+    {
+      "id": "F20",
+      "requirement": "Show export pack catalog and distinguish design/implemented/blocked",
+      "priority": "MUST",
+      "screens": "S05",
+      "severity": "P2"
+    },
+    {
+      "id": "F21",
+      "requirement": "Show current provider 13/14 and 2,013-row maintenance gap",
+      "priority": "MUST",
+      "screens": "S01/S07",
+      "severity": "P2"
+    },
+    {
+      "id": "F22",
+      "requirement": "Show pointer/dataset hashes in an expandable provenance panel",
+      "priority": "SHOULD",
+      "screens": "S01/S07",
+      "severity": "P2"
+    },
+    {
+      "id": "F23",
+      "requirement": "Keep maintenance actions read-only unless an explicit gate workflow is entered",
+      "priority": "MUST",
+      "screens": "S07",
+      "severity": "P1"
+    },
+    {
+      "id": "F24",
+      "requirement": "Provide Spanish UI copy with stable technical identifiers",
+      "priority": "MUST",
+      "screens": "all",
+      "severity": "P2"
+    },
+    {
+      "id": "F25",
+      "requirement": "Offer a persistent 'No es asesoramiento financiero' disclosure",
+      "priority": "MUST",
+      "screens": "all",
+      "severity": "P1"
+    },
+    {
+      "id": "F26",
+      "requirement": "Do not expose broker actions, buy/sell signals or allocations",
+      "priority": "MUST",
+      "screens": "all",
+      "severity": "P1"
+    },
+    {
+      "id": "F27",
+      "requirement": "Do not run OpenAI, yfinance, provider fetches or pipeline jobs on initial page load",
+      "priority": "MUST",
+      "screens": "all",
+      "severity": "P1"
+    },
+    {
+      "id": "F28",
+      "requirement": "Cache pointer-safe reads with source hash as cache key",
+      "priority": "SHOULD",
+      "screens": "all",
+      "severity": "P2"
+    },
+    {
+      "id": "F29",
+      "requirement": "Expose human-readable errors without stack traces or secrets",
+      "priority": "MUST",
+      "screens": "all",
+      "severity": "P1"
+    },
+    {
+      "id": "F30",
+      "requirement": "Keep existing CLI tools usable independently of UI",
+      "priority": "MUST",
+      "screens": "S03/S04/S05",
+      "severity": "P2"
+    }
+  ],
+  "nonfunctional_requirements": [
+    {
+      "id": "N01",
+      "category": "Local-first operation",
+      "priority": "MUST",
+      "target": "Core catalog/watchlist/report workflow works without network"
+    },
+    {
+      "id": "N02",
+      "category": "Startup performance",
+      "priority": "MUST",
+      "target": "Initial status view usable within 3 seconds on reference machine after warm cache"
+    },
+    {
+      "id": "N03",
+      "category": "Filter performance",
+      "priority": "SHOULD",
+      "target": "Typical catalog filter response below 1 second after load"
+    },
+    {
+      "id": "N04",
+      "category": "Memory",
+      "priority": "SHOULD",
+      "target": "Avoid duplicate full-dataframe copies; target below 1 GB for catalog workflow"
+    },
+    {
+      "id": "N05",
+      "category": "Accessibility",
+      "priority": "MUST",
+      "target": "Keyboard navigation, visible focus, semantic labels, non-color status cues"
+    },
+    {
+      "id": "N06",
+      "category": "Contrast",
+      "priority": "MUST",
+      "target": "WCAG AA contrast for text and controls"
+    },
+    {
+      "id": "N07",
+      "category": "Responsive",
+      "priority": "MUST",
+      "target": "Usable at 360px, 768px and desktop widths"
+    },
+    {
+      "id": "N08",
+      "category": "Data integrity",
+      "priority": "MUST",
+      "target": "SHA/pointer validation before score or maintenance-derived views"
+    },
+    {
+      "id": "N09",
+      "category": "Atomic user data writes",
+      "priority": "MUST",
+      "target": "Watchlist writes retain backup and never corrupt existing JSON"
+    },
+    {
+      "id": "N10",
+      "category": "Security",
+      "priority": "MUST",
+      "target": "No credentials, environment values, stack traces or unsafe HTML in UI"
+    },
+    {
+      "id": "N11",
+      "category": "Determinism",
+      "priority": "MUST",
+      "target": "Stable identity and final tie/order rules"
+    },
+    {
+      "id": "N12",
+      "category": "Provenance",
+      "priority": "MUST",
+      "target": "Every generated artifact records source and output hashes"
+    },
+    {
+      "id": "N13",
+      "category": "Testability",
+      "priority": "MUST",
+      "target": "Data adapters and UI state functions independently testable"
+    },
+    {
+      "id": "N14",
+      "category": "Compatibility",
+      "priority": "SHOULD",
+      "target": "Windows 11 and current Python/Streamlit requirements"
+    },
+    {
+      "id": "N15",
+      "category": "External assets",
+      "priority": "SHOULD",
+      "target": "Remove Google Fonts dependency or provide system-font fallback for offline use"
+    }
+  ],
+  "legacy_gap_audit": [
+    {
+      "id": "G01",
+      "gap": "Legacy Ranking tab may expose old scores without v2.25F pointer",
+      "severity": "CRITICAL",
+      "response": "Do not reuse render path; introduce guarded score adapter"
+    },
+    {
+      "id": "G02",
+      "gap": "README shows obsolete 38,287-row v2.14 state",
+      "severity": "HIGH",
+      "response": "Update documentation after UI foundation"
+    },
+    {
+      "id": "G03",
+      "gap": "app.py mixes data, business logic, CSS and navigation",
+      "severity": "HIGH",
+      "response": "Extract adapters/services/views before feature integration"
+    },
+    {
+      "id": "G04",
+      "gap": "Legacy pipeline execution appears in default Dashboard",
+      "severity": "HIGH",
+      "response": "Move to advanced maintenance; no execution on page load"
+    },
+    {
+      "id": "G05",
+      "gap": "Legacy download buttons do not implement v2.27B manifest contract",
+      "severity": "MEDIUM",
+      "response": "Replace with export service adapter"
+    },
+    {
+      "id": "G06",
+      "gap": "Legacy manual feedback workflow differs from v2.27C watchlist schema",
+      "severity": "MEDIUM",
+      "response": "Keep historical feedback separate; do not silently merge"
+    },
+    {
+      "id": "G07",
+      "gap": "External Google Fonts import weakens offline behavior",
+      "severity": "LOW",
+      "response": "Use system font stack or local asset"
+    },
+    {
+      "id": "G08",
+      "gap": "App title/version and README describe older MVP line",
+      "severity": "MEDIUM",
+      "response": "Introduce current operational state header and version source"
+    },
+    {
+      "id": "G09",
+      "gap": "Streamlit remains suitable for local prototype but not full multi-user product",
+      "severity": "ACCEPTED",
+      "response": "Keep local/single-user scope in v2.28"
+    }
+  ],
+  "design_tokens": {
+    "theme": "light professional research terminal",
+    "primary": "#0E7C86",
+    "background": "#F4F6F8",
+    "surface": "#FFFFFF",
+    "text": "#18222E",
+    "status_cues": "icon + text + color",
+    "font": "system sans-serif / Inter fallback"
+  },
+  "current_truth": {
+    "universe_rows": 43089,
+    "scoring_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED",
+    "allow_ranking": false,
+    "refresh_status": "HOLD",
+    "provider_coverage": "13/14",
+    "missing_refresh_rows": 2013
+  },
+  "acceptance_criteria": [
+    {
+      "id": "A01",
+      "criterion": "Existing UI stack and legacy paths audited",
+      "result": "PASS"
+    },
+    {
+      "id": "A02",
+      "criterion": "Every screen has a consumer state and safety guard",
+      "result": "PASS"
+    },
+    {
+      "id": "A03",
+      "criterion": "Scoring fail-closed behavior is a P1 requirement",
+      "result": "PASS"
+    },
+    {
+      "id": "A04",
+      "criterion": "Catalog/watchlist/report requirements cover v2.27 outputs",
+      "result": "PASS"
+    },
+    {
+      "id": "A05",
+      "criterion": "Maintenance and provider gaps visible",
+      "result": "PASS"
+    },
+    {
+      "id": "A06",
+      "criterion": "Accessibility/responsive/performance requirements defined",
+      "result": "PASS"
+    },
+    {
+      "id": "A07",
+      "criterion": "Legacy ranking bypass explicitly prohibited",
+      "result": "PASS"
+    },
+    {
+      "id": "A08",
+      "criterion": "No UI code changed in requirements phase",
+      "result": "PASS"
+    },
+    {
+      "id": "A09",
+      "criterion": "Full v2.28 implementation roadmap defined",
+      "result": "PASS"
+    },
+    {
+      "id": "A10",
+      "criterion": "Production ranking UI authorized",
+      "result": "BLOCKED_BY_SCORING_POINTER"
+    }
+  ],
+  "roadmap": [
+    {
+      "phase": "v2.28A",
+      "name": "Local UI Requirements",
+      "status": "COMPLETED_THIS_PHASE",
+      "deliverable": "Requirements, gaps, screen map and acceptance contract"
+    },
+    {
+      "phase": "v2.28B",
+      "name": "UI Architecture & Data Adapter",
+      "status": "PENDING",
+      "deliverable": "Pointer-safe services, state machine and navigation foundation"
+    },
+    {
+      "phase": "v2.28C",
+      "name": "Catalog & Watchlist UI",
+      "status": "PENDING",
+      "deliverable": "43,089-row explorer, filters, detail and watchlist controls"
+    },
+    {
+      "phase": "v2.28D",
+      "name": "Score Explorer & Reports Integration",
+      "status": "PENDING",
+      "deliverable": "Locked/diagnostic UI, reports and export surfaces"
+    },
+    {
+      "phase": "v2.28E",
+      "name": "UX / Responsive / Accessibility QA",
+      "status": "PENDING",
+      "deliverable": "Visual polish, mobile, keyboard, performance and error states"
+    },
+    {
+      "phase": "v2.28F",
+      "name": "Local UI Closure",
+      "status": "PENDING",
+      "deliverable": "Integrated QA, documentation and stable local checkpoint"
+    }
+  ],
+  "pointer_or_dataset_modified": false,
+  "next_phase": "v2.28B - UI Architecture & Data Adapter"
+}
