@@ -1,0 +1,25 @@
+dimension,segment,rows,mean_v2_23d,mean_v2_25b,mean_abs_delta,max_abs_delta,changed_pct,bucket_changed_pct
+provider,nasdaq_trader_nasdaqlisted,3241,66.5204,96,29.4796,35.4,100,100
+provider,nasdaq_trader_otherlisted,2371,66.3317,95.8,29.4683,35.4,100,100
+provider,cboe_listed_symbols,1193,56.3,74.5,18.2,18.2,100,100
+provider,sec_company_tickers_exchange,2217,60.2,78.4,18.2,18.2,100,100
+provider,jpx_listed_securities,3704,79,97.2,18.2,18.2,100,100
+provider,deutsche_boerse_xetra_all_tradable_instruments,1424,81.2,96.6,15.4,15.4,100,100
+provider,TWSE,696,85.6,96.8,11.2,11.2,100,0
+provider,cboe_europe_reference_data,11790,43.8552,44.7544,0.8992,24.2,10.7464,10.7464
+provider,ASX,1289,98.4674,98.4674,0,0,0,0
+provider,hkex_securities_list,2804,60.4,60.4,0,0,0,0
+exchange,NASDAQ,4314,64.9484,91.6224,26.6741,35.4,100,100
+exchange,NYSE,3220,64.1776,89.6938,25.5161,35.4,100,100
+exchange,CBOE,1207,56.3452,74.5452,18.2,18.2,100,100
+exchange,JPX,3704,79,97.2,18.2,18.2,100,100
+exchange,XETR,1424,81.2,96.6,15.4,15.4,100,100
+exchange,CBOE_EUROPE,11790,43.8552,44.7544,0.8992,24.2,10.7464,10.7464
+country,USA,9022,63.5662,88.7795,25.2133,35.4,100,100
+country,JP,3704,79,97.2,18.2,18.2,100,100
+country,Australia,1289,98.4674,98.4674,0,0,0,0
+country,Hong Kong,3183,60.3762,60.3762,0,0,0,0
+confidence,HIGH,4972,66.5224,95.9224,29.4,29.4,100,100
+confidence,MEDIUM,640,65.8053,95.8616,30.0563,35.4,100,100
+confidence,LOW,3410,58.8356,77.0356,18.2,18.2,100,100
+confidence,__MISSING__,22491,56.4675,60.9136,4.4462,24.2,28.4469,28.4469

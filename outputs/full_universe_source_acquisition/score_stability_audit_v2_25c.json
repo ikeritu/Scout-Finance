@@ -1,0 +1,511 @@
+{
+  "version": "v2.25C",
+  "phase": "Score Stability Audit",
+  "status": "SCORE_STABILITY_AUDIT_COMPLETED_HOLD_FOR_EXPLAINABILITY",
+  "input_rows": 33498,
+  "input_scores_sha256": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f",
+  "pearson_score_correlation": 0.890572,
+  "changed_rows": 16116,
+  "changed_pct": 48.1103,
+  "unchanged_rows": 17382,
+  "positive_delta_rows": 16116,
+  "negative_delta_rows": 0,
+  "mean_absolute_delta": 10.0086,
+  "max_absolute_delta": 35.4,
+  "same_bucket_rows": 18078,
+  "same_bucket_pct": 53.9674,
+  "bucket_changed_rows": 15420,
+  "bucket_changed_pct": 46.0326,
+  "cross_up_55": 87,
+  "cross_up_70": 9022,
+  "cross_up_85": 10743,
+  "cross_down_any_threshold": 0,
+  "largest_exact_score_cluster_score": 44.5,
+  "largest_exact_score_cluster_rows": 10523,
+  "largest_exact_score_cluster_pct": 31.414,
+  "production_scoring_authorized": false,
+  "scoring_promoted": false,
+  "stability_promotion_ready": false,
+  "promoted_metadata_artifact_modified": false,
+  "active_pointer_modified": false,
+  "openai_called": false,
+  "broker_called": false,
+  "full59k": "DEPRECATED_DEFERRED",
+  "critical_failed_checks": 0,
+  "recommended_next_phase": "v2.25D - Score Explainability Report",
+  "interpretation": {
+    "ranking_continuity": "High but not sufficient alone: Pearson correlation is 0.890572.",
+    "band_stability": "Weak for promotion: 46.0326% of rows move to another score band.",
+    "directionality": "All 16116 changes are upward; no downward correction exists.",
+    "provider_effect": "Shifts are structural and provider-driven, led by US feeds (~29.47 mean points) and 100% band migration in several providers.",
+    "score_discrimination": "Limited by large exact-score clusters; 10523 rows share 44.5.",
+    "decision": "HOLD. Continue to v2.25D explainability; do not promote or activate."
+  },
+  "thresholds": [
+    {
+      "threshold": 55,
+      "old_above": 21708,
+      "new_above": 21795,
+      "cross_up": 87,
+      "cross_down": 0
+    },
+    {
+      "threshold": 70,
+      "old_above": 7490,
+      "new_above": 16512,
+      "cross_up": 9022,
+      "cross_down": 0
+    },
+    {
+      "threshold": 85,
+      "old_above": 2332,
+      "new_above": 13075,
+      "cross_up": 10743,
+      "cross_down": 0
+    }
+  ],
+  "migration": [
+    {
+      "from_bucket": "A",
+      "to_bucket": "A",
+      "rows": 2332,
+      "pct_total": 6.9616
+    },
+    {
+      "from_bucket": "B",
+      "to_bucket": "A",
+      "rows": 5131,
+      "pct_total": 15.3173
+    },
+    {
+      "from_bucket": "C",
+      "to_bucket": "A",
+      "rows": 5612,
+      "pct_total": 16.7532
+    },
+    {
+      "from_bucket": "B",
+      "to_bucket": "B",
+      "rows": 27,
+      "pct_total": 0.0806
+    },
+    {
+      "from_bucket": "C",
+      "to_bucket": "B",
+      "rows": 3410,
+      "pct_total": 10.1797
+    },
+    {
+      "from_bucket": "E",
+      "to_bucket": "C",
+      "rows": 87,
+      "pct_total": 0.2597
+    },
+    {
+      "from_bucket": "C",
+      "to_bucket": "C",
+      "rows": 5196,
+      "pct_total": 15.5114
+    },
+    {
+      "from_bucket": "E",
+      "to_bucket": "D",
+      "rows": 1180,
+      "pct_total": 3.5226
+    },
+    {
+      "from_bucket": "D",
+      "to_bucket": "D",
+      "rows": 10523,
+      "pct_total": 31.4138
+    }
+  ],
+  "checks": [
+    {
+      "check": "input_rows_33498",
+      "passed": true,
+      "severity": "critical",
+      "detail": "33498"
+    },
+    {
+      "check": "input_scores_sha_expected",
+      "passed": true,
+      "severity": "critical",
+      "detail": "4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f"
+    },
+    {
+      "check": "score_correlation_computed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "0.890572"
+    },
+    {
+      "check": "row_partition_exact",
+      "passed": true,
+      "severity": "critical",
+      "detail": "16116+17382=33498"
+    },
+    {
+      "check": "delta_direction_accounted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "positive=16116;negative=0;zero=17382"
+    },
+    {
+      "check": "bucket_partition_exact",
+      "passed": true,
+      "severity": "critical",
+      "detail": "same=18078;changed=15420"
+    },
+    {
+      "check": "threshold_crossings_accounted",
+      "passed": true,
+      "severity": "critical",
+      "detail": "up55=87;up70=9022;up85=10743;down=0"
+    },
+    {
+      "check": "provider_segment_audit_completed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "all providers; minimum reporting size=50"
+    },
+    {
+      "check": "exchange_segment_audit_completed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "all exchanges; minimum reporting size=50"
+    },
+    {
+      "check": "country_segment_audit_completed",
+      "passed": true,
+      "severity": "critical",
+      "detail": "all countries; minimum reporting size=50"
+    },
+    {
+      "check": "no_production_authorization",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "no_promotion",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "promoted_artifact_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+    },
+    {
+      "check": "active_pointer_unchanged",
+      "passed": true,
+      "severity": "critical",
+      "detail": "61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4"
+    },
+    {
+      "check": "openai_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "broker_not_called",
+      "passed": true,
+      "severity": "critical",
+      "detail": "False"
+    },
+    {
+      "check": "full59k_deferred",
+      "passed": true,
+      "severity": "critical",
+      "detail": "DEPRECATED_DEFERRED"
+    },
+    {
+      "check": "bucket_retention_warning",
+      "passed": false,
+      "severity": "warning",
+      "detail": "53.9674% retained; 46.0326% changed"
+    },
+    {
+      "check": "provider_concentration_warning",
+      "passed": false,
+      "severity": "warning",
+      "detail": "NASDAQ/NASDAQ other mean delta ~29.47; all affected rows changed band"
+    },
+    {
+      "check": "score_cluster_warning",
+      "passed": false,
+      "severity": "warning",
+      "detail": "10523 rows (31.414%) exactly at 44.5"
+    }
+  ],
+  "segment_highlights": [
+    {
+      "dimension": "provider",
+      "segment": "nasdaq_trader_nasdaqlisted",
+      "rows": 3241,
+      "mean_v2_23d": 66.5204,
+      "mean_v2_25b": 96,
+      "mean_abs_delta": 29.4796,
+      "max_abs_delta": 35.4,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "provider",
+      "segment": "nasdaq_trader_otherlisted",
+      "rows": 2371,
+      "mean_v2_23d": 66.3317,
+      "mean_v2_25b": 95.8,
+      "mean_abs_delta": 29.4683,
+      "max_abs_delta": 35.4,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "provider",
+      "segment": "cboe_listed_symbols",
+      "rows": 1193,
+      "mean_v2_23d": 56.3,
+      "mean_v2_25b": 74.5,
+      "mean_abs_delta": 18.2,
+      "max_abs_delta": 18.2,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "provider",
+      "segment": "sec_company_tickers_exchange",
+      "rows": 2217,
+      "mean_v2_23d": 60.2,
+      "mean_v2_25b": 78.4,
+      "mean_abs_delta": 18.2,
+      "max_abs_delta": 18.2,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "provider",
+      "segment": "jpx_listed_securities",
+      "rows": 3704,
+      "mean_v2_23d": 79,
+      "mean_v2_25b": 97.2,
+      "mean_abs_delta": 18.2,
+      "max_abs_delta": 18.2,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "provider",
+      "segment": "deutsche_boerse_xetra_all_tradable_instruments",
+      "rows": 1424,
+      "mean_v2_23d": 81.2,
+      "mean_v2_25b": 96.6,
+      "mean_abs_delta": 15.4,
+      "max_abs_delta": 15.4,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "provider",
+      "segment": "TWSE",
+      "rows": 696,
+      "mean_v2_23d": 85.6,
+      "mean_v2_25b": 96.8,
+      "mean_abs_delta": 11.2,
+      "max_abs_delta": 11.2,
+      "changed_pct": 100,
+      "bucket_changed_pct": 0
+    },
+    {
+      "dimension": "provider",
+      "segment": "cboe_europe_reference_data",
+      "rows": 11790,
+      "mean_v2_23d": 43.8552,
+      "mean_v2_25b": 44.7544,
+      "mean_abs_delta": 0.8992,
+      "max_abs_delta": 24.2,
+      "changed_pct": 10.7464,
+      "bucket_changed_pct": 10.7464
+    },
+    {
+      "dimension": "provider",
+      "segment": "ASX",
+      "rows": 1289,
+      "mean_v2_23d": 98.4674,
+      "mean_v2_25b": 98.4674,
+      "mean_abs_delta": 0,
+      "max_abs_delta": 0,
+      "changed_pct": 0,
+      "bucket_changed_pct": 0
+    },
+    {
+      "dimension": "provider",
+      "segment": "hkex_securities_list",
+      "rows": 2804,
+      "mean_v2_23d": 60.4,
+      "mean_v2_25b": 60.4,
+      "mean_abs_delta": 0,
+      "max_abs_delta": 0,
+      "changed_pct": 0,
+      "bucket_changed_pct": 0
+    },
+    {
+      "dimension": "exchange",
+      "segment": "NASDAQ",
+      "rows": 4314,
+      "mean_v2_23d": 64.9484,
+      "mean_v2_25b": 91.6224,
+      "mean_abs_delta": 26.6741,
+      "max_abs_delta": 35.4,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "exchange",
+      "segment": "NYSE",
+      "rows": 3220,
+      "mean_v2_23d": 64.1776,
+      "mean_v2_25b": 89.6938,
+      "mean_abs_delta": 25.5161,
+      "max_abs_delta": 35.4,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "exchange",
+      "segment": "CBOE",
+      "rows": 1207,
+      "mean_v2_23d": 56.3452,
+      "mean_v2_25b": 74.5452,
+      "mean_abs_delta": 18.2,
+      "max_abs_delta": 18.2,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "exchange",
+      "segment": "JPX",
+      "rows": 3704,
+      "mean_v2_23d": 79,
+      "mean_v2_25b": 97.2,
+      "mean_abs_delta": 18.2,
+      "max_abs_delta": 18.2,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "exchange",
+      "segment": "XETR",
+      "rows": 1424,
+      "mean_v2_23d": 81.2,
+      "mean_v2_25b": 96.6,
+      "mean_abs_delta": 15.4,
+      "max_abs_delta": 15.4,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "exchange",
+      "segment": "CBOE_EUROPE",
+      "rows": 11790,
+      "mean_v2_23d": 43.8552,
+      "mean_v2_25b": 44.7544,
+      "mean_abs_delta": 0.8992,
+      "max_abs_delta": 24.2,
+      "changed_pct": 10.7464,
+      "bucket_changed_pct": 10.7464
+    },
+    {
+      "dimension": "country",
+      "segment": "USA",
+      "rows": 9022,
+      "mean_v2_23d": 63.5662,
+      "mean_v2_25b": 88.7795,
+      "mean_abs_delta": 25.2133,
+      "max_abs_delta": 35.4,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "country",
+      "segment": "JP",
+      "rows": 3704,
+      "mean_v2_23d": 79,
+      "mean_v2_25b": 97.2,
+      "mean_abs_delta": 18.2,
+      "max_abs_delta": 18.2,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "country",
+      "segment": "Australia",
+      "rows": 1289,
+      "mean_v2_23d": 98.4674,
+      "mean_v2_25b": 98.4674,
+      "mean_abs_delta": 0,
+      "max_abs_delta": 0,
+      "changed_pct": 0,
+      "bucket_changed_pct": 0
+    },
+    {
+      "dimension": "country",
+      "segment": "Hong Kong",
+      "rows": 3183,
+      "mean_v2_23d": 60.3762,
+      "mean_v2_25b": 60.3762,
+      "mean_abs_delta": 0,
+      "max_abs_delta": 0,
+      "changed_pct": 0,
+      "bucket_changed_pct": 0
+    },
+    {
+      "dimension": "confidence",
+      "segment": "HIGH",
+      "rows": 4972,
+      "mean_v2_23d": 66.5224,
+      "mean_v2_25b": 95.9224,
+      "mean_abs_delta": 29.4,
+      "max_abs_delta": 29.4,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "confidence",
+      "segment": "MEDIUM",
+      "rows": 640,
+      "mean_v2_23d": 65.8053,
+      "mean_v2_25b": 95.8616,
+      "mean_abs_delta": 30.0563,
+      "max_abs_delta": 35.4,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "confidence",
+      "segment": "LOW",
+      "rows": 3410,
+      "mean_v2_23d": 58.8356,
+      "mean_v2_25b": 77.0356,
+      "mean_abs_delta": 18.2,
+      "max_abs_delta": 18.2,
+      "changed_pct": 100,
+      "bucket_changed_pct": 100
+    },
+    {
+      "dimension": "confidence",
+      "segment": "__MISSING__",
+      "rows": 22491,
+      "mean_v2_23d": 56.4675,
+      "mean_v2_25b": 60.9136,
+      "mean_abs_delta": 4.4462,
+      "max_abs_delta": 24.2,
+      "changed_pct": 28.4469,
+      "bucket_changed_pct": 28.4469
+    }
+  ]
+}

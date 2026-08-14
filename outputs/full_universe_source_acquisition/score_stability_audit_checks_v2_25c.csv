@@ -1,0 +1,21 @@
+check,passed,severity,detail
+input_rows_33498,true,critical,33498
+input_scores_sha_expected,true,critical,4a041712e66034044388dddb0d556c17dbba4bc1a982a6ae7e43d7b57ded5a8f
+score_correlation_computed,true,critical,0.890572
+row_partition_exact,true,critical,16116+17382=33498
+delta_direction_accounted,true,critical,positive=16116;negative=0;zero=17382
+bucket_partition_exact,true,critical,same=18078;changed=15420
+threshold_crossings_accounted,true,critical,up55=87;up70=9022;up85=10743;down=0
+provider_segment_audit_completed,true,critical,all providers; minimum reporting size=50
+exchange_segment_audit_completed,true,critical,all exchanges; minimum reporting size=50
+country_segment_audit_completed,true,critical,all countries; minimum reporting size=50
+no_production_authorization,true,critical,False
+no_promotion,true,critical,False
+promoted_artifact_unchanged,true,critical,01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c
+active_pointer_unchanged,true,critical,61ceca33292a20e00f21a1cb34f7c824c50944818111b8c02834a2e7c74eabf4
+openai_not_called,true,critical,False
+broker_not_called,true,critical,False
+full59k_deferred,true,critical,DEPRECATED_DEFERRED
+bucket_retention_warning,false,warning,53.9674% retained; 46.0326% changed
+provider_concentration_warning,false,warning,NASDAQ/NASDAQ other mean delta ~29.47; all affected rows changed band
+score_cluster_warning,false,warning,10523 rows (31.414%) exactly at 44.5
