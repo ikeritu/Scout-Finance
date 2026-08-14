@@ -1,0 +1,5 @@
+report_type,state,formats,status,required_inputs,safety
+universe,CATALOG_AVAILABLE,md/html,AUTHORIZED,universe pointer + scoring pointer,no score rows
+watchlist,CATALOG_AVAILABLE,md/html,AUTHORIZED,watchlist + scoring pointer,forbid scoring fields
+diagnostic,DIAGNOSTIC_LOCKED,md/html,GATED,scoring pointer + diagnostic CSV + acknowledgement,aggregate only
+production_ranking,PRODUCTION_RANKING,md/html,BLOCKED,active promoted scoring pointer,all pointer gates required

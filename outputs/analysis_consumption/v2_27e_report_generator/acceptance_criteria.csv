@@ -1,0 +1,13 @@
+criterion_id,criterion,status
+A01,Universe report generated in Markdown,PASS_IMPLEMENTED
+A02,Watchlist report generated in responsive HTML,PASS_IMPLEMENTED
+A03,Diagnostic requires explicit acknowledgement,PASS_IMPLEMENTED
+A04,Diagnostic hash and row count validated,PASS_IMPLEMENTED
+A05,Source and output hashes recorded in sidecar manifest,PASS_IMPLEMENTED
+A06,Watchlist scoring fields rejected,PASS_IMPLEMENTED
+A07,No asset score ordering or ranking,PASS_IMPLEMENTED
+A08,No recommendations/signals/allocations/broker actions,PASS_IMPLEMENTED
+A09,Standard-library-only offline operation,PASS_IMPLEMENTED
+A10,Production ranking report available,BLOCKED_BY_SCORING_POINTER
+A11,PDF output,DEFERRED
+A12,Dashboard report controls,DEFERRED_TO_V2_28

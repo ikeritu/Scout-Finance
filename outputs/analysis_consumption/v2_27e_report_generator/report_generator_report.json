@@ -1,0 +1,87 @@
+{
+  "phase": "v2.27E",
+  "title": "Report Generator",
+  "status": "REPORT_GENERATOR_IMPLEMENTED_CATALOG_AND_WATCHLIST_READY_DIAGNOSTIC_GATED",
+  "executed_at_utc": "2026-08-14",
+  "report_types": [
+    {
+      "type": "universe",
+      "state": "CATALOG_AVAILABLE",
+      "formats": [
+        "Markdown",
+        "HTML"
+      ],
+      "status": "AUTHORIZED",
+      "contents": [
+        "43,089-row operational status",
+        "source SHA",
+        "quality band",
+        "scoring state"
+      ]
+    },
+    {
+      "type": "watchlist",
+      "state": "CATALOG_AVAILABLE",
+      "formats": [
+        "Markdown",
+        "HTML"
+      ],
+      "status": "AUTHORIZED",
+      "contents": [
+        "identity snapshots",
+        "tags",
+        "notes",
+        "explicit score exclusion"
+      ]
+    },
+    {
+      "type": "diagnostic",
+      "state": "DIAGNOSTIC_LOCKED",
+      "formats": [
+        "Markdown",
+        "HTML"
+      ],
+      "status": "GATED",
+      "contents": [
+        "coverage",
+        "component means",
+        "buckets",
+        "non-production disclosure"
+      ]
+    },
+    {
+      "type": "production ranking",
+      "state": "PRODUCTION_RANKING",
+      "formats": [
+        "Markdown",
+        "HTML"
+      ],
+      "status": "BLOCKED",
+      "contents": [
+        "not generated until scoring pointer authorization"
+      ]
+    }
+  ],
+  "implementation": {
+    "script": "scripts/report_generator_v2_27e.py",
+    "dependencies": "Python standard library only",
+    "sidecar_manifest": true,
+    "source_hashes": true,
+    "network_required": false
+  },
+  "safety": {
+    "default_fail_closed": true,
+    "score_ordering": false,
+    "dry_run_rank_ignored": true,
+    "recommendations": false,
+    "signals": false,
+    "allocations": false,
+    "broker_actions": false,
+    "pointer_or_dataset_modified": false
+  },
+  "tests": {
+    "script": "tests/qa_report_generator_v2_27e.py",
+    "expected": "PASS: universe/watchlist/diagnostic-ack/html/manifests/fail-closed"
+  },
+  "next_phase": "v2.27F - Analyst Workflow Review"
+}
