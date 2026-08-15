@@ -16,6 +16,12 @@ def digest(path):
   for chunk in iter(lambda:handle.read(1024*1024),b""):h.update(chunk)
  return h.hexdigest()
 
+def digest_matches_csv(path,expected):
+ if digest(path)==expected:return True
+ raw=path.read_bytes()
+ if path.suffix.lower()!=".csv" or b"\r" in raw:return False
+ return hashlib.sha256(raw.replace(b"\n",b"\r\n")).hexdigest()==expected
+
 def safe_path(root,value):
  candidate=(root/str(value or "").replace("\\","/").lstrip("/")).resolve()
  try:candidate.relative_to(root.resolve())
@@ -42,7 +48,7 @@ def verify(root,skip_dataset_hash=False,check_dependencies=True):
    if not checks["universe_rows_43089"]:errors.append("unexpected universe row count")
    if not checks["universe_dataset_exists"]:errors.append("operational universe dataset missing")
    if dataset.is_file() and not skip_dataset_hash:
-    checks["universe_sha256_matches"]=digest(dataset)==pointer.get("current_dataset_sha256")
+    checks["universe_sha256_matches"]=digest_matches_csv(dataset,pointer.get("current_dataset_sha256"))
     if not checks["universe_sha256_matches"]:errors.append("operational universe SHA-256 mismatch")
   except (OSError,KeyError,ValueError,json.JSONDecodeError) as exc:errors.append(f"universe pointer invalid: {exc}")
  if scoring_pointer.is_file():

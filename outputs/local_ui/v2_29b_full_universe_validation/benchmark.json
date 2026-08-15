@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "dataset_git_blob_sha": "900d89bb6e420f540b494a97348609bac9c25bd2",
+  "rows": 43089,
+  "unique_identities": 43089,
+  "duplicate_identity_rows": 0,
+  "load_seconds": 2.2402,
+  "peak_memory_mb": 29.65,
+  "search_mean_ms": 111.87,
+  "search_max_ms": 139.01,
+  "filter_mean_ms": 113.99,
+  "filter_max_ms": 128.09,
+  "pagination_ms": 149.54,
+  "pages_at_250_rows": 173,
+  "last_page_rows": 89,
+  "unknown_counts": {"name": 1193,"isin": 35147,"country": 21154,"currency": 31778,"asset_type": 3200},
+  "integrity_note": "Git LF blob matches the operational pointer SHA after deterministic LF-to-CRLF normalization; all non-EOL content changes remain rejected."
+}

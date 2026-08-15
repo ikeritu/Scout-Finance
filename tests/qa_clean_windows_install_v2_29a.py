@@ -7,7 +7,7 @@ def main():
  with tempfile.TemporaryDirectory() as td:
   root=Path(td);out=root/"outputs/full_universe_source_acquisition";out.mkdir(parents=True)
   for rel in ("app_v2_28.py","requirements-ui-v2_28.txt","run_local_ui_v2_28.bat"):(root/rel).write_text("fixture",encoding="utf-8")
-  dataset=out/"universe.csv";dataset.write_text("id\n1\n",encoding="utf-8");sha=hashlib.sha256(dataset.read_bytes()).hexdigest()
+  dataset=out/"universe.csv";dataset.write_text("id\n1\n",encoding="utf-8");sha=hashlib.sha256(dataset.read_bytes().replace(b"\n",b"\r\n")).hexdigest()
   (out/"current_operational_universe_pointer.json").write_text(json.dumps({"current_dataset":"outputs\\full_universe_source_acquisition\\universe.csv","current_dataset_rows":43089,"current_dataset_sha256":sha}))
   (out/"current_operational_scoring_pointer.json").write_text(json.dumps({"production_scoring_authorized":False,"consumer_contract":{"allow_ranking":False}}))
   report=verify(root,check_dependencies=False);assert report["status"]=="PASS" and report["checks"]["universe_sha256_matches"]
