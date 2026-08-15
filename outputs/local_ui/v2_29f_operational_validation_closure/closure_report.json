@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "phase": "v2.29F",
+  "title": "Operational UI Validation Closure",
+  "status": "CLOSED_VALIDATED_STABLE_FAIL_CLOSED",
+  "executed_at_utc": "2026-08-15",
+  "roadmap": {
+    "v2.29A": {"status": "COMPLETE", "commit": "86ef05dbed5d4e11d6de7fe7561c8d2a015a711a"},
+    "v2.29B": {"status": "COMPLETE", "commit": "65ce20cc35898391634fcb4cf996e9fbb814962e"},
+    "v2.29C": {"status": "COMPLETE", "commit": "ca519867dc218acb508d7f95a86e681f3a0d05a2"},
+    "v2.29D": {"status": "COMPLETE", "commit": "077a81c8879af69dc2334d3f37d4d4992ce1e0c6"},
+    "v2.29E": {"status": "COMPLETE", "commit": "982b1597a959dcba9fe46784515c4cfabfc19509"},
+    "v2.29F": {"status": "COMPLETE", "commit": "RECORDED_BY_GIT_COMMIT"}
+  },
+  "validation": {
+    "accumulated_gates": 7,
+    "universe_rows": 43089,
+    "unique_stable_identities": 43089,
+    "duplicate_identities": 0,
+    "diagnostic_rows": 33498,
+    "functional_scenarios_passed": 20,
+    "incidents_closed": 6,
+    "incidents_open": 0,
+    "performance_gates": "PASS",
+    "memory_gates": "PASS"
+  },
+  "operational_contract": {
+    "stable_entrypoint": "app_v2_28.py",
+    "windows_installer": "setup_local_ui_v2_29a.ps1",
+    "production_scoring_authorized": false,
+    "allow_ranking": false,
+    "investment_recommendations": false,
+    "broker_actions": false,
+    "universe_pointer_modified": false,
+    "scoring_pointer_modified": false
+  },
+  "next_recommended_block": "v2.30 - Provider Coverage Recovery and Real Refresh Candidate"
+}

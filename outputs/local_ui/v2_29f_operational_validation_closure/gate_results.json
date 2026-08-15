@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "phase": "v2.29F",
+  "gate_count": 7,
+  "gates": [
+    {"gate": "clean_windows_install_v2_29a", "status": "PASS", "seconds": 0.15},
+    {"gate": "full_universe_ui_v2_29b", "status": "PASS", "seconds": 5.24},
+    {"gate": "eol_hash_compatibility_v2_29b", "status": "PASS", "seconds": 0.08},
+    {"gate": "functional_flows_v2_29c", "status": "PASS", "seconds": 1.61},
+    {"gate": "performance_memory_v2_29d", "status": "PASS", "seconds": 21.39},
+    {"gate": "incident_closure_v2_29e", "status": "PASS", "seconds": 0.15},
+    {"gate": "local_ui_closure_v2_28f", "status": "PASS", "seconds": 0.45}
+  ],
+  "universe_rows": 43089,
+  "diagnostic_rows": 33498,
+  "functional_scenarios": 20,
+  "open_incidents": 0,
+  "allow_ranking": false,
+  "production_scoring_authorized": false
+}

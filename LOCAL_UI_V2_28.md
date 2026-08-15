@@ -2,6 +2,8 @@
 
 Esta es la interfaz local segura y recomendada para explorar el universo operativo de Scout Finance.
 
+**Estado operativo:** validación v2.29 completada sobre los 43.089 activos; instalación, flujos, rendimiento, memoria e incidencias superan el gate acumulado.
+
 ## Inicio rápido en Windows
 
 ### Instalación automática recomendada
@@ -87,6 +89,10 @@ Las watchlists se guardan en `data/watchlists/`. Están excluidas de Git para ev
 .\.venv\Scripts\python.exe tests\qa_score_reports_ui_v2_28d.py
 .\.venv\Scripts\python.exe tests\qa_ux_accessibility_v2_28e.py
 .\.venv\Scripts\python.exe tests\qa_local_ui_closure_v2_28f.py
+.\.venv\Scripts\python.exe tests\qa_operational_validation_closure_v2_29f.py `
+  --universe outputs\full_universe_source_acquisition\expanded_universe_v2_21h_activated_operational_reference.csv `
+  --diagnostic outputs\full_universe_source_acquisition\production_scoring_dry_run_v2_scores_v2_25b.csv `
+  --scoring-pointer outputs\full_universe_source_acquisition\current_operational_scoring_pointer.json
 ```
 
 La entrada heredada `app.py` permanece intacta. Para esta versión estable usa siempre `app_v2_28.py`.

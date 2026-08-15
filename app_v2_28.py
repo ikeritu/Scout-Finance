@@ -1,4 +1,4 @@
-"""Scout Finance local analyst UI, completed through v2.28E and frozen by v2.28F."""
+"""Scout Finance UI, completed through v2.28E. Local Analyst UI · v2.28 · estable; validated in v2.29."""
 from pathlib import Path
 import pandas as pd
 import streamlit as st
@@ -135,7 +135,7 @@ def main():
  s=state_snapshot();rows=catalog_snapshot(str(s.universe.dataset),s.universe.dataset_sha256) if s.universe.available else []
  if "screen" not in st.session_state:st.session_state.screen="status"
  with st.sidebar:
-  st.markdown("### Scout Finance");st.caption("Local Analyst UI · v2.28 · estable");ids=[x.id for x in SCREENS]
+  st.markdown("### Scout Finance");st.caption("Local Analyst UI · v2.29 · validada");ids=[x.id for x in SCREENS]
   selected=st.radio("Navegación",ids,index=ids.index(st.session_state.screen),format_func=lambda i:next(f"{x.icon} {x.label}" for x in SCREENS if x.id==i),label_visibility="collapsed")
   st.session_state.screen=selected;st.divider();st.caption(f"Estado: {s.scoring.consumer_state.value}");st.caption("No es asesoramiento financiero")
  if selected=="status":render_status(s)
