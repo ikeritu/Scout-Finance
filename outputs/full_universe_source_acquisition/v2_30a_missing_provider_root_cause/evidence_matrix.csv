@@ -1,0 +1,9 @@
+evidence_id,observation,rows,interpretation,confidence,action
+E01,source_provider is null,2013,Canonical provenance missing,HIGH,Do not authorize refresh route
+E02,provider equals nse_india_v2_17g,2013,Legacy provider provenance retained,HIGH,Validate alias and immutable source evidence
+E03,exchange equals NSE and country equals India,2013,Cohort is NSE India,HIGH,Constrain mapping to cohort
+E04,symbol non-null and unique,2013,Stable symbol identity available,HIGH,Reconcile all identities
+E05,ISIN non-null and unique,2013,Stable security identity available,HIGH,Use as reconciliation key
+E06,instrument_id non-null and unique,2013,Internal identity available,HIGH,Detect duplicate or loss
+E07,source_file and source_url absent,2013,Acquisition lineage incomplete,HIGH,Recover artifact hash URL and version before replay
+E08,exact dropping transform not directly evidenced,2013,Historical pipeline cause remains inferential,MEDIUM,Locate generating script or transformation evidence

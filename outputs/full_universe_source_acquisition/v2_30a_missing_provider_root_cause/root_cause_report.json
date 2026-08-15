@@ -1,0 +1,127 @@
+{
+  "phase": "v2.30A",
+  "title": "Missing Provider Root-Cause and Recovery Plan",
+  "status": "ROOT_CAUSE_IDENTIFIED_RECOVERY_NOT_YET_AUTHORIZED_HOLD",
+  "executed_at_utc": "2026-08-15",
+  "baseline": {
+    "operational_rows": 43089,
+    "provider_buckets_expected": 14,
+    "provider_buckets_authorized": 13,
+    "held_rows": 2013,
+    "held_share_pct": 4.6717
+  },
+  "finding": {
+    "prior_bucket": "__MISSING_PROVIDER__",
+    "identified_dataset_cohort": "NSE / India equities",
+    "latent_provider_field": {
+      "field": "provider",
+      "value": "nse_india_v2_17g",
+      "rows": 2013
+    },
+    "missing_canonical_field": {
+      "field": "source_provider",
+      "null_rows": 2013
+    },
+    "identity_evidence": {
+      "exchange": "NSE",
+      "country": "India",
+      "asset_type": "equity",
+      "symbols_non_null": 2013,
+      "symbols_unique": 2013,
+      "isin_non_null": 2013,
+      "isin_unique": 2013,
+      "instrument_id_non_null": 2013,
+      "instrument_id_unique": 2013,
+      "currency": "INR"
+    },
+    "root_cause": "Provider provenance exists in the legacy provider column but was not normalized into canonical source_provider; the refresh manifest therefore collapsed the cohort into __MISSING_PROVIDER__ and had no authorized route.",
+    "confidence": "HIGH_FOR_COHORT_IDENTIFICATION_MEDIUM_FOR_ORIGINAL_PIPELINE_CAUSE",
+    "caveat": "The exact historical transformation step that dropped source_provider is not proven by the immutable dataset alone."
+  },
+  "decision": {
+    "provider_candidate": "nse_india_v2_17g",
+    "canonical_provider_name_proposed": "nse_india",
+    "route_authorized": false,
+    "rows_reclassified": 0,
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "promotion_eligible": false
+  },
+  "recovery_plan": [
+    {
+      "gate": "R01",
+      "phase": "v2.30B",
+      "action": "Locate and validate immutable NSE acquisition evidence for nse_india_v2_17g.",
+      "pass": "Artifact hash, schema, source URL/version and 2,013-row lineage are reproducible.",
+      "fail": "Keep provenance HOLD."
+    },
+    {
+      "gate": "R02",
+      "phase": "v2.30B",
+      "action": "Implement a deterministic provider alias mapping from provider=nse_india_v2_17g to canonical source_provider.",
+      "pass": "Exactly 2,013 intended rows map; no unrelated rows change.",
+      "fail": "Reject mapping."
+    },
+    {
+      "gate": "R03",
+      "phase": "v2.30C",
+      "action": "Reconcile identities and row dispositions against the operational universe.",
+      "pass": "2,013/2,013 dispositioned; 0 duplicate identity groups; no silent losses.",
+      "fail": "Quarantine candidate."
+    },
+    {
+      "gate": "R04",
+      "phase": "v2.30D",
+      "action": "Materialize a new immutable refresh candidate.",
+      "pass": "14/14 provider buckets and hashes recorded; current pointer unchanged.",
+      "fail": "No candidate."
+    },
+    {
+      "gate": "R05",
+      "phase": "v2.30E",
+      "action": "Run delta, metadata, quality and rollback gates.",
+      "pass": "All blocking gates PASS and all real deltas classified.",
+      "fail": "HOLD."
+    },
+    {
+      "gate": "R06",
+      "phase": "v2.30F",
+      "action": "Issue explicit promotion or HOLD decision.",
+      "pass": "Human approval required before pointer mutation.",
+      "fail": "Retain current pointer."
+    }
+  ],
+  "gates": [
+    {
+      "id": "A01",
+      "result": "PASS",
+      "detail": "Held cohort is exactly 2,013 rows."
+    },
+    {
+      "id": "A02",
+      "result": "PASS",
+      "detail": "All held rows are NSE / India / equity / INR."
+    },
+    {
+      "id": "A03",
+      "result": "PASS",
+      "detail": "Legacy provider is nse_india_v2_17g for 2,013/2,013 rows."
+    },
+    {
+      "id": "A04",
+      "result": "PASS",
+      "detail": "Symbols, ISINs and instrument_ids are populated and unique for 2,013/2,013 rows."
+    },
+    {
+      "id": "A05",
+      "result": "PASS",
+      "detail": "Canonical source_provider is null for 2,013/2,013 rows."
+    },
+    {
+      "id": "A06",
+      "result": "PASS",
+      "detail": "No pointer mutation or promotion claim is part of v2.30A."
+    }
+  ],
+  "next_phase": "v2.30B - NSE Provider Evidence Recovery and Controlled Replay"
+}
