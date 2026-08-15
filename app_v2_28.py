@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 from src.ui_v2_28 import ConsumerState,SCREENS,build_app_state
 from src.ui_v2_28.catalog import DISPLAY_FIELDS,asset_by_identity,distinct_values,load_catalog,query_catalog
-from src.ui_v2_28.watchlists import add,atomic_write,create,export_csv_bytes,list_watchlists,read,remove,update_item,update_metadata
+from src.ui_v2_28.watchlists import add,atomic_write,create,export_csv_bytes,list_watchlists,read,remove,scan_watchlists,update_item,update_metadata
 from src.ui_v2_28.scoring import diagnostic_contract,distribution_rows,load_diagnostic
 from src.ui_v2_28.reports import diagnostic_markdown,package_report,universe_markdown,watchlist_markdown
 from src.ui_v2_28.ui import apply as apply_ui,screen_context
@@ -46,7 +46,8 @@ def render_catalog(rows):
   label=st.selectbox("Activo seleccionado",options)
   if st.button("Abrir detalle",type="primary"):go("asset",options[label])
 def choose_watchlist():
- available=list_watchlists(ROOT)
+ available,errors=scan_watchlists(ROOT)
+ for path,error in errors:st.warning(f"Watchlist omitida por estar dañada: {path.name} · {error}")
  if not available:return None,None
  labels={f'{data["name"]} ({len(data["items"])})':path for path,data in available};path=labels[st.selectbox("Watchlist",labels)];return path,read(path)
 def render_watchlists(rows):
@@ -60,7 +61,9 @@ def render_watchlists(rows):
  if not data:st.info("Todavía no hay watchlists locales.");return
  with st.expander("Editar datos de la lista"):
   name=st.text_input("Nombre",data["name"],key="edit_wl_name");description=st.text_input("Descripción",data.get("description",""),key="edit_wl_desc")
-  if st.button("Guardar datos"):update_metadata(path,data,name,description);st.rerun()
+  if st.button("Guardar datos"):
+   try:update_metadata(path,data,name,description);st.rerun()
+   except ValueError as exc:st.error(str(exc))
  st.subheader("Añadir activo");query=st.text_input("Buscar activo para añadir",key="wl_search");matches=query_catalog(rows,query,page_size=25).rows if query else ()
  if matches:
   labels={f'{x["ticker"]} · {x["exchange"]} · {x["name"]}':x for x in matches};label=st.selectbox("Resultado",labels);tags=st.text_input("Etiquetas separadas por comas");note=st.text_area("Nota")

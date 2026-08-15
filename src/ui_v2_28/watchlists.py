@@ -46,14 +46,21 @@ def atomic_write(path:Path,data):
 
 def read(path:Path):
  data=json.loads(path.read_text(encoding="utf-8"));validate(data);return data
+def scan_watchlists(root:Path):
+ folder=watchlist_dir(root);valid=[];errors=[]
+ if not folder.exists():return valid,errors
+ for path in sorted(folder.glob("*.json")):
+  try:valid.append((path,read(path)))
+  except (OSError,ValueError,json.JSONDecodeError) as exc:errors.append((path,str(exc)))
+ return valid,errors
 def list_watchlists(root:Path):
- folder=watchlist_dir(root)
- return [(path,read(path)) for path in sorted(folder.glob("*.json"))] if folder.exists() else []
+ return scan_watchlists(root)[0]
 def create(root:Path,name,description=""):
  path=watchlist_path(root,name)
  if path.exists():raise ValueError("watchlist already exists")
  data=new_watchlist(name,description);atomic_write(path,data);return path,data
 def update_metadata(path:Path,data,name,description=""):
+ if not clean(name):raise ValueError("watchlist name is required")
  data["name"]=clean(name);data["description"]=clean(description);data["updated_at_utc"]=now();atomic_write(path,data)
 def add(data,asset,tags="",note=""):
  key=clean(asset.get("identity_key"))

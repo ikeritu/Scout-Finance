@@ -9,21 +9,23 @@ Set-Location $ProjectRoot
 
 Write-Host "Scout Finance v2.29A - instalacion limpia de la UI local" -ForegroundColor Cyan
 
-$PythonCommand = $null
+$PythonExe = $null
+$PythonArgs = @()
 if (Get-Command py -ErrorAction SilentlyContinue) {
     & py -3.11 -c "import sys; print(sys.version)" 2>$null
-    if ($LASTEXITCODE -eq 0) { $PythonCommand = @("py", "-3.11") }
-    else { $PythonCommand = @("py", "-3") }
+    $PythonExe = "py"
+    if ($LASTEXITCODE -eq 0) { $PythonArgs = @("-3.11") }
+    else { $PythonArgs = @("-3") }
 } elseif (Get-Command python -ErrorAction SilentlyContinue) {
-    $PythonCommand = @("python")
+    $PythonExe = "python"
 } else {
     throw "Python no esta instalado o no esta disponible en PATH. Instala Python 3.11 y vuelve a ejecutar este script."
 }
 
 if (-not (Test-Path ".venv\Scripts\python.exe")) {
     Write-Host "Creando entorno virtual .venv..." -ForegroundColor Yellow
-    if ($PythonCommand.Count -eq 2) { & $PythonCommand[0] $PythonCommand[1] -m venv .venv }
-    else { & $PythonCommand[0] -m venv .venv }
+    & $PythonExe @PythonArgs -m venv .venv
+    if ($LASTEXITCODE -ne 0) { throw "Python no pudo crear el entorno virtual." }
 }
 
 $VenvPython = Join-Path $ProjectRoot ".venv\Scripts\python.exe"

@@ -1,0 +1,7 @@
+incident,severity,status,resolution
+CSV LF/CRLF pointer mismatch,HIGH,CLOSED,Constrained CSV-only EOL-equivalent SHA validation
+Diagnostic LF/CRLF pointer mismatch,HIGH,CLOSED,Same constrained integrity rule with acknowledgement retained
+Repeated query overhead,MEDIUM,CLOSED,Normalized rows reused and filter sets precomputed
+Corrupt watchlist blocks all lists,MEDIUM,CLOSED,Invalid JSON isolated and surfaced while valid lists continue
+Empty watchlist rename,LOW,CLOSED,Non-empty name required before persistence
+Ambiguous PowerShell array invocation,MEDIUM,CLOSED,Explicit executable plus splatted selector arguments
