@@ -1,0 +1,121 @@
+{
+  "phase": "v2.30E",
+  "title": "Delta Quality and Rollback Gate",
+  "status": "ALL_BLOCKING_GATES_PASS_PROMOTION_DECISION_READY_NOT_PROMOTED",
+  "executed_at_utc": "2026-08-15",
+  "candidate": {
+    "path": "outputs/full_universe_source_acquisition/v2_30d_immutable_refresh_candidate/refresh_candidate_v2_30d.csv.xz",
+    "git_blob_sha": "47e7f32c0011c5ad94fa0941407442f8ee505744",
+    "csv_sha256": "73cf3528a56e79833b3b2cad33ed0b0eb577e3e7dcd803d2976be0ef771deebe",
+    "xz_sha256": "4cbde1e534ccf145542e6d0bd0c1f5aec7dba4d43037aea5f115e1ea9b46d6bf"
+  },
+  "delta_audit": {
+    "baseline_rows": 43089,
+    "candidate_rows": 43089,
+    "added_rows": 0,
+    "removed_rows": 0,
+    "changed_rows": 2013,
+    "changed_cells": 2013,
+    "changed_fields": {
+      "source_provider": 2013
+    },
+    "classified_delta_rows": 2013,
+    "unclassified_delta_rows": 0,
+    "non_source_provider_payload_equal": true
+  },
+  "quality_audit": {
+    "quality_band_min_rows": 42000,
+    "quality_band_max_rows": 45000,
+    "row_band_result": "PASS",
+    "schema_columns_before": 33,
+    "schema_columns_after": 33,
+    "schema_result": "PASS",
+    "metadata_regressions": 0,
+    "metadata_improvements": {
+      "source_provider_non_blank": 2013
+    },
+    "blank_source_provider_after": 0,
+    "provider_coverage_after": "14/14",
+    "identity_preserved": true
+  },
+  "artifact_integrity": {
+    "xz_test": "PASS",
+    "csv_sha256_match": true,
+    "xz_sha256_match": true
+  },
+  "rollback": {
+    "method": "For rows matching provider=nse_india_v2_17g, exchange=NSE, country=India and source_provider=nse_india, set source_provider to blank.",
+    "reversed_rows": 2013,
+    "rollback_rows": 43089,
+    "normalized_baseline_sha256": "72a02a82851c6b6e14a43944e817700010516286defd8f9984991fb4d1ea50d4",
+    "rollback_sha256": "72a02a82851c6b6e14a43944e817700010516286defd8f9984991fb4d1ea50d4",
+    "byte_exact": true,
+    "result": "PASS"
+  },
+  "gates": [
+    {
+      "id": "E01",
+      "result": "PASS",
+      "detail": "XZ integrity and both recorded hashes verified."
+    },
+    {
+      "id": "E02",
+      "result": "PASS",
+      "detail": "43,089 rows preserved; additions=0 and removals=0."
+    },
+    {
+      "id": "E03",
+      "result": "PASS",
+      "detail": "33-column schema preserved."
+    },
+    {
+      "id": "E04",
+      "result": "PASS",
+      "detail": "All 2,013 changed rows are classified canonical provenance corrections."
+    },
+    {
+      "id": "E05",
+      "result": "PASS",
+      "detail": "Unclassified real deltas=0."
+    },
+    {
+      "id": "E06",
+      "result": "PASS",
+      "detail": "All non-source_provider payload is identical."
+    },
+    {
+      "id": "E07",
+      "result": "PASS",
+      "detail": "Metadata regressions=0; source_provider completeness improves by 2,013."
+    },
+    {
+      "id": "E08",
+      "result": "PASS",
+      "detail": "Row quality band PASS and provider coverage 14/14."
+    },
+    {
+      "id": "E09",
+      "result": "PASS",
+      "detail": "Rollback reverses exactly 2,013 rows and is byte-identical to normalized baseline."
+    },
+    {
+      "id": "E10",
+      "result": "PASS",
+      "detail": "Operational and scoring pointers remain unchanged."
+    }
+  ],
+  "summary": {
+    "blocking_gates_passed": 10,
+    "blocking_gates_total": 10,
+    "critical_failures": 0,
+    "warnings": 0
+  },
+  "decision": "ELIGIBLE_FOR_EXPLICIT_V2_30F_PROMOTION_OR_HOLD_DECISION",
+  "hard_guards": {
+    "candidate_promoted": false,
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "production_scoring_authorized": false
+  },
+  "next_phase": "v2.30F - Promotion or HOLD Decision and Closure"
+}

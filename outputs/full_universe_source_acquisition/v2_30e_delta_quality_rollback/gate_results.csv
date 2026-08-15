@@ -1,0 +1,11 @@
+gate_id,result,blocking,detail
+E01,PASS,true,XZ integrity and candidate hashes verified
+E02,PASS,true,Rows preserved 43089 with zero additions and removals
+E03,PASS,true,Schema preserved at 33 columns
+E04,PASS,true,All 2013 changed rows classified as provenance corrections
+E05,PASS,true,Unclassified real deltas zero
+E06,PASS,true,All non-source_provider payload byte-equivalent by field
+E07,PASS,true,Metadata regressions zero and completeness improves by 2013
+E08,PASS,true,Quality row band passes and provider coverage is 14 of 14
+E09,PASS,true,Rollback is byte-identical to normalized baseline SHA256 72a02a82851c6b6e14a43944e817700010516286defd8f9984991fb4d1ea50d4
+E10,PASS,true,Operational and scoring pointers remain unchanged

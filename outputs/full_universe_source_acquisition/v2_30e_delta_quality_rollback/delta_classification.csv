@@ -1,0 +1,4 @@
+delta_class,field,rows,added,removed,changed,classified,expected,quality_effect,decision
+CANONICAL_PROVENANCE_BACKFILL,source_provider,2013,0,0,2013,true,true,IMPROVEMENT,ACCEPT_FOR_DECISION
+UNCLASSIFIED_REAL_DELTA,any,0,0,0,0,true,false,NONE,PASS
+UNEXPECTED_FIELD_CHANGE,non_source_provider,0,0,0,0,true,false,NONE,PASS
