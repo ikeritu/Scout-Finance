@@ -1,0 +1,116 @@
+{
+  "phase": "v2.31A",
+  "title": "Post-Promotion Operational Observation",
+  "status": "POST_PROMOTION_OBSERVATION_PASS_STABLE_NO_ROLLBACK_TRIGGER",
+  "executed_at_utc": "2026-08-15",
+  "observed_pointer": {
+    "blob_sha": "d4a2b51589193a30673dd2e6cea9d42026215237",
+    "dataset": "outputs/full_universe_source_acquisition/v2_30d_immutable_refresh_candidate/refresh_candidate_v2_30d.csv.xz",
+    "dataset_sha256": "4cbde1e534ccf145542e6d0bd0c1f5aec7dba4d43037aea5f115e1ea9b46d6bf"
+  },
+  "observations": {
+    "universe_rows": 43089,
+    "unique_identities": 43089,
+    "duplicate_identities": 0,
+    "canonical_providers": 14,
+    "unknown_provider_rows": 0,
+    "nse_india_rows": 2013,
+    "cold_catalog_load_seconds": 2.1004,
+    "peak_traced_memory_mb": 93.97,
+    "search_mean_ms": 180.541,
+    "search_threshold_ms": 250,
+    "search_result": "PASS",
+    "provider_filter_mean_ms": 2.794,
+    "nse_filter_rows": 2013,
+    "pointer_hash_match": true,
+    "xz_integrity": true,
+    "maintenance_provider_coverage": "14/14",
+    "maintenance_missing_rows": 0,
+    "scoring_allow_ranking": false,
+    "production_scoring_authorized": false
+  },
+  "thresholds": {
+    "universe_rows": [
+      42000,
+      45000
+    ],
+    "cold_load_seconds_max": 3,
+    "peak_traced_memory_mb_max": 128,
+    "search_mean_ms_max": 250,
+    "duplicate_identities_max": 0,
+    "unknown_provider_rows_max": 0,
+    "missing_provider_rows_max": 0
+  },
+  "gates": [
+    {
+      "id": "A01",
+      "result": "PASS",
+      "detail": "Operational pointer resolves to immutable v2.30D XZ artifact and hash matches."
+    },
+    {
+      "id": "A02",
+      "result": "PASS",
+      "detail": "Catalog loads 43,089 rows in 2.10 seconds."
+    },
+    {
+      "id": "A03",
+      "result": "PASS",
+      "detail": "43,089 unique identities; duplicate identities=0."
+    },
+    {
+      "id": "A04",
+      "result": "PASS",
+      "detail": "14 canonical providers; unknown provider rows=0."
+    },
+    {
+      "id": "A05",
+      "result": "PASS",
+      "detail": "NSE provider filter returns exactly 2,013 rows."
+    },
+    {
+      "id": "A06",
+      "result": "PASS",
+      "detail": "Search mean 180.541 ms is below 250 ms threshold."
+    },
+    {
+      "id": "A07",
+      "result": "PASS",
+      "detail": "Peak traced memory 93.97 MB is below 128 MB threshold."
+    },
+    {
+      "id": "A08",
+      "result": "PASS",
+      "detail": "Maintenance state reports 14/14 and missing rows=0."
+    },
+    {
+      "id": "A09",
+      "result": "PASS",
+      "detail": "Scoring remains unavailable, unauthorized and fail-closed."
+    },
+    {
+      "id": "A10",
+      "result": "PASS",
+      "detail": "No rollback trigger observed; operational and scoring pointers unchanged."
+    }
+  ],
+  "summary": {
+    "gates_passed": 10,
+    "gates_total": 10,
+    "incidents_opened": 0,
+    "rollback_triggered": false
+  },
+  "hard_guards": {
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "production_scoring_authorized": false
+  },
+  "roadmap_v2_31": [
+    "v2.31A - Post-Promotion Operational Observation",
+    "v2.31B - Consumer Compatibility Regression",
+    "v2.31C - Maintenance State and Alert Rebaseline",
+    "v2.31D - Live Provider Probe",
+    "v2.31E - Observation Window Decision",
+    "v2.31F - Post-Promotion Closure"
+  ],
+  "next_phase": "v2.31B - Consumer Compatibility Regression"
+}

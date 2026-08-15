@@ -1,0 +1,13 @@
+scenario_id,result,metric,observed,threshold
+O01,PASS,pointer_hash_match,true,true
+O02,PASS,universe_rows,43089,42000-45000
+O03,PASS,unique_identities,43089,43089
+O04,PASS,duplicate_identities,0,0
+O05,PASS,canonical_providers,14,14
+O06,PASS,unknown_provider_rows,0,0
+O07,PASS,nse_filter_rows,2013,2013
+O08,PASS,cold_load_seconds,2.1004,<=3.0
+O09,PASS,peak_traced_memory_mb,93.97,<=128
+O10,PASS,search_mean_ms,180.541,<=250
+O11,PASS,provider_filter_mean_ms,2.794,<=100
+O12,PASS,scoring_allow_ranking,false,false
