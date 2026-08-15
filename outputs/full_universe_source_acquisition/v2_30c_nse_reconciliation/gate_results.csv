@@ -1,0 +1,9 @@
+gate_id,result,blocking,detail
+C01,PASS,true,Target operational cohort equals 2013 rows
+C02,PASS,true,Raw NSE identity matches 2013 of 2013
+C03,PASS,true,Instrument IDs symbols and ISINs unique 2013 of 2013
+C04,PASS,true,Exact duplicates and duplicate identity groups equal zero
+C05,PASS,true,Cross-cohort ISIN instrument ID and symbol plus exchange collisions equal zero
+C06,PASS,true,Alias predicate selects 2013 intended rows and zero unrelated rows
+C07,PASS,true,Disposition coverage 2013 of 2013 with zero unresolved or quarantined
+C08,PASS,true,Operational and scoring pointers remain unchanged

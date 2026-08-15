@@ -1,0 +1,111 @@
+{
+  "phase": "v2.30C",
+  "title": "NSE Missing Rows Reconciliation",
+  "status": "RECONCILIATION_2013_OF_2013_PASS_READY_FOR_IMMUTABLE_CANDIDATE_POINTERS_UNCHANGED",
+  "executed_at_utc": "2026-08-15",
+  "operational_baseline": {
+    "dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_21h_activated_operational_reference.csv",
+    "rows": 43089
+  },
+  "target_rule": {
+    "provider": "nse_india_v2_17g",
+    "exchange": "NSE",
+    "country": "India",
+    "source_provider_before": "",
+    "source_provider_proposed": "nse_india"
+  },
+  "reconciliation": {
+    "target_rows": 2013,
+    "dispositioned_rows": 2013,
+    "disposition_coverage_pct": 100,
+    "ready_for_candidate_normalization": 2013,
+    "quarantined_rows": 0,
+    "unresolved_rows": 0,
+    "unique_instrument_ids": 2013,
+    "unique_symbols": 2013,
+    "unique_isins": 2013,
+    "exact_duplicate_rows": 0,
+    "duplicate_instrument_id_groups": 0,
+    "duplicate_symbol_isin_groups": 0,
+    "cross_cohort_isin_collisions": 0,
+    "cross_cohort_instrument_id_collisions": 0,
+    "cross_cohort_symbol_exchange_collisions": 0,
+    "rule_target_rows": 2013,
+    "rule_non_target_matches": 0,
+    "raw_identity_matches": 2013,
+    "raw_identity_missing": 0,
+    "name_normalization_only_rows": 3
+  },
+  "disposition_policy": {
+    "identity_key": "instrument_id plus symbol plus ISIN",
+    "action": "Set source_provider=nse_india only in the future immutable candidate.",
+    "preserve": [
+      "provider=nse_india_v2_17g",
+      "instrument_id",
+      "symbol",
+      "isin",
+      "company_name",
+      "exchange",
+      "country",
+      "currency",
+      "asset_type"
+    ],
+    "no_change_current_artifact": true
+  },
+  "ledger": {
+    "path": "outputs/full_universe_source_acquisition/v2_30c_nse_reconciliation/disposition_ledger.csv",
+    "rows": 2013
+  },
+  "gates": [
+    {
+      "id": "C01",
+      "result": "PASS",
+      "detail": "Target cohort is exactly 2,013 operational rows."
+    },
+    {
+      "id": "C02",
+      "result": "PASS",
+      "detail": "2,013/2,013 rows have an immutable NSE raw identity match."
+    },
+    {
+      "id": "C03",
+      "result": "PASS",
+      "detail": "All instrument IDs, symbols and ISINs are unique within the cohort."
+    },
+    {
+      "id": "C04",
+      "result": "PASS",
+      "detail": "No exact or grouped duplicates."
+    },
+    {
+      "id": "C05",
+      "result": "PASS",
+      "detail": "No cross-cohort ISIN, instrument ID or symbol+exchange collisions."
+    },
+    {
+      "id": "C06",
+      "result": "PASS",
+      "detail": "Alias predicate selects exactly 2,013 intended rows and 0 unrelated rows."
+    },
+    {
+      "id": "C07",
+      "result": "PASS",
+      "detail": "2,013/2,013 rows dispositioned; 0 unresolved; 0 quarantined."
+    },
+    {
+      "id": "C08",
+      "result": "PASS",
+      "detail": "Operational and scoring pointers remain unchanged."
+    }
+  ],
+  "hard_guards": {
+    "candidate_materialized": false,
+    "operational_dataset_modified": false,
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "promotion_authorized": false,
+    "production_scoring_authorized": false
+  },
+  "decision": "READY_FOR_V2_30D_IMMUTABLE_REFRESH_CANDIDATE_BUILD",
+  "next_phase": "v2.30D - Immutable Refresh Candidate Build"
+}
