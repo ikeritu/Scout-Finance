@@ -1,0 +1,7 @@
+gate_id,result,blocking,detail
+F01,PASS,true,v2.30A-E evidence complete and v2.30E gates pass 10 of 10
+F02,PASS,true,Explicit human proceed instruction recorded
+F03,PASS,true,XZ candidate compatible with pointer hash and catalog consumer
+F04,PASS,true,Pointer promotion atomic and previous universe retained for rollback
+F05,PASS,true,Provider coverage 14 of 14 and missing rows zero
+F06,PASS,true,Scoring remains fail closed and scoring pointer unchanged

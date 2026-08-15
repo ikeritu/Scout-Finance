@@ -43,8 +43,15 @@ def normalized_asset(row:Mapping)->dict:
  asset["identity_key"]=stable_identity(row)
  return {key:asset.get(key,"") or "Unknown" for key in DISPLAY_FIELDS}
 
+def open_catalog(path:Path):
+ """Open plain or XZ-compressed CSV catalogs as text."""
+ if path.suffix.lower()==".xz":
+  import lzma
+  return lzma.open(path,"rt",encoding="utf-8-sig",newline="")
+ return path.open("r",encoding="utf-8-sig",newline="")
+
 def load_catalog(path:Path)->list[dict]:
- with path.open("r",encoding="utf-8-sig",newline="") as handle:
+ with open_catalog(path) as handle:
   return [normalized_asset(row) for row in csv.DictReader(handle)]
 
 def distinct_values(rows:Iterable[Mapping],field:str)->list[str]:

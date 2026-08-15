@@ -1,0 +1,97 @@
+{
+  "phase": "v2.30F",
+  "title": "Promotion Decision and Closure",
+  "status": "CLOSED_PROMOTED_STABLE_METADATA_PROVENANCE_REFRESH_14_OF_14",
+  "executed_at_utc": "2026-08-15",
+  "decision": {
+    "result": "PROMOTE",
+    "scope": "METADATA_ONLY_CANONICAL_PROVENANCE",
+    "human_gate": "APPROVED_BY_USER_PROCEED_INSTRUCTION",
+    "rationale": "All v2.30E blocking gates passed; the candidate changes only 2,013 canonical provider values, improves completeness, has no identity or metadata regressions, and has byte-exact rollback.",
+    "live_freshness_waiver": "Live freshness is not claimed or required for this metadata-only correction; no listing identity, row membership or market data value changed."
+  },
+  "promoted_artifact": {
+    "path": "outputs/full_universe_source_acquisition/v2_30d_immutable_refresh_candidate/refresh_candidate_v2_30d.csv.xz",
+    "git_blob_sha": "47e7f32c0011c5ad94fa0941407442f8ee505744",
+    "compressed_sha256": "4cbde1e534ccf145542e6d0bd0c1f5aec7dba4d43037aea5f115e1ea9b46d6bf",
+    "uncompressed_sha256": "73cf3528a56e79833b3b2cad33ed0b0eb577e3e7dcd803d2976be0ef771deebe",
+    "rows": 43089,
+    "columns": 33
+  },
+  "operating_state": {
+    "universe_rows": 43089,
+    "operational_pointer_sha256": "TO_BE_VERIFIED_BY_GIT_BLOB_d4a2b51589193a30673dd2e6cea9d42026215237",
+    "refresh_promotion_status": "PROMOTED_METADATA_PROVENANCE_REFRESH_14_OF_14",
+    "open_provider_gap": {
+      "providers_complete": 14,
+      "providers_expected": 14,
+      "missing_rows": 0
+    },
+    "scoring_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+  },
+  "consumer_compatibility": {
+    "xz_catalog_support_added": true,
+    "pointer_hash_mode": "compressed artifact bytes",
+    "ui_catalog_rows": 43089,
+    "stable_identities": 43089,
+    "scoring_fail_closed": true
+  },
+  "rollback": {
+    "dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_21h_activated_operational_reference.csv",
+    "rows": 43089,
+    "sha256": "9d33b0e4d7e309889d67e5a6d67c2fdfd4475b0d7cf5bf51ab0b71acb4db4707",
+    "simulation_result": "PASS_BYTE_EXACT_NORMALIZED_BASELINE"
+  },
+  "closure": {
+    "phases": [
+      "v2.30A",
+      "v2.30B",
+      "v2.30C",
+      "v2.30D",
+      "v2.30E",
+      "v2.30F"
+    ],
+    "completed": 6,
+    "total": 6,
+    "provider_gap_closed": true,
+    "missing_rows_dispositioned": 2013,
+    "candidate_materialized": true,
+    "candidate_promoted": true,
+    "operational_pointer_updated": true,
+    "scoring_pointer_modified": false,
+    "production_scoring_authorized": false
+  },
+  "gates": [
+    {
+      "id": "F01",
+      "result": "PASS",
+      "detail": "v2.30A-E evidence complete and v2.30E blocking gates 10/10 PASS."
+    },
+    {
+      "id": "F02",
+      "result": "PASS",
+      "detail": "Human proceed instruction recorded as explicit promotion gate approval."
+    },
+    {
+      "id": "F03",
+      "result": "PASS",
+      "detail": "Compressed candidate is compatible with pointer hash validation and catalog consumer."
+    },
+    {
+      "id": "F04",
+      "result": "PASS",
+      "detail": "Operational pointer moves atomically to immutable candidate; prior universe retained for rollback."
+    },
+    {
+      "id": "F05",
+      "result": "PASS",
+      "detail": "Provider coverage 14/14 and missing rows 0."
+    },
+    {
+      "id": "F06",
+      "result": "PASS",
+      "detail": "Scoring remains fail-closed and scoring pointer is unchanged."
+    }
+  ],
+  "next_phase": "v2.31A - Post-Promotion Operational Observation"
+}
