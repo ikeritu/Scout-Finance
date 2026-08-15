@@ -6,7 +6,7 @@ from .paths import safe_repo_path,sha256,sha256_matches
 from .state import AppState,ConsumerState,MaintenanceState,ScoringState,UniverseState
 UNIVERSE_POINTER="outputs/full_universe_source_acquisition/current_operational_universe_pointer.json"
 SCORING_POINTER="outputs/full_universe_source_acquisition/current_operational_scoring_pointer.json"
-MAINTENANCE_REPORT="outputs/full_universe_source_acquisition/v2_31d_live_provider_probe/probe_report.json"
+MAINTENANCE_REPORT="outputs/full_universe_source_acquisition/v2_31e_observation_window_decision/decision_report.json"
 def read_json(path):return json.loads(path.read_text(encoding="utf-8"))
 def load_universe(root:Path,pointer_rel=UNIVERSE_POINTER,verify_hash=True):
  errors=[];pointer=safe_repo_path(root,pointer_rel)

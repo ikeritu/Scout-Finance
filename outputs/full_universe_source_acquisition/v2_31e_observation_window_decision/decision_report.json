@@ -1,0 +1,112 @@
+{
+  "phase": "v2.31E",
+  "title": "Observation Window Decision",
+  "status": "OBSERVATION_WINDOW_DECISION_CONTINUE_STABLE_OPERATION_NO_ROLLBACK_NO_REFRESH_CANDIDATE",
+  "decided_at_utc": "2026-08-15",
+  "decision": "CONTINUE_STABLE_OPERATION_NO_ROLLBACK_NO_REFRESH_CANDIDATE",
+  "decision_basis": {
+    "post_promotion_observation": {
+      "phase": "v2.31A",
+      "commit": "5f3e08f385f9d7bc8a2ec385cf1729eecdcccab1",
+      "gates_passed": "10/10",
+      "incidents": 0,
+      "rows": 43089,
+      "providers": "14/14"
+    },
+    "consumer_compatibility": {
+      "phase": "v2.31B",
+      "commit": "96722cb57e891b700c3174fe534856b223680411",
+      "contracts_passed": "13/13",
+      "breaking_changes": 0,
+      "watchlist_migration_required": false
+    },
+    "maintenance_rebaseline": {
+      "phase": "v2.31C",
+      "commit": "225392ed2df4b37c4e4c574f63ab4eccf8f7dcc4",
+      "blocking_alerts_green": "10/10",
+      "providers": "14/14"
+    },
+    "live_provider_probe": {
+      "phase": "v2.31D",
+      "commit": "3fbfde833f932f10eae673b30779432168238da3",
+      "routes_reachable": "14/14",
+      "blocking_incidents": 0,
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_ONLY_PROBE"
+    }
+  },
+  "operating_state": {
+    "universe_rows": 43089,
+    "refresh_promotion_status": "PROMOTED_STABLE_OBSERVATION_WINDOW_ACCEPTED",
+    "open_provider_gap": {
+      "providers_complete": 14,
+      "providers_expected": 14,
+      "missing_rows": 0
+    },
+    "consumer_compatibility": "PASS_NO_BREAKING_CHANGE",
+    "provider_availability": "14_OF_14_REACHABLE",
+    "scoring_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+  },
+  "outcomes": {
+    "rollback_required": false,
+    "refresh_candidate_required": false,
+    "pointer_update_required": false,
+    "production_scoring_authorized": false,
+    "follow_up": "CLOSE_POST_PROMOTION_CYCLE"
+  },
+  "limitations": [
+    "The read-only provider probe established route availability, not complete business-date freshness.",
+    "Freshness requires a separately authorized acquisition and comparison cycle; it is not inferred from availability.",
+    "This decision does not authorize scoring, automated promotion, broker actions or external writes."
+  ],
+  "gates": [
+    {
+      "id": "E01",
+      "result": "PASS",
+      "detail": "v2.31A completed 10/10 observation gates with zero incidents."
+    },
+    {
+      "id": "E02",
+      "result": "PASS",
+      "detail": "v2.31B completed 13/13 consumer contracts with no breaking changes."
+    },
+    {
+      "id": "E03",
+      "result": "PASS",
+      "detail": "v2.31C rebaselined 14/14 providers and 10/10 blocking alerts green."
+    },
+    {
+      "id": "E04",
+      "result": "PASS",
+      "detail": "v2.31D found 14/14 official routes reachable and zero blocking incidents."
+    },
+    {
+      "id": "E05",
+      "result": "PASS_WITH_LIMITATION",
+      "detail": "Business freshness remains unproven by design and is non-blocking for this availability-only window."
+    },
+    {
+      "id": "E06",
+      "result": "PASS",
+      "detail": "No rollback trigger is present."
+    },
+    {
+      "id": "E07",
+      "result": "PASS",
+      "detail": "No material change or provider gap justifies a refresh candidate."
+    },
+    {
+      "id": "E08",
+      "result": "PASS",
+      "detail": "Universe and scoring pointers are intentionally unchanged; scoring remains fail-closed."
+    }
+  ],
+  "hard_guards": {
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "candidate_materialized": false,
+    "rollback_executed": false,
+    "production_scoring_authorized": false,
+    "automated_promotion_allowed": false
+  },
+  "next_phase": "v2.31F - Post-Promotion Closure"
+}

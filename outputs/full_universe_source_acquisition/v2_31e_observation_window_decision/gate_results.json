@@ -1,0 +1,16 @@
+{
+  "phase": "v2.31E",
+  "gate_summary": {
+    "passed": 7,
+    "passed_with_limitation": 1,
+    "failed": 0,
+    "total": 8
+  },
+  "decision": "CONTINUE_STABLE_OPERATION_NO_ROLLBACK_NO_REFRESH_CANDIDATE",
+  "blocking_conditions": [],
+  "non_blocking_limitations": [
+    "BUSINESS_FRESHNESS_NOT_PROVEN_BY_AVAILABILITY_ONLY_PROBE"
+  ],
+  "pointer_policy": "UNCHANGED",
+  "scoring_policy": "FAIL_CLOSED"
+}

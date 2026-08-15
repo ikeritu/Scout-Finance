@@ -1,0 +1,8 @@
+evidence_id,phase,commit,signal,result,decision_effect
+A,v2.31A,5f3e08f385f9d7bc8a2ec385cf1729eecdcccab1,post_promotion_observation_10_of_10,PASS,CONTINUE
+B,v2.31B,96722cb57e891b700c3174fe534856b223680411,consumer_contracts_13_of_13,PASS,CONTINUE
+C,v2.31C,225392ed2df4b37c4e4c574f63ab4eccf8f7dcc4,blocking_alerts_10_of_10_green,PASS,CONTINUE
+D,v2.31D,3fbfde833f932f10eae673b30779432168238da3,provider_routes_14_of_14_reachable,PASS_WITH_FRESHNESS_LIMITATION,CONTINUE
+E1,v2.31E,PENDING,rollback_trigger_present,PASS_FALSE,NO_ROLLBACK
+E2,v2.31E,PENDING,refresh_candidate_justified,PASS_FALSE,NO_REFRESH_CANDIDATE
+E3,v2.31E,PENDING,pointers_modified,PASS_FALSE,KEEP_POINTERS_UNCHANGED
