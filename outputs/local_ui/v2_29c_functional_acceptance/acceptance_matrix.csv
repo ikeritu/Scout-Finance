@@ -1,0 +1,21 @@
+scenario,status,evidence
+Navigation across 8 screens,PASS,Static registry and screen resolution
+Status and fail-closed state,PASS,Scoring unavailable and allow_ranking false
+Catalog search,PASS,Real 43089-row universe
+Catalog filtering,PASS,Provider filter on real universe
+Catalog pagination,PASS,Second-page scenario
+Asset detail,PASS,Stable identity resolves exactly once
+Watchlist creation,PASS,Local atomic JSON
+Watchlist add and dedupe,PASS,Duplicate rejected
+Watchlist notes and tags,PASS,Persistence round-trip
+Watchlist CSV export,PASS,Safe identity-based export
+Watchlist removal,PASS,Persistence round-trip
+Diagnostic locked by default,PASS,PermissionError without acknowledgement
+Diagnostic acknowledgement,PASS,Explicit true required
+Diagnostic integrity,PASS,33498 rows and pointer SHA EOL-compatible
+Universe report,PASS,Markdown and HTML
+Watchlist report,PASS,Markdown and HTML
+Diagnostic report,PASS,Markdown and HTML after acknowledgement
+Provenance manifests,PASS,No recommendation and no broker action
+Maintenance,PASS,Read-only UI contract
+Help and limits,PASS,Capabilities and prohibitions present

@@ -3,7 +3,7 @@ from __future__ import annotations
 import csv,json
 from collections import Counter,defaultdict
 from pathlib import Path
-from .paths import safe_repo_path,sha256
+from .paths import safe_repo_path,sha256_matches
 
 COMPONENTS=("data_quality_score","scope_confidence_score","provider_quality_score","attractiveness_score")
 FORBIDDEN_FIELDS={"dry_run_rank","legacy_v2_22d_score"}
@@ -18,7 +18,7 @@ def load_diagnostic(root:Path,acknowledged:bool):
  contract=diagnostic_contract(root)
  if not contract["available"]:raise ValueError("diagnostic contract invalid")
  path=safe_repo_path(root,contract["path"])
- if not path.is_file() or sha256(path)!=contract["sha256"]:raise ValueError("diagnostic artifact SHA-256 mismatch")
+ if not path.is_file() or not sha256_matches(path,contract["sha256"],allow_csv_eol_normalization=True):raise ValueError("diagnostic artifact SHA-256 mismatch")
  total=0;buckets=Counter();providers=Counter();countries=Counter();sums=defaultdict(float);coverage=Counter();auth=set()
  with path.open("r",encoding="utf-8-sig",newline="") as handle:
   reader=csv.DictReader(handle)
