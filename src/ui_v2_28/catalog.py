@@ -57,10 +57,12 @@ class CatalogPage:
 
 def query_catalog(rows:Sequence[Mapping],search="",filters=None,page=1,page_size=50)->CatalogPage:
  filters=filters or {};needle=clean(search).casefold();selected=[]
+ filter_sets={field:set(values) for field,values in filters.items() if values}
  for source in rows:
-  row={key:clean(source.get(key)) or "Unknown" for key in DISPLAY_FIELDS}
+  if all(key in source and source.get(key) for key in DISPLAY_FIELDS):row=source
+  else:row={key:clean(source.get(key)) or "Unknown" for key in DISPLAY_FIELDS}
   if needle and not any(needle in row[key].casefold() for key in ("name","ticker","isin","identity_key")):continue
-  if any(values and row.get(field,"Unknown") not in set(values) for field,values in filters.items()):continue
+  if any(row.get(field,"Unknown") not in values for field,values in filter_sets.items()):continue
   selected.append(row)
  page_size=max(1,min(int(page_size),250));pages=max(1,(len(selected)+page_size-1)//page_size);page=max(1,min(int(page),pages))
  start=(page-1)*page_size

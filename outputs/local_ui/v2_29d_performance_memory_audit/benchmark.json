@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "universe_rows": 43089,
+  "iterations": {
+    "full_load": 3,
+    "search": 60,
+    "filter": 60,
+    "pagination": 40,
+    "watchlist_export_1000_items": 20,
+    "html_report_1000_items": 20
+  },
+  "load": {"mean_ms": 2255.21,"p95_ms": 2246.11,"max_ms": 2516.19},
+  "peak_memory_mb_three_load_cycles": 59.28,
+  "memory_kb_per_1000_rows": 1408.78,
+  "search": {"mean_ms": 86.19,"p95_ms": 105.98,"max_ms": 109.42},
+  "filter": {"mean_ms": 79.25,"p95_ms": 88.98,"max_ms": 96.16},
+  "pagination": {"mean_ms": 64.71,"p95_ms": 76.21,"max_ms": 82.63},
+  "watchlist_export_1000_items": {"mean_ms": 14.44,"p95_ms": 19.17,"max_ms": 26.19},
+  "html_report_1000_items": {"mean_ms": 1.57,"p95_ms": 1.87,"max_ms": 1.88},
+  "improvement_vs_v2_29b_percent": {"search_mean": 22.95,"filter_mean": 30.48,"pagination": 56.73},
+  "gates": {"load_max_seconds": 15,"memory_max_mb": 512,"query_max_ms": 500,"export_max_ms": 1000,"report_max_ms": 1000}
+}
