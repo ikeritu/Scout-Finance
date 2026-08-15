@@ -1,0 +1,88 @@
+{
+  "phase": "v2.30D",
+  "title": "Immutable Refresh Candidate Build",
+  "status": "IMMUTABLE_REFRESH_CANDIDATE_MATERIALIZED_VALIDATED_NOT_PROMOTED",
+  "executed_at_utc": "2026-08-15",
+  "candidate": {
+    "path": "outputs/full_universe_source_acquisition/v2_30d_immutable_refresh_candidate/refresh_candidate_v2_30d.csv.xz",
+    "git_blob_sha": "47e7f32c0011c5ad94fa0941407442f8ee505744",
+    "rows": 43089,
+    "columns": 33,
+    "uncompressed_sha256": "73cf3528a56e79833b3b2cad33ed0b0eb577e3e7dcd803d2976be0ef771deebe",
+    "compressed_sha256": "4cbde1e534ccf145542e6d0bd0c1f5aec7dba4d43037aea5f115e1ea9b46d6bf"
+  },
+  "validation": {
+    "baseline_rows": 43089,
+    "candidate_rows": 43089,
+    "row_count_delta": 0,
+    "schema_columns_before": 33,
+    "schema_columns_after": 33,
+    "changed_rows": 2013,
+    "changed_cells": 2013,
+    "changed_fields": {
+      "source_provider": 2013
+    },
+    "unexpected_changed_fields": 0,
+    "source_provider_blank_before": 2013,
+    "source_provider_blank_after": 0,
+    "nse_india_rows_after": 2013,
+    "provider_coverage_after": "14/14",
+    "identity_set_preserved": true
+  },
+  "gates": [
+    {
+      "id": "D01",
+      "result": "PASS",
+      "detail": "Full candidate physically materialized and content-addressed."
+    },
+    {
+      "id": "D02",
+      "result": "PASS",
+      "detail": "43,089 rows before and after; no row additions or removals."
+    },
+    {
+      "id": "D03",
+      "result": "PASS",
+      "detail": "33-column schema preserved."
+    },
+    {
+      "id": "D04",
+      "result": "PASS",
+      "detail": "Exactly 2,013 rows and cells changed; source_provider is the only changed field."
+    },
+    {
+      "id": "D05",
+      "result": "PASS",
+      "detail": "All target rows now carry canonical source_provider=nse_india."
+    },
+    {
+      "id": "D06",
+      "result": "PASS",
+      "detail": "0 blank source_provider values; canonical provider coverage 14/14."
+    },
+    {
+      "id": "D07",
+      "result": "PASS",
+      "detail": "Identity set preserved because no identity field changed."
+    },
+    {
+      "id": "D08",
+      "result": "PASS",
+      "detail": "Compressed and uncompressed SHA256 hashes recorded."
+    },
+    {
+      "id": "D09",
+      "result": "PASS",
+      "detail": "Operational and scoring pointers remain unchanged."
+    }
+  ],
+  "hard_guards": {
+    "candidate_is_operational": false,
+    "operational_dataset_modified": false,
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "promotion_authorized": false,
+    "production_scoring_authorized": false
+  },
+  "next_phase": "v2.30E - Delta Quality and Rollback Gate"
+}

@@ -1,0 +1,10 @@
+gate_id,result,blocking,detail
+D01,PASS,true,Full candidate physically materialized and content addressed
+D02,PASS,true,Rows preserved 43089 before and after
+D03,PASS,true,Schema preserved at 33 columns
+D04,PASS,true,Exactly 2013 cells changed exclusively in source_provider
+D05,PASS,true,NSE canonical source provider populated for 2013 rows
+D06,PASS,true,Blank source_provider rows zero and provider coverage 14 of 14
+D07,PASS,true,Identity set preserved with no identity field changes
+D08,PASS,true,Compressed and uncompressed SHA256 hashes recorded
+D09,PASS,true,Operational and scoring pointers remain unchanged

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "candidate_name": "refresh_candidate_v2_30d_nse_provenance_normalized",
+  "status": "IMMUTABLE_CANDIDATE_MATERIALIZED_NOT_OPERATIONAL",
+  "artifact": "outputs/full_universe_source_acquisition/v2_30d_immutable_refresh_candidate/refresh_candidate_v2_30d.csv.xz",
+  "format": "CSV compressed with XZ",
+  "decompression": "xz -dc refresh_candidate_v2_30d.csv.xz > refresh_candidate_v2_30d.csv",
+  "git_blob_sha": "47e7f32c0011c5ad94fa0941407442f8ee505744",
+  "compressed_bytes": 504792,
+  "compressed_sha256": "4cbde1e534ccf145542e6d0bd0c1f5aec7dba4d43037aea5f115e1ea9b46d6bf",
+  "uncompressed_bytes": 9533761,
+  "uncompressed_sha256": "73cf3528a56e79833b3b2cad33ed0b0eb577e3e7dcd803d2976be0ef771deebe",
+  "rows": 43089,
+  "columns": 33,
+  "baseline": {
+    "path": "outputs/full_universe_source_acquisition/expanded_universe_v2_21h_activated_operational_reference.csv",
+    "git_blob_sha": "900d89bb6e420f540b494a97348609bac9c25bd2",
+    "rows": 43089
+  },
+  "transformation": {
+    "predicate": "provider=nse_india_v2_17g AND exchange=NSE AND country=India AND source_provider is blank",
+    "field": "source_provider",
+    "value": "nse_india",
+    "matched_rows": 2013,
+    "changed_rows": 2013,
+    "changed_cells": 2013,
+    "other_fields_changed": 0
+  },
+  "coverage": {
+    "canonical_provider_buckets": 14,
+    "source_provider_blank_rows": 0,
+    "nse_india_rows": 2013,
+    "row_disposition": "43089/43089"
+  },
+  "promotion_eligible": false,
+  "operational_pointer_update_allowed": false,
+  "next_consumer": "v2.30E - Delta Quality and Rollback Gate"
+}
