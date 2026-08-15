@@ -1,0 +1,10 @@
+gate_id,result,blocking,detail
+B01,PASS,true,Official NSE raw artifact and acquisition manifest verified
+B02,PASS,true,Raw rows 2397 with 2397 unique symbols and ISINs
+B03,PASS,true,Replay identities matched 2013 of 2013 by symbol plus ISIN
+B04,PASS,true,Identity missing 0 and duplicate replay identities 0
+B05,PASS_WITH_NORMALIZATION,false,Three company names differ only by repeated whitespace
+B06,PASS,true,Provider coverage 14 of 14 and row disposition 43089 of 43089
+B07,PASS,true,Deterministic immutable replay route validated
+B08,PASS,true,Universe and scoring pointers remain unchanged
+B09,HOLD,true,Live freshness not verified and promotion remains disabled

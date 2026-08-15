@@ -1,0 +1,131 @@
+{
+  "phase": "v2.30B",
+  "title": "NSE Provider Evidence Recovery and Controlled Replay",
+  "status": "CONTROLLED_IMMUTABLE_REPLAY_14_OF_14_PASS_LIVE_FRESHNESS_NOT_VERIFIED_PROMOTION_HOLD",
+  "executed_at_utc": "2026-08-15",
+  "source_evidence": {
+    "provider": "nse_india_v2_17g",
+    "canonical_provider": "nse_india",
+    "official_url": "https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv",
+    "acquisition_timestamp_utc": "2026-08-06T09:16:21.078865+00:00",
+    "raw_artifact": "outputs/full_universe_source_acquisition/nse_raw_acquisition_v2_17c/nse_securities_available_equity_segment__raw_source_file.csv",
+    "raw_git_blob_sha": "76c1065250030a7bbd882324b769a6a40cb2f430",
+    "raw_sha256": "d0147081b02000ecdea8398e42304d1f2051ef0ef62f14f1e004b456654676f9",
+    "raw_bytes": 169183,
+    "raw_rows": 2397,
+    "raw_unique_symbols": 2397,
+    "raw_unique_isins": 2397,
+    "acquisition_manifest": "outputs/full_universe_source_acquisition/nse_india_raw_acquisition_manifest_v2_17c.csv",
+    "acquisition_manifest_blob_sha": "2bdd14b8de7856d06fdd16ef7e7d7a67feaec716"
+  },
+  "replay_input": {
+    "artifact": "outputs/full_universe_source_acquisition/nse_india_expanded_rebuild_candidate_delta_rows_v2_17g.csv",
+    "git_blob_sha": "16d2d77826663cbc649e75173b847b5794289e6a",
+    "recorded_sha256": "be6e8cfdf4a73cc65cc3639d63dbddfe1d69b6edcd79393e517384b089d994e8",
+    "rows": 2013,
+    "unique_symbols": 2013,
+    "unique_isins": 2013
+  },
+  "replay_result": {
+    "expected_rows": 2013,
+    "replayed_rows": 2013,
+    "identity_key": "symbol + isin",
+    "exact_identity_matches": 2013,
+    "identity_missing": 0,
+    "identity_duplicates": 0,
+    "exact_name_matches": 2010,
+    "normalized_name_differences": 3,
+    "name_differences": [
+      {
+        "symbol": "HARRMALAYA",
+        "isin": "INE544A01019",
+        "reason": "double-space normalization"
+      },
+      {
+        "symbol": "SPIC",
+        "isin": "INE147A01011",
+        "reason": "double-space normalization"
+      },
+      {
+        "symbol": "THOMASCOOK",
+        "isin": "INE332A01027",
+        "reason": "double-space normalization"
+      }
+    ],
+    "provider_buckets_expected": 14,
+    "provider_buckets_replay_ready": 14,
+    "provider_coverage": "14/14",
+    "rows_covered": 43089,
+    "row_disposition_coverage_pct": 100,
+    "live_fetch_attempted": false,
+    "live_freshness_verified": false
+  },
+  "route_decision": {
+    "immutable_replay_route_authorized": true,
+    "scheduled_live_route_authorized": false,
+    "deterministic_alias": {
+      "when": "provider == nse_india_v2_17g AND exchange == NSE AND country == India",
+      "set_source_provider": "nse_india"
+    },
+    "alias_applied_to_operational_dataset": false,
+    "promotion_eligible": false,
+    "operational_pointer_update_allowed": false
+  },
+  "gates": [
+    {
+      "id": "B01",
+      "result": "PASS",
+      "detail": "Official NSE raw artifact exists with manifest URL, timestamp, bytes and hashes."
+    },
+    {
+      "id": "B02",
+      "result": "PASS",
+      "detail": "Raw artifact contains 2,397 unique symbol and ISIN identities."
+    },
+    {
+      "id": "B03",
+      "result": "PASS",
+      "detail": "2,013/2,013 replay identities match the raw artifact by symbol + ISIN."
+    },
+    {
+      "id": "B04",
+      "result": "PASS",
+      "detail": "0 missing identities and 0 duplicate replay identities."
+    },
+    {
+      "id": "B05",
+      "result": "PASS_WITH_NORMALIZATION",
+      "detail": "3 company names differ only by repeated whitespace."
+    },
+    {
+      "id": "B06",
+      "result": "PASS",
+      "detail": "Provider replay coverage is 14/14; all 43,089 rows are dispositioned."
+    },
+    {
+      "id": "B07",
+      "result": "PASS",
+      "detail": "Replay route is immutable and deterministic."
+    },
+    {
+      "id": "B08",
+      "result": "PASS",
+      "detail": "No operational or scoring pointer mutation."
+    },
+    {
+      "id": "B09",
+      "result": "HOLD",
+      "detail": "No live fetch was attempted; freshness is not promotion evidence."
+    }
+  ],
+  "hard_guards": {
+    "operational_dataset_modified": false,
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "production_scoring_authorized": false,
+    "promotion_authorized": false,
+    "openai_called": false,
+    "broker_called": false
+  },
+  "next_phase": "v2.30C - NSE Missing Rows Reconciliation"
+}
