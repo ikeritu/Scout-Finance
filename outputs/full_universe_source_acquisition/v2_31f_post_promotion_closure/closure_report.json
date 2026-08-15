@@ -1,0 +1,143 @@
+{
+  "phase": "v2.31F",
+  "title": "Post-Promotion Closure",
+  "status": "CLOSED_STABLE_POST_PROMOTION_CYCLE_6_OF_6",
+  "closed_at_utc": "2026-08-15",
+  "block": "v2.31",
+  "completion": {
+    "phases_completed": 6,
+    "phases_expected": 6,
+    "completion_percent": 100
+  },
+  "phase_results": [
+    {
+      "phase": "v2.31A",
+      "title": "Post-Promotion Operational Observation",
+      "commit": "5f3e08f385f9d7bc8a2ec385cf1729eecdcccab1",
+      "result": "PASS_10_OF_10_ZERO_INCIDENTS"
+    },
+    {
+      "phase": "v2.31B",
+      "title": "Consumer Compatibility Regression",
+      "commit": "96722cb57e891b700c3174fe534856b223680411",
+      "result": "PASS_13_OF_13_NO_BREAKING_CHANGES"
+    },
+    {
+      "phase": "v2.31C",
+      "title": "Maintenance State and Alert Rebaseline",
+      "commit": "225392ed2df4b37c4e4c574f63ab4eccf8f7dcc4",
+      "result": "PASS_14_OF_14_PROVIDERS_10_OF_10_ALERTS"
+    },
+    {
+      "phase": "v2.31D",
+      "title": "Live Provider Probe",
+      "commit": "3fbfde833f932f10eae673b30779432168238da3",
+      "result": "PASS_14_OF_14_AVAILABILITY_FRESHNESS_NOT_PROVEN"
+    },
+    {
+      "phase": "v2.31E",
+      "title": "Observation Window Decision",
+      "commit": "df4691c983d13df84fda4f4bcea8193a5d1b2af4",
+      "result": "CONTINUE_STABLE_NO_ROLLBACK_NO_REFRESH_CANDIDATE"
+    },
+    {
+      "phase": "v2.31F",
+      "title": "Post-Promotion Closure",
+      "commit": "SELF",
+      "result": "CLOSED_STABLE"
+    }
+  ],
+  "operating_state": {
+    "universe_rows": 43089,
+    "refresh_promotion_status": "POST_PROMOTION_CYCLE_CLOSED_STABLE",
+    "operational_dataset": "outputs/full_universe_source_acquisition/v2_30d_immutable_refresh_candidate/refresh_candidate_v2_30d.csv.xz",
+    "operational_dataset_sha256": "4cbde1e534ccf145542e6d0bd0c1f5aec7dba4d43037aea5f115e1ea9b46d6bf",
+    "open_provider_gap": {
+      "providers_complete": 14,
+      "providers_expected": 14,
+      "missing_rows": 0
+    },
+    "rollback_reference_available": true,
+    "consumer_compatibility": "PASS",
+    "blocking_incidents": 0,
+    "scoring_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+  },
+  "closure_decision": "CLOSE_V2_31_AND_ENTER_STEADY_STATE_MAINTENANCE",
+  "residual_limitations": [
+    {
+      "item": "business_date_freshness",
+      "state": "NOT_PROVEN_BY_AVAILABILITY_ONLY_PROBE",
+      "severity": "NON_BLOCKING",
+      "reopen_trigger": "EXPLICIT_AUTHORIZED_ACQUISITION_AND_COMPARISON_CYCLE"
+    },
+    {
+      "item": "production_scoring",
+      "state": "FROZEN_NOT_PROMOTED",
+      "severity": "EXPECTED_FAIL_CLOSED",
+      "reopen_trigger": "SATISFY_ALL_SCORING_REOPEN_REQUIREMENTS_AND_EXPLICIT_PROMOTION_GATE"
+    }
+  ],
+  "gates": [
+    {
+      "id": "F01",
+      "result": "PASS",
+      "detail": "All v2.31A-E phases completed with no failed blocking gate."
+    },
+    {
+      "id": "F02",
+      "result": "PASS",
+      "detail": "Post-promotion universe remains 43,089 rows with 14/14 provider coverage."
+    },
+    {
+      "id": "F03",
+      "result": "PASS",
+      "detail": "Consumer compatibility remains intact with no migration required."
+    },
+    {
+      "id": "F04",
+      "result": "PASS",
+      "detail": "No incident or rollback trigger remains open."
+    },
+    {
+      "id": "F05",
+      "result": "PASS",
+      "detail": "No refresh candidate is required by the observation evidence."
+    },
+    {
+      "id": "F06",
+      "result": "PASS",
+      "detail": "Freshness limitation is explicitly retained without overclaim."
+    },
+    {
+      "id": "F07",
+      "result": "PASS",
+      "detail": "Universe and scoring pointers remain unchanged."
+    },
+    {
+      "id": "F08",
+      "result": "PASS",
+      "detail": "Production scoring remains unauthorized and fail-closed."
+    },
+    {
+      "id": "F09",
+      "result": "PASS",
+      "detail": "Stable-state ownership and reopen triggers are documented."
+    },
+    {
+      "id": "F10",
+      "result": "PASS",
+      "detail": "v2.31 closure package is complete and consumer-visible."
+    }
+  ],
+  "hard_guards": {
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "dataset_modified": false,
+    "candidate_materialized": false,
+    "rollback_executed": false,
+    "production_scoring_authorized": false,
+    "automated_promotion_allowed": false
+  },
+  "next_state": "STEADY_STATE_MAINTENANCE_UNTIL_EXPLICIT_REFRESH_OR_SCORING_REOPEN_GATE",
+  "next_phase": null
+}

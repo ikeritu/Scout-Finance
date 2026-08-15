@@ -1,0 +1,59 @@
+{
+  "phase": "v2.31F",
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "v2_31_phases_complete_6_of_6",
+      "result": "PASS"
+    },
+    {
+      "check": "all_prior_blocking_gates_passed",
+      "result": "PASS"
+    },
+    {
+      "check": "operational_rows_43089",
+      "result": "PASS"
+    },
+    {
+      "check": "provider_coverage_14_of_14",
+      "result": "PASS"
+    },
+    {
+      "check": "blocking_incidents_zero",
+      "result": "PASS"
+    },
+    {
+      "check": "rollback_trigger_absent",
+      "result": "PASS"
+    },
+    {
+      "check": "refresh_candidate_not_required",
+      "result": "PASS"
+    },
+    {
+      "check": "freshness_limitation_retained",
+      "result": "PASS"
+    },
+    {
+      "check": "universe_pointer_unchanged",
+      "result": "PASS"
+    },
+    {
+      "check": "scoring_pointer_unchanged_fail_closed",
+      "result": "PASS"
+    },
+    {
+      "check": "pending_roadmap_items_zero",
+      "result": "PASS"
+    },
+    {
+      "check": "reopen_triggers_documented",
+      "result": "PASS"
+    }
+  ],
+  "summary": {
+    "passed": 12,
+    "failed": 0,
+    "total": 12
+  }
+}

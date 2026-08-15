@@ -1,0 +1,27 @@
+{
+  "roadmap_version": "v2.31",
+  "status": "CLOSED",
+  "completed": [
+    "v2.31A",
+    "v2.31B",
+    "v2.31C",
+    "v2.31D",
+    "v2.31E",
+    "v2.31F"
+  ],
+  "pending": [],
+  "steady_state_actions": [
+    {
+      "trigger": "EXPLICIT_REFRESH_GATE",
+      "action": "Run authorized provider acquisition, delta, quality and rollback gates before any pointer update."
+    },
+    {
+      "trigger": "SCORING_REOPEN_REQUIREMENTS_SATISFIED",
+      "action": "Run a separate scoring redesign, stability, explainability and explicit promotion decision."
+    },
+    {
+      "trigger": "BLOCKING_OPERATIONAL_INCIDENT",
+      "action": "Evaluate rollback against the immutable reference and documented rollback dataset."
+    }
+  ]
+}

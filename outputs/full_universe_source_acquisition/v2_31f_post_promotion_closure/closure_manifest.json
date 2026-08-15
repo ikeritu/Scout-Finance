@@ -1,0 +1,33 @@
+{
+  "block": "v2.31",
+  "status": "COMPLETE_6_OF_6",
+  "artifacts": [
+    {
+      "phase": "v2.31A",
+      "commit": "5f3e08f385f9d7bc8a2ec385cf1729eecdcccab1"
+    },
+    {
+      "phase": "v2.31B",
+      "commit": "96722cb57e891b700c3174fe534856b223680411"
+    },
+    {
+      "phase": "v2.31C",
+      "commit": "225392ed2df4b37c4e4c574f63ab4eccf8f7dcc4"
+    },
+    {
+      "phase": "v2.31D",
+      "commit": "3fbfde833f932f10eae673b30779432168238da3"
+    },
+    {
+      "phase": "v2.31E",
+      "commit": "df4691c983d13df84fda4f4bcea8193a5d1b2af4"
+    },
+    {
+      "phase": "v2.31F",
+      "commit": "SELF"
+    }
+  ],
+  "operational_universe_pointer": "outputs/full_universe_source_acquisition/current_operational_universe_pointer.json",
+  "operational_scoring_pointer": "outputs/full_universe_source_acquisition/current_operational_scoring_pointer.json",
+  "closure_report": "outputs/full_universe_source_acquisition/v2_31f_post_promotion_closure/closure_report.json"
+}
