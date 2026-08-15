@@ -4,6 +4,22 @@ Esta es la interfaz local segura y recomendada para explorar el universo operati
 
 ## Inicio rápido en Windows
 
+### Instalación automática recomendada
+
+Abre PowerShell en la carpeta del proyecto y ejecuta:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\setup_local_ui_v2_29a.ps1
+```
+
+El script crea `.venv`, instala únicamente las dependencias necesarias y valida Python, archivos, pointers, dataset y estado fail-closed. Para instalar y abrir la UI directamente:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\setup_local_ui_v2_29a.ps1 -Launch
+```
+
+### Instalación manual
+
 1. Clona o actualiza el repositorio.
 2. Abre PowerShell en la carpeta del proyecto.
 3. Crea el entorno si todavía no existe:
