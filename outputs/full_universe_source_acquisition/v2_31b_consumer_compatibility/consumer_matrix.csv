@@ -1,0 +1,14 @@
+consumer_id,result,breaking_change,migration_required,contract
+pointer_adapter,PASS,false,false,Resolve pointer XZ path and exact artifact hash
+catalog_loader,PASS,false,false,Read plain CSV and XZ CSV through shared catalog API
+stable_identity,PASS,false,false,Identity set equal 43089 of 43089
+search,PASS,false,false,Search by name ticker ISIN and identity
+filters,PASS,false,false,Provider country exchange filters return 2013 NSE rows
+pagination,PASS,false,false,Page size and total page calculations preserved
+asset_detail,PASS,false,false,Exactly one asset per identity key
+watchlists,PASS,false,false,Stored identity resolves after promotion
+csv_export,PASS,false,false,Metadata-only safe CSV export
+universe_report,PASS,false,false,Report carries operational dataset SHA
+maintenance_state,PASS,false,false,Providers 14 of 14 and missing rows zero
+scoring_consumer,PASS,false,false,Ranking unavailable and fail closed
+rollback_reference,PASS,false,false,Previous operational CSV remains readable

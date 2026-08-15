@@ -1,0 +1,96 @@
+{
+  "phase": "v2.31B",
+  "title": "Consumer Compatibility Regression",
+  "status": "CONSUMER_REGRESSION_PASS_NO_MIGRATION_REQUIRED",
+  "executed_at_utc": "2026-08-15",
+  "consumers": [
+    {
+      "id": "pointer_adapter",
+      "result": "PASS",
+      "detail": "XZ artifact resolves and hash contract remains valid."
+    },
+    {
+      "id": "catalog_loader",
+      "result": "PASS",
+      "detail": "Plain CSV and XZ CSV loaders share the same catalog contract."
+    },
+    {
+      "id": "stable_identity",
+      "result": "PASS",
+      "detail": "43,089 baseline and promoted identity keys preserved; added=0 removed=0."
+    },
+    {
+      "id": "search",
+      "result": "PASS",
+      "detail": "Name/ticker/ISIN search returns the promoted NSE asset."
+    },
+    {
+      "id": "filters",
+      "result": "PASS",
+      "detail": "Provider/country/exchange filter resolves 2,013 NSE rows."
+    },
+    {
+      "id": "pagination",
+      "result": "PASS",
+      "detail": "50-row pagination contract preserved."
+    },
+    {
+      "id": "asset_detail",
+      "result": "PASS",
+      "detail": "Identity lookup remains unique."
+    },
+    {
+      "id": "watchlists",
+      "result": "PASS",
+      "detail": "Existing identity keys resolve; no watchlist migration required."
+    },
+    {
+      "id": "csv_export",
+      "result": "PASS",
+      "detail": "Metadata-only watchlist export remains valid."
+    },
+    {
+      "id": "universe_report",
+      "result": "PASS",
+      "detail": "Report and provenance manifest use promoted pointer SHA."
+    },
+    {
+      "id": "maintenance_state",
+      "result": "PASS",
+      "detail": "14/14 providers and 0 missing rows."
+    },
+    {
+      "id": "scoring_consumer",
+      "result": "PASS",
+      "detail": "Ranking remains unavailable and fail-closed."
+    },
+    {
+      "id": "rollback_reference",
+      "result": "PASS",
+      "detail": "Previous operational CSV remains readable by the same loader."
+    }
+  ],
+  "regression_summary": {
+    "scenarios_passed": 13,
+    "scenarios_total": 13,
+    "breaking_changes": 0,
+    "data_migrations_required": 0,
+    "watchlist_migrations_required": 0
+  },
+  "identity_contract": {
+    "baseline_rows": 43089,
+    "promoted_rows": 43089,
+    "baseline_unique": 43089,
+    "promoted_unique": 43089,
+    "identities_added": 0,
+    "identities_removed": 0,
+    "set_equality": true
+  },
+  "hard_guards": {
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "production_scoring_authorized": false,
+    "watchlist_files_modified": false
+  },
+  "next_phase": "v2.31C - Maintenance State and Alert Rebaseline"
+}
