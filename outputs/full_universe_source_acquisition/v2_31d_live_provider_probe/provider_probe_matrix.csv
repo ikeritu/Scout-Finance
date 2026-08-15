@@ -1,0 +1,15 @@
+source_provider,operational_rows,probe_mode,result,business_freshness,url
+ASX,1316,OFFICIAL_DATA_PAGE,REACHABLE,NOT_PROVEN,https://www.asx.com.au/markets/trade-our-cash-market/directory
+sgx_structured_endpoint,358,OFFICIAL_INTERACTIVE_ROUTE_REDIRECT,REACHABLE_WITH_BROWSER_WARNING,NOT_PROVEN,https://www.sgx.com/securities/stock-screener
+nasdaq_trader_nasdaqlisted,3244,DIRECT_MACHINE_READABLE,REACHABLE,NOT_PROVEN,https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt
+nasdaq_trader_otherlisted,2404,DIRECT_MACHINE_READABLE,REACHABLE,NOT_PROVEN,https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt
+sec_company_tickers_exchange,2359,DIRECT_MACHINE_READABLE,REACHABLE,NOT_PROVEN,https://www.sec.gov/files/company_tickers_exchange.json
+cboe_listed_symbols,1193,OFFICIAL_DATA_PAGE,REACHABLE,NOT_PROVEN,https://www.cboe.com/us/equities/market_statistics/listed_symbols/
+jpx_listed_securities,3705,OFFICIAL_DATA_PAGE,REACHABLE,NOT_PROVEN,https://www.jpx.co.jp/english/markets/statistics-equities/misc/01.html
+deutsche_boerse_xetra_all_tradable_instruments,1424,OFFICIAL_DATA_PAGE_ALTERNATE,REACHABLE,NOT_PROVEN,https://www.deutsche-boerse-cash-market.com/dbcm-de/instrumente-statistiken/alle-handelbaren-instrumente
+TWSE,696,OFFICIAL_API_PORTAL_ALTERNATE,REACHABLE,NOT_PROVEN,https://openapi.twse.com.tw/
+cboe_europe_reference_data,21154,OFFICIAL_DATA_PAGE_ALTERNATE,REACHABLE,NOT_PROVEN,https://www.cboe.com/europe/equities/trade_data/
+hkex_securities_list,2804,OFFICIAL_DATA_PAGE,REACHABLE,NOT_PROVEN,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en
+HKEX,396,OFFICIAL_LEGACY_ROUTE_DOMAIN,REACHABLE,NOT_PROVEN,https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en
+SFC_SIMEV_RNVE,23,OFFICIAL_REGISTER_ROUTE,REACHABLE,NOT_PROVEN,https://www.superfinanciera.gov.co/SIMEV2/rnve
+nse_india,2013,DIRECT_MACHINE_READABLE,REACHABLE,NOT_PROVEN,https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv

@@ -1,0 +1,214 @@
+{
+  "phase": "v2.31D",
+  "title": "Live Provider Probe",
+  "status": "LIVE_READ_ONLY_AVAILABILITY_PROBE_14_OF_14_PASS_BUSINESS_FRESHNESS_NOT_PROVEN",
+  "observed_at_utc": "2026-08-15",
+  "probe_policy": {
+    "read_only": true,
+    "no_authentication": true,
+    "no_bulk_acquisition": true,
+    "no_candidate_build": true,
+    "no_pointer_write": true,
+    "no_scoring": true
+  },
+  "operating_state": {
+    "universe_rows": 43089,
+    "refresh_promotion_status": "PROMOTED_STABLE_LIVE_AVAILABILITY_OBSERVED",
+    "open_provider_gap": {
+      "providers_complete": 14,
+      "providers_expected": 14,
+      "missing_rows": 0
+    },
+    "live_probe": {
+      "routes_expected": 14,
+      "routes_reachable": 14,
+      "direct_machine_readable": 4,
+      "official_page_or_interactive": 10,
+      "business_freshness_verified": 0
+    },
+    "scoring_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+  },
+  "provider_results": [
+    {
+      "source_provider": "ASX",
+      "operational_rows": 1316,
+      "url": "https://www.asx.com.au/markets/trade-our-cash-market/directory",
+      "probe_mode": "OFFICIAL_DATA_PAGE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "sgx_structured_endpoint",
+      "operational_rows": 358,
+      "url": "https://www.sgx.com/securities/stock-screener",
+      "probe_mode": "OFFICIAL_INTERACTIVE_ROUTE_REDIRECT",
+      "result": "REACHABLE_WITH_BROWSER_WARNING",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "nasdaq_trader_nasdaqlisted",
+      "operational_rows": 3244,
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+      "probe_mode": "DIRECT_MACHINE_READABLE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "nasdaq_trader_otherlisted",
+      "operational_rows": 2404,
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt",
+      "probe_mode": "DIRECT_MACHINE_READABLE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "sec_company_tickers_exchange",
+      "operational_rows": 2359,
+      "url": "https://www.sec.gov/files/company_tickers_exchange.json",
+      "probe_mode": "DIRECT_MACHINE_READABLE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "cboe_listed_symbols",
+      "operational_rows": 1193,
+      "url": "https://www.cboe.com/us/equities/market_statistics/listed_symbols/",
+      "probe_mode": "OFFICIAL_DATA_PAGE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "jpx_listed_securities",
+      "operational_rows": 3705,
+      "url": "https://www.jpx.co.jp/english/markets/statistics-equities/misc/01.html",
+      "probe_mode": "OFFICIAL_DATA_PAGE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "deutsche_boerse_xetra_all_tradable_instruments",
+      "operational_rows": 1424,
+      "url": "https://www.deutsche-boerse-cash-market.com/dbcm-de/instrumente-statistiken/alle-handelbaren-instrumente",
+      "probe_mode": "OFFICIAL_DATA_PAGE_ALTERNATE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "TWSE",
+      "operational_rows": 696,
+      "url": "https://openapi.twse.com.tw/",
+      "probe_mode": "OFFICIAL_API_PORTAL_ALTERNATE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "cboe_europe_reference_data",
+      "operational_rows": 21154,
+      "url": "https://www.cboe.com/europe/equities/trade_data/",
+      "probe_mode": "OFFICIAL_DATA_PAGE_ALTERNATE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "hkex_securities_list",
+      "operational_rows": 2804,
+      "url": "https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en",
+      "probe_mode": "OFFICIAL_DATA_PAGE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "HKEX",
+      "operational_rows": 396,
+      "url": "https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en",
+      "probe_mode": "OFFICIAL_LEGACY_ROUTE_DOMAIN",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "SFC_SIMEV_RNVE",
+      "operational_rows": 23,
+      "url": "https://www.superfinanciera.gov.co/SIMEV2/rnve",
+      "probe_mode": "OFFICIAL_REGISTER_ROUTE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    },
+    {
+      "source_provider": "nse_india",
+      "operational_rows": 2013,
+      "url": "https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv",
+      "probe_mode": "DIRECT_MACHINE_READABLE",
+      "result": "REACHABLE",
+      "business_freshness": "NOT_PROVEN_BY_AVAILABILITY_PROBE"
+    }
+  ],
+  "summary": {
+    "provider_routes_reachable": 14,
+    "provider_routes_expected": 14,
+    "operational_rows_covered": 43089,
+    "direct_machine_readable_responses": 4,
+    "official_page_or_interactive_responses": 10,
+    "unavailable_routes": 0,
+    "blocking_incidents": 0,
+    "advisory_before": "NOT_YET_EXECUTED",
+    "advisory_after": "OBSERVED_AVAILABILITY_PASS_FRESHNESS_NOT_PROVEN"
+  },
+  "limitations": [
+    "Availability does not prove a complete or current business-date dataset.",
+    "Some direct structured URLs were not readable by the web retrieval layer; an official alternative page or portal was used.",
+    "SGX redirected to its investor screener and returned a browser compatibility warning.",
+    "HKEX legacy and securities-list buckets share the same official market-data domain.",
+    "No response was transformed, merged, compared to the universe or used to build a candidate."
+  ],
+  "gates": [
+    {
+      "id": "D01",
+      "result": "PASS",
+      "detail": "14/14 provider buckets have a reachable official route."
+    },
+    {
+      "id": "D02",
+      "result": "PASS",
+      "detail": "All 43,089 operational rows remain covered by a reachable provider bucket."
+    },
+    {
+      "id": "D03",
+      "result": "PASS",
+      "detail": "Four routes returned direct machine-readable data."
+    },
+    {
+      "id": "D04",
+      "result": "PASS_WITH_LIMITATION",
+      "detail": "Ten routes confirmed availability through official pages, portals or alternate routes."
+    },
+    {
+      "id": "D05",
+      "result": "PASS",
+      "detail": "Unavailable provider routes=0 and blocking incidents=0."
+    },
+    {
+      "id": "D06",
+      "result": "PASS",
+      "detail": "No downloads were promoted and no candidate was built."
+    },
+    {
+      "id": "D07",
+      "result": "PASS",
+      "detail": "Universe and scoring pointers remain unchanged; scoring remains fail-closed."
+    },
+    {
+      "id": "D08",
+      "result": "INCONCLUSIVE_NON_BLOCKING",
+      "detail": "Business freshness is not established by this availability-only probe."
+    }
+  ],
+  "decision": "CONTINUE_STABLE_OBSERVATION_NO_REFRESH_CANDIDATE",
+  "hard_guards": {
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "candidate_materialized": false,
+    "production_scoring_authorized": false,
+    "automated_promotion_allowed": false
+  },
+  "next_phase": "v2.31E - Observation Window Decision"
+}
