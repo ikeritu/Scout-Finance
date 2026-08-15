@@ -1,0 +1,225 @@
+{
+  "phase": "v2.31C",
+  "title": "Maintenance State and Alert Rebaseline",
+  "status": "MAINTENANCE_REBASELINED_14_OF_14_ALL_BLOCKING_ALERTS_GREEN",
+  "executed_at_utc": "2026-08-15",
+  "operating_state": {
+    "universe_rows": 43089,
+    "operational_pointer_sha256": "d4a2b51589193a30673dd2e6cea9d42026215237",
+    "operational_dataset_sha256": "4cbde1e534ccf145542e6d0bd0c1f5aec7dba4d43037aea5f115e1ea9b46d6bf",
+    "refresh_promotion_status": "PROMOTED_STABLE_OBSERVATION_ACTIVE",
+    "open_provider_gap": {
+      "providers_complete": 14,
+      "providers_expected": 14,
+      "missing_rows": 0
+    },
+    "catalog": {
+      "unique_identities": 43089,
+      "duplicate_identities": 0,
+      "unknown_provider_rows": 0
+    },
+    "performance": {
+      "cold_load_seconds": 2.1004,
+      "peak_traced_memory_mb": 93.97,
+      "search_mean_ms": 180.541
+    },
+    "scoring_status": "NO_ACTIVE_PRODUCTION_SCORING_FAIL_CLOSED"
+  },
+  "alert_summary": {
+    "blocking_alerts": 10,
+    "blocking_ok": 10,
+    "blocking_triggered": 0,
+    "advisory_pending": 1,
+    "rollback_required": false
+  },
+  "alerts": [
+    {
+      "id": "P01",
+      "severity": "critical",
+      "metric": "operational pointer exists",
+      "threshold": true,
+      "observed": true,
+      "state": "OK",
+      "response": "Freeze consumers and restore pointer if false."
+    },
+    {
+      "id": "P02",
+      "severity": "critical",
+      "metric": "dataset SHA matches pointer",
+      "threshold": true,
+      "observed": true,
+      "state": "OK",
+      "response": "Quarantine artifact on mismatch."
+    },
+    {
+      "id": "P03",
+      "severity": "critical",
+      "metric": "XZ integrity",
+      "threshold": true,
+      "observed": true,
+      "state": "OK",
+      "response": "Rollback immediately on corruption."
+    },
+    {
+      "id": "P04",
+      "severity": "high",
+      "metric": "provider coverage",
+      "threshold": "14/14",
+      "observed": "14/14",
+      "state": "OK",
+      "response": "HOLD refresh and open provider incident below threshold."
+    },
+    {
+      "id": "P05",
+      "severity": "high",
+      "metric": "missing provider rows",
+      "threshold": 0,
+      "observed": 0,
+      "state": "OK",
+      "response": "HOLD candidate if greater than zero."
+    },
+    {
+      "id": "P06",
+      "severity": "high",
+      "metric": "universe row band",
+      "threshold": "42000-45000",
+      "observed": 43089,
+      "state": "OK",
+      "response": "Human review and no promotion outside band."
+    },
+    {
+      "id": "P07",
+      "severity": "high",
+      "metric": "duplicate identities",
+      "threshold": 0,
+      "observed": 0,
+      "state": "OK",
+      "response": "Quarantine candidate if greater than zero."
+    },
+    {
+      "id": "P08",
+      "severity": "medium",
+      "metric": "cold catalog load seconds",
+      "threshold": "<=3.0",
+      "observed": 2.1004,
+      "state": "OK",
+      "response": "Performance investigation if exceeded twice."
+    },
+    {
+      "id": "P09",
+      "severity": "medium",
+      "metric": "peak traced memory MB",
+      "threshold": "<=128",
+      "observed": 93.97,
+      "state": "OK",
+      "response": "Memory regression investigation if exceeded."
+    },
+    {
+      "id": "P10",
+      "severity": "critical",
+      "metric": "production scoring authorized",
+      "threshold": false,
+      "observed": false,
+      "state": "OK",
+      "response": "Fail closed and treat unexpected activation as P1."
+    },
+    {
+      "id": "A01",
+      "severity": "advisory",
+      "metric": "live provider freshness probe",
+      "threshold": "documented observation",
+      "observed": "NOT_YET_EXECUTED",
+      "state": "PENDING_V2_31D",
+      "response": "Execute supervised read-only probe; never auto-promote."
+    }
+  ],
+  "schedule": [
+    {
+      "id": "M01",
+      "cadence": "daily",
+      "task": "Pointer, artifact SHA and XZ integrity",
+      "write_scope": "none"
+    },
+    {
+      "id": "M02",
+      "cadence": "daily",
+      "task": "Scoring fail-closed guard",
+      "write_scope": "none"
+    },
+    {
+      "id": "M03",
+      "cadence": "weekly",
+      "task": "Provider coverage, identity and metadata completeness",
+      "write_scope": "reports only"
+    },
+    {
+      "id": "M04",
+      "cadence": "weekly",
+      "task": "Catalog cold-load, memory, search and filters",
+      "write_scope": "reports only"
+    },
+    {
+      "id": "M05",
+      "cadence": "monthly supervised",
+      "task": "Live provider availability/freshness probe",
+      "write_scope": "staging logs only"
+    },
+    {
+      "id": "M06",
+      "cadence": "after every candidate",
+      "task": "Delta, quality and rollback gate",
+      "write_scope": "candidate and reports only"
+    },
+    {
+      "id": "M07",
+      "cadence": "quarterly",
+      "task": "Explicit promotion/HOLD review",
+      "write_scope": "pointer only after approval"
+    }
+  ],
+  "retention": {
+    "operational_generations_minimum": 3,
+    "maintenance_reports_months": 24,
+    "incident_evidence": "permanent",
+    "overwrite_datasets": false
+  },
+  "gates": [
+    {
+      "id": "C01",
+      "result": "PASS",
+      "detail": "Historical 13/14 baseline replaced by promoted 14/14 state."
+    },
+    {
+      "id": "C02",
+      "result": "PASS",
+      "detail": "All 10 blocking alerts have explicit thresholds, owners and responses."
+    },
+    {
+      "id": "C03",
+      "result": "PASS",
+      "detail": "All blocking alert observations are green."
+    },
+    {
+      "id": "C04",
+      "result": "PASS",
+      "detail": "UI maintenance adapter reads the v2.31C report."
+    },
+    {
+      "id": "C05",
+      "result": "PASS",
+      "detail": "Live freshness is explicitly pending v2.31D and cannot auto-promote."
+    },
+    {
+      "id": "C06",
+      "result": "PASS",
+      "detail": "Universe and scoring pointers remain unchanged."
+    }
+  ],
+  "hard_guards": {
+    "operational_pointer_modified": false,
+    "scoring_pointer_modified": false,
+    "automated_promotion_allowed": false,
+    "production_scoring_authorized": false
+  },
+  "next_phase": "v2.31D - Live Provider Probe"
+}

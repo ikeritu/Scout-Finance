@@ -1,0 +1,12 @@
+alert_id,severity,metric,threshold,observed,state,cadence,owner,response
+P01,critical,operational pointer exists,true,true,OK,daily,operator,Freeze consumers and restore pointer
+P02,critical,dataset SHA matches pointer,true,true,OK,daily,operator,Quarantine artifact
+P03,critical,XZ integrity,true,true,OK,daily,operator,Rollback immediately
+P04,high,provider coverage,14/14,14/14,OK,weekly,operator,HOLD refresh and open provider incident
+P05,high,missing provider rows,0,0,OK,weekly,operator,HOLD candidate
+P06,high,universe row band,42000-45000,43089,OK,weekly,operator,Human review and no promotion
+P07,high,duplicate identities,0,0,OK,weekly,operator,Quarantine candidate
+P08,medium,cold catalog load seconds,<=3.0,2.1004,OK,weekly,operator,Investigate after two breaches
+P09,medium,peak traced memory MB,<=128,93.97,OK,weekly,operator,Investigate memory regression
+P10,critical,production scoring authorized,false,false,OK,daily,operator,Fail closed and raise P1
+A01,advisory,live provider freshness probe,documented observation,NOT_YET_EXECUTED,PENDING_V2_31D,monthly supervised,operator,Execute read-only probe
