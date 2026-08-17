@@ -101,7 +101,9 @@ def render_scores(s):
   st.caption(f'Rol: {contract["role"] or "UNAVAILABLE"} · {contract["rows"]:,} filas · no apto para producción')
   acknowledged=st.checkbox("Entiendo que mide cobertura y calidad de datos, no atractivo de inversión ni ranking.",key="diagnostic_ack")
   if acknowledged and st.button("Abrir diagnóstico",type="primary"):
-   try:st.session_state.diagnostic_summary=load_diagnostic(ROOT,True)
+   try:
+    st.session_state.diagnostic_summary=load_diagnostic(ROOT,True)
+    st.session_state.diagnostic_consent_granted=True
    except (OSError,ValueError,PermissionError) as exc:st.error(str(exc))
  summary=st.session_state.get("diagnostic_summary") if acknowledged else None
  if not summary:return
@@ -128,7 +130,7 @@ def render_reports(s):
   md=watchlist_markdown(data,s.scoring);st.markdown(md);report_downloads(md,"watchlist",f"watchlist_{path.stem}",[{"watchlist_id":data["watchlist_id"],"updated_at_utc":data["updated_at_utc"]}])
  else:
   summary=st.session_state.get("diagnostic_summary")
-  if not st.session_state.get("diagnostic_ack") or not summary:st.warning("Abre y confirma primero el diagnóstico desde Score Explorer.");return
+  if not st.session_state.get("diagnostic_consent_granted") or not summary:st.warning("Abre y confirma primero el diagnóstico desde Score Explorer.");return
   md=diagnostic_markdown(summary);st.markdown(md);report_downloads(md,"diagnostic","data_readiness_diagnostic",[{"role":"DATA_READINESS_ONLY","rows":summary["rows"]}])
 def placeholder(title,message):st.header(title);st.info(message);st.caption("Esta pantalla se implementará en las siguientes fases v2.28.")
 def main():
