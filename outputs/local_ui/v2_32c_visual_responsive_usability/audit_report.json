@@ -1,0 +1,52 @@
+{
+  "phase": "v2.32C",
+  "status": "PASS",
+  "checks_passed": 17,
+  "checks_failed": 0,
+  "checks": {
+    "desktop_layout": "PASS",
+    "tablet_layout": "PASS",
+    "mobile_single_column": "PASS",
+    "touch_targets": "PASS",
+    "keyboard_focus": "PASS",
+    "reduced_motion": "PASS",
+    "high_contrast_preference": "PASS",
+    "wcag_contrast": "PASS",
+    "status_hierarchy_and_tones": "PASS",
+    "eight_screen_navigation": "PASS",
+    "stable_navigation_widget": "PASS",
+    "consistent_spanish_labels": "PASS",
+    "search_guidance": "PASS",
+    "maintenance_readability": "PASS",
+    "help_quick_start_and_limits": "PASS",
+    "current_sidebar_version": "PASS",
+    "financial_boundaries_visible": "PASS"
+  },
+  "screens_rendered": [
+    "status",
+    "universe",
+    "watchlists",
+    "scores",
+    "reports",
+    "asset",
+    "maintenance",
+    "help"
+  ],
+  "viewports": {
+    "desktop": "1440px content cap",
+    "tablet": "<=900px",
+    "mobile": "<=640px single column"
+  },
+  "elapsed_seconds": 6.04,
+  "incidents_found": 3,
+  "incidents_closed": 3,
+  "closed_incidents": [
+    "navigation widget identity changed between screens",
+    "healthy provider and stable states used warning visual tones",
+    "catalog filters mixed English labels into the Spanish interface"
+  ],
+  "universe_pointer_modified": false,
+  "scoring_pointer_modified": false,
+  "dataset_modified": false,
+  "production_scoring_authorized": false
+}

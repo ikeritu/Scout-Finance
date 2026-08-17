@@ -49,12 +49,12 @@ def main(argv: list[str] | None = None) -> int:
         scenarios += ["startup", "status_fail_closed"]
 
         navigate(at, "universe")
-        widget(at, "multiselect", "Provider").set_value(["nse_india"])
+        widget(at, "multiselect", "Proveedor").set_value(["nse_india"])
         at.run()
         assert any("2,013 resultados" in item.value for item in at.caption)
         scenarios.append("provider_filter")
 
-        widget(at, "multiselect", "Provider").set_value([])
+        widget(at, "multiselect", "Proveedor").set_value([])
         widget(at, "text_input", "Buscar").set_value("20MICRONS")
         at.run()
         assert any("1 resultados" in item.value for item in at.caption)
@@ -127,7 +127,7 @@ def main(argv: list[str] | None = None) -> int:
         scenarios += ["diagnostic_consent_persists", "diagnostic_report"]
 
         navigate(at, "maintenance")
-        assert any("solo lectura" in item.value for item in at.warning)
+        assert any("solo lectura" in item.value for item in at.info)
         scenarios.append("maintenance_read_only")
 
         # A fresh browser session verifies entry points that do not depend on
@@ -135,7 +135,8 @@ def main(argv: list[str] | None = None) -> int:
         at = AppTest.from_file(str(ROOT / "app_v2_28.py"), default_timeout=40).run()
         navigate(at, "help")
         assert any(item.value == "Ayuda y límites" for item in at.header)
-        assert "Ranking productivo: bloqueado" in "\n".join(str(item.value) for item in at.markdown)
+        help_text = "\n".join(str(item.value) for item in at.markdown)
+        assert "Ranking productivo" in help_text and "Bloqueado" in help_text
         scenarios.append("help_and_limits")
 
         at = AppTest.from_file(str(ROOT / "app_v2_28.py"), default_timeout=40).run()

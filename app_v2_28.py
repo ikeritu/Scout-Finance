@@ -12,6 +12,7 @@ from src.ui_v2_28.ui import apply as apply_ui,screen_context
 st.set_page_config(page_title="Scout Finance — Local Analyst UI",page_icon="📊",layout="wide")
 ROOT=Path(__file__).resolve().parent
 apply_ui(st)
+FIELD_LABELS={"country":"País","exchange":"Mercado","currency":"Moneda","asset_type":"Tipo de activo","provider":"Proveedor"}
 
 @st.cache_data(ttl=60,show_spinner=False)
 def state_snapshot():return build_app_state(ROOT)
@@ -19,7 +20,7 @@ def state_snapshot():return build_app_state(ROOT)
 def catalog_snapshot(path,sha):return load_catalog(Path(path))
 def go(screen,identity=None):
  if identity:st.session_state.asset_identity=identity
- st.session_state.screen=screen;st.rerun()
+ st.session_state.pending_screen=screen;st.rerun()
 def table(rows):
  fields=["name","ticker","exchange","isin","country","currency","asset_type","provider","identity_key"]
  st.dataframe(pd.DataFrame(rows,columns=fields),use_container_width=True,hide_index=True)
@@ -28,7 +29,8 @@ def chip(label,value,tone="neutral"):
  st.markdown(f'<div style="border:1px solid #E1E7EE;border-radius:12px;padding:12px;background:white"><small>{label}</small><div style="font-size:18px;font-weight:750;color:{color}">{value}</div></div>',unsafe_allow_html=True)
 def render_status(s):
  st.title("Scout Finance");st.caption("Interfaz local de análisis · Estado operativo verificado por pointers")
- values=(("Universo",f"{s.universe.rows:,} activos" if s.universe.available else "No disponible","ok" if s.universe.available else "bad"),("Scoring","No disponible" if not s.scoring.allow_ranking else "Productivo","warn"),("Refresh",s.maintenance.refresh_status or "UNKNOWN","warn"),("Proveedores",f"{s.maintenance.providers_complete}/{s.maintenance.providers_expected}","warn"))
+ providers_ok=s.maintenance.providers_expected>0 and s.maintenance.providers_complete==s.maintenance.providers_expected and s.maintenance.missing_rows==0
+ values=(("Universo",f"{s.universe.rows:,} activos" if s.universe.available else "No disponible","ok" if s.universe.available else "bad"),("Scoring","Bloqueado de forma segura" if not s.scoring.allow_ranking else "Productivo","neutral" if not s.scoring.allow_ranking else "warn"),("Estado operativo","Estable" if "STABLE" in (s.maintenance.refresh_status or "") else s.maintenance.refresh_status or "Desconocido","ok" if "STABLE" in (s.maintenance.refresh_status or "") else "warn"),("Proveedores",f"{s.maintenance.providers_complete}/{s.maintenance.providers_expected}","ok" if providers_ok else "warn"))
  for col,args in zip(st.columns(4),values):
   with col:chip(*args)
  if not s.scoring.allow_ranking:st.warning("Scoring productivo no autorizado. Rankings, recomendaciones y señales permanecen ocultos.")
@@ -37,7 +39,7 @@ def render_catalog(rows):
  screen_context(st,"Universo operativo","Exploración de metadatos. No contiene scores, rankings ni recomendaciones.")
  search=st.text_input("Buscar",placeholder="Nombre, ticker, ISIN o identidad estable");filters={};fields=("country","exchange","currency","asset_type","provider")
  for col,field in zip(st.columns(5),fields):
-  with col:filters[field]=st.multiselect(field.replace("_"," ").title(),distinct_values(rows,field))
+  with col:filters[field]=st.multiselect(FIELD_LABELS[field],distinct_values(rows,field))
  a,b=st.columns([1,3]);page_size=a.selectbox("Filas",[25,50,100,250],index=1);initial=query_catalog(rows,search,filters,1,page_size)
  page=b.number_input("Página",1,initial.pages,1);result=query_catalog(rows,search,filters,page,page_size)
  st.caption(f"{result.total:,} resultados · página {result.page} de {result.pages}");table(result.rows)
@@ -136,9 +138,13 @@ def placeholder(title,message):st.header(title);st.info(message);st.caption("Est
 def main():
  s=state_snapshot();rows=catalog_snapshot(str(s.universe.dataset),s.universe.dataset_sha256) if s.universe.available else []
  if "screen" not in st.session_state:st.session_state.screen="status"
+ if "pending_screen" in st.session_state:
+  st.session_state.screen=st.session_state.pop("pending_screen")
+  st.session_state.navigation_screen=st.session_state.screen
+ if "navigation_screen" not in st.session_state:st.session_state.navigation_screen=st.session_state.screen
  with st.sidebar:
-  st.markdown("### Scout Finance");st.caption("Local Analyst UI · v2.29 · validada");ids=[x.id for x in SCREENS]
-  selected=st.radio("Navegación",ids,index=ids.index(st.session_state.screen),format_func=lambda i:next(f"{x.icon} {x.label}" for x in SCREENS if x.id==i),label_visibility="collapsed")
+  st.markdown("### Scout Finance");st.caption("Local Analyst UI · v2.32 · validación operativa");ids=[x.id for x in SCREENS]
+  selected=st.radio("Navegación",ids,format_func=lambda i:next(f"{x.icon} {x.label}" for x in SCREENS if x.id==i),label_visibility="collapsed",key="navigation_screen")
   st.session_state.screen=selected;st.divider();st.caption(f"Estado: {s.scoring.consumer_state.value}");st.caption("No es asesoramiento financiero")
  if selected=="status":render_status(s)
  elif selected=="universe":render_catalog(rows) if rows else st.error("Catálogo no disponible")
@@ -146,6 +152,12 @@ def main():
  elif selected=="asset":render_asset(rows)
  elif selected=="scores":render_scores(s)
  elif selected=="reports":render_reports(s)
- elif selected=="maintenance":screen_context(st,"Mantenimiento","Estado operativo avanzado y estrictamente de solo lectura.");st.warning("Vista avanzada · solo lectura");st.write({"refresh":s.maintenance.refresh_status,"providers":f"{s.maintenance.providers_complete}/{s.maintenance.providers_expected}","missing_rows":s.maintenance.missing_rows})
- else:screen_context(st,"Ayuda y límites","Qué puedes hacer, qué permanece bloqueado y cómo interpretar la herramienta.");st.markdown("- Catálogo y watchlists: disponibles\n- Informes descriptivos: disponibles\n- Diagnóstico: requiere confirmación explícita\n- Ranking productivo: bloqueado\n- Broker, recomendaciones y señales: no disponibles\n\n**Navegación:** usa el menú lateral. Todos los controles conservan etiqueta y foco de teclado visible.")
+ elif selected=="maintenance":
+  screen_context(st,"Mantenimiento","Comprobaciones operativas avanzadas. Esta pantalla no modifica archivos ni activa procesos.");st.info("Vista avanzada · solo lectura")
+  for col,args in zip(st.columns(3),(("Estado","Estable" if "STABLE" in (s.maintenance.refresh_status or "") else s.maintenance.refresh_status,"ok"),("Cobertura",f"{s.maintenance.providers_complete}/{s.maintenance.providers_expected} proveedores","ok" if s.maintenance.providers_complete==s.maintenance.providers_expected else "warn"),("Procedencias pendientes",str(s.maintenance.missing_rows),"ok" if s.maintenance.missing_rows==0 else "bad"))):
+   with col:chip(*args)
+  st.caption("Los cambios de universo, rollback o scoring requieren un gate explícito fuera de esta interfaz.")
+ else:
+  screen_context(st,"Ayuda y límites","Guía rápida para saber por dónde empezar y qué decisiones no realiza la herramienta.")
+  st.markdown("**Primeros pasos**\n\n1. Busca un activo en **Universo**.\n2. Abre su detalle o añádelo a una **Watchlist**.\n3. Genera un informe descriptivo en **Informes y exports**.\n\n**Disponible**\n\n- Catálogo, filtros, detalle y watchlists.\n- Informes descriptivos con manifiesto.\n- Diagnóstico de calidad de datos con confirmación explícita.\n\n**Bloqueado**\n\n- Ranking productivo, recomendaciones y señales.\n- Operaciones de broker o cambios automáticos del universo.\n\nUsa el menú lateral para navegar. Todos los controles conservan etiqueta y foco de teclado visible.")
 if __name__=="__main__":main()
