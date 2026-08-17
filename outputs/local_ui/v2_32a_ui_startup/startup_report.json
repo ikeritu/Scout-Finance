@@ -1,0 +1,32 @@
+{
+  "phase": "v2.32A",
+  "status": "PASS",
+  "python": "3.12.13",
+  "streamlit_health": "ok",
+  "streamlit_http_status": 200,
+  "startup_seconds": 1.59,
+  "catalog_load_seconds": 1.341,
+  "universe_rows": 43089,
+  "unique_identities": 43089,
+  "providers_complete": 14,
+  "providers_expected": 14,
+  "missing_provider_rows": 0,
+  "nse_rows": 2013,
+  "production_scoring_authorized": false,
+  "allow_ranking": false,
+  "universe_pointer_modified": false,
+  "scoring_pointer_modified": false,
+  "dataset_modified": false,
+  "checks": {
+    "clean_install_contract": "PASS",
+    "dependencies": "PASS",
+    "dataset_hash": "PASS",
+    "catalog_load": "PASS",
+    "identity_uniqueness": "PASS",
+    "provider_coverage": "PASS",
+    "streamlit_process": "PASS",
+    "http_health": "PASS",
+    "scoring_fail_closed": "PASS",
+    "pointer_invariance": "PASS"
+  }
+}
