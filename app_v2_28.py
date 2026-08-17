@@ -23,7 +23,7 @@ def go(screen,identity=None):
  st.session_state.pending_screen=screen;st.rerun()
 def table(rows):
  fields=["name","ticker","exchange","isin","country","currency","asset_type","provider","identity_key"]
- st.dataframe(pd.DataFrame(rows,columns=fields),use_container_width=True,hide_index=True)
+ st.dataframe(pd.DataFrame(rows,columns=fields),width="stretch",hide_index=True)
 def chip(label,value,tone="neutral"):
  colors={"ok":"#0E7C86","warn":"#B76E00","bad":"#B42318","neutral":"#526173"};color=colors[tone]
  st.markdown(f'<div style="border:1px solid #E1E7EE;border-radius:12px;padding:12px;background:white"><small>{label}</small><div style="font-size:18px;font-weight:750;color:{color}">{value}</div></div>',unsafe_allow_html=True)
@@ -114,8 +114,8 @@ def render_scores(s):
  for col,(field,value) in zip(cols,summary["component_means"].items()):
   col.metric(field.replace("_"," ").title(),"N/A" if value is None else f"{value:.2f}",help="Componente de calidad/cobertura; no mide rentabilidad esperada.")
  a,b=st.columns(2)
- with a:st.subheader("Buckets diagnósticos");st.dataframe(pd.DataFrame(distribution_rows(summary["buckets"],summary["rows"])),hide_index=True,use_container_width=True)
- with b:st.subheader("Cobertura por proveedor");st.dataframe(pd.DataFrame(distribution_rows(summary["providers"],summary["rows"])),hide_index=True,use_container_width=True)
+ with a:st.subheader("Buckets diagnósticos");st.dataframe(pd.DataFrame(distribution_rows(summary["buckets"],summary["rows"])),hide_index=True,width="stretch")
+ with b:st.subheader("Cobertura por proveedor");st.dataframe(pd.DataFrame(distribution_rows(summary["providers"],summary["rows"])),hide_index=True,width="stretch")
  st.caption("El campo dry_run_rank se ignora. No se ordenan activos por score.")
 def report_downloads(markdown,kind,stem,sources):
  fmt=st.radio("Formato",["md","html"],horizontal=True,key=f"fmt_{kind}");payload,manifest=package_report(markdown,kind,fmt,sources)

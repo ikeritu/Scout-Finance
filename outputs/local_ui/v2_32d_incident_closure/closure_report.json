@@ -1,0 +1,39 @@
+{
+  "phase": "v2.32D",
+  "status": "PASS",
+  "incidents_total": 5,
+  "incidents_closed": 5,
+  "incidents_open": 0,
+  "incident_ids": [
+    "UI-001",
+    "UI-002",
+    "UI-003",
+    "UI-004",
+    "UI-005"
+  ],
+  "regression_gates": [
+    {
+      "gate": "tests/qa_real_user_journeys_v2_32b.py",
+      "status": "PASS",
+      "seconds": 6.041
+    },
+    {
+      "gate": "tests/qa_visual_responsive_usability_v2_32c.py",
+      "status": "PASS",
+      "seconds": 2.428
+    },
+    {
+      "gate": "tests/qa_ux_accessibility_v2_28e.py",
+      "status": "PASS",
+      "seconds": 0.046
+    }
+  ],
+  "streamlit_api_deprecations_in_stable_ui": 0,
+  "universe_rows": 43089,
+  "production_scoring_authorized": false,
+  "allow_ranking": false,
+  "temporary_watchlist_cleaned": true,
+  "universe_pointer_modified": false,
+  "scoring_pointer_modified": false,
+  "dataset_modified": false
+}

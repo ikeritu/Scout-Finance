@@ -1,0 +1,6 @@
+incident_id,source,severity,description,resolution,status,regression_gate
+UI-001,v2.32B,medium,Diagnostic consent was lost between Score Explorer and Reports,Persist explicit consent only after diagnostic open,CLOSED,qa_real_user_journeys_v2_32b
+UI-002,v2.32C,medium,Navigation widget identity changed between reruns,Use a stable widget key and pre-render pending transitions,CLOSED,qa_visual_responsive_usability_v2_32c
+UI-003,v2.32C,low,Healthy stable and provider states used warning tones,Derive semantic tone from operational health,CLOSED,qa_visual_responsive_usability_v2_32c
+UI-004,v2.32C,low,Catalogue filters mixed English labels into Spanish UI,Use a canonical Spanish field-label map,CLOSED,qa_visual_responsive_usability_v2_32c
+UI-005,v2.32D,low,Streamlit emitted deprecated use_container_width warnings,Migrate stable UI tables to width stretch and require Streamlit 1.50+,CLOSED,qa_incident_closure_v2_32d
