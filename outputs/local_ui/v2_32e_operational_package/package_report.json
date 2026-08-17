@@ -1,0 +1,30 @@
+{
+  "phase": "v2.32E",
+  "status": "PASS",
+  "delivery": "Windows double-click operational package",
+  "first_run_setup": true,
+  "repeat_run_verification": true,
+  "fail_closed": true,
+  "user_guide_and_faq": true,
+  "watchlist_backup_and_recovery": true,
+  "universe_rows": 43089,
+  "production_scoring_authorized": false,
+  "allow_ranking": false,
+  "package_sha256": {
+    "INICIAR_SCOUT_FINANCE.bat": "2b80eee2f5b6e1657e37ba6eb79f5e70d60908ec4331fc4eefcd42ba4f539e72",
+    "run_local_ui_v2_28.bat": "e1e33b1ac109bfa051bd45ca951785b67f6849a218ec1540040d27943861f08c",
+    "setup_local_ui_v2_29a.ps1": "0c677d90ae2dd46e5cc21a11cb555b396950018eb42cfcace8cbeb73bf164586",
+    "GUIA_SCOUT_FINANCE.md": "b7bd0a2e0efb094ff85184b284f6d4c6a9a4864215f13f5f27ace41400812d3c",
+    "LOCAL_UI_V2_28.md": "f0688341baa628eb34c0c5a776e57a5f6cd7644339e5fe0ba19a9aa1b7179f9f"
+  },
+  "operational_pointer_sha256": {
+    "outputs/full_universe_source_acquisition/current_operational_universe_pointer.json": "26d2bbc340ef3cd2a2bb29ca133a196f67dffefa3c28141fd17ad88373fc5fa5",
+    "outputs/full_universe_source_acquisition/current_operational_scoring_pointer.json": "38210323d82c540218dce6ef412f6e068f309a7fa57b80d2b9ae5de541e94558"
+  },
+  "operational_pointers_modified_by_qa": false,
+  "dataset_modified_by_qa": false,
+  "regression_gates": [
+    "v2.28F",
+    "v2.32D"
+  ]
+}
