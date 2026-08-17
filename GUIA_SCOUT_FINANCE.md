@@ -2,6 +2,8 @@
 
 Scout Finance es una aplicación local para explorar de forma segura el universo operativo validado de 43.089 instrumentos. No envía órdenes, no recomienda inversiones y no habilita rankings productivos.
 
+**Versión estable congelada:** `v2.32F — Local UI Final Freeze`. Para uso normal no es necesario ejecutar scripts ni modificar archivos: abre únicamente `INICIAR_SCOUT_FINANCE.bat`.
+
 ## Abrir la aplicación
 
 Haz doble clic en **`INICIAR_SCOUT_FINANCE.bat`**.

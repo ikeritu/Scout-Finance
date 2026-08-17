@@ -1,0 +1,43 @@
+{
+  "phase": "v2.32F",
+  "version": "v2.32F-local-ui-final-freeze",
+  "status": "PASS",
+  "freeze_status": "FROZEN",
+  "roadmap": {
+    "completed": 6,
+    "total": 6
+  },
+  "accumulated_gates": [
+    {
+      "gate": "tests/qa_ui_startup_v2_32a.py",
+      "status": "PASS",
+      "seconds": 1.773
+    },
+    {
+      "gate": "tests/qa_operational_package_v2_32e.py",
+      "status": "PASS",
+      "seconds": 6.712
+    }
+  ],
+  "phase_reports_verified": [
+    "v2.32A",
+    "v2.32B",
+    "v2.32C",
+    "v2.32D",
+    "v2.32E"
+  ],
+  "universe_rows": 43089,
+  "unique_identities": 43089,
+  "providers_complete": 14,
+  "providers_expected": 14,
+  "open_incidents": 0,
+  "production_scoring_authorized": false,
+  "allow_ranking": false,
+  "manifest_files_verified": 25,
+  "operational_pointer_sha256": {
+    "outputs/full_universe_source_acquisition/current_operational_universe_pointer.json": "26d2bbc340ef3cd2a2bb29ca133a196f67dffefa3c28141fd17ad88373fc5fa5",
+    "outputs/full_universe_source_acquisition/current_operational_scoring_pointer.json": "38210323d82c540218dce6ef412f6e068f309a7fa57b80d2b9ae5de541e94558"
+  },
+  "operational_pointers_modified_by_qa": false,
+  "dataset_modified_by_qa": false
+}

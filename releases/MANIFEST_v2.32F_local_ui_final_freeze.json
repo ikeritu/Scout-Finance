@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "version": "v2.32F-local-ui-final-freeze",
+  "status": "FROZEN_PASS",
+  "scope": "stable local UI only",
+  "roadmap": {
+    "completed": 6,
+    "total": 6
+  },
+  "universe_rows": 43089,
+  "providers": "14/14",
+  "open_incidents": 0,
+  "production_scoring_authorized": false,
+  "allow_ranking": false,
+  "files": [
+    {"path": "app_v2_28.py", "sha256": "4f77281ab66dd6ff46d9cb42e8fe5c0f8497ea8812d069bfd9fc6fd8fc05c481"},
+    {"path": "INICIAR_SCOUT_FINANCE.bat", "sha256": "2b80eee2f5b6e1657e37ba6eb79f5e70d60908ec4331fc4eefcd42ba4f539e72"},
+    {"path": "run_local_ui_v2_28.bat", "sha256": "e1e33b1ac109bfa051bd45ca951785b67f6849a218ec1540040d27943861f08c"},
+    {"path": "setup_local_ui_v2_29a.ps1", "sha256": "0c677d90ae2dd46e5cc21a11cb555b396950018eb42cfcace8cbeb73bf164586"},
+    {"path": "scripts/verify_local_ui_install_v2_29a.py", "sha256": "08d71d0cbb6bcbcc619f9015046248871e821945fb86c31f95ed4f19b65eaeb4"},
+    {"path": "requirements-ui-v2_28.txt", "sha256": "eaa1c0a0c173e7b34c7db3a685dd68853da31a703682c55a38ad4ceebf545b8c"},
+    {"path": "GUIA_SCOUT_FINANCE.md", "sha256": "824d098561a3674561a9ba6e7c58e501f51fa62ce90c6b9c794d0c69d7300afc"},
+    {"path": "VERSION_LOCAL_UI.md", "sha256": "4b1ae9b3879b231a6c0d764b0efbf0ae5c05f9993b134d3c0ec5e042f86f2026"},
+    {"path": "src/ui_v2_28/__init__.py", "sha256": "51b60c50984cefcc3d3675404bff8a8e730d39a27f00448f3341239fd04391e5"},
+    {"path": "src/ui_v2_28/adapters.py", "sha256": "86840ba0a694abfa7b8971939d26d28b4c532a000e150268fa078c10f5b2c7ef"},
+    {"path": "src/ui_v2_28/catalog.py", "sha256": "0dc9f678fc2ed4be8e116b01326ac10dc36d174a9772432f33f6f0cfb362cc80"},
+    {"path": "src/ui_v2_28/navigation.py", "sha256": "c1d229e354ecb5f55afd189ffe621455a6aaecaddfec0f1f0758be21d18c7bb5"},
+    {"path": "src/ui_v2_28/paths.py", "sha256": "a2019b9ebc060dc57dab08cb07edb3891ba7eae2973aa054b077fe2319df4fa0"},
+    {"path": "src/ui_v2_28/reports.py", "sha256": "38b44ddde09a494a66304acc8e809a2185ded8bcb149705e837d0c996f643d47"},
+    {"path": "src/ui_v2_28/scoring.py", "sha256": "af7bd4721a4d70c2f3e751a23cefe640efc1a53c29ec3a3647f5f5f7ccf84c73"},
+    {"path": "src/ui_v2_28/state.py", "sha256": "e3b5bec6ccf65070be0a05e009630ad0689ca84f8bb39a7c26b6994a6f084002"},
+    {"path": "src/ui_v2_28/ui.py", "sha256": "a92bb6e4c65ca4f7ac58f7b66cf322b4c1809990263c13db2b5cb88c1f3cdd3c"},
+    {"path": "src/ui_v2_28/watchlists.py", "sha256": "7bb5c3b3f0c0919ce47ecaea00f30f458066aa29c1b456cf67ab4caa9d15fdc0"},
+    {"path": "tests/qa_ui_startup_v2_32a.py", "sha256": "794985b8adb17add6053fecd77bef15e90eae6f4b20d5067a62fb5ab700250ac"},
+    {"path": "tests/qa_real_user_journeys_v2_32b.py", "sha256": "5ecb34758fe8ba6c2482e79c5e9bc2ed7541fe452bd52cefdfeccd687983949e"},
+    {"path": "tests/qa_visual_responsive_usability_v2_32c.py", "sha256": "733d6da37a1ff510c2d5d478fddce7fc6b3da02d92603d7c511a4511df7352b0"},
+    {"path": "tests/qa_incident_closure_v2_32d.py", "sha256": "a3870355a82261ab9dfc3a097e898d088f44b64a9eb7031c507ae6aca0439258"},
+    {"path": "tests/qa_operational_package_v2_32e.py", "sha256": "dfab934ad6e204cba352708a5f25818efe0d6c87861df33828d548a449f70e60"},
+    {"path": "outputs/full_universe_source_acquisition/current_operational_universe_pointer.json", "sha256": "26d2bbc340ef3cd2a2bb29ca133a196f67dffefa3c28141fd17ad88373fc5fa5"},
+    {"path": "outputs/full_universe_source_acquisition/current_operational_scoring_pointer.json", "sha256": "38210323d82c540218dce6ef412f6e068f309a7fa57b80d2b9ae5de541e94558"}
+  ],
+  "policy": {
+    "immutable_freeze": true,
+    "future_changes_require_new_version": true,
+    "do_not_overwrite_operational_datasets": true,
+    "do_not_modify_operational_pointers_for_ui_changes": true,
+    "require_accumulated_regression_gates": true
+  }
+}
