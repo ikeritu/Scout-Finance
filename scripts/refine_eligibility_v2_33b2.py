@@ -44,6 +44,7 @@ def main() -> int:
 
     rules = [
         ("hold_provider_schema_sgx", "sgx_ticker_and_name_fields_require_source_schema_repair", result["source_provider"].eq("sgx_structured_endpoint")),
+        ("hold_provider_schema_xetra", "xetra_company_name_field_contains_classification_codes", result["source_provider"].eq("deutsche_boerse_xetra_all_tradable_instruments")),
         ("excluded_invalid_placeholder", "placeholder_company_name", names.isin({"DUMMY", "TEST", "N/A", "UNKNOWN"}) | names.str.fullmatch(r"TEST[A-Z0-9._-]*", na=False)),
         ("excluded_exchange_traded_product", "company_name_indicates_etf_etn_or_exchange_traded_product", names.str.contains(r"\b(?:ETFS?|ETNS?|EXCHANGE[- ]TRADED)\b", regex=True)),
         ("excluded_non_common_preferred", "company_name_indicates_preferred_security", names.str.contains(r"\bPREFERRED\b", regex=True)),
@@ -97,9 +98,9 @@ def main() -> int:
         "allow_ranking": False,
     }
     if report["decision_summary"] != {
-        "eligible_for_financial_enrichment": 22_589,
+        "eligible_for_financial_enrichment": 21_165,
         "excluded_from_equity_opportunity_universe": 10_432,
-        "requires_review_or_repair": 10_068,
+        "requires_review_or_repair": 11_492,
     }:
         raise SystemExit(f"Unexpected refined counts: {report['decision_summary']}")
 
@@ -118,7 +119,7 @@ def main() -> int:
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     print(json.dumps(report, ensure_ascii=False, indent=2))
-    print("PASS: v2.33B2/43089/22589-enrichment/10432-excluded/10068-review/no-ranking")
+    print("PASS: v2.33B2/43089/21165-enrichment/10432-excluded/11492-review/no-ranking")
     return 0
 
 

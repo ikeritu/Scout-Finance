@@ -4,8 +4,9 @@
   "input_rows": 43089,
   "input_sha256": "a073209d4e12257e5408439e5352d3cd7d9e61fe928bc13e5d19249352685cca",
   "prior_eligible": 23888,
-  "refined_rows": 1299,
+  "refined_rows": 2723,
   "refinement_counts": {
+    "hold_provider_schema_xetra": 1424,
     "review_fund_or_trust": 697,
     "hold_provider_schema_sgx": 358,
     "review_spac": 216,
@@ -15,14 +16,15 @@
     "excluded_non_common_preferred": 2
   },
   "decision_summary": {
-    "eligible_for_financial_enrichment": 22589,
+    "eligible_for_financial_enrichment": 21165,
     "excluded_from_equity_opportunity_universe": 10432,
-    "requires_review_or_repair": 10068
+    "requires_review_or_repair": 11492
   },
   "decision_counts": {
-    "eligible_for_financial_enrichment_v2_33b2": 22589,
+    "eligible_for_financial_enrichment_v2_33b2": 21165,
     "excluded_from_equity_opportunity_universe": 10409,
     "review_unclassified_instrument": 8765,
+    "hold_provider_schema_xetra": 1424,
     "review_fund_or_trust": 697,
     "hold_provider_schema_sgx": 358,
     "review_spac": 216,

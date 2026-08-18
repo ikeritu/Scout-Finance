@@ -1,21 +1,20 @@
 {
   "phase": "v2.33D",
   "status": "READY_FOR_AUTHORIZED_PILOT_NOT_EXECUTED",
-  "population": 22589,
+  "population": 21165,
   "sample_rows": 240,
   "sample_strategy": "deterministic_proportional_by_source_provider_with_range_spread",
   "provider_quotas": {
     "ASX": 14,
     "SFC_SIMEV_RNVE": 1,
-    "TWSE": 7,
-    "cboe_europe_reference_data": 111,
-    "deutsche_boerse_xetra_all_tradable_instruments": 15,
-    "jpx_listed_securities": 39,
-    "nasdaq_trader_nasdaqlisted": 32,
-    "nasdaq_trader_otherlisted": 21
+    "TWSE": 8,
+    "cboe_europe_reference_data": 119,
+    "jpx_listed_securities": 42,
+    "nasdaq_trader_nasdaqlisted": 34,
+    "nasdaq_trader_otherlisted": 22
   },
-  "source_sha256": "b21e10261ce7934b24c5e07a64ad5c8e1fef90a7862745643b18f0742895b1fb",
-  "sample_sha256": "09d4935977c8d1543cfdcdc4dbcdb8fbb1f5c38a40b77072df0cfae5c691e044",
+  "source_sha256": "dd7a5d2f98d2e750d08cb8633d772caecf044e6c41db7f27464b58bf10bb1876",
+  "sample_sha256": "b4c8c49cc5ecc7006049b5dfb69f98eb79236d7313ad30e874a14d57afc8fb5c",
   "identity_mapping_complete": false,
   "eligibility_preflight": {
     "pass_rows": 240,

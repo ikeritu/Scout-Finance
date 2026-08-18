@@ -17,7 +17,7 @@ def main() -> int:
     manifest = json.loads((output / "price_pilot_manifest_v2_33d.json").read_text(encoding="utf-8"))
     rows = list(csv.DictReader((output / "price_pilot_sample_v2_33d.csv").open(encoding="utf-8", newline="")))
     assert manifest["status"] == "READY_FOR_AUTHORIZED_PILOT_NOT_EXECUTED"
-    assert manifest["population"] == 22_589 and manifest["sample_rows"] == len(rows) == 240
+    assert manifest["population"] == 21_165 and manifest["sample_rows"] == len(rows) == 240
     assert len({row["row_number"] for row in rows}) == 240
     assert set(manifest["provider_quotas"]) == {row["source_provider"] for row in rows}
     assert all(row["provider_symbol_status"] == "pending_provider_mapping" for row in rows)

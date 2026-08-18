@@ -2,22 +2,31 @@
 
 ## Trabajo completado
 
-Se ha creado una muestra determinista de 240 activos sobre los 22.589 candidatos corregidos de v2.33B2. La representación por origen es:
+Se ha creado una muestra determinista de 240 activos sobre los 21.165 candidatos corregidos de v2.33B2. La representación por origen es:
 
 | Origen | Piloto |
 |---|---:|
-| Cboe Europe | 111 |
-| JPX | 39 |
-| Nasdaq listed | 32 |
-| Nasdaq other listed | 21 |
-| Xetra | 15 |
+| Cboe Europe | 119 |
+| JPX | 42 |
+| Nasdaq listed | 34 |
+| Nasdaq other listed | 22 |
 | ASX | 14 |
-| TWSE | 7 |
+| TWSE | 8 |
 | SFC/BVC | 1 |
 
 El descargador valida el esquema EOD, limita la frecuencia, no imprime la clave y escribe una respuesta independiente por activo.
 
-Tras v2.33B2, el preflight deja **240/240** filas sin anomalías inmediatas. SGX permanece fuera del piloto hasta reparar su esquema.
+Tras v2.33B2, el preflight deja **240/240** filas sin anomalías inmediatas. SGX y Xetra permanecen fuera del piloto hasta reparar sus esquemas.
+
+## Resolución de símbolos
+
+Se han resuelto de forma determinista **78/240** símbolos:
+
+- 56 cotizaciones estadounidenses con sufijo `.US`;
+- 14 australianas, convirtiendo `.AX` en `.AU`;
+- 8 taiwanesas con sufijo `.TW` confirmado.
+
+Quedan **162/240** bloqueadas: 119 cotizaciones Cboe Europe necesitan recuperar la bolsa principal, 42 japonesas requieren confirmar el código del catálogo EODHD y una colombiana necesita búsqueda por identificador. No se han inferido equivalencias dudosas.
 
 ## Por qué no se han descargado precios
 

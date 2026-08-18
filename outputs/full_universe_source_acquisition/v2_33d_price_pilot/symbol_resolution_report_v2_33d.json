@@ -1,0 +1,27 @@
+{
+  "phase": "v2.33D-symbol-resolution",
+  "status": "PARTIAL_FAIL_CLOSED",
+  "input_rows": 240,
+  "resolved_deterministic": 78,
+  "unresolved": 162,
+  "resolved_by_market": {
+    "ASX": 14,
+    "BVC": 0,
+    "CBOE_EUROPE": 0,
+    "Cboe BZX": 1,
+    "JPX": 0,
+    "NASDAQ": 34,
+    "NYSE": 18,
+    "NYSE American": 3,
+    "TWSE": 8
+  },
+  "unresolved_reasons": {
+    "cross_listing_requires_home_exchange_or_identifier_mapping": 119,
+    "requires_eodhd_exchange_catalog_confirmation": 42,
+    "requires_provider_search_or_identifier_mapping": 1
+  },
+  "network_calls": 0,
+  "credentials_used": false,
+  "production_scoring_authorized": false,
+  "allow_ranking": false
+}

@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pandas as pd
 
-EXPECTED_INPUT_SHA256 = "b21e10261ce7934b24c5e07a64ad5c8e1fef90a7862745643b18f0742895b1fb"
+EXPECTED_INPUT_SHA256 = "dd7a5d2f98d2e750d08cb8633d772caecf044e6c41db7f27464b58bf10bb1876"
 TARGET = 240
 
 
@@ -48,7 +48,7 @@ def main() -> int:
     with lzma.open(args.eligibility_census, "rt", encoding="utf-8") as handle:
         census = pd.read_csv(handle, dtype=str, keep_default_na=False)
     eligible = census[census["eligibility_decision_v2_33b2"].eq("eligible_for_financial_enrichment_v2_33b2")].copy()
-    if len(eligible) != 22_589:
+    if len(eligible) != 21_165:
         raise SystemExit(f"Unexpected eligible population: {len(eligible)}")
 
     counts = eligible["source_provider"].value_counts().sort_index()
@@ -100,7 +100,7 @@ def main() -> int:
     manifest = {
         "phase": "v2.33D",
         "status": "READY_FOR_AUTHORIZED_PILOT_NOT_EXECUTED",
-        "population": 22_589,
+        "population": 21_165,
         "sample_rows": len(sample),
         "sample_strategy": "deterministic_proportional_by_source_provider_with_range_spread",
         "provider_quotas": quotas,
@@ -126,7 +126,7 @@ def main() -> int:
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     print(json.dumps(manifest, ensure_ascii=False, indent=2))
-    print("PASS: v2.33D-preparation/22589-population/240-stratified/preflight/fail-closed/no-ranking")
+    print("PASS: v2.33D-preparation/21165-population/240-stratified/preflight/fail-closed/no-ranking")
     return 0
 
 
