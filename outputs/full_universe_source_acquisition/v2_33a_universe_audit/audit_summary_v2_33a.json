@@ -1,0 +1,91 @@
+{
+  "phase": "v2.33A",
+  "status": "PASS",
+  "scope": "read_only_universe_type_duplicate_and_coverage_audit",
+  "input": {
+    "rows": 43089,
+    "columns": 33,
+    "sha256": "4cbde1e534ccf145542e6d0bd0c1f5aec7dba4d43037aea5f115e1ea9b46d6bf"
+  },
+  "rows_audited": 43089,
+  "type_buckets": {
+    "common_equity_candidate": 23730,
+    "fund_or_note": 10409,
+    "unclassified": 8765,
+    "depositary_receipt_candidate": 158,
+    "provider_specific_unresolved": 20,
+    "conditional_investment_vehicle": 7
+  },
+  "source_instrument_types": {
+    "EQTY": 10657,
+    "ETF": 9218,
+    "COMMON_STOCK": 5578,
+    "": 5213,
+    "equity": 4916,
+    "UNKNOWN_PENDING_CLASSIFICATION": 3552,
+    "CS": 1424,
+    "ETC": 710,
+    "Equity": 696,
+    "ETN": 481,
+    "equity_common_or_equity_like": 322,
+    "DR": 88,
+    "equity_like": 86,
+    "ADR": 70,
+    "equity_like_reit": 25,
+    "colombia_registered_bvc_security": 20,
+    "reit": 12,
+    "equity_like_trust": 11,
+    "listed_investment_vehicle": 7,
+    "colombia_equity_price_security": 3
+  },
+  "providers": {
+    "cboe_europe_reference_data": 21154,
+    "jpx_listed_securities": 3705,
+    "nasdaq_trader_nasdaqlisted": 3244,
+    "hkex_securities_list": 2804,
+    "nasdaq_trader_otherlisted": 2404,
+    "sec_company_tickers_exchange": 2359,
+    "nse_india": 2013,
+    "deutsche_boerse_xetra_all_tradable_instruments": 1424,
+    "ASX": 1316,
+    "cboe_listed_symbols": 1193,
+    "TWSE": 696,
+    "HKEX": 396,
+    "sgx_structured_endpoint": 358,
+    "SFC_SIMEV_RNVE": 23
+  },
+  "missing_fields": {
+    "ticker": 2013,
+    "company_name": 1193,
+    "country": 21154,
+    "isin": 35147,
+    "currency": 31778,
+    "sector": 39384,
+    "industry": 38688,
+    "market_cap": 43066
+  },
+  "identity": {
+    "complete_rows": 39883,
+    "incomplete_rows": 3206,
+    "duplicate_exchange_ticker_rows": 0,
+    "duplicate_exchange_ticker_groups": 0,
+    "duplicate_isin_rows": 299,
+    "duplicate_isin_groups": 133,
+    "duplicate_isin_interpretation": "cross_listing_or_duplicate_candidate_requires_v2_33b_review"
+  },
+  "financial_coverage": {
+    "rows_with_market_cap": 23,
+    "rows_with_sector": 3705,
+    "rows_with_industry": 4401,
+    "rows_with_currency": 11311,
+    "fundamental_scoring_possible_from_current_catalog_alone": false
+  },
+  "decisions_deferred_to_v2_33b": [
+    "final_eligibility_by_instrument_type",
+    "cross_listing_and_isin_deduplication_policy",
+    "treatment_of_missing_ticker_or_company_name"
+  ],
+  "production_scoring_authorized": false,
+  "allow_ranking": false,
+  "input_modified": false
+}
