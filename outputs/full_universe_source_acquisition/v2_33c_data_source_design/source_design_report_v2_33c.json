@@ -1,0 +1,15 @@
+{
+  "phase": "v2.33C",
+  "status": "PASS",
+  "review_date": "2026-08-18",
+  "eligible_assets": 23888,
+  "providers_reviewed": 5,
+  "architecture": "SEC + OpenFIGI + conditional global paid provider + sampled fallback",
+  "preferred_global_pilot_candidate": "eodhd",
+  "pilot_sample_size": 240,
+  "purchase_authorized": false,
+  "credentials_added": false,
+  "network_collection_executed": false,
+  "production_scoring_authorized": false,
+  "allow_ranking": false
+}

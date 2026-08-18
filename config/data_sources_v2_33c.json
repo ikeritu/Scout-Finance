@@ -1,0 +1,131 @@
+{
+  "phase": "v2.33C",
+  "as_of": "2026-08-18",
+  "status": "DESIGN_VALIDATED_NO_CREDENTIALS_NO_CALLS",
+  "eligible_assets_to_enrich": 23888,
+  "principles": [
+    "prefer regulator or exchange data when it supplies the required field",
+    "retain field-level provenance and observation date",
+    "never silently merge listings using ticker alone",
+    "cache immutable raw responses and use incremental refreshes",
+    "do not purchase or activate a provider without an explicit user decision",
+    "do not authorize scoring until coverage and stability gates pass"
+  ],
+  "providers": [
+    {
+      "id": "sec_edgar",
+      "role": "authoritative_us_fundamentals",
+      "decision": "APPROVED_FOR_IMPLEMENTATION_WITHOUT_API_KEY",
+      "coverage": "SEC filers, including US-GAAP and IFRS XBRL facts",
+      "data": ["submissions", "companyfacts", "companyconcept", "bulk_companyfacts"],
+      "authentication": "none",
+      "documented_limit": "10 requests/second maximum; bulk ZIP preferred",
+      "refresh": "nightly bulk plus optional incremental checks",
+      "cost": "free public data",
+      "limitations": ["not a global exchange fundamentals source", "taxonomy normalization required", "issuer-to-listing mapping required"],
+      "official_urls": [
+        "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "https://www.sec.gov/about/developer-resources"
+      ]
+    },
+    {
+      "id": "openfigi",
+      "role": "identifier_mapping",
+      "decision": "APPROVED_FOR_MAPPING_PILOT",
+      "coverage": "global identifier mapping; not financial statements or prices",
+      "data": ["FIGI", "composite FIGI", "exchange mapping", "identifier crosswalk"],
+      "authentication": "optional free API key",
+      "documented_limit": "with key: 25 requests/6 seconds and 100 jobs/request; without key: 25 requests/minute and 10 jobs/request",
+      "refresh": "on new or changed identities",
+      "cost": "free API",
+      "limitations": ["mapping only", "redistribution restrictions require review", "ambiguous matches need deterministic rejection"],
+      "official_urls": [
+        "https://www.openfigi.com/api/overview",
+        "https://www.openfigi.com/api/documentation"
+      ]
+    },
+    {
+      "id": "eodhd",
+      "role": "preferred_global_paid_pilot_candidate",
+      "decision": "CONDITIONAL_PENDING_LICENSE_AND_COVERAGE_SAMPLE",
+      "coverage": "advertised 70+ exchanges and 150,000+ tickers; global EOD and fundamentals products",
+      "data": ["adjusted EOD prices", "splits", "dividends", "fundamentals", "exchange symbols"],
+      "authentication": "paid API token for required products",
+      "documented_limit": "plan-dependent; calls and product access must be captured from the subscribed plan",
+      "refresh": "prices daily after market close; fundamentals after reported changes",
+      "cost": "official pricing currently lists separate personal packages and an all-in-one option; confirm selected-plan total before purchase",
+      "limitations": ["license differs for personal and commercial use", "coverage claims must be tested against Scout Finance symbols", "provider warns data may be delayed or inaccurate"],
+      "official_urls": [
+        "https://eodhd.com/pricing",
+        "https://eodhd.com/financial-apis/stock-etfs-fundamental-data-feeds",
+        "https://eodhd.com/financial-apis/exchanges-api-list-of-tickers-and-trading-hours"
+      ]
+    },
+    {
+      "id": "twelve_data",
+      "role": "global_validation_and_fallback_candidate",
+      "decision": "CONDITIONAL_NOT_PRIMARY_DURING_FIRST_PILOT",
+      "coverage": "advertised global prices and fundamentals; plan-dependent market access",
+      "data": ["time series", "quotes", "corporate actions", "fundamentals"],
+      "authentication": "API key",
+      "documented_limit": "credit-based; free Basic advertises 8 credits/minute and 800/day; broader global/fundamental access is plan-dependent",
+      "refresh": "validation sample or fallback only during first pilot",
+      "cost": "official support lists paid tiers from Grow upward; exact endpoint entitlement must be checked before subscription",
+      "limitations": ["credit weights vary by endpoint", "external display requires suitable licensing", "not economical to duplicate the full primary feed initially"],
+      "official_urls": [
+        "https://twelvedata.com/docs",
+        "https://twelvedata.com/fundamentals",
+        "https://support.twelvedata.com/en/articles/5335783-trial",
+        "https://twelvedata.com/pricing"
+      ]
+    },
+    {
+      "id": "alpha_vantage",
+      "role": "development_spot_checks_only",
+      "decision": "REJECTED_AS_FULL_UNIVERSE_PRIMARY",
+      "coverage": "global market and fundamental endpoints with plan-dependent entitlements",
+      "data": ["daily adjusted prices", "company overview", "financial statements"],
+      "authentication": "API key",
+      "documented_limit": "free service: 25 requests/day; premium starts with 75 requests/minute and no daily limit",
+      "refresh": "small validation samples only unless a paid plan is explicitly selected",
+      "cost": "official premium page lists 75 requests/minute at USD 49.99/month as of the review date",
+      "limitations": ["free tier cannot process 23,888 assets in an operational window", "endpoint and exchange coverage must be sampled"],
+      "official_urls": [
+        "https://www.alphavantage.co/support/",
+        "https://www.alphavantage.co/premium/",
+        "https://www.alphavantage.co/documentation/"
+      ]
+    }
+  ],
+  "selected_architecture": {
+    "identity": ["existing operational sources", "openfigi"],
+    "us_fundamentals": ["sec_edgar"],
+    "global_prices_and_non_us_fundamentals": ["eodhd conditional pilot"],
+    "validation_and_fallback": ["twelve_data sampled", "alpha_vantage spot checks"],
+    "storage": "immutable raw snapshots plus normalized field-level provenance",
+    "credentials": "environment variables only; never repository files"
+  },
+  "pilot_before_purchase": {
+    "sample_size": 240,
+    "sampling": "stratified across provider, exchange, region and identifier quality",
+    "required_match_rate": 0.9,
+    "required_price_history_coverage": 0.9,
+    "required_fundamental_coverage": 0.75,
+    "max_false_identity_matches": 0,
+    "required_checks": ["license permits local personal analysis", "API terms permit caching", "export and derived-score terms documented", "cancellation and retention rules documented"]
+  },
+  "refresh_policy": {
+    "identity": "weekly incremental",
+    "adjusted_eod_prices": "daily after exchange close",
+    "financial_statements": "weekly change detection and post-filing refresh",
+    "sector_and_reference": "monthly",
+    "full_reconciliation": "quarterly"
+  },
+  "governance": {
+    "provider_purchase_authorized": false,
+    "credentials_present": false,
+    "network_collection_executed": false,
+    "production_scoring_authorized": false,
+    "allow_ranking": false
+  }
+}
