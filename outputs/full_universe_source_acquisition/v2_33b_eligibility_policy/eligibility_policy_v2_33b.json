@@ -1,0 +1,52 @@
+{
+  "phase": "v2.33B",
+  "status": "PASS",
+  "policy_name": "conservative_equity_opportunity_universe_v1",
+  "input": {
+    "rows": 43089,
+    "sha256": "826fd5715a0b55a03e399f1707097e721d73bc2adeed07ec51f6b3ea70c2ea88",
+    "source_phase": "v2.33A"
+  },
+  "rows_decided": 43089,
+  "decision_summary": {
+    "eligible_for_financial_enrichment": 23888,
+    "excluded_from_equity_opportunity_universe": 10409,
+    "requires_review": 8792
+  },
+  "decision_counts": {
+    "eligible_for_financial_enrichment": 23888,
+    "excluded_from_equity_opportunity_universe": 10409,
+    "review_unclassified_instrument": 8765,
+    "review_provider_specific_type": 20,
+    "review_conditional_vehicle": 7
+  },
+  "rules": [
+    "include common-equity candidates and ADR/DR only when operational identity is complete",
+    "exclude ETF, ETC and ETN from the equity ranking; they require a separate methodology",
+    "hold unclassified, provider-specific and conditional vehicles for explicit review",
+    "never treat repeated ISIN as a duplicate automatically",
+    "eligibility for enrichment does not authorize scoring or ranking"
+  ],
+  "minimum_identity_for_enrichment": [
+    "ticker",
+    "company_name",
+    "exchange",
+    "source_provider"
+  ],
+  "minimum_future_financial_coverage": {
+    "status": "TO_BE_IMPLEMENTED_IN_V2_33C_TO_V2_33G",
+    "required_domains": [
+      "current_price",
+      "price_history",
+      "financial_statements",
+      "currency",
+      "sector_or_peer_group",
+      "data_date",
+      "source_provenance"
+    ]
+  },
+  "production_scoring_authorized": false,
+  "allow_ranking": false,
+  "operational_dataset_modified": false,
+  "operational_pointers_modified": false
+}
