@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pandas as pd
 
-EXPECTED_INPUT_SHA256 = "a073209d4e12257e5408439e5352d3cd7d9e61fe928bc13e5d19249352685cca"
+EXPECTED_INPUT_SHA256 = "b21e10261ce7934b24c5e07a64ad5c8e1fef90a7862745643b18f0742895b1fb"
 TARGET = 240
 
 
@@ -47,8 +47,8 @@ def main() -> int:
         raise SystemExit(f"Unexpected v2.33B census SHA-256: {source_sha}")
     with lzma.open(args.eligibility_census, "rt", encoding="utf-8") as handle:
         census = pd.read_csv(handle, dtype=str, keep_default_na=False)
-    eligible = census[census["eligibility_decision_v2_33b"].eq("eligible_for_financial_enrichment")].copy()
-    if len(eligible) != 23_888:
+    eligible = census[census["eligibility_decision_v2_33b2"].eq("eligible_for_financial_enrichment_v2_33b2")].copy()
+    if len(eligible) != 22_589:
         raise SystemExit(f"Unexpected eligible population: {len(eligible)}")
 
     counts = eligible["source_provider"].value_counts().sort_index()
@@ -100,7 +100,7 @@ def main() -> int:
     manifest = {
         "phase": "v2.33D",
         "status": "READY_FOR_AUTHORIZED_PILOT_NOT_EXECUTED",
-        "population": 23_888,
+        "population": 22_589,
         "sample_rows": len(sample),
         "sample_strategy": "deterministic_proportional_by_source_provider_with_range_spread",
         "provider_quotas": quotas,
@@ -126,7 +126,7 @@ def main() -> int:
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     print(json.dumps(manifest, ensure_ascii=False, indent=2))
-    print("PASS: v2.33D-preparation/23888-population/240-stratified/preflight/fail-closed/no-ranking")
+    print("PASS: v2.33D-preparation/22589-population/240-stratified/preflight/fail-closed/no-ranking")
     return 0
 
 

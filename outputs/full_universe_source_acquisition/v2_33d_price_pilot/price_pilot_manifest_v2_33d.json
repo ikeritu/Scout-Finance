@@ -1,34 +1,27 @@
 {
   "phase": "v2.33D",
   "status": "READY_FOR_AUTHORIZED_PILOT_NOT_EXECUTED",
-  "population": 23888,
+  "population": 22589,
   "sample_rows": 240,
   "sample_strategy": "deterministic_proportional_by_source_provider_with_range_spread",
   "provider_quotas": {
-    "ASX": 13,
+    "ASX": 14,
     "SFC_SIMEV_RNVE": 1,
     "TWSE": 7,
-    "cboe_europe_reference_data": 108,
-    "deutsche_boerse_xetra_all_tradable_instruments": 14,
-    "jpx_listed_securities": 37,
+    "cboe_europe_reference_data": 111,
+    "deutsche_boerse_xetra_all_tradable_instruments": 15,
+    "jpx_listed_securities": 39,
     "nasdaq_trader_nasdaqlisted": 32,
-    "nasdaq_trader_otherlisted": 24,
-    "sgx_structured_endpoint": 4
+    "nasdaq_trader_otherlisted": 21
   },
-  "source_sha256": "a073209d4e12257e5408439e5352d3cd7d9e61fe928bc13e5d19249352685cca",
-  "sample_sha256": "1be2b69381751afcd463cc249d8e0a02f30843d6956676c267f9f6050b12bd28",
+  "source_sha256": "b21e10261ce7934b24c5e07a64ad5c8e1fef90a7862745643b18f0742895b1fb",
+  "sample_sha256": "09d4935977c8d1543cfdcdc4dbcdb8fbb1f5c38a40b77072df0cfae5c691e044",
   "identity_mapping_complete": false,
   "eligibility_preflight": {
-    "pass_rows": 224,
-    "review_rows": 16,
-    "reason_counts": {
-      "name_indicates_exchange_traded_product": 2,
-      "name_indicates_fund_or_trust_review": 8,
-      "name_indicates_spac": 1,
-      "numeric_ticker_suspected_field_shift": 4,
-      "placeholder_company_name": 1
-    },
-    "v2_33b_reopen_required": true
+    "pass_rows": 240,
+    "review_rows": 0,
+    "reason_counts": {},
+    "v2_33b_reopen_required": false
   },
   "authorized_api_token_present": false,
   "network_collection_executed": false,

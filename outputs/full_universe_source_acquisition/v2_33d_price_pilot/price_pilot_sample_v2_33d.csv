@@ -1,241 +1,241 @@
 pilot_id,row_number,ticker,company_name,exchange,country,source_provider,instrument_type,type_bucket_v2_33a,provider_symbol_status,provider_symbol,eligibility_preflight_status,eligibility_preflight_reasons,price_collection_status
 P001,41826,10X.AX,EXULTANT MINING LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P002,41489,ARA.AX,ARIADNE AUSTRALIA LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P003,41607,C29.AX,C29 METALS LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P004,41510,CYB.AX,AUCYBER LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P005,41862,FDV.AX,FRONTIER DIGITAL VENTURES LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P006,41947,HLO.AX,HELLOWORLD TRAVEL LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P007,42042,KRR.AX,KING RIVER RESOURCES LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P008,42113,MNE.AX,MACALLUM NEW ENERGY LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P009,42270,OMG.AX,OMG GROUP LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P010,42409,RFG.AX,RETAIL FOOD GROUP LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P011,42459,SSG.AX,SHAVER SHOP GROUP LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P012,42632,VFY.AX,VITRAFY LIFE SCIENCES LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P013,41766,ZYX.AX,DUMMY,ASX,Australia,ASX,equity_like,common_equity_candidate,pending_provider_mapping,,review,placeholder_company_name,blocked_pending_eligibility_correction
-P014,43088,COB01PAAO006,AO BANCO DE BOGOTA,BVC,Colombia,SFC_SIMEV_RNVE,colombia_equity_price_security,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P015,40302,1101.TW,臺灣水泥股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P016,40418,1560.TW,中國砂輪企業股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P017,40534,2355.TW,敬鵬工業股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P018,40650,2739.TW,寒舍餐旅管理顧問股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P019,40765,4142.TW,國光生物科技股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P020,40881,6598.TW,Applied BioCode Corporation,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P021,40997,9958.TW,世紀鋼鐵結構股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P022,18530,013Ad,JD.com Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P023,18632,0HVDl,Permian Resources Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P024,18744,0JTTl,Leggett & Platt Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P025,18850,0L9Yl,STMicroelectronics NV,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P026,18954,0R1Dl,Sangamo Therapeutics Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P027,19060,1168n,Sinolink Worldwide Holdings Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P028,19160,1828n,Dah Chong Hong Holdings Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P029,19256,1AWKm,American Water Works Co Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P030,19351,1DB1m,Deutsche Boerse AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P031,19451,1GLWm,Corning Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P032,9246,1KTOSm,Kratos Defense & Security Solutions Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P033,19645,1OXYm,Occidental Petroleum Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P034,19736,1SPGIm,S&P Global Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P035,19831,1VRTm,Vertiv Holdings Co,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P036,19932,270n,Guangdong Investment Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P037,20062,3635n,Koei Tecmo Holdings Co Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P038,20261,48Zd,Howmet Aerospace Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P039,20405,6481n,THK Co Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P040,20502,78GLl,Caffyns PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P041,20602,92IPl,Marston's PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P042,9610,ABDPl,AB Dynamics PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P043,9672,ADJd,ADLER Group SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P044,20881,AGESAy,Agesa Hayat ve Emeklilik AS,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P045,9828,AKWp,AKWEL SADIR,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P046,21080,ALGAEp,Fermentalg,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P047,21167,ALPATp,Plant Advanced Technologies PAT SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P048,9882,AMDd,Advanced Micro Devices Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P049,9949,APPENt,Appeninn Holding,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P050,21492,ASTORy,Astor Transformator Enerji Turizm Insaat Ve Petrol Sanayi Ticaret AS,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P051,10090,AVOLz,Avolta AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P052,10162,BANBz,Bachem Holding AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P053,10236,BERNBs,Berner Industrier AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P054,10289,BIOVz,BioVersys AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P055,21929,BOHOs,Boho Group AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P056,22015,BROAv,Broadcom Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P057,22115,BYMOFn,Bayerische Motoren Werke AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P058,22208,CBGBd,Carlsberg AS,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P059,22352,CFVm,Confinvest Oro S.p.A,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P060,22444,CLGBz,Classic Global Equity Fund,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,review,name_indicates_fund_or_trust_review,blocked_pending_eligibility_correction
-P061,10936,COLUMc,Columbus A/S,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P062,11014,CRIp,Compagnie Chargeurs Invest,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P063,22734,CWIEMc,Investeringsforeningen C WorldWide Emerging Market,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P064,22848,DEKw,Dekpol SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P065,22976,DKIEUc,Investeringsforeningen Danske Invest - Europa KL,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P066,11400,DR0d,Deutsche Rohstoff AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P067,23178,EACf,ELANA Agrocredit AD,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P068,11638,EGTXs,Egetis Therapeutics AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P069,23433,EMLl,Emmerson PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P070,23544,EQNROs,Equinor ASA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P071,23742,EVROFy,EVROPHARMA MILK INDUSTRY ANONYME INDUSTRIAL & COMMERCIAL COMPANY,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P072,23909,FDTn,First Trust Developed Markets ex- US AlphaDEX Fund,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,review,name_indicates_fund_or_trust_review,blocked_pending_eligibility_correction
-P073,24045,FNLPFn,Fresnillo PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P074,24125,FRMn,Ford Motor Co,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P075,12630,GBGl,GB Group PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P076,12738,GKPl,Gulf Keystone Petroleum Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P077,24517,GRG1Lf,AB Grigeo,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P078,24639,H7Bd,Coherent Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P079,12960,HEMs,Hemnet Group AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P080,13074,HOMEe,Neinor Homes SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P081,24954,HXPLFn,Hexpol AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P082,13432,IFXd,Infineon Technologies AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P083,25217,INGRt,Ingra DD,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P084,25326,ISDMRy,Iskenderun Demir ve Celik AS,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P085,25460,JDPLt,Jadroplov DD,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P086,14110,KARNz,Kardex Holding AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P087,25770,KLMSNy,Klimasan Klima Sanayi ve Ticaret AS,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P088,14191,KTCGv,Kapsch TrafficCom AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P089,25972,LHCn,Life Healthcare Group Holdings Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P090,26044,LPLy,Lordos United Public Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P091,14552,MAIREm,Maire SpA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P092,14604,MEDIo,Medistim ASA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P093,26356,MINy,Minerva KnitWear SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P094,26447,MONBf,MonBat AD,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P095,14782,MTESTl,BATS Test Symbol for Unit 2,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P096,14892,NASl,North Atlantic Smaller Cos Investment Trust PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,review,name_indicates_fund_or_trust_review,blocked_pending_eligibility_correction
-P097,14954,NESTEh,Neste Oyj,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P098,14999,NOLABs,Nolato AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P099,26857,NVTw,Novita SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P100,26942,OICd,OCI NV,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P101,15144,ORSm,Orsero SpA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P102,15229,PAYb,Payton Planar Magnetics Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P103,27179,PGMw,PMPG Polskie Media SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P104,27260,PMTm,Promotica SpA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P105,15408,PROXb,Proximus SADP,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P106,15463,QBY0d,Q Beyond Ag Konv Namens Aktien,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P107,15562,RCOp,Remy Cointreau SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P108,27622,RITNd,Cie Financiere Richemont SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P109,27705,RSTIn,Rofin-Sinar Technologies Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P110,15758,SANDs,Sandvik AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P111,27882,SCTd,SSE PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P112,15938,SFPNz,SF Urban Properties AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P113,28078,SIVIs,Siljansvik AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P114,28177,SNGSPn,Surgutneftegas PAO,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P115,28285,SPIBDc,Sparinvest Baeredygtige Aktier Akk,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P116,16341,STBo,Storebrand ASA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P117,28508,SWCl,Smarter Web Co PLC/The,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P118,16587,TBm,Triboo Spa,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P119,16654,TGSo,TGS ASA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P120,16718,TMPLl,Temple Bar Investment Trust PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,review,name_indicates_fund_or_trust_review,blocked_pending_eligibility_correction
-P121,28866,TRNn,Trinity Industries Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P122,16872,U6Zd,Uranium Energy Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P123,29159,URUl,URU Metals Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P124,17291,VETNz,Vetropack Holding AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P125,29445,VOLPs,Volati AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P126,29561,WBn,Weibo Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P127,29739,WSBNl,Wishbone Gold PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P128,18374,YITh,YIT Oyj,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P129,30355,ZZBs,Zinzino AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P130,38006,01P,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P131,37827,3E2,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P132,37747,8CF,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P133,37555,ASME,LUX0,XETR,NL,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P134,36971,CEK,GER0,XETR,DE,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P135,37425,E3B,FRA0,XETR,FR,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P136,37870,G84,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P137,37914,ILT,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P138,37985,LY0,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P139,36891,NVJP,LUX0,XETR,BE,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P140,38181,R7R,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P141,37067,SRT,MDX1,XETR,DE,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P142,37338,V1NC,SDX1,XETR,DE,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P143,36928,ZX6,SWI0,XETR,CH,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P144,33160,1301,"KYOKUYO CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P145,33263,1828,TANABE ENGINEERING CORPORATION,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P146,33366,2130,"Members Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P147,33469,2376,SCINEX CORPORATION,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P148,33572,2685,"and ST HD Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P149,33674,2923,"SATO FOODS CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P150,33777,3123,"SAIBO Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P151,33880,3352,"BUFFALO CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P152,33983,3556,"RenetJapanGroup,Inc.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P153,34086,3765,"GungHo Online Entertainment,Inc.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P154,34189,3946,"TOMOKU CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P155,34292,410A,"GMO Commerce,Inc.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P156,34395,4317,Ray Corporation,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P157,34498,4463,"NICCA CHEMICAL CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P158,34600,4633,SAKATA INX CORPORATION,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P159,34703,4840,TriIs Incorporated,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P160,34806,5122,"OKAMOTO INDUSTRIES,INC.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P161,34909,5446,"HOKUETSU METAL Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P162,35012,5845,"ZENHOREN CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P163,35115,6047,Gunosy Inc.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P164,35218,6237,"IWAKI CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P165,35321,6407,CKD Corporation,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P166,35424,6579,"logly,Inc.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P167,35526,6800,"YOKOWO CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P168,35629,7003,"MITSUI E&S Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P169,35732,7189,"Nishi-Nippon Financial Holdings,Inc.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P170,35835,7377,"DN HOLDINGS CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P171,35938,7602,"Ledax Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P172,36041,7812,CRESTEC Inc.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P173,36144,7988,NIFCO INC.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P174,36247,8159,"TACHIBANA ELETECH CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P175,36350,8558,"THE TOWA BANK,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P176,36452,9005,TOKYU CORPORATION,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P177,36555,9249,"Japan Ecosystem Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P178,36658,9468,KADOKAWA CORPORATION,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P179,36761,9744,MEITEC Group Holdings Inc.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P180,36864,9997,"BELLUNA CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P181,2,AACB,Artius II Acquisition Inc. - Class A Ordinary Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P182,107,AIHS,Senmiao Technology Limited - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P183,211,APMC,AmperCap Acquisition Company - Ordinary Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P184,316,AVX,Avax One Technology Ltd. - Common Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P185,420,BMHL,Bluemount Holdings Limited - Class B Ordinary Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P186,525,CAST,"FreeCast, Inc. - Class A common stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P187,630,CING,Cingulate Inc. - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P188,734,CRNT,Ceragon Networks Ltd. - Ordinary Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P189,839,DIOD,Diodes Incorporated - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P190,944,ELPW,Elong Power Holding Limited - Class A Ordinary Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P191,1048,FCUV,Focus Universal Inc. - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P192,1153,FTHM,Fathom Holdings Inc. - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P193,1257,GP,GreenPower Motor Company Inc. - Common Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P194,1362,HOPE,"Hope Bancorp, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P195,1467,INAB,"IN8bio, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P196,1571,JMSB,"John Marshall Bancorp, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P197,1676,LCNB,LCNB Corporation - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P198,1780,LWLG,"Lightwave Logic, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P199,1885,MLGO,"MicroAlgo, Inc. - Ordinary Shares",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P200,1990,NCSM,"NCS Multistage Holdings, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P201,2094,NWS,News Corporation - Class B Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P202,2199,OWLS,OBOOK Holdings Inc. - Class A Common Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P203,2303,PLXS,Plexus Corp. - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P204,2408,QRVO,"Qorvo, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P205,2513,RNTX,"Rein Therapeutics, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P206,2617,SFIX,"Stitch Fix, Inc. - Class A Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P207,2722,SOUN,"SoundHound AI, Inc. - Class A Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P208,2827,TASK,"TaskUs, Inc. - Class A Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P209,2931,TSAT,Telesat Corporation - Class A Common Shares and Class B Variable Voting Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P210,3036,VGAS,"Verde Clean Fuels, Inc. - Class A Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P211,3140,WOOF,"Petco Health and Wellness Company, Inc. - Class A Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P212,3245,ZYME,Zymeworks Inc. - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P213,3429,ATMP,iPath Select MLP ETN,Cboe BZX,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,review,name_indicates_exchange_traded_product,blocked_pending_eligibility_correction
-P214,3354,AMG,"Affiliated Managers Group, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P215,3474,BANC,"Banc of California, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P216,3589,BP,BP p.l.c. Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P217,3707,CIG.C,Comp En De Mn Cemig ADS American Depositary Receipts,NYSE,USA,nasdaq_trader_otherlisted,ADR,depositary_receipt_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P218,3829,CWH,"Camping World Holdings, Inc. Class A Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P219,3946,EDD,"Morgan Stanley Emerging Markets Domestic Debt Fund, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,review,name_indicates_fund_or_trust_review,blocked_pending_eligibility_correction
-P220,4065,FBP,First BanCorp. New Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P221,4184,GGZ,Gabelli Global Small and Mid Cap Value Trust (The) Common Shares of Beneficial Interest,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,review,name_indicates_fund_or_trust_review,blocked_pending_eligibility_correction
-P222,4304,HLX,"Helix Energy Solutions Group, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P223,4429,JENA,Jena Acquisition Corporation II Class A Ordinary Shares,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,review,name_indicates_spac,blocked_pending_eligibility_correction
-P224,4542,LND,Brasilagro Brazilian Agric Real Estate Co Sponsored ADR (Brazil),NYSE,USA,nasdaq_trader_otherlisted,ADR,depositary_receipt_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P225,4661,MP,MP Materials Corp. Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P226,4784,NMZ,"Nuveen Municipal High Income Opportunity Fund Common Stock, $0.01 par value, per share",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,review,name_indicates_fund_or_trust_review,blocked_pending_eligibility_correction
-P227,4902,OTIS,Otis Worldwide Corporation Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P228,5015,PRKS,United Parks & Resorts Inc. Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P229,5133,RVT,"Royce Small-Cap Trust, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,review,name_indicates_fund_or_trust_review,blocked_pending_eligibility_correction
-P230,5251,SPB,"Spectrum Brands Holdings, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P231,5365,TLK,"PT Telekomunikasi Indonesia, Tbk",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P232,5490,VATE,INNOVATE Corp. Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P233,5607,WTS,"Watts Water Technologies, Inc. Class A Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P234,3959,EGG,Enigmatig Limited Class A Ordinary Shares,NYSE American,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P235,4811,NRXS,"Neuraxis, Inc. Common Stock",NYSE American,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
-P236,5444,UCIB,"ETRACS UBS Bloomberg Constant Maturity Commodity Index (CMCI) Total Return ETN Series B due April 5, 2038",NYSE Arca,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,review,name_indicates_exchange_traded_product,blocked_pending_eligibility_correction
-P237,42883,0.001,H20,SGX,Singapore,sgx_structured_endpoint,equity_common_or_equity_like,common_equity_candidate,pending_provider_mapping,,review,numeric_ticker_suspected_field_shift,blocked_pending_eligibility_correction
-P238,42997,0.171,T13,SGX,Singapore,sgx_structured_endpoint,equity_common_or_equity_like,common_equity_candidate,pending_provider_mapping,,review,numeric_ticker_suspected_field_shift,blocked_pending_eligibility_correction
-P239,42845,1.080,O10,SGX,Singapore,sgx_structured_endpoint,equity_common_or_equity_like,common_equity_candidate,pending_provider_mapping,,review,numeric_ticker_suspected_field_shift,blocked_pending_eligibility_correction
-P240,42725,9.640,AWX,SGX,Singapore,sgx_structured_endpoint,equity_common_or_equity_like,common_equity_candidate,pending_provider_mapping,,review,numeric_ticker_suspected_field_shift,blocked_pending_eligibility_correction
+P002,41537,AQC.AX,AUSTRALIAN PACIFIC COAL LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P003,41592,BRE.AX,BRAZILIAN RARE EARTHS LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P004,41718,CRR.AX,CRITICAL RESOURCES LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P005,41792,EM3.AX,EMC GOLD CORPORATION,ASX,Australia,ASX,equity_like,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P006,41879,GMD.AX,GENESIS MINERALS LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P007,41977,IPC.AX,IMPERIAL PACIFIC LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P008,42098,LSR.AX,LODESTAR MINERALS LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P009,42231,NDO.AX,NIDO EDUCATION LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P010,42306,PKO.AX,PEAKO LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P011,42426,RTG.AX,RTG MINING INC.,ASX,Australia,ASX,equity_like,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P012,41395,T3D.AX,333D LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P013,42623,VKA.AX,VIKING MINES LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P014,42495,ZSP.AX,STANDARD & POORS INDICES AUSTRALIA,ASX,Australia,ASX,equity_like,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P015,43088,COB01PAAO006,AO BANCO DE BOGOTA,BVC,Colombia,SFC_SIMEV_RNVE,colombia_equity_price_security,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P016,40302,1101.TW,臺灣水泥股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P017,40418,1560.TW,中國砂輪企業股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P018,40534,2355.TW,敬鵬工業股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P019,40650,2739.TW,寒舍餐旅管理顧問股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P020,40765,4142.TW,國光生物科技股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P021,40881,6598.TW,Applied BioCode Corporation,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P022,40997,9958.TW,世紀鋼鐵結構股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P023,18530,013Ad,JD.com Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P024,18627,0HT4l,Capital One Financial Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P025,18737,0JR1l,Kimco Realty Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P026,18839,0L5Al,Sempra,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P027,18938,0QZSl,TripAdvisor Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P028,19039,1055n,China Southern Airlines Co Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P029,19135,1681n,Consun Pharmaceutical Group Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P030,19229,1AMDm,Advanced Micro Devices Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P031,19320,1CIm,Cigna Group/The,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P032,19412,1EVTm,Evotec SE,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P033,19507,1IFXm,Infineon Technologies AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P034,19600,1MTBBm,Metsa Board Oyj,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P035,19687,1RNOm,Renault SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P036,19780,1TMR0t,Tatry mountain resorts AS,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P037,19870,2009n,BBMG Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P038,19983,2INVd,2invest AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P039,20096,3969n,China Railway Signal & Communication Corp Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P040,20302,4VKd,Aon PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P041,20431,6881n,China Galaxy Securities Co Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P042,20525,8020d,Hillman Solutions Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P043,20619,968n,Xinyi Solar Holdings Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P044,9616,ABLDp,ABL Diagnostics SACA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P045,20805,ADNGv,Adesso SE,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P046,20895,AGILe,Agile Content SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P047,20992,ALAFYp,Afyren SAS,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P048,21081,ALGECp,GECI International,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P049,21165,ALOSMp,Osmozis SAS,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P050,21302,AMATn,Applied Materials Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P051,9943,APGNz,APG SGA SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P052,21471,ASMIv,ASM International NV,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P053,21561,AVAn,Avista Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P054,21675,BAKKAs,Bakkafrost P/F,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P055,10224,BEId,Beiersdorf AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P056,10280,BIOBVh,Biohit Oyj,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P057,10349,BNORo,BLUENORD ASA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P058,22004,BRIMr,Brim hf,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P059,10503,BWZm,Beewize SpA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P060,22188,CATLv,Contemporary Amperex Technology Co Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P061,10747,CEVIs,Cellavision AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P062,22427,CLABOm,Clabo SpA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P063,22534,CODEl,Northcoders Group Plc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P064,22615,CPXl,Cap-XX Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P065,22709,CUKn,Carnival PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P066,11230,DBVp,DBV Technologies SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P067,22915,DIGIf,Digi Communications NV,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P068,11385,DOKAz,dormakaba Holding AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P069,23122,DVLw,Develia SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P070,23250,EDIp,Media 6,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P071,11740,ELMNz,Elma Electronic AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P072,23507,ENSUOs,Ensurge Micropower ASA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P073,12046,ESSIAs,Essity AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P074,23854,F9Qd,Eos Energy Enterprises Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P075,23979,FIIn,Federated Investors Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P076,24076,FPE4v,FUCHS SE,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P077,24185,FTXHGx,Fotex Holding SE,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P078,12685,GENLl,Genel Energy Plc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P079,24430,GMLm,GM Leather SpA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P080,12844,GSC1d,Gesco SE,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P081,12912,HAVBs,Havsfrun Investment AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P082,24763,HHIf,Kostenets - HHI AD,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P083,24872,HRPw,Harper Hygienics SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P084,25008,IBAIl,Imaging Biometrics Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P085,25150,IIGl,Intuitive Investments Group PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P086,25235,INR1Lf,INVL Baltic Real Estate AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P087,25346,ITCGx,ITC Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P088,25494,JFBd,Joh Friedrich Behrens AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P089,25711,KBUd,TAG Colonia-Immobilien AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P090,25778,KMMf,KMM AD,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P091,25850,KTWOn,K2M Group Holdings Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P092,25973,LHHy,Lordos Hotels Holdings Plc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P093,26042,LPLHt,Losinjska Plovidba Holding DD Mali Losinj,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P094,26178,MAGIs,MAG Interactive AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P095,26267,MDZl,MediaZest PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P096,14664,MIKOb,Miko,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P097,26440,MOGBd,MOL Hungarian Oil & Gas PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P098,14767,MSONBs,Midsona AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P099,26632,NAKASy,Philippos Nakas SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P100,26701,NEMn,Newmont Mining Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P101,14992,NODo,Nordic Semiconductor ASA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P102,26835,NUCd,Nucletron Electronic AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P103,15082,ODLo,Odfjell Drilling Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P104,15132,OREGEp,Orege SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P105,27072,PAH3v,Porsche Automobil Holding SE,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P106,15265,PETSl,Pets at Home Group Plc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P107,27240,PLGf,Puldin Properties Invest ADSIC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P108,27321,PREMIy,Premia Real Estate Investment Co SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P109,27407,PVTk,RMS Mezzanine,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P110,15536,RAMu,Ramada Investimentos E Industria SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P111,15601,REl,REA Holdings PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P112,27675,ROLn,Rollins Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P113,27757,S6IAd,Leidos Holdings Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P114,15803,SBREl,Sabre Insurance Group PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P115,27959,SEMn,Select Medical Holdings Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P116,28040,SHLv,Siemens Healthineers AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P117,28119,SLMCn,SLM Corp,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P118,28213,SOHUn,Sohu.com Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P119,28367,SQUd,Vinci SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P120,28439,STSw,Satis Group SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P121,16555,SYPd,Synopsys Inc,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P122,16607,TELIAs,Telia Co AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P123,28726,TIMEm,Cia Dei Caraibi SpA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P124,28798,TONl,Titon Holdings PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P125,16823,TSFAd,Taiwan Semiconductor Manufacturing Co Ltd,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P126,29034,UCBv,UCB SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P127,29240,UZTf,Uztel SA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P128,17341,VIDl,VIDENDUM PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P129,17417,VPBNz,VP Bank AG,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P130,17562,WEHBb,Wereldhave Belgium Comm VA,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P131,17713,WTBl,Whitbread PLC,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P132,30265,YNDn,Yandex NV,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P133,30355,ZZBs,Zinzino AB,CBOE_EUROPE,,cboe_europe_reference_data,EQTY,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P134,38006,01P,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P135,37983,33L,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P136,37599,7RA,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P137,37044,ALG,GER0,XETR,DE,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P138,36955,BYW6,GER0,XETR,DE,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P139,37781,DGY,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P140,37825,F9Q,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P141,37023,HEN3,DAX1,XETR,DE,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P142,37946,KEY,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P143,37990,MQ2,NAM0,XETR,US,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P144,37320,P911,MDX1,XETR,DE,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P145,37418,RNL,FRA0,XETR,FR,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P146,36940,SYZ,GER0,XETR,DE,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P147,36875,VAS,AST0,XETR,AT,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P148,36928,ZX6,SWI0,XETR,CH,deutsche_boerse_xetra_all_tradable_instruments,CS,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P149,33160,1301,"KYOKUYO CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P150,33257,1814,"DAISUE CONSTRUCTION CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P151,33356,2112,"Ensuiko Sugar Refining Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P152,33453,2335,CUBE SYSTEM INC.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P153,33550,2613,"J-OIL MILLS, INC.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P154,33648,2875,"TOYO SUISAN KAISHA,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P155,33745,3069,JFLA Holdings Inc.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P156,33843,3245,"DEAR LIFE CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P157,33941,3454,"First Brothers Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P158,34038,3667,"enish,inc.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P159,34136,3861,Oji Holdings Corporation,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P160,34233,4017,CREEMA LTD.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P161,34330,4194,"Visional,Inc.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P162,34428,4374,ROBOT PAYMENT INC.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P163,34525,4503,Astellas Pharma Inc.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P164,34623,4676,"FUJI MEDIA HOLDINGS,INC.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P165,34720,4891,"TMS Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P166,34817,5139,OpenWork Inc.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P167,34915,5461,"Chubu Steel Plate Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P168,35012,5845,"ZENHOREN CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P169,35109,6039,"Japan Animal Referral Medical Center Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P170,35207,6223,"Seibu Giken Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P171,35304,6378,"KIMURA CHEMICAL PLANTS CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P172,35401,6547,"GREENS CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P173,35499,6745,HOCHIKI CORPORATION,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P174,35596,6941,"YAMAICHI ELECTRONICS CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P175,35694,7110,Kurashicom Inc.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P176,35791,7292,MURAKAMI CORPORATION,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P177,35888,7501,TIEMCO LTD.,JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P178,35986,7711,"SUKEGAWA ELECTRIC CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P179,36083,7883,"Sun Messe Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P180,36180,8046,"MARUFUJI SHEET PILING CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P181,36278,8253,"Credit Saison Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P182,36377,8700,"Maruhachi Securities Co.,Ltd.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P183,36475,9042,"Hankyu Hanshin Holdings,Inc.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P184,36572,9273,"KOA SHOJI HOLDINGS CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P185,36669,9506,"Tohoku Electric Power Company,Incorporated",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P186,36767,9760,"SHINGAKUKAI HOLDINGS CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P187,36864,9997,"BELLUNA CO.,LTD.",JPX,JP,jpx_listed_securities,equity,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P188,6,AAL,"American Airlines Group, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P189,109,AIIR,Air Global PLC - Ordinary shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P190,213,APP,Applovin Corporation - Class A Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P191,314,AVT,"Avnet, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P192,425,BMRN,BioMarin Pharmaceutical Inc. - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P193,528,CBAT,CBAK Energy Technology Limited - Ordinary Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P194,637,CLBK,"Columbia Financial, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P195,739,CRSR,"Corsair Gaming, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P196,842,DKI,DarkIris Inc. - Class A Ordinary Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P197,946,ELTK,Eltek Ltd. - Ordinary Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P198,1048,FCUV,Focus Universal Inc. - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P199,1151,FTH,"Faeth Therapeutics, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P200,1256,GOVX,"GeoVax Labs, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P201,1365,HOWL,"Werewolf Therapeutics, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P202,1471,INBX,"Inhibrx Biosciences, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P203,1573,JRSH,"Jerash Holdings (US), Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P204,1679,LECO,"Lincoln Electric Holdings, Inc. - Common Shares",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P205,1782,LXRX,"Lexicon Pharmaceuticals, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P206,1890,MMSI,"Merit Medical Systems, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P207,1991,NCT,Intercont (Cayman) Limited - Class A Ordinary shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P208,2093,NWPX,"NWPX Infrastructure, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P209,2200,OXBR,Oxbridge Re Holdings Limited - Ordinary Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P210,2308,PMN,ProMIS Neurosciences Inc. - Common Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P211,2413,QTI,"QT Imaging Holdings, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P212,2519,ROIV,Roivant Sciences Ltd. - Common Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P213,2622,SGA,"Saga Communications, Inc. - Class A Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P214,2724,SPAI,Safe Pro Group Inc. - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P215,2837,TCBI,"Texas Capital Bancshares, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P216,2938,TTAN,"ServiceTitan, Inc. - Class A Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P217,3038,VHCP,Vine Hill Capital Investment Corp. II - Class A Ordinary Shares,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P218,3142,WRAP,"Wrap Technologies, Inc. - Common Stock",NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P219,3245,ZYME,Zymeworks Inc. - Common Stock,NASDAQ,USA,nasdaq_trader_nasdaqlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P220,3665,CBOE,"Cboe Global Markets, Inc. Common Stock",Cboe BZX,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P221,3370,AN,"AutoNation, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P222,3490,BBY,"Best Buy Co., Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P223,3635,BXC,Bluelinx Holdings Inc. Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P224,3764,COOK,"Traeger, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P225,3882,DINO,HF Sinclair Corporation Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P226,4027,ETD,Ethan Allen Interiors Inc. Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P227,4177,GFL,"GFL Environmental Inc. Subordinate voting shares, no par value",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P228,4315,HPP,"Hudson Pacific Properties, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P229,4468,KKR,KKR & Co. Inc. Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P230,4589,MBGL,Mobility Global Inc. Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P231,4750,NEU,NewMarket Corp Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P232,4893,ORI,Old Republic International Corporation Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P233,5038,PXED,"Phoenix Education Partners, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P234,5188,SFBS,"ServisFirst Bancshares, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P235,5308,SXT,Sensient Technologies Corporation Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P236,5430,TXNM,"TXNM Energy, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P237,5569,WHG,Westwood Holdings Group Inc Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P238,3625,BURU,"Nuburu, Inc. Common Stock",NYSE American,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P239,4685,MSN,Emerson Radio Corporation Common Stock,NYSE American,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token
+P240,5645,ZONE,CleanCore Solutions Inc. Class B Common Stock,NYSE American,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,pending_provider_mapping,,pass,,blocked_pending_authorized_api_token

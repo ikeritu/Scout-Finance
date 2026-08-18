@@ -1,0 +1,41 @@
+{
+  "phase": "v2.33B2",
+  "status": "PASS",
+  "input_rows": 43089,
+  "input_sha256": "a073209d4e12257e5408439e5352d3cd7d9e61fe928bc13e5d19249352685cca",
+  "prior_eligible": 23888,
+  "refined_rows": 1299,
+  "refinement_counts": {
+    "review_fund_or_trust": 697,
+    "hold_provider_schema_sgx": 358,
+    "review_spac": 216,
+    "excluded_exchange_traded_product": 17,
+    "review_warrant_right_or_unit": 5,
+    "excluded_invalid_placeholder": 4,
+    "excluded_non_common_preferred": 2
+  },
+  "decision_summary": {
+    "eligible_for_financial_enrichment": 22589,
+    "excluded_from_equity_opportunity_universe": 10432,
+    "requires_review_or_repair": 10068
+  },
+  "decision_counts": {
+    "eligible_for_financial_enrichment_v2_33b2": 22589,
+    "excluded_from_equity_opportunity_universe": 10409,
+    "review_unclassified_instrument": 8765,
+    "review_fund_or_trust": 697,
+    "hold_provider_schema_sgx": 358,
+    "review_spac": 216,
+    "review_provider_specific_type": 20,
+    "excluded_exchange_traded_product": 17,
+    "review_conditional_vehicle": 7,
+    "review_warrant_right_or_unit": 5,
+    "excluded_invalid_placeholder": 4,
+    "excluded_non_common_preferred": 2
+  },
+  "all_rows_decided": true,
+  "operational_dataset_modified": false,
+  "operational_pointers_modified": false,
+  "production_scoring_authorized": false,
+  "allow_ranking": false
+}

@@ -4,11 +4,11 @@ Estado: **preparación completada · adquisición bloqueada hasta resolver símb
 
 ## Resultado
 
-- población: 23.888 candidatos;
+- población corregida: 22.589 candidatos;
 - piloto: 240 activos únicos;
-- muestreo proporcional de los 9 proveedores presentes;
+- muestreo proporcional de los 8 proveedores elegibles;
 - símbolos del proveedor: pendientes de resolución;
-- preflight de elegibilidad: 224 pasan y 16 requieren revisión;
+- preflight de elegibilidad: 240/240 pasan;
 - claves almacenadas: ninguna;
 - llamadas de adquisición: cero;
 - filas de precios descargadas: cero.
