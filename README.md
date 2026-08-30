@@ -9,6 +9,8 @@ Estado añadido en el cierre de **v2.33D1 — EODHD Price Pilot Hardening & Real
 - Profundidad histórica real observada: mediana 250 sesiones/activo, ningún activo alcanza 2021 (plan gratuito de EODHD limitado a ~1 año, confirmado por el propio proveedor).
 - **Decisión del gate: `COMPLETED_NO_PROMOTION`.** EODHD (plan gratuito) no se promociona a producción. Scoring, rankings, recomendaciones, fundamentales, incorporación masiva de precios, contratación de planes y fase 5 siguen **bloqueados**.
 - Detalle: `outputs/full_universe_source_acquisition/v2_33d_price_pilot/PRICE_PILOT_STATUS_v2_33d.md`.
+- Twelve Data (plan gratuito) descartado como alternativa mundial (v2.33E: solo cubre EE. UU./forex/cripto). Fuentes oficiales por bolsa evaluadas en v2.33F.
+- **v2.33G — J-Quants (JPX/Japón):** piloto real ejecutado tras v2.33F. 42/42 símbolos japoneses resueltos y descargados, cobertura del 99.18% frente al 90% exigido. **Decisión: `PASS_FOR_NEXT_CONTROLLED_PILOT`, acotado exclusivamente a Japón** — no resuelve Cboe Europe (119 bloqueados), ASX ni TWSE. Detalle: `outputs/full_universe_source_acquisition/v2_33g_jquants_price_pilot/PRICE_PILOT_STATUS_v2_33g.md`.
 - Progreso global: **3/8 fases cerradas, fase 4 en curso** (adquisición de fuente de datos completa).
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->

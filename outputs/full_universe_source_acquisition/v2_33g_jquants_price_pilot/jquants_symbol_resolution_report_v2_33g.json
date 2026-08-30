@@ -1,0 +1,11 @@
+{
+  "phase": "v2.33G-jquants-symbol-resolution",
+  "input_rows": 42,
+  "resolved": 42,
+  "unresolved": 0,
+  "unresolved_reasons": {},
+  "network_calls": 42,
+  "credentials_used": true,
+  "production_scoring_authorized": false,
+  "allow_ranking": false
+}

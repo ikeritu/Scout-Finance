@@ -5,10 +5,12 @@ Estado tras el cierre de **v2.33D1 — EODHD Price Pilot Hardening & Real Collec
 
 - App/MVP: `v1.1C — MVP Final Freeze` (sin cambios).
 - Interfaz local estable: `v2.32F — local UI final freeze` (sin cambios).
-- Pipeline de datos vigente: `v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation`.
+- Pipeline de datos vigente: `v2.33G — J-Quants (JPX/Japón) Real Price Pilot`, sobre la base de `v2.33D1`/`v2.33E`/`v2.33F`.
 - Decisión del piloto real de precios EODHD: **`COMPLETED_NO_PROMOTION`** — no se promociona a producción (ver `outputs/full_universe_source_acquisition/v2_33d_price_pilot/PRICE_PILOT_STATUS_v2_33d.md`).
+- Twelve Data (plan gratuito): descartado como fuente mundial (v2.33E) — solo cubre EE. UU./forex/cripto.
+- Decisión del piloto real de precios J-Quants (JPX/Japón): **`PASS_FOR_NEXT_CONTROLLED_PILOT`, acotado exclusivamente a Japón** — 42/42 símbolos resueltos y descargados, 99.18% de cobertura histórica frente al 90% exigido (ver `outputs/full_universe_source_acquisition/v2_33g_jquants_price_pilot/PRICE_PILOT_STATUS_v2_33g.md`). No resuelve Cboe Europe (119 bloqueados), ASX ni TWSE.
 - Progreso global: `3/8 fases cerradas, fase 4 en curso`.
-- Siguiente fase recomendada: **ninguna fase nueva autorizada por este cierre**. El usuario ha descartado explícitamente contratar un plan de pago de EODHD (2026-08-30); EODHD queda cerrado de forma definitiva en su plan gratuito. El siguiente paso, si el usuario lo decide, es evaluar una fuente alternativa gratuita para precios mundiales o resolver los 162 símbolos aún ambiguos.
+- Siguiente fase recomendada: **ninguna fase nueva autorizada por este cierre**. El usuario ha descartado explícitamente contratar un plan de pago de EODHD (2026-08-30); EODHD queda cerrado de forma definitiva en su plan gratuito. El siguiente paso, si el usuario lo decide, es confirmar por escrito el alcance de licencia de J-Quants antes de darle más uso, y/o abordar Cboe Europe (requiere mapeo de identificadores previo) o TWSE/ASX (profundidad histórica).
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
 

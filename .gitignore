@@ -45,3 +45,6 @@ Thumbs.db
 
 # EODHD licensed/raw price data
 outputs/full_universe_source_acquisition/v2_33d_price_pilot/eodhd_prices_collection_77_v2_33d/
+
+# J-Quants licensed/raw price data
+outputs/full_universe_source_acquisition/v2_33g_jquants_price_pilot/jquants_prices_collection_v2_33g/

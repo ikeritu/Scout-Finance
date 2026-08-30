@@ -1,0 +1,61 @@
+{
+  "phase": "v2.33G-jquants-price-pilot-collection-validation",
+  "status": "VALIDATED",
+  "expected_assets": 42,
+  "valid_assets": 42,
+  "schema_errors": 0,
+  "row_counts": {
+    "valid_numeric_observations": 20228,
+    "calendar_rows_including_no_trade_days": 20294,
+    "no_trade_days_null_ohlc": 66
+  },
+  "illiquid_assets_with_no_trade_days": [
+    {
+      "pilot_id": "P182",
+      "ticker": "9537",
+      "no_trade_days": 64,
+      "traded_sessions": 422
+    },
+    {
+      "pilot_id": "P154",
+      "ticker": "3908",
+      "no_trade_days": 2,
+      "traded_sessions": 484
+    }
+  ],
+  "sessions_per_asset": {
+    "min": 368,
+    "max": 486,
+    "median": 486.0,
+    "mean": 481.62,
+    "p10": 486,
+    "p25": 486,
+    "p75": 486,
+    "p90": 486
+  },
+  "assets_with_fewer_than_300_sessions": [],
+  "date_coverage": {
+    "confirmed_free_plan_from_date": "2024-06-08",
+    "confirmed_free_plan_to_date": "2026-06-08",
+    "global_min_valid_date_observed": "2024-06-10",
+    "global_max_valid_date_observed": "2026-06-08",
+    "requested_span_days": 730,
+    "requested_trading_days_estimate": 490,
+    "median_sessions_coverage_pct_of_requested": 99.18
+  },
+  "credentials_or_urls_detected_in_raw_files": false,
+  "production_scoring_authorized": false,
+  "allow_ranking": false,
+  "evidence_classification": {
+    "observed_facts": [
+      "El propio J-Quants confirmó la ventana exacta del plan gratuito mediante un mensaje de error HTTP 400 al solicitar un rango mayor: '2024-06-08 ~ 2026-06-08'.",
+      "41/42 activos tienen el máximo de 486 sesiones cubriendo toda la ventana confirmada; 1 activo ('277A' / Globe-ing Inc., pilot P148) tiene solo 368 sesiones, empezando el 2024-11-29, más tarde que el resto.",
+      "El límite de tasa documentado del plan gratuito (5 peticiones/minuto) produjo errores HTTP 429 reales en la práctica al ritmo documentado; un reintento con espera de 65 segundos resolvió todas las ocurrencias sin intervención manual ni pérdida de datos en la ejecución final.",
+      "2 activos registraron filas de calendario sin operación (OHLC nulo) (66 filas en total): el activo P182 (HOKURIKU GAS CO.,LTD., ticker 9537) tiene 64 días sin operación en toda la ventana, coherente con una acción regional poco líquida; P154 tiene 2."
+    ],
+    "inferences": [],
+    "unconfirmed_limitations": [
+      "Por qué el activo P148 (Globe-ing Inc.) tiene una fecha de inicio posterior a los otros 41 activos no está confirmado aquí; una cotización reciente es la explicación más probable, pero no se ha verificado contra ninguna fuente externa de fecha de salida a bolsa."
+    ]
+  }
+}
