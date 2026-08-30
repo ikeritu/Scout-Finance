@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.33F — evaluación documental de fuentes oficiales por bolsa (2026-08-31)
+
+Investigación pública (sin cuentas, sin claves, sin descargas, sin gasto) de fuentes oficiales de precios por bolsa como alternativa a EODHD/Twelve Data. Hallazgo clave: "Cboe Europe" (119 símbolos bloqueados) no es una bolsa de origen sino una plataforma de cruce paneuropea con emisores de docenas de países; no existe una fuente única para resolverla. Candidatas concretas encontradas: **J-Quants** (JPX/Japón, oficial, gratis, 2 años de histórico, retraso de 12 semanas) y el **portal de datos abiertos del gobierno de Taiwán** (oficial, gratis, actualizado a diario, podría mejorar la profundidad de los 8 activos TWSE ya resueltos). Sin alternativa gratuita encontrada para Xetra, ASX ni BVC. Detalle en `outputs/full_universe_source_acquisition/v2_33f_official_exchange_sources_evaluation/OFFICIAL_EXCHANGE_SOURCES_EVALUATION_v2_33f.md`.
+
 ## v2.33E — evaluación documental de Twelve Data (2026-08-31)
 
 Investigación pública (sin cuenta, sin clave, sin descargas, sin gasto) de Twelve Data como alternativa gratuita a EODHD para precios mundiales. Hallazgo: el plan gratuito de Twelve Data solo cubre EE. UU., forex y cripto; ASX, TWSE, Cboe Europe y JPX requieren Pro+/Venture+ (planes de pago). 0/162 símbolos actualmente bloqueados serían accesibles en el plan gratuito. Decisión: **descartado como alternativa mundial gratuita**. Detalle en `outputs/full_universe_source_acquisition/v2_33e_twelve_data_evaluation/TWELVE_DATA_EVALUATION_v2_33e.md`.
