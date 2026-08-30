@@ -8,7 +8,7 @@ Estado tras el cierre de **v2.33D1 — EODHD Price Pilot Hardening & Real Collec
 - Pipeline de datos vigente: `v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation`.
 - Decisión del piloto real de precios EODHD: **`COMPLETED_NO_PROMOTION`** — no se promociona a producción (ver `outputs/full_universe_source_acquisition/v2_33d_price_pilot/PRICE_PILOT_STATUS_v2_33d.md`).
 - Progreso global: `3/8 fases cerradas, fase 4 en curso`.
-- Siguiente fase recomendada: **ninguna fase nueva autorizada por este cierre**. El siguiente paso, si el usuario lo decide, es evaluar un piloto acotado y explícito con un plan de pago de EODHD, o resolver los 162 símbolos aún ambiguos.
+- Siguiente fase recomendada: **ninguna fase nueva autorizada por este cierre**. El usuario ha descartado explícitamente contratar un plan de pago de EODHD (2026-08-30); EODHD queda cerrado de forma definitiva en su plan gratuito. El siguiente paso, si el usuario lo decide, es evaluar una fuente alternativa gratuita para precios mundiales o resolver los 162 símbolos aún ambiguos.
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
 

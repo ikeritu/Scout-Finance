@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## Post-cierre v2.33D1 (2026-08-30) — sin plan de pago
+
+El usuario descarta explícitamente contratar cualquier plan de pago de EODHD. EODHD queda cerrado en `COMPLETED_NO_PROMOTION` de forma definitiva en su plan gratuito; no se reevaluará con un plan superior salvo que el usuario lo reabra explícitamente. El siguiente paso pendiente, no ejecutado, es explorar una fuente alternativa gratuita para precios mundiales o continuar resolviendo los 162 símbolos ambiguos restantes.
+
 ## v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation
 
 Cierre honesto del piloto real de precios EODHD. No autoriza scoring, rankings, recomendaciones, fundamentales, incorporación masiva de precios, contratación de planes, brokers ni el inicio de la fase 5.

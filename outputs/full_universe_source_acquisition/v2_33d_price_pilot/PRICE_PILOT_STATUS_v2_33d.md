@@ -62,7 +62,7 @@ La ejecución técnica del piloto es limpia (0 fallos, 0 errores de esquema, cer
 - El piloto v2.33D1 se declara **completado**: se ejecutó la descarga real autorizada, se validaron los 77 históricos y se documentaron sus limitaciones con evidencia reproducible.
 - **No se promociona** EODHD (plan gratuito) a producción: falla el umbral de cobertura histórica (17.5% vs 90% requerido) y el umbral de emparejamiento sobre la muestra completa (32% vs 90% requerido); fundamentales no se han evaluado.
 - Esta decisión **no** autoriza scoring productivo, rankings reales, recomendaciones de inversión, incorporación masiva de precios, contratación de planes, conexión con brokers ni el inicio de la fase 5.
-- Si en el futuro se quiere reevaluar EODHD, el siguiente paso sería un **piloto nuevo, explícitamente autorizado y acotado a un plan de pago**, para confirmar si ese plan elimina el límite de ~1 año observado aquí. Esta decisión no compra ni activa ese plan.
+- **Descartado explícitamente por el usuario (2026-08-30): no se contratará ningún plan de pago de EODHD.** Queda descartada la vía de "confirmar el límite de ~1 año con un plan de pago". EODHD queda cerrado como fuente de precios mundiales en su plan gratuito, sin previsión de reevaluación con un plan superior.
 
 ## Símbolos aún bloqueados (162/240)
 
@@ -83,5 +83,6 @@ Ninguno se ha resuelto por aproximación; siguen bloqueados de forma fail-closed
 
 - Interfaz estable: `v2.32F` (sin cambios en este cierre).
 - Pipeline de datos: `v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation` (este cierre).
-- Progreso global: **3/8 fases cerradas, fase 4 en curso**. La fase 4 (adquisición de fuente de datos completa) sigue abierta: quedan símbolos por resolver (162/240), mercados sin cubrir (SGX, Xetra) y, ahora confirmado, profundidad histórica insuficiente en el plan gratuito de EODHD.
-- Siguiente paso recomendado (no ejecutado, no autorizado por este cierre): decidir si se autoriza un piloto acotado y explícito con un plan de pago de EODHD para confirmar si resuelve el límite de ~1 año, antes de continuar resolviendo símbolos ambiguos o evaluar proveedores alternativos para precios mundiales.
+- Progreso global: **3/8 fases cerradas, fase 4 en curso**. La fase 4 (adquisición de fuente de datos completa) sigue abierta: quedan símbolos por resolver (162/240), mercados sin cubrir (SGX, Xetra) y EODHD gratuito descartado por profundidad histórica insuficiente.
+- **Decisión del usuario (2026-08-30): sin plan de pago.** Se descarta contratar cualquier plan de pago de EODHD para reintentar este piloto. EODHD queda cerrado en `COMPLETED_NO_PROMOTION` de forma definitiva salvo que el usuario reabra la cuestión explícitamente.
+- Siguiente paso recomendado (no ejecutado, no autorizado por este cierre): evaluar, dentro de fuentes gratuitas, una alternativa distinta a EODHD para precios mundiales (p. ej. Twelve Data, ya contemplado como contraste en v2.33C), o continuar resolviendo los 162 símbolos ambiguos restantes sin asumir que resolverlos resolvería también la profundidad histórica del proveedor.
