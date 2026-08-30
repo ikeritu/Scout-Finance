@@ -11,6 +11,7 @@ Estado añadido en el cierre de **v2.33D1 — EODHD Price Pilot Hardening & Real
 - Detalle: `outputs/full_universe_source_acquisition/v2_33d_price_pilot/PRICE_PILOT_STATUS_v2_33d.md`.
 - Twelve Data (plan gratuito) descartado como alternativa mundial (v2.33E: solo cubre EE. UU./forex/cripto). Fuentes oficiales por bolsa evaluadas en v2.33F.
 - **v2.33G — J-Quants (JPX/Japón):** piloto real ejecutado tras v2.33F. 42/42 símbolos japoneses resueltos y descargados, cobertura del 99.18% frente al 90% exigido. **Decisión: `PASS_FOR_NEXT_CONTROLLED_PILOT`, acotado exclusivamente a Japón** — no resuelve Cboe Europe (119 bloqueados), ASX ni TWSE. Detalle: `outputs/full_universe_source_acquisition/v2_33g_jquants_price_pilot/PRICE_PILOT_STATUS_v2_33g.md`.
+- **v2.33H — mapeo de identificadores Cboe Europe (OpenFIGI):** 89/119 empresas identificadas de forma inequívoca, pero sin bolsa primaria determinable de forma fiable para la mayoría (el código de "mercado compuesto" de OpenFIGI no corresponde al país real, verificado explícitamente). **Decisión: `PARTIAL_IDENTIFICATION_NO_ACTIONABLE_SOURCE`** — no habilita ninguna descarga nueva. Detalle: `outputs/full_universe_source_acquisition/v2_33h_cboe_europe_identifier_mapping/CBOE_EUROPE_IDENTIFIER_MAPPING_v2_33h.md`.
 - Progreso global: **3/8 fases cerradas, fase 4 en curso** (adquisición de fuente de datos completa).
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->

@@ -1,0 +1,15 @@
+{
+  "phase": "v2.33H-cboe-europe-identifier-mapping",
+  "input_rows": 119,
+  "identified_candidates": 89,
+  "unresolved": 30,
+  "unresolved_reasons": {
+    "no_exact_normalized_name_match": 29,
+    "ambiguous_multiple_distinct_companies_matched": 1
+  },
+  "network_calls": 153,
+  "retried_with_reg_suffix_normalization_fix": 34,
+  "credentials_used": false,
+  "production_scoring_authorized": false,
+  "allow_ranking": false
+}
