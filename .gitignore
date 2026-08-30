@@ -38,3 +38,10 @@ data/watchlists/*.json.bak
 Thumbs.db
 .vscode/
 .idea/
+
+# Local secrets
+.env.*
+!.env.example
+
+# EODHD licensed/raw price data
+outputs/full_universe_source_acquisition/v2_33d_price_pilot/eodhd_prices_collection_77_v2_33d/

@@ -2,10 +2,11 @@
   "phase": "v2.33D-symbol-resolution",
   "status": "PARTIAL_FAIL_CLOSED",
   "input_rows": 240,
-  "resolved_deterministic": 78,
+  "resolved_deterministic": 77,
+  "excluded_non_company": 1,
   "unresolved": 162,
   "resolved_by_market": {
-    "ASX": 14,
+    "ASX": 13,
     "BVC": 0,
     "CBOE_EUROPE": 0,
     "Cboe BZX": 1,

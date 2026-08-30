@@ -1,3 +1,17 @@
+<!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## Estado real actual del pipeline de datos / Current Data Pipeline Real State
+
+Estado tras el cierre de **v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation**.
+
+- App/MVP: `v1.1C — MVP Final Freeze` (sin cambios).
+- Interfaz local estable: `v2.32F — local UI final freeze` (sin cambios).
+- Pipeline de datos vigente: `v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation`.
+- Decisión del piloto real de precios EODHD: **`COMPLETED_NO_PROMOTION`** — no se promociona a producción (ver `outputs/full_universe_source_acquisition/v2_33d_price_pilot/PRICE_PILOT_STATUS_v2_33d.md`).
+- Progreso global: `3/8 fases cerradas, fase 4 en curso`.
+- Siguiente fase recomendada: **ninguna fase nueva autorizada por este cierre**. El siguiente paso, si el usuario lo decide, es evaluar un piloto acotado y explícito con un plan de pago de EODHD, o resolver los 162 símbolos aún ambiguos.
+
+<!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
+
 <!-- SCOUT_FINANCE_V2_14I_STATE_START -->
 ## Estado real actual / Current Real State
 

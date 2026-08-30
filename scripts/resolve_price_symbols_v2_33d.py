@@ -22,8 +22,12 @@ def sha256(path: Path) -> str:
 
 def resolve(row: dict[str, str]) -> tuple[str, str, str]:
     ticker, exchange = row["ticker"].strip(), row["exchange"].strip()
+    company_name = row.get("company_name", "").strip().upper()
+    if "STANDARD & POORS INDICES" in company_name:
+        return "", "excluded_non_company_index", "company_name_identifies_index_provider"
     if exchange in US_EXCHANGES:
-        return f"{ticker}.US", "resolved_deterministic", "official_unified_us_exchange_code"
+        provider_ticker = ticker[:-2] + "-" + ticker[-1] if ticker[-2:-1] == "." and ticker[-1:].isalpha() else ticker
+        return f"{provider_ticker}.US", "resolved_deterministic", "official_unified_us_exchange_code"
     if exchange == "ASX" and ticker.upper().endswith(".AX"):
         return f"{ticker[:-3]}.AU", "resolved_deterministic", "official_asx_au_suffix"
     if exchange == "TWSE" and ticker.upper().endswith(".TW"):
@@ -53,11 +57,17 @@ def main() -> int:
         row["provider_symbol"] = symbol
         row["provider_symbol_status"] = status
         row["provider_symbol_reason"] = reason
-        row["price_collection_status"] = "ready_pending_authorized_api_token" if status.startswith("resolved") else "blocked_pending_provider_mapping"
+        if status.startswith("resolved"):
+            row["price_collection_status"] = "ready_pending_authorized_api_token"
+        elif status.startswith("excluded"):
+            row["price_collection_status"] = "excluded_non_company"
+        else:
+            row["price_collection_status"] = "blocked_pending_provider_mapping"
     if len(rows) != 240 or len({row["pilot_id"] for row in rows}) != 240:
         raise SystemExit("Expected 240 unique pilot rows")
     resolved = sum(row["provider_symbol_status"].startswith("resolved") for row in rows)
-    unresolved = len(rows) - resolved
+    excluded = sum(row["provider_symbol_status"].startswith("excluded") for row in rows)
+    unresolved = sum(row["provider_symbol_status"] == "unresolved" for row in rows)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     output = args.output_dir / "price_pilot_symbols_v2_33d.csv"
     fields = list(rows[0])
@@ -69,6 +79,7 @@ def main() -> int:
         "status": "PARTIAL_FAIL_CLOSED",
         "input_rows": len(rows),
         "resolved_deterministic": resolved,
+        "excluded_non_company": excluded,
         "unresolved": unresolved,
         "resolved_by_market": {
             exchange: sum(row["exchange"] == exchange and row["provider_symbol_status"].startswith("resolved") for row in rows)

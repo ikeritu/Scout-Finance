@@ -1,3 +1,18 @@
+<!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## Estado actual del pipeline de datos / Current Data Pipeline State
+
+Estado añadido en el cierre de **v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation** (2026-08-30).
+
+- Interfaz estable (app/UI, sin cambios en este cierre): `v2.32F — local UI final freeze`.
+- Pipeline de datos vigente: `v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation`.
+- Piloto real de precios EODHD: **77/77 históricos válidos**, 1 índice excluido (`P014`), 162/240 símbolos aún bloqueados por ambigüedad.
+- Profundidad histórica real observada: mediana 250 sesiones/activo, ningún activo alcanza 2021 (plan gratuito de EODHD limitado a ~1 año, confirmado por el propio proveedor).
+- **Decisión del gate: `COMPLETED_NO_PROMOTION`.** EODHD (plan gratuito) no se promociona a producción. Scoring, rankings, recomendaciones, fundamentales, incorporación masiva de precios, contratación de planes y fase 5 siguen **bloqueados**.
+- Detalle: `outputs/full_universe_source_acquisition/v2_33d_price_pilot/PRICE_PILOT_STATUS_v2_33d.md`.
+- Progreso global: **3/8 fases cerradas, fase 4 en curso** (adquisición de fuente de datos completa).
+
+<!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
+
 <!-- SCOUT_FINANCE_V2_14I_STATE_START -->
 ## Estado actual del proyecto / Current Project State
 

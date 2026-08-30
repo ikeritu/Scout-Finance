@@ -1,3 +1,32 @@
+<!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation
+
+Cierre honesto del piloto real de precios EODHD. No autoriza scoring, rankings, recomendaciones, fundamentales, incorporación masiva de precios, contratación de planes, brokers ni el inicio de la fase 5.
+
+### Añadido
+
+- `scripts/build_price_pilot_collection_report_v2_33d.py`: valida los 77 JSON descargados y construye un informe agregado reproducible (sin precios fila a fila).
+- `tests/qa_price_pilot_collection_v2_33d.py`: QA local de los 77 históricos reales; imprime `SKIP` sin fallar CI cuando la carpeta de datos licenciados no está presente.
+- `tests/qa_price_pilot_downloader_v2_33d.py`: QA del descargador reanudable, íntegramente offline (mocks, sin red, sin credenciales reales) — bloqueos, reanudación, continuidad tras errores, escritura atómica, ausencia de URL/token en informes.
+- `outputs/full_universe_source_acquisition/v2_33d_price_pilot/price_pilot_collection_report_v2_33d1.json` y `PRICE_PILOT_COLLECTION_REPORT_v2_33d1.md`: informe agregado publicable.
+
+### Corregido
+
+- `scripts/download_eodhd_price_pilot_v2_33d.py`: acepta `resolved` y `resolved_deterministic`, es reanudable, omite archivos existentes, continúa tras errores HTTP/esquema, no registra URL ni token en errores, escribe cada JSON de forma atómica (temporal + reemplazo), genera `download_report_v2_33d.json`.
+- `scripts/resolve_price_symbols_v2_33d.py`: `P014` (`ZSP.AX`, STANDARD & POORS INDICES AUSTRALIA) se excluye como índice no empresarial en vez de resolverse; `MOG.B` se resuelve correctamente como `MOG-B.US`.
+- `.gitignore`: ignora explícitamente `outputs/full_universe_source_acquisition/v2_33d_price_pilot/eodhd_prices_collection_77_v2_33d/` (JSON brutos licenciados) y `.env.*`.
+
+### Resultado
+
+- 77/240 símbolos resueltos, 1 excluido, 162 bloqueados por ambigüedad real.
+- Descarga real: 77/77 activos, 0 fallos, 0 omitidos.
+- 18.714 observaciones numéricas válidas (18.791 filas en bruto, incluyendo una fila de aviso del proveedor por activo).
+- Profundidad histórica real: mediana 250 sesiones por activo, ningún activo alcanza 2021; los 77/77 archivos incluyen el aviso literal del proveedor "Data is limited by one year as you have free subscription".
+- **Decisión del gate: `COMPLETED_NO_PROMOTION`.** EODHD (plan gratuito) no supera el umbral de cobertura histórica (~17.5% vs 90% requerido por v2.33C) ni el de emparejamiento sobre la muestra completa (32% vs 90%). Detalle en `outputs/full_universe_source_acquisition/v2_33d_price_pilot/PRICE_PILOT_STATUS_v2_33d.md`.
+- Progreso global: 3/8 fases cerradas, fase 4 en curso.
+
+<!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
+
 <!-- SCOUT_FINANCE_V2_14I_STATE_START -->
 ## Entrada documental v2.14I
 

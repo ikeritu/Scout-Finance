@@ -8,6 +8,7 @@ import io
 import json
 import os
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -39,29 +40,76 @@ def main() -> int:
         return 2
 
     sample = list(csv.DictReader(args.sample.open(encoding="utf-8", newline="")))
-    unresolved = [row["pilot_id"] for row in sample if row.get("provider_symbol_status") != "resolved" or not row.get("provider_symbol")]
+    unresolved = [row["pilot_id"] for row in sample if row.get("provider_symbol_status") not in {"resolved", "resolved_deterministic"} or not row.get("provider_symbol")]
     if unresolved:
         print(json.dumps({"status": "BLOCKED", "reason": "provider_symbols_unresolved", "rows": len(unresolved)}))
         return 2
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     collected = 0
+    skipped = 0
+    failures: list[dict[str, object]] = []
+
     for row in sample:
+        output = args.output_dir / f"{row['pilot_id']}.json"
+        if output.exists():
+            skipped += 1
+            continue
+
         symbol = urllib.parse.quote(row["provider_symbol"], safe=".-")
-        query = urllib.parse.urlencode({"api_token": token, "fmt": "csv", "from": args.from_date, "period": "d"})
+        query = urllib.parse.urlencode({
+            "api_token": token,
+            "fmt": "csv",
+            "from": args.from_date,
+            "period": "d",
+        })
         request = urllib.request.Request(
             f"https://eodhd.com/api/eod/{symbol}?{query}",
             headers={"User-Agent": "ScoutFinance/2.33D local-personal-pilot"},
         )
-        with urllib.request.urlopen(request, timeout=30) as response:
-            payload = response.read().decode("utf-8")
-        rows = parse_prices(payload)
-        output = args.output_dir / f"{row['pilot_id']}.json"
-        output.write_text(json.dumps({"pilot": row, "prices": rows}, ensure_ascii=False) + "\n", encoding="utf-8")
+
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                payload = response.read().decode("utf-8")
+            rows = parse_prices(payload)
+        except (
+            urllib.error.HTTPError,
+            urllib.error.URLError,
+            TimeoutError,
+            ValueError,
+            UnicodeDecodeError,
+        ) as exc:
+            failures.append({
+                "pilot_id": row["pilot_id"],
+                "provider_symbol": row["provider_symbol"],
+                "error_type": type(exc).__name__,
+                "http_status": getattr(exc, "code", None),
+            })
+            continue
+
+        temporary = output.with_suffix(".json.tmp")
+        temporary.write_text(
+            json.dumps({"pilot": row, "prices": rows}, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        temporary.replace(output)
         collected += 1
         time.sleep(0.12)
-    print(json.dumps({"status": "COLLECTED", "assets": collected}))
-    return 0
+
+    report = {
+        "status": "COMPLETED" if not failures else "COMPLETED_WITH_ERRORS",
+        "input_assets": len(sample),
+        "collected": collected,
+        "skipped_existing": skipped,
+        "failed": len(failures),
+        "failures": failures,
+    }
+    (args.output_dir / "download_report_v2_33d.json").write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(json.dumps(report, ensure_ascii=False))
+    return 0 if not failures else 1
 
 
 if __name__ == "__main__":

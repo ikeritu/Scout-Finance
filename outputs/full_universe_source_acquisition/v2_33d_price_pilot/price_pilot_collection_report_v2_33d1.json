@@ -1,0 +1,96 @@
+{
+  "phase": "v2.33D1-price-pilot-collection-validation",
+  "status": "VALIDATED",
+  "expected_assets": 77,
+  "valid_assets": 77,
+  "schema_errors": 0,
+  "excluded_pilot_id": "P014",
+  "excluded_pilot_id_absent_from_collection": true,
+  "p230_provider_symbol": "MOG-B.US",
+  "row_counts": {
+    "raw_rows_including_provider_notice_rows": 18791,
+    "provider_notice_rows": 77,
+    "valid_numeric_observations": 18714
+  },
+  "sessions_per_asset": {
+    "min": 102,
+    "max": 253,
+    "median": 250,
+    "mean": 243.04,
+    "p10": 243,
+    "p25": 250,
+    "p75": 250,
+    "p90": 253
+  },
+  "assets_with_fewer_than_200_sessions": 5,
+  "assets_reaching_2021_or_earlier": 0,
+  "date_coverage": {
+    "requested_from_date": "2021-01-01",
+    "global_min_valid_date_observed": "2025-09-01",
+    "global_max_valid_date_observed": "2026-08-28",
+    "requested_span_days": 2065,
+    "requested_trading_days_estimate": 1425,
+    "median_sessions_coverage_pct_of_requested": 17.54
+  },
+  "market_distribution": {
+    "ASX": {
+      "count": 13,
+      "min_sessions": 180,
+      "max_sessions": 253,
+      "mean_sessions": 242.2
+    },
+    "Cboe BZX": {
+      "count": 1,
+      "min_sessions": 250,
+      "max_sessions": 250,
+      "mean_sessions": 250
+    },
+    "NASDAQ": {
+      "count": 34,
+      "min_sessions": 102,
+      "max_sessions": 250,
+      "mean_sessions": 242.5
+    },
+    "NYSE": {
+      "count": 18,
+      "min_sessions": 144,
+      "max_sessions": 250,
+      "mean_sessions": 243.1
+    },
+    "NYSE American": {
+      "count": 3,
+      "min_sessions": 250,
+      "max_sessions": 250,
+      "mean_sessions": 250
+    },
+    "TWSE": {
+      "count": 8,
+      "min_sessions": 243,
+      "max_sessions": 243,
+      "mean_sessions": 243
+    }
+  },
+  "provider_notice_text_observed_in_all_files": true,
+  "provider_notice_text": "Data is limited by one year as you have free subscription",
+  "credentials_or_urls_detected_in_raw_files": false,
+  "production_scoring_authorized": false,
+  "allow_ranking": false,
+  "evidence_classification": {
+    "observed_facts": [
+      "Los 77/77 archivos descargados incluyen literalmente el texto del proveedor 'Data is limited by one year as you have free subscription' como última fila de la respuesta EOD.",
+      "Ningún activo tiene su sesión válida más antigua en 2021 o antes; la fecha mínima observada en toda la colección es 2025-09-01 y la máxima es 2026-08-28.",
+      "La mediana de sesiones por activo es 250 frente a una estimación de 1425 sesiones bursátiles implícitas en la fecha de inicio solicitada (2021-01-01)."
+    ],
+    "inferences": [
+      "El plan gratuito de EODHD parece aplicar una ventana móvil de aproximadamente un año sobre el endpoint EOD, independientemente del parámetro 'from' solicitado, a partir de la combinación del texto del proveedor y la agrupación observada de fechas."
+    ],
+    "unconfirmed_limitations": [
+      "La regla exacta de corte (días naturales, sesiones bursátiles o una fecha de aniversario fija) no queda confirmada únicamente con esta evidencia.",
+      "No se ha confirmado localmente si un plan de pago de EODHD elimina o relaja este límite; no se ha probado y este piloto no lo autoriza.",
+      "Los 5 activos con menos de 200 sesiones podrían reflejar cotizaciones recientes, baja liquidez u otra restricción del proveedor; no se ha consultado ninguna fuente externa de fecha de salida a bolsa para confirmarlo."
+    ],
+    "paid_plan_requirements": [
+      "Confirmar profundidad histórica plurianual para momentum, volatilidad, drawdown y estabilidad plurianual requiere un piloto nuevo, explícitamente autorizado y acotado a un plan de pago. Este cierre no autoriza contratar ni activar dicho plan."
+    ]
+  }
+}

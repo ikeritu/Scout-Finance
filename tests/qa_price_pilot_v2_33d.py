@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main() -> int:
-    output = ROOT / "outputs/v2_33d"
+    output = ROOT / "outputs/full_universe_source_acquisition/v2_33d_price_pilot"
     manifest = json.loads((output / "price_pilot_manifest_v2_33d.json").read_text(encoding="utf-8"))
     rows = list(csv.DictReader((output / "price_pilot_sample_v2_33d.csv").open(encoding="utf-8", newline="")))
     assert manifest["status"] == "READY_FOR_AUTHORIZED_PILOT_NOT_EXECUTED"

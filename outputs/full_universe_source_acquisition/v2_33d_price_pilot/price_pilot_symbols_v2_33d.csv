@@ -12,7 +12,7 @@ P010,42306,PKO.AX,PEAKO LIMITED,ASX,Australia,ASX,equity,common_equity_candidate
 P011,42426,RTG.AX,RTG MINING INC.,ASX,Australia,ASX,equity_like,common_equity_candidate,resolved_deterministic,RTG.AU,pass,,ready_pending_authorized_api_token,official_asx_au_suffix
 P012,41395,T3D.AX,333D LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,resolved_deterministic,T3D.AU,pass,,ready_pending_authorized_api_token,official_asx_au_suffix
 P013,42623,VKA.AX,VIKING MINES LIMITED,ASX,Australia,ASX,equity,common_equity_candidate,resolved_deterministic,VKA.AU,pass,,ready_pending_authorized_api_token,official_asx_au_suffix
-P014,42495,ZSP.AX,STANDARD & POORS INDICES AUSTRALIA,ASX,Australia,ASX,equity_like,common_equity_candidate,resolved_deterministic,ZSP.AU,pass,,ready_pending_authorized_api_token,official_asx_au_suffix
+P014,42495,ZSP.AX,STANDARD & POORS INDICES AUSTRALIA,ASX,Australia,ASX,equity_like,common_equity_candidate,excluded_non_company_index,,pass,,excluded_non_company,company_name_identifies_index_provider
 P015,43088,COB01PAAO006,AO BANCO DE BOGOTA,BVC,Colombia,SFC_SIMEV_RNVE,colombia_equity_price_security,common_equity_candidate,unresolved,,pass,,blocked_pending_provider_mapping,requires_provider_search_or_identifier_mapping
 P016,40302,1101.TW,臺灣水泥股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,resolved_deterministic,1101.TW,pass,,ready_pending_authorized_api_token,official_taiwan_tw_suffix
 P017,40401,1525.TW,江申工業股份有限公司,TWSE,Taiwan,TWSE,Equity,common_equity_candidate,resolved_deterministic,1525.TW,pass,,ready_pending_authorized_api_token,official_taiwan_tw_suffix
@@ -228,7 +228,7 @@ P226,4128,FSK,FS KKR Capital Corp. Common Stock,NYSE,USA,nasdaq_trader_otherlist
 P227,4271,HAYW,"Hayward Holdings, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,resolved_deterministic,HAYW.US,pass,,ready_pending_authorized_api_token,official_unified_us_exchange_code
 P228,4406,IT,"Gartner, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,resolved_deterministic,IT.US,pass,,ready_pending_authorized_api_token,official_unified_us_exchange_code
 P229,4536,LII,"Lennox International, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,resolved_deterministic,LII.US,pass,,ready_pending_authorized_api_token,official_unified_us_exchange_code
-P230,4657,MOG.B,Moog Inc. Class B Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,resolved_deterministic,MOG.B.US,pass,,ready_pending_authorized_api_token,official_unified_us_exchange_code
+P230,4657,MOG.B,Moog Inc. Class B Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,resolved_deterministic,MOG-B.US,pass,,ready_pending_authorized_api_token,official_unified_us_exchange_code
 P231,4820,NTZ,"Natuzzi, S.p.A.",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,resolved_deterministic,NTZ.US,pass,,ready_pending_authorized_api_token,official_unified_us_exchange_code
 P232,4950,PEN,"Penumbra, Inc. Common Stock",NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,resolved_deterministic,PEN.US,pass,,ready_pending_authorized_api_token,official_unified_us_exchange_code
 P233,5088,RH,RH Common Stock,NYSE,USA,nasdaq_trader_otherlisted,COMMON_STOCK,common_equity_candidate,resolved_deterministic,RH.US,pass,,ready_pending_authorized_api_token,official_unified_us_exchange_code
