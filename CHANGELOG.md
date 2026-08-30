@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.33E — evaluación documental de Twelve Data (2026-08-31)
+
+Investigación pública (sin cuenta, sin clave, sin descargas, sin gasto) de Twelve Data como alternativa gratuita a EODHD para precios mundiales. Hallazgo: el plan gratuito de Twelve Data solo cubre EE. UU., forex y cripto; ASX, TWSE, Cboe Europe y JPX requieren Pro+/Venture+ (planes de pago). 0/162 símbolos actualmente bloqueados serían accesibles en el plan gratuito. Decisión: **descartado como alternativa mundial gratuita**. Detalle en `outputs/full_universe_source_acquisition/v2_33e_twelve_data_evaluation/TWELVE_DATA_EVALUATION_v2_33e.md`.
+
 ## Post-cierre v2.33D1 (2026-08-30) — sin plan de pago
 
 El usuario descarta explícitamente contratar cualquier plan de pago de EODHD. EODHD queda cerrado en `COMPLETED_NO_PROMOTION` de forma definitiva en su plan gratuito; no se reevaluará con un plan superior salvo que el usuario lo reabra explícitamente. El siguiente paso pendiente, no ejecutado, es explorar una fuente alternativa gratuita para precios mundiales o continuar resolviendo los 162 símbolos ambiguos restantes.
