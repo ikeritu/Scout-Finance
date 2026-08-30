@@ -63,5 +63,6 @@ El mismo código (`GR`) aparece para una empresa italiana y dos suecas; el códi
 ## Estado del roadmap
 
 - No cambia el estado de v2.33D1, v2.33E, v2.33F ni v2.33G.
+- **Descartado explícitamente por el usuario (2026-08-31): ninguna opción de pago** para desambiguar las 76 empresas con mercado múltiple ni para Cboe Europe en general. Con esto, Cboe Europe (119 símbolos) queda **bloqueado de forma indefinida**: no queda ninguna vía gratuita conocida (agotadas OpenFIGI para identidad y las fuentes oficiales de v2.33F para precio) ni ninguna vía de pago autorizada.
 - Progreso global: 3/8 fases cerradas, fase 4 en curso.
-- Siguiente paso recomendado (no ejecutado, no autorizado por este cierre): decidir si el usuario quiere invertir en una fuente de datos más rica (de pago, o con indicador explícito de bolsa primaria) para desambiguar las 76 empresas con mercado múltiple, o si se acepta cerrar Cboe Europe como bloqueado de forma permanente dado el patrón ya observado en v2.33F (bolsas europeas sin fuente gratuita oficial).
+- Siguiente paso recomendado (no ejecutado, no autorizado por este cierre): ninguno para Cboe Europe salvo que el usuario reabra la cuestión explícitamente. La fase 4 puede continuar por otras vías (por ejemplo, ASX/TWSE con J-Quants-style official-source research, o simplemente aceptar la cobertura actual).
