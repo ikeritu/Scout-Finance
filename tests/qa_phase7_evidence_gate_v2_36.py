@@ -12,6 +12,7 @@ report_path = ROOT / "outputs/full_universe_source_acquisition/v2_36_phase7_vali
 
 first = subprocess.run([sys.executable, str(runner)], cwd=ROOT, capture_output=True, check=True).stdout
 saved = report_path.read_bytes()
+assert b"\r\n" not in saved
 second = subprocess.run([sys.executable, str(runner)], cwd=ROOT, capture_output=True, check=True).stdout
 assert first == second and saved == report_path.read_bytes()
 report = json.loads(saved)

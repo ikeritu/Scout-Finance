@@ -95,7 +95,9 @@ def build_report() -> dict:
 def main() -> int:
     report = build_report()
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(canonical_json(report), encoding="utf-8")
+    temporary = OUTPUT.with_suffix(OUTPUT.suffix + ".tmp")
+    temporary.write_text(canonical_json(report), encoding="utf-8", newline="\n")
+    temporary.replace(OUTPUT)
     print(canonical_json(report), end="")
     return 0
 
