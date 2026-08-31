@@ -1,0 +1,15 @@
+{
+  "phase": "v2.33P-sgx-metadata-repair",
+  "held_rows": 358,
+  "repaired": 358,
+  "unresolved": 0,
+  "unresolved_detail": [],
+  "repair_method": "deterministic_column_unshift_confirmed_against_all_held_rows",
+  "company_name_recovered": false,
+  "note": "El nombre real de la empresa no está presente en esta fuente; se marca ausente, no se inventa.",
+  "credentials_used": false,
+  "network_calls": 0,
+  "canonical_census_modified": false,
+  "production_scoring_authorized": false,
+  "allow_ranking": false
+}

@@ -1,0 +1,16 @@
+{
+  "phase": "v2.33P-xetra-metadata-repair",
+  "held_rows": 1424,
+  "repaired": 1256,
+  "unresolved": 168,
+  "unresolved_reasons": {
+    "disagreeing_names_across_openfigi_records": 163,
+    "no_openfigi_record_for_isin": 5
+  },
+  "repair_method": "openfigi_isin_exact_match_single_agreeing_name_only",
+  "network_calls": 143,
+  "credentials_used": false,
+  "canonical_census_modified": false,
+  "production_scoring_authorized": false,
+  "allow_ranking": false
+}
