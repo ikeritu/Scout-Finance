@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## Post-cierre v2.33K (2026-08-31) — BVC cerrado por decisión del usuario
+
+El usuario decide no seguir investigando BVC (ni siquiera comprobar manualmente la herramienta de bvc.com.co). BVC (1 símbolo, Banco de Bogotá) queda cerrado sin fuente de precios, sin previsión de retomarlo.
+
 ## v2.33K — evaluación de fuentes BVC, Colombia (2026-08-31)
 
 Revisión del único símbolo bloqueado de BVC (P015, Banco de Bogotá, 1/240 del piloto original). La página oficial de la Superintendencia Financiera de Colombia confirma directamente nuestro identificador interno (`COB01PAAO006`) pero solo ofrece 3 cifras resumen por periodo (precio/máximo/mínimo), no una serie diaria — insuficiente para reconstruir un histórico OHLCV. BVC (bvc.com.co) probablemente ofrece una herramienta mejor según fuentes secundarias independientes, pero no fue accesible de forma automatizada en un navegador real (se queda cargando indefinidamente sin llamadas de datos observables); no se intentó ningún método para forzar el acceso. **Decisión: inconcluso, de bajo impacto (1 símbolo)** — no se recomienda seguir invirtiendo tiempo salvo que el usuario quiera probarlo manualmente. Detalle en `outputs/full_universe_source_acquisition/v2_33k_bvc_source_evaluation/BVC_SOURCE_EVALUATION_v2_33k.md`.

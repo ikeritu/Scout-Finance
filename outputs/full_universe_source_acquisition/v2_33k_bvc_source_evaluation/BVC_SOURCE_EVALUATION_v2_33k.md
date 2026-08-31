@@ -39,4 +39,4 @@ No se ha descargado ningún precio, no se ha creado ninguna cuenta, no se ha gas
 - No cambia el estado de ningún cierre anterior (v2.33D1 a v2.33J).
 - Progreso global: 3/8 fases cerradas, fase 4 en curso.
 - Con esto se completa la revisión de los cuatro mercados originalmente bloqueados/limitados: **JPX resuelto (v2.33G)**, **TWSE resuelto (v2.33I)**, **Cboe Europe bloqueado indefinidamente (v2.33H)**, **ASX sin fuente (v2.33J)**, **BVC inconcluso por bajo impacto y bloqueo de automatización (este cierre)**.
-- Siguiente paso recomendado (no ejecutado): ninguno de oficio. Si el usuario quiere, podría comprobar manualmente la herramienta de histórico de bvc.com.co desde su propio navegador y decirme qué encuentra, ya que ese acceso desde un navegador humano normal no tiene la misma limitación que se ha visto aquí.
+- **Descartado explícitamente por el usuario (2026-08-31): no se sigue investigando BVC.** El usuario decidió no comprobar manualmente la herramienta de bvc.com.co ni continuar por ninguna otra vía. BVC (1 símbolo) queda cerrado sin fuente de precios, sin previsión de retomarlo salvo que el usuario lo reabra explícitamente.
