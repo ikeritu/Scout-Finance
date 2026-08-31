@@ -51,3 +51,9 @@ outputs/full_universe_source_acquisition/v2_33g_jquants_price_pilot/jquants_pric
 
 # TWSE raw per-security price rows (open-licensed, but kept out of git for repo size like the other raw price folders)
 outputs/full_universe_source_acquisition/v2_33i_twse_opendata_price_pilot/twse_opendata_prices_collection_v2_33i/
+
+# J-Quants raw fundamentals disclosures (phase 5, block D) -- licensed the same way as J-Quants raw prices
+outputs/full_universe_source_acquisition/v2_34d_fundamentals_acquisition/jquants_fundamentals_raw_v2_34d/
+
+# TWSE MOPS raw open-data snapshots (phase 5, block D) -- open-licensed, kept out of git for repo size like the other raw folders
+outputs/full_universe_source_acquisition/v2_34d_fundamentals_acquisition/twse_mops_raw_v2_34d/
