@@ -36,7 +36,7 @@
     "retrieved_at": {"type": "string", "format": "date-time"},
     "normalizer_version": {"type": "string"},
 
-    "statement_type": {"type": "string", "enum": ["income_statement", "balance_sheet", "cash_flow", "derived_reported_by_provider"]},
+    "statement_type": {"type": "string", "enum": ["income_statement", "balance_sheet", "cash_flow", "derived_reported_by_provider", "derived_calculated_by_scout_finance"], "description": "'derived_reported_by_provider' is a ratio the PROVIDER itself computed and reported (e.g. J-Quants 'ROE'). 'derived_calculated_by_scout_finance' is this project's own block-G computation from other already-normalized metrics (e.g. margins, growth) -- the two must never be conflated."},
     "period_type": {"type": "string", "enum": ["annual", "quarterly", "semiannual", "ttm", "instant"]},
     "fiscal_year": {"type": "string"},
     "fiscal_quarter": {"type": ["integer", "null"], "minimum": 1, "maximum": 4},

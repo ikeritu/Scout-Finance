@@ -1,0 +1,84 @@
+{
+  "block": "v2.34G",
+  "per_metric": [
+    {
+      "flagged_records": 0,
+      "invalid_schema_records": 0,
+      "metric": "current_ratio",
+      "missing_by_reason": {},
+      "ok_records": 8
+    },
+    {
+      "flagged_records": 0,
+      "invalid_schema_records": 0,
+      "metric": "free_cash_flow",
+      "missing_by_reason": {
+        "calculation_impossible_missing_components": 648
+      },
+      "ok_records": 0
+    },
+    {
+      "flagged_records": 0,
+      "invalid_schema_records": 0,
+      "metric": "gross_debt",
+      "missing_by_reason": {
+        "calculation_impossible_missing_components": 648
+      },
+      "ok_records": 0
+    },
+    {
+      "flagged_records": 0,
+      "invalid_schema_records": 0,
+      "metric": "gross_margin",
+      "missing_by_reason": {},
+      "ok_records": 8
+    },
+    {
+      "flagged_records": 0,
+      "invalid_schema_records": 0,
+      "metric": "net_debt",
+      "missing_by_reason": {
+        "calculation_impossible_missing_components": 648
+      },
+      "ok_records": 0
+    },
+    {
+      "flagged_records": 7,
+      "invalid_schema_records": 0,
+      "metric": "net_income_growth_yoy",
+      "missing_by_reason": {},
+      "ok_records": 203
+    },
+    {
+      "flagged_records": 0,
+      "invalid_schema_records": 0,
+      "metric": "net_margin",
+      "missing_by_reason": {},
+      "ok_records": 416
+    },
+    {
+      "flagged_records": 0,
+      "invalid_schema_records": 0,
+      "metric": "operating_margin",
+      "missing_by_reason": {},
+      "ok_records": 404
+    },
+    {
+      "flagged_records": 0,
+      "invalid_schema_records": 0,
+      "metric": "revenue_growth_yoy",
+      "missing_by_reason": {},
+      "ok_records": 203
+    },
+    {
+      "flagged_records": 0,
+      "invalid_schema_records": 0,
+      "metric": "roa",
+      "missing_by_reason": {},
+      "ok_records": 416
+    }
+  ],
+  "schema_version": "1.0.0",
+  "total_derived_records": 3602,
+  "total_invalid_schema_records": 0
+}

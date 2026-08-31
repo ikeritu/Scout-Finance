@@ -31,6 +31,14 @@
     {"id": "dividends_paid", "statement": "cash_flow", "kind": "reported", "reported_by": ["jquants_fins_summary"], "notes": "J-Quants per-period dividend fields ('Div1Q'..'DivAnn')."},
     {"id": "buybacks", "statement": "cash_flow", "kind": "reported", "reported_by": [], "notes": "Not confirmed available on either source."},
     {"id": "roe_reported", "statement": "derived_reported_by_provider", "kind": "reported", "reported_by": ["jquants_fins_summary"], "notes": "J-Quants 'ROE' -- reported by the provider itself, not our own G-block calculation; keep value_status distinguishing reported vs calculated."},
-    {"id": "equity_ratio_reported", "statement": "derived_reported_by_provider", "kind": "reported", "reported_by": ["jquants_fins_summary"], "notes": "J-Quants 'EqAR'."}
+    {"id": "equity_ratio_reported", "statement": "derived_reported_by_provider", "kind": "reported", "reported_by": ["jquants_fins_summary"], "notes": "J-Quants 'EqAR'."},
+
+    {"id": "gross_margin", "statement": "derived_reported_by_provider", "kind": "calculated", "reported_by": [], "notes": "block G: gross_profit / revenue. Only computable for TWSE (gross_profit is a reported field there); calculation_impossible_missing_components for JPX (no gross_profit/cost_of_sales in fins/summary)."},
+    {"id": "operating_margin", "statement": "derived_reported_by_provider", "kind": "calculated", "reported_by": [], "notes": "block G: operating_income / revenue. Computable for both JPX and TWSE."},
+    {"id": "net_margin", "statement": "derived_reported_by_provider", "kind": "calculated", "reported_by": [], "notes": "block G: net_income / revenue. Computable for both JPX and TWSE."},
+    {"id": "roa", "statement": "derived_reported_by_provider", "kind": "calculated", "reported_by": [], "notes": "block G: net_income / total_assets. Computable for both JPX and TWSE."},
+    {"id": "current_ratio", "statement": "derived_reported_by_provider", "kind": "calculated", "reported_by": [], "notes": "block G: current_assets / current_liabilities. Only computable for TWSE (JPX fins/summary only reports total_assets, no current/non-current split)."},
+    {"id": "revenue_growth_yoy", "statement": "derived_reported_by_provider", "kind": "calculated", "reported_by": [], "notes": "block G: (revenue_t - revenue_t-1y) / abs(revenue_t-1y), same CurPerType one fiscal year apart, same consolidation_scope. JPX only -- TWSE's single snapshot period has no prior period to compare against."},
+    {"id": "net_income_growth_yoy", "statement": "derived_reported_by_provider", "kind": "calculated", "reported_by": [], "notes": "block G: same method as revenue_growth_yoy, applied to net_income. JPX only."}
   ]
 }

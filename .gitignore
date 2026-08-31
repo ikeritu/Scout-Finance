@@ -62,3 +62,8 @@ outputs/full_universe_source_acquisition/v2_34d_fundamentals_acquisition/twse_mo
 # provider-reported values (licensed content, same reasoning as the raw
 # collections above), so only the aggregate coverage manifest is committed
 outputs/full_universe_source_acquisition/v2_34f_fundamental_dataset/fundamental_records_v2_34f.jsonl
+
+# Derived FundamentalRecord rows (phase 5, block G) -- computed from the
+# real normalized values above, so carry the same licensing reasoning;
+# only the aggregate coverage manifest is committed
+outputs/full_universe_source_acquisition/v2_34g_derived_metrics/derived_records_v2_34g.jsonl
