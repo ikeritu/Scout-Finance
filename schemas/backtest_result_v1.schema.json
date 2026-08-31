@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BacktestResult v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["phase", "status", "decision", "contract_hash", "performance_observed", "phase8_authorized", "limitations"],
+  "properties": {
+    "phase": {"const": "v2.36-phase7-validation"},
+    "status": {"type": "string"},
+    "decision": {"enum": ["COMPLETED_PROMOTABLE", "COMPLETED_SCOPED", "COMPLETED_NO_PROMOTION", "INSUFFICIENT_EVIDENCE", "BLOCKED"]},
+    "contract_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "performance_observed": {"type": "boolean"},
+    "phase8_authorized": {"const": false},
+    "markets": {"type": "object"},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

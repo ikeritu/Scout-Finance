@@ -1,0 +1,41 @@
+{
+  "contract_hash": "8f34a62a99895a4f0ccad7c07c7383ce1abdb6421d004de9a990a61ccb0ea2b4",
+  "decision": "INSUFFICIENT_EVIDENCE",
+  "gate_hash": "26ae971510a8aede5a6669a7e7659d8a934167dee9d90a27e58675380f47307e",
+  "limitations": [
+    "The 50-asset pilot was selected before phase 7 and is not a survivorship-free historical universe.",
+    "JPX price depth is insufficient for the pre-frozen OOS gate.",
+    "TWSE fundamental publication dates are absent and its prices are unadjusted.",
+    "No return, Sharpe, drawdown or benchmark statistic was calculated after insufficiency was established.",
+    "Infrastructure QA is not evidence of predictive power."
+  ],
+  "local_temporal_audit": {
+    "available": false,
+    "jpx_missing_publication_rows": null,
+    "twse_missing_publication_rows": null
+  },
+  "markets": {
+    "JPX": {
+      "assets": 42,
+      "classification": "INSUFFICIENT_HISTORY",
+      "price_end": "2026-06-08",
+      "price_start": "2024-06-10",
+      "reason": "Two years of prices leave roughly one evaluable year after 12-month factor formation; no defensible two-window OOS validation.",
+      "required_sessions": 756,
+      "sessions_median": 486.0,
+      "sessions_min": 368
+    },
+    "TWSE": {
+      "adjusted_prices": false,
+      "assets": 8,
+      "classification": "BLOCKED_BY_TEMPORAL_METADATA",
+      "price_end": "2026-08-31",
+      "price_start": "2010-01-04",
+      "reason": "Normalized fundamentals have no verified publication date and price history is unadjusted; historical signals would require invented availability or unsafe returns."
+    }
+  },
+  "performance_observed": false,
+  "phase": "v2.36-phase7-validation",
+  "phase8_authorized": false,
+  "status": "EVIDENCE_AUDITED_NO_PERFORMANCE_RUN"
+}

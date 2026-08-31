@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "phase_version": "v2.36A",
+  "frozen_before_performance": true,
+  "scoring_contract": "config/scoring_factor_contract_v1.json",
+  "primary_market": "JPX",
+  "diagnostic_markets": ["TWSE"],
+  "excluded_assets": ["P020", "P178"],
+  "information_policy": {
+    "publication_date_required": true,
+    "retrieved_at_fallback_forbidden": true,
+    "execution_lag_sessions": 1,
+    "same_close_execution_forbidden": true,
+    "normalization_scope": "cross_section_at_signal_date_only"
+  },
+  "portfolio": {
+    "formation_frequency": "monthly",
+    "rebalance_frequency": "monthly",
+    "holding_period": "until_next_rebalance",
+    "variants": ["top_5", "top_10", "top_quintile", "eligible_equal_weight", "bottom_quintile_diagnostic"],
+    "weighting": "equal_weight",
+    "minimum_rankable_assets": 10
+  },
+  "cost_scenarios_bps_one_way": {"zero_reference": 0, "base": 25, "adverse": 75},
+  "benchmark": {"primary": "eligible_universe_equal_weight", "official_index_optional": true},
+  "price_policy": {
+    "adjusted_prices_required_for_primary": true,
+    "missing_execution_price": "BLOCK_SIGNAL",
+    "suspension": "CARRY_LAST_PRICE_AND_FLAG",
+    "currency": "local_market_separate_no_cross_market_portfolio"
+  },
+  "minimum_evidence": {
+    "price_sessions_per_asset": 756,
+    "out_of_sample_rebalances": 12,
+    "independent_out_of_sample_windows": 2,
+    "minimum_assets": 20
+  },
+  "sensitivity": {
+    "rebalance_frequencies": ["monthly", "quarterly"],
+    "execution_lag_sessions": [1, 2, 5],
+    "cost_scenarios": ["zero_reference", "base", "adverse"],
+    "portfolio_variants": ["top_5", "top_10", "top_quintile"]
+  },
+  "random_seed": 0,
+  "phase8_authorized": false
+}

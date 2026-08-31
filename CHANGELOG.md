@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.36 — gate de evidencia y cierre de la fase 7 (2026-08-31)
+
+Cierra la validación histórica como **`INSUFFICIENT_EVIDENCE`** sin observar rendimiento después de fallar el gate predefinido. JPX aporta 368–486 sesiones: insuficientes para formar factores de 12 meses y obtener dos ventanas OOS. TWSE tiene mayor profundidad, pero precios sin ajustar y fundamentales sin fecha de publicación verificable. Añade contrato congelado, primitives point-in-time, costes, benchmark, métricas deterministas y QA anti-look-ahead. La fase 8 no está autorizada.
+
 ## v2.35C — gate final y cierre de la fase 6 (2026-08-31)
 
 Cierra scoring y selección con **`COMPLETED_SCOPED`**: 50/50 activos con precios y fundamentales, 41 JPX comparables en el ranking principal, 7 TWSE separados como `PARTIAL_COMPARABILITY` y 2 revisiones (`P020`, margen real 316,5%; `P178`, banco incompatible con el contrato industrial). Contrato congelado de 14 factores, pesos al 100%, periodos anuales preferidos, ausencias sin imputación, explicaciones deterministas y doble ejecución real byte-idéntica. Shortlist experimental top 10; no constituye recomendación. Fase 7 preparada pero no autorizada. Detalle en `outputs/full_universe_source_acquisition/v2_35c_phase6_final_gate/PHASE6_FINAL_GATE_v2_35c.md`.

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "frozen_before_performance": true,
+  "allowed_decisions": ["COMPLETED_PROMOTABLE", "COMPLETED_SCOPED", "COMPLETED_NO_PROMOTION", "INSUFFICIENT_EVIDENCE", "BLOCKED"],
+  "hard_requirements": {
+    "point_in_time_metadata_complete": true,
+    "lookahead_violations": 0,
+    "data_leakage_violations": 0,
+    "deterministic_double_run": true,
+    "minimum_out_of_sample_windows": 2,
+    "minimum_out_of_sample_rebalances": 12,
+    "base_cost_result_required": true,
+    "benchmark_required": true
+  },
+  "promotion_requirements": {
+    "positive_oos_excess_return_net_base_cost": true,
+    "positive_oos_information_ratio": true,
+    "positive_oos_score_forward_return_spearman": true,
+    "maximum_drawdown_not_worse_than_benchmark": true,
+    "majority_walk_forward_windows_positive_excess": true,
+    "result_not_dependent_on_single_asset_or_window": true,
+    "cost_and_lag_sensitivity_directionally_stable": true
+  },
+  "insufficient_evidence_precedence": true,
+  "threshold_changes_after_results_forbidden": true,
+  "phase8_authorized": false
+}

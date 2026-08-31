@@ -1,13 +1,14 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
-**Fase 6 — cerrada** con la decisión `COMPLETED_SCOPED` (v2.35C, 2026-08-31). El ranking principal contiene 41 JPX; 7 TWSE quedan en comparabilidad parcial y 2 activos en revisión. Detalle en `outputs/full_universe_source_acquisition/v2_35c_phase6_final_gate/PHASE6_FINAL_GATE_v2_35c.md`.
+**Fase 7 — cerrada** con la decisión `INSUFFICIENT_EVIDENCE` (v2.36, 2026-08-31). La infraestructura point-in-time pasa QA, pero JPX no alcanza profundidad OOS y TWSE carece de temporalidad fundamental verificable/precios ajustados. Detalle en `outputs/full_universe_source_acquisition/v2_36_phase7_final_gate/PHASE7_FINAL_GATE_v2_36.md`.
 
 - App/MVP: `v1.1C — MVP Final Freeze` (sin cambios).
 - Interfaz local estable: `v2.32F — local UI final freeze` (sin cambios).
 - Pipeline de precios vigente: `v2.33R — Fase 4 Final Gate` (sin cambios), sobre la base de `v2.33D1`–`v2.33Q`.
 - Pipeline de fundamentales vigente: `v2.34J — Fase 5 Final Gate`, sobre la base de `v2.34A`–`v2.34I`.
 - Pipeline de scoring vigente: `v2.35C — Fase 6 Final Gate`, sobre la base de `v2.35A`–`v2.35B`.
+- Gate de evidencia histórica: `v2.36 — Fase 7 Final Gate`; capacidad predictiva no demostrada.
 - **Ranking experimental:** 41 activos JPX comparables, top 10 publicable, doble ejecución byte-idéntica; 7 TWSE no entran en el ranking principal y `P020`/`P178` requieren revisión.
 - **Fundamentales: 50/50 activos** (42 JPX + 8 TWSE, mismo universo de la fase 4). Fuentes: J-Quants `/v2/fins/summary` (v2.34B/D, `APPROVED_SCOPED`, ~2 años de historia, sin desglose de deuda) y TWSE MOPS opendata (v2.34B/D, `APPROVED_SCOPED`, estado financiero detallado pero un único periodo por empresa, sin histórico). **13.917 registros `FundamentalRecord` reales (v2.34F normalización + v2.34G derivadas), 0 inválidos contra el esquema (v2.34H), 50/50 activos `PROMOTABLE`** (umbral ≥0,75, definido antes de calcular ningún score).
 - Limitación estructural declarada: deuda desglosada, capex, flujo de caja libre y recompras no disponibles en ninguna fuente aprobada (v2.34G) — bloqueadas con motivo, nunca aproximadas.
@@ -21,8 +22,8 @@
 - SGX/Xetra (v2.33P): identidad reparada (SGX 100 %, Xetra 88,2 %) vía OpenFIGI; sin fuente de precios evaluada todavía.
 - Arquitectura multifuente de precios (v2.33Q): esquema canónico `PriceRecord` + adaptadores J-Quants/TWSE, verificados contra 50 activos reales.
 - EE. UU. (v2.33M): `BLOCKED_USER_ACTION_REQUIRED` — Twelve Data es la única candidata, requiere que el usuario cree la cuenta.
-- Progreso global: **6/8 fases cerradas**.
-- Siguiente fase: **fase 7 preparada pero no autorizada.** Requiere decisión expresa tras leer `PHASE6_FINAL_GATE_v2_35c.md`; no existe todavía backtest ni validación de rentabilidad.
+- Progreso global: **7/8 fases cerradas**.
+- Siguiente fase: **fase 8 no autorizada.** Requiere decisión expresa y debe conservar el etiquetado experimental/no validado históricamente.
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
 

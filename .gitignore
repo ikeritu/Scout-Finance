@@ -72,6 +72,11 @@ outputs/full_universe_source_acquisition/v2_34g_derived_metrics/derived_records_
 # Only aggregate, license-safe reports may be promoted deliberately after review.
 outputs/full_universe_source_acquisition/v2_35_phase6_scoring_local/
 
+# Phase 7 point-in-time signals, positions and return series derive from
+# licensed local inputs. Only the reviewed aggregate insufficiency report is committed.
+outputs/full_universe_source_acquisition/v2_36_phase7_validation/point_in_time_signals_v2_36.jsonl
+outputs/full_universe_source_acquisition/v2_36_phase7_validation/backtest_detail_v2_36.json
+
 # Block H validation detail with real values (sanity-flag magnitudes,
 # per-record equation deltas) -- only the aggregate report (counts, no
 # values) is committed

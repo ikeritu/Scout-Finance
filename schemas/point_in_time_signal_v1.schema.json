@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PointInTimeSignal v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["asset_id", "market", "signal_date", "execution_date", "fundamental_available_date", "scoring_contract_hash", "backtest_contract_hash", "eligibility_status", "confidence", "effective_weight", "score"],
+  "properties": {
+    "asset_id": {"type": "string", "minLength": 1},
+    "market": {"type": "string", "enum": ["JPX", "TWSE"]},
+    "signal_date": {"type": "string", "format": "date"},
+    "execution_date": {"type": "string", "format": "date"},
+    "fundamental_period_end": {"type": ["string", "null"], "format": "date"},
+    "fundamental_available_date": {"type": "string", "format": "date"},
+    "scoring_contract_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "backtest_contract_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "eligibility_status": {"type": "string"},
+    "confidence": {"type": "string"},
+    "exclusion_reasons": {"type": "array", "items": {"type": "string"}},
+    "effective_weight": {"type": "number", "minimum": 0, "maximum": 1},
+    "score": {"type": "number", "minimum": 0, "maximum": 100}
+  }
+}
