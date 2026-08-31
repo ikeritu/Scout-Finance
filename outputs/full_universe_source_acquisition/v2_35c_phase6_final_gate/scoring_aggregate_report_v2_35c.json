@@ -1,0 +1,38 @@
+{
+  "phase": "v2.35C-phase6-final-gate",
+  "decision": "COMPLETED_SCOPED",
+  "as_of_date": "2026-08-31",
+  "input_assets": 50,
+  "assets_with_prices": 50,
+  "assets_with_fundamentals": 50,
+  "ranked_assets": 41,
+  "partial_comparability_assets": 7,
+  "review_required_assets": 2,
+  "main_ranking_market": "JPX",
+  "shortlist_size": 10,
+  "deterministic_double_run": true,
+  "input_hashes": {
+    "contract": "af4f5d5a779f99989403be22f489f0105d3549c632b77153c12fcf5516334de8",
+    "derived": "d82d4ed55ace30f3fa028ff9ab2249d2687ed93c8b84c62b0d43613ea064d640",
+    "exclusions": "e96ef10c0239c01a4a89611faa6ba5a06fa64cebe7fbbf3233971f1d60e5fe8c",
+    "normalized": "082acec5fb7e587d96774a1ea01ec7b8831e8afbde5091da9a8e7464dc698930",
+    "universe": "f6af3b8e7fd3e0b8b7d70efed5b2f5bcf1ac77a078b5fa4f10937fac4c7e9f99"
+  },
+  "shortlist": [
+    {"rank": 1, "asset_id": "P155", "ticker": "4040", "company_name": "NANKAI CHEMICAL COMPANY,LIMITED", "score": 73.19076655},
+    {"rank": 2, "asset_id": "P173", "ticker": "7460", "company_name": "YAGI & CO.,LTD.", "score": 66.05803053},
+    {"rank": 3, "asset_id": "P183", "ticker": "9769", "company_name": "GAKKYUSHA CO.,LTD.", "score": 61.49722084},
+    {"rank": 4, "asset_id": "P182", "ticker": "9537", "company_name": "HOKURIKU GAS CO.,LTD.", "score": 60.94837813},
+    {"rank": 5, "asset_id": "P160", "ticker": "4828", "company_name": "Business Engineering Corporation", "score": 60.68614153},
+    {"rank": 6, "asset_id": "P170", "ticker": "6946", "company_name": "Nippon Avionics Co.,Ltd.", "score": 60.44043471},
+    {"rank": 7, "asset_id": "P184", "ticker": "9997", "company_name": "BELLUNA CO.,LTD.", "score": 60.43141281},
+    {"rank": 8, "asset_id": "P165", "ticker": "6098", "company_name": "Recruit Holdings Co.,Ltd.", "score": 60.24056330},
+    {"rank": 9, "asset_id": "P167", "ticker": "6420", "company_name": "GALILEI CO.LTD.", "score": 58.57891571},
+    {"rank": 10, "asset_id": "P174", "ticker": "7638", "company_name": "NEW ART HOLDINGS Co.,Ltd.", "score": 58.30649577}
+  ],
+  "review_required": [
+    {"asset_id": "P020", "reason": "absolute_margin_outside_300pct"},
+    {"asset_id": "P178", "reason": "financial_institution_requires_separate_factor_contract"}
+  ],
+  "phase7_authorized": false
+}

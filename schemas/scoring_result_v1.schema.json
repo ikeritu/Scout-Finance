@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scout-finance.local/schemas/scoring_result_v1.schema.json",
+  "title": "ScoringResult v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["asset_id", "eligibility_status", "confidence", "coverage_weight", "total_score", "raw_factors", "normalized_factors", "contributions", "pillar_scores", "review_reasons"],
+  "properties": {
+    "asset_id": {"type": "string", "minLength": 1},
+    "eligibility_status": {"enum": ["ELIGIBLE_PARTIAL", "PARTIAL_COMPARABILITY", "REVIEW_REQUIRED", "BLOCKED"]},
+    "confidence": {"enum": ["HIGH", "MEDIUM", "LOW", "NOT_RANKABLE"]},
+    "coverage_weight": {"type": "number", "minimum": 0, "maximum": 1},
+    "total_score": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+    "rank": {"type": "integer", "minimum": 1},
+    "raw_factors": {"type": "object", "additionalProperties": {"type": "number"}},
+    "normalized_factors": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0, "maximum": 100}},
+    "contributions": {"type": "object", "additionalProperties": {"type": "number"}},
+    "pillar_scores": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0, "maximum": 100}},
+    "review_reasons": {"type": "array", "items": {"type": "string"}},
+    "company_name": {"type": "string"},
+    "market": {"type": "string"},
+    "ticker": {"type": "string"},
+    "quality_flags": {"type": "array", "items": {"type": "string"}},
+    "explanation": {"type": "object"}
+  }
+}

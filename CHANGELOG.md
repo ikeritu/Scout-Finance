@@ -1,4 +1,16 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.35C — gate final y cierre de la fase 6 (2026-08-31)
+
+Cierra scoring y selección con **`COMPLETED_SCOPED`**: 50/50 activos con precios y fundamentales, 41 JPX comparables en el ranking principal, 7 TWSE separados como `PARTIAL_COMPARABILITY` y 2 revisiones (`P020`, margen real 316,5%; `P178`, banco incompatible con el contrato industrial). Contrato congelado de 14 factores, pesos al 100%, periodos anuales preferidos, ausencias sin imputación, explicaciones deterministas y doble ejecución real byte-idéntica. Shortlist experimental top 10; no constituye recomendación. Fase 7 preparada pero no autorizada. Detalle en `outputs/full_universe_source_acquisition/v2_35c_phase6_final_gate/PHASE6_FINAL_GATE_v2_35c.md`.
+
+## v2.35B — explicabilidad y QA real local (2026-08-31)
+
+Añade explicaciones deterministas, conciliación de contribuciones, control de lenguaje, estados excluyentes y gate local de doble ejecución sobre los 50 activos. Resultado real: PASS, 41 ranked, 7 partial, 2 review, sin fase 7.
+
+## v2.35A — contrato y motor de scoring (2026-08-31)
+
+Congela antes de aceptar resultados un contrato de 14 factores en cinco pilares. El primer cálculo detecta y corrige dos defectos: los activos `LOW` dejan de competir con `HIGH`, y las financieras requieren contrato separado. Una revisión posterior impide mezclar periodos trimestrales y anuales. Ningún peso se optimiza según rentabilidad.
+
 ## v2.34J — gate final y cierre de la fase 5, Bloque J (2026-08-31)
 
 Cierra la fase 5 (adquisición, normalización y validación de fundamentales reales) con la decisión **`COMPLETED_PROMOTABLE`**. Alcance: los mismos 50 activos ya validados en la fase 4 (42 JPX + 8 TWSE) — la fase 5 no amplía el universo de mercados ni de activos. **13.917 registros `FundamentalRecord` reales, 0 inválidos contra el esquema; 50/50 activos alcanzan el umbral `PROMOTABLE` (≥0,75) de calidad de datos**, definido antes de calcular ningún score. Deuda desglosada, capex, flujo de caja libre y recompras quedan estructuralmente bloqueados en ambas fuentes aprobadas (J-Quants `/fins/summary`, MOPS opendata), documentados con motivo, nunca aproximados. Una anomalía económica real (`P020`, margen neto 316,5%) queda marcada, no corregida. **Fase 6: no iniciada, no autorizada** — requiere decisión explícita nueva del usuario. Progreso global: 5/8 fases cerradas. Detalle en `outputs/full_universe_source_acquisition/v2_34j_phase5_final_gate/PHASE5_FINAL_GATE_v2_34j.md`.
