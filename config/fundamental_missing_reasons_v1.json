@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Closed catalog of reasons a fundamentals observation may be absent or invalid. Per phase-5 rule 3.3, none of these may ever be silently converted to zero.",
+  "missing_reasons": [
+    {"code": "not_reported_by_company", "meaning": "The company did not disclose this figure for this period (common for OdP/ordinary income under IFRS/USGAAP filers, or optional line items)."},
+    {"code": "not_applicable", "meaning": "The metric does not apply to this statement/period type (e.g. EPS on a balance-sheet-only record)."},
+    {"code": "not_available_from_provider", "meaning": "The provider does not expose this field at all on the plan/endpoint used (e.g. detailed debt breakdown, gated behind a paid tier we do not use)."},
+    {"code": "incomplete_response", "meaning": "The provider returned a response missing expected fields or truncated mid-record."},
+    {"code": "identity_error", "meaning": "The record could not be confidently attributed to the correct company/asset."},
+    {"code": "provider_error", "meaning": "The provider returned an HTTP or schema error for this request."},
+    {"code": "normalization_error", "meaning": "The normalizer could not map the raw field/value into the canonical schema (e.g. unrecognized unit or currency)."},
+    {"code": "rejected_by_qa", "meaning": "The value was structurally valid but failed a validation rule (accounting equation, temporal check, etc.) and was blocked, not corrected."},
+    {"code": "calculation_impossible_missing_components", "meaning": "A derived metric could not be computed because one or more required reported components are missing or blocked."},
+    {"code": "coverage_unknown", "meaning": "Whether this metric exists for this asset/period has not yet been checked."}
+  ]
+}
