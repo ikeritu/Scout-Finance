@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "scoring_version": "v2.35",
+  "as_of_date": "2026-08-31",
+  "normalization": "global_percentile_rank_midrank",
+  "minimum_effective_weight": 0.50,
+  "shortlist_size": 10,
+  "confidence_thresholds": {"HIGH": 0.80, "MEDIUM": 0.65, "LOW": 0.50},
+  "anomaly_policy": {
+    "absolute_margin_limit": 3.0,
+    "action": "REVIEW_REQUIRED",
+    "notes": "A margin outside +/-300% is preserved but the asset is not ranked automatically. This general rule captures known P020 without a company-specific exception."
+  },
+  "tie_breakers": ["coverage_desc", "quality_score_desc", "risk_score_desc", "asset_id_asc"],
+  "factors": [
+    {"id":"operating_margin","pillar":"quality","source":"fundamental","weight":0.10,"direction":"higher","minimum_periods":1,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"net_margin","pillar":"quality","source":"fundamental","weight":0.06,"direction":"higher","minimum_periods":1,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"roa","pillar":"quality","source":"fundamental","weight":0.08,"direction":"higher","minimum_periods":1,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"roe_reported","pillar":"quality","source":"fundamental","weight":0.06,"direction":"higher","minimum_periods":1,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"revenue_growth_yoy","pillar":"growth","source":"fundamental","weight":0.10,"direction":"higher","minimum_periods":2,"missing_policy":"NOT_APPLICABLE"},
+    {"id":"net_income_growth_yoy","pillar":"growth","source":"fundamental","weight":0.10,"direction":"higher","minimum_periods":2,"missing_policy":"NOT_APPLICABLE"},
+    {"id":"earnings_yield","pillar":"valuation","source":"derived_price_fundamental","weight":0.10,"direction":"higher","minimum_periods":1,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"book_yield","pillar":"valuation","source":"derived_price_fundamental","weight":0.10,"direction":"higher","minimum_periods":1,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"return_3m","pillar":"momentum","source":"price","weight":0.05,"direction":"higher","minimum_sessions":64,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"return_6m","pillar":"momentum","source":"price","weight":0.05,"direction":"higher","minimum_sessions":127,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"return_12m","pillar":"momentum","source":"price","weight":0.06,"direction":"higher","minimum_sessions":253,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"distance_sma200","pillar":"momentum","source":"price","weight":0.04,"direction":"higher","minimum_sessions":200,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"volatility_12m","pillar":"risk","source":"price","weight":0.06,"direction":"lower","minimum_sessions":253,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"},
+    {"id":"max_drawdown_12m","pillar":"risk","source":"price","weight":0.04,"direction":"lower","minimum_sessions":253,"missing_policy":"RENORMALIZE_AVAILABLE_WEIGHTS"}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "policies": {
+    "REQUIRED_BLOCK": "Missing factor blocks the asset.",
+    "RENORMALIZE_AVAILABLE_WEIGHTS": "Use available factors only when total effective weight reaches the contract minimum; disclose original and effective weights.",
+    "NOT_APPLICABLE": "Factor is unavailable by source design and is excluded without pretending a neutral value.",
+    "QUALITY_PENALTY": "Apply only for a documented data-quality defect, never mere source absence.",
+    "REVIEW_REQUIRED": "Preserve the value and remove the asset from automatic ranking pending human review."
+  },
+  "forbidden": ["ZERO_IMPUTATION", "MEAN_IMPUTATION", "NEUTRAL_50_IMPUTATION", "DOUBLE_PENALTY"]
+}

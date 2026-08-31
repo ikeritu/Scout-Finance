@@ -68,6 +68,10 @@ outputs/full_universe_source_acquisition/v2_34f_fundamental_dataset/fundamental_
 # only the aggregate coverage manifest is committed
 outputs/full_universe_source_acquisition/v2_34g_derived_metrics/derived_records_v2_34g.jsonl
 
+# Phase 6 detailed scoring outputs contain values derived from local licensed data.
+# Only aggregate, license-safe reports may be promoted deliberately after review.
+outputs/full_universe_source_acquisition/v2_35_phase6_scoring_local/
+
 # Block H validation detail with real values (sanity-flag magnitudes,
 # per-record equation deltas) -- only the aggregate report (counts, no
 # values) is committed
