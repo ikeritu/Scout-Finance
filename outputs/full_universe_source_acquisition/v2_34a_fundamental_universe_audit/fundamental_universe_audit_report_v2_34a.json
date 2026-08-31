@@ -1,0 +1,15 @@
+{
+  "phase": "v2.34A-fundamental-universe-audit",
+  "expected_assets": 50,
+  "built_assets": 50,
+  "by_exchange": {
+    "JPX": 42,
+    "TWSE": 8
+  },
+  "by_identity_status": {
+    "identity_verified": 50
+  },
+  "eligible_for_fundamentals": 50,
+  "production_scoring_authorized": false,
+  "allow_ranking": false
+}
