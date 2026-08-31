@@ -47,7 +47,7 @@ def main() -> int:
     if len(universe) != 50 or any(r["identity_status"] != "identity_verified" for r in universe):
         raise SystemExit("Expected exactly 50 identity_verified assets")
     records = load_jsonl(NORMALIZED) + load_jsonl(DERIVED)
-    fundamentals, source_flags = latest_fundamentals(records, args.as_of_date)
+    fundamentals, source_flags, selected_periods = latest_fundamentals(records, args.as_of_date)
     prices, pilots = load_prices(PRICE_DIRS, args.as_of_date)
     raw = build_raw_factors(fundamentals, prices)
     normalized = percentile_scores(raw, contract)
@@ -65,6 +65,7 @@ def main() -> int:
         "as_of_date": args.as_of_date, "input_assets": len(universe), "assets_with_fundamentals": len(fundamentals),
         "assets_with_prices": len(prices), "eligibility_status_counts": dict(sorted(status_counts.items())),
         "ranked_assets": len(ranked), "partial_comparability_assets": len(partial), "shortlist_size": len(shortlist),
+        "selected_fundamental_period_type_counts": dict(sorted(Counter(period for asset in selected_periods.values() for period in asset.values()).items())),
         "shortlist": [{"rank": r["rank"], "asset_id": r["asset_id"], "ticker": r["ticker"], "market": r["market"], "total_score": r["total_score"], "confidence": r["confidence"]} for r in shortlist],
         "partial_comparability": [{"asset_id": r["asset_id"], "ticker": r["ticker"], "market": r["market"], "total_score_not_main_ranked": r["total_score"], "confidence": r["confidence"]} for r in partial],
         "input_hashes": {"contract": sha256(CONTRACT), "exclusions": sha256(EXCLUSIONS), "universe": sha256(UNIVERSE), "normalized": sha256(NORMALIZED), "derived": sha256(DERIVED)},

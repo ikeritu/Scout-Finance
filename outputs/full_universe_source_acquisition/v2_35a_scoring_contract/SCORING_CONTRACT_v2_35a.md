@@ -11,6 +11,8 @@ El primer cálculo local verificó 50/50 activos con precios y fundamentales, pe
 
 Estos cambios corrigen defectos metodológicos observados; no optimizan rentabilidad ni favorecen empresas concretas. `P020` conserva su margen neto real del 316,5% y queda `REVIEW_REQUIRED` por la regla general de margen absoluto superior al 300%.
 
+Una revisión adicional previa a aceptar la shortlist detectó que escoger simplemente la divulgación más reciente podía mezclar ratios trimestrales con BPA anual. La versión 1.2 del contrato prefiere el último periodo anual disponible y solo usa el último periodo disponible cuando la fuente no ofrece anual (caso TWSE). La disponibilidad temporal se determina por `publication_date`, luego `filing_date` y, como último límite conservador para MOPS, `retrieved_at`; un registro sin ninguna fecha verificable no entra en el snapshot.
+
 ## Alcance
 
 - 14 factores en calidad, crecimiento, valoración, momentum y riesgo.

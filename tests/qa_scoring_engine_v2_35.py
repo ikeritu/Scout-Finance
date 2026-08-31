@@ -50,9 +50,12 @@ def main() -> int:
     tied = {"A": {"operating_margin": .1}, "B": {"operating_margin": .1}}
     tied_scores = percentile_scores(tied, c)
     assert tied_scores["A"]["operating_margin"] == tied_scores["B"]["operating_margin"] == 50.0
-    pending = {"asset_id": "A", "metric": "net_margin", "value": .1, "validation_status": "pending", "publication_date": "2026-01-01", "period_end": "2025-12-31", "quality_flags": []}
-    selected, _ = latest_fundamentals([pending], "2026-08-31")
+    pending = {"asset_id": "A", "metric": "net_margin", "value": .1, "validation_status": "pending", "publication_date": "2026-01-01", "period_end": "2025-12-31", "period_type": "annual", "quality_flags": []}
+    quarterly = {**pending, "value": .3, "period_type": "quarterly", "publication_date": "2026-07-01", "period_end": "2026-06-30"}
+    future = {**pending, "metric": "roa", "publication_date": "2026-09-01"}
+    selected, _, periods = latest_fundamentals([pending, quarterly, future], "2026-08-31")
     assert selected["A"]["net_margin"] == .1
+    assert periods["A"]["net_margin"] == "annual" and "roa" not in selected["A"]
     print("PASS: v2.35 scoring contract/determinism/monotonicity/missingness/outlier/ties")
     return 0
 

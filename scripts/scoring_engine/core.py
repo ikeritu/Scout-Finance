@@ -24,11 +24,11 @@ def sha256(path: Path) -> str:
 
 
 def _available_on(record: dict, as_of: str) -> bool:
-    available = record.get("publication_date") or record.get("filing_date")
-    return not available or available <= as_of
+    available = record.get("publication_date") or record.get("filing_date") or (record.get("retrieved_at") or "")[:10]
+    return bool(available) and available <= as_of
 
 
-def latest_fundamentals(records: list[dict], as_of: str) -> tuple[dict[str, dict[str, float]], dict[str, list[str]]]:
+def latest_fundamentals(records: list[dict], as_of: str) -> tuple[dict[str, dict[str, float]], dict[str, list[str]], dict[str, dict[str, str]]]:
     grouped: dict[tuple[str, str], list[dict]] = defaultdict(list)
     flags: dict[str, list[str]] = defaultdict(list)
     for record in records:
@@ -43,7 +43,11 @@ def latest_fundamentals(records: list[dict], as_of: str) -> tuple[dict[str, dict
         grouped[(asset, record["metric"])].append(record)
         flags[asset].extend(record.get("quality_flags") or [])
     values: dict[str, dict[str, float]] = defaultdict(dict)
+    selections: dict[str, dict[str, str]] = defaultdict(dict)
     for (asset, metric), candidates in grouped.items():
+        annual = [r for r in candidates if r.get("period_type") == "annual"]
+        if annual:
+            candidates = annual
         candidates.sort(key=lambda r: (
             r.get("publication_date") or r.get("filing_date") or "0000-00-00",
             r.get("period_end") or "0000-00-00",
@@ -51,8 +55,10 @@ def latest_fundamentals(records: list[dict], as_of: str) -> tuple[dict[str, dict
             r.get("consolidation_scope") == "consolidated",
             r.get("record_id", ""),
         ))
-        values[asset][metric] = float(candidates[-1]["value"])
-    return dict(values), {k: sorted(set(v)) for k, v in flags.items()}
+        chosen = candidates[-1]
+        values[asset][metric] = float(chosen["value"])
+        selections[asset][metric] = chosen.get("period_type", "unknown")
+    return dict(values), {k: sorted(set(v)) for k, v in flags.items()}, dict(selections)
 
 
 def load_prices(raw_dirs: list[Path], as_of: str) -> tuple[dict[str, list[tuple[str, float]]], dict[str, dict]]:
