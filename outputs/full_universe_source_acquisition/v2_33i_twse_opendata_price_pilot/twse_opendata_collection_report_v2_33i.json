@@ -1,0 +1,109 @@
+{
+  "phase": "v2.33I-twse-opendata-collection-validation",
+  "status": "VALIDATED",
+  "expected_assets": 8,
+  "valid_assets": 8,
+  "schema_errors": 0,
+  "row_counts": {
+    "valid_numeric_observations": 29472,
+    "no_trade_calendar_rows": 12
+  },
+  "sessions_per_asset": {
+    "min": 1378,
+    "max": 4082,
+    "median": 4076.0,
+    "mean": 3684,
+    "p10": 3628,
+    "p25": 4074,
+    "p75": 4079,
+    "p90": 4079
+  },
+  "assets_reaching_earliest_confirmed_date": 6,
+  "date_coverage": {
+    "earliest_confirmed_source_date": "2010-01-04",
+    "global_min_valid_date_observed": "2010-01-04",
+    "global_max_valid_date_observed": "2026-08-31"
+  },
+  "per_asset": [
+    {
+      "pilot_id": "P016",
+      "ticker": "1101.TW",
+      "sessions": 4079,
+      "min_date": "2010-01-04",
+      "max_date": "2026-08-28",
+      "no_trade_rows": 3
+    },
+    {
+      "pilot_id": "P017",
+      "ticker": "1525.TW",
+      "sessions": 4078,
+      "min_date": "2010-01-04",
+      "max_date": "2026-08-31",
+      "no_trade_rows": 5
+    },
+    {
+      "pilot_id": "P018",
+      "ticker": "2102.TW",
+      "sessions": 4079,
+      "min_date": "2010-01-04",
+      "max_date": "2026-08-28",
+      "no_trade_rows": 3
+    },
+    {
+      "pilot_id": "P019",
+      "ticker": "2514.TW",
+      "sessions": 4074,
+      "min_date": "2010-01-04",
+      "max_date": "2026-08-28",
+      "no_trade_rows": 1
+    },
+    {
+      "pilot_id": "P020",
+      "ticker": "3049.TW",
+      "sessions": 4074,
+      "min_date": "2010-01-04",
+      "max_date": "2026-08-28",
+      "no_trade_rows": 0
+    },
+    {
+      "pilot_id": "P021",
+      "ticker": "4952.TW",
+      "sessions": 3628,
+      "min_date": "2011-11-01",
+      "max_date": "2026-08-28",
+      "no_trade_rows": 0
+    },
+    {
+      "pilot_id": "P022",
+      "ticker": "6756.TW",
+      "sessions": 1378,
+      "min_date": "2020-12-24",
+      "max_date": "2026-08-28",
+      "no_trade_rows": 0
+    },
+    {
+      "pilot_id": "P023",
+      "ticker": "9958.TW",
+      "sessions": 4082,
+      "min_date": "2010-01-04",
+      "max_date": "2026-08-28",
+      "no_trade_rows": 0
+    }
+  ],
+  "credentials_used": false,
+  "production_scoring_authorized": false,
+  "allow_ranking": false,
+  "evidence_classification": {
+    "observed_facts": [
+      "El propio endpoint oficial STOCK_DAY de TWSE (www.twse.com.tw), gratuito y sin cuenta ni clave, rechaza explícitamente cualquier fecha anterior al 2010-01-04 con el mensaje '查詢日期小於99年1月4日，請重新查詢!' ('fecha de consulta anterior al 4 de enero del año 99 de la República'; año 99 ROC = 2010) -- un límite declarado por el propio proveedor, no inferido.",
+      "6/8 activos alcanzan esa fecha mínima confirmada; los otros 2 empiezan más tarde, coherente con una cotización más reciente.",
+      "El endpoint devuelve OHLC en bruto (sin ajustar) -- no incluye ningún factor de ajuste por splits/dividendos, a diferencia del Adjusted_close de EODHD o los campos AdjFactor/AdjClose de J-Quants.",
+      "12 filas de calendario en 4 de los 8 activos tienen OHLC nulo (sin operación ese día), sin ningún código explicativo en el campo 'Note'; es una fracción muy pequeña del total."
+    ],
+    "inferences": [],
+    "unconfirmed_limitations": [
+      "No se ha confirmado si alguno de los 8 tickers sufrió un split o un dividendo grande durante esta ventana que distorsione cálculos de rentabilidad a largo plazo hechos de forma ingenua (sin ajustar); el campo 'Note' de TWSE no marcó ninguna de las 12 filas nulas ni ninguna otra fila de la muestra.",
+      "No se ha confirmado la causa exacta de las 12 filas de calendario con OHLC nulo (suspensión de cotización u otra causa)."
+    ]
+  }
+}

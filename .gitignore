@@ -48,3 +48,6 @@ outputs/full_universe_source_acquisition/v2_33d_price_pilot/eodhd_prices_collect
 
 # J-Quants licensed/raw price data
 outputs/full_universe_source_acquisition/v2_33g_jquants_price_pilot/jquants_prices_collection_v2_33g/
+
+# TWSE raw per-security price rows (open-licensed, but kept out of git for repo size like the other raw price folders)
+outputs/full_universe_source_acquisition/v2_33i_twse_opendata_price_pilot/twse_opendata_prices_collection_v2_33i/
