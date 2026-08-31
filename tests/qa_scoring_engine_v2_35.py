@@ -42,6 +42,11 @@ def main() -> int:
     missing = {"Y": {"operating_margin": .2}}
     blocked = score_assets(missing, percentile_scores(missing, c), c)[0]
     assert blocked["eligibility_status"] == "BLOCKED" and blocked["confidence"] == "NOT_RANKABLE"
+    low = {"L": {"operating_margin": .2, "net_margin": .1, "roa": .1, "return_3m": .1, "return_6m": .1, "return_12m": .1, "distance_sma200": .1, "volatility_12m": .2, "max_drawdown_12m": .2}}
+    low_result = score_assets(low, percentile_scores(low, c), c)[0]
+    assert low_result["confidence"] == "LOW" and low_result["eligibility_status"] == "PARTIAL_COMPARABILITY" and "rank" not in low_result
+    bank = score_assets(raw, normalized, c, {"A": "financial_institution_requires_separate_factor_contract"})
+    assert next(r for r in bank if r["asset_id"] == "A")["eligibility_status"] == "REVIEW_REQUIRED"
     tied = {"A": {"operating_margin": .1}, "B": {"operating_margin": .1}}
     tied_scores = percentile_scores(tied, c)
     assert tied_scores["A"]["operating_margin"] == tied_scores["B"]["operating_margin"] == 50.0

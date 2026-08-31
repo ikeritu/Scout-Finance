@@ -18,6 +18,7 @@ from scoring_engine.core import (  # noqa: E402
 )
 
 CONTRACT = ROOT / "config/scoring_factor_contract_v1.json"
+EXCLUSIONS = ROOT / "config/scoring_business_model_exclusions_v1.json"
 UNIVERSE = ROOT / "outputs/full_universe_source_acquisition/v2_34a_fundamental_universe_audit/fundamental_universe_manifest_v2_34a.csv"
 NORMALIZED = ROOT / "outputs/full_universe_source_acquisition/v2_34f_fundamental_dataset/fundamental_records_v2_34f.jsonl"
 DERIVED = ROOT / "outputs/full_universe_source_acquisition/v2_34g_derived_metrics/derived_records_v2_34g.jsonl"
@@ -33,13 +34,15 @@ def main() -> int:
     parser.add_argument("--as-of-date", default="2026-08-31")
     parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
     args = parser.parse_args()
-    required = [CONTRACT, UNIVERSE, NORMALIZED, DERIVED, *PRICE_DIRS]
+    required = [CONTRACT, EXCLUSIONS, UNIVERSE, NORMALIZED, DERIVED, *PRICE_DIRS]
     missing = [str(p.relative_to(ROOT)) for p in required if not p.exists()]
     if missing:
         print(canonical_json({"status": "BLOCKED_INPUT_DATA", "missing": missing}), end="")
         return 2
 
     contract = json.loads(CONTRACT.read_text(encoding="utf-8"))
+    exclusions_payload = json.loads(EXCLUSIONS.read_text(encoding="utf-8"))
+    exclusions = {r["asset_id"]: r["reason"] for r in exclusions_payload["exclusions"]}
     universe = list(csv.DictReader(UNIVERSE.open(encoding="utf-8", newline="")))
     if len(universe) != 50 or any(r["identity_status"] != "identity_verified" for r in universe):
         raise SystemExit("Expected exactly 50 identity_verified assets")
@@ -48,21 +51,23 @@ def main() -> int:
     prices, pilots = load_prices(PRICE_DIRS, args.as_of_date)
     raw = build_raw_factors(fundamentals, prices)
     normalized = percentile_scores(raw, contract)
-    results = score_assets(raw, normalized, contract)
+    results = score_assets(raw, normalized, contract, exclusions)
     known = {r["asset_id"]: r for r in universe}
     for row in results:
         meta = known[row["asset_id"]]
         row.update({"company_name": meta["company_name"], "market": meta["exchange"], "ticker": meta["ticker"], "quality_flags": source_flags.get(row["asset_id"], [])})
     ranked = sorted((r for r in results if r.get("rank")), key=lambda r: r["rank"])
+    partial = sorted((r for r in results if r["eligibility_status"] == "PARTIAL_COMPARABILITY"), key=lambda r: (-r["total_score"], r["asset_id"]))
     shortlist = ranked[: contract["shortlist_size"]]
     status_counts = Counter(r["eligibility_status"] for r in results)
     report = {
         "phase": "v2.35-phase6-scoring", "status": "CALCULATED_NOT_PHASE7_VALIDATED",
         "as_of_date": args.as_of_date, "input_assets": len(universe), "assets_with_fundamentals": len(fundamentals),
         "assets_with_prices": len(prices), "eligibility_status_counts": dict(sorted(status_counts.items())),
-        "ranked_assets": len(ranked), "shortlist_size": len(shortlist),
+        "ranked_assets": len(ranked), "partial_comparability_assets": len(partial), "shortlist_size": len(shortlist),
         "shortlist": [{"rank": r["rank"], "asset_id": r["asset_id"], "ticker": r["ticker"], "market": r["market"], "total_score": r["total_score"], "confidence": r["confidence"]} for r in shortlist],
-        "input_hashes": {"contract": sha256(CONTRACT), "universe": sha256(UNIVERSE), "normalized": sha256(NORMALIZED), "derived": sha256(DERIVED)},
+        "partial_comparability": [{"asset_id": r["asset_id"], "ticker": r["ticker"], "market": r["market"], "total_score_not_main_ranked": r["total_score"], "confidence": r["confidence"]} for r in partial],
+        "input_hashes": {"contract": sha256(CONTRACT), "exclusions": sha256(EXCLUSIONS), "universe": sha256(UNIVERSE), "normalized": sha256(NORMALIZED), "derived": sha256(DERIVED)},
         "limitations": ["Experimental research ranking, not investment advice.", "No phase-7 backtest has been run.", "TWSE has one fundamental period; growth is not applicable.", "Debt, capex, FCF and buybacks are unavailable."],
         "phase7_authorized": False,
     }

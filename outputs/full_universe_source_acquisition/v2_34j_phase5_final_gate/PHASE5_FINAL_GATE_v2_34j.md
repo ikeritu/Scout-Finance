@@ -98,7 +98,7 @@ Justificación, no elegida por conveniencia sino por evidencia medida:
 
 Aunque la fase 5 se cierra con la decisión anterior:
 
-- **FASE 6 BLOQUEADA: la fase 5 no permite promoción.**
+- **FASE 6 PREPARADA PERO NO AUTORIZADA: se requiere decisión expresa del usuario.**
 - **No se ha generado ningún score de inversión, ranking ni recomendación.**
 - **No se ha modificado la interfaz más allá de las pruebas internas ya descritas.**
 - **No se ha ampliado el universo de activos ni de mercados.**

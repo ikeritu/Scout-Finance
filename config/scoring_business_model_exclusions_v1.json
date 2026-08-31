@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "reviewed_against": "fundamental_universe_manifest_v2_34a.csv",
+  "exclusions": [
+    {
+      "asset_id": "P178",
+      "ticker": "8381",
+      "company_name": "The San-in Godo Bank,Ltd.",
+      "reason": "financial_institution_requires_separate_factor_contract",
+      "evidence": "Canonical company name explicitly identifies a bank; industrial margins and balance-sheet ratios are not comparable."
+    }
+  ]
+}

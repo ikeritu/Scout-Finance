@@ -145,14 +145,16 @@ def percentile_scores(raw: dict[str, dict[str, float]], contract: dict) -> dict[
     return dict(scores)
 
 
-def score_assets(raw: dict[str, dict[str, float]], normalized: dict[str, dict[str, float]], contract: dict) -> list[dict]:
+def score_assets(raw: dict[str, dict[str, float]], normalized: dict[str, dict[str, float]], contract: dict, exclusions: dict[str, str] | None = None) -> list[dict]:
     factor_map = {f["id"]: f for f in contract["factors"]}
+    exclusions = exclusions or {}
     rows = []
     for asset in sorted(raw):
         available = normalized.get(asset, {})
         effective_weight = sum(factor_map[f]["weight"] for f in available)
         anomaly = any(abs(raw[asset].get(m, 0.0)) > contract["anomaly_policy"]["absolute_margin_limit"] for m in ("operating_margin", "net_margin"))
-        status = "REVIEW_REQUIRED" if anomaly else ("ELIGIBLE_PARTIAL" if effective_weight >= contract["minimum_effective_weight"] else "BLOCKED")
+        excluded_reason = exclusions.get(asset)
+        status = "REVIEW_REQUIRED" if (anomaly or excluded_reason) else ("ELIGIBLE_PARTIAL" if effective_weight >= contract["minimum_effective_weight"] else "BLOCKED")
         contributions = {}
         total = None
         pillar_scores = {}
@@ -170,13 +172,15 @@ def score_assets(raw: dict[str, dict[str, float]], normalized: dict[str, dict[st
         confidence = "NOT_RANKABLE"
         if status == "ELIGIBLE_PARTIAL":
             confidence = next((label for label in ("HIGH", "MEDIUM", "LOW") if effective_weight >= contract["confidence_thresholds"][label]), "LOW")
+            if confidence not in contract["main_ranking_confidence"]:
+                status = "PARTIAL_COMPARABILITY"
         rows.append({
             "asset_id": asset, "eligibility_status": status, "confidence": confidence,
             "coverage_weight": round(effective_weight, 8), "total_score": None if total is None else round(total, 8),
             "raw_factors": raw[asset], "normalized_factors": available, "contributions": contributions,
-            "pillar_scores": pillar_scores, "review_reasons": ["absolute_margin_outside_300pct"] if anomaly else [],
+            "pillar_scores": pillar_scores, "review_reasons": (["absolute_margin_outside_300pct"] if anomaly else []) + ([excluded_reason] if excluded_reason else []),
         })
-    eligible = [r for r in rows if r["total_score"] is not None]
+    eligible = [r for r in rows if r["total_score"] is not None and r["eligibility_status"] == "ELIGIBLE_PARTIAL"]
     eligible.sort(key=lambda r: (-r["total_score"], -r["coverage_weight"], -r["pillar_scores"].get("quality", -1), -r["pillar_scores"].get("risk", -1), r["asset_id"]))
     for rank, row in enumerate(eligible, 1):
         row["rank"] = rank
