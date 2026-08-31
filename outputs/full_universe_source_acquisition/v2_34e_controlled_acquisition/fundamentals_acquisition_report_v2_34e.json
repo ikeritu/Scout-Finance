@@ -1,0 +1,88 @@
+{
+  "block": "v2.34E",
+  "expected_assets": {
+    "JPX": 42,
+    "TWSE": 8
+  },
+  "gate": {
+    "jpx_full_coverage": true,
+    "twse_full_coverage": true
+  },
+  "schema_version": "1.0.0",
+  "sources": {
+    "jquants_fins_summary": {
+      "download_report": {
+        "collected": 37,
+        "failed": 0,
+        "failures": [],
+        "input_assets": 42,
+        "skipped_existing": 5,
+        "status": "COMPLETED"
+      },
+      "earliest_fiscal_year_start": "2023-04-01",
+      "latest_fiscal_year_start": "2026-04-01",
+      "metric_presence_disclosure_count": {
+        "book_value_per_share": 120,
+        "cash_and_equivalents": 189,
+        "dividends_paid": 254,
+        "eps_basic": 342,
+        "eps_diluted": 124,
+        "equity_ratio_reported": 342,
+        "financing_cash_flow": 184,
+        "investing_cash_flow": 188,
+        "net_income": 342,
+        "operating_cash_flow": 188,
+        "operating_income": 334,
+        "ordinary_income": 310,
+        "revenue": 342,
+        "roe_reported": 90,
+        "shares_outstanding": 684,
+        "total_assets": 342,
+        "total_equity": 682
+      },
+      "obtained_assets": 42,
+      "period_type_counts": {
+        "1Q": 84,
+        "2Q": 93,
+        "3Q": 83,
+        "FY": 129
+      },
+      "provider": "jquants_fins_summary",
+      "total_disclosures": 389
+    },
+    "twse_mops_opendata": {
+      "download_report": {
+        "extracted": 5,
+        "failed": 0,
+        "failures": [],
+        "input_assets": 8,
+        "skipped_existing": 3,
+        "snapshot_row_counts": {
+          "balance_sheet": 1048,
+          "company_info": 1095,
+          "income_statement": 1048,
+          "profitability_ratios": 1054
+        },
+        "status": "COMPLETED"
+      },
+      "fiscal_periods_seen": {
+        "115-Q2": 16
+      },
+      "metric_presence_row_count": {
+        "cost_of_sales": 8,
+        "current_assets": 8,
+        "current_liabilities": 8,
+        "gross_profit": 8,
+        "net_income": 8,
+        "operating_income": 8,
+        "pretax_income": 8,
+        "revenue": 8,
+        "total_assets": 8,
+        "total_equity": 8,
+        "total_liabilities": 8
+      },
+      "obtained_assets": 8,
+      "provider": "twse_mops_opendata"
+    }
+  }
+}
