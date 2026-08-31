@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.33L — auditoría, inventario y alcance del universo operativo (2026-08-31)
+
+Inicio del cierre completo de la fase 4 (precios históricos y arquitectura multifuente), Bloque A. Auditoría confirma repo limpio y alineado con `origin/main`. **Hallazgo clave:** medido contra el censo canónico completo (21.165 candidatos elegibles, no la muestra de 240), Cboe Europe representa el **49,53 %** del universo elegible — ya bloqueado indefinidamente desde v2.33H. Distribución completa: JPX 17,49 %, NASDAQ 14,25 %, NYSE 8,32 %, ASX 6,01 %, TWSE 3,29 %, NYSE American 1,10 %, BVC 0,01 %, Cboe BZX 0,00 %. Además, 1.782 candidatos (Xetra 1.424, SGX 358) quedan retenidos fuera de este total por corrupción de esquema, pendientes de reparación. **Decisión de alcance: MVP multifuente de alcance limitado, no cobertura mundial** — techo teórico de cobertura si JPX/TWSE se amplían y EE. UU. se resuelve: ~44,45 % de los 21.165 candidatos. Sesgo geográfico documentado explícitamente (concentración en EE. UU./Japón/Taiwán). Añade `scripts/build_market_universe_inventory_v2_33l.py` y `tests/qa_market_universe_inventory_v2_33l.py`. No autoriza scoring, ranking, fundamentales ni fase 5. Detalle en `outputs/full_universe_source_acquisition/v2_33l_operational_universe_scope/OPERATIONAL_UNIVERSE_SCOPE_v2_33l.md`.
+
 ## Post-cierre v2.33K (2026-08-31) — BVC cerrado por decisión del usuario
 
 El usuario decide no seguir investigando BVC (ni siquiera comprobar manualmente la herramienta de bvc.com.co). BVC (1 símbolo, Banco de Bogotá) queda cerrado sin fuente de precios, sin previsión de retomarlo.
