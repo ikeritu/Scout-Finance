@@ -35,7 +35,10 @@ def latest_fundamentals(records: list[dict], as_of: str) -> tuple[dict[str, dict
         asset = record.get("asset_id") or record.get("pilot_id")
         if not asset or record.get("value") is None or not _available_on(record, as_of):
             continue
-        if record.get("validation_status") not in {"valid", "passed", "not_checked", "not_applicable"}:
+        # Phase-5 canonical rows deliberately remain "pending": validation is
+        # stored in the separate block-H report/detail rather than rewriting
+        # licensed normalized rows. Schema-rejected rows never reached this file.
+        if record.get("validation_status") not in {"pending", "passed", "flagged"}:
             continue
         grouped[(asset, record["metric"])].append(record)
         flags[asset].extend(record.get("quality_flags") or [])
@@ -65,7 +68,7 @@ def load_prices(raw_dirs: list[Path], as_of: str) -> tuple[dict[str, list[tuple[
             rows = []
             for row in payload["prices"]:
                 d = row.get("Date")
-                close = row.get("AdjClose", row.get("Close", row.get("C")))
+                close = row.get("AdjC", row.get("Adjusted_close", row.get("AdjClose", row.get("Close", row.get("C")))))
                 if d and d <= as_of and close is not None and float(close) > 0:
                     rows.append((d, float(close)))
             rows.sort()
