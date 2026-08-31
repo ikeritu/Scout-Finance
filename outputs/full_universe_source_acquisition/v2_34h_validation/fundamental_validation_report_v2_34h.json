@@ -1,0 +1,776 @@
+{
+  "accounting_equation_status_counts": {
+    "balance_sheet_equation/not_applicable": 640,
+    "balance_sheet_equation/passed": 8,
+    "gross_profit_equation/not_applicable": 640,
+    "gross_profit_equation/passed": 8
+  },
+  "assets_by_promotion_tier": {
+    "PROMOTABLE": 50
+  },
+  "block": "v2.34H",
+  "economic_sanity_flag_type_counts": {
+    "net_margin_outside_plausible_range": 1
+  },
+  "economic_sanity_flags_total": 1,
+  "per_asset_quality_scores": [
+    {
+      "asset_id": "P016",
+      "composite_quality_score": 0.8992,
+      "dimensions": {
+        "coherence": 1.0,
+        "comparability": 0.3793,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.9151,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "twse_mops_opendata"
+    },
+    {
+      "asset_id": "P017",
+      "composite_quality_score": 0.8992,
+      "dimensions": {
+        "coherence": 1.0,
+        "comparability": 0.3793,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.9151,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "twse_mops_opendata"
+    },
+    {
+      "asset_id": "P018",
+      "composite_quality_score": 0.8992,
+      "dimensions": {
+        "coherence": 1.0,
+        "comparability": 0.3793,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.9151,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "twse_mops_opendata"
+    },
+    {
+      "asset_id": "P019",
+      "composite_quality_score": 0.8992,
+      "dimensions": {
+        "coherence": 1.0,
+        "comparability": 0.3793,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.9151,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "twse_mops_opendata"
+    },
+    {
+      "asset_id": "P020",
+      "composite_quality_score": 0.8992,
+      "dimensions": {
+        "coherence": 1.0,
+        "comparability": 0.3793,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.9151,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "twse_mops_opendata"
+    },
+    {
+      "asset_id": "P021",
+      "composite_quality_score": 0.8992,
+      "dimensions": {
+        "coherence": 1.0,
+        "comparability": 0.3793,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.9151,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "twse_mops_opendata"
+    },
+    {
+      "asset_id": "P022",
+      "composite_quality_score": 0.8992,
+      "dimensions": {
+        "coherence": 1.0,
+        "comparability": 0.3793,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.9151,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "twse_mops_opendata"
+    },
+    {
+      "asset_id": "P023",
+      "composite_quality_score": 0.8992,
+      "dimensions": {
+        "coherence": 1.0,
+        "comparability": 0.3793,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.9151,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "twse_mops_opendata"
+    },
+    {
+      "asset_id": "P143",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P144",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P145",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P146",
+      "composite_quality_score": 0.8769,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7096,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P147",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P148",
+      "composite_quality_score": 0.8474,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 0.75,
+        "freshness": 0.7479,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P149",
+      "composite_quality_score": 0.8618,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 0.875,
+        "freshness": 0.7096,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P150",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P151",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P152",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P153",
+      "composite_quality_score": 0.889,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7479,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P154",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P155",
+      "composite_quality_score": 0.8961,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P156",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P157",
+      "composite_quality_score": 0.8961,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P158",
+      "composite_quality_score": 0.889,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7479,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P159",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P160",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P161",
+      "composite_quality_score": 0.8769,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7096,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P162",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P163",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P164",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P165",
+      "composite_quality_score": 0.8961,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P166",
+      "composite_quality_score": 0.8961,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P167",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P168",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P169",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P170",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P171",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P172",
+      "composite_quality_score": 0.8961,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P173",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P174",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P175",
+      "composite_quality_score": 0.8961,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P176",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P177",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P178",
+      "composite_quality_score": 0.857,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 0.8,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P179",
+      "composite_quality_score": 0.8961,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P180",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P181",
+      "composite_quality_score": 0.8961,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5862,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P182",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P183",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    },
+    {
+      "asset_id": "P184",
+      "composite_quality_score": 0.8904,
+      "dimensions": {
+        "coherence": null,
+        "comparability": 0.5517,
+        "completeness": 1.0,
+        "continuity": 1.0,
+        "freshness": 0.7904,
+        "identity": 1.0,
+        "provenance": 1.0
+      },
+      "promotion_tier": "PROMOTABLE",
+      "provider": "jquants_fins_summary"
+    }
+  ],
+  "promotion_thresholds": {
+    "PARTIAL": 0.5,
+    "PROMOTABLE": 0.75
+  },
+  "schema_invalid_records_count": 0,
+  "schema_version": "1.0.0",
+  "temporal_problems_count": 0,
+  "total_records_validated": 13917
+}

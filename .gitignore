@@ -67,3 +67,8 @@ outputs/full_universe_source_acquisition/v2_34f_fundamental_dataset/fundamental_
 # real normalized values above, so carry the same licensing reasoning;
 # only the aggregate coverage manifest is committed
 outputs/full_universe_source_acquisition/v2_34g_derived_metrics/derived_records_v2_34g.jsonl
+
+# Block H validation detail with real values (sanity-flag magnitudes,
+# per-record equation deltas) -- only the aggregate report (counts, no
+# values) is committed
+outputs/full_universe_source_acquisition/v2_34h_validation/validation_detail_v2_34h.json
