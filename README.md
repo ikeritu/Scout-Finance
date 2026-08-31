@@ -1,27 +1,18 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
-Estado añadido en el cierre de **v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation** (2026-08-30).
+**Fase 4 (precios históricos y arquitectura multifuente) — cerrada** con la decisión **`COMPLETED_SCOPED_OPERATIONAL_UNIVERSE`** (v2.33R, 2026-08-31). Detalle completo, matriz por mercado y justificación en `outputs/full_universe_source_acquisition/v2_33r_phase4_final_gate/PHASE4_FINAL_GATE_v2_33r.md`.
 
-- Interfaz estable (app/UI, sin cambios en este cierre): `v2.32F — local UI final freeze`.
-- Pipeline de datos vigente: `v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation`.
-- Piloto real de precios EODHD: **77/77 históricos válidos**, 1 índice excluido (`P014`), 162/240 símbolos aún bloqueados por ambigüedad.
-- Profundidad histórica real observada: mediana 250 sesiones/activo, ningún activo alcanza 2021 (plan gratuito de EODHD limitado a ~1 año, confirmado por el propio proveedor).
-- **Decisión del gate: `COMPLETED_NO_PROMOTION`.** EODHD (plan gratuito) no se promociona a producción. Scoring, rankings, recomendaciones, fundamentales, incorporación masiva de precios, contratación de planes y fase 5 siguen **bloqueados**.
-- Detalle: `outputs/full_universe_source_acquisition/v2_33d_price_pilot/PRICE_PILOT_STATUS_v2_33d.md`.
-- Twelve Data (plan gratuito) descartado como alternativa mundial (v2.33E: solo cubre EE. UU./forex/cripto). Fuentes oficiales por bolsa evaluadas en v2.33F.
-- **v2.33G — J-Quants (JPX/Japón):** piloto real ejecutado tras v2.33F. 42/42 símbolos japoneses resueltos y descargados, cobertura del 99.18% frente al 90% exigido. **Decisión: `PASS_FOR_NEXT_CONTROLLED_PILOT`, acotado exclusivamente a Japón** — no resuelve Cboe Europe (119 bloqueados), ASX ni TWSE. Detalle: `outputs/full_universe_source_acquisition/v2_33g_jquants_price_pilot/PRICE_PILOT_STATUS_v2_33g.md`.
-- **v2.33H — mapeo de identificadores Cboe Europe (OpenFIGI):** 89/119 empresas identificadas de forma inequívoca, pero sin bolsa primaria determinable de forma fiable para la mayoría (el código de "mercado compuesto" de OpenFIGI no corresponde al país real, verificado explícitamente). **Decisión: `PARTIAL_IDENTIFICATION_NO_ACTIONABLE_SOURCE`** — no habilita ninguna descarga nueva. Cboe Europe queda bloqueado de forma indefinida (usuario descarta opciones de pago). Detalle: `outputs/full_universe_source_acquisition/v2_33h_cboe_europe_identifier_mapping/CBOE_EUROPE_IDENTIFIER_MAPPING_v2_33h.md`.
-- **v2.33I — TWSE con datos oficiales de Taiwán:** piloto real sobre los 8 activos TWSE ya resueltos. 8/8 descargados, 29.472 observaciones, mediana 4.076 sesiones/activo (>16× la profundidad de EODHD), ventana real 2010-01-04 → hoy. **Decisión: `PASS_FOR_NEXT_CONTROLLED_PILOT`**, acotado a estos 8 activos. Detalle: `outputs/full_universe_source_acquisition/v2_33i_twse_opendata_price_pilot/PRICE_PILOT_STATUS_v2_33i.md`.
-- **v2.33J — ASX (Australia):** sin fuente gratuita, confirmado con evidencia de primera mano (política oficial de ASX exige licencia/pago; único endpoint no oficial conocido confirmado muerto). Detalle: `outputs/full_universe_source_acquisition/v2_33j_asx_source_reconfirmation/ASX_SOURCE_RECONFIRMATION_v2_33j.md`.
-- **v2.33K — BVC (Colombia, 1 símbolo):** inconcluso, bajo impacto. Fuente oficial (SFC) confirmada pero insuficiente (solo resumen, no serie diaria); herramienta de BVC probablemente mejor pero no accesible de forma automatizada. Detalle: `outputs/full_universe_source_acquisition/v2_33k_bvc_source_evaluation/BVC_SOURCE_EVALUATION_v2_33k.md`.
-- **v2.33L — auditoría, inventario y alcance del universo operativo:** medido contra el censo canónico completo (21.165 candidatos, no la muestra de 240), Cboe Europe representa el **49,53 %** del universo elegible — ya bloqueado. Decisión de alcance: **MVP multifuente de alcance limitado**, no cobertura mundial. Techo teórico de cobertura si JPX/TWSE se amplían y EE. UU. se resuelve: ~44,45 %. Detalle: `outputs/full_universe_source_acquisition/v2_33l_operational_universe_scope/OPERATIONAL_UNIVERSE_SCOPE_v2_33l.md`.
-- **v2.33M — fuentes EE. UU. (Bloque B):** `BLOCKED_USER_ACTION_REQUIRED`. Twelve Data es la única candidata viable, requiere que el usuario cree la cuenta. Detalle: `outputs/full_universe_source_acquisition/v2_33m_us_source_evaluation/US_SOURCE_EVALUATION_v2_33m.md`.
-- **v2.33N — licencia J-Quants y alcance JPX (Bloque C):** licencia confirmada compatible con uso privado; indicadores de corto/medio plazo válidos con 2 años, estabilidad multi-ciclo y CAGR largo no. Ampliación a 3.701 activos bloqueada, pendiente de autorización. Detalle: `outputs/full_universe_source_acquisition/v2_33n_jpx_license_and_scope/JPX_LICENSE_AND_SCOPE_v2_33n.md`.
-- **v2.33O — cierre operativo TWSE (Bloque D):** sustituye EODHD por la fuente oficial para los 8 activos ya validados; series sin ajustar (fuente de ajuste identificada, algoritmo pendiente). Ampliación a 696 activos bloqueada, pendiente de autorización. Detalle: `outputs/full_universe_source_acquisition/v2_33o_twse_operational_closure/TWSE_OPERATIONAL_CLOSURE_v2_33o.md`.
-- **v2.33P — reparación de metadatos SGX/Xetra (Bloque E):** SGX 358/358 (100%) reparado, Xetra 1.256/1.424 (88,2%) reparado vía OpenFIGI por ISIN, fail-closed. Censo canónico no modificado. Sin fuente de precios investigada todavía. Detalle: `outputs/full_universe_source_acquisition/v2_33p_sgx_xetra_metadata_repair/SGX_XETRA_METADATA_REPAIR_v2_33p.md`.
-- **v2.33Q — arquitectura multifuente mínima (Bloque F):** esquema canónico `PriceRecord` + adaptadores J-Quants/TWSE, verificados contra 50 activos reales (0 problemas de forma). Manifiesto de cobertura reproducible. Detalle: `outputs/full_universe_source_acquisition/v2_33q_multisource_architecture/MULTISOURCE_ARCHITECTURE_v2_33q.md`.
-- Progreso global: **3/8 fases cerradas, fase 4 en curso** (adquisición de fuente de datos completa).
+- Interfaz estable (app/UI, sin cambios): `v2.32F — local UI final freeze`.
+- Pipeline de datos vigente: `v2.33R — Fase 4 Final Gate`.
+- **Cobertura real hoy: 50/21.165 candidatos elegibles (0,24 %)** — JPX (42 activos, vía J-Quants) + TWSE (8 activos, fuente oficial de Taiwán). Techo teórico si se resuelven las acciones pendientes: **44,45 %**. Excluido de forma permanente en el estado actual: **55,55 %** (Cboe Europe, ASX, BVC).
+- **Mercados incluidos/condicionados:** JPX y TWSE (`PASS_FOR_NEXT_CONTROLLED_PILOT`, ampliación bloqueada por umbral de 500 activos, pendiente de autorización); EE. UU. — NASDAQ/NYSE/NYSE American/Cboe BZX (`BLOCKED_USER_ACTION_REQUIRED`, Twelve Data como única candidata, requiere que el usuario cree una cuenta).
+- **Mercados excluidos:** Cboe Europe (`PARTIAL_IDENTIFICATION_NO_ACTIONABLE_SOURCE`, bloqueado indefinidamente), ASX (`NO_FREE_SOURCE_FOUND`), BVC (cerrado por decisión del usuario).
+- **SGX y Xetra:** identidad reparada (SGX 100 %, Xetra 88,2 %) vía OpenFIGI; sin fuente de precios evaluada todavía.
+- **Fuentes descartadas como mundiales:** EODHD (`COMPLETED_NO_PROMOTION`), Twelve Data en su versión global (solo cubre EE. UU./forex/cripto de forma gratuita).
+- Arquitectura común (esquema `PriceRecord`, adaptadores, manifiesto de cobertura) construida y verificada contra los 50 activos reales.
+- Historial completo, cierre por cierre (v2.33D1 a v2.33R), en `CHANGELOG.md`.
+- Progreso global: **4/8 fases cerradas**. **Fase 5: no iniciada, no autorizada** — requiere decisión explícita nueva del usuario.
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
 

@@ -1,21 +1,23 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
-Estado tras el cierre de **v2.33D1 — EODHD Price Pilot Hardening & Real Collection Validation**.
+**Fase 4 — cerrada** con la decisión `COMPLETED_SCOPED_OPERATIONAL_UNIVERSE` (v2.33R, 2026-08-31). Detalle completo, matriz por mercado y justificación en `outputs/full_universe_source_acquisition/v2_33r_phase4_final_gate/PHASE4_FINAL_GATE_v2_33r.md`.
 
 - App/MVP: `v1.1C — MVP Final Freeze` (sin cambios).
 - Interfaz local estable: `v2.32F — local UI final freeze` (sin cambios).
-- Pipeline de datos vigente: `v2.33L — Fase 4 Operational Universe Scope`, sobre la base de `v2.33D1`–`v2.33K`.
-- Decisión del piloto real de precios EODHD: **`COMPLETED_NO_PROMOTION`** — no se promociona a producción (ver `outputs/full_universe_source_acquisition/v2_33d_price_pilot/PRICE_PILOT_STATUS_v2_33d.md`).
-- Twelve Data (plan gratuito): descartado como fuente mundial (v2.33E) — solo cubre EE. UU./forex/cripto.
-- Decisión del piloto real de precios J-Quants (JPX/Japón): **`PASS_FOR_NEXT_CONTROLLED_PILOT`, acotado exclusivamente a Japón** — 42/42 símbolos resueltos y descargados, 99.18% de cobertura histórica frente al 90% exigido (ver `outputs/full_universe_source_acquisition/v2_33g_jquants_price_pilot/PRICE_PILOT_STATUS_v2_33g.md`). No resuelve Cboe Europe (119 bloqueados), ASX ni TWSE.
-- Mapeo de identificadores Cboe Europe (v2.33H, OpenFIGI): **89/119 empresas identificadas**, pero **`PARTIAL_IDENTIFICATION_NO_ACTIONABLE_SOURCE`** — el código de mercado compuesto de OpenFIGI no indica de forma fiable la bolsa real (verificado), así que no habilita ninguna descarga nueva. Usuario descarta opciones de pago (2026-08-31): Cboe Europe (119 símbolos) queda bloqueado de forma indefinida. Ver `outputs/full_universe_source_acquisition/v2_33h_cboe_europe_identifier_mapping/CBOE_EUROPE_IDENTIFIER_MAPPING_v2_33h.md`.
-- Piloto real TWSE con datos oficiales de Taiwán (v2.33I): **`PASS_FOR_NEXT_CONTROLLED_PILOT`**, acotado a los 8 activos TWSE ya resueltos — 8/8 descargados, mediana 4.076 sesiones/activo (>16× EODHD), ventana real 2010-01-04 → hoy, sin ajuste por splits/dividendos. Ver `outputs/full_universe_source_acquisition/v2_33i_twse_opendata_price_pilot/PRICE_PILOT_STATUS_v2_33i.md`.
-- ASX (v2.33J): **`NO_FREE_SOURCE_FOUND`**, confirmado con evidencia de primera mano (política oficial exige licencia/pago; único endpoint no oficial conocido confirmado muerto). Ver `outputs/full_universe_source_acquisition/v2_33j_asx_source_reconfirmation/ASX_SOURCE_RECONFIRMATION_v2_33j.md`.
-- BVC / Colombia (v2.33K, 1 símbolo): **inconcluso, bajo impacto**. Fuente oficial (SFC) confirmada pero insuficiente (solo resumen); herramienta de BVC probablemente mejor, no verificable de forma automatizada. Ver `outputs/full_universe_source_acquisition/v2_33k_bvc_source_evaluation/BVC_SOURCE_EVALUATION_v2_33k.md`.
-- **v2.33L — auditoría, inventario y alcance del universo operativo (Bloque A del cierre de fase 4):** medido contra el censo canónico completo (21.165 candidatos elegibles), Cboe Europe representa el **49,53 %** del universo — ya bloqueado. Decisión de alcance: **MVP multifuente de alcance limitado** (`COMPLETED_SCOPED_OPERATIONAL_UNIVERSE` para este bloque), no cobertura mundial. Techo teórico de cobertura si JPX/TWSE se amplían y EE. UU. se resuelve: ~44,45 % de los 21.165 candidatos. Ver `outputs/full_universe_source_acquisition/v2_33l_operational_universe_scope/OPERATIONAL_UNIVERSE_SCOPE_v2_33l.md`.
-- Progreso global: `3/8 fases cerradas, fase 4 en curso — cierre completo de fase 4 en marcha (v2.33L en adelante)`.
-- Siguiente fase recomendada: **ninguna fase nueva autorizada por este cierre**. El usuario ha descartado explícitamente contratar un plan de pago de EODHD (2026-08-30) y opciones de pago para Cboe Europe (2026-08-31). El cierre completo de fase 4 sigue en curso: quedan pendientes el Bloque B (EE. UU.), la ampliación/confirmación de licencia de JPX (Bloque C), la ampliación de TWSE (Bloque D), la reparación de metadatos de SGX/Xetra (Bloque E) y la arquitectura multifuente (Bloque F).
+- Pipeline de datos vigente: `v2.33R — Fase 4 Final Gate`, sobre la base de `v2.33D1`–`v2.33Q`.
+- **Cobertura real hoy: 50/21.165 candidatos elegibles (0,24 %)** — JPX (42 activos, J-Quants) + TWSE (8 activos, fuente oficial). Techo teórico si se resuelven las acciones pendientes: **44,45 %**. Excluido de forma permanente en el estado actual: **55,55 %** (Cboe Europe, ASX, BVC).
+- Fuentes descartadas como mundiales: EODHD (`COMPLETED_NO_PROMOTION`, v2.33D1), Twelve Data (v2.33E, solo EE. UU./forex/cripto).
+- JPX (v2.33G/N): `PASS_FOR_NEXT_CONTROLLED_PILOT`, licencia confirmada compatible con uso privado; ampliación a 3.701 candidatos bloqueada, pendiente de autorización (>500 activos).
+- TWSE (v2.33I/O): `PASS_FOR_NEXT_CONTROLLED_PILOT`, sustituye a EODHD para los 8 activos; sin ajuste por splits/dividendos (fuente de ajuste oficial identificada, algoritmo no implementado); ampliación a 696 candidatos bloqueada, pendiente de autorización.
+- Cboe Europe (v2.33H): `PARTIAL_IDENTIFICATION_NO_ACTIONABLE_SOURCE`, bloqueado indefinidamente (usuario descarta pago).
+- ASX (v2.33J): `NO_FREE_SOURCE_FOUND`, confirmado de primera mano.
+- BVC (v2.33K): cerrado por decisión del usuario, bajo impacto (1 símbolo).
+- SGX/Xetra (v2.33P): identidad reparada (SGX 100 %, Xetra 88,2 %) vía OpenFIGI; sin fuente de precios evaluada todavía.
+- Arquitectura multifuente (v2.33Q): esquema canónico `PriceRecord` + adaptadores J-Quants/TWSE, verificados contra 50 activos reales.
+- EE. UU. (v2.33M): `BLOCKED_USER_ACTION_REQUIRED` — Twelve Data es la única candidata, requiere que el usuario cree la cuenta.
+- Progreso global: **4/8 fases cerradas** (fase 4 recién cerrada).
+- Siguiente fase recomendada: **fase 5 NO autorizada por este cierre.** Requiere decisión explícita nueva del usuario tras leer `PHASE4_FINAL_GATE_v2_33r.md`. Puntos abiertos independientes entre sí: (1) crear cuenta Twelve Data, (2) autorizar ampliación JPX, (3) autorizar ampliación TWSE, (4) decidir si se construye el algoritmo de ajuste TWSE, (5) decidir si se investiga fuente de precios para SGX/Xetra.
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
 
