@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from scoring_engine.core import (  # noqa: E402
     build_raw_factors, canonical_json, latest_fundamentals, load_jsonl,
-    load_prices, percentile_scores, score_assets, sha256,
+    load_prices, percentile_scores, score_assets, sha256, explain_result,
 )
 
 CONTRACT = ROOT / "config/scoring_factor_contract_v1.json"
@@ -56,6 +56,7 @@ def main() -> int:
     for row in results:
         meta = known[row["asset_id"]]
         row.update({"company_name": meta["company_name"], "market": meta["exchange"], "ticker": meta["ticker"], "quality_flags": source_flags.get(row["asset_id"], [])})
+        row["explanation"] = explain_result(row, contract)
     ranked = sorted((r for r in results if r.get("rank")), key=lambda r: r["rank"])
     partial = sorted((r for r in results if r["eligibility_status"] == "PARTIAL_COMPARABILITY"), key=lambda r: (-r["total_score"], r["asset_id"]))
     shortlist = ranked[: contract["shortlist_size"]]
@@ -66,7 +67,7 @@ def main() -> int:
         "assets_with_prices": len(prices), "eligibility_status_counts": dict(sorted(status_counts.items())),
         "ranked_assets": len(ranked), "partial_comparability_assets": len(partial), "shortlist_size": len(shortlist),
         "selected_fundamental_period_type_counts": dict(sorted(Counter(period for asset in selected_periods.values() for period in asset.values()).items())),
-        "shortlist": [{"rank": r["rank"], "asset_id": r["asset_id"], "ticker": r["ticker"], "market": r["market"], "total_score": r["total_score"], "confidence": r["confidence"]} for r in shortlist],
+        "shortlist": [{"rank": r["rank"], "asset_id": r["asset_id"], "ticker": r["ticker"], "company_name": r["company_name"], "market": r["market"], "total_score": r["total_score"], "confidence": r["confidence"], "coverage_weight": r["coverage_weight"], "pillar_scores": r["pillar_scores"], "strength_factors": r["explanation"]["strength_factors"], "weakness_factors": r["explanation"]["weakness_factors"], "missing_factors": r["explanation"]["missing_factors"]} for r in shortlist],
         "partial_comparability": [{"asset_id": r["asset_id"], "ticker": r["ticker"], "market": r["market"], "total_score_not_main_ranked": r["total_score"], "confidence": r["confidence"]} for r in partial],
         "input_hashes": {"contract": sha256(CONTRACT), "exclusions": sha256(EXCLUSIONS), "universe": sha256(UNIVERSE), "normalized": sha256(NORMALIZED), "derived": sha256(DERIVED)},
         "limitations": ["Experimental research ranking, not investment advice.", "No phase-7 backtest has been run.", "TWSE has one fundamental period; growth is not applicable.", "Debt, capex, FCF and buybacks are unavailable."],

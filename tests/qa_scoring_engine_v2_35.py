@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from scoring_engine.core import build_raw_factors, canonical_json, latest_fundamentals, percentile_scores, price_factors, score_assets
+from scoring_engine.core import build_raw_factors, canonical_json, explain_result, latest_fundamentals, percentile_scores, price_factors, score_assets
 
 
 def contract() -> dict:
@@ -56,6 +56,11 @@ def main() -> int:
     selected, _, periods = latest_fundamentals([pending, quarterly, future], "2026-08-31")
     assert selected["A"]["net_margin"] == .1
     assert periods["A"]["net_margin"] == "annual" and "roa" not in selected["A"]
+    explanation = explain_result(by_id["A"], c)
+    assert len(explanation["strength_factors"]) == 3
+    forbidden = ("hay que comprar", "rentabilidad garantizada", "cartera óptima")
+    assert not any(term in explanation["summary"].lower() for term in forbidden)
+    assert abs(sum(by_id["A"]["contributions"].values()) - by_id["A"]["total_score"]) < 1e-6
     print("PASS: v2.35 scoring contract/determinism/monotonicity/missingness/outlier/ties")
     return 0
 

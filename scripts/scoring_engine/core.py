@@ -195,3 +195,29 @@ def score_assets(raw: dict[str, dict[str, float]], normalized: dict[str, dict[st
 
 def canonical_json(payload: object) -> str:
     return json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+
+
+def explain_result(row: dict, contract: dict) -> dict:
+    """Build a deterministic, data-only explanation without generative AI."""
+    factor_map = {f["id"]: f for f in contract["factors"]}
+    ranked = sorted(row.get("contributions", {}).items(), key=lambda item: (-item[1], item[0]))
+    strengths = [fid for fid, _ in ranked[:3]]
+    weaknesses = [fid for fid, _ in sorted(ranked, key=lambda item: (item[1], item[0]))[:3]]
+    missing = sorted(set(factor_map) - set(row.get("normalized_factors", {})))
+    limitations = list(row.get("review_reasons", []))
+    if row.get("confidence") == "LOW":
+        limitations.append("low_factor_coverage_not_main_ranked")
+    return {
+        "classification": "experimental_research_priority",
+        "strength_factors": strengths,
+        "weakness_factors": weaknesses,
+        "missing_factors": missing,
+        "limitations": sorted(set(limitations)),
+        "summary": (
+            f"Resultado cuantitativo experimental con confianza {row.get('confidence')}; "
+            f"cobertura contractual {row.get('coverage_weight', 0) * 100:.1f}%. "
+            f"Contribuciones principales: {', '.join(strengths) or 'ninguna'}. "
+            f"Factores débiles disponibles: {', '.join(weaknesses) or 'ninguno'}. "
+            "No constituye recomendación de inversión ni predicción de rentabilidad."
+        ),
+    }
