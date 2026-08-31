@@ -1,4 +1,20 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.33Q — arquitectura multifuente mínima, Bloque F (2026-08-31)
+
+Esquema canónico `PriceRecord` (20 campos) en `scripts/price_adapters/schema.py`, con distinción explícita entre sin-operación / no-aplica / no-disponible-por-licencia. Adaptadores de normalización para J-Quants y TWSE (sin tocar red ni credenciales, reutilizan los descargadores ya probados de v2.33G/v2.33I) — verificados contra datos reales: 20.294 registros J-Quants, 29.484 registros TWSE, 0 problemas de forma. Manifiesto de cobertura reproducible para 50 activos reales. QA offline sin red. No autoriza scoring, ranking ni fase 5. Detalle en `outputs/full_universe_source_acquisition/v2_33q_multisource_architecture/MULTISOURCE_ARCHITECTURE_v2_33q.md`.
+
+## v2.33P — reparación de metadatos SGX y Xetra, Bloque E (2026-08-31)
+
+Repara identidad (no precios) sobre los 1.782 candidatos retenidos por corrupción de esquema. **SGX (358 filas):** columnas ticker/nombre intercambiadas, confirmado al 100%; ticker real recuperado en 358/358, nombre de empresa marcado como genuinamente ausente (no inventado). **Xetra (1.424 filas):** `company_name` contenía códigos de clasificación de segmento de Deutsche Börse, no nombres reales; reparado vía OpenFIGI por ISIN (fail-closed, sin cuenta) — **1.256/1.424 (88,2%)** reparados con coincidencia exacta, 168 bloqueados (163 por discrepancia real entre fuentes, 5 sin registro). El censo canónico no se modifica; toda reparación vive en archivos delta separados. No se investiga fuente de precios en este bloque. Detalle en `outputs/full_universe_source_acquisition/v2_33p_sgx_xetra_metadata_repair/SGX_XETRA_METADATA_REPAIR_v2_33p.md`.
+
+## v2.33O — cierre operativo TWSE, Bloque D (2026-08-31)
+
+Decide sustituir EODHD por la fuente oficial TWSE (v2.33I) para los 8 activos ya validados: gana en profundidad (16×) y licencia, pierde el ajuste por splits/dividendos que sí tenía EODHD (documentado sin ocultar). Identifica el endpoint oficial `TWT49U` (ex-derecho/ex-dividendo) como vía real para construir ajuste en el futuro — confirmado en vivo, algoritmo no implementado en este cierre; series marcadas explícitamente `unadjusted`. Ampliación a los 696 candidatos elegibles bloqueada: supera el umbral de 500 activos, estimada en ~31 horas de ejecución, pendiente de autorización explícita. Detalle en `outputs/full_universe_source_acquisition/v2_33o_twse_operational_closure/TWSE_OPERATIONAL_CLOSURE_v2_33o.md`.
+
+## v2.33N — licencia J-Quants y alcance JPX, Bloque C (2026-08-31)
+
+Confirma mediante documentación oficial que la licencia de J-Quants es compatible con el uso privado de Scout Finance (cita textual de "Purpose of use and use of data"), con el límite explícito de no compartir datos brutos ni proveer análisis a terceros de forma recurrente. Evalúa qué indicadores son válidos con la ventana real de 2 años: retorno a 1 año, medias móviles, momentum y volatilidad sí; estabilidad multi-ciclo y CAGR a 3-5 años no. Ampliación a los 3.701 candidatos elegibles bloqueada: supera el umbral de 500 activos, estimada en ~31 horas de ejecución, pendiente de autorización explícita. Detalle en `outputs/full_universe_source_acquisition/v2_33n_jpx_license_and_scope/JPX_LICENSE_AND_SCOPE_v2_33n.md`.
+
 ## v2.33M — evaluación de fuentes EE. UU., Bloque B (2026-08-31)
 
 Evalúa fuentes gratuitas para el bloque EE. UU. (NASDAQ+NYSE+NYSE American+Cboe BZX, 5.011 candidatos, 23,67 % del universo). Twelve Data (plan Basic) es la única candidata viable identificada, pero requiere que el usuario cree una cuenta (no hecho, corresponde solo al usuario). Stooq descartada explícitamente por carecer de términos de uso documentados ("API no documentada" según la comunidad) — incumple las reglas del proyecto. **Decisión: `BLOCKED_USER_ACTION_REQUIRED`.** No autoriza ninguna descarga, cuenta, scoring, ranking ni fase 5. Detalle en `outputs/full_universe_source_acquisition/v2_33m_us_source_evaluation/US_SOURCE_EVALUATION_v2_33m.md`.
