@@ -10,9 +10,11 @@
     "Infrastructure QA is not evidence of predictive power."
   ],
   "local_temporal_audit": {
-    "available": false,
-    "jpx_missing_publication_rows": null,
-    "twse_missing_publication_rows": null
+    "available": true,
+    "jpx_missing_publication_rows": 0,
+    "jpx_rows": 10227,
+    "twse_missing_publication_rows": 88,
+    "twse_rows": 88
   },
   "markets": {
     "JPX": {

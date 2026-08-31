@@ -25,6 +25,7 @@ No se calcularon esos resultados porque el gate previo de suficiencia falló.
 ## Evidencia
 
 - JPX: 42 activos, 368–486 sesiones entre 2024-06-10 y 2026-06-08. Es insuficiente para formar factores de 12 meses y disponer además de dos ventanas OOS.
+- Auditoría local real: 10.227 registros JPX, 0 sin fecha de publicación; 88 registros TWSE, 88 sin fecha de publicación.
 - TWSE: 8 activos y amplia profundidad de precios, pero precios sin ajustar y fundamentales sin fechas de publicación verificables.
 - Universo: piloto actual, no reconstrucción histórica libre de survivorship bias.
 
