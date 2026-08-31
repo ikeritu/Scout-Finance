@@ -1,4 +1,44 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.34J — gate final y cierre de la fase 5, Bloque J (2026-08-31)
+
+Cierra la fase 5 (adquisición, normalización y validación de fundamentales reales) con la decisión **`COMPLETED_PROMOTABLE`**. Alcance: los mismos 50 activos ya validados en la fase 4 (42 JPX + 8 TWSE) — la fase 5 no amplía el universo de mercados ni de activos. **13.917 registros `FundamentalRecord` reales, 0 inválidos contra el esquema; 50/50 activos alcanzan el umbral `PROMOTABLE` (≥0,75) de calidad de datos**, definido antes de calcular ningún score. Deuda desglosada, capex, flujo de caja libre y recompras quedan estructuralmente bloqueados en ambas fuentes aprobadas (J-Quants `/fins/summary`, MOPS opendata), documentados con motivo, nunca aproximados. Una anomalía económica real (`P020`, margen neto 316,5%) queda marcada, no corregida. **Fase 6: no iniciada, no autorizada** — requiere decisión explícita nueva del usuario. Progreso global: 5/8 fases cerradas. Detalle en `outputs/full_universe_source_acquisition/v2_34j_phase5_final_gate/PHASE5_FINAL_GATE_v2_34j.md`.
+
+## v2.34I — integración de QA offline y verificación cruzada, Bloque I (2026-08-31)
+
+Un único punto de entrada (`tests/qa_fundamentals_phase5_full_suite_v2_34i.py`) ejecuta los 6 módulos offline construidos en los Bloques C-H (44 casos individuales), sin duplicar su lógica. Verifica la lista de checklist completa: compilación de todos los ficheros de fase 5, `pytest -q` completo del proyecto (mismos 3 fallos preexistentes, sin regresiones nuevas), `git diff --check` limpio, escaneo de secretos sin coincidencias, ningún fichero grande versionado, los 5 ficheros/directorios con valores reales correctamente ignorados. Detalle en `outputs/full_universe_source_acquisition/v2_34i_offline_qa_integration/OFFLINE_QA_INTEGRATION_v2_34i.md`.
+
+## v2.34H — validación y score de calidad de datos, Bloque H (2026-08-31)
+
+Valida los 13.917 registros reales (normalizados + derivados): ecuaciones contables con tolerancia del 2% (nunca igualdad exacta) — 16/16 pasadas donde comprobables (TWSE), `not_applicable` para JPX sin comprobación circular; 0 problemas temporales; 1 bandera de sanidad económica real investigada y marcada (`P020`, margen neto 316,5%). Score de calidad de datos en 7 dimensiones (identidad/procedencia/completitud/continuidad/coherencia/comparabilidad/frescura, nunca un score de inversión), con `coherence=null` (no 0) cuando ninguna ecuación es comprobable. Umbrales de promoción definidos antes de calcular ningún score: **50/50 activos `PROMOTABLE`**. Detalle en `outputs/full_universe_source_acquisition/v2_34h_validation/FUNDAMENTAL_VALIDATION_v2_34h.md`.
+
+## v2.34G — métricas derivadas, Bloque G (2026-08-31)
+
+Calcula márgenes, ROA, ratio corriente y crecimiento interanual (3.602 registros derivados, 0 inválidos) solo donde los componentes son reales — `gross_margin`/`current_ratio` correctamente exclusivos de TWSE, `revenue_growth_yoy`/`net_income_growth_yoy` exclusivos de JPX. División por cero y denominador negativo manejados sin excepción; 7 casos reales de crecimiento con base negativa marcados, nunca presentados como un porcentaje ordinario. `gross_debt`/`net_debt`/`free_cash_flow` bloqueados de forma explícita (648 registros cada uno), nunca omitidos en silencio. Corrige un hallazgo real: el Bloque F no tenía regla de prioridad restated-vs-original para múltiples disclosures del mismo periodo; añadida y probada aquí. Detalle en `outputs/full_universe_source_acquisition/v2_34g_derived_metrics/DERIVED_METRICS_v2_34g.md`.
+
+## v2.34F — normalización a FundamentalRecord, Bloque F (2026-08-31)
+
+Dos normalizadores independientes (J-Quants, TWSE MOPS) convierten la adquisición real del Bloque E en 10.315 registros `FundamentalRecord`, 0 inválidos. Excluye por completo las divulgaciones `EarnForecastRevision`/`DividendForecastRevision` de J-Quants (guidance, no estados financieros). Un campo en blanco del proveedor nunca se convierte en cero (43,5% de JPX queda `not_reported_by_company`, por diseño). Escala de TWSE (miles→unidades TWD) confirmada, no asumida; ambigüedad trimestre discreto vs acumulado marcada explícitamente, no resuelta por conveniencia. Detalle en `outputs/full_universe_source_acquisition/v2_34f_fundamental_dataset/FUNDAMENTAL_NORMALIZATION_v2_34f.md`.
+
+## v2.34E — adquisición controlada real, 50/50 activos, Bloque E (2026-08-31)
+
+Piloto pequeño primero (5 JPX + 3 TWSE), con puerta de calidad, luego escalado a los 50 activos completos: **42/42 JPX y 8/8 TWSE, 0 fallos**, con evidencia real (389 divulgaciones JPX, ~2 años de historia). Descubre que las divulgaciones `EarnForecastRevision`/`DividendForecastRevision` de J-Quants no llevan cifras reales — hallazgo aplicado directamente en el Bloque F. Detalle en `outputs/full_universe_source_acquisition/v2_34e_controlled_acquisition/CONTROLLED_ACQUISITION_v2_34e.md`.
+
+## v2.34D — adaptadores de adquisición de fundamentales, Bloque D (2026-08-31)
+
+Dos adaptadores fail-closed e independientes (J-Quants `/fins/summary`, TWSE MOPS opendata) — bloqueados por defecto, reanudables, escritura atómica, taxonomía de errores cerrada. MOPS no tiene consulta por empresa: se descargan los 4 ficheros del mercado completo una vez y se extrae por código de empresa. Datos crudos fuera de git desde antes de crearse. 9/9 pruebas offline sin red ni credenciales reales. Detalle en `outputs/full_universe_source_acquisition/v2_34d_fundamentals_acquisition/FUNDAMENTALS_ACQUISITION_ARCHITECTURE_v2_34d.md`.
+
+## v2.34C — esquema canónico FundamentalRecord, Bloque C (2026-08-31)
+
+Contrato `FundamentalRecord` (JSON Schema draft 2020-12 + dataclass Python), formato long, con catálogo cerrado de 29 métricas iniciales y 10 motivos de ausencia. `value_status="estimated"` prohibido en código (regla 3.1), aunque se conserva en el enum para poder fallar explícitamente. 9/9 pruebas offline con ejemplos válidos y rechazados. Detalle en `outputs/full_universe_source_acquisition/v2_34c_fundamental_record_schema/FUNDAMENTAL_RECORD_SCHEMA_v2_34c.md`.
+
+## v2.34B — evaluación de fuentes de fundamentales, Bloque B (2026-08-31)
+
+Evalúa J-Quants `/fins/summary` (JPX) y MOPS opendata (TWSE): ambas `APPROVED_SCOPED`. J-Quants da historia real (~2 años) pero sin desglose de deuda (exclusivo del plan Premium de pago, descartado). MOPS da estado financiero detallado pero solo del periodo más reciente por empresa, sin histórico ni flujo de caja confirmado. Ninguna cuenta nueva creada. Detalle en `outputs/full_universe_source_acquisition/v2_34b_fundamental_source_evaluation/FUNDAMENTAL_SOURCE_EVALUATION_v2_34b.md`.
+
+## v2.34A — auditoría inicial y universo canónico de fundamentales, Bloque A (2026-08-31)
+
+Inicio de la fase 5. Manifiesto de 50 activos (42 JPX + 8 TWSE, los mismos ya validados en la fase 4), todos `identity_verified`, reutilizando evidencia ya confirmada sin re-derivarla. El trabajo previo de fundamentales basado en yfinance queda explícitamente descartado, no reutilizado. Detalle en `outputs/full_universe_source_acquisition/v2_34a_fundamental_universe_audit/FUNDAMENTAL_UNIVERSE_AUDIT_v2_34a.md`.
+
 ## v2.33R — gate final y cierre de la fase 4, Bloque H (2026-08-31)
 
 Cierra la fase 4 (precios históricos y arquitectura multifuente) con la decisión **`COMPLETED_SCOPED_OPERATIONAL_UNIVERSE`**. Matriz final por mercado (JPX, TWSE, NASDAQ, NYSE, NYSE American, Cboe BZX, Cboe Europe, ASX, BVC, Xetra, SGX) con fuente, estado, profundidad, retraso, ajustado, licencia, cobertura y decisión, todas trazables a un cierre publicado — cero mercados "pendientes" sin motivo. **Cobertura real calculada: 50/21.165 candidatos elegibles (0,24 %)**, techo teórico del 44,45 % si se resuelven las acciones pendientes, 55,55 % excluido de forma permanente en el estado actual. Sesgo geográfico (concentración EE. UU./Japón/Taiwán, exclusión de Europa y Australia) declarado explícitamente, no oculto. Cinco puntos quedan pendientes de intervención del usuario, listados de forma independiente entre sí. **Fase 5: no iniciada, no autorizada** — requiere decisión explícita nueva tras leer el informe. Progreso global: 4/8 fases cerradas. Detalle en `outputs/full_universe_source_acquisition/v2_33r_phase4_final_gate/PHASE4_FINAL_GATE_v2_33r.md`.

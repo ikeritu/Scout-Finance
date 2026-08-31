@@ -1,18 +1,20 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
-**Fase 4 (precios históricos y arquitectura multifuente) — cerrada** con la decisión **`COMPLETED_SCOPED_OPERATIONAL_UNIVERSE`** (v2.33R, 2026-08-31). Detalle completo, matriz por mercado y justificación en `outputs/full_universe_source_acquisition/v2_33r_phase4_final_gate/PHASE4_FINAL_GATE_v2_33r.md`.
+**Fase 5 (adquisición, normalización y validación de fundamentales reales) — cerrada** con la decisión **`COMPLETED_PROMOTABLE`** (v2.34J, 2026-08-31). Detalle completo, matriz de fuentes/cobertura y justificación en `outputs/full_universe_source_acquisition/v2_34j_phase5_final_gate/PHASE5_FINAL_GATE_v2_34j.md`.
 
 - Interfaz estable (app/UI, sin cambios): `v2.32F — local UI final freeze`.
-- Pipeline de datos vigente: `v2.33R — Fase 4 Final Gate`.
-- **Cobertura real hoy: 50/21.165 candidatos elegibles (0,24 %)** — JPX (42 activos, vía J-Quants) + TWSE (8 activos, fuente oficial de Taiwán). Techo teórico si se resuelven las acciones pendientes: **44,45 %**. Excluido de forma permanente en el estado actual: **55,55 %** (Cboe Europe, ASX, BVC).
+- Pipeline de precios vigente: `v2.33R — Fase 4 Final Gate` (sin cambios).
+- Pipeline de fundamentales vigente: `v2.34J — Fase 5 Final Gate`.
+- **Fundamentales: 50/50 activos** (42 JPX + 8 TWSE, los mismos de la fase 4) — **13.917 registros `FundamentalRecord` reales, 0 inválidos contra el esquema, 50/50 `PROMOTABLE`** (umbral ≥0,75, definido antes de calcular ningún score).
+- **Limitación estructural declarada:** deuda desglosada, capex, flujo de caja libre y recompras no están disponibles en ninguna de las dos fuentes aprobadas (J-Quants `/fins/summary`, MOPS opendata) — bloqueadas con motivo, nunca aproximadas.
+- **Cobertura de precios (heredada de fase 4, sin cambios): 50/21.165 candidatos elegibles (0,24 %)** — JPX (42 activos, vía J-Quants) + TWSE (8 activos, fuente oficial de Taiwán). Techo teórico si se resuelven las acciones pendientes: **44,45 %**. Excluido de forma permanente en el estado actual: **55,55 %** (Cboe Europe, ASX, BVC).
 - **Mercados incluidos/condicionados:** JPX y TWSE (`PASS_FOR_NEXT_CONTROLLED_PILOT`, ampliación bloqueada por umbral de 500 activos, pendiente de autorización); EE. UU. — NASDAQ/NYSE/NYSE American/Cboe BZX (`BLOCKED_USER_ACTION_REQUIRED`, Twelve Data como única candidata, requiere que el usuario cree una cuenta).
 - **Mercados excluidos:** Cboe Europe (`PARTIAL_IDENTIFICATION_NO_ACTIONABLE_SOURCE`, bloqueado indefinidamente), ASX (`NO_FREE_SOURCE_FOUND`), BVC (cerrado por decisión del usuario).
 - **SGX y Xetra:** identidad reparada (SGX 100 %, Xetra 88,2 %) vía OpenFIGI; sin fuente de precios evaluada todavía.
 - **Fuentes descartadas como mundiales:** EODHD (`COMPLETED_NO_PROMOTION`), Twelve Data en su versión global (solo cubre EE. UU./forex/cripto de forma gratuita).
-- Arquitectura común (esquema `PriceRecord`, adaptadores, manifiesto de cobertura) construida y verificada contra los 50 activos reales.
-- Historial completo, cierre por cierre (v2.33D1 a v2.33R), en `CHANGELOG.md`.
-- Progreso global: **4/8 fases cerradas**. **Fase 5: no iniciada, no autorizada** — requiere decisión explícita nueva del usuario.
+- Historial completo, cierre por cierre (v2.33D1 a v2.34J), en `CHANGELOG.md`.
+- Progreso global: **5/8 fases cerradas**. **Fase 6: no iniciada, no autorizada** — requiere decisión explícita nueva del usuario.
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
 
