@@ -57,3 +57,8 @@ outputs/full_universe_source_acquisition/v2_34d_fundamentals_acquisition/jquants
 
 # TWSE MOPS raw open-data snapshots (phase 5, block D) -- open-licensed, kept out of git for repo size like the other raw folders
 outputs/full_universe_source_acquisition/v2_34d_fundamentals_acquisition/twse_mops_raw_v2_34d/
+
+# Normalized FundamentalRecord rows (phase 5, block F) -- still carry real
+# provider-reported values (licensed content, same reasoning as the raw
+# collections above), so only the aggregate coverage manifest is committed
+outputs/full_universe_source_acquisition/v2_34f_fundamental_dataset/fundamental_records_v2_34f.jsonl

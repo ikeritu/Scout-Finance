@@ -1,0 +1,1415 @@
+{
+  "assets_covered": 50,
+  "block": "v2.34F",
+  "per_asset": [
+    {
+      "asset_id": "P016",
+      "distinct_metrics_with_value": [
+        "cost_of_sales",
+        "current_assets",
+        "current_liabilities",
+        "gross_profit",
+        "net_income",
+        "operating_income",
+        "pretax_income",
+        "revenue",
+        "total_assets",
+        "total_equity",
+        "total_liabilities"
+      ],
+      "exchange": "TWSE",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {},
+      "ok_records": 11,
+      "provider": "twse_mops_opendata",
+      "total_records": 11
+    },
+    {
+      "asset_id": "P017",
+      "distinct_metrics_with_value": [
+        "cost_of_sales",
+        "current_assets",
+        "current_liabilities",
+        "gross_profit",
+        "net_income",
+        "operating_income",
+        "pretax_income",
+        "revenue",
+        "total_assets",
+        "total_equity",
+        "total_liabilities"
+      ],
+      "exchange": "TWSE",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {},
+      "ok_records": 11,
+      "provider": "twse_mops_opendata",
+      "total_records": 11
+    },
+    {
+      "asset_id": "P018",
+      "distinct_metrics_with_value": [
+        "cost_of_sales",
+        "current_assets",
+        "current_liabilities",
+        "gross_profit",
+        "net_income",
+        "operating_income",
+        "pretax_income",
+        "revenue",
+        "total_assets",
+        "total_equity",
+        "total_liabilities"
+      ],
+      "exchange": "TWSE",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {},
+      "ok_records": 11,
+      "provider": "twse_mops_opendata",
+      "total_records": 11
+    },
+    {
+      "asset_id": "P019",
+      "distinct_metrics_with_value": [
+        "cost_of_sales",
+        "current_assets",
+        "current_liabilities",
+        "gross_profit",
+        "net_income",
+        "operating_income",
+        "pretax_income",
+        "revenue",
+        "total_assets",
+        "total_equity",
+        "total_liabilities"
+      ],
+      "exchange": "TWSE",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {},
+      "ok_records": 11,
+      "provider": "twse_mops_opendata",
+      "total_records": 11
+    },
+    {
+      "asset_id": "P020",
+      "distinct_metrics_with_value": [
+        "cost_of_sales",
+        "current_assets",
+        "current_liabilities",
+        "gross_profit",
+        "net_income",
+        "operating_income",
+        "pretax_income",
+        "revenue",
+        "total_assets",
+        "total_equity",
+        "total_liabilities"
+      ],
+      "exchange": "TWSE",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {},
+      "ok_records": 11,
+      "provider": "twse_mops_opendata",
+      "total_records": 11
+    },
+    {
+      "asset_id": "P021",
+      "distinct_metrics_with_value": [
+        "cost_of_sales",
+        "current_assets",
+        "current_liabilities",
+        "gross_profit",
+        "net_income",
+        "operating_income",
+        "pretax_income",
+        "revenue",
+        "total_assets",
+        "total_equity",
+        "total_liabilities"
+      ],
+      "exchange": "TWSE",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {},
+      "ok_records": 11,
+      "provider": "twse_mops_opendata",
+      "total_records": 11
+    },
+    {
+      "asset_id": "P022",
+      "distinct_metrics_with_value": [
+        "cost_of_sales",
+        "current_assets",
+        "current_liabilities",
+        "gross_profit",
+        "net_income",
+        "operating_income",
+        "pretax_income",
+        "revenue",
+        "total_assets",
+        "total_equity",
+        "total_liabilities"
+      ],
+      "exchange": "TWSE",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {},
+      "ok_records": 11,
+      "provider": "twse_mops_opendata",
+      "total_records": 11
+    },
+    {
+      "asset_id": "P023",
+      "distinct_metrics_with_value": [
+        "cost_of_sales",
+        "current_assets",
+        "current_liabilities",
+        "gross_profit",
+        "net_income",
+        "operating_income",
+        "pretax_income",
+        "revenue",
+        "total_assets",
+        "total_equity",
+        "total_liabilities"
+      ],
+      "exchange": "TWSE",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {},
+      "ok_records": 11,
+      "provider": "twse_mops_opendata",
+      "total_records": 11
+    },
+    {
+      "asset_id": "P143",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 110
+      },
+      "ok_records": 130,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P144",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P145",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 103
+      },
+      "ok_records": 137,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P146",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P147",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 91
+      },
+      "ok_records": 149,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P148",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 79
+      },
+      "ok_records": 101,
+      "provider": "jquants_fins_summary",
+      "total_records": 180
+    },
+    {
+      "asset_id": "P149",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 81
+      },
+      "ok_records": 129,
+      "provider": "jquants_fins_summary",
+      "total_records": 210
+    },
+    {
+      "asset_id": "P150",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P151",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 104
+      },
+      "ok_records": 136,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P152",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 124
+      },
+      "ok_records": 108,
+      "provider": "jquants_fins_summary",
+      "total_records": 232
+    },
+    {
+      "asset_id": "P153",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 99
+      },
+      "ok_records": 171,
+      "provider": "jquants_fins_summary",
+      "total_records": 270
+    },
+    {
+      "asset_id": "P154",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 121
+      },
+      "ok_records": 111,
+      "provider": "jquants_fins_summary",
+      "total_records": 232
+    },
+    {
+      "asset_id": "P155",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 98
+      },
+      "ok_records": 142,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P156",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 100
+      },
+      "ok_records": 140,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P157",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 98
+      },
+      "ok_records": 142,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P158",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 101
+      },
+      "ok_records": 139,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P159",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P160",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P161",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 118
+      },
+      "ok_records": 114,
+      "provider": "jquants_fins_summary",
+      "total_records": 232
+    },
+    {
+      "asset_id": "P162",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P163",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P164",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P165",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 93
+      },
+      "ok_records": 147,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P166",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 90
+      },
+      "ok_records": 150,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P167",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 126
+      },
+      "ok_records": 204,
+      "provider": "jquants_fins_summary",
+      "total_records": 330
+    },
+    {
+      "asset_id": "P168",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 110
+      },
+      "ok_records": 130,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P169",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P170",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 114
+      },
+      "ok_records": 126,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P171",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 128
+      },
+      "ok_records": 112,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P172",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 90
+      },
+      "ok_records": 150,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P173",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 108
+      },
+      "ok_records": 162,
+      "provider": "jquants_fins_summary",
+      "total_records": 270
+    },
+    {
+      "asset_id": "P174",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 116
+      },
+      "ok_records": 124,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P175",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 112
+      },
+      "ok_records": 128,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P176",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 85
+      },
+      "ok_records": 155,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P177",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P178",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 100
+      },
+      "ok_records": 140,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P179",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 117
+      },
+      "ok_records": 183,
+      "provider": "jquants_fins_summary",
+      "total_records": 300
+    },
+    {
+      "asset_id": "P180",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P181",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "eps_diluted",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 135
+      },
+      "ok_records": 156,
+      "provider": "jquants_fins_summary",
+      "total_records": 291
+    },
+    {
+      "asset_id": "P182",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 114
+      },
+      "ok_records": 126,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P183",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 114
+      },
+      "ok_records": 126,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    },
+    {
+      "asset_id": "P184",
+      "distinct_metrics_with_value": [
+        "book_value_per_share",
+        "cash_and_equivalents",
+        "dividends_paid",
+        "eps_basic",
+        "equity_ratio_reported",
+        "financing_cash_flow",
+        "investing_cash_flow",
+        "net_income",
+        "operating_cash_flow",
+        "operating_income",
+        "ordinary_income",
+        "revenue",
+        "roe_reported",
+        "shares_outstanding",
+        "total_assets",
+        "total_equity"
+      ],
+      "exchange": "JPX",
+      "invalid_schema_records": 0,
+      "missing_by_reason": {
+        "not_reported_by_company": 106
+      },
+      "ok_records": 134,
+      "provider": "jquants_fins_summary",
+      "total_records": 240
+    }
+  ],
+  "schema_version": "1.0.0",
+  "total_invalid_schema_records": 0,
+  "total_records": 10315
+}
