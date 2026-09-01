@@ -33,32 +33,32 @@
       "sha256": "09313411a7fdca5066c4fe940007bf73e97e0db7a4375840ac7db2d7d95c414c"
     },
     "global_acquisition_manifest_v2_38b.csv.xz": {
-      "bytes": 1685808,
-      "sha256": "b13ba3887eface2fb1056971ff3765ba524ae752834d9578429e7f47eb6fe123"
+      "bytes": 1686136,
+      "sha256": "fea803b7cd71db3bc240da6b9ac5b41db5a9c79c82b62365e3a2d03c5a72b2f2"
     },
     "global_enrichment_summary_v2_38b.json": {
-      "bytes": 764,
-      "sha256": "a54af43190e50a369162d850b072c41fd8a6d735c0daf7d3430fa151e8d0427b"
+      "bytes": 766,
+      "sha256": "70da30df44b2e75458889d2bd139b1d35c39320debe6c51b5c3f3e2c7fb0242c"
     },
     "jpx_symbol_resolution_overlay_25_v2_38b.csv": {
-      "bytes": 16203,
-      "sha256": "5ba35011e94c1be3931ade98d3ebcf0c29255bd66e7aca2d0abe8bd34cbc0eae"
+      "bytes": 23403,
+      "sha256": "1d484f6a585361fb0afd1967098eadbde1b58bfcf44b15963e6477161a21ae38"
     },
     "jpx_symbol_resolution_pilot_25_v2_38b.csv": {
-      "bytes": 951,
-      "sha256": "a5908d974f362eef56d1861092c1c78eb87be0c431f1f2a060a6f42d27185d26"
+      "bytes": 946,
+      "sha256": "3c77ac9816c10ada99ffb203940d83d058e10e32993d8dbddc84c60980e361e5"
     },
     "jpx_symbol_resolution_review_v2_38b.csv": {
       "bytes": 148,
       "sha256": "5b8ade2174904038381c7bd99e0b5f073cb3691a61dfeab86e74175e1d92f328"
     },
     "jpx_verified_symbols_v2_38b.csv": {
-      "bytes": 13082,
-      "sha256": "26219ee8345fdbeb04b5020bdbe82ce22900c99a1d524fd83735cf9b6e7cf30b"
+      "bytes": 17982,
+      "sha256": "aab02c5a3cc2f36f2fa87bbd6d69077c00a49ea64e968802b81aa7235b215463"
     },
     "market_acquisition_plan_v2_38b.csv": {
       "bytes": 2359,
-      "sha256": "614dcb813db7c894c870ecb78e748c0eb377441c72741c0d5dbe3d7645b90eae"
+      "sha256": "3fe038fc2ebb458d362723b97759a336e44bef2f05bdef1c915d0b7b011454b8"
     },
     "twse_collection_pilot_25_v2_38b.csv": {
       "bytes": 1469,
