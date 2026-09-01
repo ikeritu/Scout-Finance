@@ -97,16 +97,16 @@ def main() -> int:
         known_jpx = {r["ticker"]: r["provider_symbol"] for r in csv.DictReader(f) if r["status"].startswith("resolved") and r["provider_symbol"]}
     with JPX_RESOLUTION_OVERLAY.open(encoding="utf-8", newline="") as f:
         overlay = list(csv.DictReader(f))
-    if len(known_jpx) != 42 or len(overlay) != 25:
-        raise SystemExit("BLOCKED: expected 42 prior and 25 controlled-pilot JPX resolutions")
+    if len(known_jpx) != 42 or not 25 <= len(overlay) <= 3659:
+        raise SystemExit("BLOCKED: expected 42 prior and 25..3659 overlay JPX resolutions")
     if any(r["resolution_status"] != "EXACT_COMPANY_NAME_MATCH" or not r["provider_symbol"] for r in overlay):
         raise SystemExit("BLOCKED: JPX overlay contains a non-exact or empty resolution")
     overlay_jpx = {r["ticker"]: r["provider_symbol"] for r in overlay}
-    if len(overlay_jpx) != 25 or set(known_jpx) & set(overlay_jpx):
+    if len(overlay_jpx) != len(overlay) or set(known_jpx) & set(overlay_jpx):
         raise SystemExit("BLOCKED: JPX overlay contains duplicate or previously known tickers")
     known_jpx.update(overlay_jpx)
-    if len(known_jpx) != 67:
-        raise SystemExit("BLOCKED: expected 67 verified JPX symbols after overlay")
+    if len(known_jpx) != 42 + len(overlay):
+        raise SystemExit("BLOCKED: verified JPX total does not match prior plus overlay")
     rows = [classify(row, known_jpx) for row in source_rows]
     if len(rows) != len({row["asset_id"] for row in rows}):
         raise SystemExit("BLOCKED: duplicate asset identity")
@@ -134,7 +134,7 @@ def main() -> int:
 
     jpx_ready = [r for r in rows if r["exchange"] == "JPX" and r["batch_eligible"] == "true"]
     write_csv(
-        args.output / "jpx_verified_symbols_67_v2_38b.csv",
+        args.output / "jpx_verified_symbols_v2_38b.csv",
         [{"pilot_id": r["asset_id"], "ticker": r["ticker"], "exchange": "JPX", "status": "resolved_prior_exact_match", "provider_symbol": r["provider_symbol"]} for r in jpx_ready],
         ["pilot_id", "ticker", "exchange", "status", "provider_symbol"],
     )

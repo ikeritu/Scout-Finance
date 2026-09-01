@@ -22,15 +22,17 @@ def main() -> int:
         rows = list(csv.DictReader(f))
     assert len(rows) == 43089 == len({r["asset_id"] for r in rows})
     assert sum(r["eligibility_status"] == "ELIGIBLE" for r in rows) == 21165
-    assert sum(r["batch_eligible"] == "true" for r in rows) == 763
+    with (OUT / "jpx_symbol_resolution_overlay_25_v2_38b.csv").open(encoding="utf-8", newline="") as handle:
+        overlay_count = sum(1 for _ in csv.DictReader(handle))
+    assert sum(r["batch_eligible"] == "true" for r in rows) == 738 + overlay_count
     assert Counter(r["acquisition_status"] for r in rows) == {
-        "READY_FOR_CONTROLLED_BATCH": 763, "SYMBOL_RESOLUTION_REQUIRED": 3634, "USER_ACTION_REQUIRED": 5011,
+        "READY_FOR_CONTROLLED_BATCH": 738 + overlay_count, "SYMBOL_RESOLUTION_REQUIRED": 3659 - overlay_count, "USER_ACTION_REQUIRED": 5011,
         "SOURCE_RESEARCH_REQUIRED": 10486, "LICENSE_BLOCKED": 1271,
         "METADATA_REPAIR_REQUIRED": 1782, "REVIEW_REQUIRED": 9710, "NOT_ELIGIBLE": 10432,
     }
     assert all(len(r["evidence_hash"]) == 64 and r["attempt_count"] == "0" for r in rows)
-    assert sum(r["exchange"] == "JPX" and bool(r["provider_symbol"]) for r in rows) == 67
-    print("PASS: v2.38B/contract/43089/21165/763-ready/3634-symbol-resolution/closed-states/no-phase9c")
+    assert sum(r["exchange"] == "JPX" and bool(r["provider_symbol"]) for r in rows) == 42 + overlay_count
+    print(f"PASS: v2.38B/contract/43089/21165/{738 + overlay_count}-ready/{3659 - overlay_count}-symbol-resolution/closed-states/no-phase9c")
     return 0
 
 

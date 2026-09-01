@@ -10,6 +10,7 @@ TESTS = [
     "qa_phase9b_contract_manifest_v2_38b.py",
     "qa_phase9b_market_plan_v2_38b.py",
     "qa_phase9b_orchestrator_v2_38b.py",
+    "qa_jpx_global_symbol_resolver_v2_38b.py",
     "qa_phase9b_controlled_pilot_report_v2_38b.py",
     "qa_phase9a_full_suite_v2_38a.py",
 ]

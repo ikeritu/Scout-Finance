@@ -13,7 +13,9 @@ def main() -> int:
     rows = list(csv.DictReader((OUT / "market_acquisition_plan_v2_38b.csv").open(encoding="utf-8", newline="")))
     by_market = {r["exchange"]: r for r in rows}
     assert len(rows) == 15 and sum(int(r["rows"]) for r in rows) == 43089
-    assert int(by_market["JPX"]["batch_eligible_rows"]) == 67
+    with (OUT / "jpx_symbol_resolution_overlay_25_v2_38b.csv").open(encoding="utf-8", newline="") as handle:
+        overlay_count = sum(1 for _ in csv.DictReader(handle))
+    assert int(by_market["JPX"]["batch_eligible_rows"]) == 42 + overlay_count
     assert by_market["JPX"]["primary_status"] == "SYMBOL_RESOLUTION_REQUIRED"
     assert int(by_market["TWSE"]["batch_eligible_rows"]) == 696
     assert sum(int(by_market[x]["eligible_rows"]) for x in ("NASDAQ", "NYSE", "NYSE American", "Cboe BZX")) == 5011
@@ -23,10 +25,10 @@ def main() -> int:
     assert all(r["real_collection_authorized"] == "false" and r["blocker"] for r in rows)
     summary = json.loads((OUT / "global_enrichment_summary_v2_38b.json").read_text(encoding="utf-8"))
     assert summary["network_calls"] == 0 and summary["prices_downloaded"] == summary["fundamentals_downloaded"] == 0
-    jpx = list(csv.DictReader((OUT / "jpx_verified_symbols_67_v2_38b.csv").open(encoding="utf-8", newline="")))
+    jpx = list(csv.DictReader((OUT / "jpx_verified_symbols_v2_38b.csv").open(encoding="utf-8", newline="")))
     jpx_pilot = list(csv.DictReader((OUT / "jpx_symbol_resolution_pilot_25_v2_38b.csv").open(encoding="utf-8", newline="")))
     twse_pilot = list(csv.DictReader((OUT / "twse_collection_pilot_25_v2_38b.csv").open(encoding="utf-8", newline="")))
-    assert len(jpx) == 67 and all(r["provider_symbol"] for r in jpx)
+    assert len(jpx) == 42 + overlay_count and all(r["provider_symbol"] for r in jpx)
     assert len(jpx_pilot) == len(twse_pilot) == 25
     assert not ({r["ticker"] for r in jpx} & {r["ticker"] for r in jpx_pilot})
     print("PASS: v2.38B/15-markets/JPX-TWSE-ready/US-user-action/Europe-ASX-blocked/no-network")
