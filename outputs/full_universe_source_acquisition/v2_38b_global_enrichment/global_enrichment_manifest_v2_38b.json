@@ -17,16 +17,16 @@
       "sha256": "5a4be6ef4cc801fb2c51bab55ed9ca8af81054ef46c23bf15bc2b76f4e3a7e1c"
     },
     "PHASE9B_EXECUTION_STATUS_v2_38b.md": {
-      "bytes": 1940,
-      "sha256": "bbe772a35b8344317747decba7480835e8d35da99753d40a4efa00b61acceaf9"
+      "bytes": 2143,
+      "sha256": "221ee07ea82bffc6ae0dc38b141e184f7775c6a43a89c9dccd87dc238bd42fc6"
     },
     "PHASE9B_GATE_v2_38b.md": {
       "bytes": 895,
       "sha256": "f304d9d5fa0013d2cdc38eab4e6b9d676f635a2426db493c2719ff6ffb235bf1"
     },
     "README.md": {
-      "bytes": 387,
-      "sha256": "b1d97116f57daa60f67297b6ae4db545aa60948af383eb07385d0c1c4530550b"
+      "bytes": 632,
+      "sha256": "cbc59ee5d9a7294117e5edc061507392001d014d1e94716095ef4a6dfd578eba"
     },
     "global_acquisition_manifest_v2_38b.csv.xz": {
       "bytes": 1683004,

@@ -23,6 +23,7 @@ La infraestructura y planificación reproducible están completadas sobre las 43
 - Plan para los 15 mercados.
 - Orquestador con dry-run, puerta de credenciales, límite de lote y bloqueo de adaptadores no autorizados.
 - QA offline y regresión completa de 9A.
+- El manifiesto detallado comprimido se genera localmente y queda fuera de Git para evitar transferencias binarias corruptas; su entrada está fijada por hash y su reproducción forma parte de la suite.
 
 ## Bloqueos reales
 

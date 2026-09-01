@@ -15,6 +15,10 @@ TESTS = [
 
 
 def main() -> int:
+    build = subprocess.run([sys.executable, str(ROOT / "scripts/build_global_acquisition_manifest_v2_38b.py")], cwd=ROOT)
+    if build.returncode:
+        print("FAIL: build_global_acquisition_manifest_v2_38b.py")
+        return build.returncode
     for test in TESTS:
         result = subprocess.run([sys.executable, str(ROOT / "tests" / test)], cwd=ROOT)
         if result.returncode:

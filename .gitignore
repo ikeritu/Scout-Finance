@@ -20,6 +20,7 @@ env/
 # Outputs and cache
 outputs/logs/*
 outputs/exports/*
+outputs/full_universe_source_acquisition/v2_38b_global_enrichment/global_acquisition_manifest_v2_38b.csv.xz
 data/cache/demo/*
 data/cache/real/*
 
