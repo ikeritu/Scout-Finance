@@ -1,0 +1,2 @@
+asset_id,ticker,exchange,review_status,reason,evidence_source
+U33374,2153,JPX,MANUAL_REVIEW_REQUIRED,company_name_mismatch,J-Quants equities master

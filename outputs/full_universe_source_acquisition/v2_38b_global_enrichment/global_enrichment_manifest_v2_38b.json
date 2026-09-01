@@ -48,6 +48,10 @@
       "bytes": 951,
       "sha256": "a5908d974f362eef56d1861092c1c78eb87be0c431f1f2a060a6f42d27185d26"
     },
+    "jpx_symbol_resolution_review_v2_38b.csv": {
+      "bytes": 148,
+      "sha256": "5b8ade2174904038381c7bd99e0b5f073cb3691a61dfeab86e74175e1d92f328"
+    },
     "jpx_verified_symbols_v2_38b.csv": {
       "bytes": 13082,
       "sha256": "26219ee8345fdbeb04b5020bdbe82ce22900c99a1d524fd83735cf9b6e7cf30b"

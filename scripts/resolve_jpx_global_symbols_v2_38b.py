@@ -18,10 +18,13 @@ BASE = ROOT / "outputs/full_universe_source_acquisition/v2_38b_global_enrichment
 SOURCE = ROOT / "outputs/full_universe_source_acquisition/v2_38a_global_universe_audit/global_universe_audited_v2_38a.csv.xz"
 KNOWN = ROOT / "outputs/full_universe_source_acquisition/v2_33g_jquants_price_pilot/jquants_symbol_resolution_v2_33g.csv"
 OVERLAY = BASE / "jpx_symbol_resolution_overlay_25_v2_38b.csv"
+REVIEW = BASE / "jpx_symbol_resolution_review_v2_38b.csv"
 RUNTIME = BASE / "jpx_global_resolution_runtime_v2_38b"
 TOKEN_ENV = "SCOUT_FINANCE_JQUANTS_REFRESH_TOKEN"
 MASTER_URL = "https://api.jquants.com/v2/equities/master"
 FIELDS = ["asset_id", "ticker", "exchange", "provider_symbol", "resolution_status", "evidence_source"]
+REVIEW_FIELDS = ["asset_id", "ticker", "exchange", "review_status", "reason", "evidence_source"]
+PERMANENT_REVIEW_REASONS = {"code_not_found", "company_name_mismatch", "provider_symbol_empty"}
 MIN_SECONDS_BETWEEN_CALLS = 15.0
 
 
@@ -43,6 +46,22 @@ def write_overlay(path: Path, rows: list[dict[str, str]]) -> None:
     with temporary.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader(); writer.writerows(rows)
+    temporary.replace(path)
+
+
+def write_review(path: Path, rows: list[dict[str, str]]) -> None:
+    rows = sorted(rows, key=lambda row: row["asset_id"])
+    if len(rows) != len({row["asset_id"] for row in rows}) or len(rows) != len({row["ticker"] for row in rows}):
+        raise ValueError("review ledger contains duplicate asset_id or ticker")
+    if any(row.get("review_status") != "MANUAL_REVIEW_REQUIRED" for row in rows):
+        raise ValueError("review ledger contains an invalid status")
+    if any(row.get("reason") not in PERMANENT_REVIEW_REASONS for row in rows):
+        raise ValueError("review ledger contains an invalid reason")
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=REVIEW_FIELDS, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
     temporary.replace(path)
 
 
@@ -78,6 +97,7 @@ def main() -> int:
     parser.add_argument("--source", type=Path, default=SOURCE)
     parser.add_argument("--known", type=Path, default=KNOWN)
     parser.add_argument("--overlay", type=Path, default=OVERLAY)
+    parser.add_argument("--review", type=Path, default=REVIEW)
     parser.add_argument("--runtime", type=Path, default=RUNTIME)
     parser.add_argument("--min-seconds", type=float, default=MIN_SECONDS_BETWEEN_CALLS)
     args = parser.parse_args()
@@ -91,11 +111,38 @@ def main() -> int:
     if any(row.get("resolution_status") != "EXACT_COMPANY_NAME_MATCH" for row in overlay):
         print(json.dumps({"status": "BLOCKED", "reason": "overlay_contains_non_exact_resolution"}))
         return 2
+    review = read_csv(args.review) if args.review.exists() else []
+    if any(row.get("review_status") != "MANUAL_REVIEW_REQUIRED" for row in review):
+        print(json.dumps({"status": "BLOCKED", "reason": "review_ledger_contains_invalid_status"}))
+        return 2
+    if any(row.get("reason") not in PERMANENT_REVIEW_REASONS for row in review):
+        print(json.dumps({"status": "BLOCKED", "reason": "review_ledger_contains_invalid_reason"}))
+        return 2
+    if len(review) != len({row["asset_id"] for row in review}) or len(review) != len({row["ticker"] for row in review}):
+        print(json.dumps({"status": "BLOCKED", "reason": "review_ledger_contains_duplicates"}))
+        return 2
+
     completed_ids = {row["asset_id"] for row in overlay}
     completed_tickers = known_tickers | {row["ticker"] for row in overlay}
-    pending = [row for row in source if row["asset_id"] not in completed_ids and row["ticker"] not in completed_tickers]
+    review_ids = {row["asset_id"] for row in review}
+    review_tickers = {row["ticker"] for row in review}
+    pending = [
+        row for row in source
+        if row["asset_id"] not in completed_ids
+        and row["ticker"] not in completed_tickers
+        and row["asset_id"] not in review_ids
+        and row["ticker"] not in review_tickers
+    ]
     selected = pending[:args.limit]
-    plan = {"requested_limit": args.limit, "eligible_jpx": len(source), "already_resolved": len(known_tickers) + len(overlay), "remaining": len(pending), "selected": len(selected), "asset_ids": [row["asset_id"] for row in selected]}
+    plan = {
+        "requested_limit": args.limit,
+        "eligible_jpx": len(source),
+        "already_resolved": len(known_tickers) + len(overlay),
+        "manual_review": len(review),
+        "remaining_actionable": len(pending),
+        "selected": len(selected),
+        "asset_ids": [row["asset_id"] for row in selected],
+    }
     if not args.execute:
         print(json.dumps({"status": "DRY_RUN", **plan}, ensure_ascii=False))
         return 0
@@ -122,6 +169,16 @@ def main() -> int:
             resolved += 1
         else:
             failures.append({"asset_id": row["asset_id"], "ticker": row["ticker"], "reason": reason})
+            if reason in PERMANENT_REVIEW_REASONS:
+                review.append({
+                    "asset_id": row["asset_id"],
+                    "ticker": row["ticker"],
+                    "exchange": "JPX",
+                    "review_status": "MANUAL_REVIEW_REQUIRED",
+                    "reason": reason,
+                    "evidence_source": "J-Quants equities master",
+                })
+                write_review(args.review, review)
         print(f"[{index + 1}/{len(selected)}] {row['asset_id']} -> {reason}", flush=True)
     report = {"status": "COMPLETED" if not failures else "COMPLETED_WITH_ERRORS", **plan, "resolved": resolved, "failed": len(failures), "failures": failures, "network_calls": len(selected), "phase9c_authorized": False}
     report_path = args.runtime / "latest_resolution_report_v2_38b.json"
