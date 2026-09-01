@@ -22,22 +22,29 @@ def copy_input(root: Path, relative: str) -> None:
     shutil.copy2(ROOT / relative, target)
 
 
-def main() -> int:
-    aggregate = load_product_data(ROOT)
-    assert aggregate.mode == DataMode.AGGREGATE_ONLY
-    assert len(aggregate.assets) == 50 and len({a["asset_id"] for a in aggregate.assets}) == 50
-    assert Counter(a["eligibility_status"] for a in aggregate.assets) == {
+def assert_canonical_population(data) -> None:
+    assert len(data.assets) == 50 and len({a["asset_id"] for a in data.assets}) == 50
+    assert Counter(a["eligibility_status"] for a in data.assets) == {
         "ELIGIBLE_PARTIAL": 41, "PARTIAL_COMPARABILITY": 7, "REVIEW_REQUIRED": 2,
     }
-    assert all(a["rank"] is None for a in aggregate.assets if a["market"] == "TWSE")
-    assert {a["asset_id"] for a in aggregate.assets if a["eligibility_status"] == "REVIEW_REQUIRED"} == {"P020", "P178"}
-    assert len([a for a in aggregate.assets if a["rank"]]) == 10
+    assert all(a["rank"] is None for a in data.assets if a["market"] == "TWSE")
+    assert {a["asset_id"] for a in data.assets if a["eligibility_status"] == "REVIEW_REQUIRED"} == {"P020", "P178"}
+    assert len([a for a in data.assets if a["rank"]]) == (41 if data.local_scoring else 10)
+
+
+def main() -> int:
+    installed = load_product_data(ROOT)
+    assert installed.mode in {DataMode.AGGREGATE_ONLY, DataMode.PARTIAL_DATA, DataMode.REAL_LOCAL_READY}
+    assert_canonical_population(installed)
 
     with tempfile.TemporaryDirectory() as directory:
         sandbox = Path(directory)
         blocked = load_product_data(sandbox)
         assert blocked.mode == DataMode.BLOCKED_MISSING_DATA and not blocked.assets
         copy_input(sandbox, UNIVERSE_REL); copy_input(sandbox, AGGREGATE_REL)
+        aggregate = load_product_data(sandbox)
+        assert aggregate.mode == DataMode.AGGREGATE_ONLY
+        assert_canonical_population(aggregate)
         detailed = []
         for asset in aggregate.assets:
             detailed.append({
