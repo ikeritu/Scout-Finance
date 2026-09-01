@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TESTS = [
+    "tests/qa_research_recommendations_v2_38.py",
     "tests/qa_product_contract_v2_37b.py",
     "tests/qa_ui_data_readiness_v2_37c.py",
     "tests/qa_watchlists_reports_v2_37.py",

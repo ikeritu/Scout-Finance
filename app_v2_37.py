@@ -7,6 +7,7 @@ import pandas as pd
 import streamlit as st
 
 from src.ui_v2_37.repository import DataMode, load_fundamentals, load_price_series, load_product_data
+from src.ui_v2_37.recommendations import MIN_INTEREST_SCORE, candidate_explanation, select_interesting_companies
 from src.ui_v2_37.reports import DISCLAIMER, asset_markdown, manifest, ranking_markdown, to_html, watchlist_markdown
 from src.ui_v2_37.ui import apply, banner, heading
 from src.ui_v2_37.watchlists import STATUSES, add, atomic_write, create, export_csv, read, remove, scan, update
@@ -91,6 +92,19 @@ def factor_label(value: str) -> str:
     return FACTOR_LABELS.get(value, value.replace("_", " ").capitalize())
 
 
+def explanation_item(value: str) -> str:
+    kind, name, *score = value.split(":")
+    fixed = {
+        "criterion:high_confidence": "Confianza alta",
+        "criterion:score_above": f"Supera el umbral de {MIN_INTEREST_SCORE:.0f}/100",
+        "limitation:aggregate_detail_unavailable": "Detalle de factores no disponible en este equipo",
+    }
+    if f"{kind}:{name}" in fixed:
+        return fixed[f"{kind}:{name}"]
+    label = PILLAR_LABELS.get(name, factor_label(name)) if kind == "pillar" else factor_label(name)
+    return f"{label} ({score[0]}/100)" if score else label
+
+
 def display_rows(assets):
     return pd.DataFrame([{
         "ID": a["asset_id"], "Ticker": a["ticker"], "Empresa": a["company_name"], "Mercado": a["market"],
@@ -101,8 +115,29 @@ def display_rows(assets):
 
 
 def render_home(data):
-    heading(st, "Scout Finance", "Centro local de investigación financiera · v2.37")
+    heading(st, "Scout Finance", "Empresas interesantes para investigar · v2.38")
     banner(st)
+    candidates = select_interesting_companies(data.assets)
+    st.markdown("## Selección actual")
+    st.write(
+        f"He encontrado **{len(candidates)} empresas interesantes para investigar** con los datos disponibles. "
+        f"La selección varía automáticamente y exige confianza alta y un score mínimo de {MIN_INTEREST_SCORE:.0f}/100."
+    )
+    if not candidates:
+        st.warning("Ahora mismo ninguna empresa supera los criterios. Scout Finance no fuerza recomendaciones.")
+    for asset in candidates:
+        explanation = candidate_explanation(asset)
+        with st.container(border=True):
+            left, right = st.columns([4, 1])
+            left.subheader(f'{asset["company_name"]} · {asset["ticker"]}')
+            left.write(explanation["summary"])
+            left.write("**Por qué resulta interesante:** " + ", ".join(explanation_item(item) for item in explanation["reasons"]))
+            left.write("**Qué conviene vigilar:** " + ", ".join(explanation_item(item) for item in explanation["cautions"]))
+            right.metric("Posición", asset.get("rank") or "N/D")
+            if right.button("Ver análisis", key=f'home-{asset["asset_id"]}'):
+                go("asset", asset["asset_id"])
+    st.caption("Selección cuantitativa para priorizar investigación; no equivale a una recomendación de compra.")
+    st.divider()
     cols = st.columns(4)
     cols[0].metric("Activos", len(data.assets))
     cols[1].metric("Ranking principal", sum(a["eligibility_status"] == "ELIGIBLE_PARTIAL" for a in data.assets))
@@ -120,7 +155,7 @@ def render_home(data):
     (st.success if data.mode == DataMode.REAL_LOCAL_READY else st.warning)(f"{title}: {body}")
     st.caption(f"Fecha de corte: {data.as_of_date or 'no disponible'} · Sin llamadas de red · Ejecución local")
     st.markdown("### Qué puedes hacer")
-    st.write("Explorar el universo, revisar el ranking experimental, consultar fichas, comparar activos, mantener una watchlist privada y exportar informes con trazabilidad.")
+    st.write("Empezar por la selección propuesta, abrir sus argumentos, comparar empresas, mantener una watchlist privada y exportar informes con trazabilidad.")
     st.markdown("### Qué no hace Scout Finance")
     st.write("No recomienda operaciones, no predice rentabilidad, no se conecta a brokers y no ejecuta trading automático.")
 
