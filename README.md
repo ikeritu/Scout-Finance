@@ -1,7 +1,9 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
-**Fase 9A (auditoría global) — cerrada** (`COMPLETED_GLOBAL_CENSUS_READY_FOR_SOURCE_PLANNING`, v2.38A). El censo canónico conserva 43.089 filas y separa 21.165 elegibles, 10.432 excluidas, 9.710 revisables y 1.782 bloqueadas. La fase 9B no está autorizada; no se han calculado scores, rankings ni recomendaciones globales.
+**Fase 9B — infraestructura construida, adquisición real bloqueada** (`BLOCKED_EXTERNAL_ACTIONS_AFTER_INFRASTRUCTURE_READY`, v2.38B). El manifiesto conserva 43.089 filas: 738 listas para lote controlado (42 JPX ya verificadas + 696 TWSE), 3.659 JPX requieren resolución exacta y 5.011 estadounidenses requieren cuenta/licencia/piloto. No se han descargado datos nuevos ni calculado scoring global.
+
+**Fase 9A (auditoría global) — cerrada** (`COMPLETED_GLOBAL_CENSUS_READY_FOR_SOURCE_PLANNING`, v2.38A). El censo canónico conserva 43.089 filas y separa 21.165 elegibles, 10.432 excluidas, 9.710 revisables y 1.782 bloqueadas.
 
 **Fase 8 (producto local) — cerrada** (`COMPLETED_LOCAL_PRODUCT`, v2.37). La entrada canónica sigue siendo `app_v2_37.py` y limitada a 50 activos; conserva de forma visible la decisión de fase 7 **`INSUFFICIENT_EVIDENCE`** y no autoriza broker, trading ni despliegue público.
 
@@ -19,7 +21,7 @@
 - **SGX y Xetra:** identidad reparada (SGX 100 %, Xetra 88,2 %) vía OpenFIGI; sin fuente de precios evaluada todavía.
 - **Fuentes descartadas como mundiales:** EODHD (`COMPLETED_NO_PROMOTION`), Twelve Data en su versión global (solo cubre EE. UU./forex/cripto de forma gratuita).
 - Historial completo, cierre por cierre (v2.33D1 a v2.35C), en `CHANGELOG.md`.
-- Extensión global: **9A cerrada; 9B no autorizada**. Informe: `outputs/full_universe_source_acquisition/v2_38a_global_universe_audit/GLOBAL_UNIVERSE_AUDIT_v2_38a.md`. El ranking de la app sigue limitado a 50 activos, es experimental y no está validado históricamente.
+- Extensión global: **9A cerrada; 9B bloqueada tras completar su infraestructura offline; 9C no autorizada**. Estado: `outputs/full_universe_source_acquisition/v2_38b_global_enrichment/PHASE9B_EXECUTION_STATUS_v2_38b.md`. El ranking de la app sigue limitado a 50 activos, es experimental y no está validado históricamente.
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
 

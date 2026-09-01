@@ -1,0 +1,16 @@
+exchange,rows,eligible_rows,batch_eligible_rows,primary_status,price_provider,fundamental_provider,license_status,pilot_required,real_collection_authorized,blocker
+ASX,1316,1271,0,LICENSE_BLOCKED,none free,unresolved,paid_license_required,true,false,official historical distribution requires payment
+BVC,23,3,0,SOURCE_RESEARCH_REQUIRED,SFC summary only,unresolved,insufficient,true,false,validated daily series unavailable
+CBOE,1220,0,0,REVIEW_REQUIRED,not evaluated,unresolved,not_evaluated,true,false,provider_type_not_resolved
+CBOE_EUROPE,21154,10483,0,SOURCE_RESEARCH_REQUIRED,none actionable,unresolved,not_applicable,true,false,home market mapping and actionable source unavailable
+Cboe BZX,4,1,0,USER_ACTION_REQUIRED,Twelve Data candidate,unresolved,cache_terms_unresolved,true,false,"account, credential, license confirmation and pilot required"
+HKEX,3200,0,0,REVIEW_REQUIRED,not evaluated,unresolved,not_evaluated,true,false,provider_type_not_resolved
+JPX,3705,3701,42,SYMBOL_RESOLUTION_REQUIRED,J-Quants,J-Quants,personal_use_confirmed,true,false,resolved by exact J-Quants catalog match in v2.33G
+NASDAQ,4336,3016,0,USER_ACTION_REQUIRED,Twelve Data candidate,unresolved,cache_terms_unresolved,true,false,"account, credential, license confirmation and pilot required"
+NSE,2013,0,0,REVIEW_REQUIRED,not evaluated,unresolved,not_evaluated,true,false,unclassified_and_missing_ticker_or_company_name
+NYSE,3362,1761,0,USER_ACTION_REQUIRED,Twelve Data candidate,unresolved,cache_terms_unresolved,true,false,"account, credential, license confirmation and pilot required"
+NYSE American,265,233,0,USER_ACTION_REQUIRED,Twelve Data candidate,unresolved,cache_terms_unresolved,true,false,"account, credential, license confirmation and pilot required"
+NYSE Arca,13,0,0,NOT_ELIGIBLE,not evaluated,unresolved,not_evaluated,true,false,company_name_indicates_etf_etn_or_exchange_traded_product
+SGX,358,0,0,METADATA_REPAIR_REQUIRED,not evaluated,unresolved,not_evaluated,true,false,sgx_ticker_and_name_fields_require_source_schema_repair
+TWSE,696,696,696,READY_FOR_CONTROLLED_BATCH,TWSE official open data,TWSE MOPS,open_government_data,true,false,pilot validated; prices remain unadjusted and publication dates incomplete
+XETR,1424,0,0,METADATA_REPAIR_REQUIRED,not evaluated,unresolved,not_evaluated,true,false,xetra_company_name_field_contains_classification_codes

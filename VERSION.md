@@ -1,7 +1,9 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
-**Fase 9A — cerrada como censo global auditable** (`COMPLETED_GLOBAL_CENSUS_READY_FOR_SOURCE_PLANNING`, v2.38A). El universo canónico contiene 43.089 filas y queda preparado únicamente para planificación de fuentes. La fase 9B no está autorizada y no existe scoring ni recomendación global.
+**Fase 9B — infraestructura offline completada y adquisición real bloqueada** (`BLOCKED_EXTERNAL_ACTIONS_AFTER_INFRASTRUCTURE_READY`, v2.38B). El universo canónico contiene 43.089 filas; 738 tienen símbolo y ruta listos para lote controlado, 3.659 JPX requieren catálogo y 5.011 estadounidenses requieren acción externa. No existe scoring ni recomendación global.
+
+**Fase 9A — cerrada como censo global auditable** (`COMPLETED_GLOBAL_CENSUS_READY_FOR_SOURCE_PLANNING`, v2.38A).
 
 **Fase 8 — cerrada como producto local** (`COMPLETED_LOCAL_PRODUCT`, v2.37). La entrada canónica `app_v2_37.py` conserva la decisión de fase 7 `INSUFFICIENT_EVIDENCE` y permanece limitada a 50 activos locales, sin broker ni trading.
 
@@ -24,7 +26,7 @@
 - SGX/Xetra (v2.33P): identidad reparada (SGX 100 %, Xetra 88,2 %) vía OpenFIGI; sin fuente de precios evaluada todavía.
 - Arquitectura multifuente de precios (v2.33Q): esquema canónico `PriceRecord` + adaptadores J-Quants/TWSE, verificados contra 50 activos reales.
 - EE. UU. (v2.33M): `BLOCKED_USER_ACTION_REQUIRED` — Twelve Data es la única candidata, requiere que el usuario cree la cuenta.
-- Progreso histórico: **8/8 fases originales cerradas**; extensión global **9A cerrada / 9B no autorizada**.
+- Progreso histórico: **8/8 fases originales cerradas**; extensión global **9A cerrada / 9B infraestructura lista pero adquisición bloqueada / 9C no autorizada**.
 - Cierre: suite completa offline y checklist funcional con datos locales reales en Windows 11 superados el 2026-09-01.
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->

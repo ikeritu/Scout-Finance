@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scout-finance.local/schemas/global_acquisition_record_v1.schema.json",
+  "title": "GlobalAcquisitionRecord v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["asset_id", "ticker", "exchange", "eligibility_status", "identity_status", "provider_route", "price_provider", "fundamental_provider", "license_status", "provider_symbol", "symbol_resolution_status", "acquisition_status", "batch_eligible", "blocker_reason", "attempt_count", "last_success_date", "evidence_hash", "phase"],
+  "properties": {
+    "asset_id": {"type": "string", "pattern": "^U[0-9]{5}$"},
+    "ticker": {"type": "string"},
+    "exchange": {"type": "string"},
+    "eligibility_status": {"type": "string"},
+    "identity_status": {"type": "string"},
+    "provider_route": {"type": "string"},
+    "price_provider": {"type": "string"},
+    "fundamental_provider": {"type": "string"},
+    "license_status": {"type": "string"},
+    "provider_symbol": {"type": "string"},
+    "symbol_resolution_status": {"enum": ["DETERMINISTIC_RULE_AVAILABLE", "PROVIDER_LOOKUP_REQUIRED", "NOT_APPLICABLE", "BLOCKED"]},
+    "acquisition_status": {"enum": ["READY_FOR_CONTROLLED_BATCH", "SYMBOL_RESOLUTION_REQUIRED", "USER_ACTION_REQUIRED", "SOURCE_RESEARCH_REQUIRED", "LICENSE_BLOCKED", "METADATA_REPAIR_REQUIRED", "REVIEW_REQUIRED", "NOT_ELIGIBLE"]},
+    "batch_eligible": {"enum": ["true", "false"]},
+    "blocker_reason": {"type": "string"},
+    "attempt_count": {"type": "integer", "minimum": 0},
+    "last_success_date": {"type": "string"},
+    "evidence_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "phase": {"const": "v2.38B"}
+  }
+}

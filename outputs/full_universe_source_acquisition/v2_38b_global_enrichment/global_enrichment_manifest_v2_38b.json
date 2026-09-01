@@ -1,0 +1,57 @@
+{
+  "decision": "BLOCKED_EXTERNAL_ACTIONS_AFTER_INFRASTRUCTURE_READY",
+  "guardrails": {
+    "credentials_used": false,
+    "maximum_batch_assets": 500,
+    "network_calls": 0,
+    "phase9c_authorized": false
+  },
+  "input": {
+    "path": "outputs/full_universe_source_acquisition/v2_38a_global_universe_audit/global_universe_audited_v2_38a.csv.xz",
+    "rows": 43089,
+    "sha256": "66d02e1b7a0ee7b7e7db66efc266a4a1f608c96b408c862f111c616179103e83"
+  },
+  "outputs": {
+    "GLOBAL_ENRICHMENT_CONTRACT_v2_38b.md": {
+      "bytes": 1417,
+      "sha256": "5a4be6ef4cc801fb2c51bab55ed9ca8af81054ef46c23bf15bc2b76f4e3a7e1c"
+    },
+    "PHASE9B_EXECUTION_STATUS_v2_38b.md": {
+      "bytes": 1940,
+      "sha256": "bbe772a35b8344317747decba7480835e8d35da99753d40a4efa00b61acceaf9"
+    },
+    "PHASE9B_GATE_v2_38b.md": {
+      "bytes": 895,
+      "sha256": "f304d9d5fa0013d2cdc38eab4e6b9d676f635a2426db493c2719ff6ffb235bf1"
+    },
+    "README.md": {
+      "bytes": 387,
+      "sha256": "b1d97116f57daa60f67297b6ae4db545aa60948af383eb07385d0c1c4530550b"
+    },
+    "global_acquisition_manifest_v2_38b.csv.xz": {
+      "bytes": 1683004,
+      "sha256": "30b45836fbc886226ec199850059200aced7f7041d47f00f0bd01e79e62a293d"
+    },
+    "global_enrichment_summary_v2_38b.json": {
+      "bytes": 764,
+      "sha256": "1e3821853b3e08fd7b683a42b1b08e862dad239973f10a2d73ecb3cad36bc8b0"
+    },
+    "jpx_symbol_resolution_pilot_25_v2_38b.csv": {
+      "bytes": 988,
+      "sha256": "f57b2e4bb3683e9e02807195e9a9493c75d9e5bb0ab2e8a488b0f68151498032"
+    },
+    "jpx_verified_symbols_42_v2_38b.csv": {
+      "bytes": 2106,
+      "sha256": "46df20d8e1021683eb95a682ec30fe556ed73f8713d8f49dce9e93c4deea7587"
+    },
+    "market_acquisition_plan_v2_38b.csv": {
+      "bytes": 2358,
+      "sha256": "978a0257d591ca38f6beac897418af9445b5a5d72e6d86434993b03945324e03"
+    },
+    "twse_collection_pilot_25_v2_38b.csv": {
+      "bytes": 1469,
+      "sha256": "5b3b5512e8f30fa7e524f5c4151fd04fa98694df0beac6e1ae27bc219c9ccb8b"
+    }
+  },
+  "phase": "v2.38B-global-enrichment"
+}

@@ -1,0 +1,17 @@
+{
+  "contract_version": "1.0.0",
+  "phase": "v2.38B-global-enrichment",
+  "input_manifest": "outputs/full_universe_source_acquisition/v2_38a_global_universe_audit/global_universe_audited_v2_38a.csv.xz",
+  "input_sha256": "66d02e1b7a0ee7b7e7db66efc266a4a1f608c96b408c862f111c616179103e83",
+  "expected_rows": 43089,
+  "expected_eligible_rows": 21165,
+  "maximum_batch_assets": 500,
+  "execution_default": "BLOCKED",
+  "raw_data_git_policy": "FORBIDDEN",
+  "credential_policy": "ENVIRONMENT_ONLY",
+  "allowed_initial_markets": ["JPX", "TWSE", "NASDAQ", "NYSE", "NYSE American", "Cboe BZX"],
+  "forbidden_actions": ["global_unbounded_download", "paid_subscription", "symbol_guessing", "synthetic_values", "scoring", "ranking", "recommendations", "phase9c"],
+  "phase9c_authorized": false,
+  "allow_ranking": false,
+  "production_scoring_authorized": false
+}

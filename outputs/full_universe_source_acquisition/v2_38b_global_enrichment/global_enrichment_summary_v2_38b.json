@@ -1,0 +1,26 @@
+{
+  "acquisition_status_counts": {
+    "LICENSE_BLOCKED": 1271,
+    "METADATA_REPAIR_REQUIRED": 1782,
+    "NOT_ELIGIBLE": 10432,
+    "READY_FOR_CONTROLLED_BATCH": 738,
+    "REVIEW_REQUIRED": 9710,
+    "SOURCE_RESEARCH_REQUIRED": 10486,
+    "SYMBOL_RESOLUTION_REQUIRED": 3659,
+    "USER_ACTION_REQUIRED": 5011
+  },
+  "batch_eligible_rows": 738,
+  "credentials_used": false,
+  "eligible_rows": 21165,
+  "fundamentals_downloaded": 0,
+  "input_rows": 43089,
+  "maximum_batch_assets": 500,
+  "network_calls": 0,
+  "phase": "v2.38B-global-enrichment",
+  "phase9c_authorized": false,
+  "prices_downloaded": 0,
+  "ranking_calculated": false,
+  "recommendations_generated": false,
+  "scoring_calculated": false,
+  "status": "INFRASTRUCTURE_READY_REAL_COLLECTION_BLOCKED"
+}
