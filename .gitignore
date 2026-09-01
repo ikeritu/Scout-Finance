@@ -85,3 +85,8 @@ outputs/full_universe_source_acquisition/v2_37_local_exports/
 # per-record equation deltas) -- only the aggregate report (counts, no
 # values) is committed
 outputs/full_universe_source_acquisition/v2_34h_validation/validation_detail_v2_34h.json
+
+# Local Phase 9B controlled-pilot evidence
+outputs/full_universe_source_acquisition/v2_38b_global_enrichment/jpx_price_pilot_25_results_v2_38b/
+outputs/full_universe_source_acquisition/v2_38b_global_enrichment/jpx_symbol_resolution_pilot_25_results_v2_38b/
+outputs/full_universe_source_acquisition/v2_38b_global_enrichment/twse_collection_pilot_25_results_v2_38b/
