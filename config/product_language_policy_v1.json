@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "preferred_terms": {
+    "ranking": "ranking experimental de investigación",
+    "score": "puntuación cuantitativa experimental",
+    "shortlist": "prioridad de investigación",
+    "partial": "comparabilidad parcial",
+    "review": "revisión requerida"
+  },
+  "forbidden_claims": [
+    "estrategia validada",
+    "rentabilidad esperada",
+    "oportunidad garantizada",
+    "señal de compra",
+    "recomendación de compra",
+    "predicción de rentabilidad"
+  ],
+  "required_context": "No constituye recomendación de comprar, vender o mantener ningún activo."
+}

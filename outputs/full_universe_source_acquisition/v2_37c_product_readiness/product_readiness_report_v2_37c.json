@@ -1,0 +1,21 @@
+{
+  "phase": "v2.37-phase8-product",
+  "status": "IMPLEMENTED_AWAITING_WINDOWS_UI_VALIDATION",
+  "canonical_entrypoint": "app_v2_37.py",
+  "runtime": "local_streamlit",
+  "canonical_assets": 50,
+  "main_rankable_jpx": 41,
+  "partial_comparability_twse": 7,
+  "review_required": 2,
+  "review_required_assets": ["P020", "P178"],
+  "aggregate_public_ranks": 10,
+  "phase7_decision": "INSUFFICIENT_EVIDENCE",
+  "historically_validated_scoring": false,
+  "network_calls": 0,
+  "broker_integration": false,
+  "automated_trading": false,
+  "public_deployment_authorized": false,
+  "offline_qa": "PASS",
+  "windows_real_local_ui_qa": "PENDING",
+  "phase8_decision": "PENDING_WINDOWS_VALIDATION"
+}

@@ -77,6 +77,9 @@ outputs/full_universe_source_acquisition/v2_35_phase6_scoring_local/
 outputs/full_universe_source_acquisition/v2_36_phase7_validation/point_in_time_signals_v2_36.jsonl
 outputs/full_universe_source_acquisition/v2_36_phase7_validation/backtest_detail_v2_36.json
 
+# Phase 8 local product exports (private research notes and derived reports)
+outputs/full_universe_source_acquisition/v2_37_local_exports/
+
 # Block H validation detail with real values (sanity-flag magnitudes,
 # per-record equation deltas) -- only the aggregate report (counts, no
 # values) is committed

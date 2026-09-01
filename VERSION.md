@@ -1,10 +1,10 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
-**Fase 7 — cerrada** con la decisión `INSUFFICIENT_EVIDENCE` (v2.36, 2026-08-31). La infraestructura point-in-time pasa QA, pero JPX no alcanza profundidad OOS y TWSE carece de temporalidad fundamental verificable/precios ajustados. Detalle en `outputs/full_universe_source_acquisition/v2_36_phase7_final_gate/PHASE7_FINAL_GATE_v2_36.md`.
+**Fase 8 — implementada, pendiente de validación visual en Windows** (`IMPLEMENTED_AWAITING_WINDOWS_UI_VALIDATION`, v2.37). La entrada candidata `app_v2_37.py` conserva la decisión de fase 7 `INSUFFICIENT_EVIDENCE` y permanece local, sin broker ni trading.
 
 - App/MVP: `v1.1C — MVP Final Freeze` (sin cambios).
-- Interfaz local estable: `v2.32F — local UI final freeze` (sin cambios).
+- Interfaz candidata: `v2.37 — producto local de investigación`; `v2.32F` permanece como interfaz estable anterior.
 - Pipeline de precios vigente: `v2.33R — Fase 4 Final Gate` (sin cambios), sobre la base de `v2.33D1`–`v2.33Q`.
 - Pipeline de fundamentales vigente: `v2.34J — Fase 5 Final Gate`, sobre la base de `v2.34A`–`v2.34I`.
 - Pipeline de scoring vigente: `v2.35C — Fase 6 Final Gate`, sobre la base de `v2.35A`–`v2.35B`.
@@ -22,8 +22,8 @@
 - SGX/Xetra (v2.33P): identidad reparada (SGX 100 %, Xetra 88,2 %) vía OpenFIGI; sin fuente de precios evaluada todavía.
 - Arquitectura multifuente de precios (v2.33Q): esquema canónico `PriceRecord` + adaptadores J-Quants/TWSE, verificados contra 50 activos reales.
 - EE. UU. (v2.33M): `BLOCKED_USER_ACTION_REQUIRED` — Twelve Data es la única candidata, requiere que el usuario cree la cuenta.
-- Progreso global: **7/8 fases cerradas**.
-- Siguiente fase: **fase 8 no autorizada.** Requiere decisión expresa y debe conservar el etiquetado experimental/no validado históricamente.
+- Progreso global: **7/8 fases cerradas**; fase 8 en validación final.
+- Siguiente gate: ejecutar `tests/qa_phase8_full_suite_v2_37.py` y el checklist de `GUIA_SCOUT_FINANCE_v2_37.md` en el equipo Windows con datos locales reales.
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
 

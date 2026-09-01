@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "product_version": "v2.37",
+  "runtime": "local_streamlit",
+  "canonical_entrypoint": "app_v2_37.py",
+  "allowed_data_modes": ["REAL_LOCAL_READY", "AGGREGATE_ONLY", "PARTIAL_DATA", "BLOCKED_MISSING_DATA", "INCOMPATIBLE_VERSION"],
+  "canonical_states": ["ELIGIBLE_PARTIAL", "PARTIAL_COMPARABILITY", "REVIEW_REQUIRED", "BLOCKED"],
+  "main_ranking_markets": ["JPX"],
+  "partial_markets": ["TWSE"],
+  "review_required_assets": ["P020", "P178"],
+  "phase7_decision": "INSUFFICIENT_EVIDENCE",
+  "historically_validated_scoring": false,
+  "investment_advice": false,
+  "broker_integration": false,
+  "automated_trading": false,
+  "public_deployment_authorized": false,
+  "network_calls_authorized": false,
+  "required_disclaimer": "Herramienta experimental de investigación. No constituye asesoramiento financiero. El scoring no dispone de evidencia histórica suficiente para considerarse predictivo."
+}

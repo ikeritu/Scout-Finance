@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.37 — producto local de investigación (pendiente de validación Windows)
+
+Añade una interfaz Streamlit nueva y aislada (`app_v2_37.py`) sobre el universo canónico de 50 activos. Separa 41 JPX en ranking experimental, 7 TWSE con comparabilidad parcial y P020/P178 en revisión requerida. Incorpora universo filtrable, fichas, comparador, watchlists privadas con escritura atómica, informes trazables y estados explícitos de disponibilidad. No usa red ni datos demo y mantiene visible `INSUFFICIENT_EVIDENCE`. La implementación y QA offline pasan; el cierre queda pendiente del recorrido visual con datos locales reales en Windows.
+
 ## v2.36 — gate de evidencia y cierre de la fase 7 (2026-08-31)
 
 Cierra la validación histórica como **`INSUFFICIENT_EVIDENCE`** sin observar rendimiento después de fallar el gate predefinido. JPX aporta 368–486 sesiones: insuficientes para formar factores de 12 meses y obtener dos ventanas OOS. TWSE tiene mayor profundidad, pero precios sin ajustar y fundamentales sin fecha de publicación verificable. Añade contrato congelado, primitives point-in-time, costes, benchmark, métricas deterministas y QA anti-look-ahead. La fase 8 no está autorizada.

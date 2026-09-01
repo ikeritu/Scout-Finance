@@ -1,0 +1,9 @@
+{
+  "phase": "v2.37A-product-audit",
+  "selected_base": "app_v2_28.py",
+  "new_entrypoint": "app_v2_37.py",
+  "legacy_app_modified": false,
+  "scoring_contract_modified": false,
+  "network_required": false,
+  "phase7_decision": "INSUFFICIENT_EVIDENCE"
+}
