@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "outputs/full_universe_source_acquisition/v2_38b_global_enrichment/global_acquisition_manifest_v2_38b.csv.xz"
-TOKEN_ENV = {"JPX": "JQUANTS_API_KEY", "NASDAQ": "TWELVE_DATA_API_KEY", "NYSE": "TWELVE_DATA_API_KEY", "NYSE American": "TWELVE_DATA_API_KEY", "Cboe BZX": "TWELVE_DATA_API_KEY"}
+TOKEN_ENV = {"JPX": "SCOUT_FINANCE_JQUANTS_REFRESH_TOKEN", "NASDAQ": "TWELVE_DATA_API_KEY", "NYSE": "TWELVE_DATA_API_KEY", "NYSE American": "TWELVE_DATA_API_KEY", "Cboe BZX": "TWELVE_DATA_API_KEY"}
 
 
 def main() -> int:

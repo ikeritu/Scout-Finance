@@ -22,7 +22,7 @@ def main() -> int:
     assert payload["status"] == "DRY_RUN" and payload["selected"] == 25 and len(payload["asset_ids"]) == 25
     oversized = run("--market", "JPX", "--limit", "501")
     assert oversized.returncode == 2 and json.loads(oversized.stdout)["reason"] == "batch_limit_must_be_1_to_500"
-    clean_env = {k: v for k, v in os.environ.items() if k not in {"JQUANTS_API_KEY", "TWELVE_DATA_API_KEY"}}
+    clean_env = {k: v for k, v in os.environ.items() if k not in {"JQUANTS_API_KEY", "SCOUT_FINANCE_JQUANTS_REFRESH_TOKEN", "TWELVE_DATA_API_KEY"}}
     execute = run("--market", "JPX", "--limit", "5", "--execute", env=clean_env)
     assert execute.returncode == 2 and json.loads(execute.stdout)["reason"] == "credential_missing"
     twse = run("--market", "TWSE", "--limit", "5", "--execute", env=clean_env)
