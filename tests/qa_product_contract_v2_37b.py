@@ -30,6 +30,9 @@ def main() -> int:
     app = (ROOT / "app_v2_37.py").read_text(encoding="utf-8")
     for screen in ("home", "universe", "ranking", "asset", "compare", "watchlist", "reports", "help"):
         assert f'"{screen}"' in app
+    for polish_marker in ("Clasificable parcial", "Margen absoluto superior al 300 %", "Entidad financiera: requiere", "stack=False", 'placeholder="Todos"'):
+        assert polish_marker in app
+    assert '"N/D" if a.get("total_score") is None' in app
     assert "prefers-reduced-motion" in (ROOT / "src/ui_v2_37/ui.py").read_text(encoding="utf-8")
     assert "demo" not in app.lower()
     print("PASS: v2.37B product-contract/experimental-language/local-only/no-broker/no-network")

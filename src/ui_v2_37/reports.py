@@ -17,11 +17,17 @@ def asset_markdown(asset: dict, as_of: str) -> str:
     return f"""# Scout Finance — Ficha de investigación
 
 **Generado:** {now()}
+
 **Fecha de corte:** {as_of}
+
 **Activo:** {asset['company_name']} ({asset['ticker']})
+
 **Mercado:** {asset['market']}
+
 **Estado:** {asset['eligibility_status']}
+
 **Confianza:** {asset['confidence']}
+
 **Score experimental:** {asset.get('total_score') if asset.get('total_score') is not None else 'No disponible'}
 **Validación histórica:** INSUFFICIENT_EVIDENCE
 
@@ -45,7 +51,9 @@ def ranking_markdown(assets: list[dict], as_of: str) -> str:
     return f"""# Scout Finance — Ranking experimental de investigación
 
 **Generado:** {now()}
+
 **Fecha de corte:** {as_of}
+
 **Decisión de fase 7:** INSUFFICIENT_EVIDENCE
 
 | Posición | Ticker | Empresa | Score | Confianza |
@@ -63,7 +71,9 @@ def watchlist_markdown(data: dict, as_of: str) -> str:
     return f"""# Scout Finance — Watchlist privada
 
 **Generado:** {now()}
+
 **Fecha de corte:** {as_of}
+
 **Lista:** {data['name']}
 
 | Ticker | Empresa | Mercado | Estado de investigación | Nota |

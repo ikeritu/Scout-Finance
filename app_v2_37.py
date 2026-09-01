@@ -21,8 +21,43 @@ SCREENS = {
     "reports": "📄 Informes", "help": "❓ Metodología y ayuda",
 }
 STATUS_LABELS = {
-    "ELIGIBLE_PARTIAL": "Clasificable (alcance parcial)", "PARTIAL_COMPARABILITY": "Comparabilidad parcial",
+    "ELIGIBLE_PARTIAL": "Clasificable parcial", "PARTIAL_COMPARABILITY": "Comparabilidad parcial",
     "REVIEW_REQUIRED": "Revisión requerida", "BLOCKED": "Bloqueado",
+}
+CONFIDENCE_LABELS = {"HIGH": "Alta", "MEDIUM": "Media", "LOW": "Baja", "NOT_RANKABLE": "No clasificable"}
+RESEARCH_STATUS_LABELS = {
+    "WATCHLIST": "En seguimiento", "REJECT": "Descartado",
+    "NEEDS_MORE_DATA": "Necesita más datos", "REVIEW_LATER": "Revisar más adelante",
+}
+PILLAR_LABELS = {"quality": "Calidad", "growth": "Crecimiento", "valuation": "Valoración", "momentum": "Tendencia", "risk": "Riesgo"}
+FACTOR_LABELS = {
+    "operating_margin": "Margen operativo", "net_margin": "Margen neto", "roa": "Rentabilidad sobre activos",
+    "roe_reported": "Rentabilidad sobre patrimonio", "revenue_growth_yoy": "Crecimiento anual de ingresos",
+    "net_income_growth_yoy": "Crecimiento anual del beneficio", "earnings_yield": "Rentabilidad del beneficio",
+    "book_yield": "Rentabilidad del valor contable", "return_3m": "Rentabilidad a 3 meses",
+    "return_6m": "Rentabilidad a 6 meses", "return_12m": "Rentabilidad a 12 meses",
+    "distance_sma200": "Distancia a la media de 200 sesiones", "volatility_12m": "Volatilidad a 12 meses",
+    "max_drawdown_12m": "Caída máxima a 12 meses",
+    "revenue": "Ingresos", "cost_of_sales": "Coste de ventas", "gross_profit": "Beneficio bruto",
+    "operating_income": "Beneficio operativo", "ordinary_income": "Beneficio ordinario",
+    "pretax_income": "Beneficio antes de impuestos", "net_income": "Beneficio neto",
+    "eps_basic": "Beneficio por acción básico", "eps_diluted": "Beneficio por acción diluido",
+    "cash_and_equivalents": "Efectivo y equivalentes", "current_debt": "Deuda corriente",
+    "noncurrent_debt": "Deuda no corriente", "gross_debt": "Deuda bruta", "net_debt": "Deuda neta",
+    "current_assets": "Activo corriente", "total_assets": "Activo total",
+    "current_liabilities": "Pasivo corriente", "total_liabilities": "Pasivo total",
+    "total_equity": "Patrimonio neto", "book_value_per_share": "Valor contable por acción",
+    "shares_outstanding": "Acciones en circulación", "operating_cash_flow": "Flujo de caja operativo",
+    "investing_cash_flow": "Flujo de caja de inversión", "financing_cash_flow": "Flujo de caja de financiación",
+    "capex": "Inversión en activos", "free_cash_flow": "Flujo de caja libre",
+    "dividends_paid": "Dividendos pagados", "buybacks": "Recompras",
+    "equity_ratio_reported": "Ratio de patrimonio", "gross_margin": "Margen bruto",
+    "current_ratio": "Ratio corriente",
+}
+SOURCE_LABELS = {"jquants_fins_summary": "J-Quants · resumen financiero", "twse_mops_opendata": "TWSE MOPS · datos abiertos"}
+REVIEW_REASON_LABELS = {
+    "absolute_margin_outside_300pct": "Margen absoluto superior al 300 %; requiere revisión manual",
+    "financial_institution_requires_separate_factor_contract": "Entidad financiera: requiere un contrato de factores específico",
 }
 
 
@@ -52,11 +87,16 @@ def status_badge(value: str) -> str:
     return STATUS_LABELS.get(value, value)
 
 
+def factor_label(value: str) -> str:
+    return FACTOR_LABELS.get(value, value.replace("_", " ").capitalize())
+
+
 def display_rows(assets):
     return pd.DataFrame([{
         "ID": a["asset_id"], "Ticker": a["ticker"], "Empresa": a["company_name"], "Mercado": a["market"],
-        "Estado": status_badge(a["eligibility_status"]), "Confianza": a["confidence"],
-        "Score experimental": a.get("total_score"), "Posición": a.get("rank"), "Sesiones": a["price_sessions"],
+        "Estado": status_badge(a["eligibility_status"]), "Confianza": CONFIDENCE_LABELS.get(a["confidence"], a["confidence"]),
+        "Score experimental": "N/D" if a.get("total_score") is None else f'{a["total_score"]:.2f}',
+        "Posición": "N/D" if a.get("rank") is None else str(a["rank"]), "Sesiones": a["price_sessions"],
     } for a in assets])
 
 
@@ -90,9 +130,9 @@ def render_universe(data):
     banner(st)
     search = st.text_input("Buscar", placeholder="Empresa, ticker o ID")
     c1, c2, c3 = st.columns(3)
-    markets = c1.multiselect("Mercado", sorted({a["market"] for a in data.assets}))
-    states = c2.multiselect("Estado", list(STATUS_LABELS), format_func=status_badge)
-    confidence = c3.multiselect("Confianza", ["HIGH", "MEDIUM", "LOW", "NOT_RANKABLE"])
+    markets = c1.multiselect("Mercado", sorted({a["market"] for a in data.assets}), placeholder="Todos")
+    states = c2.multiselect("Estado", list(STATUS_LABELS), format_func=status_badge, placeholder="Todos")
+    confidence = c3.multiselect("Confianza", ["HIGH", "MEDIUM", "LOW", "NOT_RANKABLE"], format_func=lambda value: CONFIDENCE_LABELS[value], placeholder="Todas")
     needle = search.casefold().strip()
     rows = [a for a in data.assets if (not needle or any(needle in str(a[k]).casefold() for k in ("asset_id", "ticker", "company_name"))) and (not markets or a["market"] in markets) and (not states or a["eligibility_status"] in states) and (not confidence or a["confidence"] in confidence)]
     st.caption(f"{len(rows)} resultados")
@@ -136,10 +176,10 @@ def render_asset(data):
     cols = st.columns(4)
     cols[0].metric("Mercado", asset["market"])
     cols[1].metric("Estado", status_badge(asset["eligibility_status"]))
-    cols[2].metric("Confianza", asset["confidence"])
+    cols[2].metric("Confianza", CONFIDENCE_LABELS.get(asset["confidence"], asset["confidence"]))
     cols[3].metric("Score experimental", "N/D" if asset.get("total_score") is None else f'{asset["total_score"]:.2f}')
     if asset["eligibility_status"] == "REVIEW_REQUIRED":
-        st.error("Este activo no tiene posición automática. Motivo: " + ", ".join(asset["review_reasons"]))
+        st.error("Este activo no tiene posición automática. Motivo: " + "; ".join(REVIEW_REASON_LABELS.get(reason, reason) for reason in asset["review_reasons"]))
     if asset["market"] == "TWSE":
         st.warning("Comparabilidad parcial: precio sin ajustar y un único periodo fundamental utilizable.")
     st.markdown("### Precio")
@@ -153,20 +193,21 @@ def render_asset(data):
     st.markdown("### Pilares del scoring")
     pillars = asset.get("pillar_scores") or {}
     if pillars:
-        st.bar_chart(pd.DataFrame({"Puntuación": pillars}).sort_index())
+        translated_pillars = {PILLAR_LABELS.get(key, key): value for key, value in pillars.items()}
+        st.bar_chart(pd.DataFrame({"Puntuación": translated_pillars}))
     else:
         st.info("Los pilares detallados solo están disponibles con el resultado local de fase 6.")
     c1, c2, c3 = st.columns(3)
-    c1.write("**Fortalezas disponibles**"); c1.write(", ".join(asset.get("strength_factors") or []) or "No disponibles")
-    c2.write("**Factores débiles**"); c2.write(", ".join(asset.get("weakness_factors") or []) or "No disponibles")
-    c3.write("**Factores ausentes**"); c3.write(", ".join(asset.get("missing_factors") or []) or "No disponibles")
+    c1.write("**Fortalezas disponibles**"); c1.write(", ".join(factor_label(value) for value in (asset.get("strength_factors") or [])) or "No disponibles")
+    c2.write("**Factores débiles**"); c2.write(", ".join(factor_label(value) for value in (asset.get("weakness_factors") or [])) or "No disponibles")
+    c3.write("**Factores ausentes**"); c3.write(", ".join(factor_label(value) for value in (asset.get("missing_factors") or [])) or "No disponibles")
     fundamentals = fundamental_snapshot(asset["asset_id"])
     st.markdown("### Fundamentales")
     if fundamentals:
         latest = {}
         for row in fundamentals:
             latest.setdefault(row["metric"], row)
-        st.dataframe(pd.DataFrame([{"Métrica": key, "Valor": row["value"], "Periodo": row.get("period_end"), "Moneda": row.get("currency"), "Fuente": row.get("provider")} for key, row in sorted(latest.items())]), use_container_width=True, hide_index=True)
+        st.dataframe(pd.DataFrame([{"Métrica": factor_label(key), "Valor": row["value"], "Periodo": row.get("period_end") or "N/D", "Moneda": row.get("currency") or "N/D", "Fuente": SOURCE_LABELS.get(row.get("provider"), row.get("provider") or "N/D")} for key, row in sorted(latest.items())]), use_container_width=True, hide_index=True)
     else:
         st.info("Los fundamentales detallados no están disponibles en este equipo.")
     report = asset_markdown(asset, data.as_of_date)
@@ -176,7 +217,7 @@ def render_asset(data):
 def render_compare(data):
     heading(st, "Comparador", "Compara de dos a cuatro activos sin ocultar diferencias de mercado o cobertura.")
     options = {f'{a["ticker"]} · {a["company_name"]}': a["asset_id"] for a in data.assets}
-    selected = st.multiselect("Activos", options, max_selections=4)
+    selected = st.multiselect("Activos", options, max_selections=4, placeholder="Selecciona de 2 a 4 activos")
     assets = [data.by_id(options[label]) for label in selected]
     if len(assets) < 2:
         st.info("Selecciona entre 2 y 4 activos."); return
@@ -186,8 +227,8 @@ def render_compare(data):
     st.dataframe(display_rows(assets), use_container_width=True, hide_index=True)
     pillars = sorted({key for a in assets for key in (a.get("pillar_scores") or {})})
     if pillars:
-        frame = pd.DataFrame({a["ticker"]: {p: a.get("pillar_scores", {}).get(p) for p in pillars} for a in assets})
-        st.bar_chart(frame)
+        frame = pd.DataFrame({a["ticker"]: {PILLAR_LABELS.get(p, p): a.get("pillar_scores", {}).get(p) for p in pillars} for a in assets})
+        st.bar_chart(frame, stack=False)
     else:
         st.info("Comparación de pilares no disponible en modo agregado.")
 
@@ -216,18 +257,26 @@ def render_watchlist(data):
     st.markdown("### Añadir activo")
     options = {f'{a["ticker"]} · {a["company_name"]}': a for a in data.assets}
     choice = st.selectbox("Activo", options)
-    status = st.selectbox("Estado de investigación", STATUSES)
+    status = st.selectbox("Estado de investigación", STATUSES, format_func=lambda value: RESEARCH_STATUS_LABELS[value])
     note = st.text_area("Nota")
     if st.button("Añadir", type="primary"):
         try: add(watch, options[choice], status, note); atomic_write(path, watch); st.rerun()
         except ValueError as exc: st.error(str(exc))
     st.markdown(f'### Activos ({len(watch["items"])})')
-    st.dataframe(pd.DataFrame(watch["items"]), use_container_width=True, hide_index=True)
+    if watch["items"]:
+        watch_rows = pd.DataFrame(watch["items"]).rename(columns={
+            "asset_id": "ID", "ticker": "Ticker", "company_name": "Empresa", "market": "Mercado",
+            "research_status": "Estado", "note": "Nota", "added_at_utc": "Añadido (UTC)",
+        })
+        watch_rows["Estado"] = watch_rows["Estado"].map(lambda value: RESEARCH_STATUS_LABELS.get(value, value))
+        st.dataframe(watch_rows, use_container_width=True, hide_index=True)
+    else:
+        st.info("La watchlist está vacía.")
     if watch["items"]:
         items = {f'{x["ticker"]} · {x["company_name"]}': x for x in watch["items"]}
         label = st.selectbox("Editar activo guardado", items)
         item = items[label]
-        new_status = st.selectbox("Nuevo estado", STATUSES, index=STATUSES.index(item["research_status"]))
+        new_status = st.selectbox("Nuevo estado", STATUSES, index=STATUSES.index(item["research_status"]), format_func=lambda value: RESEARCH_STATUS_LABELS[value])
         new_note = st.text_area("Editar nota", item.get("note", ""))
         c1, c2, c3 = st.columns(3)
         if c1.button("Guardar cambios"): update(watch, item["asset_id"], new_status, new_note); atomic_write(path, watch); st.rerun()
