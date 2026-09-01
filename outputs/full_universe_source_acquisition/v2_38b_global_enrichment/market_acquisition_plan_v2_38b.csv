@@ -5,7 +5,7 @@ CBOE,1220,0,0,REVIEW_REQUIRED,not evaluated,unresolved,not_evaluated,true,false,
 CBOE_EUROPE,21154,10483,0,SOURCE_RESEARCH_REQUIRED,none actionable,unresolved,not_applicable,true,false,home market mapping and actionable source unavailable
 Cboe BZX,4,1,0,USER_ACTION_REQUIRED,Twelve Data candidate,unresolved,cache_terms_unresolved,true,false,"account, credential, license confirmation and pilot required"
 HKEX,3200,0,0,REVIEW_REQUIRED,not evaluated,unresolved,not_evaluated,true,false,provider_type_not_resolved
-JPX,3705,3701,67,SYMBOL_RESOLUTION_REQUIRED,J-Quants,J-Quants,personal_use_confirmed,true,false,resolved by exact J-Quants catalog match in v2.33G
+JPX,3705,3701,167,SYMBOL_RESOLUTION_REQUIRED,J-Quants,J-Quants,personal_use_confirmed,true,false,resolved by exact J-Quants catalog match in v2.33G
 NASDAQ,4336,3016,0,USER_ACTION_REQUIRED,Twelve Data candidate,unresolved,cache_terms_unresolved,true,false,"account, credential, license confirmation and pilot required"
 NSE,2013,0,0,REVIEW_REQUIRED,not evaluated,unresolved,not_evaluated,true,false,unclassified_and_missing_ticker_or_company_name
 NYSE,3362,1761,0,USER_ACTION_REQUIRED,Twelve Data candidate,unresolved,cache_terms_unresolved,true,false,"account, credential, license confirmation and pilot required"
