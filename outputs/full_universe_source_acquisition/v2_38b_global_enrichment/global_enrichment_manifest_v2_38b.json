@@ -28,6 +28,10 @@
       "bytes": 632,
       "sha256": "cbc59ee5d9a7294117e5edc061507392001d014d1e94716095ef4a6dfd578eba"
     },
+    "controlled_pilot_aggregate_report_v2_38b.json": {
+      "bytes": 1307,
+      "sha256": "09313411a7fdca5066c4fe940007bf73e97e0db7a4375840ac7db2d7d95c414c"
+    },
     "global_acquisition_manifest_v2_38b.csv.xz": {
       "bytes": 1683004,
       "sha256": "30b45836fbc886226ec199850059200aced7f7041d47f00f0bd01e79e62a293d"
@@ -35,6 +39,10 @@
     "global_enrichment_summary_v2_38b.json": {
       "bytes": 764,
       "sha256": "1e3821853b3e08fd7b683a42b1b08e862dad239973f10a2d73ecb3cad36bc8b0"
+    },
+    "jpx_symbol_resolution_overlay_25_v2_38b.csv": {
+      "bytes": 1875,
+      "sha256": "10a22160d4a92efce536a409a9191ecaa6b4f75346a1e47874804a468e1137cc"
     },
     "jpx_symbol_resolution_pilot_25_v2_38b.csv": {
       "bytes": 988,

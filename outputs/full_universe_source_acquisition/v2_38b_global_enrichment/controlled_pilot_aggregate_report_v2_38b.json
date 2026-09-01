@@ -1,0 +1,46 @@
+{
+  "evidence": {
+    "jpx_symbol_overlay_sha256": "10a22160d4a92efce536a409a9191ecaa6b4f75346a1e47874804a468e1137cc",
+    "raw_price_files_published": false
+  },
+  "guardrails": {
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "limitations": [
+    "This validates a controlled 50-asset pilot, not enrichment of the 21,165 eligible assets.",
+    "TWSE prices are unadjusted and must not be compared as adjusted-return series.",
+    "JPX history remains limited by the active J-Quants subscription window."
+  ],
+  "markets": {
+    "JPX": {
+      "adjusted_prices": true,
+      "assets": 25,
+      "date_end": "2026-06-10",
+      "date_start": "2024-06-10",
+      "invalid_assets": 0,
+      "price_rows": 12200,
+      "rows_max": 488,
+      "rows_min": 488
+    },
+    "TWSE": {
+      "adjusted_prices": false,
+      "assets": 25,
+      "date_end": "2026-09-01",
+      "date_start": "2026-01-02",
+      "invalid_assets": 0,
+      "price_rows": 4000,
+      "rows_max": 160,
+      "rows_min": 160
+    }
+  },
+  "phase": "v2.38B-controlled-global-enrichment-pilot",
+  "status": "CONTROLLED_PILOT_VALIDATED_NOT_GLOBAL_PROMOTION",
+  "totals": {
+    "assets": 50,
+    "invalid_assets": 0,
+    "price_rows": 16200
+  }
+}
