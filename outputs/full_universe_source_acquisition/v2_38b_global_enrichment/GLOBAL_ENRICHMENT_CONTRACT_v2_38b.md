@@ -18,4 +18,4 @@ La fase conserva las 43.089 filas del censo y solo permite planificar adquisici�
 
 ## Criterio de lote
 
-Un activo es `READY_FOR_CONTROLLED_BATCH` solo si es elegible, tiene identidad completa y su símbolo de proveedor está resuelto. Esto produce 42 JPX ya verificados por coincidencia exacta en v2.33G y 696 TWSE deterministas. Los otros 3.659 JPX requieren consulta individual al catálogo y coincidencia exacta de nombre. Estados Unidos permanece `USER_ACTION_REQUIRED` hasta disponer de cuenta, condiciones de almacenamiento confirmadas y piloto real.
+Un activo es `READY_FOR_CONTROLLED_BATCH` solo si es elegible, tiene identidad completa y su símbolo de proveedor está resuelto. Esto produce 67 JPX verificados por coincidencia exacta (42 previos y 25 del piloto controlado v2.38B) y 696 TWSE deterministas. Los otros 3.634 JPX requieren consulta individual al catálogo y coincidencia exacta de nombre. Estados Unidos permanece `USER_ACTION_REQUIRED` hasta disponer de cuenta, condiciones de almacenamiento confirmadas y piloto real.

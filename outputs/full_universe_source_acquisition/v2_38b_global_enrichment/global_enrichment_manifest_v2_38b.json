@@ -13,12 +13,12 @@
   },
   "outputs": {
     "GLOBAL_ENRICHMENT_CONTRACT_v2_38b.md": {
-      "bytes": 1417,
-      "sha256": "5a4be6ef4cc801fb2c51bab55ed9ca8af81054ef46c23bf15bc2b76f4e3a7e1c"
+      "bytes": 1451,
+      "sha256": "398309ff218db4a3d213daf39b59a84fe0bb038b88f8bd9587e1a7faadf02249"
     },
     "PHASE9B_EXECUTION_STATUS_v2_38b.md": {
       "bytes": 2143,
-      "sha256": "221ee07ea82bffc6ae0dc38b141e184f7775c6a43a89c9dccd87dc238bd42fc6"
+      "sha256": "40ac1a8e5cccadc68af17ccae6299a1ef946c0a72b8d0b887d7a7120a5ab34e4"
     },
     "PHASE9B_GATE_v2_38b.md": {
       "bytes": 895,
@@ -33,28 +33,28 @@
       "sha256": "09313411a7fdca5066c4fe940007bf73e97e0db7a4375840ac7db2d7d95c414c"
     },
     "global_acquisition_manifest_v2_38b.csv.xz": {
-      "bytes": 1683004,
-      "sha256": "30b45836fbc886226ec199850059200aced7f7041d47f00f0bd01e79e62a293d"
+      "bytes": 1684800,
+      "sha256": "cd95cd64262dec0ffcb35638c3b18ccbedd37eaa4fc6bfbc1bef3990965234dd"
     },
     "global_enrichment_summary_v2_38b.json": {
       "bytes": 764,
-      "sha256": "1e3821853b3e08fd7b683a42b1b08e862dad239973f10a2d73ecb3cad36bc8b0"
+      "sha256": "e2625a510c8be8b559af34eec1334121fe380d01399c28cab6a569f188c77806"
     },
     "jpx_symbol_resolution_overlay_25_v2_38b.csv": {
       "bytes": 1875,
       "sha256": "10a22160d4a92efce536a409a9191ecaa6b4f75346a1e47874804a468e1137cc"
     },
     "jpx_symbol_resolution_pilot_25_v2_38b.csv": {
-      "bytes": 988,
-      "sha256": "f57b2e4bb3683e9e02807195e9a9493c75d9e5bb0ab2e8a488b0f68151498032"
+      "bytes": 983,
+      "sha256": "a4d0070a9f48a1bcd3bdf246a5cd9758c9c5c25e7b5425335c0a709cd15d751e"
     },
-    "jpx_verified_symbols_42_v2_38b.csv": {
-      "bytes": 2106,
-      "sha256": "46df20d8e1021683eb95a682ec30fe556ed73f8713d8f49dce9e93c4deea7587"
+    "jpx_verified_symbols_67_v2_38b.csv": {
+      "bytes": 3331,
+      "sha256": "72c9cd1be268e35f3829ce1d7f94831cb69e4968987d71840592e4601fb738df"
     },
     "market_acquisition_plan_v2_38b.csv": {
       "bytes": 2358,
-      "sha256": "978a0257d591ca38f6beac897418af9445b5a5d72e6d86434993b03945324e03"
+      "sha256": "b8dad0a2314e815b1f6e746b697423b115b4fabf2306f4d3e12bf713b6f42d4f"
     },
     "twse_collection_pilot_25_v2_38b.csv": {
       "bytes": 1469,

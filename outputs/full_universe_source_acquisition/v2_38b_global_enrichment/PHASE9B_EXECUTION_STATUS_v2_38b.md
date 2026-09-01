@@ -6,8 +6,8 @@ La infraestructura y planificación reproducible están completadas sobre las 43
 
 | Estado | Filas |
 |---|---:|
-| Listas para lote controlado (42 JPX + 696 TWSE) | 738 |
-| Resolución exacta de símbolo requerida (JPX) | 3.659 |
+| Listas para lote controlado (67 JPX + 696 TWSE) | 763 |
+| Resolución exacta de símbolo requerida (JPX) | 3.634 |
 | Acción del usuario/proveedor requerida (EE. UU.) | 5.011 |
 | Investigación de fuente requerida | 10.486 |
 | Licencia de pago requerida | 1.271 |

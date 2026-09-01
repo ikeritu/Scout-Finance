@@ -15,6 +15,7 @@ CONTRACT_PATH = ROOT / "config/global_enrichment_contract_v1.json"
 OUTPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38b_global_enrichment"
 FIELDS = ["asset_id", "ticker", "exchange", "eligibility_status", "identity_status", "provider_route", "price_provider", "fundamental_provider", "license_status", "provider_symbol", "symbol_resolution_status", "acquisition_status", "batch_eligible", "blocker_reason", "attempt_count", "last_success_date", "evidence_hash", "phase"]
 KNOWN_JPX_SYMBOLS = ROOT / "outputs/full_universe_source_acquisition/v2_33g_jquants_price_pilot/jquants_symbol_resolution_v2_33g.csv"
+JPX_RESOLUTION_OVERLAY = OUTPUT / "jpx_symbol_resolution_overlay_25_v2_38b.csv"
 
 MARKET_POLICY = {
     "JPX": ("J-Quants", "J-Quants", "personal_use_confirmed", "PROVIDER_LOOKUP_REQUIRED", "SYMBOL_RESOLUTION_REQUIRED", "exact catalog and company-name match required before acquisition"),
@@ -94,8 +95,18 @@ def main() -> int:
         raise SystemExit("BLOCKED: input row count mismatch")
     with KNOWN_JPX_SYMBOLS.open(encoding="utf-8", newline="") as f:
         known_jpx = {r["ticker"]: r["provider_symbol"] for r in csv.DictReader(f) if r["status"].startswith("resolved") and r["provider_symbol"]}
-    if len(known_jpx) != 42:
-        raise SystemExit(f"BLOCKED: expected 42 previously verified JPX symbols, found {len(known_jpx)}")
+    with JPX_RESOLUTION_OVERLAY.open(encoding="utf-8", newline="") as f:
+        overlay = list(csv.DictReader(f))
+    if len(known_jpx) != 42 or len(overlay) != 25:
+        raise SystemExit("BLOCKED: expected 42 prior and 25 controlled-pilot JPX resolutions")
+    if any(r["resolution_status"] != "EXACT_COMPANY_NAME_MATCH" or not r["provider_symbol"] for r in overlay):
+        raise SystemExit("BLOCKED: JPX overlay contains a non-exact or empty resolution")
+    overlay_jpx = {r["ticker"]: r["provider_symbol"] for r in overlay}
+    if len(overlay_jpx) != 25 or set(known_jpx) & set(overlay_jpx):
+        raise SystemExit("BLOCKED: JPX overlay contains duplicate or previously known tickers")
+    known_jpx.update(overlay_jpx)
+    if len(known_jpx) != 67:
+        raise SystemExit("BLOCKED: expected 67 verified JPX symbols after overlay")
     rows = [classify(row, known_jpx) for row in source_rows]
     if len(rows) != len({row["asset_id"] for row in rows}):
         raise SystemExit("BLOCKED: duplicate asset identity")
@@ -123,7 +134,7 @@ def main() -> int:
 
     jpx_ready = [r for r in rows if r["exchange"] == "JPX" and r["batch_eligible"] == "true"]
     write_csv(
-        args.output / "jpx_verified_symbols_42_v2_38b.csv",
+        args.output / "jpx_verified_symbols_67_v2_38b.csv",
         [{"pilot_id": r["asset_id"], "ticker": r["ticker"], "exchange": "JPX", "status": "resolved_prior_exact_match", "provider_symbol": r["provider_symbol"]} for r in jpx_ready],
         ["pilot_id", "ticker", "exchange", "status", "provider_symbol"],
     )

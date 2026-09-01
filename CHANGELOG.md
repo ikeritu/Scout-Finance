@@ -1,7 +1,7 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## v2.38B — infraestructura de enriquecimiento global (2026-09-01)
 
-Construye el contrato, esquema, manifiesto fila a fila, plan de 15 mercados y orquestador fail-closed para la fase 9B. Conserva 43.089 activos; reutiliza 42 símbolos JPX verificados, prepara 696 TWSE deterministas, bloquea 3.659 JPX hasta coincidencia exacta de catálogo y mantiene 5.011 estadounidenses pendientes de cuenta/licencia/piloto. Añade lotes piloto, límite de 500, puertas de credenciales y QA offline. Decisión provisional: **`BLOCKED_EXTERNAL_ACTIONS_AFTER_INFRASTRUCTURE_READY`**; sin datos nuevos, scoring, ranking, recomendaciones ni fase 9C.
+Construye el contrato, esquema, manifiesto fila a fila, plan de 15 mercados y orquestador fail-closed para la fase 9B. Conserva 43.089 activos; verifica 67 símbolos JPX, prepara 696 TWSE deterministas, bloquea 3.634 JPX hasta coincidencia exacta de catálogo y mantiene 5.011 estadounidenses pendientes de cuenta/licencia/piloto. El piloto controlado nuevo valida 25 JPX y 25 TWSE (16.200 registros de precios, 0 inválidos) con evidencia agregada y crudos locales. Decisión provisional: **`CONTROLLED_PILOT_VALIDATED_NOT_GLOBAL_PROMOTION`**; sin scoring, ranking, recomendaciones ni fase 9C.
 
 ## v2.38A — auditoría canónica del universo global (2026-09-01)
 

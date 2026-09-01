@@ -1,7 +1,7 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
-**Fase 9B — infraestructura construida, adquisición real bloqueada** (`BLOCKED_EXTERNAL_ACTIONS_AFTER_INFRASTRUCTURE_READY`, v2.38B). El manifiesto conserva 43.089 filas: 738 listas para lote controlado (42 JPX ya verificadas + 696 TWSE), 3.659 JPX requieren resolución exacta y 5.011 estadounidenses requieren cuenta/licencia/piloto. No se han descargado datos nuevos ni calculado scoring global.
+**Fase 9B — piloto controlado validado, enriquecimiento global aún incompleto** (`CONTROLLED_PILOT_VALIDATED_NOT_GLOBAL_PROMOTION`, v2.38B). El manifiesto conserva 43.089 filas: 763 listas para lote controlado (67 JPX verificadas + 696 TWSE), 3.634 JPX requieren resolución exacta y 5.011 estadounidenses requieren cuenta/licencia/piloto. El piloto nuevo valida 25 JPX y 25 TWSE (16.200 registros de precios); no se ha calculado scoring global.
 
 **Fase 9A (auditoría global) — cerrada** (`COMPLETED_GLOBAL_CENSUS_READY_FOR_SOURCE_PLANNING`, v2.38A). El censo canónico conserva 43.089 filas y separa 21.165 elegibles, 10.432 excluidas, 9.710 revisables y 1.782 bloqueadas.
 
