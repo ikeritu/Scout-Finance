@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38A — auditoría canónica del universo global (2026-09-01)
+
+Cierra la fase 9A como **`COMPLETED_GLOBAL_CENSUS_READY_FOR_SOURCE_PLANNING`**. Resuelve por hash el censo canónico v2.33B2 y conserva 43.089/43.089 filas: 21.165 elegibles, 10.432 excluidas, 9.710 revisables y 1.782 bloqueadas. Añade contrato, esquema, artefacto detallado comprimido, desgloses, matriz de rutas/licencias para 15 mercados, manifiesto y QA offline determinista. No usa red ni credenciales, no descarga datos y no calcula scoring, ranking o recomendaciones. La fase 9B permanece sin autorizar.
+
 ## v2.37 — producto local de investigación (2026-09-01)
 
 Cierra la fase 8 como **`COMPLETED_LOCAL_PRODUCT`** tras superar la suite offline y el recorrido funcional con datos reales locales en Windows 11. Añade una interfaz Streamlit nueva y aislada (`app_v2_37.py`) sobre el universo canónico de 50 activos. Separa 41 JPX en ranking experimental, 7 TWSE con comparabilidad parcial y P020/P178 en revisión requerida. Incorpora universo filtrable, fichas, comparador, watchlists privadas con escritura atómica, informes trazables y estados explícitos de disponibilidad. No usa red ni datos demo y mantiene visible `INSUFFICIENT_EVIDENCE`; el cierre de producto no valida capacidad predictiva.

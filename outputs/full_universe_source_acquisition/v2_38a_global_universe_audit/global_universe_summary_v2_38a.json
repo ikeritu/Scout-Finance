@@ -1,0 +1,53 @@
+{
+  "canonical_rows": 43089,
+  "canonical_sha256": "dd7a5d2f98d2e750d08cb8633d772caecf044e6c41db7f27464b58bf10bb1876",
+  "counts": {
+    "eligibility_status": {
+      "BLOCKED": 1782,
+      "ELIGIBLE": 21165,
+      "EXCLUDED": 10432,
+      "REVIEW": 9710
+    },
+    "enrichment_readiness": {
+      "CONDITIONAL_SOURCE": 16768,
+      "METADATA_REPAIR_REQUIRED": 1782,
+      "NOT_ELIGIBLE": 10432,
+      "READY_FOR_SOURCE_PLANNING": 4397,
+      "REVIEW_REQUIRED": 9710
+    },
+    "identity_status": {
+      "BLOCKED_SCHEMA": 1782,
+      "COMPLETE": 38101,
+      "PARTIAL": 3206
+    },
+    "route_status": {
+      "BLOCKED_METADATA_SCHEMA": 1782,
+      "EXCLUDED_INSUFFICIENT_SOURCE": 23,
+      "EXCLUDED_NO_ACTIONABLE_SOURCE": 21154,
+      "EXCLUDED_NO_FREE_SOURCE": 1316,
+      "PILOT_VALIDATED_NOT_SCALED": 4401,
+      "SOURCE_RESEARCH_REQUIRED": 6446,
+      "USER_ACCOUNT_AND_PILOT_REQUIRED": 7967
+    }
+  },
+  "credentials_used": false,
+  "eligible_rows": 21165,
+  "missingness": {
+    "company_name": 1193,
+    "country": 21154,
+    "currency": 31778,
+    "industry": 38688,
+    "isin": 35147,
+    "market_cap": 43066,
+    "mic": 23167,
+    "sector": 39384,
+    "ticker": 2013
+  },
+  "network_calls": 0,
+  "phase": "v2.38A-global-universe-audit",
+  "phase9b_authorized": false,
+  "ranking_calculated": false,
+  "recommendations_generated": false,
+  "scoring_calculated": false,
+  "status": "AUDITED_OFFLINE"
+}

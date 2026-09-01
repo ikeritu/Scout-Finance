@@ -1,0 +1,15 @@
+source_provider,rows,pct_total
+cboe_europe_reference_data,21154,49.093736
+jpx_listed_securities,3705,8.598482
+nasdaq_trader_nasdaqlisted,3244,7.528604
+hkex_securities_list,2804,6.507461
+nasdaq_trader_otherlisted,2404,5.57915
+sec_company_tickers_exchange,2359,5.474715
+nse_india,2013,4.671726
+deutsche_boerse_xetra_all_tradable_instruments,1424,3.304788
+ASX,1316,3.054144
+cboe_listed_symbols,1193,2.768688
+TWSE,696,1.615261
+HKEX,396,0.919028
+sgx_structured_endpoint,358,0.830838
+SFC_SIMEV_RNVE,23,0.053378

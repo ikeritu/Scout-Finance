@@ -1,0 +1,21 @@
+blocker_reason,rows,pct_total
+home exchange mapping and free source unresolved,10483,24.328715
+etf_etc_or_etn_requires_separate_non_equity_methodology,10409,24.156977
+provider_type_not_resolved,5260,12.207292
+no validated global acquisition,5011,11.629418
+42/3701 price pilot; fundamentals only for 42 phase-5 assets,3701,8.589199
+unclassified_and_missing_ticker_or_company_name,3206,7.440414
+xetra_company_name_field_contains_classification_codes,1424,3.304788
+official historical access requires paid distribution,1271,2.949709
+company_name_indicates_fund_or_trust,697,1.617582
+8/696 price and fundamental pilot; prices unadjusted,696,1.615261
+sgx_ticker_and_name_fields_require_source_schema_repair,358,0.830838
+unclassified_with_repeated_isin,299,0.693913
+company_name_indicates_acquisition_company_or_blank_check,216,0.501288
+provider_category_needs_explicit_mapping,20,0.046416
+company_name_indicates_etf_etn_or_exchange_traded_product,17,0.039453
+listed_investment_vehicle_requires_individual_policy,7,0.016245
+company_name_indicates_warrant_right_or_unit,5,0.011604
+placeholder_company_name,4,0.009283
+no validated daily historical series,3,0.006962
+company_name_indicates_preferred_security,2,0.004642

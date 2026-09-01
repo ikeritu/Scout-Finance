@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scout-finance.local/schemas/global_universe_audit_record_v1.schema.json",
+  "title": "GlobalUniverseAuditRecord v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["asset_id", "row_number", "ticker", "company_name", "exchange", "country", "mic", "currency", "isin", "sector", "industry", "market_cap", "source_provider", "instrument_type", "instrument_bucket", "identity_status", "eligibility_status", "enrichment_readiness", "route_status", "blocker_reason", "data_quality_flags", "audit_phase"],
+  "properties": {
+    "asset_id": {"type": "string", "minLength": 1},
+    "row_number": {"type": "integer", "minimum": 1},
+    "ticker": {"type": "string"},
+    "company_name": {"type": "string"},
+    "exchange": {"type": "string"},
+    "country": {"type": "string"},
+    "mic": {"type": "string"},
+    "currency": {"type": "string"},
+    "isin": {"type": "string"},
+    "sector": {"type": "string"},
+    "industry": {"type": "string"},
+    "market_cap": {"type": "string"},
+    "source_provider": {"type": "string"},
+    "instrument_type": {"type": "string"},
+    "instrument_bucket": {"type": "string"},
+    "identity_status": {"enum": ["COMPLETE", "PARTIAL", "BLOCKED_SCHEMA"]},
+    "eligibility_status": {"enum": ["ELIGIBLE", "EXCLUDED", "REVIEW", "BLOCKED"]},
+    "enrichment_readiness": {"enum": ["READY_FOR_SOURCE_PLANNING", "CONDITIONAL_SOURCE", "NOT_ELIGIBLE", "REVIEW_REQUIRED", "METADATA_REPAIR_REQUIRED"]},
+    "route_status": {"type": "string", "minLength": 1},
+    "blocker_reason": {"type": "string"},
+    "data_quality_flags": {"type": "string"},
+    "audit_phase": {"const": "v2.38A"}
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "decision": "COMPLETED_GLOBAL_CENSUS_READY_FOR_SOURCE_PLANNING",
+  "guardrails": {
+    "allow_ranking": false,
+    "credentials_used": false,
+    "network_calls": 0,
+    "phase9b_authorized": false,
+    "production_scoring_authorized": false
+  },
+  "input": {
+    "path": "outputs/full_universe_source_acquisition/v2_33b2_eligibility_refinement/eligibility_census_v2_33b2.csv.xz",
+    "rows": 43089,
+    "sha256": "dd7a5d2f98d2e750d08cb8633d772caecf044e6c41db7f27464b58bf10bb1876"
+  },
+  "metadata_input": {
+    "join": "row order verified by ticker+company_name+exchange",
+    "path": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+    "rows": 43089,
+    "sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c"
+  },
+  "outputs": {
+    "GLOBAL_UNIVERSE_AUDIT_v2_38a.md": {
+      "bytes": 3335,
+      "sha256": "d6d3abd89ba7140bb0436d57740dcd8bb76e7170a0b8b8d15984d4e69b88fd97"
+    },
+    "PHASE9A_FINAL_GATE_v2_38a.md": {
+      "bytes": 1836,
+      "sha256": "0aa459504c263c70236b802e66c29c3883176539a6a9df21d7dd33e8a236eb2a"
+    },
+    "README.md": {
+      "bytes": 558,
+      "sha256": "40ead3ef1c1473b8d978915853a816def2b0c6019a40ad4fdb20e7c426a8f7e6"
+    },
+    "breakdown_by_blocker_v2_38a.csv": {
+      "bytes": 1211,
+      "sha256": "aec99dd254f9e8e82c02cb7d6b68f73b15169297937721ae9370ca28758bccb5"
+    },
+    "breakdown_by_country_v2_38a.csv": {
+      "bytes": 539,
+      "sha256": "d085b00611a37a6b704389a1be0bb92ba8cc0074cc9ee006f128b21d97c721e4"
+    },
+    "breakdown_by_currency_v2_38a.csv": {
+      "bytes": 204,
+      "sha256": "e0067cf8e7ef2fc1103b4c18da6132f0a3ec6ba4ec80c336a72388bb9193cd62"
+    },
+    "breakdown_by_eligibility_v2_38a.csv": {
+      "bytes": 128,
+      "sha256": "f61e6a52c850c8b86c95699cec4613cb5021f26d1aa62486848d5837bad18ea8"
+    },
+    "breakdown_by_exchange_v2_38a.csv": {
+      "bytes": 323,
+      "sha256": "5a9e95cf7f3e3a37d6fe780aa6a076ab0f0d685c3aa2b763fef4c65cbae64ade"
+    },
+    "breakdown_by_instrument_v2_38a.csv": {
+      "bytes": 254,
+      "sha256": "68e11be3dcf899e2e65b061e8b712538b0c303b7b9590c2e64008649140a2a8f"
+    },
+    "breakdown_by_mic_v2_38a.csv": {
+      "bytes": 266,
+      "sha256": "85f85ccae33c71a937db94fbee81f910fa859ec5fe81bb59f2bb1eb7e6966224"
+    },
+    "breakdown_by_readiness_v2_38a.csv": {
+      "bytes": 211,
+      "sha256": "544c85f02d8b6c728c7000b4549d0c8acb2f33811b8bba4dffb793c6e34d050f"
+    },
+    "breakdown_by_source_provider_v2_38a.csv": {
+      "bytes": 505,
+      "sha256": "af80176c5cd99e51f2cbc0e1a669a447b239f0d4549df48608cf01a3fdc57d7c"
+    },
+    "canonical_dataset_candidates_v2_38a.csv": {
+      "bytes": 720,
+      "sha256": "ce7337b8b271d073afc283932252af8c86d2ec26f6b8f58c566de54bdcafd35b"
+    },
+    "global_universe_audited_v2_38a.csv.xz": {
+      "bytes": 544100,
+      "sha256": "66d02e1b7a0ee7b7e7db66efc266a4a1f608c96b408c862f111c616179103e83"
+    },
+    "global_universe_summary_v2_38a.json": {
+      "bytes": 1413,
+      "sha256": "4583bc02565a7b24203f40cd54f7f104f52be9970e83b648197548f8ad719d17"
+    },
+    "provider_route_matrix_v2_38a.csv": {
+      "bytes": 1986,
+      "sha256": "d0d6a48c200c9c32e4f11ff76aed37584aadad7af4a927005953f829c8629baa"
+    }
+  },
+  "phase": "v2.38A-global-universe-audit",
+  "row_conservation": {
+    "audited": 43089,
+    "equal": true,
+    "input": 43089
+  }
+}

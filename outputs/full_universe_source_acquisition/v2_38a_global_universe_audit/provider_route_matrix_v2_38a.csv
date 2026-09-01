@@ -1,0 +1,16 @@
+exchange,rows,eligible_rows,candidate_provider,route_status,license_status,limitation,network_calls
+ASX,1316,1271,none free,EXCLUDED_NO_FREE_SOURCE,paid_license_required,official historical access requires paid distribution,0
+BVC,23,3,SFC summary only,EXCLUDED_INSUFFICIENT_SOURCE,not_applicable,no validated daily historical series,0
+CBOE,1220,0,not evaluated,SOURCE_RESEARCH_REQUIRED,not_evaluated,eligible population is zero under current policy,0
+CBOE_EUROPE,21154,10483,none actionable,EXCLUDED_NO_ACTIONABLE_SOURCE,not_applicable,home exchange mapping and free source unresolved,0
+Cboe BZX,4,1,Twelve Data candidate,USER_ACCOUNT_AND_PILOT_REQUIRED,personal_cache_terms_unresolved,no validated global acquisition,0
+HKEX,3200,0,not evaluated,SOURCE_RESEARCH_REQUIRED,not_evaluated,eligible population is zero under current policy,0
+JPX,3705,3701,J-Quants,PILOT_VALIDATED_NOT_SCALED,personal_use_confirmed,42/3701 price pilot; fundamentals only for 42 phase-5 assets,0
+NASDAQ,4336,3016,Twelve Data candidate,USER_ACCOUNT_AND_PILOT_REQUIRED,personal_cache_terms_unresolved,no validated global acquisition,0
+NSE,2013,0,not evaluated,SOURCE_RESEARCH_REQUIRED,not_evaluated,eligible population is zero under current policy,0
+NYSE,3362,1761,Twelve Data candidate,USER_ACCOUNT_AND_PILOT_REQUIRED,personal_cache_terms_unresolved,no validated global acquisition,0
+NYSE American,265,233,Twelve Data candidate,USER_ACCOUNT_AND_PILOT_REQUIRED,personal_cache_terms_unresolved,no validated global acquisition,0
+NYSE Arca,13,0,not evaluated,SOURCE_RESEARCH_REQUIRED,not_evaluated,eligible population is zero under current policy,0
+SGX,358,0,not evaluated,BLOCKED_METADATA_SCHEMA,not_evaluated,source schema displacement retained by v2.33B2,0
+TWSE,696,696,TWSE official open data,PILOT_VALIDATED_NOT_SCALED,open_government_data,8/696 price and fundamental pilot; prices unadjusted,0
+XETR,1424,0,not evaluated,BLOCKED_METADATA_SCHEMA,not_evaluated,source name field corruption retained by v2.33B2,0

@@ -1,0 +1,17 @@
+{
+  "contract_version": "1.0.0",
+  "phase": "v2.38A-global-universe-audit",
+  "canonical_dataset": "outputs/full_universe_source_acquisition/v2_33b2_eligibility_refinement/eligibility_census_v2_33b2.csv.xz",
+  "canonical_sha256": "dd7a5d2f98d2e750d08cb8633d772caecf044e6c41db7f27464b58bf10bb1876",
+  "metadata_dataset": "outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv",
+  "metadata_sha256": "01fef82316a458c65d42c08cb993feed9e0cc8178f4f7bf4f08835f169bfa74c",
+  "expected_rows": 43089,
+  "eligible_status": "eligible_for_financial_enrichment_v2_33b2",
+  "expected_eligible_rows": 21165,
+  "required_fields": ["row_number", "ticker", "company_name", "exchange", "source_provider", "instrument_type", "eligibility_decision_v2_33b2"],
+  "identity_key_fields": ["source_provider", "exchange", "ticker", "row_number"],
+  "forbidden_actions": ["network", "credentials", "price_download", "fundamental_download", "scoring", "ranking", "recommendations", "phase9b"],
+  "phase9b_authorized": false,
+  "allow_ranking": false,
+  "production_scoring_authorized": false
+}
