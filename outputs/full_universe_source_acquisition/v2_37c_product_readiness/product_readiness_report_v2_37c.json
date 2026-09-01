@@ -1,6 +1,6 @@
 {
   "phase": "v2.37-phase8-product",
-  "status": "IMPLEMENTED_AWAITING_WINDOWS_UI_VALIDATION",
+  "status": "COMPLETED_LOCAL_PRODUCT",
   "canonical_entrypoint": "app_v2_37.py",
   "runtime": "local_streamlit",
   "canonical_assets": 50,
@@ -16,6 +16,9 @@
   "automated_trading": false,
   "public_deployment_authorized": false,
   "offline_qa": "PASS",
-  "windows_real_local_ui_qa": "PENDING",
-  "phase8_decision": "PENDING_WINDOWS_VALIDATION"
+  "windows_real_local_ui_qa": "PASS",
+  "visual_validation_date": "2026-09-01",
+  "visual_validation_platform": "Windows 11 / Streamlit local",
+  "validated_views": 8,
+  "phase8_decision": "COMPLETED_LOCAL_PRODUCT"
 }

@@ -1,9 +1,9 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
-**Fase 8 (producto local) — implementada, pendiente de validación visual en Windows** (`IMPLEMENTED_AWAITING_WINDOWS_UI_VALIDATION`, v2.37). La nueva entrada es `app_v2_37.py`; conserva de forma visible la decisión de fase 7 **`INSUFFICIENT_EVIDENCE`** y no autoriza broker, trading ni despliegue público.
+**Fase 8 (producto local) — cerrada** (`COMPLETED_LOCAL_PRODUCT`, v2.37). La entrada canónica es `app_v2_37.py`; conserva de forma visible la decisión de fase 7 **`INSUFFICIENT_EVIDENCE`** y no autoriza broker, trading ni despliegue público.
 
-- Interfaz candidata: `v2.37 — producto local de investigación`; la interfaz estable anterior `v2.32F` permanece intacta.
+- Interfaz vigente: `v2.37 — producto local de investigación`; la interfaz estable anterior `v2.32F` permanece intacta.
 - Pipeline de precios vigente: `v2.33R — Fase 4 Final Gate` (sin cambios).
 - Pipeline de fundamentales vigente: `v2.34J — Fase 5 Final Gate`.
 - Pipeline de scoring vigente: `v2.35C — Fase 6 Final Gate`.
@@ -17,7 +17,7 @@
 - **SGX y Xetra:** identidad reparada (SGX 100 %, Xetra 88,2 %) vía OpenFIGI; sin fuente de precios evaluada todavía.
 - **Fuentes descartadas como mundiales:** EODHD (`COMPLETED_NO_PROMOTION`), Twelve Data en su versión global (solo cubre EE. UU./forex/cripto de forma gratuita).
 - Historial completo, cierre por cierre (v2.33D1 a v2.35C), en `CHANGELOG.md`.
-- Progreso global: **7/8 fases cerradas** y fase 8 en validación. Guía: `GUIA_SCOUT_FINANCE_v2_37.md`. El ranking sigue siendo experimental y no validado históricamente.
+- Progreso global: **8/8 fases cerradas**. Guía: `GUIA_SCOUT_FINANCE_v2_37.md`. El ranking sigue siendo experimental y no validado históricamente.
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
 

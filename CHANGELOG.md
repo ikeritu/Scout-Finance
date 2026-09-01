@@ -1,7 +1,7 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
-## v2.37 — producto local de investigación (pendiente de validación Windows)
+## v2.37 — producto local de investigación (2026-09-01)
 
-Añade una interfaz Streamlit nueva y aislada (`app_v2_37.py`) sobre el universo canónico de 50 activos. Separa 41 JPX en ranking experimental, 7 TWSE con comparabilidad parcial y P020/P178 en revisión requerida. Incorpora universo filtrable, fichas, comparador, watchlists privadas con escritura atómica, informes trazables y estados explícitos de disponibilidad. No usa red ni datos demo y mantiene visible `INSUFFICIENT_EVIDENCE`. La implementación y QA offline pasan; el cierre queda pendiente del recorrido visual con datos locales reales en Windows.
+Cierra la fase 8 como **`COMPLETED_LOCAL_PRODUCT`** tras superar la suite offline y el recorrido funcional con datos reales locales en Windows 11. Añade una interfaz Streamlit nueva y aislada (`app_v2_37.py`) sobre el universo canónico de 50 activos. Separa 41 JPX en ranking experimental, 7 TWSE con comparabilidad parcial y P020/P178 en revisión requerida. Incorpora universo filtrable, fichas, comparador, watchlists privadas con escritura atómica, informes trazables y estados explícitos de disponibilidad. No usa red ni datos demo y mantiene visible `INSUFFICIENT_EVIDENCE`; el cierre de producto no valida capacidad predictiva.
 
 ## v2.36 — gate de evidencia y cierre de la fase 7 (2026-08-31)
 

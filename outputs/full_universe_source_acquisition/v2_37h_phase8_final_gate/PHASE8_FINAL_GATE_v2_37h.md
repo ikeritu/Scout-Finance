@@ -1,10 +1,10 @@
 # Scout Finance v2.37H — gate de fase 8
 
-## Decisión provisional
+## Decisión final
 
-`IMPLEMENTED_AWAITING_WINDOWS_UI_VALIDATION`
+`COMPLETED_LOCAL_PRODUCT`
 
-La implementación y la QA offline están completas, pero la fase 8 no se declara cerrada hasta ejecutar el producto en Windows con los datos reales locales y completar el checklist visual. No se autoriza despliegue público, broker ni trading.
+La implementación, la QA offline y el recorrido funcional con datos reales locales en Windows 11 están completos. Scout Finance queda cerrado como producto local de investigación. No se autoriza despliegue público, broker ni trading.
 
 ## Evidencia automatizada
 
@@ -20,17 +20,20 @@ La implementación y la QA offline están completas, pero la fase 8 no se declar
 - Suite completa de fase 7 heredada: `PASS`.
 - Secretos, red y broker: `PASS`.
 
-## Validación pendiente en el equipo canónico
+## Validación visual en el equipo canónico
 
-- Arranque de Streamlit en Windows 11.
-- Lectura del detalle local licenciado de precios, fundamentales y scoring.
-- Recorrido visual de las ocho pantallas.
-- Accesibilidad básica por teclado y ancho móvil.
-- Confirmación de que ninguna de las seis salidas locales protegidas ha sido tocada.
+- Arranque de Streamlit en Windows 11: `PASS`.
+- Lectura del detalle local licenciado de precios, fundamentales y scoring: `PASS`.
+- Inicio, universo, ranking, ficha, comparador, watchlist, informes y metodología/ayuda: `PASS`.
+- Estados JPX, TWSE, P020 y P178 representados sin ocultar limitaciones: `PASS`.
+- Comparador corregido a barras agrupadas y presentación localizada: `PASS`.
+- Watchlist creada, persistida, editada y exportable: `PASS`.
+- Informes con trazabilidad y aviso obligatorio: `PASS`.
+- Las seis salidas locales protegidas permanecen fuera del alcance del cierre: `PASS`.
 
-## Regla de cierre
+## Alcance del cierre
 
-Solo tras esos controles podrá cambiarse la decisión a `COMPLETED_LOCAL_PRODUCT` y crearse el tag final. La fase 7 permanece `INSUFFICIENT_EVIDENCE`; cerrar la interfaz no valida el scoring.
+La fase 8 se cierra exclusivamente como producto local. La fase 7 permanece `INSUFFICIENT_EVIDENCE`; cerrar la interfaz no valida el scoring ni demuestra capacidad predictiva.
 
 `public_deployment_authorized: false`
 `broker_integration_authorized: false`
