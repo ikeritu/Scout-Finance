@@ -1,5 +1,5 @@
 {
-  "decision": "PARTIAL_US_SEC_FUNDAMENTAL_FEATURES_NOT_SCORING",
+  "decision": "COMPLETED_US_SEC_FUNDAMENTAL_FEATURES_NOT_SCORING",
   "guardrails": {
     "network_calls": 0,
     "phase9c_authorized": false,
@@ -8,19 +8,19 @@
     "scoring_calculated": false
   },
   "inputs": {
-    "outputs/full_universe_source_acquisition/v2_38f_us_sec_fundamental_normalization/us_sec_fundamental_quality_v2_38f.csv": {
-      "bytes": 195,
-      "sha256": "ee03acb54f4d7f1584cabb937c2cf87e73185469b53ebf2ab3acc45056bdce66"
+    "outputs\\full_universe_source_acquisition\\v2_38f_us_sec_fundamental_normalization\\us_sec_fundamental_quality_v2_38f.csv": {
+      "bytes": 142698,
+      "sha256": "a4cf4c1f85f6df9aed8b8795f06beab70b09950ab229b8844cdea59206b1f2a8"
     },
-    "outputs/full_universe_source_acquisition/v2_38f_us_sec_fundamental_normalization/us_sec_fundamental_records_v2_38f.jsonl": {
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    "outputs\\full_universe_source_acquisition\\v2_38f_us_sec_fundamental_normalization\\us_sec_fundamental_records_v2_38f.jsonl": {
+      "bytes": 210303786,
+      "sha256": "5f7ba20f329de7a41a6007f22861cbdff9c71ee6ce4d2839ecec50b11ac9a6b8"
     }
   },
   "outputs": {
     "PHASE9G_US_SEC_FEATURES_GATE_v2_38g.md": {
-      "bytes": 418,
-      "sha256": "6efd3565549cd1a6fbf0414717020ca280c8072e2ca3eb4d90f7111da6099ef4"
+      "bytes": 435,
+      "sha256": "0d11513d3f0593546d6b3bf6f71a4df6b0c1226d2f8eea0d6f256f670e9ba41a"
     },
     "README.md": {
       "bytes": 170,
@@ -31,20 +31,20 @@
       "sha256": "5bb59bf4c4cfd80afb28a54e01c27bcf714a720c901392bdfb32b1363d215a5c"
     },
     "us_sec_fundamental_feature_aggregate_report_v2_38g.json": {
-      "bytes": 1206,
-      "sha256": "782b5b9280af981368ecc87637cd9e59bb7260b90fcdc89e55d1787cd6c3015b"
+      "bytes": 1364,
+      "sha256": "52b60fb4ffd961a72dca6d31245e21fe73305649c5cdca02f674e69f13cc5ef5"
     },
     "us_sec_fundamental_feature_quality_v2_38g.csv": {
-      "bytes": 171,
-      "sha256": "93ae97cd6cb998a6db9196783ffbc0f5f24662d1b77d5b0e65080bad13d47b1a"
+      "bytes": 133139,
+      "sha256": "8d2ad7595c9f2da4264b4b3c6734bc7cbbaa822848668768cc58f2d35f525774"
     },
     "us_sec_fundamental_feature_rejections_v2_38g.csv": {
-      "bytes": 71,
-      "sha256": "a431c7eace3d7ff31bfaed4dc27f0ef71b3c9589ae45f7566e2b2572b1d9b724"
+      "bytes": 265199,
+      "sha256": "06d29a0ab7268ffd76089a1ce4725e43c5a5d37d1f65a23863ac6ccd6236d97a"
     },
     "us_sec_fundamental_features_v2_38g.csv": {
-      "bytes": 610,
-      "sha256": "2bb55a35a8a442bac3d7056700d0f19e963c73c4af414243597f91903f33333b"
+      "bytes": 216405,
+      "sha256": "ec74c4bd2b37005d3694c333ca18cc3872b180abaabd4c0a89d24b422906a48f"
     }
   },
   "phase": "v2.38G-us-sec-fundamental-features"
