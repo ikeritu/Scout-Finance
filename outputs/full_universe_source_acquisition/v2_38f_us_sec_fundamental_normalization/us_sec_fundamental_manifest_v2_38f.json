@@ -1,5 +1,5 @@
 {
-  "decision": "PARTIAL_US_SEC_FUNDAMENTAL_NORMALIZATION_NOT_SCORING",
+  "decision": "COMPLETED_US_SEC_FUNDAMENTAL_NORMALIZATION_NOT_SCORING",
   "guardrails": {
     "network_calls": 0,
     "phase9c_authorized": false,
@@ -9,14 +9,14 @@
   },
   "inputs": {
     "outputs/full_universe_source_acquisition/v2_38e_us_sec_enrichment_expansion/us_sec_enrichment_readiness_v2_38e.csv": {
-      "bytes": 2339110,
-      "sha256": "5bf822dd80d6699e1b734f0b8071d278f1c719e853fdc1a15df63b9df50b9907"
+      "bytes": 2196149,
+      "sha256": "ccb4ce14c692acf8e325cfbcb04e66a93dc8f0563a3eabf12eab80baf203b035"
     }
   },
   "outputs": {
     "PHASE9F_US_SEC_NORMALIZATION_GATE_v2_38f.md": {
-      "bytes": 515,
-      "sha256": "d2fa628959af9ca11d59f9aca5fec5b857947448546b22744f7905f176b1487f"
+      "bytes": 533,
+      "sha256": "97c543d8b437d20b5589ffdee85e0697471c7b6b5f2c2dd72c9c23140239f5d4"
     },
     "README.md": {
       "bytes": 163,
@@ -27,20 +27,20 @@
       "sha256": "b9a0c31735328af0d07a3b0dba82cdf239fd2ab5f3ba464cf579a449370d17cc"
     },
     "us_sec_fundamental_aggregate_report_v2_38f.json": {
-      "bytes": 702,
-      "sha256": "8c365e66f1e411bf242cc477812036e63053749d2b31349c85f9734509e8f43b"
+      "bytes": 1037,
+      "sha256": "988e1b5d03bac8c5e690dc33023f76ad67b306c66d51770d2a73088e7ce81409"
     },
     "us_sec_fundamental_quality_v2_38f.csv": {
-      "bytes": 195,
-      "sha256": "ee03acb54f4d7f1584cabb937c2cf87e73185469b53ebf2ab3acc45056bdce66"
+      "bytes": 142698,
+      "sha256": "a4cf4c1f85f6df9aed8b8795f06beab70b09950ab229b8844cdea59206b1f2a8"
     },
     "us_sec_fundamental_records_v2_38f.jsonl": {
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "bytes": 210303786,
+      "sha256": "5f7ba20f329de7a41a6007f22861cbdff9c71ee6ce4d2839ecec50b11ac9a6b8"
     },
     "us_sec_fundamental_rejected_v2_38f.csv": {
-      "bytes": 81,
-      "sha256": "7c824b8815bf7dc93cdb1c0664ae903129109aafd2d4bbfe601f04a60fdc07ec"
+      "bytes": 1012684,
+      "sha256": "dbe85fa453b8fabf9898fae4304f81395be73eeca0a59d464bd8c265e20fe69c"
     }
   },
   "phase": "v2.38F-us-sec-fundamental-normalization"

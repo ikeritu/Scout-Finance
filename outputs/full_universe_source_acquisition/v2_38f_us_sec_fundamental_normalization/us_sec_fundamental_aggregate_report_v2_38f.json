@@ -1,8 +1,8 @@
 {
-  "companies_no_normalizable_facts": 0,
-  "companies_normalized_partial": 0,
-  "companies_normalized_ready": 0,
-  "companies_processed": 0,
+  "companies_no_normalizable_facts": 37,
+  "companies_normalized_partial": 175,
+  "companies_normalized_ready": 380,
+  "companies_processed": 592,
   "guardrails": {
     "network_calls": 0,
     "phase9c_authorized": false,
@@ -11,14 +11,28 @@
     "scoring_calculated": false
   },
   "input_cik_resolved": 4896,
-  "input_enriched_sec_ready": 0,
+  "input_enriched_sec_ready": 592,
   "input_us_eligible": 5011,
   "input_us_rows": 9200,
-  "metrics_coverage": {},
+  "metrics_coverage": {
+    "assets": 41133,
+    "capex": 33868,
+    "eps_basic": 55280,
+    "eps_diluted": 53907,
+    "equity": 90476,
+    "liabilities": 32967,
+    "net_income": 75721,
+    "operating_cash_flow": 38402,
+    "revenue": 52688
+  },
   "phase": "v2.38F-us-sec-fundamental-normalization",
-  "quality_status_counts": {},
+  "quality_status_counts": {
+    "NORMALIZED_PARTIAL": 175,
+    "NORMALIZED_READY": 380,
+    "NO_NORMALIZABLE_FACTS": 37
+  },
   "raw_cache_published": false,
-  "records_written": 0,
-  "rejected_rows": 0,
-  "status": "PARTIAL_US_SEC_FUNDAMENTAL_NORMALIZATION_NOT_SCORING"
+  "records_written": 474442,
+  "rejected_rows": 8252,
+  "status": "COMPLETED_US_SEC_FUNDAMENTAL_NORMALIZATION_NOT_SCORING"
 }

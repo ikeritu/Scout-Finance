@@ -97,3 +97,5 @@ outputs/full_universe_source_acquisition/v2_38d_us_sec_foundation/sec_raw_cache_
 
 # Local Phase 9E SEC raw cache
 outputs/full_universe_source_acquisition/v2_38e_us_sec_enrichment_expansion/sec_raw_cache_v2_38e/
+
+outputs/full_universe_source_acquisition/v2_38f_us_sec_fundamental_normalization/us_sec_fundamental_records_v2_38f.jsonl
