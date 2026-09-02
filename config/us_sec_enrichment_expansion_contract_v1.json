@@ -1,0 +1,35 @@
+{
+  "allowed_outputs": [
+    "aggregate_report",
+    "normalized_readiness_csv",
+    "manifest",
+    "review_ledger",
+    "batch_plan",
+    "batch_ledger"
+  ],
+  "baseline_cik_resolved_minimum": 4896,
+  "contract_version": "1.0.0",
+  "execution_default": "DRY_RUN",
+  "expected_us_eligible_rows": 5011,
+  "expected_us_rows": 9200,
+  "forbidden_actions": [
+    "scoring",
+    "ranking",
+    "recommendations",
+    "predictions",
+    "phase9c",
+    "broker",
+    "trading",
+    "raw_sec_json_in_git"
+  ],
+  "input_us_census": "outputs/full_universe_source_acquisition/v2_38c_us_eu_priority_coverage/us_universe_census_v2_38c.csv",
+  "input_us_sec_overlay": "outputs/full_universe_source_acquisition/v2_38d_us_sec_foundation/us_sec_identity_overlay_v2_38d.csv",
+  "maximum_batch_assets": 250,
+  "phase": "v2.38E-us-sec-enrichment-expansion",
+  "raw_data_git_policy": "FORBIDDEN",
+  "sec_sources": [
+    "submissions",
+    "companyfacts"
+  ],
+  "sec_user_agent_env": "SCOUT_FINANCE_SEC_USER_AGENT"
+}

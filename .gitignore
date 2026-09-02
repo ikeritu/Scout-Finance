@@ -94,3 +94,6 @@ outputs/full_universe_source_acquisition/v2_38b_global_enrichment/jpx_global_res
 
 # Local Phase 9D SEC raw cache
 outputs/full_universe_source_acquisition/v2_38d_us_sec_foundation/sec_raw_cache_v2_38d/
+
+# Local Phase 9E SEC raw cache
+outputs/full_universe_source_acquisition/v2_38e_us_sec_enrichment_expansion/sec_raw_cache_v2_38e/

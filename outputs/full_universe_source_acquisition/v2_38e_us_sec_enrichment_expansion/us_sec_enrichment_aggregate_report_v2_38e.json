@@ -1,0 +1,31 @@
+{
+  "cik_resolved": 0,
+  "companyfacts_available": 0,
+  "enriched_sec_ready": 0,
+  "enrichment_status_counts": {
+    "SEC_CIK_REVIEW_REQUIRED": 5011,
+    "SEC_NOT_ELIGIBLE": 4189
+  },
+  "guardrails": {
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "limitations": [
+    "SEC enrichment records availability and metadata only; no scoring or recommendations.",
+    "Raw SEC JSON remains local and ignored by git.",
+    "Adjusted prices and comparable normalized fundamentals are deferred to later phases."
+  ],
+  "not_eligible": 4189,
+  "partial": 0,
+  "pending_collection": 0,
+  "phase": "v2.38E-us-sec-enrichment-expansion",
+  "raw_cache_published": false,
+  "review_required": 5011,
+  "status": "PARTIAL_US_SEC_ENRICHMENT_EXPANSION_NOT_SCORING",
+  "submissions_available": 0,
+  "us_eligible": 5011,
+  "us_rows": 9200,
+  "with_basic_concepts": 0
+}
