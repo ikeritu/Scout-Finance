@@ -1,0 +1,42 @@
+{
+  "companies_features_partial": 0,
+  "companies_features_ready": 0,
+  "companies_input": 0,
+  "companies_insufficient": 0,
+  "feature_coverage": {
+    "assets_yoy_growth": 0,
+    "balance_strength_flag": 0,
+    "capex_to_revenue": 0,
+    "cash_conversion_ratio": 0,
+    "equity_to_assets": 0,
+    "equity_yoy_growth": 0,
+    "free_cash_flow": 0,
+    "free_cash_flow_margin": 0,
+    "fundamental_momentum_flag": 0,
+    "growth_acceleration_flag": 0,
+    "liabilities_to_assets": 0,
+    "margin_expansion_flag": 0,
+    "net_income_yoy_growth": 0,
+    "net_margin": 0,
+    "operating_cash_flow_margin": 0,
+    "operating_cash_flow_yoy_growth": 0,
+    "positive_fcf_flag": 0,
+    "return_on_assets": 0,
+    "return_on_equity": 0,
+    "revenue_yoy_growth": 0
+  },
+  "feature_quality_status_counts": {},
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "input_quality_companies": 0,
+  "input_records": 0,
+  "phase": "v2.38G-us-sec-fundamental-features",
+  "raw_cache_published": false,
+  "rejected_rows": 0,
+  "status": "PARTIAL_US_SEC_FUNDAMENTAL_FEATURES_NOT_SCORING"
+}

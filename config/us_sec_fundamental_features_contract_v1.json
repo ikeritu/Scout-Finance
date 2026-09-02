@@ -1,0 +1,46 @@
+{
+  "allowed_feature_quality_status": [
+    "FEATURES_READY",
+    "FEATURES_PARTIAL",
+    "INSUFFICIENT_FEATURE_EVIDENCE"
+  ],
+  "allowed_features": [
+    "revenue_yoy_growth",
+    "net_income_yoy_growth",
+    "operating_cash_flow_yoy_growth",
+    "assets_yoy_growth",
+    "equity_yoy_growth",
+    "net_margin",
+    "return_on_assets",
+    "return_on_equity",
+    "operating_cash_flow_margin",
+    "liabilities_to_assets",
+    "equity_to_assets",
+    "free_cash_flow",
+    "free_cash_flow_margin",
+    "capex_to_revenue",
+    "cash_conversion_ratio",
+    "growth_acceleration_flag",
+    "margin_expansion_flag",
+    "positive_fcf_flag",
+    "balance_strength_flag",
+    "fundamental_momentum_flag"
+  ],
+  "contract_version": "1.0.0",
+  "expected_us_eligible": 5011,
+  "expected_us_rows": 9200,
+  "forbidden_actions": [
+    "network",
+    "raw_sec_json_in_git",
+    "scoring",
+    "ranking",
+    "recommendations",
+    "predictions",
+    "phase9c",
+    "broker",
+    "trading"
+  ],
+  "input_quality": "outputs/full_universe_source_acquisition/v2_38f_us_sec_fundamental_normalization/us_sec_fundamental_quality_v2_38f.csv",
+  "input_records": "outputs/full_universe_source_acquisition/v2_38f_us_sec_fundamental_normalization/us_sec_fundamental_records_v2_38f.jsonl",
+  "phase": "v2.38G-us-sec-fundamental-features"
+}
