@@ -1,0 +1,52 @@
+{
+  "decision": "PRICE_FEATURES_BLOCKED_NO_LOCAL_US_PRICE_HISTORY",
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "inputs": {
+    "outputs/full_universe_source_acquisition/v2_38g_us_sec_fundamental_features/us_sec_fundamental_feature_quality_v2_38g.csv": {
+      "bytes": 171,
+      "sha256": "93ae97cd6cb998a6db9196783ffbc0f5f24662d1b77d5b0e65080bad13d47b1a"
+    }
+  },
+  "outputs": {
+    "PHASE9H_US_PRICE_FEATURES_GATE_v2_38h.md": {
+      "bytes": 488,
+      "sha256": "6536c73597f1c35dba937ba0443e90134f331084e35c440becc85343bb354d74"
+    },
+    "README.md": {
+      "bytes": 238,
+      "sha256": "ce973e1933d00b311f0e4fe50b1e772acd282a40bd491be03dca1151121a0425"
+    },
+    "US_PRICE_FEATURES_CONTRACT_v2_38h.md": {
+      "bytes": 236,
+      "sha256": "ea7a70024558ba2698230fa5cb777bce3e88d2e0bb07982619a243a8cd08e116"
+    },
+    "us_price_feature_aggregate_report_v2_38h.json": {
+      "bytes": 1196,
+      "sha256": "fd6788917b45c1373b66131ddae0eb39a8519b3969eff78a11c63b02c0e75bbf"
+    },
+    "us_price_feature_quality_v2_38h.csv": {
+      "bytes": 149,
+      "sha256": "39b05e1ac5369c20ffcb0f7e7e2c18ed194e996a7517adcfeddc0394b8ce2050"
+    },
+    "us_price_feature_rejections_v2_38h.csv": {
+      "bytes": 66,
+      "sha256": "4f1e8c73ad45855d4f48bb682fcd78c67a2b005bdd0ecaaeca3df95dc0991a6f"
+    },
+    "us_price_features_v2_38h.csv": {
+      "bytes": 569,
+      "sha256": "ac4fb00ded412cacc9574a9228aef1ea85265513a383f330797fdbe6bdddbee6"
+    }
+  },
+  "phase": "v2.38H-us-price-features",
+  "price_roots_checked": [
+    "outputs/full_universe_source_acquisition/v2_38h_us_price_history",
+    "outputs/full_universe_source_acquisition/us_price_history",
+    "data/local/us_price_history"
+  ]
+}

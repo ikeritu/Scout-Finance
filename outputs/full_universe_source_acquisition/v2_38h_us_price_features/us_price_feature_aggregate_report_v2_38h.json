@@ -1,0 +1,43 @@
+{
+  "companies_candidates": 0,
+  "companies_input": 0,
+  "companies_insufficient_price_evidence": 0,
+  "companies_price_features_partial": 0,
+  "companies_price_features_ready": 0,
+  "feature_coverage": {
+    "avg_volume_1m": 0,
+    "avg_volume_3m": 0,
+    "downside_volatility_6m": 0,
+    "liquidity_available_flag": 0,
+    "max_drawdown_12m": 0,
+    "max_drawdown_6m": 0,
+    "momentum_consistency_flag": 0,
+    "near_52w_high_flag": 0,
+    "price_acceleration_flag": 0,
+    "price_vs_sma_200": 0,
+    "price_vs_sma_50": 0,
+    "recent_high_breakout_flag": 0,
+    "recovery_from_drawdown_flag": 0,
+    "return_12m": 0,
+    "return_1m": 0,
+    "return_3m": 0,
+    "return_6m": 0,
+    "sma_50_vs_sma_200": 0,
+    "trend_positive_flag": 0,
+    "volatility_3m": 0,
+    "volatility_6m": 0
+  },
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "phase": "v2.38H-us-price-features",
+  "price_files_discovered": 0,
+  "quality_status_counts": {},
+  "raw_cache_published": false,
+  "rejected_rows": 0,
+  "status": "PRICE_FEATURES_BLOCKED_NO_LOCAL_US_PRICE_HISTORY"
+}
