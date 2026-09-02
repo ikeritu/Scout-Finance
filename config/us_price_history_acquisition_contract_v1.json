@@ -1,0 +1,33 @@
+{
+  "allowed_acquisition_status": [
+    "PENDING_COLLECTION",
+    "LOCAL_PRICE_READY",
+    "BLOCKED_MISSING_SYMBOL",
+    "BLOCKED_PROVIDER_UNAVAILABLE",
+    "COLLECTION_FAILED"
+  ],
+  "allowed_providers": [
+    "twelvedata"
+  ],
+  "batch_limit_max": 250,
+  "contract_version": "1.0.0",
+  "default_expected_min_rows": 252,
+  "default_from_date": "2024-01-01",
+  "forbidden_actions": [
+    "scoring",
+    "ranking",
+    "recommendations",
+    "predictions",
+    "phase9c",
+    "broker",
+    "trading",
+    "secret_publication",
+    "raw_price_cache_in_git"
+  ],
+  "input_sec_features": "outputs/full_universe_source_acquisition/v2_38g_us_sec_fundamental_features/us_sec_fundamental_features_v2_38g.csv",
+  "phase": "v2.38I-us-price-history-acquisition",
+  "provider_env": {
+    "twelvedata": "TWELVE_DATA_API_KEY"
+  },
+  "raw_cache": "outputs/full_universe_source_acquisition/v2_38i_us_price_history_acquisition/us_price_history_raw_v2_38i"
+}

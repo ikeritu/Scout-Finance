@@ -1,0 +1,43 @@
+{
+  "decision": "NO_PENDING_COLLECTION",
+  "guardrails": {
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "inputs": {
+    "outputs/full_universe_source_acquisition/v2_38g_us_sec_fundamental_features/us_sec_fundamental_features_v2_38g.csv": {
+      "bytes": 610,
+      "sha256": "2bb55a35a8a442bac3d7056700d0f19e963c73c4af414243597f91903f33333b"
+    }
+  },
+  "outputs": {
+    "PHASE9I_US_PRICE_HISTORY_GATE_v2_38i.md": {
+      "bytes": 393,
+      "sha256": "51743747965c997a98f70967076d11a1170c0f2b2f35c53db7c785156a61afdf"
+    },
+    "README.md": {
+      "bytes": 214,
+      "sha256": "0798902dfd21c37774a199de91003b4130ba83f42a1499662cfebc341556c0eb"
+    },
+    "US_PRICE_HISTORY_ACQUISITION_CONTRACT_v2_38i.md": {
+      "bytes": 244,
+      "sha256": "de57bd2f72e4e7a25dbe7eeceaa88e6cbdb899930514b283b1ed85908ee1c793"
+    },
+    "us_price_history_acquisition_plan_v2_38i.csv": {
+      "bytes": 183,
+      "sha256": "80eb80ffcaa27f24c96ddfdbcb6748ce26416f0c0557d46b587300624105acba"
+    },
+    "us_price_history_batch_ledger_v2_38i.csv": {
+      "bytes": 169,
+      "sha256": "353469a477ce5367365897ec383141102fb46be5c58bdf0253090ac1b60e8fcc"
+    },
+    "us_price_history_collection_report_v2_38i.json": {
+      "bytes": 496,
+      "sha256": "4d3b19208cdcbcff2026cc822a2eda50bcf4936c5fe34105b4cebdaa44dd0ae0"
+    }
+  },
+  "phase": "v2.38I-us-price-history-acquisition",
+  "raw_cache": "outputs/full_universe_source_acquisition/v2_38i_us_price_history_acquisition/us_price_history_raw_v2_38i"
+}

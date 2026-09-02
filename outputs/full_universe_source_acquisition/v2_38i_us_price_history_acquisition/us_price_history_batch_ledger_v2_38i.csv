@@ -1,0 +1,2 @@
+batch_id,run_utc,provider,requested,selected,collected,skipped_existing,failed,status,phase9c_authorized,scoring_calculated,ranking_calculated,recommendations_generated
+v2_38i_20260902T184843Z,2026-09-02T18:48:43.292729+00:00,twelvedata,1,1,1,0,0,COMPLETED,false,false,false,false

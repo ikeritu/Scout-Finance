@@ -99,3 +99,6 @@ outputs/full_universe_source_acquisition/v2_38d_us_sec_foundation/sec_raw_cache_
 outputs/full_universe_source_acquisition/v2_38e_us_sec_enrichment_expansion/sec_raw_cache_v2_38e/
 
 outputs/full_universe_source_acquisition/v2_38f_us_sec_fundamental_normalization/us_sec_fundamental_records_v2_38f.jsonl
+
+# Local Phase 9I US raw price history
+outputs/full_universe_source_acquisition/v2_38i_us_price_history_acquisition/us_price_history_raw_v2_38i/
