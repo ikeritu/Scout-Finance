@@ -1,17 +1,25 @@
 asset_id,ticker,company_name,exchange,price_rows,date_start,date_end,features_calculated,features_missing,price_feature_quality_status,quality_flags
+U00006,AAL,"American Airlines Group, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00007,AAME,Atlantic American Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00008,AAOI,"Applied Optoelectronics, Inc. - Common Stock",,671,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00009,AAON,"AAON, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00011,AAPL,Apple Inc. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00012,AARD,"Aardvark Therapeutics, Inc. - Common Stock",,389,2025-02-13,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00013,ABAT,American Battery Technology Company - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00014,ABCL,AbCellera Biologics Inc. - Common Shares,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00015,ABEO,Abeona Therapeutics Inc. - Common Stock,,670,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00016,ABLV,Able View Global Inc. - Class B Ordinary Shares,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00017,ABNB,"Airbnb, Inc. - Class A Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00018,ABOS,"Acumen Pharmaceuticals, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00019,ABSI,Absci Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00020,ABTC,American Bitcoin Corp. - Class A Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00021,ABTS,Abits Group Inc - Ordinary Shares,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00022,ABUS,Arbutus Biopharma Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00023,ABVC,"ABVC BioPharma, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00025,ACAD,ACADIA Pharmaceuticals Inc. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00027,ACCL,Acco Group Holdings Limited - Class A Ordinary Shares,,219,2025-10-17,2026-09-01,19,max_drawdown_12m|return_12m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00028,ACDC,ProFrac Holding Corp. - Class A Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00029,ACET,"Adicet Bio, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00030,ACFN,"Acorn Energy, Inc. - Common Stock",,672,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00032,ACGL,Arch Capital Group Ltd. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00033,ACHC,"Acadia Healthcare Company, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -271,3 +279,11 @@ U00498,BZAI,"Blaize Holdings, Inc. - Common Stock",,412,2025-01-10,2026-09-01,21
 U00499,BZFD,"BuzzFeed, Inc. - Class A Common Stock",,670,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00500,CAAS,"China Automotive Systems, Inc. - Ordinary Share",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00503,CAC,Camden National Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00504,CACC,Credit Acceptance Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00509,CAKE,The Cheesecake Factory Incorporated - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00511,CALM,"Cal-Maine Foods, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00512,CAMP,CAMP4 Therapeutics Corporation - Common Stock,,619,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00513,CAMT,Camtek Ltd. - Ordinary Shares,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00519,CARE,"Carter Bankshares, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00520,CARG,"CarGurus, Inc. - Class A Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00522,CART,Maplebear Inc. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
