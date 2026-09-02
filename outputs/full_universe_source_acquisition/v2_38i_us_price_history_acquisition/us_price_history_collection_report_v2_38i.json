@@ -1,7 +1,7 @@
 {
-  "candidates_total": 0,
+  "candidates_total": 555,
   "collected_assets": 0,
-  "collection_status": "NO_PENDING_COLLECTION",
+  "collection_status": "READY_FOR_COLLECTION",
   "failed_assets": 0,
   "guardrails": {
     "phase9c_authorized": false,
@@ -10,10 +10,10 @@
     "scoring_calculated": false
   },
   "local_raw_cache_published": false,
-  "partial_priority": 0,
-  "pending_assets": 0,
+  "partial_priority": 184,
+  "pending_assets": 555,
   "phase": "v2.38I-us-price-history-acquisition",
   "provider": "twelvedata",
-  "ready_priority": 0,
+  "ready_priority": 356,
   "skipped_existing": 0
 }

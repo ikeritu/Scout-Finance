@@ -1,11 +1,11 @@
 # Phase 9I US Price History Acquisition Gate v2.38I
 
-Decision: NO_PENDING_COLLECTION
+Decision: READY_FOR_COLLECTION
 
-- Candidates total: 0
-- FEATURES_READY priority: 0
-- FEATURES_PARTIAL priority: 0
-- Pending assets: 0
+- Candidates total: 555
+- FEATURES_READY priority: 356
+- FEATURES_PARTIAL priority: 184
+- Pending assets: 555
 - Local price ready: 0
 - Provider: twelvedata
 - Local raw cache published: false

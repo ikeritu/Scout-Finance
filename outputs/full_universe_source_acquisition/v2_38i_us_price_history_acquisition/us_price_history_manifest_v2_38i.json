@@ -1,5 +1,5 @@
 {
-  "decision": "NO_PENDING_COLLECTION",
+  "decision": "READY_FOR_COLLECTION",
   "guardrails": {
     "phase9c_authorized": false,
     "ranking_calculated": false,
@@ -7,15 +7,15 @@
     "scoring_calculated": false
   },
   "inputs": {
-    "outputs/full_universe_source_acquisition/v2_38g_us_sec_fundamental_features/us_sec_fundamental_features_v2_38g.csv": {
-      "bytes": 610,
-      "sha256": "2bb55a35a8a442bac3d7056700d0f19e963c73c4af414243597f91903f33333b"
+    "outputs\\full_universe_source_acquisition\\v2_38g_us_sec_fundamental_features\\us_sec_fundamental_features_v2_38g.csv": {
+      "bytes": 216405,
+      "sha256": "ec74c4bd2b37005d3694c333ca18cc3872b180abaabd4c0a89d24b422906a48f"
     }
   },
   "outputs": {
     "PHASE9I_US_PRICE_HISTORY_GATE_v2_38i.md": {
-      "bytes": 393,
-      "sha256": "51743747965c997a98f70967076d11a1170c0f2b2f35c53db7c785156a61afdf"
+      "bytes": 400,
+      "sha256": "b38cc2eb653ac28ba3407155489dafe5182331c6f49069d2ca74a468faf0d516"
     },
     "README.md": {
       "bytes": 214,
@@ -26,18 +26,18 @@
       "sha256": "de57bd2f72e4e7a25dbe7eeceaa88e6cbdb899930514b283b1ed85908ee1c793"
     },
     "us_price_history_acquisition_plan_v2_38i.csv": {
-      "bytes": 183,
-      "sha256": "80eb80ffcaa27f24c96ddfdbcb6748ce26416f0c0557d46b587300624105acba"
+      "bytes": 150043,
+      "sha256": "e28adac8683e3884c1da055d2d9a0a8769498a05d7d028b14fa9aeed2436666d"
     },
     "us_price_history_batch_ledger_v2_38i.csv": {
-      "bytes": 169,
-      "sha256": "353469a477ce5367365897ec383141102fb46be5c58bdf0253090ac1b60e8fcc"
+      "bytes": 281,
+      "sha256": "409b5bef60a12adafba89cc493c6d7d5e231fcab90c522dabbe998abc7577460"
     },
     "us_price_history_collection_report_v2_38i.json": {
-      "bytes": 496,
-      "sha256": "4d3b19208cdcbcff2026cc822a2eda50bcf4936c5fe34105b4cebdaa44dd0ae0"
+      "bytes": 503,
+      "sha256": "47e709ed0f22f0f6d5d583a3a4974083801b91a148529fb3fdf9c2736fad2859"
     }
   },
   "phase": "v2.38I-us-price-history-acquisition",
-  "raw_cache": "outputs/full_universe_source_acquisition/v2_38i_us_price_history_acquisition/us_price_history_raw_v2_38i"
+  "raw_cache": "outputs\\full_universe_source_acquisition\\v2_38i_us_price_history_acquisition\\us_price_history_raw_v2_38i"
 }
