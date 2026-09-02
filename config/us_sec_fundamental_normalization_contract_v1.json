@@ -1,0 +1,40 @@
+{
+  "allowed_metrics": [
+    "revenue",
+    "net_income",
+    "assets",
+    "liabilities",
+    "equity",
+    "operating_cash_flow",
+    "capex",
+    "eps_basic",
+    "eps_diluted"
+  ],
+  "allowed_outputs": [
+    "normalized_fundamentals_jsonl",
+    "aggregate_report",
+    "quality_report",
+    "manifest",
+    "rejected_ledger"
+  ],
+  "contract_version": "1.0.0",
+  "expected_cik_resolved": 4896,
+  "expected_enriched_sec_ready_baseline": 592,
+  "expected_us_eligible": 5011,
+  "expected_us_rows": 9200,
+  "forbidden_actions": [
+    "network",
+    "raw_sec_json_in_git",
+    "scoring",
+    "ranking",
+    "recommendations",
+    "predictions",
+    "phase9c",
+    "broker",
+    "trading"
+  ],
+  "input_readiness": "outputs/full_universe_source_acquisition/v2_38e_us_sec_enrichment_expansion/us_sec_enrichment_readiness_v2_38e.csv",
+  "input_sec_cache": "outputs/full_universe_source_acquisition/v2_38e_us_sec_enrichment_expansion/sec_raw_cache_v2_38e",
+  "phase": "v2.38F-us-sec-fundamental-normalization",
+  "raw_data_git_policy": "FORBIDDEN"
+}

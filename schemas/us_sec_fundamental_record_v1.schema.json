@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "asset_id": {"type": "string", "pattern": "^U[0-9]{5}$"},
+    "ticker": {"type": "string"},
+    "company_name": {"type": "string"},
+    "exchange": {"type": "string"},
+    "cik": {"type": "string", "pattern": "^[0-9]{10}$"},
+    "metric": {
+      "enum": ["revenue", "net_income", "assets", "liabilities", "equity", "operating_cash_flow", "capex", "eps_basic", "eps_diluted"],
+      "type": "string"
+    },
+    "value": {"type": "number"},
+    "unit": {"type": "string"},
+    "fy": {"type": "integer"},
+    "fp": {"type": "string"},
+    "form": {"type": "string"},
+    "filed": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+    "end": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+    "frame": {"type": "string"},
+    "source_concept": {"type": "string"},
+    "taxonomy": {"type": "string"},
+    "quality_flags": {"items": {"type": "string"}, "type": "array"},
+    "period_type": {"enum": ["annual", "quarterly"], "type": "string"},
+    "phase": {"const": "v2.38F", "type": "string"}
+  },
+  "required": [
+    "asset_id",
+    "ticker",
+    "company_name",
+    "exchange",
+    "cik",
+    "metric",
+    "value",
+    "unit",
+    "fy",
+    "fp",
+    "form",
+    "filed",
+    "end",
+    "source_concept",
+    "taxonomy",
+    "quality_flags",
+    "period_type",
+    "phase"
+  ],
+  "title": "US SEC Fundamental Record v1",
+  "type": "object"
+}

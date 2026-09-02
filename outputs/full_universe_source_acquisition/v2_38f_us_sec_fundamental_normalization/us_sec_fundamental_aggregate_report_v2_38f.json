@@ -1,0 +1,24 @@
+{
+  "companies_no_normalizable_facts": 0,
+  "companies_normalized_partial": 0,
+  "companies_normalized_ready": 0,
+  "companies_processed": 0,
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "input_cik_resolved": 4896,
+  "input_enriched_sec_ready": 0,
+  "input_us_eligible": 5011,
+  "input_us_rows": 9200,
+  "metrics_coverage": {},
+  "phase": "v2.38F-us-sec-fundamental-normalization",
+  "quality_status_counts": {},
+  "raw_cache_published": false,
+  "records_written": 0,
+  "rejected_rows": 0,
+  "status": "PARTIAL_US_SEC_FUNDAMENTAL_NORMALIZATION_NOT_SCORING"
+}
