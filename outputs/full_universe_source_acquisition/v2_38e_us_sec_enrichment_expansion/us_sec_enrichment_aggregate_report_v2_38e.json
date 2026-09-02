@@ -1,9 +1,12 @@
 {
-  "cik_resolved": 0,
-  "companyfacts_available": 0,
-  "enriched_sec_ready": 0,
+  "cik_resolved": 4896,
+  "companyfacts_available": 592,
+  "enriched_sec_ready": 592,
   "enrichment_status_counts": {
-    "SEC_CIK_REVIEW_REQUIRED": 5011,
+    "ENRICHED_PARTIAL_SUBMISSIONS_ONLY": 5,
+    "ENRICHED_SEC_READY": 592,
+    "SEC_CIK_RESOLVED_PENDING_COLLECTION": 4299,
+    "SEC_CIK_REVIEW_REQUIRED": 115,
     "SEC_NOT_ELIGIBLE": 4189
   },
   "guardrails": {
@@ -18,14 +21,14 @@
     "Adjusted prices and comparable normalized fundamentals are deferred to later phases."
   ],
   "not_eligible": 4189,
-  "partial": 0,
-  "pending_collection": 0,
+  "partial": 5,
+  "pending_collection": 4299,
   "phase": "v2.38E-us-sec-enrichment-expansion",
   "raw_cache_published": false,
-  "review_required": 5011,
+  "review_required": 115,
   "status": "PARTIAL_US_SEC_ENRICHMENT_EXPANSION_NOT_SCORING",
-  "submissions_available": 0,
+  "submissions_available": 597,
   "us_eligible": 5011,
   "us_rows": 9200,
-  "with_basic_concepts": 0
+  "with_basic_concepts": 555
 }

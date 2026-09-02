@@ -1,1 +1,251 @@
 asset_id,ticker,company_name,exchange,cik,selection_reason
+U00657,CMCO,Columbus McKinnon Corporation - Common Stock,NASDAQ,0001005229,deterministic_pending_sec_collection
+U00658,CMCSA,Comcast Corporation - Class A Common Stock,NASDAQ,0001166691,deterministic_pending_sec_collection
+U00659,CMCT,Creative Media - Common Stock,NASDAQ,0000908311,deterministic_pending_sec_collection
+U00660,CME,CME Group Inc. - Class A Common Stock,NASDAQ,0001156375,deterministic_pending_sec_collection
+U00661,CMII,Columbus Circle Capital Corp II - Class A Ordinary Shares,NASDAQ,0002088805,deterministic_pending_sec_collection
+U00662,CMND,Clearmind Medicine Inc. - Common Shares,NASDAQ,0001892500,deterministic_pending_sec_collection
+U00663,CMPR,Cimpress plc - Ordinary Shares,NASDAQ,0001262976,deterministic_pending_sec_collection
+U00664,CMPS,COMPASS Pathways Plc - American Depository Shares,NASDAQ,0001816590,deterministic_pending_sec_collection
+U00665,CMPX,"Compass Therapeutics, Inc. - Common Stock",NASDAQ,0001738021,deterministic_pending_sec_collection
+U00666,CMRC,"Commerce.com, Inc. - Series 1 Common Stock",NASDAQ,0001626450,deterministic_pending_sec_collection
+U00667,CMTL,Comtech Telecommunications Corp. - Common Stock,NASDAQ,0000023197,deterministic_pending_sec_collection
+U00668,CMTV,Community Bancorp. - Common stock,NASDAQ,0000718413,deterministic_pending_sec_collection
+U00669,CNCK,Coincheck Group N.V. - Ordinary Shares,NASDAQ,0001913847,deterministic_pending_sec_collection
+U00670,CNDT,Conduent Incorporated - Common Stock,NASDAQ,0001677703,deterministic_pending_sec_collection
+U00671,CNET,ZW Data Action Technologies Inc. - Common Stock,NASDAQ,0001376321,deterministic_pending_sec_collection
+U00672,CNEY,CN Energy Group Inc. - Class A Ordinary Shares,NASDAQ,0001780785,deterministic_pending_sec_collection
+U00673,CNOB,"ConnectOne Bancorp, Inc. - Common Stock",NASDAQ,0000712771,deterministic_pending_sec_collection
+U00674,CNSP,"CNS Pharmaceuticals, Inc. - Common Stock",NASDAQ,0001729427,deterministic_pending_sec_collection
+U00675,CNTB,Connect Biopharma Holdings Limited - Ordinary Shares,NASDAQ,0001835268,deterministic_pending_sec_collection
+U00676,CNTN,"Canton Strategic Holdings, Inc. - Common Stock",NASDAQ,0001861657,deterministic_pending_sec_collection
+U00677,CNTX,Context Therapeutics Inc. - Common Stock,NASDAQ,0001842952,deterministic_pending_sec_collection
+U00678,CNTY,"Century Casinos, Inc. - Common Stock",NASDAQ,0000911147,deterministic_pending_sec_collection
+U00679,CNVS,Cineverse Corp. - Class A Common Stock,NASDAQ,0001173204,deterministic_pending_sec_collection
+U00680,CNXC,Concentrix Corporation - Common Stock,NASDAQ,0001803599,deterministic_pending_sec_collection
+U00681,CNXN,"PC Connection, Inc. - Common Stock",NASDAQ,0001050377,deterministic_pending_sec_collection
+U00682,CNXU,Conexeu Sciences Inc. - Common Stock,NASDAQ,0002066836,deterministic_pending_sec_collection
+U00683,COAG,"Hemab Therapeutics Holdings, Inc. - Common Stock",NASDAQ,0002114044,deterministic_pending_sec_collection
+U00684,COCH,"Envoy Medical, Inc. - Class A Common Stock",NASDAQ,0001840877,deterministic_pending_sec_collection
+U00685,COCO,"The Vita Coco Company, Inc. - Common Stock",NASDAQ,0001482981,deterministic_pending_sec_collection
+U00686,COCP,"Cocrystal Pharma, Inc. - Common Stock",NASDAQ,0001412486,deterministic_pending_sec_collection
+U00687,CODA,"Coda Octopus Group, Inc. - Common stock",NASDAQ,0001334325,deterministic_pending_sec_collection
+U00688,CODX,"Co-Diagnostics, Inc. - Common Stock",NASDAQ,0001692415,deterministic_pending_sec_collection
+U00689,COFS,"ChoiceOne Financial Services, Inc. - Common Stock",NASDAQ,0000803164,deterministic_pending_sec_collection
+U00690,COGT,"Cogent Biosciences, Inc. - Common Stock",NASDAQ,0001622229,deterministic_pending_sec_collection
+U00691,COHU,"Cohu, Inc. - Common Stock",NASDAQ,0000021535,deterministic_pending_sec_collection
+U00692,COIN,"Coinbase Global, Inc. - Class A Common Stock",NASDAQ,0001679788,deterministic_pending_sec_collection
+U00693,COKE,"Coca-Cola Consolidated, Inc. - Common Stock",NASDAQ,0000317540,deterministic_pending_sec_collection
+U00695,COLB,"Columbia Banking System, Inc. - Common Stock",NASDAQ,0000887343,deterministic_pending_sec_collection
+U00696,COLL,"Collegium Pharmaceutical, Inc. - Common Stock",NASDAQ,0001267565,deterministic_pending_sec_collection
+U00697,COLM,Columbia Sportswear Company - Common Stock,NASDAQ,0001050797,deterministic_pending_sec_collection
+U00698,COO,"The Cooper Companies, Inc. - Common Stock",NASDAQ,0000711404,deterministic_pending_sec_collection
+U00699,COOT,Australian Oilseeds Holdings Limited - Ordinary Shares,NASDAQ,0001959994,deterministic_pending_sec_collection
+U00700,CORT,Corcept Therapeutics Incorporated - Common Stock,NASDAQ,0001088856,deterministic_pending_sec_collection
+U00701,CORZ,"Core Scientific, Inc. - Common Stock",NASDAQ,0001839341,deterministic_pending_sec_collection
+U00702,COSM,Cosmos Health Inc. - Common Stock,NASDAQ,0001474167,deterministic_pending_sec_collection
+U00703,COST,Costco Wholesale Corporation - Common Stock,NASDAQ,0000909832,deterministic_pending_sec_collection
+U00704,COYA,"Coya Therapeutics, Inc. - Common Stock",NASDAQ,0001835022,deterministic_pending_sec_collection
+U00705,CPB,The Campbell's Company - Common Stock,NASDAQ,0000016732,deterministic_pending_sec_collection
+U00706,CPBI,"Central Plains Bancshares, Inc. - Common Stock",NASDAQ,0001979332,deterministic_pending_sec_collection
+U00707,CPHC,Canterbury Park Holding Corporation - Common Stock,NASDAQ,0001672909,deterministic_pending_sec_collection
+U00708,CPIX,Cumberland Pharmaceuticals Inc. - Common Stock,NASDAQ,0001087294,deterministic_pending_sec_collection
+U00709,CPOP,"Pop Culture Group Co., Ltd - Class A Ordinary Shares",NASDAQ,0001807389,deterministic_pending_sec_collection
+U00710,CPRT,"Copart, Inc. - Common Stock",NASDAQ,0000900075,deterministic_pending_sec_collection
+U00712,CPSH,CPS Technologies Corp. - Common Stock,NASDAQ,0000814676,deterministic_pending_sec_collection
+U00713,CPSS,"Consumer Portfolio Services, Inc. - Common Stock",NASDAQ,0000889609,deterministic_pending_sec_collection
+U00716,CRAI,"CRA International,Inc. - Common Stock",NASDAQ,0001053706,deterministic_pending_sec_collection
+U00719,CRBP,"Corbus Pharmaceuticals Holdings, Inc. - Common Stock",NASDAQ,0001595097,deterministic_pending_sec_collection
+U00720,CRBU,"Caribou Biosciences, Inc. - Common Stock",NASDAQ,0001619856,deterministic_pending_sec_collection
+U00721,CRCT,"Cricut, Inc. - Class A common stock",NASDAQ,0001828962,deterministic_pending_sec_collection
+U00722,CRDF,"Cardiff Oncology, Inc. - Common Stock",NASDAQ,0001213037,deterministic_pending_sec_collection
+U00723,CRDL,Cardiol Therapeutics Inc. - Class A Common Shares,NASDAQ,0001702123,deterministic_pending_sec_collection
+U00724,CRDO,Credo Technology Group Holding Ltd - Ordinary Shares,NASDAQ,0001807794,deterministic_pending_sec_collection
+U00725,CRE,Cre8 Enterprise Limited - Class A Ordinary Shares,NASDAQ,0002003977,deterministic_pending_sec_collection
+U00726,CREG,Smart Powerr Corp. - Common Stock,NASDAQ,0000721693,deterministic_pending_sec_collection
+U00727,CREX,"Creative Realities, Inc. - Common Stock",NASDAQ,0001356093,deterministic_pending_sec_collection
+U00728,CRGO,Freightos Limited - Ordinary shares,NASDAQ,0001927719,deterministic_pending_sec_collection
+U00729,CRIS,"Curis, Inc. - Common Stock",NASDAQ,0001108205,deterministic_pending_sec_collection
+U00730,CRMD,CorMedix Inc. - Common Stock,NASDAQ,0001410098,deterministic_pending_sec_collection
+U00731,CRML,Critical Metals Corp. - Ordinary Shares,NASDAQ,0001951089,deterministic_pending_sec_collection
+U00732,CRMT,"America's Car-Mart, Inc. - Common Stock",NASDAQ,0000799850,deterministic_pending_sec_collection
+U00733,CRNC,Cerence Inc. - Common Stock,NASDAQ,0001768267,deterministic_pending_sec_collection
+U00734,CRNT,Ceragon Networks Ltd. - Ordinary Shares,NASDAQ,0001119769,deterministic_pending_sec_collection
+U00735,CRNX,"Crinetics Pharmaceuticals, Inc. - Common Stock",NASDAQ,0001658247,deterministic_pending_sec_collection
+U00736,CRON,Cronos Group Inc. - Common Share,NASDAQ,0001656472,deterministic_pending_sec_collection
+U00737,CROX,"Crocs, Inc. - Common Stock",NASDAQ,0001334036,deterministic_pending_sec_collection
+U00738,CRSP,CRISPR Therapeutics AG - Common Shares,NASDAQ,0001674416,deterministic_pending_sec_collection
+U00739,CRSR,"Corsair Gaming, Inc. - Common Stock",NASDAQ,0001743759,deterministic_pending_sec_collection
+U00740,CRUS,"Cirrus Logic, Inc. - Common Stock",NASDAQ,0000772406,deterministic_pending_sec_collection
+U00741,CRVL,CorVel Corp. - Common Stock,NASDAQ,0000874866,deterministic_pending_sec_collection
+U00742,CRVO,CervoMed Inc. - Common Stock,NASDAQ,0001053691,deterministic_pending_sec_collection
+U00743,CRVS,"Corvus Pharmaceuticals, Inc. - Common Stock",NASDAQ,0001626971,deterministic_pending_sec_collection
+U00744,CRWD,"CrowdStrike Holdings, Inc. - Class A Common Stock",NASDAQ,0001535527,deterministic_pending_sec_collection
+U00745,CRWS,"Crown Crafts, Inc. - Common Stock",NASDAQ,0000025895,deterministic_pending_sec_collection
+U00746,CRWV,"CoreWeave, Inc. - Class A Common Stock",NASDAQ,0001769628,deterministic_pending_sec_collection
+U00747,CSAI,"Cloudastructure, Inc. - Class A Common Stock",NASDAQ,0001709628,deterministic_pending_sec_collection
+U00748,CSBR,"Champions Oncology, Inc. - Common Stock",NASDAQ,0000771856,deterministic_pending_sec_collection
+U00749,CSCO,"Cisco Systems, Inc. - Common Stock",NASDAQ,0000858877,deterministic_pending_sec_collection
+U00750,CSGP,"CoStar Group, Inc. - Common Stock",NASDAQ,0001057352,deterministic_pending_sec_collection
+U00751,CSHR,CoinShares PLC - Ordinary Shares,NASDAQ,0002087587,deterministic_pending_sec_collection
+U00752,CSIQ,Canadian Solar Inc. - Common Shares,NASDAQ,0001375877,deterministic_pending_sec_collection
+U00753,CSPI,CSP Inc. - Common Stock,NASDAQ,0000356037,deterministic_pending_sec_collection
+U00755,CSTE,Caesarstone Ltd. - Ordinary Shares,NASDAQ,0001504379,deterministic_pending_sec_collection
+U00756,CSTL,"Castle Biosciences, Inc. - Common stock",NASDAQ,0001447362,deterministic_pending_sec_collection
+U00757,CSWC,Capital Southwest Corporation - Common Stock,NASDAQ,0000017313,deterministic_pending_sec_collection
+U00758,CSX,CSX Corporation - Common Stock,NASDAQ,0000277948,deterministic_pending_sec_collection
+U00760,CTAS,Cintas Corporation - Common Stock,NASDAQ,0000723254,deterministic_pending_sec_collection
+U00762,CTKB,"Cytek Biosciences, Inc. - Common Stock",NASDAQ,0001831915,deterministic_pending_sec_collection
+U00763,CTMX,"CytomX Therapeutics, Inc. - Common Stock",NASDAQ,0001501989,deterministic_pending_sec_collection
+U00764,CTNM,"Contineum Therapeutics, Inc. - Common stock",NASDAQ,0001855175,deterministic_pending_sec_collection
+U00765,CTNT,Cheetah Net Supply Chain Service Inc. - Class A Common Stock,NASDAQ,0001951667,deterministic_pending_sec_collection
+U00766,CTOR,"Citius Oncology, Inc. - Common Stock",NASDAQ,0001851484,deterministic_pending_sec_collection
+U00767,CTRM,Castor Maritime Inc. - Common Shares,NASDAQ,0001720161,deterministic_pending_sec_collection
+U00768,CTRN,"Citi Trends, Inc. - Common Stock",NASDAQ,0001318484,deterministic_pending_sec_collection
+U00769,CTSH,Cognizant Technology Solutions Corporation - Class A Common Stock,NASDAQ,0001058290,deterministic_pending_sec_collection
+U00770,CTSO,Cytosorbents Corporation - Common Stock,NASDAQ,0001175151,deterministic_pending_sec_collection
+U00771,CTW,CTW - Class A Ordinary Shares,NASDAQ,0002047148,deterministic_pending_sec_collection
+U00772,CTXR,"Citius Pharmaceuticals, Inc. - Common Stock",NASDAQ,0001506251,deterministic_pending_sec_collection
+U00773,CUB,Lionheart Holdings - Class A Ordinary Shares,NASDAQ,0002015955,deterministic_pending_sec_collection
+U00774,CUE,"Cue Biopharma, Inc. - Common Stock",NASDAQ,0001645460,deterministic_pending_sec_collection
+U00775,CULP,"Culp, Inc. - Common Shares",NASDAQ,0000723603,deterministic_pending_sec_collection
+U00776,CUPR,Cuprina Holdings (Cayman) Limited - Class A Ordinary shares,NASDAQ,0001995704,deterministic_pending_sec_collection
+U00777,CURI,CuriosityStream Inc. - Class A Common Stock,NASDAQ,0001776909,deterministic_pending_sec_collection
+U00778,CURR,Currenc Group Inc. - Ordinary Shares,NASDAQ,0001862935,deterministic_pending_sec_collection
+U00779,CURX,Curanex Pharmaceuticals Inc - Common Stock,NASDAQ,0002025942,deterministic_pending_sec_collection
+U00780,CV,"CapsoVision, Inc. - Common Stock",NASDAQ,0001378325,deterministic_pending_sec_collection
+U00781,CVBF,CVB Financial Corporation - Common Stock,NASDAQ,0000354647,deterministic_pending_sec_collection
+U00782,CVCO,"Cavco Industries, Inc. - Common Stock",NASDAQ,0000278166,deterministic_pending_sec_collection
+U00783,CVGI,"Commercial Vehicle Group, Inc. - Common Stock",NASDAQ,0001290900,deterministic_pending_sec_collection
+U00784,CVKD,"Cadrenal Therapeutics, Inc. - Common Stock",NASDAQ,0001937993,deterministic_pending_sec_collection
+U00785,CVLT,"Commvault Systems, Inc. - Common Stock",NASDAQ,0001169561,deterministic_pending_sec_collection
+U00786,CVRX,"CVRx, Inc. - Common Stock",NASDAQ,0001235912,deterministic_pending_sec_collection
+U00787,CVV,CVD Equipment Corporation - Common Stock,NASDAQ,0000766792,deterministic_pending_sec_collection
+U00788,CWBC,Community West Bancshares - Common Stock,NASDAQ,0001127371,deterministic_pending_sec_collection
+U00789,CWCO,Consolidated Water Co. Ltd. - Ordinary Shares,NASDAQ,0000928340,deterministic_pending_sec_collection
+U00790,CWD,CaliberCos Inc. - Class A Common Stock,NASDAQ,0001627282,deterministic_pending_sec_collection
+U00791,CWST,"Casella Waste Systems, Inc. - Class A Common Stock",NASDAQ,0000911177,deterministic_pending_sec_collection
+U00792,CXAI,CXApp Inc. - Class A Common Stock,NASDAQ,0001820875,deterministic_pending_sec_collection
+U00793,CXDO,"Crexendo, Inc. - Common Stock",NASDAQ,0001075736,deterministic_pending_sec_collection
+U00794,CXII,Churchill Capital Corp XII - Class A Ordinary Shares,NASDAQ,0002114227,deterministic_pending_sec_collection
+U00795,CYAB,"Cyabra, Inc. - Common Stock",NASDAQ,0002032341,deterministic_pending_sec_collection
+U00796,CYCN,"Cyclerion Therapeutics, Inc. - Common Stock",NASDAQ,0001755237,deterministic_pending_sec_collection
+U00797,CYCU,"Cycurion, Inc. - Common Stock",NASDAQ,0001868419,deterministic_pending_sec_collection
+U00798,CYN,Cyngn Inc. - Common stock,NASDAQ,0001874097,deterministic_pending_sec_collection
+U00799,CYPH,Cypherpunk Technologies Inc. - Common Stock,NASDAQ,0001509745,deterministic_pending_sec_collection
+U00800,CYRX,"CryoPort, Inc. - Common Stock",NASDAQ,0001124524,deterministic_pending_sec_collection
+U00801,CYTK,"Cytokinetics, Incorporated - Common Stock",NASDAQ,0001061983,deterministic_pending_sec_collection
+U00802,CZFS,"Citizens Financial Services, Inc. - Common Stock",NASDAQ,0000739421,deterministic_pending_sec_collection
+U00803,CZNC,Citizens & Northern Corp - Common Stock,NASDAQ,0000810958,deterministic_pending_sec_collection
+U00804,CZR,"Caesars Entertainment, Inc. - Common Stock",NASDAQ,0001590895,deterministic_pending_sec_collection
+U00805,CZWI,"Citizens Community Bancorp, Inc. - Common Stock",NASDAQ,0001367859,deterministic_pending_sec_collection
+U00807,DAIC,"CID HoldCo, Inc. - Common Stock",NASDAQ,0002033770,deterministic_pending_sec_collection
+U00808,DAIO,Data I/O Corporation - Common Stock,NASDAQ,0000351998,deterministic_pending_sec_collection
+U00809,DAKT,"Daktronics, Inc. - Common Stock",NASDAQ,0000915779,deterministic_pending_sec_collection
+U00810,DARE,"Dare Bioscience, Inc. - Common Stock",NASDAQ,0001401914,deterministic_pending_sec_collection
+U00811,DASH,"DoorDash, Inc. - Common Stock",NASDAQ,0001792789,deterministic_pending_sec_collection
+U00812,DAVE,Dave Inc. - Class A Common Stock,NASDAQ,0001841408,deterministic_pending_sec_collection
+U00814,DBGI,"Digital Brands Group, Inc. - Common Stock",NASDAQ,0001668010,deterministic_pending_sec_collection
+U00815,DBX,"Dropbox, Inc. - Class A Common Stock",NASDAQ,0001467623,deterministic_pending_sec_collection
+U00816,DCBO,Docebo Inc. - Common Shares,NASDAQ,0001829959,deterministic_pending_sec_collection
+U00817,DCGO,DocGo Inc. - Common Stock,NASDAQ,0001822359,deterministic_pending_sec_collection
+U00818,DCOY,Decoy Therapeutics Inc. - Common Stock,NASDAQ,0001615219,deterministic_pending_sec_collection
+U00819,DCTH,"Delcath Systems, Inc. - Common Stock",NASDAQ,0000872912,deterministic_pending_sec_collection
+U00820,DCX,Digital Currency X Technology Inc. - Class A Ordinary Shares,NASDAQ,0001957413,deterministic_pending_sec_collection
+U00821,DDI,"DoubleDown Interactive Co., Ltd. - American Depository Shares",NASDAQ,0001799567,deterministic_pending_sec_collection
+U00822,DDOG,"Datadog, Inc. - Class A Common Stock",NASDAQ,0001561550,deterministic_pending_sec_collection
+U00823,DEFT,"Defi Technologies, Inc. - Common Stock",NASDAQ,0001888274,deterministic_pending_sec_collection
+U00824,DERM,Journey Medical Corporation - Common Stock,NASDAQ,0001867066,deterministic_pending_sec_collection
+U00825,DETX,"Liberty Defense Holdings, Ltd. - Common Shares",NASDAQ,0001919776,deterministic_pending_sec_collection
+U00826,DFDV,DeFi Development Corp. - Common Stock,NASDAQ,0001805526,deterministic_pending_sec_collection
+U00827,DFLI,Dragonfly Energy Holdings Corp - Common Stock,NASDAQ,0001847986,deterministic_pending_sec_collection
+U00828,DFNS,T3 Defense Inc. - Common Stock,NASDAQ,0001787518,deterministic_pending_sec_collection
+U00829,DFSC,"DEFSEC Technologies Inc. - common stock, no R/S concurrent with offering",NASDAQ,0001889823,deterministic_pending_sec_collection
+U00830,DFTX,"Definium Therapeutics, Inc. - Common Shares",NASDAQ,0001813814,deterministic_pending_sec_collection
+U00831,DGICA,"Donegal Group, Inc. - Class A Common Stock",NASDAQ,0000800457,deterministic_pending_sec_collection
+U00832,DGICB,"Donegal Group, Inc. - Class B Common Stock",NASDAQ,0000800457,deterministic_pending_sec_collection
+U00833,DGII,Digi International Inc. - Common Stock,NASDAQ,0000854775,deterministic_pending_sec_collection
+U00834,DGNX,Diginex Limited - Ordinary Shares,NASDAQ,0002010499,deterministic_pending_sec_collection
+U00835,DGXX,Digi Power X Inc. - Common Subordinate Voting Shares,NASDAQ,0001854368,deterministic_pending_sec_collection
+U00836,DH,Definitive Healthcare Corp. - Class A Common Stock,NASDAQ,0001861795,deterministic_pending_sec_collection
+U00838,DIBS,"1stdibs.com, Inc. - Common Stock",NASDAQ,0001600641,deterministic_pending_sec_collection
+U00839,DIOD,Diodes Incorporated - Common Stock,NASDAQ,0000029002,deterministic_pending_sec_collection
+U00840,DJCO,Daily Journal Corp. (S.C.) - Common Stock,NASDAQ,0000783412,deterministic_pending_sec_collection
+U00841,DJT,Trump Media & Technology Group Corp. - Common Stock,NASDAQ,0001849635,deterministic_pending_sec_collection
+U00842,DKI,DarkIris Inc. - Class A Ordinary Shares,NASDAQ,0002058584,deterministic_pending_sec_collection
+U00843,DKNG,DraftKings Inc. - Class A Common Stock,NASDAQ,0001883685,deterministic_pending_sec_collection
+U00844,DLHC,DLH Holdings Corp. - Common Stock,NASDAQ,0000785557,deterministic_pending_sec_collection
+U00845,DLO,DLocal Limited - Class A Common Shares,NASDAQ,0001846832,deterministic_pending_sec_collection
+U00846,DLPN,"Dolphin Entertainment, Inc. - Common Stock",NASDAQ,0001282224,deterministic_pending_sec_collection
+U00847,DLTH,Duluth Holdings Inc. - Class B Common Stock,NASDAQ,0001649744,deterministic_pending_sec_collection
+U00848,DLTR,"Dollar Tree, Inc. - Common Stock",NASDAQ,0000935703,deterministic_pending_sec_collection
+U00849,DLXY,Delixy Holdings Limited - Class A Ordinary Shares,NASDAQ,0002025218,deterministic_pending_sec_collection
+U00851,DMAC,DiaMedica Therapeutics Inc. - Common Stock,NASDAQ,0001401040,deterministic_pending_sec_collection
+U00853,DMRA,"Damora Therapeutics, Inc. - Common Stock",NASDAQ,0001800315,deterministic_pending_sec_collection
+U00854,DMRC,Digimarc Corporation - Common Stock,NASDAQ,0002119322,deterministic_pending_sec_collection
+U00855,DNLI,Denali Therapeutics Inc. - Common Stock,NASDAQ,0001714899,deterministic_pending_sec_collection
+U00856,DNMX,Dynamix Corporation III - Class A Ordinary Shares,NASDAQ,0002081125,deterministic_pending_sec_collection
+U00857,DNTH,"Dianthus Therapeutics, Inc. - Common Stock",NASDAQ,0001690585,deterministic_pending_sec_collection
+U00858,DNUT,"Krispy Kreme, Inc. - Common Stock",NASDAQ,0001857154,deterministic_pending_sec_collection
+U00859,DOCU,"DocuSign, Inc. - Common Stock",NASDAQ,0001261333,deterministic_pending_sec_collection
+U00860,DOGZ,Dogness (International) Corporation - Class A Common Stock,NASDAQ,0001707303,deterministic_pending_sec_collection
+U00861,DOMH,Dominari Holdings Inc. - Common Stock,NASDAQ,0000012239,deterministic_pending_sec_collection
+U00862,DOMO,"Domo, Inc. - Class B Common Stock",NASDAQ,0001505952,deterministic_pending_sec_collection
+U00863,DOO,BRP Inc. - Common Subordinate Voting Shares,NASDAQ,0001748797,deterministic_pending_sec_collection
+U00864,DORM,"Dorman Products, Inc. - Common Stock",NASDAQ,0000868780,deterministic_pending_sec_collection
+U00865,DOX,Amdocs Limited - Ordinary Shares,NASDAQ,0001062579,deterministic_pending_sec_collection
+U00866,DPRO,Draganfly Inc. - Common Shares,NASDAQ,0001786286,deterministic_pending_sec_collection
+U00867,DPZ,Domino's Pizza Inc - Common Stock,NASDAQ,0001286681,deterministic_pending_sec_collection
+U00868,DRCT,"Direct Digital Holdings, Inc. - Class A Common Stock",NASDAQ,0001880613,deterministic_pending_sec_collection
+U00870,DRH,Diamondrock Hospitality Company - Common Stock,NASDAQ,0001298946,deterministic_pending_sec_collection
+U00871,DRIO,DarioHealth Corp. - Common Stock,NASDAQ,0001533998,deterministic_pending_sec_collection
+U00872,DRMA,"Dermata Therapeutics, Inc. - Common Stock",NASDAQ,0001853816,deterministic_pending_sec_collection
+U00873,DRS,"Leonardo DRS, Inc. - Common Stock",NASDAQ,0001833756,deterministic_pending_sec_collection
+U00874,DRTS,Alpha Tau Medical Ltd. - Ordinary Shares,NASDAQ,0001871321,deterministic_pending_sec_collection
+U00875,DRVN,Driven Brands Holdings Inc. - Common Stock,NASDAQ,0001804745,deterministic_pending_sec_collection
+U00877,DSGN,"Design Therapeutics, Inc. - Common Stock",NASDAQ,0001807120,deterministic_pending_sec_collection
+U00878,DSGR,"Distribution Solutions Group, Inc. - Common Stock",NASDAQ,0000703604,deterministic_pending_sec_collection
+U00879,DSGX,The Descartes Systems Group Inc. - Common Stock,NASDAQ,0001050140,deterministic_pending_sec_collection
+U00880,DSP,Viant Technology Inc. - common stock,NASDAQ,0001828791,deterministic_pending_sec_collection
+U00881,DSWL,"Deswell Industries, Inc. - Common Shares",NASDAQ,0000946936,deterministic_pending_sec_collection
+U00882,DSY,Big Tree Cloud Holdings Limited - Class A Ordinary Shares,NASDAQ,0001999297,deterministic_pending_sec_collection
+U00883,DTCX,"Datacentrex, Inc. - Common Stock",NASDAQ,0001853825,deterministic_pending_sec_collection
+U00884,DTI,Drilling Tools International Corporation - Common Stock,NASDAQ,0001884516,deterministic_pending_sec_collection
+U00885,DTIL,"Precision BioSciences, Inc. - Common Stock",NASDAQ,0001357874,deterministic_pending_sec_collection
+U00887,DTSS,Datasea Intelligent Technology Ltd. - Class A Ordinary Shares,NASDAQ,0002110423,deterministic_pending_sec_collection
+U00888,DTST,Data Storage Corporation - Common Stock,NASDAQ,0001419951,deterministic_pending_sec_collection
+U00889,DUKR,DUKE Robotics Corp. - Common Stock,NASDAQ,0001638911,deterministic_pending_sec_collection
+U00890,DUO,Fangdd Network Group Ltd. - Class A Ordinary Shares,NASDAQ,0001750593,deterministic_pending_sec_collection
+U00891,DUOL,"Duolingo, Inc. - Class A Common Stock",NASDAQ,0001562088,deterministic_pending_sec_collection
+U00892,DUOT,"Duos Technologies Group, Inc. - Common Stock",NASDAQ,0001396536,deterministic_pending_sec_collection
+U00893,DVLT,Datavault AI Inc. - Common Stock,NASDAQ,0001682149,deterministic_pending_sec_collection
+U00894,DWSN,Dawson Geophysical Company - Common Stock,NASDAQ,0000799165,deterministic_pending_sec_collection
+U00895,DWTX,"Dogwood Therapeutics, Inc. - Common Stock",NASDAQ,0001818844,deterministic_pending_sec_collection
+U00896,DXCM,"DexCom, Inc. - Common Stock",NASDAQ,0001093557,deterministic_pending_sec_collection
+U00897,DXLG,"Destination XL Group, Inc. - Common Stock",NASDAQ,0000813298,deterministic_pending_sec_collection
+U00898,DXPE,"DXP Enterprises, Inc. - Common Stock",NASDAQ,0001020710,deterministic_pending_sec_collection
+U00900,DXST,Decent Holding Inc. - Class A Ordinary Shares,NASDAQ,0001958133,deterministic_pending_sec_collection
+U00901,DYAI,"Dyadic International, Inc. - Common Stock",NASDAQ,0001213809,deterministic_pending_sec_collection
+U00902,DYN,"Dyne Therapeutics, Inc. - Common Stock",NASDAQ,0001818794,deterministic_pending_sec_collection
+U00903,DYNC,Dynamix Corporation - Class A Ordinary Share,NASDAQ,0002028699,deterministic_pending_sec_collection
+U00904,DYOR,Insight Digital Partners II - Class A Ordinary Shares,NASDAQ,0002079292,deterministic_pending_sec_collection
+U00906,EBAY,eBay Inc. - Common Stock,NASDAQ,0001065088,deterministic_pending_sec_collection
+U00907,EBC,"Eastern Bankshares, Inc. - Common Stock",NASDAQ,0001810546,deterministic_pending_sec_collection
+U00908,EBMT,"Eagle Bancorp Montana, Inc. - Common Stock",NASDAQ,0001478454,deterministic_pending_sec_collection
+U00909,EBON,Ebang International Holdings Inc. - Class A Ordinary Shares,NASDAQ,0001799290,deterministic_pending_sec_collection
+U00910,ECBK,"ECB Bancorp, Inc. - Common Stock",NASDAQ,0001914605,deterministic_pending_sec_collection
+U00911,ECHO,EchoStar Corporation - Common stock,NASDAQ,0001415404,deterministic_pending_sec_collection
+U00912,ECOR,"electroCore, Inc. - Common Stock",NASDAQ,0001560258,deterministic_pending_sec_collection
+U00913,ECPG,Encore Capital Group Inc - Common Stock,NASDAQ,0001084961,deterministic_pending_sec_collection
+U00914,ECX,ECARX Holdings Inc. - Class A Ordinary shares,NASDAQ,0001861974,deterministic_pending_sec_collection
+U00915,EDBL,Edible Garden AG Incorporated - Common Stock,NASDAQ,0001809750,deterministic_pending_sec_collection
+U00916,EDIT,"Editas Medicine, Inc. - Common Stock",NASDAQ,0001650664,deterministic_pending_sec_collection
+U00917,EDRY,EuroDry Ltd. - Common Shares,NASDAQ,0001731388,deterministic_pending_sec_collection
+U00918,EDSA,"Edesa Biotech, Inc. - Common Shares",NASDAQ,0001540159,deterministic_pending_sec_collection
+U00919,EDTK,Skillful Craftsman Education Technology Limited - Ordinary Share,NASDAQ,0001782309,deterministic_pending_sec_collection
+U00920,EDUC,Educational Development Corporation - Common Stock,NASDAQ,0000031667,deterministic_pending_sec_collection
+U00921,EEFT,"Euronet Worldwide, Inc. - Common Stock",NASDAQ,0001029199,deterministic_pending_sec_collection
+U00922,EEIQ,EpicQuest Education Group International Limited - Common Stock,NASDAQ,0001781397,deterministic_pending_sec_collection
+U00923,EFOI,"Energy Focus, Inc. - Common Stock",NASDAQ,0000924168,deterministic_pending_sec_collection
+U00924,EFSC,Enterprise Financial Services Corporation - Common Stock,NASDAQ,0001025835,deterministic_pending_sec_collection
+U00925,EFSI,Eagle Financial Services Inc - Common Stock,NASDAQ,0000880641,deterministic_pending_sec_collection
