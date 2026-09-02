@@ -1,5 +1,5 @@
 {
-  "decision": "COMPLETED_US_SEC_FOUNDATION_DRY_RUN",
+  "decision": "REAL_SEC_PILOT_VALIDATED_NOT_SCORING",
   "guardrails": {
     "credentials_used": false,
     "network_calls": 0,
@@ -15,8 +15,8 @@
   },
   "outputs": {
     "PHASE9D_US_SEC_FINAL_GATE_v2_38d.md": {
-      "bytes": 471,
-      "sha256": "7f6f816ce11c3826dc558c6cf49ff9b0f23f4f0c4b0ce53e3a2abd04b3c6fe60"
+      "bytes": 477,
+      "sha256": "6dd6e2facba04df466e751e314f13f0d2227a1735ff333ac3467225bbd7adbc5"
     },
     "README.md": {
       "bytes": 95,
@@ -27,28 +27,28 @@
       "sha256": "712b4d613d87b354586f60c28fa5b7b2a642df4b387ad8843291568640ca785f"
     },
     "us_sec_coverage_summary_v2_38d.json": {
-      "bytes": 1247,
-      "sha256": "230da230def86b5efc691f0d13b5dc26d4b7578e87281968aac7f6e217dca40f"
+      "bytes": 1487,
+      "sha256": "1f7b9d079a5e789c41027a95f6d566d3ce4007edf6f2239627490456f777f03b"
     },
     "us_sec_identity_overlay_v2_38d.csv": {
-      "bytes": 2180960,
-      "sha256": "b80daab0767f7cdb9031d86e23a96bbd9b39550fa34588227301ed87e79ff901"
+      "bytes": 2101479,
+      "sha256": "93fbfd0f51e962aeafb8b9ef789219a4493bc5e8ed396470b78b8d2f7be9ea53"
     },
     "us_sec_identity_review_v2_38d.csv": {
-      "bytes": 2180960,
-      "sha256": "b80daab0767f7cdb9031d86e23a96bbd9b39550fa34588227301ed87e79ff901"
+      "bytes": 893028,
+      "sha256": "f386b33598c6a80c896dcf997f9f544b9de0253ecf149982c076343ca9abf229"
     },
     "us_sec_pilot_aggregate_report_v2_38d.json": {
-      "bytes": 1032,
-      "sha256": "eb446752b8d30480bdbde5f059e5211977ea9e27b2d7476c74704cf8ee57d769"
+      "bytes": 1272,
+      "sha256": "1b4582ea63cc83cebe6b143bf29d4b1ce3c1b8ef5408454ac4ddf1b51f64b090"
     },
     "us_sec_pilot_selection_v2_38d.csv": {
       "bytes": 5218,
       "sha256": "898c9fd4a03a12032dda8917a73841c1b1bd8853da636065b53ddad399491437"
     },
     "us_sec_provider_route_matrix_v2_38d.csv": {
-      "bytes": 458,
-      "sha256": "cdc897b124307d346999bc4c856f7cddcd5cab8449376633667327b26b9c6eb1"
+      "bytes": 447,
+      "sha256": "449aff61a3a170786384c7bff9190de8ebc237878617303cf6f5f3a91b07b1f8"
     }
   },
   "phase": "v2.38D-us-sec-foundation"

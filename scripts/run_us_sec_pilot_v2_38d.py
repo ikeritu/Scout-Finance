@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import gzip
 import json
 import os
 import sys
@@ -41,7 +42,10 @@ def fetch_json(url: str, user_agent: str) -> dict:
     host = "www.sec.gov" if "www.sec.gov" in url else "data.sec.gov"
     request = urllib.request.Request(url, headers={"User-Agent": user_agent, "Accept-Encoding": "gzip, deflate", "Host": host})
     with urllib.request.urlopen(request, timeout=30) as response:
-        return json.loads(response.read().decode("utf-8"))
+        body = response.read()
+        if response.headers.get("Content-Encoding", "").lower() == "gzip":
+            body = gzip.decompress(body)
+        return json.loads(body.decode("utf-8"))
 
 
 def write_json(path: Path, payload: dict) -> None:
