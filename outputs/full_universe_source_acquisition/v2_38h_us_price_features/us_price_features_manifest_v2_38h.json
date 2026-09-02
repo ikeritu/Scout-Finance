@@ -8,15 +8,15 @@
     "scoring_calculated": false
   },
   "inputs": {
-    "outputs/full_universe_source_acquisition/v2_38g_us_sec_fundamental_features/us_sec_fundamental_feature_quality_v2_38g.csv": {
-      "bytes": 171,
-      "sha256": "93ae97cd6cb998a6db9196783ffbc0f5f24662d1b77d5b0e65080bad13d47b1a"
+    "outputs\\full_universe_source_acquisition\\v2_38g_us_sec_fundamental_features\\us_sec_fundamental_feature_quality_v2_38g.csv": {
+      "bytes": 133139,
+      "sha256": "8d2ad7595c9f2da4264b4b3c6734bc7cbbaa822848668768cc58f2d35f525774"
     }
   },
   "outputs": {
     "PHASE9H_US_PRICE_FEATURES_GATE_v2_38h.md": {
-      "bytes": 488,
-      "sha256": "6536c73597f1c35dba937ba0443e90134f331084e35c440becc85343bb354d74"
+      "bytes": 494,
+      "sha256": "d4c207d677b7f6d9ea123ae7d517d34d87113738b5bf9b5ef82671cfd49060f7"
     },
     "README.md": {
       "bytes": 238,
@@ -27,16 +27,16 @@
       "sha256": "ea7a70024558ba2698230fa5cb777bce3e88d2e0bb07982619a243a8cd08e116"
     },
     "us_price_feature_aggregate_report_v2_38h.json": {
-      "bytes": 1196,
-      "sha256": "fd6788917b45c1373b66131ddae0eb39a8519b3969eff78a11c63b02c0e75bbf"
+      "bytes": 1202,
+      "sha256": "a1bbf4f9f34e307082de531beebeb83fe7bc87a412e11cd0ec30fd48862c845f"
     },
     "us_price_feature_quality_v2_38h.csv": {
       "bytes": 149,
       "sha256": "39b05e1ac5369c20ffcb0f7e7e2c18ed194e996a7517adcfeddc0394b8ce2050"
     },
     "us_price_feature_rejections_v2_38h.csv": {
-      "bytes": 66,
-      "sha256": "4f1e8c73ad45855d4f48bb682fcd78c67a2b005bdd0ecaaeca3df95dc0991a6f"
+      "bytes": 788079,
+      "sha256": "365c19cfba21b70b4d14883ee4542de268bcdcac5cee5ae5b59f3292ce31112b"
     },
     "us_price_features_v2_38h.csv": {
       "bytes": 569,
@@ -45,8 +45,8 @@
   },
   "phase": "v2.38H-us-price-features",
   "price_roots_checked": [
-    "outputs/full_universe_source_acquisition/v2_38h_us_price_history",
-    "outputs/full_universe_source_acquisition/us_price_history",
-    "data/local/us_price_history"
+    "outputs\\full_universe_source_acquisition\\v2_38h_us_price_history",
+    "outputs\\full_universe_source_acquisition\\us_price_history",
+    "data\\local\\us_price_history"
   ]
 }
