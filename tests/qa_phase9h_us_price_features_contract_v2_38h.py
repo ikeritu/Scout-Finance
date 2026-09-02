@@ -16,6 +16,7 @@ def main() -> int:
     assert set(contract["allowed_price_feature_quality_status"]) == set(schema["properties"]["price_feature_quality_status"]["enum"])
     forbidden = set(contract["forbidden_actions"])
     assert {"network", "raw_price_cache_in_git", "scoring", "ranking", "recommendations", "predictions", "phase9c", "broker", "trading"} <= forbidden
+    assert "outputs/full_universe_source_acquisition/v2_38i_us_price_history_acquisition/us_price_history_raw_v2_38i" in contract["local_price_roots"]
     assert schema["additionalProperties"] is False
     for feature in contract["allowed_features"]:
         assert feature in schema["properties"], feature
