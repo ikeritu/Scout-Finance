@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**Fase 9B-US/EU — cobertura prioritaria añadida** (`COMPLETED_PARTIAL_COVERAGE`, v2.38C). El proyecto queda reorientado al roadmap maestro: rastreo global de 43.089 empresas, con prioridad práctica en EEUU y Europa. Censo US/EU offline: 5.011 elegibles estadounidenses y 10.483 elegibles europeas. EEUU queda encaminado a SEC CIK/XBRL + proveedor de precios ajustados; Europa queda bloqueada principalmente por Cboe Europe como venue secundario hasta resolver home exchange. Sin scoring, ranking, recomendaciones ni fase 9C.
+
 **Fase 9B — piloto controlado validado, sin promoción global** (`CONTROLLED_PILOT_VALIDATED_NOT_GLOBAL_PROMOTION`, v2.38B). El universo canónico contiene 43.089 filas; 763 tienen símbolo y ruta listos para lote controlado, 3.634 JPX requieren catálogo y 5.011 estadounidenses requieren acción externa. El piloto nuevo valida 25 JPX y 25 TWSE (16.200 registros); no existe scoring ni recomendación global.
 
 **Fase 9A — cerrada como censo global auditable** (`COMPLETED_GLOBAL_CENSUS_READY_FOR_SOURCE_PLANNING`, v2.38A).

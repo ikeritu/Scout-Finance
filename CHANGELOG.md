@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38C — cobertura prioritaria EEUU/Europa (2026-09-02)
+
+Reorienta la fase 9B hacia el objetivo global real del producto: rastrear las 43.089 empresas y priorizar EEUU/Europa antes de seguir escalando JPX. Añade contrato, builder offline, censos US/EU, matriz de rutas, piloto multi-región definido y gate final fail-closed. Resultado: 5.011 elegibles de EEUU con ruta SEC/CIK/XBRL por validar y 10.483 elegibles europeas, principalmente Cboe Europe bloqueado como venue secundario hasta resolver home exchange. Sin red, credenciales, scoring, ranking, recomendaciones ni fase 9C.
+
 ## v2.38B — infraestructura de enriquecimiento global (2026-09-01)
 
 Construye el contrato, esquema, manifiesto fila a fila, plan de 15 mercados y orquestador fail-closed para la fase 9B. Conserva 43.089 activos; verifica 67 símbolos JPX, prepara 696 TWSE deterministas, bloquea 3.634 JPX hasta coincidencia exacta de catálogo y mantiene 5.011 estadounidenses pendientes de cuenta/licencia/piloto. El piloto controlado nuevo valida 25 JPX y 25 TWSE (16.200 registros de precios, 0 inválidos) con evidencia agregada y crudos locales. Decisión provisional: **`CONTROLLED_PILOT_VALIDATED_NOT_GLOBAL_PROMOTION`**; sin scoring, ranking, recomendaciones ni fase 9C.

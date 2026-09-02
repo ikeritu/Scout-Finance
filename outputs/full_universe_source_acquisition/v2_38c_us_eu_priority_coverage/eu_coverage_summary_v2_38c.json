@@ -1,0 +1,20 @@
+{
+  "cboe_europe_secondary_venue_rows": 21154,
+  "eu_eligible_rows": 10483,
+  "eu_home_exchange_ready": 0,
+  "eu_rows": 22578,
+  "eu_status_counts": {
+    "EU_ISIN_MISSING": 10483,
+    "NOT_ELIGIBLE": 12095
+  },
+  "guardrails": {
+    "credentials_used": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "phase": "v2.38C-us-eu-priority-coverage",
+  "status": "COMPLETED_PARTIAL_COVERAGE"
+}

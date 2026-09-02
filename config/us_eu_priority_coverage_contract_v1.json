@@ -1,0 +1,42 @@
+{
+  "allow_recommendations": false,
+  "allow_ranking": false,
+  "allow_scoring": false,
+  "contract_version": "1.0.0",
+  "expected_eligible_rows": 21165,
+  "expected_rows": 43089,
+  "forbidden_actions": [
+    "global_unbounded_download",
+    "paid_subscription",
+    "symbol_guessing",
+    "synthetic_values",
+    "scoring",
+    "ranking",
+    "recommendations",
+    "phase9c"
+  ],
+  "input_manifest": "outputs/full_universe_source_acquisition/v2_38a_global_universe_audit/global_universe_audited_v2_38a.csv.xz",
+  "input_sha256": "66d02e1b7a0ee7b7e7db66efc266a4a1f608c96b408c862f111c616179103e83",
+  "phase": "v2.38C-us-eu-priority-coverage",
+  "priority_regions": [
+    "US",
+    "EU"
+  ],
+  "us_exchanges": [
+    "NASDAQ",
+    "NYSE",
+    "NYSE American",
+    "Cboe BZX"
+  ],
+  "europe_exchanges": [
+    "CBOE_EUROPE",
+    "XETR",
+    "LSE",
+    "Euronext",
+    "SIX",
+    "Borsa Italiana",
+    "Nordics"
+  ],
+  "network_default": "FORBIDDEN_IN_QA",
+  "phase9c_authorized": false
+}

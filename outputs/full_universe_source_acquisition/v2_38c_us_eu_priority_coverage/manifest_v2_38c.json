@@ -1,0 +1,63 @@
+{
+  "decision": "COMPLETED_PARTIAL_COVERAGE",
+  "guardrails": {
+    "credentials_used": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "input": {
+    "path": "outputs/full_universe_source_acquisition/v2_38a_global_universe_audit/global_universe_audited_v2_38a.csv.xz",
+    "rows": 43089,
+    "sha256": "66d02e1b7a0ee7b7e7db66efc266a4a1f608c96b408c862f111c616179103e83"
+  },
+  "outputs": {
+    "PHASE9B_US_EU_FINAL_GATE_v2_38c.md": {
+      "bytes": 951,
+      "sha256": "00d356de98aeaf213bffc49e67526f79dca4140fb346daf4acc7f048621af188"
+    },
+    "README.md": {
+      "bytes": 118,
+      "sha256": "a3bf2bfc63e01143b9e1474ef26aadc4504efa59b92c0463b83f2a1965d5671c"
+    },
+    "cboe_europe_home_exchange_candidates_v2_38c.csv": {
+      "bytes": 5162672,
+      "sha256": "0c5736c51f7e0a03dfc5c42f7dbf6655470777e9aa09edfcd5016f3bfcce9387"
+    },
+    "eu_coverage_summary_v2_38c.json": {
+      "bytes": 516,
+      "sha256": "2ce6327875b5c3c5b90df7a40295d16427161b35e0bf6d9a2cde928e2f578a97"
+    },
+    "eu_exchange_breakdown_v2_38c.csv": {
+      "bytes": 122,
+      "sha256": "d044b477b3d2ff5cc32b5d2848db75a88236c4d74d21df58dc951f855c16e166"
+    },
+    "eu_universe_census_v2_38c.csv": {
+      "bytes": 5487677,
+      "sha256": "a7aaef692254e3e5c237cfe6d023ab3be894b0ef57890b209c3f0cb9075eac5b"
+    },
+    "multi_region_coverage_pilot_v2_38c.json": {
+      "bytes": 1444,
+      "sha256": "923de1ca5157a610b5834f0aa940fd6210429016d1898f4c56fd10ef75196864"
+    },
+    "us_coverage_summary_v2_38c.json": {
+      "bytes": 513,
+      "sha256": "ce9fd4b75bb0cf8f4f665eb62602163d0c67f474e42504863ad6ec3e1856b4a7"
+    },
+    "us_eu_provider_route_matrix_v2_38c.csv": {
+      "bytes": 1224,
+      "sha256": "69b2ae6931d3dfbbd9b3c1b450a7c19b4b6aa631faa10ff059d2c00e5ab29812"
+    },
+    "us_exchange_breakdown_v2_38c.csv": {
+      "bytes": 244,
+      "sha256": "6563fd34d9e6ba9b25e6d1b91fdab75f7772768f8c8e86de61b6a61f6c98c43a"
+    },
+    "us_universe_census_v2_38c.csv": {
+      "bytes": 2456362,
+      "sha256": "ee3cb066ef4df723b0021b71bdc5dbd6febcee981a8a4e500fecfb577868e90a"
+    }
+  },
+  "phase": "v2.38C-us-eu-priority-coverage"
+}

@@ -1,0 +1,3 @@
+normalized_exchange_group,rows,eligible_rows,primary_status
+CBOE_EUROPE,21154,10483,NOT_ELIGIBLE
+XETR,1424,0,NOT_ELIGIBLE

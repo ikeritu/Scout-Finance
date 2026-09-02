@@ -1,0 +1,7 @@
+region,market,identity_route,price_route,fundamental_route,status,blocker
+US,NASDAQ,SEC company tickers / CIK mapping,adjusted price provider required,SEC XBRL companyfacts/submissions,USER_ACTION_REQUIRED,credential/license pilot required for adjusted prices
+US,NYSE,SEC company tickers / CIK mapping,adjusted price provider required,SEC XBRL companyfacts/submissions,USER_ACTION_REQUIRED,credential/license pilot required for adjusted prices
+US,NYSE American,SEC company tickers / CIK mapping,adjusted price provider required,SEC XBRL companyfacts/submissions,USER_ACTION_REQUIRED,credential/license pilot required for adjusted prices
+US,Cboe BZX,SEC company tickers / CIK mapping,provider source confirmation required,SEC XBRL companyfacts/submissions,USER_ACTION_REQUIRED,single venue record requires source confirmation
+EU,CBOE_EUROPE,ISIN to home exchange required,blocked until home market resolved,blocked until issuer/home market resolved,SOURCE_REQUIRED,secondary venue cannot be treated as primary listing
+EU,Xetra/Euronext/LSE/SIX/Borsa Italiana/Nordics,ISIN/MIC/LEI candidate route,market-specific provider required,market/issuer filing route required,SOURCE_UNKNOWN,provider matrix not yet validated by market

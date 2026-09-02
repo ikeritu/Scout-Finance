@@ -1,0 +1,20 @@
+{
+  "guardrails": {
+    "credentials_used": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "phase": "v2.38C-us-eu-priority-coverage",
+  "status": "COMPLETED_PARTIAL_COVERAGE",
+  "us_eligible_rows": 5011,
+  "us_ready_for_identity_route": 5010,
+  "us_rows": 9200,
+  "us_status_counts": {
+    "NOT_ELIGIBLE": 4189,
+    "US_SOURCE_REQUIRED": 1,
+    "US_TICKER_EXCHANGE_READY": 5010
+  }
+}
