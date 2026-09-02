@@ -1,0 +1,36 @@
+{
+  "cik_resolved": 0,
+  "companyfacts_available": 0,
+  "failure_reasons": {
+    "SEC company_tickers_exchange cache unavailable; run pilot with --execute and SEC user-agent": 5011,
+    "company_name_indicates_acquisition_company_or_blank_check": 215,
+    "company_name_indicates_etf_etn_or_exchange_traded_product": 15,
+    "company_name_indicates_fund_or_trust": 407,
+    "provider_type_not_resolved": 2359,
+    "unclassified_and_missing_ticker_or_company_name": 1193
+  },
+  "guardrails": {
+    "credentials_used": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "identity_status_counts": {
+    "US_SEC_NOT_ELIGIBLE": 4189,
+    "US_SEC_SOURCE_UNAVAILABLE": 5011
+  },
+  "limitations": [
+    "SEC cache is optional; without an executed pilot, CIKs remain fail-closed.",
+    "Adjusted prices are not collected in v2.38D.",
+    "No scoring, ranking or recommendation is produced."
+  ],
+  "phase": "v2.38D-us-sec-foundation",
+  "pilot_selected_assets": 50,
+  "publication_dates_available": 0,
+  "status": "COMPLETED_US_SEC_FOUNDATION_DRY_RUN",
+  "submissions_available": 0,
+  "us_eligible_rows": 5011,
+  "us_rows": 9200
+}

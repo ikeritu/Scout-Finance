@@ -1,0 +1,51 @@
+asset_id,ticker,exchange,company_name,selection_reason
+U00006,AAL,NASDAQ,"American Airlines Group, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U03246,A,NYSE,"Agilent Technologies, Inc. Common Stock",deterministic_exchange_balanced_not_ranked
+U03262,ACCS,NYSE American,ACCESS Newswire Inc. Common Stock,deterministic_exchange_balanced_not_ranked
+U03665,CBOE,Cboe BZX,"Cboe Global Markets, Inc. Common Stock",deterministic_exchange_balanced_not_ranked
+U00007,AAME,NASDAQ,Atlantic American Corporation - Common Stock,deterministic_exchange_balanced_not_ranked
+U00008,AAOI,NASDAQ,"Applied Optoelectronics, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00009,AAON,NASDAQ,"AAON, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00010,AAPG,NASDAQ,Ascentage Pharma Group International - American Depository Shares,deterministic_exchange_balanced_not_ranked
+U00011,AAPL,NASDAQ,Apple Inc. - Common Stock,deterministic_exchange_balanced_not_ranked
+U00012,AARD,NASDAQ,"Aardvark Therapeutics, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00013,ABAT,NASDAQ,American Battery Technology Company - Common Stock,deterministic_exchange_balanced_not_ranked
+U00014,ABCL,NASDAQ,AbCellera Biologics Inc. - Common Shares,deterministic_exchange_balanced_not_ranked
+U00015,ABEO,NASDAQ,Abeona Therapeutics Inc. - Common Stock,deterministic_exchange_balanced_not_ranked
+U00016,ABLV,NASDAQ,Able View Global Inc. - Class B Ordinary Shares,deterministic_exchange_balanced_not_ranked
+U00017,ABNB,NASDAQ,"Airbnb, Inc. - Class A Common Stock",deterministic_exchange_balanced_not_ranked
+U00018,ABOS,NASDAQ,"Acumen Pharmaceuticals, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00019,ABSI,NASDAQ,Absci Corporation - Common Stock,deterministic_exchange_balanced_not_ranked
+U00020,ABTC,NASDAQ,American Bitcoin Corp. - Class A Common Stock,deterministic_exchange_balanced_not_ranked
+U00021,ABTS,NASDAQ,Abits Group Inc - Ordinary Shares,deterministic_exchange_balanced_not_ranked
+U00022,ABUS,NASDAQ,Arbutus Biopharma Corporation - Common Stock,deterministic_exchange_balanced_not_ranked
+U00023,ABVC,NASDAQ,"ABVC BioPharma, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00025,ACAD,NASDAQ,ACADIA Pharmaceuticals Inc. - Common Stock,deterministic_exchange_balanced_not_ranked
+U00026,ACB,NASDAQ,Aurora Cannabis Inc. - Common Shares,deterministic_exchange_balanced_not_ranked
+U00027,ACCL,NASDAQ,Acco Group Holdings Limited - Class A Ordinary Shares,deterministic_exchange_balanced_not_ranked
+U00028,ACDC,NASDAQ,ProFrac Holding Corp. - Class A Common Stock,deterministic_exchange_balanced_not_ranked
+U00029,ACET,NASDAQ,"Adicet Bio, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00030,ACFN,NASDAQ,"Acorn Energy, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00032,ACGL,NASDAQ,Arch Capital Group Ltd. - Common Stock,deterministic_exchange_balanced_not_ranked
+U00033,ACHC,NASDAQ,"Acadia Healthcare Company, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00034,ACHV,NASDAQ,"Achieve Life Sciences, Inc. - Common Shares",deterministic_exchange_balanced_not_ranked
+U00035,ACIC,NASDAQ,American Coastal Insurance Corporation - Common Stock,deterministic_exchange_balanced_not_ranked
+U00036,ACIU,NASDAQ,AC Immune SA - Common Stock,deterministic_exchange_balanced_not_ranked
+U00037,ACIW,NASDAQ,"ACI Worldwide, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00038,ACLS,NASDAQ,"Axcelis Technologies, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00039,ACMR,NASDAQ,"ACM Research, Inc. - Class A Common Stock",deterministic_exchange_balanced_not_ranked
+U00040,ACNB,NASDAQ,ACNB Corporation - Common Stock,deterministic_exchange_balanced_not_ranked
+U00041,ACNT,NASDAQ,Ascent Industries Co. - Common Stock,deterministic_exchange_balanced_not_ranked
+U00042,ACOG,NASDAQ,Alpha Cognition Inc. - Common Stock,deterministic_exchange_balanced_not_ranked
+U00043,ACON,NASDAQ,"Aclarion, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00044,ACRS,NASDAQ,"Aclaris Therapeutics, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00045,ACRV,NASDAQ,"Acrivon Therapeutics, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00046,ACT,NASDAQ,"Enact Holdings, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00047,ACTG,NASDAQ,Acacia Research Corporation - Common Stock,deterministic_exchange_balanced_not_ranked
+U00048,ACTU,NASDAQ,"Actuate Therapeutics, Inc. - Common stock",deterministic_exchange_balanced_not_ranked
+U00049,ACXP,NASDAQ,"Acurx Pharmaceuticals, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked
+U00051,ADAG,NASDAQ,"Adagene Inc. - ADS, each representing 1.25 ordinary shares",deterministic_exchange_balanced_not_ranked
+U00053,ADBE,NASDAQ,Adobe Inc. - Common Stock,deterministic_exchange_balanced_not_ranked
+U00054,ADEA,NASDAQ,Adeia Inc. - Common Stock,deterministic_exchange_balanced_not_ranked
+U00055,ADGM,NASDAQ,"Adagio Medical Holdings, Inc - Common Stock",deterministic_exchange_balanced_not_ranked
+U00056,ADI,NASDAQ,"Analog Devices, Inc. - Common Stock",deterministic_exchange_balanced_not_ranked

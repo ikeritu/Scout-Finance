@@ -1,0 +1,55 @@
+{
+  "decision": "COMPLETED_US_SEC_FOUNDATION_DRY_RUN",
+  "guardrails": {
+    "credentials_used": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "input": {
+    "path": "outputs/full_universe_source_acquisition/v2_38c_us_eu_priority_coverage/us_universe_census_v2_38c.csv",
+    "rows": 9200,
+    "sha256": "ee3cb066ef4df723b0021b71bdc5dbd6febcee981a8a4e500fecfb577868e90a"
+  },
+  "outputs": {
+    "PHASE9D_US_SEC_FINAL_GATE_v2_38d.md": {
+      "bytes": 471,
+      "sha256": "7f6f816ce11c3826dc558c6cf49ff9b0f23f4f0c4b0ce53e3a2abd04b3c6fe60"
+    },
+    "README.md": {
+      "bytes": 95,
+      "sha256": "4d8c900676527165ae2c8ae53a3f1a9842c2b67666a98c8509f7368cb6a74b7f"
+    },
+    "US_SEC_FOUNDATION_CONTRACT_v2_38d.md": {
+      "bytes": 399,
+      "sha256": "712b4d613d87b354586f60c28fa5b7b2a642df4b387ad8843291568640ca785f"
+    },
+    "us_sec_coverage_summary_v2_38d.json": {
+      "bytes": 1247,
+      "sha256": "230da230def86b5efc691f0d13b5dc26d4b7578e87281968aac7f6e217dca40f"
+    },
+    "us_sec_identity_overlay_v2_38d.csv": {
+      "bytes": 2180960,
+      "sha256": "b80daab0767f7cdb9031d86e23a96bbd9b39550fa34588227301ed87e79ff901"
+    },
+    "us_sec_identity_review_v2_38d.csv": {
+      "bytes": 2180960,
+      "sha256": "b80daab0767f7cdb9031d86e23a96bbd9b39550fa34588227301ed87e79ff901"
+    },
+    "us_sec_pilot_aggregate_report_v2_38d.json": {
+      "bytes": 1032,
+      "sha256": "eb446752b8d30480bdbde5f059e5211977ea9e27b2d7476c74704cf8ee57d769"
+    },
+    "us_sec_pilot_selection_v2_38d.csv": {
+      "bytes": 5218,
+      "sha256": "898c9fd4a03a12032dda8917a73841c1b1bd8853da636065b53ddad399491437"
+    },
+    "us_sec_provider_route_matrix_v2_38d.csv": {
+      "bytes": 458,
+      "sha256": "cdc897b124307d346999bc4c856f7cddcd5cab8449376633667327b26b9c6eb1"
+    }
+  },
+  "phase": "v2.38D-us-sec-foundation"
+}

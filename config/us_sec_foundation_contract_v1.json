@@ -1,0 +1,43 @@
+{
+  "allowed_exchanges": [
+    "NASDAQ",
+    "NYSE",
+    "NYSE American",
+    "Cboe BZX",
+    "CBOE",
+    "NYSE Arca"
+  ],
+  "allowed_outputs": [
+    "overlay",
+    "aggregate_report",
+    "manifest",
+    "review_ledger"
+  ],
+  "contract_version": "1.0.0",
+  "execution_default": "DRY_RUN",
+  "expected_us_eligible_rows": 5011,
+  "expected_us_rows": 9200,
+  "forbidden_actions": [
+    "global_unbounded_download",
+    "paid_subscription",
+    "symbol_guessing",
+    "synthetic_values",
+    "scoring",
+    "ranking",
+    "recommendations",
+    "phase9c",
+    "broker",
+    "trading"
+  ],
+  "input_us_census": "outputs/full_universe_source_acquisition/v2_38c_us_eu_priority_coverage/us_universe_census_v2_38c.csv",
+  "maximum_pilot_assets": 50,
+  "network_default": "BLOCKED",
+  "phase": "v2.38D-us-sec-foundation",
+  "raw_data_git_policy": "FORBIDDEN",
+  "sec_sources": [
+    "company_tickers_exchange.json",
+    "submissions",
+    "companyfacts"
+  ],
+  "sec_user_agent_env": "SCOUT_FINANCE_SEC_USER_AGENT"
+}

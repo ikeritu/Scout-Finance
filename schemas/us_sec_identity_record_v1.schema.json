@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "asset_id": {"type": "string", "pattern": "^U[0-9]{5}$"},
+    "ticker": {"type": "string"},
+    "exchange": {"type": "string"},
+    "company_name": {"type": "string"},
+    "cik": {"type": "string", "pattern": "^(|[0-9]{10})$"},
+    "sec_entity_name": {"type": "string"},
+    "sic": {"type": "string"},
+    "fiscal_year_end": {"type": "string"},
+    "sec_ticker": {"type": "string"},
+    "sec_exchange": {"type": "string"},
+    "identity_status": {
+      "enum": [
+        "US_SEC_CIK_RESOLVED",
+        "US_SEC_TICKER_AMBIGUOUS",
+        "US_SEC_EXCHANGE_MISMATCH",
+        "US_SEC_CIK_MISSING",
+        "US_SEC_ENTITY_NAME_REVIEW",
+        "US_SEC_SOURCE_UNAVAILABLE",
+        "US_SEC_NOT_ELIGIBLE",
+        "US_SEC_MANUAL_REVIEW"
+      ],
+      "type": "string"
+    },
+    "review_reason": {"type": "string"},
+    "evidence_source": {"type": "string"},
+    "evidence_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "phase": {"const": "v2.38D", "type": "string"}
+  },
+  "required": [
+    "asset_id",
+    "ticker",
+    "exchange",
+    "company_name",
+    "cik",
+    "sec_entity_name",
+    "sic",
+    "fiscal_year_end",
+    "sec_ticker",
+    "sec_exchange",
+    "identity_status",
+    "review_reason",
+    "evidence_source",
+    "evidence_hash",
+    "phase"
+  ],
+  "title": "US SEC Identity Record v1",
+  "type": "object"
+}

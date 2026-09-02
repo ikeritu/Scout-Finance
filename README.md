@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**Fase v2.38D — fundación SEC para EEUU** (`COMPLETED_US_SEC_FOUNDATION_DRY_RUN`). Añade contrato, esquema, overlay y runner para resolver CIK/submissions/companyfacts sobre 9.200 filas US / 5.011 elegibles. El acceso SEC real queda bloqueado por defecto y exige `--execute` más `SCOUT_FINANCE_SEC_USER_AGENT`; no hay scoring, ranking ni recomendaciones.
+
 **Fase 9B-US/EU — cobertura prioritaria** (`COMPLETED_PARTIAL_COVERAGE`, v2.38C). Scout Finance queda alineado con el roadmap maestro: el objetivo es rastrear las 43.089 empresas, no optimizar solo Japón. La nueva capa offline censó 5.011 elegibles de EEUU y 10.483 elegibles europeas; EEUU queda encaminado hacia SEC/CIK/XBRL y precios ajustados con proveedor por validar, y Europa queda bloqueada principalmente por la resolución de Cboe Europe a home exchange. No se calculan scoring, ranking ni recomendaciones.
 
 **Fase 9B — piloto controlado validado, enriquecimiento global aún incompleto** (`CONTROLLED_PILOT_VALIDATED_NOT_GLOBAL_PROMOTION`, v2.38B). El manifiesto conserva 43.089 filas: 763 listas para lote controlado (67 JPX verificadas + 696 TWSE), 3.634 JPX requieren resolución exacta y 5.011 estadounidenses requieren cuenta/licencia/piloto. El piloto nuevo valida 25 JPX y 25 TWSE (16.200 registros de precios); no se ha calculado scoring global.

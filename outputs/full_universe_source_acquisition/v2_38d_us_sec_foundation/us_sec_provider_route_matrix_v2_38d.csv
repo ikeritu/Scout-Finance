@@ -1,0 +1,5 @@
+route,source,status,network_required,execute_required,output_policy
+identity,SEC company_tickers_exchange.json,DRY_RUN_SOURCE_UNAVAILABLE,true,true,overlay_only
+filings,SEC submissions/CIK##########.json,PILOT_REQUIRED,true,true,aggregate_and_local_raw_cache
+fundamentals,SEC companyfacts/CIK##########.json,PILOT_REQUIRED,true,true,aggregate_and_local_raw_cache
+prices,external adjusted price provider,USER_ACTION_REQUIRED,true,true,not_collected_in_v2_38d

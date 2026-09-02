@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38D — fundación SEC para EEUU (2026-09-02)
+
+Añade la base fail-closed para resolver identidad y fundamentales de EEUU vía SEC: contrato, esquema de identidad, overlay, ledger de revisión, selección piloto, matriz de rutas, runner con `--execute` y gate por `SCOUT_FINANCE_SEC_USER_AGENT`. La fase conserva 9.200 filas US y 5.011 elegibles, pero sin cache SEC ejecutada marca los 5.011 como `US_SEC_SOURCE_UNAVAILABLE`. No usa red en QA, no calcula scoring, ranking, recomendaciones ni fase 9C.
+
 ## v2.38C — cobertura prioritaria EEUU/Europa (2026-09-02)
 
 Reorienta la fase 9B hacia el objetivo global real del producto: rastrear las 43.089 empresas y priorizar EEUU/Europa antes de seguir escalando JPX. Añade contrato, builder offline, censos US/EU, matriz de rutas, piloto multi-región definido y gate final fail-closed. Resultado: 5.011 elegibles de EEUU con ruta SEC/CIK/XBRL por validar y 10.483 elegibles europeas, principalmente Cboe Europe bloqueado como venue secundario hasta resolver home exchange. Sin red, credenciales, scoring, ranking, recomendaciones ni fase 9C.
