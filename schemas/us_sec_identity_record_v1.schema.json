@@ -27,6 +27,9 @@
     },
     "review_reason": {"type": "string"},
     "evidence_source": {"type": "string"},
+    "submissions_available": {"enum": ["true", "false"], "type": "string"},
+    "companyfacts_available": {"enum": ["true", "false"], "type": "string"},
+    "basic_concepts_available": {"type": "string", "pattern": "^[0-9]+$"},
     "evidence_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "phase": {"const": "v2.38D", "type": "string"}
   },
@@ -44,6 +47,9 @@
     "identity_status",
     "review_reason",
     "evidence_source",
+    "submissions_available",
+    "companyfacts_available",
+    "basic_concepts_available",
     "evidence_hash",
     "phase"
   ],

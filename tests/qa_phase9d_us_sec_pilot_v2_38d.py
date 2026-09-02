@@ -27,6 +27,8 @@ def main() -> int:
     assert dry.returncode == 0
     payload = json.loads(dry.stdout)
     assert payload["status"] == "DRY_RUN" and payload["selected"] == 12 and payload["network_calls"] == 0
+    oversized = run("--limit", "51")
+    assert oversized.returncode == 2 and json.loads(oversized.stdout)["reason"] == "pilot_limit_must_be_1_to_50"
     clean_env = {k: v for k, v in os.environ.items() if k != "SCOUT_FINANCE_SEC_USER_AGENT"}
     blocked = run("--limit", "2", "--execute", env=clean_env)
     assert blocked.returncode == 2 and json.loads(blocked.stdout)["reason"] == "sec_user_agent_missing"

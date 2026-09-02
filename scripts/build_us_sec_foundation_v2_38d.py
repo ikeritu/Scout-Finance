@@ -15,8 +15,19 @@ OUT = ROOT / "outputs/full_universe_source_acquisition/v2_38d_us_sec_foundation"
 OVERLAY_FIELDS = [
     "asset_id", "ticker", "exchange", "company_name", "cik", "sec_entity_name",
     "sic", "fiscal_year_end", "sec_ticker", "sec_exchange", "identity_status",
-    "review_reason", "evidence_source", "evidence_hash", "phase",
+    "review_reason", "evidence_source", "submissions_available",
+    "companyfacts_available", "basic_concepts_available", "evidence_hash", "phase",
 ]
+BASIC_CONCEPTS = {
+    "revenue": {"RevenueFromContractWithCustomerExcludingAssessedTax", "Revenues", "SalesRevenueNet"},
+    "net_income": {"NetIncomeLoss"},
+    "assets": {"Assets"},
+    "liabilities": {"Liabilities"},
+    "equity": {"StockholdersEquity", "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest"},
+    "operating_cash_flow": {"NetCashProvidedByUsedInOperatingActivities"},
+    "capex": {"PaymentsToAcquirePropertyPlantAndEquipment"},
+    "eps": {"EarningsPerShareBasic", "EarningsPerShareDiluted"},
+}
 
 
 def sha256(path: Path) -> str:
@@ -54,6 +65,36 @@ def load_sec_cache(cache_dir: Path) -> dict[str, list[dict]]:
         if ticker:
             by_ticker[ticker].append(record)
     return by_ticker
+
+
+def load_optional_json(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def submissions_summary(cache_dir: Path, cik: str) -> dict[str, str]:
+    payload = load_optional_json(cache_dir / "submissions" / f"CIK{cik}.json")
+    if not payload:
+        return {"available": "false", "sic": "", "fiscal_year_end": ""}
+    return {
+        "available": "true",
+        "sic": str(payload.get("sic", "") or ""),
+        "fiscal_year_end": str(payload.get("fiscalYearEnd", "") or ""),
+    }
+
+
+def companyfacts_summary(cache_dir: Path, cik: str) -> dict[str, object]:
+    payload = load_optional_json(cache_dir / "companyfacts" / f"CIK{cik}.json")
+    if not payload:
+        return {"available": "false", "basic_count": 0, "taxonomies": [], "facts_count": 0}
+    facts = payload.get("facts", {})
+    taxonomies = sorted(facts) if isinstance(facts, dict) else []
+    us_gaap = facts.get("us-gaap", {}) if isinstance(facts, dict) else {}
+    concepts = set(us_gaap) if isinstance(us_gaap, dict) else set()
+    basic_count = sum(1 for names in BASIC_CONCEPTS.values() if concepts & names)
+    facts_count = sum(len(v) for v in facts.values() if isinstance(v, dict)) if isinstance(facts, dict) else 0
+    return {"available": "true", "basic_count": basic_count, "taxonomies": taxonomies, "facts_count": facts_count}
 
 
 def classify(row: dict[str, str], sec_by_ticker: dict[str, list[dict]]) -> dict[str, str]:
@@ -107,12 +148,28 @@ def classify(row: dict[str, str], sec_by_ticker: dict[str, list[dict]]) -> dict[
                 status = "US_SEC_CIK_RESOLVED"
                 reason = ""
             source = "SEC company_tickers_exchange cache"
+            submissions = submissions_summary(classify.cache_dir, cik)
+            companyfacts = companyfacts_summary(classify.cache_dir, cik)
+            base.update({
+                "sic": submissions["sic"],
+                "fiscal_year_end": submissions["fiscal_year_end"],
+                "submissions_available": submissions["available"],
+                "companyfacts_available": companyfacts["available"],
+                "basic_concepts_available": str(companyfacts["basic_count"]),
+            })
+    base.setdefault("submissions_available", "false")
+    base.setdefault("companyfacts_available", "false")
+    base.setdefault("basic_concepts_available", "0")
     base.update({
         "identity_status": status,
         "review_reason": reason,
         "evidence_source": source,
     })
-    base["evidence_hash"] = row_hash(base["asset_id"], base["ticker"], base["exchange"], status, reason, source, base["cik"])
+    base["evidence_hash"] = row_hash(
+        base["asset_id"], base["ticker"], base["exchange"], status, reason, source,
+        base["cik"], base["submissions_available"], base["companyfacts_available"],
+        base["basic_concepts_available"],
+    )
     return base
 
 
@@ -145,6 +202,7 @@ def build(cache_dir: Path, limit: int) -> dict:
         raise SystemExit("BLOCKED: pilot limit must be 1..50")
     OUT.mkdir(parents=True, exist_ok=True)
     sec_by_ticker = load_sec_cache(cache_dir)
+    classify.cache_dir = cache_dir  # type: ignore[attr-defined]
     overlay = [classify(row, sec_by_ticker) for row in us_rows]
     write_csv(OUT / "us_sec_identity_overlay_v2_38d.csv", overlay, OVERLAY_FIELDS)
     review = [r for r in overlay if r["identity_status"] != "US_SEC_CIK_RESOLVED"]
@@ -163,16 +221,23 @@ def build(cache_dir: Path, limit: int) -> dict:
     ]
     write_csv(OUT / "us_sec_provider_route_matrix_v2_38d.csv", route_rows, ["route", "source", "status", "network_required", "execute_required", "output_policy"])
     counts = Counter(r["identity_status"] for r in overlay)
+    submissions_available = sum(r["submissions_available"] == "true" for r in overlay)
+    companyfacts_available = sum(r["companyfacts_available"] == "true" for r in overlay)
+    basic_concepts_available = sum(int(r["basic_concepts_available"] or 0) > 0 for r in overlay)
     report = {
         "phase": "v2.38D-us-sec-foundation",
-        "status": "COMPLETED_US_SEC_FOUNDATION_DRY_RUN" if not sec_by_ticker else "COMPLETED_US_SEC_CACHE_FOUNDATION",
+        "status": "COMPLETED_US_SEC_FOUNDATION_DRY_RUN" if not sec_by_ticker else "REAL_SEC_PILOT_VALIDATED_NOT_SCORING",
         "us_rows": len(us_rows),
         "us_eligible_rows": sum(r["eligibility_status"] == "ELIGIBLE" for r in us_rows),
+        "input_assets": len(pilot),
         "pilot_selected_assets": len(pilot),
         "cik_resolved": counts["US_SEC_CIK_RESOLVED"],
-        "submissions_available": 0,
-        "companyfacts_available": 0,
+        "cik_review_required": len([r for r in overlay if r["identity_status"] not in {"US_SEC_CIK_RESOLVED", "US_SEC_NOT_ELIGIBLE"}]),
+        "submissions_available": submissions_available,
+        "companyfacts_available": companyfacts_available,
+        "companyfacts_basic_concepts_available": basic_concepts_available,
         "publication_dates_available": 0,
+        "raw_cache_published": False,
         "identity_status_counts": dict(sorted(counts.items())),
         "failure_reasons": dict(sorted(Counter(r["review_reason"] for r in review if r["review_reason"]).items())),
         "guardrails": {

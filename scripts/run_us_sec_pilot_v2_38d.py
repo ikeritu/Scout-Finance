@@ -7,6 +7,7 @@ import csv
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -15,6 +16,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs/full_universe_source_acquisition/v2_38d_us_sec_foundation"
 SELECTION = OUT / "us_sec_pilot_selection_v2_38d.csv"
 MAX_LIMIT = 50
+SEC_TICKERS_URL = "https://www.sec.gov/files/company_tickers_exchange.json"
+SEC_SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik}.json"
+SEC_COMPANYFACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json"
 
 
 def emit(payload: dict, code: int = 0) -> int:
@@ -34,9 +38,58 @@ def read_selection(limit: int, asset_id: str | None) -> list[dict[str, str]]:
 
 
 def fetch_json(url: str, user_agent: str) -> dict:
-    request = urllib.request.Request(url, headers={"User-Agent": user_agent, "Accept-Encoding": "gzip, deflate", "Host": "data.sec.gov"})
+    host = "www.sec.gov" if "www.sec.gov" in url else "data.sec.gov"
+    request = urllib.request.Request(url, headers={"User-Agent": user_agent, "Accept-Encoding": "gzip, deflate", "Host": host})
     with urllib.request.urlopen(request, timeout=30) as response:
         return json.loads(response.read().decode("utf-8"))
+
+
+def write_json(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+
+
+def load_company_tickers(cache_dir: Path, user_agent: str) -> tuple[dict, int]:
+    cache = cache_dir / "company_tickers_exchange.json"
+    if cache.exists():
+        return json.loads(cache.read_text(encoding="utf-8")), 0
+    payload = fetch_json(SEC_TICKERS_URL, user_agent)
+    write_json(cache, payload)
+    return payload, 1
+
+
+def rows_by_ticker(payload: dict) -> dict[str, list[dict]]:
+    fields = payload.get("fields", [])
+    data = payload.get("data", [])
+    by_ticker: dict[str, list[dict]] = {}
+    if not isinstance(fields, list) or not isinstance(data, list):
+        return by_ticker
+    for item in data:
+        record = dict(zip(fields, item))
+        ticker = str(record.get("ticker", "")).upper()
+        if ticker:
+            by_ticker.setdefault(ticker, []).append(record)
+    return by_ticker
+
+
+def resolve_cik(row: dict[str, str], sec_by_ticker: dict[str, list[dict]]) -> tuple[str, str]:
+    matches = sec_by_ticker.get(row["ticker"].upper(), [])
+    if not matches:
+        return "", "cik_not_found"
+    if len(matches) > 1:
+        return "", "ticker_ambiguous"
+    cik = str(matches[0].get("cik", "")).zfill(10)
+    if not cik.isdigit() or len(cik) != 10:
+        return "", "cik_malformed"
+    return cik, "cik_resolved"
+
+
+def fetch_optional_json(url: str, user_agent: str, output: Path) -> tuple[bool, str, int]:
+    if output.exists():
+        return True, "cached", 0
+    payload = fetch_json(url, user_agent)
+    write_json(output, payload)
+    return True, "downloaded", 1
 
 
 def main() -> int:
@@ -44,6 +97,7 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=25)
     parser.add_argument("--asset-id")
     parser.add_argument("--cache-dir", type=Path, default=OUT / "sec_raw_cache_v2_38d")
+    parser.add_argument("--sleep-seconds", type=float, default=0.2)
     parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
     if not 1 <= args.limit <= MAX_LIMIT:
@@ -58,24 +112,59 @@ def main() -> int:
     failures = []
     network_calls = 0
     try:
-        company_tickers_url = "https://www.sec.gov/files/company_tickers_exchange.json"
-        payload = fetch_json(company_tickers_url, user_agent)
-        network_calls += 1
-        (args.cache_dir / "company_tickers_exchange.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
+        payload, calls = load_company_tickers(args.cache_dir, user_agent)
+        network_calls += calls
+        sec_by_ticker = rows_by_ticker(payload)
     except urllib.error.HTTPError as exc:
         reason = "sec_rate_limited" if exc.code == 429 else "sec_network_error"
-        failures.append({"source": "company_tickers_exchange", "reason": reason, "http_status": exc.code})
+        return emit({"status": "BLOCKED", "reason": reason, "http_status": exc.code, "phase9c_authorized": False}, 2)
     except Exception as exc:  # noqa: BLE001 - closed taxonomy is emitted below.
-        failures.append({"source": "company_tickers_exchange", "reason": "sec_network_error", "detail": exc.__class__.__name__})
+        return emit({"status": "BLOCKED", "reason": "sec_network_error", "detail": exc.__class__.__name__, "phase9c_authorized": False}, 2)
+    resolved = 0
+    submissions_available = 0
+    companyfacts_available = 0
+    for row in rows:
+        cik, resolution = resolve_cik(row, sec_by_ticker)
+        if not cik:
+            failures.append({"asset_id": row["asset_id"], "ticker": row["ticker"], "reason": resolution})
+            continue
+        resolved += 1
+        try:
+            ok, _, calls = fetch_optional_json(SEC_SUBMISSIONS_URL.format(cik=cik), user_agent, args.cache_dir / "submissions" / f"CIK{cik}.json")
+            network_calls += calls
+            submissions_available += int(ok)
+            if calls and args.sleep_seconds > 0:
+                time.sleep(args.sleep_seconds)
+        except urllib.error.HTTPError as exc:
+            reason = "sec_rate_limited" if exc.code == 429 else "sec_submissions_error"
+            failures.append({"asset_id": row["asset_id"], "ticker": row["ticker"], "cik": cik, "source": "submissions", "reason": reason, "http_status": exc.code})
+            if exc.code in {403, 429}:
+                break
+        except Exception as exc:  # noqa: BLE001
+            failures.append({"asset_id": row["asset_id"], "ticker": row["ticker"], "cik": cik, "source": "submissions", "reason": "sec_submissions_error", "detail": exc.__class__.__name__})
+        try:
+            ok, _, calls = fetch_optional_json(SEC_COMPANYFACTS_URL.format(cik=cik), user_agent, args.cache_dir / "companyfacts" / f"CIK{cik}.json")
+            network_calls += calls
+            companyfacts_available += int(ok)
+            if calls and args.sleep_seconds > 0:
+                time.sleep(args.sleep_seconds)
+        except urllib.error.HTTPError as exc:
+            reason = "sec_rate_limited" if exc.code == 429 else "sec_companyfacts_error"
+            failures.append({"asset_id": row["asset_id"], "ticker": row["ticker"], "cik": cik, "source": "companyfacts", "reason": reason, "http_status": exc.code})
+            if exc.code in {403, 429}:
+                break
+        except Exception as exc:  # noqa: BLE001
+            failures.append({"asset_id": row["asset_id"], "ticker": row["ticker"], "cik": cik, "source": "companyfacts", "reason": "sec_companyfacts_error", "detail": exc.__class__.__name__})
     status = "COMPLETED_WITH_ERRORS" if failures else "COMPLETED"
     return emit({
         "status": status,
         "selected": len(rows),
         "network_calls": network_calls,
         "cache_dir": str(args.cache_dir),
-        "company_tickers_cached": not failures,
-        "submissions_available": 0,
-        "companyfacts_available": 0,
+        "company_tickers_cached": True,
+        "cik_resolved": resolved,
+        "submissions_available": submissions_available,
+        "companyfacts_available": companyfacts_available,
         "failures": failures,
         "scoring_calculated": False,
         "ranking_calculated": False,

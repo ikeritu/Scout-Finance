@@ -25,11 +25,13 @@ def main() -> int:
     assert {r["identity_status"] for r in rows} <= ALLOWED
     assert all(len(r["evidence_hash"]) == 64 for r in rows)
     assert all((not r["cik"]) or re.fullmatch(r"[0-9]{10}", r["cik"]) for r in rows)
+    assert all(r["submissions_available"] in {"true", "false"} for r in rows)
+    assert all(r["companyfacts_available"] in {"true", "false"} for r in rows)
+    assert all(re.fullmatch(r"[0-9]+", r["basic_concepts_available"]) for r in rows)
     counts = Counter(r["identity_status"] for r in rows)
-    assert counts["US_SEC_SOURCE_UNAVAILABLE"] == 5011
     assert counts["US_SEC_NOT_ELIGIBLE"] == 4189
-    assert counts["US_SEC_CIK_RESOLVED"] == 0
-    print("PASS: v2.38D/US-SEC-identity/schema/closed-statuses/fail-closed/no-invented-cik")
+    assert counts["US_SEC_SOURCE_UNAVAILABLE"] == 5011 or counts["US_SEC_CIK_RESOLVED"] > 0
+    print("PASS: v2.38D/US-SEC-identity/schema/closed-statuses/real-cache-aware/no-invented-cik")
     return 0
 
 
