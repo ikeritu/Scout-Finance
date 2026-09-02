@@ -1,1 +1,6 @@
 asset_id,ticker,company_name,exchange,price_rows,date_start,date_end,features_calculated,features_missing,price_feature_quality_status,quality_flags
+U00007,AAME,Atlantic American Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00008,AAOI,"Applied Optoelectronics, Inc. - Common Stock",,671,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00011,AAPL,Apple Inc. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00014,ABCL,AbCellera Biologics Inc. - Common Shares,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00015,ABEO,Abeona Therapeutics Inc. - Common Stock,,670,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable

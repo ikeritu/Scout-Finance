@@ -1,3 +1,6 @@
 batch_id,run_utc,provider,requested,selected,collected,skipped_existing,failed,status,phase9c_authorized,scoring_calculated,ranking_calculated,recommendations_generated
 v2_38i_20260902T184843Z,2026-09-02T18:48:43.292729+00:00,twelvedata,1,1,1,0,0,COMPLETED,false,false,false,false
 v2_38i_20260902T190140Z,2026-09-02T19:01:40.611836+00:00,twelvedata,1,1,1,0,0,COMPLETED,false,false,false,false
+v2_38i_20260902T191857Z,2026-09-02T19:18:57.224627+00:00,twelvedata,1,1,1,0,0,COMPLETED,false,false,false,false
+v2_38i_20260902T193318Z,2026-09-02T19:33:18.897687+00:00,twelvedata,5,5,5,0,0,COMPLETED,false,false,false,false
+v2_38i_20260902T193512Z,2026-09-02T19:35:12.169018+00:00,twelvedata,1,1,1,0,0,COMPLETED,false,false,false,false
