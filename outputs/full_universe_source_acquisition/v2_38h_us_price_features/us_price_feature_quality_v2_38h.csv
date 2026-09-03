@@ -260,6 +260,7 @@ U00305,AVBH,"Avidbank Holdings, Inc. - Common Stock",,670,2024-01-02,2026-09-02,
 U00306,AVBP,"ArriVent BioPharma, Inc. - Common Stock",,653,2024-01-26,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00307,AVGO,Broadcom Inc. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00308,AVIR,"Atea Pharmaceuticals, Inc. - common stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00309,AVLN,Avalyn Pharma Inc. - common stock,,87,2026-04-30,2026-09-02,14,max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_6m|sma_50_vs_sma_200|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00310,AVNW,"Aviat Networks, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00311,AVO,"Mission Produce, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00312,AVPT,"AvePoint, Inc. - Class A Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -380,6 +381,7 @@ U00456,BRLS,Borealis Foods Inc. - Class A Common Shares,,649,2024-02-01,2026-09-
 U00457,BRLT,"Brilliant Earth Group, Inc. - Class A Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00458,BRR,"ProCap Financial, Inc. - Common Stock",,311,2025-06-09,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00459,BRTX,"BioRestorative Therapies, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00460,BRUN,Boost Run Inc. - Class A Common Stock,,420,2024-12-30,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00461,BRZE,"Braze, Inc. - Class A Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00463,BSBK,Bogota Financial Corp. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00464,BSET,"Bassett Furniture Industries, Incorporated - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -421,6 +423,7 @@ U00502,CABR,"Caring Brands, Inc. - Common Stock",,279,2025-06-17,2026-09-02,21,,
 U00503,CAC,Camden National Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00504,CACC,Credit Acceptance Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00505,CADL,"Candel Therapeutics, Inc. - Common Stock",,671,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00506,CAES,"Cantor Equity Partners VII, Inc. - Class A Ordinary Shares",,54,2026-06-17,2026-09-02,11,avg_volume_3m|max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_3m|return_6m|sma_50_vs_sma_200|volatility_3m|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00507,CAI,"Caris Life Sciences, Inc. - Common Stock",,304,2025-06-18,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00509,CAKE,The Cheesecake Factory Incorporated - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00510,CALC,"CalciMedica, Inc. - Common Stock",,668,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -436,6 +439,7 @@ U00521,CARL,"Carlsmed, Inc. - Common Stock",,281,2025-07-23,2026-09-02,21,,PRICE
 U00522,CART,Maplebear Inc. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00523,CASH,"Pathward Financial, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00524,CASS,"Cass Information Systems, Inc - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00525,CAST,"FreeCast, Inc. - Class A common stock",,123,2026-03-10,2026-09-02,14,max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_6m|sma_50_vs_sma_200|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00526,CASY,"Caseys General Stores, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00527,CATY,Cathay General Bancorp - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00529,CBC,"Central Bancompany, Inc. - Class A Common Stock",,195,2025-11-21,2026-09-02,17,max_drawdown_12m|price_vs_sma_200|return_12m|sma_50_vs_sma_200,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
@@ -445,6 +449,7 @@ U00532,CBK,"Commercial Bancgroup, Inc. - Common Stock",,231,2025-10-02,2026-09-0
 U00533,CBLL,"CeriBell, Inc. - Common Stock",,474,2024-10-11,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00534,CBNK,"Capital Bancorp, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00535,CBRL,"Cracker Barrel Old Country Store, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00536,CBRS,Cerebras Systems Inc. - Class A Common Stock,,77,2026-05-14,2026-09-02,14,max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_6m|sma_50_vs_sma_200|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00537,CBSH,"Commerce Bancshares, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00538,CBUS,"Cibus, Inc. - Class A Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00539,CCAP,"Crescent Capital BDC, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -528,6 +533,7 @@ U00633,CISS,C3is Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATUR
 U00634,CIVB,"Civista Bancshares, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00635,CJMB,Callan JMB Inc. - Common Stock,,396,2025-02-05,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00636,CLAR,Clarus Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00637,CLBK,"Columbia Financial, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00638,CLBT,Cellebrite DI Ltd. - Ordinary Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00639,CLDX,"Celldex Therapeutics, Inc. - Common Stock",,672,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00640,CLFD,"Clearfield, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable

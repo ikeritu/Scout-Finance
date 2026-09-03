@@ -5,8 +5,8 @@ Decision: READY_FOR_COLLECTION
 - Candidates total: 555
 - FEATURES_READY priority: 356
 - FEATURES_PARTIAL priority: 184
-- Pending assets: 7
-- Local price ready: 548
+- Pending assets: 1
+- Local price ready: 554
 - Provider: twelvedata
 - Local raw cache published: false
 
