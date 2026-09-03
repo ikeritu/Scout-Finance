@@ -30,5 +30,15 @@ U00381,BGIN,return_12m,insufficient_or_missing_price_evidence,218,253,v2.38H
 U00381,BGIN,max_drawdown_12m,insufficient_or_missing_price_evidence,218,252,v2.38H
 U00409,BLLN,return_12m,insufficient_or_missing_price_evidence,205,253,v2.38H
 U00409,BLLN,max_drawdown_12m,insufficient_or_missing_price_evidence,205,252,v2.38H
+U00451,BRCB,return_12m,insufficient_or_missing_price_evidence,245,253,v2.38H
+U00451,BRCB,max_drawdown_12m,insufficient_or_missing_price_evidence,245,252,v2.38H
+U00529,CBC,return_12m,insufficient_or_missing_price_evidence,195,253,v2.38H
+U00529,CBC,price_vs_sma_200,insufficient_or_missing_price_evidence,195,200,v2.38H
+U00529,CBC,sma_50_vs_sma_200,insufficient_or_missing_price_evidence,195,200,v2.38H
+U00529,CBC,max_drawdown_12m,insufficient_or_missing_price_evidence,195,252,v2.38H
+U00532,CBK,return_12m,insufficient_or_missing_price_evidence,231,253,v2.38H
+U00532,CBK,max_drawdown_12m,insufficient_or_missing_price_evidence,231,252,v2.38H
 U00543,CCC,return_12m,insufficient_or_missing_price_evidence,215,253,v2.38H
 U00543,CCC,max_drawdown_12m,insufficient_or_missing_price_evidence,215,252,v2.38H
+U00549,CCHH,return_12m,insufficient_or_missing_price_evidence,229,253,v2.38H
+U00549,CCHH,max_drawdown_12m,insufficient_or_missing_price_evidence,229,252,v2.38H
