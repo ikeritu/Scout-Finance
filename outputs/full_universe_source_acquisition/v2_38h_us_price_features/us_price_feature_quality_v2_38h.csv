@@ -76,6 +76,7 @@ U00095,AGPU,Axe Compute Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE
 U00097,AGYS,"Agilysys, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00098,AHCO,AdaptHealth Corp. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00099,AHMA,Ambitions Enterprise Management Co. L.L.C - Class A Ordinary Shares,,217,2025-10-21,2026-09-01,19,max_drawdown_12m|return_12m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
+U00100,AIAI,AIAI Holdings Corporation - Class A common stock,,77,2026-05-14,2026-09-02,14,max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_6m|sma_50_vs_sma_200|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00102,AIDX,"20/20 Biolabs, Inc. - Common Stock",,136,2026-02-19,2026-09-02,17,max_drawdown_12m|price_vs_sma_200|return_12m|sma_50_vs_sma_200,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00103,AIFA,"All In FutureTech Alliance, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00104,AIFC,AI Financial Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -97,6 +98,7 @@ U00120,AISP,"Airship AI Holdings, Inc - Class A Common Stock",,670,2024-01-02,20
 U00121,AIXC,"AIxCrypto Holdings, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00122,AKAM,"Akamai Technologies, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00124,AKBA,"Akebia Therapeutics, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00125,AKTS,"Aktis Oncology, Inc. - Common stock",,581,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00126,ALAB,"Astera Labs, Inc. - Common Stock",,615,2024-03-20,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00128,ALCO,"Alico, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00129,ALDF,Aldel Financial II Inc. - Class A Ordinary Shares,,430,2024-12-13,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -112,6 +114,7 @@ U00140,ALKT,"Alkami Technology, Inc. - Common Stock",,669,2024-01-02,2026-09-01,
 U00141,ALLO,"Allogene Therapeutics, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00142,ALLR,"Allarity Therapeutics, Inc. - Common stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00143,ALLT,Allot Ltd. - Ordinary Shares,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00145,ALMR,"Alamar Biosciences, Inc. - Class A common stock",,96,2026-04-17,2026-09-02,14,max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_6m|sma_50_vs_sma_200|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00146,ALMS,Alumis Inc. - Common Stock,,546,2024-06-28,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00147,ALMU,"Aeluma, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00148,ALNT,Allient Inc. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -144,6 +147,7 @@ U00177,AMPL,"Amplitude, Inc. - Class A Common Stock",,669,2024-01-02,2026-09-01,
 U00178,AMRX,"Amneal Pharmaceuticals, Inc. - Class A Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00179,AMSC,American Superconductor Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00180,AMSF,"AMERISAFE, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00181,AMSS,AMASS Brands Inc. - Common Stock,,73,2026-05-20,2026-09-02,14,max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_6m|sma_50_vs_sma_200|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00182,AMST,Amesite Inc. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00183,AMTX,"Aemetis, Inc - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00184,AMZN,"Amazon.com, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -163,6 +167,7 @@ U00199,ANY,Sphere 3D Corp. - Common Shares,,669,2024-01-02,2026-09-01,21,,PRICE_
 U00200,AOSL,Alpha and Omega Semiconductor Limited - Common Shares,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00201,AOUT,"American Outdoor Brands, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00202,APA,APA Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00204,APC,ARKO Petroleum Corp. - Class A Common Stock,,142,2026-02-10,2026-09-02,17,max_drawdown_12m|price_vs_sma_200|return_12m|sma_50_vs_sma_200,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00205,APEI,"American Public Education, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00206,APGE,"Apogee Therapeutics, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00207,API,"Agora, Inc. - ADS",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -173,6 +178,7 @@ U00214,APPF,"AppFolio, Inc. - Class A Common Stock",,671,2024-01-02,2026-09-01,2
 U00215,APPN,Appian Corporation - Class A Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00216,APPS,"Digital Turbine, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00217,APRE,"Aprea Therapeutics, Inc. - Common Stock",,671,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00218,APUR,Aperture AC - Class A Ordinary Shares,,72,2026-05-21,2026-09-02,14,max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_6m|sma_50_vs_sma_200|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00219,APVO,Aptevo Therapeutics Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00220,APWC,"Asia Pacific Wire & Cable Corporation Limited - Common shares, Par value .01 per share",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00221,APXT,Apex Treasury Corporation - Class A Ordinary Share,,199,2025-11-17,2026-09-02,17,max_drawdown_12m|price_vs_sma_200|return_12m|sma_50_vs_sma_200,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
@@ -184,6 +190,7 @@ U00226,ARAI,Arrive AI Inc. - Common Stock,,327,2025-05-15,2026-09-02,21,,PRICE_F
 U00227,ARAY,Accuray Incorporated - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00229,ARBE,Arbe Robotics Ltd. - Ordinary Shares,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00230,ARCB,ArcBest Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00232,ARCI,Archimedes Tech SPAC Partners III Co. - Ordinary Share,,119,2026-03-16,2026-09-02,14,max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_6m|sma_50_vs_sma_200|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00234,ARCT,Arcturus Therapeutics Holdings Inc. - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00235,ARDX,"Ardelyx, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00236,AREC,American Resources Corporation - Class A Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -200,6 +207,7 @@ U00248,ARTV,"Artiva Biotherapeutics, Inc. - Common Stock",,533,2024-07-19,2026-0
 U00249,ARTW,"Art's-Way Manufacturing Co., Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00250,ARVN,"Arvinas, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00251,ARWR,"Arrowhead Pharmaceuticals, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00252,ARXS,"Arxis, Inc. - Class A Common Stock",,97,2026-04-16,2026-09-02,14,max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_6m|sma_50_vs_sma_200|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00253,ASBP,"Aspire Biopharma Holdings, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00254,ASLE,AerSale Corporation - Common Stock,,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00255,ASMB,"Assembly Biosciences, Inc. - Common Stock",,669,2024-01-02,2026-09-01,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -246,6 +254,7 @@ U00299,AURA,"Aura Biosciences, Inc. - Common Stock",,670,2024-01-02,2026-09-02,2
 U00300,AURE,Aurelion Inc. - Class A Ordinary Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00301,AUUD,Auddia Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00302,AVAH,Aveanna Healthcare Holdings Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00303,AVAT,Avalanche Treasury Corporation - Class A Common Stock,,62,2026-06-05,2026-09-02,11,avg_volume_3m|max_drawdown_12m|max_drawdown_6m|price_vs_sma_200|return_12m|return_3m|return_6m|sma_50_vs_sma_200|volatility_3m|volatility_6m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00304,AVAV,"AeroVironment, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00305,AVBH,"Avidbank Holdings, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00306,AVBP,"ArriVent BioPharma, Inc. - Common Stock",,653,2024-01-26,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -448,48 +457,72 @@ U00548,CCG,Cheche Group Inc. - Class A Ordinary Shares,,670,2024-01-02,2026-09-0
 U00549,CCHH,CCH Holdings Ltd - Class A Ordinary Shares,,229,2025-10-03,2026-09-02,19,max_drawdown_12m|return_12m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00552,CCLD,"CareCloud, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00553,CCNE,CNB Financial Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00554,CCOI,"Cogent Communications Holdings, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00556,CCSI,"Consensus Cloud Solutions, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00557,CCTG,CCSC Technology International Holdings Limited - Class A Ordinary Shares,,658,2024-01-18,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00558,CCXI,Churchill Capital Corp XI - Class A Ordinary Shares,,143,2026-02-09,2026-09-02,17,max_drawdown_12m|price_vs_sma_200|return_12m|sma_50_vs_sma_200,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00559,CD,Chaince Digital Holdings Inc. - American Ordinary Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00560,CDIO,Cardio Diagnostics Holdings Inc. - Common stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00561,CDLX,"Cardlytics, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00562,CDNA,"CareDx, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00563,CDNL,Cardinal Infrastructure Group Inc. - Class A Common Stock,,183,2025-12-10,2026-09-02,17,max_drawdown_12m|price_vs_sma_200|return_12m|sma_50_vs_sma_200,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00564,CDNS,"Cadence Design Systems, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00566,CDT,CDT Equity Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00567,CDTG,CDT Environmental Technology Investment Holdings Limited - ordinary shares,,595,2024-04-19,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00568,CDW,CDW Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00569,CDXS,"Codexis, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00570,CDZI,"Cadiz, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00571,CECO,CECO Environmental Corp. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00572,CEG,Constellation Energy Corporation - Common Stock When-Issued,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00573,CELC,Celcuity Inc. - Common Stock,,673,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00574,CELH,"Celsius Holdings, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00575,CELU,Celularity Inc. - Class A Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00576,CELZ,"Creative Medical Technology Holdings, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00577,CENN,Cenntro Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00578,CENT,Central Garden & Pet Company - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00579,CENTA,Central Garden & Pet Company - Class A Common Stock Nonvoting,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00580,CENX,Century Aluminum Company - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00581,CEPF,"Cantor Equity Partners IV, Inc. - Class A Ordinary Shares",,260,2025-08-21,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00582,CEPO,"Cantor Equity Partners I, Inc. - Class A Ordinary Shares",,415,2025-01-07,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00583,CEPS,"Cantor Equity Partners VI, Inc. - Class A Ordinary Shares",,145,2026-02-05,2026-09-02,17,max_drawdown_12m|price_vs_sma_200|return_12m|sma_50_vs_sma_200,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
+U00584,CEPV,"Cantor Equity Partners V, Inc. - Class A Ordinary Shares",,208,2025-11-04,2026-09-02,19,max_drawdown_12m|return_12m,PRICE_FEATURES_PARTIAL,adjusted_prices_unavailable|less_than_252_sessions
 U00585,CERS,Cerus Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00586,CERT,"Certara, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00587,CETX,Cemtrex Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00588,CETY,"Clean Energy Technologies, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00589,CEVA,"CEVA, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00590,CFBK,CF Bankshares Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00591,CFFI,C&F Financial Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00592,CFFN,"Capitol Federal Financial, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00593,CG,The Carlyle Group Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00595,CGC,Canopy Growth Corporation - Common Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00596,CGEM,"Cullinan Therapeutics, Inc. - Common Stock",,671,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00597,CGEN,Compugen Ltd. - Ordinary Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00598,CGNT,Cognyte Software Ltd. - Ordinary Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00599,CGNX,Cognex Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00601,CGON,"CG Oncology, Inc. - Common stock",,654,2024-01-25,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00602,CGTL,Creative Global Technology Holdings Limited - Class A Ordinary Shares,,442,2024-11-26,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00603,CGTX,"Cognition Therapeutics, Inc. - Common Stock",,672,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00604,CHAI,"Core AI Holdings, Inc. - Common Shares",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00606,CHCI,"Comstock Holding Companies, Inc. - Class A Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00607,CHCO,City Holding Company - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00608,CHDN,"Churchill Downs, Incorporated - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00610,CHEF,"The Chefs' Warehouse, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00612,CHKP,Check Point Software Technologies Ltd. - Ordinary Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00613,CHMG,Chemung Financial Corp - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00616,CHR,"Cheer Holding, Inc. - Class A Ordinary Share",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00617,CHRD,Chord Energy Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00618,CHRN,ChronoScale Holdings Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00619,CHRS,"Coherus Oncology, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00620,CHRW,"C.H. Robinson Worldwide, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00621,CHSN,Chanson International Holding - Class A Ordinary Shares,,667,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00622,CHTR,"Charter Communications, Inc. - Class A Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00625,CHYM,"Chime Financial, Inc. - Class A Common Stock",,308,2025-06-12,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00626,CIFR,Cipher Digital Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00627,CIGI,Colliers International Group Inc. - Subordinate Voting Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00628,CIIT,"Tianci International, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00629,CINF,Cincinnati Financial Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00630,CING,Cingulate Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00632,CISO,"CISO Global, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00633,CISS,C3is Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00634,CIVB,"Civista Bancshares, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -497,7 +530,10 @@ U00635,CJMB,Callan JMB Inc. - Common Stock,,396,2025-02-05,2026-09-02,21,,PRICE_
 U00636,CLAR,Clarus Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00638,CLBT,Cellebrite DI Ltd. - Ordinary Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00639,CLDX,"Celldex Therapeutics, Inc. - Common Stock",,672,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00640,CLFD,"Clearfield, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00641,CLGN,CollPlant Biotechnologies Ltd. - Ordinary Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00642,CLIK,Click Holdings Limited - Ordinary Share,,476,2024-10-09,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00643,CLIR,ClearSign Technologies Corporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00644,CLMB,"Climb Global Solutions, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00645,CLMT,"Calumet, Inc - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00646,CLNE,Clean Energy Fuels Corp. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
@@ -505,5 +541,9 @@ U00647,CLNN,Clene Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATU
 U00648,CLOV,"Clover Health Investments, Corp. - Class A Common stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00649,CLPS,CLPS Incorporation - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00650,CLPT,ClearPoint Neuro Inc. - Common Stock,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00651,CLRB,"Cellectar Biosciences, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00652,CLRO,"ClearOne, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00653,CLSK,"CleanSpark, Inc. - Common Stock",,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00654,CLST,"Catalyst Bancorp, Inc. - common stock",,673,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
 U00655,CLWT,Euro Tech Holdings Company Limited - Ordinary Shares,,670,2024-01-02,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable
+U00656,CLYM,"Climb Bio, Inc. - Common Stock",,485,2024-09-26,2026-09-02,21,,PRICE_FEATURES_READY,adjusted_prices_unavailable

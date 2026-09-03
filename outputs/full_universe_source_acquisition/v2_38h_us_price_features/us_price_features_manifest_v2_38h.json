@@ -15,8 +15,8 @@
   },
   "outputs": {
     "PHASE9H_US_PRICE_FEATURES_GATE_v2_38h.md": {
-      "bytes": 489,
-      "sha256": "542a54383892fee5d62b3b315e85ead9cc45272ef98599337fddd660ac767dee"
+      "bytes": 490,
+      "sha256": "89887bed407e100f36a50b327598a94279f7393989bf54d1d9d5f5a823f416a4"
     },
     "README.md": {
       "bytes": 238,
@@ -27,20 +27,20 @@
       "sha256": "ea7a70024558ba2698230fa5cb777bce3e88d2e0bb07982619a243a8cd08e116"
     },
     "us_price_feature_aggregate_report_v2_38h.json": {
-      "bytes": 1308,
-      "sha256": "7028f747e3bd429e7b62a26544ecfbfb1f181c1e9f8b8f6d2b47bc9c557c55ae"
+      "bytes": 1309,
+      "sha256": "354005b1b8bfe285d80f773751dfa4be15d5624d3bbf90f609ce24fa0442aa9e"
     },
     "us_price_feature_quality_v2_38h.csv": {
-      "bytes": 68769,
-      "sha256": "a9207fd64888a23402e525230dc384686ce24f245daeac6ab4518622b6e9bde8"
+      "bytes": 75540,
+      "sha256": "82d5542971ad464c6e90f8f27ceb1d1da73a8356ba04b4a48651436f3665a1a6"
     },
     "us_price_feature_rejections_v2_38h.csv": {
-      "bytes": 3531,
-      "sha256": "ab0e2a1c559d82be14f768a6238af4cdac87f197b8da8d7bea419b879c6d07d1"
+      "bytes": 9138,
+      "sha256": "3cebde711c3d27e044baa10886ebaa8fc64c0c7616f19a9c336067cd4c1639a6"
     },
     "us_price_features_v2_38h.csv": {
-      "bytes": 168487,
-      "sha256": "b8ba04100ab7cec7595f2d2b1ab4308a03381c5eba6e675a98680fae8ad5361a"
+      "bytes": 182525,
+      "sha256": "636aad7744a13367352418cde1acd5084ec1e82bef23f034f8e5b146b4674169"
     }
   },
   "phase": "v2.38H-us-price-features",
