@@ -1,6 +1,6 @@
 {
   "candidates_total": 555,
-  "collected_assets": 366,
+  "collected_assets": 401,
   "collection_status": "READY_FOR_COLLECTION",
   "failed_assets": 0,
   "guardrails": {
@@ -11,9 +11,9 @@
   },
   "local_raw_cache_published": false,
   "partial_priority": 184,
-  "pending_assets": 189,
+  "pending_assets": 154,
   "phase": "v2.38I-us-price-history-acquisition",
   "provider": "twelvedata",
   "ready_priority": 356,
-  "skipped_existing": 366
+  "skipped_existing": 401
 }
