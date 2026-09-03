@@ -1,0 +1,46 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": true,
+    "recommendations_generated": false,
+    "scoring_calculated": true
+  },
+  "outputs": {
+    "PHASE9K_US_EXPERIMENTAL_SCORING_GATE_v2_38k.md": {
+      "bytes": 354,
+      "sha256": "94e9db8490ef539fbbb9a167f5ed1f44cc4c05aceb3356d4778a681a6f6e99cd"
+    },
+    "README.md": {
+      "bytes": 276,
+      "sha256": "c59c649d046bb21e073447cd60faa89419993d9af43a90d6b0786a619f6072d2"
+    },
+    "US_EXPERIMENTAL_SCORING_CONTRACT_v2_38k.md": {
+      "bytes": 360,
+      "sha256": "77819b6fa60e80084984be3109759451f1e2b8d2bc47440ee41c95dba098ce30"
+    },
+    "us_experimental_score_aggregate_report_v2_38k.json": {
+      "bytes": 887,
+      "sha256": "b37ff4680498b3be35f7f8a3bd3c7015fb1d66ef2c030a15320e57dd67acb4c8"
+    },
+    "us_experimental_score_components_v2_38k.csv": {
+      "bytes": 435126,
+      "sha256": "1aa4dd2bbb06fcb8af58792bbca9ac9e1bff980675598677de6de0d9c12cc6b8"
+    },
+    "us_experimental_score_quality_v2_38k.csv": {
+      "bytes": 71466,
+      "sha256": "544fe9842fcef63880cf74e185d1cf8458b00eba8652986cd169c67ed0c9947a"
+    },
+    "us_experimental_score_rejections_v2_38k.csv": {
+      "bytes": 51,
+      "sha256": "5261b11686644b7a32a5b66d29ff99c8e532acaba8df413ed246bbbc43c3f54d"
+    },
+    "us_experimental_scores_v2_38k.csv": {
+      "bytes": 248105,
+      "sha256": "46551af58d5b192b4d4fa8d196e774b335af4df66a6006aa6c9e9ee525afdd01"
+    }
+  },
+  "phase": "v2.38K-us-experimental-scoring"
+}

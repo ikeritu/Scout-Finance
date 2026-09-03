@@ -1,0 +1,34 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": true,
+    "recommendations_generated": false,
+    "scoring_calculated": true
+  },
+  "input_candidates": 555,
+  "phase": "v2.38K-us-experimental-scoring",
+  "pillar_weights": {
+    "fundamentals_quality": 0.3,
+    "growth_momentum": 0.2,
+    "price_momentum_trend": 0.2,
+    "profitability_cashflow": 0.2,
+    "risk_liquidity": 0.1
+  },
+  "rejected_rows": 0,
+  "score_bucket_counts": {
+    "BLOCKED": 0,
+    "INVESTIGATE_HIGH": 20,
+    "INVESTIGATE_LOW": 256,
+    "INVESTIGATE_MEDIUM": 74,
+    "REVIEW_REQUIRED": 205
+  },
+  "score_max": 87.3314,
+  "score_mean": 46.6316,
+  "score_min": 7.5,
+  "scored_companies": 350,
+  "status": "COMPLETED_US_EXPERIMENTAL_SCORING_NOT_RECOMMENDATIONS",
+  "unscored_companies": 205
+}

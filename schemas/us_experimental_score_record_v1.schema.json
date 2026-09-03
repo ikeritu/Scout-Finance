@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scout-finance.local/schemas/us_experimental_score_record_v1.schema.json",
+  "title": "USExperimentalScoreRecord",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "asset_id",
+    "ticker",
+    "company_name",
+    "exchange",
+    "candidate_matrix_status",
+    "score_bucket",
+    "scoring_calculated",
+    "ranking_calculated",
+    "recommendation_generated",
+    "phase"
+  ],
+  "properties": {
+    "asset_id": {"type": "string", "pattern": "^U[0-9]{5}$"},
+    "ticker": {"type": "string", "minLength": 1},
+    "company_name": {"type": "string", "minLength": 1},
+    "exchange": {"type": "string", "minLength": 1},
+    "candidate_matrix_status": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE_MATRIX_READY",
+        "CANDIDATE_MATRIX_PARTIAL_PRICE",
+        "CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS",
+        "CANDIDATE_MATRIX_INSUFFICIENT_EVIDENCE",
+        "CANDIDATE_MATRIX_BLOCKED"
+      ]
+    },
+    "score_bucket": {
+      "type": "string",
+      "enum": [
+        "INVESTIGATE_HIGH",
+        "INVESTIGATE_MEDIUM",
+        "INVESTIGATE_LOW",
+        "REVIEW_REQUIRED",
+        "BLOCKED"
+      ]
+    },
+    "experimental_score": {"type": ["number", "string"]},
+    "research_rank": {"type": ["integer", "string"]},
+    "scoring_calculated": {"type": "boolean", "const": true},
+    "ranking_calculated": {"type": "boolean", "const": true},
+    "recommendation_generated": {"type": "boolean", "const": false},
+    "phase": {"type": "string", "const": "v2.38K-us-experimental-scoring"}
+  }
+}

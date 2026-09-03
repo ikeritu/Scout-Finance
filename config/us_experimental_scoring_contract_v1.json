@@ -1,0 +1,35 @@
+{
+  "phase": "v2.38K-us-experimental-scoring",
+  "input_matrix": "outputs/full_universe_source_acquisition/v2_38j_us_candidate_feature_matrix/us_candidate_feature_matrix_v2_38j.csv",
+  "score_range": [0, 100],
+  "scored_status": "CANDIDATE_MATRIX_READY",
+  "unscored_statuses": [
+    "CANDIDATE_MATRIX_PARTIAL_PRICE",
+    "CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS",
+    "CANDIDATE_MATRIX_INSUFFICIENT_EVIDENCE",
+    "CANDIDATE_MATRIX_BLOCKED"
+  ],
+  "pillar_weights": {
+    "fundamentals_quality": 0.3,
+    "growth_momentum": 0.2,
+    "profitability_cashflow": 0.2,
+    "price_momentum_trend": 0.2,
+    "risk_liquidity": 0.1
+  },
+  "score_buckets": [
+    "INVESTIGATE_HIGH",
+    "INVESTIGATE_MEDIUM",
+    "INVESTIGATE_LOW",
+    "REVIEW_REQUIRED",
+    "BLOCKED"
+  ],
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "scoring_calculated": true,
+    "ranking_calculated": true,
+    "recommendations_generated": false,
+    "broker_actions_allowed": false,
+    "financial_advice": false
+  }
+}
