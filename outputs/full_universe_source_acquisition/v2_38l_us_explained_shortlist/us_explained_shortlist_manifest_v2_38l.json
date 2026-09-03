@@ -1,0 +1,45 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "recommendation_generated": false,
+    "recommendations_generated": false
+  },
+  "outputs": {
+    "PHASE9L_US_EXPLAINED_SHORTLIST_GATE_v2_38l.md": {
+      "bytes": 401,
+      "sha256": "a9a29d15fef5d9c1ce0a1936da134eb0ab1f2c76a29ecda684700e32d2f2d573"
+    },
+    "README.md": {
+      "bytes": 276,
+      "sha256": "6c85850a32b0cf1634e9938c7604c529a72853407db35848a967533d15ebf70e"
+    },
+    "US_EXPLAINED_SHORTLIST_CONTRACT_v2_38l.md": {
+      "bytes": 247,
+      "sha256": "c07ed73193038514f6795fc8900c4eeeb770534a8027b3344b69e0eaf396a85c"
+    },
+    "us_explained_shortlist_aggregate_report_v2_38l.json": {
+      "bytes": 554,
+      "sha256": "8c65c45e83f2c7db49b3dc8c21d4ba667af3bd4da15dfedc42f5dffc8f22a921"
+    },
+    "us_explained_shortlist_quality_v2_38l.csv": {
+      "bytes": 8176,
+      "sha256": "21905250430f13ea60990997655ec6c93fa5a84fac1514496a09f1f075ecd042"
+    },
+    "us_explained_shortlist_rejections_v2_38l.csv": {
+      "bytes": 24327,
+      "sha256": "53d05058cab34b416b724857a0dd2988faf7ea9469d7f318bc2e616a186ee85c"
+    },
+    "us_explained_shortlist_research_notes_v2_38l.csv": {
+      "bytes": 48091,
+      "sha256": "b996451204790e6adb305e18b64290f6c7495d5dcf6cea41b95ec3d65e4ad9cd"
+    },
+    "us_explained_shortlist_v2_38l.csv": {
+      "bytes": 61007,
+      "sha256": "c2b34fa22275b3b842f65bed63491c90af373c4f85390a22d0059a6340736e31"
+    }
+  },
+  "phase": "v2.38L-us-explained-shortlist"
+}

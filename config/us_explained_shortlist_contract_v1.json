@@ -1,0 +1,48 @@
+{
+  "phase": "v2.38L-us-explained-shortlist",
+  "inputs": [
+    "outputs/full_universe_source_acquisition/v2_38k_us_experimental_scoring/us_experimental_scores_v2_38k.csv",
+    "outputs/full_universe_source_acquisition/v2_38k_us_experimental_scoring/us_experimental_score_aggregate_report_v2_38k.json",
+    "outputs/full_universe_source_acquisition/v2_38j_us_candidate_feature_matrix/us_candidate_feature_matrix_v2_38j.csv"
+  ],
+  "default_limit": 50,
+  "max_limit": 100,
+  "allowed_shortlist_buckets": [
+    "SHORTLIST_HIGH_PRIORITY",
+    "SHORTLIST_MEDIUM_PRIORITY",
+    "SHORTLIST_WATCHLIST",
+    "REVIEW_REQUIRED",
+    "BLOCKED"
+  ],
+  "allowed_note_types": [
+    "POSITIVE_DRIVER",
+    "RISK_DRIVER",
+    "EVIDENCE_LIMITATION",
+    "NEXT_RESEARCH_STEP",
+    "LANGUAGE_GUARDRAIL"
+  ],
+  "deterministic_sort": [
+    "research_rank_asc",
+    "experimental_score_desc",
+    "ticker_asc",
+    "asset_id_asc"
+  ],
+  "forbidden_language": [
+    "buy",
+    "sell",
+    "hold",
+    "investment recommendation",
+    "price target",
+    "expected return",
+    "guaranteed",
+    "will rise"
+  ],
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "recommendation_generated": false,
+    "recommendations_generated": false,
+    "financial_advice": false,
+    "broker_actions_allowed": false
+  }
+}

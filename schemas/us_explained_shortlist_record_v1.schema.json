@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scout-finance.local/schemas/us_explained_shortlist_record_v1.schema.json",
+  "title": "USExplainedShortlistRecord",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "shortlist_rank",
+    "research_rank",
+    "asset_id",
+    "ticker",
+    "company_name",
+    "exchange",
+    "experimental_score",
+    "shortlist_bucket",
+    "candidate_matrix_status",
+    "inclusion_reason",
+    "research_explanation",
+    "recommendation_generated",
+    "financial_advice",
+    "broker_actions_allowed",
+    "phase9c_authorized",
+    "phase"
+  ],
+  "properties": {
+    "shortlist_rank": {"type": ["integer", "string"]},
+    "research_rank": {"type": ["integer", "string"]},
+    "asset_id": {"type": "string", "pattern": "^U[0-9]{5}$"},
+    "ticker": {"type": "string", "minLength": 1},
+    "company_name": {"type": "string", "minLength": 1},
+    "exchange": {"type": "string", "minLength": 1},
+    "experimental_score": {"type": ["number", "string"]},
+    "shortlist_bucket": {
+      "type": "string",
+      "enum": [
+        "SHORTLIST_HIGH_PRIORITY",
+        "SHORTLIST_MEDIUM_PRIORITY",
+        "SHORTLIST_WATCHLIST",
+        "REVIEW_REQUIRED",
+        "BLOCKED"
+      ]
+    },
+    "candidate_matrix_status": {"type": "string", "const": "CANDIDATE_MATRIX_READY"},
+    "recommendation_generated": {"type": "boolean", "const": false},
+    "financial_advice": {"type": "boolean", "const": false},
+    "broker_actions_allowed": {"type": "boolean", "const": false},
+    "phase9c_authorized": {"type": "boolean", "const": false},
+    "phase": {"type": "string", "const": "v2.38L-us-explained-shortlist"}
+  }
+}

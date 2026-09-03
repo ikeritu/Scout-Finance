@@ -1,0 +1,380 @@
+asset_id,ticker,note_type,note,source_phase,phase
+U00597,CGEN,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00597,CGEN,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00597,CGEN,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00597,CGEN,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00597,CGEN,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00597,CGEN,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00597,CGEN,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00597,CGEN,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00597,CGEN,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00489,BWFG,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00489,BWFG,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00489,BWFG,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00489,BWFG,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00489,BWFG,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00489,BWFG,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00489,BWFG,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00489,BWFG,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00040,ACNB,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00040,ACNB,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00040,ACNB,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00040,ACNB,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00040,ACNB,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00040,ACNB,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00040,ACNB,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00040,ACNB,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00126,ALAB,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00126,ALAB,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00126,ALAB,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00126,ALAB,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00126,ALAB,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00126,ALAB,RISK_DRIVER,risk/liquidity component below 55,v2.38K,v2.38L-us-explained-shortlist
+U00126,ALAB,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00126,ALAB,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00126,ALAB,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00276,ATEX,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00276,ATEX,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00276,ATEX,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00276,ATEX,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00276,ATEX,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00276,ATEX,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00276,ATEX,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00503,CAC,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00503,CAC,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00503,CAC,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00503,CAC,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00503,CAC,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00503,CAC,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00503,CAC,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00503,CAC,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00025,ACAD,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00025,ACAD,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00025,ACAD,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00025,ACAD,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00025,ACAD,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00025,ACAD,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00025,ACAD,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00025,ACAD,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00482,BUSE,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00482,BUSE,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00482,BUSE,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00482,BUSE,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00482,BUSE,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00482,BUSE,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00482,BUSE,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00522,CART,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00522,CART,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00522,CART,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00522,CART,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00522,CART,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00522,CART,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00522,CART,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00522,CART,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00425,BMRN,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00425,BMRN,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00425,BMRN,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00425,BMRN,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00425,BMRN,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00425,BMRN,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00425,BMRN,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00425,BMRN,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00592,CFFN,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00592,CFFN,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00592,CFFN,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00592,CFFN,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00592,CFFN,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00592,CFFN,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00592,CFFN,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00592,CFFN,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00170,AMGN,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00170,AMGN,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00170,AMGN,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00170,AMGN,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00170,AMGN,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00170,AMGN,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00170,AMGN,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00170,AMGN,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00390,BIIB,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00390,BIIB,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00390,BIIB,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00390,BIIB,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00390,BIIB,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00390,BIIB,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00390,BIIB,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00390,BIIB,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00054,ADEA,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00054,ADEA,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00054,ADEA,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00054,ADEA,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00054,ADEA,RISK_DRIVER,risk/liquidity component below 55,v2.38K,v2.38L-us-explained-shortlist
+U00054,ADEA,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00054,ADEA,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00054,ADEA,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00011,AAPL,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00011,AAPL,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00011,AAPL,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00011,AAPL,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00011,AAPL,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00011,AAPL,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00011,AAPL,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00011,AAPL,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00519,CARE,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00519,CARE,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00519,CARE,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00519,CARE,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00519,CARE,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00519,CARE,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00519,CARE,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00169,AMD,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00169,AMD,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00169,AMD,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00169,AMD,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00169,AMD,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00169,AMD,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00169,AMD,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00214,APPF,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00214,APPF,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00214,APPF,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00214,APPF,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00214,APPF,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00214,APPF,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00497,BZ,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00497,BZ,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00497,BZ,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00497,BZ,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00497,BZ,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00497,BZ,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00379,BGC,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00379,BGC,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00379,BGC,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00379,BGC,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00379,BGC,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00379,BGC,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00379,BGC,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00379,BGC,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00251,ARWR,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00251,ARWR,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00251,ARWR,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00251,ARWR,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00251,ARWR,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00251,ARWR,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00251,ARWR,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00591,CFFI,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00591,CFFI,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00591,CFFI,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00591,CFFI,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00591,CFFI,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00591,CFFI,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00591,CFFI,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00591,CFFI,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00165,AMAT,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00165,AMAT,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00165,AMAT,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00165,AMAT,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00165,AMAT,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00165,AMAT,RISK_DRIVER,risk/liquidity component below 55,v2.38K,v2.38L-us-explained-shortlist
+U00165,AMAT,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00165,AMAT,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00165,AMAT,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00599,CGNX,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00599,CGNX,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00599,CGNX,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00599,CGNX,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00599,CGNX,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00599,CGNX,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00599,CGNX,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00606,CHCI,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00606,CHCI,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00606,CHCI,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00606,CHCI,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00606,CHCI,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00606,CHCI,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00606,CHCI,RISK_DRIVER,risk/liquidity component below 55,v2.38K,v2.38L-us-explained-shortlist
+U00606,CHCI,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00606,CHCI,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00606,CHCI,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00312,AVPT,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00312,AVPT,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00312,AVPT,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00312,AVPT,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00312,AVPT,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00312,AVPT,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00312,AVPT,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00372,BELFB,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00372,BELFB,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00372,BELFB,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00372,BELFB,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00372,BELFB,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00372,BELFB,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00372,BELFB,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00086,AFRM,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00086,AFRM,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00086,AFRM,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00086,AFRM,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00086,AFRM,RISK_DRIVER,risk/liquidity component below 55,v2.38K,v2.38L-us-explained-shortlist
+U00086,AFRM,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00086,AFRM,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00086,AFRM,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00288,ATRC,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00288,ATRC,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00288,ATRC,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00288,ATRC,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00288,ATRC,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00288,ATRC,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00288,ATRC,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00288,ATRC,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00629,CINF,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00629,CINF,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00629,CINF,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00629,CINF,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00629,CINF,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00629,CINF,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00629,CINF,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00139,ALKS,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00139,ALKS,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00139,ALKS,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00139,ALKS,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00139,ALKS,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00139,ALKS,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00297,AUPH,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00297,AUPH,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00297,AUPH,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00297,AUPH,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00297,AUPH,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00297,AUPH,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00297,AUPH,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00297,AUPH,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00065,ADUS,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00065,ADUS,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00065,ADUS,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00065,ADUS,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00065,ADUS,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00065,ADUS,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00065,ADUS,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00056,ADI,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00056,ADI,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00056,ADI,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00056,ADI,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00056,ADI,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00056,ADI,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00056,ADI,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00371,BELFA,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00371,BELFA,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00371,BELFA,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00371,BELFA,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00371,BELFA,RISK_DRIVER,risk/liquidity component below 55,v2.38K,v2.38L-us-explained-shortlist
+U00371,BELFA,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00371,BELFA,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00371,BELFA,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00504,CACC,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00504,CACC,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00504,CACC,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00504,CACC,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00504,CACC,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00504,CACC,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00504,CACC,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00037,ACIW,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00037,ACIW,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00037,ACIW,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00037,ACIW,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00037,ACIW,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00037,ACIW,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00037,ACIW,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00046,ACT,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00046,ACT,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00046,ACT,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00046,ACT,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00046,ACT,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00046,ACT,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00046,ACT,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00046,ACT,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00185,ANAB,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00185,ANAB,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00185,ANAB,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00185,ANAB,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00185,ANAB,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00185,ANAB,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00185,ANAB,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00015,ABEO,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00015,ABEO,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00015,ABEO,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00015,ABEO,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00015,ABEO,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00015,ABEO,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00053,ADBE,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00053,ADBE,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00053,ADBE,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00053,ADBE,RISK_DRIVER,risk/liquidity component below 55,v2.38K,v2.38L-us-explained-shortlist
+U00053,ADBE,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00053,ADBE,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00053,ADBE,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00047,ACTG,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00047,ACTG,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00047,ACTG,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00047,ACTG,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00047,ACTG,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00047,ACTG,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00047,ACTG,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00634,CIVB,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00634,CIVB,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00634,CIVB,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00634,CIVB,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00634,CIVB,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00634,CIVB,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00520,CARG,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00520,CARG,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00520,CARG,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00520,CARG,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00520,CARG,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00520,CARG,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00520,CARG,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00017,ABNB,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00017,ABNB,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00017,ABNB,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00017,ABNB,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00017,ABNB,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00017,ABNB,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00017,ABNB,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00017,ABNB,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00513,CAMT,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00513,CAMT,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00513,CAMT,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00513,CAMT,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00513,CAMT,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00513,CAMT,RISK_DRIVER,risk/liquidity component below 55,v2.38K,v2.38L-us-explained-shortlist
+U00513,CAMT,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00513,CAMT,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00513,CAMT,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00119,AIRT,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00119,AIRT,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00119,AIRT,POSITIVE_DRIVER,positive price trend,v2.38K,v2.38L-us-explained-shortlist
+U00119,AIRT,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00119,AIRT,RISK_DRIVER,balance-sheet risk flag,v2.38K,v2.38L-us-explained-shortlist
+U00119,AIRT,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00119,AIRT,RISK_DRIVER,risk/liquidity component below 55,v2.38K,v2.38L-us-explained-shortlist
+U00119,AIRT,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00119,AIRT,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00119,AIRT,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00653,CLSK,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00653,CLSK,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00653,CLSK,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00653,CLSK,RISK_DRIVER,large 12m drawdown,v2.38K,v2.38L-us-explained-shortlist
+U00653,CLSK,RISK_DRIVER,high 6m volatility,v2.38K,v2.38L-us-explained-shortlist
+U00653,CLSK,RISK_DRIVER,risk/liquidity component below 55,v2.38K,v2.38L-us-explained-shortlist
+U00653,CLSK,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00653,CLSK,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00653,CLSK,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00191,ANIP,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00191,ANIP,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00191,ANIP,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00191,ANIP,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00191,ANIP,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00191,ANIP,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist
+U00398,BJRI,POSITIVE_DRIVER,positive revenue growth,v2.38K,v2.38L-us-explained-shortlist
+U00398,BJRI,POSITIVE_DRIVER,positive profitability/FCF signal,v2.38K,v2.38L-us-explained-shortlist
+U00398,BJRI,POSITIVE_DRIVER,positive 12m momentum,v2.38K,v2.38L-us-explained-shortlist
+U00398,BJRI,RISK_DRIVER,no dominant risk flag in tracked fields,v2.38K,v2.38L-us-explained-shortlist
+U00398,BJRI,EVIDENCE_LIMITATION,Shortlist uses local 38J/38K evidence only; no external news or macro/geopolitical data is added in 38L.,v2.38L,v2.38L-us-explained-shortlist
+U00398,BJRI,NEXT_RESEARCH_STEP,Review latest SEC filings; inspect revenue quality and cash conversion; compare valuation manually; check sector news and macro/geopolitical exposure in the next phase.,v2.38L,v2.38L-us-explained-shortlist
+U00398,BJRI,LANGUAGE_GUARDRAIL,Research prioritization only; not a final investment action signal.,v2.38L,v2.38L-us-explained-shortlist

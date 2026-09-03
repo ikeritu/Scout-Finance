@@ -1,0 +1,21 @@
+{
+  "eligible_candidates": 350,
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "recommendation_generated": false,
+    "recommendations_generated": false
+  },
+  "high_priority": 20,
+  "input_scored_companies": 350,
+  "limit": 50,
+  "medium_priority": 30,
+  "min_score": null,
+  "phase": "v2.38L-us-explained-shortlist",
+  "rejected_rows": 205,
+  "shortlist_size": 50,
+  "status": "COMPLETED_US_EXPLAINED_SHORTLIST_NOT_RECOMMENDATIONS",
+  "watchlist": 0
+}
