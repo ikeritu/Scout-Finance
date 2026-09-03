@@ -1,0 +1,40 @@
+{
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "outputs": {
+    "PHASE9J_US_CANDIDATE_MATRIX_GATE_v2_38j.md": {
+      "bytes": 327,
+      "sha256": "f3105cebf1b2cfd035eb35f8d6fbe106f88d6cfc0a965db50bd36d2fbcc2804c"
+    },
+    "README.md": {
+      "bytes": 223,
+      "sha256": "091984949a34fafa3614ec3a4cc8ca5156b485135e40c410daadc1886a6a1a72"
+    },
+    "US_CANDIDATE_FEATURE_MATRIX_CONTRACT_v2_38j.md": {
+      "bytes": 241,
+      "sha256": "863f31a50e72e40e70a46af2d86d2169b0cdbccc70a5f1fae24fcc0c28b845ba"
+    },
+    "us_candidate_feature_matrix_aggregate_report_v2_38j.json": {
+      "bytes": 614,
+      "sha256": "f3a58b76b8568bc33255854f82492058f4d73145db8600d11c9099dcbeef68e9"
+    },
+    "us_candidate_feature_matrix_quality_v2_38j.csv": {
+      "bytes": 100853,
+      "sha256": "15ed202d6f37dd40455e5df1251d0742d838c0fcf17491109e8dde6765433c38"
+    },
+    "us_candidate_feature_matrix_rejections_v2_38j.csv": {
+      "bytes": 83478,
+      "sha256": "f543e087e2507f2862738fb250c09c3925764d1cebdb8f11cce40e9af85ae874"
+    },
+    "us_candidate_feature_matrix_v2_38j.csv": {
+      "bytes": 381761,
+      "sha256": "c21f41dd834bb18d252204615b05af5b82ff516ea88793a6f74d9f974837dbe0"
+    }
+  },
+  "phase": "v2.38J-us-candidate-feature-matrix"
+}

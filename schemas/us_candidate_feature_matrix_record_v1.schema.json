@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scout-finance.local/schemas/us_candidate_feature_matrix_record_v1.schema.json",
+  "title": "USCandidateFeatureMatrixRecord",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "asset_id",
+    "ticker",
+    "company_name",
+    "exchange",
+    "candidate_matrix_status",
+    "evidence_level",
+    "scoring_calculated",
+    "ranking_calculated",
+    "recommendation_generated"
+  ],
+  "properties": {
+    "asset_id": {"type": "string", "pattern": "^U[0-9]{5}$"},
+    "ticker": {"type": "string", "minLength": 1},
+    "company_name": {"type": "string", "minLength": 1},
+    "exchange": {"type": "string", "minLength": 1},
+    "cik": {"type": "string"},
+    "candidate_matrix_status": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE_MATRIX_READY",
+        "CANDIDATE_MATRIX_PARTIAL_PRICE",
+        "CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS",
+        "CANDIDATE_MATRIX_INSUFFICIENT_EVIDENCE",
+        "CANDIDATE_MATRIX_BLOCKED"
+      ]
+    },
+    "evidence_level": {"type": "string", "enum": ["high", "medium", "low", "blocked"]},
+    "scoring_calculated": {"type": "boolean", "const": false},
+    "ranking_calculated": {"type": "boolean", "const": false},
+    "recommendation_generated": {"type": "boolean", "const": false}
+  }
+}

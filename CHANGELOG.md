@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38J — matriz US de candidatos para scoring futuro (2026-09-03)
+
+Une de forma offline y determinista la identidad SEC, las features fundamentales US de v2.38G y las price features US de v2.38H/38I en una matriz pública de candidatos. Clasifica cada empresa como `CANDIDATE_MATRIX_READY`, parcial o bloqueada según evidencia disponible, y genera resúmenes trazables de señales fundamentales, precio y riesgo. No calcula scoring, ranking, recomendaciones, predicciones ni fase 9C; prepara la siguiente fase de scoring explicable alineada con el objetivo de rastrear 43.089 empresas, con prioridad US/EU y futura capa geopolítica/macro.
+
 ## v2.38D — fundación SEC para EEUU (2026-09-02)
 
 Añade la base fail-closed para resolver identidad y fundamentales de EEUU vía SEC: contrato, esquema de identidad, overlay, ledger de revisión, selección piloto, matriz de rutas, runner con `--execute` y gate por `SCOUT_FINANCE_SEC_USER_AGENT`. La fase conserva 9.200 filas US y 5.011 elegibles, pero sin cache SEC ejecutada marca los 5.011 como `US_SEC_SOURCE_UNAVAILABLE`. No usa red en QA, no calcula scoring, ranking, recomendaciones ni fase 9C.

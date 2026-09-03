@@ -1,0 +1,556 @@
+asset_id,ticker,company_name,exchange,candidate_matrix_status,fundamental_quality_status,price_quality_status,evidence_level,missing_reason,phase
+U00006,AAL,"American Airlines Group, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00007,AAME,Atlantic American Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00008,AAOI,"Applied Optoelectronics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00009,AAON,"AAON, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00011,AAPL,Apple Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00012,AARD,"Aardvark Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00013,ABAT,American Battery Technology Company - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00014,ABCL,AbCellera Biologics Inc. - Common Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00015,ABEO,Abeona Therapeutics Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00016,ABLV,Able View Global Inc. - Class B Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00017,ABNB,"Airbnb, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00018,ABOS,"Acumen Pharmaceuticals, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00019,ABSI,Absci Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00020,ABTC,American Bitcoin Corp. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00021,ABTS,Abits Group Inc - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00022,ABUS,Arbutus Biopharma Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00023,ABVC,"ABVC BioPharma, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00025,ACAD,ACADIA Pharmaceuticals Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00027,ACCL,Acco Group Holdings Limited - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_READY,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00028,ACDC,ProFrac Holding Corp. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00029,ACET,"Adicet Bio, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00030,ACFN,"Acorn Energy, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00032,ACGL,Arch Capital Group Ltd. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00033,ACHC,"Acadia Healthcare Company, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00034,ACHV,"Achieve Life Sciences, Inc. - Common Shares",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00035,ACIC,American Coastal Insurance Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00037,ACIW,"ACI Worldwide, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00038,ACLS,"Axcelis Technologies, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00039,ACMR,"ACM Research, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00040,ACNB,ACNB Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00041,ACNT,Ascent Industries Co. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00042,ACOG,Alpha Cognition Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00043,ACON,"Aclarion, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00044,ACRS,"Aclaris Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00045,ACRV,"Acrivon Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00046,ACT,"Enact Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00047,ACTG,Acacia Research Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00048,ACTU,"Actuate Therapeutics, Inc. - Common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00049,ACXP,"Acurx Pharmaceuticals, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00051,ADAG,"Adagene Inc. - ADS, each representing 1.25 ordinary shares",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00053,ADBE,Adobe Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00054,ADEA,Adeia Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00055,ADGM,"Adagio Medical Holdings, Inc - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00056,ADI,"Analog Devices, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00057,ADIL,"Adial Pharmaceuticals, Inc - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00058,ADMA,ADMA Biologics Inc - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00059,ADP,"Automatic Data Processing, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00060,ADPT,Adaptive Biotechnologies Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00062,ADSK,"Autodesk, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00063,ADTN,"ADTRAN Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00065,ADUS,Addus HomeCare Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00066,ADV,Advantage Solutions Inc. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00067,ADVB,Advanced Biomed Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00069,AEBI,Aebi Schmidt Holding AG - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00072,AEHR,Aehr Test Systems - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00073,AEI,Alset Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00074,AEIS,"Advanced Energy Industries, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00075,AEMD,"Aethlon Medical, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00076,AENT,Alliance Entertainment Holding Corporation - common stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00077,AEP,"American Electric Power Company, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00078,AERT,"Aeries Technology, Inc. - Class A Ordinary Share",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00080,AEVA,"Aeva Technologies, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00081,AEYE,"AudioEye, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00083,AFCG,Advanced Flower Capital Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00084,AFJK,"Aimei Health Technology Co., Ltd - Ordinary Share",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00085,AFRI,Forafric Global PLC - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00086,AFRM,"Affirm Holdings, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00088,AGCC,Agencia Comercial Spirits Ltd - Class A Ordinary Share,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00089,AGEN,Agenus Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00090,AGIO,"Agios Pharmaceuticals, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00092,AGMH,AGM Group Holdings Inc. - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00093,AGNC,AGNC Investment Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00094,AGNT,"AGNT, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00095,AGPU,Axe Compute Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00097,AGYS,"Agilysys, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00098,AHCO,AdaptHealth Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00099,AHMA,Ambitions Enterprise Management Co. L.L.C - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_READY,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00100,AIAI,AIAI Holdings Corporation - Class A common stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00102,AIDX,"20/20 Biolabs, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00103,AIFA,"All In FutureTech Alliance, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00104,AIFC,AI Financial Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00105,AIFF,"Firefly Neuroscience, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00106,AIFU,AIFU Inc. - Class A Ordinary Share,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00107,AIHS,Senmiao Technology Limited - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00108,AIIO,Robo.ai Inc. - Class B Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00110,AIMD,"Ainos, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00111,AIOS,AIOS Tech Inc. - Class A Common Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00112,AIOT,"PowerFleet, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00113,AIP,"Arteris, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00114,AIRE,reAlpha Tech Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00115,AIRG,"Airgain, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00116,AIRJ,AirJoule Technologies Corporation - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00117,AIRO,"AIRO Group Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00118,AIRS,"AirSculpt Technologies, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00119,AIRT,"Air T, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00120,AISP,"Airship AI Holdings, Inc - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00121,AIXC,"AIxCrypto Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00122,AKAM,"Akamai Technologies, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00124,AKBA,"Akebia Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00125,AKTS,"Aktis Oncology, Inc. - Common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00126,ALAB,"Astera Labs, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00128,ALCO,"Alico, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00129,ALDF,Aldel Financial II Inc. - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00130,ALDX,"Aldeyra Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00131,ALEC,"Alector, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00133,ALGM,"Allegro MicroSystems, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00134,ALGN,"Align Technology, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00135,ALGS,"Aligos Therapeutics, Inc. - Common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00136,ALGT,Allegiant Travel Company - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00137,ALHC,"Alignment Healthcare, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00139,ALKS,Alkermes plc - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00140,ALKT,"Alkami Technology, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00141,ALLO,"Allogene Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00142,ALLR,"Allarity Therapeutics, Inc. - Common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00143,ALLT,Allot Ltd. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00145,ALMR,"Alamar Biosciences, Inc. - Class A common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00146,ALMS,Alumis Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00147,ALMU,"Aeluma, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00148,ALNT,Allient Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00149,ALNY,"Alnylam Pharmaceuticals, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00150,ALOT,"AstroNova, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00151,ALOV,"Aldabra 4 Liquidity Opportunity Vehicle, Inc. - Class A Ordinary Shares",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00152,ALOY,REalloys Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00153,ALP,Alpha Compute Corp - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00155,ALRM,"Alarm.com Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00156,ALRS,Alerus Financial Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00157,ALT,"Altimmune, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00158,ALTI,"AlTi Global, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00159,ALTO,"Alto Ingredients, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00161,ALXO,ALX Oncology Holdings Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00162,ALZN,"Alzamend Neuro, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00163,AMAL,Amalgamated Financial Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00165,AMAT,"Applied Materials, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00166,AMBA,"Ambarella, Inc. - Ordinary Shares",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00167,AMCI,AMC Robotics Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00168,AMCX,AMC Global Media Inc. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00169,AMD,"Advanced Micro Devices, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00170,AMGN,Amgen Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00171,AMIX,"Autonomix Medical, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00172,AMKR,"Amkor Technology, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00173,AMLX,"Amylyx Pharmaceuticals, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00174,AMOD,"Alpha Modus Holdings, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00175,AMPG,"Amplitech Group, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00176,AMPH,"Amphastar Pharmaceuticals, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00177,AMPL,"Amplitude, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00178,AMRX,"Amneal Pharmaceuticals, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00179,AMSC,American Superconductor Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00180,AMSF,"AMERISAFE, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00181,AMSS,AMASS Brands Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00182,AMST,Amesite Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00183,AMTX,"Aemetis, Inc - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00184,AMZN,"Amazon.com, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00185,ANAB,"AnaptysBio, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00186,ANDE,"The Andersons, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00188,ANGI,Angi Inc. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00189,ANGO,"AngioDynamics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00190,ANIK,Anika Therapeutics Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00191,ANIP,"ANI Pharmaceuticals, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00192,ANIX,"Anixa Biosciences, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00193,ANNA,"AleAnna, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00194,ANNX,"Annexon, Inc. - common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00195,ANPA,Rich Sparkle Holdings Limited - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00197,ANTA,Antalpha Platform Holding Company - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00198,ANTX,"AN2 Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00199,ANY,Sphere 3D Corp. - Common Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00200,AOSL,Alpha and Omega Semiconductor Limited - Common Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00201,AOUT,"American Outdoor Brands, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00202,APA,APA Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00204,APC,ARKO Petroleum Corp. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00205,APEI,"American Public Education, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00206,APGE,"Apogee Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00207,API,"Agora, Inc. - ADS",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00208,APLD,Applied Digital Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00212,APOG,"Apogee Enterprises, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00213,APP,Applovin Corporation - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00214,APPF,"AppFolio, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00215,APPN,Appian Corporation - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00216,APPS,"Digital Turbine, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00217,APRE,"Aprea Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00218,APUR,Aperture AC - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00219,APVO,Aptevo Therapeutics Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00220,APWC,"Asia Pacific Wire & Cable Corporation Limited - Common shares, Par value .01 per share",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00221,APXT,Apex Treasury Corporation - Class A Ordinary Share,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00222,APYX,Apyx Medical Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00223,AQB,"AquaBounty Technologies, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00224,AQMS,"Aqua Metals, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00225,AQST,"Aquestive Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00226,ARAI,Arrive AI Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00227,ARAY,Accuray Incorporated - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00229,ARBE,Arbe Robotics Ltd. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00230,ARCB,ArcBest Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00232,ARCI,Archimedes Tech SPAC Partners III Co. - Ordinary Share,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00234,ARCT,Arcturus Therapeutics Holdings Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00235,ARDX,"Ardelyx, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00236,AREC,American Resources Corporation - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00237,ARHS,"Arhaus, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00238,ARKO,ARKO Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00239,ARKR,Ark Restaurants Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00240,AROW,Arrow Financial Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00241,ARQ,"Arq, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00243,ARQT,"Arcutis Biotherapeutics, Inc. - Common stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00244,ARRY,"Array Technologies, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00246,ARTL,"Artelo Biosciences, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00247,ARTNA,Artesian Resources Corporation - Class A Non-Voting Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00248,ARTV,"Artiva Biotherapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00249,ARTW,"Art's-Way Manufacturing Co., Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00250,ARVN,"Arvinas, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00251,ARWR,"Arrowhead Pharmaceuticals, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00252,ARXS,"Arxis, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00253,ASBP,"Aspire Biopharma Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00254,ASLE,AerSale Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00255,ASMB,"Assembly Biosciences, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00256,ASML,ASML Holding N.V. - New York Registry Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00258,ASO,"Academy Sports and Outdoors, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00260,ASPI,ASP Isotopes Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00261,ASPS,Altisource Portfolio Solutions S.A. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00262,ASRV,AmeriServ Financial Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00263,ASST,"Strive, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00264,ASTC,Astrotech Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00265,ASTE,"Astec Industries, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00266,ASTH,Astrana Health Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00267,ASTI,"Ascent Solar Technologies, Inc - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00269,ASTS,"AST SpaceMobile, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00270,ASUR,Asure Software Inc - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00271,ASYS,"Amtech Systems, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00272,ATAI,AtaiBeckley Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00273,ATCX,Atlas Critical Minerals Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_READY,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00274,ATEC,"Alphatec Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00275,ATER,"Aterian, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00276,ATEX,Anterix Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00277,ATGL,Alpha Technology Group Limited - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00278,ATHR,"Aether Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00279,ATII,Archimedes Tech SPAC Partners II Co. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00280,ATLC,Atlanticus Holdings Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00281,ATLO,Ames National Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00282,ATLX,Atlas Lithium Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00283,ATNI,"ATN International, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00284,ATOM,Atomera Incorporated - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00285,ATOS,"Atossa Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00286,ATPC,Agape ATP Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00287,ATRA,"Atara Biotherapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00288,ATRC,"AtriCure, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00289,ATRO,Astronics Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00290,ATXG,Addentax Group Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00291,ATYR,"aTyr Pharma, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00292,AUBN,"Auburn National Bancorporation, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00293,AUC,ATIF Holdings Limited - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00294,AUDC,AudioCodes Ltd. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00296,AUID,authID Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00297,AUPH,Aurinia Pharmaceuticals Inc - Common Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00298,AUR,"Aurora Innovation, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00299,AURA,"Aura Biosciences, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00300,AURE,Aurelion Inc. - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00301,AUUD,Auddia Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00302,AVAH,Aveanna Healthcare Holdings Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00303,AVAT,Avalanche Treasury Corporation - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00304,AVAV,"AeroVironment, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00305,AVBH,"Avidbank Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00306,AVBP,"ArriVent BioPharma, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00307,AVGO,Broadcom Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00308,AVIR,"Atea Pharmaceuticals, Inc. - common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00309,AVLN,Avalyn Pharma Inc. - common stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00310,AVNW,"Aviat Networks, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00311,AVO,"Mission Produce, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00312,AVPT,"AvePoint, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00313,AVR,Anteris Technologies Global Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00314,AVT,"Avnet, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00315,AVTX,"Avalo Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00316,AVX,Avax One Technology Ltd. - Common Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00317,AVXL,Anavex Life Sciences Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00318,AWRE,"Aware, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00319,AXG,Solowin Holdings - Class A Ordinary Share,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00320,AXGN,"Axogen, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00322,AXON,"Axon Enterprise, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00323,AXSM,"Axsome Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00324,AXTI,AXT Inc - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00326,AYTU,"Aytu BioPharma, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00328,AZI,Autozi Internet Technology (Global) Ltd. - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00329,AZTA,"Azenta, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00331,BAER,"Bridger Aerospace Group Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00332,BAFN,BayFirst Financial Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00333,BAND,Bandwidth Inc. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00334,BANF,BancFirst Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00335,BANL,CBL International Limited - Class B Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00336,BANR,Banner Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00338,BAOS,Baosheng Media Group Holdings Limited - Ordinary shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00339,BATRA,"Atlanta Braves Holdings, Inc. - Series A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00340,BATRK,"Atlanta Braves Holdings, Inc. - Series C Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00342,BBCP,"Concrete Pumping Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00344,BBGI,"Beasley Broadcast Group, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00345,BBIO,"BridgeBio Pharma, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00346,BBLG,Bone Biologics Corp - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00347,BBNX,"Beta Bionics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00348,BBOT,"BridgeBio Oncology Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00349,BBSI,"Barrett Business Services, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00350,BCAB,"BioAtla, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00351,BCAL,California BanCorp - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00353,BCAX,Bicara Therapeutics Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00354,BCBP,"BCB Bancorp, Inc. (NJ) - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00355,BCDA,"BioCardia, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00356,BCG,"Binah Capital Group, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00358,BCML,BayCom Corp - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00359,BCPC,Balchem Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00360,BCRX,"BioCryst Pharmaceuticals, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00361,BCTX,BriaCell Therapeutics Corp. - Common Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00362,BDCI,BTC Development Corp. - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00363,BDMD,Baird Medical Investment Holdings Ltd - Ordinary Share,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00364,BDSX,"Biodesix, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00365,BDTX,"Black Diamond Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00367,BEAM,Beam Therapeutics Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00368,BEAT,"Heartbeam, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00369,BEEM,Beam Global - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00370,BEEP,Mobile Infrastructure Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00371,BELFA,Bel Fuse Inc. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00372,BELFB,Bel Fuse Inc. - Class B Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00373,BENF,Beneficient - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00374,BETR,Better Home & Finance Holding Company - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00375,BFC,Bank First Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00376,BFRG,"Bullfrog AI Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00377,BFRI,Biofrontera Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00378,BFST,"Business First Bancshares, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00379,BGC,"BGC Group, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00380,BGDE,"Big Digital Energy, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00381,BGIN,Bgin Blockchain Limited - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00382,BGL,Blue Gold Limited - Class A ordinary shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00383,BGLC,BioNexus Gene Lab Corp - Common stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00384,BGM,BGM Group Ltd. - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00385,BGMS,"Bio Green Med Solution, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00387,BHRB,Burke & Herbert Financial Services Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00388,BHST,BioHarvest Sciences Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00389,BIAF,"bioAffinity Technologies, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00390,BIIB,Biogen Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00391,BIOA,"BioAge Labs, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00393,BIRD,"Smartbird, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00394,BIVI,BioVie Inc. - Common stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00396,BIYA,Baiya International Group Inc. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00397,BJDX,"Bluejay Diagnostics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00398,BJRI,"BJ's Restaurants, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00400,BKNG,Booking Holdings Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00401,BKR,Baker Hughes Company - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00402,BL,"BlackLine, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00403,BLBD,Blue Bird Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00405,BLFS,"BioLife Solutions, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00406,BLIN,"Bridgeline Digital, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00408,BLKB,"Blackbaud, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00409,BLLN,"BillionToOne, Inc. - Class A common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_READY,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00410,BLMN,"Bloomin' Brands, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00411,BLNE,"Beeline Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00412,BLNK,Blink Charging Co. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00415,BLZE,"Backblaze, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00417,BMBL,Bumble Inc. - common stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00418,BMEA,"Biomea Fusion, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00422,BMR,Beamr Imaging Ltd. - Ordinary Share,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00423,BMRA,"Biomerica, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00424,BMRC,Bank of Marin Bancorp - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00425,BMRN,BioMarin Pharmaceutical Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00426,BNAI,Brand Engagement Network Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00427,BNBX,BNB Plus Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00428,BNC,CEA Industries Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00429,BNGO,"Bionano Genomics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00430,BNKK,"Bonk, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00432,BNTC,Benitec Biopharma Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00434,BODI,"The Beachbody Company, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00435,BOF,BranchOut Food Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00436,BOKF,BOK Financial Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00437,BOLD,"Boundless Bio, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00438,BOLT,"Bolt Biotherapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00439,BON,Bon Natural Life Limited - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00440,BOOM,DMC Global Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00441,BOSC,B.O.S. Better Online Solutions - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00443,BOTJ,"Bank of the James Financial Group, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00444,BOXL,Boxlight Corporation - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00446,BPOP,"Popular, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00447,BPRN,"Princeton Bancorp, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00451,BRCB,"Black Rock Coffee Bar, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00453,BRFH,Barfresh Food Group Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00454,BRID,Bridgford Foods Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00455,BRKR,Bruker Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00456,BRLS,Borealis Foods Inc. - Class A Common Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00457,BRLT,"Brilliant Earth Group, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00458,BRR,"ProCap Financial, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00459,BRTX,"BioRestorative Therapies, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00460,BRUN,Boost Run Inc. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00461,BRZE,"Braze, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00463,BSBK,Bogota Financial Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00464,BSET,"Bassett Furniture Industries, Incorporated - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00465,BSIN,Big Sky Industrial Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00467,BSRR,Sierra Bancorp - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00468,BSVN,Bank7 Corp. - Common stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00469,BSY,"Bentley Systems, Incorporated - Class B Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00470,BTAI,"BioXcel Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00471,BTBD,"BT Brands, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00472,BTBT,"Bit Digital, Inc. - Ordinary Share",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00473,BTCS,BTCS Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00474,BTCT,BTC Digital Ltd. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00476,BTMD,Biote Corp. - Class A common stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00477,BTOC,Armlogi Holding Corp. - common stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00478,BTOG,Bit Origin Limited - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00480,BTTC,Black Titan Corp - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00481,BULL,Webull Corporation - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00482,BUSE,First Busey Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00483,BUUU,BUUU Group Limited - Class A Ordinary Share,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00484,BVC,BitVentures Limited - Ordinary Share,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00485,BVFL,"BV Financial, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00486,BVS,Bioventus Inc. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00487,BWB,"Bridgewater Bancshares, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00488,BWEN,"Broadwind, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00489,BWFG,"Bankwell Financial Group, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00490,BWIN,"The Baldwin Insurance Group, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00491,BWMN,Bowman Consulting Group Ltd. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00492,BYAH,"Park Ha Biological Technology Co., Ltd. - Class A Ordinary Shares",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00493,BYFC,Broadway Financial Corporation - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00494,BYND,"Beyond Meat, Inc. - Common stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00495,BYRN,"Byrna Technologies, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00496,BYSI,"BeyondSpring, Inc. - Ordinary Shares",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00497,BZ,KANZHUN LIMITED - American Depository Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00498,BZAI,"Blaize Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00499,BZFD,"BuzzFeed, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00500,CAAS,"China Automotive Systems, Inc. - Ordinary Share",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00501,CABA,"Cabaletta Bio, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00502,CABR,"Caring Brands, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00503,CAC,Camden National Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00504,CACC,Credit Acceptance Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00505,CADL,"Candel Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00506,CAES,"Cantor Equity Partners VII, Inc. - Class A Ordinary Shares",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00507,CAI,"Caris Life Sciences, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00509,CAKE,The Cheesecake Factory Incorporated - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00510,CALC,"CalciMedica, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00511,CALM,"Cal-Maine Foods, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00512,CAMP,CAMP4 Therapeutics Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00513,CAMT,Camtek Ltd. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00515,CAPR,"Capricor Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00516,CAPS,Capstone Holding Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00518,CAR,"Avis Budget Group, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00519,CARE,"Carter Bankshares, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00520,CARG,"CarGurus, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00521,CARL,"Carlsmed, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00522,CART,Maplebear Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00523,CASH,"Pathward Financial, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00524,CASS,"Cass Information Systems, Inc - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00525,CAST,"FreeCast, Inc. - Class A common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00526,CASY,"Caseys General Stores, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00527,CATY,Cathay General Bancorp - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00529,CBC,"Central Bancompany, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00530,CBFV,"CB Financial Services, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00531,CBIO,"Crescent Biopharma, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00532,CBK,"Commercial Bancgroup, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00533,CBLL,"CeriBell, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00534,CBNK,"Capital Bancorp, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00535,CBRL,"Cracker Barrel Old Country Store, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00536,CBRS,Cerebras Systems Inc. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00537,CBSH,"Commerce Bancshares, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00538,CBUS,"Cibus, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00539,CCAP,"Crescent Capital BDC, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00541,CCB,Coastal Financial Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00542,CCBG,Capital City Bank Group - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00543,CCC,CCC Intelligent Solutions Holdings Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_READY,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00544,CCCC,"C4 Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00546,CCEC,Capital Clean Energy Carriers Corp. - Common Share,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00548,CCG,Cheche Group Inc. - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00549,CCHH,CCH Holdings Ltd - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00552,CCLD,"CareCloud, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00553,CCNE,CNB Financial Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00554,CCOI,"Cogent Communications Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00556,CCSI,"Consensus Cloud Solutions, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00557,CCTG,CCSC Technology International Holdings Limited - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00558,CCXI,Churchill Capital Corp XI - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00559,CD,Chaince Digital Holdings Inc. - American Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00560,CDIO,Cardio Diagnostics Holdings Inc. - Common stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00561,CDLX,"Cardlytics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00562,CDNA,"CareDx, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00563,CDNL,Cardinal Infrastructure Group Inc. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00564,CDNS,"Cadence Design Systems, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00566,CDT,CDT Equity Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00567,CDTG,CDT Environmental Technology Investment Holdings Limited - ordinary shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00568,CDW,CDW Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00569,CDXS,"Codexis, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00570,CDZI,"Cadiz, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00571,CECO,CECO Environmental Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00572,CEG,Constellation Energy Corporation - Common Stock When-Issued,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00573,CELC,Celcuity Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00574,CELH,"Celsius Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00575,CELU,Celularity Inc. - Class A Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00576,CELZ,"Creative Medical Technology Holdings, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00577,CENN,Cenntro Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00578,CENT,Central Garden & Pet Company - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00579,CENTA,Central Garden & Pet Company - Class A Common Stock Nonvoting,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00580,CENX,Century Aluminum Company - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00581,CEPF,"Cantor Equity Partners IV, Inc. - Class A Ordinary Shares",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00582,CEPO,"Cantor Equity Partners I, Inc. - Class A Ordinary Shares",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00583,CEPS,"Cantor Equity Partners VI, Inc. - Class A Ordinary Shares",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00584,CEPV,"Cantor Equity Partners V, Inc. - Class A Ordinary Shares",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,PRICE_FEATURES_PARTIAL,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00585,CERS,Cerus Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00586,CERT,"Certara, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00587,CETX,Cemtrex Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00588,CETY,"Clean Energy Technologies, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00589,CEVA,"CEVA, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00590,CFBK,CF Bankshares Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00591,CFFI,C&F Financial Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00592,CFFN,"Capitol Federal Financial, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00593,CG,The Carlyle Group Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00595,CGC,Canopy Growth Corporation - Common Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00596,CGEM,"Cullinan Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00597,CGEN,Compugen Ltd. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00598,CGNT,Cognyte Software Ltd. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00599,CGNX,Cognex Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00601,CGON,"CG Oncology, Inc. - Common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00602,CGTL,Creative Global Technology Holdings Limited - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00603,CGTX,"Cognition Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00604,CHAI,"Core AI Holdings, Inc. - Common Shares",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00606,CHCI,"Comstock Holding Companies, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00607,CHCO,City Holding Company - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00608,CHDN,"Churchill Downs, Incorporated - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00610,CHEF,"The Chefs' Warehouse, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00612,CHKP,Check Point Software Technologies Ltd. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00613,CHMG,Chemung Financial Corp - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00616,CHR,"Cheer Holding, Inc. - Class A Ordinary Share",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00617,CHRD,Chord Energy Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00618,CHRN,ChronoScale Holdings Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00619,CHRS,"Coherus Oncology, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00620,CHRW,"C.H. Robinson Worldwide, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00621,CHSN,Chanson International Holding - Class A Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00622,CHTR,"Charter Communications, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00625,CHYM,"Chime Financial, Inc. - Class A Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00626,CIFR,Cipher Digital Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00627,CIGI,Colliers International Group Inc. - Subordinate Voting Shares,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00628,CIIT,"Tianci International, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00629,CINF,Cincinnati Financial Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00630,CING,Cingulate Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00631,CIRC,"Circle8 Group, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_READY,MISSING,medium,price_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00632,CISO,"CISO Global, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00633,CISS,C3is Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00634,CIVB,"Civista Bancshares, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00635,CJMB,Callan JMB Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00636,CLAR,Clarus Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00637,CLBK,"Columbia Financial, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,INSUFFICIENT_FEATURE_EVIDENCE,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00638,CLBT,Cellebrite DI Ltd. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00639,CLDX,"Celldex Therapeutics, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00640,CLFD,"Clearfield, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00641,CLGN,CollPlant Biotechnologies Ltd. - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00642,CLIK,Click Holdings Limited - Ordinary Share,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00643,CLIR,ClearSign Technologies Corporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00644,CLMB,"Climb Global Solutions, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00645,CLMT,"Calumet, Inc - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00646,CLNE,Clean Energy Fuels Corp. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00647,CLNN,Clene Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00648,CLOV,"Clover Health Investments, Corp. - Class A Common stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00649,CLPS,CLPS Incorporation - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00650,CLPT,ClearPoint Neuro Inc. - Common Stock,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00651,CLRB,"Cellectar Biosciences, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00652,CLRO,"ClearOne, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00653,CLSK,"CleanSpark, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00654,CLST,"Catalyst Bancorp, Inc. - common stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix
+U00655,CLWT,Euro Tech Holdings Company Limited - Ordinary Shares,NASDAQ,CANDIDATE_MATRIX_READY,FEATURES_READY,PRICE_FEATURES_READY,high,,v2.38J-us-candidate-feature-matrix
+U00656,CLYM,"Climb Bio, Inc. - Common Stock",NASDAQ,CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS,FEATURES_PARTIAL,PRICE_FEATURES_READY,medium,fundamental_features_missing_or_partial,v2.38J-us-candidate-feature-matrix

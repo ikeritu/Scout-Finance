@@ -1,0 +1,26 @@
+{
+  "phase": "v2.38J-us-candidate-feature-matrix",
+  "allowed_markets": ["NASDAQ", "NYSE", "NYSE American", "Cboe BZX"],
+  "required_identity_keys": ["asset_id", "ticker", "company_name", "exchange"],
+  "optional_identity_keys": ["cik"],
+  "required_fundamental_inputs": [
+    "outputs/full_universe_source_acquisition/v2_38g_us_sec_fundamental_features/us_sec_fundamental_features_v2_38g.csv"
+  ],
+  "required_price_inputs": [
+    "outputs/full_universe_source_acquisition/v2_38h_us_price_features/us_price_features_v2_38h.csv"
+  ],
+  "allowed_candidate_statuses": [
+    "CANDIDATE_MATRIX_READY",
+    "CANDIDATE_MATRIX_PARTIAL_PRICE",
+    "CANDIDATE_MATRIX_PARTIAL_FUNDAMENTALS",
+    "CANDIDATE_MATRIX_INSUFFICIENT_EVIDENCE",
+    "CANDIDATE_MATRIX_BLOCKED"
+  ],
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  }
+}

@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**Fase v2.38J — matriz US de candidatos** (`COMPLETED_US_CANDIDATE_FEATURE_MATRIX_NOT_SCORING`). La capa une SEC fundamentals y price features US locales en una matriz preparada para scoring explicable futuro. No genera recomendaciones, no predice rentabilidad y no constituye asesoramiento financiero.
+
 **Fase v2.38D — fundación SEC para EEUU** (`COMPLETED_US_SEC_FOUNDATION_DRY_RUN`). Añade contrato, esquema, overlay y runner para resolver CIK/submissions/companyfacts sobre 9.200 filas US / 5.011 elegibles. El acceso SEC real queda bloqueado por defecto y exige `--execute` más `SCOUT_FINANCE_SEC_USER_AGENT`; no hay scoring, ranking ni recomendaciones.
 
 **Fase 9B-US/EU — cobertura prioritaria** (`COMPLETED_PARTIAL_COVERAGE`, v2.38C). Scout Finance queda alineado con el roadmap maestro: el objetivo es rastrear las 43.089 empresas, no optimizar solo Japón. La nueva capa offline censó 5.011 elegibles de EEUU y 10.483 elegibles europeas; EEUU queda encaminado hacia SEC/CIK/XBRL y precios ajustados con proveedor por validar, y Europa queda bloqueada principalmente por la resolución de Cboe Europe a home exchange. No se calculan scoring, ranking ni recomendaciones.

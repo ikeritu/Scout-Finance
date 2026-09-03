@@ -1,0 +1,23 @@
+{
+  "blocked": 0,
+  "candidates_total": 555,
+  "fundamental_input_companies": 555,
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "insufficient_evidence": 0,
+  "joined_both": 554,
+  "matrix_ready": 350,
+  "only_fundamentals": 1,
+  "only_price": 0,
+  "partial_fundamentals": 173,
+  "partial_price": 32,
+  "phase": "v2.38J-us-candidate-feature-matrix",
+  "price_input_companies": 554,
+  "rejected_rows": 1193,
+  "status": "COMPLETED_US_CANDIDATE_FEATURE_MATRIX_NOT_SCORING"
+}
