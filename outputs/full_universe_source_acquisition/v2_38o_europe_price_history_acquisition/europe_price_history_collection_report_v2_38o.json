@@ -1,0 +1,25 @@
+{
+  "blocked_cboe_secondary_source": 0,
+  "blocked_credential_missing": 0,
+  "blocked_insufficient_history": 0,
+  "blocked_network_error": 0,
+  "blocked_provider_error": 0,
+  "blocked_provider_unsupported": 0,
+  "candidates_total": 689,
+  "collected_assets": 0,
+  "collection_status": "READY_FOR_COLLECTION",
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "cboe_europe_source_forbidden": true,
+    "financial_advice": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "pending_assets": 689,
+  "phase": "v2.38O-europe-price-history-acquisition",
+  "raw_cache_published": false,
+  "skipped_existing": 0
+}

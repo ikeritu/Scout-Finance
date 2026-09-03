@@ -102,3 +102,6 @@ outputs/full_universe_source_acquisition/v2_38f_us_sec_fundamental_normalization
 
 # Local Phase 9I US raw price history
 outputs/full_universe_source_acquisition/v2_38i_us_price_history_acquisition/us_price_history_raw_v2_38i/
+
+# Local Phase 9O Europe raw price history
+outputs/full_universe_source_acquisition/v2_38o_europe_price_history_acquisition/europe_price_history_raw_v2_38o/

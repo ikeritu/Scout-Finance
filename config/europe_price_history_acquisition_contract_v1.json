@@ -1,0 +1,38 @@
+{
+  "phase": "v2.38O-europe-price-history-acquisition",
+  "input_resolution": "outputs/full_universe_source_acquisition/v2_38n_europe_home_exchange_resolution/europe_home_exchange_resolution_v2_38n.csv",
+  "output_directory": "outputs/full_universe_source_acquisition/v2_38o_europe_price_history_acquisition",
+  "raw_cache": "outputs/full_universe_source_acquisition/v2_38o_europe_price_history_acquisition/europe_price_history_raw_v2_38o",
+  "only_home_exchange_resolved": true,
+  "cboe_europe_source_forbidden": true,
+  "raw_cache_published": false,
+  "no_scoring": true,
+  "no_ranking": true,
+  "no_recommendations": true,
+  "no_phase9c": true,
+  "max_batch_limit": 100,
+  "default_batch_limit": 25,
+  "default_from_date": "2024-01-01",
+  "expected_min_rows": 120,
+  "supported_providers": [
+    "stooq",
+    "twelvedata",
+    "eodhd",
+    "yahoo_chart"
+  ],
+  "providers_requiring_credentials": {
+    "stooq": "",
+    "twelvedata": "TWELVE_DATA_API_KEY",
+    "eodhd": "EODHD_API_KEY",
+    "yahoo_chart": ""
+  },
+  "guardrails": {
+    "network_calls": 0,
+    "scoring_calculated": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "phase9c_authorized": false,
+    "financial_advice": false,
+    "broker_actions_allowed": false
+  }
+}
