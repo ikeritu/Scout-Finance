@@ -1,0 +1,35 @@
+{
+  "adr_gdr_review_required": 88,
+  "cboe_secondary_home_required": 21066,
+  "europe_rows": 22578,
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "cboe_europe_is_secondary_by_default": true,
+    "financial_advice": false,
+    "home_exchange_required_for_europe_enrichment": true,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "home_exchange_resolved": 689,
+  "input_universe_rows_expected": 43089,
+  "manual_review_or_blocked": 21889,
+  "phase": "v2.38N-europe-home-exchange-resolution",
+  "provider_route_status_counts": {
+    "BLOCKED_HOME_EXCHANGE_REQUIRED": 21066,
+    "BLOCKED_PROVIDER_REQUIRED": 710,
+    "MANUAL_REVIEW_REQUIRED": 113,
+    "READY_FOR_IDENTITY_PILOT": 276,
+    "READY_FOR_PRICE_HISTORY_PILOT": 413
+  },
+  "status": "COMPLETED_EUROPE_HOME_EXCHANGE_RESOLUTION_NOT_ENRICHMENT",
+  "status_counts": {
+    "ADR_GDR_REVIEW_REQUIRED": 88,
+    "CBOE_SECONDARY_HOME_EXCHANGE_REQUIRED": 21066,
+    "COUNTRY_EXCHANGE_MISMATCH_REVIEW": 25,
+    "HOME_EXCHANGE_RESOLVED": 689,
+    "OUT_OF_SCOPE_NON_EUROPE": 710
+  }
+}

@@ -1,0 +1,18 @@
+market,provider_route,provider_route_status,rows,home_exchange_resolved,blocker
+BME,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,15,15,
+Borsa Italiana,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,22,22,
+CBOE_EUROPE,exchange_official_reference,BLOCKED_HOME_EXCHANGE_REQUIRED,21066,0,identity/home-exchange/provider validation required before price history pilot
+CBOE_EUROPE,manual_review_required,MANUAL_REVIEW_REQUIRED,88,0,identity/home-exchange/provider validation required before price history pilot
+Euronext Amsterdam,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,44,44,
+Euronext Brussels,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,6,6,
+Euronext Dublin,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,17,17,
+Euronext Paris,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,53,53,
+LSE,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,40,40,
+Nasdaq Copenhagen,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,21,21,
+Nasdaq Helsinki,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,5,5,
+Nasdaq Stockholm,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,4,4,
+SIX Swiss Exchange,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,29,29,
+Vienna Stock Exchange,eodhd_europe_prices,READY_FOR_IDENTITY_PILOT,20,20,
+XETR,blocked_provider_required,BLOCKED_PROVIDER_REQUIRED,710,0,identity/home-exchange/provider validation required before price history pilot
+XETRA,manual_review_required,MANUAL_REVIEW_REQUIRED,25,0,identity/home-exchange/provider validation required before price history pilot
+XETRA,stooq_daily_prices,READY_FOR_PRICE_HISTORY_PILOT,413,413,

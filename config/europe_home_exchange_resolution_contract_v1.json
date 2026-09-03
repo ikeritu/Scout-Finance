@@ -1,0 +1,56 @@
+{
+  "phase": "v2.38N-europe-home-exchange-resolution",
+  "scope": "Europe priority coverage",
+  "input_universe_rows_expected": 43089,
+  "input_europe_census": "outputs/full_universe_source_acquisition/v2_38c_us_eu_priority_coverage/eu_universe_census_v2_38c.csv",
+  "input_cboe_candidates": "outputs/full_universe_source_acquisition/v2_38c_us_eu_priority_coverage/cboe_europe_home_exchange_candidates_v2_38c.csv",
+  "output_directory": "outputs/full_universe_source_acquisition/v2_38n_europe_home_exchange_resolution",
+  "cboe_europe_is_secondary_by_default": true,
+  "home_exchange_required_for_europe_enrichment": true,
+  "no_network": true,
+  "no_scoring": true,
+  "no_ranking": true,
+  "no_recommendations": true,
+  "no_phase9c": true,
+  "closed_statuses": [
+    "HOME_EXCHANGE_RESOLVED",
+    "CBOE_SECONDARY_HOME_EXCHANGE_REQUIRED",
+    "MULTILISTING_REVIEW_REQUIRED",
+    "ADR_GDR_REVIEW_REQUIRED",
+    "COUNTRY_EXCHANGE_MISMATCH_REVIEW",
+    "PROVIDER_ROUTE_BLOCKED",
+    "INSUFFICIENT_IDENTITY_EVIDENCE",
+    "OUT_OF_SCOPE_NON_EUROPE"
+  ],
+  "listing_roles": [
+    "PRIMARY_HOME_EXCHANGE",
+    "SECONDARY_CBOE_EUROPE",
+    "SECONDARY_MULTILISTING",
+    "ADR_GDR",
+    "UNKNOWN_REVIEW"
+  ],
+  "provider_routes": [
+    "stooq_daily_prices",
+    "eodhd_europe_prices",
+    "yahoo_chart_prices",
+    "exchange_official_reference",
+    "manual_review_required",
+    "blocked_provider_required"
+  ],
+  "provider_route_statuses": [
+    "READY_FOR_PRICE_HISTORY_PILOT",
+    "READY_FOR_IDENTITY_PILOT",
+    "BLOCKED_PROVIDER_REQUIRED",
+    "BLOCKED_HOME_EXCHANGE_REQUIRED",
+    "MANUAL_REVIEW_REQUIRED"
+  ],
+  "guardrails": {
+    "network_calls": 0,
+    "scoring_calculated": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "phase9c_authorized": false,
+    "financial_advice": false,
+    "broker_actions_allowed": false
+  }
+}

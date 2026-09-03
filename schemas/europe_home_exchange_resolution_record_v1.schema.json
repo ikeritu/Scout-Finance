@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scout-finance.local/schemas/europe_home_exchange_resolution_record_v1.schema.json",
+  "title": "Europe home exchange resolution record v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "asset_id",
+    "ticker",
+    "company_name",
+    "country",
+    "currency",
+    "exchange",
+    "mic",
+    "inferred_region",
+    "source_provider",
+    "home_exchange",
+    "home_mic",
+    "home_country",
+    "home_currency",
+    "listing_role",
+    "resolution_status",
+    "provider_route",
+    "provider_route_status",
+    "evidence_source",
+    "evidence_strength",
+    "review_reason",
+    "phase",
+    "scoring_calculated",
+    "ranking_calculated",
+    "recommendations_generated",
+    "phase9c_authorized"
+  ],
+  "properties": {
+    "asset_id": {"type": "string", "pattern": "^U[0-9]+$"},
+    "ticker": {"type": "string"},
+    "company_name": {"type": "string"},
+    "country": {"type": "string"},
+    "currency": {"type": "string"},
+    "exchange": {"type": "string"},
+    "mic": {"type": "string"},
+    "inferred_region": {"type": "string", "enum": ["EUROPE", "OUT_OF_SCOPE"]},
+    "source_provider": {"type": "string"},
+    "home_exchange": {"type": "string"},
+    "home_mic": {"type": "string"},
+    "home_country": {"type": "string"},
+    "home_currency": {"type": "string"},
+    "listing_role": {
+      "type": "string",
+      "enum": [
+        "PRIMARY_HOME_EXCHANGE",
+        "SECONDARY_CBOE_EUROPE",
+        "SECONDARY_MULTILISTING",
+        "ADR_GDR",
+        "UNKNOWN_REVIEW"
+      ]
+    },
+    "resolution_status": {
+      "type": "string",
+      "enum": [
+        "HOME_EXCHANGE_RESOLVED",
+        "CBOE_SECONDARY_HOME_EXCHANGE_REQUIRED",
+        "MULTILISTING_REVIEW_REQUIRED",
+        "ADR_GDR_REVIEW_REQUIRED",
+        "COUNTRY_EXCHANGE_MISMATCH_REVIEW",
+        "PROVIDER_ROUTE_BLOCKED",
+        "INSUFFICIENT_IDENTITY_EVIDENCE",
+        "OUT_OF_SCOPE_NON_EUROPE"
+      ]
+    },
+    "provider_route": {
+      "type": "string",
+      "enum": [
+        "stooq_daily_prices",
+        "eodhd_europe_prices",
+        "yahoo_chart_prices",
+        "exchange_official_reference",
+        "manual_review_required",
+        "blocked_provider_required"
+      ]
+    },
+    "provider_route_status": {
+      "type": "string",
+      "enum": [
+        "READY_FOR_PRICE_HISTORY_PILOT",
+        "READY_FOR_IDENTITY_PILOT",
+        "BLOCKED_PROVIDER_REQUIRED",
+        "BLOCKED_HOME_EXCHANGE_REQUIRED",
+        "MANUAL_REVIEW_REQUIRED"
+      ]
+    },
+    "evidence_source": {"type": "string"},
+    "evidence_strength": {"type": "string", "enum": ["HIGH", "MEDIUM", "LOW", "NONE"]},
+    "review_reason": {"type": "string"},
+    "phase": {"const": "v2.38N-europe-home-exchange-resolution"},
+    "scoring_calculated": {"const": false},
+    "ranking_calculated": {"const": false},
+    "recommendations_generated": {"const": false},
+    "phase9c_authorized": {"const": false}
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "outputs": {
+    "EUROPE_HOME_EXCHANGE_RESOLUTION_CONTRACT_v2_38n.md": {
+      "bytes": 385,
+      "sha256": "41d5c4cec346e057bba7c0d5d1530b95fbe45e3f56c029a62b1768905c657e48"
+    },
+    "PHASE9N_EUROPE_HOME_EXCHANGE_GATE_v2_38n.md": {
+      "bytes": 343,
+      "sha256": "675a3df5c582dfc45109effe466b8d40ccbc473fc4839f46b517f9212574df33"
+    },
+    "README.md": {
+      "bytes": 459,
+      "sha256": "63d893f6756dd59b534585d8864c19db032c8e6b21fc188e6458fddfd748618a"
+    },
+    "europe_home_exchange_aggregate_report_v2_38n.json": {
+      "bytes": 1196,
+      "sha256": "ab63e9027baeda32f77fef39e60cc8962985f2fe66e764955ff762950c781b9a"
+    },
+    "europe_home_exchange_batch_plan_v2_38n.csv": {
+      "bytes": 7364,
+      "sha256": "298851abb27ae6ea40149a73ca7dc4b18f338ee04ee4690bbea580effe30dde5"
+    },
+    "europe_home_exchange_country_summary_v2_38n.csv": {
+      "bytes": 623,
+      "sha256": "c9e67c06a5cdd2ab27ab62013c9b2adcad26a673cd7053314f9f25aa390a03bb"
+    },
+    "europe_home_exchange_manifest_v2_38n.json": {
+      "bytes": 2072,
+      "sha256": "54e91e64ba98597911aeedb8e2ed635beec55426a352ebd7c369cdec8773fe06"
+    },
+    "europe_home_exchange_resolution_v2_38n.csv": {
+      "bytes": 8743373,
+      "sha256": "8a55be5061bbd024424a721d4a2b01e9dbdb4bb60771a6a1602ba56fc4d45e21"
+    },
+    "europe_home_exchange_review_v2_38n.csv": {
+      "bytes": 8471057,
+      "sha256": "7a8b6a3e10c1764c462f6eb842fd6622c2905924617fff85c83895e151ff2a36"
+    },
+    "europe_home_exchange_route_matrix_v2_38n.csv": {
+      "bytes": 1523,
+      "sha256": "f1287f0bab3d0f00d43c0bad2636421a26dd79e7f55c006405e842c458dc07ee"
+    }
+  },
+  "phase": "v2.38N-europe-home-exchange-resolution",
+  "status": "COMPLETED_EUROPE_HOME_EXCHANGE_RESOLUTION_NOT_ENRICHMENT"
+}
