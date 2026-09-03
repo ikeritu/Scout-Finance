@@ -15,7 +15,7 @@
   "outputs": {
     "PHASE9I_US_PRICE_HISTORY_GATE_v2_38i.md": {
       "bytes": 402,
-      "sha256": "3782e18ea68b963157f385a26774674bf320632ce7c0a5f49974fe752b33b4fb"
+      "sha256": "668a054d544096340ecc1ded2e98514a1e8b5fd231568e2e26e36a527de51ebd"
     },
     "README.md": {
       "bytes": 214,
@@ -26,16 +26,16 @@
       "sha256": "de57bd2f72e4e7a25dbe7eeceaa88e6cbdb899930514b283b1ed85908ee1c793"
     },
     "us_price_history_acquisition_plan_v2_38i.csv": {
-      "bytes": 149179,
-      "sha256": "bf7cb1ccf1e03b6d902a3542da575c9e7cac4a59fc5d3afe467752e95d9a37c2"
+      "bytes": 149059,
+      "sha256": "f72ae5f114267df1338dc7c200d2835e5cd32e2623819bac3efc5b8b3a6a5987"
     },
     "us_price_history_batch_ledger_v2_38i.csv": {
-      "bytes": 10980,
-      "sha256": "4af11ba309c86fa21e1a46abc30d341f9d1430e32cd7dc962226427d669d8a93"
+      "bytes": 13813,
+      "sha256": "1e69b4692809ec6e594529d314997acb733c13a1082515fafc7a899a37307e70"
     },
     "us_price_history_collection_report_v2_38i.json": {
       "bytes": 507,
-      "sha256": "a8dd5bc9fda8bdd844800d5db3b3b46f6417595cb3ce9e3d803a30e6378b313d"
+      "sha256": "540e0a5c6c2c0d15bd21af55832549f54d3154e8cb5c89ec06086688758de685"
     }
   },
   "phase": "v2.38I-us-price-history-acquisition",
