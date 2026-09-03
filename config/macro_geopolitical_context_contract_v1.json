@@ -1,0 +1,64 @@
+{
+  "phase": "v2.38M-macro-geopolitical-context",
+  "output_directory": "outputs/full_universe_source_acquisition/v2_38m_macro_geopolitical_context",
+  "inputs": [
+    "outputs/full_universe_source_acquisition/v2_38l_us_explained_shortlist/us_explained_shortlist_v2_38l.csv",
+    "outputs/full_universe_source_acquisition/v2_38l_us_explained_shortlist/us_explained_shortlist_aggregate_report_v2_38l.json",
+    "outputs/full_universe_source_acquisition/v2_38j_us_candidate_feature_matrix/us_candidate_feature_matrix_v2_38j.csv"
+  ],
+  "taxonomy_themes": [
+    "INTEREST_RATES",
+    "INFLATION",
+    "USD_STRENGTH",
+    "AI_SEMICONDUCTORS",
+    "DEFENSE_SECURITY",
+    "ENERGY_TRANSITION",
+    "OIL_GAS_SUPPLY",
+    "CHINA_US_TENSIONS",
+    "SUPPLY_CHAIN_RESILIENCE",
+    "CYBERSECURITY",
+    "HEALTHCARE_REGULATION",
+    "BANK_CREDIT_CYCLE",
+    "SMALL_CAP_LIQUIDITY",
+    "INDUSTRIAL_RESHORING",
+    "EUROPE_REGULATORY_DRAG",
+    "CLIMATE_POLICY",
+    "COMMODITY_INPUT_COSTS"
+  ],
+  "allowed_statuses": [
+    "MACRO_CONTEXT_READY",
+    "MACRO_CONTEXT_PARTIAL",
+    "MACRO_CONTEXT_REVIEW_REQUIRED",
+    "MACRO_CONTEXT_BLOCKED"
+  ],
+  "allowed_note_types": [
+    "MACRO_OPPORTUNITY",
+    "MACRO_RISK",
+    "GEOPOLITICAL_EXPOSURE",
+    "EVIDENCE_LIMITATION",
+    "NEXT_RESEARCH_STEP",
+    "LANGUAGE_GUARDRAIL"
+  ],
+  "scoring_rules": {
+    "macro_opportunity_score": "mean_applicable_theme_opportunity_score",
+    "macro_risk_score": "mean_applicable_theme_risk_score",
+    "macro_balance": "macro_opportunity_score_minus_macro_risk_score",
+    "modify_existing_rank": false,
+    "modify_existing_score": false
+  },
+  "no_network": true,
+  "no_live_news": true,
+  "no_llm_runtime_classification": true,
+  "guardrails": {
+    "network_calls": 0,
+    "recommendation_generated": false,
+    "recommendations_generated": false,
+    "financial_advice": false,
+    "broker_actions_allowed": false,
+    "phase9c_authorized": false,
+    "ranking_modified": false,
+    "scoring_modified": false,
+    "live_news_used": false,
+    "llm_runtime_classification": false
+  }
+}

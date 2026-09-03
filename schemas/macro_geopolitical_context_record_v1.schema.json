@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scout-finance.local/schemas/macro_geopolitical_context_record_v1.schema.json",
+  "title": "MacroGeopoliticalContextRecord",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "asset_id",
+    "ticker",
+    "company_name",
+    "exchange",
+    "macro_context_status",
+    "applicable_themes",
+    "macro_opportunity_score",
+    "macro_risk_score",
+    "macro_balance",
+    "recommendation_generated",
+    "financial_advice",
+    "broker_actions_allowed",
+    "phase9c_authorized",
+    "phase"
+  ],
+  "properties": {
+    "asset_id": {"type": "string", "pattern": "^U[0-9]{5}$"},
+    "ticker": {"type": "string", "minLength": 1},
+    "company_name": {"type": "string", "minLength": 1},
+    "exchange": {"type": "string", "minLength": 1},
+    "macro_context_status": {
+      "type": "string",
+      "enum": [
+        "MACRO_CONTEXT_READY",
+        "MACRO_CONTEXT_PARTIAL",
+        "MACRO_CONTEXT_REVIEW_REQUIRED",
+        "MACRO_CONTEXT_BLOCKED"
+      ]
+    },
+    "macro_opportunity_score": {"type": ["number", "string"]},
+    "macro_risk_score": {"type": ["number", "string"]},
+    "macro_balance": {"type": ["number", "string"]},
+    "recommendation_generated": {"type": "boolean", "const": false},
+    "financial_advice": {"type": "boolean", "const": false},
+    "broker_actions_allowed": {"type": "boolean", "const": false},
+    "phase9c_authorized": {"type": "boolean", "const": false},
+    "phase": {"type": "string", "const": "v2.38M-macro-geopolitical-context"}
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "live_news_used": false,
+    "llm_runtime_classification": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_modified": false,
+    "recommendation_generated": false,
+    "recommendations_generated": false,
+    "scoring_modified": false
+  },
+  "live_news_used": false,
+  "macro_context_blocked": 0,
+  "macro_context_partial": 38,
+  "macro_context_ready": 12,
+  "macro_context_review_required": 0,
+  "notes": 362,
+  "phase": "v2.38M-macro-geopolitical-context",
+  "recommendations_generated": false,
+  "rejected_rows": 0,
+  "shortlist_assets": 50,
+  "status": "COMPLETED_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS",
+  "themes_defined": 17
+}

@@ -1,0 +1,363 @@
+asset_id,ticker,theme_id,note_type,note,confidence_level,source_policy,phase
+U00597,CGEN,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00597,CGEN,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00597,CGEN,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00597,CGEN,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00597,CGEN,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00597,CGEN,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00597,CGEN,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00489,BWFG,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00489,BWFG,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00489,BWFG,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00489,BWFG,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00489,BWFG,BANK_CREDIT_CYCLE,MACRO_RISK,Credit quality and funding costs can materially affect banks and lenders.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00489,BWFG,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00489,BWFG,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00489,BWFG,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00040,ACNB,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00040,ACNB,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00040,ACNB,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00040,ACNB,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00040,ACNB,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00040,ACNB,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00040,ACNB,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00126,ALAB,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00126,ALAB,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00126,ALAB,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00126,ALAB,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00126,ALAB,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00126,ALAB,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00126,ALAB,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00276,ATEX,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00276,ATEX,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00276,ATEX,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00276,ATEX,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00276,ATEX,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00276,ATEX,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00276,ATEX,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00503,CAC,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00503,CAC,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00503,CAC,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00503,CAC,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00503,CAC,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00503,CAC,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00503,CAC,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00025,ACAD,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00025,ACAD,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00025,ACAD,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00025,ACAD,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00025,ACAD,HEALTHCARE_REGULATION,MACRO_RISK,"Healthcare and biotech names face policy, reimbursement and trial/regulatory uncertainty.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00025,ACAD,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00025,ACAD,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00025,ACAD,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00482,BUSE,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00482,BUSE,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00482,BUSE,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00482,BUSE,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00482,BUSE,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00482,BUSE,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00482,BUSE,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00522,CART,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00522,CART,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00522,CART,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00522,CART,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00522,CART,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00522,CART,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00522,CART,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00425,BMRN,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00425,BMRN,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00425,BMRN,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00425,BMRN,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00425,BMRN,HEALTHCARE_REGULATION,MACRO_RISK,"Healthcare and biotech names face policy, reimbursement and trial/regulatory uncertainty.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00425,BMRN,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00425,BMRN,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00425,BMRN,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00592,CFFN,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00592,CFFN,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00592,CFFN,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00592,CFFN,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00592,CFFN,BANK_CREDIT_CYCLE,MACRO_RISK,Credit quality and funding costs can materially affect banks and lenders.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00592,CFFN,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00592,CFFN,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00592,CFFN,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00170,AMGN,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00170,AMGN,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00170,AMGN,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00170,AMGN,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00170,AMGN,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00170,AMGN,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00170,AMGN,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00390,BIIB,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00390,BIIB,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00390,BIIB,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00390,BIIB,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00390,BIIB,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00390,BIIB,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00390,BIIB,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00054,ADEA,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00054,ADEA,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00054,ADEA,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00054,ADEA,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00054,ADEA,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00054,ADEA,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00054,ADEA,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00011,AAPL,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00011,AAPL,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00011,AAPL,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00011,AAPL,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00011,AAPL,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00011,AAPL,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00011,AAPL,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00519,CARE,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00519,CARE,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00519,CARE,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00519,CARE,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00519,CARE,BANK_CREDIT_CYCLE,MACRO_RISK,Credit quality and funding costs can materially affect banks and lenders.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00519,CARE,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00519,CARE,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00519,CARE,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00169,AMD,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00169,AMD,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00169,AMD,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00169,AMD,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00169,AMD,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00169,AMD,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00169,AMD,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00214,APPF,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00214,APPF,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00214,APPF,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00214,APPF,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00214,APPF,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00214,APPF,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00214,APPF,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00497,BZ,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00497,BZ,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00497,BZ,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00497,BZ,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00497,BZ,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00497,BZ,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00497,BZ,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00379,BGC,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00379,BGC,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00379,BGC,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00379,BGC,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00379,BGC,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00379,BGC,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00379,BGC,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00251,ARWR,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00251,ARWR,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00251,ARWR,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00251,ARWR,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00251,ARWR,HEALTHCARE_REGULATION,MACRO_RISK,"Healthcare and biotech names face policy, reimbursement and trial/regulatory uncertainty.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00251,ARWR,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00251,ARWR,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00251,ARWR,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00591,CFFI,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00591,CFFI,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00591,CFFI,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00591,CFFI,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00591,CFFI,BANK_CREDIT_CYCLE,MACRO_RISK,Credit quality and funding costs can materially affect banks and lenders.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00591,CFFI,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00591,CFFI,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00591,CFFI,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00165,AMAT,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00165,AMAT,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00165,AMAT,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00165,AMAT,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00165,AMAT,COMMODITY_INPUT_COSTS,MACRO_RISK,Commodity cost volatility can pressure margin for input-intensive businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00165,AMAT,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00165,AMAT,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00165,AMAT,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00599,CGNX,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00599,CGNX,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00599,CGNX,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00599,CGNX,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00599,CGNX,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00599,CGNX,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00599,CGNX,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00606,CHCI,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00606,CHCI,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00606,CHCI,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00606,CHCI,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00606,CHCI,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00606,CHCI,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00606,CHCI,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00312,AVPT,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00312,AVPT,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00312,AVPT,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00312,AVPT,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00312,AVPT,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00312,AVPT,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00312,AVPT,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00372,BELFB,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00372,BELFB,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00372,BELFB,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00372,BELFB,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00372,BELFB,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00372,BELFB,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00372,BELFB,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00086,AFRM,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00086,AFRM,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00086,AFRM,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00086,AFRM,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00086,AFRM,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00086,AFRM,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00086,AFRM,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00288,ATRC,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00288,ATRC,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00288,ATRC,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00288,ATRC,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00288,ATRC,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00288,ATRC,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00288,ATRC,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00629,CINF,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00629,CINF,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00629,CINF,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00629,CINF,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00629,CINF,BANK_CREDIT_CYCLE,MACRO_RISK,Credit quality and funding costs can materially affect banks and lenders.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00629,CINF,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00629,CINF,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00629,CINF,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00139,ALKS,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00139,ALKS,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00139,ALKS,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00139,ALKS,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00139,ALKS,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00139,ALKS,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00139,ALKS,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00297,AUPH,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00297,AUPH,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00297,AUPH,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00297,AUPH,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00297,AUPH,HEALTHCARE_REGULATION,MACRO_RISK,"Healthcare and biotech names face policy, reimbursement and trial/regulatory uncertainty.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00297,AUPH,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00297,AUPH,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00297,AUPH,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00065,ADUS,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00065,ADUS,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00065,ADUS,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00065,ADUS,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00065,ADUS,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00065,ADUS,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00065,ADUS,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00056,ADI,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00056,ADI,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00056,ADI,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00056,ADI,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00056,ADI,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00056,ADI,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00056,ADI,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00371,BELFA,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00371,BELFA,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00371,BELFA,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00371,BELFA,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00371,BELFA,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00371,BELFA,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00371,BELFA,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00504,CACC,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00504,CACC,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00504,CACC,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00504,CACC,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00504,CACC,BANK_CREDIT_CYCLE,MACRO_RISK,Credit quality and funding costs can materially affect banks and lenders.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00504,CACC,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00504,CACC,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00504,CACC,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00037,ACIW,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00037,ACIW,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00037,ACIW,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00037,ACIW,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00037,ACIW,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00037,ACIW,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00037,ACIW,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00046,ACT,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00046,ACT,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00046,ACT,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00046,ACT,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00046,ACT,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00046,ACT,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00046,ACT,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00185,ANAB,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00185,ANAB,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00185,ANAB,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00185,ANAB,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00185,ANAB,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00185,ANAB,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00185,ANAB,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00015,ABEO,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00015,ABEO,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00015,ABEO,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00015,ABEO,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00015,ABEO,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00015,ABEO,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00015,ABEO,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00053,ADBE,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00053,ADBE,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00053,ADBE,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00053,ADBE,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00053,ADBE,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00053,ADBE,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00053,ADBE,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00047,ACTG,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00047,ACTG,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00047,ACTG,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00047,ACTG,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00047,ACTG,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00047,ACTG,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00047,ACTG,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00634,CIVB,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00634,CIVB,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00634,CIVB,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00634,CIVB,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00634,CIVB,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00634,CIVB,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00634,CIVB,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00520,CARG,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00520,CARG,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00520,CARG,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00520,CARG,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00520,CARG,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00520,CARG,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00520,CARG,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00017,ABNB,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00017,ABNB,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00017,ABNB,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00017,ABNB,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00017,ABNB,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00017,ABNB,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00017,ABNB,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00513,CAMT,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00513,CAMT,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00513,CAMT,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00513,CAMT,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00513,CAMT,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00513,CAMT,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00513,CAMT,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00119,AIRT,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00119,AIRT,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00119,AIRT,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00119,AIRT,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00119,AIRT,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00119,AIRT,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00119,AIRT,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00653,CLSK,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00653,CLSK,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00653,CLSK,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00653,CLSK,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00653,CLSK,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00653,CLSK,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00653,CLSK,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00191,ANIP,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00191,ANIP,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00191,ANIP,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00191,ANIP,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00191,ANIP,HEALTHCARE_REGULATION,MACRO_RISK,"Healthcare and biotech names face policy, reimbursement and trial/regulatory uncertainty.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00191,ANIP,,EVIDENCE_LIMITATION,Sector classification is conservative and derived only from existing local text fields; no live external classification was used.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00191,ANIP,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00191,ANIP,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00398,BJRI,INTEREST_RATES,MACRO_RISK,"Higher or volatile interest rates can affect discount rates, financing costs and risk appetite.",MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00398,BJRI,INFLATION,MACRO_RISK,Inflation can pressure input costs and consumer demand while helping some pricing-power businesses.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00398,BJRI,USD_STRENGTH,MACRO_RISK,A stronger dollar can pressure foreign revenue translation and help import-heavy cost bases.,LOW,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00398,BJRI,SMALL_CAP_LIQUIDITY,MACRO_RISK,Smaller and less liquid equities can be more sensitive to risk appetite and financing conditions.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00398,BJRI,,EVIDENCE_LIMITATION,No reliable sector-specific theme was inferred; only general US macro themes were applied.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00398,BJRI,,NEXT_RESEARCH_STEP,Review sourced macro and sector evidence in the next phase before changing any research priority.,MEDIUM,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
+U00398,BJRI,,LANGUAGE_GUARDRAIL,Static context only; no final action language or external event claim is generated.,HIGH,OFFLINE_STATIC_NO_LIVE_NEWS,v2.38M-macro-geopolitical-context
