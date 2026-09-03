@@ -3,11 +3,11 @@
 Decision: COMPLETED_US_PRICE_FEATURES_NOT_SCORING
 
 - Candidate companies: 555
-- Companies with local price input: 328
-- Companies price features ready: 323
+- Companies with local price input: 366
+- Companies price features ready: 361
 - Companies price features partial: 5
 - Companies insufficient price evidence: 0
-- Price files discovered: 328
+- Price files discovered: 366
 - Rejected rows: 12
 - Raw cache published: false
 
