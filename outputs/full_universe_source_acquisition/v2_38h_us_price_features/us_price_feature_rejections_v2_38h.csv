@@ -16,6 +16,10 @@ U00151,ALOV,sma_50_vs_sma_200,insufficient_or_missing_price_evidence,119,200,v2.
 U00151,ALOV,volatility_6m,insufficient_or_missing_price_evidence,119,127,v2.38H
 U00151,ALOV,max_drawdown_6m,insufficient_or_missing_price_evidence,119,126,v2.38H
 U00151,ALOV,max_drawdown_12m,insufficient_or_missing_price_evidence,119,252,v2.38H
+U00221,APXT,return_12m,insufficient_or_missing_price_evidence,199,253,v2.38H
+U00221,APXT,price_vs_sma_200,insufficient_or_missing_price_evidence,199,200,v2.38H
+U00221,APXT,sma_50_vs_sma_200,insufficient_or_missing_price_evidence,199,200,v2.38H
+U00221,APXT,max_drawdown_12m,insufficient_or_missing_price_evidence,199,252,v2.38H
 U00273,ATCX,return_12m,insufficient_or_missing_price_evidence,162,253,v2.38H
 U00273,ATCX,price_vs_sma_200,insufficient_or_missing_price_evidence,162,200,v2.38H
 U00273,ATCX,sma_50_vs_sma_200,insufficient_or_missing_price_evidence,162,200,v2.38H
