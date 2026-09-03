@@ -1,0 +1,51 @@
+{
+  "decision": "PRICE_FEATURES_BLOCKED_NO_LOCAL_EUROPE_PRICE_HISTORY",
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "cboe_europe_source_forbidden": true,
+    "financial_advice": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "inputs": {
+    "outputs\\full_universe_source_acquisition\\v2_38o_europe_price_history_acquisition\\europe_price_history_acquisition_plan_v2_38o.csv": {
+      "bytes": 196392,
+      "sha256": "d5f504e43bd3e9c9ba2798a1fa298eccd411b2e1f3d2d70e983cb7bf1f7adc0d"
+    }
+  },
+  "outputs": {
+    "EUROPE_PRICE_FEATURES_CONTRACT_v2_38p.md": {
+      "bytes": 337,
+      "sha256": "c0c992029c86af12bcf3a0f4918e49494af59497c1b4ef240517236eafc881f6"
+    },
+    "PHASE9P_EUROPE_PRICE_FEATURES_GATE_v2_38p.md": {
+      "bytes": 390,
+      "sha256": "e1a2d77c4b48eb2b5c0157961b9892db4d0a985de46e8fcd033f24e35bdb8fc2"
+    },
+    "README.md": {
+      "bytes": 287,
+      "sha256": "6964688732b8f1c210438fc25d3285fdb755f1884a3c0dafc6d8779ee861ea6f"
+    },
+    "europe_price_feature_aggregate_report_v2_38p.json": {
+      "bytes": 1316,
+      "sha256": "25705c881173f10ec045006c8bc84981ecf26dd2208a1ae5d32527760c302904"
+    },
+    "europe_price_feature_quality_v2_38p.csv": {
+      "bytes": 93,
+      "sha256": "b3434df638ad20f2ccbc827b2f71546fd36c0da73f3b625772c57db5d522b806"
+    },
+    "europe_price_feature_rejections_v2_38p.csv": {
+      "bytes": 168,
+      "sha256": "0e7dcf8194ba24ee973e101450728d7fc53f9ce4bc8e666d660063d2629f070e"
+    },
+    "europe_price_features_v2_38p.csv": {
+      "bytes": 630,
+      "sha256": "48bb1ec4ad73231908a4e375b89b8a5aa9b18b2aea8e0eb17c290f7a848cb664"
+    }
+  },
+  "phase": "v2.38P-europe-price-features",
+  "raw_cache": "outputs\\full_universe_source_acquisition\\v2_38o_europe_price_history_acquisition\\europe_price_history_raw_v2_38o"
+}
