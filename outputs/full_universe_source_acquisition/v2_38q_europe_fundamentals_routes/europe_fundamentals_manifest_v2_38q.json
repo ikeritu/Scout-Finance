@@ -1,0 +1,57 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "fundamentals_downloaded": false,
+    "fundamentals_normalized": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "inputs": {
+    "/workspace/scratch/42c582c7acca/scout_finance_38s_work/outputs/full_universe_source_acquisition/v2_38n_europe_home_exchange_resolution/europe_home_exchange_resolution_v2_38n.csv": {
+      "sha256": "8a55be5061bbd024424a721d4a2b01e9dbdb4bb60771a6a1602ba56fc4d45e21"
+    }
+  },
+  "outputs": {
+    "EUROPE_FUNDAMENTALS_ROUTE_CONTRACT_v2_38q.md": {
+      "bytes": 76,
+      "sha256": "72f1829900e0c2903badff6806238f99c6bb502fbd7e3ed8d39355d73dda841f"
+    },
+    "PHASE9Q_EUROPE_FUNDAMENTALS_GATE_v2_38q.md": {
+      "bytes": 168,
+      "sha256": "d57e463e845b464a78f7769f2462708f3b901e4f6155b2cd6d719fb1169ee1e4"
+    },
+    "README.md": {
+      "bytes": 123,
+      "sha256": "f30c254f006240c69257b7c77b3d3f7d645c93bc836c7538169fd4b2c0972568"
+    },
+    "europe_fundamentals_aggregate_report_v2_38q.json": {
+      "bytes": 668,
+      "sha256": "ea143aec32231834b012fb6e80c7bd5b6d09e7f724b02bacecde360007672174"
+    },
+    "europe_fundamentals_asset_routes_v2_38q.csv": {
+      "bytes": 173816,
+      "sha256": "c33627d901ef3d9ce641f8920f37bc9a66c83d888d59d355ee76a5909d11a735"
+    },
+    "europe_fundamentals_batch_plan_v2_38q.csv": {
+      "bytes": 1113,
+      "sha256": "43c43d71c4208b5d07acb4f9d6a122c225f87491d697a94568c7448094a5aae7"
+    },
+    "europe_fundamentals_country_summary_v2_38q.csv": {
+      "bytes": 783,
+      "sha256": "fc85a6a1b5016fe2852959d4abce861ee7323443cf89bfe900c95f74176b9b19"
+    },
+    "europe_fundamentals_route_matrix_v2_38q.csv": {
+      "bytes": 1405,
+      "sha256": "ed0b96010cdd2b3206ad5355f33426c31dd2dc896e999937f536c32e9de26f00"
+    },
+    "europe_fundamentals_route_review_v2_38q.csv": {
+      "bytes": 4537557,
+      "sha256": "53623da12fcada2b40fb1d8a5fd9b5108ce0712bbd35b6d1a15047ba0d4f6206"
+    }
+  },
+  "phase": "v2.38Q-europe-fundamentals-route-foundation"
+}

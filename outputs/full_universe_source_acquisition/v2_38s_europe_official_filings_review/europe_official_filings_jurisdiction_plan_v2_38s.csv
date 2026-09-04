@@ -1,0 +1,3 @@
+jurisdiction_code,country,mic,exchange,official_registry_name,official_registry_candidate,expected_identifier,identifier_resolution_required,assets,ready_for_future_execution,blocked_reason,network_allowed,scraping_allowed,api_allowed,phase9c_authorized
+ES,ES,XMAD,BME,CNMV,cnmv_issuer_filings,ISIN,true,15,false,identifier_resolution_required_before_official_collection,false,false,false,false
+GB,GB,XLON,LSE,UK Companies House,uk_companies_house_filings,COMPANY_REGISTRY_ID,true,40,false,identifier_resolution_required_before_official_collection,false,false,false,false

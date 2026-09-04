@@ -1,0 +1,21 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "fundamentals_downloaded": false,
+    "fundamentals_normalized": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "input_assets": 22578,
+  "phase": "v2.38Q-europe-fundamentals-route-foundation",
+  "raw_cache_published": false,
+  "route_manual_review_required": 17,
+  "route_ready_official_filings_review": 55,
+  "route_ready_provider_pilot": 617,
+  "routed_assets": 689,
+  "status": "COMPLETED_EUROPE_FUNDAMENTALS_ROUTE_FOUNDATION_NOT_COLLECTION"
+}

@@ -1,0 +1,31 @@
+{
+  "phase": "v2.38R-europe-fundamentals-provider-pilot",
+  "input_phase": "v2.38Q",
+  "input_routes": "outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes/europe_fundamentals_asset_routes_v2_38q.csv",
+  "input_summary": "outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes/europe_fundamentals_aggregate_report_v2_38q.json",
+  "output_directory": "outputs/full_universe_source_acquisition/v2_38r_europe_fundamentals_pilot_provider",
+  "eligible_route_status": "FUNDAMENTALS_ROUTE_READY_FOR_PROVIDER_PILOT",
+  "expected_provider_pilot_assets": 617,
+  "batch_size": 50,
+  "provider_candidate": "eodhd_fundamentals",
+  "no_network": true,
+  "real_fundamentals_downloaded": false,
+  "normalized_fundamentals_created": false,
+  "no_scoring": true,
+  "no_ranking": true,
+  "no_recommendations": true,
+  "no_phase9c": true,
+  "raw_cache_published": false,
+  "final_status": "COMPLETED_EUROPE_FUNDAMENTALS_PROVIDER_PILOT_READY_NOT_EXECUTED",
+  "guardrails": {
+    "network_used": false,
+    "real_fundamentals_downloaded": false,
+    "normalized_fundamentals_created": false,
+    "scoring_created": false,
+    "ranking_created": false,
+    "recommendations_created": false,
+    "phase9c_authorized": false,
+    "financial_advice": false,
+    "broker_actions_allowed": false
+  }
+}

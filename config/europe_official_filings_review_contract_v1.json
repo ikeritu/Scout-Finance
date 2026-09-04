@@ -1,0 +1,52 @@
+{
+  "phase": "v2.38S-europe-official-filings-review",
+  "input_phase": "v2.38Q",
+  "previous_phase": "v2.38R",
+  "input_routes": "outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes/europe_fundamentals_asset_routes_v2_38q.csv",
+  "input_route_summary": "outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes/europe_fundamentals_aggregate_report_v2_38q.json",
+  "input_provider_summary": "outputs/full_universe_source_acquisition/v2_38r_europe_fundamentals_pilot_provider/europe_fundamentals_provider_pilot_summary_v2_38r.json",
+  "input_provider_exclusions": "outputs/full_universe_source_acquisition/v2_38r_europe_fundamentals_pilot_provider/europe_fundamentals_provider_pilot_exclusions_v2_38r.csv",
+  "output_directory": "outputs/full_universe_source_acquisition/v2_38s_europe_official_filings_review",
+  "eligible_route_status": "FUNDAMENTALS_ROUTE_READY_FOR_OFFICIAL_FILINGS_REVIEW",
+  "expected_official_filings_review_assets": 55,
+  "official_registries": {
+    "GB": {
+      "mic": "XLON",
+      "official_registry_name": "UK Companies House",
+      "official_registry_candidate": "uk_companies_house_filings",
+      "expected_identifier": "COMPANY_REGISTRY_ID"
+    },
+    "ES": {
+      "mic": "XMAD",
+      "official_registry_name": "CNMV",
+      "official_registry_candidate": "cnmv_issuer_filings",
+      "expected_identifier": "ISIN"
+    }
+  },
+  "no_network": true,
+  "no_scraping": true,
+  "no_api_call": true,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false,
+  "normalized_fundamentals_created": false,
+  "no_scoring": true,
+  "no_ranking": true,
+  "no_recommendations": true,
+  "no_phase9c": true,
+  "raw_cache_published": false,
+  "final_status": "COMPLETED_EUROPE_OFFICIAL_FILINGS_REVIEW_READY_NOT_EXECUTED",
+  "guardrails": {
+    "network_used": false,
+    "scraping_used": false,
+    "api_used": false,
+    "real_filings_downloaded": false,
+    "real_fundamentals_present": false,
+    "normalized_fundamentals_created": false,
+    "scoring_created": false,
+    "ranking_created": false,
+    "recommendations_created": false,
+    "phase9c_authorized": false,
+    "financial_advice": false,
+    "broker_actions_allowed": false
+  }
+}

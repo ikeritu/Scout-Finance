@@ -1,0 +1,89 @@
+{
+  "counts": {
+    "identifier_resolution_required_assets": 55,
+    "manual_review_assets_excluded": 17,
+    "official_filings_review_assets_actual": 55,
+    "provider_pilot_assets_excluded": 617,
+    "total_excluded_assets": 634
+  },
+  "created_at_utc": "2026-09-04T16:17:34Z",
+  "decision": "COMPLETED_EUROPE_OFFICIAL_FILINGS_REVIEW_READY_NOT_EXECUTED",
+  "guardrails": {
+    "api_used": false,
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_used": false,
+    "normalized_fundamentals_created": false,
+    "phase9c_authorized": false,
+    "ranking_created": false,
+    "real_filings_downloaded": false,
+    "real_fundamentals_present": false,
+    "recommendations_created": false,
+    "scoring_created": false,
+    "scraping_used": false
+  },
+  "inputs": {
+    "/workspace/scratch/42c582c7acca/scout_finance_38s_work/config/europe_official_filings_review_contract_v1.json": {
+      "bytes": 2220,
+      "sha256": "d14e41acfe545f9f83b692fcb9f1aaf9d360952da90cd219de1d577e42c28244"
+    },
+    "/workspace/scratch/42c582c7acca/scout_finance_38s_work/outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes/europe_fundamentals_aggregate_report_v2_38q.json": {
+      "bytes": 668,
+      "sha256": "ea143aec32231834b012fb6e80c7bd5b6d09e7f724b02bacecde360007672174"
+    },
+    "/workspace/scratch/42c582c7acca/scout_finance_38s_work/outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes/europe_fundamentals_asset_routes_v2_38q.csv": {
+      "bytes": 173816,
+      "sha256": "c33627d901ef3d9ce641f8920f37bc9a66c83d888d59d355ee76a5909d11a735"
+    },
+    "/workspace/scratch/42c582c7acca/scout_finance_38s_work/outputs/full_universe_source_acquisition/v2_38r_europe_fundamentals_pilot_provider/europe_fundamentals_provider_pilot_exclusions_v2_38r.csv": {
+      "bytes": 16123,
+      "sha256": "a7799e65957339ff43eb1d5e8dab825ea133c3f9d3fdf5d9f6d85363a2421b4b"
+    },
+    "/workspace/scratch/42c582c7acca/scout_finance_38s_work/outputs/full_universe_source_acquisition/v2_38r_europe_fundamentals_pilot_provider/europe_fundamentals_provider_pilot_summary_v2_38r.json": {
+      "bytes": 1086,
+      "sha256": "0d205486d5821987802333e8e418cf6d0dae284eaca96d8f4b28407b1d87f9a6"
+    }
+  },
+  "outputs": {
+    "EUROPE_OFFICIAL_FILINGS_REVIEW_CONTRACT_v2_38s.md": {
+      "bytes": 170,
+      "sha256": "90e3292b34475a4b2d353e12156cc667ddb2952ef61b0d6ccd37872e81feccc3"
+    },
+    "PHASE9S_EUROPE_OFFICIAL_FILINGS_REVIEW_v2_38s.md": {
+      "bytes": 299,
+      "sha256": "678d0b0535cfbd9ed2383ed8eec003cf42954e3a2c4cfc1078b9a5c7213cc7e8"
+    },
+    "README.md": {
+      "bytes": 181,
+      "sha256": "837ef74d104ad7f1975d51c55b3b30535b20ec45121358ff38b7b524984e4b75"
+    },
+    "europe_official_filings_identifier_requirements_v2_38s.csv": {
+      "bytes": 10629,
+      "sha256": "629f387f418adaf677170cb860db90f49b4b30eb09e6a9bac5ac0ddf9c929591"
+    },
+    "europe_official_filings_jurisdiction_plan_v2_38s.csv": {
+      "bytes": 572,
+      "sha256": "8c49c0521a1241f90d5163d58399820b7d0a8a530e880f8be131948a9b725420"
+    },
+    "europe_official_filings_review_exclusions_v2_38s.csv": {
+      "bytes": 133552,
+      "sha256": "d72e05d0f4f893f28078e02677ce07ce15addfec045f35e962fca8462093b529"
+    },
+    "europe_official_filings_review_matrix_v2_38s.csv": {
+      "bytes": 37735,
+      "sha256": "50fbf990baf3e2d10c31defbef2251f7801c0ac02f9efefe605706cc48e34898"
+    },
+    "europe_official_filings_review_summary_v2_38s.json": {
+      "bytes": 1574,
+      "sha256": "0a0340a631a27a50d09e1a48473e08ccf2f9f13539f6b0812c2803a994395be7"
+    }
+  },
+  "phase": "v2.38S-europe-official-filings-review",
+  "raw_cache_published": false,
+  "schemas": [
+    "schemas/europe_official_filings_review_record_v1.schema.json"
+  ],
+  "scripts": [
+    "scripts/build_europe_official_filings_review_v2_38s.py"
+  ]
+}

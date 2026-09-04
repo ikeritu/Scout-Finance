@@ -1,0 +1,58 @@
+{
+  "counts": {
+    "batches_created": 13,
+    "excluded_assets": 72,
+    "provider_pilot_assets_actual": 617
+  },
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_used": false,
+    "normalized_fundamentals_created": false,
+    "phase9c_authorized": false,
+    "ranking_created": false,
+    "real_fundamentals_downloaded": false,
+    "recommendations_created": false,
+    "scoring_created": false
+  },
+  "inputs": {
+    "/workspace/scratch/42c582c7acca/scout_finance_38s_work/outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes/europe_fundamentals_asset_routes_v2_38q.csv": {
+      "sha256": "c33627d901ef3d9ce641f8920f37bc9a66c83d888d59d355ee76a5909d11a735"
+    }
+  },
+  "outputs": {
+    "EUROPE_FUNDAMENTALS_PROVIDER_PILOT_CONTRACT_v2_38r.md": {
+      "bytes": 122,
+      "sha256": "7755486516a6b7e077fb23ed2402c996dfa92cff477492f52689b5b723172176"
+    },
+    "PHASE9R_EUROPE_FUNDAMENTALS_PILOT_PROVIDER_v2_38r.md": {
+      "bytes": 161,
+      "sha256": "2c86972f9e248930a8871fc8cf36c67b7ecfd09064d540b73e099c400715e552"
+    },
+    "README.md": {
+      "bytes": 83,
+      "sha256": "2a94f50f2ec1aedec1261fc46bb2bb0e41fea134680ddc064866b4501ba26dc3"
+    },
+    "europe_fundamentals_provider_pilot_batches_v2_38r.csv": {
+      "bytes": 6236,
+      "sha256": "fd587ee4e1bba3b6496af84ab9ae488f36af2ec98af6f76bb859eb0312b603a7"
+    },
+    "europe_fundamentals_provider_pilot_coverage_v2_38r.csv": {
+      "bytes": 4346,
+      "sha256": "7ac2d600edcaf46c9678c8aaaa6b0ab6e5935b5c53ab4e937c468b4c83844d0a"
+    },
+    "europe_fundamentals_provider_pilot_exclusions_v2_38r.csv": {
+      "bytes": 16123,
+      "sha256": "a7799e65957339ff43eb1d5e8dab825ea133c3f9d3fdf5d9f6d85363a2421b4b"
+    },
+    "europe_fundamentals_provider_pilot_matrix_v2_38r.csv": {
+      "bytes": 380957,
+      "sha256": "4360a2f954a12fdf7ff3dce4c0350dc38966f4c7100f578dcc9826fa4228a7a9"
+    },
+    "europe_fundamentals_provider_pilot_summary_v2_38r.json": {
+      "bytes": 1086,
+      "sha256": "0d205486d5821987802333e8e418cf6d0dae284eaca96d8f4b28407b1d87f9a6"
+    }
+  },
+  "phase": "v2.38R-europe-fundamentals-provider-pilot"
+}

@@ -1,0 +1,52 @@
+{
+  "api_used": false,
+  "guardrails": {
+    "api_used": false,
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_used": false,
+    "normalized_fundamentals_created": false,
+    "phase9c_authorized": false,
+    "ranking_created": false,
+    "real_filings_downloaded": false,
+    "real_fundamentals_present": false,
+    "recommendations_created": false,
+    "scoring_created": false,
+    "scraping_used": false
+  },
+  "identifier_resolution_required_assets": 55,
+  "input_phase": "v2.38Q",
+  "jurisdiction_counts": {
+    "ES": 15,
+    "GB": 40
+  },
+  "jurisdictions_detected": [
+    "ES",
+    "GB"
+  ],
+  "manual_review_assets_excluded": 17,
+  "network_used": false,
+  "normalized_fundamentals_created": false,
+  "official_filings_review_assets_actual": 55,
+  "official_filings_review_assets_expected": 55,
+  "phase": "v2.38S-europe-official-filings-review",
+  "phase9c_authorized": false,
+  "previous_phase": "v2.38R",
+  "provider_pilot_assets_excluded": 617,
+  "q_summary_input_assets": 22578,
+  "q_summary_routed_assets": 689,
+  "qa_status": "PASS",
+  "r_provider_exclusions_rows": 72,
+  "r_provider_pilot_assets": 617,
+  "ranking_created": false,
+  "raw_cache_published": false,
+  "ready_for_future_official_execution_assets": 0,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false,
+  "recommendations_created": false,
+  "scoring_created": false,
+  "scraping_used": false,
+  "status": "COMPLETED_EUROPE_OFFICIAL_FILINGS_REVIEW_READY_NOT_EXECUTED",
+  "total_excluded_assets": 634,
+  "total_input_assets_from_38q": 689
+}

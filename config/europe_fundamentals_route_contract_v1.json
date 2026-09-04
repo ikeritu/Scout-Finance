@@ -1,0 +1,31 @@
+{
+  "phase": "v2.38Q-europe-fundamentals-route-foundation",
+  "input_resolution": "outputs/full_universe_source_acquisition/v2_38n_europe_home_exchange_resolution/europe_home_exchange_resolution_v2_38n.csv",
+  "output_directory": "outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes",
+  "only_home_exchange_resolved": true,
+  "cboe_europe_source_forbidden": true,
+  "expected_routed_assets": 689,
+  "expected_provider_pilot_assets": 617,
+  "expected_official_filings_review_assets": 55,
+  "expected_manual_review_assets": 17,
+  "no_network": true,
+  "no_fundamentals_download": true,
+  "no_fundamental_normalization": true,
+  "no_scoring": true,
+  "no_ranking": true,
+  "no_recommendations": true,
+  "no_phase9c": true,
+  "raw_cache_published": false,
+  "final_status": "COMPLETED_EUROPE_FUNDAMENTALS_ROUTE_FOUNDATION_NOT_COLLECTION",
+  "guardrails": {
+    "network_calls": 0,
+    "fundamentals_downloaded": false,
+    "fundamentals_normalized": false,
+    "scoring_calculated": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "phase9c_authorized": false,
+    "financial_advice": false,
+    "broker_actions_allowed": false
+  }
+}
