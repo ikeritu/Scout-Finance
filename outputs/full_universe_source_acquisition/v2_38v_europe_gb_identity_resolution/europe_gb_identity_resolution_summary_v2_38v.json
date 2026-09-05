@@ -1,0 +1,37 @@
+{
+  "credentials_used": false,
+  "guardrails": {
+    "api_used": true,
+    "broker_actions_allowed": false,
+    "credentials_used": false,
+    "financial_advice": false,
+    "network_used": true,
+    "normalized_fundamentals_created": false,
+    "phase9c_authorized": false,
+    "ranking_created": false,
+    "real_filings_downloaded": false,
+    "real_fundamentals_present": false,
+    "recommendations_created": false,
+    "scoring_created": false,
+    "scraping_used": false
+  },
+  "input_assets": 40,
+  "input_phase": "v2.38S",
+  "network_calls": 4,
+  "normalized_fundamentals_created": false,
+  "phase": "v2.38V-europe-gb-identity-resolution",
+  "phase9c_authorized": false,
+  "previous_phase": "v2.38U",
+  "ranking_created": false,
+  "raw_cache_published": false,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false,
+  "recommendations_created": false,
+  "resolved": 4,
+  "scoring_created": false,
+  "status": "COMPLETED_EUROPE_GB_IDENTITY_RESOLUTION_PARTIAL",
+  "unresolved": 36,
+  "unresolved_reasons": {
+    "no_openfigi_record_for_ticker_on_lse": 36
+  }
+}

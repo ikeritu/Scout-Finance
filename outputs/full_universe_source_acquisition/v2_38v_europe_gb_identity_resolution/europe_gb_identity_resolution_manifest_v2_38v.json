@@ -1,0 +1,57 @@
+{
+  "counts": {
+    "input_assets": 40,
+    "resolved": 4,
+    "unresolved": 36
+  },
+  "created_at_utc": "2026-09-05T10:16:00Z",
+  "decision": "COMPLETED_EUROPE_GB_IDENTITY_RESOLUTION_PARTIAL",
+  "guardrails": {
+    "api_used": true,
+    "broker_actions_allowed": false,
+    "credentials_used": false,
+    "financial_advice": false,
+    "network_used": true,
+    "normalized_fundamentals_created": false,
+    "phase9c_authorized": false,
+    "ranking_created": false,
+    "real_filings_downloaded": false,
+    "real_fundamentals_present": false,
+    "recommendations_created": false,
+    "scoring_created": false,
+    "scraping_used": false
+  },
+  "inputs": {
+    "D:\\Proyectos\\\ud83d\udcb0 Scout Finance\\config\\europe_gb_identity_resolution_contract_v1.json": {
+      "bytes": 1489,
+      "sha256": "4ed1a9b7cf24cd5d2787dd41bcd437f27258743bc9ca890559ec1d594d13cf3c"
+    },
+    "D:\\Proyectos\\\ud83d\udcb0 Scout Finance\\outputs\\full_universe_source_acquisition\\v2_38s_europe_official_filings_review\\europe_official_filings_review_matrix_v2_38s.csv": {
+      "bytes": 37735,
+      "sha256": "50fbf990baf3e2d10c31defbef2251f7801c0ac02f9efefe605706cc48e34898"
+    }
+  },
+  "outputs": {
+    "PHASE9V_EUROPE_GB_IDENTITY_RESOLUTION_v2_38v.md": {
+      "bytes": 308,
+      "sha256": "7312c6125adf14d366e8036a6922c1c1fc46b83b18cc7b55634d8c07c5a29a92"
+    },
+    "README.md": {
+      "bytes": 279,
+      "sha256": "66ebd89fca4d00af09ae66793066b8bcb3fe8d50a630dd72a49135303e8a4ae1"
+    },
+    "europe_gb_identity_resolution_matrix_v2_38v.csv": {
+      "bytes": 8734,
+      "sha256": "9a84ef359c6518a47491ff1c5cfa66a75e6a38309e19f65112239e1868435ae6"
+    },
+    "europe_gb_identity_resolution_summary_v2_38v.json": {
+      "bytes": 1124,
+      "sha256": "5b407949ee179e5af809d52096cd23a8faa80b3d9d701f1a3213c9bea4aafe70"
+    }
+  },
+  "phase": "v2.38V-europe-gb-identity-resolution",
+  "raw_cache_published": false,
+  "scripts": [
+    "scripts/resolve_europe_gb_identity_v2_38v.py"
+  ]
+}
