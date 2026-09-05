@@ -1,0 +1,15 @@
+{
+  "credentials_used": false,
+  "gleif_profiles_confirmed": 36,
+  "gleif_unresolved_or_error": 8,
+  "input_resolved_assets": 44,
+  "jaarrekeningen_available_in_sample": 0,
+  "jaarrekeningen_sample_checked": 8,
+  "kvk_numbers_confirmed": 36,
+  "note": "GLEIF gives real identity + national registration number for free via ISIN (no name-matching ambiguity). KVK's Jaarrekeningen Open Dataset is checked only for a representative sample due to its documented 1-request/minute rate limit -- the pattern (large IFRS filers absent from this SME-oriented dataset) is already well evidenced by the sample.",
+  "phase": "v2.38AE-europe-netherlands-registry-lookup",
+  "phase9c_authorized": false,
+  "raw_cache_published": false,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false
+}

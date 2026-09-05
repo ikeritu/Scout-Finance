@@ -1,0 +1,9 @@
+asset_id,ticker,kvk_number,jaarrekeningen_status,jaarrekeningen_reason,phase,created_at_utc
+U37541,KPN,02045200,not_available,no_jaarrekening_in_open_dataset_likely_large_ifrs_filer_not_sbr,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37542,HNK1,33011433,not_available,no_jaarrekening_in_open_dataset_likely_large_ifrs_filer_not_sbr,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37543,PHI1,17001910,not_available,no_jaarrekening_in_open_dataset_likely_large_ifrs_filer_not_sbr,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37544,SGM,33194537,not_available,no_jaarrekening_in_open_dataset_likely_large_ifrs_filer_not_sbr,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37545,AIR,24288945,not_available,no_jaarrekening_in_open_dataset_likely_large_ifrs_filer_not_sbr,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37547,AVS,30037466,not_available,no_jaarrekening_in_open_dataset_likely_large_ifrs_filer_not_sbr,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37548,WOSB,33202517,not_available,no_jaarrekening_in_open_dataset_likely_large_ifrs_filer_not_sbr,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37550,ADG,34261128,not_available,no_jaarrekening_in_open_dataset_likely_large_ifrs_filer_not_sbr,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z

@@ -1,0 +1,45 @@
+asset_id,ticker,resolved_company_name,isin,gleif_lookup_status,gleif_lookup_reason,lei,legal_name,registration_authority_id,kvk_number,entity_status,phase,created_at_utc
+U37541,KPN,KON. KPN NV,NL0000009082,resolved,exact_isin_match_single_lei_record,549300YO0JZHAL7FVP81,Koninklijke KPN N.V.,RA000463,02045200,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37542,HNK1,HEINEKEN,NL0000009165,resolved,exact_isin_match_single_lei_record,724500K5PTPSST86UQ23,Heineken N.V.,RA000463,33011433,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37543,PHI1,KONINKL. PHILIPS,NL0000009538,resolved,exact_isin_match_single_lei_record,H1FJE8H61JGM1JSGM897,Koninklijke Philips N.V.,RA000463,17001910,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37544,SGM,STMICROELECTRONICS,NL0000226223,resolved,exact_isin_match_single_lei_record,213800Z8NOHIKRI42W10,STMICROELECTRONICS N.V.,RA000463,33194537,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37545,AIR,AIRBUS SE,NL0000235190,resolved,exact_isin_match_single_lei_record,MINO79WLOO247M1IL051,AIRBUS SE,RA000463,24288945,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37546,APM,AD PEPPER MEDIA,NL0000238145,unresolved,no_lei_record_for_isin,,,,,,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37547,AVS,ASM INTL N.V.,NL0000334118,resolved,exact_isin_match_single_lei_record,7245001I22ND6ZFHX623,ASM International N.V.,RA000463,30037466,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37548,WOSB,WOLTERS KLUWER,NL0000395903,resolved,exact_isin_match_single_lei_record,724500TEM53I0U077B74,Wolters Kluwer N.V.,RA000463,33202517,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37549,R1D,AERCAP HOLDINGS,NL0000687663,unresolved,no_lei_record_for_isin,,,,,,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37550,ADG,AMG CRITICAL MATER.,NL0000888691,resolved,exact_isin_match_single_lei_record,5493006MN6OH67U2YI74,AMG Critical Materials N.V.,RA000463,34261128,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37551,ENXB,EURONEXT N.V. WI,NL0006294274,resolved,exact_isin_match_single_lei_record,724500QJ4QSZ3H9QU415,Euronext N.V.,RA000463,60234520,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37552,DLY,LYONDELLBAS.IND.A,NL0009434992,unresolved,no_lei_record_for_isin,,,,,,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37553,VNX,NXP SEMICONDUCTORS,NL0009538784,unresolved,no_lei_record_for_isin,,,,,,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37554,YDX,NEBIUS GROUP CL.A,NL0009805522,resolved,exact_isin_match_single_lei_record,549300GGZHJ5Q1B18P93,Nebius Group N.V.,RA000463,27265167,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37555,ASME,ASML HOLDING,NL0010273215,resolved,exact_isin_match_single_lei_record,724500Y6DUVHQD6OXN27,ASML Holding N.V.,RA000463,17085815,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37556,PHGN,PHARMING GRP,NL0010391025,resolved,exact_isin_match_single_lei_record,724500DCJ9MPG74JEH91,Pharming Group N.V.,RA000463,28048592,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37557,P7V,PHOTON ENERGY NV,NL0010391108,resolved,exact_isin_match_single_lei_record,315700YHFON9RJOPCK19,Photon Energy N.V.,RA000463,51447126,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37558,37C,CNH INDUSTRIAL,NL0010545661,unresolved,no_lei_record_for_isin,,,,,,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37559,2NN,NN GROUP NV,NL0010773842,resolved,exact_isin_match_single_lei_record,724500OHYNDT9OY6Q215,NN Group N.V.,RA000463,52387534,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37560,INX,IMCD N.V.,NL0010801007,resolved,exact_isin_match_single_lei_record,724500NSJPNFJPDAUP02,IMCD N.V.,RA000463,51470497,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37561,1AE,ARGENX SE,NL0010832176,resolved,exact_isin_match_single_lei_record,7245009C5FZE6G9ODQ71,argenx SE,RA000463,24435214,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37562,3SQ1,A.H.T. SYNGAS TECH.,NL0010872388,unresolved,no_lei_record_for_isin,,,,,,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37563,AB2,ABN AMRO BANK DR/,NL0011540547,resolved,exact_isin_match_single_lei_record,BFXS5XCH7N0Y05NIXW11,ABN AMRO Bank N.V.,RA000463,34334259,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37564,2FE,FERRARI N.V.,NL0011585146,resolved,exact_isin_match_single_lei_record,549300RIVY5EX8RCON76,FERRARI N.V.,RA000463,64060977,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37565,AHOG,"AHOLD DELHAIZE,KON.",NL0011794037,resolved,exact_isin_match_single_lei_record,724500C9GNBV20UYRX36,Koninklijke Ahold Delhaize N.V.,RA000463,35000363,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37566,INN1,ING GROEP NV,NL0011821202,resolved,exact_isin_match_single_lei_record,549300NYKK9MWM7GGW15,ING GROEP N.V.,RA000463,33231073,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37567,G14,SIGNIFY N.V.,NL0011821392,resolved,exact_isin_match_single_lei_record,549300072P3J1X8NZO35,SIGNIFY N.V.,RA000463,65220692,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37568,A16,ASR NEDERLAND N.V.,NL0011872643,resolved,exact_isin_match_single_lei_record,7245000G0HS48PZWUD53,ASR Nederland N.V.,RA000463,30070695,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37569,RDC,REDCARE PHARMACY,NL0012044747,resolved,exact_isin_match_single_lei_record,529900JK6UXHY1YKZ082,Redcare Pharmacy N.V.,RA000463,63986981,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37570,EYX,EXOR N.V.,NL0012059018,resolved,exact_isin_match_single_lei_record,5493002ENHZ6NYET7405,EXOR N.V.,RA000463,64236277,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37571,703,ALFEN N.V.,NL0012817175,resolved,exact_isin_match_single_lei_record,724500HDW6IWR9J5YT90,Alfen N.V.,RA000463,64462846,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37572,BSI,BE SEMICON.INDS,NL0012866412,resolved,exact_isin_match_single_lei_record,7245007A1YFLI2GNYX06,BE Semiconductor Industries N.V.,RA000463,09092395,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37573,1N8,ADYEN N.V.,NL0012969182,resolved,exact_isin_match_single_lei_record,724500973ODKK3IFQ447,Adyen N.V.,RA000463,34259528,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37574,3E1,ELASTIC N.V.,NL0013056914,unresolved,no_lei_record_for_isin,,,,,,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37575,AKU1,AKZO NOBEL,NL0013267909,resolved,exact_isin_match_single_lei_record,724500XYIJUGXAA5QD70,Akzo Nobel N.V.,RA000463,09007809,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37576,1TY,PROSUS NV,NL0013654783,resolved,exact_isin_match_single_lei_record,635400Z5LQ5F9OLVT688,Prosus N.V.,RA000463,34099856,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37577,8TI,STELLANTIS NV,NL00150001Q9,resolved,exact_isin_match_single_lei_record,549300LKT9PW7ZIBDF31,STELLANTIS N.V.,RA000463,60372958,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37578,0VD,UNIVERSAL MUSIC GROUP,NL0015000IY2,resolved,exact_isin_match_single_lei_record,724500GJBUL3D9TW9Y18,Universal Music Group N.V.,RA000463,81106661,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37579,R3D,IVECO GROUP N.V.,NL0015000LU4,resolved,exact_isin_match_single_lei_record,549300ZWF2ZJDD9EOR96,IVECO GROUP N.V.,RA000463,83102701,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37580,8ZQ,FERROVIAL N.V.,NL0015001FS8,resolved,exact_isin_match_single_lei_record,72450022R2ZFL41Y6I04,Ferrovial N.V.,RA000463,73422134,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37581,Z98,JBS N.N.,NL0015002J37,resolved,exact_isin_match_single_lei_record,254900JSFON4WL81TW77,JBS N.V.,RA000463,76063305,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37582,QIA,QIAGEN NV,NL0015002SN0,resolved,exact_isin_match_single_lei_record,54930036WK3GMCN17Z57,QIAGEN N.V.,RA000463,12036979,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37583,NW0,CSG N.V.,NL0015073TS8,resolved,exact_isin_match_single_lei_record,31570078IM9ILNPQUB16,CSG N.V.,RA000463,99414376,ACTIVE,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
+U37584,58H,DAVIDE CAMPARI-MIL.,NL0015435975,unresolved,no_lei_record_for_isin,,,,,,v2.38AE-europe-netherlands-registry-lookup,2026-09-05T22:28:21Z
