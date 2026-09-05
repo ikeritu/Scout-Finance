@@ -1,2 +1,3 @@
 asset_id,ticker,company_name,company_number,features_calculated,features_missing,feature_quality_status,quality_flags
 U37446,SCT,SOFTCAT PLC,02174990,9,,FEATURES_READY,balance_strength_flag|net_margin_positive
+U37451,KFI1,KINGFISHER,01664812,9,,FEATURES_READY,balance_strength_flag|net_margin_positive

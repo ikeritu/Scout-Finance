@@ -24,7 +24,15 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs/full_universe_source_acquisition/v2_38x_europe_candidate_feature_matrix"
 PHASE = "v2.38X-europe-fundamental-features"
-RECORDS_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals/europe_ixbrl_fundamental_records_v2_38w.jsonl"
+# Every real block that has extracted iXBRL fundamentals for GB companies so
+# far: v2.38W (Softcat, the original 3-4-identity pilot) and v2.38Y (the
+# 40-identity expansion, Kingfisher). Each new such block should be added
+# here so this matrix always reflects the full real evidence on file, not
+# just whichever block happened to exist when this script was first written.
+DEFAULT_RECORDS_INPUTS = [
+    ROOT / "outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals/europe_ixbrl_fundamental_records_v2_38w.jsonl",
+    ROOT / "outputs/full_universe_source_acquisition/v2_38y_europe_gb_full_expansion/europe_ixbrl_fundamental_records_v2_38y.jsonl",
+]
 
 FEATURE_FIELDS = [
     "asset_id", "ticker", "company_name", "company_number", "feature_period_end",
@@ -86,6 +94,26 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def read_jsonl_many(paths: Path | list[Path]) -> tuple[list[dict[str, Any]], list[str]]:
+    """Merge records from every existing path in `paths`. A path that does
+    not exist yet (e.g. a records file some future block hasn't produced
+    real data for) is skipped, never an error -- this mirrors how every
+    other builder in this project treats an absent real-data file as
+    honestly-empty rather than a hard failure."""
+    path_list = [paths] if isinstance(paths, Path) else list(paths)
+    all_records: list[dict[str, Any]] = []
+    sources_used: list[str] = []
+    for path in path_list:
+        records = read_jsonl(path)
+        if records:
+            try:
+                sources_used.append(str(path.relative_to(ROOT)))
+            except ValueError:
+                sources_used.append(str(path))
+        all_records.extend(records)
+    return all_records, sources_used
+
+
 def rounded(value: float | None) -> float | None:
     if value is None or not math.isfinite(value):
         return None
@@ -137,8 +165,8 @@ def build_company(company_records: list[dict[str, Any]]) -> tuple[dict[str, Any]
     return row, rejections
 
 
-def build(records_path: Path, output_dir: Path) -> dict[str, Any]:
-    records = read_jsonl(records_path)
+def build(records_paths: Path | list[Path], output_dir: Path) -> dict[str, Any]:
+    records, sources_used = read_jsonl_many(records_paths)
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for record in records:
         grouped[str(record["asset_id"])].append(record)
@@ -160,8 +188,8 @@ def build(records_path: Path, output_dir: Path) -> dict[str, Any]:
         "phase": PHASE, "companies_input": len(grouped), "companies_features_ready": quality_counts["FEATURES_READY"],
         "companies_features_partial": quality_counts["FEATURES_PARTIAL"], "companies_insufficient": quality_counts["INSUFFICIENT_FEATURE_EVIDENCE"],
         "rejected_rows": len(rejection_rows), "network_used": False, "scoring_created": False, "ranking_created": False,
-        "recommendations_created": False, "phase9c_authorized": False,
-        "note": "Growth features are out of scope: v2.38W extracts only the single most recent reporting period per concept, so no prior-year comparison exists yet.",
+        "recommendations_created": False, "phase9c_authorized": False, "records_sources_used": sources_used,
+        "note": "Growth features are out of scope: the iXBRL extractors (v2.38W/Y) keep only the single most recent reporting period per concept, so no prior-year comparison exists yet.",
     }
     write_text(output_dir / "europe_fundamental_features_report_v2_38x.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
     return report, feature_rows
@@ -169,7 +197,7 @@ def build(records_path: Path, output_dir: Path) -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--records-input", type=Path, default=RECORDS_INPUT)
+    parser.add_argument("--records-input", type=Path, nargs="+", default=DEFAULT_RECORDS_INPUTS, help="one or more iXBRL records JSONL files to merge (defaults to every real block on file: v2.38W + v2.38Y)")
     parser.add_argument("--output-dir", type=Path, default=OUT)
     args = parser.parse_args()
     report, _ = build(args.records_input, args.output_dir)

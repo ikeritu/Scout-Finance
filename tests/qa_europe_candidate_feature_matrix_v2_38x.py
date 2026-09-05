@@ -93,6 +93,34 @@ def test_no_data_produces_insufficient_status():
     assert rows[0]["feature_quality_status"] == "INSUFFICIENT_FEATURE_EVIDENCE"
 
 
+def test_multiple_records_inputs_are_merged_across_companies():
+    """v2.38X's reconstruction (after v2.38Y added a second real company,
+    Kingfisher, alongside v2.38W's Softcat) reads BOTH blocks' records
+    files and merges them -- a company present in only one file must still
+    appear, and a missing file (e.g. a future block with 0 real companies
+    yet) must be skipped honestly, never treated as an error."""
+    mod = module(FEATURES_SCRIPT, "features_4")
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        path_w = root / "records_w.jsonl"
+        path_y = root / "records_y.jsonl"
+        path_missing = root / "records_does_not_exist.jsonl"
+        write_jsonl(path_w, [
+            fixture_record("U1", "SCT", "SOFTCAT PLC", "111", "ifrs-full:Revenue", 1000.0),
+            fixture_record("U1", "SCT", "SOFTCAT PLC", "111", "ifrs-full:ProfitLoss", 100.0),
+        ])
+        write_jsonl(path_y, [
+            fixture_record("U2", "KFI1", "KINGFISHER", "222", "ifrs-full:Revenue", 2000.0),
+            fixture_record("U2", "KFI1", "KINGFISHER", "222", "ifrs-full:ProfitLoss", 200.0),
+        ])
+        report, rows = mod.build([path_w, path_y, path_missing], root / "out")
+    assert report["companies_input"] == 2
+    by_asset = {r["asset_id"]: r for r in rows}
+    assert by_asset["U1"]["net_margin"] == 0.1
+    assert by_asset["U2"]["net_margin"] == 0.1
+    assert len(report["records_sources_used"]) == 2  # the missing path is skipped, never an error
+
+
 # --- candidate matrix builder ---
 
 def write_features_csv(path: Path, rows: list[dict]) -> None:
@@ -163,6 +191,7 @@ CASES = [
     test_all_ratios_computed_when_all_concepts_present,
     test_missing_concept_produces_partial_status_and_rejection_reason,
     test_no_data_produces_insufficient_status,
+    test_multiple_records_inputs_are_merged_across_companies,
     test_matrix_classifies_ready_partial_and_missing_correctly,
     test_empty_price_input_never_invents_price_signal,
     test_invalid_identity_rows_are_rejected_not_silently_dropped,
