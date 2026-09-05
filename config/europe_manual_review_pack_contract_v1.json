@@ -1,0 +1,42 @@
+{
+  "phase": "v2.38T-europe-manual-review-pack",
+  "input_phase": "v2.38Q",
+  "previous_phase": "v2.38S",
+  "input_routes": "outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes/europe_fundamentals_asset_routes_v2_38q.csv",
+  "input_route_summary": "outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes/europe_fundamentals_aggregate_report_v2_38q.json",
+  "output_directory": "outputs/full_universe_source_acquisition/v2_38t_europe_manual_review_pack",
+  "eligible_route_status": "FUNDAMENTALS_ROUTE_MANUAL_REVIEW_REQUIRED",
+  "expected_manual_review_assets": 17,
+  "known_placeholder_company_names": ["UKI0"],
+  "required_human_actions": [
+    "confirm_real_company_identity",
+    "confirm_isin_or_national_registration_number",
+    "determine_fundamentals_route_registry_or_provider"
+  ],
+  "no_network": true,
+  "no_scraping": true,
+  "no_api_call": true,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false,
+  "normalized_fundamentals_created": false,
+  "no_scoring": true,
+  "no_ranking": true,
+  "no_recommendations": true,
+  "no_phase9c": true,
+  "raw_cache_published": false,
+  "final_status": "COMPLETED_EUROPE_MANUAL_REVIEW_PACK_READY_NOT_EXECUTED",
+  "guardrails": {
+    "network_used": false,
+    "scraping_used": false,
+    "api_used": false,
+    "real_filings_downloaded": false,
+    "real_fundamentals_present": false,
+    "normalized_fundamentals_created": false,
+    "scoring_created": false,
+    "ranking_created": false,
+    "recommendations_created": false,
+    "phase9c_authorized": false,
+    "financial_advice": false,
+    "broker_actions_allowed": false
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "counts": {
+    "checklist_actions_total": 51,
+    "manual_review_pack_assets_actual": 17,
+    "official_filings_review_assets_excluded": 55,
+    "provider_pilot_assets_excluded": 617,
+    "total_excluded_assets": 672
+  },
+  "created_at_utc": "2026-09-05T09:39:42Z",
+  "decision": "COMPLETED_EUROPE_MANUAL_REVIEW_PACK_READY_NOT_EXECUTED",
+  "guardrails": {
+    "api_used": false,
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_used": false,
+    "normalized_fundamentals_created": false,
+    "phase9c_authorized": false,
+    "ranking_created": false,
+    "real_filings_downloaded": false,
+    "real_fundamentals_present": false,
+    "recommendations_created": false,
+    "scoring_created": false,
+    "scraping_used": false
+  },
+  "inputs": {
+    "D:\\Proyectos\\\ud83d\udcb0 Scout Finance\\config\\europe_manual_review_pack_contract_v1.json": {
+      "bytes": 1649,
+      "sha256": "23e70a23080b932c4a1f5ab03caf91da5be1b99bb685180e94954f396886a264"
+    },
+    "D:\\Proyectos\\\ud83d\udcb0 Scout Finance\\outputs\\full_universe_source_acquisition\\v2_38q_europe_fundamentals_routes\\europe_fundamentals_aggregate_report_v2_38q.json": {
+      "bytes": 689,
+      "sha256": "ac8a24b1db1698473e5f4dd7097337cc58bc65f6fc0968dc048d8189bf021dbd"
+    },
+    "D:\\Proyectos\\\ud83d\udcb0 Scout Finance\\outputs\\full_universe_source_acquisition\\v2_38q_europe_fundamentals_routes\\europe_fundamentals_asset_routes_v2_38q.csv": {
+      "bytes": 173816,
+      "sha256": "c33627d901ef3d9ce641f8920f37bc9a66c83d888d59d355ee76a5909d11a735"
+    }
+  },
+  "outputs": {
+    "EUROPE_MANUAL_REVIEW_PACK_CONTRACT_v2_38t.md": {
+      "bytes": 224,
+      "sha256": "e4c6a70a889838a7bc835cd88c388ae7c67a776b1072cd9dbd6d2be5699c6656"
+    },
+    "PHASE9T_EUROPE_MANUAL_REVIEW_PACK_v2_38t.md": {
+      "bytes": 365,
+      "sha256": "b352557164cad886466432bb1e63257e08f757cfe1b2bb482928a80b6739752b"
+    },
+    "README.md": {
+      "bytes": 439,
+      "sha256": "9d4bb6643c1b95d8426782088cbf7e142fd900408e2a83a4bce80fc37bb7ef76"
+    },
+    "europe_manual_review_pack_checklist_v2_38t.csv": {
+      "bytes": 18699,
+      "sha256": "255fc181a054db6aebb483d02eec6185bc68e7bf6e547e48e5c3b37a2ba2d92d"
+    },
+    "europe_manual_review_pack_exclusions_v2_38t.csv": {
+      "bytes": 138107,
+      "sha256": "31cbed0b1c057d717e244f3c15800174b7ae50041e9f0bdae57aa702f5cdc38a"
+    },
+    "europe_manual_review_pack_matrix_v2_38t.csv": {
+      "bytes": 13098,
+      "sha256": "5d259578d94ebfd46d2da80e2e33735b282478bb0a0a88f4b536228f630a4d1d"
+    },
+    "europe_manual_review_pack_summary_v2_38t.json": {
+      "bytes": 1505,
+      "sha256": "57879e84627b2cd57a94c6f24747c231534dc2827c73459c795ac14e395587c5"
+    }
+  },
+  "phase": "v2.38T-europe-manual-review-pack",
+  "raw_cache_published": false,
+  "schemas": [
+    "schemas/europe_manual_review_pack_record_v1.schema.json"
+  ],
+  "scripts": [
+    "scripts/build_europe_manual_review_pack_v2_38t.py"
+  ]
+}
