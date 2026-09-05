@@ -36,9 +36,13 @@ Al investigar por qué el resto de tickers no resolvían en OpenFIGI (para "ampl
 - `outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals/`: **los 14 valores IFRS extraídos son reales y correctos para Softcat PLC** (verificados con 4 identidades contables exactas) — pero **no representan al activo `U37446` de nuestro censo**, que debería ser SSE PLC. Esta extracción queda marcada como mal atribuida, no como incorrecta en sí misma.
 - `outputs/full_universe_source_acquisition/v2_38x_europe_candidate_feature_matrix/`: el único candidato de la matriz (basado en las features de "Softcat") queda igualmente mal atribuido a `U37446`.
 
-## Próximo paso (pendiente de decisión del usuario)
+## Próximo paso — ejecutado y resuelto (2026-09-05, mismo día)
 
-Con 40 identidades reales confirmadas (frente a 4 antes, 2 de ellas erróneas), el paso natural sería repetir el piloto de Companies House + extracción iXBRL de v2.38V/W para las 40 empresas reales — una ampliación sustancialmente mayor que la piloteada hasta ahora. Esto se deja explícitamente para una decisión del usuario ("ampliar identidades primero, luego reevaluamos"), no se ejecuta automáticamente en esta corrección.
+Con 40 identidades reales confirmadas, el usuario autorizó ampliar Companies House + iXBRL a las 40 (v2.38Y): **29/40 perfiles confirmados**, y de ellos **Kingfisher plc resultó tener un paquete iXBRL real** (segunda empresa real tras Softcat).
+
+**SSE PLC específicamente comprobada, con resultado definitivo**: v2.38Y incluyó a SSE PLC (ticker `SCT`, ISIN `GB0007908733`) entre los 40 — su perfil de Companies House se confirmó real (nº **SC117119**, activa, constituida 1989-04-01), y se consultó su historial de filings de cuentas más reciente. **Resultado: la última cuenta depositada (2026-08-03, tipo AA) es solo PDF** (`accounts_format_not_parseable_pdf_only`) — igual que Rio Tinto y Rentokil en v2.38W, sin iXBRL disponible vía la API pública de documentos de Companies House. Esto confirma, con evidencia real y no solo por inferencia, que **no existe ninguna forma de obtener cifras reales de SSE PLC a través de este pipeline** — repetir la consulta no cambiaría el resultado (es un hecho depositado, no un fallo transitorio).
+
+**Consecuencia aplicada**: dado que los 14 valores IFRS de v2.38W nunca podrán convertirse en datos reales de SSE PLC por esta vía, publicar esa fila bajo la identidad `U37446`/SSE seguiría siendo activamente engañoso, no solo evidencia parcial. `build_europe_fundamental_features_v2_38x.py` ahora excluye explícitamente `U37446` de la matriz de candidatos (nunca en silencio: la exclusión queda registrada en `europe_fundamental_feature_rejections_v2_38x.csv` con el motivo `asset_reidentified_as_sse_plc_by_v2_38v_correction_but_records_are_softcat_plc_real_data_sse_confirmed_pdf_only_no_ixbrl_available`). La matriz reconstruida (v2.38X) queda con **1 único candidato real y correctamente atribuido: Kingfisher plc**.
 
 ## Pruebas offline
 
@@ -55,4 +59,4 @@ PASS: v2.38V-gb-identity-xetra-source/ticker-collision-regression/ambiguous-isin
 - Sin credenciales en este bloque de corrección.
 - Sin scoring, ranking, recomendaciones, fase 9C.
 
-**Estado: corrección completa de identidad (40/40, 0 ambiguos). Companies House + iXBRL para las 40 empresas reales queda pendiente de decisión explícita del usuario.**
+**Estado: corrección completa de identidad (40/40, 0 ambiguos). Companies House + iXBRL ampliado a las 40 empresas reales (v2.38Y: 29/40 perfiles, 2 empresas con iXBRL real). SSE PLC comprobada específicamente y confirmada sin iXBRL disponible (solo PDF) — la fila mal atribuida a Softcat queda excluida, explícita y trazablemente, de la matriz de candidatos reconstruida (v2.38X).**

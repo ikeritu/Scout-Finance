@@ -139,6 +139,35 @@ def write_prices_csv(path: Path, rows: list[dict]) -> None:
         writer.writerows(rows)
 
 
+def test_known_identity_mismatch_asset_is_excluded_not_silently_dropped():
+    """Real case confirmed 2026-09-05: asset_id U37446 was reidentified as
+    SSE PLC by the v2.38V Xetra-source correction, but its iXBRL records
+    (from v2.38W, before the correction) are Softcat plc's real data.
+    Repeating Companies House + accounts-document fetch specifically for
+    SSE PLC (done for real in v2.38Y) confirmed SSE's accounts are
+    PDF-only -- no real SSE data can ever come from this pipeline, so
+    U37446 must never appear in the feature matrix mislabeled as SSE, but
+    the exclusion itself must be visible in the rejections output, not a
+    silent drop."""
+    mod = module(FEATURES_SCRIPT, "features_5")
+    assert "U37446" in mod.KNOWN_IDENTITY_MISMATCH_EXCLUSIONS
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        records_path = root / "records.jsonl"
+        write_jsonl(records_path, [
+            fixture_record("U37446", "SCT", "SOFTCAT PLC", "02174990", "ifrs-full:Revenue", 1458411000.0),
+            fixture_record("U37446", "SCT", "SOFTCAT PLC", "02174990", "ifrs-full:ProfitLoss", 133008000.0),
+            fixture_record("U2", "KFI1", "KINGFISHER", "222", "ifrs-full:Revenue", 2000.0),
+            fixture_record("U2", "KFI1", "KINGFISHER", "222", "ifrs-full:ProfitLoss", 200.0),
+        ])
+        report, rows = mod.build(records_path, root / "out")
+        rejections = list(csv.DictReader((root / "out" / "europe_fundamental_feature_rejections_v2_38x.csv").open(encoding="utf-8")))
+    assert report["companies_excluded_known_identity_mismatch"] == 1
+    assert all(r["asset_id"] != "U37446" for r in rows)  # never published mislabeled
+    excluded = [r for r in rejections if r["asset_id"] == "U37446"]
+    assert len(excluded) == 1 and excluded[0]["reason"] == mod.KNOWN_IDENTITY_MISMATCH_EXCLUSIONS["U37446"]
+
+
 def test_matrix_classifies_ready_partial_and_missing_correctly():
     mod = module(MATRIX_SCRIPT, "matrix_1")
     with tempfile.TemporaryDirectory() as tmp:
@@ -192,6 +221,7 @@ CASES = [
     test_missing_concept_produces_partial_status_and_rejection_reason,
     test_no_data_produces_insufficient_status,
     test_multiple_records_inputs_are_merged_across_companies,
+    test_known_identity_mismatch_asset_is_excluded_not_silently_dropped,
     test_matrix_classifies_ready_partial_and_missing_correctly,
     test_empty_price_input_never_invents_price_signal,
     test_invalid_identity_rows_are_rejected_not_silently_dropped,

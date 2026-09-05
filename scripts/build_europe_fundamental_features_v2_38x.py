@@ -44,6 +44,25 @@ FEATURE_FIELDS = [
 QUALITY_FIELDS = ["asset_id", "ticker", "company_name", "company_number", "features_calculated", "features_missing", "feature_quality_status", "quality_flags"]
 REJECTION_FIELDS = ["asset_id", "ticker", "company_number", "feature", "reason", "phase"]
 FEATURES = ["net_margin", "operating_margin", "pretax_margin", "return_on_assets", "return_on_equity", "liabilities_to_assets", "equity_to_assets", "cash_to_assets", "current_ratio"]
+# Asset-level identity mismatches confirmed real and permanently unfixable
+# via this pipeline (never a silent drop -- each exclusion is recorded in
+# the rejections output with this exact reason string). U37446 is the one
+# known case so far: v2.38V's Xetra-source correction re-identified it as
+# SSE PLC, but the iXBRL records already extracted in v2.38W for that
+# asset_id are Softcat plc's real, correctly-tagged financial data
+# (attached before the correction, via the superseded OpenFIGI-based
+# Companies House lookup). Repeating Companies House + accounts-document
+# fetch specifically for SSE PLC (company number SC117119, done for real
+# as part of v2.38Y's 40-company run) confirmed SSE's most recent accounts
+# filing is PDF-only at Companies House -- no iXBRL package exists to
+# extract, so there is no way to obtain real SSE PLC figures through this
+# pipeline. Publishing Softcat's numbers under the SSE identity would be
+# actively wrong, not just partial evidence, so this asset is excluded
+# from the matrix rather than shown mislabeled.
+KNOWN_IDENTITY_MISMATCH_EXCLUSIONS = {
+    "U37446": "asset_reidentified_as_sse_plc_by_v2_38v_correction_but_records_are_softcat_plc_real_data_sse_confirmed_pdf_only_no_ixbrl_available",
+}
+
 RATIO_RULES = {
     "net_margin": ("ifrs-full:ProfitLoss", "ifrs-full:Revenue"),
     "operating_margin": ("ifrs-full:ProfitLossFromOperatingActivities", "ifrs-full:Revenue"),
@@ -174,6 +193,13 @@ def build(records_paths: Path | list[Path], output_dir: Path) -> dict[str, Any]:
     feature_rows = []
     rejection_rows: list[dict[str, str]] = []
     for asset_id in sorted(grouped):
+        if asset_id in KNOWN_IDENTITY_MISMATCH_EXCLUSIONS:
+            base = grouped[asset_id][0]
+            rejection_rows.append({
+                "asset_id": asset_id, "ticker": base["ticker"], "company_number": base.get("company_number", ""),
+                "feature": "ALL", "reason": KNOWN_IDENTITY_MISMATCH_EXCLUSIONS[asset_id], "phase": PHASE,
+            })
+            continue
         row, rejections = build_company(grouped[asset_id])
         feature_rows.append(row)
         rejection_rows.extend(rejections)
@@ -184,8 +210,10 @@ def build(records_paths: Path | list[Path], output_dir: Path) -> dict[str, Any]:
     write_csv(output_dir / "europe_fundamental_feature_rejections_v2_38x.csv", rejection_rows, REJECTION_FIELDS)
 
     quality_counts = {status: sum(1 for r in feature_rows if r["feature_quality_status"] == status) for status in {"FEATURES_READY", "FEATURES_PARTIAL", "INSUFFICIENT_FEATURE_EVIDENCE"}}
+    excluded = [a for a in grouped if a in KNOWN_IDENTITY_MISMATCH_EXCLUSIONS]
     report = {
-        "phase": PHASE, "companies_input": len(grouped), "companies_features_ready": quality_counts["FEATURES_READY"],
+        "phase": PHASE, "companies_input": len(grouped), "companies_excluded_known_identity_mismatch": len(excluded),
+        "companies_features_ready": quality_counts["FEATURES_READY"],
         "companies_features_partial": quality_counts["FEATURES_PARTIAL"], "companies_insufficient": quality_counts["INSUFFICIENT_FEATURE_EVIDENCE"],
         "rejected_rows": len(rejection_rows), "network_used": False, "scoring_created": False, "ranking_created": False,
         "recommendations_created": False, "phase9c_authorized": False, "records_sources_used": sources_used,

@@ -13,7 +13,7 @@
     },
     "PHASE9X_EUROPE_CANDIDATE_MATRIX_GATE_v2_38x.md": {
       "bytes": 329,
-      "sha256": "3a87bf51d4649219e62876d1d18c4dbc3cbe86c0c733e0863ec93eb193873c78"
+      "sha256": "d6e864afd101bc5fe4343449d869f5c9059767bd31732b2b06929450b2632c27"
     },
     "README.md": {
       "bytes": 402,
@@ -21,19 +21,19 @@
     },
     "europe_candidate_feature_matrix_aggregate_report_v2_38x.json": {
       "bytes": 815,
-      "sha256": "28097a9e25bc39f8168626a36c293d238a8a026938d07413f54db8e71e15f259"
+      "sha256": "22f43b7d660a096e75cbea563ac5fe41f193f6c66f30c6e5ab87a10fd3ae0ddf"
     },
     "europe_candidate_feature_matrix_quality_v2_38x.csv": {
-      "bytes": 451,
-      "sha256": "2d81fc84142f4a85688f9b294db3a66e52e1d3c0f9933a219b37e60a225d8ccd"
+      "bytes": 294,
+      "sha256": "cfb8b95c9b175118739097187a8b4aab072bd8d166c0494b74190fdd88cb3062"
     },
     "europe_candidate_feature_matrix_rejections_v2_38x.csv": {
       "bytes": 42,
       "sha256": "b57a5f7414b853dce56ff2dfbc276eef55191b21dc4d2dd7fb9c32ea3d6a6dc3"
     },
     "europe_candidate_feature_matrix_v2_38x.csv": {
-      "bytes": 1683,
-      "sha256": "bf3c1a3ae85c950eeed12de5b3e33d83918d35df76995ae3901e4ccf6b929187"
+      "bytes": 1169,
+      "sha256": "e62c489e755cd5f80bd759e21a6cd57ef889086af1dd0364a98a103c9cb0ceb1"
     }
   },
   "phase": "v2.38X-europe-candidate-feature-matrix"
