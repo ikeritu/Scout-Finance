@@ -1,0 +1,36 @@
+{
+  "counts": {
+    "resolved": 15,
+    "unresolved": 0
+  },
+  "created_at_utc": "2026-09-05T21:36:40Z",
+  "guardrails": {
+    "credentials_used": false,
+    "network_used": false,
+    "phase9c_authorized": false
+  },
+  "inputs": {
+    "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\datasets\\001_downloads_en_t7-xetr-allTradableInstruments.csv": {
+      "bytes": 4480626,
+      "sha256": "7807928fcc47441f33ff522950cb7077c6b751c4b181de7ab91a83643f1582a9"
+    },
+    "outputs\\full_universe_source_acquisition\\v2_38s_europe_official_filings_review\\europe_official_filings_review_matrix_v2_38s.csv": {
+      "bytes": 37735,
+      "sha256": "50fbf990baf3e2d10c31defbef2251f7801c0ac02f9efefe605706cc48e34898"
+    }
+  },
+  "outputs": {
+    "europe_spain_identity_resolution_xetra_source_matrix_v2_38aa.csv": {
+      "bytes": 4593,
+      "sha256": "d89d652d3ada444e4e6f603d665f70d338ba54f5d77a6d6014e94a182006cf20"
+    },
+    "europe_spain_identity_resolution_xetra_source_summary_v2_38aa.json": {
+      "bytes": 456,
+      "sha256": "df3af09ffc680dd727034a0dce2c786c0774574b7514b87e4280c1a83aafcf1d"
+    }
+  },
+  "phase": "v2.38AA-europe-spain-identity-resolution-xetra-source",
+  "scripts": [
+    "scripts/resolve_europe_spain_identity_xetra_source_v2_38aa.py"
+  ]
+}

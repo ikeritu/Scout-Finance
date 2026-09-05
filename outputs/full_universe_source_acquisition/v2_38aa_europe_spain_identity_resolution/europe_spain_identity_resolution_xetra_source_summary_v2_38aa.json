@@ -1,0 +1,12 @@
+{
+  "credentials_used": false,
+  "input_assets": 15,
+  "network_used": false,
+  "phase": "v2.38AA-europe-spain-identity-resolution-xetra-source",
+  "phase9c_authorized": false,
+  "resolution_method": "xetra_reference_file_mnemonic_to_isin_lookup",
+  "resolved": 15,
+  "same_method_as": "resolve_europe_gb_identity_xetra_source_v2_38v.py / resolve_europe_ireland_identity_xetra_source_v2_38z.py",
+  "unresolved": 0,
+  "unresolved_reasons": {}
+}
