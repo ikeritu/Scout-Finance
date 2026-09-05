@@ -1,0 +1,18 @@
+{
+  "blocked_or_error": 28,
+  "credentials_used": true,
+  "fetch_reason_counts": {
+    "accounts_format_not_parseable_pdf_only": 28,
+    "ixbrl_esef_package_downloaded": 1
+  },
+  "fetch_status_counts": {
+    "blocked": 28,
+    "fetched": 1
+  },
+  "fetched": 1,
+  "input_resolved_assets": 29,
+  "phase": "v2.38Y-europe-accounts-document-fetch",
+  "phase9c_authorized": false,
+  "raw_cache_published": false,
+  "real_filings_downloaded": true
+}

@@ -111,3 +111,9 @@ outputs/full_universe_source_acquisition/v2_38o_europe_price_history_acquisition
 # cache in this project) and the real extracted fundamental values
 outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals/accounts_documents_raw_v2_38w/
 outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals/europe_ixbrl_fundamental_records_v2_38w.jsonl
+
+# Local Phase 9Y Europe accounts documents (full 40-company expansion after
+# the Xetra-source identity correction) and the real extracted fundamental
+# values -- same reasoning as v2.38W above
+outputs/full_universe_source_acquisition/v2_38y_europe_gb_full_expansion/accounts_documents_raw_v2_38y/
+outputs/full_universe_source_acquisition/v2_38y_europe_gb_full_expansion/europe_ixbrl_fundamental_records_v2_38y.jsonl

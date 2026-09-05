@@ -1,0 +1,30 @@
+asset_id,ticker,company_number,resolved_company_name,filing_date,filing_type,document_format,fetch_status,fetch_reason,raw_xhtml_path,real_filings_downloaded,phase,created_at_utc
+U37439,GUI,00023307,DIAGEO PLC,2025-11-15,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37440,BSP,01470151,BAE SYSTEMS PLC,2026-06-26,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37442,ITB,03236483,IMPERIAL BRANDS PLC,2026-02-07,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37444,PES,00053723,PEARSON PLC,2026-05-14,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37445,RIO1,00719885,RIO TINTO PLC,2026-04-16,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37446,SCT,SC117119,SSE PLC,2026-08-03,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37447,BPE5,00102498,BP PLC,2026-05-20,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37450,BCY,00048839,BARCLAYS PLC,2026-05-31,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37451,KFI1,01664812,KINGFISHER,2026-07-01,AA,application/zip,fetched,ixbrl_esef_package_downloaded,outputs/full_universe_source_acquisition/v2_38y_europe_gb_full_expansion/accounts_documents_raw_v2_38y/CZBr5HE8-QCxkTLDPEbxjCcGA5vWrqeO4QnjTpGcOIE.xhtml,true,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37452,IJ8,05059407,ITM POWER PLC,2025-10-24,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37453,RTO1,05393279,RENTOKIL INITIAL,2026-05-24,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37454,LS4C,02075721,LONDON STOCK EXCHANGE,2026-06-01,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37455,RDEB,00077536,RELX PLC,2026-06-23,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37457,EJT1,03959649,EASYJET PLC,2026-02-24,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37458,XGR2,04083914,COMPASS GROUP,2026-02-17,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37459,NNGF,04031152,NATIONAL GRID PLC,2026-07-27,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37460,1T1,09909709,TECHNIPFMC PLC,2026-06-04,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37462,VODI,01833679,VODAFONE GROUP PLC,2026-08-07,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37464,TCO0,00445790,TESCO PLC,2026-07-25,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37467,88Q,13519889,4BASEBIO PLC,2026-07-25,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37468,H1W,14467769,KLARNA GROUP PLC,2026-07-10,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37470,H6D0,13691224,HALEON PLC,2026-03-31,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37471,GS71,03888792,GSK PLC,2026-04-26,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37472,R6C0,04366849,SHELL PLC,2026-04-14,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37473,GU81,02468686,AVIVA PLC,2026-05-18,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37474,HT3,14654651,ANGLOGOLD ASHANTI,2026-05-29,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37476,NGL0,03564138,ANGLO AMERICAN,2026-07-20,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37477,UNV0,00041424,UNILEVER PLC,2026-04-26,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z
+U37478,0VQ,09582467,PURETECH HEALTH PLC,2026-06-21,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38Y-europe-accounts-document-fetch,2026-09-05T19:43:20Z

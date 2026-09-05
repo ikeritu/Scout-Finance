@@ -49,7 +49,7 @@ MATRIX_FIELDS = [
     "resolved_company_name_raw", "resolution_status", "resolution_reason", "isin",
     "home_mic", "home_country", "source_row_hash", "credentials_used", "phase", "created_at_utc",
 ]
-DENOMINATION_SUFFIX_RE = re.compile(r"\s*(LS|DL|EO|USD|EUR)[\-,.\d]+$")
+DENOMINATION_SUFFIX_RE = re.compile(r"\s*(LS|DL|EO|USD|EUR)\s*[\-,.\d]+$")
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:

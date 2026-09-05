@@ -3,7 +3,7 @@
     "resolved": 40,
     "unresolved": 0
   },
-  "created_at_utc": "2026-09-05T19:21:43Z",
+  "created_at_utc": "2026-09-05T19:40:08Z",
   "guardrails": {
     "credentials_used": false,
     "network_used": false,
@@ -21,8 +21,8 @@
   },
   "outputs": {
     "europe_gb_identity_resolution_xetra_source_matrix_v2_38v.csv": {
-      "bytes": 12243,
-      "sha256": "4321ad6fb7c97e540d7ded44e0e1084ecddc076776b92db6e878754db3afeaf5"
+      "bytes": 12095,
+      "sha256": "1c436e03fc35f059d73d05a8433285f45e31bbf576c9d944de80be81ee420668"
     },
     "europe_gb_identity_resolution_xetra_source_summary_v2_38v.json": {
       "bytes": 507,

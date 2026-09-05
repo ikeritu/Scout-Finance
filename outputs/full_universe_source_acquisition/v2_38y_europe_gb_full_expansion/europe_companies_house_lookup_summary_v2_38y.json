@@ -1,0 +1,13 @@
+{
+  "credentials_used": true,
+  "input_resolved_assets": 40,
+  "normalized_fundamentals_created": false,
+  "note": "Profile confirmation only (company_number/status/incorporation date/SIC). Accounts document download and iXBRL parsing happen in a following step of this same block.",
+  "phase": "v2.38Y-europe-gb-companies-house-lookup-full-expansion",
+  "phase9c_authorized": false,
+  "profiles_confirmed": 29,
+  "raw_cache_published": false,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false,
+  "unresolved_or_error": 11
+}

@@ -115,12 +115,31 @@ def test_clean_company_name_strips_denomination_suffix_without_losing_raw_value(
     assert mod.clean_company_name("PLAIN NAME WITH NO SUFFIX") == "PLAIN NAME WITH NO SUFFIX"
 
 
+def test_clean_company_name_strips_denomination_suffix_with_space_before_value():
+    """Real bug found while running the v2.38Y Companies House lookup at
+    full scale: several real Xetra Instrument values put a space between
+    the currency-code marker and the numeric par value (e.g. "BARCLAYS
+    PLC      LS 0,25", "UNILEVER PLC     LS -,035") -- the original regex
+    only matched when the marker and value were glued together with no
+    space, so these were left uncleaned and never matched Companies
+    House's real registered name. Confirmed real names still genuinely
+    abbreviated by Xetra (e.g. "LLOYDS BKG GRP", "RECKITT BENCK.") are
+    correctly left uncleaned/unresolved -- this fix only removes the
+    mechanical denomination-suffix noise, never guesses at an abbreviation."""
+    mod = module()
+    assert mod.clean_company_name("BARCLAYS PLC      LS 0,25") == "BARCLAYS PLC"
+    assert mod.clean_company_name("UNILEVER PLC     LS -,035") == "UNILEVER PLC"
+    assert mod.clean_company_name("RENTOKIL INITIAL  LS 0,01") == "RENTOKIL INITIAL"
+    assert mod.clean_company_name("LLOYDS BKG GRP") == "LLOYDS BKG GRP"  # genuinely abbreviated, no suffix to strip -- must stay as-is
+
+
 CASES = [
     test_exact_mnemonic_resolves_to_real_instrument_and_isin,
     test_ticker_collision_regression_never_uses_wrong_companys_ticker_match,
     test_mnemonic_not_in_reference_file_is_unresolved,
     test_ambiguous_mnemonic_with_conflicting_isins_stays_unresolved,
     test_clean_company_name_strips_denomination_suffix_without_losing_raw_value,
+    test_clean_company_name_strips_denomination_suffix_with_space_before_value,
 ]
 
 
