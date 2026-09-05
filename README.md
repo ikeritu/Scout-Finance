@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**Fases v2.38K–S — scoring experimental US y fundación de fundamentales de Europa** (branch `phase9b-global-enrichment-v2-38b`, aún no fusionado a `main`). Sobre la matriz de candidatos US de v2.38J: scoring experimental determinista (v2.38K, 350/555 puntuados, rango 7,5–87,33), shortlist explicada de 50 empresas (v2.38L, 20 alta prioridad) y capa de contexto macro/geopolítico estático (v2.38M, taxonomía, sin noticias en vivo). En paralelo, arranca la fundación de Europa: resolución de casa de cotización (v2.38N, 689/22.578 resueltas, Cboe Europe bloqueado como venue secundario), plan de adquisición de precios (v2.38O, `READY_FOR_COLLECTION`, **0 activos recolectados todavía**), gate de price features que cierra fail-closed por falta de historial local (v2.38P, `PRICE_FEATURES_BLOCKED_NO_LOCAL_EUROPE_PRICE_HISTORY`), y enrutamiento + piloto de fundamentales (v2.38Q/R/S: 617 al piloto de proveedor, 55 a revisión de filings oficiales, 17 a revisión manual — todo listo, ninguna ejecución real todavía). Ninguna fase de este rango calcula scoring adicional, ranking, recomendaciones ni autoriza fase 9C. Siguiente paso: v2.38T (paquete de revisión manual de Europa).
+
 **Fase v2.38J — matriz US de candidatos** (`COMPLETED_US_CANDIDATE_FEATURE_MATRIX_NOT_SCORING`). La capa une SEC fundamentals y price features US locales en una matriz preparada para scoring explicable futuro. No genera recomendaciones, no predice rentabilidad y no constituye asesoramiento financiero.
 
 **Fase v2.38D — fundación SEC para EEUU** (`COMPLETED_US_SEC_FOUNDATION_DRY_RUN`). Añade contrato, esquema, overlay y runner para resolver CIK/submissions/companyfacts sobre 9.200 filas US / 5.011 elegibles. El acceso SEC real queda bloqueado por defecto y exige `--execute` más `SCOUT_FINANCE_SEC_USER_AGENT`; no hay scoring, ranking ni recomendaciones.
@@ -26,8 +28,8 @@
 - **Mercados excluidos:** Cboe Europe (`PARTIAL_IDENTIFICATION_NO_ACTIONABLE_SOURCE`, bloqueado indefinidamente), ASX (`NO_FREE_SOURCE_FOUND`), BVC (cerrado por decisión del usuario).
 - **SGX y Xetra:** identidad reparada (SGX 100 %, Xetra 88,2 %) vía OpenFIGI; sin fuente de precios evaluada todavía.
 - **Fuentes descartadas como mundiales:** EODHD (`COMPLETED_NO_PROMOTION`), Twelve Data en su versión global (solo cubre EE. UU./forex/cripto de forma gratuita).
-- Historial completo, cierre por cierre (v2.33D1 a v2.35C), en `CHANGELOG.md`.
-- Extensión global: **9A cerrada; 9B bloqueada tras completar su infraestructura offline; 9C no autorizada**. Estado: `outputs/full_universe_source_acquisition/v2_38b_global_enrichment/PHASE9B_EXECUTION_STATUS_v2_38b.md`. El ranking de la app sigue limitado a 50 activos, es experimental y no está validado históricamente.
+- Historial completo, cierre por cierre (v2.33D1 a v2.38S), en `CHANGELOG.md`.
+- Extensión global: **9A cerrada; 9B en curso (v2.38C–S cerradas, hasta scoring experimental US y fundación de fundamentales de Europa); 9C no autorizada**. Este rango (v2.38K–S) vive en el branch `phase9b-global-enrichment-v2-38b` (subido a GitHub, **no fusionado a `main`**). Estado: `outputs/full_universe_source_acquisition/v2_38b_global_enrichment/PHASE9B_EXECUTION_STATUS_v2_38b.md`. El ranking de la app sigue limitado a 50 activos, es experimental y no está validado históricamente.
 
 <!-- SCOUT_FINANCE_V2_33D1_STATE_END -->
 

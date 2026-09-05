@@ -1,4 +1,40 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38S — revisión de filings oficiales de Europa (2026-09-04)
+
+`COMPLETED_EUROPE_OFFICIAL_FILINGS_REVIEW_READY_NOT_EXECUTED`. Revisa, para los 55 activos que necesitan resolución de identificador tras excluir los 617 del piloto de proveedor (v2.38R) y los 17 de revisión manual (v2.38Q), qué fuentes de filings oficiales (reguladores nacionales, registros mercantiles) existirían por jurisdicción (ES: 15, GB: 40). Solo dos jurisdicciones detectadas de las potenciales de la Unión Europea/Reino Unido. Sin red, sin scraping, sin llamadas a API, sin descarga de filings, sin fundamentales reales, sin scoring, ranking ni fase 9C. Próxima fase recomendada: v2.38T (paquete de revisión manual). Detalle en `outputs/full_universe_source_acquisition/v2_38s_europe_official_filings_review/PHASE9S_EUROPE_OFFICIAL_FILINGS_REVIEW_v2_38s.md`.
+
+## v2.38R — piloto de proveedor de fundamentales para Europa (2026-09-04)
+
+`COMPLETED_EUROPE_FUNDAMENTALS_PROVIDER_PILOT_READY_NOT_EXECUTED`. Prepara el paquete de ejecución offline (13 lotes) para los 617 activos enrutados al piloto de proveedor en v2.38Q — listo para ejecutar, sin ninguna llamada real todavía. Detalle en `outputs/full_universe_source_acquisition/v2_38r_europe_fundamentals_pilot_provider/PHASE9R_EUROPE_FUNDAMENTALS_PILOT_PROVIDER_v2_38r.md`.
+
+## v2.38Q — fundación de rutas de fundamentales para Europa (2026-09-04)
+
+`COMPLETED_EUROPE_FUNDAMENTALS_ROUTE_FOUNDATION_NOT_COLLECTION`. Clasifica los 689 activos con casa de cotización europea resuelta (v2.38N) en tres rutas: piloto de proveedor (617), revisión de filings oficiales (55), revisión manual (17). Solo enrutamiento — sin red, sin fundamentales, sin scoring, sin ranking, sin recomendaciones. Detalle en `outputs/full_universe_source_acquisition/v2_38q_europe_fundamentals_routes/PHASE9Q_EUROPE_FUNDAMENTALS_GATE_v2_38q.md`.
+
+## v2.38P — gate de price features de Europa (2026-09-03)
+
+`PRICE_FEATURES_BLOCKED_NO_LOCAL_EUROPE_PRICE_HISTORY`. De los 689 candidatos europeos, **0 tienen historial de precios local disponible** — v2.38O solo generó el plan de adquisición, ninguna descarga real se ha ejecutado todavía. La fase cierra fail-closed (0 features calculadas) en vez de simular o aproximar datos ausentes. No calcula scores, rankings, recomendaciones, predicciones, acciones de bróker ni señales de fase 9C. Detalle en `outputs/full_universe_source_acquisition/v2_38p_europe_price_features/PHASE9P_EUROPE_PRICE_FEATURES_GATE_v2_38p.md`.
+
+## v2.38O — piloto de adquisición de historial de precios de Europa (2026-09-03)
+
+`READY_FOR_COLLECTION`. Construye el plan determinista de adquisición de precios para los 689 activos con casa de cotización resuelta en v2.38N — **689 pendientes, 0 recolectados todavía**, caché cruda sin publicar. Cboe Europe permanece prohibido como fuente primaria. No calcula features, scores, rankings, recomendaciones, predicciones, acciones de bróker ni señales de fase 9C. Detalle en `outputs/full_universe_source_acquisition/v2_38o_europe_price_history_acquisition/PHASE9O_EUROPE_PRICE_HISTORY_GATE_v2_38o.md`.
+
+## v2.38N — fundación de resolución de casa de cotización de Europa (2026-09-03)
+
+`COMPLETED_EUROPE_HOME_EXCHANGE_RESOLUTION_NOT_ENRICHMENT`. Procesa 22.578 filas europeas; resuelve casa de cotización fiable para **689**; bloquea **21.066** registros de Cboe Europe como venue secundario por defecto (no se usa como fuente primaria de listado hasta que se establezca una casa de cotización fiable). Sin red, sin scoring, sin ranking, sin recomendaciones, sin autorización de fase 9C. Detalle en `outputs/full_universe_source_acquisition/v2_38n_europe_home_exchange_resolution/PHASE9N_EUROPE_HOME_EXCHANGE_GATE_v2_38n.md`.
+
+## v2.38M — capa de contexto macro/geopolítico (2026-09-03)
+
+`COMPLETED_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`. Añade contexto estático basado en taxonomía (17 temas, 362 notas) sobre los 50 activos de la shortlist explicada de v2.38L — 12 con contexto completo, 38 parcial. Sin llamadas de red, sin noticias en vivo, sin clasificación LLM en tiempo de ejecución, sin modificar scoring/ranking, sin acciones de bróker ni autorización de fase 9C. Detalle en `outputs/full_universe_source_acquisition/v2_38m_macro_geopolitical_context/PHASE9M_MACRO_GEOPOLITICAL_GATE_v2_38m.md`.
+
+## v2.38L — shortlist explicada de investigación US (2026-09-03)
+
+`COMPLETED_US_EXPLAINED_SHORTLIST_NOT_RECOMMENDATIONS`. Construye una shortlist determinista de 50 empresas (20 prioridad alta, 30 media, 0 en watchlist) a partir de las 350 empresas puntuadas en v2.38K; las 205 sin score suficiente quedan explícitamente rechazadas para esta shortlist, no ocultas. Solo para investigación manual — no genera guía de inversión final, acciones de bróker, afirmaciones externas de noticias ni promoción a fase 9C. Detalle en `outputs/full_universe_source_acquisition/v2_38l_us_explained_shortlist/PHASE9L_US_EXPLAINED_SHORTLIST_GATE_v2_38l.md`.
+
+## v2.38K — motor de scoring experimental US (2026-09-03)
+
+`COMPLETED_US_EXPERIMENTAL_SCORING_NOT_RECOMMENDATIONS`. Calcula un score de investigación determinista (rango real 7,5–87,33) sobre los 555 candidatos de la matriz US de v2.38J: **350 puntuados**, **205 sin puntuar** (evidencia incompleta, marcados `REVIEW_REQUIRED`, no descartados), 0 filas rechazadas. Sin red, sin recomendaciones, sin asesoramiento financiero, sin acciones de bróker ni autorización de fase 9C. Detalle en `outputs/full_universe_source_acquisition/v2_38k_us_experimental_scoring/PHASE9K_US_EXPERIMENTAL_SCORING_GATE_v2_38k.md`.
+
 ## v2.38J — matriz US de candidatos para scoring futuro (2026-09-03)
 
 Une de forma offline y determinista la identidad SEC, las features fundamentales US de v2.38G y las price features US de v2.38H/38I en una matriz pública de candidatos. Clasifica cada empresa como `CANDIDATE_MATRIX_READY`, parcial o bloqueada según evidencia disponible, y genera resúmenes trazables de señales fundamentales, precio y riesgo. No calcula scoring, ranking, recomendaciones, predicciones ni fase 9C; prepara la siguiente fase de scoring explicable alineada con el objetivo de rastrear 43.089 empresas, con prioridad US/EU y futura capa geopolítica/macro.
