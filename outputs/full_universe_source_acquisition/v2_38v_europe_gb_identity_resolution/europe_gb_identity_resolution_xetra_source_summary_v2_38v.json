@@ -1,0 +1,12 @@
+{
+  "credentials_used": false,
+  "input_assets": 40,
+  "network_used": false,
+  "phase": "v2.38V-europe-gb-identity-resolution-xetra-source-correction",
+  "phase9c_authorized": false,
+  "resolution_method": "xetra_reference_file_mnemonic_to_isin_lookup",
+  "resolved": 40,
+  "supersedes": "resolve_europe_gb_identity_v2_38v.py (OpenFIGI ticker-based, superseded due to two confirmed Xetra-mnemonic/LSE-ticker collisions -- see module docstring)",
+  "unresolved": 0,
+  "unresolved_reasons": {}
+}

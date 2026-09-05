@@ -1,5 +1,7 @@
 # v2.38V — Europe fundamentals collection pilot (real)
 
+> **⚠️ CORRECCIÓN POSTERIOR (2026-09-05, mismo día)**: la Parte 1 de este documento (resolución de identidad vía OpenFIGI) contenía **2 identificaciones erróneas** (`SCT`→"Softcat PLC" debería ser SSE PLC; `BMT`→"Braime" debería ser British American Tobacco), causadas por confundir un mnemonic interno de Xetra con un ticker real de LSE. Corregido con una resolución basada en el fichero fuente oficial de Xetra (40/40 resueltas, 0 ambiguas). Ver `CORRECTION_XETRA_SOURCE_IDENTITY_v2_38v.md` para el detalle completo — **léelo antes de confiar en los nombres de empresa de este documento**.
+
 Fecha: 2026-09-05. Alcance: intentar, de verdad, la primera recolección real de fundamentales de Europa, respetando el gate de v2.38U (ninguna de las tres rutas estaba `READY`). Dos partes, ambas con evidencia real, ninguna simulada.
 
 ## Contexto: por qué no se tocó el piloto de proveedor (EODHD, 617 activos)

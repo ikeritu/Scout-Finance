@@ -1,5 +1,7 @@
 # v2.38W — normalización de fundamentales de Europa (iXBRL real)
 
+> **⚠️ CORRECCIÓN POSTERIOR (2026-09-05, mismo día)**: la identidad "Softcat PLC" usada como entrada a este bloque estaba **mal atribuida** al activo `U37446` de nuestro censo — el resolutor de identidad original (OpenFIGI/ticker) confundió el mnemonic de Xetra "SCT" con el ticker real de Softcat en LSE; el activo real es **SSE PLC**. Los 14 valores IFRS extraídos abajo son reales y correctos **para Softcat PLC**, verificados con 4 identidades contables exactas — pero no representan a `U37446`. Ver `outputs/full_universe_source_acquisition/v2_38v_europe_gb_identity_resolution/CORRECTION_XETRA_SOURCE_IDENTITY_v2_38v.md` para el detalle completo. Companies House + iXBRL para la identidad correcta (SSE PLC) y las otras 39 empresas ahora confirmadas quedan pendientes de una decisión explícita del usuario.
+
 Fecha: 2026-09-05. Alcance: lo deliberadamente aplazado en v2.38V — obtener el documento de cuentas real de cada empresa confirmada en Companies House y, cuando el formato lo permita, extraer cifras financieras reales de un iXBRL/ESEF real. Dos scripts, ambos ejecutados con la credencial real del usuario.
 
 ## Parte 1 — Descarga real de documentos (`fetch_europe_accounts_documents_v2_38w.py`)

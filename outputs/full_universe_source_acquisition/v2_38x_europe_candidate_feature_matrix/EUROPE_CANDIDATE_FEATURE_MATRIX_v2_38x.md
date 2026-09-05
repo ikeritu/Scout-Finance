@@ -1,5 +1,7 @@
 # v2.38X — matriz de candidatos de Europa (real, no simulada)
 
+> **⚠️ CORRECCIÓN POSTERIOR (2026-09-05, mismo día)**: el único candidato de esta matriz ("Softcat PLC") hereda una identidad mal atribuida de v2.38V/W — el activo real del censo es **SSE PLC**, no Softcat. Ver `outputs/full_universe_source_acquisition/v2_38v_europe_gb_identity_resolution/CORRECTION_XETRA_SOURCE_IDENTITY_v2_38v.md`. Esta matriz queda pendiente de reconstrucción una vez se decida si se amplía Companies House/iXBRL a las 40 identidades ahora confirmadas.
+
 Fecha: 2026-09-05. Alcance: análogo de Europa a v2.38G (features fundamentales) + v2.38J (matriz de candidatos) de EE. UU., construido sobre los datos reales de v2.38W. Dos scripts, ambos ejecutados contra datos reales, sin red.
 
 ## Parte 1 — Features fundamentales (`build_europe_fundamental_features_v2_38x.py`)
