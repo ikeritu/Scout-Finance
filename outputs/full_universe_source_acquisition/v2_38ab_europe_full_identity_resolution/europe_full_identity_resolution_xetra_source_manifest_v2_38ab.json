@@ -1,0 +1,36 @@
+{
+  "counts": {
+    "resolved": 689,
+    "unresolved": 0
+  },
+  "created_at_utc": "2026-09-05T21:49:12Z",
+  "guardrails": {
+    "credentials_used": false,
+    "network_used": false,
+    "phase9c_authorized": false
+  },
+  "inputs": {
+    "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\datasets\\001_downloads_en_t7-xetr-allTradableInstruments.csv": {
+      "bytes": 4480626,
+      "sha256": "7807928fcc47441f33ff522950cb7077c6b751c4b181de7ab91a83643f1582a9"
+    },
+    "outputs\\full_universe_source_acquisition\\v2_38q_europe_fundamentals_routes\\europe_fundamentals_asset_routes_v2_38q.csv": {
+      "bytes": 173816,
+      "sha256": "c33627d901ef3d9ce641f8920f37bc9a66c83d888d59d355ee76a5909d11a735"
+    }
+  },
+  "outputs": {
+    "europe_full_identity_resolution_xetra_source_matrix_v2_38ab.csv": {
+      "bytes": 213932,
+      "sha256": "417cfb892b1b002efb89c2014a621d55658ad49f7df8a0c0c2021db9dbe1dc95"
+    },
+    "europe_full_identity_resolution_xetra_source_summary_v2_38ab.json": {
+      "bytes": 1123,
+      "sha256": "c61175fc7b1fc157ecf9f49bc2ad3d3bf303399999b71017908d28e03722cc0d"
+    }
+  },
+  "phase": "v2.38AB-europe-full-identity-resolution-xetra-source",
+  "scripts": [
+    "scripts/resolve_europe_full_identity_xetra_source_v2_38ab.py"
+  ]
+}

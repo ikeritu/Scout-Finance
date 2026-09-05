@@ -1,0 +1,34 @@
+{
+  "by_fundamental_route_and_status": {
+    "cnmv_issuer_filings:resolved": 15,
+    "eodhd_fundamentals:resolved": 617,
+    "issuer_filings_manual_review:resolved": 17,
+    "uk_companies_house_filings:resolved": 40
+  },
+  "credentials_used": false,
+  "input_assets": 689,
+  "network_used": false,
+  "phase": "v2.38AB-europe-full-identity-resolution-xetra-source",
+  "phase9c_authorized": false,
+  "resolution_method": "xetra_reference_file_mnemonic_to_isin_lookup",
+  "resolved": 689,
+  "resolved_by_country": {
+    "AT": 20,
+    "BE": 6,
+    "CH": 29,
+    "DE": 413,
+    "DK": 21,
+    "ES": 15,
+    "FI": 5,
+    "FR": 53,
+    "GB": 40,
+    "IE": 17,
+    "IT": 22,
+    "NL": 44,
+    "SE": 4
+  },
+  "supersedes_scope_of": "resolve_europe_gb_identity_xetra_source_v2_38v.py (40) + resolve_europe_ireland_identity_xetra_source_v2_38z.py (17) + resolve_europe_spain_identity_xetra_source_v2_38aa.py (15) -- this block covers the full 689, those three remain the authoritative historical record for their own 72",
+  "unresolved": 0,
+  "unresolved_by_country": {},
+  "unresolved_reasons": {}
+}
