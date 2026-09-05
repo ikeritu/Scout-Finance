@@ -1,0 +1,18 @@
+asset_id,ticker,resolved_company_name,isin,lookup_status,lookup_reason,company_number,company_status,company_type,company_reg_date,real_filings_downloaded,real_fundamentals_present,phase,created_at_utc
+U37479,N4U,SMURFIT WESTROCK,IE00028FXN24,resolved,exact_normalized_name_match_single_active_company,607515,Normal,PLC - Public Limited Company,2017-07-06,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37480,IJF,ICON PLC,IE0005711209,resolved,exact_normalized_name_match_single_active_company,145835,Normal,PLC - Public Limited Company,1989-05-31,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37481,BZ4,TE CONNECTIVITY,IE000IVNQZ81,resolved,exact_normalized_name_match_single_active_company,571909,Normal,PLC - Public Limited Company,2015-11-16,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37482,JHA1,JAMES HARDIE IND.,IE000R94NGM2,unresolved,no_exact_normalized_name_match,,,,,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37483,LIN,LINDE PLC,IE000S9YS762,resolved,exact_normalized_name_match_single_active_company,606357,Normal,PLC - Public Limited Company,2017-06-19,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37484,CSA,ACCENTURE A,IE00B4BNMY34,unresolved,no_exact_normalized_name_match,,,,,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37485,J7Z,JAZZ PHARMACEUT.,IE00B4Q5ZN47,unresolved,no_exact_normalized_name_match,,,,,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37486,8AK,ALKERMES PLC,IE00B56GVS15,resolved,exact_normalized_name_match_single_active_company,498284,Normal,PLC - Public Limited Company,2011-05-04,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37487,3EC,EATON CORP.PLC,IE00B8KQN827,unresolved,no_exact_normalized_name_match,,,,,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37488,WTY,WILLIS TOWERS WATSON,IE00BDB6Q211,resolved,exact_normalized_name_match_single_active_company,475616,Normal,PLC - Public Limited Company,2009-09-24,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37489,60A,ALLEGION PLC,IE00BFRT3W74,resolved,exact_normalized_name_match_single_active_company,527370,Normal,PLC - Public Limited Company,2013-05-09,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37490,2IS,TRANE TECHNOLOG. PLC,IE00BK9ZQ967,unresolved,no_exact_normalized_name_match,,,,,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37491,847,SEAGATE TEC.HLD.,IE00BKVD2N49,unresolved,no_exact_normalized_name_match,,,,,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37492,4VK,AON PLC A,IE00BLP1HW54,unresolved,no_exact_normalized_name_match,,,,,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37493,2M6,MEDTRONIC PLC,IE00BTN1Y115,resolved,exact_normalized_name_match_single_active_company,545333,Normal,PLC - Public Limited Company,2014-06-12,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37494,TYIA,JOHNSON CONTR.INTL.,IE00BY7QL619,unresolved,no_exact_normalized_name_match,,,,,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z
+U37495,RY4C,RYANAIR HLDGS PLC,IE00BYTBXV33,unresolved,no_exact_normalized_name_match,,,,,false,false,v2.38Z-europe-ireland-cro-lookup,2026-09-05T21:27:48Z

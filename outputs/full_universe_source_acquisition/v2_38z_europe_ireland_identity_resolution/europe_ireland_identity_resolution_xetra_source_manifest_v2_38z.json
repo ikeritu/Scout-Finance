@@ -1,0 +1,36 @@
+{
+  "counts": {
+    "resolved": 17,
+    "unresolved": 0
+  },
+  "created_at_utc": "2026-09-05T21:21:34Z",
+  "guardrails": {
+    "credentials_used": false,
+    "network_used": false,
+    "phase9c_authorized": false
+  },
+  "inputs": {
+    "outputs\\full_universe_source_acquisition\\raw\\deutsche_boerse_xetra_v2_14c\\datasets\\001_downloads_en_t7-xetr-allTradableInstruments.csv": {
+      "bytes": 4480626,
+      "sha256": "7807928fcc47441f33ff522950cb7077c6b751c4b181de7ab91a83643f1582a9"
+    },
+    "outputs\\full_universe_source_acquisition\\v2_38t_europe_manual_review_pack\\europe_manual_review_pack_matrix_v2_38t.csv": {
+      "bytes": 13098,
+      "sha256": "5d259578d94ebfd46d2da80e2e33735b282478bb0a0a88f4b536228f630a4d1d"
+    }
+  },
+  "outputs": {
+    "europe_ireland_identity_resolution_xetra_source_matrix_v2_38z.csv": {
+      "bytes": 5184,
+      "sha256": "954947ce41949851691cc781eef33718db6a1857fcea426e58c8b26ffe860f07"
+    },
+    "europe_ireland_identity_resolution_xetra_source_summary_v2_38z.json": {
+      "bytes": 458,
+      "sha256": "7d676297747f7935c61893738aa7d7e29703257118c7d8dc736af3a54847ccb5"
+    }
+  },
+  "phase": "v2.38Z-europe-ireland-identity-resolution-xetra-source",
+  "scripts": [
+    "scripts/resolve_europe_ireland_identity_xetra_source_v2_38z.py"
+  ]
+}

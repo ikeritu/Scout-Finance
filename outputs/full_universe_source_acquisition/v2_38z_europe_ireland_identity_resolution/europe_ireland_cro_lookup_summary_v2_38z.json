@@ -1,0 +1,12 @@
+{
+  "credentials_used": false,
+  "input_resolved_assets": 17,
+  "note": "Profile confirmation only. Real accounts/iXBRL extraction is explicitly out of scope: the CRO's Financial Statements open dataset is confirmed 100% PDF filings (no structured or iXBRL data exists for any Irish company, verified project-wide and specifically for Ryanair Holdings).",
+  "phase": "v2.38Z-europe-ireland-cro-lookup",
+  "phase9c_authorized": false,
+  "profiles_confirmed": 8,
+  "raw_cache_published": false,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false,
+  "unresolved_or_error": 9
+}
