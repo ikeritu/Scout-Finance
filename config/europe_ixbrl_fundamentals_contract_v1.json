@@ -1,0 +1,56 @@
+{
+  "phase": "v2.38W-europe-ixbrl-fundamentals",
+  "input_phase": "v2.38V",
+  "previous_phase": "v2.38V",
+  "input_lookup_matrix": "outputs/full_universe_source_acquisition/v2_38v_europe_gb_identity_resolution/europe_companies_house_lookup_matrix_v2_38v.csv",
+  "output_directory": "outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals",
+  "raw_cache": "outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals/accounts_documents_raw_v2_38w",
+  "records_output": "outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals/europe_ixbrl_fundamental_records_v2_38w.jsonl",
+  "companies_house_api_base": "https://api.company-information.service.gov.uk",
+  "companies_house_document_api_base": "https://document-api.company-information.service.gov.uk",
+  "credential_env": "SCOUT_FINANCE_COMPANIES_HOUSE_API_KEY",
+  "eligible_lookup_status": "resolved",
+  "target_ifrs_concepts": [
+    "ifrs-full:Revenue",
+    "ifrs-full:ProfitLossFromOperatingActivities",
+    "ifrs-full:ProfitLossBeforeTax",
+    "ifrs-full:ProfitLoss",
+    "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+    "ifrs-full:Assets",
+    "ifrs-full:CurrentAssets",
+    "ifrs-full:NoncurrentAssets",
+    "ifrs-full:Liabilities",
+    "ifrs-full:CurrentLiabilities",
+    "ifrs-full:NoncurrentLiabilities",
+    "ifrs-full:Equity",
+    "ifrs-full:CashAndCashEquivalents",
+    "ifrs-full:NetAssetsLiabilities"
+  ],
+  "flow_concepts": [
+    "ifrs-full:Revenue", "ifrs-full:ProfitLossFromOperatingActivities", "ifrs-full:ProfitLossBeforeTax",
+    "ifrs-full:ProfitLoss", "ifrs-full:ProfitLossAttributableToOwnersOfParent"
+  ],
+  "stock_concepts": [
+    "ifrs-full:Assets", "ifrs-full:CurrentAssets", "ifrs-full:NoncurrentAssets", "ifrs-full:Liabilities",
+    "ifrs-full:CurrentLiabilities", "ifrs-full:NoncurrentLiabilities", "ifrs-full:Equity",
+    "ifrs-full:CashAndCashEquivalents", "ifrs-full:NetAssetsLiabilities"
+  ],
+  "no_scoring": true,
+  "no_ranking": true,
+  "no_recommendations": true,
+  "no_phase9c": true,
+  "raw_cache_published": false,
+  "real_fundamentals_published": false,
+  "guardrails": {
+    "network_used": true,
+    "credentials_used": true,
+    "scraping_used": false,
+    "api_used": true,
+    "scoring_created": false,
+    "ranking_created": false,
+    "recommendations_created": false,
+    "phase9c_authorized": false,
+    "financial_advice": false,
+    "broker_actions_allowed": false
+  }
+}

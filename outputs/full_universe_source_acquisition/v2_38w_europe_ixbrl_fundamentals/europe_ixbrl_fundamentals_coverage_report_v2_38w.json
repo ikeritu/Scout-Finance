@@ -1,0 +1,22 @@
+{
+  "companies_with_fetched_document": 1,
+  "extracted_records": 14,
+  "network_used": false,
+  "normalized_fundamentals_created": true,
+  "not_tagged_records": 0,
+  "per_company_coverage": [
+    {
+      "asset_id": "U37446",
+      "concepts_expected": 14,
+      "concepts_extracted": 14,
+      "status": "normalized",
+      "ticker": "SCT"
+    }
+  ],
+  "phase": "v2.38W-europe-ixbrl-fundamentals",
+  "phase9c_authorized": false,
+  "ranking_created": false,
+  "recommendations_created": false,
+  "scoring_created": false,
+  "total_records": 14
+}

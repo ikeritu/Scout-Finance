@@ -1,0 +1,4 @@
+asset_id,ticker,company_number,resolved_company_name,filing_date,filing_type,document_format,fetch_status,fetch_reason,raw_xhtml_path,real_filings_downloaded,phase,created_at_utc
+U37445,RIO1,00719885,RIO TINTO PLC,2026-04-16,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38W-europe-accounts-document-fetch,2026-09-05T18:31:56Z
+U37446,SCT,02174990,SOFTCAT PLC,2026-01-06,AA,application/zip,fetched,ixbrl_esef_package_downloaded,outputs\full_universe_source_acquisition\v2_38w_europe_ixbrl_fundamentals\accounts_documents_raw_v2_38w\EK_wIIdO6i53sHcEH8I8HACxzp6qFd44aKI4EfcnMo4.xhtml,true,v2.38W-europe-accounts-document-fetch,2026-09-05T18:31:56Z
+U37453,RTO1,05393279,RENTOKIL INITIAL PLC,2026-05-24,AA,application/pdf,blocked,accounts_format_not_parseable_pdf_only,,false,v2.38W-europe-accounts-document-fetch,2026-09-05T18:31:56Z

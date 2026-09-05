@@ -1,0 +1,14 @@
+{
+  "blocked_or_error": 2,
+  "credentials_used": true,
+  "fetch_status_counts": {
+    "blocked": 2,
+    "fetched": 1
+  },
+  "fetched": 1,
+  "input_resolved_assets": 3,
+  "phase": "v2.38W-europe-accounts-document-fetch",
+  "phase9c_authorized": false,
+  "raw_cache_published": false,
+  "real_filings_downloaded": true
+}

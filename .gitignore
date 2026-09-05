@@ -105,3 +105,9 @@ outputs/full_universe_source_acquisition/v2_38i_us_price_history_acquisition/us_
 
 # Local Phase 9O Europe raw price history
 outputs/full_universe_source_acquisition/v2_38o_europe_price_history_acquisition/europe_price_history_raw_v2_38o/
+
+# Local Phase 9W Europe accounts documents (real filings, Crown-copyright
+# open but kept out of git for consistency with every other raw provider
+# cache in this project) and the real extracted fundamental values
+outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals/accounts_documents_raw_v2_38w/
+outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals/europe_ixbrl_fundamental_records_v2_38w.jsonl
