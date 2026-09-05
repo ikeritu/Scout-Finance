@@ -1,0 +1,5 @@
+asset_id,ticker,resolved_company_name,lookup_status,lookup_reason,company_number,company_status,date_of_creation,sic_codes,real_filings_downloaded,real_fundamentals_present,normalized_fundamentals_present,credential_used_value_never_logged,phase,created_at_utc
+U37441,BMT,BRAIME (TF & JH)-A NON VOTG,unresolved,no_exact_normalized_name_match,,,,,false,false,false,true,v2.38V-companies-house-lookup,2026-09-05T18:17:55Z
+U37445,RIO1,RIO TINTO PLC,resolved,exact_normalized_name_match_single_active_company,00719885,active,1962-03-30,,false,false,false,true,v2.38V-companies-house-lookup,2026-09-05T18:17:55Z
+U37446,SCT,SOFTCAT PLC,resolved,exact_normalized_name_match_single_active_company,02174990,active,1987-10-07,,false,false,false,true,v2.38V-companies-house-lookup,2026-09-05T18:17:55Z
+U37453,RTO1,RENTOKIL INITIAL PLC,resolved,exact_normalized_name_match_single_active_company,05393279,active,2005-03-15,,false,false,false,true,v2.38V-companies-house-lookup,2026-09-05T18:17:55Z

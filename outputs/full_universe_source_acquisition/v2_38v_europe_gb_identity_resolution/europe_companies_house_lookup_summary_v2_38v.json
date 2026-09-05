@@ -1,0 +1,13 @@
+{
+  "credentials_used": true,
+  "input_resolved_assets": 4,
+  "normalized_fundamentals_created": false,
+  "note": "Profile confirmation only (company_number/status/incorporation date/SIC). Accounts document download and iXBRL parsing are explicitly out of scope for this phase.",
+  "phase": "v2.38V-companies-house-lookup",
+  "phase9c_authorized": false,
+  "profiles_confirmed": 3,
+  "raw_cache_published": false,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false,
+  "unresolved_or_error": 1
+}

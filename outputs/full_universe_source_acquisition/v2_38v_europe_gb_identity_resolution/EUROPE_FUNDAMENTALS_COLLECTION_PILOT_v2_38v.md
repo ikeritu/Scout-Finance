@@ -24,15 +24,26 @@ Los 40 activos GB de v2.38S comparten el mismo `company_name` placeholder (`"UKI
 
 **Decisión: `COMPLETED_EUROPE_GB_IDENTITY_RESOLUTION_PARTIAL`.** Una tasa de resolución del 10% es honesta, no decepcionante por sí misma: refleja que el ticker es, en muchos casos, el único campo superviviente utilizable de un feed con datos ya confirmados como corruptos en múltiples columnas (nombre, y ahora también parcialmente el propio ticker). No se ha intentado ninguna heurística adicional de normalización más allá de las dos confirmadas con evidencia real, para no sobreajustar a suposiciones no verificadas.
 
-## Parte 2 — Localizador de perfil en UK Companies House (construido, bloqueado por credencial)
+## Parte 2 — Localizador de perfil en UK Companies House (ejecutado con credencial real del usuario)
 
-Companies House confirma ser una API REST **gratuita** (verificado contra la documentación oficial antes de escribir código: sin coste por llamada, límite de uso justo de 600 peticiones/5 min), pero requiere una cuenta y clave gratuitas que este proyecto **no crea por el usuario**, siguiendo la regla del proyecto.
+Companies House confirma ser una API REST **gratuita** (verificado contra la documentación oficial antes de escribir código: sin coste por llamada, límite de uso justo de 600 peticiones/5 min). El usuario creó su propia cuenta gratuita en `developer.company-information.service.gov.uk` y guardó la clave como `SCOUT_FINANCE_COMPANIES_HOUSE_API_KEY` — este proyecto no creó la cuenta ni ha visto el valor de la clave en ningún momento.
 
-Se construyó `scripts/run_europe_companies_house_lookup_v2_38v.py`: bloqueado por defecto, exige `--execute` + `SCOUT_FINANCE_COMPANIES_HOUSE_API_KEY`; busca por nombre normalizado (quita sufijos legales "PLC"/"LIMITED"/"LTD"), fail-closed (solo acepta una única empresa activa con coincidencia exacta de nombre normalizado, nunca ambigua). Autenticación HTTP Basic con la clave como usuario — la clave real nunca se lee más allá de esa cabecera, nunca se registra ni se escribe en ningún fichero de salida (verificado en la prueba offline).
+`scripts/run_europe_companies_house_lookup_v2_38v.py`: bloqueado por defecto, exige `--execute` + la credencial; busca por nombre normalizado (quita sufijos legales "PLC"/"LIMITED"/"LTD"), fail-closed (solo acepta una única empresa activa con coincidencia exacta de nombre normalizado, nunca ambigua). Autenticación HTTP Basic con la clave como usuario — la clave real nunca se lee más allá de esa cabecera, nunca se registra ni se escribe en ningún fichero de salida (verificado en la prueba offline y re-confirmado tras la ejecución real: escaneo de secretos sobre los ficheros de salida sin coincidencias).
 
-**Deliberadamente fuera de alcance de este bloque**: la descarga y el parseo de los documentos de cuentas (PDF/iXBRL). Construir un parser de iXBRL sin haberlo probado nunca contra un documento real (que exige la clave real que este proyecto no tiene) produciría código frágil y no verificado — se aplaza a una fase futura, una vez el usuario aporte la clave y pueda validarse contra un documento real.
+**Deliberadamente fuera de alcance de este bloque**: la descarga y el parseo de los documentos de cuentas (PDF/iXBRL) — ver v2.38W.
 
-**Estado real**: `--execute` sin la credencial → `BLOCKED: credential_missing` (confirmado, no simulado). Con la credencial, el script confirmaría el perfil (número de empresa, estado, fecha de constitución, códigos SIC) de las 4 empresas ya resueltas en la Parte 1 — pero eso no se ha podido probar contra la API real todavía.
+**Resultado real (ejecutado 2026-09-05, con la credencial del usuario):**
+
+| Ticker | Nombre resuelto (OpenFIGI) | Resultado en Companies House |
+|---|---|---|
+| RIO1 | RIO TINTO PLC | **Confirmado** — nº 00719885, activa, constituida 1962-03-30 |
+| SCT | SOFTCAT PLC | **Confirmado** — nº 02174990, activa, constituida 1987-10-07 |
+| RTO1 | RENTOKIL INITIAL PLC | **Confirmado** — nº 05393279, activa, constituida 2005-03-15 |
+| BMT | BRAIME (TF & JH)-A NON VOTG | Sin resolver — `no_exact_normalized_name_match` |
+
+**3/4 perfiles reales confirmados.** El caso sin resolver es honesto, no un fallo: el nombre que da OpenFIGI para BMT es una descripción de clase de acción ("-A NON VOTG" = acciones A sin voto), no la razón social exacta registrada en Companies House — el emparejamiento fail-closed rechazó correctamente forzar una coincidencia en vez de adivinar. `sic_codes` queda vacío en los tres confirmados porque el endpoint `/search/companies` no lo devuelve (solo lo daría una llamada adicional a `/company/{number}`, no implementada en este bloque).
+
+Estos son los **primeros datos reales de fundamentales-adyacentes de Europa** de todo el proyecto (identidad corporativa confirmada contra un registro oficial) — todavía no son cifras financieras (eso exige el parser iXBRL de v2.38W).
 
 ## Pruebas offline
 
@@ -46,17 +57,15 @@ PASS: v2.38V-gb-identity-resolution/dry-run-gate/fail-closed-exact-match/trailin
 PASS: v2.38V-companies-house-lookup/blocked-by-default/fail-closed-name-match/atomic-write/no-credential-leak
 ```
 
-## Qué necesita el usuario para desbloquear el siguiente paso real
+## Próximo paso real: v2.38W
 
-1. Crear una cuenta gratuita en `developer.company-information.service.gov.uk` (Companies House) — este proyecto no la crea.
-2. Definir la variable de entorno `SCOUT_FINANCE_COMPANIES_HOUSE_API_KEY` con la clave obtenida (nunca pegarla en el chat).
-3. Con eso, `run_europe_companies_house_lookup_v2_38v.py --execute` confirmaría perfiles reales para las 4 empresas ya identificadas — el primer paso real hacia fundamentales de Europa.
+Con identidad y número de empresa confirmados para 3 activos, el siguiente paso natural es obtener el historial de filings (`/company/{number}/filing-history`) y descargar el documento de cuentas más reciente para intentar el parseo de iXBRL — la pieza deliberadamente diferida de este bloque. Requiere probarse contra un documento real antes de darse por fiable.
 
 ## Seguridad y alcance
 
-- Red real usada: solo OpenFIGI (sin cuenta, sin credencial) — 4 llamadas, ya aprobado como patrón en v2.33C/H/P.
-- Ninguna cuenta creada, ninguna credencial de Companies House usada (no existe en este entorno).
-- Sin descarga de fundamentales reales, sin normalización, sin scoring, sin ranking, sin recomendaciones, sin fase 9C.
+- Red real usada: OpenFIGI (sin cuenta, sin credencial, 4 llamadas) + Companies House (con la credencial del usuario, nunca vista ni registrada por este proyecto, 4 llamadas).
+- Ninguna cuenta creada por este proyecto en ningún momento; la cuenta y la clave de Companies House las creó y guardó el usuario.
+- Sin descarga de documentos de cuentas, sin fundamentales reales, sin normalización, sin scoring, sin ranking, sin recomendaciones, sin fase 9C.
 - `production_scoring_authorized: false`, `allow_ranking: false`.
 
-**Estado del bloque: parcial, con evidencia real en ambas partes.** Identidad GB: 4/40 resuelta. Localizador de Companies House: construido y probado offline, bloqueado por falta de credencial (no por falta de código).
+**Estado del bloque: parcial, con evidencia real en ambas partes.** Identidad GB: 4/40 resuelta vía OpenFIGI. Companies House: **3/4 perfiles reales confirmados** con la credencial del usuario — los primeros datos reales de identidad corporativa de Europa de todo el proyecto.
