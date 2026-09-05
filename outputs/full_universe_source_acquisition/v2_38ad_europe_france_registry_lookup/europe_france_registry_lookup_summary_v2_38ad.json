@@ -1,0 +1,12 @@
+{
+  "credentials_used": false,
+  "input_resolved_assets": 53,
+  "note": "Profile confirmation only. Real accounts/financial-statement extraction is out of scope: recherche-entreprises.api.gouv.fr does not provide financial figures at all, and the endpoint that does (API Entreprise actes-et-bilans) is restricted to public administrations, not accessible to this project.",
+  "phase": "v2.38AD-europe-france-registry-lookup",
+  "phase9c_authorized": false,
+  "profiles_confirmed": 18,
+  "raw_cache_published": false,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false,
+  "unresolved_or_error": 35
+}

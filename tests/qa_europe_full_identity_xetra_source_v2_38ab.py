@@ -122,11 +122,29 @@ def test_ambiguous_mnemonic_with_conflicting_isins_stays_unresolved():
     assert report["unresolved_reasons"] == {"ambiguous_multiple_distinct_isins_for_mnemonic": 1}
 
 
+def test_clean_company_name_strips_share_type_markers_alongside_denomination():
+    """Real cases confirmed while building the France registry lookup:
+    Xetra appends a share-type marker (bearer/registered/no-par-value)
+    independently of the denomination notation, and the two can stack in
+    either order. Genuinely abbreviated real-world tokens (e.g. "BNK" for
+    "Bank") must stay untouched -- this only strips the closed set of
+    share-type/denomination markers, never guesses at abbreviations."""
+    mod = module()
+    assert mod.clean_company_name("NEXANS INH.") == "NEXANS"
+    assert mod.clean_company_name("SANOFI SA INHABER") == "SANOFI SA"
+    assert mod.clean_company_name("HERMES INTERNATIONAL O.N.") == "HERMES INTERNATIONAL"
+    assert mod.clean_company_name("MICHELIN  NOM.") == "MICHELIN"
+    assert mod.clean_company_name("NOVARTIS NAM.     SF 0,49") == "NOVARTIS"  # share-type AND denomination stacked
+    assert mod.clean_company_name("ERSTE GROUP BNK INH. O.N.") == "ERSTE GROUP BNK"  # two share-type markers stacked
+    assert mod.clean_company_name("ZURICH INSUR.GR.NA.SF0,10") == "ZURICH INSUR.GR."  # "GR." (Gruppe) is a separate, genuine abbreviation left untouched -- only NA/SF0,10 are share-type/denomination noise
+
+
 CASES = [
     test_no_jurisdiction_filter_resolves_across_every_country_in_one_pass,
     test_regression_reproduces_already_published_gb_result_exactly,
     test_mnemonic_not_in_reference_file_is_unresolved,
     test_ambiguous_mnemonic_with_conflicting_isins_stays_unresolved,
+    test_clean_company_name_strips_share_type_markers_alongside_denomination,
 ]
 
 

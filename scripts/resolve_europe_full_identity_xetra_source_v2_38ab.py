@@ -64,7 +64,17 @@ MATRIX_FIELDS = [
     "home_mic", "home_country", "primary_fundamental_route", "source_row_hash",
     "credentials_used", "phase", "created_at_utc",
 ]
-DENOMINATION_SUFFIX_RE = re.compile(r"\s*(LS|DL|EO|USD|EUR)\s*[\-,.\d]+$")
+DENOMINATION_SUFFIX_RE = re.compile(r"\s*(LS|DL|EO|USD|EUR|SF)\s*[\-,.\d]+$")
+# Xetra also appends a share-type marker (bearer/registered, and "no par
+# value") independent of the denomination notation -- confirmed real
+# while building the France registry lookup: "NEXANS INH.", "SANOFI SA
+# INHABER", "HERMES INTERNATIONAL O.N.", "MICHELIN  NOM.", "NOVARTIS
+# NAM.     SF 0,49" (share-type AND denomination stacked), "ERSTE GROUP
+# BNK INH. O.N." (two share-type markers stacked). Stripped iteratively
+# alongside the denomination suffix, in either order, until stable --
+# same discipline as the denomination fix: presentation cleanup only, the
+# raw value is always kept alongside it, never discarded.
+SHARE_TYPE_SUFFIX_RE = re.compile(r"\s*(INHABER|INH|NOM|NAM|NA|O\.N)\.?$")
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -110,10 +120,20 @@ def relative_or_absolute(path: Path) -> str:
 
 
 def clean_company_name(raw_instrument: str) -> str:
-    """Strip the trailing denomination/par-value notation Xetra appends to
-    every instrument name. Presentation cleanup only -- the raw value is
-    always kept alongside it, never discarded."""
-    cleaned = DENOMINATION_SUFFIX_RE.sub("", raw_instrument).strip()
+    """Strip the trailing denomination/par-value notation and share-type
+    marker (bearer/registered/no-par-value) Xetra appends to every
+    instrument name, iterating until stable since the two can stack in
+    either order. Presentation cleanup only -- the raw value is always
+    kept alongside it, never discarded."""
+    cleaned = raw_instrument.strip()
+    changed = True
+    while changed:
+        changed = False
+        for pattern in (DENOMINATION_SUFFIX_RE, SHARE_TYPE_SUFFIX_RE):
+            new_cleaned = pattern.sub("", cleaned).strip()
+            if new_cleaned != cleaned:
+                cleaned = new_cleaned
+                changed = True
     return cleaned or raw_instrument.strip()
 
 

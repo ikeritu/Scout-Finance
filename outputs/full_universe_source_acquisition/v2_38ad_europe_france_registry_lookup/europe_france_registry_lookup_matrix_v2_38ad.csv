@@ -1,0 +1,54 @@
+asset_id,ticker,resolved_company_name,isin,lookup_status,lookup_reason,siren,company_status,legal_form_code,real_filings_downloaded,real_fundamentals_present,phase,created_at_utc
+U37386,NXS,NEXANS,FR0000044448,resolved,exact_normalized_name_match_single_active_company,393525852,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37387,XCA,CREDIT AGRICOLE,FR0000045072,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37388,RCF,TELEPERFORMANCE,FR0000051807,resolved,exact_normalized_name_match_single_active_company,301292702,A,5800,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37389,HMI,HERMES INTERNATIONAL,FR0000052292,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37390,UEN,UBISOFT ENTMT IN.,FR0000054470,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37391,SEJ1,SAFRAN,FR0000073272,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37392,AIL,AIR LIQUIDE,FR0000120073,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37393,CAR,CARREFOUR S.A.,FR0000120172,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37394,TOTB,TOTALENERGIES SE,FR0000120271,resolved,exact_normalized_name_match_single_active_company,934082975,A,9220,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37395,LOR,L OREAL,FR0000120321,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37396,ACR,ACCOR SA,FR0000120404,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37397,SNW,SANOFI SA,FR0000120578,resolved,exact_normalized_name_match_single_active_company,395030844,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37398,AXA,AXA S.A.,FR0000120628,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37399,BSN,DANONE S.A.,FR0000120644,resolved,exact_normalized_name_match_single_active_company,552032534,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37400,PER,PERNOD RICARD,FR0000120693,resolved,exact_normalized_name_match_single_active_company,582041943,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37401,MOH,LVMH,FR0000121014,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37402,FAU,FORVIA SE,FR0000121147,resolved,exact_normalized_name_match_single_active_company,542005376,A,5800,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37403,CSF,THALES S.A.,FR0000121329,resolved,exact_normalized_name_match_single_active_company,552059024,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37404,PPX,KERING S.A.,FR0000121485,resolved,exact_normalized_name_match_single_active_company,552075020,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37405,ESL,ESSILORLUXO.,FR0000121667,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37406,SND,SCHNEIDER ELEC.,FR0000121972,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37407,VVD,VEOLIA ENVIRONNE.,FR0000124141,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37408,GOB,ST GOBAIN,FR0000125007,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37409,CGM,CAPGEMINI SE,FR0000125338,resolved,exact_normalized_name_match_single_active_company,330703844,A,5800,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37410,SQU,VINCI S.A.,FR0000125486,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37411,VVU,VIVENDI SE,FR0000127771,resolved,exact_normalized_name_match_single_active_company,343134763,A,5800,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37412,DIO,CHRISTIAN DIOR,FR0000130403,resolved,exact_normalized_name_match_single_active_company,582110987,A,5800,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37413,EF3,EIFFAGE SA,FR0000130452,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37414,PU4,PUBLICIS GRP,FR0000130577,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37415,SGE,STE GENERALE,FR0000130809,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37416,BNP,BNP PARIBAS,FR0000131104,resolved,exact_normalized_name_match_single_active_company,500569983,A,3220,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37417,ER7,ERAMET SA,FR0000131757,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37418,RNL,RENAULT,FR0000131906,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37419,FTE,ORANGE,FR0000133308,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37420,AYJ,VALNEVA SE,FR0004056851,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37421,ANI,AMUNDI S.A.,FR0004125920,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37422,XUP,GENFIT S.A.,FR0004163111,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37423,GZF,ENGIE S.A.,FR0010208488,resolved,exact_normalized_name_match_single_active_company,542107651,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37424,AOMD,ALSTOM S.A.,FR0010220475,resolved,exact_normalized_name_match_single_active_company,389058447,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37425,E3B,EUTELSAT COMMS,FR0010221234,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37426,LRC,LEGRAND S.A.,FR0010307819,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37427,IDD,INNATE PHARMA,FR0010331421,resolved,exact_normalized_name_match_single_active_company,424365336,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37428,SDRC,SCOR SE,FR0010411983,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37429,DBV,DBV TECHNOLOGIES,FR0010417345,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37430,2X1,ABIVAX SA,FR0012333284,resolved,exact_normalized_name_match_single_active_company,799363718,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37431,56S1,SARTOR.STED.B.,FR0013154002,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37432,SOH1,SOITEC S.A.,FR0013227113,resolved,exact_normalized_name_match_single_active_company,384711909,A,5599,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37433,6IV,"INVENTIVA S.A.(PROM.)-,01",FR0013233012,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37434,1BR1,URW (STAPLED SHS),FR0013326246,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37435,ESF0,EUROFINS SCI.,FR0014000MR3,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37436,DSYA,DASSAULT SYS SE,FR0014003TT8,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37437,MCHA,MICHELIN,FR001400AJ45,unresolved,ambiguous_multiple_active_companies_match_name,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
+U37438,AFR0,AIR FRANCE-KLM,FR001400J770,unresolved,no_exact_normalized_name_match,,,,false,false,v2.38AD-europe-france-registry-lookup,2026-09-05T22:15:41Z
