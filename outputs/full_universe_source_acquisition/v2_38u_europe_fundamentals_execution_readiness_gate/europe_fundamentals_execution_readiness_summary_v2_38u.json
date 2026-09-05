@@ -1,0 +1,49 @@
+{
+  "api_used": false,
+  "guardrails": {
+    "api_used": false,
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_used": false,
+    "normalized_fundamentals_created": false,
+    "phase9c_authorized": false,
+    "ranking_created": false,
+    "real_filings_downloaded": false,
+    "real_fundamentals_present": false,
+    "recommendations_created": false,
+    "scoring_created": false,
+    "scraping_used": false
+  },
+  "input_phase": [
+    "v2.38R",
+    "v2.38S",
+    "v2.38T"
+  ],
+  "network_used": false,
+  "normalized_fundamentals_created": false,
+  "per_route_blockers": {
+    "manual_review": "manual_review_prerequisite_incomplete",
+    "official_filings_review": "official_filings_review_prerequisite_incomplete;automation_script_not_implemented",
+    "provider_pilot": "automation_script_not_implemented;credential_missing"
+  },
+  "per_route_status": {
+    "manual_review": "NOT_READY",
+    "official_filings_review": "NOT_READY",
+    "provider_pilot": "NOT_READY"
+  },
+  "phase": "v2.38U-europe-fundamentals-execution-readiness-gate",
+  "phase9c_authorized": false,
+  "previous_phase": "v2.38T",
+  "qa_status": "PASS",
+  "ranking_created": false,
+  "raw_cache_published": false,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false,
+  "recommendations_created": false,
+  "routes_assessed": 3,
+  "routes_not_ready": 3,
+  "routes_ready": 0,
+  "scoring_created": false,
+  "scraping_used": false,
+  "status": "EUROPE_FUNDAMENTALS_EXECUTION_NOT_READY_PENDING_PREREQUISITES"
+}

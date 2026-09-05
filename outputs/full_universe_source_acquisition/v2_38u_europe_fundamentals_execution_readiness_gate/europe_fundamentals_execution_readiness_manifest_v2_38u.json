@@ -1,0 +1,71 @@
+{
+  "counts": {
+    "routes_assessed": 3,
+    "routes_not_ready": 3,
+    "routes_ready": 0
+  },
+  "created_at_utc": "2026-09-05T09:58:34Z",
+  "decision": "EUROPE_FUNDAMENTALS_EXECUTION_NOT_READY_PENDING_PREREQUISITES",
+  "guardrails": {
+    "api_used": false,
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_used": false,
+    "normalized_fundamentals_created": false,
+    "phase9c_authorized": false,
+    "ranking_created": false,
+    "real_filings_downloaded": false,
+    "real_fundamentals_present": false,
+    "recommendations_created": false,
+    "scoring_created": false,
+    "scraping_used": false
+  },
+  "inputs": {
+    "D:\\Proyectos\\\ud83d\udcb0 Scout Finance\\config\\europe_fundamentals_execution_readiness_gate_contract_v1.json": {
+      "bytes": 3669,
+      "sha256": "42aca4824215f497dbfbe0899a3e81296f83c98172aa1bfafe2aed90995f5ed4"
+    },
+    "D:\\Proyectos\\\ud83d\udcb0 Scout Finance\\outputs\\full_universe_source_acquisition\\v2_38r_europe_fundamentals_pilot_provider\\europe_fundamentals_provider_pilot_summary_v2_38r.json": {
+      "bytes": 1120,
+      "sha256": "50ba33575ef872b479e4ba50dcd9f9ac8dcfb994d0e76dbae7560b9c48d3961f"
+    },
+    "D:\\Proyectos\\\ud83d\udcb0 Scout Finance\\outputs\\full_universe_source_acquisition\\v2_38s_europe_official_filings_review\\europe_official_filings_review_summary_v2_38s.json": {
+      "bytes": 1626,
+      "sha256": "e58e3dc304cb0f699d81e1c1d7415fb167ddb8252e7a34635db0381f6d291253"
+    },
+    "D:\\Proyectos\\\ud83d\udcb0 Scout Finance\\outputs\\full_universe_source_acquisition\\v2_38t_europe_manual_review_pack\\europe_manual_review_pack_summary_v2_38t.json": {
+      "bytes": 1505,
+      "sha256": "57879e84627b2cd57a94c6f24747c231534dc2827c73459c795ac14e395587c5"
+    }
+  },
+  "outputs": {
+    "EUROPE_FUNDAMENTALS_EXECUTION_READINESS_GATE_CONTRACT_v2_38u.md": {
+      "bytes": 397,
+      "sha256": "b0deafefbd0b99c5d2601051361d098f19668326e2a224628e5f03b8823a7f5c"
+    },
+    "PHASE9U_EUROPE_FUNDAMENTALS_EXECUTION_READINESS_GATE_v2_38u.md": {
+      "bytes": 573,
+      "sha256": "c27f9b159a3b94545e61f6b1b47ae5fcd8cf3219071395e840397d3a58c3ce33"
+    },
+    "README.md": {
+      "bytes": 317,
+      "sha256": "0631b69a5b95cc7eb70217b33c679fb253e2c2484fe74be2847dc4c438890124"
+    },
+    "europe_fundamentals_execution_readiness_matrix_v2_38u.csv": {
+      "bytes": 2480,
+      "sha256": "57cf460732d7f8d7fdda65dc601f8aafb2a291b545290d571d9304d95217a8db"
+    },
+    "europe_fundamentals_execution_readiness_summary_v2_38u.json": {
+      "bytes": 1578,
+      "sha256": "efaa0809cdcef907b1603f9e91c0478169a7714fa43910ef2dfc30aee177e46a"
+    }
+  },
+  "phase": "v2.38U-europe-fundamentals-execution-readiness-gate",
+  "raw_cache_published": false,
+  "schemas": [
+    "schemas/europe_fundamentals_execution_readiness_gate_record_v1.schema.json"
+  ],
+  "scripts": [
+    "scripts/build_europe_fundamentals_execution_readiness_gate_v2_38u.py"
+  ]
+}

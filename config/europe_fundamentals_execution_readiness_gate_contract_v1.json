@@ -1,0 +1,68 @@
+{
+  "phase": "v2.38U-europe-fundamentals-execution-readiness-gate",
+  "input_phase": ["v2.38R", "v2.38S", "v2.38T"],
+  "previous_phase": "v2.38T",
+  "input_provider_pilot_summary": "outputs/full_universe_source_acquisition/v2_38r_europe_fundamentals_pilot_provider/europe_fundamentals_provider_pilot_summary_v2_38r.json",
+  "input_official_filings_summary": "outputs/full_universe_source_acquisition/v2_38s_europe_official_filings_review/europe_official_filings_review_summary_v2_38s.json",
+  "input_manual_review_summary": "outputs/full_universe_source_acquisition/v2_38t_europe_manual_review_pack/europe_manual_review_pack_summary_v2_38t.json",
+  "output_directory": "outputs/full_universe_source_acquisition/v2_38u_europe_fundamentals_execution_readiness_gate",
+  "routes": {
+    "provider_pilot": {
+      "route_phase": "v2.38R",
+      "execution_method": "automated_provider_api",
+      "credential_env_var": "EODHD_API_KEY",
+      "automation_script_glob": "scripts/run_europe_fundamentals_provider_pilot*.py",
+      "prerequisite_description": "provider_symbol_candidate assigned per asset (v2.38Q)",
+      "total_assets_field": "provider_pilot_assets_actual",
+      "prerequisite_complete_assets_field": "provider_pilot_assets_actual",
+      "next_required_action": "set EODHD_API_KEY (or an equivalent approved provider credential) and implement the provider-API execution runner before requesting any real fundamentals."
+    },
+    "official_filings_review": {
+      "route_phase": "v2.38S",
+      "execution_method": "official_registry_access",
+      "credential_env_var": "",
+      "automation_script_glob": "scripts/run_europe_official_filings*.py",
+      "prerequisite_description": "official filing identifier (ISIN or national company registry id) resolved per asset",
+      "total_assets_field": "official_filings_review_assets_actual",
+      "prerequisite_complete_assets_field": "ready_for_future_official_execution_assets",
+      "next_required_action": "resolve a real ISIN or national company-registry identifier for each of the 55 assets from an authoritative source, then implement an official-registry access script."
+    },
+    "manual_review": {
+      "route_phase": "v2.38T",
+      "execution_method": "human_manual_review",
+      "credential_env_var": "",
+      "automation_script_glob": "",
+      "prerequisite_description": "real company identity confirmed per asset (v2.38T checklist)",
+      "total_assets_field": "manual_review_pack_assets_actual",
+      "prerequisite_complete_assets_field": "ready_for_future_manual_review_execution_assets",
+      "next_required_action": "a human must confirm the real company identity for each of the 17 Euronext Dublin assets (see v2.38T checklist) before any registry or provider decision can be made."
+    }
+  },
+  "no_network": true,
+  "no_scraping": true,
+  "no_api_call": true,
+  "real_filings_downloaded": false,
+  "real_fundamentals_present": false,
+  "normalized_fundamentals_created": false,
+  "no_scoring": true,
+  "no_ranking": true,
+  "no_recommendations": true,
+  "no_phase9c": true,
+  "raw_cache_published": false,
+  "ready_status": "EUROPE_FUNDAMENTALS_EXECUTION_READY",
+  "not_ready_status": "EUROPE_FUNDAMENTALS_EXECUTION_NOT_READY_PENDING_PREREQUISITES",
+  "guardrails": {
+    "network_used": false,
+    "scraping_used": false,
+    "api_used": false,
+    "real_filings_downloaded": false,
+    "real_fundamentals_present": false,
+    "normalized_fundamentals_created": false,
+    "scoring_created": false,
+    "ranking_created": false,
+    "recommendations_created": false,
+    "phase9c_authorized": false,
+    "financial_advice": false,
+    "broker_actions_allowed": false
+  }
+}
