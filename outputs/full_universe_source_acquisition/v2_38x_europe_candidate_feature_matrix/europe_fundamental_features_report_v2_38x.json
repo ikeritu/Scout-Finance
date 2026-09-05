@@ -1,0 +1,14 @@
+{
+  "companies_features_partial": 0,
+  "companies_features_ready": 1,
+  "companies_input": 1,
+  "companies_insufficient": 0,
+  "network_used": false,
+  "note": "Growth features are out of scope: v2.38W extracts only the single most recent reporting period per concept, so no prior-year comparison exists yet.",
+  "phase": "v2.38X-europe-fundamental-features",
+  "phase9c_authorized": false,
+  "ranking_created": false,
+  "recommendations_created": false,
+  "rejected_rows": 0,
+  "scoring_created": false
+}

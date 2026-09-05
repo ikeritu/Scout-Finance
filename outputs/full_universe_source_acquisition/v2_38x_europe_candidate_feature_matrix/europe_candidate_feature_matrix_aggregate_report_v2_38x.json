@@ -1,0 +1,24 @@
+{
+  "blocked": 0,
+  "candidates_total": 1,
+  "fundamental_input_companies": 1,
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "insufficient_evidence": 0,
+  "joined_both": 0,
+  "matrix_ready": 0,
+  "note": "price_input_companies is 0 because v2.38O/P have not collected any real Europe price history yet -- this matrix reflects that honestly rather than inventing price signals.",
+  "only_fundamentals": 1,
+  "only_price": 0,
+  "partial_fundamentals": 0,
+  "partial_price": 1,
+  "phase": "v2.38X-europe-candidate-feature-matrix",
+  "price_input_companies": 0,
+  "rejected_rows": 0,
+  "status": "COMPLETED_EUROPE_CANDIDATE_FEATURE_MATRIX_NOT_SCORING"
+}

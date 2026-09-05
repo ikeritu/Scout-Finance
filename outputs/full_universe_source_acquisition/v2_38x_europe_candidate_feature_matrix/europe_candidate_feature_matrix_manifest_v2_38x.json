@@ -1,0 +1,40 @@
+{
+  "guardrails": {
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "outputs": {
+    "EUROPE_CANDIDATE_FEATURE_MATRIX_CONTRACT_v2_38x.md": {
+      "bytes": 224,
+      "sha256": "15cd4c8308a55e69ece2edab604d33126a3835cfbe0cf7ae94e4b296a89e0d72"
+    },
+    "PHASE9X_EUROPE_CANDIDATE_MATRIX_GATE_v2_38x.md": {
+      "bytes": 329,
+      "sha256": "d6e864afd101bc5fe4343449d869f5c9059767bd31732b2b06929450b2632c27"
+    },
+    "README.md": {
+      "bytes": 402,
+      "sha256": "615a89453381250d937961af5669fbe8ab00a0603aa6c9360292fe7c072d0047"
+    },
+    "europe_candidate_feature_matrix_aggregate_report_v2_38x.json": {
+      "bytes": 815,
+      "sha256": "22f43b7d660a096e75cbea563ac5fe41f193f6c66f30c6e5ab87a10fd3ae0ddf"
+    },
+    "europe_candidate_feature_matrix_quality_v2_38x.csv": {
+      "bytes": 294,
+      "sha256": "fb220e62a4be25f78930b94bbb6f9478cec5ac2e5b651b045c181566a8fd21b0"
+    },
+    "europe_candidate_feature_matrix_rejections_v2_38x.csv": {
+      "bytes": 42,
+      "sha256": "b57a5f7414b853dce56ff2dfbc276eef55191b21dc4d2dd7fb9c32ea3d6a6dc3"
+    },
+    "europe_candidate_feature_matrix_v2_38x.csv": {
+      "bytes": 1170,
+      "sha256": "544e90b34e0acc802d5d5a246b20e9914bb9cb8a14d9f10f748bdc2be408c76c"
+    }
+  },
+  "phase": "v2.38X-europe-candidate-feature-matrix"
+}
