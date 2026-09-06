@@ -46,3 +46,19 @@ Presentada de nuevo la disyuntiva real al usuario (Wikidata, ya comprobado en vi
 **16/22 empresas italianas con industria real capturada, 0 errores, 0 ambiguas, 6 sin coincidencia en Wikidata.** Ejemplos reales: Generali→"insurance industry", Intesa Sanpaolo/UniCredit/BPER/Banco BPM→banca, Eni→"energy industry;petroleum industry", Leonardo→"aerospace engineering;aerospace industry;aircraft industry;information security;weapons industry" (coincide correctamente con el tema `DEFENSE_SECURITY`), Poste Italiane→"economics of banking;logistics;postal sector", Fincantieri→"shipbuilding", Moncler→"clothing industry".
 
 **Estado de la re-ejecución: `COMPLETED_EUROPE_WIKIDATA_SECTOR`.** Sin pruebas nuevas necesarias — el mecanismo genérico de `v2.38AR` (probado con Suiza) ya cubre a Italia sin cambios de código, confirmando que la generalización fue la decisión correcta. Alimenta la quinta reconstrucción de `v2.38AM`.
+
+---
+
+## Re-ejecución (mismo día, 2026-09-06): Dinamarca — el primer caso donde la vía oficial gratuita SÍ existe, solo pendiente de credencial
+
+Instrucción del usuario: "sigue con Dinamarca para el hueco de sector" (21/689 activos). A diferencia de Alemania/Suiza/Italia (donde la vía oficial resultó bloqueada, retenida o detrás de reCAPTCHA), Dinamarca es un caso distinto: el registro oficial **CVR** (Erhvervsstyrelsen) sí tiene una API real y gratuita con el código de rama **DB07** (extensión danesa de NACE) — pero exige una cuenta registrada. Confirmado en vivo: `distribution.virk.dk` devuelve `401 Authorization Required` sin credencial; la vía oficial de acceso sistema-a-sistema exige contactar con `cvrselvbetjening@erst.dk` para obtenerla — el mismo proceso de solicitud de credencial ya iniciado en una fase anterior de este proyecto (para fundamentales, no para sector), pero sin confirmación de si se completó. También se comprobó y descartó `cvrapi.dk`, un proxy no oficial de terceros: **cuota agotada en la primera llamada de prueba**, poco fiable y no gubernamental.
+
+Preguntado directamente al usuario si ya tenía la credencial CVR — **respondió que aún no**, y eligió usar Wikidata mientras tanto (ya comprobado en vivo con 14/21 coincidencias reales, 0 ambiguas). Al ser el cuarto país con el mismo mecanismo, se reejecutó `v2.38AR` con `--countries CH IT DK`, sin ningún script nuevo.
+
+### Resultado real
+
+**14/21 empresas danesas con industria real capturada, 0 errores, 0 ambiguas, 7 sin coincidencia en Wikidata** (incluida, sorprendentemente, Novo Nordisk — un hueco real de datos en Wikidata para esa empresa concreta, no un fallo del script). Ejemplos reales: Carlsberg→"beverage industry;food industry", Maersk (clase B)→"water transport", Genmab/Bavarian Nordic→"biotechnology", Ørsted→"energy industry", Coloplast→"health care", Tryg→"insurance industry", ISS→"facility management".
+
+**Nota para el futuro**: si el usuario completa el registro CVR, este bloque debería revisitarse para sustituir Wikidata por el código DB07 oficial — igual que se hizo con GB/Francia respecto a fuentes oficiales, Dinamarca es el único de los países atacados hasta ahora donde la vía oficial gratuita genuinamente existe y solo falta completar el registro.
+
+**Estado de la re-ejecución: `COMPLETED_EUROPE_WIKIDATA_SECTOR`.** Sin pruebas nuevas necesarias. Alimenta la sexta reconstrucción de `v2.38AM`.

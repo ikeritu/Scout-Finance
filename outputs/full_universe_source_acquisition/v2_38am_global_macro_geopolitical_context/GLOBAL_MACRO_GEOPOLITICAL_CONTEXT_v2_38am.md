@@ -96,3 +96,17 @@ Al ser ya la tercera vez, **no se creó ningún script nuevo**: se reejecutó di
 **El hueco de sector europeo pasa de 27/689 a 39/689** (GB 4 + Francia 3 + Países Bajos 14 + Suiza 6 + Italia 12). Quedan 7 países sin atacar: Dinamarca (21), Austria (20), Irlanda (17), España (15), Bélgica (6), Finlandia (5), Suecia (4) — 88/689 empresas en total.
 
 **Estado del bloque (cuarta reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Ninguna prueba nueva necesaria (12 en total) — el mecanismo genérico ya estaba probado.
+
+---
+
+## Quinta reconstrucción (mismo día, 2026-09-06): Dinamarca, el primer país con vía oficial gratuita genuinamente pendiente (no bloqueada)
+
+Instrucción del usuario: "sigue con Dinamarca para el hueco de sector". Caso distinto de Alemania/Suiza/Italia: el registro danés CVR (Erhvervsstyrelsen) sí tiene una API oficial real y gratuita con el código DB07 — confirmado en vivo que `distribution.virk.dk` exige cuenta registrada (`401`), la misma solicitud de credencial ya iniciada en una fase anterior de este proyecto (para fundamentales) pero sin confirmar si se completó. Preguntado directamente, el usuario confirmó que aún no tiene esa credencial y eligió Wikidata mientras tanto (14/21 coincidencias reales ya verificadas, 0 ambiguas). Al ser el cuarto país con el mismo mecanismo, se reejecutó `v2.38AR` (`--countries CH IT DK`) sin ningún script nuevo.
+
+### Resultado real
+
+`MACRO_CONTEXT_READY` sube de **147 a 155** (+8, todos en Dinamarca: Carlsberg→alimentación/bebidas, Maersk→transporte marítimo, Genmab/Bavarian Nordic→biotecnología, Ørsted→energía, Coloplast→salud, Tryg→seguros, ISS→gestión de instalaciones). Dinamarca pasa de 0/689 a **8/689** con coincidencia real de sector. Novo Nordisk, sorprendentemente, no tiene coincidencia en Wikidata — un hueco real de esa base de datos, no un fallo del script.
+
+**El hueco de sector europeo pasa de 39/689 a 47/689** (GB 4 + Francia 3 + Países Bajos 14 + Suiza 6 + Italia 12 + Dinamarca 8). Quedan 6 países sin atacar: Austria (20), Irlanda (17), España (15), Bélgica (6), Finlandia (5), Suecia (4) — 67/689 empresas. **Nota abierta**: si el usuario completa el registro CVR pendiente, este bloque debería revisitarse para sustituir Wikidata por el código DB07 oficial en Dinamarca.
+
+**Estado del bloque (quinta reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Ninguna prueba nueva necesaria (12 en total).
