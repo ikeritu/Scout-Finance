@@ -123,3 +123,9 @@ outputs/full_universe_source_acquisition/v2_38y_europe_gb_full_expansion/europe_
 # source) -- same reasoning as v2.38W/Y above: raw/individual real
 # financial figures never published, only aggregate coverage counts
 outputs/full_universe_source_acquisition/v2_38ai_europe_austria_fundamentals/europe_austria_fundamental_records_v2_38ai.jsonl
+
+# Local Phase 9AX Luxembourg Centrale des Bilans raw quarterly XML cache --
+# CC-BY-SA open data (data.public.lu), but each quarterly file is
+# 100-800MB and this project keeps every provider's raw bulk download out
+# of git for repo size, same as every other raw cache above
+outputs/full_universe_source_acquisition/v2_38ax_europe_luxembourg_fundamentals/raw_quarterly_xml_cache_v2_38ax/

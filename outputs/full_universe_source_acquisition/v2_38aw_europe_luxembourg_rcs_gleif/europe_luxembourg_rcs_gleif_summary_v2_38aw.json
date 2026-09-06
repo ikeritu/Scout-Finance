@@ -1,0 +1,14 @@
+{
+  "credentials_used": false,
+  "input_assets": 20,
+  "isin_based_gleif_lookup_confirmed_zero_coverage": true,
+  "network_used": true,
+  "phase": "v2.38AW-europe-luxembourg-rcs-gleif",
+  "phase9c_authorized": false,
+  "resolution_method": "gleif_legal_name_prefix_filter_plus_exact_token_verification_country_lu",
+  "resolved": 18,
+  "unresolved": 2,
+  "unresolved_reasons": {
+    "no_exact_normalized_name_match_in_luxembourg": 2
+  }
+}
