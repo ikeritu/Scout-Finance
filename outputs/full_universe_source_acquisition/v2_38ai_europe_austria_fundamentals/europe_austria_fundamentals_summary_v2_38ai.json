@@ -1,0 +1,16 @@
+{
+  "companies_error": 0,
+  "companies_fetched": 20,
+  "credentials_used": true,
+  "data_source": "firmenakte.at (commercial aggregator of official Austrian government registers, user-approved exception, not an official/non-profit source)",
+  "extracted_values": 564,
+  "input_resolved_assets": 20,
+  "not_tagged_values": 338,
+  "note": "Values are the entity's own standalone (Einzelabschluss) filed figures, not necessarily group-consolidated IFRS figures. Multi-year (up to 5 fiscal years per company) where available.",
+  "phase": "v2.38AI-europe-austria-fundamentals",
+  "phase9c_authorized": false,
+  "raw_cache_published": false,
+  "real_filings_downloaded": true,
+  "real_fundamentals_present": true,
+  "total_records": 902
+}
