@@ -64,3 +64,19 @@ Instrucciones del usuario: "sigue con Alemania para el hueco de sector" y, tras 
 **Lo que queda sin atacar**: 598/689 empresas europeas (Suiza 29, Italia 22, Dinamarca 21, Austria 20, Irlanda 17, España 15, Bélgica 6, Finlandia 5, Suecia 4) — ningún registro nacional de esos 9 países investigado todavía para clasificación sectorial.
 
 **Estado del bloque (segunda reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 1 prueba offline nueva añadida (11 en total). El hueco de sector en Europa pasa de 7/689 a 21/689 con esta reconstrucción.
+
+---
+
+## Tercera reconstrucción (mismo día, 2026-09-06): Suiza, con prueba en vivo del registro oficial antes de decidir
+
+Instrucción del usuario: "sigue con Suiza para el hueco de sector". A diferencia de Alemania (investigación de escritorio), aquí se construyó y ejecutó un **cliente SOAP real** contra el registro oficial suizo UID (`uid-wse-a.admin.ch`, Oficina Federal de Estadística): confirmado en vivo que el servicio público (sin cuenta, gratis) funciona y devuelve datos reales de Nestlé, Novartis, Sika, Straumann y Logitech — pero **ni una sola vez** aparece el campo `NOGACode` (clasificación sectorial), ni siquiera en el registro de ejemplo oficial del propio servicio que muestra todos los campos posibles. Mismo patrón exacto que Alemania: el dato existe en el esquema y en el sistema, pero se retiene del nivel público/no autenticado.
+
+Presentada de nuevo la elección real al usuario (Wikidata, ya comprobado en vivo con 16/29 coincidencias, o dejar el país sin atacar), **el usuario eligió Wikidata otra vez**. Dado que es la segunda vez que se usa exactamente el mismo mecanismo, `v2.38AQ` (específico de Países Bajos) se generalizó en `v2.38AR` (acepta `--countries`, cualquier país futuro se reejecuta con el mismo script) — siguiendo el mismo patrón de generalización tras un segundo caso real ya usado con GLEIF (`v2.38AE`→`v2.38AF`).
+
+### Resultado real de esta reconstrucción
+
+`MACRO_CONTEXT_READY` sube de **129 a 135** (+6, todos en Suiza: Novartis→química/farmacéutica, Nestlé→alimentación, ABB→ingeniería eléctrica/robótica, UBS→banca, Sika→química/construcción, Alcon→farmacéutica). Suiza pasa de 0/689 a **6/689** con coincidencia real de sector.
+
+**El hueco de sector europeo pasa de 21/689 a 27/689** (GB 4 + Francia 3 + Países Bajos 14 + Suiza 6). Quedan 8 países sin atacar: Italia (22), Dinamarca (21), Austria (20), Irlanda (17), España (15), Bélgica (6), Finlandia (5), Suecia (4) — 110/689 empresas en total.
+
+**Estado del bloque (tercera reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 1 prueba offline nueva añadida (12 en total).

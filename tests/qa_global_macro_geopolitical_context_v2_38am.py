@@ -23,6 +23,7 @@ US_SIGNAL_FIELDS = ["asset_id", "ticker", "company_name", "fundamental_signal_su
 GB_SIC_FIELDS = ["asset_id", "ticker", "company_name", "sic_codes", "sic_descriptions"]
 FRANCE_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "naf_code", "naf_description_en"]
 NETHERLANDS_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "industries", "non_official_source_caveat"]
+GENERALIZED_WIKIDATA_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "country", "industries", "non_official_source_caveat"]
 
 
 def module(path: Path, name: str):
@@ -53,7 +54,7 @@ def coverage_row(asset_id: str, ticker: str, name: str, country: str, identity_s
             "price_status": "NOT_ATTEMPTED", "price_source": "", "overall_coverage_status": overall, "phase": ""}
 
 
-def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None, netherlands_sector_rows=None):
+def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None, netherlands_sector_rows=None, generalized_wikidata_sector_rows=None):
     mod = module(SCRIPT, f"geo_{id(coverage_rows)}")
     coverage_path = tmp / "coverage.csv.xz"
     write_coverage_xz(coverage_path, coverage_rows)
@@ -69,7 +70,10 @@ def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic
     netherlands_sector_path = tmp / "netherlands_sector.csv"
     if netherlands_sector_rows:
         write_csv(netherlands_sector_path, netherlands_sector_rows, NETHERLANDS_SECTOR_FIELDS)
-    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, netherlands_sector_path, tmp / "out")
+    generalized_wikidata_sector_path = tmp / "generalized_wikidata_sector.csv"
+    if generalized_wikidata_sector_rows:
+        write_csv(generalized_wikidata_sector_path, generalized_wikidata_sector_rows, GENERALIZED_WIKIDATA_SECTOR_FIELDS)
+    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, netherlands_sector_path, generalized_wikidata_sector_path, tmp / "out")
     rows = {r["asset_id"]: r for r in csv.DictReader((tmp / "out" / "global_macro_geopolitical_context_v2_38am.csv").open(encoding="utf-8"))}
     return report, rows
 
@@ -169,6 +173,25 @@ def test_netherlands_wikidata_source_matches_and_carries_non_official_caveat():
     assert "NOT an official government registry" in row["macro_limitations"]
 
 
+def test_switzerland_generalized_wikidata_source_matches_and_carries_caveat():
+    """Real case: v2.38AR generalized v2.38AQ's approach to Switzerland
+    after live-testing confirmed the Swiss UID register's public tier
+    never exposes NOGACode. Novartis's real Wikidata industry
+    ('pharmaceutical industry') must reach MACRO_CONTEXT_READY via
+    v2.38AR, distinct from v2.38AQ's own Netherlands-specific source."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "NOT", "NOVARTIS", "CH")],
+            generalized_wikidata_sector_rows=[{"asset_id": "U1", "ticker": "NOT", "company_name": "NOVARTIS", "country": "CH", "industries": "pharmaceutical industry", "non_official_source_caveat": "Sourced from Wikidata -- NOT an official government registry."}],
+        )
+    row = rows["U1"]
+    assert row["macro_context_status"] == "MACRO_CONTEXT_READY"
+    assert "HEALTHCARE_REGULATION" in row["applicable_themes"].split("|")
+    assert row["sector_text_source"] == "v2.38AR"
+    assert "NOT an official government registry" in row["macro_limitations"]
+
+
 def test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf():
     """Real case: Austria (AT) is both an EU member and a Eurozone member
     -- must get EU_SINGLE_MARKET_REGULATION AND EUROZONE_ECB_MONETARY_
@@ -234,6 +257,7 @@ CASES = [
     test_gb_company_with_real_sic_description_reaches_ready_status,
     test_france_company_with_real_naf_description_reaches_ready_status,
     test_netherlands_wikidata_source_matches_and_carries_non_official_caveat,
+    test_switzerland_generalized_wikidata_source_matches_and_carries_caveat,
     test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf,
     test_gb_gets_brexit_theme_not_eu_or_eurozone,
     test_switzerland_gets_chf_theme_not_eu_or_eurozone,
