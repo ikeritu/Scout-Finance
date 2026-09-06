@@ -1,0 +1,46 @@
+{
+  "by_registration_authority": {
+    "RA000017": 20,
+    "RA000025": 6,
+    "RA000170": 21,
+    "RA000407": 22,
+    "RA000544": 4,
+    "RA000548": 11,
+    "RA000549": 18
+  },
+  "countries_covered": [
+    "AT",
+    "BE",
+    "CH",
+    "DK",
+    "FI",
+    "IT",
+    "SE"
+  ],
+  "credentials_used": false,
+  "gleif_profiles_confirmed": 102,
+  "gleif_unresolved_or_error": 5,
+  "input_resolved_assets": 107,
+  "network_used": true,
+  "note": "Registry identity confirmation only (registration authority + national number via GLEIF, ISIN-keyed, no name-matching ambiguity). Per-country financial-statement source research is deliberately out of scope for this block -- left for future, country-specific investigation the same way GB/Ireland/France/Netherlands were each investigated individually.",
+  "phase": "v2.38AF-europe-gleif-registry-lookup",
+  "phase9c_authorized": false,
+  "resolved_by_country": {
+    "AT": 20,
+    "BE": 6,
+    "CH": 29,
+    "DK": 21,
+    "FI": 0,
+    "IT": 22,
+    "SE": 4
+  },
+  "total_by_country": {
+    "AT": 20,
+    "BE": 6,
+    "CH": 29,
+    "DK": 21,
+    "FI": 5,
+    "IT": 22,
+    "SE": 4
+  }
+}
