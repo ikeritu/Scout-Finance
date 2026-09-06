@@ -1,0 +1,29 @@
+{
+  "asset_id": "U04441",
+  "cik": "0001819848",
+  "credentials_used": false,
+  "feature_quality_status": "FEATURES_READY",
+  "feature_rejections": 3,
+  "features_calculated": 17,
+  "features_missing": "cash_conversion_ratio|net_income_yoy_growth|operating_cash_flow_yoy_growth",
+  "metrics_available": [
+    "assets",
+    "capex",
+    "eps_basic",
+    "eps_diluted",
+    "equity",
+    "liabilities",
+    "net_income",
+    "operating_cash_flow",
+    "revenue"
+  ],
+  "missing_metrics": [],
+  "network_used": false,
+  "normalization_quality_status": "NORMALIZED_READY",
+  "normalization_rejected": 9,
+  "normalized_records": 558,
+  "note": "Reuses v2.38F.normalize_company() and v2.38G.build_company() unmodified -- same methodology already validated on 555 companies, applied to one real, previously-unprocessed company discovered via v2.38AV/AZ.",
+  "phase": "v2.38BA-us-joby-aviation-fundamentals",
+  "phase9c_authorized": false,
+  "ticker": "JOBY"
+}

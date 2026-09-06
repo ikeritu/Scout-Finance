@@ -1,0 +1,2 @@
+asset_id,ticker,company_name,exchange,cik,enrichment_status,records,metrics_available,annual_records,quarterly_records,latest_filed,latest_period_end,quality_status,missing_metrics,quality_flags
+U04441,JOBY,"Joby Aviation, Inc.",NYSE,0001819848,ENRICHED_SEC_READY,558,assets|capex|eps_basic|eps_diluted|equity|liabilities|net_income|operating_cash_flow|revenue,134,424,2026-08-06,2026-06-30,NORMALIZED_READY,,
