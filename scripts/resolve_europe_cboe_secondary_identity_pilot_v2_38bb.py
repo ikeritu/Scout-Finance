@@ -78,6 +78,7 @@ LEGAL_FORM_RE = re.compile(
     r"\s+("
     r"PUBLIC LIMITED COMPANY|LIMITED COMPANY|AKTIENGESELLSCHAFT|AKTIEBOLAG|"
     r"ALLMENNAKSJESELSKAP|NAAMLOZE VENNOOTSCHAP|SOCIETA PER AZIONI|SOCIETE ANONYME|"
+    r"CORPORATION|LIMITED|COMPANY|"
     r"S\.?A\.?|SE|SCA|S\.C\.A\.?|N\.?V\.?|PLC|AG|GMBH|LTD|INC|CORP|OYJ|ASA|AB|A/S|SPA|CO"
     r")$", re.IGNORECASE,
 )
@@ -185,11 +186,23 @@ def http_get_json(url: str) -> tuple[int, dict | None]:
     raise RuntimeError("rate_limit_retries_exhausted")
 
 
-def gleif_lookup_no_country(key: str) -> tuple[list[dict], str]:
-    """No country filter, unlike Luxembourg's scoped search -- the real
-    country is exactly what this pilot is trying to discover."""
-    first_word = key.split()[0] if key else key
-    query = urllib.parse.urlencode({"filter[entity.legalName]": first_word, "page[size]": "50"})
+def raw_words(name: str, count: int) -> str:
+    """The first `count` whitespace-separated tokens of the ORIGINAL,
+    un-normalized name -- keeps internal punctuation (periods, ampersands)
+    intact. Real bug found live: GLEIF's own legalName filter does a
+    literal prefix match against its stored string, punctuation included
+    -- querying "WW" (periods stripped by our own normalization) finds
+    nothing, but querying "W.W." (the real Cboe/GLEIF spelling, periods
+    kept) finds "W.W. GRAINGER, INC." immediately. The normalized,
+    punctuation-free key is still used for the exact-match comparison
+    afterwards -- only the query sent to GLEIF needs the original
+    spelling."""
+    tokens = (name or "").strip().split()
+    return " ".join(tokens[:count])
+
+
+def gleif_query(query_string: str) -> tuple[list[dict], str]:
+    query = urllib.parse.urlencode({"filter[entity.legalName]": query_string, "page[size]": "50"})
     status, payload = http_get_json(f"{GLEIF_URL}?{query}")
     if status != 200 or payload is None:
         return [], f"gleif_http_error_{status}"
@@ -206,6 +219,31 @@ def find_exact_candidates(key: str, records: list[dict]) -> list[dict]:
     return matches
 
 
+def gleif_lookup_no_country(original_name: str, key: str) -> tuple[list[dict], str, str]:
+    """Two-step search, no country filter (the real country is exactly
+    what this pilot is trying to discover). Step 1: query with the raw
+    first word (original spelling, punctuation intact). Step 2 (real
+    fallback, found live via "Check Point Software Technologies" --
+    querying just "Check" returns dozens of unrelated small companies
+    named "Check ..." and never finds it on page 1, but "Check Point"
+    finds it immediately): if step 1 finds no exact match and the name
+    has a second word, retry with the first two raw words together --
+    strictly narrower than one word, so it only adds a real candidate,
+    never removes one already found."""
+    first = raw_words(original_name, 1)
+    records, reason = gleif_query(first)
+    if reason != "queried":
+        return [], reason, "first_word"
+    if find_exact_candidates(key, records):
+        return records, "queried", "first_word"
+    two = raw_words(original_name, 2)
+    if two and two != first:
+        more_records, reason2 = gleif_query(two)
+        if reason2 == "queried" and find_exact_candidates(key, more_records):
+            return more_records, "queried", "first_two_words"
+    return records, "queried", "first_word"
+
+
 def build(home_exchange_csv: Path, eu_identity_csv: Path, census_xz: Path, output_dir: Path, sample_size: int, seed: int, execute: bool) -> dict[str, Any]:
     known_names = load_known_names(eu_identity_csv, census_xz)
     candidates = select_candidates(home_exchange_csv, known_names)
@@ -220,7 +258,7 @@ def build(home_exchange_csv: Path, eu_identity_csv: Path, census_xz: Path, outpu
         if i > 0:
             time.sleep(GLEIF_MIN_SECONDS_BETWEEN_CALLS)
         key = normalize_key(row["company_name"])
-        records, reason = gleif_lookup_no_country(key)
+        records, reason, query_strategy = gleif_lookup_no_country(row["company_name"], key)
         if reason != "queried":
             matrix.append(_record(row, key, "unresolved", reason, created_at))
             continue
@@ -239,7 +277,7 @@ def build(home_exchange_csv: Path, eu_identity_csv: Path, census_xz: Path, outpu
         matrix.append(_record(
             row, key, "resolved", "exact_single_gleif_match_no_country_filter", created_at,
             lei=exact[0].get("id", ""), legal_name=(entity.get("legalName") or {}).get("name", ""),
-            country=(entity.get("legalAddress") or {}).get("country", ""),
+            country=(entity.get("legalAddress") or {}).get("country", ""), query_strategy=query_strategy,
         ))
 
     resolved = [r for r in matrix if r["status"] == "resolved"]
@@ -247,6 +285,7 @@ def build(home_exchange_csv: Path, eu_identity_csv: Path, census_xz: Path, outpu
     unresolved = [r for r in matrix if r["status"] == "unresolved"]
     from collections import Counter
     by_country = Counter(r["country"] for r in resolved if r["country"])
+    by_query_strategy = Counter(r["query_strategy"] for r in resolved if r["query_strategy"])
 
     report = {
         "phase": PHASE, "sample_size": len(sample), "sample_seed": seed,
@@ -255,6 +294,7 @@ def build(home_exchange_csv: Path, eu_identity_csv: Path, census_xz: Path, outpu
         "resolved_rate_pct": round(100 * len(resolved) / len(sample), 1) if sample else 0,
         "ambiguous_rate_pct": round(100 * len(ambiguous) / len(sample), 1) if sample else 0,
         "resolved_by_country": dict(sorted(by_country.items(), key=lambda kv: -kv[1])),
+        "resolved_by_query_strategy": dict(by_query_strategy),
         "projection_if_scaled_to_full_population": {
             "estimated_resolved": round(len(candidates) * (len(resolved) / len(sample))) if sample else 0,
             "estimated_ambiguous": round(len(candidates) * (len(ambiguous) / len(sample))) if sample else 0,
@@ -268,14 +308,15 @@ def build(home_exchange_csv: Path, eu_identity_csv: Path, census_xz: Path, outpu
     return report
 
 
-MATRIX_FIELDS = ["asset_id", "ticker", "company_name", "search_key", "status", "reason", "lei", "legal_name", "country", "candidate_count", "candidate_countries", "phase", "created_at_utc"]
+MATRIX_FIELDS = ["asset_id", "ticker", "company_name", "search_key", "status", "reason", "lei", "legal_name", "country", "candidate_count", "candidate_countries", "query_strategy", "phase", "created_at_utc"]
 
 
-def _record(row: dict[str, str], key: str, status: str, reason: str, created_at: str, lei: str = "", legal_name: str = "", country: str = "", candidate_count: int = 0, candidate_countries: str = "") -> dict[str, str]:
+def _record(row: dict[str, str], key: str, status: str, reason: str, created_at: str, lei: str = "", legal_name: str = "", country: str = "", candidate_count: int = 0, candidate_countries: str = "", query_strategy: str = "") -> dict[str, str]:
     return {
         "asset_id": row["asset_id"], "ticker": row["ticker"], "company_name": row["company_name"], "search_key": key,
         "status": status, "reason": reason, "lei": lei, "legal_name": legal_name, "country": country,
-        "candidate_count": candidate_count, "candidate_countries": candidate_countries, "phase": PHASE, "created_at_utc": created_at,
+        "candidate_count": candidate_count, "candidate_countries": candidate_countries, "query_strategy": query_strategy,
+        "phase": PHASE, "created_at_utc": created_at,
     }
 
 

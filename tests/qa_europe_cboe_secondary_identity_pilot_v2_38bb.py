@@ -69,6 +69,18 @@ def test_public_limited_company_full_form_matches_plc_abbreviation():
     assert mod.normalize_key("Croda International PLC") == mod.normalize_key("CRODA INTERNATIONAL PUBLIC LIMITED COMPANY")
 
 
+def test_spelled_out_legal_forms_converge_with_their_abbreviations():
+    """Real bug found live: the source often abbreviates a legal form
+    ("Ltd", "Corp", "Co") while GLEIF spells it out in full ("Limited",
+    "Corporation", "Company") -- the single biggest yield improvement
+    found in this pilot (confirmed live with China Overseas Land &
+    Investment Ltd/Limited and Canadian National Railway Co/Company)."""
+    mod = module()
+    assert mod.normalize_key("China Overseas Land & Investment Ltd") == mod.normalize_key("China Overseas Land & Investment Limited")
+    assert mod.normalize_key("Canadian National Railway Co") == mod.normalize_key("Canadian National Railway Company")
+    assert mod.normalize_key("Some Corp") == mod.normalize_key("Some Corporation")
+
+
 def test_etf_named_rows_are_excluded_from_candidates():
     mod = module()
     with tempfile.TemporaryDirectory() as tmp:
@@ -108,7 +120,7 @@ def test_exact_single_match_resolves_with_real_country():
     mod = module()
 
     def fake_http_get_json(url):
-        assert "UBER" in url
+        assert "uber" in url.lower()
         return 200, {"data": [gleif_entity("Uber Technologies, Inc.", "US")], "meta": {"pagination": {"total": 1}}}
 
     mod.http_get_json = fake_http_get_json
@@ -124,6 +136,67 @@ def test_exact_single_match_resolves_with_real_country():
         rows = list(csv.DictReader((root / "out" / "europe_cboe_secondary_identity_pilot_matrix_v2_38bb.csv").open(encoding="utf-8")))
     assert report["resolved"] == 1
     assert rows[0]["country"] == "US"
+
+
+def test_raw_first_word_query_preserves_internal_punctuation():
+    """Real bug found live: GLEIF's own legalName filter does a literal
+    prefix match including punctuation -- querying "WW" (periods
+    stripped by our normalization) finds nothing, but "W.W." (the real
+    spelling, periods intact) finds "W.W. GRAINGER, INC." immediately.
+    The query sent to GLEIF must use the original spelling, never the
+    punctuation-stripped comparison key."""
+    mod = module()
+    seen_queries = []
+
+    def fake_http_get_json(url):
+        seen_queries.append(url)
+        if "W.W." in url or "W%2EW%2E" in url:
+            return 200, {"data": [gleif_entity("W.W. Grainger, Inc.", "US")], "meta": {"pagination": {"total": 1}}}
+        return 200, {"data": [], "meta": {"pagination": {"total": 0}}}
+
+    mod.http_get_json = fake_http_get_json
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        home = root / "home.csv"
+        write_home_exchange_csv(home, [cboe_row("U1", "GWW", "W.W. Grainger Inc")])
+        eu = root / "eu.csv"
+        write_empty_eu_identity_csv(eu)
+        census = root / "census.csv.xz"
+        write_empty_census_xz(census)
+        report = mod.build(home, eu, census, root / "out", sample_size=1, seed=1, execute=True)
+        rows = list(csv.DictReader((root / "out" / "europe_cboe_secondary_identity_pilot_matrix_v2_38bb.csv").open(encoding="utf-8")))
+    assert report["resolved"] == 1
+    assert rows[0]["query_strategy"] == "first_word"
+
+
+def test_two_word_fallback_finds_match_first_word_alone_misses():
+    """Real case: "Check Point Software Technologies Ltd" -- querying
+    just "Check" alone (too generic) never surfaces it among unrelated
+    "Check ..." companies, but "Check Point" (first two words) does. The
+    two-word fallback must only fire when the one-word query found no
+    exact match, and never overwrite a match the one-word query already
+    found."""
+    mod = module()
+
+    def fake_http_get_json(url):
+        if "Check%20Point" in url or "Check+Point" in url:
+            return 200, {"data": [gleif_entity("Check Point Software Technologies, Inc.", "US")], "meta": {"pagination": {"total": 1}}}
+        return 200, {"data": [gleif_entity("Check Something Unrelated Ltd", "GB")], "meta": {"pagination": {"total": 1}}}
+
+    mod.http_get_json = fake_http_get_json
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        home = root / "home.csv"
+        write_home_exchange_csv(home, [cboe_row("U1", "CHKP", "Check Point Software Technologies Ltd")])
+        eu = root / "eu.csv"
+        write_empty_eu_identity_csv(eu)
+        census = root / "census.csv.xz"
+        write_empty_census_xz(census)
+        report = mod.build(home, eu, census, root / "out", sample_size=1, seed=1, execute=True)
+        rows = list(csv.DictReader((root / "out" / "europe_cboe_secondary_identity_pilot_matrix_v2_38bb.csv").open(encoding="utf-8")))
+    assert report["resolved"] == 1
+    assert rows[0]["country"] == "US"
+    assert rows[0]["query_strategy"] == "first_two_words"
 
 
 def test_multiple_distinct_countries_stays_ambiguous_never_guessed():
@@ -185,9 +258,12 @@ def test_dry_run_never_touches_network():
 CASES = [
     test_normalize_key_converges_regardless_of_trailing_period,
     test_public_limited_company_full_form_matches_plc_abbreviation,
+    test_spelled_out_legal_forms_converge_with_their_abbreviations,
     test_etf_named_rows_are_excluded_from_candidates,
     test_already_known_eu_company_is_excluded_as_duplicate,
     test_exact_single_match_resolves_with_real_country,
+    test_raw_first_word_query_preserves_internal_punctuation,
+    test_two_word_fallback_finds_match_first_word_alone_misses,
     test_multiple_distinct_countries_stays_ambiguous_never_guessed,
     test_no_gleif_match_stays_unresolved,
     test_dry_run_never_touches_network,
