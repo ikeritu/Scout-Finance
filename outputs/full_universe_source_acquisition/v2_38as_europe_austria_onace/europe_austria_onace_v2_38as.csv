@@ -1,0 +1,21 @@
+asset_id,ticker,company_name,fnr,fetch_status,fetch_reason,onace_code,onace_description_en,onace_titel_de,purpose_de,unknown_onace_code,phase,created_at_utc
+U36865,XD4,STRABAG SE,88983h,resolved,onace_present_on_record,70100,Activities of head offices,Verwaltung und Führung von Unternehmen und Betrieben,,,v2.38AS-europe-austria-onace,2026-09-06T16:37:43Z
+U36866,RAW,RAIFFEISEN BK INTL,122119m,resolved,onace_present_on_record,64190,Other monetary intermediation,"Kreditinstitute, ohne Spezialkreditinstitute",,,v2.38AS-europe-austria-onace,2026-09-06T16:37:43Z
+U36867,ABS2,PORR AG,34853f,resolved,onace_present_on_record,70100,Activities of head offices,Verwaltung und Führung von Unternehmen und Betrieben,,,v2.38AS-europe-austria-onace,2026-09-06T16:37:43Z
+U36868,EBO,ERSTE GROUP BNK,33209m,resolved,onace_present_on_record,64190,Other monetary intermediation,"Kreditinstitute, ohne Spezialkreditinstitute",Bankgeschäfte,,v2.38AS-europe-austria-onace,2026-09-06T16:37:43Z
+U36869,AZ2,ANDRITZ AG,50935f,resolved,onace_present_on_record,28950,Manufacture of machinery for paper and paperboard production,Herstellung von Maschinen für die Papiererzeugung und -verarbeitung,,,v2.38AS-europe-austria-onace,2026-09-06T16:37:43Z
+U36870,OMV,OMV AG,93363z,error,http_status_000_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36871,OEWA,VERBUND AG       INH. A,76023z,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36872,FAA,FABASOFT AG,98699x,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36873,UN9,UNIQA INSURANCE GROUP AG,92933t,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36874,WIB,WIENERBERGER,77676f,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36875,VAS,VOESTALPINE AG,66209t,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36876,SLL,SBO AG,102999w,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36877,KTN,KONTRON AG,190272m,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36878,WAH,WOLFTANK GROUP AG,306731a,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36879,GEPH,EPH GROUP AG IA,603735x,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36880,4X0,STEYR MOTORS AG,583243k,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36881,O3P,OESTERREICH. POST AG,180219d,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36882,0B2,BAWAG GROUP AG,269842b,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36883,1AST,ASTA ENERGY SOLUTIONS AG,271337a,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z
+U36884,FQT,FREQUENTIS AG,72115b,error,http_status_429_after_3_attempts,,,,,,v2.38AS-europe-austria-onace,2026-09-06T17:00:14Z

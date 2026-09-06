@@ -110,3 +110,19 @@ Instrucción del usuario: "sigue con Dinamarca para el hueco de sector". Caso di
 **El hueco de sector europeo pasa de 39/689 a 47/689** (GB 4 + Francia 3 + Países Bajos 14 + Suiza 6 + Italia 12 + Dinamarca 8). Quedan 6 países sin atacar: Austria (20), Irlanda (17), España (15), Bélgica (6), Finlandia (5), Suecia (4) — 67/689 empresas. **Nota abierta**: si el usuario completa el registro CVR pendiente, este bloque debería revisitarse para sustituir Wikidata por el código DB07 oficial en Dinamarca.
 
 **Estado del bloque (quinta reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Ninguna prueba nueva necesaria (12 en total).
+
+---
+
+## Sexta reconstrucción (mismo día, 2026-09-06): Austria — sin nueva decisión de política, con un fallo real de proveedor documentado
+
+Instrucción del usuario: "sigue con Austria para el hueco de sector". Caso distinto a todos los anteriores: Austria **ya tiene** una fuente real y aprobada (`firmenakte.at`, excepción comercial aprobada en `v2.38AI` para fundamentales) — investigando la respuesta completa de esa misma API se confirmó en vivo que **ya incluye** un campo `oenaces` (ÖNACE oficial, implementación austriaca 1:1 de NACE Rev.2) y un campo `purpose`, nunca antes leídos por `v2.38AI`. Ninguna aprobación nueva del usuario fue necesaria.
+
+Al construir `v2.38AS` se encontró y documentó un **bug real de conectividad del proveedor**: `api.firmenakte.at` sufre una degradación de conexión intermitente real (confirmado durante varios minutos con `curl`, sin relación con ningún límite de tasa ni con el resto de Internet) — Python `urllib` colgaba sistemáticamente contra ese host mientras `curl` respondía al instante, resuelto invocando `curl` como subproceso. El script se hizo **resumible** (nunca repite una empresa ya resuelta), verificado en vivo con tres ejecuciones reales consecutivas que preservaron exactamente las mismas 5 empresas confirmadas sin perderlas ni repetirlas.
+
+### Resultado real (parcial, honesto)
+
+**5/20 empresas austriacas con código ÖNACE real, 15/20 pendientes por la degradación real y actual del proveedor** (STRABAG/PORR→"Activities of head offices", Raiffeisen Bank International/Erste Group Bank→"Other monetary intermediation", Andritz→fabricación de maquinaria papelera). `MACRO_CONTEXT_READY` sube de 155 a **156** (+1: Erste Group Bank, vía `BANK_CREDIT_CYCLE` — su texto alemán de objeto social real, "Bankgeschäfte", coincide por subcadena con la palabra clave "bank", algo que la sola traducción al inglés no habría producido). Austria pasa de 0/689 a **1/689** con coincidencia real de sector, con 4 empresas más ya identificadas correctamente pero sin coincidencia de tema (holdings/bancos sin la palabra exacta).
+
+**El hueco de sector europeo pasa de 47/689 a 48/689.** Este bloque queda explícitamente incompleto: en cuanto el proveedor se recupere, una nueva ejecución de `v2.38AS` completará las 15 empresas restantes sin perder las 5 ya confirmadas, y debería reconstruirse `v2.38AM` de nuevo entonces.
+
+**Estado del bloque (sexta reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 2 pruebas offline nuevas añadidas (14 en total).

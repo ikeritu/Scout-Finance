@@ -24,6 +24,7 @@ GB_SIC_FIELDS = ["asset_id", "ticker", "company_name", "sic_codes", "sic_descrip
 FRANCE_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "naf_code", "naf_description_en"]
 NETHERLANDS_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "industries", "non_official_source_caveat"]
 GENERALIZED_WIKIDATA_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "country", "industries", "non_official_source_caveat"]
+AUSTRIA_ONACE_FIELDS = ["asset_id", "ticker", "company_name", "fetch_status", "onace_code", "onace_description_en", "purpose_de"]
 
 
 def module(path: Path, name: str):
@@ -54,7 +55,7 @@ def coverage_row(asset_id: str, ticker: str, name: str, country: str, identity_s
             "price_status": "NOT_ATTEMPTED", "price_source": "", "overall_coverage_status": overall, "phase": ""}
 
 
-def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None, netherlands_sector_rows=None, generalized_wikidata_sector_rows=None):
+def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None, netherlands_sector_rows=None, generalized_wikidata_sector_rows=None, austria_onace_rows=None):
     mod = module(SCRIPT, f"geo_{id(coverage_rows)}")
     coverage_path = tmp / "coverage.csv.xz"
     write_coverage_xz(coverage_path, coverage_rows)
@@ -73,7 +74,10 @@ def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic
     generalized_wikidata_sector_path = tmp / "generalized_wikidata_sector.csv"
     if generalized_wikidata_sector_rows:
         write_csv(generalized_wikidata_sector_path, generalized_wikidata_sector_rows, GENERALIZED_WIKIDATA_SECTOR_FIELDS)
-    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, netherlands_sector_path, generalized_wikidata_sector_path, tmp / "out")
+    austria_onace_path = tmp / "austria_onace.csv"
+    if austria_onace_rows:
+        write_csv(austria_onace_path, austria_onace_rows, AUSTRIA_ONACE_FIELDS)
+    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, netherlands_sector_path, generalized_wikidata_sector_path, austria_onace_path, tmp / "out")
     rows = {r["asset_id"]: r for r in csv.DictReader((tmp / "out" / "global_macro_geopolitical_context_v2_38am.csv").open(encoding="utf-8"))}
     return report, rows
 
@@ -192,6 +196,40 @@ def test_switzerland_generalized_wikidata_source_matches_and_carries_caveat():
     assert "NOT an official government registry" in row["macro_limitations"]
 
 
+def test_austria_onace_source_matches_bank_via_german_purpose_substring():
+    """Real case (Erste Group Bank AG): v2.38AS provides both the
+    English-translated ÖNACE description ('Other monetary intermediation'
+    -- doesn't literally contain 'bank') and the raw German purpose text
+    ('Bankgeschäfte') -- which DOES match the BANK_CREDIT_CYCLE keyword
+    'bank' as a substring, a real free win from including the untranslated
+    official filing text rather than only the translated description."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "EBO", "ERSTE GROUP BANK AG", "AT")],
+            austria_onace_rows=[{"asset_id": "U1", "ticker": "EBO", "company_name": "ERSTE GROUP BANK AG", "fetch_status": "resolved", "onace_code": "64190", "onace_description_en": "Other monetary intermediation", "purpose_de": "Bankgeschäfte"}],
+        )
+    row = rows["U1"]
+    assert row["macro_context_status"] == "MACRO_CONTEXT_READY"
+    assert "BANK_CREDIT_CYCLE" in row["applicable_themes"].split("|")
+    assert row["sector_text_source"] == "v2.38AS"
+
+
+def test_austria_onace_not_yet_resolved_never_used_as_source():
+    """A company still pending (fetch_status='error', a real state given
+    firmenakte.at's confirmed intermittent connectivity) must never be
+    treated as if it had real sector data."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "OMV", "OMV AKTIENGESELLSCHAFT", "AT")],
+            austria_onace_rows=[{"asset_id": "U1", "ticker": "OMV", "company_name": "OMV AKTIENGESELLSCHAFT", "fetch_status": "error", "onace_code": "", "onace_description_en": "", "purpose_de": ""}],
+        )
+    row = rows["U1"]
+    assert row["sector_text_source"] == ""
+    assert row["macro_context_status"] == "MACRO_CONTEXT_PARTIAL"
+
+
 def test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf():
     """Real case: Austria (AT) is both an EU member and a Eurozone member
     -- must get EU_SINGLE_MARKET_REGULATION AND EUROZONE_ECB_MONETARY_
@@ -258,6 +296,8 @@ CASES = [
     test_france_company_with_real_naf_description_reaches_ready_status,
     test_netherlands_wikidata_source_matches_and_carries_non_official_caveat,
     test_switzerland_generalized_wikidata_source_matches_and_carries_caveat,
+    test_austria_onace_source_matches_bank_via_german_purpose_substring,
+    test_austria_onace_not_yet_resolved_never_used_as_source,
     test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf,
     test_gb_gets_brexit_theme_not_eu_or_eurozone,
     test_switzerland_gets_chf_theme_not_eu_or_eurozone,
