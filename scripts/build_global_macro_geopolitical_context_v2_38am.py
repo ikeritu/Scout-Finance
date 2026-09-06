@@ -52,6 +52,7 @@ FRANCE_SECTOR_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38ao_e
 NETHERLANDS_SECTOR_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38aq_europe_netherlands_wikidata_sector/europe_netherlands_wikidata_sector_v2_38aq.csv"
 GENERALIZED_WIKIDATA_SECTOR_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38ar_europe_wikidata_sector/europe_wikidata_sector_v2_38ar.csv"
 AUSTRIA_ONACE_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38as_europe_austria_onace/europe_austria_onace_v2_38as.csv"
+IRELAND_NACE_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38at_europe_ireland_nace/europe_ireland_nace_v2_38at.csv"
 ASOF_DATE = "2026-09-06"
 
 # Real, stable, uncontroversial EU/Eurozone membership as of this project's
@@ -224,7 +225,7 @@ def context_status(sector_matched: bool) -> str:
     return "MACRO_CONTEXT_READY" if sector_matched else "MACRO_CONTEXT_PARTIAL"
 
 
-def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_sector_path: Path, netherlands_sector_path: Path, generalized_wikidata_sector_path: Path, austria_onace_path: Path, output_dir: Path) -> dict[str, Any]:
+def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_sector_path: Path, netherlands_sector_path: Path, generalized_wikidata_sector_path: Path, austria_onace_path: Path, ireland_nace_path: Path, output_dir: Path) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
     coverage_rows = read_coverage(coverage_path)
     us_signal_idx = read_csv_index(us_signal_path)
@@ -233,6 +234,7 @@ def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_s
     netherlands_sector_idx = read_csv_index(netherlands_sector_path)
     generalized_wikidata_sector_idx = read_csv_index(generalized_wikidata_sector_path)
     austria_onace_idx = read_csv_index(austria_onace_path)
+    ireland_nace_idx = read_csv_index(ireland_nace_path)
     taxonomy_rows = taxonomy()
     themes = {row["theme_id"]: row for row in taxonomy_rows}
 
@@ -260,6 +262,8 @@ def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_s
         wikidata_row = netherlands_sector_row or generalized_wikidata_row
         austria_onace_row = austria_onace_idx.get(asset_id)
         austria_resolved = austria_onace_row if (austria_onace_row or {}).get("fetch_status") == "resolved" else None
+        ireland_nace_row = ireland_nace_idx.get(asset_id)
+        ireland_resolved = ireland_nace_row if (ireland_nace_row or {}).get("fetch_status") == "resolved" else None
         extra_text_parts = [
             (signal_row or {}).get("fundamental_signal_summary", ""),
             (signal_row or {}).get("price_signal_summary", ""),
@@ -269,9 +273,10 @@ def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_s
             (wikidata_row or {}).get("industries", "").replace(";", " "),
             (austria_resolved or {}).get("onace_description_en", ""),
             (austria_resolved or {}).get("purpose_de", ""),
+            (ireland_resolved or {}).get("nace_description_en", ""),
         ]
         extra_text = " ".join(part for part in extra_text_parts if part).strip()
-        sector_source = "v2.38J" if signal_row else "v2.38AN" if gb_sic_row else "v2.38AO" if france_sector_row else "v2.38AQ" if netherlands_sector_row else "v2.38AR" if generalized_wikidata_row else "v2.38AS" if austria_resolved else ""
+        sector_source = "v2.38J" if signal_row else "v2.38AN" if gb_sic_row else "v2.38AO" if france_sector_row else "v2.38AQ" if netherlands_sector_row else "v2.38AR" if generalized_wikidata_row else "v2.38AS" if austria_resolved else "v2.38AT" if ireland_resolved else ""
         selected, limitation, sector_matched = match_themes(company_name, extra_text, country, themes)
         if sector_source in ("v2.38AQ", "v2.38AR"):
             limitation = f"{limitation} {(wikidata_row or {}).get('non_official_source_caveat', '')}".strip()
@@ -336,7 +341,7 @@ def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_s
             "broker_actions_allowed": False, "phase9c_authorized": False, "ranking_modified": False,
             "scoring_modified": False, "live_news_used": False, "llm_runtime_classification": False,
         },
-        "note": "Generalizes v2.38M (which only ever covered the old 50-company US shortlist) to every identity-resolved company in the v2.38AL global coverage matrix (1,244: 555 US + 689 Europe). Reconstructed repeatedly to attack the 0/689 Europe sector-match finding from this phase's first run: v2.38AN's real UK Companies House SIC codes (official), v2.38AO's real French NAF/NACE codes (official), v2.38AQ/v2.38AR's Wikidata industry data (Netherlands/Switzerland/Italy/Denmark, a user-approved non-official-source exception used each time an official free source turned out blocked, paid, or structurally withheld), and v2.38AS's ÖNACE classification for Austria -- reusing the already-approved firmenakte.at exception from v2.38AI (no new policy decision needed) and currently PARTIAL (5/20) due to a real, confirmed, ongoing firmenakte.at connectivity degradation, resumable to fill in the rest once the provider recovers. Germany (413 companies, v2.38AP) was investigated and confirmed structurally non-public. The remaining Europe companies without any sector-classification source stay on company_name-only matching, honestly reported via macro_limitations. Four country-specific structural themes remain (EU single-market regulation, Eurozone monetary policy, UK post-Brexit trade friction, Swiss franc safe-haven dynamics) -- evergreen jurisdictional facts, not dated event claims, matching v2.38M's own static/offline discipline.",
+        "note": "Generalizes v2.38M (which only ever covered the old 50-company US shortlist) to every identity-resolved company in the v2.38AL global coverage matrix (1,244: 555 US + 689 Europe). Reconstructed repeatedly to attack the 0/689 Europe sector-match finding from this phase's first run: v2.38AN's real UK Companies House SIC codes (official), v2.38AO's real French NAF/NACE codes (official), v2.38AQ/v2.38AR's Wikidata industry data (Netherlands/Switzerland/Italy/Denmark, a user-approved non-official-source exception used each time an official free source turned out blocked, paid, or structurally withheld), v2.38AS's ÖNACE classification for Austria (reusing the already-approved firmenakte.at exception from v2.38AI, currently PARTIAL 5/20 due to a real, confirmed, ongoing provider connectivity degradation, resumable), and v2.38AT's NACE Rev.2 classification for Ireland (reusing the already-approved free CRO open-data endpoint from v2.38Z, no new policy decision needed; deliberately excludes a second field, princ_object_code, confirmed live to carry a demonstrably wrong classification for a real, well-known company -- Alkermes plc showing 'manufacture of basic metals' -- likely boilerplate objects-clause text, not a reliable sector signal). Germany (413 companies, v2.38AP) was investigated and confirmed structurally non-public. The remaining Europe companies without any sector-classification source stay on company_name-only matching, honestly reported via macro_limitations. Four country-specific structural themes remain (EU single-market regulation, Eurozone monetary policy, UK post-Brexit trade friction, Swiss franc safe-haven dynamics) -- evergreen jurisdictional facts, not dated event claims, matching v2.38M's own static/offline discipline.",
     }
     write_text(output_dir / "global_macro_geopolitical_aggregate_report_v2_38am.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
     write_docs(output_dir, report)
@@ -388,9 +393,10 @@ def main() -> int:
     parser.add_argument("--netherlands-sector-input", type=Path, default=NETHERLANDS_SECTOR_INPUT)
     parser.add_argument("--generalized-wikidata-sector-input", type=Path, default=GENERALIZED_WIKIDATA_SECTOR_INPUT)
     parser.add_argument("--austria-onace-input", type=Path, default=AUSTRIA_ONACE_INPUT)
+    parser.add_argument("--ireland-nace-input", type=Path, default=IRELAND_NACE_INPUT)
     parser.add_argument("--output-dir", type=Path, default=OUT)
     args = parser.parse_args()
-    report = build(args.coverage_input, args.us_signal_input, args.gb_sic_input, args.france_sector_input, args.netherlands_sector_input, args.generalized_wikidata_sector_input, args.austria_onace_input, args.output_dir)
+    report = build(args.coverage_input, args.us_signal_input, args.gb_sic_input, args.france_sector_input, args.netherlands_sector_input, args.generalized_wikidata_sector_input, args.austria_onace_input, args.ireland_nace_input, args.output_dir)
     print(json.dumps({k: report[k] for k in ("phase", "status", "companies_context_built", "macro_context_ready", "macro_context_partial")}, ensure_ascii=False, sort_keys=True))
     return 0
 

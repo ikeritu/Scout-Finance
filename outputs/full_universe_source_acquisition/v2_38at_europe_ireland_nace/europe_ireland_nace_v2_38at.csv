@@ -1,0 +1,9 @@
+asset_id,ticker,company_name,company_number,fetch_status,fetch_reason,nace_code,nace_description_en,princ_object_code_unverified_not_used,unknown_nace_code,phase,created_at_utc
+U37479,N4U,SMURFIT WESTROCK,607515,resolved,nace_v2_code_present,6420,Activities of holding companies,,,v2.38AT-europe-ireland-nace,2026-09-06T18:26:29Z
+U37480,IJF,ICON PLC,145835,no_nace_on_record,nace_v2_code_absent,,,65.XX,,v2.38AT-europe-ireland-nace,2026-09-06T18:26:29Z
+U37481,BZ4,TE CONNECTIVITY,571909,resolved,nace_v2_code_present,6420,Activities of holding companies,,,v2.38AT-europe-ireland-nace,2026-09-06T18:26:29Z
+U37483,LIN,LINDE PLC,606357,resolved,nace_v2_code_present,6420,Activities of holding companies,,,v2.38AT-europe-ireland-nace,2026-09-06T18:26:29Z
+U37486,8AK,ALKERMES PLC,498284,no_nace_on_record,nace_v2_code_absent,,,24.41,,v2.38AT-europe-ireland-nace,2026-09-06T18:26:29Z
+U37488,WTY,WILLIS TOWERS WATSON,475616,no_nace_on_record,nace_v2_code_absent,,,65.23,,v2.38AT-europe-ireland-nace,2026-09-06T18:26:29Z
+U37489,60A,ALLEGION PLC,527370,no_nace_on_record,nace_v2_code_absent,,,74.15,,v2.38AT-europe-ireland-nace,2026-09-06T18:26:29Z
+U37493,2M6,MEDTRONIC PLC,545333,no_nace_on_record,nace_v2_code_absent,,,74.15,,v2.38AT-europe-ireland-nace,2026-09-06T18:26:29Z

@@ -25,6 +25,7 @@ FRANCE_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "naf_code", "naf_d
 NETHERLANDS_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "industries", "non_official_source_caveat"]
 GENERALIZED_WIKIDATA_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "country", "industries", "non_official_source_caveat"]
 AUSTRIA_ONACE_FIELDS = ["asset_id", "ticker", "company_name", "fetch_status", "onace_code", "onace_description_en", "purpose_de"]
+IRELAND_NACE_FIELDS = ["asset_id", "ticker", "company_name", "fetch_status", "nace_code", "nace_description_en"]
 
 
 def module(path: Path, name: str):
@@ -55,7 +56,7 @@ def coverage_row(asset_id: str, ticker: str, name: str, country: str, identity_s
             "price_status": "NOT_ATTEMPTED", "price_source": "", "overall_coverage_status": overall, "phase": ""}
 
 
-def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None, netherlands_sector_rows=None, generalized_wikidata_sector_rows=None, austria_onace_rows=None):
+def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None, netherlands_sector_rows=None, generalized_wikidata_sector_rows=None, austria_onace_rows=None, ireland_nace_rows=None):
     mod = module(SCRIPT, f"geo_{id(coverage_rows)}")
     coverage_path = tmp / "coverage.csv.xz"
     write_coverage_xz(coverage_path, coverage_rows)
@@ -77,7 +78,10 @@ def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic
     austria_onace_path = tmp / "austria_onace.csv"
     if austria_onace_rows:
         write_csv(austria_onace_path, austria_onace_rows, AUSTRIA_ONACE_FIELDS)
-    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, netherlands_sector_path, generalized_wikidata_sector_path, austria_onace_path, tmp / "out")
+    ireland_nace_path = tmp / "ireland_nace.csv"
+    if ireland_nace_rows:
+        write_csv(ireland_nace_path, ireland_nace_rows, IRELAND_NACE_FIELDS)
+    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, netherlands_sector_path, generalized_wikidata_sector_path, austria_onace_path, ireland_nace_path, tmp / "out")
     rows = {r["asset_id"]: r for r in csv.DictReader((tmp / "out" / "global_macro_geopolitical_context_v2_38am.csv").open(encoding="utf-8"))}
     return report, rows
 
@@ -230,6 +234,32 @@ def test_austria_onace_not_yet_resolved_never_used_as_source():
     assert row["macro_context_status"] == "MACRO_CONTEXT_PARTIAL"
 
 
+def test_ireland_nace_source_reaches_ready_status():
+    """Real case: Smurfit Westrock's CRO record carries nace_code 6420
+    -> should not itself trigger a sector theme (no keyword matches
+    'holding companies'), but confirms the source is correctly attributed
+    and available for keyword matching alongside general/country themes."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "N4U", "SMURFIT WESTROCK", "IE")],
+            ireland_nace_rows=[{"asset_id": "U1", "ticker": "N4U", "company_name": "SMURFIT WESTROCK", "fetch_status": "resolved", "nace_code": "6420", "nace_description_en": "Activities of holding companies"}],
+        )
+    row = rows["U1"]
+    assert row["sector_text_source"] == "v2.38AT"
+
+
+def test_ireland_nace_not_resolved_never_used_as_source():
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "8AK", "ALKERMES PLC", "IE")],
+            ireland_nace_rows=[{"asset_id": "U1", "ticker": "8AK", "company_name": "ALKERMES PLC", "fetch_status": "no_nace_on_record", "nace_code": "", "nace_description_en": ""}],
+        )
+    row = rows["U1"]
+    assert row["sector_text_source"] == ""
+
+
 def test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf():
     """Real case: Austria (AT) is both an EU member and a Eurozone member
     -- must get EU_SINGLE_MARKET_REGULATION AND EUROZONE_ECB_MONETARY_
@@ -298,6 +328,8 @@ CASES = [
     test_switzerland_generalized_wikidata_source_matches_and_carries_caveat,
     test_austria_onace_source_matches_bank_via_german_purpose_substring,
     test_austria_onace_not_yet_resolved_never_used_as_source,
+    test_ireland_nace_source_reaches_ready_status,
+    test_ireland_nace_not_resolved_never_used_as_source,
     test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf,
     test_gb_gets_brexit_theme_not_eu_or_eurozone,
     test_switzerland_gets_chf_theme_not_eu_or_eurozone,

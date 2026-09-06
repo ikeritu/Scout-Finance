@@ -1,0 +1,19 @@
+{
+  "companies_error": 0,
+  "companies_fetched": 8,
+  "companies_no_match": 0,
+  "companies_no_nace_on_record": 5,
+  "companies_with_nace": 3,
+  "credentials_used": false,
+  "eligible_companies": 8,
+  "network_used": true,
+  "note": "Reuses the already-approved free CRO open-data endpoint from v2.38Z -- no new policy decision needed. princ_object_code is captured for traceability only, never used as sector-matching text: confirmed live that Alkermes plc (a real, well-known pharmaceutical company) shows princ_object_code '24.41' (manufacture of basic precious and non-ferrous metals), which cannot be its real activity -- likely boilerplate objects-clause text from the memorandum of association of a newly-incorporated Irish holding entity, not a reliable classification. Same real, confirmed limitation as every other country attacked so far: companies with a real nace_v2_code (Smurfit Westrock, TE Connectivity, Linde) all show 6420 'Activities of holding companies' -- the Irish-registered entity is the group's holding vehicle, not its real global operating business.",
+  "phase": "v2.38AT-europe-ireland-nace",
+  "phase9c_authorized": false,
+  "ranking_created": false,
+  "raw_cache_published": false,
+  "recommendations_created": false,
+  "scoring_created": false,
+  "status": "COMPLETED_EUROPE_IRELAND_NACE",
+  "unknown_nace_codes_needing_verification": []
+}

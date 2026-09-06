@@ -126,3 +126,19 @@ Al construir `v2.38AS` se encontró y documentó un **bug real de conectividad d
 **El hueco de sector europeo pasa de 47/689 a 48/689.** Este bloque queda explícitamente incompleto: en cuanto el proveedor se recupere, una nueva ejecución de `v2.38AS` completará las 15 empresas restantes sin perder las 5 ya confirmadas, y debería reconstruirse `v2.38AM` de nuevo entonces.
 
 **Estado del bloque (sexta reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 2 pruebas offline nuevas añadidas (14 en total).
+
+---
+
+## Séptima reconstrucción (mismo día, 2026-09-06): Irlanda — sin nueva política, y un campo real confirmado no fiable descartado deliberadamente
+
+Instrucción del usuario: "sigue con Irlanda para el hueco de sector" (17/689 activos, 8/17 con identidad CRO real desde `v2.38Z`). Igual que Austria: ninguna aprobación nueva necesaria — el dataset abierto del CRO irlandés (`opendata.cro.ie`, ya usado en `v2.38Z` para identidad) ya devuelve un campo `nace_v2_code` real, nunca antes leído.
+
+**Hallazgo real distinto**: un segundo campo (`princ_object_code`) también existe, pero se confirmó en vivo que es **no fiable** — Alkermes plc (una farmacéutica real y conocida) muestra el código "24.41" (fabricación de metales), demostrablemente incorrecto. Confirmado que Alkermes plc se constituyó de nuevo en Irlanda específicamente para su fusión de 2011 (no es una sociedad reutilizada con historial previo), así que el código erróneo probablemente refleja texto genérico de la cláusula de objeto social, no una clasificación real. Este campo se captura solo para trazabilidad y **nunca se usa** como texto de coincidencia de sector — una decisión deliberada de calidad de datos, no una limitación técnica.
+
+### Resultado real
+
+**3/8 empresas irlandesas con código NACE real** (Smurfit Westrock, TE Connectivity, Linde — las tres `6420` "Activities of holding companies", el mismo patrón de domicilio-sin-operación ya visto en GB/Francia/Suiza/Italia/Austria). `MACRO_CONTEXT_READY` se mantiene en **156** — resultado honesto: "holding companies" no coincide con ningún tema actual de la taxonomía, pero la fuente queda correctamente atribuida (`sector_text_source=v2.38AT`) y trazable.
+
+**El hueco de sector europeo se mantiene en 48/689** (Irlanda no añade coincidencias de tema, pero sí clasificación real verificada para 3 empresas). Quedan 4 países sin atacar: España (15), Bélgica (6), Finlandia (5), Suecia (4) — 30/689 empresas.
+
+**Estado del bloque (séptima reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 2 pruebas offline nuevas añadidas (16 en total).
