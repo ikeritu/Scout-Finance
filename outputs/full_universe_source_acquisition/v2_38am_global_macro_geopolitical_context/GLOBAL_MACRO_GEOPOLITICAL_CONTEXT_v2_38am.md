@@ -156,3 +156,17 @@ Instrucción del usuario: "sigue con España para el hueco de sector" (15/689 ac
 **El hueco de sector europeo pasa de 48/689 a 54/689.** Quedan 3 países sin atacar: Bélgica (6), Finlandia (5), Suecia (4) — 15/689 empresas.
 
 **Estado del bloque (octava reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Ninguna prueba nueva necesaria (16 en total) — el mecanismo genérico ya estaba probado.
+
+---
+
+## Novena reconstrucción (mismo día, 2026-09-06): Bélgica, cobertura perfecta, sin script nuevo
+
+Instrucción del usuario: "sigue con Bélgica para el hueco de sector" (6/689 activos). Caso distinto de Suiza/Italia/España: el registro KBO/BCE belga sí publica datos abiertos oficiales con nombre de empresa real (a diferencia del KVK neerlandés, anonimizado) — pero son ficheros nacionales masivos (1,9M+ empresas) tras un registro cuya página está protegida con CAPTCHA, desproporcionado para consultar solo 6 empresas. Presentada la disyuntiva completa (registrar y procesar el fichero oficial / Wikidata, ya comprobado con 6/6 coincidencias reales / dejar el país sin atacar), **el usuario eligió Wikidata por quinta vez**. Quinto país con el mismo mecanismo — se reejecutó `v2.38AR` (`--countries CH IT DK ES BE`) sin ningún script nuevo.
+
+### Resultado real
+
+`MACRO_CONTEXT_READY` sube de **162 a 166** (+4, todos Bélgica: KBC→`BANK_CREDIT_CYCLE`, UCB→`HEALTHCARE_REGULATION`+`COMMODITY_INPUT_COSTS`, Lakefront Biotherapeutics→`HEALTHCARE_REGULATION`, Ageas→`BANK_CREDIT_CYCLE`). Bélgica pasa de 0/689 a **4/689** con coincidencia real de sector, con **cobertura perfecta de industria real: 6/6 empresas, 0 errores, 0 ambiguas** — la primera vez que un país atacado alcanza el 100%. AB InBev (cervecera) y Umicore (minería) no coinciden con ningún tema actual de la taxonomía (sin palabra clave para "brewing"/"mining") — resultado honesto, no un fallo.
+
+**El hueco de sector europeo pasa de 54/689 a 58/689.** Quedan 2 países sin atacar: Finlandia (5), Suecia (4) — 9/689 empresas.
+
+**Estado del bloque (novena reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Ninguna prueba nueva necesaria (16 en total).

@@ -4,10 +4,10 @@ Status: COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS
 
 - Identity-resolved companies input: 1244
 - Companies with context built: 1244
-- Macro context ready (sector theme matched): 162
-- Macro context partial (general/country themes only): 1082
+- Macro context ready (sector theme matched): 166
+- Macro context partial (general/country themes only): 1078
 - Themes defined: 21
-- Notes: 10232
+- Notes: 10237
 - Rejected rows: 0
 
 Guardrails: no network calls, no live news, no runtime LLM classification, no ranking/scoring modification, no broker actions and no phase 9C authorization.

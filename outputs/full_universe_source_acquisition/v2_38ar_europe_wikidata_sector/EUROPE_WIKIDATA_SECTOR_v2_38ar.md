@@ -76,3 +76,17 @@ Presentada de nuevo la disyuntiva real (Wikidata, ya comprobado en vivo con 13/1
 **13/15 empresas españolas con industria real capturada — la mejor cobertura relativa de todos los países atacados hasta ahora (86,7%)**, 1 ambigua (Banco Santander, el mismo tipo de caso real ya visto con Ahold Delhaize — dos elementos de Wikidata distintos), 1 sin coincidencia (AENA). Ejemplos reales: Cellnex→"telecommunications infrastructure", Amadeus IT→"software industry", BBVA/Sabadell/CaixaBank→banca, Indra→"IT service management", Endesa/Iberdrola/Redeia→energía eléctrica, Inditex→"fast fashion;retail;textile industry", Repsol→"petroleum industry", IAG→"aviation", Telefónica→telecomunicaciones.
 
 **Estado de la re-ejecución: `COMPLETED_EUROPE_WIKIDATA_SECTOR`.** Sin pruebas nuevas necesarias. Alimenta la octava reconstrucción de `v2.38AM`.
+
+---
+
+## Re-ejecución (mismo día, 2026-09-06): Bélgica — cobertura perfecta, la vía oficial real existe pero es desproporcionada
+
+Instrucción del usuario: "sigue con Bélgica para el hueco de sector" (6/689 activos). A diferencia de Suiza/Italia/España, aquí **sí existe una vía oficial gratuita real con nombre de empresa** (a diferencia del KVK neerlandés, que estaba anonimizado): el registro KBO/BCE belga publica ficheros de datos abiertos oficiales (`denomination.csv`, con el nombre de la empresa, y un fichero de actividad con el código Nacebel) — gratuitos tras registro. Pero son **ficheros nacionales masivos** (más de 1,9 millones de empresas, actualizados a diario), y la propia página que describe el proceso de registro (`economie.fgov.be`) está protegida con un CAPTCHA real — descargar y procesar un extracto nacional completo solo para consultar 6 empresas es desproporcionado frente al coste real.
+
+Presentada la disyuntiva completa al usuario (registrar la cuenta KBO y procesar el fichero masivo oficial / usar Wikidata, ya comprobado en vivo con 6/6 coincidencias reales / dejar el país sin atacar) — **el usuario eligió Wikidata por quinta vez**. Quinto país con el mismo mecanismo — se reejecutó `v2.38AR` con `--countries CH IT DK ES BE`, sin ningún script nuevo.
+
+### Resultado real
+
+**6/6 empresas belgas con industria real capturada — cobertura perfecta, 0 errores, 0 ambiguas.** KBC Groep→"financial sector;insurance industry", UCB→"chemical industry;pharmaceutical industry", Lakefront Biotherapeutics→"pharmaceutical industry", Ageas→"financial services", AB InBev→"brewing industry", Umicore→"mining".
+
+**Estado de la re-ejecución: `COMPLETED_EUROPE_WIKIDATA_SECTOR`.** Sin pruebas nuevas necesarias. Alimenta la novena reconstrucción de `v2.38AM`.

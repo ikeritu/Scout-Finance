@@ -574,10 +574,10 @@ U36881,O3P,AT,MACRO_CONTEXT_PARTIAL,6,47.0,62.8333,-15.8333,general_and_country_
 U36882,0B2,AT,MACRO_CONTEXT_PARTIAL,6,47.0,62.8333,-15.8333,general_and_country_themes_only,v2.38AM-global-macro-geopolitical-context
 U36883,1AST,AT,MACRO_CONTEXT_PARTIAL,6,47.0,62.8333,-15.8333,general_and_country_themes_only,v2.38AM-global-macro-geopolitical-context
 U36884,FQT,AT,MACRO_CONTEXT_PARTIAL,6,47.0,62.8333,-15.8333,general_and_country_themes_only,v2.38AM-global-macro-geopolitical-context
-U36886,KDB,BE,MACRO_CONTEXT_PARTIAL,6,47.0,62.8333,-15.8333,general_and_country_themes_only,v2.38AM-global-macro-geopolitical-context
-U36887,UNC,BE,MACRO_CONTEXT_PARTIAL,6,47.0,62.8333,-15.8333,general_and_country_themes_only,v2.38AM-global-macro-geopolitical-context
-U36888,GXE,BE,MACRO_CONTEXT_PARTIAL,6,47.0,62.8333,-15.8333,general_and_country_themes_only,v2.38AM-global-macro-geopolitical-context
-U36889,FO4N,BE,MACRO_CONTEXT_PARTIAL,6,47.0,62.8333,-15.8333,general_and_country_themes_only,v2.38AM-global-macro-geopolitical-context
+U36886,KDB,BE,MACRO_CONTEXT_READY,7,46.5714,64.4286,-17.8572,sector_theme_matched,v2.38AM-global-macro-geopolitical-context
+U36887,UNC,BE,MACRO_CONTEXT_READY,8,47.375,64.75,-17.375,sector_theme_matched,v2.38AM-global-macro-geopolitical-context
+U36888,GXE,BE,MACRO_CONTEXT_READY,7,48.1429,64.1429,-16.0,sector_theme_matched,v2.38AM-global-macro-geopolitical-context
+U36889,FO4N,BE,MACRO_CONTEXT_READY,7,46.5714,64.4286,-17.8572,sector_theme_matched,v2.38AM-global-macro-geopolitical-context
 U36890,1NBA,BE,MACRO_CONTEXT_PARTIAL,6,47.0,62.8333,-15.8333,general_and_country_themes_only,v2.38AM-global-macro-geopolitical-context
 U36891,NVJP,BE,MACRO_CONTEXT_PARTIAL,6,47.0,62.8333,-15.8333,general_and_country_themes_only,v2.38AM-global-macro-geopolitical-context
 U36902,HLG,CH,MACRO_CONTEXT_PARTIAL,5,47.8,61.4,-13.6,general_and_country_themes_only,v2.38AM-global-macro-geopolitical-context
