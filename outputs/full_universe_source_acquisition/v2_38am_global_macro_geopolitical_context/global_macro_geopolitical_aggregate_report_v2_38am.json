@@ -21,11 +21,11 @@
   "recommendations_generated": false,
   "rejected_rows": 0,
   "sector_text_source_counts": {
-    "NONE": 492,
+    "NONE": 488,
     "v2.38AN": 29,
     "v2.38AO": 18,
     "v2.38AQ": 44,
-    "v2.38AR": 93,
+    "v2.38AR": 97,
     "v2.38AS": 5,
     "v2.38AT": 3,
     "v2.38AU": 5,

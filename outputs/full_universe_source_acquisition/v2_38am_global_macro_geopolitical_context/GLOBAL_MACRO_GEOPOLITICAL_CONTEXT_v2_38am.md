@@ -186,3 +186,35 @@ Se resolvieron en vivo tres problemas reales de identidad, nunca asumidos: (1) t
 **El hueco de sector europeo pasa de 58/689 a 60/689.** Queda solo 1 país sin atacar: Suecia (4 empresas).
 
 **Estado del bloque (décima reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 2 pruebas offline nuevas añadidas (18 en total).
+
+---
+
+## Undécima reconstrucción (mismo día, 2026-09-06): Suecia — cierre del esfuerzo de sector europeo
+
+Instrucción del usuario: "sigue con Suecia para el hueco de sector" (4/689 activos, el último país pendiente). Igual que Dinamarca: la credencial de Bolagsverket (formulario "Kundanmälan" ya rellenado por el usuario en una fase muy anterior de este proyecto) sigue pendiente de aprobación. Preguntado directamente, el usuario confirmó que aún no la tiene y eligió Wikidata por sexta vez (3/4 coincidencias reales, 0 ambiguas). Se reejecutó `v2.38AR` (`--countries CH IT DK ES BE SE`) sin ningún script nuevo.
+
+### Resultado real
+
+`MACRO_CONTEXT_READY` se mantiene en **168** — resultado honesto: "fast fashion/retail" (H&M) e "information and communications technology" (Ericsson) no coinciden con ningún tema actual de la taxonomía, pero las 3 empresas quedan correctamente atribuidas y trazables (`sector_text_source=v2.38AR`). Suecia recibe correctamente `EU_SINGLE_MARKET_REGULATION` pero no `EUROZONE_ECB_MONETARY_POLICY` (Suecia usa la corona, no el euro).
+
+### Cierre del esfuerzo: los 13 países europeos, resumen final
+
+| País | Empresas | Con sector real | Fuente | Coincidencia de tema |
+|---|---:|---:|---|---:|
+| Reino Unido | 40 | 29 | Companies House (oficial, bug corregido) | 4 |
+| Francia | 53 | 18 | SIRENE (oficial) | 3 |
+| Países Bajos | 44 | 32 | Wikidata (excepción aprobada) | 14 |
+| Suiza | 29 | 15 | Wikidata (registro oficial confirmado sin exponer NOGA) | 6 |
+| Italia | 22 | 16 | Wikidata (InfoCamere confirmado tras reCAPTCHA) | 12 |
+| Dinamarca | 21 | 14 | Wikidata (CVR oficial pendiente de credencial) | 8 |
+| Austria | 20 | 5/20 (parcial) | firmenakte.at (excepción ya aprobada, sin política nueva) | 1 |
+| Irlanda | 17 | 3 | CRO (oficial, sin política nueva) | 0 |
+| España | 15 | 13 | Wikidata (registro oficial confirmado bloqueado) | 6 |
+| Bélgica | 6 | 6 | Wikidata (KBO oficial real pero desproporcionado) | 4 |
+| Finlandia | 5 | 5 | PRH (oficial, la mejor fuente de todo el esfuerzo) | 2 |
+| Suecia | 4 | 3 | Wikidata (Bolagsverket pendiente de credencial) | 0 |
+| Alemania | 413 | 0 | Ninguna (confirmado estructuralmente no público) | 0 |
+
+**El hueco de sector europeo cierra en 60/689 (8,7%)**, con Alemania (413/689, el 60% del universo europeo) confirmada como un hallazgo negativo estructural real, no un fallo de investigación. De las 12 empresas restantes (Irlanda y Suecia con 0 coincidencias de tema pese a tener clasificación real), el motivo es siempre el mismo: la clasificación real existe pero su vocabulario ("holding companies", "retail", "information and communications technology") no coincide con ningún tema actual del motor de palabras clave — una limitación conocida del motor, no de los datos.
+
+**Estado del bloque (undécima reconstrucción, cierre del esfuerzo): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Ninguna prueba nueva necesaria (18 en total).

@@ -90,3 +90,17 @@ Presentada la disyuntiva completa al usuario (registrar la cuenta KBO y procesar
 **6/6 empresas belgas con industria real capturada — cobertura perfecta, 0 errores, 0 ambiguas.** KBC Groep→"financial sector;insurance industry", UCB→"chemical industry;pharmaceutical industry", Lakefront Biotherapeutics→"pharmaceutical industry", Ageas→"financial services", AB InBev→"brewing industry", Umicore→"mining".
 
 **Estado de la re-ejecución: `COMPLETED_EUROPE_WIKIDATA_SECTOR`.** Sin pruebas nuevas necesarias. Alimenta la novena reconstrucción de `v2.38AM`.
+
+---
+
+## Re-ejecución (mismo día, 2026-09-06): Suecia — último país del esfuerzo, credencial de Bolagsverket aún pendiente
+
+Instrucción del usuario: "sigue con Suecia para el hueco de sector" (4/689 activos, el último país pendiente). Igual que Dinamarca: la credencial de Bolagsverket (la API sueca de "conjuntos de datos valiosos", cuyo formulario "Kundanmälan" el usuario ya rellenó en una fase muy anterior de este proyecto) sigue sin estar configurada como variable de entorno — pendiente de aprobación oficial. Preguntado directamente, el usuario confirmó que aún no la tiene y eligió Wikidata mientras tanto (ya comprobado en vivo con 3/4 coincidencias reales, 0 ambiguas). Sexto país con el mismo mecanismo — se reejecutó `v2.38AR` con `--countries CH IT DK ES BE SE`, sin ningún script nuevo.
+
+### Resultado real
+
+**3/4 empresas suecas con industria real capturada, 0 errores, 0 ambiguas, 1 sin coincidencia (Verve Group Media).** H&M→"fast fashion;retail", Ericsson (clases A y B, la misma empresa real)→"information and communications technology".
+
+**Nota abierta**: si el usuario completa el registro de Bolagsverket pendiente, este bloque debería revisitarse para sustituir Wikidata por el código SNI oficial en Suecia.
+
+**Estado de la re-ejecución: `COMPLETED_EUROPE_WIKIDATA_SECTOR`.** Sin pruebas nuevas necesarias. Alimenta la undécima y última reconstrucción de `v2.38AM` de este esfuerzo — con Suecia, los 9 países que quedaban sin atacar tras la generalización de v2.38AN/AO/AQ ya están todos investigados con evidencia real.
