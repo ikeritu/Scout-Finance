@@ -3,21 +3,26 @@
     "CH": {
       "resolved": 15,
       "total": 29
+    },
+    "IT": {
+      "resolved": 16,
+      "total": 22
     }
   },
   "companies_ambiguous": 1,
   "companies_error": 0,
-  "companies_fetched": 29,
-  "companies_no_industry": 7,
-  "companies_no_wikidata_match": 6,
-  "companies_with_industry": 15,
+  "companies_fetched": 51,
+  "companies_no_industry": 9,
+  "companies_no_wikidata_match": 10,
+  "companies_with_industry": 31,
   "countries": [
-    "CH"
+    "CH",
+    "IT"
   ],
   "credentials_used": false,
-  "eligible_companies": 29,
+  "eligible_companies": 51,
   "network_used": true,
-  "note": "Generalizes v2.38AQ (Netherlands-only) to any Europe country -- Switzerland is the first re-run (2026-09-06), after live-testing confirmed the official Swiss UID register's PublicServices tier never exposes NOGACode/uidBrancheText (same structural pattern as Germany's WZ code, v2.38AP), and the user again approved the Wikidata exception already used for the Netherlands. Every record carries a non_official_source_caveat field; v2.38AM's consumption of this data must never treat it as equivalent-confidence to Companies House (v2.38AN) or SIRENE (v2.38AO).",
+  "note": "Generalizes v2.38AQ (Netherlands-only) to any Europe country -- re-run for Switzerland (2026-09-06, after live-testing confirmed the official Swiss UID register's PublicServices tier never exposes NOGACode/uidBrancheText, the same structural pattern as Germany's WZ code, v2.38AP) and for Italy (2026-09-06, after InfoCamere's genuinely free HVD open-data portal turned out to sit behind a reCAPTCHA-gated frontend with no confirmed simple API path, and its commercial registroimprese.it channel is a paid/contact-sales product). The user approved the Wikidata exception each time it was presented, matching the one already used for the Netherlands. Every record carries a non_official_source_caveat field; v2.38AM's consumption of this data must never treat it as equivalent-confidence to Companies House (v2.38AN) or SIRENE (v2.38AO).",
   "phase": "v2.38AR-europe-wikidata-sector",
   "phase9c_authorized": false,
   "ranking_created": false,

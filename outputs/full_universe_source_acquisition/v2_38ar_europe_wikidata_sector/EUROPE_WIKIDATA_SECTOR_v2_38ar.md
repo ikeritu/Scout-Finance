@@ -29,3 +29,20 @@ Con un segundo país usando exactamente el mismo mecanismo (Wikidata por ISIN), 
 Bloqueado por defecto; requiere `--execute` (sin credencial). 6 pruebas offline nuevas. Sin scoring, sin ranking, sin recomendaciones. Cada fila lleva el mismo `non_official_source_caveat` que `v2.38AQ`.
 
 **Estado del bloque: `COMPLETED_EUROPE_WIKIDATA_SECTOR`.** Alimenta la cuarta reconstrucción de `v2.38AM`. El hueco de sector europeo pasa de 21/689 a 27/689 con este bloque.
+
+---
+
+## Re-ejecución (mismo día, 2026-09-06): Italia, tercer país con el mismo mecanismo generalizado
+
+Instrucción del usuario: "sigue con Italia para el hueco de sector" (22/689 activos). Investigación real del registro oficial (InfoCamere/Registro Imprese):
+
+1. **Existe un portal de datos abiertos genuinamente gratuito por regulación europea** (`hvdataset.infocamere.it`, licencia CC BY 4.0, incluye código ATECO junto con el nombre de la empresa — a diferencia del dataset abierto anonimizado del KVK neerlandés) — pero su frontend real usa **reCAPTCHA de Google**, y fuentes independientes confirman que el acceso vía API/descarga masiva está sujeto a "criterios muy restrictivos" que no permiten una consulta simple por empresa sin pasar por ese control. Este proyecto nunca sortea un reto anti-bot real.
+2. El otro canal oficial (`accessoallebanchedati.registroimprese.it`) es un producto claramente comercial ("contacta con nuestros expertos", sin precios públicos) — de pago, no de autoservicio gratuito.
+
+Presentada de nuevo la disyuntiva real al usuario (Wikidata, ya comprobado en vivo con 16/22 coincidencias, 0 ambiguas, o dejar el país sin atacar) — **el usuario eligió Wikidata por tercera vez**. Al ser ya la tercera vez que se usa el mismo mecanismo, **no se creó ningún script nuevo** — se reejecutó directamente `v2.38AR` con `--countries CH IT`, confirmando en la práctica que la generalización hecha para Suiza ya cubre cualquier país futuro sin cambios de código.
+
+### Resultado real
+
+**16/22 empresas italianas con industria real capturada, 0 errores, 0 ambiguas, 6 sin coincidencia en Wikidata.** Ejemplos reales: Generali→"insurance industry", Intesa Sanpaolo/UniCredit/BPER/Banco BPM→banca, Eni→"energy industry;petroleum industry", Leonardo→"aerospace engineering;aerospace industry;aircraft industry;information security;weapons industry" (coincide correctamente con el tema `DEFENSE_SECURITY`), Poste Italiane→"economics of banking;logistics;postal sector", Fincantieri→"shipbuilding", Moncler→"clothing industry".
+
+**Estado de la re-ejecución: `COMPLETED_EUROPE_WIKIDATA_SECTOR`.** Sin pruebas nuevas necesarias — el mecanismo genérico de `v2.38AR` (probado con Suiza) ya cubre a Italia sin cambios de código, confirmando que la generalización fue la decisión correcta. Alimenta la quinta reconstrucción de `v2.38AM`.

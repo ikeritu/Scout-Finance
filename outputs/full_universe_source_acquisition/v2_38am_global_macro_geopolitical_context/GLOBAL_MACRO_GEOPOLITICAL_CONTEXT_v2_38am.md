@@ -80,3 +80,19 @@ Presentada de nuevo la elección real al usuario (Wikidata, ya comprobado en viv
 **El hueco de sector europeo pasa de 21/689 a 27/689** (GB 4 + Francia 3 + Países Bajos 14 + Suiza 6). Quedan 8 países sin atacar: Italia (22), Dinamarca (21), Austria (20), Irlanda (17), España (15), Bélgica (6), Finlandia (5), Suecia (4) — 110/689 empresas en total.
 
 **Estado del bloque (tercera reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 1 prueba offline nueva añadida (12 en total).
+
+---
+
+## Cuarta reconstrucción (mismo día, 2026-09-06): Italia, sin ningún script nuevo
+
+Instrucción del usuario: "sigue con Italia para el hueco de sector". Investigación real: el portal de datos abiertos oficial de InfoCamere (`hvdataset.infocamere.it`) es genuinamente gratuito por regulación europea e incluye código ATECO — pero su frontend usa reCAPTCHA de Google y el acceso está sujeto a restricciones que no permiten una consulta simple por empresa; el otro canal oficial es un producto comercial de pago. Presentada de nuevo la disyuntiva (Wikidata, ya comprobado con 16/22 coincidencias reales, o dejar el país sin atacar), **el usuario eligió Wikidata por tercera vez**.
+
+Al ser ya la tercera vez, **no se creó ningún script nuevo**: se reejecutó directamente `v2.38AR` (el fetcher ya generalizado tras Suiza) con `--countries CH IT` — confirmando en la práctica que la generalización cubre países futuros sin tocar código.
+
+### Resultado real
+
+`MACRO_CONTEXT_READY` sube de **135 a 147** (+12, todos en Italia: Generali→seguros, bancos→financiero, Eni→energía/petróleo, Leonardo→defensa/aeroespacial, Poste Italiane→banca/logística/postal, Fincantieri→construcción naval, Moncler→confección). Italia pasa de 0/689 a **12/689** con coincidencia real de sector.
+
+**El hueco de sector europeo pasa de 27/689 a 39/689** (GB 4 + Francia 3 + Países Bajos 14 + Suiza 6 + Italia 12). Quedan 7 países sin atacar: Dinamarca (21), Austria (20), Irlanda (17), España (15), Bélgica (6), Finlandia (5), Suecia (4) — 88/689 empresas en total.
+
+**Estado del bloque (cuarta reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Ninguna prueba nueva necesaria (12 en total) — el mecanismo genérico ya estaba probado.
