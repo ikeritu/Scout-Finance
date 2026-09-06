@@ -1,0 +1,37 @@
+{
+  "companies_expected_from_census": 43089,
+  "companies_total": 43089,
+  "identity_status_counts": {
+    "NOT_ATTEMPTED": 41845,
+    "RESOLVED": 1244
+  },
+  "inputs_used": {
+    "census": "outputs\\full_universe_source_acquisition\\v2_38a_global_universe_audit\\global_universe_audited_v2_38a.csv.xz",
+    "europe_fundamentals": "outputs\\full_universe_source_acquisition\\v2_38x_europe_candidate_feature_matrix\\europe_fundamental_features_v2_38x.csv",
+    "europe_growth": "outputs\\full_universe_source_acquisition\\v2_38ak_europe_growth_features\\europe_growth_features_v2_38ak.csv",
+    "europe_identity": "outputs\\full_universe_source_acquisition\\v2_38ab_europe_full_identity_resolution\\europe_full_identity_resolution_xetra_source_matrix_v2_38ab.csv",
+    "us_fundamentals": "outputs\\full_universe_source_acquisition\\v2_38g_us_sec_fundamental_features\\us_sec_fundamental_features_v2_38g.csv",
+    "us_price": "outputs\\full_universe_source_acquisition\\v2_38h_us_price_features\\us_price_features_v2_38h.csv"
+  },
+  "network_used": false,
+  "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline.",
+  "overall_coverage_status_counts": {
+    "FUNDAMENTALS_PARTIAL_NO_GROWTH_YET": 34,
+    "FUNDAMENTALS_READY_NO_GROWTH_YET": 9,
+    "GROWTH_PARTIAL": 391,
+    "GROWTH_READY": 120,
+    "IDENTITY_ONLY_NO_FUNDAMENTALS_YET": 690,
+    "NO_DATA_YET": 41845
+  },
+  "phase": "v2.38AL-global-coverage-matrix",
+  "phase9c_authorized": false,
+  "price_status_counts": {
+    "NOT_ATTEMPTED": 41846,
+    "NOT_COLLECTED_NO_FREE_SOURCE_FOUND": 689,
+    "PRICE_FEATURES_PARTIAL": 31,
+    "PRICE_FEATURES_READY": 523
+  },
+  "ranking_created": false,
+  "recommendations_created": false,
+  "scoring_created": false
+}
