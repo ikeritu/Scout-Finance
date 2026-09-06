@@ -1,0 +1,28 @@
+{
+  "confirmed_real_country_differs_from_de_home_exchange_flag": 25,
+  "credentials_used": false,
+  "input_assets": 25,
+  "input_by_census_country_tag": {
+    "BG": 2,
+    "KY": 1,
+    "LI": 1,
+    "LU": 20,
+    "MT": 1
+  },
+  "network_used": false,
+  "note": "v2.38N flagged these 25 for manual review because census country tag (BG/KY/LI/LU/MT) conflicted with the XETR/DE exchange mapping. This block resolves the conflict directly: the ISIN prefix (not the census tag, not the exchange field) is the authoritative real country of incorporation.",
+  "phase": "v2.38AV-europe-mismatch-identity-resolution-xetra-source",
+  "phase9c_authorized": false,
+  "resolution_method": "xetra_reference_file_mnemonic_to_isin_lookup_plus_isin_country_prefix",
+  "resolved": 25,
+  "resolved_by_real_isin_country": {
+    "Bulgaria": 2,
+    "Cayman Islands": 1,
+    "Liechtenstein": 1,
+    "Luxembourg": 20,
+    "Malta": 1
+  },
+  "target_status_from_v2_38n": "COUNTRY_EXCHANGE_MISMATCH_REVIEW",
+  "unresolved": 0,
+  "unresolved_reasons": {}
+}
