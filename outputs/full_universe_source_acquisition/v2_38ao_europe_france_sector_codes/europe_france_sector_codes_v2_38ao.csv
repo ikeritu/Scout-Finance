@@ -1,0 +1,19 @@
+asset_id,ticker,company_name,siren,fetch_status,fetch_reason,naf_code,naf_description_en,nace_section,nace_section_description_en,unknown_naf_code,unknown_nace_section,phase,created_at_utc
+U37386,NXS,NEXANS,393525852,resolved,siren_matched,71.12B,Engineering and technical studies,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37388,RCF,TELEPERFORMANCE,301292702,resolved,siren_matched,73.11Z,Advertising agency activities,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37394,TOTB,TOTALENERGIES SE,934082975,resolved,siren_matched,94.99Z,Other membership organization activities,S,Other service activities,,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37397,SNW,SANOFI SA,395030844,resolved,siren_matched,70.10Z,Head office activities,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37399,BSN,DANONE S.A.,552032534,resolved,siren_matched,70.10Z,Head office activities,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37400,PER,PERNOD RICARD,582041943,resolved,siren_matched,70.10Z,Head office activities,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37402,FAU,FORVIA SE,542005376,resolved,siren_matched,70.10Z,Head office activities,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37403,CSF,THALES S.A.,552059024,resolved,siren_matched,70.10Z,Head office activities,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37404,PPX,KERING S.A.,552075020,resolved,siren_matched,70.10Z,Head office activities,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37409,CGM,CAPGEMINI SE,330703844,resolved,siren_matched,70.10Z,Head office activities,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37411,VVU,VIVENDI SE,343134763,resolved,siren_matched,70.10Z,Head office activities,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37412,DIO,CHRISTIAN DIOR,582110987,resolved,siren_matched,64.20Z,Holding company activities,K,Financial and insurance activities,,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37416,BNP,BNP PARIBAS,500569983,resolved,siren_matched,68.20A,Residential real estate leasing,L,Real estate activities,,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37423,GZF,ENGIE S.A.,542107651,resolved,siren_matched,35.23Z,Trade in gaseous fuel via pipelines,D,"Electricity, gas, steam and air conditioning supply",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37424,AOMD,ALSTOM S.A.,389058447,resolved,siren_matched,70.10Z,Head office activities,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37427,IDD,INNATE PHARMA,424365336,resolved,siren_matched,72.11Z,Research and development in biotechnology,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37430,2X1,ABIVAX SA,799363718,resolved,siren_matched,72.11Z,Research and development in biotechnology,M,"Professional, scientific and technical activities",,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z
+U37432,SOH1,SOITEC S.A.,384711909,resolved,siren_matched,26.11Z,Manufacture of electronic components,C,Manufacturing,,,v2.38AO-europe-france-sector-codes,2026-09-06T14:17:28Z

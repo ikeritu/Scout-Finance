@@ -13,14 +13,22 @@
   },
   "identity_resolved_companies_input": 1244,
   "live_news_used": false,
-  "macro_context_partial": 1136,
-  "macro_context_ready": 108,
-  "note": "Generalizes v2.38M (which only ever covered the old 50-company US shortlist) to every identity-resolved company in the v2.38AL global coverage matrix (1,244: 555 US + 689 Europe). Europe's sector-theme matching is honestly weaker than the US's: Europe's fundamentals extraction never captured narrative text, so only company_name keywords are available there, reported via macro_limitations per company. Four new country-specific structural themes added (EU single-market regulation, Eurozone monetary policy, UK post-Brexit trade friction, Swiss franc safe-haven dynamics) -- evergreen jurisdictional facts, not dated event claims, matching v2.38M's own static/offline discipline.",
-  "notes": 10149,
+  "macro_context_partial": 1129,
+  "macro_context_ready": 115,
+  "note": "Generalizes v2.38M (which only ever covered the old 50-company US shortlist) to every identity-resolved company in the v2.38AL global coverage matrix (1,244: 555 US + 689 Europe). Reconstructed to attack the 0/689 Europe sector-match finding from this same phase's first run: v2.38AN's real UK Companies House SIC codes (29 companies) and v2.38AO's real French NAF/NACE codes (18 companies) now feed the same keyword matcher as the US's v2.38J narrative text. The remaining 642 Europe companies (413 DE, 44 NL, 29 CH, 22 IT, 21 DK, 20 AT, 17 IE, 15 ES, 6 BE, 5 FI, 4 SE) still have no sector-classification source confirmed and stay on company_name-only matching, honestly reported via macro_limitations. Four country-specific structural themes remain (EU single-market regulation, Eurozone monetary policy, UK post-Brexit trade friction, Swiss franc safe-haven dynamics) -- evergreen jurisdictional facts, not dated event claims, matching v2.38M's own static/offline discipline.",
+  "notes": 10156,
   "phase": "v2.38AM-global-macro-geopolitical-context",
   "recommendations_generated": false,
   "rejected_rows": 0,
+  "sector_text_source_counts": {
+    "NONE": 642,
+    "v2.38AN": 29,
+    "v2.38AO": 18,
+    "v2.38J": 555
+  },
   "sector_theme_matched_by_country_top": {
+    "FR": 3,
+    "GB": 4,
     "USA": 108
   },
   "status": "COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS",

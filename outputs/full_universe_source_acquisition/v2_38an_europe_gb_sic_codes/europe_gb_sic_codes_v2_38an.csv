@@ -1,0 +1,30 @@
+asset_id,ticker,company_name,company_number,fetch_status,fetch_reason,sic_codes,sic_descriptions,unknown_sic_codes,phase,created_at_utc
+U37439,GUI,DIAGEO PLC,00023307,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37440,BSP,BAE SYSTEMS PLC,01470151,resolved,profile_fetched,25400;29100;30110;30300,Manufacture of weapons and ammunition;Manufacture of motor vehicles;Building of ships and floating structures;Manufacture of air and spacecraft and related machinery,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37442,ITB,IMPERIAL BRANDS PLC,03236483,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37444,PES,PEARSON PLC,00053723,resolved,profile_fetched,58190,Other publishing activities,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37445,RIO1,RIO TINTO PLC,00719885,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37446,SCT,SSE PLC,SC117119,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37447,BPE5,BP PLC,00102498,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37450,BCY,BARCLAYS PLC,00048839,resolved,profile_fetched,64191,Banks,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37451,KFI1,KINGFISHER,01664812,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37452,IJ8,ITM POWER PLC,05059407,resolved,profile_fetched,27900,Manufacture of other electrical equipment,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37453,RTO1,RENTOKIL INITIAL,05393279,resolved,profile_fetched,82990;96090,Other business support service activities n.e.c;Other service activities n.e.c.,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37454,LS4C,LONDON STOCK EXCHANGE,02075721,resolved,profile_fetched,66110,Administration of financial markets,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37455,RDEB,RELX PLC,00077536,resolved,profile_fetched,58110;58142;58190;58290,Book publishing;Publishing of consumer and business journals and periodicals;Other publishing activities;Other software publishing,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37457,EJT1,EASYJET PLC,03959649,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37458,XGR2,COMPASS GROUP,04083914,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37459,NNGF,NATIONAL GRID PLC,04031152,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37460,1T1,TECHNIPFMC PLC,09909709,resolved,profile_fetched,09100;25110;71129,Support activities for petroleum and natural gas mining;Manufacture of metal structures and parts of structures;Other engineering activities,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37462,VODI,VODAFONE GROUP PLC,01833679,resolved,profile_fetched,61900;70100,Other telecommunications activities;Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37464,TCO0,TESCO PLC,00445790,resolved,profile_fetched,47110,"Retail sale in non-specialised stores with food, beverages or tobacco predominating",,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37467,88Q,4BASEBIO PLC,13519889,resolved,profile_fetched,74909,"Other professional, scientific and technical activities n.e.c.",,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37468,H1W,KLARNA GROUP PLC,14467769,resolved,profile_fetched,64209,Activities of other holding companies n.e.c.,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37470,H6D0,HALEON PLC,13691224,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37471,GS71,GSK PLC,03888792,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37472,R6C0,SHELL PLC,04366849,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37473,GU81,AVIVA PLC,02468686,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37474,HT3,ANGLOGOLD ASHANTI,14654651,resolved,profile_fetched,64209,Activities of other holding companies n.e.c.,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37476,NGL0,ANGLO AMERICAN,03564138,resolved,profile_fetched,08990,Other mining and quarrying n.e.c.,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37477,UNV0,UNILEVER PLC,00041424,resolved,profile_fetched,70100,Activities of head offices,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z
+U37478,0VQ,PURETECH HEALTH PLC,09582467,resolved,profile_fetched,72110,Research and experimental development on biotechnology,,v2.38AN-europe-gb-sic-codes,2026-09-06T14:12:46Z

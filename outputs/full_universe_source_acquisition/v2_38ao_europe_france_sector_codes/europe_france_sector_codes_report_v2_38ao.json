@@ -1,0 +1,19 @@
+{
+  "companies_error": 0,
+  "companies_fetched": 18,
+  "companies_no_siren_match": 0,
+  "companies_with_sector_codes": 18,
+  "credentials_used": false,
+  "eligible_companies": 18,
+  "network_used": true,
+  "note": "Real, confirmed limitation carried over from Austria's individual-vs-consolidated caveat (v2.38AI): the SIREN queried is often the registered head-office/holding legal entity, not the operating business -- e.g. Sanofi, Danone, Pernod Ricard, L'Oreal-adjacent and others here all show NAF 70.10Z 'Head office activities' rather than their real operating sector, an artifact of French corporate registration structure, not a data-quality error in this script.",
+  "phase": "v2.38AO-europe-france-sector-codes",
+  "phase9c_authorized": false,
+  "ranking_created": false,
+  "raw_cache_published": false,
+  "recommendations_created": false,
+  "scoring_created": false,
+  "status": "COMPLETED_EUROPE_FRANCE_SECTOR_CODES",
+  "unknown_nace_sections_needing_translation": [],
+  "unknown_naf_codes_needing_translation": []
+}

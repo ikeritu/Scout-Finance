@@ -22,4 +22,25 @@ Verificación real por país: `OMV AG` (Austria, petrolera real) → `EU_SINGLE_
 
 Idénticas a `v2.38M`: sin red, sin noticias en vivo, sin clasificación por LLM en tiempo de ejecución, sin modificar ningún score/ranking/feature ya calculado, sin recomendaciones, sin fase 9C. 8 pruebas offline nuevas, todas con datos sintéticos.
 
-**Estado del bloque: `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Primera generalización real del módulo geopolítico a la población completa con identidad confirmada; el hueco de emparejamiento de sector en Europa (0/689) queda documentado como el próximo objetivo natural de mejora — probablemente exigirá una fuente real de clasificación sectorial (GICS/NACE) en vez de depender solo del nombre legal, algo que este bloque señala pero no resuelve.
+**Estado del bloque (primera ejecución): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Primera generalización real del módulo geopolítico a la población completa con identidad confirmada; el hueco de emparejamiento de sector en Europa (0/689) queda documentado como el próximo objetivo natural de mejora.
+
+---
+
+## Reconstrucción (mismo día, 2026-09-06): ataque real al hueco de sector en Europa
+
+Instrucción del usuario: "ataca el hueco de sector en Europa". En lugar de una fuente única, se atacaron dos huecos reales y ya alcanzables con acceso confirmado:
+
+- **`v2.38AN`** — bug real encontrado en `v2.38Y`: su columna `sic_codes` llevaba vacía desde siempre porque consultaba el endpoint de **búsqueda** de Companies House, que nunca devuelve ese campo (solo el endpoint de **perfil completo** lo hace, confirmado en vivo). Corregido: 29/29 empresas GB con código SIC real, verificado uno a uno contra la lista oficial condensada de Companies House.
+- **`v2.38AO`** — misma API gubernamental francesa ya validada en `v2.38AD` (`recherche-entreprises.api.gouv.fr`), ahora consultada por SIREN para capturar el código NAF/NACE real: 18/18 empresas con código verificado contra las páginas de metadatos oficiales del INSEE.
+
+Ambas fuentes se integraron en este mismo módulo (`build_global_macro_geopolitical_context_v2_38am.py`, reconstruido, no reescrito desde cero) como una tercera y cuarta fuente de texto narrativo, junto a los resúmenes de señal de EE. UU. (`v2.38J`), alimentando el mismo motor de coincidencia por palabra clave — nueva columna `sector_text_source` para trazabilidad.
+
+### Resultado real de la reconstrucción
+
+`MACRO_CONTEXT_READY` sube de **108 a 115** (+7, todos en Europa: 3 en Francia — ENGIE→`OIL_GAS_SUPPLY`, Innate Pharma y Abivax→`HEALTHCARE_REGULATION` — y 4 en Reino Unido — Barclays y London Stock Exchange→`BANK_CREDIT_CYCLE`, TechnipFMC→`OIL_GAS_SUPPLY`, PureTech Health→`HEALTHCARE_REGULATION`). Europa pasa de **0/689 a 7/689** con coincidencia real de sector.
+
+**Hallazgo honesto, el mismo en las dos fuentes**: de las 47 empresas nuevas con código real (29 GB + 18 FR), **23 (casi la mitad)** muestran un código genérico de "actividades de sede social" u "holding" (`70100`/`64.20Z`), no su sector operativo real — la entidad registrada en el registro mercantil es la matriz jurídica del grupo, no la marca operativa. Es exactamente el mismo patrón ya documentado en `v2.38AI` (Austria, individual vs. consolidado) — confirmado ahora también en Reino Unido y Francia, con datos reales de tres países independientes.
+
+**Lo que queda sin atacar, explícitamente**: 642 de las 689 empresas europeas (413 Alemania, 44 Países Bajos, 29 Suiza, 22 Italia, 21 Dinamarca, 20 Austria, 17 Irlanda, 15 España, 6 Bélgica, 5 Finlandia, 4 Suecia) siguen sin ninguna fuente de clasificación sectorial confirmada — ningún registro nacional de esos 11 países ha sido investigado todavía para esto. Próximo paso natural: repetir esta misma investigación (¿tiene el registro mercantil de ese país una clasificación de actividad accesible gratis, como Companies House/INSEE?) país por país.
+
+**Estado del bloque (reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 2 pruebas offline nuevas añadidas (10 en total). Progreso real y honesto, no una solución completa: el hueco de sector en Europa pasa de 0/689 a 7/689, con una causa raíz (holdings registradas vs. operación real) ahora confirmada con evidencia de tres países.

@@ -17,27 +17,27 @@
     },
     "PHASE9AM_GLOBAL_MACRO_GEOPOLITICAL_GATE_v2_38am.md": {
       "bytes": 534,
-      "sha256": "405dc5c8f5891ea45c197c38e09538adbe809ff880657bd3df20c378a8aa57ac"
+      "sha256": "636e96b38d43e8b4cde8757927ca83cdd17bcc2056fd4b7c31d53f84e8296e39"
     },
     "README.md": {
       "bytes": 345,
       "sha256": "9be42f834d24b09f66ee8500794f2e504e5b70e70e8514cb92c673bbc889a50e"
     },
     "global_macro_geopolitical_aggregate_report_v2_38am.json": {
-      "bytes": 1494,
-      "sha256": "bcd858f132398280dfe555177f77d11ac266f10f408d4d1748fc6b071190223c"
+      "bytes": 1929,
+      "sha256": "3ca38c00814e89d2189146f8fb27166b407d8cd7f15a33c739bac20d629f4b9b"
     },
     "global_macro_geopolitical_context_v2_38am.csv": {
-      "bytes": 1834432,
-      "sha256": "f3fd4455773a85a8f541960e36d9c0326f8550c1eeb4e31366a2b28dfc093df6"
+      "bytes": 1837288,
+      "sha256": "3d71bc73a5d3efb0f3a7a694c16ddef26c5118bdefbf471b8931168d6f031834"
     },
     "global_macro_geopolitical_notes_v2_38am.csv": {
-      "bytes": 2381702,
-      "sha256": "a7b4b03a840f861dda71645da28c9d4e689361a26c049365d7670643401b6381"
+      "bytes": 2380181,
+      "sha256": "0f613d4be1fff4315320edd2d0dba33f9a1a7251d12c3979236dfe0a0378a669"
     },
     "global_macro_geopolitical_quality_v2_38am.csv": {
-      "bytes": 163720,
-      "sha256": "f3437a969ecf87ceaa3ae6279389afa1a09785dff1d63e476a9dcda3aea1bc57"
+      "bytes": 163656,
+      "sha256": "8fc18bc0bb8d3f744b37d82f920c78c84113a5f901f42bad83f2b10830762b2c"
     },
     "global_macro_geopolitical_rejections_v2_38am.csv": {
       "bytes": 50,

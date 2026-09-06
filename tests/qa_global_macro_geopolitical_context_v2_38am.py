@@ -20,6 +20,8 @@ COVERAGE_FIELDS = [
     "price_status", "price_source", "overall_coverage_status", "phase",
 ]
 US_SIGNAL_FIELDS = ["asset_id", "ticker", "company_name", "fundamental_signal_summary", "price_signal_summary", "risk_signal_summary"]
+GB_SIC_FIELDS = ["asset_id", "ticker", "company_name", "sic_codes", "sic_descriptions"]
+FRANCE_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "naf_code", "naf_description_en"]
 
 
 def module(path: Path, name: str):
@@ -50,14 +52,20 @@ def coverage_row(asset_id: str, ticker: str, name: str, country: str, identity_s
             "price_status": "NOT_ATTEMPTED", "price_source": "", "overall_coverage_status": overall, "phase": ""}
 
 
-def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None):
+def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None):
     mod = module(SCRIPT, f"geo_{id(coverage_rows)}")
     coverage_path = tmp / "coverage.csv.xz"
     write_coverage_xz(coverage_path, coverage_rows)
     us_signal_path = tmp / "us_signal.csv"
     if us_signal_rows:
         write_csv(us_signal_path, us_signal_rows, US_SIGNAL_FIELDS)
-    report = mod.build(coverage_path, us_signal_path, tmp / "out")
+    gb_sic_path = tmp / "gb_sic.csv"
+    if gb_sic_rows:
+        write_csv(gb_sic_path, gb_sic_rows, GB_SIC_FIELDS)
+    france_sector_path = tmp / "france_sector.csv"
+    if france_sector_rows:
+        write_csv(france_sector_path, france_sector_rows, FRANCE_SECTOR_FIELDS)
+    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, tmp / "out")
     rows = {r["asset_id"]: r for r in csv.DictReader((tmp / "out" / "global_macro_geopolitical_context_v2_38am.csv").open(encoding="utf-8"))}
     return report, rows
 
@@ -101,6 +109,41 @@ def test_europe_company_with_no_text_gets_partial_status_and_honest_limitation()
     row = rows["U1"]
     assert row["macro_context_status"] == "MACRO_CONTEXT_PARTIAL"
     assert "No narrative signal text is available" in row["macro_limitations"]
+    assert row["sector_text_source"] == ""
+
+
+def test_gb_company_with_real_sic_description_reaches_ready_status():
+    """Real case: v2.38AN fetched real UK SIC codes (e.g. Barclays ->
+    64191 'Banks') that v2.38Y's search-endpoint approach never captured.
+    Feeding that real description into the same matcher must reach
+    MACRO_CONTEXT_READY via BANK_CREDIT_CYCLE, attacking the 0/689 Europe
+    sector-match finding from this module's first run."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "BCY", "BARCLAYS PLC", "GB")],
+            gb_sic_rows=[{"asset_id": "U1", "ticker": "BCY", "company_name": "BARCLAYS PLC", "sic_codes": "64191", "sic_descriptions": "Banks"}],
+        )
+    row = rows["U1"]
+    assert row["macro_context_status"] == "MACRO_CONTEXT_READY"
+    assert "BANK_CREDIT_CYCLE" in row["applicable_themes"].split("|")
+    assert row["sector_text_source"] == "v2.38AN"
+
+
+def test_france_company_with_real_naf_description_reaches_ready_status():
+    """Real case: v2.38AO fetched Soitec's real NAF code (26.11Z ->
+    'Manufacture of electronic components'). Confirms the France sector
+    source feeds the same matcher and is correctly attributed."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "SOH1", "SOITEC S.A.", "FR")],
+            france_sector_rows=[{"asset_id": "U1", "ticker": "SOH1", "company_name": "SOITEC S.A.", "naf_code": "72.11Z", "naf_description_en": "Research and development in biotechnology"}],
+        )
+    row = rows["U1"]
+    assert row["macro_context_status"] == "MACRO_CONTEXT_READY"
+    assert "HEALTHCARE_REGULATION" in row["applicable_themes"].split("|")
+    assert row["sector_text_source"] == "v2.38AO"
 
 
 def test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf():
@@ -165,6 +208,8 @@ CASES = [
     test_only_identity_resolved_companies_get_context,
     test_us_company_with_signal_text_matches_sector_theme,
     test_europe_company_with_no_text_gets_partial_status_and_honest_limitation,
+    test_gb_company_with_real_sic_description_reaches_ready_status,
+    test_france_company_with_real_naf_description_reaches_ready_status,
     test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf,
     test_gb_gets_brexit_theme_not_eu_or_eurozone,
     test_switzerland_gets_chf_theme_not_eu_or_eurozone,

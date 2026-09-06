@@ -1,0 +1,17 @@
+{
+  "companies_error": 0,
+  "companies_fetched": 29,
+  "companies_no_sic_codes": 0,
+  "companies_with_sic_codes": 29,
+  "credentials_used": true,
+  "eligible_companies": 29,
+  "network_used": true,
+  "phase": "v2.38AN-europe-gb-sic-codes",
+  "phase9c_authorized": false,
+  "ranking_created": false,
+  "raw_cache_published": false,
+  "recommendations_created": false,
+  "scoring_created": false,
+  "status": "COMPLETED_EUROPE_GB_SIC_CODES",
+  "unknown_sic_codes_needing_description": []
+}

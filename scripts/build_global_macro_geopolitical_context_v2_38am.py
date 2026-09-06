@@ -47,6 +47,8 @@ PHASE = "v2.38AM-global-macro-geopolitical-context"
 OUT = ROOT / "outputs/full_universe_source_acquisition/v2_38am_global_macro_geopolitical_context"
 COVERAGE_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38al_global_coverage_matrix/global_coverage_matrix_v2_38al.csv.xz"
 US_SIGNAL_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38j_us_candidate_feature_matrix/us_candidate_feature_matrix_v2_38j.csv"
+GB_SIC_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38an_europe_gb_sic_codes/europe_gb_sic_codes_v2_38an.csv"
+FRANCE_SECTOR_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38ao_europe_france_sector_codes/europe_france_sector_codes_v2_38ao.csv"
 ASOF_DATE = "2026-09-06"
 
 # Real, stable, uncontroversial EU/Eurozone membership as of this project's
@@ -62,7 +64,7 @@ TAXONOMY_FIELDS = [
 ]
 CONTEXT_FIELDS = [
     "asset_id", "ticker", "company_name", "exchange", "country",
-    "identity_status", "overall_coverage_status",
+    "identity_status", "overall_coverage_status", "sector_text_source",
     "macro_context_status", "applicable_themes", "macro_opportunity_score",
     "macro_risk_score", "macro_balance", "macro_context_summary",
     "macro_positive_context", "macro_risk_context", "macro_limitations",
@@ -219,10 +221,12 @@ def context_status(sector_matched: bool) -> str:
     return "MACRO_CONTEXT_READY" if sector_matched else "MACRO_CONTEXT_PARTIAL"
 
 
-def build(coverage_path: Path, us_signal_path: Path, output_dir: Path) -> dict[str, Any]:
+def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_sector_path: Path, output_dir: Path) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
     coverage_rows = read_coverage(coverage_path)
     us_signal_idx = read_csv_index(us_signal_path)
+    gb_sic_idx = read_csv_index(gb_sic_path)
+    france_sector_idx = read_csv_index(france_sector_path)
     taxonomy_rows = taxonomy()
     themes = {row["theme_id"]: row for row in taxonomy_rows}
 
@@ -243,11 +247,17 @@ def build(coverage_path: Path, us_signal_path: Path, output_dir: Path) -> dict[s
             continue
         seen.add(asset_id)
         signal_row = us_signal_idx.get(asset_id)
-        extra_text = " ".join([
+        gb_sic_row = gb_sic_idx.get(asset_id)
+        france_sector_row = france_sector_idx.get(asset_id)
+        extra_text_parts = [
             (signal_row or {}).get("fundamental_signal_summary", ""),
             (signal_row or {}).get("price_signal_summary", ""),
             (signal_row or {}).get("risk_signal_summary", ""),
-        ]).strip()
+            (gb_sic_row or {}).get("sic_descriptions", ""),
+            (france_sector_row or {}).get("naf_description_en", ""),
+        ]
+        extra_text = " ".join(part for part in extra_text_parts if part).strip()
+        sector_source = "v2.38J" if signal_row else "v2.38AN" if gb_sic_row else "v2.38AO" if france_sector_row else ""
         selected, limitation, sector_matched = match_themes(company_name, extra_text, country, themes)
         status = context_status(sector_matched)
         opportunity = mean([float(t["opportunity_score"]) for t in selected])
@@ -259,6 +269,7 @@ def build(coverage_path: Path, us_signal_path: Path, output_dir: Path) -> dict[s
             "asset_id": asset_id, "ticker": ticker, "company_name": company_name,
             "exchange": row.get("exchange", ""), "country": country,
             "identity_status": row.get("identity_status", ""), "overall_coverage_status": row.get("overall_coverage_status", ""),
+            "sector_text_source": sector_source,
             "macro_context_status": status, "applicable_themes": "|".join(str(t["theme_id"]) for t in selected),
             "macro_opportunity_score": opportunity, "macro_risk_score": risk, "macro_balance": balance,
             "macro_context_summary": f"Static macro/geopolitical context applied using {len(selected)} taxonomy themes as of {ASOF_DATE}.",
@@ -302,13 +313,14 @@ def build(coverage_path: Path, us_signal_path: Path, output_dir: Path) -> dict[s
         "notes": len(notes),
         "rejected_rows": len(rejections),
         "sector_theme_matched_by_country_top": dict(sorted(by_country_ready.items(), key=lambda kv: -kv[1])[:10]),
+        "sector_text_source_counts": dict(sorted(Counter(row["sector_text_source"] or "NONE" for row in context_rows).items())),
         "live_news_used": False, "recommendations_generated": False,
         "guardrails": {
             "network_calls": 0, "recommendations_generated": False, "financial_advice": False,
             "broker_actions_allowed": False, "phase9c_authorized": False, "ranking_modified": False,
             "scoring_modified": False, "live_news_used": False, "llm_runtime_classification": False,
         },
-        "note": "Generalizes v2.38M (which only ever covered the old 50-company US shortlist) to every identity-resolved company in the v2.38AL global coverage matrix (1,244: 555 US + 689 Europe). Europe's sector-theme matching is honestly weaker than the US's: Europe's fundamentals extraction never captured narrative text, so only company_name keywords are available there, reported via macro_limitations per company. Four new country-specific structural themes added (EU single-market regulation, Eurozone monetary policy, UK post-Brexit trade friction, Swiss franc safe-haven dynamics) -- evergreen jurisdictional facts, not dated event claims, matching v2.38M's own static/offline discipline.",
+        "note": "Generalizes v2.38M (which only ever covered the old 50-company US shortlist) to every identity-resolved company in the v2.38AL global coverage matrix (1,244: 555 US + 689 Europe). Reconstructed to attack the 0/689 Europe sector-match finding from this same phase's first run: v2.38AN's real UK Companies House SIC codes (29 companies) and v2.38AO's real French NAF/NACE codes (18 companies) now feed the same keyword matcher as the US's v2.38J narrative text. The remaining 642 Europe companies (413 DE, 44 NL, 29 CH, 22 IT, 21 DK, 20 AT, 17 IE, 15 ES, 6 BE, 5 FI, 4 SE) still have no sector-classification source confirmed and stay on company_name-only matching, honestly reported via macro_limitations. Four country-specific structural themes remain (EU single-market regulation, Eurozone monetary policy, UK post-Brexit trade friction, Swiss franc safe-haven dynamics) -- evergreen jurisdictional facts, not dated event claims, matching v2.38M's own static/offline discipline.",
     }
     write_text(output_dir / "global_macro_geopolitical_aggregate_report_v2_38am.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
     write_docs(output_dir, report)
@@ -355,9 +367,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--coverage-input", type=Path, default=COVERAGE_INPUT)
     parser.add_argument("--us-signal-input", type=Path, default=US_SIGNAL_INPUT)
+    parser.add_argument("--gb-sic-input", type=Path, default=GB_SIC_INPUT)
+    parser.add_argument("--france-sector-input", type=Path, default=FRANCE_SECTOR_INPUT)
     parser.add_argument("--output-dir", type=Path, default=OUT)
     args = parser.parse_args()
-    report = build(args.coverage_input, args.us_signal_input, args.output_dir)
+    report = build(args.coverage_input, args.us_signal_input, args.gb_sic_input, args.france_sector_input, args.output_dir)
     print(json.dumps({k: report[k] for k in ("phase", "status", "companies_context_built", "macro_context_ready", "macro_context_partial")}, ensure_ascii=False, sort_keys=True))
     return 0
 
