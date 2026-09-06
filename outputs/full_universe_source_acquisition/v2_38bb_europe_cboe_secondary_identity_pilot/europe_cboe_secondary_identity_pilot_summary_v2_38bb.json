@@ -1,0 +1,33 @@
+{
+  "ambiguous": 4,
+  "ambiguous_rate_pct": 5.3,
+  "credentials_used": false,
+  "eligible_new_company_candidates": 9634,
+  "network_used": true,
+  "phase": "v2.38BB-europe-cboe-secondary-identity-pilot",
+  "phase9c_authorized": false,
+  "projection_if_scaled_to_full_population": {
+    "caveat": "Linear extrapolation from a random sample -- a real signal of scale, not a guarantee; only a full run confirms the real number.",
+    "estimated_ambiguous": 514,
+    "estimated_resolved": 3468,
+    "estimated_unresolved": 5652
+  },
+  "resolved": 27,
+  "resolved_by_country": {
+    "CH": 3,
+    "DE": 1,
+    "DK": 2,
+    "FI": 1,
+    "FR": 1,
+    "GB": 10,
+    "KY": 1,
+    "NO": 1,
+    "SE": 2,
+    "US": 5
+  },
+  "resolved_rate_pct": 36.0,
+  "sample_seed": 2026,
+  "sample_size": 75,
+  "total_cboe_secondary_rows": 21066,
+  "unresolved": 44
+}

@@ -1,0 +1,76 @@
+asset_id,ticker,company_name,search_key,status,reason,lei,legal_name,country,candidate_count,candidate_countries,phase,created_at_utc
+U12305,FAIRl,Fair Oaks Income Ltd,FAIR OAKS INCOME,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U17018,ULTPl,Ultimate Products PLC,ULTIMATE PRODUCTS,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U21144,ALMUNp,Munic SA,MUNIC,resolved,exact_single_gleif_match_no_country_filter,969500WCODOO2EV5W145,MUNIC,FR,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U21225,ALVDMp,Voyageurs du Monde,VOYAGEURS DU MONDE,ambiguous,multiple_distinct_countries_match_same_name,,,,3,CH|FR,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U24117,FREEMs,Freemelt Holding AB,FREEMELT HOLDING,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U28299,SPIVAc,Sparinvest Value Aktier,SPARINVEST VALUE AKTIER,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U11621,EG7i,FBD Holdings PLC,FBD HOLDINGS,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U28804,TORw,Torpol SA,TORPOL,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U15008,NORTHo,North Energy ASA,NORTH ENERGY,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U29009,UBXNz,u-blox Holding AG,U-BLOX HOLDING,resolved,exact_single_gleif_match_no_country_filter,506700B2W2NUXS9X8479,u-blox Holding AG,CH,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U22983,DKIGIc,Danske Invest Globale Lange Indeksobligationer - Akkumulerende KL,DANSKE INVEST GLOBALE LANGE INDEKSOBLIGATIONER - AKKUMULERENDE KL,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U23391,EMANl,Everyman Media Group Plc,EVERYMAN MEDIA GROUP,resolved,exact_single_gleif_match_no_country_filter,213800XIF4R73HAM8S36,EVERYMAN MEDIA GROUP PLC,GB,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U22096,BWRAl,Bristol Water PLC,BRISTOL WATER,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U19946,2869n,Greentown Service Group Co Ltd,GREENTOWN SERVICE GROUP,resolved,exact_single_gleif_match_no_country_filter,254900V8OFDBOODYW979,GREENTOWN SERVICE GROUP CO. LTD.,KY,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U26961,OMFn,OneMain Holdings Inc,ONEMAIN HOLDINGS,resolved,exact_single_gleif_match_no_country_filter,549300E3VEW8SMS5XW09,"OneMain Holdings, Inc.",US,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U22435,CLDXn,Celldex Therapeutics Inc,CELLDEX THERAPEUTICS,resolved,exact_single_gleif_match_no_country_filter,529900F018DMYWH38923,"Celldex Therapeutics, Inc.",US,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U21930,BOJAn,Bojangles' Inc,BOJANGLES',resolved,exact_single_gleif_match_no_country_filter,549300V7MGDZ6K056B43,"BOJANGLES', INC.",US,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U27998,SFRz,SF Retail Properties Fund,SF RETAIL PROPERTIES FUND,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U26063,LSCl,London Security PLC,LONDON SECURITY,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U26856,NVTn,nVent Electric PLC,NVENT ELECTRIC,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U26705,NEOHf,Neochim AD,NEOCHIM AD,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U21038,ALCPBp,Capital B,CAPITAL B,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U26399,MLSRn,Melisron Ltd,MELISRON,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U26811,NRm,Next Re SIIQ SpA,NEXT RE SIIQ,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U22685,CTAIl,Catenai PLC,CATENAI,resolved,exact_single_gleif_match_no_country_filter,2138007I2D8YWPMSP544,CATENAI PLC,GB,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U20323,538n,Ajisen China Holdings Ltd,AJISEN CHINA HOLDINGS,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U15232,PBEEl,Pensionbee Group PLC,PENSIONBEE GROUP,resolved,exact_single_gleif_match_no_country_filter,2138008663P5FHPGZV74,PENSIONBEE GROUP PLC,GB,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U09262,1SPCXm,Space Exploration Technologies Corp,SPACE EXPLORATION TECHNOLOGIES,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U23214,ECKd,Ludwig Beck am Rathauseck-Textilhaus Feldmeier AG,LUDWIG BECK AM RATHAUSECK-TEXTILHAUS FELDMEIER,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U11008,CRDAl,Croda International PLC,CRODA INTERNATIONAL,resolved,exact_single_gleif_match_no_country_filter,2138004WCNBFJEEOXV26,CRODA INTERNATIONAL PUBLIC LIMITED COMPANY,GB,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U11909,ENSUo,Ensurge Micropower ASA,ENSURGE MICROPOWER,resolved,exact_single_gleif_match_no_country_filter,5493007QXMCG0WPKFC96,ENSURGE MICROPOWER ASA,NO,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U16127,SNORo,SpareBank 1 Nordmoere,SPAREBANK 1 NORDMOERE,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U27508,RAEd,China Rare Earth Holdings Ltd,CHINA RARE EARTH HOLDINGS,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U11494,EASTs,Eastnine AB,EASTNINE,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U20434,688n,China Overseas Land & Investment Ltd,CHINA OVERSEAS LAND & INVESTMENT,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U09671,ADENz,Adecco Group AG,ADECCO GROUP,resolved,exact_single_gleif_match_no_country_filter,NI14Y5UMU60O7JE9P611,Adecco Group AG,CH,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U27462,QLIFEs,Qlife Holding AB,QLIFE HOLDING,resolved,exact_single_gleif_match_no_country_filter,8945004IFHG6OZ3P8239,Qlife Holding AB,SE,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U28894,TSGIn,Stars Group Inc/The,STARS GROUP INC/THE,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U25066,IDLDXs,IDL Diagnostics AB,IDL DIAGNOSTICS,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U21033,ALCLSp,Cellectis SA,CELLECTIS,ambiguous,multiple_distinct_entities_same_country_same_name,,,,2,FR,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U24914,HTAn,Healthcare Trust of America Inc,HEALTHCARE TRUST OF AMERICA,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U16785,TRIFOc,Trifork Group AG,TRIFORK GROUP,resolved,exact_single_gleif_match_no_country_filter,8945004BYZKXPESTBL36,Trifork Group AG,CH,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U14795,MTOl,Mitie Group PLC,MITIE GROUP,resolved,exact_single_gleif_match_no_country_filter,213800MTCLTKEHWZMJ03,MITIE GROUP PLC,GB,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U19297,1BSL1t,Biotika AS,BIOTIKA AS,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U15394,PRICBs,Pricer AB,PRICER,ambiguous,multiple_distinct_countries_match_same_name,,,,2,FR|SE,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U18602,0HIYl,Atara Biotherapeutics Inc,ATARA BIOTHERAPEUTICS,resolved,exact_single_gleif_match_no_country_filter,549300WBXUXZRE03MS38,"Atara Biotherapeutics, Inc.",US,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U18698,0IZIl,WW Grainger Inc,WW GRAINGER,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U27289,PPCy,Public Power Corp SA,PUBLIC POWER,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U19023,0Y9Sl,Check Point Software Technologies Ltd,CHECK POINT SOFTWARE TECHNOLOGIES,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U26340,MIDSs,Midsummer AB,MIDSUMMER,resolved,exact_single_gleif_match_no_country_filter,549300ZOWFLNDFSHNB56,Midsummer AB,SE,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U21298,AMA0d,Altech Advanced Materials AG,ALTECH ADVANCED MATERIALS,resolved,exact_single_gleif_match_no_country_filter,529900PVUKFVG9GDEQ03,Altech Advanced Materials AG,DE,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U23969,FHPl,Fandango Holdings PLC,FANDANGO HOLDINGS,resolved,exact_single_gleif_match_no_country_filter,213800JKH2KSD3OKJJ63,FANDANGO HOLDINGS PLC,GB,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U10932,COLOBc,Coloplast A/S,COLOPLAST,resolved,exact_single_gleif_match_no_country_filter,529900NN7SOJ5QG82X67,COLOPLAST A/S,DK,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U25944,LEMSEs,Leading Edge Materials Corp,LEADING EDGE MATERIALS,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U18376,YNGAl,Young & Co's Brewery PLC,YOUNG & CO'S BREWERY,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U11284,DFDSc,Dfds A/S,DFDS,resolved,exact_single_gleif_match_no_country_filter,549300JZVW1Y1UZ5UK38,DFDS A/S,DK,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U22114,BYLOTy,Ballys Intralot SA,BALLYS INTRALOT,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U21776,BGIGf,Bulgarian Investment Group REIT,BULGARIAN INVESTMENT GROUP REIT,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U16280,SRADl,Stelrad Group PLC,STELRAD GROUP,resolved,exact_single_gleif_match_no_country_filter,2138006LKVGN16PTVA73,STELRAD GROUP PLC,GB,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U16134,SNWSl,Smiths News PLC,SMITHS NEWS,resolved,exact_single_gleif_match_no_country_filter,2138004O33ONVOOQXB02,SMITHS NEWS PLC,GB,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U20524,8008n,SUNeVision Holdings Ltd,SUNEVISION HOLDINGS,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U12819,GPWw,Warsaw Stock Exchange,WARSAW STOCK EXCHANGE,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U28686,TETl,Treatt PLC,TREATT,resolved,exact_single_gleif_match_no_country_filter,213800G4OJM9F7G9LG39,TREATT PLC,GB,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U24088,FPILIc,Formuepleje LimiTTellus akk,FORMUEPLEJE LIMITTELLUS AKK,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U25512,JHGn,Janus Henderson Group PLC,JANUS HENDERSON GROUP,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U25812,KP2l,Kore Potash PLC,KORE POTASH,resolved,exact_single_gleif_match_no_country_filter,213800NWX7EHG4UVC107,KORE POTASH PLC,GB,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U22518,CNN1v,Canon Inc,CANON,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U16665,TIBNz,Bergbahnen Engelberg-Truebsee-Titlis AG BET,BERGBAHNEN ENGELBERG-TRUEBSEE-TITLIS AG BET,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U09921,ANORAh,Anora Group Oyj,ANORA GROUP,resolved,exact_single_gleif_match_no_country_filter,52990007AXNSS4PNX352,Anora Group Oyj,FI,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U28092,SKAw,Sniezka SA,SNIEZKA,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U25736,KERw,Kernel Holding SA,KERNEL HOLDING,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U18861,0LHYl,US Bancorp,US BANCORP,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U18794,0KEQl,PVH Corp,PVH,resolved,exact_single_gleif_match_no_country_filter,123WALMHY1GZXG2YDL90,PVH CORP.,US,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U20558,855n,China Water Affairs Group Ltd,CHINA WATER AFFAIRS GROUP,unresolved,no_exact_normalized_name_match_gleif,,,,0,,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
+U19983,2INVd,2invest AG,2INVEST,ambiguous,multiple_distinct_countries_match_same_name,,,,2,CH|DE,v2.38BB-europe-cboe-secondary-identity-pilot,2026-09-06T22:11:45Z
