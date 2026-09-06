@@ -1,0 +1,21 @@
+asset_id,ticker,company_name,company_number,current_period_end,previous_period_end,periods_available,feature_quality_status,features_calculated,features_missing,quality_flags,revenue_yoy_growth,net_profit_yoy_growth,assets_yoy_growth,equity_yoy_growth,growth_acceleration_flag,margin_expansion_flag,phase
+U36865,XD4,STRABAG SE,88983h,2025-12-31,2024-12-31,5,FEATURES_READY,6,,growth_acceleration_flag,0.048231,0.039842,0.046887,0.045609,True,False,v2.38AK-europe-growth-features
+U36866,RAW,Raiffeisen Bank International AG,122119m,2024-12-31,2023-12-31,5,FEATURES_PARTIAL,2,assets_yoy_growth|equity_yoy_growth|net_profit_yoy_growth|revenue_yoy_growth,,,,,,False,False,v2.38AK-europe-growth-features
+U36867,ABS2,PORR AG,34853f,2025-12-31,2024-12-31,5,FEATURES_READY,6,,growth_acceleration_flag|margin_expansion_flag,0.074721,0.181345,0.062429,0.07269,True,True,v2.38AK-europe-growth-features
+U36868,EBO,ERSTE GROUP BANK AG,33209m,2025-12-31,2024-12-31,5,FEATURES_PARTIAL,2,assets_yoy_growth|equity_yoy_growth|net_profit_yoy_growth|revenue_yoy_growth,,,,,,False,False,v2.38AK-europe-growth-features
+U36869,AZ2,Andritz AG,50935f,2024-12-31,2023-12-31,4,FEATURES_READY,6,,,0.125596,-0.204843,-0.094562,-0.104057,False,False,v2.38AK-europe-growth-features
+U36870,OMV,OMV AKTIENGESELLSCHAFT,93363z,2024-12-31,2023-12-31,4,FEATURES_READY,6,,margin_expansion_flag,0.076674,0.103598,-0.018421,-0.003947,False,True,v2.38AK-europe-growth-features
+U36871,OEWA,VERBUND AG,76023z,2025-12-31,2024-12-31,5,FEATURES_PARTIAL,2,assets_yoy_growth|equity_yoy_growth|net_profit_yoy_growth|revenue_yoy_growth,,,,,,False,False,v2.38AK-europe-growth-features
+U36872,FAA,Fabasoft AG,98699x,2025-03-31,2024-03-31,2,FEATURES_PARTIAL,2,assets_yoy_growth|equity_yoy_growth|net_profit_yoy_growth|revenue_yoy_growth,,,,,,False,False,v2.38AK-europe-growth-features
+U36873,UN9,UNIQA Insurance Group AG,92933t,2025-12-31,2024-12-31,5,FEATURES_PARTIAL,2,assets_yoy_growth|equity_yoy_growth|net_profit_yoy_growth|revenue_yoy_growth,,,,,,False,False,v2.38AK-europe-growth-features
+U36874,WIB,Wienerberger AG,77676f,2025-12-31,2024-12-31,5,FEATURES_PARTIAL,2,assets_yoy_growth|equity_yoy_growth|net_profit_yoy_growth|revenue_yoy_growth,,,,,,False,False,v2.38AK-europe-growth-features
+U36875,VAS,voestalpine AG,66209t,2024-03-31,2023-03-31,4,FEATURES_PARTIAL,5,net_profit_yoy_growth,,-0.04226,,-0.045753,-0.06655,False,False,v2.38AK-europe-growth-features
+U36876,SLL,SBO AG,102999w,2023-12-31,2022-12-31,3,FEATURES_READY,6,,margin_expansion_flag,0.007502,0.357916,0.029602,0.094581,False,True,v2.38AK-europe-growth-features
+U36877,KTN,Kontron AG,190272m,2023-12-31,2022-12-31,3,FEATURES_READY,6,,growth_acceleration_flag,0.025003,-0.960146,-0.186165,-0.132732,True,False,v2.38AK-europe-growth-features
+U36878,WAH,Wolftank Group AG,306731a,2025-12-31,2024-12-31,5,FEATURES_PARTIAL,5,net_profit_yoy_growth,,-0.238722,,0.004644,-0.058079,False,False,v2.38AK-europe-growth-features
+U36879,GEPH,EPH Group AG,603735x,2024-12-31,2023-12-31,2,FEATURES_PARTIAL,3,equity_yoy_growth|net_profit_yoy_growth|revenue_yoy_growth,,,,0.057745,,False,False,v2.38AK-europe-growth-features
+U36880,4X0,Steyr Motors AG,583243k,2024-12-31,2023-12-31,3,FEATURES_PARTIAL,4,net_profit_yoy_growth|revenue_yoy_growth,,,,1.144956,1.27133,False,False,v2.38AK-europe-growth-features
+U36881,O3P,Österreichische Post Aktiengesellschaft,180219d,2025-12-31,2024-12-31,5,FEATURES_READY,6,,margin_expansion_flag,-0.006122,0.095813,0.029968,0.015495,False,True,v2.38AK-europe-growth-features
+U36882,0B2,BAWAG Group AG,269842b,2024-12-31,2023-12-31,5,FEATURES_PARTIAL,2,assets_yoy_growth|equity_yoy_growth|net_profit_yoy_growth|revenue_yoy_growth,,,,,,False,False,v2.38AK-europe-growth-features
+U36883,1AST,ASTA Energy Solutions AG,271337a,2024-12-31,2023-12-31,4,FEATURES_READY,6,,,0.194836,-0.798903,0.244103,2.211782,False,False,v2.38AK-europe-growth-features
+U36884,FQT,FREQUENTIS AG,72115b,2023-12-31,2022-12-31,3,FEATURES_READY,6,,growth_acceleration_flag,0.140235,-0.122867,0.168329,0.133476,True,False,v2.38AK-europe-growth-features

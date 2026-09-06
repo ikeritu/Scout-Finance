@@ -1,0 +1,17 @@
+{
+  "companies_features_partial": 11,
+  "companies_features_ready": 9,
+  "companies_input": 20,
+  "companies_insufficient": 0,
+  "network_used": false,
+  "note": "Growth features require >=2 fiscal periods on file for a company; today only Austria (v2.38AI) has real multi-year fundamentals in this pipeline. GB/Ireland's single-period iXBRL extraction never clears this bar and correctly reports INSUFFICIENT_FEATURE_EVIDENCE if ever included as an input. Free-cash-flow-derived features from the US v2.38G methodology (free_cash_flow, capex_to_revenue, cash_conversion_ratio, positive_fcf_flag, fundamental_momentum_flag) are not reproduced here: Austria's captured concepts include no operating cash flow or capex figures.",
+  "phase": "v2.38AK-europe-growth-features",
+  "phase9c_authorized": false,
+  "ranking_created": false,
+  "recommendations_created": false,
+  "records_sources_used": [
+    "outputs\\full_universe_source_acquisition\\v2_38ai_europe_austria_fundamentals\\europe_austria_fundamental_records_v2_38ai.jsonl"
+  ],
+  "rejected_rows": 35,
+  "scoring_created": false
+}
