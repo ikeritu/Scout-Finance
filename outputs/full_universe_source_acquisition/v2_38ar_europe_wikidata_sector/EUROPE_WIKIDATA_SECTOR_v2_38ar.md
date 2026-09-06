@@ -62,3 +62,17 @@ Preguntado directamente al usuario si ya tenía la credencial CVR — **respondi
 **Nota para el futuro**: si el usuario completa el registro CVR, este bloque debería revisitarse para sustituir Wikidata por el código DB07 oficial — igual que se hizo con GB/Francia respecto a fuentes oficiales, Dinamarca es el único de los países atacados hasta ahora donde la vía oficial gratuita genuinamente existe y solo falta completar el registro.
 
 **Estado de la re-ejecución: `COMPLETED_EUROPE_WIKIDATA_SECTOR`.** Sin pruebas nuevas necesarias. Alimenta la sexta reconstrucción de `v2.38AM`.
+
+---
+
+## Re-ejecución (mismo día, 2026-09-06): España — la mejor cobertura de todos los países atacados hasta ahora
+
+Instrucción del usuario: "sigue con España para el hueco de sector" (15/689 activos, todos del IBEX 35). Reconfirmado que las tres vías oficiales españolas siguen bloqueadas exactamente igual que en `v2.38AA`: el Colegio de Registradores sigue devolviendo el mismo bloqueo WAF, y se comprobó además que la propia herramienta de "Distribución por Sectores" de la CNMV (que sí clasifica emisores por sector) es un formulario web ASPX sin ningún API — automatizarla sería scraping.
+
+Presentada de nuevo la disyuntiva real (Wikidata, ya comprobado en vivo con 13/15 coincidencias reales, o dejar el país sin atacar) — **el usuario eligió Wikidata por cuarta vez**. Se reejecutó `v2.38AR` con `--countries CH IT DK ES`, sin ningún script nuevo.
+
+### Resultado real
+
+**13/15 empresas españolas con industria real capturada — la mejor cobertura relativa de todos los países atacados hasta ahora (86,7%)**, 1 ambigua (Banco Santander, el mismo tipo de caso real ya visto con Ahold Delhaize — dos elementos de Wikidata distintos), 1 sin coincidencia (AENA). Ejemplos reales: Cellnex→"telecommunications infrastructure", Amadeus IT→"software industry", BBVA/Sabadell/CaixaBank→banca, Indra→"IT service management", Endesa/Iberdrola/Redeia→energía eléctrica, Inditex→"fast fashion;retail;textile industry", Repsol→"petroleum industry", IAG→"aviation", Telefónica→telecomunicaciones.
+
+**Estado de la re-ejecución: `COMPLETED_EUROPE_WIKIDATA_SECTOR`.** Sin pruebas nuevas necesarias. Alimenta la octava reconstrucción de `v2.38AM`.

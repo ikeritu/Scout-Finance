@@ -142,3 +142,17 @@ Instrucción del usuario: "sigue con Irlanda para el hueco de sector" (17/689 ac
 **El hueco de sector europeo se mantiene en 48/689** (Irlanda no añade coincidencias de tema, pero sí clasificación real verificada para 3 empresas). Quedan 4 países sin atacar: España (15), Bélgica (6), Finlandia (5), Suecia (4) — 30/689 empresas.
 
 **Estado del bloque (séptima reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 2 pruebas offline nuevas añadidas (16 en total).
+
+---
+
+## Octava reconstrucción (mismo día, 2026-09-06): España, sin script nuevo, la mejor cobertura hasta ahora
+
+Instrucción del usuario: "sigue con España para el hueco de sector" (15/689 activos, IBEX 35). Reconfirmado que las tres vías oficiales españolas siguen bloqueadas exactamente igual que en `v2.38AA` (WAF en Registradores, sin API buscable en BORME, formularios ASPX sin API en CNMV — incluida su propia herramienta interna de "Distribución por Sectores"). Presentada de nuevo la disyuntiva (Wikidata, ya comprobado con 13/15 coincidencias reales, o dejar el país sin atacar), **el usuario eligió Wikidata por cuarta vez**. Cuarto país con el mismo mecanismo generalizado — se reejecutó `v2.38AR` (`--countries CH IT DK ES`) sin ningún script nuevo.
+
+### Resultado real
+
+`MACRO_CONTEXT_READY` sube de **156 a 162** (+6, todos España: Cellnex→infraestructura de telecomunicaciones, Amadeus IT→software, Endesa/Iberdrola/Redeia→energía eléctrica, Repsol→petróleo, IAG→aviación, Telefónica→telecomunicaciones — nota: algunas de estas 6 coinciden con más de un tema). España pasa de 0/689 a **6/689** con coincidencia real de sector — 13/15 empresas (86,7%) con industria real capturada, **la mejor cobertura relativa de todos los países atacados hasta ahora**. 1 empresa ambigua (Banco Santander, mismo patrón real que Ahold Delhaize: dos elementos de Wikidata distintos), 1 sin coincidencia (AENA).
+
+**El hueco de sector europeo pasa de 48/689 a 54/689.** Quedan 3 países sin atacar: Bélgica (6), Finlandia (5), Suecia (4) — 15/689 empresas.
+
+**Estado del bloque (octava reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Ninguna prueba nueva necesaria (16 en total) — el mecanismo genérico ya estaba probado.
