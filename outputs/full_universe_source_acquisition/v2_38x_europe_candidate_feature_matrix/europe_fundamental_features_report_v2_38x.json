@@ -1,19 +1,20 @@
 {
   "companies_excluded_known_identity_mismatch": 1,
-  "companies_features_partial": 0,
+  "companies_features_partial": 17,
   "companies_features_ready": 1,
-  "companies_input": 2,
-  "companies_insufficient": 0,
+  "companies_input": 22,
+  "companies_insufficient": 3,
   "network_used": false,
-  "note": "Growth features are out of scope: the iXBRL extractors (v2.38W/Y) keep only the single most recent reporting period per concept, so no prior-year comparison exists yet.",
+  "note": "Growth features are out of scope: only each company's single most recent reporting period feeds these ratios, even when multiple fiscal years are on file (e.g. Austria's up to 5 years per company from v2.38AI) -- no prior-year comparison is computed yet.",
   "phase": "v2.38X-europe-fundamental-features",
   "phase9c_authorized": false,
   "ranking_created": false,
   "recommendations_created": false,
   "records_sources_used": [
     "outputs\\full_universe_source_acquisition\\v2_38w_europe_ixbrl_fundamentals\\europe_ixbrl_fundamental_records_v2_38w.jsonl",
-    "outputs\\full_universe_source_acquisition\\v2_38y_europe_gb_full_expansion\\europe_ixbrl_fundamental_records_v2_38y.jsonl"
+    "outputs\\full_universe_source_acquisition\\v2_38y_europe_gb_full_expansion\\europe_ixbrl_fundamental_records_v2_38y.jsonl",
+    "outputs\\full_universe_source_acquisition\\v2_38ai_europe_austria_fundamentals\\europe_austria_fundamental_records_v2_38ai.jsonl"
   ],
-  "rejected_rows": 1,
+  "rejected_rows": 62,
   "scoring_created": false
 }

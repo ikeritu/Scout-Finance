@@ -155,6 +155,11 @@ def test_real_porr_shape_extracts_multi_year_records_and_no_credential_leak():
         y2025 = by_period["2025-12-31"]
         reconstructed = y2025["verbindlichkeiten"]["value"] + y2025["rueckstellungen"]["value"] + y2025["eigenkapital"]["value"]
         assert abs(reconstructed - y2025["bilanzSumme"]["value"]) < 0.01
+        # Real fix applied after this script was first built: records must
+        # carry company_name (from GLEIF's legal_name) so the v2.38X
+        # feature builder can display a readable name, the same way
+        # GB/Ireland's iXBRL records already do.
+        assert y2025["bilanzSumme"]["company_name"] == "PORR AG"
         assert not list((root / "out").glob("*.tmp"))
 
 

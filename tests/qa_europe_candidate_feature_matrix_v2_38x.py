@@ -121,6 +121,46 @@ def test_multiple_records_inputs_are_merged_across_companies():
     assert len(report["records_sources_used"]) == 2  # the missing path is skipped, never an error
 
 
+def test_austrian_vocabulary_ratios_and_liabilities_component_sum():
+    """Real case from v2.38AI: Austria's records use German Bilanz/GuV
+    concept names, not IFRS, and split "liabilities" into two separate
+    line items (Verbindlichkeiten + Rueckstellungen) that must be summed
+    to match the IFRS-style total -- confirmed exactly against PORR AG's
+    real FY2025 filing (Assets = Verbindlichkeiten + Rueckstellungen +
+    Eigenkapital). Also confirms only the latest of several fiscal years
+    on file feeds the ratios, never a mix of years."""
+    mod = module(FEATURES_SCRIPT, "features_6")
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        records_path = root / "records.jsonl"
+        write_jsonl(records_path, [
+            # Latest year (2025) -- fully populated
+            fixture_record("U1", "ABS2", "PORR AG", "34853f", "umsatzerloese", 212437331.95, "2025-12-31"),
+            fixture_record("U1", "ABS2", "PORR AG", "34853f", "jahresueberschuss", 40622686.02, "2025-12-31"),
+            fixture_record("U1", "ABS2", "PORR AG", "34853f", "bilanzSumme", 1775949626.05, "2025-12-31"),
+            fixture_record("U1", "ABS2", "PORR AG", "34853f", "eigenkapital", 589899666.58, "2025-12-31"),
+            fixture_record("U1", "ABS2", "PORR AG", "34853f", "verbindlichkeiten", 1150919959.54, "2025-12-31"),
+            fixture_record("U1", "ABS2", "PORR AG", "34853f", "rueckstellungen", 35129999.93, "2025-12-31"),
+            fixture_record("U1", "ABS2", "PORR AG", "34853f", "liquidesVermoegen", 152519795.44, "2025-12-31"),
+            # A prior year (2021) with a very different net_margin -- must never leak into the computed ratio
+            fixture_record("U1", "ABS2", "PORR AG", "34853f", "umsatzerloese", 1.0, "2021-12-31"),
+            fixture_record("U1", "ABS2", "PORR AG", "34853f", "jahresueberschuss", 999.0, "2021-12-31"),
+        ])
+        report, rows = mod.build(records_path, root / "out")
+    row = rows[0]
+    assert row["company_name"] == "PORR AG" and row["company_number"] == "34853f"
+    assert row["feature_period_end"] == "2025-12-31"
+    net_margin = 40622686.02 / 212437331.95
+    assert abs(row["net_margin"] - net_margin) < 1e-6  # never the absurd prior-year ratio (999/1)
+    liabilities_to_assets = (1150919959.54 + 35129999.93) / 1775949626.05
+    assert abs(row["liabilities_to_assets"] - liabilities_to_assets) < 1e-6
+    equity_to_assets = 589899666.58 / 1775949626.05
+    assert abs(row["equity_to_assets"] - equity_to_assets) < 1e-6
+    # current_ratio has no Austrian equivalent for current_liabilities -- must stay honestly missing, never guessed
+    assert row["current_ratio"] is None
+    assert "current_ratio" in row["features_missing"]
+
+
 # --- candidate matrix builder ---
 
 def write_features_csv(path: Path, rows: list[dict]) -> None:
@@ -221,6 +261,7 @@ CASES = [
     test_missing_concept_produces_partial_status_and_rejection_reason,
     test_no_data_produces_insufficient_status,
     test_multiple_records_inputs_are_merged_across_companies,
+    test_austrian_vocabulary_ratios_and_liabilities_component_sum,
     test_known_identity_mismatch_asset_is_excluded_not_silently_dropped,
     test_matrix_classifies_ready_partial_and_missing_correctly,
     test_empty_price_input_never_invents_price_signal,

@@ -80,7 +80,7 @@ PROFILE_FIELDS = [
     "phase", "created_at_utc",
 ]
 RECORD_FIELDS = [
-    "asset_id", "ticker", "fnr", "concept", "statement_kind", "period_end", "value", "currency",
+    "asset_id", "ticker", "fnr", "company_name", "concept", "statement_kind", "period_end", "value", "currency",
     "source_document_key", "normalized_fundamentals_present", "phase", "created_at_utc",
 ]
 
@@ -153,9 +153,9 @@ def extract_records(row: dict[str, str], payload: dict, created_at: str) -> list
 def _record(row: dict[str, str], concept: str, kind: str, period_end: str, value: float | None, doc_key: str, created_at: str) -> dict[str, Any]:
     return {
         "asset_id": row["asset_id"], "ticker": row["ticker"], "fnr": row["national_registration_number"],
-        "concept": concept, "statement_kind": kind, "period_end": period_end, "value": value,
-        "currency": "EUR", "source_document_key": doc_key, "normalized_fundamentals_present": value is not None,
-        "phase": PHASE, "created_at_utc": created_at,
+        "company_name": row.get("legal_name", ""), "concept": concept, "statement_kind": kind,
+        "period_end": period_end, "value": value, "currency": "EUR", "source_document_key": doc_key,
+        "normalized_fundamentals_present": value is not None, "phase": PHASE, "created_at_utc": created_at,
     }
 
 

@@ -1,2 +1,22 @@
 asset_id,ticker,company_name,candidate_matrix_status,fundamental_quality_status,price_quality_status,evidence_level,missing_reason,phase
+U36865,XD4,STRABAG SE,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36866,RAW,Raiffeisen Bank International AG,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36867,ABS2,PORR AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36868,EBO,ERSTE GROUP BANK AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36869,AZ2,Andritz AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36870,OMV,OMV AKTIENGESELLSCHAFT,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36871,OEWA,VERBUND AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36872,FAA,Fabasoft AG,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36873,UN9,UNIQA Insurance Group AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36874,WIB,Wienerberger AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36875,VAS,voestalpine AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36876,SLL,SBO AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36877,KTN,Kontron AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36878,WAH,Wolftank Group AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36879,GEPH,EPH Group AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36880,4X0,Steyr Motors AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36881,O3P,Österreichische Post Aktiengesellschaft,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36882,0B2,BAWAG Group AG,CANDIDATE_MATRIX_PARTIAL_PRICE,INSUFFICIENT_FEATURE_EVIDENCE,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36883,1AST,ASTA Energy Solutions AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
+U36884,FQT,FREQUENTIS AG,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_PARTIAL,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix
 U37451,KFI1,KINGFISHER,CANDIDATE_MATRIX_PARTIAL_PRICE,FEATURES_READY,MISSING,medium,price_features_missing_or_partial,v2.38X-europe-candidate-feature-matrix

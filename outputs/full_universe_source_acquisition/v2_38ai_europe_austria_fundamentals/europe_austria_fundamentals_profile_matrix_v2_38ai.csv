@@ -1,21 +1,21 @@
 asset_id,ticker,fnr,resolved_company_name,legal_name_firmenakte,is_active,legal_form,court,years_of_jahresabschluss_available,fetch_status,fetch_reason,phase,created_at_utc
-U36865,XD4,88983h,STRABAG SE,STRABAG SE,True,Europäische Gesellschaft (SE),Villach,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36866,RAW,122119m,Raiffeisen Bank International AG,Raiffeisen Bank International AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36867,ABS2,34853f,PORR AG,PORR AG,True,Aktiengesellschaft,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36868,EBO,33209m,ERSTE GROUP BANK AG,Erste Group Bank AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36869,AZ2,50935f,Andritz AG,Andritz AG,True,Anonim Şirket,Graz,4,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36870,OMV,93363z,OMV AKTIENGESELLSCHAFT,OMV Aktiengesellschaft,True,Anonim Şirket,Wien,4,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36871,OEWA,76023z,VERBUND AG,VERBUND AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36872,FAA,98699x,Fabasoft AG,Fabasoft AG,True,Anonim Şirket,Linz,2,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36873,UN9,92933t,UNIQA Insurance Group AG,UNIQA Insurance Group AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36874,WIB,77676f,Wienerberger AG,Wienerberger AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36875,VAS,66209t,voestalpine AG,voestalpine AG,True,Anonim Şirket,Linz,4,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36876,SLL,102999w,SBO AG,SBO AG,True,Anonim Şirket,Ternitz,3,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36877,KTN,190272m,Kontron AG,Kontron AG,True,Anonim Şirket,Linz,3,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36878,WAH,306731a,Wolftank Group AG,Wolftank Group AG,True,Anonim Şirket,Innsbruck,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36879,GEPH,603735x,EPH Group AG,EPH Group AG,True,Anonim Şirket,Wien,2,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36880,4X0,583243k,Steyr Motors AG,Steyr Motors AG,True,Anonim Şirket,Steyr,3,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36881,O3P,180219d,Österreichische Post Aktiengesellschaft,Österreichische Post Aktiengesellschaft,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36882,0B2,269842b,BAWAG Group AG,BAWAG Group AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36883,1AST,271337a,ASTA Energy Solutions AG,ASTA Energy Solutions AG,True,Anonim Şirket,Waldegg,4,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
-U36884,FQT,72115b,FREQUENTIS AG,FREQUENTIS AG,True,Anonim Şirket,Wien,3,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:36:52Z
+U36865,XD4,88983h,STRABAG SE,STRABAG SE,True,Europäische Gesellschaft (SE),Villach,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36866,RAW,122119m,Raiffeisen Bank International AG,Raiffeisen Bank International AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36867,ABS2,34853f,PORR AG,PORR AG,True,Aktiengesellschaft,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36868,EBO,33209m,ERSTE GROUP BANK AG,Erste Group Bank AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36869,AZ2,50935f,Andritz AG,Andritz AG,True,Anonim Şirket,Graz,4,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36870,OMV,93363z,OMV AKTIENGESELLSCHAFT,OMV Aktiengesellschaft,True,Anonim Şirket,Wien,4,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36871,OEWA,76023z,VERBUND AG,VERBUND AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36872,FAA,98699x,Fabasoft AG,Fabasoft AG,True,Anonim Şirket,Linz,2,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36873,UN9,92933t,UNIQA Insurance Group AG,UNIQA Insurance Group AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36874,WIB,77676f,Wienerberger AG,Wienerberger AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36875,VAS,66209t,voestalpine AG,voestalpine AG,True,Anonim Şirket,Linz,4,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36876,SLL,102999w,SBO AG,SBO AG,True,Anonim Şirket,Ternitz,3,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36877,KTN,190272m,Kontron AG,Kontron AG,True,Anonim Şirket,Linz,3,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36878,WAH,306731a,Wolftank Group AG,Wolftank Group AG,True,Anonim Şirket,Innsbruck,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36879,GEPH,603735x,EPH Group AG,EPH Group AG,True,Anonim Şirket,Wien,2,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36880,4X0,583243k,Steyr Motors AG,Steyr Motors AG,True,Anonim Şirket,Steyr,3,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36881,O3P,180219d,Österreichische Post Aktiengesellschaft,Österreichische Post Aktiengesellschaft,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36882,0B2,269842b,BAWAG Group AG,BAWAG Group AG,True,Anonim Şirket,Wien,5,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36883,1AST,271337a,ASTA Energy Solutions AG,ASTA Energy Solutions AG,True,Anonim Şirket,Waldegg,4,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z
+U36884,FQT,72115b,FREQUENTIS AG,FREQUENTIS AG,True,Anonim Şirket,Wien,3,fetched,business_profile_and_statements_retrieved,v2.38AI-europe-austria-fundamentals,2026-09-06T10:58:53Z

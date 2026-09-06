@@ -1,14 +1,22 @@
 #!/usr/bin/env python3
 """Build deterministic v2.38X Europe fundamental features (ratios only)
-from the real v2.38W iXBRL extraction. No network, no scoring, no ranking.
+from every real structured-fundamentals block on file. No network, no
+scoring, no ranking.
 
-Unlike the US SEC features (v2.38G), no growth features are computed here:
-v2.38W's extractor deliberately keeps only the single most recent
-reporting period per concept (see its own docstring), so there is no
-second year on file to compare against yet. Every feature below is a
-same-period ratio, computable from one balance sheet / income statement.
-Growth features stay explicitly out of scope until a phase re-runs the
-extractor against a prior-year filing too.
+Records come from more than one concept vocabulary -- IFRS taxonomy
+names (ifrs-full:*, from GB/Ireland's real iXBRL extraction) and
+Austria's own German Bilanz/GuV field names (from firmenakte.at,
+v2.38AI) -- resolved to a small set of canonical, source-agnostic slots
+(see CONCEPT_ALIASES) before any ratio is computed, so adding a future
+country's vocabulary never touches the ratio logic itself.
+
+Unlike the US SEC features (v2.38G), no growth features are computed
+here: only each company's single most recent reporting period feeds
+these ratios, even for companies with several fiscal years on file
+(e.g. Austria's up to 5 years) -- there is no prior-year comparison yet.
+Every feature below is a same-period ratio, computable from one balance
+sheet / income statement. Growth features stay explicitly out of scope
+until a future phase deliberately adds them.
 """
 from __future__ import annotations
 
@@ -24,14 +32,17 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs/full_universe_source_acquisition/v2_38x_europe_candidate_feature_matrix"
 PHASE = "v2.38X-europe-fundamental-features"
-# Every real block that has extracted iXBRL fundamentals for GB companies so
-# far: v2.38W (Softcat, the original 3-4-identity pilot) and v2.38Y (the
-# 40-identity expansion, Kingfisher). Each new such block should be added
-# here so this matrix always reflects the full real evidence on file, not
-# just whichever block happened to exist when this script was first written.
+# Every real block that has extracted structured fundamentals for any
+# European company so far: v2.38W (Softcat, the original 3-4-identity
+# pilot) and v2.38Y (the 40-identity GB expansion, Kingfisher) via real
+# iXBRL, plus v2.38AI (20 Austrian companies) via firmenakte.at's parsed
+# Bilanz/GuV. Each new such block should be added here so this matrix
+# always reflects the full real evidence on file, not just whichever
+# block happened to exist when this script was first written.
 DEFAULT_RECORDS_INPUTS = [
     ROOT / "outputs/full_universe_source_acquisition/v2_38w_europe_ixbrl_fundamentals/europe_ixbrl_fundamental_records_v2_38w.jsonl",
     ROOT / "outputs/full_universe_source_acquisition/v2_38y_europe_gb_full_expansion/europe_ixbrl_fundamental_records_v2_38y.jsonl",
+    ROOT / "outputs/full_universe_source_acquisition/v2_38ai_europe_austria_fundamentals/europe_austria_fundamental_records_v2_38ai.jsonl",
 ]
 
 FEATURE_FIELDS = [
@@ -63,17 +74,70 @@ KNOWN_IDENTITY_MISMATCH_EXCLUSIONS = {
     "U37446": "asset_reidentified_as_sse_plc_by_v2_38v_correction_but_records_are_softcat_plc_real_data_sse_confirmed_pdf_only_no_ixbrl_available",
 }
 
-RATIO_RULES = {
-    "net_margin": ("ifrs-full:ProfitLoss", "ifrs-full:Revenue"),
-    "operating_margin": ("ifrs-full:ProfitLossFromOperatingActivities", "ifrs-full:Revenue"),
-    "pretax_margin": ("ifrs-full:ProfitLossBeforeTax", "ifrs-full:Revenue"),
-    "return_on_assets": ("ifrs-full:ProfitLoss", "ifrs-full:Assets"),
-    "return_on_equity": ("ifrs-full:ProfitLoss", "ifrs-full:Equity"),
-    "liabilities_to_assets": ("ifrs-full:Liabilities", "ifrs-full:Assets"),
-    "equity_to_assets": ("ifrs-full:Equity", "ifrs-full:Assets"),
-    "cash_to_assets": ("ifrs-full:CashAndCashEquivalents", "ifrs-full:Assets"),
-    "current_ratio": ("ifrs-full:CurrentAssets", "ifrs-full:CurrentLiabilities"),
+# Records so far come from two different concept vocabularies: the IFRS
+# taxonomy (ifrs-full:*, from GB/Ireland's real iXBRL extraction) and
+# Austria's own German Bilanz/GuV field names (from firmenakte.at,
+# v2.38AI). Rather than hardcode ratios against one vocabulary, every raw
+# concept name is first resolved to a small set of canonical, source-
+# agnostic slots -- adding a future country's vocabulary (e.g. a fourth
+# real fundamentals source) only means adding its raw names here, never
+# touching the ratio logic itself.
+CONCEPT_ALIASES = {
+    "revenue": ["ifrs-full:Revenue", "umsatzerloese"],
+    "operating_profit": ["ifrs-full:ProfitLossFromOperatingActivities", "betriebsErfolg"],
+    "pretax_profit": ["ifrs-full:ProfitLossBeforeTax", "ergebnisVorSteuern"],
+    "net_profit": ["ifrs-full:ProfitLoss", "jahresueberschuss"],
+    "total_assets": ["ifrs-full:Assets", "bilanzSumme"],
+    "current_assets": ["ifrs-full:CurrentAssets", "umlaufvermoegen"],
+    "current_liabilities": ["ifrs-full:CurrentLiabilities"],  # no Austrian equivalent was extracted in v2.38AI -- stays honestly missing, never guessed
+    "equity": ["ifrs-full:Equity", "eigenkapital"],
+    "cash": ["ifrs-full:CashAndCashEquivalents", "liquidesVermoegen"],
 }
+# "Liabilities" needs special handling: IFRS tags it as one figure, but
+# Austria's statutory Bilanz splits it into Verbindlichkeiten (payables/
+# borrowings) and Rueckstellungen (provisions) as two separate line items
+# that sit alongside Eigenkapital under Bilanzsumme -- confirmed for real
+# in v2.38AI (Assets = Verbindlichkeiten + Rueckstellungen + Eigenkapital,
+# verified exactly for PORR AG's actual filing). The IFRS-style "total
+# liabilities" figure is only comparable to the SUM of both components,
+# never to Verbindlichkeiten alone, which would understate it.
+LIABILITIES_DIRECT_ALIASES = ["ifrs-full:Liabilities"]
+LIABILITIES_COMPONENT_ALIASES = ["verbindlichkeiten", "rueckstellungen"]
+
+RATIO_RULES = {
+    "net_margin": ("net_profit", "revenue"),
+    "operating_margin": ("operating_profit", "revenue"),
+    "pretax_margin": ("pretax_profit", "revenue"),
+    "return_on_assets": ("net_profit", "total_assets"),
+    "return_on_equity": ("net_profit", "equity"),
+    "liabilities_to_assets": ("liabilities", "total_assets"),
+    "equity_to_assets": ("equity", "total_assets"),
+    "cash_to_assets": ("cash", "total_assets"),
+    "current_ratio": ("current_assets", "current_liabilities"),
+}
+
+
+def canonicalize_concepts(company_records: list[dict[str, Any]]) -> dict[str, float]:
+    """Resolve each record's raw, vocabulary-specific concept name to a
+    canonical slot. A company's records come from exactly one vocabulary
+    in practice, so alias collisions are not a real concern here -- but
+    resolution always prefers whichever alias appears first in each list,
+    deterministically, never averaging or picking arbitrarily."""
+    by_raw = {r["concept"]: r["value"] for r in company_records if r["value"] is not None}
+    by_canonical: dict[str, float] = {}
+    for canonical, aliases in CONCEPT_ALIASES.items():
+        for alias in aliases:
+            if alias in by_raw:
+                by_canonical[canonical] = by_raw[alias]
+                break
+    for alias in LIABILITIES_DIRECT_ALIASES:
+        if alias in by_raw:
+            by_canonical["liabilities"] = by_raw[alias]
+            break
+    else:
+        if all(component in by_raw for component in LIABILITIES_COMPONENT_ALIASES):
+            by_canonical["liabilities"] = sum(by_raw[component] for component in LIABILITIES_COMPONENT_ALIASES)
+    return by_canonical
 
 
 def sha256(path: Path) -> str:
@@ -147,24 +211,33 @@ def ratio(num: float | None, den: float | None) -> float | None:
 
 def build_company(company_records: list[dict[str, Any]]) -> tuple[dict[str, Any], list[dict[str, str]]]:
     base = company_records[0]
-    by_concept = {r["concept"]: r["value"] for r in company_records if r["value"] is not None}
+    company_number = base.get("company_number") or base.get("fnr", "")
+    company_name = base.get("company_name") or base.get("ticker", "")
+    # Only the most recent period's records feed the ratios below (same
+    # single-period, no-growth-features scope as before) -- a company
+    # with multiple fiscal years on file (e.g. Austria's up to 5) uses
+    # only its latest year here, consistent with GB/Ireland's own
+    # extractors, which never kept more than one period per concept.
     period_ends = {r["period_end"] for r in company_records if r.get("period_end")}
+    latest_period = max(period_ends) if period_ends else ""
+    latest_records = [r for r in company_records if r.get("period_end") == latest_period] if latest_period else company_records
+    by_canonical = canonicalize_concepts(latest_records)
     row: dict[str, Any] = {field: None for field in FEATURE_FIELDS}
     row.update({
-        "asset_id": base["asset_id"], "ticker": base["ticker"], "company_name": base["company_name"],
-        "company_number": base["company_number"], "feature_period_end": max(period_ends) if period_ends else "",
+        "asset_id": base["asset_id"], "ticker": base["ticker"], "company_name": company_name,
+        "company_number": company_number, "feature_period_end": latest_period,
         "phase": PHASE,
     })
     rejections: list[dict[str, str]] = []
     missing: list[str] = []
     flags: set[str] = set()
     for feature, (num_concept, den_concept) in RATIO_RULES.items():
-        value = ratio(by_concept.get(num_concept), by_concept.get(den_concept))
+        value = ratio(by_canonical.get(num_concept), by_canonical.get(den_concept))
         row[feature] = value
         if value is None:
             missing.append(feature)
-            reason = "missing_numerator" if num_concept not in by_concept else ("missing_or_zero_denominator" if den_concept not in by_concept else "unknown")
-            rejections.append({"asset_id": base["asset_id"], "ticker": base["ticker"], "company_number": base["company_number"], "feature": feature, "reason": reason, "phase": PHASE})
+            reason = "missing_numerator" if num_concept not in by_canonical else ("missing_or_zero_denominator" if den_concept not in by_canonical else "unknown")
+            rejections.append({"asset_id": base["asset_id"], "ticker": base["ticker"], "company_number": company_number, "feature": feature, "reason": reason, "phase": PHASE})
     if row["net_margin"] is not None and row["net_margin"] > 0:
         flags.add("net_margin_positive")
     if row["liabilities_to_assets"] is not None and row["equity_to_assets"] is not None and row["liabilities_to_assets"] < 0.75 and row["equity_to_assets"] > 0.25:
@@ -196,7 +269,7 @@ def build(records_paths: Path | list[Path], output_dir: Path) -> dict[str, Any]:
         if asset_id in KNOWN_IDENTITY_MISMATCH_EXCLUSIONS:
             base = grouped[asset_id][0]
             rejection_rows.append({
-                "asset_id": asset_id, "ticker": base["ticker"], "company_number": base.get("company_number", ""),
+                "asset_id": asset_id, "ticker": base["ticker"], "company_number": base.get("company_number") or base.get("fnr", ""),
                 "feature": "ALL", "reason": KNOWN_IDENTITY_MISMATCH_EXCLUSIONS[asset_id], "phase": PHASE,
             })
             continue
@@ -217,7 +290,7 @@ def build(records_paths: Path | list[Path], output_dir: Path) -> dict[str, Any]:
         "companies_features_partial": quality_counts["FEATURES_PARTIAL"], "companies_insufficient": quality_counts["INSUFFICIENT_FEATURE_EVIDENCE"],
         "rejected_rows": len(rejection_rows), "network_used": False, "scoring_created": False, "ranking_created": False,
         "recommendations_created": False, "phase9c_authorized": False, "records_sources_used": sources_used,
-        "note": "Growth features are out of scope: the iXBRL extractors (v2.38W/Y) keep only the single most recent reporting period per concept, so no prior-year comparison exists yet.",
+        "note": "Growth features are out of scope: only each company's single most recent reporting period feeds these ratios, even when multiple fiscal years are on file (e.g. Austria's up to 5 years per company from v2.38AI) -- no prior-year comparison is computed yet.",
     }
     write_text(output_dir / "europe_fundamental_features_report_v2_38x.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
     return report, feature_rows

@@ -2,9 +2,9 @@
 
 Status: COMPLETED_EUROPE_CANDIDATE_FEATURE_MATRIX_NOT_SCORING
 
-- Candidates: 1
+- Candidates: 21
 - Ready matrix rows: 0
-- Partial price rows: 1
+- Partial price rows: 21
 - Partial fundamental rows: 0
 - Rejected rows: 0
 
