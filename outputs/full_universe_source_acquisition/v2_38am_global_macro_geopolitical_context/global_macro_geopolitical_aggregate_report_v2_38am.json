@@ -1,0 +1,28 @@
+{
+  "companies_context_built": 1244,
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "live_news_used": false,
+    "llm_runtime_classification": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_modified": false,
+    "recommendations_generated": false,
+    "scoring_modified": false
+  },
+  "identity_resolved_companies_input": 1244,
+  "live_news_used": false,
+  "macro_context_partial": 1136,
+  "macro_context_ready": 108,
+  "note": "Generalizes v2.38M (which only ever covered the old 50-company US shortlist) to every identity-resolved company in the v2.38AL global coverage matrix (1,244: 555 US + 689 Europe). Europe's sector-theme matching is honestly weaker than the US's: Europe's fundamentals extraction never captured narrative text, so only company_name keywords are available there, reported via macro_limitations per company. Four new country-specific structural themes added (EU single-market regulation, Eurozone monetary policy, UK post-Brexit trade friction, Swiss franc safe-haven dynamics) -- evergreen jurisdictional facts, not dated event claims, matching v2.38M's own static/offline discipline.",
+  "notes": 10149,
+  "phase": "v2.38AM-global-macro-geopolitical-context",
+  "recommendations_generated": false,
+  "rejected_rows": 0,
+  "sector_theme_matched_by_country_top": {
+    "USA": 108
+  },
+  "status": "COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS",
+  "themes_defined": 21
+}
