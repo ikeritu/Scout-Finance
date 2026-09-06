@@ -1,0 +1,17 @@
+{
+  "companies_error": 0,
+  "companies_fetched": 5,
+  "companies_unresolved": 0,
+  "companies_with_tol": 5,
+  "credentials_used": false,
+  "eligible_companies": 5,
+  "network_used": true,
+  "note": "PRH's YTJ open-data API returns an already-English sector description on every real record -- no manual translation table needed, unlike every other country attacked so far. Same real, confirmed limitation as everywhere else: Nokia Oyj and Sampo Oyj both show TOL 70100/64210 ('Activities of head offices' / 'Activities of holding companies') -- the registered entity is the group's holding/management company for at least these two, not necessarily its full operating business.",
+  "phase": "v2.38AU-europe-finland-tol",
+  "phase9c_authorized": false,
+  "ranking_created": false,
+  "raw_cache_published": false,
+  "recommendations_created": false,
+  "scoring_created": false,
+  "status": "COMPLETED_EUROPE_FINLAND_TOL"
+}

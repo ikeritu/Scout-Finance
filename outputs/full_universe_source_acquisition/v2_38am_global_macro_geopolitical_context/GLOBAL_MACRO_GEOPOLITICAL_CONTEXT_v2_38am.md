@@ -170,3 +170,19 @@ Instrucción del usuario: "sigue con Bélgica para el hueco de sector" (6/689 ac
 **El hueco de sector europeo pasa de 54/689 a 58/689.** Quedan 2 países sin atacar: Finlandia (5), Suecia (4) — 9/689 empresas.
 
 **Estado del bloque (novena reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Ninguna prueba nueva necesaria (16 en total).
+
+---
+
+## Décima reconstrucción (mismo día, 2026-09-06): Finlandia — la mejor fuente oficial encontrada en todo este esfuerzo
+
+Instrucción del usuario: "sigue con Finlandia para el hueco de sector" (5/689 activos, el país donde GLEIF ya confirmó una laguna real en `v2.38AF`). El PRH finlandés (`avoindata.prh.fi`) resultó ser la mejor fuente oficial de todo este esfuerzo: gratis, sin cuenta, y **con la descripción del sector ya traducida al inglés en la propia respuesta** — ninguna tabla de traducción propia fue necesaria, a diferencia de todos los países anteriores.
+
+Se resolvieron en vivo tres problemas reales de identidad, nunca asumidos: (1) transliteración real de vocales finlandesas por Xetra (o-diéresis → "OE", la misma convención alemana ya vista en otros países, revertida por primera vez), (2) la búsqueda del API es literal frente a espacios/guiones (confirmado que "UPM KYMMENE" no encuentra nada pero "UPM-Kymmene" sí), resuelto buscando por la primera palabra normalizada y paginando todos los resultados, y (3) una ambigüedad real por nombres comerciales históricos de la fusión Merita/Nordea de 2001 (cuatro entidades no relacionadas comparten un nombre comercial auxiliar genérico "Nordea Bank"), resuelta restringiendo la comparación a nombres oficiales actuales, nunca comerciales. Se descubrió además una colisión real Oy-vs-Oyj (dos empresas SRV distintas, privada y pública) que exigió un emparejamiento en dos niveles: primero con el sufijo legal real intacto, y solo como último recurso sin él.
+
+### Resultado real
+
+**5/5 empresas finlandesas con código TOL real — cobertura perfecta, 0 errores, 0 ambigüedades**: Nokia Oyj→sede social, UPM-Kymmene→fabricación de papel, Nordea Bank Abp→servicios financieros, SRV Yhtiöt Oyj→construcción, Sampo Oyj→holding. `MACRO_CONTEXT_READY` sube de **166 a 168** (+2: Nordea→`BANK_CREDIT_CYCLE`, SRV Yhtiöt→`CONSTRUCTION_INFRASTRUCTURE`). Finlandia pasa de 0/689 a **2/689** con coincidencia real de sector — la segunda vez (tras Bélgica) que un país alcanza cobertura perfecta de industria real.
+
+**El hueco de sector europeo pasa de 58/689 a 60/689.** Queda solo 1 país sin atacar: Suecia (4 empresas).
+
+**Estado del bloque (décima reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 2 pruebas offline nuevas añadidas (18 en total).

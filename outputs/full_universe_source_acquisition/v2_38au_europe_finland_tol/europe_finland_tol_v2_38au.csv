@@ -1,0 +1,6 @@
+asset_id,ticker,company_name,isin,business_id,fetch_status,fetch_reason,tol_code,tol_description_en,phase,created_at_utc
+U37381,NOA3,NOKIA OYJ,FI0009000681,0112038-9,resolved,exact_normalized_name_match_full_suffix,70100,Activities of head offices,v2.38AU-europe-finland-tol,2026-09-06T19:30:29Z
+U37382,RPL,UPM KYMMENE CORP.,FI0009005987,1041090-0,resolved,exact_normalized_name_match_full_suffix,17120,Manufacture of paper and paperboard,v2.38AU-europe-finland-tol,2026-09-06T19:30:29Z
+U37383,04Q,NORDEA BANK ABP,FI4000297767,2858394-9,resolved,exact_normalized_name_match_full_suffix,66190,"Other activities auxiliary to financial services, except insurance and pension funding",v2.38AU-europe-finland-tol,2026-09-06T19:30:29Z
+U37384,B7J1,SRV YHTIOET OYJ,FI4000523675,1707186-8,resolved,exact_normalized_name_match_full_suffix,41000,Construction of residential and non-residential buildings,v2.38AU-europe-finland-tol,2026-09-06T19:30:29Z
+U37385,SMP0,SAMPO OYJ A,FI4000552500,0142213-3,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-06T19:30:29Z

@@ -26,6 +26,7 @@ NETHERLANDS_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "industries",
 GENERALIZED_WIKIDATA_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "country", "industries", "non_official_source_caveat"]
 AUSTRIA_ONACE_FIELDS = ["asset_id", "ticker", "company_name", "fetch_status", "onace_code", "onace_description_en", "purpose_de"]
 IRELAND_NACE_FIELDS = ["asset_id", "ticker", "company_name", "fetch_status", "nace_code", "nace_description_en"]
+FINLAND_TOL_FIELDS = ["asset_id", "ticker", "company_name", "fetch_status", "tol_code", "tol_description_en"]
 
 
 def module(path: Path, name: str):
@@ -56,7 +57,7 @@ def coverage_row(asset_id: str, ticker: str, name: str, country: str, identity_s
             "price_status": "NOT_ATTEMPTED", "price_source": "", "overall_coverage_status": overall, "phase": ""}
 
 
-def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None, netherlands_sector_rows=None, generalized_wikidata_sector_rows=None, austria_onace_rows=None, ireland_nace_rows=None):
+def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None, netherlands_sector_rows=None, generalized_wikidata_sector_rows=None, austria_onace_rows=None, ireland_nace_rows=None, finland_tol_rows=None):
     mod = module(SCRIPT, f"geo_{id(coverage_rows)}")
     coverage_path = tmp / "coverage.csv.xz"
     write_coverage_xz(coverage_path, coverage_rows)
@@ -81,7 +82,10 @@ def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic
     ireland_nace_path = tmp / "ireland_nace.csv"
     if ireland_nace_rows:
         write_csv(ireland_nace_path, ireland_nace_rows, IRELAND_NACE_FIELDS)
-    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, netherlands_sector_path, generalized_wikidata_sector_path, austria_onace_path, ireland_nace_path, tmp / "out")
+    finland_tol_path = tmp / "finland_tol.csv"
+    if finland_tol_rows:
+        write_csv(finland_tol_path, finland_tol_rows, FINLAND_TOL_FIELDS)
+    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, netherlands_sector_path, generalized_wikidata_sector_path, austria_onace_path, ireland_nace_path, finland_tol_path, tmp / "out")
     rows = {r["asset_id"]: r for r in csv.DictReader((tmp / "out" / "global_macro_geopolitical_context_v2_38am.csv").open(encoding="utf-8"))}
     return report, rows
 
@@ -260,6 +264,37 @@ def test_ireland_nace_not_resolved_never_used_as_source():
     assert row["sector_text_source"] == ""
 
 
+def test_finland_tol_source_matches_and_is_native_english():
+    """Real case: PRH's Finnish TOL API already returns English
+    descriptions (no translation table needed, unlike every other
+    official source used so far). SRV Yhtiöt Oyj's real TOL 41000
+    ('Construction of residential and non-residential buildings') must
+    reach MACRO_CONTEXT_READY -- Finland is also a Eurozone/EU member."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "B7J1", "SRV YHTIOET OYJ", "FI")],
+            finland_tol_rows=[{"asset_id": "U1", "ticker": "B7J1", "company_name": "SRV YHTIOET OYJ", "fetch_status": "resolved", "tol_code": "41000", "tol_description_en": "Construction of residential and non-residential buildings"}],
+        )
+    row = rows["U1"]
+    assert row["macro_context_status"] == "MACRO_CONTEXT_READY"
+    assert "CONSTRUCTION_INFRASTRUCTURE" in row["applicable_themes"].split("|")
+    assert row["sector_text_source"] == "v2.38AU"
+    assert "EU_SINGLE_MARKET_REGULATION" in row["applicable_themes"].split("|")
+    assert "EUROZONE_ECB_MONETARY_POLICY" in row["applicable_themes"].split("|")
+
+
+def test_finland_tol_not_resolved_never_used_as_source():
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "04Q", "NORDEA BANK ABP", "FI")],
+            finland_tol_rows=[{"asset_id": "U1", "ticker": "04Q", "company_name": "NORDEA BANK ABP", "fetch_status": "unresolved", "tol_code": "", "tol_description_en": ""}],
+        )
+    row = rows["U1"]
+    assert row["sector_text_source"] == ""
+
+
 def test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf():
     """Real case: Austria (AT) is both an EU member and a Eurozone member
     -- must get EU_SINGLE_MARKET_REGULATION AND EUROZONE_ECB_MONETARY_
@@ -330,6 +365,8 @@ CASES = [
     test_austria_onace_not_yet_resolved_never_used_as_source,
     test_ireland_nace_source_reaches_ready_status,
     test_ireland_nace_not_resolved_never_used_as_source,
+    test_finland_tol_source_matches_and_is_native_english,
+    test_finland_tol_not_resolved_never_used_as_source,
     test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf,
     test_gb_gets_brexit_theme_not_eu_or_eurozone,
     test_switzerland_gets_chf_theme_not_eu_or_eurozone,
