@@ -44,3 +44,23 @@ Ambas fuentes se integraron en este mismo módulo (`build_global_macro_geopoliti
 **Lo que queda sin atacar, explícitamente**: 642 de las 689 empresas europeas (413 Alemania, 44 Países Bajos, 29 Suiza, 22 Italia, 21 Dinamarca, 20 Austria, 17 Irlanda, 15 España, 6 Bélgica, 5 Finlandia, 4 Suecia) siguen sin ninguna fuente de clasificación sectorial confirmada — ningún registro nacional de esos 11 países ha sido investigado todavía para esto. Próximo paso natural: repetir esta misma investigación (¿tiene el registro mercantil de ese país una clasificación de actividad accesible gratis, como Companies House/INSEE?) país por país.
 
 **Estado del bloque (reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 2 pruebas offline nuevas añadidas (10 en total). Progreso real y honesto, no una solución completa: el hueco de sector en Europa pasa de 0/689 a 7/689, con una causa raíz (holdings registradas vs. operación real) ahora confirmada con evidencia de tres países.
+
+---
+
+## Segunda reconstrucción (mismo día, 2026-09-06): Alemania confirmada estructuralmente sin dato público, Países Bajos vía Wikidata
+
+Instrucciones del usuario: "sigue con Alemania para el hueco de sector" y, tras el hallazgo negativo, "sigue con Países Bajos para el hueco de sector".
+
+**Alemania (`v2.38AP`)**: investigación real, sin script — el código WZ 2008 alemán **no se publica por empresa individual a través de ningún canal gubernamental** (confirmado: Destatis lo mantiene internamente pero explícitamente no lo hace público a terceros; ni el Handelsregister ni el Bundesanzeiger lo incluyen nunca; BRIS no tiene API pública ni lleva ese dato). Distinto en naturaleza de GB/Francia: no es un problema de acceso, es que el dato no es público.
+
+**Países Bajos (`v2.38AQ`)**: el KVK real exige suscripción de pago (confirmado en vivo). Presentada la elección real al usuario (pagar, usar Wikidata, o dejar el país sin atacar), **el usuario eligió Wikidata** — una excepción de política explícita, ya que Wikidata no es un registro oficial del gobierno sino una base de datos abierta editada por la comunidad. 32/44 empresas con industria real capturada vía SPARQL por ISIN. Hallazgo real que confirma el riesgo de una fuente editada por la comunidad: **Ahold Delhaize tiene dos elementos de Wikidata distintos con el mismo ISIN** (la entidad previa a la fusión de 2016 y la actual) — dejado correctamente sin resolver, nunca adivinado.
+
+### Resultado real de esta reconstrucción
+
+`MACRO_CONTEXT_READY` sube de **115 a 129** (+14, todos en Países Bajos vía Wikidata: STMicroelectronics/ASM International/ASML→semiconductores, Airbus/AerCap→defensa o aeroespacial, Pharming/argenx/Redcare Pharmacy→salud, Photon Energy→energía, y varias entidades financieras→banca). Países Bajos pasa de 0/689 a **14/689** con coincidencia real de sector — la mejora más grande de las tres fuentes atacadas hasta ahora.
+
+**Limitación honesta encontrada, nueva**: el emparejamiento por palabra clave es ingenuo (subcadena literal) y el vocabulario de Wikidata no siempre coincide con el de la taxonomía — "aircraft construction" (la industria real de Airbus según Wikidata) coincide por casualidad con la palabra clave "construction" de `CONSTRUCTION_INFRASTRUCTURE`, en vez de con `DEFENSE_SECURITY`, que sería más preciso. No se corrige en este bloque (ampliaría el alcance); queda documentado como una imprecisión conocida del motor de coincidencia, no como un error de los datos de origen.
+
+**Lo que queda sin atacar**: 598/689 empresas europeas (Suiza 29, Italia 22, Dinamarca 21, Austria 20, Irlanda 17, España 15, Bélgica 6, Finlandia 5, Suecia 4) — ningún registro nacional de esos 9 países investigado todavía para clasificación sectorial.
+
+**Estado del bloque (segunda reconstrucción): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** 1 prueba offline nueva añadida (11 en total). El hueco de sector en Europa pasa de 7/689 a 21/689 con esta reconstrucción.

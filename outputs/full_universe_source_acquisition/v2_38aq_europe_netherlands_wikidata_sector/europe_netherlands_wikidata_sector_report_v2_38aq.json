@@ -1,0 +1,20 @@
+{
+  "companies_ambiguous": 3,
+  "companies_error": 0,
+  "companies_fetched": 44,
+  "companies_no_industry": 6,
+  "companies_no_wikidata_match": 3,
+  "companies_with_industry": 32,
+  "credentials_used": false,
+  "eligible_companies": 44,
+  "network_used": true,
+  "note": "User-approved exception (2026-09-06, after KVK's real paid-subscription requirement was confirmed live) to use Wikidata instead of an official government source for Dutch sector classification. Every record carries a non_official_source_caveat field; v2.38AM's consumption of this data must never treat it as equivalent-confidence to Companies House (v2.38AN) or SIRENE (v2.38AO).",
+  "phase": "v2.38AQ-europe-netherlands-wikidata-sector",
+  "phase9c_authorized": false,
+  "ranking_created": false,
+  "raw_cache_published": false,
+  "recommendations_created": false,
+  "scoring_created": false,
+  "source_type": "NON_OFFICIAL_NONPROFIT_COMMUNITY_DATABASE",
+  "status": "COMPLETED_EUROPE_NETHERLANDS_WIKIDATA_SECTOR"
+}
