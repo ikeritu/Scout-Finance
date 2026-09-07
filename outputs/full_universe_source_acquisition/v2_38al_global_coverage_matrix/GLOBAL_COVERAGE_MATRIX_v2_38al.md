@@ -44,3 +44,47 @@ De 43.089 empresas, hoy el pipeline tiene **algo real** para 1.244 (2,9%) y **cr
 Sin red (todas las fuentes ya eran ficheros locales de fases anteriores), sin scoring, sin ranking, sin recomendaciones, sin fase 9C. 7 pruebas offline nuevas, todas con datos sintéticos.
 
 **Estado del bloque: `COMPLETED_GLOBAL_COVERAGE_MATRIX_V1_NOT_RECOMMENDATIONS`.** Primera pieza real de la arquitectura de "las 43.000 empresas con banderas honestas" — se reconstruirá automáticamente cada vez que una fase futura (más países, más fuentes) añada cobertura real, sin tocar la lógica de este script salvo para añadir la nueva fuente a la lista de entradas.
+
+---
+
+## Reconstrucción (2026-09-07): consolidando todo lo encontrado al atacar el hueco de Cboe Europe
+
+Instrucción del usuario, tras completar Luxemburgo/Austria/Finlandia: "consolidar primero" — antes de abrir más frentes nuevos (Reino Unido, EE. UU., cierres offshore), reconstruir esta matriz con todo lo real que ya existe disperso en ficheros sueltos desde `v2.38AV`. Ninguna fuente nueva se investiga en este bloque — solo se conecta lo ya construido.
+
+### Fuentes nuevas conectadas
+
+- **Luxemburgo fusionado** (`v2.38AV` + `v2.38AW` + `v2.38AX` + `v2.38BE`): 37 activos con identidad real (20 originales + 17 nuevos de Cboe Europe), de los cuales 6 son compartimentos de fondos de inversión (identificador GLEIF que no es un RCS real de empresa) — nunca tratados como una empresa operativa, con un estado propio (`IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY`) en vez de forzarlos en la escalera de fundamentales.
+- **Austria** (`v2.38BF`/`v2.38BG`): 40 activos con identidad real, fundamentales bloqueados por la cuota real y confirmada de firmenakte.at (HTTP 429 en vivo) — estado propio `IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED`, distinto de "no attentado todavía".
+- **Finlandia** (`v2.38BF`/`v2.38BH`): 127 activos con identidad y sector real (código TOL en inglés), mismo estado de bloqueo confirmado para fundamentales — la API XBRL de PRH no cubre grandes cotizadas (0/7 en la prueba real).
+- **Los otros 4 países de `v2.38AV`** (Bulgaria, Liechtenstein, Malta — 4 activos): identidad real, con el país corregido de nombre legible a código ISO2.
+- **Joby Aviation** (`v2.38AZ`/`v2.38BA`): corrección real de país — el activo Xetra (ticker `8TQ`) que el prefijo del ISIN clasificaba como "Islas Caimán" se corrige a `US`, y sus fundamentales se referencian directamente desde el activo real de la SEC (`U04441`), nunca duplicados ni recalculados.
+- **Resolución masiva de Cboe Europe** (`v2.38BC`): 3.766 activos con identidad real en 54 países, usados como último recurso solo para lo que ninguna fuente más específica ya cubre.
+
+### Dos estados nuevos en la escalera, para no confundir un bloqueo real con "todavía no intentado"
+
+`IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY` (los 6 fondos de Luxemburgo) e `IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED` (Austria y Finlandia) — ambos documentan una investigación real ya agotada, no un hueco por rellenar.
+
+### Resultado real
+
+| `overall_coverage_status` | Antes | Después |
+|---|---:|---:|
+| `NO_DATA_YET` | 41.845 | **38.055** |
+| `IDENTITY_ONLY_NO_FUNDAMENTALS_YET` | 690 | **4.281** |
+| `IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED` | — | **167** (nuevo) |
+| `IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY` | — | **6** (nuevo) |
+| `FUNDAMENTALS_PARTIAL_NO_GROWTH_YET` | 34 | 53 |
+| `FUNDAMENTALS_READY_NO_GROWTH_YET` | 9 | 16 |
+| `GROWTH_PARTIAL` | 391 | 391 (sin cambios) |
+| `GROWTH_READY` | 120 | 120 (sin cambios) |
+
+**Identidad real resuelta: de 1.244 a 5.034 empresas** (verificado: 1.244 + 25 de `v2.38AV` + 3.766 de `v2.38BC`, con la resta de 1 por un activo que ya estaba en los 689 originales y también aparecía en la resolución masiva — correctamente atribuido a la fuente más antigua y específica, nunca contado dos veces). Verificación cruzada por país en el resumen: Alemania 413+190=603, Francia 53+293=346, Suecia 4+319=323, Suiza 29+159=188 — todos exactos.
+
+### Qué NO hace esta reconstrucción
+
+No investiga ningún registro ni fuente nueva. No reconstruye `v2.38AM` (contexto geopolítico) todavía — queda como el siguiente paso natural de la misma consolidación. No calcula crecimiento para ninguna de las empresas nuevas (Luxemburgo/Austria/Finlandia/Cboe masivo) — solo Austria original y EE. UU. tienen crecimiento real hoy.
+
+### Pruebas offline
+
+8 casos nuevos añadidos a `tests/qa_global_coverage_matrix_v2_38al.py` (15 en total): fusión de Luxemburgo con fundamentales reales, exclusión de compartimentos de fondos, bloqueo confirmado de Austria, bloqueo confirmado de Finlandia con sector real, corrección de país de Joby Aviation, país real de los otros 3 países de `v2.38AV`, resolución de respaldo de Cboe Europe, y prioridad correcta de las fuentes originales sobre las nuevas cuando coinciden.
+
+**Estado de la reconstrucción: `COMPLETED_GLOBAL_COVERAGE_MATRIX_V2_CONSOLIDATED_NOT_RECOMMENDATIONS`.** La matriz de las 43.089 vuelve a ser la única fuente de verdad real del proyecto — todo lo encontrado entre `v2.38AV` y `v2.38BH` queda ahora visible en un solo fichero, en vez de disperso en una docena de bloques sueltos.

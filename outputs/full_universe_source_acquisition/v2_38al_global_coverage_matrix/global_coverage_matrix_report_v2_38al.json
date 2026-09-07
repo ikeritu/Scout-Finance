@@ -2,32 +2,40 @@
   "companies_expected_from_census": 43089,
   "companies_total": 43089,
   "identity_status_counts": {
-    "NOT_ATTEMPTED": 41845,
-    "RESOLVED": 1244
+    "NOT_ATTEMPTED": 38055,
+    "RESOLVED": 5034
   },
   "inputs_used": {
+    "austria_bf_bg": 40,
+    "av_other_bulgaria_liechtenstein_malta": 4,
+    "cboe_europe_bulk_bc": 3766,
     "census": "outputs\\full_universe_source_acquisition\\v2_38a_global_universe_audit\\global_universe_audited_v2_38a.csv.xz",
     "europe_fundamentals": "outputs\\full_universe_source_acquisition\\v2_38x_europe_candidate_feature_matrix\\europe_fundamental_features_v2_38x.csv",
     "europe_growth": "outputs\\full_universe_source_acquisition\\v2_38ak_europe_growth_features\\europe_growth_features_v2_38ak.csv",
     "europe_identity": "outputs\\full_universe_source_acquisition\\v2_38ab_europe_full_identity_resolution\\europe_full_identity_resolution_xetra_source_matrix_v2_38ab.csv",
+    "finland_bf_bh": 127,
+    "joby_aviation_us_features": "outputs\\full_universe_source_acquisition\\v2_38ba_us_joby_aviation_fundamentals\\us_joby_aviation_fundamental_features_v2_38ba.csv",
+    "luxembourg_merged_av_aw_ax_be": 37,
     "us_fundamentals": "outputs\\full_universe_source_acquisition\\v2_38g_us_sec_fundamental_features\\us_sec_fundamental_features_v2_38g.csv",
     "us_price": "outputs\\full_universe_source_acquisition\\v2_38h_us_price_features\\us_price_features_v2_38h.csv"
   },
   "network_used": false,
-  "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline.",
+  "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline. Twelfth reconstruction (2026-09-07): merges everything found while attacking the Cboe Europe gap -- the 25 v2.38AV mismatch assets (5 new countries), Luxembourg's real fundamentals (30 companies across v2.38AW/AX/BE), Austria's and Finland's new identities (v2.38BF/BG/BH), Joby Aviation's real US identity/fundamentals corrected from its Cayman-by-ISIN-prefix classification (v2.38AZ/BA), and the bulk 54-country Cboe Europe identity resolution (v2.38BC) for everything without a more specific source. Two new overall_coverage_status values distinguish a real, confirmed blocker from simply 'not attempted yet': IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY (Luxembourg investment fund compartments) and IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED (Austria's exhausted firmenakte.at quota, Finland's confirmed no-source-for-large-caps finding).",
   "overall_coverage_status_counts": {
-    "FUNDAMENTALS_PARTIAL_NO_GROWTH_YET": 34,
-    "FUNDAMENTALS_READY_NO_GROWTH_YET": 9,
+    "FUNDAMENTALS_PARTIAL_NO_GROWTH_YET": 53,
+    "FUNDAMENTALS_READY_NO_GROWTH_YET": 16,
     "GROWTH_PARTIAL": 391,
     "GROWTH_READY": 120,
-    "IDENTITY_ONLY_NO_FUNDAMENTALS_YET": 690,
-    "NO_DATA_YET": 41845
+    "IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED": 167,
+    "IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY": 6,
+    "IDENTITY_ONLY_NO_FUNDAMENTALS_YET": 4281,
+    "NO_DATA_YET": 38055
   },
   "phase": "v2.38AL-global-coverage-matrix",
   "phase9c_authorized": false,
   "price_status_counts": {
-    "NOT_ATTEMPTED": 41846,
-    "NOT_COLLECTED_NO_FREE_SOURCE_FOUND": 689,
+    "NOT_ATTEMPTED": 41642,
+    "NOT_COLLECTED_NO_FREE_SOURCE_FOUND": 893,
     "PRICE_FEATURES_PARTIAL": 31,
     "PRICE_FEATURES_READY": 523
   },
