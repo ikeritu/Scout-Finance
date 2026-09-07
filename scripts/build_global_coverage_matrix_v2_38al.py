@@ -460,6 +460,7 @@ def build_row(
         row["identity_status"] = "RESOLVED"
         row["identity_source"] = av_other_entry["identity_source"]
     elif us_cboe_secondary_entry is not None:
+        row["country"] = "US"  # v2.38BI only ever processes country=='US' candidates from v2.38BC; the base census row's own country field is blank for these Cboe-only assets
         row["identity_status"] = "RESOLVED"
         row["identity_source"] = us_cboe_secondary_entry["identity_source"]
         features = us_cboe_secondary_entry.get("features")

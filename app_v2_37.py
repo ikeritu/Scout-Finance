@@ -1,11 +1,13 @@
 """Scout Finance v2.37 — local research product."""
 from __future__ import annotations
 
+from collections import Counter
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
 
+from src.ui_v2_37.global_universe import load_global_matrix, rebuild_global_matrix
 from src.ui_v2_37.repository import DataMode, load_fundamentals, load_price_series, load_product_data
 from src.ui_v2_37.reports import DISCLAIMER, asset_markdown, manifest, ranking_markdown, to_html, watchlist_markdown
 from src.ui_v2_37.ui import apply, banner, heading
@@ -16,10 +18,24 @@ st.set_page_config(page_title="Scout Finance — Investigación local", page_ico
 apply(st)
 
 SCREENS = {
-    "home": "🏠 Inicio", "universe": "🌐 Universo", "ranking": "📊 Ranking experimental",
-    "asset": "🔎 Ficha de empresa", "compare": "⚖️ Comparador", "watchlist": "⭐ Watchlist",
-    "reports": "📄 Informes", "help": "❓ Metodología y ayuda",
+    "home": "🏠 Inicio", "global_universe": "🌍 Universo global (43.089)", "universe": "🌐 Universo",
+    "ranking": "📊 Ranking experimental", "asset": "🔎 Ficha de empresa", "compare": "⚖️ Comparador",
+    "watchlist": "⭐ Watchlist", "reports": "📄 Informes", "help": "❓ Metodología y ayuda",
 }
+GLOBAL_STATUS_LABELS = {
+    "NO_DATA_YET": "Sin datos todavía",
+    "IDENTITY_ONLY_NO_FUNDAMENTALS_YET": "Solo identidad, sin fundamentales todavía",
+    "IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY": "Solo identidad — no es una empresa operativa (fondo de inversión)",
+    "IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED": "Solo identidad — fundamentales bloqueados (motivo real confirmado)",
+    "IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED": "Solo identidad — sin obligación legal de divulgación pública",
+    "FUNDAMENTALS_PARTIAL_NO_GROWTH_YET": "Fundamentales parciales, sin crecimiento todavía",
+    "FUNDAMENTALS_READY_NO_GROWTH_YET": "Fundamentales completos, sin crecimiento todavía",
+    "GROWTH_PARTIAL": "Crecimiento parcial",
+    "GROWTH_READY": "Crecimiento completo",
+}
+GLOBAL_FUNDAMENTALS_OR_BETTER = {"FUNDAMENTALS_PARTIAL_NO_GROWTH_YET", "FUNDAMENTALS_READY_NO_GROWTH_YET", "GROWTH_PARTIAL", "GROWTH_READY"}
+GLOBAL_GROWTH_STATUSES = {"GROWTH_PARTIAL", "GROWTH_READY"}
+GLOBAL_TABLE_LIMIT = 2000
 STATUS_LABELS = {
     "ELIGIBLE_PARTIAL": "Clasificable parcial", "PARTIAL_COMPARABILITY": "Comparabilidad parcial",
     "REVIEW_REQUIRED": "Revisión requerida", "BLOCKED": "Bloqueado",
@@ -64,6 +80,11 @@ REVIEW_REASON_LABELS = {
 @st.cache_data(show_spinner=False)
 def product_snapshot():
     return load_product_data(ROOT)
+
+
+@st.cache_data(show_spinner=False)
+def global_matrix_snapshot():
+    return load_global_matrix(ROOT)
 
 
 @st.cache_data(show_spinner=False)
@@ -123,6 +144,58 @@ def render_home(data):
     st.write("Explorar el universo, revisar el ranking experimental, consultar fichas, comparar activos, mantener una watchlist privada y exportar informes con trazabilidad.")
     st.markdown("### Qué no hace Scout Finance")
     st.write("No recomienda operaciones, no predice rentabilidad, no se conecta a brokers y no ejecuta trading automático.")
+
+
+def render_global_universe(_data):
+    heading(st, "Universo global", "Las 43.089 empresas del censo operativo completo, con el estado real de identidad, fundamentales, crecimiento y precio de cada una — lo que falta se marca, nunca se oculta.")
+    action_col, info_col = st.columns([1, 3])
+    if action_col.button("🔄 Actualizar", type="primary", help="Recalcula la matriz a partir de los datos ya recolectados hasta ahora. No descarga ni consulta nada nuevo."):
+        with st.spinner("Actualizando matriz de cobertura y contexto geopolítico (sin conexión de red)…"):
+            result = rebuild_global_matrix(ROOT)
+        global_matrix_snapshot.clear()
+        (st.success if result.ok else st.error)("Matriz actualizada correctamente." if result.ok else "La actualización falló — revisa el detalle abajo.")
+        with st.expander("Detalle de la actualización", expanded=not result.ok):
+            for step in result.steps:
+                (st.success if step.ok else st.error)(f"{step.label} · {step.seconds:.1f} s")
+                if step.detail:
+                    st.code(step.detail, language="text")
+    matrix = global_matrix_snapshot()
+    if not matrix.available:
+        info_col.info(matrix.error)
+        return
+    info_col.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(matrix.rows):,} empresas · sin conexión de red — recalcula solo lo ya recolectado")
+    counts = Counter(row["overall_coverage_status"] for row in matrix.rows)
+    metric_cols = st.columns(4)
+    metric_cols[0].metric("Censo total", f"{len(matrix.rows):,}")
+    metric_cols[1].metric("Con identidad real", f"{sum(v for k, v in counts.items() if k != 'NO_DATA_YET'):,}")
+    metric_cols[2].metric("Con fundamentales reales", f"{sum(v for k, v in counts.items() if k in GLOBAL_FUNDAMENTALS_OR_BETTER):,}")
+    metric_cols[3].metric("Con crecimiento real", f"{sum(v for k, v in counts.items() if k in GLOBAL_GROWTH_STATUSES):,}")
+    st.markdown("### Desglose por estado")
+    status_rows = [{"Estado": GLOBAL_STATUS_LABELS.get(status, status), "Empresas": count} for status, count in sorted(counts.items(), key=lambda kv: -kv[1])]
+    st.dataframe(pd.DataFrame(status_rows), use_container_width=True, hide_index=True)
+    st.markdown("### Buscar en el censo")
+    search = st.text_input("Buscar", placeholder="Empresa, ticker o ID", key="global_search")
+    c1, c2 = st.columns(2)
+    countries = sorted({row["country"] for row in matrix.rows if row["country"]})
+    country_filter = c1.multiselect("País", countries, placeholder="Todos")
+    status_filter = c2.multiselect("Estado", sorted(counts), format_func=lambda value: GLOBAL_STATUS_LABELS.get(value, value), placeholder="Todos")
+    needle = search.casefold().strip()
+    filtered = [
+        row for row in matrix.rows
+        if (not needle or any(needle in str(row.get(key, "")).casefold() for key in ("company_name", "ticker", "asset_id")))
+        and (not country_filter or row["country"] in country_filter)
+        and (not status_filter or row["overall_coverage_status"] in status_filter)
+    ]
+    st.caption(f"{len(filtered):,} de {len(matrix.rows):,} empresas")
+    if len(filtered) > GLOBAL_TABLE_LIMIT:
+        st.warning(f"Mostrando las primeras {GLOBAL_TABLE_LIMIT:,} filas de {len(filtered):,} — afina la búsqueda o los filtros para ver el resto.")
+    table_rows = [{
+        "ID": row["asset_id"], "Ticker": row["ticker"], "Empresa": row["company_name"],
+        "Bolsa": row["exchange"], "País": row["country"], "Identidad": row["identity_status"],
+        "Fundamentales": row["fundamentals_status"], "Crecimiento": row["growth_status"], "Precio": row["price_status"],
+        "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
+    } for row in filtered[:GLOBAL_TABLE_LIMIT]]
+    st.dataframe(pd.DataFrame(table_rows), use_container_width=True, hide_index=True)
 
 
 def render_universe(data):
@@ -328,7 +401,7 @@ def main():
         st.divider(); st.caption(f"Datos: {data.mode.value}"); st.caption("Fase 7: INSUFFICIENT_EVIDENCE"); st.caption("Sin conexión a broker")
     if data.mode in {DataMode.BLOCKED_MISSING_DATA, DataMode.INCOMPATIBLE_VERSION}:
         render_home(data); st.error("La aplicación queda bloqueada: " + "; ".join(data.errors)); return
-    {"home": render_home, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "help": render_help}[selected](data)
+    {"home": render_home, "global_universe": render_global_universe, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "help": render_help}[selected](data)
 
 
 if __name__ == "__main__":

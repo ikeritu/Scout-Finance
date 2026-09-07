@@ -422,14 +422,20 @@ def test_us_cboe_secondary_resolved_company_with_features_reaches_growth_ready()
         feature_row = {"asset_id": "U20"}
         feature_row.update({f: "0.1" for f in module(SCRIPT, "tmp_us_bi_growth").US_GROWTH_FIELDS})
         feature_row.update({f: "0.2" for f in module(SCRIPT, "tmp_us_bi_ratio").US_FUNDAMENTAL_RATIO_FIELDS})
+        # Real census shape: these Cboe-only assets carry a BLANK country
+        # in the base v2.38A census (confirmed live -- a real regression
+        # briefly shipped where this branch never set row["country"],
+        # silently reverting Moderna and 537 others back to blank country
+        # the moment the UI's Actualizar button re-ran this builder).
         report, rows = build_with(
             Path(tmp),
-            [census_row("U20", "1MRNAd", "Moderna Inc", "CBOE_EUROPE", "US")],
+            [census_row("U20", "1MRNAd", "Moderna Inc", "CBOE_EUROPE", "")],
             cboe_bulk_rows=[{"asset_id": "U20", "status": "resolved", "country": "US"}],
             us_cboe_secondary_identity_rows=[{"asset_id": "U20", "fetch_status": "resolved"}],
             us_cboe_secondary_features_rows=[feature_row],
         )
     row = rows["U20"]
+    assert row["country"] == "US"
     assert row["identity_status"] == "RESOLVED" and row["identity_source"] == "v2.38BI"
     assert row["fundamentals_status"] == "FEATURES_READY" and row["fundamentals_source"] == "v2.38BK"
     assert row["growth_status"] == "FEATURES_READY" and row["growth_source"] == "v2.38BK"
@@ -446,10 +452,11 @@ def test_us_cboe_secondary_resolved_but_features_not_yet_extracted_stays_identit
     with tempfile.TemporaryDirectory() as tmp:
         report, rows = build_with(
             Path(tmp),
-            [census_row("U21", "1DIAm", "No Facts Yet Inc", "CBOE_EUROPE", "US")],
+            [census_row("U21", "1DIAm", "No Facts Yet Inc", "CBOE_EUROPE", "")],
             us_cboe_secondary_identity_rows=[{"asset_id": "U21", "fetch_status": "resolved"}],
         )
     row = rows["U21"]
+    assert row["country"] == "US"
     assert row["identity_status"] == "RESOLVED" and row["identity_source"] == "v2.38BI"
     assert row["fundamentals_status"] == "NOT_ATTEMPTED"
     assert row["overall_coverage_status"] == "IDENTITY_ONLY_NO_FUNDAMENTALS_YET"
