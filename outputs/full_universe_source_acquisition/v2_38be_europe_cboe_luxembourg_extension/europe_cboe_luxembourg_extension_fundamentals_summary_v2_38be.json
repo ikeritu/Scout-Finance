@@ -1,0 +1,60 @@
+{
+  "balance_sheet_disclosed_count": 10,
+  "concept_coverage_among_found": {
+    "equity": 10,
+    "net_profit": 10,
+    "revenue": 4,
+    "total_assets": 10
+  },
+  "credentials_used": false,
+  "found": 10,
+  "network_used": true,
+  "not_found": 1,
+  "note": "A company found with balance_sheet_disclosed=false or profit_loss_disclosed=false did file that quarter but marked that specific statement confidential at deposit time (Art.70/71 of the 2002 law) -- the public bulk file simply omits it. This is never treated as zero.",
+  "phase": "v2.38AX-europe-luxembourg-fundamentals",
+  "phase9c_authorized": false,
+  "profit_loss_disclosed_count": 7,
+  "quarters_scanned": [
+    {
+      "new_matches": 5,
+      "quarter": "2026q2",
+      "still_remaining_after": 6
+    },
+    {
+      "new_matches": 0,
+      "quarter": "2026q1",
+      "still_remaining_after": 6
+    },
+    {
+      "new_matches": 0,
+      "quarter": "2025q4",
+      "still_remaining_after": 6
+    },
+    {
+      "new_matches": 2,
+      "quarter": "2025q3",
+      "still_remaining_after": 4
+    },
+    {
+      "new_matches": 3,
+      "quarter": "2025q2",
+      "still_remaining_after": 1
+    },
+    {
+      "new_matches": 0,
+      "quarter": "2025q1",
+      "still_remaining_after": 1
+    },
+    {
+      "new_matches": 0,
+      "quarter": "2024q4",
+      "still_remaining_after": 1
+    },
+    {
+      "new_matches": 0,
+      "quarter": "2024q3",
+      "still_remaining_after": 1
+    }
+  ],
+  "target_companies": 11
+}

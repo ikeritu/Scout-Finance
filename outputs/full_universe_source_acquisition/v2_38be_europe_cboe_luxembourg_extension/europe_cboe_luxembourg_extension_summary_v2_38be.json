@@ -1,0 +1,13 @@
+{
+  "credentials_used": false,
+  "fundamentals_found": 10,
+  "fundamentals_not_found": 1,
+  "network_used": true,
+  "new_candidates": 17,
+  "note": "Fund compartments (RCS-equivalent identifier does not start with 'B') are real GLEIF-registered entities but are investment fund sub-funds, not operating companies -- excluded from fundamentals extraction as a category error, not a data gap.",
+  "phase": "v2.38BE-europe-cboe-luxembourg-extension",
+  "phase9c_authorized": false,
+  "rcs_resolved_fund_compartments_excluded": 6,
+  "rcs_resolved_real_companies": 11,
+  "rcs_unresolved": 0
+}

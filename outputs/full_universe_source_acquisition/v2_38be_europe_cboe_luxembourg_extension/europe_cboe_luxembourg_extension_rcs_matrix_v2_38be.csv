@@ -1,0 +1,18 @@
+asset_id,ticker,resolved_company_name,isin,search_key,gleif_lookup_status,gleif_lookup_reason,lei,gleif_legal_name,rcs_number,entity_status,phase,created_at_utc
+U09840,ALEw,ALLEGRO.EU,,ALLEGRO.EU,resolved,exact_token_match_single_luxembourg_entity,222100VRLXV3FPMG4982,ALLEGRO.EU,B214830,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U09938,APAMa,APERAM,,APERAM,resolved,exact_token_match_single_luxembourg_entity,5493001136GE6L4R7M63,APERAM,B155908,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U10397,BREBb,BREDERODE,,BREDERODE,resolved,exact_token_match_single_luxembourg_entity,222100RV64ZZO8RUZB21,BREDERODE,B174490,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U11974,ERFp,EUROFINS SCIENTIFIC SE,,EUROFINS SCIENTIFIC,resolved,exact_token_match_single_luxembourg_entity,529900JEHFM47DYY3S57,EUROFINS SCIENTIFIC SE,B167775,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U15922,SESGp,SES,,SES,resolved,exact_token_match_single_luxembourg_entity,5493008JPA4HYMH1HX51,SES,B81267,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U16477,SWPp,SWORD GROUP SE,,SWORD GROUP,resolved,exact_token_match_single_luxembourg_entity,222100GEODKMZ0FFWK29,SWORD GROUP SE,B168244,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U18384,ZABw,Zabka Group,,Zabka Group,resolved,exact_token_match_single_luxembourg_entity,549300TU2RZ35E4ET914,Zabka Group,B263068,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U21051,ALDNXp,DNXCORP SE,,DNXCORP,resolved,exact_token_match_single_luxembourg_entity,222100UH8Y1135OGDV16,DNXCORP SE,B182439,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U21984,BQGEd,BARCLAYS QUANTIC GLOBAL E NR,,BARCLAYS QUANTIC GLOBAL E NR,resolved,exact_token_match_single_luxembourg_entity,549300XMUGUGTLFYSO27,BARCLAYS QUANTIC GLOBAL E NR,O00007020_00000026,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U22886,DGAw,DGA,,DGA,resolved,exact_token_match_single_luxembourg_entity,529900P4T0IMER2DLD02,DGA,O00008378,INACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U23519,ENYm,ENERGY,,ENERGY,resolved,exact_token_match_single_luxembourg_entity,529900VXWTD7WWCDEK75,ENERGY,O00000010_00000025,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U24185,FTXHGx,FOTEX HOLDING,,FOTEX HOLDING,resolved,exact_token_match_single_luxembourg_entity,529900HEZI4AW8PRTG30,FOTEX HOLDING,B146938,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U26110,LXMPRx,LUXEMPART,,LUXEMPART,resolved,exact_token_match_single_luxembourg_entity,222100WPYK3JKB5F4D19,LUXEMPART,B27846,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U26989,OPGw,CPI FIM SA,,CPI FIM,resolved,exact_token_match_single_luxembourg_entity,222100KIDRQ6NNVYUH61,CPI FIM SA,B44996,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U27659,RNWEFn,RENEWABLE ENERGY,,RENEWABLE ENERGY,resolved,exact_token_match_single_luxembourg_entity,54930081K8CKBHORUK11,RENEWABLE ENERGY,O00000828_00000039,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U28690,TGAId,TEQ - GENERAL ARTIFICIAL INTELLIGENCE,,TEQ - GENERAL ARTIFICIAL INTELLIGENCE,resolved,exact_token_match_single_luxembourg_entity,529900ZVOLJAPKEU2927,TEQ - GENERAL ARTIFICIAL INTELLIGENCE,O00015374_00000001,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
+U28916,TTFNFn,TOTAL,,TOTAL,resolved,exact_token_match_single_luxembourg_entity,213800X5S646EM87BD66,TOTAL,O00008140_00000019,ACTIVE,v2.38AW-europe-luxembourg-rcs-gleif,2026-09-07T14:40:49Z
