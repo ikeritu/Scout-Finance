@@ -88,3 +88,26 @@ No investiga ningún registro ni fuente nueva. No reconstruye `v2.38AM` (context
 8 casos nuevos añadidos a `tests/qa_global_coverage_matrix_v2_38al.py` (15 en total): fusión de Luxemburgo con fundamentales reales, exclusión de compartimentos de fondos, bloqueo confirmado de Austria, bloqueo confirmado de Finlandia con sector real, corrección de país de Joby Aviation, país real de los otros 3 países de `v2.38AV`, resolución de respaldo de Cboe Europe, y prioridad correcta de las fuentes originales sobre las nuevas cuando coinciden.
 
 **Estado de la reconstrucción: `COMPLETED_GLOBAL_COVERAGE_MATRIX_V2_CONSOLIDATED_NOT_RECOMMENDATIONS`.** La matriz de las 43.089 vuelve a ser la única fuente de verdad real del proyecto — todo lo encontrado entre `v2.38AV` y `v2.38BH` queda ahora visible en un solo fichero, en vez de disperso en una docena de bloques sueltos.
+
+---
+
+## Decimocuarta reconstrucción (2026-09-08): el frente Reino Unido/EE. UU. — 538 empresas con fundamentales y crecimiento reales
+
+Instrucción del usuario tras cerrar "consolidar primero": elegir explícitamente "Reino Unido / EE. UU." como siguiente frente, frente a los cierres offshore o la revisión manual de ambiguas. Detalle completo en `US_CBOE_SECONDARY_SEC_FUNDAMENTALS_v2_38bi_bj_bk.md` — resumen aquí solo del impacto en esta matriz.
+
+De las 628 candidatas `country=US` que `v2.38BC` ya había identificado vía GLEIF (sin ningún enlace a fundamentales), `v2.38BI` resolvió un CIK real de la SEC para 538 (85,7%, 0 ambiguas, tres niveles de coincidencia fail-closed), `v2.38BJ` descargó sus datos reales de la SEC reutilizando el fetcher ya probado de `v2.38E`, y `v2.38BK` extrajo fundamentales/crecimiento reales reutilizando `v2.38F`/`v2.38G` sin ninguna línea nueva de lógica — la misma metodología ya validada en las 555 empresas originales y en Joby Aviation, ahora en lote.
+
+Nueva rama de prioridad en `build_row()`, insertada justo antes del respaldo genérico de Cboe masivo para que solo las 538 resueltas se beneficien; las 90 sin resolver (etiquetado erróneo de país, empresas ya excluidas de bolsa, o un hueco real del propio fichero de tickers de la SEC) siguen cayendo al respaldo genérico exactamente igual que antes.
+
+### Resultado real
+
+| `overall_coverage_status` | Antes | Después |
+|---|---:|---:|
+| `GROWTH_READY` | 120 | **417** |
+| `GROWTH_PARTIAL` | 391 | **611** |
+| `FUNDAMENTALS_PARTIAL_NO_GROWTH_YET` | 53 | 67 |
+| `IDENTITY_ONLY_NO_FUNDAMENTALS_YET` | 4.281 | 3.750 |
+
+**Empresas con crecimiento interanual real y calculable pasa de ~140 a más de 1.000** — el mayor salto de profundidad (no solo identidad) de todo este esfuerzo de Cboe Europe. 3 pruebas offline nuevas en esta matriz (21 en total contando las de v2.38BI/BJ/BK).
+
+**Estado de la reconstrucción: `COMPLETED_GLOBAL_COVERAGE_MATRIX_V3_US_CBOE_SECONDARY_FUNDAMENTALS`.** Reino Unido (791 candidatas) queda como el siguiente paso natural del mismo frente, con una pregunta de investigación distinta: fuente de fundamentales, no de identidad.

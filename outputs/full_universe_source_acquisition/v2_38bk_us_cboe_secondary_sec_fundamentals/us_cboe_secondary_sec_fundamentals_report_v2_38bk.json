@@ -1,0 +1,27 @@
+{
+  "candidates_input": 538,
+  "companies_normalized": 536,
+  "companies_with_features": 533,
+  "credentials_used": false,
+  "feature_status_counts": {
+    "FEATURES_PARTIAL": 80,
+    "FEATURES_READY": 451,
+    "INSUFFICIENT_FEATURE_EVIDENCE": 2
+  },
+  "guardrails": {
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "network_used": false,
+  "normalization_status_counts": {
+    "NORMALIZED_PARTIAL": 196,
+    "NORMALIZED_READY": 337,
+    "NO_NORMALIZABLE_FACTS": 3
+  },
+  "note": "Reuses normalize_us_sec_fundamentals_v2_38f.normalize_company()/quality_row() and build_us_sec_fundamental_features_v2_38g.build_company()/as_csv_value() unmodified -- same methodology validated on the original 555 US companies and individually on Joby Aviation (v2.38BA), applied here in a loop over the 538 Cboe-secondary US candidates CIK-matched by v2.38BI.",
+  "phase": "v2.38BK-us-cboe-secondary-sec-fundamentals",
+  "skipped_no_cache": 2,
+  "status": "COMPLETED_US_CBOE_SECONDARY_SEC_FUNDAMENTALS"
+}

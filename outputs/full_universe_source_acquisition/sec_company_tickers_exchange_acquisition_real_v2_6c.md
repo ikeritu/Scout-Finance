@@ -2,7 +2,7 @@
 
 - Phase: v2.6C
 - Method: sec_company_tickers_exchange_acquisition_real_v1
-- Created at: 2026-07-06T11:21:39+00:00
+- Created at: 2026-09-07T21:46:40+00:00
 - Acquisition status: **SEC_COMPANY_TICKERS_EXCHANGE_ACQUISITION_COMPLETED**
 - Readiness score: **85/100**
 - Provider: **SEC company_tickers_exchange.json**
@@ -10,8 +10,8 @@
 - Network status OK: True
 - HTTP status code: 200
 - Content type: `application/json`
-- Size bytes: 521876
-- SHA256: `10cf18f2433682557f1d71c3085c811f20fae4efe660e1cee7e5ce1c341f23f4`
+- Size bytes: 522577
+- SHA256: `ec43db74f82d1739cce6340f36b9695dcb51231fc38edd493215677627bb01cd`
 - Raw JSON: `data/raw/source_providers/sec_company_tickers_exchange/company_tickers_exchange.json`
 - Normalized CSV: `data/raw/source_providers/sec_company_tickers_exchange/sec_company_tickers_exchange.csv`
 - Normalized rows: 10415
@@ -43,11 +43,11 @@
 
 ## Exchange counts
 
-- NASDAQ: 4329
-- NYSE: 3312
-- OTC: 2558
-- None: 189
-- CBOE: 27
+- NASDAQ: 4374
+- NYSE: 3301
+- OTC: 2495
+- None: 209
+- CBOE: 36
 
 ## Positives
 

@@ -1,7 +1,7 @@
 {
   "phase": "v2.6C",
   "method": "sec_company_tickers_exchange_acquisition_real_v1",
-  "created_at": "2026-07-06T11:21:39+00:00",
+  "created_at": "2026-09-07T21:46:40+00:00",
   "acquisition_status": "SEC_COMPANY_TICKERS_EXCHANGE_ACQUISITION_COMPLETED",
   "readiness_score": 85,
   "provider": {
@@ -19,8 +19,8 @@
     "status_code": 200,
     "reason": "OK",
     "content_type": "application/json",
-    "size_bytes": 521876,
-    "sha256": "10cf18f2433682557f1d71c3085c811f20fae4efe660e1cee7e5ce1c341f23f4",
+    "size_bytes": 522577,
+    "sha256": "ec43db74f82d1739cce6340f36b9695dcb51231fc38edd493215677627bb01cd",
     "timeout_seconds": 30,
     "user_agent_env": "SCOUT_FINANCE_SEC_USER_AGENT",
     "user_agent_present": true,
@@ -50,18 +50,18 @@
     "empty_ciks": 0,
     "duplicate_exchange_ticker_keys": 0,
     "exchange_counts": {
-      "NASDAQ": 4329,
-      "NYSE": 3312,
-      "OTC": 2558,
-      "None": 189,
-      "CBOE": 27
+      "NASDAQ": 4374,
+      "NYSE": 3301,
+      "OTC": 2495,
+      "CBOE": 36,
+      "None": 209
     },
     "raw_exchange_counts": {
-      "Nasdaq": 4329,
-      "NYSE": 3312,
-      "OTC": 2558,
-      "None": 189,
-      "CBOE": 27
+      "Nasdaq": 4374,
+      "NYSE": 3301,
+      "OTC": 2495,
+      "CBOE": 36,
+      "None": 209
     },
     "rows_needed_first_expansion_before_sec": 9352,
     "rows_needed_full_source_before_sec": 44352

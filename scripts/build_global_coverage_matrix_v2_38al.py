@@ -74,6 +74,18 @@ AT_BG_REGISTRY_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bg_
 FI_BH_REGISTRY_SECTOR_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bh_europe_cboe_finland_extension/europe_cboe_finland_extension_registry_sector_v2_38bh.csv"
 CBOE_BULK_IDENTITY_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bc_europe_cboe_secondary_identity_full/europe_cboe_secondary_identity_full_matrix_v2_38bc.csv"
 
+# Real new source added in the fourteenth reconstruction (2026-09-08),
+# attacking the UK/US front the user chose after "consolidar primero"
+# closed: 538 of the 628 country=US Cboe secondary candidates (already
+# GLEIF-identified by v2.38BC) got a real SEC CIK match via v2.38BI,
+# which then let v2.38BK reuse the exact same v2.38F/G fundamentals
+# extraction already proven on the original 555 companies. Without this,
+# these 538 would fall all the way through to the generic Cboe-bulk
+# fallback branch below and be stuck at identity-only forever, despite
+# now having real US GAAP fundamentals and growth on file.
+US_CBOE_SECONDARY_IDENTITY_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bi_us_cboe_secondary_identity_sec/us_cboe_secondary_identity_sec_v2_38bi.csv"
+US_CBOE_SECONDARY_FEATURES_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bk_us_cboe_secondary_sec_fundamentals/us_cboe_secondary_sec_fundamental_features_v2_38bk.csv"
+
 # v2.38AV reports the real country as a readable name (from the ISIN
 # prefix), not the 2-letter code the rest of this matrix's "country"
 # column already uses everywhere else -- mapped here just for display
@@ -287,6 +299,31 @@ def build_av_other_index(path: Path) -> dict[str, dict[str, Any]]:
     return index
 
 
+def build_us_cboe_secondary_index(identity_path: Path, features_path: Path) -> dict[str, dict[str, Any]]:
+    """Merge v2.38BI's real SEC CIK matches with v2.38BK's fundamentals/
+    growth features (reusing v2.38G's exact field names, since v2.38BK
+    calls the same build_company() function). Only the 538 CIK-resolved
+    candidates get an entry here -- the other 90 (delisted/acquired
+    companies, or a handful mislabeled country=US in the source) fall
+    through to the generic Cboe-bulk fallback branch unchanged, same as
+    before this reconstruction."""
+    if not identity_path.exists():
+        return {}
+    index: dict[str, dict[str, Any]] = {}
+    with identity_path.open(encoding="utf-8", newline="") as f:
+        for row in csv.DictReader(f):
+            if row.get("fetch_status") == "resolved":
+                index[row["asset_id"]] = {"identity_source": "v2.38BI"}
+    if not features_path.exists():
+        return index
+    with features_path.open(encoding="utf-8", newline="") as f:
+        for row in csv.DictReader(f):
+            asset_id = row.get("asset_id", "")
+            if asset_id in index:
+                index[asset_id]["features"] = row
+    return index
+
+
 def build_cboe_bulk_index(path: Path) -> dict[str, dict[str, Any]]:
     if not path.exists():
         return {}
@@ -311,6 +348,7 @@ def build_row(
     eu_identity: dict[str, str] | None, eu_fund: dict[str, str] | None, eu_growth: dict[str, str] | None,
     joby_us_features: dict[str, str] | None, lux_entry: dict[str, Any] | None, at_entry: dict[str, Any] | None,
     fi_entry: dict[str, Any] | None, av_other_entry: dict[str, Any] | None, cboe_entry: dict[str, Any] | None,
+    us_cboe_secondary_entry: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     asset_id = census_row["asset_id"]
     row: dict[str, Any] = {field: NOT_ATTEMPTED for field in FIELDS}
@@ -400,6 +438,21 @@ def build_row(
         row["country"] = av_other_entry.get("country_code", row["country"])
         row["identity_status"] = "RESOLVED"
         row["identity_source"] = av_other_entry["identity_source"]
+    elif us_cboe_secondary_entry is not None:
+        row["identity_status"] = "RESOLVED"
+        row["identity_source"] = us_cboe_secondary_entry["identity_source"]
+        features = us_cboe_secondary_entry.get("features")
+        if features is not None:
+            growth_present = sum(1 for field in US_GROWTH_FIELDS if present(features.get(field)))
+            fund_present = sum(1 for field in US_FUNDAMENTAL_RATIO_FIELDS if present(features.get(field)))
+            row["fundamentals_status"] = classify_ladder(fund_present, len(US_FUNDAMENTAL_RATIO_FIELDS))
+            row["fundamentals_source"] = "v2.38BK"
+            row["growth_status"] = classify_ladder(growth_present, len(US_GROWTH_FIELDS))
+            row["growth_source"] = "v2.38BK"
+        # Price not yet attempted for this new population (v2.38H's real
+        # price extraction was scoped only to the original 555) -- left
+        # honestly NOT_ATTEMPTED, never claimed as a confirmed gap the
+        # way Europe's real v2.38AJ finding is.
     elif cboe_entry is not None:
         row["country"] = cboe_entry.get("country_code", row["country"])
         row["identity_status"] = "RESOLVED"
@@ -427,7 +480,8 @@ def build(
     census_path: Path, us_fund_path: Path, us_price_path: Path, eu_identity_path: Path, eu_fund_path: Path, eu_growth_path: Path,
     joby_features_path: Path, av_mismatch_path: Path, lux_aw_rcs_path: Path, lux_ax_fund_path: Path, lux_be_rcs_path: Path,
     lux_be_fund_path: Path, lux_be_fund_compartments_path: Path, at_bg_path: Path, fi_bh_path: Path, cboe_bulk_path: Path,
-    output_dir: Path,
+    output_dir: Path, us_cboe_secondary_identity_path: Path = US_CBOE_SECONDARY_IDENTITY_INPUT,
+    us_cboe_secondary_features_path: Path = US_CBOE_SECONDARY_FEATURES_INPUT,
 ) -> dict[str, Any]:
     census = read_census(census_path)
     us_fund_idx = read_csv_index(us_fund_path)
@@ -441,6 +495,7 @@ def build(
     fi_idx = build_fi_bh_index(fi_bh_path)
     av_other_idx = build_av_other_index(av_mismatch_path)
     cboe_idx = build_cboe_bulk_index(cboe_bulk_path)
+    us_cboe_secondary_idx = build_us_cboe_secondary_index(us_cboe_secondary_identity_path, us_cboe_secondary_features_path)
 
     rows = [
         build_row(
@@ -448,6 +503,7 @@ def build(
             eu_identity_idx.get(c["asset_id"]), eu_fund_idx.get(c["asset_id"]), eu_growth_idx.get(c["asset_id"]),
             joby_features_idx.get(c["asset_id"]), lux_idx.get(c["asset_id"]), at_idx.get(c["asset_id"]),
             fi_idx.get(c["asset_id"]), av_other_idx.get(c["asset_id"]), cboe_idx.get(c["asset_id"]),
+            us_cboe_secondary_idx.get(c["asset_id"]),
         )
         for c in census
     ]
@@ -490,8 +546,9 @@ def build(
             "finland_bf_bh": len(fi_idx) or None,
             "av_other_bulgaria_liechtenstein_malta": len(av_other_idx) or None,
             "cboe_europe_bulk_bc": len(cboe_idx) or None,
+            "us_cboe_secondary_sec_bi_bk": len(us_cboe_secondary_idx) or None,
         },
-        "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline. Twelfth reconstruction (2026-09-07): merges everything found while attacking the Cboe Europe gap -- the 25 v2.38AV mismatch assets (5 new countries), Luxembourg's real fundamentals (30 companies across v2.38AW/AX/BE), Austria's and Finland's new identities (v2.38BF/BG/BH), Joby Aviation's real US identity/fundamentals corrected from its Cayman-by-ISIN-prefix classification (v2.38AZ/BA), and the bulk 54-country Cboe Europe identity resolution (v2.38BC) for everything without a more specific source. Two new overall_coverage_status values distinguish a real, confirmed blocker from simply 'not attempted yet': IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY (Luxembourg investment fund compartments) and IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED (Austria's exhausted firmenakte.at quota, Finland's confirmed no-source-for-large-caps finding).",
+        "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline. Twelfth reconstruction (2026-09-07): merges everything found while attacking the Cboe Europe gap -- the 25 v2.38AV mismatch assets (5 new countries), Luxembourg's real fundamentals (30 companies across v2.38AW/AX/BE), Austria's and Finland's new identities (v2.38BF/BG/BH), Joby Aviation's real US identity/fundamentals corrected from its Cayman-by-ISIN-prefix classification (v2.38AZ/BA), and the bulk 54-country Cboe Europe identity resolution (v2.38BC) for everything without a more specific source. Two new overall_coverage_status values distinguish a real, confirmed blocker from simply 'not attempted yet': IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY (Luxembourg investment fund compartments) and IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED (Austria's exhausted firmenakte.at quota, Finland's confirmed no-source-for-large-caps finding). Fourteenth reconstruction (2026-09-08): the UK/US front chosen after consolidation closed -- 538 of the 628 country=US Cboe secondary candidates got a real SEC CIK match (v2.38BI, three-tier fail-closed name matching against SEC's own company_tickers_exchange.json) and, from that, real US GAAP fundamentals/growth reusing v2.38F/G unmodified at batch scale (v2.38BK) -- the same methodology already proven on the original 555 companies and individually on Joby Aviation.",
     }
     write_text(output_dir / "global_coverage_matrix_report_v2_38al.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
     return report
@@ -515,6 +572,8 @@ def main() -> int:
     parser.add_argument("--at-bg-input", type=Path, default=AT_BG_REGISTRY_INPUT)
     parser.add_argument("--fi-bh-input", type=Path, default=FI_BH_REGISTRY_SECTOR_INPUT)
     parser.add_argument("--cboe-bulk-input", type=Path, default=CBOE_BULK_IDENTITY_INPUT)
+    parser.add_argument("--us-cboe-secondary-identity-input", type=Path, default=US_CBOE_SECONDARY_IDENTITY_INPUT)
+    parser.add_argument("--us-cboe-secondary-features-input", type=Path, default=US_CBOE_SECONDARY_FEATURES_INPUT)
     parser.add_argument("--output-dir", type=Path, default=OUT)
     args = parser.parse_args()
     report = build(
@@ -522,6 +581,7 @@ def main() -> int:
         args.europe_fundamentals_input, args.europe_growth_input, args.joby_features_input, args.av_mismatch_input,
         args.lux_aw_rcs_input, args.lux_ax_fundamentals_input, args.lux_be_rcs_input, args.lux_be_fundamentals_input,
         args.lux_be_fund_compartments_input, args.at_bg_input, args.fi_bh_input, args.cboe_bulk_input, args.output_dir,
+        args.us_cboe_secondary_identity_input, args.us_cboe_secondary_features_input,
     )
     print(json.dumps({k: report[k] for k in ("phase", "companies_total", "overall_coverage_status_counts")}, ensure_ascii=False, sort_keys=True))
     return 0

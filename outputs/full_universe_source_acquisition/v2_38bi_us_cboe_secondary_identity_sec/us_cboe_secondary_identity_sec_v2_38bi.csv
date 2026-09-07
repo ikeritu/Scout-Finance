@@ -1,0 +1,629 @@
+asset_id,ticker,company_name,cik,sec_name,sec_ticker,sec_exchange,match_tier,fetch_status,fetch_reason,phase,created_at_utc
+U09211,0QFd,Moderna Inc,0001682852,"Moderna, Inc.",MRNA,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09222,12DAd,Dell Technologies Inc,0001571996,Dell Technologies Inc.,DELL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09229,1AALm,American Airlines Group Inc,0000006201,American Airlines Group Inc.,AAL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09231,1ADMm,Archer-Daniels-Midland Co,0000007084,Archer-Daniels-Midland Co,ADM,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09233,1ANFm,Abercrombie & Fitch Co,0001018840,ABERCROMBIE & FITCH CO /DE/,ANF,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09234,1APPm,AppLovin Corp,0001751008,AppLovin Corp,APP,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09237,1BLEm,Bloom Energy Corp,0001664703,Bloom Energy Corp,BE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09240,1CNCm,Centene Corp,0001071739,CENTENE CORP,CNC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09244,1HOODm,Robinhood Markets Inc,0001783879,"Robinhood Markets, Inc.",HOOD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09246,1KTOSm,Kratos Defense & Security Solutions Inc,0001069258,"KRATOS DEFENSE & SECURITY SOLUTIONS, INC.",KTOS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09249,1MNSTm,Monster Beverage Corp,0000865752,Monster Beverage Corp,MNST,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09252,1PANWm,Palo Alto Networks Inc,0001327567,Palo Alto Networks Inc,PANW,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09255,1PATHm,UiPath Inc,0001734722,"UiPath, Inc.",PATH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09256,1PLTRm,Palantir Technologies Inc,0001321655,Palantir Technologies Inc.,PLTR,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09257,1QZd,Coinbase Global Inc,0001679788,"Coinbase Global, Inc.",COIN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09260,1RIVNm,Rivian Automotive Inc,0001874178,"Rivian Automotive, Inc. / DE",RIVN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09261,1SId,Snap Inc,0001564408,Snap Inc,SNAP,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09262,1SPCXm,Space Exploration Technologies Corp,0001181412,SPACE EXPLORATION TECHNOLOGIES CORP,SPCX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09264,1TTEKm,Tetra Tech Inc,0000831641,TETRA TECH INC,TTEK,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09268,1WULFm,Terawulf Inc,0001083301,TERAWULF INC.,WULF,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09303,2OYd,Dow Inc,0001751788,DOW INC.,DOW,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09306,2PPd,PayPal Holdings Inc,0001633917,"PayPal Holdings, Inc.",PYPL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09316,33Ld,Lululemon Athletica Inc,0001397187,lululemon athletica inc.,LULU,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09452,3QDd,Datadog Inc,0001561550,"Datadog, Inc.",DDOG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09518,4I1d,Philip Morris International Inc,0001413329,Philip Morris International Inc.,PM,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09523,4S0d,ServiceNow Inc,0001373715,"ServiceNow, Inc.",NOW,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09555,6MKd,Merck & Co Inc,0000310158,"Merck & Co., Inc.",MRK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09560,6Z1d,Airbnb Inc,0001559720,"Airbnb, Inc.",ABNB,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09562,7DBd,Diamondback Energy Inc,0001539838,"Diamondback Energy, Inc.",FANG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09668,ADBd,Adobe Inc,0000796343,ADOBE INC.,ADBE,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09882,AMDd,Advanced Micro Devices Inc,0000002488,ADVANCED MICRO DEVICES INC,AMD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09892,AMGa,AMG Critical Materials NV,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09908,AMZd,Amazon.com Inc,0001018724,AMAZON COM INC,AMZN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U09936,AP2d,Applied Materials Inc,0000006951,APPLIED MATERIALS INC /DE,AMAT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U10006,ASMa,ASM International NV,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U10056,AUDd,Autodesk Inc,0000769397,"Autodesk, Inc.",ADSK,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U10153,BACd,Verizon Communications Inc,0000732712,VERIZON COMMUNICATIONS INC,VZ,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U10225,BEKBb,Bekaert SA,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U10436,BSXd,Boston Scientific Corp,0000885725,BOSTON SCIENTIFIC CORP,BSX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U10542,C9Fd,Chipotle Mexican Grill Inc,0001058090,CHIPOTLE MEXICAN GRILL INC,CMG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U10584,CAT1d,Caterpillar Inc,0000018230,CATERPILLAR INC,CAT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U10596,CB1Ad,Constellation Brands Inc,0000016918,"CONSTELLATION BRANDS, INC.",STZ,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U10702,CDSd,Cadence Design Systems Inc,0000813672,CADENCE DESIGN SYSTEMS INC,CDNS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U10946,COMm,Comer Industries SpA,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U11063,CSGa,CSG NV,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U11129,CTOd,Costco Wholesale Corp,0000909832,COSTCO WHOLESALE CORP /NEW,COST,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U11130,CTP2d,Comcast Corp,0001166691,COMCAST CORP,CMCSA,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U11156,CVSd,CVS Health Corp,0000064803,CVS HEALTH Corp,CVS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U11249,DCHl,Dauch Corp,0001062231,Dauch Corp,DCH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U11250,DCOd,Deere & Co,0000315189,DEERE & CO,DE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U11337,DIAm,DiaSorin SpA,0001544088,DiaSorin SpA/ADR,DSRNY,OTC,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U11459,DY6d,Devon Energy Corp,0001090012,DEVON ENERGY CORP/DE,DVN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12192,EWLd,Edwards Lifesciences Corp,0001099800,Edwards Lifesciences Corp,EW,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12314,FB2Ad,Meta Platforms Inc,0001326801,"Meta Platforms, Inc.",META,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12335,FDAm,Fidia SpA,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12362,FERGl,Ferguson Enterprises Inc,0002011641,Ferguson Enterprises Inc. /DE/,FERG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12489,FOOd,Salesforce Inc,0001108524,"Salesforce, Inc.",CRM,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12507,FPMBd,Freeport-McMoRan Inc,0000831259,FREEPORT-MCMORAN INC,FCX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12598,G2Ms,Gentoo Media Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12650,GCPd,General Electric Co,0000040545,GENERAL ELECTRIC CO,GE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12733,GISd,Gilead Sciences Inc,0000882095,"GILEAD SCIENCES, INC.",GILD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12837,GRMd,General Mills Inc,0000040704,GENERAL MILLS INC,GIS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U12903,HALd,Halliburton Co,0000045012,HALLIBURTON CO,HAL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U13091,HRSd,L3Harris Technologies Inc,0000202058,"L3HARRIS TECHNOLOGIES, INC. /DE/",LHX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U13132,HUGw,HUUUGE Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U13133,HUH1Vh,Huhtamaki Oyj,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U13510,ILTd,Illinois Tool Works Inc,0000049826,ILLINOIS TOOL WORKS INC,ITW,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U13589,INLd,Intel Corp,0000050863,INTEL CORP,INTC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U13771,ITUd,Intuit Inc,0000896878,INTUIT INC.,INTU,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U13894,J5Ad,Warner Bros Discovery Inc,0001437107,"Warner Bros. Discovery, Inc.",WBD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U14175,KOSl,Kosmos Energy Ltd,0001509991,Kosmos Energy Ltd.,KOS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U14192,KTFd,Mondelez International Inc,0001103982,"Mondelez International, Inc.",MDLZ,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U14386,LOMd,Lockheed Martin Corp,0000936468,LOCKHEED MARTIN CORP,LMT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U14536,M44d,MARA Holdings Inc,0001507605,"MARA Holdings, Inc.",MARA,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U14575,MBKw,mBank SA,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U14600,MDOd,McDonald's Corp,0000063908,MCDONALDS CORP,MCD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U14683,MLB1d,MercadoLibre Inc,0001099590,MERCADOLIBRE INC,MELI,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U14783,MTEd,Micron Technology Inc,0000723125,MICRON TECHNOLOGY INC,MU,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U15035,NTHd,Northrop Grumman Corp,0001133421,NORTHROP GRUMMAN CORP /DE/,NOC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U15048,NVDd,NVIDIA Corp,0001045810,NVIDIA CORP,NVDA,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U15116,ONKd,ONEOK Inc,0001039684,ONEOK INC /NEW/,OKE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U15121,OPCd,Occidental Petroleum Corp,0000797468,OCCIDENTAL PETROLEUM CORP /DE/,OXY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U15165,OYCd,Delta Air Lines Inc,0000027904,"DELTA AIR LINES, INC.",DAL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U15213,PARd,Parker-Hannifin Corp,0000076334,Parker-Hannifin Corp,PH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U15236,PCE1d,Booking Holdings Inc,0001075531,Booking Holdings Inc.,BKNG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U15263,PEPd,PepsiCo Inc,0000077476,PEPSICO INC,PEP,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U15336,PLUNd,Plug Power Inc,0001093691,PLUG POWER INC,PLUG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U16135,SNl,Smith & Nephew PLC,0000845982,SMITH & NEPHEW PLC,SNN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U16427,SUNBl,Sunbelt Rentals Holdings Inc,0002083785,"Sunbelt Rentals Holdings, Inc.",SUNB,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U16474,SWNd,Southwest Airlines Co,0000092380,SOUTHWEST AIRLINES CO,LUV,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U16555,SYPd,Synopsys Inc,0000883241,SYNOPSYS INC,SNPS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U16707,TKEd,Take-Two Interactive Software Inc,0000946581,TAKE TWO INTERACTIVE SOFTWARE INC,TTWO,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U16757,TRACBs,Traction AB,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U16875,UAL1d,United Airlines Holdings Inc,0000100517,"United Airlines Holdings, Inc.",UAL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U17156,UT8d,Uber Technologies Inc,0001543151,"Uber Technologies, Inc",UBER,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U17166,UWSd,Waste Management Inc,0000823768,WASTE MANAGEMENT INC,WM,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U17336,VIAd,Viatris Inc,0001792044,Viatris Inc,VTRS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U17531,WDCd,Western Digital Corp,0000106040,WESTERN DIGITAL CORP,WDC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U17664,WMTd,Walmart Inc,0000104169,Walmart Inc.,WMT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18173,XONAd,Exxon Mobil Corp,0002115436,ExxonMobil Holdings Corp,XOM,NYSE,squashed_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18208,XS4d,ON Semiconductor Corp,0001097864,ON SEMICONDUCTOR CORP,ON,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18414,ZOEd,Zoetis Inc,0001555280,Zoetis Inc.,ZTS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18538,07G0d,Corpay Inc,0001175454,"CORPAY, INC.",CPAY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18540,096d,HubSpot Inc,0001404655,HUBSPOT INC,HUBS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18541,0A1Ol,Zoom Communications Inc,0001585521,"Zoom Communications, Inc.",ZM,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18547,0A3Zl,Cloudflare Inc,0001477333,"Cloudflare, Inc.",NET,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18549,0A60l,FuelCell Energy Inc,0000886128,FUELCELL ENERGY INC,FCEL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18559,0C6d,Cargurus Inc,0001494259,"CarGurus, Inc.",CARG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18577,0HAVl,Agilent Technologies Inc,0001090872,"AGILENT TECHNOLOGIES, INC.",A,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18579,0HC3l,Alaska Air Group Inc,0000766421,"ALASKA AIR GROUP, INC.",ALK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18580,0HCHl,Alexandria Real Estate Equities Inc,0001035443,"ALEXANDRIA REAL ESTATE EQUITIES, INC.",ARE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18582,0HCKl,Align Technology Inc,0001097149,ALIGN TECHNOLOGY INC,ALGN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18584,0HCTl,Alliant Energy Corp,0000352541,ALLIANT ENERGY CORP,LNT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18588,0HE2l,Ameren Corp,0001002910,AMEREN CORP,AEE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18590,0HECl,American Electric Power Co Inc,0000004904,AMERICAN ELECTRIC POWER CO INC,AEP,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18591,0HEWl,American Water Works Co Inc,0001410636,"American Water Works Company, Inc.",AWK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18592,0HF3l,Cencora Inc,0001140859,"Cencora, Inc.",COR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18593,0HF6l,Ameriprise Financial Inc,0000820027,AMERIPRISE FINANCIAL INC,AMP,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18595,0HF9l,Amicus Therapeutics Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18598,0HG8l,Elevance Health Inc,0001156039,"Elevance Health, Inc.",ELV,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18600,0HI1l,Arrow Electronics Inc,0000007536,"ARROW ELECTRONICS, INC.",ARW,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18602,0HIYl,Atara Biotherapeutics Inc,0001604464,"Atara Biotherapeutics, Inc.",ATRA,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18603,0HJLl,AutoZone Inc,0000866787,AUTOZONE INC,AZO,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18604,0HJOl,AvalonBay Communities Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18605,0HJRl,Avery Dennison Corp,0000008818,Avery Dennison Corp,AVY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18608,0HL5l,Ball Corp,0000009389,BALL Corp,BALL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18610,0HMSl,Bellicum Pharmaceuticals Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18614,0HOXl,BXP Inc,0001037540,"BXP, Inc.",BXP,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18617,0HQ3l,Brown-Forman Corp,0000014693,BROWN FORMAN CORP,BF-B,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18618,0HQPl,CBRE Group Inc,0001138118,"CBRE GROUP, INC.",CBRE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18619,0HQUl,CF Industries Holdings Inc,0001324404,"CF Industries Holdings, Inc.",CF,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18622,0HRJl,CSX Corp,0000277948,CSX CORP,CSX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18624,0HRZl,Coterra Energy Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18628,0HTGl,Cardinal Health Inc,0000721371,CARDINAL HEALTH INC,CAH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18632,0HVDl,Permian Resources Corp,0001658566,Permian Resources Corp,PR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18633,0HVFl,CenterPoint Energy Inc,0001130310,CENTERPOINT ENERGY INC,CNP,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18634,0HW4l,Charter Communications Inc,0001091667,"CHARTER COMMUNICATIONS, INC. /MO/",CHTR,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18637,0HYEl,Cincinnati Financial Corp,0000020286,CINCINNATI FINANCIAL CORP,CINF,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18639,0HYPl,Citizens Financial Group Inc,0000759944,CITIZENS FINANCIAL GROUP INC/RI,CFG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18642,0I2Pl,Conagra Brands Inc,0000023217,CONAGRA BRANDS INC.,CAG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18643,0I35l,Consolidated Edison Inc,0001047862,CONSOLIDATED EDISON INC,ED,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18646,0I4Al,Coty Inc,0001024305,COTY INC.,COTY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18651,0I6Ql,DTE Energy Co,0000936340,DTE ENERGY CO,DTE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18652,0I7El,DaVita Inc,0000927066,DAVITA INC.,DVA,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18653,0I8Fl,DENTSPLY SIRONA Inc,0000818479,DENTSPLY SIRONA Inc.,XRAY,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18656,0IC7l,Dollar General Corp,0000029534,DOLLAR GENERAL CORP,DG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18657,0IC8l,Dollar Tree Inc,0000935703,"DOLLAR TREE, INC.",DLTR,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18661,0IDRl,EOG Resources Inc,0000821189,EOG RESOURCES INC,EOG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18663,0IF3l,Eastman Chemical Co,0000915389,EASTMAN CHEMICAL CO,EMN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18664,0IF4l,Eastman Kodak Co,0000031235,EASTMAN KODAK CO,KODK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18666,0IFJl,Edison International,0000827052,EDISON INTERNATIONAL,EIX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18667,0IHPl,Entergy Corp,0000065984,ENTERGY CORP /DE/,ETR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18668,0II3l,Equifax Inc,0000033185,EQUIFAX INC,EFX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18671,0IIRl,Essex Property Trust Inc,0000920522,"ESSEX PROPERTY TRUST, INC.",ESS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18672,0IJ2l,Eversource Energy,0000072741,EVERSOURCE ENERGY,ES,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18674,0IJNl,Exelon Corp,0001109357,EXELON CORP,EXC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18675,0IJRl,Expeditors International of Washington Inc,0000746515,EXPEDITORS INTERNATIONAL OF WASHINGTON INC,EXPD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18676,0IJVl,Extra Space Storage Inc,0001289490,Extra Space Storage Inc.,EXR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18678,0IKWl,Fastenal Co,0000815556,FASTENAL CO,FAST,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18681,0ILWl,Fidelity National Information Services Inc,0001136893,"Fidelity National Information Services, Inc.",FIS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18683,0IP9l,Fiserv Inc,0000798354,FISERV INC,FISV,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18684,0IPBl,FirstEnergy Corp,0001031296,FIRSTENERGY CORP,FE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18686,0IQEl,Flowserve Corp,0000030625,FLOWSERVE CORP,FLS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18687,0IREl,Fortive Corp,0001659166,Fortive Corp,FTV,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18688,0IRNl,Fortune Brands Innovations Inc,0001519751,"Fortune Brands Innovations, Inc.",FBIN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18689,0ITLl,Arthur J Gallagher & Co,0000354190,Arthur J. Gallagher & Co.,AJG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18692,0IUCl,General Dynamics Corp,0000040533,GENERAL DYNAMICS CORP,GD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18693,0IUXl,Genuine Parts Co,0000040987,GENUINE PARTS CO,GPC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18699,0J1Rl,HCA Healthcare Inc,0000860730,"HCA Healthcare, Inc.",HCA,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18700,0J1Ul,Healthpeak Properties Inc,0000765880,"HEALTHPEAK PROPERTIES, INC.",DOC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18705,0J4Gl,Helmerich & Payne Inc,0000046765,"Helmerich & Payne, Inc.",HP,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18709,0J5Il,Hilton Worldwide Holdings Inc,0001585689,Hilton Worldwide Holdings Inc.,HLT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18710,0J5Ql,Hologic Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18711,0J5Zl,Hormel Foods Corp,0000048465,HORMEL FOODS CORP /DE/,HRL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18712,0J66l,Host Hotels & Resorts Inc,0001070750,"HOST HOTELS & RESORTS, INC.",HST,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18716,0J76l,Huntington Ingalls Industries Inc,0001501585,"HUNTINGTON INGALLS INDUSTRIES, INC.",HII,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18717,0J86l,IPG Photonics Corp,0001111928,IPG PHOTONICS CORP,IPGP,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18718,0J8Pl,IDEXX Laboratories Inc,0000874716,IDEXX LABORATORIES INC /DE,IDXX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18720,0J9Pl,Incyte Corp,0000879169,INCYTE CORP,INCY,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18721,0JC3l,Intercontinental Exchange Inc,0001571949,"Intercontinental Exchange, Inc.",ICE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18723,0JDMl,IQVIA Holdings Inc,0001478242,IQVIA HOLDINGS INC.,IQV,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18736,0JQRl,KeyCorp,0000091576,KEYCORP /NEW/,KEY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18739,0JRLl,Kohl's Corp,0000885639,KOHLS Corp,KSS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18742,0JSJl,LKQ Corp,0001065696,LKQ CORP,LKQ,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18743,0JT5l,Lam Research Corp,0000707549,LAM RESEARCH CORP,LRCX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18745,0JU0l,Lennar Corp,0000920760,LENNAR CORP /NEW/,LEN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18750,0JWCl,MGM Resorts International,0000789570,MGM Resorts International,MGM,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18752,0JXDl,Macy's Inc,0000794367,"Macy's, Inc.",M,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18754,0JYAl,Marathon Petroleum Corp,0001510295,Marathon Petroleum Corp,MPC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18756,0JZ0l,Martin Marietta Materials Inc,0000916076,MARTIN MARIETTA MATERIALS INC,MLM,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18757,0JZ1l,Masco Corp,0000062996,MASCO CORP /DE/,MAS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18758,0JZHl,Mattel Inc,0000063276,MATTEL INC /DE/,MAT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18760,0JZUl,McKesson Corp,0000927653,MCKESSON CORP,MCK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18762,0K10l,Mettler-Toledo International Inc,0001037646,METTLER TOLEDO INTERNATIONAL INC/,MTD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18764,0K1El,Mid-America Apartment Communities Inc,0000912595,MID AMERICA APARTMENT COMMUNITIES INC.,MAA,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18765,0K2Fl,Mohawk Industries Inc,0000851968,MOHAWK INDUSTRIES INC,MHK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18769,0K36l,Moody's Corp,0001059556,MOODYS CORP /DE/,MCO,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18771,0K3Hl,Motorola Solutions Inc,0000068505,"Motorola Solutions, Inc.",MSI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18772,0K4Cl,NRG Energy Inc,0001013871,"NRG ENERGY, INC.",NRG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18775,0K6Fl,NetApp Inc,0001002047,"NetApp, Inc.",NTAP,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18778,0K7Jl,Newell Brands Inc,0000814453,NEWELL BRANDS INC.,NWL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18783,0K87l,NiSource Inc,0001111711,NISOURCE INC.,NI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18784,0K8Ml,Norfolk Southern Corp,0000702165,NORFOLK SOUTHERN CORP,NSC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18786,0K9Ll,Nucor Corp,0000073309,NUCOR CORP,NUE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18787,0KABl,O'Reilly Automotive Inc,0000898173,O REILLY AUTOMOTIVE INC,ORLY,Nasdaq,squashed_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18789,0KBKl,Omnicom Group Inc,0000029989,OMNICOM GROUP INC.,OMC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18792,0KEIl,PPG Industries Inc,0000079879,PPG INDUSTRIES INC,PPG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18794,0KEQl,PVH Corp,0000078239,PVH CORP. /DE/,PVH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18795,0KETl,PACCAR Inc,0000075362,PACCAR INC,PCAR,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18797,0KGEl,Paychex Inc,0000723531,PAYCHEX INC,PAYX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18798,0KHEl,Revvity Inc,0000031791,"REVVITY, INC.",RVTY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18801,0KITl,Pinnacle West Capital Corp,0000764622,PINNACLE WEST CAPITAL CORP,PNW,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18802,0KNYl,T Rowe Price Group Inc,0001113169,PRICE T ROWE GROUP INC,TROW,Nasdaq,sorted_token_set,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18803,0KO5l,Principal Financial Group Inc,0001126328,PRINCIPAL FINANCIAL GROUP INC,PFG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18805,0KODl,Prologis Inc,0001045609,"Prologis, Inc.",PLD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18811,0KSJl,Qorvo Inc,0001604778,"Qorvo, Inc.",QRVO,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18816,0KU1l,Raymond James Financial Inc,0000720005,RAYMOND JAMES FINANCIAL INC,RJF,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18817,0KUEl,Realty Income Corp,0000726728,REALTY INCOME CORP,O,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18820,0KW1l,Republic Services Inc,0001060391,"REPUBLIC SERVICES, INC.",RSG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18822,0KX0l,Riot Platforms Inc,0001167419,"Riot Platforms, Inc.",RIOT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18825,0KXMl,Roper Technologies Inc,0000882835,ROPER TECHNOLOGIES INC,ROP,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18826,0KXOl,Ross Stores Inc,0000745732,"ROSS STORES, INC.",ROST,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18828,0KYZl,SBA Communications Corp,0001034054,SBA COMMUNICATIONS CORP,SBAC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18830,0KZAd,Amerant Bancorp Inc,0001734342,Amerant Bancorp Inc.,AMTB,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18835,0L4Fl,Sealed Air Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18841,0L5d,Lamb Weston Holdings Inc,0001679273,"Lamb Weston Holdings, Inc.",LW,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18843,0L7Al,A O Smith Corp,0000091142,SMITH A O CORP,AOS,NYSE,sorted_token_set,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18848,0L9El,Stanley Black & Decker Inc,0000093556,"STANLEY BLACK & DECKER, INC.",SWK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18853,0LC6l,Sysco Corp,0000096021,SYSCO CORP,SYY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18855,0LD5l,Tapestry Inc,0001116132,"TAPESTRY, INC.",TPR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18858,0LF0l,Textron Inc,0000217346,TEXTRON INC,TXT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18859,0LHRl,Tyson Foods Inc,0000100493,"TYSON FOODS, INC.",TSN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18862,0LIBl,Ulta Beauty Inc,0001403568,"Ulta Beauty, Inc.",ULTA,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18863,0LIKl,Under Armour Inc,0001336917,"Under Armour, Inc.",UAA,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18865,0LIYl,United Rentals Inc,0001067701,"UNITED RENTALS, INC.",URI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18869,0LJLl,Universal Health Services Inc,0000352915,UNIVERSAL HEALTH SERVICES INC,UHS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18874,0LOZl,VeriSign Inc,0001014473,VERISIGN INC/CA,VRSN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18879,0LRKl,Vulcan Materials Co,0001396009,Vulcan Materials CO,VMC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18882,0LTIl,Waters Corp,0001000697,WATERS CORP /DE/,WAT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18883,0LUSl,Welltower Inc,0000766704,WELLTOWER INC.,WELL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18885,0LWGl,Weyerhaeuser Co,0000106535,WEYERHAEUSER CO,WY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18886,0LWHl,Whirlpool Corp,0000106640,WHIRLPOOL CORP /DE/,WHR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18890,0M1Rl,Xcel Energy Inc,0000072903,XCEL ENERGY INC,XEL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18895,0M5d,BILL Holdings Inc,0001786352,"BILL Holdings, Inc.",BILL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18899,0NUd,Nutanix Inc,0001618732,"Nutanix, Inc.",NTNX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18900,0OALl,American International Group Inc,0000005272,"AMERICAN INTERNATIONAL GROUP, INC.",AIG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18906,0PYd,Paycom Software Inc,0001590955,"Paycom Software, Inc.",PAYC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18912,0Q3d,Beyond Meat Inc,0001655210,"BEYOND MEAT, INC.",BYND,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18925,0QYYl,Harley-Davidson Inc,0000793952,"HARLEY-DAVIDSON, INC.",HOG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18952,0R18l,Best Buy Co Inc,0000764478,BEST BUY CO INC,BBY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18954,0R1Dl,Sangamo Therapeutics Inc,0001001233,"SANGAMO THERAPEUTICS, INC",SGMOQ,OTC,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18959,0R1Tl,Expedia Group Inc,0001324424,"Expedia Group, Inc.",EXPE,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18970,0R2Ml,Regeneron Pharmaceuticals Inc,0000872589,"REGENERON PHARMACEUTICALS, INC.",REGN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18976,0R33l,Emerson Electric Co,0000032604,EMERSON ELECTRIC CO,EMR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18990,0SE0d,Sezzle Inc,0001662991,Sezzle Inc.,SEZL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U18993,0SGOl,Dropbox Inc,0001467623,"DROPBOX, INC.",DBX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19007,0V6d,Vistra Corp,0001692819,Vistra Corp.,VST,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19023,0Y9Sl,Check Point Software Technologies Ltd,0001015922,CHECK POINT SOFTWARE TECHNOLOGIES LTD,CHKP,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19026,0YUd,Yum China Holdings Inc,0001673358,"Yum China Holdings, Inc.",YUMC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19027,0ZCd,Zscaler Inc,0001713683,"Zscaler, Inc.",ZS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19028,0ZG2d,Zillow Group Inc,0001617640,"ZILLOW GROUP, INC.",ZG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19063,1170d,Arista Networks Inc,0001596532,"Arista Networks, Inc.",ANET,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19162,185d,Alcoa Corp,0001675149,Alcoa Corp,AA,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19189,19MWm,Marvell Technology Inc,0001835632,"Marvell Technology, Inc.",MRVL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19190,19Xd,Axsome Therapeutics Inc,0001579428,"Axsome Therapeutics, Inc.",AXSM,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19232,1AMTm,American Tower Corp,0001053507,AMERICAN TOWER CORP /MA/,AMT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19246,1ASTSm,AST SpaceMobile Inc,0001780312,"AST SpaceMobile, Inc.",ASTS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19254,1AVAVm,AeroVironment Inc,0001368622,AeroVironment Inc,AVAV,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19259,1AXONm,Axon Enterprise Inc,0001069183,"AXON ENTERPRISE, INC.",AXON,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19264,1B8d,Ondas Inc,0001646188,Ondas Inc.,ONDS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19267,1BAHm,Booz Allen Hamilton Holding Corp,0001443646,Booz Allen Hamilton Holding Corp,BAH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19279,1BIIBm,Biogen Inc,0000875045,BIOGEN INC.,BIIB,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19284,1BLDRm,Builders FirstSource Inc,0001316835,"Builders FirstSource, Inc.",BLDR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19286,1BMRNm,BioMarin Pharmaceutical Inc,0001048477,BIOMARIN PHARMACEUTICAL INC,BMRN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19296,1BROm,Brown & Brown Inc,0000079282,"BROWN & BROWN, INC.",BRO,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19303,1C3m,C3.ai Inc,0001577526,"C3.ai, Inc.",AI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19308,1CARRm,Carrier Global Corp,0001783180,CARRIER GLOBAL Corp,CARR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19313,1CDEm,Coeur Mining Inc,0000215466,"Coeur Mining, Inc.",CDE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19316,1CEGm,Constellation Energy Corp,0001868275,Constellation Energy Corp,CEG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19336,1CPRTm,Copart Inc,0000900075,COPART INC,CPRT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19338,1CROXm,Crocs Inc,0001334036,"Crocs, Inc.",CROX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19339,1CRWDm,Crowdstrike Holdings Inc,0001535527,"CrowdStrike Holdings, Inc.",CRWD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19342,1CSGPm,CoStar Group Inc,0001057352,"COSTAR GROUP, INC.",CSGP,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19344,1CVNAm,Carvana Co,0001690820,CARVANA CO.,CVNA,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19347,1CYTHm,Lumen Technologies Inc,0000018926,"Lumen Technologies, Inc.",LUMN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19350,1DASHm,DoorDash Inc,0001792789,"DoorDash, Inc.",DASH,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19353,1DECKm,Deckers Outdoor Corp,0000910521,DECKERS OUTDOOR CORP,DECK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19366,1DPZm,Domino's Pizza Inc,0001286681,DOMINOS PIZZA INC,DPZ,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19374,1DXCMm,Dexcom Inc,0001093557,DEXCOM INC,DXCM,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19390,1EMEm,EMCOR Group Inc,0000105634,"EMCOR Group, Inc.",EME,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19394,1ENPHm,Enphase Energy Inc,0001463101,"Enphase Energy, Inc.",ENPH,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19396,1ENVXm,Enovix Corp,0001828318,Enovix Corp,ENVX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19398,1EPAMm,EPAM Systems Inc,0001352010,"EPAM Systems, Inc.",EPAM,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19406,1ETSYm,Etsy Inc,0001370637,ETSY INC,ETSY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19419,1FAd,Sprouts Farmers Market Inc,0001575515,"Sprouts Farmers Market, Inc.",SFM,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19424,1FICOm,Fair Isaac Corp,0000814547,FAIR ISAAC CORP,FICO,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19426,1FIXm,Comfort Systems USA Inc,0001035983,COMFORT SYSTEMS USA INC,FIX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19436,1FTNTm,Fortinet Inc,0001262039,"Fortinet, Inc.",FTNT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19444,1GEHCm,GE HealthCare Technologies Inc,0001932393,GE HealthCare Technologies Inc.,GEHC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19446,1GEVm,GE Vernova Inc,0001996810,GE Vernova Inc.,GEV,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19457,1GQd,Liberty All-Star Equity Fund,0000799195,LIBERTY ALL STAR EQUITY FUND,USA,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19481,1HLm,Hecla Mining Co,0000719413,HECLA MINING CO/DE/,HL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19497,1HUTm,Hut 8 Corp,0001964789,Hut 8 Corp.,HUT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19498,1HWMm,Howmet Aerospace Inc,0000004281,Howmet Aerospace Inc.,HWM,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19502,1IBKRm,Interactive Brokers Group Inc,0001381197,"Interactive Brokers Group, Inc.",IBKR,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19508,1ILMNm,Illumina Inc,0001110803,"ILLUMINA, INC.",ILMN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19513,1INODm,Innodata Inc,0000903651,INNODATA INC,INOD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19519,1ISRGm,Intuitive Surgical Inc,0001035267,INTUITIVE SURGICAL INC,ISRG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19522,1JBLm,Jabil Inc,0000898293,JABIL INC,JBL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19527,1JQd,BlackRock Enhanced Global Dividend Trust,0001320375,BlackRock Enhanced Global Dividend Trust,BOE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19531,1KDPm,Keurig Dr Pepper Inc,0001418135,Keurig Dr Pepper Inc.,KDP,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19535,1KFd,Pimco Dynamic Income Fund,0001510599,PIMCO Dynamic Income Fund,PDI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19552,1LCIDm,Lucid Group Inc,0001811210,"Lucid Group, Inc.",LCID,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19553,1LDOSm,Leidos Holdings Inc,0001336920,"Leidos Holdings, Inc.",LDOS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19559,1LITEm,Lumentum Holdings Inc,0001633978,Lumentum Holdings Inc.,LITE,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19561,1LNGm,Cheniere Energy Inc,0000003570,"Cheniere Energy, Inc.",LNG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19581,1MDBm,MongoDB Inc,0001441816,"MongoDB, Inc.",MDB,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19591,1MPWRm,Monolithic Power Systems Inc,0001280452,"MONOLITHIC POWER SYSTEMS, INC.",MPWR,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19592,1MPm,MP Materials Corp,0001801368,MP Materials Corp. / DE,MP,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19608,1NBIXm,Neurocrine Biosciences Inc,0000914475,NEUROCRINE BIOSCIENCES INC,NBIX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19633,1OGNm,Organon & Co,0001821825,Organon & Co.,OGN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19656,1PLLm,Planet Labs PBC,0001836833,Planet Labs PBC,PL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19665,1PSTGm,Everpure Inc,0001474432,"Everpure, Inc.",P,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19672,1QBTSm,D-Wave Quantum Inc,0001907982,D-Wave Quantum Inc.,QBTS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19679,1RDDTm,Reddit Inc,0001713445,"Reddit, Inc.",RDDT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19685,1RKLBm,Rocket Lab Corp,0001819994,Rocket Lab Corp,RKLB,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19686,1RMBSm,Rambus Inc,0000917273,RAMBUS INC,RMBS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19688,1ROKUm,Roku Inc,0001428439,"ROKU, INC",ROKU,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19734,1SOFIm,SoFi Technologies Inc,0001818874,"SoFi Technologies, Inc.",SOFI,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19742,1SRPTm,Sarepta Therapeutics Inc,0000873303,"Sarepta Therapeutics, Inc.",SRPT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19752,1SWKSm,Skyworks Solutions Inc,0000004127,"SKYWORKS SOLUTIONS, INC.",SWKS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19770,1TEMm,Tempus AI Inc,0001717115,"Tempus AI, Inc.",TEM,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19778,1TMDXm,TransMedics Group Inc,0001756262,"TransMedics Group, Inc.",TMDX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19785,1TRMBm,Trimble Inc,0000864749,TRIMBLE INC.,TRMB,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19801,1UC0d,Cue Biopharma Inc,0001645460,"Cue Biopharma, Inc.",CUE,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19805,1UNPm,Union Pacific Corp,0000100885,UNION PACIFIC CORP,UNP,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19807,1UPSTm,Upstart Holdings Inc,0001647639,"Upstart Holdings, Inc.",UPST,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19814,1VEEVm,Veeva Systems Inc,0001393052,VEEVA SYSTEMS INC,VEEV,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19821,1VKTXm,Viking Therapeutics Inc,0001607678,"Viking Therapeutics, Inc.",VKTX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19831,1VRTm,Vertiv Holdings Co,0001674101,Vertiv Holdings Co,VRT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19931,26CAd,ImmunityBio Inc,0001326110,"ImmunityBio, Inc.",IBRX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19979,2H51d,Ocugen Inc,0001372299,"Ocugen, Inc.",OCGN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19991,2ONd,Peloton Interactive Inc,0001639825,"PELOTON INTERACTIVE, INC.",PTON,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U19993,2RJAd,Phunware Inc,0001665300,"Phunware, Inc.",PHUN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20001,2X0d,Corteva Inc,0001755672,"Corteva, Inc.",CTVA,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20003,2XTd,DXC Technology Co,0001688568,DXC Technology Co,DXC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20087,38Id,Intellia Therapeutics Inc,0001652130,"Intellia Therapeutics, Inc.",NTLA,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20098,3988n,Bank of China Ltd,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20125,3E7d,Evergy Inc,0001711269,"Evergy, Inc.",EVRG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20161,3LNd,Live Nation Entertainment Inc,0001335258,"Live Nation Entertainment, Inc.",LYV,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20188,3S9d,Sunrun Inc,0001469367,Sunrun Inc.,RUN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20217,3U6d,UGI Corp,0000884614,UGI CORP /PA/,UGI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20240,45Td,IES Holdings Inc,0001048268,"IES Holdings, Inc.",IESC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20273,4CC0d,ClearSign Technologies Corp,0001434524,ClearSign Technologies Corp,CLIR,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20274,4CUd,Centrus Energy Corp,0001065059,CENTRUS ENERGY CORP,LEU,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20277,4DNd,Denali Therapeutics Inc,0001714899,Denali Therapeutics Inc.,DNLI,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20282,4LLd,Teladoc Health Inc,0001477449,"Teladoc Health, Inc.",TDOC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20283,4MDd,Digital Turbine Inc,0000317788,"Digital Turbine, Inc.",APPS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20285,4PGd,Otis Worldwide Corp,0001781335,Otis Worldwide Corp,OTIS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20302,4VKd,Aon PLC,0000315293,Aon plc,AON,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20356,5GHd,Guardant Health Inc,0001576280,"Guardant Health, Inc.",GH,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20373,5QZ0d,QuantumScape Corp,0001811414,QuantumScape Corp,QS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20400,63Gd,Paramount Skydance Corp,0002041610,Paramount Skydance Corp,PSKY,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20445,6D8d,DuPont de Nemours Inc,0001666700,"DuPont de Nemours, Inc.",DD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20447,6HAd,HA Sustainable Infrastructure Capital Inc,0001561894,"HA Sustainable Infrastructure Capital, Inc.",HASI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20497,76Wd,H2O America,0000766829,H2O AMERICA,HTO,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20501,788d,Coupang Inc,0001834584,"Coupang, Inc.",CPNG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20509,7B0d,SentinelOne Inc,0001583708,"SentinelOne, Inc.",S,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20514,7JAd,Butterfly Network Inc,0001804176,"Butterfly Network, Inc.",BFLY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20522,7XUd,Kyndryl Holdings Inc,0001867072,"Kyndryl Holdings, Inc.",KD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20525,8020d,Hillman Solutions Corp,0001822492,Hillman Solutions Corp.,HLMN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20543,82Wd,Hims & Hers Health Inc,0001773751,"Hims & Hers Health, Inc.",HIMS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20570,87Pd,SharonAI Holdings Inc,0002068385,SharonAI Holdings Inc.,SHAZ,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20585,8LL0d,374Water Inc,0000933972,374Water Inc.,SCWO,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20587,8QJ0d,Marqeta Inc,0001522540,"Marqeta, Inc.",MQ,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20649,9MKd,Keel Infrastructure Corp,0001812477,Keel Infrastructure Corp.,KEEL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20655,9WYd,Texas Pacific Land Corp,0001811074,Texas Pacific Land Corp,TPL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20684,AAOIn,Applied Optoelectronics Inc,0001158114,"APPLIED OPTOELECTRONICS, INC.",AAOI,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20728,ACADn,ACADIA Pharmaceuticals Inc,0001070494,ACADIA PHARMACEUTICALS INC,ACAD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20743,ACHCn,Acadia Healthcare Co Inc,0001520697,"Acadia Healthcare Company, Inc.",ACHC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20896,AGIOn,Agios Pharmaceuticals Inc,0001439222,"AGIOS PHARMACEUTICALS, INC.",AGIO,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20906,AGTd,AptarGroup Inc,0000896622,"APTARGROUP, INC.",ATR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20910,AH91d,AMC Entertainment Holdings Inc,0001411579,"AMC ENTERTAINMENT HOLDINGS, INC.",AMC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20939,AIMTn,Aimmune Therapeutics Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20956,AIVd,Apartment Investment and Management Co,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U20979,AKRXn,Akorn Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21131,ALLYn,Ally Financial Inc,0000040729,Ally Financial Inc.,ALLY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21301,AMAGn,AMAG Pharmaceuticals Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21324,AMKRn,Amkor Technology Inc,0001047127,"AMKOR TECHNOLOGY, INC.",AMKR,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21329,AMS1d,American Superconductor Corp,0000880807,AMERICAN SUPERCONDUCTOR CORP /DE/,AMSC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21394,AOTIl,AOTI Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21439,ARMOn,ARMO BioSciences Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21521,ATHNn,athenahealth Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21543,ATVIn,Activision Blizzard Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21561,AVAn,Avista Corp,0000104918,AVISTA CORP,AVA,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21649,B72d,AtaiBeckley Inc,0002081043,AtaiBeckley Inc.,ATAI,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21697,BAXn,Baxter International Inc,0000010456,BAXTER INTERNATIONAL INC,BAX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21751,BDCn,Belden Inc,0000913142,BELDEN INC.,BDC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21792,BICd,BTCS Inc,0001436229,BTCS Inc.,BTCS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21835,BIVVn,Bioverativ Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21852,BJn,BJ's Wholesale Club Holdings Inc,0001531152,"BJ's Wholesale Club Holdings, Inc.",BJ,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21853,BKDn,Brookdale Senior Living Inc,0001332349,Brookdale Senior Living Inc.,BKD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21892,BMCHn,BMC Stock Holdings Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21930,BOJAn,Bojangles' Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U21932,BOKUl,Boku Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22025,BRXn,Brixmor Property Group Inc,0001581068,Brixmor Property Group Inc.,BRX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22058,BTJn,Atmos Energy Corp,0000731802,ATMOS ENERGY CORP,ATO,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22148,CA8Ad,CACI International Inc,0000016058,CACI INTERNATIONAL INC /DE/,CACI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22158,CALn,Caleres Inc,0000014707,CALERES INC,CAL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22192,CAVMn,Cavium Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22260,CCEn,Coca-Cola Enterprises Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22283,CDLXn,Cardlytics Inc,0001666071,"Cardlytics, Inc.",CDLX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22325,CENXn,Century Aluminum Co,0000949157,CENTURY ALUMINUM CO,CENX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22364,CGNXn,Cognex Corp,0000851205,COGNEX CORP,CGNX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22373,CHGGn,Chegg Inc,0001364954,"CHEGG, INC",CHGG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22414,CIRn,CIRCOR International Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22432,CLBn,Core Laboratories NV,0001958086,Core Laboratories Inc. /DE/,CLB,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22435,CLDXn,Celldex Therapeutics Inc,0000744218,"Celldex Therapeutics, Inc.",CLDX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22464,CLOVRn,Clover Health Investments Corp,0001801170,"CLOVER HEALTH INVESTMENTS, CORP. /DE",CLOV,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22470,CLVSn,Clovis Oncology Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22515,CNKn,Cinemark Holdings Inc,0001385280,"Cinemark Holdings, Inc.",CNK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22517,CNMDn,CONMED Corp,0000816956,CONMED Corp,CNMD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22597,COZd,Cognizant Technology Solutions Corp,0001058290,COGNIZANT TECHNOLOGY SOLUTIONS CORP,CTSH,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22612,CPTn,Camden Property Trust,0000906345,CAMDEN PROPERTY TRUST,CPT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22654,CRZOn,Carrizo Oil & Gas Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22655,CS1d,Expand Energy Corp,0000895126,EXPAND ENERGY Corp,EXE,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22732,CWHn,Camping World Holdings Inc,0001669779,"Camping World Holdings, Inc.",CWH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22826,DCPHn,Deciphera Pharmaceuticals Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22836,DDNd,Darden Restaurants Inc,0000940944,DARDEN RESTAURANTS INC,DRI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U22869,DEVOl,Devolver Digital Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23030,DOCUn,DocuSign Inc,0001261333,"DOCUSIGN, INC.",DOCU,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23061,DRHn,DiamondRock Hospitality Co,0001298946,DiamondRock Hospitality Co,DRH,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23156,E050d,Easterly Government Properties Inc,0001622194,"Easterly Government Properties, Inc.",DEA,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23170,E7Pd,Indivior Pharmaceuticals Inc,0001625297,"Indivior Pharmaceuticals, Inc.",INDV,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23180,EAFn,GrafTech International Ltd,0000931148,GRAFTECH INTERNATIONAL LTD,EAF,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23279,EFIIn,Electronics For Imaging Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23314,EI2d,Erie Indemnity Co,0000922621,ERIE INDEMNITY CO,ERIE,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23379,ELSn,Equity LifeStyle Properties Inc,0000895417,EQUITY LIFESTYLE PROPERTIES INC,ELS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23504,ENRn,Energizer Holdings Inc,0001632790,"ENERGIZER HOLDINGS, INC.",ENR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23526,EOLSn,Evolus Inc,0001570562,"Evolus, Inc.",EOLS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23552,ER4d,Emergent BioSolutions Inc,0001367644,Emergent BioSolutions Inc.,EBS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23642,ESRTn,Empire State Realty Trust Inc,0001541401,"Empire State Realty Trust, Inc.",ESRT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23649,ET9d,Circle Internet Group Inc,0001876042,"Circle Internet Group, Inc.",CRCL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23825,EXELn,Exelixis Inc,0000939767,"EXELIXIS, INC.",EXEL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23845,EYEn,National Vision Holdings Inc,0001710155,"National Vision Holdings, Inc.",EYE,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23854,F9Qd,Eos Energy Enterprises Inc,0001805077,"Eos Energy Enterprises, Inc.",EOSE,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23856,FA1d,FactSet Research Systems Inc,0001013237,FACTSET RESEARCH SYSTEMS INC,FDS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23910,FDXHv,Fedex Freight Holding Co Inc,0002082247,"FedEx Freight Holding Company, Inc.",FDXF,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U23988,FIVEBn,Five Below Inc,0001177609,"FIVE BELOW, INC",FIVE,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24010,FLEXQs,Flexqube AB,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24124,FRMIl,Fermi Inc,0002071778,Fermi Inc.,FRMI,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24141,FS5Ad,FS KKR Capital Corp,0001422183,FS KKR Capital Corp,FSK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24155,FSLYRn,Fastly Inc,0001517413,"Fastly, Inc.",FSLY,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24233,G84d,Generac Holdings Inc,0001474735,GENERAC HOLDINGS INC.,GNRC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24269,GBTn,Global Blood Therapeutics Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24288,GDDYn,GoDaddy Inc,0001609711,GoDaddy Inc.,GDDY,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24419,GLUUn,Glu Mobile Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24444,GNWn,Genworth Financial Inc,0001276520,GENWORTH FINANCIAL INC,GNW,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24457,GOGOn,Gogo Inc,0001537054,Gogo Inc.,GOGO,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24487,GOVd,Insulet Corp,0001145197,INSULET CORP,PODD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24496,GPROn,GoPro Inc,0001500435,"GoPro, Inc.",GPRO,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24527,GRPNn,Groupon Inc,0001490281,"Groupon, Inc.",GRPN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24531,GRUBn,GrubHub Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24652,HALOn,Halozyme Therapeutics Inc,0001159036,"HALOZYME THERAPEUTICS, INC.",HALO,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24660,HAWKn,Blackhawk Network Holdings Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24663,HAn,Hawaiian Holdings Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24678,HCCn,Warrior Met Coal Inc,0001691303,"WARRIOR MET COAL, INC.",HCC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24685,HCSGn,Healthcare Services Group Inc,0000731012,HEALTHCARE SERVICES GROUP INC,HCSG,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24699,HDPn,Hortonworks Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24762,HGVn,Hilton Grand Vacations Inc,0001674168,Hilton Grand Vacations Inc.,HGV,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24820,HMSYn,HMS Holdings Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24870,HQYn,HealthEquity Inc,0001428336,"HEALTHEQUITY, INC.",HQY,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24898,HSOAd,Encompass Health Corp,0000785161,Encompass Health Corp,EHC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24931,HUNn,Huntsman Corp,0001307954,Huntsman CORP,HUN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24953,HXLn,Hexcel Corp,0000717605,HEXCEL CORP /DE/,HXL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24981,I1Vd,CoreWeave Inc,0001769628,"CoreWeave, Inc.",CRWV,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U24997,IARTn,Integra LifeSciences Holdings Corp,0000917520,INTEGRA LIFESCIENCES HOLDINGS CORP,IART,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25032,ICFIn,ICF International Inc,0001362004,"ICF International, Inc.",ICFI,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25038,ICONn,Iconix Brand Group Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25054,ID7d,IDEX Corp,0000832101,IDEX CORP /DE/,IEX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25098,IFFn,International Flavors & Fragrances Inc,0000051253,INTERNATIONAL FLAVORS & FRAGRANCES INC,IFF,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25140,IGTn,International Game Technology PLC,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25162,ILPTn,Industrial Logistics Properties Trust,0001717307,Industrial Logistics Properties Trust,ILPT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25178,IMMUn,Immunomedics Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25212,INFNn,Infinera Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25254,INVAn,Innoviva Inc,0001080014,"Innoviva, Inc.",INVA,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25255,INVHn,Invitation Homes Inc,0001687229,Invitation Homes Inc.,INVH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25262,IONSn,Ionis Pharmaceuticals Inc,0000874015,IONIS PHARMACEUTICALS INC,IONS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25264,IOVAn,Iovance Biotherapeutics Inc,0001425205,"IOVANCE BIOTHERAPEUTICS, INC.",IOVA,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25307,IRWDn,Ironwood Pharmaceuticals Inc,0001446847,IRONWOOD PHARMACEUTICALS INC,IRWD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25350,ITH0d,Nektar Therapeutics,0000906709,NEKTAR THERAPEUTICS,NKTR,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25352,ITRIn,Itron Inc,0000780571,"ITRON, INC.",ITRI,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25435,J4Dd,Kenvue Inc,0001944048,Kenvue Inc.,KVUE,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25437,JACKn,Jack in the Box Inc,0000807882,JACK IN THE BOX INC,JACK,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25449,JBLUn,JetBlue Airways Corp,0001158463,JETBLUE AIRWAYS CORP,JBLU,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25471,JEFn,Jefferies Financial Group Inc,0000096223,Jefferies Financial Group Inc.,JEF,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25515,JHYd,Jack Henry & Associates Inc,0000779152,JACK HENRY & ASSOCIATES INC,JKHY,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25706,KB7d,Solventum Corp,0001964738,Solventum Corp,SOLV,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25738,KEYSn,Keysight Technologies Inc,0001601046,"Keysight Technologies, Inc.",KEYS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25773,KLXIn,KLX Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25817,KPTIn,Karyopharm Therapeutics Inc,0001503802,Karyopharm Therapeutics Inc.,KPTI,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25850,KTWOn,K2M Group Holdings Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25911,LCn,LendingClub Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25927,LE0d,Lemonade Inc,0001691421,"Lemonade, Inc.",LMND,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25977,LHVd,ExlService Holdings Inc,0001297989,"ExlService Holdings, Inc.",EXLS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U25979,LIIn,Lennox International Inc,0001069202,LENNOX INTERNATIONAL INC,LII,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26020,LNTHn,Lantheus Holdings Inc,0001521036,"Lantheus Holdings, Inc.",LNTH,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26045,LPXn,Louisiana-Pacific Corp,0000060519,LOUISIANA-PACIFIC CORP,LPX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26101,LVSn,Las Vegas Sands Corp,0001300514,LAS VEGAS SANDS CORP,LVS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26113,LY0d,Lyft Inc,0001759509,"Lyft, Inc.",LYFT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26272,MEDPn,Medpace Holdings Inc,0001668397,"Medpace Holdings, Inc.",MEDP,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26329,MHGd,Molina Healthcare Inc,0001179929,"MOLINA HEALTHCARE, INC.",MOH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26406,MMFd,Modine Manufacturing Co,0000067347,MODINE MANUFACTURING CO,MOD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26422,MNKDn,MannKind Corp,0000899460,MANNKIND CORP,MNKD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26472,MPWn,Medical Properties Trust Inc,0001287865,MEDICAL PROPERTIES TRUST INC,MPT,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26477,MRCYn,Mercury Systems Inc,0001049521,MERCURY SYSTEMS INC,MRCY,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26526,MTDRn,Matador Resources Co,0001520006,Matador Resources Co,MTDR,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26529,MTGn,MGIC Investment Corp,0000876437,MGIC INVESTMENT CORP,MTG,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26579,MWId,MarketAxess Holdings Inc,0001278021,MARKETAXESS HOLDINGS INC,MKTX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26610,MYOKn,MyoKardia Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26612,MYXl,Mycelx Technologies Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26667,ND1d,Nordson Corp,0000072331,NORDSON CORP,NDSN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26743,NKB2d,TG Therapeutics Inc,0001001316,"TG THERAPEUTICS, INC.",TGTX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26818,NTCn,Netcare Ltd,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26838,NUSn,Nu Skin Enterprises Inc,0001021561,"NU SKIN ENTERPRISES, INC.",NUS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26842,NVAXn,Novavax Inc,0001000694,NOVAVAX INC,NVAX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26852,NVROn,Nevro Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26853,NVTAn,Invitae Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26870,NXSTn,Nexstar Media Group Inc,0001142417,"NEXSTAR MEDIA GROUP, INC.",NXST,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26904,OCLRn,Oclaro Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26905,OCSLn,Oaktree Specialty Lending Corp,0001414932,Oaktree Specialty Lending Corp,OCSL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26922,ODFd,Old Dominion Freight Line Inc,0000878927,"OLD DOMINION FREIGHT LINE, INC.",ODFL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26935,OGLd,Golub Capital BDC Inc,0001476765,"GOLUB CAPITAL BDC, Inc.",GBDC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26940,OHIn,Omega Healthcare Investors Inc,0000888491,OMEGA HEALTHCARE INVESTORS INC,OHI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26948,OISn,Oil States International Inc,0001121484,"OIL STATES INTERNATIONAL, INC",OIS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26949,OIn,Owens-Illinois Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26961,OMFn,OneMain Holdings Inc,0001584207,"OneMain Holdings, Inc.",OMF,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26967,ONCEn,Spark Therapeutics Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26990,OPKn,OPKO Health Inc,0000944809,"OPKO HEALTH, INC.",OPK,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U26999,ORBCn,ORBCOMM Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27027,OSURn,OraSure Technologies Inc,0001116463,ORASURE TECHNOLOGIES INC,OSUR,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27064,PACBn,Pacific Biosciences of California Inc,0001299130,"PACIFIC BIOSCIENCES OF CALIFORNIA, INC.",PACB,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27097,PBEd,Peabody Energy Corp,0001064728,PEABODY ENERGY CORP,BTU,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27100,PBIn,Pitney Bowes Inc,0000078814,PITNEY BOWES INC /DE/,PBI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27115,PCHn,PotlatchDeltic Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27123,PCUd,Southern Copper Corp,0001001838,SOUTHERN COPPER CORP/,SCCO,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27160,PETSn,PetMed Express Inc,0001040130,PETMED EXPRESS INC,PETS,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27161,PETXn,Aratana Therapeutics Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27170,PFPTn,Proofpoint Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27175,PGEJFn,Petroleum Geo-Services ASA,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27183,PGTIn,PGT Innovations Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27209,PINCn,Premier Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27216,PIn,Impinj Inc,0001114995,IMPINJ INC,PI,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27287,PPBIn,Pacific Premier Bancorp Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27292,PPHCl,Public Policy Holding Co Inc,0001903508,"Public Policy Holding Company, Inc.",PPHC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27301,PQIAd,RadNet Inc,0000790526,"RadNet, Inc.",RDNT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27367,PSMTn,PriceSmart Inc,0001041803,PRICESMART INC,PSMT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27369,PSNn,Parsons Corp,0000275880,PARSONS CORP,PSN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27373,PSRAd,CoreCivic Inc,0001070985,"CoreCivic, Inc.",CXW,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27382,PTENn,Patterson-UTI Energy Inc,0000889900,PATTERSON UTI ENERGY INC,PTEN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27402,PUMPn,ProPetro Holding Corp,0001680247,ProPetro Holding Corp.,PUMP,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27408,PW2d,Powell Industries Inc,0000080420,POWELL INDUSTRIES INC,POWL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27454,QH9d,ADTRAN Holdings Inc,0000926282,"ADTRAN Holdings, Inc.",ADTN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27497,R3Qd,REC Silicon ASA,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27507,RADn,Rite Aid Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27513,RAMPn,LiveRamp Holdings Inc,0000733269,"LiveRamp Holdings, Inc.",RAMP,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27521,RBBNn,Ribbon Communications Inc,0001708055,Ribbon Communications Inc.,RBBN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27527,RBRKn,Rubrik Inc,0001943896,"Rubrik, Inc.",RBRK,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27545,RDNn,Radian Group Inc,0000890926,RADIAN GROUP INC,RDN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27660,RO7d,ROBLOX Corp,0001315098,Roblox Corp,RBLX,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27675,ROLn,Rollins Inc,0000084839,ROLLINS INC,ROL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27685,RPDn,Rapid7 Inc,0001560327,"Rapid7, Inc.",RPD,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27690,RPMn,RPM International Inc,0000110621,RPM INTERNATIONAL INC/DE/,RPM,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27722,RV6d,Charles River Laboratories International Inc,0001100682,"CHARLES RIVER LABORATORIES INTERNATIONAL, INC.",CRL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27735,RYNn,Rayonier Inc,0000052827,RAYONIER INC,RYN,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27738,RZ2d,Veralto Corp,0001967680,Veralto Corp,VLTO,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27819,SBGIn,Sinclair Broadcast Group Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27880,SCSCn,ScanSource Inc,0000918965,"SCANSOURCE, INC.",SCSC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U27931,SEASn,SeaWorld Entertainment Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28005,SFWd,Capital Southwest Corp,0000017313,CAPITAL SOUTHWEST CORP,CSWC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28015,SGMSn,Scientific Games Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28109,SLABn,Silicon Laboratories Inc,0001038074,SILICON LABORATORIES INC.,SLAB,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28112,SLCAn,US Silica Holdings Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28227,SOMl,Somero Enterprises Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28314,SPPIn,Spectrum Pharmaceuticals Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28442,STWDn,Starwood Property Trust Inc,0001465128,"STARWOOD PROPERTY TRUST, INC.",STWD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28457,SUIn,Sun Communities Inc,0000912593,SUN COMMUNITIES INC,SUI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28464,SUMn,Summit Materials Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28475,SUPNn,Supernus Pharmaceuticals Inc,0001356576,"SUPERNUS PHARMACEUTICALS, INC.",SUPN,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28479,SURFn,Surface Oncology Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28517,SWNn,Southwestern Energy Co,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28581,SYNHn,Syneos Health Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28600,T8Zd,Waystar Holding Corp,0001990354,Waystar Holding Corp.,WAY,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28615,TARd,Targa Resources Corp,0001389170,Targa Resources Corp.,TRGP,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28628,TBLDl,Tinybuild Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28655,TE1d,Bio-Techne Corp,0000842023,BIO-TECHNE Corp,TECH,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28710,THSn,TreeHouse Foods Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28752,TLKd,Toll Brothers Inc,0000794170,"Toll Brothers, Inc.",TOL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28758,TLRYn,Tilray Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28823,TR4d,Tractor Supply Co,0000916365,TRACTOR SUPPLY CO /DE/,TSCO,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28878,TRUEn,TrueCar Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28879,TRUUn,TransUnion,0001552033,TransUnion,TRU,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28935,TUSKn,Mammoth Energy Services Inc,0001679268,"MAMMOTH ENERGY SERVICES, INC.",TUSK,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28941,TWHd,Twilio Inc,0001447669,TWILIO INC,TWLO,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U28950,TYPd,Tyler Technologies Inc,0000860731,TYLER TECHNOLOGIES INC,TYL,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29146,UPWKn,Upwork Inc,0001627475,"UPWORK, INC",UPWK,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29191,USFDn,US Foods Holding Corp,0001665918,US Foods Holding Corp.,USFD,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29381,VIACRn,Paramount Global,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29383,VIAVn,Viavi Solutions Inc,0000912093,VIAVI SOLUTIONS INC.,VIAV,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29384,VICIn,VICI Properties Inc,0001705696,VICI PROPERTIES INC.,VICI,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29470,VREXn,Varex Imaging Corp,0001681622,Varex Imaging Corp,VREX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29479,VSATn,ViaSat Inc,0000797721,VIASAT INC,VSAT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29487,VSHn,Vishay Intertechnology Inc,0000103730,VISHAY INTERTECHNOLOGY INC,VSH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29533,W1Xd,Wix.com Ltd,0001576789,Wix.com Ltd.,WIX,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29677,WMGIn,Wright Medical Group NV,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29680,WMSn,Advanced Drainage Systems Inc,0001604028,"ADVANCED DRAINAGE SYSTEMS, INC.",WMS,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29683,WNCn,Wabash National Corp,0000879526,WABASH NATIONAL Corp,WNC,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29708,WOWn,WideOpenWest Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29719,WPSd,West Pharmaceutical Services Inc,0000105770,WEST PHARMACEUTICAL SERVICES INC,WST,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29737,WS11d,WillScot Holdings Corp,0001647088,WillScot Holdings Corp,WSC,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29807,X06d,Versant Media Group Inc,0002067876,"Versant Media Group, Inc.",VSNT,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U29924,XENTn,Intersect ENT Inc,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U30227,Xn,United States Steel Corp,,,,,,unresolved,no_exact_normalized_name_match,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U30228,Y1Fd,First American Financial Corp,0001472787,First American Financial Corp,FAF,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U30237,YDO1d,Madrigal Pharmaceuticals Inc,0001157601,"MADRIGAL PHARMACEUTICALS, INC.",MDGL,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U30291,ZBRAn,Zebra Technologies Corp,0000877212,ZEBRA TECHNOLOGIES CORP,ZBRA,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U30303,ZGV3d,Gevo Inc,0001392380,"Gevo, Inc.",GEVO,Nasdaq,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00
+U30305,ZIMd,Zimmer Biomet Holdings Inc,0001136869,"ZIMMER BIOMET HOLDINGS, INC.",ZBH,NYSE,exact_normalized_name,resolved,,v2.38BI-us-cboe-secondary-identity-sec,2026-09-07T21:56:23+00:00

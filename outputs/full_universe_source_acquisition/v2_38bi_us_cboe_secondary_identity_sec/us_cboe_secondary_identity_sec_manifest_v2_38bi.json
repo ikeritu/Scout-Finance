@@ -1,0 +1,18 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_modified": false,
+    "recommendations_generated": false,
+    "scoring_modified": false
+  },
+  "outputs": {
+    "us_cboe_secondary_identity_sec_v2_38bi.csv": {
+      "bytes": 106042,
+      "sha256": "889a83d0527fa6f5ce878a58eb0de433b619f1f772f450d5c32d7cb91e83aae1"
+    }
+  },
+  "phase": "v2.38BI-us-cboe-secondary-identity-sec"
+}

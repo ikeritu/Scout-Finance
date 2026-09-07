@@ -98,7 +98,13 @@ outputs/full_universe_source_acquisition/v2_38d_us_sec_foundation/sec_raw_cache_
 # Local Phase 9E SEC raw cache
 outputs/full_universe_source_acquisition/v2_38e_us_sec_enrichment_expansion/sec_raw_cache_v2_38e/
 
+# Local Phase 9BJ SEC raw cache (US Cboe secondary candidates)
+outputs/full_universe_source_acquisition/v2_38bj_us_cboe_secondary_sec_enrichment/sec_raw_cache_v2_38bj/
+
 outputs/full_universe_source_acquisition/v2_38f_us_sec_fundamental_normalization/us_sec_fundamental_records_v2_38f.jsonl
+
+# Local Phase 9BK raw normalized fundamental records (large, same convention as v2.38F's)
+outputs/full_universe_source_acquisition/v2_38bk_us_cboe_secondary_sec_fundamentals/us_cboe_secondary_sec_fundamental_records_v2_38bk.jsonl
 
 # Local Phase 9I US raw price history
 outputs/full_universe_source_acquisition/v2_38i_us_price_history_acquisition/us_price_history_raw_v2_38i/

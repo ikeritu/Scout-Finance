@@ -49,7 +49,7 @@ def build_with(
     tmp: Path, census_rows: list[dict], us_fund_rows=None, us_price_rows=None, eu_identity_rows=None, eu_fund_rows=None,
     eu_growth_rows=None, joby_features_rows=None, av_mismatch_rows=None, lux_aw_rcs_rows=None, lux_ax_fund_records=None,
     lux_be_rcs_rows=None, lux_be_fund_records=None, lux_be_fund_compartment_records=None, at_bg_rows=None, fi_bh_rows=None,
-    cboe_bulk_rows=None,
+    cboe_bulk_rows=None, us_cboe_secondary_identity_rows=None, us_cboe_secondary_features_rows=None,
 ):
     mod_name = f"coverage_{id(census_rows)}"
     mod = module(SCRIPT, mod_name)
@@ -118,10 +118,20 @@ def build_with(
     if cboe_bulk_rows:
         write_csv(cboe_bulk_path, cboe_bulk_rows, ["asset_id", "status", "country"])
 
+    us_cboe_secondary_identity_path = tmp / "us_cboe_secondary_identity.csv"
+    if us_cboe_secondary_identity_rows:
+        write_csv(us_cboe_secondary_identity_path, us_cboe_secondary_identity_rows, ["asset_id", "fetch_status"])
+
+    us_cboe_secondary_features_path = tmp / "us_cboe_secondary_features.csv"
+    if us_cboe_secondary_features_rows:
+        fields = ["asset_id"] + mod.US_GROWTH_FIELDS + mod.US_FUNDAMENTAL_RATIO_FIELDS
+        write_csv(us_cboe_secondary_features_path, us_cboe_secondary_features_rows, fields)
+
     report = mod.build(
         census_path, us_fund_path, us_price_path, eu_identity_path, eu_fund_path, eu_growth_path,
         joby_features_path, av_mismatch_path, lux_aw_rcs_path, lux_ax_fund_path, lux_be_rcs_path,
         lux_be_fund_path, lux_be_fund_compartments_path, at_bg_path, fi_bh_path, cboe_bulk_path, tmp / "out",
+        us_cboe_secondary_identity_path, us_cboe_secondary_features_path,
     )
     with lzma.open(tmp / "out" / "global_coverage_matrix_v2_38al.csv.xz", "rt", encoding="utf-8", newline="") as f:
         rows = {r["asset_id"]: r for r in csv.DictReader(f)}
@@ -250,7 +260,7 @@ def test_missing_input_files_are_skipped_not_errors():
             tmp_path / "does_not_exist_identity.csv", tmp_path / "does_not_exist_eu_fund.csv", tmp_path / "does_not_exist_eu_growth.csv",
             missing / "joby.csv", missing / "av.csv", missing / "aw.csv", missing / "ax.jsonl", missing / "be_rcs.csv",
             missing / "be_fund.jsonl", missing / "be_fund_compartments.jsonl", missing / "at.csv", missing / "fi.csv", missing / "cboe.csv",
-            tmp_path / "out",
+            tmp_path / "out", missing / "us_cboe_secondary_identity.csv", missing / "us_cboe_secondary_features.csv",
         )
     assert report["companies_total"] == 1
     assert report["overall_coverage_status_counts"] == {"NO_DATA_YET": 1}
@@ -401,6 +411,66 @@ def test_original_689_europe_identity_takes_priority_over_new_sources():
     assert row["fundamentals_status"] == "FEATURES_READY"
 
 
+def test_us_cboe_secondary_resolved_company_with_features_reaches_growth_ready():
+    """Real case from the fourteenth reconstruction (2026-09-08): a
+    country=US Cboe secondary candidate that v2.38BI CIK-matched and
+    v2.38BK extracted real fundamentals/growth for -- must take priority
+    over the generic Cboe-bulk fallback and reach the same GROWTH_READY
+    status a directly-resolved US company would, via v2.38BI/v2.38BK
+    sources rather than v2.38D-F/v2.38G."""
+    with tempfile.TemporaryDirectory() as tmp:
+        feature_row = {"asset_id": "U20"}
+        feature_row.update({f: "0.1" for f in module(SCRIPT, "tmp_us_bi_growth").US_GROWTH_FIELDS})
+        feature_row.update({f: "0.2" for f in module(SCRIPT, "tmp_us_bi_ratio").US_FUNDAMENTAL_RATIO_FIELDS})
+        report, rows = build_with(
+            Path(tmp),
+            [census_row("U20", "1MRNAd", "Moderna Inc", "CBOE_EUROPE", "US")],
+            cboe_bulk_rows=[{"asset_id": "U20", "status": "resolved", "country": "US"}],
+            us_cboe_secondary_identity_rows=[{"asset_id": "U20", "fetch_status": "resolved"}],
+            us_cboe_secondary_features_rows=[feature_row],
+        )
+    row = rows["U20"]
+    assert row["identity_status"] == "RESOLVED" and row["identity_source"] == "v2.38BI"
+    assert row["fundamentals_status"] == "FEATURES_READY" and row["fundamentals_source"] == "v2.38BK"
+    assert row["growth_status"] == "FEATURES_READY" and row["growth_source"] == "v2.38BK"
+    assert row["overall_coverage_status"] == "GROWTH_READY"
+    assert row["price_status"] == "NOT_ATTEMPTED"  # never claimed as a confirmed gap, unlike Europe's real v2.38AJ finding
+
+
+def test_us_cboe_secondary_resolved_but_features_not_yet_extracted_stays_identity_only():
+    """v2.38BI's identity resolution and v2.38BK's fundamentals extraction
+    are separate steps -- a company resolved by the former but not yet
+    processed by the latter (e.g. a real companyfacts 404, still pending)
+    must stay honestly IDENTITY_ONLY, never silently treated as having
+    features it doesn't have yet."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [census_row("U21", "1DIAm", "No Facts Yet Inc", "CBOE_EUROPE", "US")],
+            us_cboe_secondary_identity_rows=[{"asset_id": "U21", "fetch_status": "resolved"}],
+        )
+    row = rows["U21"]
+    assert row["identity_status"] == "RESOLVED" and row["identity_source"] == "v2.38BI"
+    assert row["fundamentals_status"] == "NOT_ATTEMPTED"
+    assert row["overall_coverage_status"] == "IDENTITY_ONLY_NO_FUNDAMENTALS_YET"
+
+
+def test_us_cboe_secondary_unresolved_candidate_still_falls_back_to_cboe_bulk():
+    """Only the CIK-resolved subset (538 of 628) gets a v2.38BI entry --
+    a candidate v2.38BI could not match (delisted, acquired, or a real
+    gap in SEC's ticker file) must still fall through to the generic
+    Cboe-bulk identity, exactly as it did before this reconstruction."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [census_row("U22", "1XYZm", "Delisted Co", "CBOE_EUROPE", "US")],
+            cboe_bulk_rows=[{"asset_id": "U22", "status": "resolved", "country": "US"}],
+            us_cboe_secondary_identity_rows=[{"asset_id": "U22", "fetch_status": "unresolved"}],
+        )
+    row = rows["U22"]
+    assert row["identity_status"] == "RESOLVED" and row["identity_source"] == "v2.38BC"
+
+
 CASES = [
     test_untouched_census_company_is_no_data_yet,
     test_europe_identity_only_reports_confirmed_price_gap_not_unattempted,
@@ -417,6 +487,9 @@ CASES = [
     test_av_other_country_gets_real_country_code_from_isin_prefix,
     test_cboe_bulk_fallback_covers_everything_without_a_richer_source,
     test_original_689_europe_identity_takes_priority_over_new_sources,
+    test_us_cboe_secondary_resolved_company_with_features_reaches_growth_ready,
+    test_us_cboe_secondary_resolved_but_features_not_yet_extracted_stays_identity_only,
+    test_us_cboe_secondary_unresolved_candidate_still_falls_back_to_cboe_bulk,
 ]
 
 

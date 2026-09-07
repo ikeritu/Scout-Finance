@@ -1,0 +1,26 @@
+{
+  "ambiguous": 0,
+  "candidates_input": 628,
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_calls": 0,
+    "phase9c_authorized": false,
+    "ranking_modified": false,
+    "recommendations_generated": false,
+    "scoring_modified": false
+  },
+  "match_tier_counts": {
+    "exact_normalized_name": 534,
+    "sorted_token_set": 2,
+    "squashed_normalized_name": 2
+  },
+  "phase": "v2.38BI-us-cboe-secondary-identity-sec",
+  "resolved": 538,
+  "sec_tickers_source_rows": 10415,
+  "status": "COMPLETED_US_CBOE_SECONDARY_IDENTITY_SEC",
+  "unresolved": 90,
+  "unresolved_reason_counts": {
+    "no_exact_normalized_name_match": 90
+  }
+}
