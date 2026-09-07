@@ -17,35 +17,35 @@
     },
     "PHASE9AM_GLOBAL_MACRO_GEOPOLITICAL_GATE_v2_38am.md": {
       "bytes": 534,
-      "sha256": "ac3674cdd6eab108ad647d6e844f157e12087b7fa40f1ebf4fbd8dd81334a723"
+      "sha256": "c6219d9e1193d52842fb78a6aac7c430cb39aa4ca2c9515abf2b1ea3090c65af"
     },
     "README.md": {
       "bytes": 345,
       "sha256": "9be42f834d24b09f66ee8500794f2e504e5b70e70e8514cb92c673bbc889a50e"
     },
     "global_macro_geopolitical_aggregate_report_v2_38am.json": {
-      "bytes": 3346,
-      "sha256": "0cbbeb3675b05f698dba0d50f2a9e43ec490e4b817b3b283c8330ca6516ed1fc"
+      "bytes": 4205,
+      "sha256": "360ea6aed5f0b55100ae5023e7a860e05eec9192bdf2410a8ce0fa0cf0f35144"
     },
     "global_macro_geopolitical_context_v2_38am.csv": {
-      "bytes": 1870981,
-      "sha256": "51339e7154f048563bc02a7bd721402edc0e1e8c8ddc7f489903776cd0781d4b"
+      "bytes": 7451286,
+      "sha256": "e8b3ceaab298da6fccfe5b3abcd8ee4cd2464abbb06564e44aa3ce6f1cae449f"
     },
     "global_macro_geopolitical_notes_v2_38am.csv": {
-      "bytes": 2421488,
-      "sha256": "fb692cc9abf61b12e095c007e317e0c55bf5c3d6487e8dd0c9dcb942dde36c95"
+      "bytes": 9512985,
+      "sha256": "f601c29d5b96897a86e1ae743e755f2008b0a62f5237a51fde9027d2112b8aaa"
     },
     "global_macro_geopolitical_quality_v2_38am.csv": {
-      "bytes": 163097,
-      "sha256": "3d3624d68367e8dbeeaa77f82c0fc4c6235964e238f13dc59aefb6686a0dbb11"
+      "bytes": 657216,
+      "sha256": "8a08e8a766691d96933a8d949c2f5d52554f60fcdc183bcc5d3f32a0b0223cac"
     },
     "global_macro_geopolitical_rejections_v2_38am.csv": {
       "bytes": 50,
       "sha256": "bc11bc7da6cf443fdb8b0761c7e075d3676d99f6cc4d4513ed6523d796313056"
     },
     "global_macro_geopolitical_taxonomy_v2_38am.csv": {
-      "bytes": 6472,
-      "sha256": "f831b357fbeba3e462e0b828728149a09010075e75c653afe1c4a6790ab73117"
+      "bytes": 6523,
+      "sha256": "eda99a18c9a68314a388ed6c4dbf4147287c4f7d194a6b93b76d120181c9199b"
     }
   },
   "phase": "v2.38AM-global-macro-geopolitical-context"

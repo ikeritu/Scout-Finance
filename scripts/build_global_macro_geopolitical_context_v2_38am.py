@@ -13,14 +13,34 @@ way this project has repeatedly generalized narrow country-specific work
 (GLEIF identity resolution, the fundamentals concept-alias system) once a
 second real case showed the original scope was too narrow.
 
+Reconstructed a thirteenth time (2026-09-07) as the second half of the
+"consolidar primero" instruction, once v2.38AL's own reconstruction grew
+the identity-resolved population from 1,244 to 5,034 (Luxembourg, Austria,
+Finland's new Cboe extension, and 3,766 companies across 54 countries from
+the full-scale Cboe Europe resolution). This script reads that population
+automatically -- COVERAGE_INPUT already pointed at the one file v2.38AL
+rewrites -- and adds only what a real, already-collected source made
+possible: Finland's 127-company extension (v2.38BH) carries the same real
+English PRH sector text as the original 5 companies, wired in here as a
+second Finland input. Luxembourg's and Austria's new companies have no
+sector-descriptive text source at all, so they honestly fall back to
+company_name-only keyword matching, same as every other Europe company
+without a dedicated source -- no new text was fabricated to fill that gap.
+The EU_MEMBER_COUNTRIES/EUROZONE_COUNTRIES sets also grew to cover real,
+long-established members newly present among the 54 Cboe countries
+(Luxembourg, Poland, Portugal, Czechia, Hungary, Romania, Bulgaria,
+Cyprus, Estonia, Lithuania, Malta) -- each a well-documented accession
+long before this project's "as of" date, not a recent or disputed one.
+
 Two real, honest limitations carried forward from v2.38M, made explicit
 rather than hidden:
 
 1. Sector-keyword matching depends on descriptive text. The US population
    has real narrative fields (v2.38J's fundamental/price/risk signal
-   summaries); Europe's fundamentals extraction never captured anything
-   like that, so Europe's sector-theme matching relies on company_name
-   text alone -- weaker, and reported as such via macro_limitations.
+   summaries); most of Europe's fundamentals extraction never captured
+   anything like that, so most of Europe's sector-theme matching relies on
+   company_name text alone -- weaker, and reported as such via
+   macro_limitations.
 2. This is a STATIC_TAXONOMY, offline, with no live news and no runtime
    LLM classification -- exactly v2.38M's own discipline, preserved
    unchanged. The new country-specific themes added here (EU single-market
@@ -54,13 +74,23 @@ GENERALIZED_WIKIDATA_SECTOR_INPUT = ROOT / "outputs/full_universe_source_acquisi
 AUSTRIA_ONACE_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38as_europe_austria_onace/europe_austria_onace_v2_38as.csv"
 IRELAND_NACE_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38at_europe_ireland_nace/europe_ireland_nace_v2_38at.csv"
 FINLAND_TOL_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38au_europe_finland_tol/europe_finland_tol_v2_38au.csv"
+# Real new sector-text source connected in the thirteenth reconstruction
+# (2026-09-07): Finland's 127-company Cboe Europe extension (v2.38BH)
+# carries the same real, already-English PRH sector description as the
+# original 5 companies, in a separate file since it was fetched by a
+# separate block reusing v2.38AU's code, not a rewrite of its output.
+FINLAND_BH_EXTENSION_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bh_europe_cboe_finland_extension/europe_cboe_finland_extension_registry_sector_v2_38bh.csv"
 ASOF_DATE = "2026-09-06"
 
-# Real, stable, uncontroversial EU/Eurozone membership as of this project's
-# real in-scope Europe country list (v2.38AB, 13 countries, 689 assets).
-# These are geographic/political facts, not time-sensitive claims.
-EU_MEMBER_COUNTRIES = {"DE", "FR", "NL", "IT", "AT", "BE", "ES", "IE", "FI", "SE", "DK"}
-EUROZONE_COUNTRIES = {"DE", "FR", "NL", "IT", "AT", "BE", "ES", "IE", "FI"}  # EU members that actually use the euro; SE/DK keep their own currencies
+# Real, stable, uncontroversial EU/Eurozone membership. Originally scoped
+# to this project's first 13-country in-scope Europe list (v2.38AB); the
+# thirteenth reconstruction (2026-09-07) extends both sets with real,
+# long-established members that appeared once v2.38AL's coverage matrix
+# grew to 54 countries via the Cboe Europe identity resolution (v2.38BC)
+# -- every addition below is a well-documented accession from years
+# before this project's "as of" date, never a recent or uncertain one.
+EU_MEMBER_COUNTRIES = {"DE", "FR", "NL", "IT", "AT", "BE", "ES", "IE", "FI", "SE", "DK", "LU", "PL", "PT", "CZ", "HU", "RO", "BG", "CY", "EE", "LT", "MT"}
+EUROZONE_COUNTRIES = {"DE", "FR", "NL", "IT", "AT", "BE", "ES", "IE", "FI", "LU", "PT", "CY", "EE", "LT", "MT"}  # EU members that actually use the euro; SE/DK/PL/CZ/HU/RO/BG keep their own currencies
 
 TAXONOMY_FIELDS = [
     "theme_id", "theme_name", "region", "applies_countries", "sector_hint",
@@ -226,7 +256,7 @@ def context_status(sector_matched: bool) -> str:
     return "MACRO_CONTEXT_READY" if sector_matched else "MACRO_CONTEXT_PARTIAL"
 
 
-def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_sector_path: Path, netherlands_sector_path: Path, generalized_wikidata_sector_path: Path, austria_onace_path: Path, ireland_nace_path: Path, finland_tol_path: Path, output_dir: Path) -> dict[str, Any]:
+def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_sector_path: Path, netherlands_sector_path: Path, generalized_wikidata_sector_path: Path, austria_onace_path: Path, ireland_nace_path: Path, finland_tol_path: Path, output_dir: Path, finland_bh_extension_path: Path = FINLAND_BH_EXTENSION_INPUT) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
     coverage_rows = read_coverage(coverage_path)
     us_signal_idx = read_csv_index(us_signal_path)
@@ -237,6 +267,7 @@ def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_s
     austria_onace_idx = read_csv_index(austria_onace_path)
     ireland_nace_idx = read_csv_index(ireland_nace_path)
     finland_tol_idx = read_csv_index(finland_tol_path)
+    finland_bh_extension_idx = read_csv_index(finland_bh_extension_path)
     taxonomy_rows = taxonomy()
     themes = {row["theme_id"]: row for row in taxonomy_rows}
 
@@ -268,6 +299,8 @@ def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_s
         ireland_resolved = ireland_nace_row if (ireland_nace_row or {}).get("fetch_status") == "resolved" else None
         finland_tol_row = finland_tol_idx.get(asset_id)
         finland_resolved = finland_tol_row if (finland_tol_row or {}).get("fetch_status") == "resolved" else None
+        finland_bh_row = finland_bh_extension_idx.get(asset_id)
+        finland_bh_resolved = finland_bh_row if (finland_bh_row or {}).get("fetch_status") == "resolved" else None
         extra_text_parts = [
             (signal_row or {}).get("fundamental_signal_summary", ""),
             (signal_row or {}).get("price_signal_summary", ""),
@@ -279,9 +312,10 @@ def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_s
             (austria_resolved or {}).get("purpose_de", ""),
             (ireland_resolved or {}).get("nace_description_en", ""),
             (finland_resolved or {}).get("tol_description_en", ""),
+            (finland_bh_resolved or {}).get("tol_description_en", ""),
         ]
         extra_text = " ".join(part for part in extra_text_parts if part).strip()
-        sector_source = "v2.38J" if signal_row else "v2.38AN" if gb_sic_row else "v2.38AO" if france_sector_row else "v2.38AQ" if netherlands_sector_row else "v2.38AR" if generalized_wikidata_row else "v2.38AS" if austria_resolved else "v2.38AT" if ireland_resolved else "v2.38AU" if finland_resolved else ""
+        sector_source = "v2.38J" if signal_row else "v2.38AN" if gb_sic_row else "v2.38AO" if france_sector_row else "v2.38AQ" if netherlands_sector_row else "v2.38AR" if generalized_wikidata_row else "v2.38AS" if austria_resolved else "v2.38AT" if ireland_resolved else "v2.38AU" if finland_resolved else "v2.38BH" if finland_bh_resolved else ""
         selected, limitation, sector_matched = match_themes(company_name, extra_text, country, themes)
         if sector_source in ("v2.38AQ", "v2.38AR"):
             limitation = f"{limitation} {(wikidata_row or {}).get('non_official_source_caveat', '')}".strip()
@@ -346,7 +380,7 @@ def build(coverage_path: Path, us_signal_path: Path, gb_sic_path: Path, france_s
             "broker_actions_allowed": False, "phase9c_authorized": False, "ranking_modified": False,
             "scoring_modified": False, "live_news_used": False, "llm_runtime_classification": False,
         },
-        "note": "Generalizes v2.38M (which only ever covered the old 50-company US shortlist) to every identity-resolved company in the v2.38AL global coverage matrix (1,244: 555 US + 689 Europe). Reconstructed repeatedly to attack the 0/689 Europe sector-match finding from this phase's first run: v2.38AN's real UK Companies House SIC codes (official), v2.38AO's real French NAF/NACE codes (official), v2.38AQ/v2.38AR's Wikidata industry data (Netherlands/Switzerland/Italy/Denmark, a user-approved non-official-source exception used each time an official free source turned out blocked, paid, or structurally withheld), v2.38AS's ÖNACE classification for Austria (reusing the already-approved firmenakte.at exception from v2.38AI, currently PARTIAL 5/20 due to a real, confirmed, ongoing provider connectivity degradation, resumable), and v2.38AT's NACE Rev.2 classification for Ireland (reusing the already-approved free CRO open-data endpoint from v2.38Z, no new policy decision needed; deliberately excludes a second field, princ_object_code, confirmed live to carry a demonstrably wrong classification for a real, well-known company -- Alkermes plc showing 'manufacture of basic metals' -- likely boilerplate objects-clause text, not a reliable sector signal), and v2.38AU's TOL 2008 classification for Finland (the best official source found in this entire effort: PRH's YTJ open-data API returns an already-English sector description on every real record, no translation table needed; real disambiguation problems solved live, including Xetra's German-style OE/AE transliteration of Finnish/Swedish umlauts and a genuine Oy-vs-Oyj legal-form collision risk from decades of Nordic bank merger history). Germany (413 companies, v2.38AP) was investigated and confirmed structurally non-public. The remaining Europe companies without any sector-classification source stay on company_name-only matching, honestly reported via macro_limitations. Four country-specific structural themes remain (EU single-market regulation, Eurozone monetary policy, UK post-Brexit trade friction, Swiss franc safe-haven dynamics) -- evergreen jurisdictional facts, not dated event claims, matching v2.38M's own static/offline discipline.",
+        "note": "Generalizes v2.38M (which only ever covered the old 50-company US shortlist) to every identity-resolved company in the v2.38AL global coverage matrix. Reconstructed repeatedly to attack the 0/689 Europe sector-match finding from this phase's first run: v2.38AN's real UK Companies House SIC codes (official), v2.38AO's real French NAF/NACE codes (official), v2.38AQ/v2.38AR's Wikidata industry data (Netherlands/Switzerland/Italy/Denmark, a user-approved non-official-source exception used each time an official free source turned out blocked, paid, or structurally withheld), v2.38AS's ÖNACE classification for Austria's original companies (reusing the already-approved firmenakte.at exception from v2.38AI, currently PARTIAL 5/20 due to a real, confirmed, ongoing provider connectivity degradation, resumable), and v2.38AT's NACE Rev.2 classification for Ireland (reusing the already-approved free CRO open-data endpoint from v2.38Z, no new policy decision needed; deliberately excludes a second field, princ_object_code, confirmed live to carry a demonstrably wrong classification for a real, well-known company -- Alkermes plc showing 'manufacture of basic metals' -- likely boilerplate objects-clause text, not a reliable sector signal), and v2.38AU's TOL 2008 classification for Finland's original 5 companies (the best official source found in this entire effort: PRH's YTJ open-data API returns an already-English sector description on every real record, no translation table needed). Germany (413 companies, v2.38AP) was investigated and confirmed structurally non-public. Thirteenth reconstruction (2026-09-07, 'consolidar primero'): the identity-resolved population grew from 1,244 to 5,034 once v2.38AL absorbed Luxembourg (v2.38AV/AW/AX/BE), Austria's 40 new companies (v2.38BF/BG), Finland's 127 new companies (v2.38BF/BH), and the 3,766-company full-scale Cboe Europe resolution (v2.38BC) across 54 countries -- this script picks that up automatically from the same COVERAGE_INPUT file, no path change needed. Finland's new 127 companies carry the same real English TOL sector text as the original 5 (v2.38BH, wired in as a second Finland source). Luxembourg's and Austria's new companies, and every Cboe-bulk-resolved company without a dedicated per-country source, have no sector-descriptive text at all and honestly fall back to company_name-only matching, reported via macro_limitations -- no text was fabricated to fill that gap. EU_MEMBER_COUNTRIES/EUROZONE_COUNTRIES were also expanded with real, long-established members now present among the 54 Cboe countries (Luxembourg, Poland, Portugal, Czechia, Hungary, Romania, Bulgaria, Cyprus, Estonia, Lithuania, Malta), each a well-documented accession long predating this project's asof date. Four country-specific structural themes remain (EU single-market regulation, Eurozone monetary policy, UK post-Brexit trade friction, Swiss franc safe-haven dynamics) -- evergreen jurisdictional facts, not dated event claims, matching v2.38M's own static/offline discipline.",
     }
     write_text(output_dir / "global_macro_geopolitical_aggregate_report_v2_38am.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
     write_docs(output_dir, report)
@@ -400,9 +434,10 @@ def main() -> int:
     parser.add_argument("--austria-onace-input", type=Path, default=AUSTRIA_ONACE_INPUT)
     parser.add_argument("--ireland-nace-input", type=Path, default=IRELAND_NACE_INPUT)
     parser.add_argument("--finland-tol-input", type=Path, default=FINLAND_TOL_INPUT)
+    parser.add_argument("--finland-bh-extension-input", type=Path, default=FINLAND_BH_EXTENSION_INPUT)
     parser.add_argument("--output-dir", type=Path, default=OUT)
     args = parser.parse_args()
-    report = build(args.coverage_input, args.us_signal_input, args.gb_sic_input, args.france_sector_input, args.netherlands_sector_input, args.generalized_wikidata_sector_input, args.austria_onace_input, args.ireland_nace_input, args.finland_tol_input, args.output_dir)
+    report = build(args.coverage_input, args.us_signal_input, args.gb_sic_input, args.france_sector_input, args.netherlands_sector_input, args.generalized_wikidata_sector_input, args.austria_onace_input, args.ireland_nace_input, args.finland_tol_input, args.output_dir, args.finland_bh_extension_input)
     print(json.dumps({k: report[k] for k in ("phase", "status", "companies_context_built", "macro_context_ready", "macro_context_partial")}, ensure_ascii=False, sort_keys=True))
     return 0
 

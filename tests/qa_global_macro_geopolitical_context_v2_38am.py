@@ -27,6 +27,7 @@ GENERALIZED_WIKIDATA_SECTOR_FIELDS = ["asset_id", "ticker", "company_name", "cou
 AUSTRIA_ONACE_FIELDS = ["asset_id", "ticker", "company_name", "fetch_status", "onace_code", "onace_description_en", "purpose_de"]
 IRELAND_NACE_FIELDS = ["asset_id", "ticker", "company_name", "fetch_status", "nace_code", "nace_description_en"]
 FINLAND_TOL_FIELDS = ["asset_id", "ticker", "company_name", "fetch_status", "tol_code", "tol_description_en"]
+FINLAND_BH_EXTENSION_FIELDS = ["asset_id", "ticker", "company_name", "isin", "business_id", "fetch_status", "fetch_reason", "tol_code", "tol_description_en"]
 
 
 def module(path: Path, name: str):
@@ -57,7 +58,7 @@ def coverage_row(asset_id: str, ticker: str, name: str, country: str, identity_s
             "price_status": "NOT_ATTEMPTED", "price_source": "", "overall_coverage_status": overall, "phase": ""}
 
 
-def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None, netherlands_sector_rows=None, generalized_wikidata_sector_rows=None, austria_onace_rows=None, ireland_nace_rows=None, finland_tol_rows=None):
+def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic_rows=None, france_sector_rows=None, netherlands_sector_rows=None, generalized_wikidata_sector_rows=None, austria_onace_rows=None, ireland_nace_rows=None, finland_tol_rows=None, finland_bh_extension_rows=None):
     mod = module(SCRIPT, f"geo_{id(coverage_rows)}")
     coverage_path = tmp / "coverage.csv.xz"
     write_coverage_xz(coverage_path, coverage_rows)
@@ -85,7 +86,10 @@ def build_with(tmp: Path, coverage_rows: list[dict], us_signal_rows=None, gb_sic
     finland_tol_path = tmp / "finland_tol.csv"
     if finland_tol_rows:
         write_csv(finland_tol_path, finland_tol_rows, FINLAND_TOL_FIELDS)
-    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, netherlands_sector_path, generalized_wikidata_sector_path, austria_onace_path, ireland_nace_path, finland_tol_path, tmp / "out")
+    finland_bh_extension_path = tmp / "finland_bh_extension.csv"
+    if finland_bh_extension_rows:
+        write_csv(finland_bh_extension_path, finland_bh_extension_rows, FINLAND_BH_EXTENSION_FIELDS)
+    report = mod.build(coverage_path, us_signal_path, gb_sic_path, france_sector_path, netherlands_sector_path, generalized_wikidata_sector_path, austria_onace_path, ireland_nace_path, finland_tol_path, tmp / "out", finland_bh_extension_path)
     rows = {r["asset_id"]: r for r in csv.DictReader((tmp / "out" / "global_macro_geopolitical_context_v2_38am.csv").open(encoding="utf-8"))}
     return report, rows
 
@@ -295,6 +299,61 @@ def test_finland_tol_not_resolved_never_used_as_source():
     assert row["sector_text_source"] == ""
 
 
+def test_finland_bh_extension_source_matches_and_is_attributed_v2_38bh():
+    """Real case (thirteenth reconstruction, 2026-09-07): Finland's
+    127-company Cboe Europe extension (v2.38BH) reused v2.38AU's code but
+    wrote its result to a separate file, so it needs its own source input.
+    A company only present in that second file (not the original 5) must
+    still reach MACRO_CONTEXT_READY and be attributed to v2.38BH, not
+    v2.38AU, so the aggregate report's sector_text_source_counts stays
+    accurate about which real fetch produced the text."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "PON1", "PONSSE OYJ", "FI")],
+            finland_bh_extension_rows=[{"asset_id": "U1", "ticker": "PON1", "company_name": "PONSSE OYJ", "isin": "", "business_id": "", "fetch_status": "resolved", "fetch_reason": "", "tol_code": "28221", "tol_description_en": "Manufacture of machinery for mining, quarrying and construction"}],
+        )
+    row = rows["U1"]
+    assert row["macro_context_status"] == "MACRO_CONTEXT_READY"
+    assert "CONSTRUCTION_INFRASTRUCTURE" in row["applicable_themes"].split("|")
+    assert row["sector_text_source"] == "v2.38BH"
+
+
+def test_finland_bh_extension_not_resolved_never_used_as_source():
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [coverage_row("U1", "ALMA", "ALMA MEDIA OYJ", "FI")],
+            finland_bh_extension_rows=[{"asset_id": "U1", "ticker": "ALMA", "company_name": "ALMA MEDIA OYJ", "isin": "", "business_id": "", "fetch_status": "ambiguous_multiple_matches", "fetch_reason": "shared_name", "tol_code": "", "tol_description_en": ""}],
+        )
+    row = rows["U1"]
+    assert row["sector_text_source"] == ""
+
+
+def test_luxembourg_gets_eu_and_eurozone_themes():
+    """Real case (thirteenth reconstruction): Luxembourg is a real,
+    long-standing EU and Eurozone member that newly appears in the v2.38AL
+    population via v2.38AV/AW/AX/BE -- it was missing from the original
+    13-country EU_MEMBER_COUNTRIES/EUROZONE_COUNTRIES sets entirely."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(Path(tmp), [coverage_row("U1", "ALLG", "ALLEGRO.EU", "LU")])
+    themes = rows["U1"]["applicable_themes"].split("|")
+    assert "EU_SINGLE_MARKET_REGULATION" in themes
+    assert "EUROZONE_ECB_MONETARY_POLICY" in themes
+
+
+def test_bulgaria_gets_eu_theme_but_not_eurozone():
+    """Real case: Bulgaria is a real EU member but does not use the euro
+    -- must get EU_SINGLE_MARKET_REGULATION only, never the Eurozone
+    theme, distinguishing 'in the EU' from 'in the Eurozone' correctly for
+    a country newly added in the thirteenth reconstruction."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(Path(tmp), [coverage_row("U1", "SPH", "SOPHARMA AD", "BG")])
+    themes = rows["U1"]["applicable_themes"].split("|")
+    assert "EU_SINGLE_MARKET_REGULATION" in themes
+    assert "EUROZONE_ECB_MONETARY_POLICY" not in themes
+
+
 def test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf():
     """Real case: Austria (AT) is both an EU member and a Eurozone member
     -- must get EU_SINGLE_MARKET_REGULATION AND EUROZONE_ECB_MONETARY_
@@ -367,6 +426,10 @@ CASES = [
     test_ireland_nace_not_resolved_never_used_as_source,
     test_finland_tol_source_matches_and_is_native_english,
     test_finland_tol_not_resolved_never_used_as_source,
+    test_finland_bh_extension_source_matches_and_is_attributed_v2_38bh,
+    test_finland_bh_extension_not_resolved_never_used_as_source,
+    test_luxembourg_gets_eu_and_eurozone_themes,
+    test_bulgaria_gets_eu_theme_but_not_eurozone,
     test_eurozone_country_gets_both_eu_and_eurozone_themes_not_uk_or_chf,
     test_gb_gets_brexit_theme_not_eu_or_eurozone,
     test_switzerland_gets_chf_theme_not_eu_or_eurozone,
