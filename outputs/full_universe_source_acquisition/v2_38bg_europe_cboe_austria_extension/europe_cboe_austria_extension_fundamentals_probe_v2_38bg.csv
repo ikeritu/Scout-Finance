@@ -1,0 +1,4 @@
+asset_id,ticker,fnr,resolved_company_name,legal_name_firmenakte,is_active,legal_form,court,years_of_jahresabschluss_available,fetch_status,fetch_reason,phase,created_at_utc
+U09673,ADKOv,350921k,Addiko Bank AG,,,,,0,error,http_error_429,v2.38AI-europe-austria-fundamentals,2026-09-07T15:24:48Z
+U09876,AMAGv,310593f,AMAG Austria Metall AG,,,,,0,error,http_error_429,v2.38AI-europe-austria-fundamentals,2026-09-07T15:24:48Z
+U09900,AMSz,34109k,ams-OSRAM AG,,,,,0,error,http_error_429,v2.38AI-europe-austria-fundamentals,2026-09-07T15:24:48Z

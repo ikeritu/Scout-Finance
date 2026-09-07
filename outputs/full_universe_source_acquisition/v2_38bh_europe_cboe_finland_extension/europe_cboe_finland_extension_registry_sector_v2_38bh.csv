@@ -1,0 +1,134 @@
+asset_id,ticker,company_name,isin,business_id,fetch_status,fetch_reason,tol_code,tol_description_en,phase,created_at_utc
+U09640,ACG1Vh,Aspocomp Group Oyj,,1547801-5,resolved,exact_normalized_name_match_full_suffix,26110,Manufacture of electronic components,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U09722,AFAGRh,Afarak Group SE,,0618181-8,resolved,exact_normalized_name_match_full_suffix,64990,"Other financial service activities, except insurance and pension funding n.e.c.",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U09846,ALISAh,Alisa Pankki Oyj,,0533755-0,resolved,exact_normalized_name_match_full_suffix,64190,Other monetary intermediation,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U09854,ALMAh,Alma Media Oyj,,,unresolved,ambiguous_multiple_distinct_business_ids_match_name,,,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U09921,ANORAh,Anora Group Oyj,,1505555-7,resolved,exact_normalized_name_match_full_suffix,11010,"Distilling, rectifying and blending of spirits",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U09941,APETIh,Apetit Oyj,,0197395-5,resolved,exact_normalized_name_match_full_suffix,10890,Manufacture of other food products n.e.c.,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U10007,ASPOh,Aspo Oyj,,,unresolved,ambiguous_multiple_distinct_business_ids_match_name,,,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U10280,BIOBVh,Biohit Oyj,,0703582-0,resolved,exact_normalized_name_match_full_suffix,20590,Manufacture of other chemical products n.e.c.,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U10301,BITTIh,Bittium Oyj,,1004129-5,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U10370,BOREOh,Boreo Oyj,,0116173-8,resolved,exact_normalized_name_match_full_suffix,46500,Wholesale of information and communication equipment,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U10569,CAPMAh,CapMan Oyj,,0922445-7,resolved,exact_normalized_name_match_full_suffix,66300,Fund management activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U10948,CONSTh,Consti Oyj,,2203605-5,resolved,exact_normalized_name_match_full_suffix,70200,Business and other management consultancy activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U11127,CTH1Vh,Componenta Oyj,,1635451-6,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U11136,CTY1Sh,Citycon Oyj,,0699505-3,resolved,exact_normalized_name_match_full_suffix,68203,Rental and operating of own or leased non-residential real estate,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U11343,DIGIAh,Digia Oyj,,0831312-4,resolved,exact_normalized_name_match_full_suffix,62200,Computer consultancy and computer facilities management activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U11344,DIGIGh,Digitalist Group Oyj,,0997039-6,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U11391,DOV1Vh,Dovre Group Oyj,,0545139-6,resolved,exact_normalized_name_match_full_suffix,70200,Business and other management consultancy activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U11493,EASORh,Easor Oyj,,3574738-2,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U11613,EEZYh,Eezy Oyj,,2854570-7,resolved,exact_normalized_name_match_full_suffix,70100,Activities of head offices,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U11723,ELEAVh,Elecster Oyj,,0290791-7,resolved,exact_normalized_name_match_full_suffix,28290,Manufacture of other general-purpose machinery n.e.c.,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U11886,ENENTh,Enento Group Oyj,,2194007-7,resolved,exact_normalized_name_match_full_suffix,70200,Business and other management consultancy activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U11969,EQV1Vh,eQ Oyj,,,unresolved,ambiguous_multiple_distinct_business_ids_match_name,,,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12084,ETTEh,Etteplan Oyj,,0545456-2,resolved,exact_normalized_name_match_full_suffix,71127,Mechanical and process engineering design and technical consultancy,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12180,EVLIh,Evli Oyj,,3239286-2,resolved,exact_normalized_name_match_full_suffix,66300,Fund management activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12208,EXELh,Exel Composites Oyj,,1067292-7,resolved,exact_normalized_name_match_full_suffix,22210,"Manufacture of plastic plates, sheets, tubes and profiles",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12397,FIA1Sh,FINNAIR OYJ,,0108023-3,resolved,exact_normalized_name_match_full_suffix,51101,Scheduled passenger air transport,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12497,FORTMh,Fortum Oyj,,1463611-4,resolved,exact_normalized_name_match_full_suffix,70100,Activities of head offices,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12513,FRAMEh,Framery Group Oyj,,2887221-4,resolved,exact_normalized_name_match_full_suffix,70100,Activities of head offices,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12537,FSECUh,F-Secure Oyj,,,unresolved,no_exact_normalized_name_match,,,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12541,FSKRSh,Fiskars Oyj Abp,,0214036-5,resolved,exact_normalized_name_match_full_suffix,70100,Activities of head offices,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12740,GLA1Vh,Glaston Oyj Abp,,1651585-0,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12835,GRKh,GRK Infra Oyj,,0533768-1,resolved,exact_normalized_name_match_full_suffix,42110,Construction of roads and motorways,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U12908,HARVIh,Harvia Oyj,,2612169-5,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U13008,HKFOOh,HKFoods Oyj,,0111425-3,resolved,exact_normalized_name_match_full_suffix,10130,Production of meat and poultry meat products,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U13076,HONBSh,Honkarakenne Oyj,,0131529-0,resolved,exact_normalized_name_match_full_suffix,16231,Manufacture of prefabricated wooden buildings,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U13508,ILKKAh,Ilkka Oyj,,0182140-9,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U13610,INVESh,Investors House Oyj,,0717469-5,resolved,exact_normalized_name_match_full_suffix,68201,Rental of own or leased dwellings and residential real estate,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14107,KAMUXh,Kamux Oyj,,2442327-8,resolved,exact_normalized_name_match_full_suffix,64990,"Other financial service activities, except insurance and pension funding n.e.c.",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14123,KELASh,Kesla Oyj,,0168715-8,resolved,exact_normalized_name_match_full_suffix,28220,Manufacture of lifting and handling equipment,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14124,KEMIRh,Kemira Oyj,,0109823-0,resolved,exact_normalized_name_match_full_suffix,20590,Manufacture of other chemical products n.e.c.,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14125,KEMPOh,Kempower Oyj,,2856868-5,resolved,exact_normalized_name_match_full_suffix,27900,Manufacture of other electrical equipment,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14129,KESKBh,Kesko Oyj,,0109862-8,resolved,exact_normalized_name_match_full_suffix,46900,Non-specialised wholesale trade,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14138,KHGh,KH Group Oyj,,0190457-0,resolved,exact_normalized_name_match_full_suffix,46630,"Wholesale of mining, construction and civil engineering machinery",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14174,KOSKIh,Koskisen Oyj,,0148241-9,resolved,exact_normalized_name_match_full_suffix,16110,Sawmilling and planing of wood,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14188,KSLh,Keskisuomalainen Oyj,,0174445-8,resolved,exact_normalized_name_match_full_suffix,58120,Publishing of newspapers,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14226,LASTIh,Lassila & Tikanoja Oyj,,,unresolved,ambiguous_multiple_distinct_business_ids_match_name,,,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14338,LINDEh,Lindex Group Oyj,,0114162-2,resolved,exact_normalized_name_match_full_suffix,47120,Other non-specialised retail sale,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14444,LUMOh,Lumo Kodit Oyj,,0116336-2,resolved,exact_normalized_name_match_full_suffix,68201,Rental of own or leased dwellings and residential real estate,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14446,LUOTEh,Luotea Oyj,,1680140-0,resolved,exact_normalized_name_match_full_suffix,81100,Combined facilities support activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14560,MANTAh,Mandatum Oyj,,3355142-3,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14562,MARASh,Martela Oyj,,0114891-2,resolved,exact_normalized_name_match_full_suffix,31000,Manufacture of furniture,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14613,MEKKOh,Marimekko Oyj,,0111316-2,resolved,exact_normalized_name_match_full_suffix,47712,Retail sale of clothing without specialisation on any specific product group,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14812,MUSTIh,Musti Group Oyj,,2659161-1,resolved,exact_normalized_name_match_full_suffix,70200,Business and other management consultancy activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14985,NLG1Vh,Nurminen Logistics Oyj,,0109707-8,resolved,exact_normalized_name_match_full_suffix,52250,Logistics service activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U14996,NOHOh,NoHo Partners Oyj,,1952494-7,resolved,exact_normalized_name_match_full_suffix,56111,Restaurants and cafeterias,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15103,OLVASh,Olvi Oyj,,0170318-9,resolved,exact_normalized_name_match_full_suffix,11050,Manufacture of beer,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15135,ORIOLh,Oriola Oyj,,1999215-0,resolved,exact_normalized_name_match_full_suffix,46461,Wholesale of pharmaceutical goods,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15145,ORTHEh,Orthex Oyj,,2727990-2,resolved,exact_normalized_name_match_full_suffix,64990,"Other financial service activities, except insurance and pension funding n.e.c.",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15202,PAMPAh,Endomines Finland Oyj,,3215519-7,resolved,exact_normalized_name_match_full_suffix,09900,Support activities for other mining and quarrying,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15309,PIHLIh,Pihlajalinna Oyj,,2617455-1,resolved,exact_normalized_name_match_full_suffix,86210,General medical practice activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15342,PNA1Vh,Panostaja Oyj,,0585148-8,resolved,exact_normalized_name_match_full_suffix,64990,"Other financial service activities, except insurance and pension funding n.e.c.",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15354,PON1Vh,Ponsse Oyj,,0934209-0,resolved,exact_normalized_name_match_full_suffix,28300,Manufacture of agricultural and forestry machinery,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15356,POSTIh,Posti Group Oyj,,1531864-4,resolved,exact_normalized_name_match_full_suffix,70100,Activities of head offices,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15453,PUUILh,Puuilo Oyj,,2726573-8,resolved,exact_normalized_name_match_full_suffix,47555,Retail sale of other tableware and household goods,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15498,QPR1Vh,QPR Software Oyj,,0832693-7,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15508,QTCOMh,Qt Group Oyj,,2733394-8,resolved,exact_normalized_name_match_full_suffix,62200,Computer consultancy and computer facilities management activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15533,RAIKVh,Raisio Oyj,,0664032-4,resolved,exact_normalized_name_match_full_suffix,82100,Office administrative and support activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15538,RAP1Vh,Rapala VMC Oyj,,1016238-8,resolved,exact_normalized_name_match_full_suffix,32300,Manufacture of sports goods,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15546,RAUTEh,Raute Oyj,,0149072-6,resolved,exact_normalized_name_match_full_suffix,28240,Manufacture of power-driven hand tools,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15567,REAKTh,Reaktor Group Oyj,,2447229-9,resolved,exact_normalized_name_match_full_suffix,70100,Activities of head offices,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15568,REBLh,Rebl Group Oyj,,0214720-9,resolved,exact_normalized_name_match_full_suffix,58120,Publishing of newspapers,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15575,REG1Vh,Revenio Group Oyj,,1700625-7,resolved,exact_normalized_name_match_full_suffix,26510,"Manufacture of instruments and appliances for measuring, testing and navigation",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15580,REKAh,Reka Industrial Oyj,,0693494-7,resolved,exact_normalized_name_match_full_suffix,66190,"Other activities auxiliary to financial services, except insurance and pension funding",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15581,REMEDh,Remedy Entertainment Oyj,,1017278-9,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15643,ROBITh,Robit Oyj,,0825627-0,resolved,exact_normalized_name_match_full_suffix,28920,"Manufacture of machinery for mining, quarrying and construction",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15745,SAGCVh,Saga Furs Oyj,,0115411-6,resolved,exact_normalized_name_match_full_suffix,46110,"Activities of agents involved in the wholesale of agricultural raw materials, live animals, textile raw materials and semi-finished goods",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15754,SAMPOc,Sampo Oyj,,0142213-3,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15761,SANOMh,Sanoma Oyj,,1524361-1,resolved,exact_normalized_name_match_full_suffix,82990,Other business support service activities n.e.c.,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15774,SAVOXh,Savox Communications Oyj,,1031081-1,resolved,exact_normalized_name_match_full_suffix,26300,Manufacture of communication equipment,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U15821,SCANFh,Scanfil Oyj,,2422742-9,resolved,exact_normalized_name_match_full_suffix,26110,Manufacture of electronic components,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16007,SIILIh,Siili Solutions Oyj,,1979903-5,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16151,SOLTEh,Solteq Oyj,,0490484-0,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16319,SSH1Vh,SSH Communications Security Oyj,,1035804-9,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16342,STEAVh,Stora Enso Oyj,,1039050-8,resolved,exact_normalized_name_match_full_suffix,17120,Manufacture of paper and paperboard,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16452,SUY1Vh,Suominen Oyj,,1680141-9,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16572,TAALAh,Taaleri Oyj,,2234823-5,resolved,exact_normalized_name_match_full_suffix,70100,Activities of head offices,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16609,TEM1Vh,Tecnotree Oyj,,1651577-0,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16712,TLT1Vh,Teleste Oyj,,1102267-8,resolved,exact_normalized_name_match_full_suffix,26110,Manufacture of electronic components,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16725,TNOMh,Talenom Oyj,,2551454-2,resolved,exact_normalized_name_match_full_suffix,70200,Business and other management consultancy activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16733,TOKMAh,Tokmanni Group Oyj,,2483212-7,resolved,exact_normalized_name_match_full_suffix,47110,"Non-specialised retail sale of predominately food, beverages or tobacco",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16834,TTALOh,Terveystalo Oyj,,2575979-3,resolved,exact_normalized_name_match_full_suffix,66190,"Other activities auxiliary to financial services, except insurance and pension funding",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16845,TULAVh,Tulikivi Oyj,,0350080-1,resolved,exact_normalized_name_match_full_suffix,23700,"Cutting, shaping and finishing of stone",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U16857,TYRESh,Nokian Renkaat Oyj,,0680006-8,resolved,exact_normalized_name_match_full_suffix,22110,"Manufacture, retreading and rebuilding of rubber tyres and manufacture of tubes",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U17036,UPMh,UPM-KYMMENE OYJ,,1041090-0,resolved,exact_normalized_name_match_full_suffix,17120,Manufacture of paper and paperboard,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U17210,VAIASh,Vaisala Oyj,,0124416-2,resolved,exact_normalized_name_match_full_suffix,26510,"Manufacture of instruments and appliances for measuring, testing and navigation",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U17280,VERKh,Verkkokauppa.com Oyj,,,unresolved,no_exact_normalized_name_match,,,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U17347,VIK1Vh,Viking Line Abp,,0144983-8,resolved,exact_normalized_name_match_full_suffix,50101,Sea passenger water transport,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U17602,WETTEh,Wetteri Oyj,,0548170-4,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U18374,YITh,YIT Oyj,,0112650-2,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U20801,ADMCMh,Admicom Oyj,,2800085-4,resolved,exact_normalized_name_match_full_suffix,70200,Business and other management consultancy activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U20930,AIFORh,Aiforia Technologies Oyj,,2534910-2,resolved,exact_normalized_name_match_full_suffix,46649,Wholesale of other machinery and equipment n.e.c.,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U21067,ALEXh,Alexandria Group Oyj,,1063450-9,resolved,exact_normalized_name_match_full_suffix,66190,"Other activities auxiliary to financial services, except insurance and pension funding",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U21455,ARVOSh,Arvo Sijoitusosuuskunta,,0190515-1,resolved,exact_normalized_name_match_full_suffix,64210,Activities of holding companies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U21496,ASUNTh,Asuntosalkku Oyj,,2633454-3,resolved,exact_normalized_name_match_full_suffix,68110,Buying and selling of own real estate,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U21770,BETOLh,Betolar Oyj,,2800638-3,resolved,exact_normalized_name_match_full_suffix,23660,"Manufacture of other articles of concrete, cement and plaster",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U21994,BRETEh,Bioretec Oy,,1474196-9,resolved,exact_normalized_name_match_full_suffix,32502,Manufacture of other medical and dental instruments and supplies,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U22160,CANATh,Canatu Oyj,,3229349-3,resolved,exact_normalized_name_match_full_suffix,64990,"Other financial service activities, except insurance and pension funding n.e.c.",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U22416,CITYVh,Cityvarasto Oyj,,1561027-4,resolved,exact_normalized_name_match_full_suffix,52100,Warehousing and storage,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U23182,EAGLEh,Eagle Filters Group Oyj,,2005438-0,resolved,exact_normalized_name_match_full_suffix,66190,"Other activities auxiliary to financial services, except insurance and pension funding",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U23594,ESENSh,Enersense International Oyj,,0609766-7,resolved,exact_normalized_name_match_full_suffix,35121,Production of electricity from hydropower,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U23881,FARNl,Faron Pharmaceuticals Oy,,2068285-4,resolved,exact_normalized_name_match_full_suffix,72100,Research and experimental development on natural sciences and engineering,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U24061,FONDIh,Fondia Oyj,,0706964-1,resolved,exact_normalized_name_match_full_suffix,69102,Legal counselling and advising activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U24704,HEALTh,Nightingale Health Oyj,,1750524-0,resolved,exact_normalized_name_match_full_suffix,72100,Research and experimental development on natural sciences and engineering,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U24874,HRTISh,Herantis Pharma Oyj,,2198665-7,resolved,exact_normalized_name_match_full_suffix,72100,Research and experimental development on natural sciences and engineering,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U25202,INDERh,Inderes Oyj,,2277600-2,resolved,exact_normalized_name_match_full_suffix,70200,Business and other management consultancy activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U25825,KREATh,Kreate Group Oyj,,2601364-3,resolved,exact_normalized_name_match_full_suffix,64990,"Other financial service activities, except insurance and pension funding n.e.c.",v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U25873,LAMORh,Lamor Corporation Oyj,,2038517-1,resolved,exact_normalized_name_match_full_suffix,46642,Wholesale of other machinery for use in industry,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U25928,LEADDh,LeadDesk Oyj,,2299022-8,resolved,exact_normalized_name_match_full_suffix,62900,Other information technology and computer service activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U25937,LEHTOh,Lehto Group Oyj,,2235443-2,resolved,exact_normalized_name_match_full_suffix,68203,Rental and operating of own or leased non-residential real estate,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U25943,LEMONh,Lemonsoft Oyj,,2017863-1,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U26286,MERUSh,Merus Power Oyj,,2230775-9,resolved,exact_normalized_name_match_full_suffix,27900,Manufacture of other electrical equipment,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U26635,NANOFh,Nanoform Finland Oyj,,2730572-8,resolved,exact_normalized_name_match_full_suffix,21200,Manufacture of pharmaceutical preparations,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U26740,NITROs,Nitro Games Oyj,,2134819-6,resolved,exact_normalized_name_match_full_suffix,62100,Computer programming activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U26873,NXTMHh,Nexstim Oyj,,1628881-1,resolved,exact_normalized_name_match_full_suffix,72100,Research and experimental development on natural sciences and engineering,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U27569,RELAIh,Relais Group Oyj,,2566730-3,resolved,exact_normalized_name_match_full_suffix,46722,Wholesale of other motor vehicle parts and accessories,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U27996,SFOODh,Solar Foods Oyj,,2872116-8,resolved,exact_normalized_name_match_full_suffix,72100,Research and experimental development on natural sciences and engineering,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U28077,SITOWh,Sitowise Group Oyj,,2767842-8,resolved,exact_normalized_name_match_full_suffix,70200,Business and other management consultancy activities,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U28223,SOLWEh,Solwers Oyj,,0720734-6,resolved,exact_normalized_name_match_full_suffix,71123,Structural engineering design and technical consultancy,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U28293,SPINNh,Spinnova Oyj,,2653299-6,resolved,exact_normalized_name_match_full_suffix,17250,Manufacture of other articles of paper and paperboard,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U28463,SUMMAs,Summa Defence Oyj,,2309682-6,resolved,exact_normalized_name_match_full_suffix,26110,Manufacture of electronic components,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U28791,TOIVOh,Toivo Group Oyj,,2687933-2,resolved,exact_normalized_name_match_full_suffix,68202,Operating of own or leased dwellings and residential real estate,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U29126,UNITEh,United Bankers Oyj,,2355443-6,resolved,exact_normalized_name_match_full_suffix,66120,Security and commodity contracts brokerage,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
+U29382,VIAFIh,Viafin Service Oyj,,2848022-9,resolved,exact_normalized_name_match_full_suffix,33110,Repair and maintenance of fabricated metal products,v2.38AU-europe-finland-tol,2026-09-07T15:28:56Z
