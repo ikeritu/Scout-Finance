@@ -218,3 +218,13 @@ Instrucción del usuario: "sigue con Suecia para el hueco de sector" (4/689 acti
 **El hueco de sector europeo cierra en 60/689 (8,7%)**, con Alemania (413/689, el 60% del universo europeo) confirmada como un hallazgo negativo estructural real, no un fallo de investigación. De las 12 empresas restantes (Irlanda y Suecia con 0 coincidencias de tema pese a tener clasificación real), el motivo es siempre el mismo: la clasificación real existe pero su vocabulario ("holding companies", "retail", "information and communications technology") no coincide con ningún tema actual del motor de palabras clave — una limitación conocida del motor, no de los datos.
 
 **Estado del bloque (undécima reconstrucción, cierre del esfuerzo): `COMPLETED_GLOBAL_MACRO_GEOPOLITICAL_CONTEXT_STATIC_NOT_RECOMMENDATIONS`.** Ninguna prueba nueva necesaria (18 en total).
+
+---
+
+## Duodécima reconstrucción (2026-09-07): Suecia — Wikidata confirmada como fuente definitiva, credencial oficial abandonada por un obstáculo real de entrega
+
+La credencial de Bolagsverket ("API för värdefulla datamängder", programa `Kundanmälan` registrado por el usuario en una fase muy anterior) fue finalmente aprobada — Bolagsverket envió `client_id`/`client_secret` reales en un fichero zip cifrado. Pero el código de descifrado se envía **solo por SMS desde un número corto sueco (300595)**, y el usuario tiene un número de teléfono español — los números cortos son tráfico nacional y normalmente no se entregan a números extranjeros en itinerancia, un límite real de telecomunicaciones, no de este proyecto. Presentada la opción de contactar a Bolagsverket para pedir el código por otro canal, **el usuario decidió no insistir y desechar la vía oficial para Suecia**, dado el alcance mínimo (solo 4 empresas).
+
+**Decisión final**: Wikidata queda como fuente **definitiva y permanente** para Suecia, no como una solución provisional a la espera de la credencial — el mismo dato ya real y verificado (`sector_text_source=v2.38AR`, 3/4 empresas con industria real: H&M, Ericsson clase A, Ericsson clase B; Verve Group Media sin coincidencia en Wikidata, un hueco real de esa base de datos ya documentado). Ningún dato se recalcula ni se sustituye. La credencial de Bolagsverket obtenida queda sin usar — el usuario fue informado explícitamente de no compartir `client_id`/`client_secret` en ningún momento, y no se guardó ni se vio ningún valor real por este proyecto.
+
+**Estado del bloque (duodécima reconstrucción, cierre definitivo de Suecia): `COMPLETED_SWEDEN_WIKIDATA_PERMANENT_BOLAGSVERKET_ABANDONED_SMS_DELIVERY_BLOCKER`.** Ninguna prueba nueva necesaria — no se ha construido ni modificado ningún script en este cierre.
