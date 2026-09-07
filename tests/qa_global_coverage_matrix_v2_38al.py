@@ -471,6 +471,62 @@ def test_us_cboe_secondary_unresolved_candidate_still_falls_back_to_cboe_bulk():
     assert row["identity_status"] == "RESOLVED" and row["identity_source"] == "v2.38BC"
 
 
+def test_offshore_no_disclosure_country_gets_confirmed_status_not_generic_identity_only():
+    """Real case from the fifteenth reconstruction (2026-09-08): a
+    Bermuda-resolved company must never sit in the generic
+    IDENTITY_ONLY_NO_FUNDAMENTALS_YET bucket -- Bermuda's exempted-
+    company regime is a confirmed, structural legal fact (no public
+    filing requirement at all), distinct from 'nobody has looked for a
+    source yet'."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [census_row("U23", "1BMYm", "Some Bermuda Holding Ltd", "CBOE_EUROPE", "")],
+            cboe_bulk_rows=[{"asset_id": "U23", "status": "resolved", "country": "BM"}],
+        )
+    row = rows["U23"]
+    assert row["country"] == "BM"
+    assert row["identity_status"] == "RESOLVED"
+    assert row["fundamentals_status"] == "NOT_APPLICABLE_NO_PUBLIC_DISCLOSURE_REQUIRED"
+    assert row["fundamentals_source"] == "v2.38BM"
+    assert row["overall_coverage_status"] == "IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED"
+
+
+def test_cayman_offshore_closure_cites_both_az_and_bm():
+    """Cayman was the first jurisdiction investigated (v2.38AZ, via the
+    Joby Aviation discovery) but never got this terminal status wired
+    into the matrix until the fifteenth reconstruction -- its
+    fundamentals_source must credit both phases, not just the newer
+    one."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [census_row("U24", "1KYm", "Some Cayman Fund Ltd", "CBOE_EUROPE", "")],
+            cboe_bulk_rows=[{"asset_id": "U24", "status": "resolved", "country": "KY"}],
+        )
+    row = rows["U24"]
+    assert row["fundamentals_source"] == "v2.38AZ/BM"
+    assert row["overall_coverage_status"] == "IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED"
+
+
+def test_jersey_is_deliberately_not_closed_as_no_disclosure():
+    """Real, honest exception: Jersey public companies DO have a genuine
+    statutory duty to file audited accounts (unlike the 6 closed
+    jurisdictions) -- a Jersey-resolved company must stay in the generic
+    identity-only bucket, never silently marked as having no disclosure
+    requirement it might actually have."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [census_row("U25", "1JEm", "3i Infrastructure PLC", "CBOE_EUROPE", "")],
+            cboe_bulk_rows=[{"asset_id": "U25", "status": "resolved", "country": "JE"}],
+        )
+    row = rows["U25"]
+    assert row["country"] == "JE"
+    assert row["fundamentals_status"] == "NOT_ATTEMPTED"
+    assert row["overall_coverage_status"] == "IDENTITY_ONLY_NO_FUNDAMENTALS_YET"
+
+
 CASES = [
     test_untouched_census_company_is_no_data_yet,
     test_europe_identity_only_reports_confirmed_price_gap_not_unattempted,
@@ -490,6 +546,9 @@ CASES = [
     test_us_cboe_secondary_resolved_company_with_features_reaches_growth_ready,
     test_us_cboe_secondary_resolved_but_features_not_yet_extracted_stays_identity_only,
     test_us_cboe_secondary_unresolved_candidate_still_falls_back_to_cboe_bulk,
+    test_offshore_no_disclosure_country_gets_confirmed_status_not_generic_identity_only,
+    test_cayman_offshore_closure_cites_both_az_and_bm,
+    test_jersey_is_deliberately_not_closed_as_no_disclosure,
 ]
 
 

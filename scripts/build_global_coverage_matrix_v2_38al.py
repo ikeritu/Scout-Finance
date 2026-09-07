@@ -94,6 +94,27 @@ AV_COUNTRY_NAME_TO_CODE = {"Luxembourg": "LU", "Bulgaria": "BG", "Liechtenstein"
 
 LUX_FUNDAMENTAL_CONCEPTS = ["revenue", "net_profit", "total_assets", "equity"]
 
+# Real, confirmed legal facts added in the fifteenth reconstruction
+# (2026-09-08): these 6 jurisdictions' company law does not require an
+# exempted/non-resident company to publicly file financial statements at
+# all -- confirmed per jurisdiction (Bermuda's Companies Act exempted-
+# company regime, BVI's Business Companies Act annual financial return
+# kept privately at the registered agent, Guernsey's Companies Law no
+# public-filing requirement, the Marshall Islands' Associations Law for
+# non-resident domestic corporations, the Isle of Man's Companies
+# Registry not centrally holding filed accounts even for 1931 Act public
+# companies, and Cayman's exempted-company regime already confirmed in
+# v2.38AZ). This is a structural, jurisdiction-wide legal fact, not a
+# per-company investigation -- it applies to every real company under
+# that country code the same way v2.38BE's fund-compartment detection
+# applies to every Luxembourg sub-fund. Jersey is deliberately excluded:
+# its public companies DO have a real statutory duty to file audited
+# accounts, and the census population here is overwhelmingly PLCs (3i
+# Infrastructure PLC, B&M European Value Retail plc...) -- closing it the
+# same way would risk hiding real disclosure, so it stays untouched
+# pending its own investigation (v2.38BM's real, honest open question).
+OFFSHORE_NO_DISCLOSURE_COUNTRIES = {"KY", "BM", "VG", "GG", "MH", "IM"}
+
 # v2.38G packs both same-period ratios AND growth-over-time features into
 # one row per US company -- unlike Europe, where those two are split
 # across separate phases (v2.38X ratios, v2.38AK growth). To place a US
@@ -458,6 +479,17 @@ def build_row(
         row["identity_status"] = "RESOLVED"
         row["identity_source"] = cboe_entry["identity_source"]
 
+    if row["country"] in OFFSHORE_NO_DISCLOSURE_COUNTRIES and row["identity_status"] == "RESOLVED" and row["fundamentals_status"] == NOT_ATTEMPTED:
+        # A structural legal fact, not a source we failed to find: none of
+        # these 6 jurisdictions require an exempted/non-resident company
+        # to publicly file financial statements at all -- confirmed per
+        # jurisdiction (v2.38AZ for Cayman originally, v2.38BM for the
+        # other 5). Applies regardless of which branch above resolved the
+        # identity, so it is checked once here rather than duplicated in
+        # every branch that could produce one of these 6 country codes.
+        row["fundamentals_status"] = "NOT_APPLICABLE_NO_PUBLIC_DISCLOSURE_REQUIRED"
+        row["fundamentals_source"] = "v2.38AZ/BM" if row["country"] == "KY" else "v2.38BM"
+
     row["overall_coverage_status"] = overall_status(row["identity_status"], row["fundamentals_status"], row["growth_status"])
     return row
 
@@ -467,6 +499,8 @@ def overall_status(identity_status: str, fundamentals_status: str, growth_status
         return "NO_DATA_YET"
     if fundamentals_status == "NOT_APPLICABLE_INVESTMENT_FUND_NOT_AN_OPERATING_COMPANY":
         return "IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY"
+    if fundamentals_status == "NOT_APPLICABLE_NO_PUBLIC_DISCLOSURE_REQUIRED":
+        return "IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED"
     if fundamentals_status in ("BLOCKED_PROVIDER_QUOTA_EXHAUSTED", "NOT_COLLECTED_NO_FREE_SOURCE_FOUND_FOR_LARGE_CAPS"):
         return "IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED"
     if fundamentals_status in (NOT_ATTEMPTED, "INSUFFICIENT_FEATURE_EVIDENCE"):
@@ -548,7 +582,7 @@ def build(
             "cboe_europe_bulk_bc": len(cboe_idx) or None,
             "us_cboe_secondary_sec_bi_bk": len(us_cboe_secondary_idx) or None,
         },
-        "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline. Twelfth reconstruction (2026-09-07): merges everything found while attacking the Cboe Europe gap -- the 25 v2.38AV mismatch assets (5 new countries), Luxembourg's real fundamentals (30 companies across v2.38AW/AX/BE), Austria's and Finland's new identities (v2.38BF/BG/BH), Joby Aviation's real US identity/fundamentals corrected from its Cayman-by-ISIN-prefix classification (v2.38AZ/BA), and the bulk 54-country Cboe Europe identity resolution (v2.38BC) for everything without a more specific source. Two new overall_coverage_status values distinguish a real, confirmed blocker from simply 'not attempted yet': IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY (Luxembourg investment fund compartments) and IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED (Austria's exhausted firmenakte.at quota, Finland's confirmed no-source-for-large-caps finding). Fourteenth reconstruction (2026-09-08): the UK/US front chosen after consolidation closed -- 538 of the 628 country=US Cboe secondary candidates got a real SEC CIK match (v2.38BI, three-tier fail-closed name matching against SEC's own company_tickers_exchange.json) and, from that, real US GAAP fundamentals/growth reusing v2.38F/G unmodified at batch scale (v2.38BK) -- the same methodology already proven on the original 555 companies and individually on Joby Aviation.",
+        "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline. Twelfth reconstruction (2026-09-07): merges everything found while attacking the Cboe Europe gap -- the 25 v2.38AV mismatch assets (5 new countries), Luxembourg's real fundamentals (30 companies across v2.38AW/AX/BE), Austria's and Finland's new identities (v2.38BF/BG/BH), Joby Aviation's real US identity/fundamentals corrected from its Cayman-by-ISIN-prefix classification (v2.38AZ/BA), and the bulk 54-country Cboe Europe identity resolution (v2.38BC) for everything without a more specific source. Two new overall_coverage_status values distinguish a real, confirmed blocker from simply 'not attempted yet': IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY (Luxembourg investment fund compartments) and IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED (Austria's exhausted firmenakte.at quota, Finland's confirmed no-source-for-large-caps finding). Fourteenth reconstruction (2026-09-08): the UK/US front chosen after consolidation closed -- 538 of the 628 country=US Cboe secondary candidates got a real SEC CIK match (v2.38BI, three-tier fail-closed name matching against SEC's own company_tickers_exchange.json) and, from that, real US GAAP fundamentals/growth reusing v2.38F/G unmodified at batch scale (v2.38BK) -- the same methodology already proven on the original 555 companies and individually on Joby Aviation. Fifteenth reconstruction (2026-09-08): closes 6 offshore jurisdictions (Cayman Islands, Bermuda, British Virgin Islands, Guernsey, Marshall Islands, Isle of Man -- 265 companies) with a new terminal status, IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED, confirming a real, structural legal fact per jurisdiction: none of these require an exempted/non-resident company to publicly file financial statements at all. Jersey (45 companies, overwhelmingly real PLCs with a genuine statutory duty to file audited accounts) is deliberately left untouched -- closing it the same way would risk hiding real disclosure that a separate investigation (v2.38BM) left as an open, unresolved question rather than forcing it into either bucket.",
     }
     write_text(output_dir / "global_coverage_matrix_report_v2_38al.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
     return report
