@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.38BR — Jersey: tres vías reales agotadas, cierre honesto sin fundamentales**: navegación real e interactiva al sitio principal de la JFSC y a su propio enlace público de búsqueda topó con una verificación anti-bot activa que no se resolvió sola; el único acceso alternativo exige crear una cuenta. Ninguna vía compatible con las reglas del proyecto (nunca sortear anti-bot, nunca crear cuentas de terceros). Jersey se une a Reino Unido: el dato existe, ninguna vía de acceso es segura.
+
 **v2.38BQ — las 530 ambiguas: 200 resueltas de verdad, 174 candidatas sin confirmar**: dos señales reales de GLEIF (registro actualmente activo; forma jurídica del nombre de origen) narrowing la ambigüedad de `v2.38BC` sin nunca adivinar. Un caso real (ACEA SpA) confirmó un bug de normalización de "S.P.A." con puntos y se corrigió; otro caso real (Danone SA) confirmó que el segundo nivel de coincidencia puede elegir la entidad equivocada — por eso ese nivel queda como "candidata sin confirmar", nunca como identidad resuelta. Solo 200 empresas (nivel 1) se conectan a `v2.38AL`: `NO_DATA_YET` baja de 38.055 a 37.855.
 
 **v2.38BP — filtro por nivel de elegibilidad en "Universo global"**: la pantalla ya construida en `v2.38BN` ahora muestra y filtra por los 5 niveles reales de `v2.38BO`. El botón Actualizar encadena 3 pasos (`v2.38AL`→`v2.38AM`→`v2.38BO`). Verificado en vivo: filtrar por "Elegible completo" reduce la tabla a exactamente 474 empresas, coincidiendo con el fichero real.
