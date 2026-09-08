@@ -1,0 +1,1112 @@
+asset_id,ticker,company_name,country,eligibility_status,confidence,coverage_weight,total_score,rank,review_reasons,phase
+U00006,AAL,"American Airlines Group, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.94,39.35357561,236,,v2.38BV-global-research-ranking
+U00007,AAME,Atlantic American Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,38.48983685,242,,v2.38BV-global-research-ranking
+U00008,AAOI,"Applied Optoelectronics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,43.84518966,218,,v2.38BV-global-research-ranking
+U00009,AAON,"AAON, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,44.39294061,215,,v2.38BV-global-research-ranking
+U00011,AAPL,Apple Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,70.60157141,28,,v2.38BV-global-research-ranking
+U00012,AARD,"Aardvark Therapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,38.01379892,,,v2.38BV-global-research-ranking
+U00013,ABAT,American Battery Technology Company - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00014,ABCL,AbCellera Biologics Inc. - Common Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,52.62172224,155,,v2.38BV-global-research-ranking
+U00015,ABEO,Abeona Therapeutics Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00016,ABLV,Able View Global Inc. - Class B Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.8,48.99942759,179,,v2.38BV-global-research-ranking
+U00017,ABNB,"Airbnb, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,75.17498052,9,,v2.38BV-global-research-ranking
+U00018,ABOS,"Acumen Pharmaceuticals, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,42.18045089,,,v2.38BV-global-research-ranking
+U00019,ABSI,Absci Corporation - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.54,52.27774167,,,v2.38BV-global-research-ranking
+U00020,ABTC,American Bitcoin Corp. - Class A Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,47.75993952,188,,v2.38BV-global-research-ranking
+U00021,ABTS,Abits Group Inc - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,41.14492219,229,,v2.38BV-global-research-ranking
+U00022,ABUS,Arbutus Biopharma Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,45.98381097,202,,v2.38BV-global-research-ranking
+U00023,ABVC,"ABVC BioPharma, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00025,ACAD,ACADIA Pharmaceuticals Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,75.40562632,8,,v2.38BV-global-research-ranking
+U00027,ACCL,Acco Group Holdings Limited - Class A Ordinary Shares,USA,PARTIAL_COMPARABILITY,LOW,0.64,75.79347638,,,v2.38BV-global-research-ranking
+U00028,ACDC,ProFrac Holding Corp. - Class A Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,29.73236968,291,,v2.38BV-global-research-ranking
+U00029,ACET,"Adicet Bio, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,43.99853332,,,v2.38BV-global-research-ranking
+U00030,ACFN,"Acorn Energy, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,55.69875892,125,,v2.38BV-global-research-ranking
+U00032,ACGL,Arch Capital Group Ltd. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,70.69954194,26,,v2.38BV-global-research-ranking
+U00033,ACHC,"Acadia Healthcare Company, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,41.448479,226,,v2.38BV-global-research-ranking
+U00034,ACHV,"Achieve Life Sciences, Inc. - Common Shares",USA,PARTIAL_COMPARABILITY,LOW,0.64,43.91611665,,,v2.38BV-global-research-ranking
+U00035,ACIC,American Coastal Insurance Corporation - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,1.0,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00037,ACIW,"ACI Worldwide, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,68.0898964,45,,v2.38BV-global-research-ranking
+U00038,ACLS,"Axcelis Technologies, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,57.18883086,115,,v2.38BV-global-research-ranking
+U00039,ACMR,"ACM Research, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,59.74902738,101,,v2.38BV-global-research-ranking
+U00040,ACNB,ACNB Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,73.95952287,15,,v2.38BV-global-research-ranking
+U00041,ACNT,Ascent Industries Co. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,47.64788325,191,,v2.38BV-global-research-ranking
+U00042,ACOG,Alpha Cognition Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,37.94487038,247,,v2.38BV-global-research-ranking
+U00043,ACON,"Aclarion, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00044,ACRS,"Aclaris Therapeutics, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00045,ACRV,"Acrivon Therapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,48.87782386,,,v2.38BV-global-research-ranking
+U00046,ACT,"Enact Holdings, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,74.62612453,10,,v2.38BV-global-research-ranking
+U00047,ACTG,Acacia Research Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,67.86151993,47,,v2.38BV-global-research-ranking
+U00048,ACTU,"Actuate Therapeutics, Inc. - Common stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,16.57842826,,,v2.38BV-global-research-ranking
+U00049,ACXP,"Acurx Pharmaceuticals, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,25.09343144,,,v2.38BV-global-research-ranking
+U00051,ADAG,"Adagene Inc. - ADS, each representing 1.25 ordinary shares",USA,ELIGIBLE_PARTIAL,HIGH,0.9,44.96920998,208,,v2.38BV-global-research-ranking
+U00053,ADBE,Adobe Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,69.45319984,37,,v2.38BV-global-research-ranking
+U00054,ADEA,Adeia Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,71.68480813,25,,v2.38BV-global-research-ranking
+U00055,ADGM,"Adagio Medical Holdings, Inc - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,19.86563359,314,,v2.38BV-global-research-ranking
+U00056,ADI,"Analog Devices, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,66.66041284,54,,v2.38BV-global-research-ranking
+U00057,ADIL,"Adial Pharmaceuticals, Inc - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,41.21988361,,,v2.38BV-global-research-ranking
+U00058,ADMA,ADMA Biologics Inc - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,62.4895729,81,,v2.38BV-global-research-ranking
+U00059,ADP,"Automatic Data Processing, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,64.33719565,67,,v2.38BV-global-research-ranking
+U00060,ADPT,Adaptive Biotechnologies Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,52.03200202,159,,v2.38BV-global-research-ranking
+U00062,ADSK,"Autodesk, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,61.60771035,87,,v2.38BV-global-research-ranking
+U00063,ADTN,"ADTRAN Holdings, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,38.20309263,245,,v2.38BV-global-research-ranking
+U00065,ADUS,Addus HomeCare Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,68.8978468,40,,v2.38BV-global-research-ranking
+U00066,ADV,Advantage Solutions Inc. - Class A Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,33.43702138,269,,v2.38BV-global-research-ranking
+U00067,ADVB,Advanced Biomed Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,41.05162676,,,v2.38BV-global-research-ranking
+U00069,AEBI,Aebi Schmidt Holding AG - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,53.25667437,153,,v2.38BV-global-research-ranking
+U00072,AEHR,Aehr Test Systems - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,39.23055984,238,,v2.38BV-global-research-ranking
+U00073,AEI,Alset Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00074,AEIS,"Advanced Energy Industries, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,55.79542509,124,,v2.38BV-global-research-ranking
+U00075,AEMD,"Aethlon Medical, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,24.41748558,,,v2.38BV-global-research-ranking
+U00076,AENT,Alliance Entertainment Holding Corporation - common stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,53.45856094,148,,v2.38BV-global-research-ranking
+U00077,AEP,"American Electric Power Company, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.6,68.69453471,,,v2.38BV-global-research-ranking
+U00078,AERT,"Aeries Technology, Inc. - Class A Ordinary Share",USA,ELIGIBLE_PARTIAL,HIGH,0.84,50.5938716,171,,v2.38BV-global-research-ranking
+U00080,AEVA,"Aeva Technologies, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00081,AEYE,"AudioEye, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,35.76604104,257,,v2.38BV-global-research-ranking
+U00083,AFCG,Advanced Flower Capital Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.6,50.58684386,,,v2.38BV-global-research-ranking
+U00084,AFJK,"Aimei Health Technology Co., Ltd - Ordinary Share",USA,PARTIAL_COMPARABILITY,LOW,0.58,23.31810213,,,v2.38BV-global-research-ranking
+U00085,AFRI,Forafric Global PLC - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.8,39.4654487,235,,v2.38BV-global-research-ranking
+U00086,AFRM,"Affirm Holdings, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,79.06207556,3,,v2.38BV-global-research-ranking
+U00088,AGCC,Agencia Comercial Spirits Ltd - Class A Ordinary Share,USA,PARTIAL_COMPARABILITY,LOW,0.54,57.25548338,,,v2.38BV-global-research-ranking
+U00089,AGEN,Agenus Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,52.94877889,154,,v2.38BV-global-research-ranking
+U00090,AGIO,"Agios Pharmaceuticals, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,1.0,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00092,AGMH,AGM Group Holdings Inc. - Class A Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,32.31537197,275,,v2.38BV-global-research-ranking
+U00093,AGNC,AGNC Investment Corp. - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,73.0507768,20,,v2.38BV-global-research-ranking
+U00094,AGNT,"AGNT, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,37.18395177,252,,v2.38BV-global-research-ranking
+U00095,AGPU,Axe Compute Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,38.85273501,,,v2.38BV-global-research-ranking
+U00097,AGYS,"Agilysys, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,66.00205954,61,,v2.38BV-global-research-ranking
+U00098,AHCO,AdaptHealth Corp. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,36.68853868,254,,v2.38BV-global-research-ranking
+U00099,AHMA,Ambitions Enterprise Management Co. L.L.C - Class A Ordinary Shares,USA,PARTIAL_COMPARABILITY,LOW,0.54,55.12422305,,,v2.38BV-global-research-ranking
+U00102,AIDX,"20/20 Biolabs, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.54,11.07152025,,,v2.38BV-global-research-ranking
+U00103,AIFA,"All In FutureTech Alliance, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,36.04271788,,,v2.38BV-global-research-ranking
+U00104,AIFC,AI Financial Corporation - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00105,AIFF,"Firefly Neuroscience, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00106,AIFU,AIFU Inc. - Class A Ordinary Share,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00107,AIHS,Senmiao Technology Limited - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.84,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00108,AIIO,Robo.ai Inc. - Class B Ordinary Shares,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00110,AIMD,"Ainos, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00111,AIOS,AIOS Tech Inc. - Class A Common Shares,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00112,AIOT,"PowerFleet, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,47.94984478,187,,v2.38BV-global-research-ranking
+U00113,AIP,"Arteris, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.84,39.14194783,240,,v2.38BV-global-research-ranking
+U00114,AIRE,reAlpha Tech Corp. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00115,AIRG,"Airgain, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,38.41644169,243,,v2.38BV-global-research-ranking
+U00116,AIRJ,AirJoule Technologies Corporation - Class A Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.54,37.7709965,,,v2.38BV-global-research-ranking
+U00117,AIRO,"AIRO Group Holdings, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,39.2640735,237,,v2.38BV-global-research-ranking
+U00118,AIRS,"AirSculpt Technologies, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,31.20023953,282,,v2.38BV-global-research-ranking
+U00119,AIRT,"Air T, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,77.5363876,6,,v2.38BV-global-research-ranking
+U00120,AISP,"Airship AI Holdings, Inc - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.84,41.40342676,227,,v2.38BV-global-research-ranking
+U00121,AIXC,"AIxCrypto Holdings, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,24.87540682,,,v2.38BV-global-research-ranking
+U00122,AKAM,"Akamai Technologies, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,53.35180789,149,,v2.38BV-global-research-ranking
+U00124,AKBA,"Akebia Therapeutics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,42.9551252,221,,v2.38BV-global-research-ranking
+U00126,ALAB,"Astera Labs, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,66.03771134,59,,v2.38BV-global-research-ranking
+U00128,ALCO,"Alico, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,1.0,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00129,ALDF,Aldel Financial II Inc. - Class A Ordinary Shares,USA,PARTIAL_COMPARABILITY,LOW,0.54,74.66379025,,,v2.38BV-global-research-ranking
+U00130,ALDX,"Aldeyra Therapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,23.56279011,,,v2.38BV-global-research-ranking
+U00131,ALEC,"Alector, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00133,ALGM,"Allegro MicroSystems, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,46.71741939,197,,v2.38BV-global-research-ranking
+U00134,ALGN,"Align Technology, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,56.84174277,119,,v2.38BV-global-research-ranking
+U00135,ALGS,"Aligos Therapeutics, Inc. - Common stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00136,ALGT,Allegiant Travel Company - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,42.84057288,222,,v2.38BV-global-research-ranking
+U00137,ALHC,"Alignment Healthcare, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,45.12804657,206,,v2.38BV-global-research-ranking
+U00139,ALKS,Alkermes plc - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,1.0,62.44689701,82,,v2.38BV-global-research-ranking
+U00140,ALKT,"Alkami Technology, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,47.32627866,193,,v2.38BV-global-research-ranking
+U00141,ALLO,"Allogene Therapeutics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,35.29236302,263,,v2.38BV-global-research-ranking
+U00142,ALLR,"Allarity Therapeutics, Inc. - Common stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,37.5894708,,,v2.38BV-global-research-ranking
+U00143,ALLT,Allot Ltd. - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,51.93040193,161,,v2.38BV-global-research-ranking
+U00146,ALMS,Alumis Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.7,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00147,ALMU,"Aeluma, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,33.09779558,271,,v2.38BV-global-research-ranking
+U00148,ALNT,Allient Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,60.12189455,100,,v2.38BV-global-research-ranking
+U00149,ALNY,"Alnylam Pharmaceuticals, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,55.68223126,127,,v2.38BV-global-research-ranking
+U00150,ALOT,"AstroNova, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,54.34027785,138,,v2.38BV-global-research-ranking
+U00151,ALOV,"Aldabra 4 Liquidity Opportunity Vehicle, Inc. - Class A Ordinary Shares",USA,BLOCKED,NOT_RANKABLE,0.13,,,,v2.38BV-global-research-ranking
+U00152,ALOY,REalloys Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,28.01897442,,,v2.38BV-global-research-ranking
+U00153,ALP,Alpha Compute Corp - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.56,38.03354503,,,v2.38BV-global-research-ranking
+U00155,ALRM,"Alarm.com Holdings, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,63.82617369,75,,v2.38BV-global-research-ranking
+U00156,ALRS,Alerus Financial Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,65.40831199,63,,v2.38BV-global-research-ranking
+U00157,ALT,"Altimmune, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00158,ALTI,"AlTi Global, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,44.68473848,212,,v2.38BV-global-research-ranking
+U00159,ALTO,"Alto Ingredients, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,54.04906153,140,,v2.38BV-global-research-ranking
+U00161,ALXO,ALX Oncology Holdings Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,36.85002893,,,v2.38BV-global-research-ranking
+U00162,ALZN,"Alzamend Neuro, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,27.42116912,,,v2.38BV-global-research-ranking
+U00163,AMAL,Amalgamated Financial Corp. - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,68.38458257,43,,v2.38BV-global-research-ranking
+U00165,AMAT,"Applied Materials, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,63.61159231,77,,v2.38BV-global-research-ranking
+U00166,AMBA,"Ambarella, Inc. - Ordinary Shares",USA,ELIGIBLE_PARTIAL,HIGH,0.9,43.3408803,220,,v2.38BV-global-research-ranking
+U00167,AMCI,AMC Robotics Corporation - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00168,AMCX,AMC Global Media Inc. - Class A Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,64.24750486,72,,v2.38BV-global-research-ranking
+U00169,AMD,"Advanced Micro Devices, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,67.07922496,50,,v2.38BV-global-research-ranking
+U00170,AMGN,Amgen Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,73.62637923,16,,v2.38BV-global-research-ranking
+U00171,AMIX,"Autonomix Medical, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,40.09549341,,,v2.38BV-global-research-ranking
+U00172,AMKR,"Amkor Technology, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,53.98163772,143,,v2.38BV-global-research-ranking
+U00173,AMLX,"Amylyx Pharmaceuticals, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,45.01659776,207,,v2.38BV-global-research-ranking
+U00174,AMOD,"Alpha Modus Holdings, Inc. - Class A Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.84,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00175,AMPG,"Amplitech Group, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,41.08901076,230,,v2.38BV-global-research-ranking
+U00176,AMPH,"Amphastar Pharmaceuticals, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,60.69427444,98,,v2.38BV-global-research-ranking
+U00177,AMPL,"Amplitude, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,54.44409829,135,,v2.38BV-global-research-ranking
+U00178,AMRX,"Amneal Pharmaceuticals, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,68.83832276,41,,v2.38BV-global-research-ranking
+U00179,AMSC,American Superconductor Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,61.98658551,84,,v2.38BV-global-research-ranking
+U00180,AMSF,"AMERISAFE, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,54.39750822,137,,v2.38BV-global-research-ranking
+U00182,AMST,Amesite Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00183,AMTX,"Aemetis, Inc - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.58,27.66204075,,,v2.38BV-global-research-ranking
+U00184,AMZN,"Amazon.com, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,66.27660361,56,,v2.38BV-global-research-ranking
+U00185,ANAB,"AnaptysBio, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,58.29144677,110,,v2.38BV-global-research-ranking
+U00186,ANDE,"The Andersons, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,48.66109311,181,,v2.38BV-global-research-ranking
+U00188,ANGI,Angi Inc. - Class A Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.6,38.47267257,,,v2.38BV-global-research-ranking
+U00189,ANGO,"AngioDynamics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,51.86717189,162,,v2.38BV-global-research-ranking
+U00190,ANIK,Anika Therapeutics Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,51.74182178,163,,v2.38BV-global-research-ranking
+U00191,ANIP,"ANI Pharmaceuticals, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,64.29577605,70,,v2.38BV-global-research-ranking
+U00192,ANIX,"Anixa Biosciences, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,37.92315774,,,v2.38BV-global-research-ranking
+U00193,ANNA,"AleAnna, Inc. - Class A Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.6,53.77351091,,,v2.38BV-global-research-ranking
+U00194,ANNX,"Annexon, Inc. - common stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,38.37404919,,,v2.38BV-global-research-ranking
+U00195,ANPA,Rich Sparkle Holdings Limited - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.8,29.9950707,285,,v2.38BV-global-research-ranking
+U00197,ANTA,Antalpha Platform Holding Company - Class A Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.8,57.10253417,117,,v2.38BV-global-research-ranking
+U00198,ANTX,"AN2 Therapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,49.98491052,,,v2.38BV-global-research-ranking
+U00199,ANY,Sphere 3D Corp. - Common Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,24.80208297,302,,v2.38BV-global-research-ranking
+U00200,AOSL,Alpha and Omega Semiconductor Limited - Common Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,38.91323345,241,,v2.38BV-global-research-ranking
+U00201,AOUT,"American Outdoor Brands, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,44.92425193,209,,v2.38BV-global-research-ranking
+U00202,APA,APA Corporation - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,77.32656569,,,v2.38BV-global-research-ranking
+U00205,APEI,"American Public Education, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,61.40438893,93,,v2.38BV-global-research-ranking
+U00206,APGE,"Apogee Therapeutics, Inc. - Common Stock",USA,BLOCKED,NOT_RANKABLE,0.48,,,,v2.38BV-global-research-ranking
+U00207,API,"Agora, Inc. - ADS",USA,ELIGIBLE_PARTIAL,HIGH,0.9,49.67289876,176,,v2.38BV-global-research-ranking
+U00208,APLD,Applied Digital Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,45.56668543,204,,v2.38BV-global-research-ranking
+U00212,APOG,"Apogee Enterprises, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,54.96309376,132,,v2.38BV-global-research-ranking
+U00213,APP,Applovin Corporation - Class A Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,62.3144692,83,,v2.38BV-global-research-ranking
+U00214,APPF,"AppFolio, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,67.50212173,49,,v2.38BV-global-research-ranking
+U00215,APPN,Appian Corporation - Class A Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.84,53.82281081,144,,v2.38BV-global-research-ranking
+U00216,APPS,"Digital Turbine, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,52.61847726,156,,v2.38BV-global-research-ranking
+U00217,APRE,"Aprea Therapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,34.88001381,,,v2.38BV-global-research-ranking
+U00219,APVO,Aptevo Therapeutics Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,21.77065034,,,v2.38BV-global-research-ranking
+U00220,APWC,"Asia Pacific Wire & Cable Corporation Limited - Common shares, Par value .01 per share",USA,ELIGIBLE_PARTIAL,HIGH,0.8,49.34035049,178,,v2.38BV-global-research-ranking
+U00221,APXT,Apex Treasury Corporation - Class A Ordinary Share,USA,BLOCKED,NOT_RANKABLE,0.18,,,,v2.38BV-global-research-ranking
+U00222,APYX,Apyx Medical Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,37.28449106,250,,v2.38BV-global-research-ranking
+U00223,AQB,"AquaBounty Technologies, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.58,30.71767624,,,v2.38BV-global-research-ranking
+U00224,AQMS,"Aqua Metals, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,24.39628607,,,v2.38BV-global-research-ranking
+U00225,AQST,"Aquestive Therapeutics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.84,32.04918568,277,,v2.38BV-global-research-ranking
+U00226,ARAI,Arrive AI Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.7,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00227,ARAY,Accuray Incorporated - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,24.95382101,301,,v2.38BV-global-research-ranking
+U00229,ARBE,Arbe Robotics Ltd. - Ordinary Shares,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00230,ARCB,ArcBest Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,51.21957842,168,,v2.38BV-global-research-ranking
+U00234,ARCT,Arcturus Therapeutics Holdings Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,37.86783557,248,,v2.38BV-global-research-ranking
+U00235,ARDX,"Ardelyx, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,36.42061884,256,,v2.38BV-global-research-ranking
+U00236,AREC,American Resources Corporation - Class A Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,46.31059949,,,v2.38BV-global-research-ranking
+U00237,ARHS,"Arhaus, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,58.49163724,107,,v2.38BV-global-research-ranking
+U00238,ARKO,ARKO Corp. - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,50.15232789,174,,v2.38BV-global-research-ranking
+U00239,ARKR,Ark Restaurants Corp. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,38.20615707,244,,v2.38BV-global-research-ranking
+U00240,AROW,Arrow Financial Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,70.6205858,27,,v2.38BV-global-research-ranking
+U00241,ARQ,"Arq, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,33.81182949,,,v2.38BV-global-research-ranking
+U00243,ARQT,"Arcutis Biotherapeutics, Inc. - Common stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,49.99882494,175,,v2.38BV-global-research-ranking
+U00244,ARRY,"Array Technologies, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,36.68297264,255,,v2.38BV-global-research-ranking
+U00246,ARTL,"Artelo Biosciences, Inc. - Common Stock",USA,BLOCKED,NOT_RANKABLE,0.48,,,,v2.38BV-global-research-ranking
+U00247,ARTNA,Artesian Resources Corporation - Class A Non-Voting Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,68.50318939,42,,v2.38BV-global-research-ranking
+U00248,ARTV,"Artiva Biotherapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,40.3932578,,,v2.38BV-global-research-ranking
+U00249,ARTW,"Art's-Way Manufacturing Co., Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,59.57663812,104,,v2.38BV-global-research-ranking
+U00250,ARVN,"Arvinas, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,40.19698292,233,,v2.38BV-global-research-ranking
+U00251,ARWR,"Arrowhead Pharmaceuticals, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,60.3926126,99,,v2.38BV-global-research-ranking
+U00253,ASBP,"Aspire Biopharma Holdings, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.64,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00254,ASLE,AerSale Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,54.01625285,142,,v2.38BV-global-research-ranking
+U00255,ASMB,"Assembly Biosciences, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,51.42099334,166,,v2.38BV-global-research-ranking
+U00258,ASO,"Academy Sports and Outdoors, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,57.0749456,118,,v2.38BV-global-research-ranking
+U00260,ASPI,ASP Isotopes Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00261,ASPS,Altisource Portfolio Solutions S.A. - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,37.26451812,251,,v2.38BV-global-research-ranking
+U00262,ASRV,AmeriServ Financial Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,71.69797898,24,,v2.38BV-global-research-ranking
+U00263,ASST,"Strive, Inc. - Class A Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00264,ASTC,Astrotech Corporation - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00265,ASTE,"Astec Industries, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,58.38478283,108,,v2.38BV-global-research-ranking
+U00266,ASTH,Astrana Health Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,55.68894975,126,,v2.38BV-global-research-ranking
+U00267,ASTI,"Ascent Solar Technologies, Inc - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00269,ASTS,"AST SpaceMobile, Inc. - Class A Common Stock",USA,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U00270,ASUR,Asure Software Inc - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,52.83063104,,,v2.38BV-global-research-ranking
+U00271,ASYS,"Amtech Systems, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,32.1873293,276,,v2.38BV-global-research-ranking
+U00272,ATAI,AtaiBeckley Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00273,ATCX,Atlas Critical Minerals Corporation - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.7,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00274,ATEC,"Alphatec Holdings, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,28.64388953,,,v2.38BV-global-research-ranking
+U00275,ATER,"Aterian, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,23.52845482,306,,v2.38BV-global-research-ranking
+U00276,ATEX,Anterix Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00277,ATGL,Alpha Technology Group Limited - Class A Ordinary Shares,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00278,ATHR,"Aether Holdings, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,24.36939861,305,,v2.38BV-global-research-ranking
+U00279,ATII,Archimedes Tech SPAC Partners II Co. - Ordinary Shares,USA,BLOCKED,NOT_RANKABLE,0.48,,,,v2.38BV-global-research-ranking
+U00280,ATLC,Atlanticus Holdings Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,70.14584365,30,,v2.38BV-global-research-ranking
+U00281,ATLO,Ames National Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,74.34183015,12,,v2.38BV-global-research-ranking
+U00282,ATLX,Atlas Lithium Corporation - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00283,ATNI,"ATN International, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,53.30277982,150,,v2.38BV-global-research-ranking
+U00284,ATOM,Atomera Incorporated - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00285,ATOS,"Atossa Therapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,24.86996069,,,v2.38BV-global-research-ranking
+U00286,ATPC,Agape ATP Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,31.86294623,279,,v2.38BV-global-research-ranking
+U00287,ATRA,"Atara Biotherapeutics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.84,55.15589847,130,,v2.38BV-global-research-ranking
+U00288,ATRC,"AtriCure, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,56.59080828,123,,v2.38BV-global-research-ranking
+U00289,ATRO,Astronics Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,60.91447508,95,,v2.38BV-global-research-ranking
+U00290,ATXG,Addentax Group Corp. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,35.17731753,265,,v2.38BV-global-research-ranking
+U00291,ATYR,"aTyr Pharma, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00292,AUBN,"Auburn National Bancorporation, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.5,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00293,AUC,ATIF Holdings Limited - Ordinary Shares,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00294,AUDC,AudioCodes Ltd. - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,1.0,54.44858038,134,,v2.38BV-global-research-ranking
+U00296,AUID,authID Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00297,AUPH,Aurinia Pharmaceuticals Inc - Common Shares,USA,ELIGIBLE_PARTIAL,HIGH,1.0,80.39506771,2,,v2.38BV-global-research-ranking
+U00298,AUR,"Aurora Innovation, Inc. - Class A Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00299,AURA,"Aura Biosciences, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,44.62162102,,,v2.38BV-global-research-ranking
+U00300,AURE,Aurelion Inc. - Class A Ordinary Shares,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00301,AUUD,Auddia Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,18.83942356,,,v2.38BV-global-research-ranking
+U00302,AVAH,Aveanna Healthcare Holdings Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,73.05737312,19,,v2.38BV-global-research-ranking
+U00304,AVAV,"AeroVironment, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.6,36.7370128,,,v2.38BV-global-research-ranking
+U00305,AVBH,"Avidbank Holdings, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,59.66968225,,,v2.38BV-global-research-ranking
+U00306,AVBP,"ArriVent BioPharma, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,46.48439297,,,v2.38BV-global-research-ranking
+U00307,AVGO,Broadcom Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,61.53716011,90,,v2.38BV-global-research-ranking
+U00308,AVIR,"Atea Pharmaceuticals, Inc. - common stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,52.41563124,,,v2.38BV-global-research-ranking
+U00310,AVNW,"Aviat Networks, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,57.89912561,113,,v2.38BV-global-research-ranking
+U00311,AVO,"Mission Produce, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,59.62400378,102,,v2.38BV-global-research-ranking
+U00312,AVPT,"AvePoint, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,61.0521699,94,,v2.38BV-global-research-ranking
+U00313,AVR,Anteris Technologies Global Corp. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00314,AVT,"Avnet, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,68.3106674,44,,v2.38BV-global-research-ranking
+U00315,AVTX,"Avalo Therapeutics, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00316,AVX,Avax One Technology Ltd. - Common Shares,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00317,AVXL,Anavex Life Sciences Corp. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,30.12130315,,,v2.38BV-global-research-ranking
+U00318,AWRE,"Aware, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,38.56108246,,,v2.38BV-global-research-ranking
+U00319,AXG,Solowin Holdings - Class A Ordinary Share,USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,38.06755244,246,,v2.38BV-global-research-ranking
+U00320,AXGN,"Axogen, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,54.66015168,133,,v2.38BV-global-research-ranking
+U00322,AXON,"Axon Enterprise, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,45.27594594,205,,v2.38BV-global-research-ranking
+U00323,AXSM,"Axsome Therapeutics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,46.01523356,201,,v2.38BV-global-research-ranking
+U00324,AXTI,AXT Inc - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,34.60751625,266,,v2.38BV-global-research-ranking
+U00326,AYTU,"Aytu BioPharma, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,36.95023909,253,,v2.38BV-global-research-ranking
+U00328,AZI,Autozi Internet Technology (Global) Ltd. - Class A Ordinary Shares,USA,PARTIAL_COMPARABILITY,LOW,0.5,19.19880973,,,v2.38BV-global-research-ranking
+U00329,AZTA,"Azenta, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,47.70908461,190,,v2.38BV-global-research-ranking
+U00331,BAER,"Bridger Aerospace Group Holdings, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,32.77197156,273,,v2.38BV-global-research-ranking
+U00332,BAFN,BayFirst Financial Corp. - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,44.59758226,214,,v2.38BV-global-research-ranking
+U00333,BAND,Bandwidth Inc. - Class A Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,48.49301971,183,,v2.38BV-global-research-ranking
+U00334,BANF,BancFirst Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,61.57713638,88,,v2.38BV-global-research-ranking
+U00335,BANL,CBL International Limited - Class B Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,44.64598021,213,,v2.38BV-global-research-ranking
+U00336,BANR,Banner Corporation - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,67.92815504,,,v2.38BV-global-research-ranking
+U00338,BAOS,Baosheng Media Group Holdings Limited - Ordinary shares,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00339,BATRA,"Atlanta Braves Holdings, Inc. - Series A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,55.09742908,131,,v2.38BV-global-research-ranking
+U00340,BATRK,"Atlanta Braves Holdings, Inc. - Series C Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,54.19803067,139,,v2.38BV-global-research-ranking
+U00342,BBCP,"Concrete Pumping Holdings, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,52.49733805,158,,v2.38BV-global-research-ranking
+U00344,BBGI,"Beasley Broadcast Group, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,29.95626116,286,,v2.38BV-global-research-ranking
+U00345,BBIO,"BridgeBio Pharma, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,53.29173526,151,,v2.38BV-global-research-ranking
+U00346,BBLG,Bone Biologics Corp - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,26.31091484,,,v2.38BV-global-research-ranking
+U00347,BBNX,"Beta Bionics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,46.4906192,198,,v2.38BV-global-research-ranking
+U00348,BBOT,"BridgeBio Oncology Therapeutics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,35.24199113,264,,v2.38BV-global-research-ranking
+U00349,BBSI,"Barrett Business Services, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,60.75847897,96,,v2.38BV-global-research-ranking
+U00350,BCAB,"BioAtla, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.58,6.05521676,,,v2.38BV-global-research-ranking
+U00351,BCAL,California BanCorp - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00353,BCAX,Bicara Therapeutics Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,51.85585979,,,v2.38BV-global-research-ranking
+U00354,BCBP,"BCB Bancorp, Inc. (NJ) - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00355,BCDA,"BioCardia, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,25.63244467,,,v2.38BV-global-research-ranking
+U00356,BCG,"Binah Capital Group, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,51.07810821,170,,v2.38BV-global-research-ranking
+U00358,BCML,BayCom Corp - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,62.54665109,79,,v2.38BV-global-research-ranking
+U00359,BCPC,Balchem Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,66.66641204,53,,v2.38BV-global-research-ranking
+U00360,BCRX,"BioCryst Pharmaceuticals, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.58,68.20035393,,,v2.38BV-global-research-ranking
+U00361,BCTX,BriaCell Therapeutics Corp. - Common Shares,USA,PARTIAL_COMPARABILITY,LOW,0.64,29.80667063,,,v2.38BV-global-research-ranking
+U00362,BDCI,BTC Development Corp. - Class A Ordinary Shares,USA,BLOCKED,NOT_RANKABLE,0.22,,,,v2.38BV-global-research-ranking
+U00363,BDMD,Baird Medical Investment Holdings Ltd - Ordinary Share,USA,ELIGIBLE_PARTIAL,HIGH,0.9,23.00921288,309,,v2.38BV-global-research-ranking
+U00364,BDSX,"Biodesix, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.84,46.09107873,200,,v2.38BV-global-research-ranking
+U00365,BDTX,"Black Diamond Therapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,63.78469908,,,v2.38BV-global-research-ranking
+U00367,BEAM,Beam Therapeutics Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,48.78306559,180,,v2.38BV-global-research-ranking
+U00368,BEAT,"Heartbeam, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,12.29760686,,,v2.38BV-global-research-ranking
+U00369,BEEM,Beam Global - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,25.66431911,299,,v2.38BV-global-research-ranking
+U00370,BEEP,Mobile Infrastructure Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,41.7894034,225,,v2.38BV-global-research-ranking
+U00371,BELFA,Bel Fuse Inc. - Class A Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,69.88038824,32,,v2.38BV-global-research-ranking
+U00372,BELFB,Bel Fuse Inc. - Class B Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,71.94892851,23,,v2.38BV-global-research-ranking
+U00373,BENF,Beneficient - Class A Common Stock,USA,BLOCKED,NOT_RANKABLE,0.38,,,,v2.38BV-global-research-ranking
+U00374,BETR,Better Home & Finance Holding Company - Class A Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,16.85077895,315,,v2.38BV-global-research-ranking
+U00375,BFC,Bank First Corporation - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00376,BFRG,"Bullfrog AI Holdings, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00377,BFRI,Biofrontera Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,47.04720651,195,,v2.38BV-global-research-ranking
+U00378,BFST,"Business First Bancshares, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00379,BGC,"BGC Group, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,68.07356096,46,,v2.38BV-global-research-ranking
+U00380,BGDE,"Big Digital Energy, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,22.66517709,310,,v2.38BV-global-research-ranking
+U00381,BGIN,Bgin Blockchain Limited - Class A Ordinary Shares,USA,PARTIAL_COMPARABILITY,LOW,0.54,12.17024521,,,v2.38BV-global-research-ranking
+U00382,BGL,Blue Gold Limited - Class A ordinary shares,USA,BLOCKED,NOT_RANKABLE,0.48,,,,v2.38BV-global-research-ranking
+U00383,BGLC,BioNexus Gene Lab Corp - Common stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,27.97025193,295,,v2.38BV-global-research-ranking
+U00384,BGM,BGM Group Ltd. - Class A Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,35.32939084,261,,v2.38BV-global-research-ranking
+U00385,BGMS,"Bio Green Med Solution, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,26.90414317,,,v2.38BV-global-research-ranking
+U00387,BHRB,Burke & Herbert Financial Services Corp. - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,74.59864721,11,,v2.38BV-global-research-ranking
+U00388,BHST,BioHarvest Sciences Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.72,29.89645865,288,,v2.38BV-global-research-ranking
+U00389,BIAF,"bioAffinity Technologies, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,27.92153653,296,,v2.38BV-global-research-ranking
+U00390,BIIB,Biogen Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,61.92096382,86,,v2.38BV-global-research-ranking
+U00391,BIOA,"BioAge Labs, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00393,BIRD,"Smartbird, Inc. - Class A Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.54,11.02637564,,,v2.38BV-global-research-ranking
+U00394,BIVI,BioVie Inc. - Common stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,42.0509047,,,v2.38BV-global-research-ranking
+U00396,BIYA,Baiya International Group Inc. - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.8,31.7304734,280,,v2.38BV-global-research-ranking
+U00397,BJDX,"Bluejay Diagnostics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,20.44102964,,,v2.38BV-global-research-ranking
+U00398,BJRI,"BJ's Restaurants, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,69.53613866,36,,v2.38BV-global-research-ranking
+U00400,BKNG,Booking Holdings Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.6,75.92279939,,,v2.38BV-global-research-ranking
+U00401,BKR,Baker Hughes Company - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,57.1364469,116,,v2.38BV-global-research-ranking
+U00402,BL,"BlackLine, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,44.04139429,217,,v2.38BV-global-research-ranking
+U00403,BLBD,Blue Bird Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,64.14788333,73,,v2.38BV-global-research-ranking
+U00405,BLFS,"BioLife Solutions, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,60.50999161,,,v2.38BV-global-research-ranking
+U00406,BLIN,"Bridgeline Digital, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,37.31436592,249,,v2.38BV-global-research-ranking
+U00408,BLKB,"Blackbaud, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,56.70876173,121,,v2.38BV-global-research-ranking
+U00409,BLLN,"BillionToOne, Inc. - Class A common stock",USA,PARTIAL_COMPARABILITY,LOW,0.54,50.345809,,,v2.38BV-global-research-ranking
+U00410,BLMN,"Bloomin' Brands, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,53.49803242,147,,v2.38BV-global-research-ranking
+U00411,BLNE,"Beeline Holdings, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,32.92684836,272,,v2.38BV-global-research-ranking
+U00412,BLNK,Blink Charging Co. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,22.36756483,311,,v2.38BV-global-research-ranking
+U00415,BLZE,"Backblaze, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,50.34441604,173,,v2.38BV-global-research-ranking
+U00417,BMBL,Bumble Inc. - common stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,20.85144067,312,,v2.38BV-global-research-ranking
+U00418,BMEA,"Biomea Fusion, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,38.45013385,,,v2.38BV-global-research-ranking
+U00422,BMR,Beamr Imaging Ltd. - Ordinary Share,USA,ELIGIBLE_PARTIAL,HIGH,0.9,28.79062491,293,,v2.38BV-global-research-ranking
+U00423,BMRA,"Biomerica, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,29.9192651,287,,v2.38BV-global-research-ranking
+U00424,BMRC,Bank of Marin Bancorp - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.64,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00425,BMRN,BioMarin Pharmaceutical Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,62.5029161,80,,v2.38BV-global-research-ranking
+U00426,BNAI,Brand Engagement Network Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00427,BNBX,BNB Plus Corp. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,17.77182088,,,v2.38BV-global-research-ranking
+U00428,BNC,CEA Industries Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00429,BNGO,"Bionano Genomics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,30.17239557,284,,v2.38BV-global-research-ranking
+U00430,BNKK,"Bonk, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00432,BNTC,Benitec Biopharma Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,45.98048204,,,v2.38BV-global-research-ranking
+U00434,BODI,"The Beachbody Company, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,30.25555793,283,,v2.38BV-global-research-ranking
+U00435,BOF,BranchOut Food Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,42.17150453,223,,v2.38BV-global-research-ranking
+U00436,BOKF,BOK Financial Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,67.58159021,48,,v2.38BV-global-research-ranking
+U00437,BOLD,"Boundless Bio, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,56.48346885,,,v2.38BV-global-research-ranking
+U00438,BOLT,"Bolt Biotherapeutics, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00439,BON,Bon Natural Life Limited - Class A Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,1.0,35.3009285,262,,v2.38BV-global-research-ranking
+U00440,BOOM,DMC Global Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,39.59930243,234,,v2.38BV-global-research-ranking
+U00441,BOSC,B.O.S. Better Online Solutions - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,1.0,70.01927021,31,,v2.38BV-global-research-ranking
+U00443,BOTJ,"Bank of the James Financial Group, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00444,BOXL,Boxlight Corporation - Class A Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,28.17051336,294,,v2.38BV-global-research-ranking
+U00446,BPOP,"Popular, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,72.67741122,21,,v2.38BV-global-research-ranking
+U00447,BPRN,"Princeton Bancorp, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00451,BRCB,"Black Rock Coffee Bar, Inc. - Class A Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.54,43.70396718,,,v2.38BV-global-research-ranking
+U00453,BRFH,Barfresh Food Group Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,29.18409633,292,,v2.38BV-global-research-ranking
+U00454,BRID,Bridgford Foods Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,44.18333324,216,,v2.38BV-global-research-ranking
+U00455,BRKR,Bruker Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,47.09065298,194,,v2.38BV-global-research-ranking
+U00456,BRLS,Borealis Foods Inc. - Class A Common Shares,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,23.13768651,308,,v2.38BV-global-research-ranking
+U00457,BRLT,"Brilliant Earth Group, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,32.72443839,274,,v2.38BV-global-research-ranking
+U00458,BRR,"ProCap Financial, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00459,BRTX,"BioRestorative Therapies, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00461,BRZE,"Braze, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,51.41228248,167,,v2.38BV-global-research-ranking
+U00463,BSBK,Bogota Financial Corp. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,63.56952662,,,v2.38BV-global-research-ranking
+U00464,BSET,"Bassett Furniture Industries, Incorporated - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,61.5699296,89,,v2.38BV-global-research-ranking
+U00465,BSIN,Big Sky Industrial Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,35.68301537,258,,v2.38BV-global-research-ranking
+U00467,BSRR,Sierra Bancorp - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00468,BSVN,Bank7 Corp. - Common stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,66.96437558,51,,v2.38BV-global-research-ranking
+U00469,BSY,"Bentley Systems, Incorporated - Class B Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,66.47291659,55,,v2.38BV-global-research-ranking
+U00470,BTAI,"BioXcel Therapeutics, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.84,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00471,BTBD,"BT Brands, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,42.16913727,224,,v2.38BV-global-research-ranking
+U00472,BTBT,"Bit Digital, Inc. - Ordinary Share",USA,ELIGIBLE_PARTIAL,HIGH,1.0,31.34059227,281,,v2.38BV-global-research-ranking
+U00473,BTCS,BTCS Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,40.57120207,231,,v2.38BV-global-research-ranking
+U00474,BTCT,BTC Digital Ltd. - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,44.70695984,211,,v2.38BV-global-research-ranking
+U00476,BTMD,Biote Corp. - Class A common stock,USA,ELIGIBLE_PARTIAL,HIGH,0.84,60.74713006,97,,v2.38BV-global-research-ranking
+U00477,BTOC,Armlogi Holding Corp. - common stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,34.52096411,267,,v2.38BV-global-research-ranking
+U00478,BTOG,Bit Origin Limited - Class A Ordinary Shares,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.6,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00481,BULL,Webull Corporation - Class A Ordinary Shares,USA,PARTIAL_COMPARABILITY,LOW,0.54,52.98363082,,,v2.38BV-global-research-ranking
+U00482,BUSE,First Busey Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,72.65783638,22,,v2.38BV-global-research-ranking
+U00483,BUUU,BUUU Group Limited - Class A Ordinary Share,USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,77.70363245,5,,v2.38BV-global-research-ranking
+U00484,BVC,BitVentures Limited - Ordinary Share,USA,PARTIAL_COMPARABILITY,LOW,0.64,43.50325205,,,v2.38BV-global-research-ranking
+U00485,BVFL,"BV Financial, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,69.7514364,34,,v2.38BV-global-research-ranking
+U00486,BVS,Bioventus Inc. - Class A Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,66.07383614,58,,v2.38BV-global-research-ranking
+U00487,BWB,"Bridgewater Bancshares, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00488,BWEN,"Broadwind, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,69.2330635,,,v2.38BV-global-research-ranking
+U00489,BWFG,"Bankwell Financial Group, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct|financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00490,BWIN,"The Baldwin Insurance Group, Inc. - Class A Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00491,BWMN,Bowman Consulting Group Ltd. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,62.62921857,78,,v2.38BV-global-research-ranking
+U00492,BYAH,"Park Ha Biological Technology Co., Ltd. - Class A Ordinary Shares",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00493,BYFC,Broadway Financial Corporation - Class A Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00494,BYND,"Beyond Meat, Inc. - Common stock",USA,ELIGIBLE_PARTIAL,HIGH,0.84,55.45562632,129,,v2.38BV-global-research-ranking
+U00495,BYRN,"Byrna Technologies, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,53.61529886,146,,v2.38BV-global-research-ranking
+U00496,BYSI,"BeyondSpring, Inc. - Ordinary Shares",USA,PARTIAL_COMPARABILITY,LOW,0.58,21.44199565,,,v2.38BV-global-research-ranking
+U00497,BZ,KANZHUN LIMITED - American Depository Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.8,75.72211507,7,,v2.38BV-global-research-ranking
+U00498,BZAI,"Blaize Holdings, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00499,BZFD,"BuzzFeed, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,25.13915932,300,,v2.38BV-global-research-ranking
+U00500,CAAS,"China Automotive Systems, Inc. - Ordinary Share",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,73.15203698,18,,v2.38BV-global-research-ranking
+U00501,CABA,"Cabaletta Bio, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,39.20071346,,,v2.38BV-global-research-ranking
+U00502,CABR,"Caring Brands, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00503,CAC,Camden National Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,73.24357484,17,,v2.38BV-global-research-ranking
+U00504,CACC,Credit Acceptance Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,69.8329349,33,,v2.38BV-global-research-ranking
+U00505,CADL,"Candel Therapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,51.708997,,,v2.38BV-global-research-ranking
+U00507,CAI,"Caris Life Sciences, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,43.54364661,219,,v2.38BV-global-research-ranking
+U00509,CAKE,The Cheesecake Factory Incorporated - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,61.97836202,85,,v2.38BV-global-research-ranking
+U00510,CALC,"CalciMedica, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.58,30.21234996,,,v2.38BV-global-research-ranking
+U00511,CALM,"Cal-Maine Foods, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,54.01977033,141,,v2.38BV-global-research-ranking
+U00512,CAMP,CAMP4 Therapeutics Corporation - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00513,CAMT,Camtek Ltd. - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,1.0,52.5216094,157,,v2.38BV-global-research-ranking
+U00515,CAPR,"Capricor Therapeutics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,24.70457037,303,,v2.38BV-global-research-ranking
+U00516,CAPS,Capstone Holding Corp. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,23.8412604,,,v2.38BV-global-research-ranking
+U00518,CAR,"Avis Budget Group, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,34.77048107,,,v2.38BV-global-research-ranking
+U00519,CARE,"Carter Bankshares, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,69.56743683,35,,v2.38BV-global-research-ranking
+U00520,CARG,"CarGurus, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,74.13015654,14,,v2.38BV-global-research-ranking
+U00521,CARL,"Carlsmed, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,48.80894578,,,v2.38BV-global-research-ranking
+U00522,CART,Maplebear Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,66.01683804,60,,v2.38BV-global-research-ranking
+U00523,CASH,"Pathward Financial, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,64.04920483,74,,v2.38BV-global-research-ranking
+U00524,CASS,"Cass Information Systems, Inc - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,66.93399673,52,,v2.38BV-global-research-ranking
+U00526,CASY,"Caseys General Stores, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,64.2970015,69,,v2.38BV-global-research-ranking
+U00527,CATY,Cathay General Bancorp - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00529,CBC,"Central Bancompany, Inc. - Class A Common Stock",USA,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U00530,CBFV,"CB Financial Services, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,58.1033861,112,,v2.38BV-global-research-ranking
+U00531,CBIO,"Crescent Biopharma, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.7,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00532,CBK,"Commercial Bancgroup, Inc. - Common Stock",USA,BLOCKED,NOT_RANKABLE,0.48,,,,v2.38BV-global-research-ranking
+U00533,CBLL,"CeriBell, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,51.20448345,169,,v2.38BV-global-research-ranking
+U00534,CBNK,"Capital Bancorp, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00535,CBRL,"Cracker Barrel Old Country Store, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,58.33652569,109,,v2.38BV-global-research-ranking
+U00537,CBSH,"Commerce Bancshares, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.64,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00538,CBUS,"Cibus, Inc. - Class A Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00539,CCAP,"Crescent Capital BDC, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,56.78443709,120,,v2.38BV-global-research-ranking
+U00541,CCB,Coastal Financial Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,48.35819291,184,,v2.38BV-global-research-ranking
+U00542,CCBG,Capital City Bank Group - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.74,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00543,CCC,CCC Intelligent Solutions Holdings Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.84,51.45013483,165,,v2.38BV-global-research-ranking
+U00544,CCCC,"C4 Therapeutics, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00546,CCEC,Capital Clean Energy Carriers Corp. - Common Share,USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,65.0239317,65,,v2.38BV-global-research-ranking
+U00549,CCHH,CCH Holdings Ltd - Class A Ordinary Shares,USA,PARTIAL_COMPARABILITY,LOW,0.64,37.71256498,,,v2.38BV-global-research-ranking
+U00552,CCLD,"CareCloud, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,61.41861285,91,,v2.38BV-global-research-ranking
+U00553,CCNE,CNB Financial Corporation - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,71.28208035,,,v2.38BV-global-research-ranking
+U00554,CCOI,"Cogent Communications Holdings, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.58,18.4645735,,,v2.38BV-global-research-ranking
+U00556,CCSI,"Consensus Cloud Solutions, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,63.78472598,76,,v2.38BV-global-research-ranking
+U00557,CCTG,CCSC Technology International Holdings Limited - Class A Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.8,23.42428464,307,,v2.38BV-global-research-ranking
+U00558,CCXI,Churchill Capital Corp XI - Class A Ordinary Shares,USA,BLOCKED,NOT_RANKABLE,0.18,,,,v2.38BV-global-research-ranking
+U00559,CD,Chaince Digital Holdings Inc. - American Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,29.80977478,290,,v2.38BV-global-research-ranking
+U00560,CDIO,Cardio Diagnostics Holdings Inc. - Common stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00561,CDLX,"Cardlytics, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.84,14.01693609,317,,v2.38BV-global-research-ranking
+U00562,CDNA,"CareDx, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,50.46577601,172,,v2.38BV-global-research-ranking
+U00563,CDNL,Cardinal Infrastructure Group Inc. - Class A Common Stock,USA,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U00564,CDNS,"Cadence Design Systems, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,61.40976423,92,,v2.38BV-global-research-ranking
+U00566,CDT,CDT Equity Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.58,6.08289849,,,v2.38BV-global-research-ranking
+U00567,CDTG,CDT Environmental Technology Investment Holdings Limited - ordinary shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,10.83416003,318,,v2.38BV-global-research-ranking
+U00568,CDW,CDW Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,58.90752232,105,,v2.38BV-global-research-ranking
+U00569,CDXS,"Codexis, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,34.20765336,268,,v2.38BV-global-research-ranking
+U00570,CDZI,"Cadiz, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,35.35204918,260,,v2.38BV-global-research-ranking
+U00571,CECO,CECO Environmental Corp. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,66.22034164,57,,v2.38BV-global-research-ranking
+U00572,CEG,Constellation Energy Corporation - Common Stock When-Issued,USA,ELIGIBLE_PARTIAL,HIGH,1.0,56.5945683,122,,v2.38BV-global-research-ranking
+U00573,CELC,Celcuity Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,37.10877582,,,v2.38BV-global-research-ranking
+U00574,CELH,"Celsius Holdings, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,48.51456678,182,,v2.38BV-global-research-ranking
+U00575,CELU,Celularity Inc. - Class A Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.84,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00576,CELZ,"Creative Medical Technology Holdings, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00577,CENN,Cenntro Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00578,CENT,Central Garden & Pet Company - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,64.32729236,68,,v2.38BV-global-research-ranking
+U00579,CENTA,Central Garden & Pet Company - Class A Common Stock Nonvoting,USA,ELIGIBLE_PARTIAL,HIGH,0.9,64.27908857,71,,v2.38BV-global-research-ranking
+U00580,CENX,Century Aluminum Company - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,48.17699433,185,,v2.38BV-global-research-ranking
+U00581,CEPF,"Cantor Equity Partners IV, Inc. - Class A Ordinary Shares",USA,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U00582,CEPO,"Cantor Equity Partners I, Inc. - Class A Ordinary Shares",USA,BLOCKED,NOT_RANKABLE,0.38,,,,v2.38BV-global-research-ranking
+U00583,CEPS,"Cantor Equity Partners VI, Inc. - Class A Ordinary Shares",USA,BLOCKED,NOT_RANKABLE,0.28,,,,v2.38BV-global-research-ranking
+U00584,CEPV,"Cantor Equity Partners V, Inc. - Class A Ordinary Shares",USA,BLOCKED,NOT_RANKABLE,0.28,,,,v2.38BV-global-research-ranking
+U00585,CERS,Cerus Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,46.87689755,196,,v2.38BV-global-research-ranking
+U00586,CERT,"Certara, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,54.43822895,136,,v2.38BV-global-research-ranking
+U00587,CETX,Cemtrex Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,29.82476577,289,,v2.38BV-global-research-ranking
+U00588,CETY,"Clean Energy Technologies, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00589,CEVA,"CEVA, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,47.28964702,,,v2.38BV-global-research-ranking
+U00590,CFBK,CF Bankshares Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,73.99611664,,,v2.38BV-global-research-ranking
+U00591,CFFI,C&F Financial Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,74.27704533,13,,v2.38BV-global-research-ranking
+U00592,CFFN,"Capitol Federal Financial, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00593,CG,The Carlyle Group Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,51.64035414,164,,v2.38BV-global-research-ranking
+U00596,CGEM,"Cullinan Therapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.54,55.51361196,,,v2.38BV-global-research-ranking
+U00597,CGEN,Compugen Ltd. - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,82.58878751,1,,v2.38BV-global-research-ranking
+U00598,CGNT,Cognyte Software Ltd. - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.8,48.16032291,186,,v2.38BV-global-research-ranking
+U00599,CGNX,Cognex Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,59.59707713,103,,v2.38BV-global-research-ranking
+U00601,CGON,"CG Oncology, Inc. - Common stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,53.7705024,,,v2.38BV-global-research-ranking
+U00602,CGTL,Creative Global Technology Holdings Limited - Class A Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,31.94940306,278,,v2.38BV-global-research-ranking
+U00603,CGTX,"Cognition Therapeutics, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,27.93164957,,,v2.38BV-global-research-ranking
+U00604,CHAI,"Core AI Holdings, Inc. - Common Shares",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,15.11766027,316,,v2.38BV-global-research-ranking
+U00606,CHCI,"Comstock Holding Companies, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.8,77.88398829,4,,v2.38BV-global-research-ranking
+U00607,CHCO,City Holding Company - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,71.76947438,,,v2.38BV-global-research-ranking
+U00608,CHDN,"Churchill Downs, Incorporated - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,58.17345636,111,,v2.38BV-global-research-ranking
+U00610,CHEF,"The Chefs' Warehouse, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,64.76424284,66,,v2.38BV-global-research-ranking
+U00612,CHKP,Check Point Software Technologies Ltd. - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,1.0,65.99740431,62,,v2.38BV-global-research-ranking
+U00613,CHMG,Chemung Financial Corp - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,64.79355906,,,v2.38BV-global-research-ranking
+U00616,CHR,"Cheer Holding, Inc. - Class A Ordinary Share",USA,ELIGIBLE_PARTIAL,HIGH,0.9,46.1415642,199,,v2.38BV-global-research-ranking
+U00617,CHRD,Chord Energy Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,1.0,52.00415307,160,,v2.38BV-global-research-ranking
+U00618,CHRN,ChronoScale Holdings Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,41.21016761,228,,v2.38BV-global-research-ranking
+U00619,CHRS,"Coherus Oncology, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.74,69.09249907,38,,v2.38BV-global-research-ranking
+U00620,CHRW,"C.H. Robinson Worldwide, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,53.68933418,145,,v2.38BV-global-research-ranking
+U00621,CHSN,Chanson International Holding - Class A Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,1.0,33.41855229,270,,v2.38BV-global-research-ranking
+U00622,CHTR,"Charter Communications, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,58.54249919,106,,v2.38BV-global-research-ranking
+U00625,CHYM,"Chime Financial, Inc. - Class A Common Stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,44.88988789,210,,v2.38BV-global-research-ranking
+U00626,CIFR,Cipher Digital Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00627,CIGI,Colliers International Group Inc. - Subordinate Voting Shares,USA,PARTIAL_COMPARABILITY,LOW,0.6,56.01293167,,,v2.38BV-global-research-ranking
+U00628,CIIT,"Tianci International, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,26.45712791,297,,v2.38BV-global-research-ranking
+U00629,CINF,Cincinnati Financial Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.8,70.24396212,29,,v2.38BV-global-research-ranking
+U00630,CING,Cingulate Inc. - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,27.03247327,,,v2.38BV-global-research-ranking
+U00631,CIRC,"Circle8 Group, Inc. - Common Stock",USA,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U00632,CISO,"CISO Global, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,24.57122466,304,,v2.38BV-global-research-ranking
+U00633,CISS,C3is Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,47.4541378,192,,v2.38BV-global-research-ranking
+U00634,CIVB,"Civista Bancshares, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.8,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00635,CJMB,Callan JMB Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,26.33623237,298,,v2.38BV-global-research-ranking
+U00636,CLAR,Clarus Corporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,45.69511644,203,,v2.38BV-global-research-ranking
+U00638,CLBT,Cellebrite DI Ltd. - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,57.87067717,114,,v2.38BV-global-research-ranking
+U00639,CLDX,"Celldex Therapeutics, Inc. - Common Stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00640,CLFD,"Clearfield, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,40.52809908,232,,v2.38BV-global-research-ranking
+U00641,CLGN,CollPlant Biotechnologies Ltd. - Ordinary Shares,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.9,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00642,CLIK,Click Holdings Limited - Ordinary Share,USA,ELIGIBLE_PARTIAL,HIGH,0.8,20.74982894,313,,v2.38BV-global-research-ranking
+U00643,CLIR,ClearSign Technologies Corporation - Common Stock,USA,PARTIAL_COMPARABILITY,LOW,0.64,30.72050115,,,v2.38BV-global-research-ranking
+U00644,CLMB,"Climb Global Solutions, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,1.0,69.01357886,39,,v2.38BV-global-research-ranking
+U00645,CLMT,"Calumet, Inc - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.84,53.26523176,152,,v2.38BV-global-research-ranking
+U00646,CLNE,Clean Energy Fuels Corp. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,35.65313316,259,,v2.38BV-global-research-ranking
+U00647,CLNN,Clene Inc. - Common Stock,USA,REVIEW_REQUIRED,NOT_RANKABLE,0.84,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U00648,CLOV,"Clover Health Investments, Corp. - Class A Common stock",USA,ELIGIBLE_PARTIAL,MEDIUM,0.7,55.66181478,128,,v2.38BV-global-research-ranking
+U00649,CLPS,CLPS Incorporation - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,49.54430441,177,,v2.38BV-global-research-ranking
+U00650,CLPT,ClearPoint Neuro Inc. - Common Stock,USA,ELIGIBLE_PARTIAL,HIGH,0.9,39.14436728,239,,v2.38BV-global-research-ranking
+U00651,CLRB,"Cellectar Biosciences, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,28.94766991,,,v2.38BV-global-research-ranking
+U00652,CLRO,"ClearOne, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.58,28.24158213,,,v2.38BV-global-research-ranking
+U00653,CLSK,"CleanSpark, Inc. - Common Stock",USA,ELIGIBLE_PARTIAL,HIGH,0.9,65.25371252,64,,v2.38BV-global-research-ranking
+U00654,CLST,"Catalyst Bancorp, Inc. - common stock",USA,REVIEW_REQUIRED,NOT_RANKABLE,0.64,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U00655,CLWT,Euro Tech Holdings Company Limited - Ordinary Shares,USA,ELIGIBLE_PARTIAL,HIGH,0.9,47.75908165,189,,v2.38BV-global-research-ranking
+U00656,CLYM,"Climb Bio, Inc. - Common Stock",USA,PARTIAL_COMPARABILITY,LOW,0.64,53.53153272,,,v2.38BV-global-research-ranking
+U09211,0QFd,Moderna Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U09222,12DAd,Dell Technologies Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U09229,1AALm,American Airlines Group Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U09231,1ADMm,Archer-Daniels-Midland Co,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U09233,1ANFm,Abercrombie & Fitch Co,US,PARTIAL_COMPARABILITY,LOW,0.5,63.39040967,,,v2.38BV-global-research-ranking
+U09234,1APPm,AppLovin Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,91.75741494,,,v2.38BV-global-research-ranking
+U09237,1BLEm,Bloom Energy Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U09240,1CNCm,Centene Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,34.21749809,,,v2.38BV-global-research-ranking
+U09244,1HOODm,Robinhood Markets Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U09246,1KTOSm,Kratos Defense & Security Solutions Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,56.81606013,,,v2.38BV-global-research-ranking
+U09249,1MNSTm,Monster Beverage Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U09252,1PANWm,Palo Alto Networks Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,59.85185379,,,v2.38BV-global-research-ranking
+U09255,1PATHm,UiPath Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U09256,1PLTRm,Palantir Technologies Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,91.57309944,,,v2.38BV-global-research-ranking
+U09257,1QZd,Coinbase Global Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,58.15671462,,,v2.38BV-global-research-ranking
+U09260,1RIVNm,Rivian Automotive Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U09261,1SId,Snap Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U09264,1TTEKm,Tetra Tech Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U09268,1WULFm,Terawulf Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.3,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U09303,2OYd,Dow Inc,US,BLOCKED,NOT_RANKABLE,0.1,,,,v2.38BV-global-research-ranking
+U09306,2PPd,PayPal Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,69.88294767,,,v2.38BV-global-research-ranking
+U09316,33Ld,Lululemon Athletica Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,65.87114565,,,v2.38BV-global-research-ranking
+U09452,3QDd,Datadog Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,47.86171225,,,v2.38BV-global-research-ranking
+U09518,4I1d,Philip Morris International Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U09523,4S0d,ServiceNow Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,73.56335278,,,v2.38BV-global-research-ranking
+U09555,6MKd,Merck & Co Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U09560,6Z1d,Airbnb Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,70.69381609,,,v2.38BV-global-research-ranking
+U09562,7DBd,Diamondback Energy Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,55.83216832,,,v2.38BV-global-research-ranking
+U09668,ADBd,Adobe Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,84.12240394,,,v2.38BV-global-research-ranking
+U09882,AMDd,Advanced Micro Devices Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,74.45868021,,,v2.38BV-global-research-ranking
+U09908,AMZd,Amazon.com Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,72.44747308,,,v2.38BV-global-research-ranking
+U09936,AP2d,Applied Materials Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,71.16080833,,,v2.38BV-global-research-ranking
+U10056,AUDd,Autodesk Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,74.10633493,,,v2.38BV-global-research-ranking
+U10153,BACd,Verizon Communications Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,60.05229753,,,v2.38BV-global-research-ranking
+U10436,BSXd,Boston Scientific Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U10542,C9Fd,Chipotle Mexican Grill Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,67.59631909,,,v2.38BV-global-research-ranking
+U10584,CAT1d,Caterpillar Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U10596,CB1Ad,Constellation Brands Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U10702,CDSd,Cadence Design Systems Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,75.98243831,,,v2.38BV-global-research-ranking
+U11129,CTOd,Costco Wholesale Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,61.97016808,,,v2.38BV-global-research-ranking
+U11130,CTP2d,Comcast Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,66.53702316,,,v2.38BV-global-research-ranking
+U11156,CVSd,CVS Health Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,39.28029435,,,v2.38BV-global-research-ranking
+U11249,DCHl,Dauch Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,29.15866269,,,v2.38BV-global-research-ranking
+U11250,DCOd,Deere & Co,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U11459,DY6d,Devon Energy Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U12192,EWLd,Edwards Lifesciences Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,61.90505813,,,v2.38BV-global-research-ranking
+U12314,FB2Ad,Meta Platforms Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,79.37179749,,,v2.38BV-global-research-ranking
+U12362,FERGl,Ferguson Enterprises Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,42.06934405,,,v2.38BV-global-research-ranking
+U12489,FOOd,Salesforce Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,79.0144733,,,v2.38BV-global-research-ranking
+U12507,FPMBd,Freeport-McMoRan Inc,US,BLOCKED,NOT_RANKABLE,0.1,,,,v2.38BV-global-research-ranking
+U12650,GCPd,General Electric Co,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U12733,GISd,Gilead Sciences Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,82.11433023,,,v2.38BV-global-research-ranking
+U12837,GRMd,General Mills Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,31.13133922,,,v2.38BV-global-research-ranking
+U12903,HALd,Halliburton Co,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U13091,HRSd,L3Harris Technologies Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,54.39344155,,,v2.38BV-global-research-ranking
+U13510,ILTd,Illinois Tool Works Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U13589,INLd,Intel Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U13771,ITUd,Intuit Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,80.74599018,,,v2.38BV-global-research-ranking
+U13894,J5Ad,Warner Bros Discovery Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U14175,KOSl,Kosmos Energy Ltd,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U14192,KTFd,Mondelez International Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,49.14680772,,,v2.38BV-global-research-ranking
+U14386,LOMd,Lockheed Martin Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,60.50917823,,,v2.38BV-global-research-ranking
+U14536,M44d,MARA Holdings Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.5,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U14600,MDOd,McDonald's Corp,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U14683,MLB1d,MercadoLibre Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,71.03105865,,,v2.38BV-global-research-ranking
+U14783,MTEd,Micron Technology Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,88.08385868,,,v2.38BV-global-research-ranking
+U15035,NTHd,Northrop Grumman Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,59.93857934,,,v2.38BV-global-research-ranking
+U15048,NVDd,NVIDIA Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,94.32208217,,,v2.38BV-global-research-ranking
+U15116,ONKd,ONEOK Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,73.55484138,,,v2.38BV-global-research-ranking
+U15121,OPCd,Occidental Petroleum Corp,US,BLOCKED,NOT_RANKABLE,0.1,,,,v2.38BV-global-research-ranking
+U15165,OYCd,Delta Air Lines Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,65.1118446,,,v2.38BV-global-research-ranking
+U15213,PARd,Parker-Hannifin Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U15236,PCE1d,Booking Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U15263,PEPd,PepsiCo Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,58.04813403,,,v2.38BV-global-research-ranking
+U15336,PLUNd,Plug Power Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U16427,SUNBl,Sunbelt Rentals Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U16474,SWNd,Southwest Airlines Co,US,PARTIAL_COMPARABILITY,LOW,0.5,41.99603746,,,v2.38BV-global-research-ranking
+U16555,SYPd,Synopsys Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,57.16247089,,,v2.38BV-global-research-ranking
+U16707,TKEd,Take-Two Interactive Software Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U16875,UAL1d,United Airlines Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,57.33738967,,,v2.38BV-global-research-ranking
+U17156,UT8d,Uber Technologies Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,72.9643447,,,v2.38BV-global-research-ranking
+U17166,UWSd,Waste Management Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,67.52325633,,,v2.38BV-global-research-ranking
+U17336,VIAd,Viatris Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U17531,WDCd,Western Digital Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,94.28085844,,,v2.38BV-global-research-ranking
+U17664,WMTd,Walmart Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,59.50216748,,,v2.38BV-global-research-ranking
+U18208,XS4d,ON Semiconductor Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,30.72654053,,,v2.38BV-global-research-ranking
+U18414,ZOEd,Zoetis Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18538,07G0d,Corpay Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,75.23785402,,,v2.38BV-global-research-ranking
+U18540,096d,HubSpot Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,60.73182147,,,v2.38BV-global-research-ranking
+U18541,0A1Ol,Zoom Communications Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,78.62455154,,,v2.38BV-global-research-ranking
+U18547,0A3Zl,Cloudflare Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18549,0A60l,FuelCell Energy Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18559,0C6d,Cargurus Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,79.67824166,,,v2.38BV-global-research-ranking
+U18577,0HAVl,Agilent Technologies Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,68.51587009,,,v2.38BV-global-research-ranking
+U18579,0HC3l,Alaska Air Group Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,44.29607946,,,v2.38BV-global-research-ranking
+U18580,0HCHl,Alexandria Real Estate Equities Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U18582,0HCKl,Align Technology Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,55.77311728,,,v2.38BV-global-research-ranking
+U18584,0HCTl,Alliant Energy Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,69.32613714,,,v2.38BV-global-research-ranking
+U18588,0HE2l,Ameren Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U18590,0HECl,American Electric Power Co Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U18591,0HEWl,American Water Works Co Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,69.01200749,,,v2.38BV-global-research-ranking
+U18592,0HF3l,Cencora Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,54.60076854,,,v2.38BV-global-research-ranking
+U18593,0HF6l,Ameriprise Financial Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18598,0HG8l,Elevance Health Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,54.73469657,,,v2.38BV-global-research-ranking
+U18600,0HI1l,Arrow Electronics Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,58.60270031,,,v2.38BV-global-research-ranking
+U18602,0HIYl,Atara Biotherapeutics Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U18603,0HJLl,AutoZone Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U18605,0HJRl,Avery Dennison Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18608,0HL5l,Ball Corp,US,BLOCKED,NOT_RANKABLE,0,,,,v2.38BV-global-research-ranking
+U18614,0HOXl,BXP Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18617,0HQ3l,Brown-Forman Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,60.64779219,,,v2.38BV-global-research-ranking
+U18618,0HQPl,CBRE Group Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,61.06874832,,,v2.38BV-global-research-ranking
+U18619,0HQUl,CF Industries Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U18622,0HRJl,CSX Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,61.07043764,,,v2.38BV-global-research-ranking
+U18628,0HTGl,Cardinal Health Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U18632,0HVDl,Permian Resources Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,60.28164251,,,v2.38BV-global-research-ranking
+U18633,0HVFl,CenterPoint Energy Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,62.5138501,,,v2.38BV-global-research-ranking
+U18634,0HW4l,Charter Communications Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,58.54762963,,,v2.38BV-global-research-ranking
+U18637,0HYEl,Cincinnati Financial Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18639,0HYPl,Citizens Financial Group Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.4,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U18642,0I2Pl,Conagra Brands Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,20.98488277,,,v2.38BV-global-research-ranking
+U18643,0I35l,Consolidated Edison Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,63.78680729,,,v2.38BV-global-research-ranking
+U18646,0I4Al,Coty Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18651,0I6Ql,DTE Energy Co,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U18652,0I7El,DaVita Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U18653,0I8Fl,DENTSPLY SIRONA Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18656,0IC7l,Dollar General Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,61.16448149,,,v2.38BV-global-research-ranking
+U18657,0IC8l,Dollar Tree Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18661,0IDRl,EOG Resources Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,60.24422114,,,v2.38BV-global-research-ranking
+U18663,0IF3l,Eastman Chemical Co,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18664,0IF4l,Eastman Kodak Co,US,PARTIAL_COMPARABILITY,LOW,0.5,27.25932352,,,v2.38BV-global-research-ranking
+U18666,0IFJl,Edison International,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18667,0IHPl,Entergy Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U18668,0II3l,Equifax Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,65.09613054,,,v2.38BV-global-research-ranking
+U18671,0IIRl,Essex Property Trust Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.2,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U18672,0IJ2l,Eversource Energy,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U18674,0IJNl,Exelon Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U18675,0IJRl,Expeditors International of Washington Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,62.1449825,,,v2.38BV-global-research-ranking
+U18676,0IJVl,Extra Space Storage Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.5,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U18678,0IKWl,Fastenal Co,US,PARTIAL_COMPARABILITY,LOW,0.5,74.1560743,,,v2.38BV-global-research-ranking
+U18681,0ILWl,Fidelity National Information Services Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,45.86153565,,,v2.38BV-global-research-ranking
+U18683,0IP9l,Fiserv Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,66.0487365,,,v2.38BV-global-research-ranking
+U18684,0IPBl,FirstEnergy Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,59.31213164,,,v2.38BV-global-research-ranking
+U18686,0IQEl,Flowserve Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,61.61176402,,,v2.38BV-global-research-ranking
+U18687,0IREl,Fortive Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,48.50451843,,,v2.38BV-global-research-ranking
+U18688,0IRNl,Fortune Brands Innovations Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U18689,0ITLl,Arthur J Gallagher & Co,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18692,0IUCl,General Dynamics Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,65.80196338,,,v2.38BV-global-research-ranking
+U18693,0IUXl,Genuine Parts Co,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18699,0J1Rl,HCA Healthcare Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U18700,0J1Ul,Healthpeak Properties Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18705,0J4Gl,Helmerich & Payne Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,39.93372246,,,v2.38BV-global-research-ranking
+U18709,0J5Il,Hilton Worldwide Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U18711,0J5Zl,Hormel Foods Corp,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U18712,0J66l,Host Hotels & Resorts Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,64.41005956,,,v2.38BV-global-research-ranking
+U18716,0J76l,Huntington Ingalls Industries Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,58.42706594,,,v2.38BV-global-research-ranking
+U18717,0J86l,IPG Photonics Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18718,0J8Pl,IDEXX Laboratories Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,82.18293482,,,v2.38BV-global-research-ranking
+U18720,0J9Pl,Incyte Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,89.77051964,,,v2.38BV-global-research-ranking
+U18721,0JC3l,Intercontinental Exchange Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,70.98129843,,,v2.38BV-global-research-ranking
+U18723,0JDMl,IQVIA Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,59.6202887,,,v2.38BV-global-research-ranking
+U18736,0JQRl,KeyCorp,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U18739,0JRLl,Kohl's Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,52.1512125,,,v2.38BV-global-research-ranking
+U18742,0JSJl,LKQ Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,44.97312135,,,v2.38BV-global-research-ranking
+U18743,0JT5l,Lam Research Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,89.01287084,,,v2.38BV-global-research-ranking
+U18745,0JU0l,Lennar Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18750,0JWCl,MGM Resorts International,US,PARTIAL_COMPARABILITY,LOW,0.5,39.04108824,,,v2.38BV-global-research-ranking
+U18752,0JXDl,Macy's Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,50.746933,,,v2.38BV-global-research-ranking
+U18754,0JYAl,Marathon Petroleum Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,54.96555472,,,v2.38BV-global-research-ranking
+U18756,0JZ0l,Martin Marietta Materials Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,54.04974699,,,v2.38BV-global-research-ranking
+U18757,0JZ1l,Masco Corp,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U18758,0JZHl,Mattel Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,51.15561074,,,v2.38BV-global-research-ranking
+U18760,0JZUl,McKesson Corp,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U18762,0K10l,Mettler-Toledo International Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U18764,0K1El,Mid-America Apartment Communities Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18765,0K2Fl,Mohawk Industries Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,41.42957182,,,v2.38BV-global-research-ranking
+U18769,0K36l,Moody's Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,81.69089749,,,v2.38BV-global-research-ranking
+U18771,0K3Hl,Motorola Solutions Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,79.284944,,,v2.38BV-global-research-ranking
+U18772,0K4Cl,NRG Energy Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,54.37181693,,,v2.38BV-global-research-ranking
+U18775,0K6Fl,NetApp Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,72.96404899,,,v2.38BV-global-research-ranking
+U18778,0K7Jl,Newell Brands Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18783,0K87l,NiSource Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,73.80810588,,,v2.38BV-global-research-ranking
+U18784,0K8Ml,Norfolk Southern Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,68.4361443,,,v2.38BV-global-research-ranking
+U18786,0K9Ll,Nucor Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18787,0KABl,O'Reilly Automotive Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U18789,0KBKl,Omnicom Group Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,38.52646789,,,v2.38BV-global-research-ranking
+U18792,0KEIl,PPG Industries Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18794,0KEQl,PVH Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,34.94868254,,,v2.38BV-global-research-ranking
+U18795,0KETl,PACCAR Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18797,0KGEl,Paychex Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18798,0KHEl,Revvity Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,49.52671489,,,v2.38BV-global-research-ranking
+U18801,0KITl,Pinnacle West Capital Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U18802,0KNYl,T Rowe Price Group Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,69.63442514,,,v2.38BV-global-research-ranking
+U18803,0KO5l,Principal Financial Group Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.4,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U18805,0KODl,Prologis Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,63.57617742,,,v2.38BV-global-research-ranking
+U18811,0KSJl,Qorvo Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,63.79836715,,,v2.38BV-global-research-ranking
+U18816,0KU1l,Raymond James Financial Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18817,0KUEl,Realty Income Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18820,0KW1l,Republic Services Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,63.95244795,,,v2.38BV-global-research-ranking
+U18822,0KX0l,Riot Platforms Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,30.82068838,,,v2.38BV-global-research-ranking
+U18825,0KXMl,Roper Technologies Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,66.7989906,,,v2.38BV-global-research-ranking
+U18826,0KXOl,Ross Stores Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,66.34158634,,,v2.38BV-global-research-ranking
+U18828,0KYZl,SBA Communications Corp,US,REVIEW_REQUIRED,NOT_RANKABLE,0.44,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U18830,0KZAd,Amerant Bancorp Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.14,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U18841,0L5d,Lamb Weston Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,50.11875573,,,v2.38BV-global-research-ranking
+U18843,0L7Al,A O Smith Corp,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U18848,0L9El,Stanley Black & Decker Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18853,0LC6l,Sysco Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,54.11868353,,,v2.38BV-global-research-ranking
+U18855,0LD5l,Tapestry Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,87.39125096,,,v2.38BV-global-research-ranking
+U18858,0LF0l,Textron Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18859,0LHRl,Tyson Foods Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,38.18234873,,,v2.38BV-global-research-ranking
+U18862,0LIBl,Ulta Beauty Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,66.6557662,,,v2.38BV-global-research-ranking
+U18863,0LIKl,Under Armour Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18865,0LIYl,United Rentals Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,70.25379274,,,v2.38BV-global-research-ranking
+U18869,0LJLl,Universal Health Services Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,70.5776559,,,v2.38BV-global-research-ranking
+U18874,0LOZl,VeriSign Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U18879,0LRKl,Vulcan Materials Co,US,PARTIAL_COMPARABILITY,LOW,0.5,68.95399411,,,v2.38BV-global-research-ranking
+U18882,0LTIl,Waters Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,71.12719692,,,v2.38BV-global-research-ranking
+U18883,0LUSl,Welltower Inc,US,BLOCKED,NOT_RANKABLE,0.1,,,,v2.38BV-global-research-ranking
+U18885,0LWGl,Weyerhaeuser Co,US,PARTIAL_COMPARABILITY,LOW,0.5,43.23294408,,,v2.38BV-global-research-ranking
+U18886,0LWHl,Whirlpool Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18890,0M1Rl,Xcel Energy Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U18895,0M5d,BILL Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,37.00930326,,,v2.38BV-global-research-ranking
+U18899,0NUd,Nutanix Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U18900,0OALl,American International Group Inc,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U18906,0PYd,Paycom Software Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,68.52554772,,,v2.38BV-global-research-ranking
+U18912,0Q3d,Beyond Meat Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U18925,0QYYl,Harley-Davidson Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,46.10528958,,,v2.38BV-global-research-ranking
+U18952,0R18l,Best Buy Co Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,57.31315565,,,v2.38BV-global-research-ranking
+U18954,0R1Dl,Sangamo Therapeutics Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.34,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U18959,0R1Tl,Expedia Group Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,64.95096271,,,v2.38BV-global-research-ranking
+U18970,0R2Ml,Regeneron Pharmaceuticals Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,66.6023156,,,v2.38BV-global-research-ranking
+U18976,0R33l,Emerson Electric Co,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U18990,0SE0d,Sezzle Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,94.50302446,,,v2.38BV-global-research-ranking
+U18993,0SGOl,Dropbox Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U19007,0V6d,Vistra Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,56.37690653,,,v2.38BV-global-research-ranking
+U19023,0Y9Sl,Check Point Software Technologies Ltd,US,PARTIAL_COMPARABILITY,LOW,0.5,79.09933082,,,v2.38BV-global-research-ranking
+U19026,0YUd,Yum China Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,60.03791197,,,v2.38BV-global-research-ranking
+U19027,0ZCd,Zscaler Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19028,0ZG2d,Zillow Group Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19063,1170d,Arista Networks Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,87.1925854,,,v2.38BV-global-research-ranking
+U19162,185d,Alcoa Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19189,19MWm,Marvell Technology Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19190,19Xd,Axsome Therapeutics Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19232,1AMTm,American Tower Corp,US,REVIEW_REQUIRED,NOT_RANKABLE,0.2,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U19246,1ASTSm,AST SpaceMobile Inc,US,BLOCKED,NOT_RANKABLE,0.14,,,,v2.38BV-global-research-ranking
+U19254,1AVAVm,AeroVironment Inc,US,BLOCKED,NOT_RANKABLE,0.1,,,,v2.38BV-global-research-ranking
+U19259,1AXONm,Axon Enterprise Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,47.18804199,,,v2.38BV-global-research-ranking
+U19264,1B8d,Ondas Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19267,1BAHm,Booz Allen Hamilton Holding Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,55.10439257,,,v2.38BV-global-research-ranking
+U19279,1BIIBm,Biogen Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19284,1BLDRm,Builders FirstSource Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,39.92325531,,,v2.38BV-global-research-ranking
+U19286,1BMRNm,BioMarin Pharmaceutical Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,57.63106391,,,v2.38BV-global-research-ranking
+U19296,1BROm,Brown & Brown Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19303,1C3m,C3.ai Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19308,1CARRm,Carrier Global Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,43.99889846,,,v2.38BV-global-research-ranking
+U19313,1CDEm,Coeur Mining Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,91.54156117,,,v2.38BV-global-research-ranking
+U19316,1CEGm,Constellation Energy Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,61.3096492,,,v2.38BV-global-research-ranking
+U19336,1CPRTm,Copart Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U19338,1CROXm,Crocs Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,30.28570006,,,v2.38BV-global-research-ranking
+U19339,1CRWDm,Crowdstrike Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.14,,,,v2.38BV-global-research-ranking
+U19342,1CSGPm,CoStar Group Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,40.37474137,,,v2.38BV-global-research-ranking
+U19344,1CVNAm,Carvana Co,US,PARTIAL_COMPARABILITY,LOW,0.5,80.99051453,,,v2.38BV-global-research-ranking
+U19347,1CYTHm,Lumen Technologies Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U19350,1DASHm,DoorDash Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,71.38188761,,,v2.38BV-global-research-ranking
+U19353,1DECKm,Deckers Outdoor Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,76.04185304,,,v2.38BV-global-research-ranking
+U19366,1DPZm,Domino's Pizza Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U19374,1DXCMm,Dexcom Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,81.22814828,,,v2.38BV-global-research-ranking
+U19390,1EMEm,EMCOR Group Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,74.2026351,,,v2.38BV-global-research-ranking
+U19394,1ENPHm,Enphase Energy Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,71.02998399,,,v2.38BV-global-research-ranking
+U19396,1ENVXm,Enovix Corp,US,REVIEW_REQUIRED,NOT_RANKABLE,0.4,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U19398,1EPAMm,EPAM Systems Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,59.72554941,,,v2.38BV-global-research-ranking
+U19406,1ETSYm,Etsy Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U19419,1FAd,Sprouts Farmers Market Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,73.12283728,,,v2.38BV-global-research-ranking
+U19424,1FICOm,Fair Isaac Corp,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U19426,1FIXm,Comfort Systems USA Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,83.2352324,,,v2.38BV-global-research-ranking
+U19436,1FTNTm,Fortinet Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,80.65361777,,,v2.38BV-global-research-ranking
+U19444,1GEHCm,GE HealthCare Technologies Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,62.0744309,,,v2.38BV-global-research-ranking
+U19446,1GEVm,GE Vernova Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,72.12842966,,,v2.38BV-global-research-ranking
+U19481,1HLm,Hecla Mining Co,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U19497,1HUTm,Hut 8 Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,31.48356159,,,v2.38BV-global-research-ranking
+U19498,1HWMm,Howmet Aerospace Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,79.62920744,,,v2.38BV-global-research-ranking
+U19502,1IBKRm,Interactive Brokers Group Inc,US,BLOCKED,NOT_RANKABLE,0.1,,,,v2.38BV-global-research-ranking
+U19508,1ILMNm,Illumina Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19513,1INODm,Innodata Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,79.18678984,,,v2.38BV-global-research-ranking
+U19519,1ISRGm,Intuitive Surgical Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,82.44394853,,,v2.38BV-global-research-ranking
+U19522,1JBLm,Jabil Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,47.58846019,,,v2.38BV-global-research-ranking
+U19531,1KDPm,Keurig Dr Pepper Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,68.87701374,,,v2.38BV-global-research-ranking
+U19552,1LCIDm,Lucid Group Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19553,1LDOSm,Leidos Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,65.70199597,,,v2.38BV-global-research-ranking
+U19559,1LITEm,Lumentum Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,37.1709078,,,v2.38BV-global-research-ranking
+U19561,1LNGm,Cheniere Energy Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,89.47850295,,,v2.38BV-global-research-ranking
+U19581,1MDBm,MongoDB Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19591,1MPWRm,Monolithic Power Systems Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,71.6078822,,,v2.38BV-global-research-ranking
+U19592,1MPm,MP Materials Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19608,1NBIXm,Neurocrine Biosciences Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,80.17543684,,,v2.38BV-global-research-ranking
+U19633,1OGNm,Organon & Co,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19656,1PLLm,Planet Labs PBC,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19665,1PSTGm,Everpure Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,66.10982433,,,v2.38BV-global-research-ranking
+U19672,1QBTSm,D-Wave Quantum Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.4,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U19679,1RDDTm,Reddit Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19685,1RKLBm,Rocket Lab Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19686,1RMBSm,Rambus Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U19688,1ROKUm,Roku Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19734,1SOFIm,SoFi Technologies Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19742,1SRPTm,Sarepta Therapeutics Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,20.62463409,,,v2.38BV-global-research-ranking
+U19752,1SWKSm,Skyworks Solutions Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,50.58639584,,,v2.38BV-global-research-ranking
+U19770,1TEMm,Tempus AI Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19778,1TMDXm,TransMedics Group Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,88.73917139,,,v2.38BV-global-research-ranking
+U19785,1TRMBm,Trimble Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,47.72181673,,,v2.38BV-global-research-ranking
+U19801,1UC0d,Cue Biopharma Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19805,1UNPm,Union Pacific Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,71.87455722,,,v2.38BV-global-research-ranking
+U19807,1UPSTm,Upstart Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U19814,1VEEVm,Veeva Systems Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,79.90239511,,,v2.38BV-global-research-ranking
+U19821,1VKTXm,Viking Therapeutics Inc,US,BLOCKED,NOT_RANKABLE,0.14,,,,v2.38BV-global-research-ranking
+U19831,1VRTm,Vertiv Holdings Co,US,PARTIAL_COMPARABILITY,LOW,0.5,83.62909571,,,v2.38BV-global-research-ranking
+U19931,26CAd,ImmunityBio Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.34,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U19979,2H51d,Ocugen Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.34,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U19991,2ONd,Peloton Interactive Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U19993,2RJAd,Phunware Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.4,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U20001,2X0d,Corteva Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U20003,2XTd,DXC Technology Co,US,PARTIAL_COMPARABILITY,LOW,0.5,34.53889833,,,v2.38BV-global-research-ranking
+U20087,38Id,Intellia Therapeutics Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.4,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U20125,3E7d,Evergy Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,56.69517152,,,v2.38BV-global-research-ranking
+U20161,3LNd,Live Nation Entertainment Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,51.91804437,,,v2.38BV-global-research-ranking
+U20188,3S9d,Sunrun Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U20217,3U6d,UGI Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,66.20119267,,,v2.38BV-global-research-ranking
+U20240,45Td,IES Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,82.80505772,,,v2.38BV-global-research-ranking
+U20273,4CC0d,ClearSign Technologies Corp,US,BLOCKED,NOT_RANKABLE,0.14,,,,v2.38BV-global-research-ranking
+U20274,4CUd,Centrus Energy Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,57.11699654,,,v2.38BV-global-research-ranking
+U20277,4DNd,Denali Therapeutics Inc,US,BLOCKED,NOT_RANKABLE,0.14,,,,v2.38BV-global-research-ranking
+U20282,4LLd,Teladoc Health Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U20283,4MDd,Digital Turbine Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U20285,4PGd,Otis Worldwide Corp,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U20302,4VKd,Aon PLC,US,PARTIAL_COMPARABILITY,LOW,0.5,79.14569842,,,v2.38BV-global-research-ranking
+U20356,5GHd,Guardant Health Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U20373,5QZ0d,QuantumScape Corp,US,BLOCKED,NOT_RANKABLE,0.14,,,,v2.38BV-global-research-ranking
+U20400,63Gd,Paramount Skydance Corp,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U20445,6D8d,DuPont de Nemours Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U20447,6HAd,HA Sustainable Infrastructure Capital Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U20497,76Wd,H2O America,US,PARTIAL_COMPARABILITY,LOW,0.5,63.44386212,,,v2.38BV-global-research-ranking
+U20501,788d,Coupang Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,55.85252626,,,v2.38BV-global-research-ranking
+U20509,7B0d,SentinelOne Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U20514,7JAd,Butterfly Network Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U20522,7XUd,Kyndryl Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.1,,,,v2.38BV-global-research-ranking
+U20525,8020d,Hillman Solutions Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,58.07138817,,,v2.38BV-global-research-ranking
+U20543,82Wd,Hims & Hers Health Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,65.92738589,,,v2.38BV-global-research-ranking
+U20570,87Pd,SharonAI Holdings Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.24,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U20585,8LL0d,374Water Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.4,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U20587,8QJ0d,Marqeta Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,38.7816896,,,v2.38BV-global-research-ranking
+U20649,9MKd,Keel Infrastructure Corp,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U20655,9WYd,Texas Pacific Land Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,81.68135099,,,v2.38BV-global-research-ranking
+U20684,AAOIn,Applied Optoelectronics Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U20728,ACADn,ACADIA Pharmaceuticals Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,80.19735711,,,v2.38BV-global-research-ranking
+U20743,ACHCn,Acadia Healthcare Co Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U20896,AGIOn,Agios Pharmaceuticals Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.5,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U20906,AGTd,AptarGroup Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,62.75213344,,,v2.38BV-global-research-ranking
+U20910,AH91d,AMC Entertainment Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U21131,ALLYn,Ally Financial Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U21324,AMKRn,Amkor Technology Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,55.25893765,,,v2.38BV-global-research-ranking
+U21329,AMS1d,American Superconductor Corp,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U21561,AVAn,Avista Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,56.42551341,,,v2.38BV-global-research-ranking
+U21649,B72d,AtaiBeckley Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.3,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U21697,BAXn,Baxter International Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U21751,BDCn,Belden Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,68.41188238,,,v2.38BV-global-research-ranking
+U21792,BICd,BTCS Inc,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U21852,BJn,BJ's Wholesale Club Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,58.23508083,,,v2.38BV-global-research-ranking
+U21853,BKDn,Brookdale Senior Living Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U22025,BRXn,Brixmor Property Group Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U22058,BTJn,Atmos Energy Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,72.93669045,,,v2.38BV-global-research-ranking
+U22148,CA8Ad,CACI International Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,61.28867059,,,v2.38BV-global-research-ranking
+U22158,CALn,Caleres Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U22283,CDLXn,Cardlytics Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U22325,CENXn,Century Aluminum Co,US,PARTIAL_COMPARABILITY,LOW,0.5,46.19613432,,,v2.38BV-global-research-ranking
+U22364,CGNXn,Cognex Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,63.57506746,,,v2.38BV-global-research-ranking
+U22373,CHGGn,Chegg Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U22432,CLBn,Core Laboratories NV,US,PARTIAL_COMPARABILITY,LOW,0.5,51.5585148,,,v2.38BV-global-research-ranking
+U22435,CLDXn,Celldex Therapeutics Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.4,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U22464,CLOVRn,Clover Health Investments Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U22515,CNKn,Cinemark Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.26,,,,v2.38BV-global-research-ranking
+U22517,CNMDn,CONMED Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,43.97005302,,,v2.38BV-global-research-ranking
+U22597,COZd,Cognizant Technology Solutions Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,63.79534552,,,v2.38BV-global-research-ranking
+U22612,CPTn,Camden Property Trust,US,REVIEW_REQUIRED,NOT_RANKABLE,0.4,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U22655,CS1d,Expand Energy Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U22732,CWHn,Camping World Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U22836,DDNd,Darden Restaurants Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,70.34118572,,,v2.38BV-global-research-ranking
+U23030,DOCUn,DocuSign Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,55.20390966,,,v2.38BV-global-research-ranking
+U23061,DRHn,DiamondRock Hospitality Co,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U23156,E050d,Easterly Government Properties Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U23170,E7Pd,Indivior Pharmaceuticals Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U23180,EAFn,GrafTech International Ltd,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U23314,EI2d,Erie Indemnity Co,US,PARTIAL_COMPARABILITY,LOW,0.5,66.35489142,,,v2.38BV-global-research-ranking
+U23379,ELSn,Equity LifeStyle Properties Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,66.65928365,,,v2.38BV-global-research-ranking
+U23504,ENRn,Energizer Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U23526,EOLSn,Evolus Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U23552,ER4d,Emergent BioSolutions Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U23642,ESRTn,Empire State Realty Trust Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U23649,ET9d,Circle Internet Group Inc,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U23825,EXELn,Exelixis Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,83.52840429,,,v2.38BV-global-research-ranking
+U23845,EYEn,National Vision Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U23854,F9Qd,Eos Energy Enterprises Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.34,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U23856,FA1d,FactSet Research Systems Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,75.27031794,,,v2.38BV-global-research-ranking
+U23910,FDXHv,Fedex Freight Holding Co Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U23988,FIVEBn,Five Below Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,73.35168029,,,v2.38BV-global-research-ranking
+U24124,FRMIl,Fermi Inc,US,BLOCKED,NOT_RANKABLE,0.14,,,,v2.38BV-global-research-ranking
+U24141,FS5Ad,FS KKR Capital Corp,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U24155,FSLYRn,Fastly Inc,US,BLOCKED,NOT_RANKABLE,0.14,,,,v2.38BV-global-research-ranking
+U24233,G84d,Generac Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,41.23452189,,,v2.38BV-global-research-ranking
+U24288,GDDYn,GoDaddy Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,70.06155919,,,v2.38BV-global-research-ranking
+U24444,GNWn,Genworth Financial Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U24457,GOGOn,Gogo Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,60.5734841,,,v2.38BV-global-research-ranking
+U24487,GOVd,Insulet Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,65.91873216,,,v2.38BV-global-research-ranking
+U24496,GPROn,GoPro Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U24527,GRPNn,Groupon Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U24652,HALOn,Halozyme Therapeutics Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,77.79537627,,,v2.38BV-global-research-ranking
+U24678,HCCn,Warrior Met Coal Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U24685,HCSGn,Healthcare Services Group Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U24762,HGVn,Hilton Grand Vacations Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U24870,HQYn,HealthEquity Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,75.9771475,,,v2.38BV-global-research-ranking
+U24898,HSOAd,Encompass Health Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U24931,HUNn,Huntsman Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,23.65887075,,,v2.38BV-global-research-ranking
+U24953,HXLn,Hexcel Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U24981,I1Vd,CoreWeave Inc,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U24997,IARTn,Integra LifeSciences Holdings Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U25032,ICFIn,ICF International Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,44.44155379,,,v2.38BV-global-research-ranking
+U25054,ID7d,IDEX Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,62.43618761,,,v2.38BV-global-research-ranking
+U25098,IFFn,International Flavors & Fragrances Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U25162,ILPTn,Industrial Logistics Properties Trust,US,BLOCKED,NOT_RANKABLE,0.14,,,,v2.38BV-global-research-ranking
+U25254,INVAn,Innoviva Inc,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U25255,INVHn,Invitation Homes Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U25262,IONSn,Ionis Pharmaceuticals Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U25264,IOVAn,Iovance Biotherapeutics Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U25307,IRWDn,Ironwood Pharmaceuticals Inc,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U25350,ITH0d,Nektar Therapeutics,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U25352,ITRIn,Itron Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,63.30923855,,,v2.38BV-global-research-ranking
+U25435,J4Dd,Kenvue Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,63.16853641,,,v2.38BV-global-research-ranking
+U25437,JACKn,Jack in the Box Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U25449,JBLUn,JetBlue Airways Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U25471,JEFn,Jefferies Financial Group Inc,US,REVIEW_REQUIRED,NOT_RANKABLE,0.1,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U25515,JHYd,Jack Henry & Associates Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,74.46353443,,,v2.38BV-global-research-ranking
+U25706,KB7d,Solventum Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,76.60945186,,,v2.38BV-global-research-ranking
+U25738,KEYSn,Keysight Technologies Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,71.8227706,,,v2.38BV-global-research-ranking
+U25817,KPTIn,Karyopharm Therapeutics Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U25927,LE0d,Lemonade Inc,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U25977,LHVd,ExlService Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,75.87428649,,,v2.38BV-global-research-ranking
+U25979,LIIn,Lennox International Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,65.18209095,,,v2.38BV-global-research-ranking
+U26020,LNTHn,Lantheus Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,60.03086625,,,v2.38BV-global-research-ranking
+U26045,LPXn,Louisiana-Pacific Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,42.26036248,,,v2.38BV-global-research-ranking
+U26101,LVSn,Las Vegas Sands Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,76.2951353,,,v2.38BV-global-research-ranking
+U26113,LY0d,Lyft Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,77.4400614,,,v2.38BV-global-research-ranking
+U26272,MEDPn,Medpace Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,80.88849528,,,v2.38BV-global-research-ranking
+U26329,MHGd,Molina Healthcare Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,47.08967606,,,v2.38BV-global-research-ranking
+U26406,MMFd,Modine Manufacturing Co,US,PARTIAL_COMPARABILITY,LOW,0.5,57.96066265,,,v2.38BV-global-research-ranking
+U26422,MNKDn,MannKind Corp,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U26472,MPWn,Medical Properties Trust Inc,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U26477,MRCYn,Mercury Systems Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U26526,MTDRn,Matador Resources Co,US,PARTIAL_COMPARABILITY,LOW,0.5,64.63819765,,,v2.38BV-global-research-ranking
+U26529,MTGn,MGIC Investment Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U26579,MWId,MarketAxess Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,68.9693527,,,v2.38BV-global-research-ranking
+U26667,ND1d,Nordson Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,66.7189204,,,v2.38BV-global-research-ranking
+U26743,NKB2d,TG Therapeutics Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,93.54468424,,,v2.38BV-global-research-ranking
+U26838,NUSn,Nu Skin Enterprises Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U26842,NVAXn,Novavax Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U26870,NXSTn,Nexstar Media Group Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,39.26251934,,,v2.38BV-global-research-ranking
+U26905,OCSLn,Oaktree Specialty Lending Corp,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U26922,ODFd,Old Dominion Freight Line Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U26935,OGLd,Golub Capital BDC Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U26940,OHIn,Omega Healthcare Investors Inc,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U26948,OISn,Oil States International Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U26961,OMFn,OneMain Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U26990,OPKn,OPKO Health Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27027,OSURn,OraSure Technologies Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27064,PACBn,Pacific Biosciences of California Inc,US,BLOCKED,NOT_RANKABLE,0.14,,,,v2.38BV-global-research-ranking
+U27097,PBEd,Peabody Energy Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U27100,PBIn,Pitney Bowes Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U27123,PCUd,Southern Copper Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U27160,PETSn,PetMed Express Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27216,PIn,Impinj Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,28.25363934,,,v2.38BV-global-research-ranking
+U27292,PPHCl,Public Policy Holding Co Inc,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U27301,PQIAd,RadNet Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,37.63129297,,,v2.38BV-global-research-ranking
+U27367,PSMTn,PriceSmart Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,56.88287983,,,v2.38BV-global-research-ranking
+U27369,PSNn,Parsons Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,47.38274552,,,v2.38BV-global-research-ranking
+U27373,PSRAd,CoreCivic Inc,US,BLOCKED,NOT_RANKABLE,0.1,,,,v2.38BV-global-research-ranking
+U27382,PTENn,Patterson-UTI Energy Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27402,PUMPn,ProPetro Holding Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27408,PW2d,Powell Industries Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,75.78595305,,,v2.38BV-global-research-ranking
+U27454,QH9d,ADTRAN Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27513,RAMPn,LiveRamp Holdings Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27521,RBBNn,Ribbon Communications Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27527,RBRKn,Rubrik Inc,US,BLOCKED,NOT_RANKABLE,0.34,,,,v2.38BV-global-research-ranking
+U27545,RDNn,Radian Group Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27660,RO7d,ROBLOX Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27675,ROLn,Rollins Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,75.98697002,,,v2.38BV-global-research-ranking
+U27685,RPDn,Rapid7 Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,44.55318929,,,v2.38BV-global-research-ranking
+U27690,RPMn,RPM International Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U27722,RV6d,Charles River Laboratories International Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,27.60617231,,,v2.38BV-global-research-ranking
+U27735,RYNn,Rayonier Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,67.01688116,,,v2.38BV-global-research-ranking
+U27738,RZ2d,Veralto Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,73.07652605,,,v2.38BV-global-research-ranking
+U27880,SCSCn,ScanSource Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,53.05489882,,,v2.38BV-global-research-ranking
+U28005,SFWd,Capital Southwest Corp,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U28109,SLABn,Silicon Laboratories Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U28442,STWDn,Starwood Property Trust Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U28457,SUIn,Sun Communities Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U28475,SUPNn,Supernus Pharmaceuticals Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,32.18170589,,,v2.38BV-global-research-ranking
+U28600,T8Zd,Waystar Holding Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U28615,TARd,Targa Resources Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,80.54821974,,,v2.38BV-global-research-ranking
+U28655,TE1d,Bio-Techne Corp,US,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U28752,TLKd,Toll Brothers Inc,US,BLOCKED,NOT_RANKABLE,0.24,,,,v2.38BV-global-research-ranking
+U28823,TR4d,Tractor Supply Co,US,PARTIAL_COMPARABILITY,LOW,0.5,60.79596776,,,v2.38BV-global-research-ranking
+U28879,TRUUn,TransUnion,US,PARTIAL_COMPARABILITY,LOW,0.5,69.83131126,,,v2.38BV-global-research-ranking
+U28935,TUSKn,Mammoth Energy Services Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U28941,TWHd,Twilio Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U28950,TYPd,Tyler Technologies Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,66.81729014,,,v2.38BV-global-research-ranking
+U29146,UPWKn,Upwork Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,57.71228334,,,v2.38BV-global-research-ranking
+U29191,USFDn,US Foods Holding Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,58.15344146,,,v2.38BV-global-research-ranking
+U29383,VIAVn,Viavi Solutions Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,44.79416434,,,v2.38BV-global-research-ranking
+U29384,VICIn,VICI Properties Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U29470,VREXn,Varex Imaging Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U29479,VSATn,ViaSat Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U29487,VSHn,Vishay Intertechnology Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U29533,W1Xd,Wix.com Ltd,US,BLOCKED,NOT_RANKABLE,0.44,,,,v2.38BV-global-research-ranking
+U29680,WMSn,Advanced Drainage Systems Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,64.69258525,,,v2.38BV-global-research-ranking
+U29683,WNCn,Wabash National Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U29719,WPSd,West Pharmaceutical Services Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,66.3646331,,,v2.38BV-global-research-ranking
+U29737,WS11d,WillScot Holdings Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,30.8466467,,,v2.38BV-global-research-ranking
+U29807,X06d,Versant Media Group Inc,US,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U30228,Y1Fd,First American Financial Corp,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U30237,YDO1d,Madrigal Pharmaceuticals Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U30291,ZBRAn,Zebra Technologies Corp,US,PARTIAL_COMPARABILITY,LOW,0.5,56.46098965,,,v2.38BV-global-research-ranking
+U30303,ZGV3d,Gevo Inc,US,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U30305,ZIMd,Zimmer Biomet Holdings Inc,US,PARTIAL_COMPARABILITY,LOW,0.5,52.46941245,,,v2.38BV-global-research-ranking
+U36865,XD4,STRABAG SE,AT,REVIEW_REQUIRED,NOT_RANKABLE,0.5,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U36867,ABS2,PORR AG,AT,PARTIAL_COMPARABILITY,LOW,0.5,59.17583852,,,v2.38BV-global-research-ranking
+U36868,EBO,ERSTE GROUP BANK AG,AT,REVIEW_REQUIRED,NOT_RANKABLE,0.08,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U36869,AZ2,Andritz AG,AT,PARTIAL_COMPARABILITY,LOW,0.5,62.63516689,,,v2.38BV-global-research-ranking
+U36870,OMV,OMV AKTIENGESELLSCHAFT,AT,REVIEW_REQUIRED,NOT_RANKABLE,0.5,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U36871,OEWA,VERBUND AG,AT,REVIEW_REQUIRED,NOT_RANKABLE,0.3,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U36873,UN9,UNIQA Insurance Group AG,AT,REVIEW_REQUIRED,NOT_RANKABLE,0.14,,,financial_institution_requires_separate_factor_contract,v2.38BV-global-research-ranking
+U36874,WIB,Wienerberger AG,AT,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U36875,VAS,voestalpine AG,AT,BLOCKED,NOT_RANKABLE,0.2,,,,v2.38BV-global-research-ranking
+U36876,SLL,SBO AG,AT,REVIEW_REQUIRED,NOT_RANKABLE,0.5,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U36877,KTN,Kontron AG,AT,PARTIAL_COMPARABILITY,LOW,0.5,40.02679592,,,v2.38BV-global-research-ranking
+U36878,WAH,Wolftank Group AG,AT,BLOCKED,NOT_RANKABLE,0.4,,,,v2.38BV-global-research-ranking
+U36879,GEPH,EPH Group AG,AT,REVIEW_REQUIRED,NOT_RANKABLE,0.1,,,absolute_margin_outside_300pct,v2.38BV-global-research-ranking
+U36880,4X0,Steyr Motors AG,AT,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U36881,O3P,Österreichische Post Aktiengesellschaft,AT,PARTIAL_COMPARABILITY,LOW,0.5,56.02473436,,,v2.38BV-global-research-ranking
+U36883,1AST,ASTA Energy Solutions AG,AT,PARTIAL_COMPARABILITY,LOW,0.5,41.94868301,,,v2.38BV-global-research-ranking
+U36884,FQT,FREQUENTIS AG,AT,PARTIAL_COMPARABILITY,LOW,0.5,58.91440612,,,v2.38BV-global-research-ranking
+U37451,KFI1,KINGFISHER,GB,BLOCKED,NOT_RANKABLE,0.3,,,,v2.38BV-global-research-ranking
+U09840,ALEw,Allegro.eu SA,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U09938,APAMa,APERAM SA,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U10397,BREBb,Brederode SA,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U11974,ERFp,Eurofins Scientific SE,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U15922,SESGp,SES SA,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U16477,SWPp,Sword Group,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U18384,ZABw,Zabka Group SA,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U21051,ALDNXp,DNXcorp SE,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U26110,LXMPRx,Luxempart SA,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U26989,OPGw,CPI FIM SA,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37520,M4M1,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37521,RRTL,MDX1,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37522,O5G,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37523,H2A,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37524,GYC,SDX1,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37525,ADJ,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37528,TGHN,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37529,AT1,MDX1,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37530,BFSA,SDX1,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37532,GFG,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37533,HTG,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37534,TNIE,SDX1,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37535,NVM,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37537,MS1,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37538,TW10,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking
+U37539,OT8,LUX0,LU,NOT_YET_SCORED_NO_ADAPTER,NOT_RANKABLE,0.0,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,v2.38BV-global-research-ranking

@@ -1,0 +1,17 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_used": false,
+    "phase9c_authorized": true,
+    "phase9c_block": "2_of_3_scoring_engine_applied",
+    "recommendations_generated": false
+  },
+  "outputs": {
+    "global_research_ranking_v2_38bv.csv": {
+      "bytes": 135880,
+      "sha256": "2733786ad0ac20b96832af283efd29bfbd3b3ddea2c8ed0afd2e3ddee2d0e9a1"
+    }
+  },
+  "phase": "v2.38BV-global-research-ranking"
+}

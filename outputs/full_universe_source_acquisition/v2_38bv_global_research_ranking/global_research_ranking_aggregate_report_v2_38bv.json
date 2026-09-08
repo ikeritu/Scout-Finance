@@ -1,0 +1,68 @@
+{
+  "eligibility_status_counts": {
+    "BLOCKED": 270,
+    "ELIGIBLE_PARTIAL": 318,
+    "NOT_YET_SCORED_NO_ADAPTER": 26,
+    "PARTIAL_COMPARABILITY": 373,
+    "REVIEW_REQUIRED": 124
+  },
+  "eligible_input": 1088,
+  "financial_institution_input": 23,
+  "financial_institutions_recovered_from_real_austria_names": [
+    "U36868",
+    "U36873"
+  ],
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice": false,
+    "network_used": false,
+    "phase9c_authorized": true,
+    "phase9c_block": "2_of_3_scoring_engine_applied",
+    "recommendations_generated": false
+  },
+  "not_yet_scored_no_adapter": [
+    "U09840",
+    "U09938",
+    "U10397",
+    "U11974",
+    "U15922",
+    "U16477",
+    "U18384",
+    "U21051",
+    "U26110",
+    "U26989",
+    "U37520",
+    "U37521",
+    "U37522",
+    "U37523",
+    "U37524",
+    "U37525",
+    "U37528",
+    "U37529",
+    "U37530",
+    "U37532",
+    "U37533",
+    "U37534",
+    "U37535",
+    "U37537",
+    "U37538",
+    "U37539"
+  ],
+  "note": "Applies the already-validated v2.35A3 scoring engine (scripts/scoring_engine/core.py) unchanged to the v2.38BO eligible universe -- same contract, same weights, same percentile-rank normalization, same renormalize-weights coverage floor, same confidence tiers. US-origin (v2.38G+BK+BA+BU) and Austria (v2.38X+AK) are scored; Luxembourg and GB have no ratio/growth adapter built yet and are reported explicitly as not_yet_scored_no_adapter, never silently dropped or fabricated. A real placeholder-company-name bug in v2.38AL/v2.38BO (literal 'AST0' for the whole new Austria population) meant two real financial institutions (Erste Group Bank AG, UNIQA Insurance Group AG) were not caught upstream -- recovered here by re-applying v2.38BO's own real heuristic against v2.38X's real company names, routed to REVIEW_REQUIRED via the engine's existing exclusions mechanism, same reason string the old product already uses for its own bank (P178). Experimental research prioritization only -- never investment advice, never a prediction, never a trade.",
+  "phase": "v2.38BV-global-research-ranking",
+  "shortlist": [
+    "U00597",
+    "U00297",
+    "U00086",
+    "U00606",
+    "U00483",
+    "U00119",
+    "U00497",
+    "U00025",
+    "U00017",
+    "U00046"
+  ],
+  "shortlist_size": 10,
+  "status": "COMPLETED_GLOBAL_RESEARCH_RANKING_EXPERIMENTAL",
+  "universe_size": 1111
+}
