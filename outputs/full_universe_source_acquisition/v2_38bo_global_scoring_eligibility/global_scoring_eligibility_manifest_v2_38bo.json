@@ -1,0 +1,16 @@
+{
+  "guardrails": {
+    "network_used": false,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "outputs": {
+    "global_scoring_eligibility_v2_38bo.csv": {
+      "bytes": 6480993,
+      "sha256": "94979bc2de2ced2cb4d98afa4af23d17e7d3b9f57b8ed88d7df7b973b5d5d6a9"
+    }
+  },
+  "phase": "v2.38BO-global-scoring-eligibility"
+}
