@@ -37,3 +37,13 @@ No toca el dataset de 50 activos ni su ranking experimental. No añade scoring, 
 Sin red disparada por el botón (los dos scripts reconstruidos son puramente locales). Sin credenciales nuevas. Sin scoring, ranking, recomendaciones ni fase 9C. `.claude/launch.json` añadido para poder previsualizar la app durante el desarrollo (no forma parte de la app en sí).
 
 **Estado del bloque: `COMPLETED_UI_GLOBAL_UNIVERSE_ACTUALIZAR`.** Primera pieza real de "camino a producto": el trabajo de más de 40 bloques de investigación ya no vive solo en ficheros — es visible y actualizable desde la app real, con lo que falta siempre marcado, nunca oculto.
+
+---
+
+## Actualización (v2.38BP, 2026-09-08): filtro por nivel de elegibilidad para scoring
+
+Tras definir el subconjunto elegible para scoring (`v2.38BO`), el usuario pidió conectarlo a esta misma pantalla. `load_global_matrix()` ahora une por `asset_id` el fichero real de `v2.38BO` (si todavía no existe, cada fila queda con los campos de elegibilidad en blanco — el mismo convenio de "fallo abierto a blanco" ya usado en todo este módulo, nunca un error). El botón "Actualizar" pasa de 2 a 3 pasos reales encadenados (`v2.38AL` → `v2.38AM` → `v2.38BO`), cada uno deteniéndose si el anterior falla — nueva prueba real que confirma que un fallo en el contexto geopolítico impide construir la elegibilidad sobre una base rota.
+
+Nueva quinta métrica ("Elegibles para scoring") y un tercer filtro ("Elegibilidad para scoring") en la pantalla, con las etiquetas reales de los 5 niveles de `v2.38BO`. **Verificado en vivo**: la métrica muestra 1.088 (474+531+83, la suma real de los tres niveles elegibles sin contar los de revisión), y filtrar por "Elegible completo" reduce la tabla a exactamente 474 empresas — coincide exacto con el fichero real, confirmando que la unión por `asset_id` funciona correctamente de principio a fin.
+
+3 pruebas offline nuevas (10 en total en `qa_ui_global_universe_v2_38al.py`): el fichero de elegibilidad se une correctamente por `asset_id`, la reconstrucción se detiene tras un fallo del contexto geopolítico sin intentar la elegibilidad, y la carga sin fichero de elegibilidad deja los campos en blanco sin fallar. Sin red nueva, sin scoring, sin cambios en `v2.38BO` en sí.

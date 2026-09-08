@@ -36,6 +36,15 @@ GLOBAL_STATUS_LABELS = {
 GLOBAL_FUNDAMENTALS_OR_BETTER = {"FUNDAMENTALS_PARTIAL_NO_GROWTH_YET", "FUNDAMENTALS_READY_NO_GROWTH_YET", "GROWTH_PARTIAL", "GROWTH_READY"}
 GLOBAL_GROWTH_STATUSES = {"GROWTH_PARTIAL", "GROWTH_READY"}
 GLOBAL_TABLE_LIMIT = 2000
+GLOBAL_ELIGIBILITY_LABELS = {
+    "ELIGIBLE_FULL": "Elegible completo (crecimiento + precio real)",
+    "ELIGIBLE_PARTIAL_NO_PRICE": "Elegible parcial (sin precio real)",
+    "ELIGIBLE_PARTIAL_SINGLE_PERIOD": "Elegible parcial (un solo periodo)",
+    "REVIEW_REQUIRED_FINANCIAL_INSTITUTION": "Revisión requerida (entidad financiera)",
+    "NOT_ELIGIBLE": "No elegible todavía",
+    "": "Sin clasificar (pulsa Actualizar)",
+}
+GLOBAL_ELIGIBLE_TIERS = {"ELIGIBLE_FULL", "ELIGIBLE_PARTIAL_NO_PRICE", "ELIGIBLE_PARTIAL_SINGLE_PERIOD"}
 STATUS_LABELS = {
     "ELIGIBLE_PARTIAL": "Clasificable parcial", "PARTIAL_COMPARABILITY": "Comparabilidad parcial",
     "REVIEW_REQUIRED": "Revisión requerida", "BLOCKED": "Bloqueado",
@@ -150,7 +159,7 @@ def render_global_universe(_data):
     heading(st, "Universo global", "Las 43.089 empresas del censo operativo completo, con el estado real de identidad, fundamentales, crecimiento y precio de cada una — lo que falta se marca, nunca se oculta.")
     action_col, info_col = st.columns([1, 3])
     if action_col.button("🔄 Actualizar", type="primary", help="Recalcula la matriz a partir de los datos ya recolectados hasta ahora. No descarga ni consulta nada nuevo."):
-        with st.spinner("Actualizando matriz de cobertura y contexto geopolítico (sin conexión de red)…"):
+        with st.spinner("Actualizando matriz de cobertura, contexto geopolítico y elegibilidad para scoring (sin conexión de red)…"):
             result = rebuild_global_matrix(ROOT)
         global_matrix_snapshot.clear()
         (st.success if result.ok else st.error)("Matriz actualizada correctamente." if result.ok else "La actualización falló — revisa el detalle abajo.")
@@ -165,26 +174,30 @@ def render_global_universe(_data):
         return
     info_col.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(matrix.rows):,} empresas · sin conexión de red — recalcula solo lo ya recolectado")
     counts = Counter(row["overall_coverage_status"] for row in matrix.rows)
-    metric_cols = st.columns(4)
+    eligibility_counts = Counter(row.get("eligibility_tier", "") for row in matrix.rows)
+    metric_cols = st.columns(5)
     metric_cols[0].metric("Censo total", f"{len(matrix.rows):,}")
     metric_cols[1].metric("Con identidad real", f"{sum(v for k, v in counts.items() if k != 'NO_DATA_YET'):,}")
     metric_cols[2].metric("Con fundamentales reales", f"{sum(v for k, v in counts.items() if k in GLOBAL_FUNDAMENTALS_OR_BETTER):,}")
     metric_cols[3].metric("Con crecimiento real", f"{sum(v for k, v in counts.items() if k in GLOBAL_GROWTH_STATUSES):,}")
+    metric_cols[4].metric("Elegibles para scoring", f"{sum(v for k, v in eligibility_counts.items() if k in GLOBAL_ELIGIBLE_TIERS):,}", help="Suma de los tres niveles ELIGIBLE_*; no incluye las que están en revisión por ser entidades financieras. Pulsa Actualizar si no se ha calculado todavía (v2.38BO).")
     st.markdown("### Desglose por estado")
     status_rows = [{"Estado": GLOBAL_STATUS_LABELS.get(status, status), "Empresas": count} for status, count in sorted(counts.items(), key=lambda kv: -kv[1])]
     st.dataframe(pd.DataFrame(status_rows), use_container_width=True, hide_index=True)
     st.markdown("### Buscar en el censo")
     search = st.text_input("Buscar", placeholder="Empresa, ticker o ID", key="global_search")
-    c1, c2 = st.columns(2)
+    c1, c2, c3 = st.columns(3)
     countries = sorted({row["country"] for row in matrix.rows if row["country"]})
     country_filter = c1.multiselect("País", countries, placeholder="Todos")
     status_filter = c2.multiselect("Estado", sorted(counts), format_func=lambda value: GLOBAL_STATUS_LABELS.get(value, value), placeholder="Todos")
+    eligibility_filter = c3.multiselect("Elegibilidad para scoring", sorted(eligibility_counts), format_func=lambda value: GLOBAL_ELIGIBILITY_LABELS.get(value, value), placeholder="Todas")
     needle = search.casefold().strip()
     filtered = [
         row for row in matrix.rows
         if (not needle or any(needle in str(row.get(key, "")).casefold() for key in ("company_name", "ticker", "asset_id")))
         and (not country_filter or row["country"] in country_filter)
         and (not status_filter or row["overall_coverage_status"] in status_filter)
+        and (not eligibility_filter or row.get("eligibility_tier", "") in eligibility_filter)
     ]
     st.caption(f"{len(filtered):,} de {len(matrix.rows):,} empresas")
     if len(filtered) > GLOBAL_TABLE_LIMIT:
@@ -194,6 +207,7 @@ def render_global_universe(_data):
         "Bolsa": row["exchange"], "País": row["country"], "Identidad": row["identity_status"],
         "Fundamentales": row["fundamentals_status"], "Crecimiento": row["growth_status"], "Precio": row["price_status"],
         "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
+        "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
     } for row in filtered[:GLOBAL_TABLE_LIMIT]]
     st.dataframe(pd.DataFrame(table_rows), use_container_width=True, hide_index=True)
 

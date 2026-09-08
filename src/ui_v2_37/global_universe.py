@@ -7,12 +7,17 @@ lens onto local research state (identity/fundamentals/growth/price status
 per company, never a score or a ranking), not a replacement or an input to
 the ranking pipeline.
 
-rebuild_global_matrix() re-runs only the two pure, offline, network-free
-builders that already exist (v2.38AL, v2.38AM) -- both read whatever real
-source data has already been collected by the many separate, deliberately
-manual CLI phases of this project and reassemble it. It never fetches
-anything new from any external source itself; that stays a distinct,
-deliberate, per-source decision outside this button's scope.
+rebuild_global_matrix() re-runs only the three pure, offline, network-free
+builders that already exist (v2.38AL, v2.38AM, v2.38BO) -- all three read
+whatever real source data has already been collected by the many separate,
+deliberately manual CLI phases of this project and reassemble it. None of
+them ever fetches anything new from any external source itself; that stays
+a distinct, deliberate, per-source decision outside this button's scope.
+
+load_global_matrix() also joins in v2.38BO's scoring-eligibility tier per
+company (a classification, never a score) when that file exists -- if it
+doesn't yet, every row's eligibility fields are simply blank, same
+fail-open-to-blank convention used everywhere else in this module.
 """
 from __future__ import annotations
 
@@ -27,9 +32,12 @@ from pathlib import Path
 from typing import Callable
 
 MATRIX_REL = "outputs/full_universe_source_acquisition/v2_38al_global_coverage_matrix/global_coverage_matrix_v2_38al.csv.xz"
+ELIGIBILITY_REL = "outputs/full_universe_source_acquisition/v2_38bo_global_scoring_eligibility/global_scoring_eligibility_v2_38bo.csv"
 COVERAGE_SCRIPT_REL = "scripts/build_global_coverage_matrix_v2_38al.py"
 MACRO_SCRIPT_REL = "scripts/build_global_macro_geopolitical_context_v2_38am.py"
+ELIGIBILITY_SCRIPT_REL = "scripts/build_global_scoring_eligibility_v2_38bo.py"
 REBUILD_TIMEOUT_SECONDS = 600
+ELIGIBILITY_FIELDS_DEFAULT = {"eligibility_tier": "", "eligibility_reason": "", "is_financial_institution_heuristic": ""}
 
 
 @dataclass(frozen=True)
@@ -64,6 +72,17 @@ def _rooted(root: Path, relative: str) -> Path:
     return candidate
 
 
+def _load_eligibility_index(root: Path) -> dict[str, dict]:
+    path = _rooted(root, ELIGIBILITY_REL)
+    if not path.is_file():
+        return {}
+    try:
+        with path.open(encoding="utf-8", newline="") as handle:
+            return {row["asset_id"]: row for row in csv.DictReader(handle)}
+    except Exception:  # noqa: BLE001
+        return {}
+
+
 def load_global_matrix(root: Path) -> GlobalMatrixData:
     path = _rooted(root, MATRIX_REL)
     if not path.is_file():
@@ -73,21 +92,30 @@ def load_global_matrix(root: Path) -> GlobalMatrixData:
             rows = tuple(csv.DictReader(handle))
     except Exception as exc:  # noqa: BLE001
         return GlobalMatrixData(False, (), "", f"No se pudo leer la matriz existente: {exc}")
+    eligibility_index = _load_eligibility_index(root)
+    merged_rows = tuple({
+        **row,
+        "eligibility_tier": eligibility_index.get(row["asset_id"], ELIGIBILITY_FIELDS_DEFAULT).get("eligibility_tier", ""),
+        "eligibility_reason": eligibility_index.get(row["asset_id"], ELIGIBILITY_FIELDS_DEFAULT).get("eligibility_reason", ""),
+        "is_financial_institution_heuristic": eligibility_index.get(row["asset_id"], ELIGIBILITY_FIELDS_DEFAULT).get("is_financial_institution_heuristic", ""),
+    } for row in rows)
     generated_at = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).isoformat(timespec="seconds")
-    return GlobalMatrixData(True, rows, generated_at)
+    return GlobalMatrixData(True, merged_rows, generated_at)
 
 
 def rebuild_global_matrix(root: Path, run: Callable = subprocess.run) -> RebuildResult:
-    """Re-run the coverage matrix builder, then the macro context builder
-    on top of it. Uses the same Python interpreter this app is already
-    running under (sys.executable), so it works identically whether the
-    app was launched from a venv or a system install. `run` is injectable
-    purely for offline testing -- production callers never pass it."""
+    """Re-run the coverage matrix builder, then the macro context builder,
+    then the scoring-eligibility builder, each on top of the one before
+    it. Uses the same Python interpreter this app is already running
+    under (sys.executable), so it works identically whether the app was
+    launched from a venv or a system install. `run` is injectable purely
+    for offline testing -- production callers never pass it."""
     steps: list[RebuildStep] = []
     ok = True
     for label, script_rel in (
         ("Matriz de cobertura (v2.38AL)", COVERAGE_SCRIPT_REL),
         ("Contexto geopolítico (v2.38AM)", MACRO_SCRIPT_REL),
+        ("Elegibilidad para scoring (v2.38BO)", ELIGIBILITY_SCRIPT_REL),
     ):
         script_path = _rooted(root, script_rel)
         start = time.monotonic()
@@ -99,7 +127,7 @@ def rebuild_global_matrix(root: Path, run: Callable = subprocess.run) -> Rebuild
             steps.append(RebuildStep(label, step_ok, elapsed, detail[-800:]))
             ok = ok and step_ok
             if not step_ok:
-                break  # never build macro context on top of a coverage matrix that failed to regenerate
+                break  # never run a later step on top of one that failed -- each depends on the one(s) before it
         except Exception as exc:  # noqa: BLE001
             steps.append(RebuildStep(label, False, time.monotonic() - start, str(exc)))
             ok = False

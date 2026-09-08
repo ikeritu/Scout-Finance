@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.38BP — filtro por nivel de elegibilidad en "Universo global"**: la pantalla ya construida en `v2.38BN` ahora muestra y filtra por los 5 niveles reales de `v2.38BO`. El botón Actualizar encadena 3 pasos (`v2.38AL`→`v2.38AM`→`v2.38BO`). Verificado en vivo: filtrar por "Elegible completo" reduce la tabla a exactamente 474 empresas, coincidiendo con el fichero real.
+
 **v2.38BO — el subconjunto elegible para scoring, definido y auditable**: cinco niveles reales sobre las 43.089 empresas, reutilizando la escalera de `v2.38AL` sin recalcular nada — `ELIGIBLE_FULL` (474, crecimiento completo + precio real), `ELIGIBLE_PARTIAL_NO_PRICE` (531, crecimiento completo sin precio, nunca penalizado por el hueco europeo), `ELIGIBLE_PARTIAL_SINGLE_PERIOD` (83, solo un periodo fundamental), `REVIEW_REQUIRED_FINANCIAL_INSTITUTION` (23, heurístico real de nombre, mismo precedente que el banco P178 del producto antiguo), `NOT_ELIGIBLE` (41.978, siempre con el motivo real). Cero scores calculados — solo clasifica.
 
 **v2.38BN — el botón "Actualizar" en la UI, primera pieza real de "camino a producto"**: nueva pantalla "🌍 Universo global (43.089)" en `app_v2_37.py`, respaldada por un módulo totalmente nuevo (`src/ui_v2_37/global_universe.py`) que nunca toca el dataset fijo de 50 activos. El botón re-ejecuta los builders `v2.38AL`/`v2.38AM` (sin red, solo reensambla lo ya recolectado) y muestra la matriz completa con lo que falta siempre marcado. Verificado en vivo en el navegador; un bug real encontrado durante esa verificación (país en blanco para las 538 empresas de EE. UU. tras Actualizar) se corrigió de inmediato.

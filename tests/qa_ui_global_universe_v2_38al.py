@@ -17,9 +17,10 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from src.ui_v2_37.global_universe import MATRIX_REL, load_global_matrix, rebuild_global_matrix  # noqa: E402
+from src.ui_v2_37.global_universe import ELIGIBILITY_REL, MATRIX_REL, load_global_matrix, rebuild_global_matrix  # noqa: E402
 
 FIELDS = ["asset_id", "ticker", "company_name", "exchange", "country", "identity_status", "fundamentals_status", "growth_status", "price_status", "overall_coverage_status"]
+ELIGIBILITY_FIELDS = ["asset_id", "eligibility_tier", "eligibility_reason", "is_financial_institution_heuristic"]
 
 
 def write_matrix(root: Path, rows: list[dict]) -> None:
@@ -27,6 +28,15 @@ def write_matrix(root: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with lzma.open(path, "wt", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=FIELDS, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def write_eligibility(root: Path, rows: list[dict]) -> None:
+    path = root / ELIGIBILITY_REL
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=ELIGIBILITY_FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -52,6 +62,22 @@ def test_existing_matrix_loads_all_rows_and_a_real_mtime():
     assert len(data.rows) == 2
     assert data.generated_at  # a real ISO timestamp, not blank
     assert data.rows[0]["asset_id"] == "U1"
+    assert data.rows[0]["eligibility_tier"] == ""  # no eligibility file yet -- blank, never a crash
+
+
+def test_eligibility_file_is_joined_in_by_asset_id():
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        write_matrix(root, [row("U1", "GROWTH_READY"), row("U2", "NO_DATA_YET")])
+        write_eligibility(root, [
+            {"asset_id": "U1", "eligibility_tier": "ELIGIBLE_FULL", "eligibility_reason": "real_identity_fundamentals_growth_and_price", "is_financial_institution_heuristic": "False"},
+            {"asset_id": "U2", "eligibility_tier": "NOT_ELIGIBLE", "eligibility_reason": "no_data_yet", "is_financial_institution_heuristic": "False"},
+        ])
+        data = load_global_matrix(root)
+    by_id = {r["asset_id"]: r for r in data.rows}
+    assert by_id["U1"]["eligibility_tier"] == "ELIGIBLE_FULL"
+    assert by_id["U2"]["eligibility_tier"] == "NOT_ELIGIBLE"
+    assert by_id["U2"]["eligibility_reason"] == "no_data_yet"
 
 
 def test_corrupted_matrix_file_reports_error_never_crashes():
@@ -65,7 +91,7 @@ def test_corrupted_matrix_file_reports_error_never_crashes():
     assert data.error
 
 
-def test_rebuild_runs_both_scripts_with_this_interpreter_in_order():
+def test_rebuild_runs_all_three_scripts_with_this_interpreter_in_order():
     calls = []
 
     def fake_run(cmd, cwd, capture_output, text, timeout):
@@ -75,13 +101,14 @@ def test_rebuild_runs_both_scripts_with_this_interpreter_in_order():
     with tempfile.TemporaryDirectory() as tmp:
         result = rebuild_global_matrix(Path(tmp), run=fake_run)
     assert result.ok is True
-    assert len(result.steps) == 2
+    assert len(result.steps) == 3
     assert calls[0].endswith("build_global_coverage_matrix_v2_38al.py")
     assert calls[1].endswith("build_global_macro_geopolitical_context_v2_38am.py")
+    assert calls[2].endswith("build_global_scoring_eligibility_v2_38bo.py")
     assert all(step.ok for step in result.steps)
 
 
-def test_rebuild_stops_after_coverage_matrix_failure_never_builds_macro_on_broken_input():
+def test_rebuild_stops_after_coverage_matrix_failure_never_builds_later_steps_on_broken_input():
     calls = []
 
     def fake_run(cmd, cwd, capture_output, text, timeout):
@@ -91,8 +118,24 @@ def test_rebuild_stops_after_coverage_matrix_failure_never_builds_macro_on_broke
     with tempfile.TemporaryDirectory() as tmp:
         result = rebuild_global_matrix(Path(tmp), run=fake_run)
     assert result.ok is False
-    assert len(calls) == 1  # macro context never attempted on top of a failed coverage matrix
+    assert len(calls) == 1  # neither macro context nor eligibility ever attempted on top of a failed coverage matrix
     assert "BLOCKED" in result.steps[0].detail
+
+
+def test_rebuild_stops_after_macro_context_failure_never_builds_eligibility():
+    calls = []
+
+    def fake_run(cmd, cwd, capture_output, text, timeout):
+        calls.append(cmd[1])
+        ok = len(calls) == 1  # coverage matrix succeeds, macro context fails
+        return SimpleNamespace(returncode=0 if ok else 1, stdout="ok" if ok else "", stderr="" if ok else "BLOCKED: macro failed")
+
+    with tempfile.TemporaryDirectory() as tmp:
+        result = rebuild_global_matrix(Path(tmp), run=fake_run)
+    assert result.ok is False
+    assert len(calls) == 2  # eligibility never attempted on top of a failed macro context step
+    assert result.steps[0].ok is True
+    assert result.steps[1].ok is False
 
 
 def test_rebuild_exception_is_caught_and_reported_never_crashes_the_app():
@@ -122,9 +165,11 @@ def test_path_traversal_in_matrix_path_is_rejected():
 CASES = [
     test_missing_matrix_reports_unavailable_never_crashes,
     test_existing_matrix_loads_all_rows_and_a_real_mtime,
+    test_eligibility_file_is_joined_in_by_asset_id,
     test_corrupted_matrix_file_reports_error_never_crashes,
-    test_rebuild_runs_both_scripts_with_this_interpreter_in_order,
-    test_rebuild_stops_after_coverage_matrix_failure_never_builds_macro_on_broken_input,
+    test_rebuild_runs_all_three_scripts_with_this_interpreter_in_order,
+    test_rebuild_stops_after_coverage_matrix_failure_never_builds_later_steps_on_broken_input,
+    test_rebuild_stops_after_macro_context_failure_never_builds_eligibility,
     test_rebuild_exception_is_caught_and_reported_never_crashes_the_app,
     test_path_traversal_in_matrix_path_is_rejected,
 ]
