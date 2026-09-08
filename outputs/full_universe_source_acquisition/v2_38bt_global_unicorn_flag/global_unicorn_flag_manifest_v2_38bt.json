@@ -7,10 +7,10 @@
     "scoring_calculated": false
   },
   "outputs": {
-    "global_scoring_eligibility_v2_38bo.csv": {
-      "bytes": 6490293,
-      "sha256": "9de72aee28e8bb49604159be90862a73fbec7a2f4bca0634b94fb84b942871b8"
+    "global_unicorn_flag_v2_38bt.csv": {
+      "bytes": 215359,
+      "sha256": "a01d07de4fa5b5a4a2ea8ba9acc7769e61a12fbb4dd54f8f38362c13cd0fbc74"
     }
   },
-  "phase": "v2.38BO-global-scoring-eligibility"
+  "phase": "v2.38BT-global-unicorn-flag"
 }

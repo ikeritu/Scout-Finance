@@ -23,10 +23,10 @@
   },
   "not_eligible_reason_counts": {
     "identity_only_fundamentals_blocked_real_reason_confirmed": 167,
-    "identity_only_no_fundamentals_yet": 3473,
-    "identity_only_no_public_disclosure_required": 277,
+    "identity_only_no_fundamentals_yet": 3668,
+    "identity_only_no_public_disclosure_required": 282,
     "identity_only_not_an_operating_company": 6,
-    "no_data_yet": 38055
+    "no_data_yet": 37855
   },
   "note": "Defines who is structurally eligible for a future scoring phase -- computes zero scores, zero ranks, zero factor values. ELIGIBLE_FULL requires the real identity->fundamentals->growth ladder (v2.38AL) plus a real price signal (PRICE_FEATURES_READY/PARTIAL, never just attempted). ELIGIBLE_PARTIAL_NO_PRICE has the full growth ladder but no real price -- deliberately not penalized for Europe's confirmed 0% free price coverage (v2.38AJ) or for the new US Cboe-secondary population's not-yet-attempted price. ELIGIBLE_PARTIAL_SINGLE_PERIOD has real fundamentals but no year-over-year growth evidence, the lowest-confidence eligible tier, same spirit as the old 50-asset product's TWSE PARTIAL_COMPARABILITY treatment. REVIEW_REQUIRED_FINANCIAL_INSTITUTION flags real companies (via an admittedly imperfect company-name heuristic, not a verified SIC/NAICS classification) that need a separate factor contract before generic industrial ratios could ever apply to them -- same precedent as the old product's own P178 exception, generalized. NOT_ELIGIBLE always keeps the real, already-computed v2.38AL reason, never a generic rejection.",
   "phase": "v2.38BO-global-scoring-eligibility",

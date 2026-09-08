@@ -7,17 +7,27 @@ lens onto local research state (identity/fundamentals/growth/price status
 per company, never a score or a ranking), not a replacement or an input to
 the ranking pipeline.
 
-rebuild_global_matrix() re-runs only the three pure, offline, network-free
-builders that already exist (v2.38AL, v2.38AM, v2.38BO) -- all three read
-whatever real source data has already been collected by the many separate,
-deliberately manual CLI phases of this project and reassemble it. None of
-them ever fetches anything new from any external source itself; that stays
-a distinct, deliberate, per-source decision outside this button's scope.
+rebuild_global_matrix() re-runs only the four pure, offline, network-free
+builders that already exist (v2.38AL, v2.38AM, v2.38BO, v2.38BT) -- all
+four read whatever real source data has already been collected by the
+many separate, deliberately manual CLI phases of this project and
+reassemble it. None of them ever fetches anything new from any external
+source itself; that stays a distinct, deliberate, per-source decision
+outside this button's scope. v2.38BT does not actually depend on v2.38AL/
+AM/BO's own output (it reads the raw growth-feature files directly), but
+runs last in this same sequence purely for one simple "Actualizar" button
+UX -- if an earlier step fails, this one is conservatively skipped too,
+even though it could technically still run on its own.
 
 load_global_matrix() also joins in v2.38BO's scoring-eligibility tier per
 company (a classification, never a score) when that file exists -- if it
 doesn't yet, every row's eligibility fields are simply blank, same
 fail-open-to-blank convention used everywhere else in this module.
+
+v2.38BT's "unicornio" flag (a real, pre-existing multi-signal growth
+combination, never a weighted score) is joined in the same way -- when a
+company has no growth-feature row anywhere, its unicorn fields are simply
+blank, never a computed "false".
 """
 from __future__ import annotations
 
@@ -33,11 +43,14 @@ from typing import Callable
 
 MATRIX_REL = "outputs/full_universe_source_acquisition/v2_38al_global_coverage_matrix/global_coverage_matrix_v2_38al.csv.xz"
 ELIGIBILITY_REL = "outputs/full_universe_source_acquisition/v2_38bo_global_scoring_eligibility/global_scoring_eligibility_v2_38bo.csv"
+UNICORN_REL = "outputs/full_universe_source_acquisition/v2_38bt_global_unicorn_flag/global_unicorn_flag_v2_38bt.csv"
 COVERAGE_SCRIPT_REL = "scripts/build_global_coverage_matrix_v2_38al.py"
 MACRO_SCRIPT_REL = "scripts/build_global_macro_geopolitical_context_v2_38am.py"
 ELIGIBILITY_SCRIPT_REL = "scripts/build_global_scoring_eligibility_v2_38bo.py"
+UNICORN_SCRIPT_REL = "scripts/build_global_unicorn_flag_v2_38bt.py"
 REBUILD_TIMEOUT_SECONDS = 600
 ELIGIBILITY_FIELDS_DEFAULT = {"eligibility_tier": "", "eligibility_reason": "", "is_financial_institution_heuristic": ""}
+UNICORN_FIELDS_DEFAULT = {"unicorn_status": "", "unicorn_reason": ""}
 
 
 @dataclass(frozen=True)
@@ -83,6 +96,17 @@ def _load_eligibility_index(root: Path) -> dict[str, dict]:
         return {}
 
 
+def _load_unicorn_index(root: Path) -> dict[str, dict]:
+    path = _rooted(root, UNICORN_REL)
+    if not path.is_file():
+        return {}
+    try:
+        with path.open(encoding="utf-8", newline="") as handle:
+            return {row["asset_id"]: row for row in csv.DictReader(handle)}
+    except Exception:  # noqa: BLE001
+        return {}
+
+
 def load_global_matrix(root: Path) -> GlobalMatrixData:
     path = _rooted(root, MATRIX_REL)
     if not path.is_file():
@@ -93,11 +117,14 @@ def load_global_matrix(root: Path) -> GlobalMatrixData:
     except Exception as exc:  # noqa: BLE001
         return GlobalMatrixData(False, (), "", f"No se pudo leer la matriz existente: {exc}")
     eligibility_index = _load_eligibility_index(root)
+    unicorn_index = _load_unicorn_index(root)
     merged_rows = tuple({
         **row,
         "eligibility_tier": eligibility_index.get(row["asset_id"], ELIGIBILITY_FIELDS_DEFAULT).get("eligibility_tier", ""),
         "eligibility_reason": eligibility_index.get(row["asset_id"], ELIGIBILITY_FIELDS_DEFAULT).get("eligibility_reason", ""),
         "is_financial_institution_heuristic": eligibility_index.get(row["asset_id"], ELIGIBILITY_FIELDS_DEFAULT).get("is_financial_institution_heuristic", ""),
+        "unicorn_status": unicorn_index.get(row["asset_id"], UNICORN_FIELDS_DEFAULT).get("unicorn_status", ""),
+        "unicorn_reason": unicorn_index.get(row["asset_id"], UNICORN_FIELDS_DEFAULT).get("unicorn_reason", ""),
     } for row in rows)
     generated_at = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).isoformat(timespec="seconds")
     return GlobalMatrixData(True, merged_rows, generated_at)
@@ -105,17 +132,19 @@ def load_global_matrix(root: Path) -> GlobalMatrixData:
 
 def rebuild_global_matrix(root: Path, run: Callable = subprocess.run) -> RebuildResult:
     """Re-run the coverage matrix builder, then the macro context builder,
-    then the scoring-eligibility builder, each on top of the one before
-    it. Uses the same Python interpreter this app is already running
-    under (sys.executable), so it works identically whether the app was
-    launched from a venv or a system install. `run` is injectable purely
-    for offline testing -- production callers never pass it."""
+    then the scoring-eligibility builder, then the unicorn-flag builder,
+    each on top of the one before it. Uses the same Python interpreter
+    this app is already running under (sys.executable), so it works
+    identically whether the app was launched from a venv or a system
+    install. `run` is injectable purely for offline testing -- production
+    callers never pass it."""
     steps: list[RebuildStep] = []
     ok = True
     for label, script_rel in (
         ("Matriz de cobertura (v2.38AL)", COVERAGE_SCRIPT_REL),
         ("Contexto geopolítico (v2.38AM)", MACRO_SCRIPT_REL),
         ("Elegibilidad para scoring (v2.38BO)", ELIGIBILITY_SCRIPT_REL),
+        ("Icono unicornio (v2.38BT)", UNICORN_SCRIPT_REL),
     ):
         script_path = _rooted(root, script_rel)
         start = time.monotonic()

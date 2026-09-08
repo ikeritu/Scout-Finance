@@ -17,10 +17,11 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from src.ui_v2_37.global_universe import ELIGIBILITY_REL, MATRIX_REL, load_global_matrix, rebuild_global_matrix  # noqa: E402
+from src.ui_v2_37.global_universe import ELIGIBILITY_REL, MATRIX_REL, UNICORN_REL, load_global_matrix, rebuild_global_matrix  # noqa: E402
 
 FIELDS = ["asset_id", "ticker", "company_name", "exchange", "country", "identity_status", "fundamentals_status", "growth_status", "price_status", "overall_coverage_status"]
 ELIGIBILITY_FIELDS = ["asset_id", "eligibility_tier", "eligibility_reason", "is_financial_institution_heuristic"]
+UNICORN_FIELDS = ["asset_id", "unicorn_status", "unicorn_reason"]
 
 
 def write_matrix(root: Path, rows: list[dict]) -> None:
@@ -37,6 +38,15 @@ def write_eligibility(root: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=ELIGIBILITY_FIELDS, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def write_unicorn(root: Path, rows: list[dict]) -> None:
+    path = root / UNICORN_REL
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=UNICORN_FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -63,6 +73,7 @@ def test_existing_matrix_loads_all_rows_and_a_real_mtime():
     assert data.generated_at  # a real ISO timestamp, not blank
     assert data.rows[0]["asset_id"] == "U1"
     assert data.rows[0]["eligibility_tier"] == ""  # no eligibility file yet -- blank, never a crash
+    assert data.rows[0]["unicorn_status"] == ""  # no unicorn file yet -- blank, never a computed "false"
 
 
 def test_eligibility_file_is_joined_in_by_asset_id():
@@ -80,6 +91,21 @@ def test_eligibility_file_is_joined_in_by_asset_id():
     assert by_id["U2"]["eligibility_reason"] == "no_data_yet"
 
 
+def test_unicorn_file_is_joined_in_by_asset_id():
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        write_matrix(root, [row("U1", "GROWTH_READY"), row("U2", "GROWTH_READY"), row("U3", "NO_DATA_YET")])
+        write_unicorn(root, [
+            {"asset_id": "U1", "unicorn_status": "EVALUATED_UNICORN", "unicorn_reason": "us_fundamental_momentum_flag_true_real_revenue_growth_and_margin_expansion_and_positive_free_cash_flow"},
+            {"asset_id": "U2", "unicorn_status": "EVALUATED_NOT_UNICORN", "unicorn_reason": "us_fundamental_momentum_flag_false:revenue_growth_not_positive"},
+        ])
+        data = load_global_matrix(root)
+    by_id = {r["asset_id"]: r for r in data.rows}
+    assert by_id["U1"]["unicorn_status"] == "EVALUATED_UNICORN"
+    assert by_id["U2"]["unicorn_status"] == "EVALUATED_NOT_UNICORN"
+    assert by_id["U3"]["unicorn_status"] == ""  # never evaluated (no growth-feature row) -- blank, not "false"
+
+
 def test_corrupted_matrix_file_reports_error_never_crashes():
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
@@ -91,7 +117,7 @@ def test_corrupted_matrix_file_reports_error_never_crashes():
     assert data.error
 
 
-def test_rebuild_runs_all_three_scripts_with_this_interpreter_in_order():
+def test_rebuild_runs_all_four_scripts_with_this_interpreter_in_order():
     calls = []
 
     def fake_run(cmd, cwd, capture_output, text, timeout):
@@ -101,10 +127,11 @@ def test_rebuild_runs_all_three_scripts_with_this_interpreter_in_order():
     with tempfile.TemporaryDirectory() as tmp:
         result = rebuild_global_matrix(Path(tmp), run=fake_run)
     assert result.ok is True
-    assert len(result.steps) == 3
+    assert len(result.steps) == 4
     assert calls[0].endswith("build_global_coverage_matrix_v2_38al.py")
     assert calls[1].endswith("build_global_macro_geopolitical_context_v2_38am.py")
     assert calls[2].endswith("build_global_scoring_eligibility_v2_38bo.py")
+    assert calls[3].endswith("build_global_unicorn_flag_v2_38bt.py")
     assert all(step.ok for step in result.steps)
 
 
@@ -138,6 +165,23 @@ def test_rebuild_stops_after_macro_context_failure_never_builds_eligibility():
     assert result.steps[1].ok is False
 
 
+def test_rebuild_stops_after_eligibility_failure_never_builds_unicorn_flag():
+    calls = []
+
+    def fake_run(cmd, cwd, capture_output, text, timeout):
+        calls.append(cmd[1])
+        ok = len(calls) < 3  # coverage matrix and macro context succeed, eligibility fails
+        return SimpleNamespace(returncode=0 if ok else 1, stdout="ok" if ok else "", stderr="" if ok else "BLOCKED: eligibility failed")
+
+    with tempfile.TemporaryDirectory() as tmp:
+        result = rebuild_global_matrix(Path(tmp), run=fake_run)
+    assert result.ok is False
+    assert len(calls) == 3  # unicorn flag never attempted on top of a failed eligibility step
+    assert result.steps[0].ok is True
+    assert result.steps[1].ok is True
+    assert result.steps[2].ok is False
+
+
 def test_rebuild_exception_is_caught_and_reported_never_crashes_the_app():
     def raising_run(cmd, cwd, capture_output, text, timeout):
         raise TimeoutError("real subprocess timeout")
@@ -166,10 +210,12 @@ CASES = [
     test_missing_matrix_reports_unavailable_never_crashes,
     test_existing_matrix_loads_all_rows_and_a_real_mtime,
     test_eligibility_file_is_joined_in_by_asset_id,
+    test_unicorn_file_is_joined_in_by_asset_id,
     test_corrupted_matrix_file_reports_error_never_crashes,
-    test_rebuild_runs_all_three_scripts_with_this_interpreter_in_order,
+    test_rebuild_runs_all_four_scripts_with_this_interpreter_in_order,
     test_rebuild_stops_after_coverage_matrix_failure_never_builds_later_steps_on_broken_input,
     test_rebuild_stops_after_macro_context_failure_never_builds_eligibility,
+    test_rebuild_stops_after_eligibility_failure_never_builds_unicorn_flag,
     test_rebuild_exception_is_caught_and_reported_never_crashes_the_app,
     test_path_traversal_in_matrix_path_is_rejected,
 ]

@@ -1,0 +1,30 @@
+{
+  "companies_with_growth_features_evaluated": 1110,
+  "guardrails": {
+    "network_used": false,
+    "phase9c_authorized": false,
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "note": "Flags companies whose ALREADY-COMPUTED real growth features (never re-derived or estimated here) meet a real, pre-existing multi-signal combination -- v2.38G's own fundamental_momentum_flag for US-origin companies (real revenue growth>0 AND real margin expansion AND real positive free cash flow), and the closest same-spirit combination for Austria (v2.38AK, no free-cash-flow data available there) using only its real fields (real revenue growth>0 AND real growth acceleration AND real margin expansion). No new weighted score, no arbitrary percentage threshold invented -- a plain AND over pre-existing real booleans. Companies with no growth-feature row in any of the four source files simply do not appear here; the UI defaults them to blank, never to a silent 'not a unicorn'.",
+  "phase": "v2.38BT-global-unicorn-flag",
+  "status": "COMPLETED_GLOBAL_UNICORN_FLAG_DEFINED_NOT_SCORED",
+  "unicorn_examples": [
+    "ACADIA Pharmaceuticals Inc. - Common Stock",
+    "ACI Worldwide, Inc. - Common Stock",
+    "ADTRAN Holdings, Inc. - Common Stock",
+    "Addus HomeCare Corporation - Common Stock",
+    "Adeia Inc. - Common Stock",
+    "Adobe Inc. - Common Stock",
+    "American Coastal Insurance Corporation - Common Stock",
+    "Analog Devices, Inc. - Common Stock",
+    "Apple Inc. - Common Stock",
+    "AudioEye, Inc. - Common Stock"
+  ],
+  "unicorn_status_counts": {
+    "EVALUATED_NOT_UNICORN": 690,
+    "EVALUATED_UNICORN": 161,
+    "INSUFFICIENT_DATA": 259
+  }
+}

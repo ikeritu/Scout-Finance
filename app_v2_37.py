@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from collections import Counter
 from pathlib import Path
+from urllib.parse import quote
 
 import pandas as pd
 import streamlit as st
@@ -45,6 +46,28 @@ GLOBAL_ELIGIBILITY_LABELS = {
     "": "Sin clasificar (pulsa Actualizar)",
 }
 GLOBAL_ELIGIBLE_TIERS = {"ELIGIBLE_FULL", "ELIGIBLE_PARTIAL_NO_PRICE", "ELIGIBLE_PARTIAL_SINGLE_PERIOD"}
+GLOBAL_UNICORN_ICON = "🦄"
+GLOBAL_UNICORN_STATUS_LABELS = {
+    "EVALUATED_UNICORN": "🦄 Sí — cumple los 3 criterios de crecimiento reales",
+    "EVALUATED_NOT_UNICORN": "No — evaluado, no cumple los criterios",
+    "INSUFFICIENT_DATA": "Sin datos suficientes para evaluar",
+    "": "Sin evaluar (pulsa Actualizar)",
+}
+
+
+def google_finance_search_url(company_name: str) -> str:
+    """A plain Google Search deep-link, deliberately NOT a direct
+    google.com/finance/quote/TICKER:EXCHANGE URL -- this project has no
+    verified, real mapping from its own internal exchange codes to
+    Google's exchange mnemonics (NASDAQ, ETR, BIT, LON...) across the
+    dozens of markets in the census, and guessing one wrong for even a
+    fraction of 43,089 companies would silently send the user to the
+    wrong company's page. A name-based search always resolves to a real,
+    legitimate Google results page (Google's own Finance card included,
+    when Google has one) without that risk -- purely a manual-lookup
+    convenience link, Scout Finance never fetches or stores anything
+    from it."""
+    return f"https://www.google.com/search?q={quote(f'{company_name} stock')}"
 STATUS_LABELS = {
     "ELIGIBLE_PARTIAL": "Clasificable parcial", "PARTIAL_COMPARABILITY": "Comparabilidad parcial",
     "REVIEW_REQUIRED": "Revisión requerida", "BLOCKED": "Bloqueado",
@@ -159,7 +182,7 @@ def render_global_universe(_data):
     heading(st, "Universo global", "Las 43.089 empresas del censo operativo completo, con el estado real de identidad, fundamentales, crecimiento y precio de cada una — lo que falta se marca, nunca se oculta.")
     action_col, info_col = st.columns([1, 3])
     if action_col.button("🔄 Actualizar", type="primary", help="Recalcula la matriz a partir de los datos ya recolectados hasta ahora. No descarga ni consulta nada nuevo."):
-        with st.spinner("Actualizando matriz de cobertura, contexto geopolítico y elegibilidad para scoring (sin conexión de red)…"):
+        with st.spinner("Actualizando matriz de cobertura, contexto geopolítico, elegibilidad para scoring e icono unicornio (sin conexión de red)…"):
             result = rebuild_global_matrix(ROOT)
         global_matrix_snapshot.clear()
         (st.success if result.ok else st.error)("Matriz actualizada correctamente." if result.ok else "La actualización falló — revisa el detalle abajo.")
@@ -175,12 +198,14 @@ def render_global_universe(_data):
     info_col.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(matrix.rows):,} empresas · sin conexión de red — recalcula solo lo ya recolectado")
     counts = Counter(row["overall_coverage_status"] for row in matrix.rows)
     eligibility_counts = Counter(row.get("eligibility_tier", "") for row in matrix.rows)
-    metric_cols = st.columns(5)
+    unicorn_counts = Counter(row.get("unicorn_status", "") for row in matrix.rows)
+    metric_cols = st.columns(6)
     metric_cols[0].metric("Censo total", f"{len(matrix.rows):,}")
     metric_cols[1].metric("Con identidad real", f"{sum(v for k, v in counts.items() if k != 'NO_DATA_YET'):,}")
     metric_cols[2].metric("Con fundamentales reales", f"{sum(v for k, v in counts.items() if k in GLOBAL_FUNDAMENTALS_OR_BETTER):,}")
     metric_cols[3].metric("Con crecimiento real", f"{sum(v for k, v in counts.items() if k in GLOBAL_GROWTH_STATUSES):,}")
     metric_cols[4].metric("Elegibles para scoring", f"{sum(v for k, v in eligibility_counts.items() if k in GLOBAL_ELIGIBLE_TIERS):,}", help="Suma de los tres niveles ELIGIBLE_*; no incluye las que están en revisión por ser entidades financieras. Pulsa Actualizar si no se ha calculado todavía (v2.38BO).")
+    metric_cols[5].metric(f"{GLOBAL_UNICORN_ICON} Unicornios", f"{unicorn_counts.get('EVALUATED_UNICORN', 0):,}", help="Empresas cuyo crecimiento real ya calculado cumple los 3 criterios reales combinados (v2.38BT): crecimiento de ingresos positivo, expansión real de margen y (en EE. UU.) flujo de caja libre real positivo. Nunca un score ni un ranking — una clasificación real sobre datos ya existentes. Pulsa Actualizar si no se ha calculado todavía.")
     st.markdown("### Desglose por estado")
     status_rows = [{"Estado": GLOBAL_STATUS_LABELS.get(status, status), "Empresas": count} for status, count in sorted(counts.items(), key=lambda kv: -kv[1])]
     st.dataframe(pd.DataFrame(status_rows), use_container_width=True, hide_index=True)
@@ -191,6 +216,7 @@ def render_global_universe(_data):
     country_filter = c1.multiselect("País", countries, placeholder="Todos")
     status_filter = c2.multiselect("Estado", sorted(counts), format_func=lambda value: GLOBAL_STATUS_LABELS.get(value, value), placeholder="Todos")
     eligibility_filter = c3.multiselect("Elegibilidad para scoring", sorted(eligibility_counts), format_func=lambda value: GLOBAL_ELIGIBILITY_LABELS.get(value, value), placeholder="Todas")
+    unicorn_only = st.checkbox(f"Mostrar solo {GLOBAL_UNICORN_ICON} unicornios", help="Empresas con el criterio de crecimiento real más exigente ya calculado (v2.38BT) — nunca un ranking, solo las que cumplen los 3 criterios reales.")
     needle = search.casefold().strip()
     filtered = [
         row for row in matrix.rows
@@ -198,6 +224,7 @@ def render_global_universe(_data):
         and (not country_filter or row["country"] in country_filter)
         and (not status_filter or row["overall_coverage_status"] in status_filter)
         and (not eligibility_filter or row.get("eligibility_tier", "") in eligibility_filter)
+        and (not unicorn_only or row.get("unicorn_status", "") == "EVALUATED_UNICORN")
     ]
     st.caption(f"{len(filtered):,} de {len(matrix.rows):,} empresas")
     if len(filtered) > GLOBAL_TABLE_LIMIT:
@@ -208,8 +235,13 @@ def render_global_universe(_data):
         "Fundamentales": row["fundamentals_status"], "Crecimiento": row["growth_status"], "Precio": row["price_status"],
         "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
         "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
+        GLOBAL_UNICORN_ICON: GLOBAL_UNICORN_ICON if row.get("unicorn_status") == "EVALUATED_UNICORN" else "",
+        "Google Finance": google_finance_search_url(row["company_name"]),
     } for row in filtered[:GLOBAL_TABLE_LIMIT]]
-    st.dataframe(pd.DataFrame(table_rows), use_container_width=True, hide_index=True)
+    st.dataframe(
+        pd.DataFrame(table_rows), use_container_width=True, hide_index=True,
+        column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda real de Google para esta empresa — Scout Finance no descarga ni procesa ningún dato de Google, solo te lleva hasta allí para que lo consultes tú.")},
+    )
 
 
 def render_universe(data):
