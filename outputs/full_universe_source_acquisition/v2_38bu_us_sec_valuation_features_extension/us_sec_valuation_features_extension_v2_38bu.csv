@@ -1,0 +1,1090 @@
+asset_id,ticker,company_name,source,feature_asof_fy,operating_margin,eps_basic,book_value_per_share,valuation_extension_status,phase
+U00006,AAL,"American Airlines Group, Inc. - Common Stock",us_sec_v2_38g,2025,0.026852,0.17,-5.644395,READY,v2.38BU-us-sec-valuation-features-extension
+U00007,AAME,Atlantic American Corporation - Common Stock,us_sec_v2_38g,2024,-0.026341,-0.23,4.883048,READY,v2.38BU-us-sec-valuation-features-extension
+U00008,AAOI,"Applied Optoelectronics, Inc. - Common Stock",us_sec_v2_38g,2025,-0.119816,-0.64,9.785834,READY,v2.38BU-us-sec-valuation-features-extension
+U00009,AAON,"AAON, Inc. - Common Stock",us_sec_v2_38g,2025,,1.32,10.955726,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00011,AAPL,Apple Inc. - Common Stock,us_sec_v2_38g,2025,0.319708,7.49,4.990977,READY,v2.38BU-us-sec-valuation-features-extension
+U00012,AARD,"Aardvark Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-2.93,4.88798,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00013,ABAT,American Battery Technology Company - Common Stock,us_sec_v2_38g,2025,-9.795136,-0.58,0.724847,READY,v2.38BU-us-sec-valuation-features-extension
+U00014,ABCL,AbCellera Biologics Inc. - Common Shares,us_sec_v2_38g,2025,-2.889775,-0.49,3.216573,READY,v2.38BU-us-sec-valuation-features-extension
+U00015,ABEO,Abeona Therapeutics Inc. - Common Stock,us_sec_v2_38g,2025,-15.369072,1.34,2.892553,READY,v2.38BU-us-sec-valuation-features-extension
+U00016,ABLV,Able View Global Inc. - Class B Ordinary Shares,us_sec_v2_38g,2025,-0.004625,0.02,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00017,ABNB,"Airbnb, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.207826,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00018,ABOS,"Acumen Pharmaceuticals, Inc. - Common Stock",us_sec_v2_38g,2025,,-2.0,1.162684,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00019,ABSI,Absci Corporation - Common Stock,us_sec_v2_38g,2025,,-0.84,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00020,ABTC,American Bitcoin Corp. - Class A Common Stock,us_sec_v2_38g,2025,-1.231276,-0.17,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00021,ABTS,Abits Group Inc - Ordinary Shares,us_sec_v2_38g,2025,0.402742,-1.21,3.283033,READY,v2.38BU-us-sec-valuation-features-extension
+U00022,ABUS,Arbutus Biopharma Corporation - Common Stock,us_sec_v2_38g,2025,-2.70965,-0.17,0.397733,READY,v2.38BU-us-sec-valuation-features-extension
+U00023,ABVC,"ABVC BioPharma, Inc. - Common Stock",us_sec_v2_38g,2025,-14.033386,-0.39,0.443531,READY,v2.38BU-us-sec-valuation-features-extension
+U00025,ACAD,ACADIA Pharmaceuticals Inc. - Common Stock,us_sec_v2_38g,2025,0.097817,2.32,7.206826,READY,v2.38BU-us-sec-valuation-features-extension
+U00027,ACCL,Acco Group Holdings Limited - Class A Ordinary Shares,us_sec_v2_38g,2025,0.222561,0.083,0.174951,READY,v2.38BU-us-sec-valuation-features-extension
+U00028,ACDC,ProFrac Holding Corp. - Class A Common Stock,us_sec_v2_38g,2025,-0.116284,-2.22,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00029,ACET,"Adicet Bio, Inc. - Common Stock",us_sec_v2_38g,2025,,-16.95,16.607262,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00030,ACFN,"Acorn Energy, Inc. - Common Stock",us_sec_v2_38g,2025,0.173288,1.01,3.293905,READY,v2.38BU-us-sec-valuation-features-extension
+U00032,ACGL,Arch Capital Group Ltd. - Common Stock,us_sec_v2_38g,2025,,11.83,67.426184,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00033,ACHC,"Acadia Healthcare Company, Inc. - Common Stock",us_sec_v2_38g,2025,,-12.16,21.546697,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00034,ACHV,"Achieve Life Sciences, Inc. - Common Shares",us_sec_v2_38g,2025,,-1.25,0.404215,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00035,ACIC,American Coastal Insurance Corporation - Common Stock,us_sec_v2_38g,2025,0.418189,2.2,6.512177,READY,v2.38BU-us-sec-valuation-features-extension
+U00037,ACIW,"ACI Worldwide, Inc. - Common Stock",us_sec_v2_38g,2025,0.187474,2.18,14.789674,READY,v2.38BU-us-sec-valuation-features-extension
+U00038,ACLS,"Axcelis Technologies, Inc. - Common Stock",us_sec_v2_38g,2025,0.142203,3.81,33.684181,READY,v2.38BU-us-sec-valuation-features-extension
+U00039,ACMR,"ACM Research, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.121411,1.47,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00040,ACNB,ACNB Corporation - Common Stock,us_sec_v2_38g,2025,,3.61,40.49015,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00041,ACNT,Ascent Industries Co. - Common Stock,us_sec_v2_38g,2025,-0.093766,0.09,9.253584,READY,v2.38BU-us-sec-valuation-features-extension
+U00042,ACOG,Alpha Cognition Inc. - Common Stock,us_sec_v2_38g,2025,-2.217229,-1.17,2.875995,READY,v2.38BU-us-sec-valuation-features-extension
+U00043,ACON,"Aclarion, Inc. - Common Stock",us_sec_v2_38g,2025,-93.125459,-13.61,15.022885,READY,v2.38BU-us-sec-valuation-features-extension
+U00044,ACRS,"Aclaris Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,-9.759136,-0.53,0.855456,READY,v2.38BU-us-sec-valuation-features-extension
+U00045,ACRV,"Acrivon Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-2.02,3.555136,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00046,ACT,"Enact Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,,4.54,37.657117,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00047,ACTG,Acacia Research Corporation - Common Stock,us_sec_v2_38g,2025,0.022469,0.23,5.633038,READY,v2.38BU-us-sec-valuation-features-extension
+U00048,ACTU,"Actuate Therapeutics, Inc. - Common stock",us_sec_v2_38g,2025,,-1.06,0.340888,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00049,ACXP,"Acurx Pharmaceuticals, Inc. - Common Stock",us_sec_v2_38g,2025,,-5.32,2.243756,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00051,ADAG,"Adagene Inc. - ADS, each representing 1.25 ordinary shares",us_sec_v2_38g,2025,-2.794755,-0.3,0.596798,READY,v2.38BU-us-sec-valuation-features-extension
+U00053,ADBE,Adobe Inc. - Common Stock,us_sec_v2_38g,2025,0.366275,16.73,28.142857,READY,v2.38BU-us-sec-valuation-features-extension
+U00054,ADEA,Adeia Inc. - Common Stock,us_sec_v2_38g,2025,0.394697,1.02,4.408673,READY,v2.38BU-us-sec-valuation-features-extension
+U00055,ADGM,"Adagio Medical Holdings, Inc - Common Stock",us_sec_v2_38g,2025,,-1.51,0.558386,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00056,ADI,"Analog Devices, Inc. - Common Stock",us_sec_v2_38g,2025,0.266114,4.59,69.060496,READY,v2.38BU-us-sec-valuation-features-extension
+U00057,ADIL,"Adial Pharmaceuticals, Inc - Common Stock",us_sec_v2_38g,2025,,-11.93,4.749244,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00058,ADMA,ADMA Biologics Inc - Common Stock,us_sec_v2_38g,2025,0.375251,0.62,2.006604,READY,v2.38BU-us-sec-valuation-features-extension
+U00059,ADP,"Automatic Data Processing, Inc. - Common Stock",us_sec_v2_38g,2026,,10.97,15.161388,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00060,ADPT,Adaptive Biotechnologies Corporation - Common Stock,us_sec_v2_38g,2025,-0.206238,-0.39,1.422772,READY,v2.38BU-us-sec-valuation-features-extension
+U00062,ADSK,"Autodesk, Inc. - Common Stock",us_sec_v2_38g,2026,0.218984,5.28,14.363208,READY,v2.38BU-us-sec-valuation-features-extension
+U00063,ADTN,"ADTRAN Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,-0.01439,-0.52,1.824563,READY,v2.38BU-us-sec-valuation-features-extension
+U00065,ADUS,Addus HomeCare Corporation - Common Stock,us_sec_v2_38g,2025,0.097443,5.31,58.608003,READY,v2.38BU-us-sec-valuation-features-extension
+U00066,ADV,Advantage Solutions Inc. - Class A Common Stock,us_sec_v2_38g,2025,-0.035698,,1.69702,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00067,ADVB,Advanced Biomed Inc. - Common Stock,us_sec_v2_38g,2025,,-0.16,0.160701,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00069,AEBI,Aebi Schmidt Holding AG - Common Stock,us_sec_v2_38g,2025,0.047861,0.17,10.583301,READY,v2.38BU-us-sec-valuation-features-extension
+U00072,AEHR,Aehr Test Systems - Common Stock,us_sec_v2_38g,2026,-0.282974,-0.23,6.758344,READY,v2.38BU-us-sec-valuation-features-extension
+U00073,AEI,Alset Inc. - Common Stock,us_sec_v2_38g,2025,-3.388729,-2.22,3.112811,READY,v2.38BU-us-sec-valuation-features-extension
+U00074,AEIS,"Advanced Energy Industries, Inc. - Common Stock",us_sec_v2_38g,2025,0.093396,3.95,36.05291,READY,v2.38BU-us-sec-valuation-features-extension
+U00075,AEMD,"Aethlon Medical, Inc. - Common Stock",us_sec_v2_38g,2026,,-10.61,3.111385,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00076,AENT,Alliance Entertainment Holding Corporation - common stock,us_sec_v2_38g,2025,0.028338,0.3,2.025654,READY,v2.38BU-us-sec-valuation-features-extension
+U00077,AEP,"American Electric Power Company, Inc. - Common Stock",us_sec_v2_38g,2025,0.245093,6.7,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00078,AERT,"Aeries Technology, Inc. - Class A Ordinary Share",us_sec_v2_38g,2026,0.06453,0.05,-0.06256,READY,v2.38BU-us-sec-valuation-features-extension
+U00080,AEVA,"Aeva Technologies, Inc. - Common Stock",us_sec_v2_38g,2025,-7.057747,-2.55,0.214599,READY,v2.38BU-us-sec-valuation-features-extension
+U00081,AEYE,"AudioEye, Inc. - Common Stock",us_sec_v2_38g,2025,-0.045397,-0.25,0.387951,READY,v2.38BU-us-sec-valuation-features-extension
+U00083,AFCG,Advanced Flower Capital Inc. - Common Stock,us_sec_v2_38g,2025,,-0.95,7.46182,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00084,AFJK,"Aimei Health Technology Co., Ltd - Ordinary Share",us_sec_v2_38g,2025,,,-1.909093,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00085,AFRI,Forafric Global PLC - Ordinary Shares,us_sec_v2_38g,2025,-0.020143,,0.24731,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00086,AFRM,"Affirm Holdings, Inc. - Class A Common Stock",us_sec_v2_38g,2026,0.288781,5.76,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00088,AGCC,Agencia Comercial Spirits Ltd - Class A Ordinary Share,us_sec_v2_38g,2025,0.12633,0.0383,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00089,AGEN,Agenus Inc. - Common Stock,us_sec_v2_38g,2025,-0.176617,0.0,-7.675763,READY,v2.38BU-us-sec-valuation-features-extension
+U00090,AGIO,"Agios Pharmaceuticals, Inc. - Common Stock",us_sec_v2_38g,2025,-8.738654,-7.12,20.413049,READY,v2.38BU-us-sec-valuation-features-extension
+U00092,AGMH,AGM Group Holdings Inc. - Class A Ordinary Shares,us_sec_v2_38g,2025,-0.153175,0.32,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00093,AGNC,AGNC Investment Corp. - Common Stock,us_sec_v2_38g,2025,,1.48,11.189057,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00094,AGNT,"AGNT, Inc. - Common Stock",us_sec_v2_38g,2025,-0.004498,-0.14,1.507476,READY,v2.38BU-us-sec-valuation-features-extension
+U00095,AGPU,Axe Compute Inc. - Common Stock,us_sec_v2_38g,2025,,-13.37,11.686244,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00097,AGYS,"Agilysys, Inc. - Common Stock",us_sec_v2_38g,2026,0.134712,1.39,11.602125,READY,v2.38BU-us-sec-valuation-features-extension
+U00098,AHCO,AdaptHealth Corp. - Common Stock,us_sec_v2_38g,2025,0.028005,-0.52,11.211206,READY,v2.38BU-us-sec-valuation-features-extension
+U00099,AHMA,Ambitions Enterprise Management Co. L.L.C - Class A Ordinary Shares,us_sec_v2_38g,2025,0.063823,0.04,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00100,AIAI,AIAI Holdings Corporation - Class A common stock,us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00102,AIDX,"20/20 Biolabs, Inc. - Common Stock",us_sec_v2_38g,2025,-1.628682,-0.76,-0.003533,READY,v2.38BU-us-sec-valuation-features-extension
+U00103,AIFA,"All In FutureTech Alliance, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.83,0.921729,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00104,AIFC,AI Financial Corporation - Common Stock,us_sec_v2_38g,2025,-0.919928,-5.91,9.107362,READY,v2.38BU-us-sec-valuation-features-extension
+U00105,AIFF,"Firefly Neuroscience, Inc. - Common Stock",us_sec_v2_38g,2025,-7.754816,-1.97,0.546892,READY,v2.38BU-us-sec-valuation-features-extension
+U00106,AIFU,AIFU Inc. - Class A Ordinary Share,us_sec_v2_38g,2025,-0.070186,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00107,AIHS,Senmiao Technology Limited - Common Stock,us_sec_v2_38g,2026,-1.868021,-1.97,-1.27996,READY,v2.38BU-us-sec-valuation-features-extension
+U00108,AIIO,Robo.ai Inc. - Class B Ordinary Shares,us_sec_v2_38g,2025,-165.378947,-10.59,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00110,AIMD,"Ainos, Inc. - Common Stock",us_sec_v2_38g,2025,-112.683199,-3.46,1.285569,READY,v2.38BU-us-sec-valuation-features-extension
+U00111,AIOS,AIOS Tech Inc. - Class A Common Shares,us_sec_v2_38g,2025,0.290337,-47.65,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00112,AIOT,"PowerFleet, Inc. - Common Stock",us_sec_v2_38g,2026,0.044112,-0.15,3.544284,READY,v2.38BU-us-sec-valuation-features-extension
+U00113,AIP,"Arteris, Inc. - Common Stock",us_sec_v2_38g,2025,-0.469502,-0.82,-0.330526,READY,v2.38BU-us-sec-valuation-features-extension
+U00114,AIRE,reAlpha Tech Corp. - Common Stock,us_sec_v2_38g,2025,-3.54254,-0.23,0.087218,READY,v2.38BU-us-sec-valuation-features-extension
+U00115,AIRG,"Airgain, Inc. - Common Stock",us_sec_v2_38g,2025,-0.163831,-0.54,2.333113,READY,v2.38BU-us-sec-valuation-features-extension
+U00116,AIRJ,AirJoule Technologies Corporation - Class A Common Stock,us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00117,AIRO,"AIRO Group Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,-0.316422,-0.17,23.559153,READY,v2.38BU-us-sec-valuation-features-extension
+U00118,AIRS,"AirSculpt Technologies, Inc. - Common Stock",us_sec_v2_38g,2025,-0.076144,-0.19,1.360807,READY,v2.38BU-us-sec-valuation-features-extension
+U00119,AIRT,"Air T, Inc. - Common Stock",us_sec_v2_38g,2026,-0.034232,28.85,29.544214,READY,v2.38BU-us-sec-valuation-features-extension
+U00120,AISP,"Airship AI Holdings, Inc - Class A Common Stock",us_sec_v2_38g,2025,-0.470963,0.9,-0.208031,READY,v2.38BU-us-sec-valuation-features-extension
+U00121,AIXC,"AIxCrypto Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,,-8.11,5.416383,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00122,AKAM,"Akamai Technologies, Inc. - Common Stock",us_sec_v2_38g,2025,,3.11,34.395228,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00124,AKBA,"Akebia Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,0.099489,-0.02,0.12286,READY,v2.38BU-us-sec-valuation-features-extension
+U00125,AKTS,"Aktis Oncology, Inc. - Common stock",us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00126,ALAB,"Astera Labs, Inc. - Common Stock",us_sec_v2_38g,2025,0.203423,1.32,8.01261,READY,v2.38BU-us-sec-valuation-features-extension
+U00128,ALCO,"Alico, Inc. - Common Stock",us_sec_v2_38g,2025,-4.627173,-19.29,13.476409,READY,v2.38BU-us-sec-valuation-features-extension
+U00129,ALDF,Aldel Financial II Inc. - Class A Ordinary Shares,us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00130,ALDX,"Aldeyra Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.56,0.735511,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00131,ALEC,"Alector, Inc. - Common Stock",us_sec_v2_38g,2025,-7.41302,-1.39,0.277712,READY,v2.38BU-us-sec-valuation-features-extension
+U00133,ALGM,"Allegro MicroSystems, Inc. - Common Stock",us_sec_v2_38g,2026,0.02077,-0.08,5.150845,READY,v2.38BU-us-sec-valuation-features-extension
+U00134,ALGN,"Align Technology, Inc. - Common Stock",us_sec_v2_38g,2025,0.135256,5.66,56.73935,READY,v2.38BU-us-sec-valuation-features-extension
+U00135,ALGS,"Aligos Therapeutics, Inc. - Common stock",us_sec_v2_38g,2025,-40.249314,-2.45,8.666722,READY,v2.38BU-us-sec-valuation-features-extension
+U00136,ALGT,Allegiant Travel Company - Common Stock,us_sec_v2_38g,2025,0.01599,-2.48,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00137,ALHC,"Alignment Healthcare, Inc. - Common Stock",us_sec_v2_38g,2025,0.003736,0.0,0.878148,READY,v2.38BU-us-sec-valuation-features-extension
+U00139,ALKS,Alkermes plc - Ordinary Shares,us_sec_v2_38g,2025,0.172069,1.47,10.985615,READY,v2.38BU-us-sec-valuation-features-extension
+U00140,ALKT,"Alkami Technology, Inc. - Common Stock",us_sec_v2_38g,2025,-0.1209,-0.46,3.412277,READY,v2.38BU-us-sec-valuation-features-extension
+U00141,ALLO,"Allogene Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.87,1.275173,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00142,ALLR,"Allarity Therapeutics, Inc. - Common stock",us_sec_v2_38g,2025,,-0.78,0.611157,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00143,ALLT,Allot Ltd. - Ordinary Shares,us_sec_v2_38g,2025,0.035336,0.08,2.330133,READY,v2.38BU-us-sec-valuation-features-extension
+U00145,ALMR,"Alamar Biosciences, Inc. - Class A common stock",us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00146,ALMS,Alumis Inc. - Common Stock,us_sec_v2_38g,2025,-18.869189,-2.86,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00147,ALMU,"Aeluma, Inc. - Common Stock",us_sec_v2_38g,2025,-0.459164,-0.23,1.128189,READY,v2.38BU-us-sec-valuation-features-extension
+U00148,ALNT,Allient Inc. - Common Stock,us_sec_v2_38g,2025,0.079327,1.32,17.799658,READY,v2.38BU-us-sec-valuation-features-extension
+U00149,ALNY,"Alnylam Pharmaceuticals, Inc. - Common Stock",us_sec_v2_38g,2025,0.135053,2.39,5.961624,READY,v2.38BU-us-sec-valuation-features-extension
+U00150,ALOT,"AstroNova, Inc. - Common Stock",us_sec_v2_38g,2026,0.008012,-0.31,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00151,ALOV,"Aldabra 4 Liquidity Opportunity Vehicle, Inc. - Class A Ordinary Shares",us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00152,ALOY,REalloys Inc. - Common Stock,us_sec_v2_38g,2025,,-1.17,1.313187,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00153,ALP,Alpha Compute Corp - Common Stock,us_sec_v2_38g,2018,,0.46,0.034265,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00155,ALRM,"Alarm.com Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,0.13216,2.66,17.089478,READY,v2.38BU-us-sec-valuation-features-extension
+U00156,ALRS,Alerus Financial Corporation - Common Stock,us_sec_v2_38g,2025,,0.69,22.236,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00157,ALT,"Altimmune, Inc. - Common Stock",us_sec_v2_38g,2025,-2304.609756,-1.0,2.028197,READY,v2.38BU-us-sec-valuation-features-extension
+U00158,ALTI,"AlTi Global, Inc. - Class A Common Stock",us_sec_v2_38g,2025,-0.290023,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00159,ALTO,"Alto Ingredients, Inc. - Common Stock",us_sec_v2_38g,2025,0.00802,0.16,3.172301,READY,v2.38BU-us-sec-valuation-features-extension
+U00161,ALXO,ALX Oncology Holdings Inc. - Common Stock,us_sec_v2_38g,2025,,-1.9,0.477697,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00162,ALZN,"Alzamend Neuro, Inc. - Common Stock",us_sec_v2_38g,2026,,-2.63,0.172275,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00163,AMAL,Amalgamated Financial Corp. - Common Stock,us_sec_v2_38g,2025,,3.44,26.643393,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00165,AMAT,"Applied Materials, Inc. - Common Stock",us_sec_v2_38g,2025,0.292195,8.71,25.74401,READY,v2.38BU-us-sec-valuation-features-extension
+U00166,AMBA,"Ambarella, Inc. - Ordinary Shares",us_sec_v2_38g,2026,-0.211227,-1.78,13.734693,READY,v2.38BU-us-sec-valuation-features-extension
+U00167,AMCI,AMC Robotics Corporation - Common Stock,us_sec_v2_38g,2025,-0.084464,-1.36,0.461431,READY,v2.38BU-us-sec-valuation-features-extension
+U00168,AMCX,AMC Global Media Inc. - Class A Common Stock,us_sec_v2_38g,2025,0.05767,2.01,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00169,AMD,"Advanced Micro Devices, Inc. - Common Stock",us_sec_v2_38g,2025,0.106643,2.67,38.649693,READY,v2.38BU-us-sec-valuation-features-extension
+U00170,AMGN,Amgen Inc. - Common Stock,us_sec_v2_38g,2025,0.247068,14.33,16.069042,READY,v2.38BU-us-sec-valuation-features-extension
+U00171,AMIX,"Autonomix Medical, Inc. - Common Stock",us_sec_v2_38g,2026,,-2.32,0.516682,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00172,AMKR,"Amkor Technology, Inc. - Common Stock",us_sec_v2_38g,2025,0.069676,1.51,18.079465,READY,v2.38BU-us-sec-valuation-features-extension
+U00173,AMLX,"Amylyx Pharmaceuticals, Inc. - Common Stock",us_sec_v2_38g,2025,,-1.53,2.777999,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00174,AMOD,"Alpha Modus Holdings, Inc. - Class A Common Stock",us_sec_v2_38g,2025,-734.685906,-0.29,-1.149938,READY,v2.38BU-us-sec-valuation-features-extension
+U00175,AMPG,"Amplitech Group, Inc. - Common Stock",us_sec_v2_38g,2025,-0.290519,-0.33,1.588861,READY,v2.38BU-us-sec-valuation-features-extension
+U00176,AMPH,"Amphastar Pharmaceuticals, Inc. - Common Stock",us_sec_v2_38g,2025,0.195035,2.1,17.281113,READY,v2.38BU-us-sec-valuation-features-extension
+U00177,AMPL,"Amplitude, Inc. - Class A Common Stock",us_sec_v2_38g,2025,,-0.67,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00178,AMRX,"Amneal Pharmaceuticals, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.130549,0.23,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00179,AMSC,American Superconductor Corporation - Common Stock,us_sec_v2_38g,2026,,3.12,11.661132,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00180,AMSF,"AMERISAFE, Inc. - Common Stock",us_sec_v2_38g,2025,,2.48,13.386517,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00181,AMSS,AMASS Brands Inc. - Common Stock,us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00182,AMST,Amesite Inc. - Common Stock,us_sec_v2_38g,2025,-32.623987,-1.03,0.598879,READY,v2.38BU-us-sec-valuation-features-extension
+U00183,AMTX,"Aemetis, Inc - Common Stock",us_sec_v2_38g,2025,,-1.28,-4.63568,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00184,AMZN,"Amazon.com, Inc. - Common Stock",us_sec_v2_38g,2025,0.111553,7.29,38.306309,READY,v2.38BU-us-sec-valuation-features-extension
+U00185,ANAB,"AnaptysBio, Inc. - Common Stock",us_sec_v2_38g,2025,0.204158,-0.46,1.328035,READY,v2.38BU-us-sec-valuation-features-extension
+U00186,ANDE,"The Andersons, Inc. - Common Stock",us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00188,ANGI,Angi Inc. - Class A Common Stock,us_sec_v2_38g,2025,0.063468,0.96,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00189,ANGO,"AngioDynamics, Inc. - Common Stock",us_sec_v2_38g,2026,-0.124704,-0.88,4.096482,READY,v2.38BU-us-sec-valuation-features-extension
+U00190,ANIK,Anika Therapeutics Inc. - Common Stock,us_sec_v2_38g,2025,-0.097953,-0.76,10.329397,READY,v2.38BU-us-sec-valuation-features-extension
+U00191,ANIP,"ANI Pharmaceuticals, Inc. - Common Stock",us_sec_v2_38g,2025,0.125761,3.5,24.041494,READY,v2.38BU-us-sec-valuation-features-extension
+U00192,ANIX,"Anixa Biosciences, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.34,0.459232,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00193,ANNA,"AleAnna, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.115937,0.04,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00194,ANNX,"Annexon, Inc. - common stock",us_sec_v2_38g,2025,,-1.34,1.417006,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00195,ANPA,Rich Sparkle Holdings Limited - Ordinary Shares,us_sec_v2_38g,2025,0.015544,0.0115,0.451754,READY,v2.38BU-us-sec-valuation-features-extension
+U00197,ANTA,Antalpha Platform Holding Company - Class A Ordinary Shares,us_sec_v2_38g,2025,0.188451,0.84,6.217155,READY,v2.38BU-us-sec-valuation-features-extension
+U00198,ANTX,"AN2 Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-1.16,1.935566,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00199,ANY,Sphere 3D Corp. - Common Shares,us_sec_v2_38g,2025,-1.967534,-7.37,6.868008,READY,v2.38BU-us-sec-valuation-features-extension
+U00200,AOSL,Alpha and Omega Semiconductor Limited - Common Shares,us_sec_v2_38g,2026,-0.063622,-1.41,26.374277,READY,v2.38BU-us-sec-valuation-features-extension
+U00201,AOUT,"American Outdoor Brands, Inc. - Common Stock",us_sec_v2_38g,2026,-0.047235,-0.73,13.315109,READY,v2.38BU-us-sec-valuation-features-extension
+U00202,APA,APA Corporation - Common Stock,us_sec_v2_38g,2025,,3.99,17.262352,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00204,APC,ARKO Petroleum Corp. - Class A Common Stock,us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00205,APEI,"American Public Education, Inc. - Common Stock",us_sec_v2_38g,2025,0.073875,1.4,16.263063,READY,v2.38BU-us-sec-valuation-features-extension
+U00206,APGE,"Apogee Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-4.22,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00207,API,"Agora, Inc. - ADS",us_sec_v2_38g,2025,-0.066711,0.03,1.611522,READY,v2.38BU-us-sec-valuation-features-extension
+U00208,APLD,Applied Digital Corporation - Common Stock,us_sec_v2_38g,2026,-0.386811,-0.91,5.965869,READY,v2.38BU-us-sec-valuation-features-extension
+U00212,APOG,"Apogee Enterprises, Inc. - Common Stock",us_sec_v2_38g,2026,0.060135,2.54,24.118075,READY,v2.38BU-us-sec-valuation-features-extension
+U00213,APP,Applovin Corporation - Class A Common Stock,us_sec_v2_38g,2025,0.757549,9.84,6.309752,READY,v2.38BU-us-sec-valuation-features-extension
+U00214,APPF,"AppFolio, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.160826,3.91,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00215,APPN,Appian Corporation - Class A Common Stock,us_sec_v2_38g,2025,0.000838,0.02,-0.635041,READY,v2.38BU-us-sec-valuation-features-extension
+U00216,APPS,"Digital Turbine, Inc. - Common Stock",us_sec_v2_38g,2026,0.060225,-0.33,1.597146,READY,v2.38BU-us-sec-valuation-features-extension
+U00217,APRE,"Aprea Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-1.93,1.51866,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00218,APUR,Aperture AC - Class A Ordinary Shares,us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00219,APVO,Aptevo Therapeutics Inc. - Common Stock,us_sec_v2_38g,2025,,-87.27,17.418799,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00220,APWC,"Asia Pacific Wire & Cable Corporation Limited - Common shares, Par value .01 per share",us_sec_v2_38g,2012,-0.001123,,11.69416,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00221,APXT,Apex Treasury Corporation - Class A Ordinary Share,us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00222,APYX,Apyx Medical Corporation - Common Stock,us_sec_v2_38g,2025,-0.121982,-0.27,0.347964,READY,v2.38BU-us-sec-valuation-features-extension
+U00223,AQB,"AquaBounty Technologies, Inc. - Common Stock",us_sec_v2_38g,2025,,-4.77,-0.487641,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00224,AQMS,"Aqua Metals, Inc. - Common Stock",us_sec_v2_38g,2025,,-15.15,4.924003,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00225,AQST,"Aquestive Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,-1.595039,-0.78,-0.275818,READY,v2.38BU-us-sec-valuation-features-extension
+U00226,ARAI,Arrive AI Inc. - Common Stock,us_sec_v2_38g,2025,,-0.4,0.072358,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00227,ARAY,Accuray Incorporated - Common Stock,us_sec_v2_38g,2026,-0.065785,-0.4,0.34914,READY,v2.38BU-us-sec-valuation-features-extension
+U00229,ARBE,Arbe Robotics Ltd. - Ordinary Shares,us_sec_v2_38g,2025,-46.983431,-0.42,0.362393,READY,v2.38BU-us-sec-valuation-features-extension
+U00230,ARCB,ArcBest Corporation - Common Stock,us_sec_v2_38g,2025,0.02252,2.63,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00232,ARCI,Archimedes Tech SPAC Partners III Co. - Ordinary Share,us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00234,ARCT,Arcturus Therapeutics Holdings Inc. - Common Stock,us_sec_v2_38g,2025,-0.929649,-2.4,7.530971,READY,v2.38BU-us-sec-valuation-features-extension
+U00235,ARDX,"Ardelyx, Inc. - Common Stock",us_sec_v2_38g,2025,-0.100601,-0.26,0.683233,READY,v2.38BU-us-sec-valuation-features-extension
+U00236,AREC,American Resources Corporation - Class A Common Stock,us_sec_v2_38g,2025,,,0.886432,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00237,ARHS,"Arhaus, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.064446,0.48,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00238,ARKO,ARKO Corp. - Common Stock,us_sec_v2_38g,2025,,0.15,2.410586,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00239,ARKR,Ark Restaurants Corp. - Common Stock,us_sec_v2_38g,2025,-0.024519,-3.18,9.07543,READY,v2.38BU-us-sec-valuation-features-extension
+U00240,AROW,Arrow Financial Corporation - Common Stock,us_sec_v2_38g,2025,,2.65,26.259837,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00241,ARQ,"Arq, Inc. - Common Stock",us_sec_v2_38g,2025,,-1.27,3.930775,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00243,ARQT,"Arcutis Biotherapeutics, Inc. - Common stock",us_sec_v2_38g,2025,-0.032512,-0.13,1.536324,READY,v2.38BU-us-sec-valuation-features-extension
+U00244,ARRY,"Array Technologies, Inc. - Common Stock",us_sec_v2_38g,2025,-0.022579,-0.73,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00246,ARTL,"Artelo Biosciences, Inc. - Common Stock",us_sec_v2_38g,2025,,,-0.630094,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00247,ARTNA,Artesian Resources Corporation - Class A Non-Voting Common Stock,us_sec_v2_38g,2025,0.245987,2.21,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00248,ARTV,"Artiva Biotherapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-3.43,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00249,ARTW,"Art's-Way Manufacturing Co., Inc. - Common Stock",us_sec_v2_38g,2025,0.012598,0.2,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00250,ARVN,"Arvinas, Inc. - Common Stock",us_sec_v2_38g,2025,-0.451257,-1.14,6.833071,READY,v2.38BU-us-sec-valuation-features-extension
+U00251,ARWR,"Arrowhead Pharmaceuticals, Inc. - Common Stock",us_sec_v2_38g,2025,0.118568,-0.01,3.434378,READY,v2.38BU-us-sec-valuation-features-extension
+U00252,ARXS,"Arxis, Inc. - Class A Common Stock",us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00253,ASBP,"Aspire Biopharma Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,-3120.169461,,-1.804583,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00254,ASLE,AerSale Corporation - Common Stock,us_sec_v2_38g,2025,0.047094,0.18,8.988086,READY,v2.38BU-us-sec-valuation-features-extension
+U00255,ASMB,"Assembly Biosciences, Inc. - Common Stock",us_sec_v2_38g,2025,-0.1676,-0.55,13.039843,READY,v2.38BU-us-sec-valuation-features-extension
+U00256,ASML,ASML Holding N.V. - New York Registry Shares,us_sec_v2_38g,2025,,24.73,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00258,ASO,"Academy Sports and Outdoors, Inc. - Common Stock",us_sec_v2_38g,2025,0.084611,5.66,33.4336,READY,v2.38BU-us-sec-valuation-features-extension
+U00260,ASPI,ASP Isotopes Inc. - Common Stock,us_sec_v2_38g,2025,-2.511971,-2.11,1.828036,READY,v2.38BU-us-sec-valuation-features-extension
+U00261,ASPS,Altisource Portfolio Solutions S.A. - Common Stock,us_sec_v2_38g,2025,0.002439,0.16,-10.024923,READY,v2.38BU-us-sec-valuation-features-extension
+U00262,ASRV,AmeriServ Financial Inc. - Common Stock,us_sec_v2_38g,2025,,0.34,7.221285,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00263,ASST,"Strive, Inc. - Class A Common Stock",us_sec_v2_38g,2025,-159.481481,-9.04,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00264,ASTC,Astrotech Corporation - Common Stock,us_sec_v2_38g,2025,-14.734,-8.32,12.564293,READY,v2.38BU-us-sec-valuation-features-extension
+U00265,ASTE,"Astec Industries, Inc. - Common Stock",us_sec_v2_38g,2025,0.046724,1.7,29.797797,READY,v2.38BU-us-sec-valuation-features-extension
+U00266,ASTH,Astrana Health Inc. - Common Stock,us_sec_v2_38g,2025,0.02468,0.46,15.941194,READY,v2.38BU-us-sec-valuation-features-extension
+U00267,ASTI,"Ascent Solar Technologies, Inc - Common Stock",us_sec_v2_38g,2025,-102.567061,-3.09,0.715937,READY,v2.38BU-us-sec-valuation-features-extension
+U00269,ASTS,"AST SpaceMobile, Inc. - Class A Common Stock",us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00270,ASUR,Asure Software Inc - Common Stock,us_sec_v2_38g,2025,,-0.48,7.045021,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00271,ASYS,"Amtech Systems, Inc. - Common Stock",us_sec_v2_38g,2025,-0.358954,-2.12,3.718966,READY,v2.38BU-us-sec-valuation-features-extension
+U00272,ATAI,AtaiBeckley Inc. - Common Stock,us_sec_v2_38g,2025,-157.510638,-2.91,0.610751,READY,v2.38BU-us-sec-valuation-features-extension
+U00273,ATCX,Atlas Critical Minerals Corporation - Common Stock,us_sec_v2_38g,2025,-57.876323,-1.69,0.231505,READY,v2.38BU-us-sec-valuation-features-extension
+U00274,ATEC,"Alphatec Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.96,0.082698,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00275,ATER,"Aterian, Inc. - Common Stock",us_sec_v2_38g,2025,-0.260573,-2.39,1.516897,READY,v2.38BU-us-sec-valuation-features-extension
+U00276,ATEX,Anterix Inc. - Common Stock,us_sec_v2_38g,2026,14.448546,4.85,13.868946,READY,v2.38BU-us-sec-valuation-features-extension
+U00277,ATGL,Alpha Technology Group Limited - Class A Ordinary Shares,us_sec_v2_38g,2025,-7.705409,-4.0,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00278,ATHR,"Aether Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.29,0.373273,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00279,ATII,Archimedes Tech SPAC Partners II Co. - Ordinary Shares,us_sec_v2_38g,2025,,,-1.017216,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00280,ATLC,Atlanticus Holdings Corporation - Common Stock,us_sec_v2_38g,2025,,7.4,40.790856,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00281,ATLO,Ames National Corporation - Common Stock,us_sec_v2_38g,2025,,2.14,23.471699,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00282,ATLX,Atlas Lithium Corporation - Common Stock,us_sec_v2_38g,2025,-260.748212,-1.54,1.92634,READY,v2.38BU-us-sec-valuation-features-extension
+U00283,ATNI,"ATN International, Inc. - Common Stock",us_sec_v2_38g,2025,0.042621,-1.38,29.119789,READY,v2.38BU-us-sec-valuation-features-extension
+U00284,ATOM,Atomera Incorporated - Common Stock,us_sec_v2_38g,2025,-324.969231,-0.65,0.568121,READY,v2.38BU-us-sec-valuation-features-extension
+U00285,ATOS,"Atossa Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-4.04,4.569893,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00286,ATPC,Agape ATP Corporation - Common Stock,us_sec_v2_38g,2025,-2.13654,-2.85,22.445498,READY,v2.38BU-us-sec-valuation-features-extension
+U00287,ATRA,"Atara Biotherapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,0.29694,2.61,-5.256963,READY,v2.38BU-us-sec-valuation-features-extension
+U00288,ATRC,"AtriCure, Inc. - Common Stock",us_sec_v2_38g,2025,-0.017674,-0.24,9.8798,READY,v2.38BU-us-sec-valuation-features-extension
+U00289,ATRO,Astronics Corporation - Common Stock,us_sec_v2_38g,2025,0.088632,0.83,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00290,ATXG,Addentax Group Corp. - Common Stock,us_sec_v2_38g,2026,-0.284708,-6.27,27.909885,READY,v2.38BU-us-sec-valuation-features-extension
+U00291,ATYR,"aTyr Pharma, Inc. - Common Stock",us_sec_v2_38g,2025,-408.563158,-0.8,0.688353,READY,v2.38BU-us-sec-valuation-features-extension
+U00292,AUBN,"Auburn National Bancorporation, Inc. - Common Stock",us_sec_v2_38g,2025,,2.08,26.348292,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00293,AUC,ATIF Holdings Limited - Ordinary Shares,us_sec_v2_38g,2024,-28.000129,-0.31,0.147158,READY,v2.38BU-us-sec-valuation-features-extension
+U00294,AUDC,AudioCodes Ltd. - Ordinary Shares,us_sec_v2_38g,2025,0.057161,0.31,6.323503,READY,v2.38BU-us-sec-valuation-features-extension
+U00296,AUID,authID Inc. - Common Stock,us_sec_v2_38g,2025,-8.895906,,0.534559,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00297,AUPH,Aurinia Pharmaceuticals Inc - Common Shares,us_sec_v2_38g,2025,0.370649,2.14,4.393273,READY,v2.38BU-us-sec-valuation-features-extension
+U00298,AUR,"Aurora Innovation, Inc. - Class A Common Stock",us_sec_v2_38g,2025,-300.333333,-0.44,1.10139,READY,v2.38BU-us-sec-valuation-features-extension
+U00299,AURA,"Aura Biosciences, Inc. - Common Stock",us_sec_v2_38g,2025,,-1.76,2.153134,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00300,AURE,Aurelion Inc. - Class A Ordinary Shares,us_sec_v2_38g,2024,-11.012281,-0.677,0.210191,READY,v2.38BU-us-sec-valuation-features-extension
+U00301,AUUD,Auddia Inc. - Common Stock,us_sec_v2_38g,2025,,-5.6,1.365662,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00302,AVAH,Aveanna Healthcare Holdings Inc. - Common Stock,us_sec_v2_38g,2026,0.105402,1.11,0.921632,READY,v2.38BU-us-sec-valuation-features-extension
+U00303,AVAT,Avalanche Treasury Corporation - Class A Common Stock,us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00304,AVAV,"AeroVironment, Inc. - Common Stock",us_sec_v2_38g,2026,-0.157319,-5.4,86.946361,READY,v2.38BU-us-sec-valuation-features-extension
+U00305,AVBH,"Avidbank Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,,-2.25,25.664948,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00306,AVBP,"ArriVent BioPharma, Inc. - Common Stock",us_sec_v2_38g,2025,,-4.32,7.236931,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00307,AVGO,Broadcom Inc. - Common Stock,us_sec_v2_38g,2025,0.398892,4.91,17.146594,READY,v2.38BU-us-sec-valuation-features-extension
+U00308,AVIR,"Atea Pharmaceuticals, Inc. - common stock",us_sec_v2_38g,2025,,-1.94,3.525474,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00309,AVLN,Avalyn Pharma Inc. - common stock,us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00310,AVNW,"Aviat Networks, Inc. - Common Stock",us_sec_v2_38g,2026,,0.2,20.889688,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00311,AVO,"Mission Produce, Inc. - Common Stock",us_sec_v2_38g,2025,0.046866,0.53,8.32229,READY,v2.38BU-us-sec-valuation-features-extension
+U00312,AVPT,"AvePoint, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.078749,0.17,2.22572,READY,v2.38BU-us-sec-valuation-features-extension
+U00313,AVR,Anteris Technologies Global Corp. - Common Stock,us_sec_v2_38g,2025,-49.08207,-2.55,-0.002237,READY,v2.38BU-us-sec-valuation-features-extension
+U00314,AVT,"Avnet, Inc. - Common Stock",us_sec_v2_38g,2026,0.026229,4.07,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00315,AVTX,"Avalo Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,-1236.016949,-5.84,4.486042,READY,v2.38BU-us-sec-valuation-features-extension
+U00316,AVX,Avax One Technology Ltd. - Common Shares,us_sec_v2_38g,2025,-9.255344,-2.03,2.011814,READY,v2.38BU-us-sec-valuation-features-extension
+U00317,AVXL,Anavex Life Sciences Corp. - Common Stock,us_sec_v2_38g,2025,,-0.54,1.094619,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00318,AWRE,"Aware, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.28,1.218811,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00319,AXG,Solowin Holdings - Class A Ordinary Share,us_sec_v2_38g,2026,,-0.11,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00320,AXGN,"Axogen, Inc. - Common Stock",us_sec_v2_38g,2025,-0.034852,-0.34,2.729821,READY,v2.38BU-us-sec-valuation-features-extension
+U00322,AXON,"Axon Enterprise, Inc. - Common Stock",us_sec_v2_38g,2025,-0.022333,1.6,40.426329,READY,v2.38BU-us-sec-valuation-features-extension
+U00323,AXSM,"Axsome Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,-0.261179,-3.68,1.735263,READY,v2.38BU-us-sec-valuation-features-extension
+U00324,AXTI,AXT Inc - Common Stock,us_sec_v2_38g,2025,-0.248806,-0.49,4.938649,READY,v2.38BU-us-sec-valuation-features-extension
+U00326,AYTU,"Aytu BioPharma, Inc. - Common Stock",us_sec_v2_38g,2025,-0.117908,-2.16,2.112753,READY,v2.38BU-us-sec-valuation-features-extension
+U00328,AZI,Autozi Internet Technology (Global) Ltd. - Class A Ordinary Shares,us_sec_v2_38g,2025,-0.142517,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00329,AZTA,"Azenta, Inc. - Common Stock",us_sec_v2_38g,2025,-0.045206,-1.22,37.658623,READY,v2.38BU-us-sec-valuation-features-extension
+U00331,BAER,"Bridger Aerospace Group Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.42,-6.129226,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00332,BAFN,BayFirst Financial Corp. - Common Stock,us_sec_v2_38g,2025,,-6.32,19.858479,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00333,BAND,Bandwidth Inc. - Class A Common Stock,us_sec_v2_38g,2025,-0.019062,-0.43,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00334,BANF,BancFirst Corporation - Common Stock,us_sec_v2_38g,2025,,7.22,55.282603,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00335,BANL,CBL International Limited - Class B Ordinary Shares,us_sec_v2_38g,2025,-0.004519,-0.108,0.723221,READY,v2.38BU-us-sec-valuation-features-extension
+U00336,BANR,Banner Corporation - Common Stock,us_sec_v2_38g,2025,,5.67,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00338,BAOS,Baosheng Media Group Holdings Limited - Ordinary shares,us_sec_v2_38g,2025,-17.993717,-7.83,2.142287,READY,v2.38BU-us-sec-valuation-features-extension
+U00339,BATRA,"Atlanta Braves Holdings, Inc. - Series A Common Stock",us_sec_v2_38g,2025,-0.018467,-0.37,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00340,BATRK,"Atlanta Braves Holdings, Inc. - Series C Common Stock",us_sec_v2_38g,2025,-0.018467,-0.37,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00342,BBCP,"Concrete Pumping Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,0.116579,0.09,5.164347,READY,v2.38BU-us-sec-valuation-features-extension
+U00344,BBGI,"Beasley Broadcast Group, Inc. - Class A Common Stock",us_sec_v2_38g,2025,-1.115249,-109.27,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00345,BBIO,"BridgeBio Pharma, Inc. - Common Stock",us_sec_v2_38g,2025,-1.042494,-3.78,-10.713093,READY,v2.38BU-us-sec-valuation-features-extension
+U00346,BBLG,Bone Biologics Corp - Common Stock,us_sec_v2_38g,2025,,-2.65,2.995415,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00347,BBNX,"Beta Bionics, Inc. - Common Stock",us_sec_v2_38g,2025,-0.715015,-1.81,6.483416,READY,v2.38BU-us-sec-valuation-features-extension
+U00348,BBOT,"BridgeBio Oncology Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-4.3,5.139229,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00349,BBSI,"Barrett Business Services, Inc. - Common Stock",us_sec_v2_38g,2025,,2.13,9.571468,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00350,BCAB,"BioAtla, Inc. - Common Stock",us_sec_v2_38g,2025,,-1.01,-0.570226,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00351,BCAL,California BanCorp - Common Stock,us_sec_v2_38g,2025,,1.95,17.785883,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00353,BCAX,Bicara Therapeutics Inc. - Common Stock,us_sec_v2_38g,2025,,-2.52,7.092701,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00354,BCBP,"BCB Bancorp, Inc. (NJ) - Common Stock",us_sec_v2_38g,2025,,-0.84,17.614928,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00355,BCDA,"BioCardia, Inc. - Common Stock",us_sec_v2_38g,2025,,-1.23,0.083212,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00356,BCG,"Binah Capital Group, Inc. - Common Stock",us_sec_v2_38g,2025,,0.05,1.092785,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00358,BCML,BayCom Corp - Common Stock,us_sec_v2_38g,2025,,2.18,31.095143,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00359,BCPC,Balchem Corporation - Common Stock,us_sec_v2_38g,2025,0.201826,4.8,39.222916,READY,v2.38BU-us-sec-valuation-features-extension
+U00360,BCRX,"BioCryst Pharmaceuticals, Inc. - Common Stock",us_sec_v2_38g,2025,,1.26,-0.559246,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00361,BCTX,BriaCell Therapeutics Corp. - Common Shares,us_sec_v2_38g,2025,,-62.19,9.20112,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00362,BDCI,BTC Development Corp. - Class A Ordinary Shares,us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00363,BDMD,Baird Medical Investment Holdings Ltd - Ordinary Share,us_sec_v2_38g,2025,-1.137276,-0.98,1.020007,READY,v2.38BU-us-sec-valuation-features-extension
+U00364,BDSX,"Biodesix, Inc. - Common Stock",us_sec_v2_38g,2025,-0.314953,-4.67,-0.298677,READY,v2.38BU-us-sec-valuation-features-extension
+U00365,BDTX,"Black Diamond Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,0.39,1.963857,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00367,BEAM,Beam Therapeutics Inc. - Common Stock,us_sec_v2_38g,2025,-2.745705,-0.81,12.170719,READY,v2.38BU-us-sec-valuation-features-extension
+U00368,BEAT,"Heartbeam, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.62,0.096547,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00369,BEEM,Beam Global - Common Stock,us_sec_v2_38g,2025,-0.975067,-1.61,1.299142,READY,v2.38BU-us-sec-valuation-features-extension
+U00370,BEEP,Mobile Infrastructure Corporation - Common Stock,us_sec_v2_38g,2025,,-0.55,3.561868,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00371,BELFA,Bel Fuse Inc. - Class A Common Stock,us_sec_v2_38g,2025,0.164328,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00372,BELFB,Bel Fuse Inc. - Class B Common Stock,us_sec_v2_38g,2025,0.164328,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00373,BENF,Beneficient - Class A Common Stock,us_sec_v2_38g,2026,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00374,BETR,Better Home & Finance Holding Company - Class A Common Stock,us_sec_v2_38g,2025,,-10.8,2.324387,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00375,BFC,Bank First Corporation - Common Stock,us_sec_v2_38g,2025,,7.23,65.466261,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00376,BFRG,"Bullfrog AI Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,-56.523836,-0.63,0.187099,READY,v2.38BU-us-sec-valuation-features-extension
+U00377,BFRI,Biofrontera Inc. - Common Stock,us_sec_v2_38g,2025,-0.272102,-1.04,0.8997,READY,v2.38BU-us-sec-valuation-features-extension
+U00378,BFST,"Business First Bancshares, Inc. - Common Stock",us_sec_v2_38g,2025,,2.81,30.391823,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00379,BGC,"BGC Group, Inc. - Class A Common Stock",us_sec_v2_38g,2025,,0.31,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00380,BGDE,"Big Digital Energy, Inc. - Common Stock",us_sec_v2_38g,2025,-0.485311,-20.11,-3.318147,READY,v2.38BU-us-sec-valuation-features-extension
+U00381,BGIN,Bgin Blockchain Limited - Class A Ordinary Shares,us_sec_v2_38g,2025,-2.61284,-1.62,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00382,BGL,Blue Gold Limited - Class A ordinary shares,us_sec_v2_38g,2025,,-1.56,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00383,BGLC,BioNexus Gene Lab Corp - Common stock,us_sec_v2_38g,2025,-0.39934,,3.563843,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00384,BGM,BGM Group Ltd. - Class A Ordinary Shares,us_sec_v2_38g,2025,-0.3318,-0.18,1.948318,READY,v2.38BU-us-sec-valuation-features-extension
+U00385,BGMS,"Bio Green Med Solution, Inc. - Common Stock",us_sec_v2_38g,2025,,-6.45,1.266962,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00387,BHRB,Burke & Herbert Financial Services Corp. - Common Stock,us_sec_v2_38g,2025,,7.76,56.868459,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00388,BHST,BioHarvest Sciences Inc. - Common Stock,us_sec_v2_38g,2025,-0.161557,-0.6,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00389,BIAF,"bioAffinity Technologies, Inc. - Common Stock",us_sec_v2_38g,2025,-1.715771,-8.66,1.617733,READY,v2.38BU-us-sec-valuation-features-extension
+U00390,BIIB,Biogen Inc. - Common Stock,us_sec_v2_38g,2025,,8.83,124.365123,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00391,BIOA,"BioAge Labs, Inc. - Common Stock",us_sec_v2_38g,2025,-10.314619,-2.24,7.276638,READY,v2.38BU-us-sec-valuation-features-extension
+U00393,BIRD,"Smartbird, Inc. - Class A Common Stock",us_sec_v2_38g,2025,,-9.47,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00394,BIVI,BioVie Inc. - Common stock,us_sec_v2_38g,2026,,-3.05,1.361628,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00396,BIYA,Baiya International Group Inc. - Ordinary Shares,us_sec_v2_38g,2025,-0.581169,-5.04,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00397,BJDX,"Bluejay Diagnostics, Inc. - Common Stock",us_sec_v2_38g,2025,,-15.25,9.884124,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00398,BJRI,"BJ's Restaurants, Inc. - Common Stock",us_sec_v2_38g,2023,0.033099,2.22,17.343611,READY,v2.38BU-us-sec-valuation-features-extension
+U00400,BKNG,Booking Holdings Inc. - Common Stock,us_sec_v2_38g,2025,0.32786,166.52,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00401,BKR,Baker Hughes Company - Common Stock,us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00402,BL,"BlackLine, Inc. - Common Stock",us_sec_v2_38g,2025,0.036481,0.4,5.549814,READY,v2.38BU-us-sec-valuation-features-extension
+U00403,BLBD,Blue Bird Corporation - Common Stock,us_sec_v2_38g,2025,0.112942,4.01,8.010577,READY,v2.38BU-us-sec-valuation-features-extension
+U00405,BLFS,"BioLife Solutions, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.09,7.71569,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00406,BLIN,"Bridgeline Digital, Inc. - Common Stock",us_sec_v2_38g,2025,-0.157772,-0.25,0.782697,READY,v2.38BU-us-sec-valuation-features-extension
+U00408,BLKB,"Blackbaud, Inc. - Common Stock",us_sec_v2_38g,2025,0.169053,2.41,1.821077,READY,v2.38BU-us-sec-valuation-features-extension
+U00409,BLLN,"BillionToOne, Inc. - Class A common stock",us_sec_v2_38g,2025,0.052515,0.18,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00410,BLMN,"Bloomin' Brands, Inc. - Common Stock",us_sec_v2_38g,2025,0.009394,0.1,3.914516,READY,v2.38BU-us-sec-valuation-features-extension
+U00411,BLNE,"Beeline Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,-2.514929,-2.23,1.921128,READY,v2.38BU-us-sec-valuation-features-extension
+U00412,BLNK,Blink Charging Co. - Common Stock,us_sec_v2_38g,2025,-0.812403,-0.76,0.453745,READY,v2.38BU-us-sec-valuation-features-extension
+U00415,BLZE,"Backblaze, Inc. - Common Stock",us_sec_v2_38g,2025,-0.161984,-0.46,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00417,BMBL,Bumble Inc. - common stock,us_sec_v2_38g,2025,-0.834434,-5.95,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00418,BMEA,"Biomea Fusion, Inc. - Common Stock",us_sec_v2_38g,2025,,-1.18,0.408745,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00422,BMR,Beamr Imaging Ltd. - Ordinary Share,us_sec_v2_38g,2025,-2.085973,-0.39,1.014948,READY,v2.38BU-us-sec-valuation-features-extension
+U00423,BMRA,"Biomerica, Inc. - Common Stock",us_sec_v2_38g,2026,-1.1947,-1.3,0.823093,READY,v2.38BU-us-sec-valuation-features-extension
+U00424,BMRC,Bank of Marin Bancorp - Common Stock,us_sec_v2_38g,2025,,-2.24,24.50858,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00425,BMRN,BioMarin Pharmaceutical Inc. - Common Stock,us_sec_v2_38g,2025,0.127118,1.82,31.653644,READY,v2.38BU-us-sec-valuation-features-extension
+U00426,BNAI,Brand Engagement Network Inc. - Common Stock,us_sec_v2_38g,2025,-45.893243,-1.97,0.598397,READY,v2.38BU-us-sec-valuation-features-extension
+U00427,BNBX,BNB Plus Corp. - Common Stock,us_sec_v2_38g,2025,,-134.23,1.38623,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00428,BNC,CEA Industries Inc. - Common Stock,us_sec_v2_38g,2026,-6.042602,2.52,7.153029,READY,v2.38BU-us-sec-valuation-features-extension
+U00429,BNGO,"Bionano Genomics, Inc. - Common Stock",us_sec_v2_38g,2025,-1.169461,-4.85,4.136236,READY,v2.38BU-us-sec-valuation-features-extension
+U00430,BNKK,"Bonk, Inc. - Common Stock",us_sec_v2_38g,2025,,-17.02,4.514663,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00432,BNTC,Benitec Biopharma Inc. - Common Stock,us_sec_v2_38g,2025,,-1.05,3.70641,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00434,BODI,"The Beachbody Company, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.02196,-0.41,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00435,BOF,BranchOut Food Inc. - Common Stock,us_sec_v2_38g,2025,-0.390794,-0.57,0.416251,READY,v2.38BU-us-sec-valuation-features-extension
+U00436,BOKF,BOK Financial Corporation - Common Stock,us_sec_v2_38g,2025,,9.17,97.634386,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00437,BOLD,"Boundless Bio, Inc. - Common Stock",us_sec_v2_38g,2025,,-2.6,4.402821,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00438,BOLT,"Bolt Biotherapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,-4.693047,-17.85,13.800619,READY,v2.38BU-us-sec-valuation-features-extension
+U00439,BON,Bon Natural Life Limited - Class A Ordinary Shares,us_sec_v2_38g,2025,-0.086939,-0.72,5231.88,READY,v2.38BU-us-sec-valuation-features-extension
+U00440,BOOM,DMC Global Inc. - Common Stock,us_sec_v2_38g,2025,-0.00018,-0.9,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00441,BOSC,B.O.S. Better Online Solutions - Ordinary Shares,us_sec_v2_38g,2025,0.057506,0.59,4.083692,READY,v2.38BU-us-sec-valuation-features-extension
+U00443,BOTJ,"Bank of the James Financial Group, Inc. - Common Stock",us_sec_v2_38g,2025,,1.99,17.618764,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00444,BOXL,Boxlight Corporation - Class A Common Stock,us_sec_v2_38g,2025,-0.149882,-39.74,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00446,BPOP,"Popular, Inc. - Common Stock",us_sec_v2_38g,2025,,12.31,95.087302,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00447,BPRN,"Princeton Bancorp, Inc. - Common Stock",us_sec_v2_38g,2025,,2.73,40.013421,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00451,BRCB,"Black Rock Coffee Bar, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.004498,0.0,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00453,BRFH,Barfresh Food Group Inc. - Common Stock,us_sec_v2_38g,2025,-0.241554,-0.17,0.083285,READY,v2.38BU-us-sec-valuation-features-extension
+U00454,BRID,Bridgford Foods Corporation - Common Stock,us_sec_v2_38g,2025,-0.081195,-1.47,12.729772,READY,v2.38BU-us-sec-valuation-features-extension
+U00455,BRKR,Bruker Corporation - Common Stock,us_sec_v2_38g,2025,0.019846,-0.15,16.14599,READY,v2.38BU-us-sec-valuation-features-extension
+U00456,BRLS,Borealis Foods Inc. - Class A Common Shares,us_sec_v2_38g,2025,-0.35062,-0.89,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00457,BRLT,"Brilliant Earth Group, Inc. - Class A Common Stock",us_sec_v2_38g,2025,-0.012288,-0.25,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00458,BRR,"ProCap Financial, Inc. - Common Stock",us_sec_v2_38g,2025,-93.969153,-0.39,4.982694,READY,v2.38BU-us-sec-valuation-features-extension
+U00459,BRTX,"BioRestorative Therapies, Inc. - Common Stock",us_sec_v2_38g,2025,-43.500506,-1.58,0.040191,READY,v2.38BU-us-sec-valuation-features-extension
+U00460,BRUN,Boost Run Inc. - Class A Common Stock,us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00461,BRZE,"Braze, Inc. - Class A Common Stock",us_sec_v2_38g,2026,-0.196099,-1.22,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00463,BSBK,Bogota Financial Corp. - Common Stock,us_sec_v2_38g,2025,,0.17,10.901517,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00464,BSET,"Bassett Furniture Industries, Incorporated - Common Stock",us_sec_v2_38g,2025,0.023345,0.7,19.085189,READY,v2.38BU-us-sec-valuation-features-extension
+U00465,BSIN,Big Sky Industrial Inc. - Common Stock,us_sec_v2_38g,2025,-1.952808,-0.43,0.703238,READY,v2.38BU-us-sec-valuation-features-extension
+U00467,BSRR,Sierra Bancorp - Common Stock,us_sec_v2_38g,2025,,3.14,27.487481,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00468,BSVN,Bank7 Corp. - Common stock,us_sec_v2_38g,2025,,4.56,26.524794,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00469,BSY,"Bentley Systems, Incorporated - Class B Common Stock",us_sec_v2_38g,2025,0.241461,0.88,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00470,BTAI,"BioXcel Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,-78.599688,-5.73,-4.275484,READY,v2.38BU-us-sec-valuation-features-extension
+U00471,BTBD,"BT Brands, Inc. - Common Stock",us_sec_v2_38g,2024,-0.123609,,1.131688,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00472,BTBT,"Bit Digital, Inc. - Ordinary Share",us_sec_v2_38g,2025,-0.808667,-0.31,2.233224,READY,v2.38BU-us-sec-valuation-features-extension
+U00473,BTCS,BTCS Inc. - Common Stock,us_sec_v2_38g,2025,,-1.0,2.975638,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00474,BTCT,BTC Digital Ltd. - Ordinary Shares,us_sec_v2_38g,2025,-0.627377,-1.1,3.904917,READY,v2.38BU-us-sec-valuation-features-extension
+U00476,BTMD,Biote Corp. - Class A common stock,us_sec_v2_38g,2025,0.18495,0.86,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00477,BTOC,Armlogi Holding Corp. - common stock,us_sec_v2_38g,2025,-0.092833,-0.37,0.593832,READY,v2.38BU-us-sec-valuation-features-extension
+U00478,BTOG,Bit Origin Limited - Class A Ordinary Shares,us_sec_v2_38g,2025,-75.748652,-0.28,0.502701,READY,v2.38BU-us-sec-valuation-features-extension
+U00480,BTTC,Black Titan Corp - Ordinary Shares,us_sec_v2_38g,2025,,-163173.0,-167120.0,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00481,BULL,Webull Corporation - Class A Ordinary Shares,us_sec_v2_38g,2025,,-1.23,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00482,BUSE,First Busey Corporation - Common Stock,us_sec_v2_38g,2025,,1.49,28.176868,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00483,BUUU,BUUU Group Limited - Class A Ordinary Share,us_sec_v2_38g,2025,0.162521,0.05,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00484,BVC,BitVentures Limited - Ordinary Share,us_sec_v2_38g,2025,,-0.06,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00485,BVFL,"BV Financial, Inc. - Common Stock",us_sec_v2_38g,2025,,1.44,20.762214,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00486,BVS,Bioventus Inc. - Class A Common Stock,us_sec_v2_38g,2025,0.095012,0.34,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00487,BWB,"Bridgewater Bancshares, Inc. - Common Stock",us_sec_v2_38g,2025,,1.53,18.627362,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00488,BWEN,"Broadwind, Inc. - Common Stock",us_sec_v2_38g,2025,,0.23,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00489,BWFG,"Bankwell Financial Group, Inc. - Common Stock",us_sec_v2_38g,2025,,4.49,38.16344,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00490,BWIN,"The Baldwin Insurance Group, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.049499,-0.5,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00491,BWMN,Bowman Consulting Group Ltd. - Common Stock,us_sec_v2_38g,2025,0.040121,0.74,15.18574,READY,v2.38BU-us-sec-valuation-features-extension
+U00492,BYAH,"Park Ha Biological Technology Co., Ltd. - Class A Ordinary Shares",us_sec_v2_38g,2025,-9.564516,-41.38,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00493,BYFC,Broadway Financial Corporation - Class A Common Stock,us_sec_v2_38g,2025,,-3.23,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00494,BYND,"Beyond Meat, Inc. - Common stock",us_sec_v2_38g,2025,-1.210983,1.15,-0.002198,READY,v2.38BU-us-sec-valuation-features-extension
+U00495,BYRN,"Byrna Technologies, Inc. - Common Stock",us_sec_v2_38g,2025,0.10022,0.43,2.899503,READY,v2.38BU-us-sec-valuation-features-extension
+U00496,BYSI,"BeyondSpring, Inc. - Ordinary Shares",us_sec_v2_38g,2025,,-0.02,-0.782081,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00497,BZ,KANZHUN LIMITED - American Depository Shares,us_sec_v2_38g,2025,0.298046,3.04,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00498,BZAI,"Blaize Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,-2.687953,-1.98,0.319557,READY,v2.38BU-us-sec-valuation-features-extension
+U00499,BZFD,"BuzzFeed, Inc. - Class A Common Stock",us_sec_v2_38g,2025,-0.258472,-1.53,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00500,CAAS,"China Automotive Systems, Inc. - Ordinary Share",us_sec_v2_38g,2025,0.070038,1.42,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00501,CABA,"Cabaletta Bio, Inc. - Common Stock",us_sec_v2_38g,2025,,-2.1,1.115165,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00502,CABR,"Caring Brands, Inc. - Common Stock",us_sec_v2_38g,2025,-1408.072361,-0.46,0.14167,READY,v2.38BU-us-sec-valuation-features-extension
+U00503,CAC,Camden National Corporation - Common Stock,us_sec_v2_38g,2025,,3.86,41.157247,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00504,CACC,Credit Acceptance Corporation - Common Stock,us_sec_v2_38g,2025,,37.02,142.657266,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00505,CADL,"Candel Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.72,0.945785,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00506,CAES,"Cantor Equity Partners VII, Inc. - Class A Ordinary Shares",us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00507,CAI,"Caris Life Sciences, Inc. - Common Stock",us_sec_v2_38g,2025,0.055556,-3.22,2.043376,READY,v2.38BU-us-sec-valuation-features-extension
+U00509,CAKE,The Cheesecake Factory Incorporated - Common Stock,us_sec_v2_38g,2025,0.049919,3.17,8.792569,READY,v2.38BU-us-sec-valuation-features-extension
+U00510,CALC,"CalciMedica, Inc. - Common Stock",us_sec_v2_38g,2025,,-1.97,-0.430189,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00511,CALM,"Cal-Maine Foods, Inc. - Common Stock",us_sec_v2_38g,2026,0.120271,6.65,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00512,CAMP,CAMP4 Therapeutics Corporation - Common Stock,us_sec_v2_38g,2025,-15.0243,-2.65,0.919106,READY,v2.38BU-us-sec-valuation-features-extension
+U00513,CAMT,Camtek Ltd. - Ordinary Shares,us_sec_v2_38g,2025,0.258436,1.11,13.463411,READY,v2.38BU-us-sec-valuation-features-extension
+U00515,CAPR,"Capricor Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-2.26,5.330091,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00516,CAPS,Capstone Holding Corp. - Common Stock,us_sec_v2_38g,2025,,-4.12,1.41949,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00518,CAR,"Avis Budget Group, Inc. - Common Stock",us_sec_v2_38g,2025,,-25.25,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00519,CARE,"Carter Bankshares, Inc. - Common Stock",us_sec_v2_38g,2025,,1.38,19.005428,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00520,CARG,"CarGurus, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.269515,1.58,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00521,CARL,"Carlsmed, Inc. - Common Stock",us_sec_v2_38g,2025,,-2.12,3.71625,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00522,CART,Maplebear Inc. - Common Stock,us_sec_v2_38g,2025,0.133084,1.68,10.367814,READY,v2.38BU-us-sec-valuation-features-extension
+U00523,CASH,"Pathward Financial, Inc. - Common Stock",us_sec_v2_38g,2025,,7.91,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00524,CASS,"Cass Information Systems, Inc - Common Stock",us_sec_v2_38g,2025,,2.66,18.811335,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00525,CAST,"FreeCast, Inc. - Class A common stock",us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00526,CASY,"Caseys General Stores, Inc. - Common Stock",us_sec_v2_38g,2026,,19.28,107.080221,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00527,CATY,Cathay General Bancorp - Common Stock,us_sec_v2_38g,2025,,4.55,43.532478,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00529,CBC,"Central Bancompany, Inc. - Class A Common Stock",us_sec_v2_38g,2025,,1.75,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00530,CBFV,"CB Financial Services, Inc. - Common Stock",us_sec_v2_38g,2025,,0.97,31.279007,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00531,CBIO,"Crescent Biopharma, Inc. - Common Stock",us_sec_v2_38g,2025,-14.075249,,7.367047,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00532,CBK,"Commercial Bancgroup, Inc. - Common Stock",us_sec_v2_38g,2025,,2.95,20.831078,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00533,CBLL,"CeriBell, Inc. - Common Stock",us_sec_v2_38g,2025,-0.655738,-1.46,4.143937,READY,v2.38BU-us-sec-valuation-features-extension
+U00534,CBNK,"Capital Bancorp, Inc. - Common Stock",us_sec_v2_38g,2025,,3.45,24.537344,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00535,CBRL,"Cracker Barrel Old Country Store, Inc. - Common Stock",us_sec_v2_38g,2025,0.015796,2.08,20.733551,READY,v2.38BU-us-sec-valuation-features-extension
+U00536,CBRS,Cerebras Systems Inc. - Class A Common Stock,us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00537,CBSH,"Commerce Bancshares, Inc. - Common Stock",us_sec_v2_38g,2025,,4.04,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00538,CBUS,"Cibus, Inc. - Class A Common Stock",us_sec_v2_38g,2025,-26.801044,-2.78,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00539,CCAP,"Crescent Capital BDC, Inc. - Common Stock",us_sec_v2_38g,2025,,1.81,19.097962,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00541,CCB,Coastal Financial Corporation - Common Stock,us_sec_v2_38g,2025,,3.12,32.427528,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00542,CCBG,Capital City Bank Group - Common Stock,us_sec_v2_38g,2025,,3.61,32.360016,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00543,CCC,CCC Intelligent Solutions Holdings Inc. - Common Stock,us_sec_v2_38g,2025,0.088781,0.0,2.951545,READY,v2.38BU-us-sec-valuation-features-extension
+U00544,CCCC,"C4 Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,-3.20533,-1.27,2.647563,READY,v2.38BU-us-sec-valuation-features-extension
+U00546,CCEC,Capital Clean Energy Carriers Corp. - Common Share,us_sec_v2_38g,2025,,2.9,25.204591,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00548,CCG,Cheche Group Inc. - Class A Ordinary Shares,us_sec_v2_38g,2025,,-0.22,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00549,CCHH,CCH Holdings Ltd - Class A Ordinary Shares,us_sec_v2_38g,2025,-0.246008,-0.14,0.416026,READY,v2.38BU-us-sec-valuation-features-extension
+U00552,CCLD,"CareCloud, Inc. - Common Stock",us_sec_v2_38g,2025,0.094134,0.1,1.402188,READY,v2.38BU-us-sec-valuation-features-extension
+U00553,CCNE,CNB Financial Corporation - Common Stock,us_sec_v2_38g,2025,,2.5,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00554,CCOI,"Cogent Communications Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,,-3.8,-1.275375,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00556,CCSI,"Consensus Cloud Solutions, Inc. - Common Stock",us_sec_v2_38g,2025,0.429627,4.39,0.726484,READY,v2.38BU-us-sec-valuation-features-extension
+U00557,CCTG,CCSC Technology International Holdings Limited - Class A Ordinary Shares,us_sec_v2_38g,2026,-0.199886,-1.94,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00558,CCXI,Churchill Capital Corp XI - Class A Ordinary Shares,us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00559,CD,Chaince Digital Holdings Inc. - American Ordinary Shares,us_sec_v2_38g,2025,-2.02037,-0.08,0.604148,READY,v2.38BU-us-sec-valuation-features-extension
+U00560,CDIO,Cardio Diagnostics Holdings Inc. - Common stock,us_sec_v2_38g,2025,-437.37457,-3.71,3.818817,READY,v2.38BU-us-sec-valuation-features-extension
+U00561,CDLX,"Cardlytics, Inc. - Common Stock",us_sec_v2_38g,2025,-0.479522,-1.95,-0.119382,READY,v2.38BU-us-sec-valuation-features-extension
+U00562,CDNA,"CareDx, Inc. - Common Stock",us_sec_v2_38g,2025,-0.081044,-0.4,5.952886,READY,v2.38BU-us-sec-valuation-features-extension
+U00563,CDNL,Cardinal Infrastructure Group Inc. - Class A Common Stock,us_sec_v2_38g,2025,,0.06,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00564,CDNS,"Cadence Design Systems, Inc. - Common Stock",us_sec_v2_38g,2025,0.28169,4.09,20.140549,READY,v2.38BU-us-sec-valuation-features-extension
+U00566,CDT,CDT Equity Inc. - Common Stock,us_sec_v2_38g,2025,,-1177.89,-77.816366,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00567,CDTG,CDT Environmental Technology Investment Holdings Limited - ordinary shares,us_sec_v2_38g,2025,-0.63928,-0.84,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00568,CDW,CDW Corporation - Common Stock,us_sec_v2_38g,2025,0.073831,8.13,20.139876,READY,v2.38BU-us-sec-valuation-features-extension
+U00569,CDXS,"Codexis, Inc. - Common Stock",us_sec_v2_38g,2025,-0.592993,-0.5,0.558467,READY,v2.38BU-us-sec-valuation-features-extension
+U00570,CDZI,"Cadiz, Inc. - Common Stock",us_sec_v2_38g,2025,-1.569178,-0.48,0.279474,READY,v2.38BU-us-sec-valuation-features-extension
+U00571,CECO,CECO Environmental Corp. - Common Stock,us_sec_v2_38g,2025,0.136701,1.42,8.908181,READY,v2.38BU-us-sec-valuation-features-extension
+U00572,CEG,Constellation Energy Corporation - Common Stock When-Issued,us_sec_v2_38g,2025,0.136169,7.4,46.528846,READY,v2.38BU-us-sec-valuation-features-extension
+U00573,CELC,Celcuity Inc. - Common Stock,us_sec_v2_38g,2025,,-3.79,2.084259,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00574,CELH,"Celsius Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,0.056082,0.25,4.59883,READY,v2.38BU-us-sec-valuation-features-extension
+U00575,CELU,Celularity Inc. - Class A Common Stock,us_sec_v2_38g,2025,-2.309153,-3.59,-1.319865,READY,v2.38BU-us-sec-valuation-features-extension
+U00576,CELZ,"Creative Medical Technology Holdings, Inc. - Common Stock",us_sec_v2_38g,2025,-1023.802333,,2.032816,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00577,CENN,Cenntro Inc. - Common Stock,us_sec_v2_38g,2025,-1.800248,-87.21,27.492686,READY,v2.38BU-us-sec-valuation-features-extension
+U00578,CENT,Central Garden & Pet Company - Common Stock,us_sec_v2_38g,2025,0.07991,2.58,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00579,CENTA,Central Garden & Pet Company - Class A Common Stock Nonvoting,us_sec_v2_38g,2025,0.07991,2.58,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00580,CENX,Century Aluminum Company - Common Stock,us_sec_v2_38g,2025,0.062542,0.42,8.139922,READY,v2.38BU-us-sec-valuation-features-extension
+U00581,CEPF,"Cantor Equity Partners IV, Inc. - Class A Ordinary Shares",us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00582,CEPO,"Cantor Equity Partners I, Inc. - Class A Ordinary Shares",us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00583,CEPS,"Cantor Equity Partners VI, Inc. - Class A Ordinary Shares",us_sec_v2_38g,2025,,-0.03,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00584,CEPV,"Cantor Equity Partners V, Inc. - Class A Ordinary Shares",us_sec_v2_38g,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U00585,CERS,Cerus Corporation - Common Stock,us_sec_v2_38g,2025,-0.03713,-0.08,0.334253,READY,v2.38BU-us-sec-valuation-features-extension
+U00586,CERT,"Certara, Inc. - Common Stock",us_sec_v2_38g,2025,0.050177,-0.01,6.678383,READY,v2.38BU-us-sec-valuation-features-extension
+U00587,CETX,Cemtrex Inc. - Common Stock,us_sec_v2_38g,2025,0.006665,,10.4953,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00588,CETY,"Clean Energy Technologies, Inc. - Common Stock",us_sec_v2_38g,2025,-1.183994,-1.55,0.663047,READY,v2.38BU-us-sec-valuation-features-extension
+U00589,CEVA,"CEVA, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.44,12.23006,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00590,CFBK,CF Bankshares Inc. - Common Stock,us_sec_v2_38g,2025,,2.7,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00591,CFFI,C&F Financial Corporation - Common Stock,us_sec_v2_38g,2025,,8.29,80.639328,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00592,CFFN,"Capitol Federal Financial, Inc. - Common Stock",us_sec_v2_38g,2025,,0.52,7.924681,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00593,CG,The Carlyle Group Inc. - Common Stock,us_sec_v2_38g,2025,,2.25,19.747098,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00595,CGC,Canopy Growth Corporation - Common Shares,us_sec_v2_38g,2026,,-0.88,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00596,CGEM,"Cullinan Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,,6.784561,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00597,CGEN,Compugen Ltd. - Ordinary Shares,us_sec_v2_38g,2025,0.430515,0.38,1.086489,READY,v2.38BU-us-sec-valuation-features-extension
+U00598,CGNT,Cognyte Software Ltd. - Ordinary Shares,us_sec_v2_38g,2025,0.033149,-0.01,2.826335,READY,v2.38BU-us-sec-valuation-features-extension
+U00599,CGNX,Cognex Corporation - Common Stock,us_sec_v2_38g,2025,0.163488,0.68,8.933699,READY,v2.38BU-us-sec-valuation-features-extension
+U00601,CGON,"CG Oncology, Inc. - Common stock",us_sec_v2_38g,2025,,-2.08,9.32718,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00602,CGTL,Creative Global Technology Holdings Limited - Class A Ordinary Shares,us_sec_v2_38g,2025,-0.622239,-0.57,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00603,CGTX,"Cognition Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.32,0.385483,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00604,CHAI,"Core AI Holdings, Inc. - Common Shares",us_sec_v2_38g,2025,-0.128847,,0.155687,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00606,CHCI,"Comstock Holding Companies, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.189784,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00607,CHCO,City Holding Company - Common Stock,us_sec_v2_38g,2025,,8.94,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00608,CHDN,"Churchill Downs, Incorporated - Common Stock",us_sec_v2_38g,2025,0.233706,,14.507184,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00610,CHEF,"The Chefs' Warehouse, Inc. - Common Stock",us_sec_v2_38g,2025,0.034969,1.87,14.855255,READY,v2.38BU-us-sec-valuation-features-extension
+U00612,CHKP,Check Point Software Technologies Ltd. - Ordinary Shares,us_sec_v2_38g,2025,0.304946,9.85,27.293638,READY,v2.38BU-us-sec-valuation-features-extension
+U00613,CHMG,Chemung Financial Corp - Common Stock,us_sec_v2_38g,2025,,3.14,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00616,CHR,"Cheer Holding, Inc. - Class A Ordinary Share",us_sec_v2_38g,2025,0.176625,24.07,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00617,CHRD,Chord Energy Corporation - Common Stock,us_sec_v2_38g,2025,0.04048,0.74,142.347335,READY,v2.38BU-us-sec-valuation-features-extension
+U00618,CHRN,ChronoScale Holdings Corporation - Common Stock,us_sec_v2_38g,2026,-0.523672,-0.36,1.239739,READY,v2.38BU-us-sec-valuation-features-extension
+U00619,CHRS,"Coherus Oncology, Inc. - Common Stock",us_sec_v2_38g,2025,,1.43,0.503603,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00620,CHRW,"C.H. Robinson Worldwide, Inc. - Common Stock",us_sec_v2_38g,2025,0.048973,4.88,15.584418,READY,v2.38BU-us-sec-valuation-features-extension
+U00621,CHSN,Chanson International Holding - Class A Ordinary Shares,us_sec_v2_38g,2025,-0.103297,0.03,1.442091,READY,v2.38BU-us-sec-valuation-features-extension
+U00622,CHTR,"Charter Communications, Inc. - Class A Common Stock",us_sec_v2_38g,2025,0.235659,36.9,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00625,CHYM,"Chime Financial, Inc. - Class A Common Stock",us_sec_v2_38g,2025,-0.475578,-4.27,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00626,CIFR,Cipher Digital Inc. - Common Stock,us_sec_v2_38g,2025,-1.882465,-2.15,1.989157,READY,v2.38BU-us-sec-valuation-features-extension
+U00627,CIGI,Colliers International Group Inc. - Subordinate Voting Shares,us_sec_v2_38g,2025,0.066738,2.03,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00628,CIIT,"Tianci International, Inc. - Common Stock",us_sec_v2_38g,2025,-0.291707,,0.180519,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00629,CINF,Cincinnati Financial Corporation - Common Stock,us_sec_v2_38g,2025,,15.32,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00630,CING,Cingulate Inc. - Common Stock,us_sec_v2_38g,2025,,-4.44,0.346042,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00631,CIRC,"Circle8 Group, Inc. - Common Stock",us_sec_v2_38g,2025,-0.115244,-1.08,-0.57599,READY,v2.38BU-us-sec-valuation-features-extension
+U00632,CISO,"CISO Global, Inc. - Common Stock",us_sec_v2_38g,2025,-0.330191,-0.3,0.331753,READY,v2.38BU-us-sec-valuation-features-extension
+U00633,CISS,C3is Inc. - Common Stock,us_sec_v2_38g,2025,0.039258,46.5,144.162843,READY,v2.38BU-us-sec-valuation-features-extension
+U00634,CIVB,"Civista Bancshares, Inc. - Common Stock",us_sec_v2_38g,2025,,2.64,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00635,CJMB,Callan JMB Inc. - Common Stock,us_sec_v2_38g,2025,-1.229139,-1.82,0.479152,READY,v2.38BU-us-sec-valuation-features-extension
+U00636,CLAR,Clarus Corporation - Common Stock,us_sec_v2_38g,2025,-0.238305,-1.21,5.114135,READY,v2.38BU-us-sec-valuation-features-extension
+U00637,CLBK,"Columbia Financial, Inc. - Common Stock",us_sec_v2_38g,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U00638,CLBT,Cellebrite DI Ltd. - Ordinary Shares,us_sec_v2_38g,2025,0.139759,0.32,1.94833,READY,v2.38BU-us-sec-valuation-features-extension
+U00639,CLDX,"Celldex Therapeutics, Inc. - Common Stock",us_sec_v2_38g,2025,-185.998058,-3.9,7.921404,READY,v2.38BU-us-sec-valuation-features-extension
+U00640,CLFD,"Clearfield, Inc. - Common Stock",us_sec_v2_38g,2025,0.014107,-0.58,18.509322,READY,v2.38BU-us-sec-valuation-features-extension
+U00641,CLGN,CollPlant Biotechnologies Ltd. - Ordinary Shares,us_sec_v2_38g,2025,-4.843104,-0.94,0.474967,READY,v2.38BU-us-sec-valuation-features-extension
+U00642,CLIK,Click Holdings Limited - Ordinary Share,us_sec_v2_38g,2025,-0.101959,-12.55,0.379291,READY,v2.38BU-us-sec-valuation-features-extension
+U00643,CLIR,ClearSign Technologies Corporation - Common Stock,us_sec_v2_38g,2025,,-0.99,1.788419,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00644,CLMB,"Climb Global Solutions, Inc. - Common Stock",us_sec_v2_38g,2025,0.044727,4.64,25.284897,READY,v2.38BU-us-sec-valuation-features-extension
+U00645,CLMT,"Calumet, Inc - Common Stock",us_sec_v2_38g,2025,0.026274,-0.39,-8.443525,READY,v2.38BU-us-sec-valuation-features-extension
+U00646,CLNE,Clean Energy Fuels Corp. - Common Stock,us_sec_v2_38g,2025,-0.376298,-1.01,2.550567,READY,v2.38BU-us-sec-valuation-features-extension
+U00647,CLNN,Clene Inc. - Common Stock,us_sec_v2_38g,2025,-115.415,-2.65,-1.621386,READY,v2.38BU-us-sec-valuation-features-extension
+U00648,CLOV,"Clover Health Investments, Corp. - Class A Common stock",us_sec_v2_38g,2025,-0.044447,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00649,CLPS,CLPS Incorporation - Common Stock,us_sec_v2_38g,2025,-0.032692,-0.26,1.984275,READY,v2.38BU-us-sec-valuation-features-extension
+U00650,CLPT,ClearPoint Neuro Inc. - Common Stock,us_sec_v2_38g,2025,-0.653593,-0.9,0.954075,READY,v2.38BU-us-sec-valuation-features-extension
+U00651,CLRB,"Cellectar Biosciences, Inc. - Common Stock",us_sec_v2_38g,2025,,-8.35,2.013421,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00652,CLRO,"ClearOne, Inc. - Common Stock",us_sec_v2_38g,2025,,-14.77,-0.319047,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00653,CLSK,"CleanSpark, Inc. - Common Stock",us_sec_v2_38g,2025,0.416212,-1.3,7.650073,READY,v2.38BU-us-sec-valuation-features-extension
+U00654,CLST,"Catalyst Bancorp, Inc. - common stock",us_sec_v2_38g,2025,,0.56,20.055653,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00655,CLWT,Euro Tech Holdings Company Limited - Ordinary Shares,us_sec_v2_38g,2025,-0.017791,,1.976505,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U00656,CLYM,"Climb Bio, Inc. - Common Stock",us_sec_v2_38g,2025,,-0.88,3.359583,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09211,0QFd,Moderna Inc,us_cboe_secondary_sec_v2_38bk,2025,-1.581276,-7.26,21.954315,READY,v2.38BU-us-sec-valuation-features-extension
+U09222,12DAd,Dell Technologies Inc,us_cboe_secondary_sec_v2_38bk,2026,0.071773,8.79,-3.788344,READY,v2.38BU-us-sec-valuation-features-extension
+U09229,1AALm,American Airlines Group Inc,us_cboe_secondary_sec_v2_38bk,2025,0.026852,0.17,-5.644395,READY,v2.38BU-us-sec-valuation-features-extension
+U09231,1ADMm,Archer-Daniels-Midland Co,us_cboe_secondary_sec_v2_38bk,2025,,2.23,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09233,1ANFm,Abercrombie & Fitch Co,us_cboe_secondary_sec_v2_38bk,2025,0.132758,10.71,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09234,1APPm,AppLovin Corp,us_cboe_secondary_sec_v2_38bk,2025,0.757549,9.84,6.309752,READY,v2.38BU-us-sec-valuation-features-extension
+U09237,1BLEm,Bloom Energy Corp,us_cboe_secondary_sec_v2_38bk,2025,0.036372,-0.37,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09240,1CNCm,Centene Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.043665,-13.53,40.574918,READY,v2.38BU-us-sec-valuation-features-extension
+U09244,1HOODm,Robinhood Markets Inc,us_cboe_secondary_sec_v2_38bk,2025,,2.12,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09246,1KTOSm,Kratos Defense & Security Solutions Inc,us_cboe_secondary_sec_v2_38bk,2025,0.019008,0.14,11.821167,READY,v2.38BU-us-sec-valuation-features-extension
+U09249,1MNSTm,Monster Beverage Corp,us_cboe_secondary_sec_v2_38bk,2025,0.291687,,8.438808,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09252,1PANWm,Palo Alto Networks Inc,us_cboe_secondary_sec_v2_38bk,2025,0.134783,1.71,11.714927,READY,v2.38BU-us-sec-valuation-features-extension
+U09255,1PATHm,UiPath Inc,us_cboe_secondary_sec_v2_38bk,2026,0.035242,0.52,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09256,1PLTRm,Palantir Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,0.31595,0.69,3.089366,READY,v2.38BU-us-sec-valuation-features-extension
+U09257,1QZd,Coinbase Global Inc,us_cboe_secondary_sec_v2_38bk,2025,0.199885,4.85,55.231776,READY,v2.38BU-us-sec-valuation-features-extension
+U09260,1RIVNm,Rivian Automotive Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.665491,-3.07,3.704839,READY,v2.38BU-us-sec-valuation-features-extension
+U09261,1SId,Snap Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.08972,-0.27,1.299092,READY,v2.38BU-us-sec-valuation-features-extension
+U09262,1SPCXm,Space Exploration Technologies Corp,us_cboe_secondary_sec_v2_38bk,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U09264,1TTEKm,Tetra Tech Inc,us_cboe_secondary_sec_v2_38bk,2025,0.075041,0.94,6.808196,READY,v2.38BU-us-sec-valuation-features-extension
+U09268,1WULFm,Terawulf Inc,us_cboe_secondary_sec_v2_38bk,2025,-1.105417,-1.66,0.33434,READY,v2.38BU-us-sec-valuation-features-extension
+U09303,2OYd,Dow Inc,us_cboe_secondary_sec_v2_38bk,2025,,-3.7,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09306,2PPd,PayPal Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.182835,5.46,22.017391,READY,v2.38BU-us-sec-valuation-features-extension
+U09316,33Ld,Lululemon Athletica Inc,us_cboe_secondary_sec_v2_38bk,2025,0.199108,13.27,44.548752,READY,v2.38BU-us-sec-valuation-features-extension
+U09452,3QDd,Datadog Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.012947,0.31,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09518,4I1d,Philip Morris International Inc,us_cboe_secondary_sec_v2_38bk,2025,0.366365,7.27,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09523,4S0d,ServiceNow Inc,us_cboe_secondary_sec_v2_38bk,2025,0.13737,1.69,12.378757,READY,v2.38BU-us-sec-valuation-features-extension
+U09555,6MKd,Merck & Co Inc,us_cboe_secondary_sec_v2_38bk,2025,,7.3,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09560,6Z1d,Airbnb Inc,us_cboe_secondary_sec_v2_38bk,2025,0.207826,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U09562,7DBd,Diamondback Energy Inc,us_cboe_secondary_sec_v2_38bk,2025,0.084254,5.73,129.910968,READY,v2.38BU-us-sec-valuation-features-extension
+U09668,ADBd,Adobe Inc,us_cboe_secondary_sec_v2_38bk,2025,0.366275,16.73,28.142857,READY,v2.38BU-us-sec-valuation-features-extension
+U09882,AMDd,Advanced Micro Devices Inc,us_cboe_secondary_sec_v2_38bk,2025,0.106643,2.67,38.649693,READY,v2.38BU-us-sec-valuation-features-extension
+U09908,AMZd,Amazon.com Inc,us_cboe_secondary_sec_v2_38bk,2025,0.111553,7.29,38.306309,READY,v2.38BU-us-sec-valuation-features-extension
+U09936,AP2d,Applied Materials Inc,us_cboe_secondary_sec_v2_38bk,2025,0.292195,8.71,25.74401,READY,v2.38BU-us-sec-valuation-features-extension
+U10056,AUDd,Autodesk Inc,us_cboe_secondary_sec_v2_38bk,2026,0.218984,5.28,14.363208,READY,v2.38BU-us-sec-valuation-features-extension
+U10153,BACd,Verizon Communications Inc,us_cboe_secondary_sec_v2_38bk,2025,0.211729,4.06,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U10436,BSXd,Boston Scientific Corp,us_cboe_secondary_sec_v2_38bk,2025,0.179984,1.96,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U10542,C9Fd,Chipotle Mexican Grill Inc,us_cboe_secondary_sec_v2_38bk,2025,0.162323,1.15,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U10584,CAT1d,Caterpillar Inc,us_cboe_secondary_sec_v2_38bk,2025,0.164982,18.9,45.815603,READY,v2.38BU-us-sec-valuation-features-extension
+U10596,CB1Ad,Constellation Brands Inc,us_cboe_secondary_sec_v2_38bk,2026,0.297779,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U10702,CDSd,Cadence Design Systems Inc,us_cboe_secondary_sec_v2_38bk,2025,0.28169,4.09,20.140549,READY,v2.38BU-us-sec-valuation-features-extension
+U11129,CTOd,Costco Wholesale Corp,us_cboe_secondary_sec_v2_38bk,2025,0.037724,18.24,65.797756,READY,v2.38BU-us-sec-valuation-features-extension
+U11130,CTP2d,Comcast Corp,us_cboe_secondary_sec_v2_38bk,2025,0.167105,5.41,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U11156,CVSd,CVS Health Corp,us_cboe_secondary_sec_v2_38bk,2025,0.01159,1.4,59.177026,READY,v2.38BU-us-sec-valuation-features-extension
+U11249,DCHl,Dauch Corp,us_cboe_secondary_sec_v2_38bk,2025,0.01924,-0.17,5.391744,READY,v2.38BU-us-sec-valuation-features-extension
+U11250,DCOd,Deere & Co,us_cboe_secondary_sec_v2_38bk,2025,,18.55,95.968935,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U11459,DY6d,Devon Energy Corp,us_cboe_secondary_sec_v2_38bk,2025,,4.18,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U12192,EWLd,Edwards Lifesciences Corp,us_cboe_secondary_sec_v2_38bk,2025,0.208353,1.84,17.801963,READY,v2.38BU-us-sec-valuation-features-extension
+U12314,FB2Ad,Meta Platforms Inc,us_cboe_secondary_sec_v2_38bk,2025,0.414379,23.98,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U12362,FERGl,Ferguson Enterprises Inc,us_cboe_secondary_sec_v2_38bk,2025,0.085639,4.01,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U12489,FOOd,Salesforce Inc,us_cboe_secondary_sec_v2_38bk,2025,0.200626,7.85,63.662002,READY,v2.38BU-us-sec-valuation-features-extension
+U12507,FPMBd,Freeport-McMoRan Inc,us_cboe_secondary_sec_v2_38bk,2025,0.258795,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U12650,GCPd,General Electric Co,us_cboe_secondary_sec_v2_38bk,2025,,8.2,17.808536,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U12733,GISd,Gilead Sciences Inc,us_cboe_secondary_sec_v2_38bk,2025,0.340387,6.84,18.294118,READY,v2.38BU-us-sec-valuation-features-extension
+U12837,GRMd,General Mills Inc,us_cboe_secondary_sec_v2_38bk,2026,0.048077,-0.16,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U12903,HALd,Halliburton Co,us_cboe_secondary_sec_v2_38bk,2025,,,12.528144,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U13091,HRSd,L3Harris Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,0.096501,8.57,105.087614,READY,v2.38BU-us-sec-valuation-features-extension
+U13510,ILTd,Illinois Tool Works Inc,us_cboe_secondary_sec_v2_38bk,2025,0.262777,10.52,11.178101,READY,v2.38BU-us-sec-valuation-features-extension
+U13589,INLd,Intel Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.04189,-0.06,22.88366,READY,v2.38BU-us-sec-valuation-features-extension
+U13771,ITUd,Intuit Inc,us_cboe_secondary_sec_v2_38bk,2025,0.261431,13.82,70.612512,READY,v2.38BU-us-sec-valuation-features-extension
+U13894,J5Ad,Warner Bros Discovery Inc,us_cboe_secondary_sec_v2_38bk,2025,0.019788,0.29,14.483468,READY,v2.38BU-us-sec-valuation-features-extension
+U14175,KOSl,Kosmos Energy Ltd,us_cboe_secondary_sec_v2_38bk,2025,,-1.47,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U14192,KTFd,Mondelez International Inc,us_cboe_secondary_sec_v2_38bk,2025,0.092067,1.89,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U14386,LOMd,Lockheed Martin Corp,us_cboe_secondary_sec_v2_38bk,2025,0.103014,21.56,29.349345,READY,v2.38BU-us-sec-valuation-features-extension
+U14536,M44d,MARA Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,-20.854627,-3.69,9.148989,READY,v2.38BU-us-sec-valuation-features-extension
+U14600,MDOd,McDonald's Corp,us_cboe_secondary_sec_v2_38bk,2025,0.460963,12.0,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U14683,MLB1d,MercadoLibre Inc,us_cboe_secondary_sec_v2_38bk,2025,0.157413,39.4,133.104045,READY,v2.38BU-us-sec-valuation-features-extension
+U14783,MTEd,Micron Technology Inc,us_cboe_secondary_sec_v2_38bk,2025,0.261384,7.65,48.275401,READY,v2.38BU-us-sec-valuation-features-extension
+U15035,NTHd,Northrop Grumman Corp,us_cboe_secondary_sec_v2_38bk,2025,0.107523,29.14,117.424856,READY,v2.38BU-us-sec-valuation-features-extension
+U15048,NVDd,NVIDIA Corp,us_cboe_secondary_sec_v2_38bk,2026,0.603817,4.93,6.471898,READY,v2.38BU-us-sec-valuation-features-extension
+U15116,ONKd,ONEOK Inc,us_cboe_secondary_sec_v2_38bk,2025,0.170716,5.43,35.707044,READY,v2.38BU-us-sec-valuation-features-extension
+U15121,OPCd,Occidental Petroleum Corp,us_cboe_secondary_sec_v2_38bk,2025,,1.65,36.54466,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U15165,OYCd,Delta Air Lines Inc,us_cboe_secondary_sec_v2_38bk,2025,0.091882,7.72,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U15213,PARd,Parker-Hannifin Corp,us_cboe_secondary_sec_v2_38bk,2026,0.235732,28.89,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U15236,PCE1d,Booking Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.32786,166.52,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U15263,PEPd,PepsiCo Inc,us_cboe_secondary_sec_v2_38bk,2025,0.122417,6.02,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U15336,PLUNd,Plug Power Inc,us_cboe_secondary_sec_v2_38bk,2025,-2.066975,-1.42,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U16427,SUNBl,Sunbelt Rentals Holdings Inc,us_cboe_secondary_sec_v2_38bk,2026,0.869271,3.15,18.058747,READY,v2.38BU-us-sec-valuation-features-extension
+U16474,SWNd,Southwest Airlines Co,us_cboe_secondary_sec_v2_38bk,2025,0.015251,0.82,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U16555,SYPd,Synopsys Inc,us_cboe_secondary_sec_v2_38bk,2025,0.1297,8.13,152.303849,READY,v2.38BU-us-sec-valuation-features-extension
+U16707,TKEd,Take-Two Interactive Software Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.015654,-1.62,18.936893,READY,v2.38BU-us-sec-valuation-features-extension
+U16875,UAL1d,United Airlines Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.079787,10.32,47.243849,READY,v2.38BU-us-sec-valuation-features-extension
+U17156,UT8d,Uber Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,0.106984,4.82,13.076519,READY,v2.38BU-us-sec-valuation-features-extension
+U17166,UWSd,Waste Management Inc,us_cboe_secondary_sec_v2_38bk,2025,0.170925,6.72,24.795235,READY,v2.38BU-us-sec-valuation-features-extension
+U17336,VIAd,Viatris Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.186879,-3.0,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U17531,WDCd,Western Digital Corp,us_cboe_secondary_sec_v2_38bk,2026,0.344686,26.92,24.554017,READY,v2.38BU-us-sec-valuation-features-extension
+U17664,WMTd,Walmart Inc,us_cboe_secondary_sec_v2_38bk,2026,0.04222,2.74,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18173,XONAd,Exxon Mobil Corp,us_cboe_secondary_sec_v2_38bk,,,,,INSUFFICIENT_EVIDENCE,v2.38BU-us-sec-valuation-features-extension
+U18208,XS4d,ON Semiconductor Corp,us_cboe_secondary_sec_v2_38bk,2025,0.014044,0.29,19.340851,READY,v2.38BU-us-sec-valuation-features-extension
+U18414,ZOEd,Zoetis Inc,us_cboe_secondary_sec_v2_38bk,2025,,6.03,7.838984,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18538,07G0d,Corpay Inc,us_cboe_secondary_sec_v2_38bk,2025,0.440356,15.23,56.81296,READY,v2.38BU-us-sec-valuation-features-extension
+U18540,096d,HubSpot Inc,us_cboe_secondary_sec_v2_38bk,2025,0.002357,0.88,39.315841,READY,v2.38BU-us-sec-valuation-features-extension
+U18541,0A1Ol,Zoom Communications Inc,us_cboe_secondary_sec_v2_38bk,2026,0.230784,6.32,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18547,0A3Zl,Cloudflare Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.095577,-0.29,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18549,0A60l,FuelCell Energy Inc,us_cboe_secondary_sec_v2_38bk,2025,-1.216145,-7.42,14.37169,READY,v2.38BU-us-sec-valuation-features-extension
+U18559,0C6d,Cargurus Inc,us_cboe_secondary_sec_v2_38bk,2025,0.269515,1.58,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18577,0HAVl,Agilent Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,0.212867,4.59,23.815212,READY,v2.38BU-us-sec-valuation-features-extension
+U18579,0HC3l,Alaska Air Group Inc,us_cboe_secondary_sec_v2_38bk,2025,0.02128,0.85,35.644147,READY,v2.38BU-us-sec-valuation-features-extension
+U18580,0HCHl,Alexandria Real Estate Equities Inc,us_cboe_secondary_sec_v2_38bk,2025,,-8.44,90.713401,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18582,0HCKl,Align Technology Inc,us_cboe_secondary_sec_v2_38bk,2025,0.135256,5.66,56.73935,READY,v2.38BU-us-sec-valuation-features-extension
+U18584,0HCTl,Alliant Energy Corp,us_cboe_secondary_sec_v2_38bk,2025,0.234984,3.15,28.521732,READY,v2.38BU-us-sec-valuation-features-extension
+U18588,0HE2l,Ameren Corp,us_cboe_secondary_sec_v2_38bk,2025,0.230253,5.38,48.484081,READY,v2.38BU-us-sec-valuation-features-extension
+U18590,0HECl,American Electric Power Co Inc,us_cboe_secondary_sec_v2_38bk,2025,0.245093,6.7,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18591,0HEWl,American Water Works Co Inc,us_cboe_secondary_sec_v2_38bk,2025,0.366921,5.69,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18592,0HF3l,Cencora Inc,us_cboe_secondary_sec_v2_38bk,2025,0.00818,8.02,7.775792,READY,v2.38BU-us-sec-valuation-features-extension
+U18593,0HF6l,Ameriprise Financial Inc,us_cboe_secondary_sec_v2_38bk,2025,,36.85,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18598,0HG8l,Elevance Health Inc,us_cboe_secondary_sec_v2_38bk,2025,0.036153,25.28,198.809465,READY,v2.38BU-us-sec-valuation-features-extension
+U18600,0HI1l,Arrow Electronics Inc,us_cboe_secondary_sec_v2_38bk,2025,0.02665,11.03,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18602,0HIYl,Atara Biotherapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,0.29694,2.61,-5.256963,READY,v2.38BU-us-sec-valuation-features-extension
+U18603,0HJLl,AutoZone Inc,us_cboe_secondary_sec_v2_38bk,2025,0.190623,148.8,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18605,0HJRl,Avery Dennison Corp,us_cboe_secondary_sec_v2_38bk,2025,,8.81,29.164585,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18608,0HL5l,Ball Corp,us_cboe_secondary_sec_v2_38bk,2025,,3.33,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18614,0HOXl,BXP Inc,us_cboe_secondary_sec_v2_38bk,2026,,1.07,32.3163,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18617,0HQ3l,Brown-Forman Corp,us_cboe_secondary_sec_v2_38bk,2026,0.254837,1.53,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18618,0HQPl,CBRE Group Inc,us_cboe_secondary_sec_v2_38bk,2025,0.043935,3.88,30.020477,READY,v2.38BU-us-sec-valuation-features-extension
+U18619,0HQUl,CF Industries Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.324675,8.98,31.507209,READY,v2.38BU-us-sec-valuation-features-extension
+U18622,0HRJl,CSX Corp,us_cboe_secondary_sec_v2_38bk,2025,0.32082,1.54,7.075269,READY,v2.38BU-us-sec-valuation-features-extension
+U18628,0HTGl,Cardinal Health Inc,us_cboe_secondary_sec_v2_38bk,2026,0.010277,7.27,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18632,0HVDl,Permian Resources Corp,us_cboe_secondary_sec_v2_38bk,2025,0.288779,1.31,13.672539,READY,v2.38BU-us-sec-valuation-features-extension
+U18633,0HVFl,CenterPoint Energy Inc,us_cboe_secondary_sec_v2_38bk,2025,0.225983,1.61,17.083044,READY,v2.38BU-us-sec-valuation-features-extension
+U18634,0HW4l,Charter Communications Inc,us_cboe_secondary_sec_v2_38bk,2025,0.235659,36.9,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18637,0HYEl,Cincinnati Financial Corp,us_cboe_secondary_sec_v2_38bk,2025,,15.32,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18639,0HYPl,Citizens Financial Group Inc,us_cboe_secondary_sec_v2_38bk,2025,,3.9,61.310378,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18642,0I2Pl,Conagra Brands Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.144341,-4.0,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18643,0I35l,Consolidated Edison Inc,us_cboe_secondary_sec_v2_38bk,2025,0.172151,5.66,66.985775,READY,v2.38BU-us-sec-valuation-features-extension
+U18646,0I4Al,Coty Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.014036,-0.7,3.395457,READY,v2.38BU-us-sec-valuation-features-extension
+U18651,0I6Ql,DTE Energy Co,us_cboe_secondary_sec_v2_38bk,2025,,7.04,59.221598,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18652,0I7El,DaVita Inc,us_cboe_secondary_sec_v2_38bk,2025,0.149791,10.06,-9.498052,READY,v2.38BU-us-sec-valuation-features-extension
+U18653,0I8Fl,DENTSPLY SIRONA Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.114674,-3.0,6.708417,READY,v2.38BU-us-sec-valuation-features-extension
+U18656,0IC7l,Dollar General Corp,us_cboe_secondary_sec_v2_38bk,2025,0.051579,6.87,38.651733,READY,v2.38BU-us-sec-valuation-features-extension
+U18657,0IC8l,Dollar Tree Inc,us_cboe_secondary_sec_v2_38bk,2025,0.08523,6.23,18.915877,READY,v2.38BU-us-sec-valuation-features-extension
+U18661,0IDRl,EOG Resources Inc,us_cboe_secondary_sec_v2_38bk,2025,0.282123,9.17,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18663,0IF3l,Eastman Chemical Co,us_cboe_secondary_sec_v2_38bk,2025,,4.14,26.618969,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18664,0IF4l,Eastman Kodak Co,us_cboe_secondary_sec_v2_38bk,2025,0.0,-1.78,6.303901,READY,v2.38BU-us-sec-valuation-features-extension
+U18666,0IFJl,Edison International,us_cboe_secondary_sec_v2_38bk,2025,0.36719,11.58,45.685009,READY,v2.38BU-us-sec-valuation-features-extension
+U18667,0IHPl,Entergy Corp,us_cboe_secondary_sec_v2_38bk,2025,0.247343,3.98,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18668,0II3l,Equifax Inc,us_cboe_secondary_sec_v2_38bk,2025,0.180295,5.36,38.241694,READY,v2.38BU-us-sec-valuation-features-extension
+U18671,0IIRl,Essex Property Trust Inc,us_cboe_secondary_sec_v2_38bk,2025,95.865686,10.4,85.989682,READY,v2.38BU-us-sec-valuation-features-extension
+U18672,0IJ2l,Eversource Energy,us_cboe_secondary_sec_v2_38bk,2025,0.220605,4.56,43.14476,READY,v2.38BU-us-sec-valuation-features-extension
+U18674,0IJNl,Exelon Corp,us_cboe_secondary_sec_v2_38bk,2025,0.212219,,28.150538,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18675,0IJRl,Expeditors International of Washington Inc,us_cboe_secondary_sec_v2_38bk,2025,0.095089,5.97,17.594582,READY,v2.38BU-us-sec-valuation-features-extension
+U18676,0IJVl,Extra Space Storage Inc,us_cboe_secondary_sec_v2_38bk,2025,10.910833,4.59,63.617464,READY,v2.38BU-us-sec-valuation-features-extension
+U18678,0IKWl,Fastenal Co,us_cboe_secondary_sec_v2_38bk,2025,0.201902,1.1,3.43502,READY,v2.38BU-us-sec-valuation-features-extension
+U18681,0ILWl,Fidelity National Information Services Inc,us_cboe_secondary_sec_v2_38bk,2025,0.163061,0.73,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18683,0IP9l,Fiserv Inc,us_cboe_secondary_sec_v2_38bk,2025,0.274525,6.36,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18684,0IPBl,FirstEnergy Corp,us_cboe_secondary_sec_v2_38bk,2025,0.14619,1.77,21.649178,READY,v2.38BU-us-sec-valuation-features-extension
+U18686,0IQEl,Flowserve Corp,us_cboe_secondary_sec_v2_38bk,2025,0.084564,2.66,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18687,0IREl,Fortive Corp,us_cboe_secondary_sec_v2_38bk,2025,0.173162,1.74,20.591576,READY,v2.38BU-us-sec-valuation-features-extension
+U18688,0IRNl,Fortune Brands Innovations Inc,us_cboe_secondary_sec_v2_38bk,2025,0.115635,2.48,19.91226,READY,v2.38BU-us-sec-valuation-features-extension
+U18689,0ITLl,Arthur J Gallagher & Co,us_cboe_secondary_sec_v2_38bk,2025,,5.83,90.743191,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18692,0IUCl,General Dynamics Corp,us_cboe_secondary_sec_v2_38bk,2025,0.101922,15.65,94.759506,READY,v2.38BU-us-sec-valuation-features-extension
+U18693,0IUXl,Genuine Parts Co,us_cboe_secondary_sec_v2_38bk,2025,,0.47,32.139665,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18699,0J1Rl,HCA Healthcare Inc,us_cboe_secondary_sec_v2_38bk,2025,,28.7,-26.833763,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18700,0J1Ul,Healthpeak Properties Inc,us_cboe_secondary_sec_v2_38bk,2025,,0.1,10.790932,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18705,0J4Gl,Helmerich & Payne Inc,us_cboe_secondary_sec_v2_38bk,2025,0.000902,-1.66,28.450833,READY,v2.38BU-us-sec-valuation-features-extension
+U18709,0J5Il,Hilton Worldwide Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.22369,6.18,-23.382048,READY,v2.38BU-us-sec-valuation-features-extension
+U18711,0J5Zl,Hormel Foods Corp,us_cboe_secondary_sec_v2_38bk,2025,,0.87,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18712,0J66l,Host Hotels & Resorts Inc,us_cboe_secondary_sec_v2_38bk,2025,0.139843,1.11,9.534748,READY,v2.38BU-us-sec-valuation-features-extension
+U18716,0J76l,Huntington Ingalls Industries Inc,us_cboe_secondary_sec_v2_38bk,2025,0.052627,15.39,129.276315,READY,v2.38BU-us-sec-valuation-features-extension
+U18717,0J86l,IPG Photonics Corp,us_cboe_secondary_sec_v2_38bk,2025,0.013055,0.73,50.516928,READY,v2.38BU-us-sec-valuation-features-extension
+U18718,0J8Pl,IDEXX Laboratories Inc,us_cboe_secondary_sec_v2_38bk,2025,0.316014,13.17,20.139791,READY,v2.38BU-us-sec-valuation-features-extension
+U18720,0J9Pl,Incyte Corp,us_cboe_secondary_sec_v2_38bk,2025,0.294648,6.59,26.037881,READY,v2.38BU-us-sec-valuation-features-extension
+U18721,0JC3l,Intercontinental Exchange Inc,us_cboe_secondary_sec_v2_38bk,2025,0.389953,5.79,50.996473,READY,v2.38BU-us-sec-valuation-features-extension
+U18723,0JDMl,IQVIA Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.133783,7.91,38.34316,READY,v2.38BU-us-sec-valuation-features-extension
+U18736,0JQRl,KeyCorp,us_cboe_secondary_sec_v2_38bk,2025,,1.53,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18739,0JRLl,Kohl's Corp,us_cboe_secondary_sec_v2_38bk,2025,0.040188,2.43,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18742,0JSJl,LKQ Corp,us_cboe_secondary_sec_v2_38bk,2025,0.072742,2.36,25.635294,READY,v2.38BU-us-sec-valuation-features-extension
+U18743,0JT5l,Lam Research Corp,us_cboe_secondary_sec_v2_38bk,2026,0.352942,5.79,9.966547,READY,v2.38BU-us-sec-valuation-features-extension
+U18745,0JU0l,Lennar Corp,us_cboe_secondary_sec_v2_38bk,2025,,7.98,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18750,0JWCl,MGM Resorts International,us_cboe_secondary_sec_v2_38bk,2025,0.057122,0.77,9.406501,READY,v2.38BU-us-sec-valuation-features-extension
+U18752,0JXDl,Macy's Inc,us_cboe_secondary_sec_v2_38bk,2025,0.047326,2.37,18.479087,READY,v2.38BU-us-sec-valuation-features-extension
+U18754,0JYAl,Marathon Petroleum Corp,us_cboe_secondary_sec_v2_38bk,2025,0.06248,13.24,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18756,0JZ0l,Martin Marietta Materials Inc,us_cboe_secondary_sec_v2_38bk,2025,0.233659,18.81,166.341294,READY,v2.38BU-us-sec-valuation-features-extension
+U18757,0JZ1l,Masco Corp,us_cboe_secondary_sec_v2_38bk,2025,0.165036,3.87,-0.905531,READY,v2.38BU-us-sec-valuation-features-extension
+U18758,0JZHl,Mattel Inc,us_cboe_secondary_sec_v2_38bk,2025,0.102181,1.25,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18760,0JZUl,McKesson Corp,us_cboe_secondary_sec_v2_38bk,2026,0.015398,38.55,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18762,0K10l,Mettler-Toledo International Inc,us_cboe_secondary_sec_v2_38bk,2025,,42.17,-1.160941,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18764,0K1El,Mid-America Apartment Communities Inc,us_cboe_secondary_sec_v2_38bk,2025,,3.79,48.450925,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18765,0K2Fl,Mohawk Industries Inc,us_cboe_secondary_sec_v2_38bk,2025,0.045413,5.96,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18769,0K36l,Moody's Corp,us_cboe_secondary_sec_v2_38bk,2025,0.43418,13.73,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18771,0K3Hl,Motorola Solutions Inc,us_cboe_secondary_sec_v2_38bk,2025,0.255778,12.93,14.544357,READY,v2.38BU-us-sec-valuation-features-extension
+U18772,0K4Cl,NRG Energy Inc,us_cboe_secondary_sec_v2_38bk,2025,0.060797,4.09,8.829866,READY,v2.38BU-us-sec-valuation-features-extension
+U18775,0K6Fl,NetApp Inc,us_cboe_secondary_sec_v2_38bk,2026,0.241733,6.41,6.892857,READY,v2.38BU-us-sec-valuation-features-extension
+U18778,0K7Jl,Newell Brands Inc,us_cboe_secondary_sec_v2_38bk,2025,0.005414,-0.68,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18783,0K87l,NiSource Inc,us_cboe_secondary_sec_v2_38bk,2025,0.281367,1.96,19.75223,READY,v2.38BU-us-sec-valuation-features-extension
+U18784,0K8Ml,Norfolk Southern Corp,us_cboe_secondary_sec_v2_38bk,2025,0.357635,12.76,69.276141,READY,v2.38BU-us-sec-valuation-features-extension
+U18786,0K9Ll,Nucor Corp,us_cboe_secondary_sec_v2_38bk,2025,,7.53,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18787,0KABl,O'Reilly Automotive Inc,us_cboe_secondary_sec_v2_38bk,2025,0.194613,2.98,-0.906692,READY,v2.38BU-us-sec-valuation-features-extension
+U18789,0KBKl,Omnicom Group Inc,us_cboe_secondary_sec_v2_38bk,2025,0.025747,-0.27,38.472692,READY,v2.38BU-us-sec-valuation-features-extension
+U18792,0KEIl,PPG Industries Inc,us_cboe_secondary_sec_v2_38bk,2025,,6.96,35.541818,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18794,0KEQl,PVH Corp,us_cboe_secondary_sec_v2_38bk,2025,0.025765,0.53,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18795,0KETl,PACCAR Inc,us_cboe_secondary_sec_v2_38bk,2025,,4.52,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18797,0KGEl,Paychex Inc,us_cboe_secondary_sec_v2_38bk,2026,0.398422,4.9,10.503656,READY,v2.38BU-us-sec-valuation-features-extension
+U18798,0KHEl,Revvity Inc,us_cboe_secondary_sec_v2_38bk,2025,0.12487,2.07,64.573347,READY,v2.38BU-us-sec-valuation-features-extension
+U18801,0KITl,Pinnacle West Capital Corp,us_cboe_secondary_sec_v2_38bk,2025,0.199933,5.15,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18802,0KNYl,T Rowe Price Group Inc,us_cboe_secondary_sec_v2_38bk,2025,0.299229,9.26,49.688193,READY,v2.38BU-us-sec-valuation-features-extension
+U18803,0KO5l,Principal Financial Group Inc,us_cboe_secondary_sec_v2_38bk,2025,,5.32,54.668553,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18805,0KODl,Prologis Inc,us_cboe_secondary_sec_v2_38bk,2025,0.495768,3.58,57.249105,READY,v2.38BU-us-sec-valuation-features-extension
+U18811,0KSJl,Qorvo Inc,us_cboe_secondary_sec_v2_38bk,2026,0.111845,3.66,38.115579,READY,v2.38BU-us-sec-valuation-features-extension
+U18816,0KU1l,Raymond James Financial Inc,us_cboe_secondary_sec_v2_38bk,2025,,10.53,63.101976,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18817,0KUEl,Realty Income Corp,us_cboe_secondary_sec_v2_38bk,2025,,1.17,42.226714,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18820,0KW1l,Republic Services Inc,us_cboe_secondary_sec_v2_38bk,2025,0.199024,6.86,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18822,0KX0l,Riot Platforms Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.960971,-1.95,7.692662,READY,v2.38BU-us-sec-valuation-features-extension
+U18825,0KXMl,Roper Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,0.282873,14.3,186.505629,READY,v2.38BU-us-sec-valuation-features-extension
+U18826,0KXOl,Ross Stores Inc,us_cboe_secondary_sec_v2_38bk,2025,0.119002,6.66,19.19581,READY,v2.38BU-us-sec-valuation-features-extension
+U18828,0KYZl,SBA Communications Corp,us_cboe_secondary_sec_v2_38bk,2025,5.492012,9.83,-45.932646,READY,v2.38BU-us-sec-valuation-features-extension
+U18830,0KZAd,Amerant Bancorp Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.26,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18841,0L5d,Lamb Weston Holdings Inc,us_cboe_secondary_sec_v2_38bk,2026,0.089394,2.09,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18843,0L7Al,A O Smith Corp,us_cboe_secondary_sec_v2_38bk,2025,0.190225,3.87,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18848,0L9El,Stanley Black & Decker Inc,us_cboe_secondary_sec_v2_38bk,2025,,2.66,58.403055,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18853,0LC6l,Sysco Corp,us_cboe_secondary_sec_v2_38bk,2026,0.036604,3.67,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18855,0LD5l,Tapestry Inc,us_cboe_secondary_sec_v2_38bk,2026,0.239174,7.49,3.453593,READY,v2.38BU-us-sec-valuation-features-extension
+U18858,0LF0l,Textron Inc,us_cboe_secondary_sec_v2_38bk,2025,,5.15,45.178131,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18859,0LHRl,Tyson Foods Inc,us_cboe_secondary_sec_v2_38bk,2025,0.020169,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18862,0LIBl,Ulta Beauty Inc,us_cboe_secondary_sec_v2_38bk,2025,0.1237,25.72,63.47532,READY,v2.38BU-us-sec-valuation-features-extension
+U18863,0LIKl,Under Armour Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.032843,-1.16,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18865,0LIYl,United Rentals Inc,us_cboe_secondary_sec_v2_38bk,2025,1.075237,38.71,142.132691,READY,v2.38BU-us-sec-valuation-features-extension
+U18869,0LJLl,Universal Health Services Inc,us_cboe_secondary_sec_v2_38bk,2025,0.114831,23.42,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18874,0LOZl,VeriSign Inc,us_cboe_secondary_sec_v2_38bk,2025,0.676687,,-23.440696,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18879,0LRKl,Vulcan Materials Co,us_cboe_secondary_sec_v2_38bk,2025,0.203952,8.16,65.276417,READY,v2.38BU-us-sec-valuation-features-extension
+U18882,0LTIl,Waters Corp,us_cboe_secondary_sec_v2_38bk,2025,0.253559,10.8,43.010663,READY,v2.38BU-us-sec-valuation-features-extension
+U18883,0LUSl,Welltower Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.41,60.486804,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18885,0LWGl,Weyerhaeuser Co,us_cboe_secondary_sec_v2_38bk,2025,0.105865,0.45,13.082019,READY,v2.38BU-us-sec-valuation-features-extension
+U18886,0LWHl,Whirlpool Corp,us_cboe_secondary_sec_v2_38bk,2025,0.053981,5.68,48.678571,READY,v2.38BU-us-sec-valuation-features-extension
+U18890,0M1Rl,Xcel Energy Inc,us_cboe_secondary_sec_v2_38bk,2025,,3.44,37.859161,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18895,0M5d,BILL Holdings Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.044428,-0.11,38.349847,READY,v2.38BU-us-sec-valuation-features-extension
+U18899,0NUd,Nutanix Inc,us_cboe_secondary_sec_v2_38bk,2025,0.067985,0.7,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18900,0OALl,American International Group Inc,us_cboe_secondary_sec_v2_38bk,2025,,5.48,76.438127,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18906,0PYd,Paycom Software Inc,us_cboe_secondary_sec_v2_38bk,2025,0.276454,8.13,31.596715,READY,v2.38BU-us-sec-valuation-features-extension
+U18912,0Q3d,Beyond Meat Inc,us_cboe_secondary_sec_v2_38bk,2025,-1.210983,1.15,-0.002198,READY,v2.38BU-us-sec-valuation-features-extension
+U18925,0QYYl,Harley-Davidson Inc,us_cboe_secondary_sec_v2_38bk,2025,0.10728,2.82,28.127231,READY,v2.38BU-us-sec-valuation-features-extension
+U18952,0R18l,Best Buy Co Inc,us_cboe_secondary_sec_v2_38bk,2026,0.033317,5.06,14.175036,READY,v2.38BU-us-sec-valuation-features-extension
+U18954,0R1Dl,Sangamo Therapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,-3.065306,-0.44,-0.040686,READY,v2.38BU-us-sec-valuation-features-extension
+U18959,0R1Tl,Expedia Group Inc,us_cboe_secondary_sec_v2_38bk,2025,0.126994,10.32,10.976704,READY,v2.38BU-us-sec-valuation-features-extension
+U18970,0R2Ml,Regeneron Pharmaceuticals Inc,us_cboe_secondary_sec_v2_38bk,2025,0.249454,43.07,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18976,0R33l,Emerson Electric Co,us_cboe_secondary_sec_v2_38bk,2025,,4.06,36.037669,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U18990,0SE0d,Sezzle Inc,us_cboe_secondary_sec_v2_38bk,2025,0.749493,3.93,5.024291,READY,v2.38BU-us-sec-valuation-features-extension
+U18993,0SGOl,Dropbox Inc,us_cboe_secondary_sec_v2_38bk,2025,0.273344,1.89,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19007,0V6d,Vistra Corp,us_cboe_secondary_sec_v2_38bk,2025,0.108382,2.22,15.077222,READY,v2.38BU-us-sec-valuation-features-extension
+U19023,0Y9Sl,Check Point Software Technologies Ltd,us_cboe_secondary_sec_v2_38bk,2025,0.304946,9.85,27.293638,READY,v2.38BU-us-sec-valuation-features-extension
+U19026,0YUd,Yum China Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.10935,2.52,15.194915,READY,v2.38BU-us-sec-valuation-features-extension
+U19027,0ZCd,Zscaler Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.039751,-0.39,15.934875,READY,v2.38BU-us-sec-valuation-features-extension
+U19028,0ZG2d,Zillow Group Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.013163,0.09,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19063,1170d,Arista Networks Inc,us_cboe_secondary_sec_v2_38bk,2025,0.428184,2.79,9.845205,READY,v2.38BU-us-sec-valuation-features-extension
+U19162,185d,Alcoa Corp,us_cboe_secondary_sec_v2_38bk,2025,,4.4,23.253303,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19189,19MWm,Marvell Technology Inc,us_cboe_secondary_sec_v2_38bk,2026,0.161436,3.1,16.887053,READY,v2.38BU-us-sec-valuation-features-extension
+U19190,19Xd,Axsome Therapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.261179,-3.68,1.735263,READY,v2.38BU-us-sec-valuation-features-extension
+U19232,1AMTm,American Tower Corp,us_cboe_secondary_sec_v2_38bk,2025,5.17769,5.41,7.832638,READY,v2.38BU-us-sec-valuation-features-extension
+U19246,1ASTSm,AST SpaceMobile Inc,us_cboe_secondary_sec_v2_38bk,2025,,,,NO_CONCEPTS_AVAILABLE,v2.38BU-us-sec-valuation-features-extension
+U19254,1AVAVm,AeroVironment Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.157319,-5.4,86.946361,READY,v2.38BU-us-sec-valuation-features-extension
+U19259,1AXONm,Axon Enterprise Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.022333,1.6,40.426329,READY,v2.38BU-us-sec-valuation-features-extension
+U19264,1B8d,Ondas Inc,us_cboe_secondary_sec_v2_38bk,2025,-1.150855,-0.62,1.149816,READY,v2.38BU-us-sec-valuation-features-extension
+U19267,1BAHm,Booz Allen Hamilton Holding Corp,us_cboe_secondary_sec_v2_38bk,2026,0.092092,6.92,9.182216,READY,v2.38BU-us-sec-valuation-features-extension
+U19279,1BIIBm,Biogen Inc,us_cboe_secondary_sec_v2_38bk,2025,,8.83,124.365123,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19284,1BLDRm,Builders FirstSource Inc,us_cboe_secondary_sec_v2_38bk,2025,0.051761,3.91,39.356613,READY,v2.38BU-us-sec-valuation-features-extension
+U19286,1BMRNm,BioMarin Pharmaceutical Inc,us_cboe_secondary_sec_v2_38bk,2025,0.127118,1.82,31.653644,READY,v2.38BU-us-sec-valuation-features-extension
+U19296,1BROm,Brown & Brown Inc,us_cboe_secondary_sec_v2_38bk,2025,,3.37,37.419643,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19303,1C3m,C3.ai Inc,us_cboe_secondary_sec_v2_38bk,2026,-1.991857,-3.35,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19308,1CARRm,Carrier Global Corp,us_cboe_secondary_sec_v2_38bk,2025,0.099876,1.74,16.896669,READY,v2.38BU-us-sec-valuation-features-extension
+U19313,1CDEm,Coeur Mining Inc,us_cboe_secondary_sec_v2_38bk,2025,0.341531,0.96,5.15977,READY,v2.38BU-us-sec-valuation-features-extension
+U19316,1CEGm,Constellation Energy Corp,us_cboe_secondary_sec_v2_38bk,2025,0.136169,7.4,46.528846,READY,v2.38BU-us-sec-valuation-features-extension
+U19336,1CPRTm,Copart Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.61,9.49585,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19338,1CROXm,Crocs Inc,us_cboe_secondary_sec_v2_38bk,2025,0.037003,-1.5,25.76261,READY,v2.38BU-us-sec-valuation-features-extension
+U19339,1CRWDm,Crowdstrike Holdings Inc,us_cboe_secondary_sec_v2_38bk,2026,,-0.65,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19342,1CSGPm,CoStar Group Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.022174,0.02,19.94257,READY,v2.38BU-us-sec-valuation-features-extension
+U19344,1CVNAm,Carvana Co,us_cboe_secondary_sec_v2_38bk,2025,0.09256,10.22,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19347,1CYTHm,Lumen Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.071662,-1.75,-1.089282,READY,v2.38BU-us-sec-valuation-features-extension
+U19350,1DASHm,DoorDash Inc,us_cboe_secondary_sec_v2_38bk,2025,0.052708,2.19,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19353,1DECKm,Deckers Outdoor Corp,us_cboe_secondary_sec_v2_38bk,2026,0.230781,7.04,17.857363,READY,v2.38BU-us-sec-valuation-features-extension
+U19366,1DPZm,Domino's Pizza Inc,us_cboe_secondary_sec_v2_38bk,2025,0.193112,17.69,-116.00877,READY,v2.38BU-us-sec-valuation-features-extension
+U19374,1DXCMm,Dexcom Inc,us_cboe_secondary_sec_v2_38bk,2025,0.195581,2.14,7.136175,READY,v2.38BU-us-sec-valuation-features-extension
+U19390,1EMEm,EMCOR Group Inc,us_cboe_secondary_sec_v2_38bk,2025,0.10087,28.3,82.52277,READY,v2.38BU-us-sec-valuation-features-extension
+U19394,1ENPHm,Enphase Energy Inc,us_cboe_secondary_sec_v2_38bk,2025,0.106943,1.31,8.292821,READY,v2.38BU-us-sec-valuation-features-extension
+U19396,1ENVXm,Enovix Corp,us_cboe_secondary_sec_v2_38bk,2025,-5.570347,-0.75,1.252395,READY,v2.38BU-us-sec-valuation-features-extension
+U19398,1EPAMm,EPAM Systems Inc,us_cboe_secondary_sec_v2_38bk,2025,0.09529,6.76,67.752994,READY,v2.38BU-us-sec-valuation-features-extension
+U19406,1ETSYm,Etsy Inc,us_cboe_secondary_sec_v2_38bk,2025,0.092322,1.59,-11.31695,READY,v2.38BU-us-sec-valuation-features-extension
+U19419,1FAd,Sprouts Farmers Market Inc,us_cboe_secondary_sec_v2_38bk,2025,0.077918,5.36,14.626625,READY,v2.38BU-us-sec-valuation-features-extension
+U19424,1FICOm,Fair Isaac Corp,us_cboe_secondary_sec_v2_38bk,2025,0.464546,26.9,-73.46339,READY,v2.38BU-us-sec-valuation-features-extension
+U19426,1FIXm,Comfort Systems USA Inc,us_cboe_secondary_sec_v2_38bk,2025,0.144434,28.93,69.612929,READY,v2.38BU-us-sec-valuation-features-extension
+U19436,1FTNTm,Fortinet Inc,us_cboe_secondary_sec_v2_38bk,2025,0.306592,2.45,1.665545,READY,v2.38BU-us-sec-valuation-features-extension
+U19444,1GEHCm,GE HealthCare Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,0.133964,4.56,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19446,1GEVm,GE Vernova Inc,us_cboe_secondary_sec_v2_38bk,2025,0.036461,17.92,41.472275,READY,v2.38BU-us-sec-valuation-features-extension
+U19481,1HLm,Hecla Mining Co,us_cboe_secondary_sec_v2_38bk,2025,,0.49,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19497,1HUTm,Hut 8 Corp,us_cboe_secondary_sec_v2_38bk,2025,-1.3695,-2.14,12.915864,READY,v2.38BU-us-sec-valuation-features-extension
+U19498,1HWMm,Howmet Aerospace Inc,us_cboe_secondary_sec_v2_38bk,2025,0.24794,3.73,13.328501,READY,v2.38BU-us-sec-valuation-features-extension
+U19502,1IBKRm,Interactive Brokers Group Inc,us_cboe_secondary_sec_v2_38bk,2025,,2.23,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19508,1ILMNm,Illumina Inc,us_cboe_secondary_sec_v2_38bk,2025,0.185816,5.47,17.797386,READY,v2.38BU-us-sec-valuation-features-extension
+U19513,1INODm,Innodata Inc,us_cboe_secondary_sec_v2_38bk,2025,0.158438,1.01,3.313387,READY,v2.38BU-us-sec-valuation-features-extension
+U19519,1ISRGm,Intuitive Surgical Inc,us_cboe_secondary_sec_v2_38bk,2025,0.292657,8.0,50.194311,READY,v2.38BU-us-sec-valuation-features-extension
+U19522,1JBLm,Jabil Inc,us_cboe_secondary_sec_v2_38bk,2025,0.039662,6.0,14.07692,READY,v2.38BU-us-sec-valuation-features-extension
+U19531,1KDPm,Keurig Dr Pepper Inc,us_cboe_secondary_sec_v2_38bk,2025,0.215323,1.53,18.780216,READY,v2.38BU-us-sec-valuation-features-extension
+U19552,1LCIDm,Lucid Group Inc,us_cboe_secondary_sec_v2_38bk,2025,-2.586629,-11.81,2.191085,READY,v2.38BU-us-sec-valuation-features-extension
+U19553,1LDOSm,Leidos Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.123283,11.31,38.898358,READY,v2.38BU-us-sec-valuation-features-extension
+U19559,1LITEm,Lumentum Holdings Inc,us_cboe_secondary_sec_v2_38bk,2026,0.174121,-92.96,52.414221,READY,v2.38BU-us-sec-valuation-features-extension
+U19561,1LNGm,Cheniere Energy Inc,us_cboe_secondary_sec_v2_38bk,2025,0.468146,24.19,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19581,1MDBm,MongoDB Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.055592,-0.88,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19591,1MPWRm,Monolithic Power Systems Inc,us_cboe_secondary_sec_v2_38bk,2025,0.261117,12.94,72.50194,READY,v2.38BU-us-sec-valuation-features-extension
+U19592,1MPm,MP Materials Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.665538,-0.5,11.156874,READY,v2.38BU-us-sec-valuation-features-extension
+U19608,1NBIXm,Neurocrine Biosciences Inc,us_cboe_secondary_sec_v2_38bk,2025,0.216431,4.81,32.498501,READY,v2.38BU-us-sec-valuation-features-extension
+U19633,1OGNm,Organon & Co,us_cboe_secondary_sec_v2_38bk,2025,,0.72,2.888797,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19656,1PLLm,Planet Labs PBC,us_cboe_secondary_sec_v2_38bk,2026,-0.308952,-0.8,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19665,1PSTGm,Everpure Inc,us_cboe_secondary_sec_v2_38bk,2026,0.031346,0.57,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19672,1QBTSm,D-Wave Quantum Inc,us_cboe_secondary_sec_v2_38bk,2025,-4.082157,-1.11,2.37561,READY,v2.38BU-us-sec-valuation-features-extension
+U19679,1RDDTm,Reddit Inc,us_cboe_secondary_sec_v2_38bk,2025,0.200673,2.84,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19685,1RKLBm,Rocket Lab Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.380257,-0.37,3.16765,READY,v2.38BU-us-sec-valuation-features-extension
+U19686,1RMBSm,Rambus Inc,us_cboe_secondary_sec_v2_38bk,2025,,2.14,12.659134,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19688,1ROKUm,Roku Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.001187,0.6,17.977308,READY,v2.38BU-us-sec-valuation-features-extension
+U19734,1SOFIm,SoFi Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,,0.42,8.255747,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19742,1SRPTm,Sarepta Therapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.375359,-7.13,10.86677,READY,v2.38BU-us-sec-valuation-features-extension
+U19752,1SWKSm,Skyworks Solutions Inc,us_cboe_secondary_sec_v2_38bk,2025,0.122342,3.09,38.716207,READY,v2.38BU-us-sec-valuation-features-extension
+U19770,1TEMm,Tempus AI Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.198832,-1.41,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19778,1TMDXm,TransMedics Group Inc,us_cboe_secondary_sec_v2_38bk,2025,0.17933,5.6,13.805963,READY,v2.38BU-us-sec-valuation-features-extension
+U19785,1TRMBm,Trimble Inc,us_cboe_secondary_sec_v2_38bk,2025,0.165027,1.77,24.729661,READY,v2.38BU-us-sec-valuation-features-extension
+U19801,1UC0d,Cue Biopharma Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.966722,-0.28,0.273563,READY,v2.38BU-us-sec-valuation-features-extension
+U19805,1UNPm,Union Pacific Corp,us_cboe_secondary_sec_v2_38bk,2025,0.401714,12.0,31.128745,READY,v2.38BU-us-sec-valuation-features-extension
+U19807,1UPSTm,Upstart Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.04084,0.56,8.1484,READY,v2.38BU-us-sec-valuation-features-extension
+U19814,1VEEVm,Veeva Systems Inc,us_cboe_secondary_sec_v2_38bk,2026,0.286786,5.55,44.051949,READY,v2.38BU-us-sec-valuation-features-extension
+U19821,1VKTXm,Viking Therapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,,-3.19,5.567078,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19831,1VRTm,Vertiv Holdings Co,us_cboe_secondary_sec_v2_38bk,2025,0.178858,3.49,10.302606,READY,v2.38BU-us-sec-valuation-features-extension
+U19931,26CAd,ImmunityBio Inc,us_cboe_secondary_sec_v2_38bk,2025,-2.259966,-0.38,-0.494632,READY,v2.38BU-us-sec-valuation-features-extension
+U19979,2H51d,Ocugen Inc,us_cboe_secondary_sec_v2_38bk,2025,-14.256968,,-0.038946,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19991,2ONd,Peloton Interactive Inc,us_cboe_secondary_sec_v2_38bk,2026,0.065699,0.15,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U19993,2RJAd,Phunware Inc,us_cboe_secondary_sec_v2_38bk,2025,-8.037211,-0.57,4.770965,READY,v2.38BU-us-sec-valuation-features-extension
+U20001,2X0d,Corteva Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.6,35.919859,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20003,2XTd,DXC Technology Co,us_cboe_secondary_sec_v2_38bk,2026,0.076716,0.1,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20087,38Id,Intellia Therapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,-6.516676,-3.81,5.772103,READY,v2.38BU-us-sec-valuation-features-extension
+U20125,3E7d,Evergy Inc,us_cboe_secondary_sec_v2_38bk,2025,0.268689,3.71,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20161,3LNd,Live Nation Entertainment Inc,us_cboe_secondary_sec_v2_38bk,2025,0.049649,-0.24,1.151157,READY,v2.38BU-us-sec-valuation-features-extension
+U20188,3S9d,Sunrun Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.042654,1.96,13.408917,READY,v2.38BU-us-sec-valuation-features-extension
+U20217,3U6d,UGI Corp,us_cboe_secondary_sec_v2_38bk,2025,0.15489,3.15,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20240,45Td,IES Holdings Inc,us_cboe_secondary_sec_v2_38bk,2024,0.113757,15.22,44.521728,READY,v2.38BU-us-sec-valuation-features-extension
+U20273,4CC0d,ClearSign Technologies Corp,us_cboe_secondary_sec_v2_38bk,2025,,-0.99,1.788419,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20274,4CUd,Centrus Energy Corp,us_cboe_secondary_sec_v2_38bk,2025,0.111879,4.33,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20277,4DNd,Denali Therapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,,-2.97,6.490888,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20282,4LLd,Teladoc Health Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.103936,-1.14,7.771095,READY,v2.38BU-us-sec-valuation-features-extension
+U20283,4MDd,Digital Turbine Inc,us_cboe_secondary_sec_v2_38bk,2026,0.060225,-0.33,1.597146,READY,v2.38BU-us-sec-valuation-features-extension
+U20285,4PGd,Otis Worldwide Corp,us_cboe_secondary_sec_v2_38bk,2025,0.147807,3.52,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20302,4VKd,Aon PLC,us_cboe_secondary_sec_v2_38bk,2025,0.252837,17.11,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20356,5GHd,Guardant Health Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.445253,-3.32,-0.760185,READY,v2.38BU-us-sec-valuation-features-extension
+U20373,5QZ0d,QuantumScape Corp,us_cboe_secondary_sec_v2_38bk,2025,,-0.76,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20400,63Gd,Paramount Skydance Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.007743,-0.53,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20445,6D8d,DuPont de Nemours Inc,us_cboe_secondary_sec_v2_38bk,2025,,-1.87,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20447,6HAd,HA Sustainable Infrastructure Capital Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.49,20.822433,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20497,76Wd,H2O America,us_cboe_secondary_sec_v2_38bk,2025,0.220368,2.93,42.659081,READY,v2.38BU-us-sec-valuation-features-extension
+U20501,788d,Coupang Inc,us_cboe_secondary_sec_v2_38bk,2025,0.013697,0.11,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20509,7B0d,SentinelOne Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.320899,-1.37,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20514,7JAd,Butterfly Network Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.885309,-0.31,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20522,7XUd,Kyndryl Holdings Inc,us_cboe_secondary_sec_v2_38bk,2026,,0.87,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20525,8020d,Hillman Solutions Corp,us_cboe_secondary_sec_v2_38bk,2025,0.073423,0.2,6.252341,READY,v2.38BU-us-sec-valuation-features-extension
+U20543,82Wd,Hims & Hers Health Inc,us_cboe_secondary_sec_v2_38bk,2025,0.044987,0.57,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20570,87Pd,SharonAI Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,-8.799737,-4.04,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20585,8LL0d,374Water Inc,us_cboe_secondary_sec_v2_38bk,2025,-98.341513,,0.392265,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20587,8QJ0d,Marqeta Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.074302,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20649,9MKd,Keel Infrastructure Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.652489,-0.52,0.931505,READY,v2.38BU-us-sec-valuation-features-extension
+U20655,9WYd,Texas Pacific Land Corp,us_cboe_secondary_sec_v2_38bk,2025,0.74188,6.98,21.162525,READY,v2.38BU-us-sec-valuation-features-extension
+U20684,AAOIn,Applied Optoelectronics Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.119816,-0.64,9.785834,READY,v2.38BU-us-sec-valuation-features-extension
+U20728,ACADn,ACADIA Pharmaceuticals Inc,us_cboe_secondary_sec_v2_38bk,2025,0.097817,2.32,7.206826,READY,v2.38BU-us-sec-valuation-features-extension
+U20743,ACHCn,Acadia Healthcare Co Inc,us_cboe_secondary_sec_v2_38bk,2025,,-12.16,21.546697,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20896,AGIOn,Agios Pharmaceuticals Inc,us_cboe_secondary_sec_v2_38bk,2025,-8.738654,-7.12,20.413049,READY,v2.38BU-us-sec-valuation-features-extension
+U20906,AGTd,AptarGroup Inc,us_cboe_secondary_sec_v2_38bk,2025,0.132649,5.97,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U20910,AH91d,AMC Entertainment Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.003588,-1.34,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U21131,ALLYn,Ally Financial Inc,us_cboe_secondary_sec_v2_38bk,2025,,2.39,50.23778,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U21324,AMKRn,Amkor Technology Inc,us_cboe_secondary_sec_v2_38bk,2025,0.069676,1.51,18.079465,READY,v2.38BU-us-sec-valuation-features-extension
+U21329,AMS1d,American Superconductor Corp,us_cboe_secondary_sec_v2_38bk,2026,,3.12,11.661132,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U21561,AVAn,Avista Corp,us_cboe_secondary_sec_v2_38bk,2025,0.180244,2.38,32.959011,READY,v2.38BU-us-sec-valuation-features-extension
+U21649,B72d,AtaiBeckley Inc,us_cboe_secondary_sec_v2_38bk,2025,-157.510638,-2.91,0.610751,READY,v2.38BU-us-sec-valuation-features-extension
+U21697,BAXn,Baxter International Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.027392,-1.87,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U21751,BDCn,Belden Inc,us_cboe_secondary_sec_v2_38bk,2025,0.116269,6.0,32.465248,READY,v2.38BU-us-sec-valuation-features-extension
+U21792,BICd,BTCS Inc,us_cboe_secondary_sec_v2_38bk,2025,,-1.0,2.975638,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U21852,BJn,BJ's Wholesale Club Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.038057,4.41,16.952275,READY,v2.38BU-us-sec-valuation-features-extension
+U21853,BKDn,Brookdale Senior Living Inc,us_cboe_secondary_sec_v2_38bk,2025,0.004226,-1.12,-0.188238,READY,v2.38BU-us-sec-valuation-features-extension
+U22025,BRXn,Brixmor Property Group Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.26,9.832627,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U22058,BTJn,Atmos Energy Corp,us_cboe_secondary_sec_v2_38bk,2025,0.331714,7.54,83.920441,READY,v2.38BU-us-sec-valuation-features-extension
+U22148,CA8Ad,CACI International Inc,us_cboe_secondary_sec_v2_38bk,2026,0.096137,24.28,201.941129,READY,v2.38BU-us-sec-valuation-features-extension
+U22158,CALn,Caleres Inc,us_cboe_secondary_sec_v2_38bk,2025,,-0.21,17.779935,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U22283,CDLXn,Cardlytics Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.479522,-1.95,-0.119382,READY,v2.38BU-us-sec-valuation-features-extension
+U22325,CENXn,Century Aluminum Co,us_cboe_secondary_sec_v2_38bk,2025,0.062542,0.42,8.139922,READY,v2.38BU-us-sec-valuation-features-extension
+U22364,CGNXn,Cognex Corp,us_cboe_secondary_sec_v2_38bk,2025,0.163488,0.68,8.933699,READY,v2.38BU-us-sec-valuation-features-extension
+U22373,CHGGn,Chegg Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.310039,-0.96,1.077825,READY,v2.38BU-us-sec-valuation-features-extension
+U22432,CLBn,Core Laboratories NV,us_cboe_secondary_sec_v2_38bk,2025,0.107248,0.64,5.77034,READY,v2.38BU-us-sec-valuation-features-extension
+U22435,CLDXn,Celldex Therapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,-185.998058,-3.9,7.921404,READY,v2.38BU-us-sec-valuation-features-extension
+U22464,CLOVRn,Clover Health Investments Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.044447,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U22515,CNKn,Cinemark Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.18,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U22517,CNMDn,CONMED Corp,us_cboe_secondary_sec_v2_38bk,2025,0.074649,1.52,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U22597,COZd,Cognizant Technology Solutions Corp,us_cboe_secondary_sec_v2_38bk,2025,0.160555,4.57,31.346555,READY,v2.38BU-us-sec-valuation-features-extension
+U22612,CPTn,Camden Property Trust,us_cboe_secondary_sec_v2_38bk,2025,,3.54,41.826683,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U22655,CS1d,Expand Energy Corp,us_cboe_secondary_sec_v2_38bk,2025,0.203811,7.67,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U22732,CWHn,Camping World Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.028293,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U22836,DDNd,Darden Restaurants Inc,us_cboe_secondary_sec_v2_38bk,2026,0.11981,10.45,19.347064,READY,v2.38BU-us-sec-valuation-features-extension
+U23030,DOCUn,DocuSign Inc,us_cboe_secondary_sec_v2_38bk,2026,0.092741,1.53,9.697469,READY,v2.38BU-us-sec-valuation-features-extension
+U23061,DRHn,DiamondRock Hospitality Co,us_cboe_secondary_sec_v2_38bk,2025,,0.44,7.107817,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U23156,E050d,Easterly Government Properties Inc,us_cboe_secondary_sec_v2_38bk,2025,,0.27,28.575224,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U23170,E7Pd,Indivior Pharmaceuticals Inc,us_cboe_secondary_sec_v2_38bk,2025,0.211461,1.68,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U23180,EAFn,GrafTech International Ltd,us_cboe_secondary_sec_v2_38bk,2025,-0.152868,-8.45,-10.055263,READY,v2.38BU-us-sec-valuation-features-extension
+U23314,EI2d,Erie Indemnity Co,us_cboe_secondary_sec_v2_38bk,2025,0.176331,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U23379,ELSn,Equity LifeStyle Properties Inc,us_cboe_secondary_sec_v2_38bk,2025,0.255553,2.01,9.060644,READY,v2.38BU-us-sec-valuation-features-extension
+U23504,ENRn,Energizer Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,,3.37,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U23526,EOLSn,Evolus Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.109908,-0.8,-0.355432,READY,v2.38BU-us-sec-valuation-features-extension
+U23552,ER4d,Emergent BioSolutions Inc,us_cboe_secondary_sec_v2_38bk,2025,0.134742,0.98,10.03071,READY,v2.38BU-us-sec-valuation-features-extension
+U23642,ESRTn,Empire State Realty Trust Inc,us_cboe_secondary_sec_v2_38bk,2025,0.176906,0.26,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U23649,ET9d,Circle Internet Group Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.878119,-0.44,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U23825,EXELn,Exelixis Inc,us_cboe_secondary_sec_v2_38bk,2025,0.375924,2.88,8.234129,READY,v2.38BU-us-sec-valuation-features-extension
+U23845,EYEn,National Vision Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.0296,0.37,10.949084,READY,v2.38BU-us-sec-valuation-features-extension
+U23854,F9Qd,Eos Energy Enterprises Inc,us_cboe_secondary_sec_v2_38bk,2025,-2.270256,-6.69,-6.640899,READY,v2.38BU-us-sec-valuation-features-extension
+U23856,FA1d,FactSet Research Systems Inc,us_cboe_secondary_sec_v2_38bk,2025,0.322302,15.74,58.078429,READY,v2.38BU-us-sec-valuation-features-extension
+U23910,FDXHv,Fedex Freight Holding Co Inc,us_cboe_secondary_sec_v2_38bk,2026,0.061399,4.38,-3.324298,READY,v2.38BU-us-sec-valuation-features-extension
+U23988,FIVEBn,Five Below Inc,us_cboe_secondary_sec_v2_38bk,2025,0.096009,6.51,39.712842,READY,v2.38BU-us-sec-valuation-features-extension
+U24124,FRMIl,Fermi Inc,us_cboe_secondary_sec_v2_38bk,2025,,-1.13,1.739922,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24141,FS5Ad,FS KKR Capital Corp,us_cboe_secondary_sec_v2_38bk,2025,,0.04,20.884331,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24155,FSLYRn,Fastly Inc,us_cboe_secondary_sec_v2_38bk,2025,,-0.83,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24233,G84d,Generac Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.068705,2.73,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24288,GDDYn,GoDaddy Inc,us_cboe_secondary_sec_v2_38bk,2025,0.227687,6.34,1.596443,READY,v2.38BU-us-sec-valuation-features-extension
+U24444,GNWn,Genworth Financial Inc,us_cboe_secondary_sec_v2_38bk,2025,,0.54,22.330738,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24457,GOGOn,Gogo Inc,us_cboe_secondary_sec_v2_38bk,2025,0.125298,0.1,0.751825,READY,v2.38BU-us-sec-valuation-features-extension
+U24487,GOVd,Insulet Corp,us_cboe_secondary_sec_v2_38bk,2025,0.174957,3.51,21.525535,READY,v2.38BU-us-sec-valuation-features-extension
+U24496,GPROn,GoPro Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.127913,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24527,GRPNn,Groupon Inc,us_cboe_secondary_sec_v2_38bk,2025,0.04743,-2.08,-1.04492,READY,v2.38BU-us-sec-valuation-features-extension
+U24652,HALOn,Halozyme Therapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,0.335817,2.64,0.414444,READY,v2.38BU-us-sec-valuation-features-extension
+U24678,HCCn,Warrior Met Coal Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.08,40.733853,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24685,HCSGn,Healthcare Services Group Inc,us_cboe_secondary_sec_v2_38bk,2025,,0.82,7.331025,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24762,HGVn,Hilton Grand Vacations Inc,us_cboe_secondary_sec_v2_38bk,2025,,0.9,15.505148,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24870,HQYn,HealthEquity Inc,us_cboe_secondary_sec_v2_38bk,2026,0.245507,2.5,24.7885,READY,v2.38BU-us-sec-valuation-features-extension
+U24898,HSOAd,Encompass Health Corp,us_cboe_secondary_sec_v2_38bk,2025,,5.62,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24931,HUNn,Huntsman Corp,us_cboe_secondary_sec_v2_38bk,2024,-0.023051,-1.65,15.930731,READY,v2.38BU-us-sec-valuation-features-extension
+U24953,HXLn,Hexcel Corp,us_cboe_secondary_sec_v2_38bk,2025,0.090607,,16.521797,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24981,I1Vd,CoreWeave Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.008965,-2.75,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U24997,IARTn,Integra LifeSciences Holdings Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.30171,-6.74,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U25032,ICFIn,ICF International Inc,us_cboe_secondary_sec_v2_38bk,2025,0.07767,4.97,56.361858,READY,v2.38BU-us-sec-valuation-features-extension
+U25054,ID7d,IDEX Corp,us_cboe_secondary_sec_v2_38bk,2025,0.202256,6.41,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U25098,IFFn,International Flavors & Fragrances Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.035078,-1.41,55.35393,READY,v2.38BU-us-sec-valuation-features-extension
+U25162,ILPTn,Industrial Logistics Properties Trust,us_cboe_secondary_sec_v2_38bk,2025,,-1.0,7.346947,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U25254,INVAn,Innoviva Inc,us_cboe_secondary_sec_v2_38bk,2025,0.398089,4.02,15.714146,READY,v2.38BU-us-sec-valuation-features-extension
+U25255,INVHn,Invitation Homes Inc,us_cboe_secondary_sec_v2_38bk,2025,,0.96,15.602992,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U25262,IONSn,Ionis Pharmaceuticals Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.40445,-2.38,2.994944,READY,v2.38BU-us-sec-valuation-features-extension
+U25264,IOVAn,Iovance Biotherapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,-1.530751,-1.09,1.695845,READY,v2.38BU-us-sec-valuation-features-extension
+U25307,IRWDn,Ironwood Pharmaceuticals Inc,us_cboe_secondary_sec_v2_38bk,2025,0.332607,0.15,-1.605775,READY,v2.38BU-us-sec-valuation-features-extension
+U25350,ITH0d,Nektar Therapeutics,us_cboe_secondary_sec_v2_38bk,2025,-2.536609,-9.73,4.408103,READY,v2.38BU-us-sec-valuation-features-extension
+U25352,ITRIn,Itron Inc,us_cboe_secondary_sec_v2_38bk,2025,0.132253,6.62,38.20686,READY,v2.38BU-us-sec-valuation-features-extension
+U25435,J4Dd,Kenvue Inc,us_cboe_secondary_sec_v2_38bk,2025,0.159614,0.77,5.618137,READY,v2.38BU-us-sec-valuation-features-extension
+U25437,JACKn,Jack in the Box Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.012332,-4.24,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U25449,JBLUn,JetBlue Airways Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.040609,-1.66,5.72973,READY,v2.38BU-us-sec-valuation-features-extension
+U25471,JEFn,Jefferies Financial Group Inc,us_cboe_secondary_sec_v2_38bk,2025,,2.93,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U25515,JHYd,Jack Henry & Associates Inc,us_cboe_secondary_sec_v2_38bk,2026,0.249587,7.0,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U25706,KB7d,Solventum Corp,us_cboe_secondary_sec_v2_38bk,2025,0.261982,8.94,29.102397,READY,v2.38BU-us-sec-valuation-features-extension
+U25738,KEYSn,Keysight Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,0.162977,4.93,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U25817,KPTIn,Karyopharm Therapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.620996,-17.93,-15.997269,READY,v2.38BU-us-sec-valuation-features-extension
+U25927,LE0d,Lemonade Inc,us_cboe_secondary_sec_v2_38bk,2025,,-2.24,7.029635,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U25977,LHVd,ExlService Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.150287,1.56,5.83459,READY,v2.38BU-us-sec-valuation-features-extension
+U25979,LIIn,Lennox International Inc,us_cboe_secondary_sec_v2_38bk,2025,0.20047,22.89,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26020,LNTHn,Lantheus Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.201628,3.46,16.873579,READY,v2.38BU-us-sec-valuation-features-extension
+U26045,LPXn,Louisiana-Pacific Corp,us_cboe_secondary_sec_v2_38bk,2025,0.077179,2.09,24.728571,READY,v2.38BU-us-sec-valuation-features-extension
+U26101,LVSn,Las Vegas Sands Corp,us_cboe_secondary_sec_v2_38bk,2025,0.216486,2.35,2.355556,READY,v2.38BU-us-sec-valuation-features-extension
+U26113,LY0d,Lyft Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.031952,6.92,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26272,MEDPn,Medpace Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.211417,15.64,16.18112,READY,v2.38BU-us-sec-valuation-features-extension
+U26329,MHGd,Molina Healthcare Inc,us_cboe_secondary_sec_v2_38bk,2025,0.017193,8.93,79.784314,READY,v2.38BU-us-sec-valuation-features-extension
+U26406,MMFd,Modine Manufacturing Co,us_cboe_secondary_sec_v2_38bk,2026,0.107636,2.3,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26422,MNKDn,MannKind Corp,us_cboe_secondary_sec_v2_38bk,2025,0.111188,0.02,-0.165746,READY,v2.38BU-us-sec-valuation-features-extension
+U26472,MPWn,Medical Properties Trust Inc,us_cboe_secondary_sec_v2_38bk,2025,,-0.46,7.715466,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26477,MRCYn,Mercury Systems Inc,us_cboe_secondary_sec_v2_38bk,2026,0.000285,-0.5,25.124826,READY,v2.38BU-us-sec-valuation-features-extension
+U26526,MTDRn,Matador Resources Co,us_cboe_secondary_sec_v2_38bk,2025,0.33544,6.1,45.533843,READY,v2.38BU-us-sec-valuation-features-extension
+U26529,MTGn,MGIC Investment Corp,us_cboe_secondary_sec_v2_38bk,2025,,3.17,23.465476,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26579,MWId,MarketAxess Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.403936,6.66,32.022547,READY,v2.38BU-us-sec-valuation-features-extension
+U26667,ND1d,Nordson Corp,us_cboe_secondary_sec_v2_38bk,2025,0.254944,8.56,54.427235,READY,v2.38BU-us-sec-valuation-features-extension
+U26743,NKB2d,TG Therapeutics Inc,us_cboe_secondary_sec_v2_38bk,2025,0.200108,3.1,4.172538,READY,v2.38BU-us-sec-valuation-features-extension
+U26838,NUSn,Nu Skin Enterprises Inc,us_cboe_secondary_sec_v2_38bk,2025,0.04428,3.25,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26842,NVAXn,Novavax Inc,us_cboe_secondary_sec_v2_38bk,2025,0.403029,2.72,-0.785805,READY,v2.38BU-us-sec-valuation-features-extension
+U26870,NXSTn,Nexstar Media Group Inc,us_cboe_secondary_sec_v2_38bk,2025,0.17155,3.04,68.056665,READY,v2.38BU-us-sec-valuation-features-extension
+U26905,OCSLn,Oaktree Specialty Lending Corp,us_cboe_secondary_sec_v2_38bk,2025,,0.39,16.640703,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26922,ODFd,Old Dominion Freight Line Inc,us_cboe_secondary_sec_v2_38bk,2025,,4.86,20.670902,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26935,OGLd,Golub Capital BDC Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.42,14.971601,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26940,OHIn,Omega Healthcare Investors Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.96,17.531693,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26948,OISn,Oil States International Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.146447,-1.86,9.608271,READY,v2.38BU-us-sec-valuation-features-extension
+U26961,OMFn,OneMain Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,,6.59,29.019566,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U26990,OPKn,OPKO Health Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.193464,-0.3,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U27027,OSURn,OraSure Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.625703,-0.94,4.841912,READY,v2.38BU-us-sec-valuation-features-extension
+U27064,PACBn,Pacific Biosciences of California Inc,us_cboe_secondary_sec_v2_38bk,2025,,-1.82,0.017715,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U27097,PBEd,Peabody Energy Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.020743,-0.43,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U27100,PBIn,Pitney Bowes Inc,us_cboe_secondary_sec_v2_38bk,2025,,0.84,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U27123,PCUd,Southern Copper Corp,us_cboe_secondary_sec_v2_38bk,2025,0.521736,5.24,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U27160,PETSn,PetMed Express Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.327744,-2.74,1.353245,READY,v2.38BU-us-sec-valuation-features-extension
+U27216,PIn,Impinj Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.002041,-0.37,6.923135,READY,v2.38BU-us-sec-valuation-features-extension
+U27292,PPHCl,Public Policy Holding Co Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.181799,-2.37,2.975393,READY,v2.38BU-us-sec-valuation-features-extension
+U27301,PQIAd,RadNet Inc,us_cboe_secondary_sec_v2_38bk,2025,0.030385,-0.25,14.720884,READY,v2.38BU-us-sec-valuation-features-extension
+U27367,PSMTn,PriceSmart Inc,us_cboe_secondary_sec_v2_38bk,2025,0.044119,4.82,40.570441,READY,v2.38BU-us-sec-valuation-features-extension
+U27369,PSNn,Parsons Corp,us_cboe_secondary_sec_v2_38bk,2025,0.065691,2.26,47.091502,READY,v2.38BU-us-sec-valuation-features-extension
+U27373,PSRAd,CoreCivic Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.09,14.045327,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U27382,PTENn,Patterson-UTI Energy Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.008518,-0.24,8.485431,READY,v2.38BU-us-sec-valuation-features-extension
+U27402,PUMPn,ProPetro Holding Corp,us_cboe_secondary_sec_v2_38bk,2025,0.005003,0.01,7.955516,READY,v2.38BU-us-sec-valuation-features-extension
+U27408,PW2d,Powell Industries Inc,us_cboe_secondary_sec_v2_38bk,2025,0.19728,14.98,53.087038,READY,v2.38BU-us-sec-valuation-features-extension
+U27454,QH9d,ADTRAN Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.01439,-0.52,1.824563,READY,v2.38BU-us-sec-valuation-features-extension
+U27513,RAMPn,LiveRamp Holdings Inc,us_cboe_secondary_sec_v2_38bk,2026,0.102672,2.28,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U27521,RBBNn,Ribbon Communications Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.003936,0.22,2.554352,READY,v2.38BU-us-sec-valuation-features-extension
+U27527,RBRKn,Rubrik Inc,us_cboe_secondary_sec_v2_38bk,2026,-0.262436,-1.78,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U27545,RDNn,Radian Group Inc,us_cboe_secondary_sec_v2_38bk,2025,,4.18,35.288447,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U27660,RO7d,ROBLOX Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.251984,-1.54,0.556898,READY,v2.38BU-us-sec-valuation-features-extension
+U27675,ROLn,Rollins Inc,us_cboe_secondary_sec_v2_38bk,2025,0.193049,1.09,2.856066,READY,v2.38BU-us-sec-valuation-features-extension
+U27685,RPDn,Rapid7 Inc,us_cboe_secondary_sec_v2_38bk,2025,0.013454,0.36,2.349844,READY,v2.38BU-us-sec-valuation-features-extension
+U27690,RPMn,RPM International Inc,us_cboe_secondary_sec_v2_38bk,2026,,5.19,25.94371,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U27722,RV6d,Charles River Laboratories International Inc,us_cboe_secondary_sec_v2_38bk,2025,0.006266,-2.91,64.299531,READY,v2.38BU-us-sec-valuation-features-extension
+U27735,RYNn,Rayonier Inc,us_cboe_secondary_sec_v2_38bk,2025,0.172526,3.07,13.688875,READY,v2.38BU-us-sec-valuation-features-extension
+U27738,RZ2d,Veralto Corp,us_cboe_secondary_sec_v2_38bk,2025,0.232055,3.79,12.5,READY,v2.38BU-us-sec-valuation-features-extension
+U27880,SCSCn,ScanSource Inc,us_cboe_secondary_sec_v2_38bk,2026,0.030572,3.69,45.173892,READY,v2.38BU-us-sec-valuation-features-extension
+U28005,SFWd,Capital Southwest Corp,us_cboe_secondary_sec_v2_38bk,2026,,1.98,16.689321,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U28109,SLABn,Silicon Laboratories Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.089888,-1.98,33.209467,READY,v2.38BU-us-sec-valuation-features-extension
+U28442,STWDn,Starwood Property Trust Inc,us_cboe_secondary_sec_v2_38bk,2025,,1.15,18.338361,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U28457,SUIn,Sun Communities Inc,us_cboe_secondary_sec_v2_38bk,2025,,10.84,56.330741,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U28475,SUPNn,Supernus Pharmaceuticals Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.08663,-0.68,18.478261,READY,v2.38BU-us-sec-valuation-features-extension
+U28600,T8Zd,Waystar Holding Corp,us_cboe_secondary_sec_v2_38bk,2025,0.22679,0.63,20.245748,READY,v2.38BU-us-sec-valuation-features-extension
+U28615,TARd,Targa Resources Corp,us_cboe_secondary_sec_v2_38bk,2025,0.195627,8.52,14.29176,READY,v2.38BU-us-sec-valuation-features-extension
+U28655,TE1d,Bio-Techne Corp,us_cboe_secondary_sec_v2_38bk,2026,0.20731,1.17,13.506003,READY,v2.38BU-us-sec-valuation-features-extension
+U28752,TLKd,Toll Brothers Inc,us_cboe_secondary_sec_v2_38bk,2025,,13.6,87.243281,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U28823,TR4d,Tractor Supply Co,us_cboe_secondary_sec_v2_38bk,2025,0.094524,2.07,4.897931,READY,v2.38BU-us-sec-valuation-features-extension
+U28879,TRUUn,TransUnion,us_cboe_secondary_sec_v2_38bk,2025,0.187444,2.34,23.072765,READY,v2.38BU-us-sec-valuation-features-extension
+U28935,TUSKn,Mammoth Energy Services Inc,us_cboe_secondary_sec_v2_38bk,2025,-1.29669,0.1,5.341129,READY,v2.38BU-us-sec-valuation-features-extension
+U28941,TWHd,Twilio Inc,us_cboe_secondary_sec_v2_38bk,2025,0.031142,0.22,51.31866,READY,v2.38BU-us-sec-valuation-features-extension
+U28950,TYPd,Tyler Technologies Inc,us_cboe_secondary_sec_v2_38bk,2025,0.153355,7.32,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U29146,UPWKn,Upwork Inc,us_cboe_secondary_sec_v2_38bk,2025,0.16414,0.87,4.828326,READY,v2.38BU-us-sec-valuation-features-extension
+U29191,USFDn,US Foods Holding Corp,us_cboe_secondary_sec_v2_38bk,2025,0.030413,2.98,19.53288,READY,v2.38BU-us-sec-valuation-features-extension
+U29383,VIAVn,Viavi Solutions Inc,us_cboe_secondary_sec_v2_38bk,2026,0.069222,-0.13,5.864372,READY,v2.38BU-us-sec-valuation-features-extension
+U29384,VICIn,VICI Properties Inc,us_cboe_secondary_sec_v2_38bk,2025,,2.61,26.007994,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U29470,VREXn,Varex Imaging Corp,us_cboe_secondary_sec_v2_38bk,2025,-0.032915,-1.7,11.336141,READY,v2.38BU-us-sec-valuation-features-extension
+U29479,VSATn,ViaSat Inc,us_cboe_secondary_sec_v2_38bk,2026,0.023301,-0.25,34.126975,READY,v2.38BU-us-sec-valuation-features-extension
+U29487,VSHn,Vishay Intertechnology Inc,us_cboe_secondary_sec_v2_38bk,2025,0.01853,-0.07,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U29533,W1Xd,Wix.com Ltd,us_cboe_secondary_sec_v2_38bk,2024,0.000879,0.91,-6.523178,READY,v2.38BU-us-sec-valuation-features-extension
+U29680,WMSn,Advanced Drainage Systems Inc,us_cboe_secondary_sec_v2_38bk,2026,0.202992,5.48,25.583368,READY,v2.38BU-us-sec-valuation-features-extension
+U29683,WNCn,Wabash National Corp,us_cboe_secondary_sec_v2_38bk,2025,0.199322,5.09,9.084826,READY,v2.38BU-us-sec-valuation-features-extension
+U29719,WPSd,West Pharmaceutical Services Inc,us_cboe_secondary_sec_v2_38bk,2025,0.190267,6.83,44.111111,READY,v2.38BU-us-sec-valuation-features-extension
+U29737,WS11d,WillScot Holdings Corp,us_cboe_secondary_sec_v2_38bk,2025,0.079535,-0.29,4.725869,READY,v2.38BU-us-sec-valuation-features-extension
+U29807,X06d,Versant Media Group Inc,us_cboe_secondary_sec_v2_38bk,2025,0.190191,,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U30228,Y1Fd,First American Financial Corp,us_cboe_secondary_sec_v2_38bk,2025,,6.02,53.916667,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U30237,YDO1d,Madrigal Pharmaceuticals Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.313122,-12.85,26.38504,READY,v2.38BU-us-sec-valuation-features-extension
+U30291,ZBRAn,Zebra Technologies Corp,us_cboe_secondary_sec_v2_38bk,2025,0.129726,8.24,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U30303,ZGV3d,Gevo Inc,us_cboe_secondary_sec_v2_38bk,2025,-0.125869,-0.14,1.923321,READY,v2.38BU-us-sec-valuation-features-extension
+U30305,ZIMd,Zimmer Biomet Holdings Inc,us_cboe_secondary_sec_v2_38bk,2025,0.133402,3.56,,PARTIAL,v2.38BU-us-sec-valuation-features-extension
+U04441,JOBY,"Joby Aviation, Inc.",us_joby_v2_38ba,2025,-13.469181,-1.13,1.540541,READY,v2.38BU-us-sec-valuation-features-extension

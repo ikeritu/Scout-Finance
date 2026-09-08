@@ -1,0 +1,20 @@
+{
+  "companies_processed": 1089,
+  "guardrails": {
+    "network_used": false,
+    "phase9c_authorized": true,
+    "phase9c_block": "1_of_3_valuation_features_extension",
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "note": "Extends the real, already-cached SEC companyfacts data (zero new network calls) with operating_margin, eps_basic and book_value_per_share -- the three raw concepts scripts/scoring_engine/core.py's already-validated v2.35A3 factor contract needs but v2.38F/G's own extraction never computed. Reuses normalize_us_sec_fundamentals_v2_38f.normalize_company() and build_us_sec_fundamental_features_v2_38g.selected_annual()/ratio()/rounded() unmodified, monkeypatching only the METRIC_CONCEPTS dict on the loaded module object (never v2.38F's own file) with two new real, standard SEC XBRL concepts (OperatingIncomeLoss, CommonStockSharesOutstanding) -- eps_basic was already being extracted by v2.38F, just never carried through by v2.38G. A company whose cache lacks a concept gets a blank field, never an estimate.",
+  "phase": "v2.38BU-us-sec-valuation-features-extension",
+  "status": "COMPLETED_US_SEC_VALUATION_FEATURES_EXTENSION_NOT_SCORING",
+  "valuation_extension_status_counts": {
+    "INSUFFICIENT_EVIDENCE": 17,
+    "NO_CONCEPTS_AVAILABLE": 14,
+    "PARTIAL": 494,
+    "READY": 564
+  }
+}

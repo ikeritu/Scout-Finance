@@ -1,0 +1,17 @@
+{
+  "guardrails": {
+    "network_used": false,
+    "phase9c_authorized": true,
+    "phase9c_block": "1_of_3_valuation_features_extension",
+    "ranking_calculated": false,
+    "recommendations_generated": false,
+    "scoring_calculated": false
+  },
+  "outputs": {
+    "us_sec_valuation_features_extension_v2_38bu.csv": {
+      "bytes": 153296,
+      "sha256": "96870b11ebddf8ecbc443b7ee783a07a32e5b9f1cf0ee3dd4a40d3271711f604"
+    }
+  },
+  "phase": "v2.38BU-us-sec-valuation-features-extension"
+}
