@@ -74,6 +74,17 @@ AT_BG_REGISTRY_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bg_
 FI_BH_REGISTRY_SECTOR_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bh_europe_cboe_finland_extension/europe_cboe_finland_extension_registry_sector_v2_38bh.csv"
 CBOE_BULK_IDENTITY_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bc_europe_cboe_secondary_identity_full/europe_cboe_secondary_identity_full_matrix_v2_38bc.csv"
 
+# Real new source added in the sixteenth reconstruction (2026-09-08):
+# v2.38BQ attacked the 530 companies v2.38BC left "ambiguous" (multiple
+# distinct, real GLEIF entities exactly matching the same normalized
+# name). Only its "resolved" tier (a single currently-ISSUED registration
+# among the exact matches -- the same trust level as every other name-
+# based GLEIF resolution already in this matrix) is wired in here. Its
+# "narrowed_unconfirmed" tier is deliberately excluded: a real, confirmed
+# case (Danone SA) showed that heuristic can pick the wrong entity, so it
+# stays a separate, human-reviewable suggestion, never silent identity.
+AMBIGUOUS_DISAMBIGUATION_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bq_europe_cboe_ambiguous_disambiguation/europe_cboe_ambiguous_disambiguation_v2_38bq.csv"
+
 # Real new source added in the fourteenth reconstruction (2026-09-08),
 # attacking the UK/US front the user chose after "consolidar primero"
 # closed: 538 of the 628 country=US Cboe secondary candidates (already
@@ -356,6 +367,21 @@ def build_cboe_bulk_index(path: Path) -> dict[str, dict[str, Any]]:
     return index
 
 
+def build_ambiguous_disambiguation_index(path: Path) -> dict[str, dict[str, Any]]:
+    """Only status=='resolved' (v2.38BQ's tier 1: a single currently-
+    ISSUED GLEIF registration among the exact-name matches) counts as
+    real identity here -- status=='narrowed_unconfirmed' (tier 2) is
+    deliberately excluded, see the module-level comment above."""
+    if not path.exists():
+        return {}
+    index: dict[str, dict[str, Any]] = {}
+    with path.open(encoding="utf-8", newline="") as f:
+        for row in csv.DictReader(f):
+            if row.get("status") == "resolved":
+                index[row["asset_id"]] = {"identity_source": "v2.38BQ", "country_code": row.get("country", "")}
+    return index
+
+
 def classify_ladder(present_count: int, total_count: int) -> str:
     if total_count == 0 or present_count == 0:
         return "INSUFFICIENT_FEATURE_EVIDENCE"
@@ -369,7 +395,7 @@ def build_row(
     eu_identity: dict[str, str] | None, eu_fund: dict[str, str] | None, eu_growth: dict[str, str] | None,
     joby_us_features: dict[str, str] | None, lux_entry: dict[str, Any] | None, at_entry: dict[str, Any] | None,
     fi_entry: dict[str, Any] | None, av_other_entry: dict[str, Any] | None, cboe_entry: dict[str, Any] | None,
-    us_cboe_secondary_entry: dict[str, Any] | None = None,
+    us_cboe_secondary_entry: dict[str, Any] | None = None, ambiguous_entry: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     asset_id = census_row["asset_id"]
     row: dict[str, Any] = {field: NOT_ATTEMPTED for field in FIELDS}
@@ -475,6 +501,10 @@ def build_row(
         # price extraction was scoped only to the original 555) -- left
         # honestly NOT_ATTEMPTED, never claimed as a confirmed gap the
         # way Europe's real v2.38AJ finding is.
+    elif ambiguous_entry is not None:
+        row["country"] = ambiguous_entry.get("country_code", row["country"])
+        row["identity_status"] = "RESOLVED"
+        row["identity_source"] = ambiguous_entry["identity_source"]
     elif cboe_entry is not None:
         row["country"] = cboe_entry.get("country_code", row["country"])
         row["identity_status"] = "RESOLVED"
@@ -517,6 +547,7 @@ def build(
     lux_be_fund_path: Path, lux_be_fund_compartments_path: Path, at_bg_path: Path, fi_bh_path: Path, cboe_bulk_path: Path,
     output_dir: Path, us_cboe_secondary_identity_path: Path = US_CBOE_SECONDARY_IDENTITY_INPUT,
     us_cboe_secondary_features_path: Path = US_CBOE_SECONDARY_FEATURES_INPUT,
+    ambiguous_disambiguation_path: Path = AMBIGUOUS_DISAMBIGUATION_INPUT,
 ) -> dict[str, Any]:
     census = read_census(census_path)
     us_fund_idx = read_csv_index(us_fund_path)
@@ -531,6 +562,7 @@ def build(
     av_other_idx = build_av_other_index(av_mismatch_path)
     cboe_idx = build_cboe_bulk_index(cboe_bulk_path)
     us_cboe_secondary_idx = build_us_cboe_secondary_index(us_cboe_secondary_identity_path, us_cboe_secondary_features_path)
+    ambiguous_idx = build_ambiguous_disambiguation_index(ambiguous_disambiguation_path)
 
     rows = [
         build_row(
@@ -538,7 +570,7 @@ def build(
             eu_identity_idx.get(c["asset_id"]), eu_fund_idx.get(c["asset_id"]), eu_growth_idx.get(c["asset_id"]),
             joby_features_idx.get(c["asset_id"]), lux_idx.get(c["asset_id"]), at_idx.get(c["asset_id"]),
             fi_idx.get(c["asset_id"]), av_other_idx.get(c["asset_id"]), cboe_idx.get(c["asset_id"]),
-            us_cboe_secondary_idx.get(c["asset_id"]),
+            us_cboe_secondary_idx.get(c["asset_id"]), ambiguous_idx.get(c["asset_id"]),
         )
         for c in census
     ]
@@ -581,9 +613,10 @@ def build(
             "finland_bf_bh": len(fi_idx) or None,
             "av_other_bulgaria_liechtenstein_malta": len(av_other_idx) or None,
             "cboe_europe_bulk_bc": len(cboe_idx) or None,
+            "europe_cboe_ambiguous_disambiguation_bq": len(ambiguous_idx) or None,
             "us_cboe_secondary_sec_bi_bk": len(us_cboe_secondary_idx) or None,
         },
-        "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline. Twelfth reconstruction (2026-09-07): merges everything found while attacking the Cboe Europe gap -- the 25 v2.38AV mismatch assets (5 new countries), Luxembourg's real fundamentals (30 companies across v2.38AW/AX/BE), Austria's and Finland's new identities (v2.38BF/BG/BH), Joby Aviation's real US identity/fundamentals corrected from its Cayman-by-ISIN-prefix classification (v2.38AZ/BA), and the bulk 54-country Cboe Europe identity resolution (v2.38BC) for everything without a more specific source. Two new overall_coverage_status values distinguish a real, confirmed blocker from simply 'not attempted yet': IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY (Luxembourg investment fund compartments) and IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED (Austria's exhausted firmenakte.at quota, Finland's confirmed no-source-for-large-caps finding). Fourteenth reconstruction (2026-09-08): the UK/US front chosen after consolidation closed -- 538 of the 628 country=US Cboe secondary candidates got a real SEC CIK match (v2.38BI, three-tier fail-closed name matching against SEC's own company_tickers_exchange.json) and, from that, real US GAAP fundamentals/growth reusing v2.38F/G unmodified at batch scale (v2.38BK) -- the same methodology already proven on the original 555 companies and individually on Joby Aviation. Fifteenth reconstruction (2026-09-08): closes 6 offshore jurisdictions (Cayman Islands, Bermuda, British Virgin Islands, Guernsey, Marshall Islands, Isle of Man -- 265 companies) with a new terminal status, IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED, confirming a real, structural legal fact per jurisdiction: none of these require an exempted/non-resident company to publicly file financial statements at all. Jersey (45 companies, overwhelmingly real PLCs with a genuine statutory duty to file audited accounts) is deliberately left untouched -- closing it the same way would risk hiding real disclosure that a separate investigation (v2.38BM) left as an open, unresolved question rather than forcing it into either bucket.",
+        "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline. Twelfth reconstruction (2026-09-07): merges everything found while attacking the Cboe Europe gap -- the 25 v2.38AV mismatch assets (5 new countries), Luxembourg's real fundamentals (30 companies across v2.38AW/AX/BE), Austria's and Finland's new identities (v2.38BF/BG/BH), Joby Aviation's real US identity/fundamentals corrected from its Cayman-by-ISIN-prefix classification (v2.38AZ/BA), and the bulk 54-country Cboe Europe identity resolution (v2.38BC) for everything without a more specific source. Two new overall_coverage_status values distinguish a real, confirmed blocker from simply 'not attempted yet': IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY (Luxembourg investment fund compartments) and IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED (Austria's exhausted firmenakte.at quota, Finland's confirmed no-source-for-large-caps finding). Fourteenth reconstruction (2026-09-08): the UK/US front chosen after consolidation closed -- 538 of the 628 country=US Cboe secondary candidates got a real SEC CIK match (v2.38BI, three-tier fail-closed name matching against SEC's own company_tickers_exchange.json) and, from that, real US GAAP fundamentals/growth reusing v2.38F/G unmodified at batch scale (v2.38BK) -- the same methodology already proven on the original 555 companies and individually on Joby Aviation. Fifteenth reconstruction (2026-09-08): closes 6 offshore jurisdictions (Cayman Islands, Bermuda, British Virgin Islands, Guernsey, Marshall Islands, Isle of Man -- 265 companies) with a new terminal status, IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED, confirming a real, structural legal fact per jurisdiction: none of these require an exempted/non-resident company to publicly file financial statements at all. Jersey (45 companies, overwhelmingly real PLCs with a genuine statutory duty to file audited accounts) is deliberately left untouched -- closing it the same way would risk hiding real disclosure that a separate investigation (v2.38BM) left as an open, unresolved question rather than forcing it into either bucket. Sixteenth reconstruction (2026-09-08): v2.38BQ attacked the 530 companies v2.38BC left 'ambiguous' with a real, two-tier, fail-closed disambiguation against live GLEIF data -- 200 resolved via a single currently-ISSUED registration among the exact-name matches (the same trust level as every other name-based match already in this matrix) are wired in here; 174 more were narrowed to a single plausible candidate via a legal-form-suffix heuristic but deliberately excluded from identity, since a real, confirmed case (Danone SA) showed that specific heuristic can pick the wrong entity when the true target's own GLEIF registration carries no legal-form suffix at all; the remaining 156 stay honestly ambiguous.",
     }
     write_text(output_dir / "global_coverage_matrix_report_v2_38al.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
     return report
@@ -609,6 +642,7 @@ def main() -> int:
     parser.add_argument("--cboe-bulk-input", type=Path, default=CBOE_BULK_IDENTITY_INPUT)
     parser.add_argument("--us-cboe-secondary-identity-input", type=Path, default=US_CBOE_SECONDARY_IDENTITY_INPUT)
     parser.add_argument("--us-cboe-secondary-features-input", type=Path, default=US_CBOE_SECONDARY_FEATURES_INPUT)
+    parser.add_argument("--ambiguous-disambiguation-input", type=Path, default=AMBIGUOUS_DISAMBIGUATION_INPUT)
     parser.add_argument("--output-dir", type=Path, default=OUT)
     args = parser.parse_args()
     report = build(
@@ -616,7 +650,7 @@ def main() -> int:
         args.europe_fundamentals_input, args.europe_growth_input, args.joby_features_input, args.av_mismatch_input,
         args.lux_aw_rcs_input, args.lux_ax_fundamentals_input, args.lux_be_rcs_input, args.lux_be_fundamentals_input,
         args.lux_be_fund_compartments_input, args.at_bg_input, args.fi_bh_input, args.cboe_bulk_input, args.output_dir,
-        args.us_cboe_secondary_identity_input, args.us_cboe_secondary_features_input,
+        args.us_cboe_secondary_identity_input, args.us_cboe_secondary_features_input, args.ambiguous_disambiguation_input,
     )
     print(json.dumps({k: report[k] for k in ("phase", "companies_total", "overall_coverage_status_counts")}, ensure_ascii=False, sort_keys=True))
     return 0

@@ -50,6 +50,7 @@ def build_with(
     eu_growth_rows=None, joby_features_rows=None, av_mismatch_rows=None, lux_aw_rcs_rows=None, lux_ax_fund_records=None,
     lux_be_rcs_rows=None, lux_be_fund_records=None, lux_be_fund_compartment_records=None, at_bg_rows=None, fi_bh_rows=None,
     cboe_bulk_rows=None, us_cboe_secondary_identity_rows=None, us_cboe_secondary_features_rows=None,
+    ambiguous_disambiguation_rows=None,
 ):
     mod_name = f"coverage_{id(census_rows)}"
     mod = module(SCRIPT, mod_name)
@@ -127,11 +128,15 @@ def build_with(
         fields = ["asset_id"] + mod.US_GROWTH_FIELDS + mod.US_FUNDAMENTAL_RATIO_FIELDS
         write_csv(us_cboe_secondary_features_path, us_cboe_secondary_features_rows, fields)
 
+    ambiguous_disambiguation_path = tmp / "ambiguous_disambiguation.csv"
+    if ambiguous_disambiguation_rows:
+        write_csv(ambiguous_disambiguation_path, ambiguous_disambiguation_rows, ["asset_id", "status", "country"])
+
     report = mod.build(
         census_path, us_fund_path, us_price_path, eu_identity_path, eu_fund_path, eu_growth_path,
         joby_features_path, av_mismatch_path, lux_aw_rcs_path, lux_ax_fund_path, lux_be_rcs_path,
         lux_be_fund_path, lux_be_fund_compartments_path, at_bg_path, fi_bh_path, cboe_bulk_path, tmp / "out",
-        us_cboe_secondary_identity_path, us_cboe_secondary_features_path,
+        us_cboe_secondary_identity_path, us_cboe_secondary_features_path, ambiguous_disambiguation_path,
     )
     with lzma.open(tmp / "out" / "global_coverage_matrix_v2_38al.csv.xz", "rt", encoding="utf-8", newline="") as f:
         rows = {r["asset_id"]: r for r in csv.DictReader(f)}
@@ -261,6 +266,7 @@ def test_missing_input_files_are_skipped_not_errors():
             missing / "joby.csv", missing / "av.csv", missing / "aw.csv", missing / "ax.jsonl", missing / "be_rcs.csv",
             missing / "be_fund.jsonl", missing / "be_fund_compartments.jsonl", missing / "at.csv", missing / "fi.csv", missing / "cboe.csv",
             tmp_path / "out", missing / "us_cboe_secondary_identity.csv", missing / "us_cboe_secondary_features.csv",
+            missing / "ambiguous_disambiguation.csv",
         )
     assert report["companies_total"] == 1
     assert report["overall_coverage_status_counts"] == {"NO_DATA_YET": 1}
@@ -534,6 +540,42 @@ def test_jersey_is_deliberately_not_closed_as_no_disclosure():
     assert row["overall_coverage_status"] == "IDENTITY_ONLY_NO_FUNDAMENTALS_YET"
 
 
+def test_ambiguous_disambiguation_resolved_tier_gets_real_identity():
+    """Real case from the sixteenth reconstruction (2026-09-08): one of
+    v2.38BC's 530 ambiguous companies that v2.38BQ resolved via a single
+    currently-ISSUED GLEIF registration must get real, RESOLVED identity
+    -- the same trust level as any other name-based match already in
+    this matrix."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [census_row("U26", "1VOW3m", "Volkswagen AG", "CBOE_EUROPE", "")],
+            ambiguous_disambiguation_rows=[{"asset_id": "U26", "status": "resolved", "country": "DE"}],
+        )
+    row = rows["U26"]
+    assert row["country"] == "DE"
+    assert row["identity_status"] == "RESOLVED" and row["identity_source"] == "v2.38BQ"
+
+
+def test_ambiguous_disambiguation_narrowed_unconfirmed_never_becomes_identity():
+    """The other real outcome of v2.38BQ (a plausible but NOT
+    independently verified candidate, since the Danone SA case proved
+    this specific heuristic can pick the wrong entity) must never be
+    treated as resolved identity here -- build_ambiguous_disambiguation_
+    index() itself filters on status=='resolved', so a
+    narrowed_unconfirmed row is simply absent from the index and this
+    company stays NO_DATA_YET."""
+    with tempfile.TemporaryDirectory() as tmp:
+        report, rows = build_with(
+            Path(tmp),
+            [census_row("U27", "1BNd", "Danone SA", "CBOE_EUROPE", "")],
+            ambiguous_disambiguation_rows=[{"asset_id": "U27", "status": "narrowed_unconfirmed", "country": "ES"}],
+        )
+    row = rows["U27"]
+    assert row["identity_status"] == "NOT_ATTEMPTED"
+    assert row["overall_coverage_status"] == "NO_DATA_YET"
+
+
 CASES = [
     test_untouched_census_company_is_no_data_yet,
     test_europe_identity_only_reports_confirmed_price_gap_not_unattempted,
@@ -556,6 +598,8 @@ CASES = [
     test_offshore_no_disclosure_country_gets_confirmed_status_not_generic_identity_only,
     test_cayman_offshore_closure_cites_both_az_and_bm,
     test_jersey_is_deliberately_not_closed_as_no_disclosure,
+    test_ambiguous_disambiguation_resolved_tier_gets_real_identity,
+    test_ambiguous_disambiguation_narrowed_unconfirmed_never_becomes_identity,
 ]
 
 

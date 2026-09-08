@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "match_tier_counts": {
+    "tier1_single_issued": 200,
+    "tier2_legal_form_match": 174
+  },
+  "network_used": true,
+  "note": "Only status=resolved (tier1_single_issued) feeds v2.38AL's identity-resolved population. status=narrowed_unconfirmed (tier2_legal_form_match) is real, useful narrowing but NOT identity resolution -- a real, confirmed case (Danone SA) showed this specific heuristic can pick the wrong entity when the true target's own GLEIF registration carries no legal-form suffix at all. Surfaced for manual review, never auto-promoted.",
+  "phase": "v2.38BQ-europe-cboe-ambiguous-disambiguation",
+  "phase9c_authorized": false,
+  "processed_this_run": 130,
+  "ranking_calculated": false,
+  "recommendations_generated": false,
+  "rows_written": 530,
+  "scoring_calculated": false,
+  "status": "COMPLETED_EUROPE_CBOE_AMBIGUOUS_DISAMBIGUATION",
+  "status_counts": {
+    "ambiguous": 156,
+    "narrowed_unconfirmed": 174,
+    "resolved": 200
+  },
+  "total_ambiguous_rows": 530,
+  "unique_keys": 530
+}

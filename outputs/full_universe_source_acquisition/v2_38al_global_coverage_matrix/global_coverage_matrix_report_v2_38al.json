@@ -2,14 +2,15 @@
   "companies_expected_from_census": 43089,
   "companies_total": 43089,
   "identity_status_counts": {
-    "NOT_ATTEMPTED": 38055,
-    "RESOLVED": 5034
+    "NOT_ATTEMPTED": 37855,
+    "RESOLVED": 5234
   },
   "inputs_used": {
     "austria_bf_bg": 40,
     "av_other_bulgaria_liechtenstein_malta": 4,
     "cboe_europe_bulk_bc": 3766,
     "census": "outputs\\full_universe_source_acquisition\\v2_38a_global_universe_audit\\global_universe_audited_v2_38a.csv.xz",
+    "europe_cboe_ambiguous_disambiguation_bq": 200,
     "europe_fundamentals": "outputs\\full_universe_source_acquisition\\v2_38x_europe_candidate_feature_matrix\\europe_fundamental_features_v2_38x.csv",
     "europe_growth": "outputs\\full_universe_source_acquisition\\v2_38ak_europe_growth_features\\europe_growth_features_v2_38ak.csv",
     "europe_identity": "outputs\\full_universe_source_acquisition\\v2_38ab_europe_full_identity_resolution\\europe_full_identity_resolution_xetra_source_matrix_v2_38ab.csv",
@@ -21,7 +22,7 @@
     "us_price": "outputs\\full_universe_source_acquisition\\v2_38h_us_price_features\\us_price_features_v2_38h.csv"
   },
   "network_used": false,
-  "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline. Twelfth reconstruction (2026-09-07): merges everything found while attacking the Cboe Europe gap -- the 25 v2.38AV mismatch assets (5 new countries), Luxembourg's real fundamentals (30 companies across v2.38AW/AX/BE), Austria's and Finland's new identities (v2.38BF/BG/BH), Joby Aviation's real US identity/fundamentals corrected from its Cayman-by-ISIN-prefix classification (v2.38AZ/BA), and the bulk 54-country Cboe Europe identity resolution (v2.38BC) for everything without a more specific source. Two new overall_coverage_status values distinguish a real, confirmed blocker from simply 'not attempted yet': IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY (Luxembourg investment fund compartments) and IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED (Austria's exhausted firmenakte.at quota, Finland's confirmed no-source-for-large-caps finding). Fourteenth reconstruction (2026-09-08): the UK/US front chosen after consolidation closed -- 538 of the 628 country=US Cboe secondary candidates got a real SEC CIK match (v2.38BI, three-tier fail-closed name matching against SEC's own company_tickers_exchange.json) and, from that, real US GAAP fundamentals/growth reusing v2.38F/G unmodified at batch scale (v2.38BK) -- the same methodology already proven on the original 555 companies and individually on Joby Aviation. Fifteenth reconstruction (2026-09-08): closes 6 offshore jurisdictions (Cayman Islands, Bermuda, British Virgin Islands, Guernsey, Marshall Islands, Isle of Man -- 265 companies) with a new terminal status, IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED, confirming a real, structural legal fact per jurisdiction: none of these require an exempted/non-resident company to publicly file financial statements at all. Jersey (45 companies, overwhelmingly real PLCs with a genuine statutory duty to file audited accounts) is deliberately left untouched -- closing it the same way would risk hiding real disclosure that a separate investigation (v2.38BM) left as an open, unresolved question rather than forcing it into either bucket.",
+  "note": "overall_coverage_status follows the identity->fundamentals->growth depth ladder only; price_status is tracked separately and deliberately excluded from that ladder, because Europe's confirmed 0% free price coverage (v2.38AJ) would otherwise make every Europe growth-ready company indistinguishable from one with no data at all. Every one of the census's rows appears exactly once in the output -- this script never drops or excludes a row, unlike every other builder in this pipeline. Twelfth reconstruction (2026-09-07): merges everything found while attacking the Cboe Europe gap -- the 25 v2.38AV mismatch assets (5 new countries), Luxembourg's real fundamentals (30 companies across v2.38AW/AX/BE), Austria's and Finland's new identities (v2.38BF/BG/BH), Joby Aviation's real US identity/fundamentals corrected from its Cayman-by-ISIN-prefix classification (v2.38AZ/BA), and the bulk 54-country Cboe Europe identity resolution (v2.38BC) for everything without a more specific source. Two new overall_coverage_status values distinguish a real, confirmed blocker from simply 'not attempted yet': IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY (Luxembourg investment fund compartments) and IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED (Austria's exhausted firmenakte.at quota, Finland's confirmed no-source-for-large-caps finding). Fourteenth reconstruction (2026-09-08): the UK/US front chosen after consolidation closed -- 538 of the 628 country=US Cboe secondary candidates got a real SEC CIK match (v2.38BI, three-tier fail-closed name matching against SEC's own company_tickers_exchange.json) and, from that, real US GAAP fundamentals/growth reusing v2.38F/G unmodified at batch scale (v2.38BK) -- the same methodology already proven on the original 555 companies and individually on Joby Aviation. Fifteenth reconstruction (2026-09-08): closes 6 offshore jurisdictions (Cayman Islands, Bermuda, British Virgin Islands, Guernsey, Marshall Islands, Isle of Man -- 265 companies) with a new terminal status, IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED, confirming a real, structural legal fact per jurisdiction: none of these require an exempted/non-resident company to publicly file financial statements at all. Jersey (45 companies, overwhelmingly real PLCs with a genuine statutory duty to file audited accounts) is deliberately left untouched -- closing it the same way would risk hiding real disclosure that a separate investigation (v2.38BM) left as an open, unresolved question rather than forcing it into either bucket. Sixteenth reconstruction (2026-09-08): v2.38BQ attacked the 530 companies v2.38BC left 'ambiguous' with a real, two-tier, fail-closed disambiguation against live GLEIF data -- 200 resolved via a single currently-ISSUED registration among the exact-name matches (the same trust level as every other name-based match already in this matrix) are wired in here; 174 more were narrowed to a single plausible candidate via a legal-form-suffix heuristic but deliberately excluded from identity, since a real, confirmed case (Danone SA) showed that specific heuristic can pick the wrong entity when the true target's own GLEIF registration carries no legal-form suffix at all; the remaining 156 stay honestly ambiguous.",
   "overall_coverage_status_counts": {
     "FUNDAMENTALS_PARTIAL_NO_GROWTH_YET": 67,
     "FUNDAMENTALS_READY_NO_GROWTH_YET": 16,
@@ -29,9 +30,9 @@
     "GROWTH_READY": 417,
     "IDENTITY_ONLY_FUNDAMENTALS_BLOCKED_REAL_REASON_CONFIRMED": 167,
     "IDENTITY_ONLY_NOT_AN_OPERATING_COMPANY": 6,
-    "IDENTITY_ONLY_NO_FUNDAMENTALS_YET": 3473,
-    "IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED": 277,
-    "NO_DATA_YET": 38055
+    "IDENTITY_ONLY_NO_FUNDAMENTALS_YET": 3668,
+    "IDENTITY_ONLY_NO_PUBLIC_DISCLOSURE_REQUIRED": 282,
+    "NO_DATA_YET": 37855
   },
   "phase": "v2.38AL-global-coverage-matrix",
   "phase9c_authorized": false,
