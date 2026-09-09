@@ -8,6 +8,7 @@ from urllib.parse import quote
 import pandas as pd
 import streamlit as st
 
+from src.ui_v2_37.global_ranking import load_global_ranking
 from src.ui_v2_37.global_universe import load_global_matrix, rebuild_global_matrix
 from src.ui_v2_37.repository import DataMode, load_fundamentals, load_price_series, load_product_data
 from src.ui_v2_37.reports import DISCLAIMER, asset_markdown, manifest, ranking_markdown, to_html, watchlist_markdown
@@ -19,7 +20,7 @@ st.set_page_config(page_title="Scout Finance — Investigación local", page_ico
 apply(st)
 
 SCREENS = {
-    "home": "🏠 Inicio", "global_universe": "🌍 Universo global (43.089)", "universe": "🌐 Universo",
+    "home": "🏠 Inicio", "global_universe": "🌍 Universo global (43.089)", "global_ranking": "🏆 Ranking global (experimental)", "universe": "🌐 Universo",
     "ranking": "📊 Ranking experimental", "asset": "🔎 Ficha de empresa", "compare": "⚖️ Comparador",
     "watchlist": "⭐ Watchlist", "reports": "📄 Informes", "help": "❓ Metodología y ayuda",
 }
@@ -52,6 +53,18 @@ GLOBAL_UNICORN_STATUS_LABELS = {
     "EVALUATED_NOT_UNICORN": "No — evaluado, no cumple los criterios",
     "INSUFFICIENT_DATA": "Sin datos suficientes para evaluar",
     "": "Sin evaluar (pulsa Actualizar)",
+}
+GLOBAL_RANKING_STATUS_LABELS = {
+    "ELIGIBLE_PARTIAL": "Ranking principal",
+    "PARTIAL_COMPARABILITY": "Comparabilidad parcial (confianza baja)",
+    "REVIEW_REQUIRED": "Revisión requerida",
+    "BLOCKED": "Cobertura real insuficiente",
+    "NOT_YET_SCORED_NO_ADAPTER": "Sin adaptador de datos todavía",
+}
+GLOBAL_RANKING_REVIEW_REASON_LABELS = {
+    "absolute_margin_outside_300pct": "Margen fuera de ±300 % — revisión manual",
+    "financial_institution_requires_separate_factor_contract": "Entidad financiera — necesita un contrato de factores distinto",
+    "no_fundamentals_growth_ratio_adapter_built_yet_for_this_country": "Sin adaptador real de ratios/crecimiento todavía para este país",
 }
 
 
@@ -117,6 +130,11 @@ def product_snapshot():
 @st.cache_data(show_spinner=False)
 def global_matrix_snapshot():
     return load_global_matrix(ROOT)
+
+
+@st.cache_data(show_spinner=False)
+def global_ranking_snapshot():
+    return load_global_ranking(ROOT)
 
 
 @st.cache_data(show_spinner=False)
@@ -242,6 +260,88 @@ def render_global_universe(_data):
         pd.DataFrame(table_rows), use_container_width=True, hide_index=True,
         column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda real de Google para esta empresa — Scout Finance no descarga ni procesa ningún dato de Google, solo te lleva hasta allí para que lo consultes tú.")},
     )
+
+
+def render_global_ranking(_data):
+    heading(st, "Ranking global (experimental)", "Prioridad cuantitativa de investigación sobre el universo elegible (v2.38BO), calculada con el mismo motor real y ya validado del producto de 50 activos — nunca una recomendación de inversión ni una predicción de rentabilidad.")
+    ranking = global_ranking_snapshot()
+    if not ranking.available:
+        st.info(ranking.error)
+        return
+    st.markdown(f'<div class="sf-banner"><strong>Fase 9C — resultado experimental.</strong><br>{DISCLAIMER}</div>', unsafe_allow_html=True)
+    st.caption(f"Última actualización: {ranking.generated_at} (UTC) · {len(ranking.rows):,} empresas evaluadas · sin conexión de red")
+    counts = Counter(row["eligibility_status"] for row in ranking.rows)
+    metric_cols = st.columns(5)
+    metric_cols[0].metric("Ranking principal", f"{counts.get('ELIGIBLE_PARTIAL', 0):,}", help="Confianza HIGH o MEDIUM — cobertura contractual real de al menos el 65% de los factores.")
+    metric_cols[1].metric("Comparabilidad parcial", f"{counts.get('PARTIAL_COMPARABILITY', 0):,}", help="Confianza LOW (50–65% de cobertura real) — puntuado, pero fuera del ranking principal.")
+    metric_cols[2].metric("Revisión requerida", f"{counts.get('REVIEW_REQUIRED', 0):,}", help="Margen real fuera de ±300%, o entidad financiera que necesita un contrato de factores distinto — nunca puntuado.")
+    metric_cols[3].metric("Cobertura insuficiente", f"{counts.get('BLOCKED', 0):,}", help="Menos del 50% real de los factores disponibles — nunca se imputa ni se estima.")
+    metric_cols[4].metric("Sin adaptador todavía", f"{counts.get('NOT_YET_SCORED_NO_ADAPTER', 0):,}", help="Luxemburgo y Reino Unido — sin un adaptador real de ratios/crecimiento construido todavía (v2.38BV).")
+
+    st.markdown("### Ranking principal")
+    countries = sorted({row.get("country", "") for row in ranking.rows if row.get("country")})
+    c1, c2 = st.columns(2)
+    country_filter = c1.multiselect("País", countries, placeholder="Todos", key="global_ranking_country")
+    confidence_filter = c2.multiselect("Confianza", ["HIGH", "MEDIUM"], format_func=lambda value: CONFIDENCE_LABELS.get(value, value), placeholder="Todas", key="global_ranking_confidence")
+    main_ranking = sorted((row for row in ranking.rows if row["eligibility_status"] == "ELIGIBLE_PARTIAL" and row.get("rank")), key=lambda row: row["rank"])
+    filtered_main = [
+        row for row in main_ranking
+        if (not country_filter or row.get("country") in country_filter)
+        and (not confidence_filter or row.get("confidence") in confidence_filter)
+    ]
+    st.caption(f"{len(filtered_main):,} de {len(main_ranking):,} empresas en el ranking principal")
+    main_table = pd.DataFrame([{
+        "Posición": row["rank"], "Ticker": row["ticker"], "Empresa": row["company_name"], "País": row.get("country", ""),
+        "Score": round(row["total_score"], 2), "Confianza": CONFIDENCE_LABELS.get(row["confidence"], row["confidence"]),
+        "Cobertura": f'{row["coverage_weight"] * 100:.0f}%',
+    } for row in filtered_main])
+    st.dataframe(main_table, use_container_width=True, hide_index=True)
+
+    if filtered_main:
+        st.markdown("### Ficha rápida")
+        options = {f'#{row["rank"]} · {row["ticker"]} · {row["company_name"]}': row for row in filtered_main}
+        selected_label = st.selectbox("Selecciona una empresa del ranking principal", options)
+        selected = options[selected_label]
+        detail_cols = st.columns(4)
+        detail_cols[0].metric("Score", f'{selected["total_score"]:.2f}')
+        detail_cols[1].metric("Confianza", CONFIDENCE_LABELS.get(selected["confidence"], selected["confidence"]))
+        detail_cols[2].metric("Cobertura real", f'{selected["coverage_weight"] * 100:.0f}%')
+        detail_cols[3].metric("Posición", f'#{selected["rank"]}')
+        pillar_rows = [{"Pilar": PILLAR_LABELS.get(pillar, pillar), "Puntuación": round(score, 1)} for pillar, score in sorted(selected.get("pillar_scores", {}).items())]
+        if pillar_rows:
+            st.dataframe(pd.DataFrame(pillar_rows), use_container_width=True, hide_index=True)
+        explanation = selected.get("explanation") or {}
+        if explanation:
+            st.caption(explanation.get("summary", ""))
+        st.link_button("Ver en Google Finance", google_finance_search_url(selected["company_name"]))
+        wpath, wdata = select_watchlist()
+        if wdata is None:
+            st.info("Crea una watchlist en la pantalla ⭐ Watchlist antes de añadir empresas desde aquí.")
+        elif st.button(f'Añadir {selected["ticker"]} a "{wdata["name"]}"', key="global_ranking_add_watchlist", type="primary"):
+            try:
+                add(wdata, {"asset_id": selected["asset_id"], "ticker": selected["ticker"], "company_name": selected["company_name"], "market": selected.get("country", "")}, "WATCHLIST", "")
+                atomic_write(wpath, wdata)
+                st.success("Añadida a la watchlist.")
+            except ValueError as exc:
+                st.error(str(exc))
+
+    with st.expander(f"Comparabilidad parcial ({counts.get('PARTIAL_COMPARABILITY', 0):,})"):
+        st.caption("Confianza LOW (50–65% de cobertura real) — puntuadas, pero fuera del ranking principal por baja comparabilidad, nunca excluidas silenciosamente.")
+        partial_rows = sorted((row for row in ranking.rows if row["eligibility_status"] == "PARTIAL_COMPARABILITY"), key=lambda row: -(row["total_score"] or 0))
+        st.dataframe(pd.DataFrame([{"Ticker": row["ticker"], "Empresa": row["company_name"], "País": row.get("country", ""), "Score": round(row["total_score"], 2), "Cobertura": f'{row["coverage_weight"] * 100:.0f}%'} for row in partial_rows]), use_container_width=True, hide_index=True)
+
+    with st.expander(f"Revisión requerida ({counts.get('REVIEW_REQUIRED', 0):,})"):
+        st.caption("Nunca puntuadas con el contrato industrial — un margen real fuera de ±300%, o una entidad financiera que necesita un modelo de factores distinto (mismo criterio que P178 en el producto antiguo).")
+        review_rows = [row for row in ranking.rows if row["eligibility_status"] == "REVIEW_REQUIRED"]
+        st.dataframe(pd.DataFrame([{
+            "Ticker": row["ticker"], "Empresa": row["company_name"], "País": row.get("country", ""),
+            "Motivo": " · ".join(GLOBAL_RANKING_REVIEW_REASON_LABELS.get(reason, reason) for reason in row.get("review_reasons", [])),
+        } for row in review_rows]), use_container_width=True, hide_index=True)
+
+    with st.expander(f"Sin adaptador todavía ({counts.get('NOT_YET_SCORED_NO_ADAPTER', 0):,})"):
+        st.caption("Luxemburgo y Reino Unido — elegibles según v2.38BO, pero v2.38BV todavía no tiene un adaptador real de ratios/crecimiento para ellas. Nunca se les asigna un score inventado.")
+        pending_rows = [row for row in ranking.rows if row["eligibility_status"] == "NOT_YET_SCORED_NO_ADAPTER"]
+        st.dataframe(pd.DataFrame([{"Ticker": row["ticker"], "Empresa": row["company_name"], "País": row.get("country", "")} for row in pending_rows]), use_container_width=True, hide_index=True)
 
 
 def render_universe(data):
@@ -447,7 +547,7 @@ def main():
         st.divider(); st.caption(f"Datos: {data.mode.value}"); st.caption("Fase 7: INSUFFICIENT_EVIDENCE"); st.caption("Sin conexión a broker")
     if data.mode in {DataMode.BLOCKED_MISSING_DATA, DataMode.INCOMPATIBLE_VERSION}:
         render_home(data); st.error("La aplicación queda bloqueada: " + "; ".join(data.errors)); return
-    {"home": render_home, "global_universe": render_global_universe, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "help": render_help}[selected](data)
+    {"home": render_home, "global_universe": render_global_universe, "global_ranking": render_global_ranking, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "help": render_help}[selected](data)
 
 
 if __name__ == "__main__":
