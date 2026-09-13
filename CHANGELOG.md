@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38BX — Phase 9C closure audit (2026-09-13)
+
+Cierra la Fase 9C con una auditoria de solo lectura sobre `v2.38BV` y `v2.38BW`. Verifica los conteos reales del ranking experimental (318/373/124/270/26; 1.111 total), los casos centinela documentados, los guardrails de no red/no broker/no recomendaciones, y que la UI no recalcula scoring ni importa el builder del ranking. No cambia metodologia, pesos ni motor de scoring. 4 pruebas offline nuevas. Detalle en `PHASE9C_CLOSURE_AUDIT_v2_38bx.md`.
+
 ## v2.38BW — Fase 9C bloque 3/3: la pantalla real "Ranking global (experimental)" (2026-09-08)
 
 Lleva el resultado real de `v2.38BV` a la app, como un tercer módulo independiente (`src/ui_v2_37/global_ranking.py`, solo lectura, fail-closed) -- nunca dentro del contrato fijo de 50 activos ni de `global_universe.py` (que se documenta a sí mismo como "never a score or a ranking"). Muestra las 5 métricas reales, el ranking principal filtrable, una ficha rápida por empresa (score, pilares, resumen del motor, enlace a Google Finance) y tres desplegables (comparabilidad parcial, revisión requerida, sin adaptador). Reutiliza sin cambios la watchlist ya existente. Verificado en vivo en el navegador: métricas exactas (318/373/124/270/26), población real reconocible en cada sección, y una empresa nueva añadida de verdad a una watchlist real junto a un activo del producto antiguo, confirmando interoperabilidad. "Ranking experimental" (el antiguo) verificado sin cambios. 4 pruebas offline nuevas. Cierra los tres bloques de la Fase 9C. Detalle en `UI_GLOBAL_RANKING_v2_38bw.md`.

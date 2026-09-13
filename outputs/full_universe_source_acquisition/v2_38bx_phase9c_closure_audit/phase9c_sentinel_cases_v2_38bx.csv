@@ -1,0 +1,6 @@
+case_id,asset_id,ticker,company_name,actual_status,expected_status,actual_rank,expected_rank,actual_score,review_reasons,status
+top_ranked_company,U00597,CGEN,Compugen Ltd. - Ordinary Shares,ELIGIBLE_PARTIAL,ELIGIBLE_PARTIAL,1,1,82.58878751,,PASS
+nvidia_partial_no_price,U15048,NVDd,NVIDIA Corp,PARTIAL_COMPARABILITY,PARTIAL_COMPARABILITY,,,94.32208217,,PASS
+palantir_partial_no_price,U09256,1PLTRm,Palantir Technologies Inc,PARTIAL_COMPARABILITY,PARTIAL_COMPARABILITY,,,91.57309944,,PASS
+american_coastal_financial_review,U00035,ACIC,American Coastal Insurance Corporation - Common Stock,REVIEW_REQUIRED,REVIEW_REQUIRED,,,,financial_institution_requires_separate_factor_contract,PASS
+allegro_luxembourg_no_adapter,U09840,ALEw,Allegro.eu SA,NOT_YET_SCORED_NO_ADAPTER,NOT_YET_SCORED_NO_ADAPTER,,,,no_fundamentals_growth_ratio_adapter_built_yet_for_this_country,PASS

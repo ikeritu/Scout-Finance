@@ -1,0 +1,11 @@
+guardrail,expected,actual,status
+scoring_recomputed,false,false,PASS
+methodology_changed,false,false,PASS
+weights_changed,false,false,PASS
+network_allowed,false,false,PASS
+broker_actions_allowed,false,false,PASS
+financial_advice_allowed,false,false,PASS
+recommendations_allowed,false,false,PASS
+no_positive_advice_language:src/ui_v2_37/global_ranking.py,true,true,PASS
+no_positive_advice_language:app_v2_37.py,true,true,PASS
+no_positive_advice_language:outputs/full_universe_source_acquisition/v2_38bw_ui_global_ranking/UI_GLOBAL_RANKING_v2_38bw.md,true,true,PASS

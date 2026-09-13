@@ -1,0 +1,83 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "ui_recomputes_scoring": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "app_v2_37.py": {
+      "bytes": 38358,
+      "sha256": "157b7031354c2a2d1c191012a2fead0e3a3c12af84c0f13c3bd8ce478564d3d9"
+    },
+    "config/phase9c_closure_audit_contract_v2_38bx.json": {
+      "bytes": 1672,
+      "sha256": "00b31a56b48e364947689f5f47400a48361f08e8c5109ac11a14ac99eb378b01"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_aggregate_report_v2_38bv.json": {
+      "bytes": 2371,
+      "sha256": "4c1db269001f3d67d9ee40e7ab35cad8780d1eb3b76392aa3faf635c314f8279"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json": {
+      "bytes": 2264529,
+      "sha256": "965c5f02426cb0c2901dc497d6d9d67e21cd2fbc4dee27ca4e3cd4544a2f9817"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_v2_38bv.csv": {
+      "bytes": 135880,
+      "sha256": "2733786ad0ac20b96832af283efd29bfbd3b3ddea2c8ed0afd2e3ddee2d0e9a1"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bw_ui_global_ranking/UI_GLOBAL_RANKING_v2_38bw.md": {
+      "bytes": 4993,
+      "sha256": "7ef8148f25c9bfcff093f9c35e7517e3491ba12b04b92bd44342308cce1c8cbe"
+    },
+    "src/ui_v2_37/global_ranking.py": {
+      "bytes": 2212,
+      "sha256": "8fe11c587261bef398a2229e8117fea840a51c2b49b3284207cba09745daefe4"
+    }
+  },
+  "outputs": {
+    "PHASE9C_CLOSURE_AUDIT_v2_38bx.md": {
+      "bytes": 1006,
+      "sha256": "b1a5352b29d19bda4e2a3a671d48b215b2ab4b237e060fd1db1efafd38ee4d59"
+    },
+    "README.md": {
+      "bytes": 263,
+      "sha256": "1b04536b2ab9910a16273b8ca55f6429edda451da49aef720172a63014462853"
+    },
+    "phase9c_closure_audit_summary_v2_38bx.json": {
+      "bytes": 958,
+      "sha256": "42c033a2acfe4090e4c777b7c3ac7dbbd4930197eef585e5d1d63d76701fdb39"
+    },
+    "phase9c_guardrail_audit_v2_38bx.csv": {
+      "bytes": 564,
+      "sha256": "3e1faeda443e58f821175d7392486863d9e1083516536c65756e7f45eb7dd7cc"
+    },
+    "phase9c_population_reconciliation_v2_38bx.csv": {
+      "bytes": 219,
+      "sha256": "a11dc54fa5b1841b1f5413f258e912668ad9e06051947439f0f0f00d4709a321"
+    },
+    "phase9c_sentinel_cases_v2_38bx.csv": {
+      "bytes": 865,
+      "sha256": "8dde3baf3b95850b53990e0ce28c82cf4a421b2f2385c015984fd6b73ee0f8ec"
+    },
+    "phase9c_ui_readonly_audit_v2_38bx.csv": {
+      "bytes": 1147,
+      "sha256": "3efd9b150307cdc6105115c00cbcbb10c6a3afd3c894b26ae6011da10659eb28"
+    }
+  },
+  "phase": "v2.38BX-phase9c-closure-audit",
+  "scripts": [
+    "scripts/build_phase9c_closure_audit_v2_38bx.py"
+  ],
+  "status": "COMPLETED_PHASE9C_CLOSURE_AUDIT_EXPERIMENTAL_RANKING_VERIFIED",
+  "tests": [
+    "tests/qa_phase9c_closure_audit_contract_v2_38bx.py",
+    "tests/qa_phase9c_closure_audit_builder_v2_38bx.py",
+    "tests/qa_phase9c_closure_audit_quality_v2_38bx.py",
+    "tests/qa_phase9c_closure_audit_full_suite_v2_38bx.py"
+  ]
+}
