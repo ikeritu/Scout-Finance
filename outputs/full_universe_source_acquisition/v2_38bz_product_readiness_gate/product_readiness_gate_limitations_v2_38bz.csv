@@ -1,0 +1,9 @@
+limitation_id,description,blocks_local_research_use,blocks_financial_advice_or_broker_use
+experimental_ranking,"Ranking experimental: usable only to prioritize local research, not to make investment decisions.",false,true
+no_out_of_sample_validation,No out-of-sample predictive validation is available for the global ranking.,false,true
+partial_country_coverage,Country coverage is partial and depends on real data adapters already built.,false,true
+missing_adapters,Some jurisdictions remain not yet scored because no real ratios/growth adapter exists.,false,true
+blocked_low_coverage,"Assets with less than contractual coverage remain blocked and visible, never imputed.",false,true
+financial_institutions_pending_contract,Financial institutions require a separate factor contract before scoring.,false,true
+price_coverage_gaps,Some otherwise useful assets lack real price coverage and remain outside the main ranking.,false,true
+no_automatic_recommendations,The surface is not authorized for automatic buy/sell/hold recommendations or broker workflows.,false,true

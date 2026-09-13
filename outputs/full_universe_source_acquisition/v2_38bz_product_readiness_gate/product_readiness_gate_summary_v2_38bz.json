@@ -1,0 +1,33 @@
+{
+  "blocked_count": 270,
+  "broker_actions_allowed": false,
+  "decision": "usable_for_local_research_with_limitations",
+  "financial_advice_created": false,
+  "input_phase_closure_audit": "v2.38BX",
+  "input_phase_scoring": "v2.38BV",
+  "input_phase_ui": "v2.38BW",
+  "input_phase_ux_hardening": "v2.38BY",
+  "limitations_count": 8,
+  "main_ranking_count": 318,
+  "methodology_changed": false,
+  "network_used": false,
+  "next_recommended_phase": "v2.38CA-release-candidate-local-packaging-operator-guide",
+  "not_yet_scored_count": 26,
+  "partial_comparability_count": 373,
+  "phase": "v2.38BZ-product-readiness-gate",
+  "population_counts": {
+    "BLOCKED": 270,
+    "ELIGIBLE_PARTIAL": 318,
+    "NOT_YET_SCORED_NO_ADAPTER": 26,
+    "PARTIAL_COMPARABILITY": 373,
+    "REVIEW_REQUIRED": 124
+  },
+  "qa_status": "PASS",
+  "recommendations_created": false,
+  "review_required_count": 124,
+  "scoring_recomputed": false,
+  "status": "PRODUCT_READINESS_PASS_WITH_LIMITATIONS",
+  "total_assets": 1111,
+  "ui_recomputes_scoring": false,
+  "weights_changed": false
+}

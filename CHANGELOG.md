@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38BZ — Product Readiness Gate (2026-09-14)
+
+Anade una puerta formal de preparacion de producto para la pantalla `Ranking global (experimental)`. Lee `v2.38BV`, `v2.38BX` y `v2.38BY`, verifica los conteos reales (318/373/124/270/26; 1.111 total), la UI minima de producto, las limitaciones explicitas y los guardrails de no red/no scoring nuevo/no metodologia nueva/no recomendaciones/no broker. Decision: `PRODUCT_READINESS_PASS_WITH_LIMITATIONS`; usable como herramienta local de investigacion, no como producto predictivo ni asesor financiero. 2 pruebas offline nuevas. Detalle en `PRODUCT_READINESS_GATE_v2_38bz.md`.
+
 ## v2.38BY — Ranking UX Hardening (2026-09-13)
 
 Endurece la pantalla real `Ranking global (experimental)` sin tocar scoring: busqueda por empresa/ticker/ID/pais, filtros de score y cobertura, Top N, export CSV filtrado, tabs por poblacion y una superficie visible para las 270 empresas `BLOCKED`. Mantiene intactos los conteos reales auditados por `v2.38BX` sobre `v2.38BV`: 318 ranking principal, 373 comparabilidad parcial, 124 revision requerida, 270 cobertura insuficiente, 26 sin adaptador, 1.111 total. Sin red, sin recomputar scores, sin cambios de metodologia/pesos, sin recomendaciones y sin broker. 3 pruebas offline nuevas. Detalle en `RANKING_UX_HARDENING_v2_38by.md`.

@@ -1,0 +1,73 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "ui_recomputes_scoring": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "app_v2_37.py": {
+      "bytes": 46342,
+      "sha256": "8875f1ae2696933c90806a1c897c1e6e20f3e16afdbb2b9ef90d41a50e1a53df"
+    },
+    "config/product_readiness_gate_contract_v2_38bz.json": {
+      "bytes": 2022,
+      "sha256": "43016c122b9d0212abf8c80c010540f1dfcc06ddc1ee443ac8f1695affc8b656"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json": {
+      "bytes": 2264529,
+      "sha256": "965c5f02426cb0c2901dc497d6d9d67e21cd2fbc4dee27ca4e3cd4544a2f9817"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_v2_38bv.csv": {
+      "bytes": 135880,
+      "sha256": "2733786ad0ac20b96832af283efd29bfbd3b3ddea2c8ed0afd2e3ddee2d0e9a1"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bx_phase9c_closure_audit/phase9c_closure_audit_summary_v2_38bx.json": {
+      "bytes": 958,
+      "sha256": "42c033a2acfe4090e4c777b7c3ac7dbbd4930197eef585e5d1d63d76701fdb39"
+    },
+    "outputs/full_universe_source_acquisition/v2_38by_ranking_ux_hardening/ranking_ux_hardening_summary_v2_38by.json": {
+      "bytes": 900,
+      "sha256": "a2f67a2f6252ece241841a9fd7196c787efc8ce5d93f3b483e7fbb43c1f904dd"
+    },
+    "src/ui_v2_37/global_ranking.py": {
+      "bytes": 2212,
+      "sha256": "8fe11c587261bef398a2229e8117fea840a51c2b49b3284207cba09745daefe4"
+    }
+  },
+  "outputs": {
+    "PRODUCT_READINESS_GATE_v2_38bz.md": {
+      "bytes": 991,
+      "sha256": "891d8fbe8de67cb30eae4b5c03600c471d5b4ad49b92b34dfd127e960d704059"
+    },
+    "README.md": {
+      "bytes": 291,
+      "sha256": "6a155ddebf6db4da2d733a53b3a41d842aa13ea79627a876261ade09452cbedc"
+    },
+    "product_readiness_gate_checks_v2_38bz.csv": {
+      "bytes": 4230,
+      "sha256": "0c16170a1a6819a687bbad5445884f8b5a0f25aa8e91812b5fb12619184bafd7"
+    },
+    "product_readiness_gate_limitations_v2_38bz.csv": {
+      "bytes": 1067,
+      "sha256": "b2767c2b9915b030a5c52b88f07f8c7c33ffa345414311779a6bb9ebf85a0d7e"
+    },
+    "product_readiness_gate_summary_v2_38bz.json": {
+      "bytes": 1062,
+      "sha256": "4fb7106669927ec69f3e04adcc8b1e6c282bf06aa97ffecce7497f49015daeef"
+    }
+  },
+  "phase": "v2.38BZ-product-readiness-gate",
+  "scripts": [
+    "scripts/build_product_readiness_gate_v2_38bz.py"
+  ],
+  "status": "PRODUCT_READINESS_PASS_WITH_LIMITATIONS",
+  "tests": [
+    "tests/qa_product_readiness_gate_v2_38bz.py",
+    "tests/qa_product_readiness_gate_full_suite_v2_38bz.py"
+  ]
+}

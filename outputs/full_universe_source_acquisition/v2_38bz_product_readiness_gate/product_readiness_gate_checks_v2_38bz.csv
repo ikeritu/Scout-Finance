@@ -1,0 +1,52 @@
+category,check,expected,actual,target,critical,status
+population,ELIGIBLE_PARTIAL,318,318,,true,PASS
+population,PARTIAL_COMPARABILITY,373,373,,true,PASS
+population,REVIEW_REQUIRED,124,124,,true,PASS
+population,BLOCKED,270,270,,true,PASS
+population,NOT_YET_SCORED_NO_ADAPTER,26,26,,true,PASS
+population,TOTAL,1111,1111,,true,PASS
+upstream,v2_38bx_passed,COMPLETED_PHASE9C_CLOSURE_AUDIT_EXPERIMENTAL_RANKING_VERIFIED,COMPLETED_PHASE9C_CLOSURE_AUDIT_EXPERIMENTAL_RANKING_VERIFIED,,true,PASS
+upstream,v2_38by_passed,COMPLETED_RANKING_UX_HARDENING_READ_ONLY,COMPLETED_RANKING_UX_HARDENING_READ_ONLY,,true,PASS
+ui,feature_present:Ranking global (experimental),present,present,app_v2_37.py,true,PASS
+ui,feature_present:global_ranking_search,present,present,app_v2_37.py,true,PASS
+ui,feature_present:global_ranking_score_range,present,present,app_v2_37.py,true,PASS
+ui,feature_present:global_ranking_coverage_range,present,present,app_v2_37.py,true,PASS
+ui,feature_present:global_ranking_top_n,present,present,app_v2_37.py,true,PASS
+ui,feature_present:Descargar CSV filtrado,present,present,app_v2_37.py,true,PASS
+ui,feature_present:Ficha rápida,present,present,app_v2_37.py,true,PASS
+ui,feature_present:Cobertura insuficiente,present,present,app_v2_37.py,true,PASS
+ui,feature_present:st.tabs,present,present,app_v2_37.py,true,PASS
+ui,feature_present:global_ranking_export_frame,present,present,app_v2_37.py,true,PASS
+ui,copy_present:experimental,present,present,app_v2_37.py,true,PASS
+ui,copy_present:no es asesoramiento financiero,present,present,app_v2_37.py,true,PASS
+ui,copy_present:no estima precios objetivo,present,present,app_v2_37.py,true,PASS
+ui,copy_present:no promete rentabilidad,present,present,app_v2_37.py,true,PASS
+ui,copy_present:no ejecuta operaciones,present,present,app_v2_37.py,true,PASS
+ui,copy_present:no se conecta a brokers,present,present,app_v2_37.py,true,PASS
+guardrail,app_forbidden_token_absent:score_assets(,absent,absent,app_v2_37.py,true,PASS
+guardrail,app_forbidden_token_absent:percentile_scores(,absent,absent,app_v2_37.py,true,PASS
+guardrail,app_forbidden_token_absent:build_raw_factors(,absent,absent,app_v2_37.py,true,PASS
+guardrail,app_forbidden_token_absent:build_global_research_ranking_v2_38bv,absent,absent,app_v2_37.py,true,PASS
+guardrail,app_forbidden_token_absent:requests.,absent,absent,app_v2_37.py,true,PASS
+guardrail,app_forbidden_token_absent:httpx.,absent,absent,app_v2_37.py,true,PASS
+guardrail,app_forbidden_token_absent:urlopen(,absent,absent,app_v2_37.py,true,PASS
+guardrail,app_forbidden_token_absent:subprocess.,absent,absent,app_v2_37.py,true,PASS
+guardrail,app_forbidden_token_absent:os.system(,absent,absent,app_v2_37.py,true,PASS
+guardrail,loader_forbidden_token_absent:score_assets(,absent,absent,src/ui_v2_37/global_ranking.py,true,PASS
+guardrail,loader_forbidden_token_absent:percentile_scores(,absent,absent,src/ui_v2_37/global_ranking.py,true,PASS
+guardrail,loader_forbidden_token_absent:build_raw_factors(,absent,absent,src/ui_v2_37/global_ranking.py,true,PASS
+guardrail,loader_forbidden_token_absent:requests.,absent,absent,src/ui_v2_37/global_ranking.py,true,PASS
+guardrail,loader_forbidden_token_absent:httpx.,absent,absent,src/ui_v2_37/global_ranking.py,true,PASS
+guardrail,loader_forbidden_token_absent:urllib.,absent,absent,src/ui_v2_37/global_ranking.py,true,PASS
+guardrail,loader_forbidden_token_absent:urlopen(,absent,absent,src/ui_v2_37/global_ranking.py,true,PASS
+guardrail,loader_forbidden_token_absent:subprocess.,absent,absent,src/ui_v2_37/global_ranking.py,true,PASS
+guardrail,loader_forbidden_token_absent:os.system(,absent,absent,src/ui_v2_37/global_ranking.py,true,PASS
+guardrail,scoring_recomputed,false,false,,true,PASS
+guardrail,methodology_changed,false,false,,true,PASS
+guardrail,weights_changed,false,false,,true,PASS
+guardrail,network_allowed,false,false,,true,PASS
+guardrail,broker_actions_allowed,false,false,,true,PASS
+guardrail,financial_advice_allowed,false,false,,true,PASS
+guardrail,recommendations_allowed,false,false,,true,PASS
+guardrail,no_positive_advice_language:app_v2_37.py,true,true,app_v2_37.py,true,PASS
+guardrail,no_positive_advice_language:src/ui_v2_37/global_ranking.py,true,true,src/ui_v2_37/global_ranking.py,true,PASS
