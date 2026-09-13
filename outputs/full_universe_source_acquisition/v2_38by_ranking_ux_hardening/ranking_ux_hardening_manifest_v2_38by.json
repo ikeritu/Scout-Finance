@@ -1,0 +1,62 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "ui_recomputes_scoring": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "app_v2_37.py": {
+      "bytes": 46342,
+      "sha256": "8875f1ae2696933c90806a1c897c1e6e20f3e16afdbb2b9ef90d41a50e1a53df"
+    },
+    "config/ranking_ux_hardening_contract_v2_38by.json": {
+      "bytes": 1436,
+      "sha256": "598b793aa44b5e09f715aa44db7e03ed01499d1a0aa769a608ff16c1c9a08e4d"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json": {
+      "bytes": 2264529,
+      "sha256": "965c5f02426cb0c2901dc497d6d9d67e21cd2fbc4dee27ca4e3cd4544a2f9817"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_v2_38bv.csv": {
+      "bytes": 135880,
+      "sha256": "2733786ad0ac20b96832af283efd29bfbd3b3ddea2c8ed0afd2e3ddee2d0e9a1"
+    },
+    "src/ui_v2_37/global_ranking.py": {
+      "bytes": 2212,
+      "sha256": "8fe11c587261bef398a2229e8117fea840a51c2b49b3284207cba09745daefe4"
+    }
+  },
+  "outputs": {
+    "RANKING_UX_HARDENING_v2_38by.md": {
+      "bytes": 866,
+      "sha256": "51aaa723ed48654e33a324464ba26013aca58c85fa58fce2b82ecc57a230feef"
+    },
+    "README.md": {
+      "bytes": 267,
+      "sha256": "9efcf4b508b373f02370c459744abf49e14ca8765216c614a13fd14951e3c6fc"
+    },
+    "ranking_ux_hardening_checks_v2_38by.csv": {
+      "bytes": 2613,
+      "sha256": "0b5dd12f8c2704d5cd361928d21bfe80b778b1c6099c22034204a1f892aa6809"
+    },
+    "ranking_ux_hardening_summary_v2_38by.json": {
+      "bytes": 900,
+      "sha256": "a2f67a2f6252ece241841a9fd7196c787efc8ce5d93f3b483e7fbb43c1f904dd"
+    }
+  },
+  "phase": "v2.38BY-ranking-ux-hardening",
+  "scripts": [
+    "scripts/build_ranking_ux_hardening_v2_38by.py"
+  ],
+  "status": "COMPLETED_RANKING_UX_HARDENING_READ_ONLY",
+  "tests": [
+    "tests/qa_ui_global_ranking_v2_38by.py",
+    "tests/qa_phase9c_ranking_ux_hardening_v2_38by.py",
+    "tests/qa_phase9c_ranking_ux_hardening_full_suite_v2_38by.py"
+  ]
+}

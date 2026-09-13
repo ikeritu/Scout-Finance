@@ -11,8 +11,8 @@
   },
   "inputs": {
     "app_v2_37.py": {
-      "bytes": 38358,
-      "sha256": "157b7031354c2a2d1c191012a2fead0e3a3c12af84c0f13c3bd8ce478564d3d9"
+      "bytes": 46342,
+      "sha256": "8875f1ae2696933c90806a1c897c1e6e20f3e16afdbb2b9ef90d41a50e1a53df"
     },
     "config/phase9c_closure_audit_contract_v2_38bx.json": {
       "bytes": 1672,

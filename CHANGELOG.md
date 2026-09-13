@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38BY — Ranking UX Hardening (2026-09-13)
+
+Endurece la pantalla real `Ranking global (experimental)` sin tocar scoring: busqueda por empresa/ticker/ID/pais, filtros de score y cobertura, Top N, export CSV filtrado, tabs por poblacion y una superficie visible para las 270 empresas `BLOCKED`. Mantiene intactos los conteos reales auditados por `v2.38BX` sobre `v2.38BV`: 318 ranking principal, 373 comparabilidad parcial, 124 revision requerida, 270 cobertura insuficiente, 26 sin adaptador, 1.111 total. Sin red, sin recomputar scores, sin cambios de metodologia/pesos, sin recomendaciones y sin broker. 3 pruebas offline nuevas. Detalle en `RANKING_UX_HARDENING_v2_38by.md`.
+
 ## v2.38BX — Phase 9C closure audit (2026-09-13)
 
 Cierra la Fase 9C con una auditoria de solo lectura sobre `v2.38BV` y `v2.38BW`. Verifica los conteos reales del ranking experimental (318/373/124/270/26; 1.111 total), los casos centinela documentados, los guardrails de no red/no broker/no recomendaciones, y que la UI no recalcula scoring ni importa el builder del ranking. No cambia metodologia, pesos ni motor de scoring. 4 pruebas offline nuevas. Detalle en `PHASE9C_CLOSURE_AUDIT_v2_38bx.md`.
