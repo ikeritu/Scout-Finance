@@ -1,0 +1,72 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "config/user_guide_dummy_friendly_contract_v2_38cc.json": {
+      "bytes": 2459,
+      "sha256": "e442690dd91640c07436daac2eaac5861535439f17de07d37e5d1e86a58c16f4"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bz_product_readiness_gate/product_readiness_gate_summary_v2_38bz.json": {
+      "bytes": 1062,
+      "sha256": "4fb7106669927ec69f3e04adcc8b1e6c282bf06aa97ffecce7497f49015daeef"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ca_release_candidate_local/OPERATOR_GUIDE_LOCAL_v2_38ca.md": {
+      "bytes": 1963,
+      "sha256": "5e026934cae73a3e8805ca6a9f4e46ae340e4e43b6af8311ff6fab6178f8e7d7"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ca_release_candidate_local/release_candidate_local_summary_v2_38ca.json": {
+      "bytes": 1098,
+      "sha256": "a8d30cda2eea8b3cd24c645eb24c1351f294e85d7e9886c235a8c2a9c979544d"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cb_local_startup_validation/LOCAL_STARTUP_TROUBLESHOOTING_v2_38cb.md": {
+      "bytes": 1219,
+      "sha256": "045e70c6e2e588879548f141539e5b12b5c1008d6666869bfbd0907e8b813986"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cb_local_startup_validation/local_startup_validation_summary_v2_38cb.json": {
+      "bytes": 807,
+      "sha256": "d06bc967a631fd0bc6d4921c2b4bda43df6fe1e9bb4cda558a135e7c3b3b5d01"
+    }
+  },
+  "outputs": {
+    "README.md": {
+      "bytes": 251,
+      "sha256": "6dbec817e9f61c9ac4ccaf07195247f547cdc3b6a43ef0a64ac0e101bbf7dc2e"
+    },
+    "USER_GUIDE_DUMMY_FRIENDLY_v2_38cc.md": {
+      "bytes": 3239,
+      "sha256": "dde2c2a298f4427b86913cd10936fa4e364a70524770a26cf2fedd317d7ac5fa"
+    },
+    "USER_GUIDE_FAQ_v2_38cc.md": {
+      "bytes": 2061,
+      "sha256": "9bb40f8ae9417c19d04767415830f3c6ffc60946c2cfc1add9930ddf7b4d17eb"
+    },
+    "USER_GUIDE_QUICK_START_v2_38cc.md": {
+      "bytes": 698,
+      "sha256": "b075e441c85dfee41981b59191b94373f90160f3dc0b70af727fab01e2bcc4e3"
+    },
+    "user_guide_dummy_friendly_checks_v2_38cc.csv": {
+      "bytes": 2653,
+      "sha256": "825403db5c2f0b5a865774aeb2996d95e802ef28c842ba375615ab9071313e19"
+    },
+    "user_guide_dummy_friendly_summary_v2_38cc.json": {
+      "bytes": 713,
+      "sha256": "ddcdfe910ce5c872fd3de6638d25f77ef59a4abbbdfdc2e5752e26fbd84b9b38"
+    }
+  },
+  "phase": "v2.38CC-user-guide-dummy-friendly",
+  "scripts": [
+    "scripts/build_user_guide_dummy_friendly_v2_38cc.py"
+  ],
+  "status": "USER_GUIDE_DUMMY_FRIENDLY_READY",
+  "tests": [
+    "tests/qa_user_guide_dummy_friendly_v2_38cc.py",
+    "tests/qa_user_guide_dummy_friendly_full_suite_v2_38cc.py"
+  ]
+}

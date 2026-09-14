@@ -1,0 +1,23 @@
+{
+  "blocked_count": 270,
+  "broker_actions_allowed": false,
+  "check_count": 45,
+  "faq_created": true,
+  "financial_advice_created": false,
+  "guide_created": true,
+  "main_ranking_count": 318,
+  "methodology_changed": false,
+  "network_used": false,
+  "next_recommended_phase": "v2.38CD-required-outputs-checklist-missing-data-diagnostics",
+  "not_yet_scored_count": 26,
+  "partial_comparability_count": 373,
+  "phase": "v2.38CC-user-guide-dummy-friendly",
+  "qa_status": "PASS",
+  "quick_start_created": true,
+  "recommendations_created": false,
+  "review_required_count": 124,
+  "scoring_recomputed": false,
+  "status": "USER_GUIDE_DUMMY_FRIENDLY_READY",
+  "total_assets": 1111,
+  "weights_changed": false
+}

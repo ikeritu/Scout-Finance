@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38CC — User guide / dummy-friendly guide (2026-09-14)
+
+Crea la guia final de usuario para Scout Finance en lenguaje no tecnico: guia completa, quick start y FAQ. Cubre arranque local, pantallas principales, ranking global experimental, score, confianza, cobertura, estados, filtros, exportacion CSV, Google Finance, watchlists, limitaciones y errores frecuentes heredados de CB. Verifica estados BZ/CA/CB, conteos reales (318/373/124/270/26; 1.111 total) y guardrails. Resultado: `USER_GUIDE_DUMMY_FRIENDLY_READY`. 2 pruebas offline nuevas. Detalle en `USER_GUIDE_DUMMY_FRIENDLY_v2_38cc.md`, `USER_GUIDE_QUICK_START_v2_38cc.md` y `USER_GUIDE_FAQ_v2_38cc.md`.
+
 ## v2.38CB — Local startup/dependency validation (2026-09-14)
 
 Valida el arranque local de la release candidate: contrato CB, builder de diagnostico, parseo de app/loader, inspeccion de `run_local_ui_v2_37.bat`, importabilidad de dependencias criticas, carga real del ranking con 1.111 filas, outputs BV/BX/BY/BZ/CA y troubleshooting de errores comunes. Resultado: `LOCAL_STARTUP_VALIDATED_WITH_ENVIRONMENT_WARNINGS` con 0 fallos y warnings de entorno permitidos. Sin scoring nuevo, sin red, sin recomendaciones ni broker. 2 pruebas offline nuevas. Detalle en `LOCAL_STARTUP_VALIDATION_v2_38cb.md` y `LOCAL_STARTUP_TROUBLESHOOTING_v2_38cb.md`.

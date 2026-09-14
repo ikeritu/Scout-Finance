@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.38CC — User guide / dummy-friendly guide** (`USER_GUIDE_DUMMY_FRIENDLY_READY`): guia de usuario final creada en lenguaje no tecnico, con quick start y FAQ. Explica arranque local, ranking experimental, score/confianza/cobertura, estados, filtros, exportacion, Google Finance, watchlists, limitaciones y troubleshooting heredado de CB. Sin scoring nuevo, sin red, sin recomendaciones, sin broker. Siguiente fase sugerida: `v2.38CD`.
+
 **v2.38CB — Local startup/dependency validation** (`LOCAL_STARTUP_VALIDATED_WITH_ENVIRONMENT_WARNINGS`): validacion reproducible de arranque local. Comprueba `.bat`, dependencias importables, parseo de app/loader, carga real del ranking de 1.111 filas, outputs BV/BX/BY/BZ/CA y guardrails. Crea troubleshooting de errores frecuentes de Windows/PowerShell. Sin scoring nuevo, sin red, sin recomendaciones, sin broker. Siguiente fase sugerida: `v2.38CC` guia de usuario final.
 
 **v2.38CA — Release Candidate / local packaging / operator guide** (`RELEASE_CANDIDATE_LOCAL_READY_WITH_LIMITATIONS`): candidata local preparada con guia de operador, checklist de arranque y diagnostico reproducible. Confirma presencia y coherencia de outputs `v2.38BV`/`BX`/`BY`/`BZ`, mantiene guardrails cerrados y documenta arranque Windows con `run_local_ui_v2_37.bat`. No scoring nuevo, no red, no recomendaciones, no broker. Siguiente fase sugerida: `v2.38CB` validacion local de arranque/dependencias.

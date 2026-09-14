@@ -1,0 +1,46 @@
+check,expected,actual,status
+bz_status,PRODUCT_READINESS_PASS_WITH_LIMITATIONS,PRODUCT_READINESS_PASS_WITH_LIMITATIONS,PASS
+ca_status,RELEASE_CANDIDATE_LOCAL_READY_WITH_LIMITATIONS,RELEASE_CANDIDATE_LOCAL_READY_WITH_LIMITATIONS,PASS
+cb_status,LOCAL_STARTUP_VALIDATED_WITH_ENVIRONMENT_WARNINGS|LOCAL_STARTUP_VALIDATED,LOCAL_STARTUP_VALIDATED_WITH_ENVIRONMENT_WARNINGS,PASS
+quick_start_no_unnegated_advice,true,true,PASS
+faq_no_unnegated_advice,true,true,PASS
+guide_no_unnegated_advice,true,true,PASS
+guide_section:Que es Scout Finance,present,present,PASS
+guide_section:Que no es,present,present,PASS
+guide_section:Arranque rapido,present,present,PASS
+guide_section:Pantallas principales,present,present,PASS
+guide_section:Ranking global experimental,present,present,PASS
+guide_section:Estados,present,present,PASS
+guide_section:Filtros y exportacion,present,present,PASS
+guide_section:Watchlists,present,present,PASS
+guide_section:Limitaciones,present,present,PASS
+guide_section:Errores frecuentes,present,present,PASS
+faq_question:Que es Scout Finance,present,present,PASS
+faq_question:Es una recomendacion de inversion,present,present,PASS
+faq_question:Que significa que el ranking sea experimental,present,present,PASS
+faq_question:Que significa el score,present,present,PASS
+faq_question:Que significa confianza,present,present,PASS
+faq_question:Que significa cobertura,present,present,PASS
+faq_question:Por que algunas empresas estan bloqueadas,present,present,PASS
+faq_question:Por que algunas empresas no tienen adaptador,present,present,PASS
+faq_question:Por que algunas empresas requieren revision,present,present,PASS
+faq_question:Puedo usarlo para decidir comprar o vender,present,present,PASS
+faq_question:Que hago si no arranca,present,present,PASS
+faq_question:Que hago si estoy en C:\Users\ikeri,present,present,PASS
+faq_question:Que hago si falta Streamlit,present,present,PASS
+faq_question:Que hago si el puerto 8501 esta ocupado,present,present,PASS
+faq_question:Que significa Google Finance aqui,present,present,PASS
+faq_question:Que son las watchlists,present,present,PASS
+count:main_ranking_count,318,318,PASS
+count:partial_comparability_count,373,373,PASS
+count:review_required_count,124,124,PASS
+count:blocked_count,270,270,PASS
+count:not_yet_scored_count,26,26,PASS
+count:total_assets,1111,1111,PASS
+guardrail:scoring_recomputed,False,False,PASS
+guardrail:methodology_changed,False,False,PASS
+guardrail:weights_changed,False,False,PASS
+guardrail:network_used,False,False,PASS
+guardrail:financial_advice_created,False,False,PASS
+guardrail:broker_actions_allowed,False,False,PASS
+guardrail:recommendations_created,False,False,PASS
