@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38CI — Freeze candidate version (2026-09-14)
+
+Congela formalmente la release candidate auditada por `v2.38CH`. Genera contrato, builder, matriz de freeze, trazabilidad, summary, manifest con hashes SHA256, reporte Markdown y README de outputs. Resultado: `FREEZE_CANDIDATE_VERSION_LOCKED_WITH_DOCUMENTED_LIMITATIONS`; 43 checks de freeze, 0 fallos, 0 warnings, 0 issues bloqueantes, 14 limitaciones documentadas preservadas y ranking intacto con 1.111 filas y poblaciones 318/373/124/270/26. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones, sin broker y sin publicacion final. 2 pruebas offline nuevas. Detalle en `FREEZE_CANDIDATE_VERSION_v2_38ci.md`.
+
 ## v2.38CH — Release candidate audit (2026-09-14)
 
 Crea la auditoria final de release candidate previa al freeze. Verifica estados de `v2.38CD-v2.38CG`, conteos del ranking real, guardrails, documentacion, trazabilidad, risk register, warnings de entorno, packaging y readiness para congelacion. Resultado: `RELEASE_CANDIDATE_AUDIT_PASS_WITH_DOCUMENTED_LIMITATIONS`; 43 checks de auditoria, 0 fallos, 0 issues bloqueantes, 14 limitaciones documentadas y ranking intacto con 1.111 filas y poblaciones 318/373/124/270/26. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones, sin broker y sin publicacion final. 2 pruebas offline nuevas. Detalle en `RELEASE_CANDIDATE_AUDIT_v2_38ch.md`.

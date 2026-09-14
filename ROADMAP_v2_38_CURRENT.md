@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.38CH cerrada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.38CI cerrada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.38CH: add release candidate audit`
+`LOCAL_COMMIT_PENDING_PUSH v2.38CI: freeze candidate version`
 
 Estado operativo del producto:
 
-`RELEASE_CANDIDATE_AUDIT_PASS_WITH_DOCUMENTED_LIMITATIONS`
+`FREEZE_CANDIDATE_VERSION_LOCKED_WITH_DOCUMENTED_LIMITATIONS`
 
 ## Checklist General
 
@@ -48,13 +48,13 @@ Estado operativo del producto:
 | Completada | v2.38CF | Streamlit visual smoke test |
 | Completada | v2.38CG | Limitations backlog / product risk register |
 | Completada | v2.38CH | Release candidate audit |
+| Completada | v2.38CI | Freeze candidate version |
 
 ## Pendiente Para Completar El Ciclo Local
 
 | Estado | Fase | Objetivo | Criterio de cierre |
 | --- | --- | --- | --- |
-| Pendiente | v2.38CI | Freeze candidate version | Congelacion de version candidata con hash, artefactos esperados y no-go criteria. |
-| Pendiente | v2.38CJ | Final operational publication | Publicacion operativa final de la rama/version con guia de ejecucion, estado y pendientes no bloqueantes. |
+| Pendiente | v2.38CJ | Final operational publication / release handoff | Publicacion operativa final de la rama/version con guia de ejecucion, estado y pendientes no bloqueantes. |
 
 ## Pendientes Estructurales Conocidos
 
@@ -72,6 +72,6 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.38CI: Freeze candidate version`
+`v2.38CJ: Final operational publication / release handoff`
 
-Objetivo recomendado: congelar la version candidata con hash, artefactos esperados, criterios no-go y estado reproducible.
+Objetivo recomendado: preparar el handoff final de la release candidate congelada, declarar estado operativo, guia de ejecucion y pendientes no bloqueantes sin cambiar scoring, ranking, metodologia ni pesos.

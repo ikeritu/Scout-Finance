@@ -13,20 +13,20 @@
   },
   "inputs": {
     "CHANGELOG.md": {
-      "bytes": 165149,
-      "sha256": "ed90a82608740215f0d135a8c6bbf27ff74518add1e41ff09972ff4e8a38c134"
+      "bytes": 165881,
+      "sha256": "5d64d264ffcfa4f08b2af86d0c958bb2a441c09b16a24e041f3238c897f6e20b"
     },
     "README.md": {
-      "bytes": 66382,
-      "sha256": "72c34824b49071f6873ec73f2dd4ec48dafb842c318b4d4e766c7e12c301b065"
+      "bytes": 66989,
+      "sha256": "a74e568064b6f2cb6e92707a93c9e7ea9917e8a57364ae0cd5884650c957cff1"
     },
     "ROADMAP_v2_38_CURRENT.md": {
-      "bytes": 3829,
-      "sha256": "dbf005c26b2289af5d795f9807764f13432593059fb2ba0d7e6c0d7ec048c79b"
+      "bytes": 3872,
+      "sha256": "72a578f366c83f935cb22ec72bb201be5ca0a1b390ee1f59bdd26234735ee0ba"
     },
     "VERSION.md": {
-      "bytes": 145428,
-      "sha256": "0ca92d8c402df3aab1c08bf7e1895a3cae57ea74c574029b55f306f40b284ec1"
+      "bytes": 145990,
+      "sha256": "943d76d26c7e127ae3a31d16c63121cfa32e6d2c7aad68461c85d48288141a0e"
     },
     "config/release_candidate_audit_contract_v2_38ch.json": {
       "bytes": 1212,
@@ -42,7 +42,7 @@
     },
     "outputs/full_universe_source_acquisition/v2_38ce_windows_reproducible_packaging/windows_reproducible_packaging_summary_v2_38ce.json": {
       "bytes": 781,
-      "sha256": "91e4759bc0371c97c16d0c1a78ddf6ffbde3937513ed1c7fca36c198cbb352f1"
+      "sha256": "63c5755d6fa616f72c1fe795c269701beedcf192573f400e38983ffe22a9cc95"
     },
     "outputs/full_universe_source_acquisition/v2_38cf_streamlit_visual_smoke_test/streamlit_visual_smoke_test_summary_v2_38cf.json": {
       "bytes": 1107,

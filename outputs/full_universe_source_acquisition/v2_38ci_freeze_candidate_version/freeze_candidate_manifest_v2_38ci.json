@@ -1,0 +1,75 @@
+{
+  "created_at_utc": "2026-09-14T11:37:19Z",
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "datasets_mutated": false,
+    "final_publication_declared": false,
+    "financial_advice_created": false,
+    "methodology_changed": false,
+    "network_allowed": false,
+    "network_used": false,
+    "ranking_changed": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "ui_changed": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "config/freeze_candidate_version_contract_v2_38ci.json": {
+      "bytes": 1121,
+      "sha256": "37e5d8a853bf7c39f56bd31446eb3ab8024cfbf2701b7d671af5c3b529a2ca8d"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ch_release_candidate_audit/RELEASE_CANDIDATE_AUDIT_v2_38ch.md": {
+      "bytes": 1125,
+      "sha256": "61d8b40e636d58eb1367dec36684dc77e15b3cbc1eff787a32b57cd771435ecc"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ch_release_candidate_audit/release_candidate_audit_manifest_v2_38ch.json": {
+      "bytes": 3760,
+      "sha256": "ad1e5b5ddace2146f735b04556c4f670c8be056af856a0c5249875c68566f846"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ch_release_candidate_audit/release_candidate_audit_matrix_v2_38ch.csv": {
+      "bytes": 9079,
+      "sha256": "bb4e3eed7cfe101520143d5ef6ff28d5d28d555265839c2dd4d1e0ed75cdcfde"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ch_release_candidate_audit/release_candidate_audit_summary_v2_38ch.json": {
+      "bytes": 933,
+      "sha256": "f23e4a7b6e5f77e1e8d05205fe6f831e64ecf79f0be3e77856b75f52212c48f8"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ch_release_candidate_audit/release_candidate_traceability_v2_38ch.csv": {
+      "bytes": 1845,
+      "sha256": "16a590d67cb87eb4da0dfcb37f3922844d2e386c1cdb15b786effbe8cf7c0cd0"
+    }
+  },
+  "next_recommended_phase": "v2.38CJ-release-handoff",
+  "outputs": {
+    "FREEZE_CANDIDATE_VERSION_v2_38ci.md": {
+      "bytes": 1033,
+      "sha256": "b842629ded7dc580f1939530b081759ac50d0cad429c832218784e1b40293f02"
+    },
+    "README.md": {
+      "bytes": 202,
+      "sha256": "6bf2aaa5084480b01f3489129083f4753628de5a8b3790616d78c75f757c9bfe"
+    },
+    "freeze_candidate_matrix_v2_38ci.csv": {
+      "bytes": 8767,
+      "sha256": "c20e960b411e14cb5d1feb7e4bb8df93e8f14b7d25283217ff22a0a829f33736"
+    },
+    "freeze_candidate_summary_v2_38ci.json": {
+      "bytes": 1057,
+      "sha256": "a98083e316057e628df3b74f38f962dbed214951379f7b4cf571efbdbe01dd77"
+    },
+    "freeze_candidate_traceability_v2_38ci.csv": {
+      "bytes": 2013,
+      "sha256": "3a41a096de19220bdf0161667dd757daf4882e9114e945804d4f317c912d5236"
+    }
+  },
+  "phase": "v2.38CI-freeze-candidate-version",
+  "scripts": [
+    "scripts/build_freeze_candidate_version_v2_38ci.py"
+  ],
+  "status": "FREEZE_CANDIDATE_VERSION_LOCKED_WITH_DOCUMENTED_LIMITATIONS",
+  "tests": [
+    "tests/qa_freeze_candidate_version_v2_38ci.py",
+    "tests/qa_freeze_candidate_version_full_suite_v2_38ci.py"
+  ]
+}

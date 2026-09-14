@@ -1,0 +1,38 @@
+{
+  "phase": "v2.38CI-freeze-candidate-version",
+  "source_phase": "v2.38CH-release-candidate-audit",
+  "required_source_status": "RELEASE_CANDIDATE_AUDIT_PASS_WITH_DOCUMENTED_LIMITATIONS",
+  "target_status": "FREEZE_CANDIDATE_VERSION_LOCKED_WITH_DOCUMENTED_LIMITATIONS",
+  "allowed_input_phases": [
+    "v2.38CH",
+    "v2.38CG",
+    "v2.38CF",
+    "v2.38CE",
+    "v2.38CD",
+    "v2.38BW",
+    "v2.38BV"
+  ],
+  "expected_ranking_counts": {
+    "ranking_total": 1111,
+    "ranking_main_count": 318,
+    "ranking_partial_count": 373,
+    "ranking_review_required_count": 124,
+    "ranking_blocked_count": 270,
+    "ranking_no_adapter_count": 26
+  },
+  "guardrails": {
+    "network_allowed": false,
+    "network_used": false,
+    "scoring_recomputed": false,
+    "weights_changed": false,
+    "ranking_changed": false,
+    "methodology_changed": false,
+    "datasets_mutated": false,
+    "ui_changed": false,
+    "financial_advice_created": false,
+    "recommendations_created": false,
+    "broker_actions_allowed": false,
+    "final_publication_declared": false
+  },
+  "next_recommended_phase": "v2.38CJ-release-handoff"
+}
