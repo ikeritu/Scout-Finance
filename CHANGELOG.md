@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38CJ — Final operational publication / release handoff (2026-09-14)
+
+Cierra el ciclo local v2.38 con un handoff operativo final dentro del repositorio. Genera contrato, builder, matriz final de handoff, checklist operativo, summary, manifest con hashes SHA256, reporte Markdown y README de outputs. Resultado: `FINAL_OPERATIONAL_PUBLICATION_READY_WITH_DOCUMENTED_LIMITATIONS`; cycle status `V2_38_LOCAL_CYCLE_CLOSED`; 34 checks de handoff, 12 pasos operativos, 0 fallos, 0 warnings, 0 bloqueantes, 14 limitaciones documentadas y ranking intacto con 1.111 filas y poblaciones 318/373/124/270/26. Publicacion operativa local solo como herramienta de investigacion: sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI nueva, sin recomendaciones financieras y sin broker. 2 pruebas offline nuevas. Detalle en `FINAL_OPERATIONAL_PUBLICATION_v2_38cj.md`.
+
 ## v2.38CI — Freeze candidate version (2026-09-14)
 
 Congela formalmente la release candidate auditada por `v2.38CH`. Genera contrato, builder, matriz de freeze, trazabilidad, summary, manifest con hashes SHA256, reporte Markdown y README de outputs. Resultado: `FREEZE_CANDIDATE_VERSION_LOCKED_WITH_DOCUMENTED_LIMITATIONS`; 43 checks de freeze, 0 fallos, 0 warnings, 0 issues bloqueantes, 14 limitaciones documentadas preservadas y ranking intacto con 1.111 filas y poblaciones 318/373/124/270/26. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones, sin broker y sin publicacion final. 2 pruebas offline nuevas. Detalle en `FREEZE_CANDIDATE_VERSION_v2_38ci.md`.

@@ -1,0 +1,102 @@
+{
+  "completion_marker": "v2.38-local-cycle-complete",
+  "created_at_utc": "2026-09-14T12:26:06Z",
+  "cycle_status": "V2_38_LOCAL_CYCLE_CLOSED",
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "datasets_mutated": false,
+    "final_publication_declared": true,
+    "financial_advice_created": false,
+    "methodology_changed": false,
+    "network_allowed": false,
+    "network_used": false,
+    "ranking_changed": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "ui_changed": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "config/final_operational_publication_contract_v2_38cj.json": {
+      "bytes": 1384,
+      "sha256": "9fa62138eedadd81312c71495efd4eaa0cfc477534371315047077dd33329812"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ca_release_candidate_local/OPERATOR_GUIDE_LOCAL_v2_38ca.md": {
+      "bytes": 1963,
+      "sha256": "5e026934cae73a3e8805ca6a9f4e46ae340e4e43b6af8311ff6fab6178f8e7d7"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cc_user_guide_dummy_friendly/USER_GUIDE_DUMMY_FRIENDLY_v2_38cc.md": {
+      "bytes": 3239,
+      "sha256": "dde2c2a298f4427b86913cd10936fa4e364a70524770a26cf2fedd317d7ac5fa"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ce_windows_reproducible_packaging/windows_reproducible_packaging_summary_v2_38ce.json": {
+      "bytes": 781,
+      "sha256": "ad1bbd8bd69d0ff9e9705c7f6fdbcbe06599aaf23c58bab40825b65ab141f0dd"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cf_streamlit_visual_smoke_test/streamlit_visual_smoke_test_summary_v2_38cf.json": {
+      "bytes": 1107,
+      "sha256": "5de62baa62b6e3df326dbcb3c8fcd521e3d38b3192141bcc3c7946cb48feb3a8"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cg_limitations_backlog_product_risk_register/product_risk_register_v2_38cg.csv": {
+      "bytes": 5924,
+      "sha256": "f35d9e38261de65ae10dcfd7a8490ceae4079d1ec102cb3d32037afb4865b95a"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ch_release_candidate_audit/release_candidate_audit_summary_v2_38ch.json": {
+      "bytes": 933,
+      "sha256": "f23e4a7b6e5f77e1e8d05205fe6f831e64ecf79f0be3e77856b75f52212c48f8"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ci_freeze_candidate_version/FREEZE_CANDIDATE_VERSION_v2_38ci.md": {
+      "bytes": 1033,
+      "sha256": "b842629ded7dc580f1939530b081759ac50d0cad429c832218784e1b40293f02"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ci_freeze_candidate_version/freeze_candidate_manifest_v2_38ci.json": {
+      "bytes": 2997,
+      "sha256": "5e0f559cb50583f178c7d4c5f6788c5621879720b798a5f8b32f4990859f9756"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ci_freeze_candidate_version/freeze_candidate_matrix_v2_38ci.csv": {
+      "bytes": 8767,
+      "sha256": "c20e960b411e14cb5d1feb7e4bb8df93e8f14b7d25283217ff22a0a829f33736"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ci_freeze_candidate_version/freeze_candidate_summary_v2_38ci.json": {
+      "bytes": 1057,
+      "sha256": "a98083e316057e628df3b74f38f962dbed214951379f7b4cf571efbdbe01dd77"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ci_freeze_candidate_version/freeze_candidate_traceability_v2_38ci.csv": {
+      "bytes": 2013,
+      "sha256": "c1a369d2384a97ad622f04caacb71abd04a4c194ffc31af74ae457972d060caf"
+    }
+  },
+  "next_recommended_phase": "POST_V2_38_DECISION",
+  "outputs": {
+    "FINAL_OPERATIONAL_PUBLICATION_v2_38cj.md": {
+      "bytes": 2368,
+      "sha256": "f5222ad079a9d287dfd05b4662691046af63950cc753e6cc1594c55f0776a2ca"
+    },
+    "README.md": {
+      "bytes": 224,
+      "sha256": "2c2da0416351daa37c49dcc236745bd416d46accb7262d5523b4609762aadca5"
+    },
+    "final_handoff_matrix_v2_38cj.csv": {
+      "bytes": 6446,
+      "sha256": "85dbeaad779a7c0a7a8e7b29ff751516a3c094701033e8f1547ec5c2d8a90a38"
+    },
+    "final_operational_checklist_v2_38cj.csv": {
+      "bytes": 1158,
+      "sha256": "4cbb4878498010a7f1de61e2443809539b64540de9b68f3fd2285f29e298315a"
+    },
+    "final_operational_publication_summary_v2_38cj.json": {
+      "bytes": 1219,
+      "sha256": "7f4ede1e8994da4b6dbec4a0eedd7f0e8118410e39283df00dcdb5470e4663af"
+    }
+  },
+  "phase": "v2.38CJ-final-operational-publication",
+  "publication_scope": "local_research_tool_only",
+  "scripts": [
+    "scripts/build_final_operational_publication_v2_38cj.py"
+  ],
+  "status": "FINAL_OPERATIONAL_PUBLICATION_READY_WITH_DOCUMENTED_LIMITATIONS",
+  "tests": [
+    "tests/qa_final_operational_publication_v2_38cj.py",
+    "tests/qa_final_operational_publication_full_suite_v2_38cj.py"
+  ]
+}

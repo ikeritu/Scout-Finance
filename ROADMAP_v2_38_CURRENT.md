@@ -1,14 +1,18 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.38CI cerrada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.38CJ cerrada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.38CI: freeze candidate version`
+`LOCAL_COMMIT_PENDING_PUSH v2.38CJ: add final operational publication handoff`
 
 Estado operativo del producto:
 
-`FREEZE_CANDIDATE_VERSION_LOCKED_WITH_DOCUMENTED_LIMITATIONS`
+`FINAL_OPERATIONAL_PUBLICATION_READY_WITH_DOCUMENTED_LIMITATIONS`
+
+Cycle status:
+
+`V2_38_LOCAL_CYCLE_CLOSED`
 
 ## Checklist General
 
@@ -49,12 +53,13 @@ Estado operativo del producto:
 | Completada | v2.38CG | Limitations backlog / product risk register |
 | Completada | v2.38CH | Release candidate audit |
 | Completada | v2.38CI | Freeze candidate version |
+| Completada | v2.38CJ | Final operational publication / release handoff |
 
 ## Pendiente Para Completar El Ciclo Local
 
 | Estado | Fase | Objetivo | Criterio de cierre |
 | --- | --- | --- | --- |
-| Pendiente | v2.38CJ | Final operational publication / release handoff | Publicacion operativa final de la rama/version con guia de ejecucion, estado y pendientes no bloqueantes. |
+| Cerrado | Ninguna | Ciclo local v2.38 completado | `V2_38_LOCAL_CYCLE_CLOSED`. |
 
 ## Pendientes Estructurales Conocidos
 
@@ -70,8 +75,8 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 ## Siguiente Fase Recomendada
 
-La siguiente fase es:
+La siguiente decision es:
 
-`v2.38CJ: Final operational publication / release handoff`
+`POST_V2_38_DECISION`
 
-Objetivo recomendado: preparar el handoff final de la release candidate congelada, declarar estado operativo, guia de ejecucion y pendientes no bloqueantes sin cambiar scoring, ranking, metodologia ni pesos.
+Objetivo recomendado: decidir si el proyecto entra en uso local observado, publicacion externa controlada, nueva fase de datos, hardening tecnico adicional o congelacion estable sin mas cambios inmediatos.

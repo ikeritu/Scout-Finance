@@ -1,0 +1,13 @@
+step_id,operator_step,command_or_action,requirement_level,status
+01,Enter the local repository,"cd ""D:\Proyectos\Scout Finance""",Required,READY
+02,Confirm the branch,git status on phase9b-global-enrichment-v2-38b,Required,READY
+03,Install dependencies,pip install -r requirements.txt,Required when environment is new,READY
+04,Optionally run freeze QA,python tests/qa_freeze_candidate_version_full_suite_v2_38ci.py,Optional verification,READY
+05,Optionally run final handoff QA,python tests/qa_final_operational_publication_v2_38cj.py,Optional verification,READY
+06,Start the local app,run_local_ui_v2_37.bat,Required,READY
+07,Open Streamlit,http://localhost:8501,Required,READY
+08,Open Global experimental ranking,Use the Ranking global experimental screen,Required,READY
+09,Review limitations,Read v2.38CG and v2.38CJ reports before interpretation,Required,READY
+10,Export CSV when needed,Use the filtered export as a research artifact only,Optional,READY
+11,Keep scope clear,"Treat outputs as local research, not financial advice",Required,READY
+12,Do not use broker workflows,No automated trading or broker action is part of this release,Required,READY

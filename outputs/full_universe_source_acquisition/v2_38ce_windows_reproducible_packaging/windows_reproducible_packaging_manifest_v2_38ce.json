@@ -23,20 +23,20 @@
   },
   "included_files": {
     "CHANGELOG.md": {
-      "bytes": 165881,
-      "sha256": "5d64d264ffcfa4f08b2af86d0c958bb2a441c09b16a24e041f3238c897f6e20b"
+      "bytes": 166776,
+      "sha256": "7a74bb187c1bd41fe33e8748d90d949a9372b373483c30fa55b8a07f708d1985"
     },
     "README.md": {
-      "bytes": 66989,
-      "sha256": "a74e568064b6f2cb6e92707a93c9e7ea9917e8a57364ae0cd5884650c957cff1"
+      "bytes": 67721,
+      "sha256": "697a6460a7c82f9af0b7b5b76841a5ddb57b6f5f2304c60cf12339586085b558"
     },
     "ROADMAP_v2_38_CURRENT.md": {
-      "bytes": 3872,
-      "sha256": "72a578f366c83f935cb22ec72bb201be5ca0a1b390ee1f59bdd26234735ee0ba"
+      "bytes": 3877,
+      "sha256": "fce77fc793aa9c3b2bbebcb68eb50acf3402111681987c8c38a5ad39e17a40b1"
     },
     "VERSION.md": {
-      "bytes": 145990,
-      "sha256": "943d76d26c7e127ae3a31d16c63121cfa32e6d2c7aad68461c85d48288141a0e"
+      "bytes": 146651,
+      "sha256": "200ecc1d097d2cdefe235ab717b63faf8479a87d967f8119fa00605f7f871675"
     },
     "app_v2_37.py": {
       "bytes": 46342,
@@ -146,7 +146,7 @@
     },
     "WINDOWS_REPRODUCIBLE_PACKAGING_v2_38ce.md": {
       "bytes": 1457,
-      "sha256": "d99b66f73c5d3d9ddea0a69dde66be3913bd1fdfd37125c8cad01ca70516d40c"
+      "sha256": "9c81a11b5ebd48534066287a21c85e3ff704238fa787cae08724661af957df67"
     },
     "windows_reproducible_packaging_checklist_v2_38ce.csv": {
       "bytes": 2316,
@@ -154,7 +154,7 @@
     },
     "windows_reproducible_packaging_summary_v2_38ce.json": {
       "bytes": 781,
-      "sha256": "63c5755d6fa616f72c1fe795c269701beedcf192573f400e38983ffe22a9cc95"
+      "sha256": "ad1bbd8bd69d0ff9e9705c7f6fdbcbe06599aaf23c58bab40825b65ab141f0dd"
     }
   },
   "packaging_mode": "manifest_based_reproducible_packaging",
@@ -170,6 +170,6 @@
     "tests/qa_windows_reproducible_packaging_v2_38ce.py",
     "tests/qa_windows_reproducible_packaging_full_suite_v2_38ce.py"
   ],
-  "total_bytes": 3725921,
+  "total_bytes": 3728214,
   "total_files_in_package": 28
 }
