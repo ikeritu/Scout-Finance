@@ -1,0 +1,35 @@
+{
+  "phase": "v2.39A-stable-release-tag",
+  "source_phase": "v2.38CJ-final-operational-publication",
+  "required_source_status": "FINAL_OPERATIONAL_PUBLICATION_READY_WITH_DOCUMENTED_LIMITATIONS",
+  "required_cycle_status": "V2_38_LOCAL_CYCLE_CLOSED",
+  "target_status": "STABLE_RELEASE_TAG_READY",
+  "stable_tag": "v2.38CJ-local-stable",
+  "release_name": "Scout Finance v2.38CJ Local Stable",
+  "source_branch": "phase9b-global-enrichment-v2-38b",
+  "source_commit": "56e773b",
+  "publication_scope": "local_research_tool_only",
+  "tag_push_requires_user_confirmation": true,
+  "expected_ranking_counts": {
+    "ranking_total": 1111,
+    "ranking_main_count": 318,
+    "ranking_partial_count": 373,
+    "ranking_review_required_count": 124,
+    "ranking_blocked_count": 270,
+    "ranking_no_adapter_count": 26
+  },
+  "guardrails": {
+    "network_allowed": false,
+    "network_used": false,
+    "scoring_recomputed": false,
+    "weights_changed": false,
+    "ranking_changed": false,
+    "methodology_changed": false,
+    "datasets_mutated": false,
+    "ui_changed": false,
+    "financial_advice_created": false,
+    "recommendations_created": false,
+    "broker_actions_allowed": false
+  },
+  "next_recommended_phase": "v2.39B-public-documentation-cleanup"
+}

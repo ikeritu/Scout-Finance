@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.38CJ cerrada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.39A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.38CJ: add final operational publication handoff`
+`LOCAL_COMMIT_PENDING_PUSH v2.39A: prepare stable release tag`
 
 Estado operativo del producto:
 
-`FINAL_OPERATIONAL_PUBLICATION_READY_WITH_DOCUMENTED_LIMITATIONS`
+`STABLE_RELEASE_TAG_READY`
 
 Cycle status:
 
@@ -54,6 +54,7 @@ Cycle status:
 | Completada | v2.38CH | Release candidate audit |
 | Completada | v2.38CI | Freeze candidate version |
 | Completada | v2.38CJ | Final operational publication / release handoff |
+| Completada | v2.39A | Stable release tag metadata |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -75,8 +76,31 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 ## Siguiente Fase Recomendada
 
-La siguiente decision es:
+La siguiente fase es:
 
-`POST_V2_38_DECISION`
+`v2.39B: Public documentation cleanup`
 
-Objetivo recomendado: decidir si el proyecto entra en uso local observado, publicacion externa controlada, nueva fase de datos, hardening tecnico adicional o congelacion estable sin mas cambios inmediatos.
+Objetivo recomendado: limpiar documentacion publica, rutas locales, mensajes de release y referencias internas para dejar el proyecto presentable sin tocar scoring, ranking, metodologia ni pesos.
+
+## Roadmap Reducido Post-v2.38
+
+| Estado | Fase | Objetivo |
+| --- | --- | --- |
+| Completada | v2.39A | Stable release tag del cierre v2.38CJ |
+| Pendiente | v2.39B | Limpieza final publica: README, VERSION, CHANGELOG, roadmap y rutas locales |
+| Pendiente | v2.39C | Auditoria de seguridad: secretos, archivos sensibles, rutas personales y outputs accidentales |
+| Pendiente | v2.39D | Validacion de instalacion desde cero en Windows |
+| Pendiente | v2.39E | Paquete reproducible final y GitHub release assets |
+| Pendiente | v2.39F | Smoke test real post-release local |
+| Pendiente | v2.40A | Decision de publicacion: local-only, privada, demo publica o despliegue controlado |
+| Pendiente | v2.40B | Preparacion Streamlit Cloud / hosting externo seguro |
+| Pendiente | v2.40C | Modo demo seguro sin datos sensibles ni escritura peligrosa |
+| Pendiente | v2.40D | Publicacion externa controlada y QA post-publicacion |
+| Pendiente | v2.41A | Priorizacion final de gaps de datos: Europa, Reino Unido, Cboe, Luxemburgo y manual review |
+| Pendiente | v2.41B | Adaptador Luxemburgo para scoring o cierre documentado |
+| Pendiente | v2.41C | Decision Reino Unido / Cboe Europe / manual reviews |
+| Pendiente | v2.41D | Cobertura y limitaciones finales por pais, fuente y poblacion |
+| Pendiente | v2.42A | Hardening UX final: ranking, filtros, exportaciones, errores y estados vacios |
+| Pendiente | v2.42B | Pagina final dentro de la app: guia, limitaciones, no-advice y uso responsable |
+| Pendiente | v2.43A | Auditoria final consolidada: tests, reproducibilidad, legal, seguridad y rendimiento |
+| Pendiente | v2.44A | Release final estable y project closure report |

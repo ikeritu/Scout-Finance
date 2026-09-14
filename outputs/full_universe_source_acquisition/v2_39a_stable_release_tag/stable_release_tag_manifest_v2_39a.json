@@ -1,0 +1,64 @@
+{
+  "created_at_utc": "2026-09-14T19:55:39Z",
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "datasets_mutated": false,
+    "financial_advice_created": false,
+    "methodology_changed": false,
+    "network_allowed": false,
+    "network_used": false,
+    "ranking_changed": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "ui_changed": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "config/stable_release_tag_contract_v2_39a.json": {
+      "bytes": 1260,
+      "sha256": "40fe2f4d553ac6e107ceeb118e60449ef0c278dfdb0aa562dcb4383e508dfc6e"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cj_final_operational_publication/FINAL_OPERATIONAL_PUBLICATION_v2_38cj.md": {
+      "bytes": 2368,
+      "sha256": "f5222ad079a9d287dfd05b4662691046af63950cc753e6cc1594c55f0776a2ca"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cj_final_operational_publication/final_operational_publication_manifest_v2_38cj.json": {
+      "bytes": 4605,
+      "sha256": "a624671c099177d266c047e60379e112e2aaa08b750d28b62812f02a724cce92"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cj_final_operational_publication/final_operational_publication_summary_v2_38cj.json": {
+      "bytes": 1219,
+      "sha256": "7f4ede1e8994da4b6dbec4a0eedd7f0e8118410e39283df00dcdb5470e4663af"
+    }
+  },
+  "outputs": {
+    "README.md": {
+      "bytes": 138,
+      "sha256": "446ffa8bbb618f2293c94cf7107a54bbf5ab4ce8eecf32ae68c5b9a3f62dfb0e"
+    },
+    "STABLE_RELEASE_TAG_v2_39a.md": {
+      "bytes": 1766,
+      "sha256": "703a3a46bf51942305b62258e85627eff1455f31a0c9ac91ebf3e309a287a4f6"
+    },
+    "stable_release_tag_checklist_v2_39a.csv": {
+      "bytes": 1144,
+      "sha256": "f6357b5d6246e029e9041f7b19826e84add15424cab9c548af7320fdfafd2b4f"
+    },
+    "stable_release_tag_summary_v2_39a.json": {
+      "bytes": 1296,
+      "sha256": "1b0e876baa5da84314afcd5f2c7f7ab361c2df8950a1c0aa36d34e165bc522f6"
+    }
+  },
+  "phase": "v2.39A-stable-release-tag",
+  "release_name": "Scout Finance v2.38CJ Local Stable",
+  "scripts": [
+    "scripts/build_stable_release_tag_v2_39a.py"
+  ],
+  "source_commit": "56e773b",
+  "stable_tag": "v2.38CJ-local-stable",
+  "status": "STABLE_RELEASE_TAG_READY",
+  "tests": [
+    "tests/qa_stable_release_tag_v2_39a.py",
+    "tests/qa_stable_release_tag_full_suite_v2_39a.py"
+  ]
+}

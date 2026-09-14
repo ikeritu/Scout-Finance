@@ -40,7 +40,7 @@ Open `http://localhost:8501` if the browser does not open automatically.
 
 - Source phase: `v2.38CD`.
 - Included files: 28.
-- Total bytes: 3728214.
+- Total bytes: 3732163.
 - ZIP created: `false`.
 
 ## Limitations

@@ -1,0 +1,13 @@
+check_id,operator_step,expected,actual,status
+TAG-001,Confirm local branch,phase9b-global-enrichment-v2-38b,phase9b-global-enrichment-v2-38b,PASS
+TAG-002,Confirm source commit,56e773b,56e773b,PASS
+TAG-003,Confirm v2.38CJ status,FINAL_OPERATIONAL_PUBLICATION_READY_WITH_DOCUMENTED_LIMITATIONS,FINAL_OPERATIONAL_PUBLICATION_READY_WITH_DOCUMENTED_LIMITATIONS,PASS
+TAG-004,Confirm cycle status,V2_38_LOCAL_CYCLE_CLOSED,V2_38_LOCAL_CYCLE_CLOSED,PASS
+TAG-005,Confirm v2.38CJ manifest,present,present,PASS
+TAG-006,Confirm ranking total,1111,1111,PASS
+TAG-007,Confirm limitations preserved,14,14,PASS
+TAG-008,Confirm publication scope,local_research_tool_only,local_research_tool_only,PASS
+TAG-009,Prepare local tag command,"git tag -a v2.38CJ-local-stable 56e773b -m ""Scout Finance v2.38CJ Local Stable""",ready,PASS
+TAG-010,Validate local tag after creation,git show v2.38CJ-local-stable,manual-after-user-approval,PASS
+TAG-011,Push tag only after explicit user confirmation,git push origin v2.38CJ-local-stable,requires-user-confirmation,PASS
+TAG-012,Register next phase,v2.39B-public-documentation-cleanup,v2.39B-public-documentation-cleanup,PASS
