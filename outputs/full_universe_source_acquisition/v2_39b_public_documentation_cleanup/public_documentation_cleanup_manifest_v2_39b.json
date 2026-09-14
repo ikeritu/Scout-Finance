@@ -1,0 +1,97 @@
+{
+  "created_at_utc": "2026-09-14T21:39:12Z",
+  "docs_created": [
+    "docs/PUBLIC_DOCUMENTATION_INDEX_v2_39b.md",
+    "docs/LOCAL_USAGE_PUBLIC_GUIDE_v2_39b.md"
+  ],
+  "docs_reviewed": [
+    "README.md",
+    "VERSION.md",
+    "CHANGELOG.md",
+    "ROADMAP_v2_38_CURRENT.md"
+  ],
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "datasets_mutated": false,
+    "financial_advice_created": false,
+    "github_release_created": false,
+    "methodology_changed": false,
+    "network_allowed": false,
+    "network_used": false,
+    "ranking_changed": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "tag_created": false,
+    "ui_changed": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "CHANGELOG.md": {
+      "bytes": 168443,
+      "sha256": "131cde28f97d4abe84b5de23e48db035932322c01dd938c3e8b27f39edd05f1a"
+    },
+    "README.md": {
+      "bytes": 69225,
+      "sha256": "38e2127bc2bcf7d4389265bdc5e537dd1777bb7402d31599cd01ba6bf9a267da"
+    },
+    "ROADMAP_v2_38_CURRENT.md": {
+      "bytes": 5590,
+      "sha256": "f394d29c421e4a5c25bbfa83c4830490b0d11503a08760e3009a4f270b5ab992"
+    },
+    "VERSION.md": {
+      "bytes": 148027,
+      "sha256": "1c4558757491ebfa1e86280082ee7a83dd00c16ca2081ff3758e4a9f9594b63e"
+    },
+    "config/public_documentation_cleanup_contract_v2_39b.json": {
+      "bytes": 1111,
+      "sha256": "7bd420baac7e50c325ee5f5b01bac47b3b1761a70b2ba5259b80d4447e7c858a"
+    },
+    "outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_manifest_v2_39a.json": {
+      "bytes": 2358,
+      "sha256": "27672bd31a5c06df2f47f030eb9ca3a610cb79b3ab9ca00abe3f62e802a90eb2"
+    },
+    "outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_summary_v2_39a.json": {
+      "bytes": 1296,
+      "sha256": "1b0e876baa5da84314afcd5f2c7f7ab361c2df8950a1c0aa36d34e165bc522f6"
+    }
+  },
+  "outputs": {
+    "docs/LOCAL_USAGE_PUBLIC_GUIDE_v2_39b.md": {
+      "bytes": 1555,
+      "sha256": "48d6a0ee8895a20e04a17894c11d67e7a5298186da97b8e95f6123cbb32c68ee"
+    },
+    "docs/PUBLIC_DOCUMENTATION_INDEX_v2_39b.md": {
+      "bytes": 1263,
+      "sha256": "8eb4373f125735304af23e5fd8c8cfa27dc816f4e80793e7e43ef39cad9db6fe"
+    },
+    "outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/PUBLIC_DOCUMENTATION_CLEANUP_v2_39b.md": {
+      "bytes": 756,
+      "sha256": "c60000152e5a0657d6941c46bd461ff92b4f8aeed57bda023eb64abfb93958e0"
+    },
+    "outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/README.md": {
+      "bytes": 213,
+      "sha256": "c0d49142f5db766a14fd5342c0f3cda6d4bc93ea0b7abdddd99a0ea74c7c85d1"
+    },
+    "outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/public_documentation_cleanup_matrix_v2_39b.csv": {
+      "bytes": 4431,
+      "sha256": "d3fc00f5ca1e2170e09ffd8ffc0715df4df8fe80d4460a087224ed04515a666d"
+    },
+    "outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/public_documentation_cleanup_summary_v2_39b.json": {
+      "bytes": 1227,
+      "sha256": "5dc9bacecb718eba632eab459fe3c1a8698df219bd63f23bc41f48b79a38e721"
+    },
+    "outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/public_documentation_index_v2_39b.csv": {
+      "bytes": 1199,
+      "sha256": "a56d9a1276881cdd89dce7817ac04a6fe85ab9cf9b1c9ea19b988042bcdb8f97"
+    }
+  },
+  "phase": "v2.39B-public-documentation-cleanup",
+  "scripts": [
+    "scripts/build_public_documentation_cleanup_v2_39b.py"
+  ],
+  "status": "PUBLIC_DOCUMENTATION_CLEANUP_READY",
+  "tests": [
+    "tests/qa_public_documentation_cleanup_v2_39b.py",
+    "tests/qa_public_documentation_cleanup_full_suite_v2_39b.py"
+  ]
+}

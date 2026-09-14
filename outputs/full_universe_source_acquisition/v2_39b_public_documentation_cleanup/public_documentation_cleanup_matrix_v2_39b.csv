@@ -1,0 +1,32 @@
+check_id,category,item,expected,actual,status,evidence_path,remediation
+DOC-001,SOURCE,v2.39A status accepted,STABLE_RELEASE_TAG_READY,STABLE_RELEASE_TAG_READY,PASS,outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_summary_v2_39a.json,No action required.
+DOC-002,SOURCE,stable tag documented,v2.38CJ-local-stable,v2.38CJ-local-stable,PASS,outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_summary_v2_39a.json,No action required.
+DOC-003,SOURCE,source commit documented,56e773b,56e773b,PASS,outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_summary_v2_39a.json,No action required.
+DOC-004,SOURCE,cycle status closed,V2_38_LOCAL_CYCLE_CLOSED,V2_38_LOCAL_CYCLE_CLOSED,PASS,outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_summary_v2_39a.json,No action required.
+DOC-005,SOURCE,publication scope,local_research_tool_only,local_research_tool_only,PASS,outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_summary_v2_39a.json,No action required.
+DOC-006,README,README mentions v2.39B,present,present,PASS,README.md,No action required.
+DOC-007,README,README mentions local research scope,present,present,PASS,README.md,No action required.
+DOC-008,README,README mentions no financial advice,present,present,PASS,README.md,No action required.
+DOC-009,README,README mentions no broker,present,present,PASS,README.md,No action required.
+DOC-010,VERSION,VERSION mentions v2.39B,present,present,PASS,VERSION.md,No action required.
+DOC-011,CHANGELOG,CHANGELOG mentions v2.39B,present,present,PASS,CHANGELOG.md,No action required.
+DOC-012,ROADMAP,ROADMAP marks v2.39B,present,present,PASS,ROADMAP_v2_38_CURRENT.md,No action required.
+DOC-013,ROADMAP,ROADMAP declares v2.39C next,present,present,PASS,ROADMAP_v2_38_CURRENT.md,No action required.
+DOC-014,PUBLIC_GUIDE,public guide exists,present,present,PASS,docs/LOCAL_USAGE_PUBLIC_GUIDE_v2_39b.md,No action required.
+DOC-015,PUBLIC_INDEX,documentation index exists,present,present,PASS,docs/PUBLIC_DOCUMENTATION_INDEX_v2_39b.md,No action required.
+DOC-016,LIMITATIONS,limitations remain visible,present,present,PASS,ROADMAP_v2_38_CURRENT.md,No action required.
+DOC-017,RANKING,ranking remains experimental,present,present,PASS,README.md,No action required.
+DOC-018,PUBLICATION,no cloud publication claim,absent,absent,PASS,README.md,No action required.
+GUARDRAIL-network_allowed,GUARDRAILS,network_allowed,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-network_used,GUARDRAILS,network_used,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-scoring_recomputed,GUARDRAILS,scoring_recomputed,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-weights_changed,GUARDRAILS,weights_changed,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-ranking_changed,GUARDRAILS,ranking_changed,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-methodology_changed,GUARDRAILS,methodology_changed,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-datasets_mutated,GUARDRAILS,datasets_mutated,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-ui_changed,GUARDRAILS,ui_changed,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-financial_advice_created,GUARDRAILS,financial_advice_created,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-recommendations_created,GUARDRAILS,recommendations_created,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-broker_actions_allowed,GUARDRAILS,broker_actions_allowed,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-tag_created,GUARDRAILS,tag_created,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.
+GUARDRAIL-github_release_created,GUARDRAILS,github_release_created,false,false,PASS,config/public_documentation_cleanup_contract_v2_39b.json,No action required.

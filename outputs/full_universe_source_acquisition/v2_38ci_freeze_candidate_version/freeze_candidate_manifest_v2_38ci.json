@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-09-14T19:55:39Z",
+  "created_at_utc": "2026-09-14T21:37:40Z",
   "guardrails": {
     "broker_actions_allowed": false,
     "datasets_mutated": false,
@@ -25,7 +25,7 @@
     },
     "outputs/full_universe_source_acquisition/v2_38ch_release_candidate_audit/release_candidate_audit_manifest_v2_38ch.json": {
       "bytes": 3760,
-      "sha256": "149ed71cc5fbe5d5386dd26e5998e8ca2ea8f26a2c8f3a3b87d7afba2592a6d6"
+      "sha256": "4a38fc1b702bf63da4548e51e422b28ff82cd48ed9bfe2ff5ee23f8c6f7370ec"
     },
     "outputs/full_universe_source_acquisition/v2_38ch_release_candidate_audit/release_candidate_audit_matrix_v2_38ch.csv": {
       "bytes": 9079,
@@ -60,7 +60,7 @@
     },
     "freeze_candidate_traceability_v2_38ci.csv": {
       "bytes": 2013,
-      "sha256": "80088c187d01a0a003e945644c541c09eb8ac9128e37b65fbb6207807a57f347"
+      "sha256": "63b0c8bf2ca68430d680ed6248b981aedf1a73fb34b3a68879da5329e7345c9e"
     }
   },
   "phase": "v2.38CI-freeze-candidate-version",

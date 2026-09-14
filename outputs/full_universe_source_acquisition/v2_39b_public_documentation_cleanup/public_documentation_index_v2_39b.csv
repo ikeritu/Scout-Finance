@@ -1,0 +1,8 @@
+document,purpose,audience,status,path,notes
+README.md,Public entry point and current state,User / reviewer,PUBLIC_CLEAN,README.md,"Current phase, scope and guardrails visible."
+VERSION.md,Version state history,Maintainer,PUBLIC_CLEAN,VERSION.md,Latest v2.39B state at top.
+CHANGELOG.md,Chronological changes,Maintainer / reviewer,PUBLIC_CLEAN,CHANGELOG.md,No scoring/ranking mutation in v2.39B.
+ROADMAP_v2_38_CURRENT.md,Reduced roadmap and pending phases,Product owner,PUBLIC_CLEAN,ROADMAP_v2_38_CURRENT.md,"v2.38 closed, v2.39C next."
+FINAL_OPERATIONAL_PUBLICATION_v2_38cj.md,Final v2.38 handoff evidence,Operator,REFERENCE,outputs/full_universe_source_acquisition/v2_38cj_final_operational_publication/FINAL_OPERATIONAL_PUBLICATION_v2_38cj.md,Local research scope.
+STABLE_RELEASE_TAG_v2_39a.md,Stable tag metadata,Maintainer,REFERENCE,outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/STABLE_RELEASE_TAG_v2_39a.md,Tag v2.38CJ-local-stable.
+PUBLIC_DOCUMENTATION_CLEANUP_v2_39b.md,Public documentation cleanup report,Maintainer / reviewer,CURRENT,outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/PUBLIC_DOCUMENTATION_CLEANUP_v2_39b.md,This phase report.

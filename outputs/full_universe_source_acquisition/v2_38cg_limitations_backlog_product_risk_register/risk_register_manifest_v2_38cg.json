@@ -12,8 +12,8 @@
   },
   "inputs": {
     "ROADMAP_v2_38_CURRENT.md": {
-      "bytes": 5553,
-      "sha256": "af6d8111e576ccdd0750b7d1ccd5b417066154df54ae4b5bbc4c6d1ecf2b1ee9"
+      "bytes": 5590,
+      "sha256": "f394d29c421e4a5c25bbfa83c4830490b0d11503a08760e3009a4f270b5ab992"
     },
     "config/limitations_backlog_product_risk_register_contract_v2_38cg.json": {
       "bytes": 945,
@@ -41,7 +41,7 @@
     },
     "outputs/full_universe_source_acquisition/v2_38ce_windows_reproducible_packaging/windows_reproducible_packaging_summary_v2_38ce.json": {
       "bytes": 781,
-      "sha256": "fd456ac7f4b51c109775c6710b330d19b73e37fa6c89dc5cf0f54e53bc8b8c4e"
+      "sha256": "e46b9f7f669e345f123d154b16d9b094dd7eb006da17106b9cf16e0a9829bcce"
     },
     "outputs/full_universe_source_acquisition/v2_38cf_streamlit_visual_smoke_test/streamlit_visual_smoke_test_checklist_v2_38cf.csv": {
       "bytes": 4981,

@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.39A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.39B preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.39A: prepare stable release tag`
+`LOCAL_COMMIT_PENDING_PUSH v2.39B: clean public documentation`
 
 Estado operativo del producto:
 
-`STABLE_RELEASE_TAG_READY`
+`PUBLIC_DOCUMENTATION_CLEANUP_READY`
 
 Cycle status:
 
@@ -55,6 +55,7 @@ Cycle status:
 | Completada | v2.38CI | Freeze candidate version |
 | Completada | v2.38CJ | Final operational publication / release handoff |
 | Completada | v2.39A | Stable release tag metadata |
+| Completada | v2.39B | Public documentation cleanup |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -78,16 +79,16 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.39B: Public documentation cleanup`
+`v2.39C: Security / sensitive files audit`
 
-Objetivo recomendado: limpiar documentacion publica, rutas locales, mensajes de release y referencias internas para dejar el proyecto presentable sin tocar scoring, ranking, metodologia ni pesos.
+Objetivo recomendado: auditar secretos, rutas personales, archivos sensibles y outputs accidentales antes de preparar instalacion limpia o publicacion mas amplia.
 
 ## Roadmap Reducido Post-v2.38
 
 | Estado | Fase | Objetivo |
 | --- | --- | --- |
 | Completada | v2.39A | Stable release tag del cierre v2.38CJ |
-| Pendiente | v2.39B | Limpieza final publica: README, VERSION, CHANGELOG, roadmap y rutas locales |
+| Completada | v2.39B | Limpieza final publica: README, VERSION, CHANGELOG, roadmap y rutas locales |
 | Pendiente | v2.39C | Auditoria de seguridad: secretos, archivos sensibles, rutas personales y outputs accidentales |
 | Pendiente | v2.39D | Validacion de instalacion desde cero en Windows |
 | Pendiente | v2.39E | Paquete reproducible final y GitHub release assets |

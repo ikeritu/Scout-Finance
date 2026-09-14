@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-09-14T19:55:39Z",
+  "created_at_utc": "2026-09-14T21:37:40Z",
   "guardrails": {
     "broker_actions_allowed": false,
     "datasets_mutated": false,
@@ -24,7 +24,7 @@
     },
     "outputs/full_universe_source_acquisition/v2_38cj_final_operational_publication/final_operational_publication_manifest_v2_38cj.json": {
       "bytes": 4605,
-      "sha256": "a624671c099177d266c047e60379e112e2aaa08b750d28b62812f02a724cce92"
+      "sha256": "75bd1e22bc236331cb651e2e71f40fc5c4d5d0b7183f7826a708df30fac2f24a"
     },
     "outputs/full_universe_source_acquisition/v2_38cj_final_operational_publication/final_operational_publication_summary_v2_38cj.json": {
       "bytes": 1219,

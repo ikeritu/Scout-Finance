@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.39B — Public documentation cleanup (2026-09-14)
+
+Limpia y ordena la documentacion publica posterior al cierre de v2.38. Genera contrato, builder, matriz de limpieza, indice CSV, indice publico en Markdown, guia publica de uso local, summary, manifest con hashes SHA256, reporte Markdown y README de outputs. Resultado: `PUBLIC_DOCUMENTATION_CLEANUP_READY`; 31 checks documentales, 0 fallos, 0 warnings, 0 bloqueantes, tag estable `v2.38CJ-local-stable`, source commit `56e773b`, ciclo v2.38 cerrado y scope `local_research_tool_only`. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI funcional nueva, sin recomendaciones financieras, sin broker, sin tag nuevo y sin GitHub release. 2 pruebas offline nuevas. Detalle en `PUBLIC_DOCUMENTATION_CLEANUP_v2_39b.md`.
+
 ## v2.39A — Stable release tag (2026-09-14)
 
 Prepara el primer ancla estable posterior al cierre de `v2.38CJ`. Genera contrato, builder, checklist de tag, summary, manifest con hashes SHA256, reporte Markdown y README de outputs. Resultado: `STABLE_RELEASE_TAG_READY`; tag recomendado `v2.38CJ-local-stable`; source commit `56e773b`; release name `Scout Finance v2.38CJ Local Stable`; 12 checks, 0 fallos, 0 warnings, 0 bloqueantes, 14 limitaciones documentadas preservadas y ranking intacto con 1.111 filas y poblaciones 318/373/124/270/26. No crea ni sube el tag automaticamente: el push del tag requiere autorizacion explicita del usuario. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI nueva, sin recomendaciones financieras y sin broker. 2 pruebas offline nuevas. Detalle en `STABLE_RELEASE_TAG_v2_39a.md`.
