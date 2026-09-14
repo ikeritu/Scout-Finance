@@ -1,0 +1,9 @@
+trace_id,source_phase,source_artifact,downstream_usage,required_for_freeze,status,note
+TR-CD-001,v2.38CD,outputs/full_universe_source_acquisition/v2_38cd_required_outputs_diagnostics/required_outputs_summary_v2_38cd.json,Required output baseline for packaging/audit,true,PASS,Confirms required outputs present with no blocking gaps.
+TR-CD-002,v2.38CD,outputs/full_universe_source_acquisition/v2_38cd_required_outputs_diagnostics/missing_data_diagnostics_v2_38cd.csv,Feeds limitation and risk register,true,PASS,Missing/degraded data remains visible.
+TR-CE-001,v2.38CE,outputs/full_universe_source_acquisition/v2_38ce_windows_reproducible_packaging/windows_reproducible_packaging_summary_v2_38ce.json,Windows reproducible packaging readiness,true,PASS,Manifest-based package ready with warnings.
+TR-CF-001,v2.38CF,outputs/full_universe_source_acquisition/v2_38cf_streamlit_visual_smoke_test/streamlit_visual_smoke_test_summary_v2_38cf.json,Streamlit smoke-test evidence,true,PASS,Structural smoke test accepted with environment limitations.
+TR-CG-001,v2.38CG,outputs/full_universe_source_acquisition/v2_38cg_limitations_backlog_product_risk_register/risk_register_summary_v2_38cg.json,Risk register readiness,true,PASS,No blocking product risks.
+TR-CG-002,v2.38CG,outputs/full_universe_source_acquisition/v2_38cg_limitations_backlog_product_risk_register/product_risk_register_v2_38cg.csv,Freeze go/no-go risk input,true,PASS,All known risks are registered.
+TR-BV-001,v2.38BV,outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json,Experimental ranking count reconciliation,true,PASS,Ranking populations remain unchanged.
+TR-DOC-001,docs,README.md VERSION.md CHANGELOG.md ROADMAP_v2_38_CURRENT.md,Operator-facing release state,true,PASS,Docs state current phase and next freeze step.

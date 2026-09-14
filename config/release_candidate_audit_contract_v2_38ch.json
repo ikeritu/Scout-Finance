@@ -1,0 +1,43 @@
+{
+  "expected_status": "RELEASE_CANDIDATE_AUDIT_PASS_WITH_DOCUMENTED_LIMITATIONS",
+  "expected_source_statuses": {
+    "v2.38CD": "LOCAL_APP_READY_WITH_WARNINGS",
+    "v2.38CE": "WINDOWS_PACKAGE_READY_WITH_WARNINGS",
+    "v2.38CF": [
+      "STREAMLIT_VISUAL_SMOKE_PASS",
+      "STREAMLIT_VISUAL_SMOKE_PASS_WITH_ENVIRONMENT_LIMITATIONS"
+    ],
+    "v2.38CG": "PRODUCT_RISK_REGISTER_READY_WITH_NON_BLOCKING_LIMITATIONS"
+  },
+  "expected_ranking_counts": {
+    "ELIGIBLE_PARTIAL": 318,
+    "PARTIAL_COMPARABILITY": 373,
+    "REVIEW_REQUIRED": 124,
+    "BLOCKED": 270,
+    "NOT_YET_SCORED_NO_ADAPTER": 26,
+    "TOTAL": 1111
+  },
+  "required_categories": [
+    "SOURCE_PHASE_STATUS",
+    "RANKING_COUNTS",
+    "GUARDRAILS",
+    "DOCUMENTATION",
+    "TRACEABILITY",
+    "RISK_REGISTER",
+    "ENVIRONMENT_WARNINGS",
+    "PACKAGING",
+    "FREEZE_READINESS"
+  ],
+  "guardrails": {
+    "scoring_recomputed": false,
+    "methodology_changed": false,
+    "weights_changed": false,
+    "network_used": false,
+    "datasets_mutated": false,
+    "ui_changed": false,
+    "financial_advice_created": false,
+    "broker_actions_allowed": false,
+    "recommendations_created": false,
+    "final_publication_declared": false
+  }
+}

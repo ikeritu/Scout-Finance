@@ -1,0 +1,33 @@
+{
+  "audit_count": 43,
+  "blocking_issue_count": 0,
+  "broker_actions_allowed": false,
+  "datasets_mutated": false,
+  "documented_limitation_count": 14,
+  "fail_count": 0,
+  "final_publication_declared": false,
+  "financial_advice_created": false,
+  "methodology_changed": false,
+  "network_used": false,
+  "next_recommended_phase": "v2.38CI-freeze-candidate-version",
+  "phase": "v2.38CH-release-candidate-audit",
+  "qa_status": "PASS",
+  "ranking_blocked_count": 270,
+  "ranking_main_count": 318,
+  "ranking_no_adapter_count": 26,
+  "ranking_partial_count": 373,
+  "ranking_review_required_count": 124,
+  "ranking_total": 1111,
+  "recommendations_created": false,
+  "scoring_recomputed": false,
+  "source_phases_checked": [
+    "v2.38CD",
+    "v2.38CE",
+    "v2.38CF",
+    "v2.38CG"
+  ],
+  "status": "RELEASE_CANDIDATE_AUDIT_PASS_WITH_DOCUMENTED_LIMITATIONS",
+  "ui_changed": false,
+  "warn_count": 0,
+  "weights_changed": false
+}

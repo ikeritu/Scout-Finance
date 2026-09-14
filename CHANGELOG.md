@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38CH — Release candidate audit (2026-09-14)
+
+Crea la auditoria final de release candidate previa al freeze. Verifica estados de `v2.38CD-v2.38CG`, conteos del ranking real, guardrails, documentacion, trazabilidad, risk register, warnings de entorno, packaging y readiness para congelacion. Resultado: `RELEASE_CANDIDATE_AUDIT_PASS_WITH_DOCUMENTED_LIMITATIONS`; 43 checks de auditoria, 0 fallos, 0 issues bloqueantes, 14 limitaciones documentadas y ranking intacto con 1.111 filas y poblaciones 318/373/124/270/26. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones, sin broker y sin publicacion final. 2 pruebas offline nuevas. Detalle en `RELEASE_CANDIDATE_AUDIT_v2_38ch.md`.
+
 ## v2.38CG — Limitations backlog / product risk register (2026-09-14)
 
 Crea el registro unico de limitaciones, warnings de entorno, deuda tecnica y riesgos de interpretacion antes de la auditoria final. Usa `v2.38BX`, `v2.38BZ`, `v2.38CD`, `v2.38CE` y `v2.38CF` como fuentes. Resultado: `PRODUCT_RISK_REGISTER_READY_WITH_NON_BLOCKING_LIMITATIONS`; 14 riesgos registrados, 11 entradas de backlog, 0 riesgos bloqueantes y 9 categorias cubiertas. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones ni broker. 2 pruebas offline nuevas. Detalle en `LIMITATIONS_BACKLOG_PRODUCT_RISK_REGISTER_v2_38cg.md`.
