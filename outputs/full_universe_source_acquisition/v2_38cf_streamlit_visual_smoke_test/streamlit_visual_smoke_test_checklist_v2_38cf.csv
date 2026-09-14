@@ -1,0 +1,42 @@
+check_id,category,item,expected,actual,severity,status,diagnostic_note,remediation_hint
+file:app_v2_37.py,file,app_v2_37.py,present,present,FAIL,PASS,,No action required.
+file:run_local_ui_v2_37.bat,file,run_local_ui_v2_37.bat,present,present,FAIL,PASS,,No action required.
+file:src/ui_v2_37/global_ranking.py,file,src/ui_v2_37/global_ranking.py,present,present,FAIL,PASS,,No action required.
+file:src/ui_v2_37/global_universe.py,file,src/ui_v2_37/global_universe.py,present,present,FAIL,PASS,,No action required.
+file:src/ui_v2_37/ui.py,file,src/ui_v2_37/ui.py,present,present,FAIL,PASS,,No action required.
+file:outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json,file,outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json,present,present,FAIL,PASS,,No action required.
+file:outputs/full_universe_source_acquisition/v2_38ce_windows_reproducible_packaging/windows_reproducible_packaging_summary_v2_38ce.json,file,outputs/full_universe_source_acquisition/v2_38ce_windows_reproducible_packaging/windows_reproducible_packaging_summary_v2_38ce.json,present,present,FAIL,PASS,,No action required.
+ast:app_v2_37.py,python_ast,app_v2_37.py,parseable,parseable,FAIL,PASS,,No action required.
+ast:src/ui_v2_37/global_ranking.py,python_ast,src/ui_v2_37/global_ranking.py,parseable,parseable,FAIL,PASS,,No action required.
+ast:src/ui_v2_37/global_universe.py,python_ast,src/ui_v2_37/global_universe.py,parseable,parseable,FAIL,PASS,,No action required.
+ast:src/ui_v2_37/ui.py,python_ast,src/ui_v2_37/ui.py,parseable,parseable,FAIL,PASS,,No action required.
+ce_status,source,v2.38CE summary,WINDOWS_PACKAGE_READY_WITH_WARNINGS,WINDOWS_PACKAGE_READY_WITH_WARNINGS,FAIL,PASS,,No action required.
+ranking_count:ELIGIBLE_PARTIAL,ranking_data,ELIGIBLE_PARTIAL,318,318,FAIL,PASS,,No action required.
+ranking_count:PARTIAL_COMPARABILITY,ranking_data,PARTIAL_COMPARABILITY,373,373,FAIL,PASS,,No action required.
+ranking_count:REVIEW_REQUIRED,ranking_data,REVIEW_REQUIRED,124,124,FAIL,PASS,,No action required.
+ranking_count:BLOCKED,ranking_data,BLOCKED,270,270,FAIL,PASS,,No action required.
+ranking_count:NOT_YET_SCORED_NO_ADAPTER,ranking_data,NOT_YET_SCORED_NO_ADAPTER,26,26,FAIL,PASS,,No action required.
+ranking_count:TOTAL,ranking_data,TOTAL,1111,1111,FAIL,PASS,,No action required.
+ui_token:Inicio,ui_structure,Inicio,present,present,FAIL,PASS,,No action required.
+ui_token:Universo global,ui_structure,Universo global,present,present,FAIL,PASS,,No action required.
+ui_token:Ranking global (experimental),ui_structure,Ranking global (experimental),present,present,FAIL,PASS,,No action required.
+ui_token:No es asesoramiento financiero,ui_structure,No es asesoramiento financiero,present,present,FAIL,PASS,,No action required.
+ui_token:no recalcula scores,ui_structure,no recalcula scores,present,present,FAIL,PASS,,No action required.
+ui_token:sin conexión de red,ui_structure,sin conexión de red,present,present,FAIL,PASS,,No action required.
+ui_token:Comparabilidad parcial,ui_structure,Comparabilidad parcial,present,present,FAIL,PASS,,No action required.
+ui_token:Revisión requerida,ui_structure,Revisión requerida,present,present,FAIL,PASS,,No action required.
+ui_token:Cobertura insuficiente,ui_structure,Cobertura insuficiente,present,present,FAIL,PASS,,No action required.
+ui_token:Sin adaptador,ui_structure,Sin adaptador,present,present,FAIL,PASS,,No action required.
+streamlit_available,environment,python module streamlit,available,missing,WARN,WARN,Missing Streamlit prevents live app launch in this environment.,
+playwright_available,environment,python module playwright,available,missing,WARN,WARN,Missing Playwright/browser prevents screenshot capture in this environment.,
+screenshots_available,evidence,screenshots,true,false,WARN,WARN,Screenshots are unavailable because browser smoke test could not run here.,
+guardrail:scoring_recomputed,guardrail,scoring_recomputed,false,false,FAIL,PASS,,No action required.
+guardrail:methodology_changed,guardrail,methodology_changed,false,false,FAIL,PASS,,No action required.
+guardrail:weights_changed,guardrail,weights_changed,false,false,FAIL,PASS,,No action required.
+guardrail:network_used,guardrail,network_used,false,false,FAIL,PASS,,No action required.
+guardrail:datasets_mutated,guardrail,datasets_mutated,false,false,FAIL,PASS,,No action required.
+guardrail:ui_changed,guardrail,ui_changed,false,false,FAIL,PASS,,No action required.
+guardrail:financial_advice_created,guardrail,financial_advice_created,false,false,FAIL,PASS,,No action required.
+guardrail:broker_actions_allowed,guardrail,broker_actions_allowed,false,false,FAIL,PASS,,No action required.
+guardrail:recommendations_created,guardrail,recommendations_created,false,false,FAIL,PASS,,No action required.
+guardrail:browser_claimed_without_browser,guardrail,browser_claimed_without_browser,false,false,FAIL,PASS,,No action required.

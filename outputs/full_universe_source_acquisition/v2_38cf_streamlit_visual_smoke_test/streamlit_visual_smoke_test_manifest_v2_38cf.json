@@ -1,0 +1,52 @@
+{
+  "environment": {
+    "browser_validation_attempted": false,
+    "external_network_used": false,
+    "playwright_available": false,
+    "streamlit_available": false
+  },
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "browser_claimed_without_browser": false,
+    "datasets_mutated": false,
+    "financial_advice_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "ui_changed": false,
+    "weights_changed": false
+  },
+  "next_recommended_phase": "v2.38CG-limitations-backlog-product-risk-register",
+  "outputs": {
+    "README.md": {
+      "bytes": 260,
+      "sha256": "205f292f6bf43770e047a2a4965f0503e9eba70a0788f244708f08790b41f1cc"
+    },
+    "STREAMLIT_VISUAL_SMOKE_TEST_v2_38cf.md": {
+      "bytes": 1334,
+      "sha256": "c1c08aa990c509e2b1040a32beb73494253a5ee5cbfbc8a00077c4c32b074d05"
+    },
+    "streamlit_visual_smoke_test_checklist_v2_38cf.csv": {
+      "bytes": 4981,
+      "sha256": "968e157e4e92bdda298d6048de4049c526020a252f1ae4c760ac35ef71aa8c06"
+    },
+    "streamlit_visual_smoke_test_summary_v2_38cf.json": {
+      "bytes": 1107,
+      "sha256": "5de62baa62b6e3df326dbcb3c8fcd521e3d38b3192141bcc3c7946cb48feb3a8"
+    }
+  },
+  "phase": "v2.38CF-streamlit-visual-smoke-test",
+  "screenshots": [],
+  "screenshots_available": false,
+  "scripts": [
+    "scripts/build_streamlit_visual_smoke_test_v2_38cf.py"
+  ],
+  "source_phase": "v2.38CE-windows-reproducible-packaging",
+  "status": "STREAMLIT_VISUAL_SMOKE_PASS_WITH_ENVIRONMENT_LIMITATIONS",
+  "tests": [
+    "tests/qa_streamlit_visual_smoke_test_v2_38cf.py",
+    "tests/qa_streamlit_visual_smoke_test_full_suite_v2_38cf.py"
+  ],
+  "validation_mode": "STRUCTURAL_SMOKE_TEST"
+}

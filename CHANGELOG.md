@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38CF — Streamlit visual smoke test (2026-09-14)
+
+Crea smoke test visual honesto para Streamlit. Como el entorno no dispone de `streamlit` ni `playwright`, registra `STRUCTURAL_SMOKE_TEST` en vez de declarar navegador real: valida app, modulos UI, navegacion, textos de ranking experimental, disclaimers/no-advice, loader real de 1.111 filas y poblaciones 318/373/124/270/26. Resultado: `STREAMLIT_VISUAL_SMOKE_PASS_WITH_ENVIRONMENT_LIMITATIONS`; 41 checks, 0 fallos, 3 warnings de entorno y screenshots no disponibles. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones ni broker. 2 pruebas offline nuevas. Detalle en `STREAMLIT_VISUAL_SMOKE_TEST_v2_38cf.md`.
+
 ## v2.38CE — Windows reproducible local packaging (2026-09-14)
 
 Define un paquete local reproducible para Windows basado en manifiesto y alimentado por `v2.38CD`. Genera manifest, checklist CSV, guia Windows, preflight checklist, summary JSON y README de fase. Resultado: `WINDOWS_PACKAGE_READY_WITH_WARNINGS`; 28 archivos incluidos, 3.718.092 bytes, 21 checks, 0 fallos, ZIP no creado para evitar duplicar datasets. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones ni broker. 2 pruebas offline nuevas. Detalle en `WINDOWS_REPRODUCIBLE_PACKAGING_v2_38ce.md`.
