@@ -1,0 +1,57 @@
+{
+  "branch": "phase9b-global-enrichment-v2-38b",
+  "broker_actions_allowed": false,
+  "created_at_utc": "2026-09-14T22:18:35Z",
+  "github_release_created": false,
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "datasets_mutated": false,
+    "financial_advice_created": false,
+    "github_release_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "ranking_changed": false,
+    "scoring_recomputed": false,
+    "tag_created": false,
+    "ui_changed": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "config/security_sensitive_files_audit_contract_v2_39c.json": {
+      "bytes": 1130,
+      "sha256": "633fc4d2b45c4abebedb3916304d0f332a6fcd6ded4baab1be50c02b2d310833"
+    },
+    "outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/public_documentation_cleanup_summary_v2_39b.json": {
+      "bytes": 1227,
+      "sha256": "5dc9bacecb718eba632eab459fe3c1a8698df219bd63f23bc41f48b79a38e721"
+    }
+  },
+  "network_used": false,
+  "outputs": {
+    "outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/README.md": {
+      "bytes": 110,
+      "sha256": "d7992c9d1ee6be23faf00b3c171502dbe4fc3f56ad89c7c2c5d06a08da11075e"
+    },
+    "outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/SECURITY_SENSITIVE_FILES_AUDIT_v2_39c.md": {
+      "bytes": 9700,
+      "sha256": "dc4199ad698a4af7f918b5f7bb7d45362bd7b6d660b151cad5d9336470d00f24"
+    },
+    "outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/security_sensitive_files_audit_matrix_v2_39c.csv": {
+      "bytes": 12490,
+      "sha256": "53b058b56fe8470be30e2521700c169020f947c80dcf338ed3d3cd19002b54ca"
+    },
+    "outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/security_sensitive_files_summary_v2_39c.json": {
+      "bytes": 1069,
+      "sha256": "63e7105dd5ff868a0afb28b8a53f7080f3e1ee94fbe082e81895dddd1188aa83"
+    },
+    "outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/security_sensitive_patterns_v2_39c.csv": {
+      "bytes": 698,
+      "sha256": "86e2918562df1e153bf33a6eaa7e0a4e6f1f64922ede6d83befb96f356756335"
+    }
+  },
+  "phase": "v2.39C-security-sensitive-files-audit",
+  "scoring_recomputed": false,
+  "source_commit": "bc51160",
+  "stable_tag": "v2.38CJ-local-stable",
+  "status": "SECURITY_SENSITIVE_FILES_AUDIT_READY"
+}

@@ -1,0 +1,72 @@
+check_id,category,severity,status,path,evidence,remediation
+EXT-.docx,sensitive_extensions,WARN,WARN,Auditoria_Scout_Finance.docx,tracked extension .docx,Review whether this file belongs in public Git.
+EMAIL,public_documentation_claims,WARN,WARN,CHANGELOG.md,cvrselvbetjening@erst.dk,Review and redact if this is real sensitive information.
+EMAIL,public_documentation_claims,WARN,WARN,CHANGELOG.md,zefix@bj.admin.ch,Review and redact if this is real sensitive information.
+EMAIL,public_documentation_claims,WARN,WARN,VERSION.md,zefix@bj.admin.ch,Review and redact if this is real sensitive information.
+GENERIC-PASSWORD,passwords,WARN,WARN,app.py,password = st.text_input(,Review and redact if this is real sensitive information.
+GENERIC-PASSWORD,passwords,WARN,WARN,app_v0_5_stable.py,password = st.text_input(,Review and redact if this is real sensitive information.
+GENERIC-PASSWORD,passwords,WARN,WARN,app_v0_6_stable.py,password = st.text_input(,Review and redact if this is real sensitive information.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/asx_candidate_extraction_dry_run_rows_v2_20e.csv,5278877 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/cboe_europe_normalized_candidates_v2_11e.csv,20628746 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_candidate_asx_v2_20g.csv,9389852 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_candidate_hkex_v2_19p.csv,8627341 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_candidate_nse_india_v2_17g.csv,8192878 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_candidate_tmx_v2_16g.csv,7916109 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_candidate_twse_tpex_v2_18g.csv,8541783 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_exclusions_v2_11e.csv,15714442 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_11e.csv,5356957 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_12e.csv,6476310 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_13e.csv,7257817 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_14e.csv,7915990 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_20m_asx_promoted.csv,9389852 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_21d_c_colombia_candidate.csv,9515644 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_21d_s_singapore_candidate.csv,9511466 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_21e_c_colombia_promoted.csv,9515644 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_21e_s_singapore_promoted.csv,9511466 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_21g_final_reference.csv,9515644 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_21h_activated_operational_reference.csv,9515644 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/expanded_universe_v2_24f_metadata_promoted.csv,10089148 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/hkex_candidate_extraction_dry_run_candidates_v2_19n.csv,8073954 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/hkex_candidate_validation_against_canonical_dry_run_exclusions_v2_19o.csv,10001010 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/hkex_candidate_validation_against_canonical_dry_run_validated_candidates_v2_19o.csv,10224843 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/metadata_improvement_dry_run_overlay_v2_24e.csv,6845770 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/nse_india_candidate_extraction_candidates_v2_17e.csv,9431170 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/nse_india_candidate_extraction_exclusions_v2_17e.csv,26389523 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/nse_india_candidate_validation_classified_candidates_v2_17f.csv,11202955 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/production_scoring_dry_run_v2_scores_v2_25b.csv,10004942 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/raw/cboe_europe_v2_11c/fallback_symbols_traded/symbols_traded_bxe.html,9849501 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/raw/cboe_europe_v2_11c/fallback_symbols_traded/symbols_traded_cxe.html,9889739 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/raw/cboe_europe_v2_11c/fallback_symbols_traded/symbols_traded_dxe.html,6287811 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/raw/cboe_europe_v2_11c/fallback_symbols_traded/symbols_traded_trf.html,20760867 bytes,Confirm the file is intentionally tracked.
+EXT-.zip,sensitive_extensions,WARN,WARN,outputs/full_universe_source_acquisition/raw/deutsche_boerse_xetra_v2_14c/datasets/002_downloads_en_RDF_StaticData_xetr.zip,tracked extension .zip,Review whether this file belongs in public Git.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/raw/deutsche_boerse_xetra_v2_14c/datasets/002_downloads_en_RDF_StaticData_xetr.zip,6974014 bytes,Confirm the file is intentionally tracked.
+EXT-.xlsx,sensitive_extensions,WARN,WARN,outputs/full_universe_source_acquisition/raw/hkex_v2_12c/ListOfSecurities.xlsx,tracked extension .xlsx,Review whether this file belongs in public Git.
+EXT-.xlsx,sensitive_extensions,WARN,WARN,outputs/full_universe_source_acquisition/raw/hkex_v2_19l_fix/01_full_list_of_securities.xlsx,tracked extension .xlsx,Review whether this file belongs in public Git.
+EXT-.xlsx,sensitive_extensions,WARN,WARN,outputs/full_universe_source_acquisition/raw/hkex_v2_19l_fix/09_list_of_dual_counter_securities.xlsx,tracked extension .xlsx,Review whether this file belongs in public Git.
+EXT-.xlsx,sensitive_extensions,WARN,WARN,outputs/full_universe_source_acquisition/raw/jpx_v2_13c/datasets/002_jpx_dataset_candidate_jpx_discovered_workbook_candidate.xlsx,tracked extension .xlsx,Review whether this file belongs in public Git.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/scoring_formula_redesign_dry_run_scores_v2_23d.csv,10053232 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/v2_38am_global_macro_geopolitical_context/global_macro_geopolitical_context_v2_38am.csv,7736253 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/v2_38am_global_macro_geopolitical_context/global_macro_geopolitical_notes_v2_38am.csv,9884159 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/v2_38bo_global_scoring_eligibility/global_scoring_eligibility_v2_38bo.csv,6490293 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/v2_38c_us_eu_priority_coverage/eu_universe_census_v2_38c.csv,5487677 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/v2_38n_europe_home_exchange_resolution/europe_home_exchange_resolution_v2_38n.csv,8743373 bytes,Confirm the file is intentionally tracked.
+SIZE-001,oversized_files,WARN,WARN,outputs/full_universe_source_acquisition/v2_38n_europe_home_exchange_resolution/europe_home_exchange_review_v2_38n.csv,8471057 bytes,Confirm the file is intentionally tracked.
+EXT-.zip,sensitive_extensions,WARN,WARN,releases/Scout_Finance_v0.7.0_candidate_FREEZE.zip,tracked extension .zip,Review whether this file belongs in public Git.
+EXT-.zip,sensitive_extensions,WARN,WARN,releases/Scout_Finance_v0.8.0_candidate_FREEZE.zip,tracked extension .zip,Review whether this file belongs in public Git.
+EXT-.zip,sensitive_extensions,WARN,WARN,releases/Scout_Finance_v0.9.0_experimental_ai_FREEZE.zip,tracked extension .zip,Review whether this file belongs in public Git.
+EXT-.zip,sensitive_extensions,WARN,WARN,releases/Scout_Finance_v1.0.0_candidate_DOCUMENTATION_FREEZE.zip,tracked extension .zip,Review whether this file belongs in public Git.
+EXT-.zip,sensitive_extensions,WARN,WARN,releases/Scout_Finance_v1.0.0_candidate_FREEZE.zip,tracked extension .zip,Review whether this file belongs in public Git.
+EXT-.zip,sensitive_extensions,WARN,WARN,releases/Scout_Finance_v1.1C_MVP_FINAL_FREEZE.zip,tracked extension .zip,Review whether this file belongs in public Git.
+GENERIC-PASSWORD,passwords,WARN,WARN,src/auth.py,password = os.getenv(,Review and redact if this is real sensitive information.
+GENERIC-PASSWORD,passwords,WARN,WARN,src/auth.py,password = password.strip(),Review and redact if this is real sensitive information.
+GENERIC-PASSWORD,passwords,WARN,WARN,src/auth.py,password = get_app_password(),Review and redact if this is real sensitive information.
+GENERIC-TOKEN,tokens,WARN,WARN,tests/qa_price_pilot_downloader_v2_33d.py,"FIXTURE_TOKEN = ""test-fixture-token-not-real",Review and redact if this is real sensitive information.
+PASS-secrets,secrets,PASS,PASS,.,No secrets blockers found.,No action required.
+PASS-api_keys,api_keys,PASS,PASS,.,No api_keys blockers found.,No action required.
+PASS-private_keys,private_keys,PASS,PASS,.,No private_keys blockers found.,No action required.
+PASS-env_files,env_files,PASS,PASS,.,No env_files blockers found.,No action required.
+UNTRACKED-REVIEW,working_tree_untracked_review,WARN,WARN,config/security_sensitive_files_audit_contract_v2_39c.json,untracked local file,Keep out of commit unless it belongs to a scoped phase.
+UNTRACKED-REVIEW,working_tree_untracked_review,WARN,WARN,scripts/build_security_sensitive_files_audit_v2_39c.py,untracked local file,Keep out of commit unless it belongs to a scoped phase.
+UNTRACKED-REVIEW,working_tree_untracked_review,WARN,WARN,tests/qa_security_sensitive_files_audit_full_suite_v2_39c.py,untracked local file,Keep out of commit unless it belongs to a scoped phase.
+UNTRACKED-REVIEW,working_tree_untracked_review,WARN,WARN,tests/qa_security_sensitive_files_audit_v2_39c.py,untracked local file,Keep out of commit unless it belongs to a scoped phase.
+GITIGNORE-001,ignored_files_policy,WARN,WARN,.gitignore,".pytest_cache,*.tmp,*.log",Add missing ignore patterns in a scoped future cleanup if needed.

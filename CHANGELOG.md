@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.39C — Security / sensitive files audit (2026-09-14)
+
+Audita offline el repositorio y los artefactos publicables antes de avanzar hacia instalacion limpia o publicacion mas amplia. Genera contrato, builder, matriz de auditoria, inventario de patrones sensibles, summary, manifest con hashes SHA256, reporte Markdown y README de outputs. Resultado esperado: `SECURITY_SENSITIVE_FILES_AUDIT_READY`; sin blockers, cualquier warning queda documentado en el reporte. Mantiene `v2.38CJ-local-stable`, fuente `v2.39B`, ciclo v2.38 cerrado y scope `local_research_tool_only`. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI funcional nueva, sin recomendaciones financieras, sin broker, sin tag nuevo y sin GitHub release. 2 pruebas offline nuevas. Detalle en `SECURITY_SENSITIVE_FILES_AUDIT_v2_39c.md`.
+
 ## v2.39B — Public documentation cleanup (2026-09-14)
 
 Limpia y ordena la documentacion publica posterior al cierre de v2.38. Genera contrato, builder, matriz de limpieza, indice CSV, indice publico en Markdown, guia publica de uso local, summary, manifest con hashes SHA256, reporte Markdown y README de outputs. Resultado: `PUBLIC_DOCUMENTATION_CLEANUP_READY`; 31 checks documentales, 0 fallos, 0 warnings, 0 bloqueantes, tag estable `v2.38CJ-local-stable`, source commit `56e773b`, ciclo v2.38 cerrado y scope `local_research_tool_only`. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI funcional nueva, sin recomendaciones financieras, sin broker, sin tag nuevo y sin GitHub release. 2 pruebas offline nuevas. Detalle en `PUBLIC_DOCUMENTATION_CLEANUP_v2_39b.md`.

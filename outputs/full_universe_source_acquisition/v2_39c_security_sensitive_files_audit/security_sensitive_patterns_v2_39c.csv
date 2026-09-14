@@ -1,0 +1,9 @@
+pattern_id,category,default_severity,description
+PRIVATE-KEY,private_keys,BLOCKER,BEGIN (RSA |OPENSSH |EC |DSA )?PRIVATE KEY
+EMBEDDED-CREDENTIAL-URL,secrets,BLOCKER,https?://[^/\s:@]+:[^/\s:@]+@
+GENERIC-API-KEY,api_keys,WARN,"\b[A-Z0-9_]*(API[_-]?KEY|SECRET[_-]?KEY)\b\s*[:=]\s*['\""]?([A-Za-z0-9_\-]{16,})"
+GENERIC-TOKEN,tokens,WARN,"\b[A-Z0-9_]*(TOKEN|SECRET)\b\s*[:=]\s*['\""]?([A-Za-z0-9_\-.]{20,})"
+GENERIC-PASSWORD,passwords,WARN,"\b(PASSWORD|PASSWD|PWD)\b\s*[:=]\s*['\""]?([^'\""\s]{8,})"
+WINDOWS-USER-PATH,local_paths,WARN,[A-Z]:\\Users\\[^\\\s]+\\
+UNIX-USER-PATH,local_paths,WARN,(/Users|/home)/[^/\s]+/
+EMAIL,public_documentation_claims,WARN,"\b[A-Z0-9._%+\-]+@[A-Z0-9.\-]+\.[A-Z]{2,}\b"
