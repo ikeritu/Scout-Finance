@@ -1,0 +1,32 @@
+{
+  "expected_status": "PRODUCT_RISK_REGISTER_READY_WITH_NON_BLOCKING_LIMITATIONS",
+  "expected_cf_statuses": [
+    "STREAMLIT_VISUAL_SMOKE_PASS",
+    "STREAMLIT_VISUAL_SMOKE_PASS_WITH_ENVIRONMENT_LIMITATIONS"
+  ],
+  "required_categories": [
+    "DATA_COVERAGE",
+    "DATA_QUALITY",
+    "METHODOLOGY",
+    "UX",
+    "ENVIRONMENT",
+    "PACKAGING",
+    "LEGAL_COMPLIANCE",
+    "PRODUCT_POSITIONING",
+    "OPERATIONAL"
+  ],
+  "allowed_severities": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+  "allowed_likelihoods": ["LOW", "MEDIUM", "HIGH"],
+  "allowed_statuses": ["OPEN", "MITIGATED", "ACCEPTED_LIMITATION", "DEFERRED", "BLOCKED"],
+  "guardrails": {
+    "scoring_recomputed": false,
+    "methodology_changed": false,
+    "weights_changed": false,
+    "network_used": false,
+    "datasets_mutated": false,
+    "ui_changed": false,
+    "financial_advice_created": false,
+    "broker_actions_allowed": false,
+    "recommendations_created": false
+  }
+}

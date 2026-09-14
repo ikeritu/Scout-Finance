@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.38CG — Limitations backlog / product risk register** (`PRODUCT_RISK_REGISTER_READY_WITH_NON_BLOCKING_LIMITATIONS`): registro unico de limitaciones y riesgos de producto. Consolida fuentes `v2.38BX/BZ/CD/CE/CF`, con 14 riesgos, 11 entradas de backlog, 0 riesgos bloqueantes y 9 categorias cubiertas. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI nueva, sin recomendaciones y sin broker. Siguiente fase sugerida: `v2.38CH`.
+
 **v2.38CF — Streamlit visual smoke test** (`STREAMLIT_VISUAL_SMOKE_PASS_WITH_ENVIRONMENT_LIMITATIONS`): validacion estructural reproducible de la app Streamlit al no estar disponibles `streamlit`/`playwright` en este entorno. Comprueba app, modulos UI, navegacion, disclaimers/no-advice, loader real de ranking y conteos 318/373/124/270/26 sobre 1.111 filas. Resultado: 41 checks, 0 fallos, 3 warnings de entorno, sin screenshots. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI nueva, sin recomendaciones y sin broker. Siguiente fase sugerida: `v2.38CG`.
 
 **v2.38CE — Windows reproducible local packaging** (`WINDOWS_PACKAGE_READY_WITH_WARNINGS`): paquete local reproducible para Windows definido por manifest sobre `v2.38CD`. Incluye 28 archivos, 3.718.092 bytes, 21 checks y 0 fallos; no crea ZIP pesado. Mantiene guardrails: sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI nueva, sin recomendaciones y sin broker. Siguiente fase sugerida: `v2.38CF`.

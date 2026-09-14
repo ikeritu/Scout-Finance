@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38CG — Limitations backlog / product risk register (2026-09-14)
+
+Crea el registro unico de limitaciones, warnings de entorno, deuda tecnica y riesgos de interpretacion antes de la auditoria final. Usa `v2.38BX`, `v2.38BZ`, `v2.38CD`, `v2.38CE` y `v2.38CF` como fuentes. Resultado: `PRODUCT_RISK_REGISTER_READY_WITH_NON_BLOCKING_LIMITATIONS`; 14 riesgos registrados, 11 entradas de backlog, 0 riesgos bloqueantes y 9 categorias cubiertas. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones ni broker. 2 pruebas offline nuevas. Detalle en `LIMITATIONS_BACKLOG_PRODUCT_RISK_REGISTER_v2_38cg.md`.
+
 ## v2.38CF — Streamlit visual smoke test (2026-09-14)
 
 Crea smoke test visual honesto para Streamlit. Como el entorno no dispone de `streamlit` ni `playwright`, registra `STRUCTURAL_SMOKE_TEST` en vez de declarar navegador real: valida app, modulos UI, navegacion, textos de ranking experimental, disclaimers/no-advice, loader real de 1.111 filas y poblaciones 318/373/124/270/26. Resultado: `STREAMLIT_VISUAL_SMOKE_PASS_WITH_ENVIRONMENT_LIMITATIONS`; 41 checks, 0 fallos, 3 warnings de entorno y screenshots no disponibles. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones ni broker. 2 pruebas offline nuevas. Detalle en `STREAMLIT_VISUAL_SMOKE_TEST_v2_38cf.md`.
