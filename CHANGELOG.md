@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38CA — Release Candidate / local packaging / operator guide (2026-09-14)
+
+Prepara la app como candidata local de uso con limitaciones: contrato CA, builder de diagnostico, guia de operador Windows, checklist de arranque, summary y manifest. Verifica outputs BV/BX/BY/BZ, conteos reales del ranking (318/373/124/270/26; 1.111 total) y guardrails de no scoring nuevo/no metodologia nueva/no red/no recomendaciones/no broker. Resultado: `RELEASE_CANDIDATE_LOCAL_READY_WITH_LIMITATIONS`. 2 pruebas offline nuevas. Detalle en `RELEASE_CANDIDATE_LOCAL_v2_38ca.md` y `OPERATOR_GUIDE_LOCAL_v2_38ca.md`.
+
 ## v2.38BZ — Product Readiness Gate (2026-09-14)
 
 Anade una puerta formal de preparacion de producto para la pantalla `Ranking global (experimental)`. Lee `v2.38BV`, `v2.38BX` y `v2.38BY`, verifica los conteos reales (318/373/124/270/26; 1.111 total), la UI minima de producto, las limitaciones explicitas y los guardrails de no red/no scoring nuevo/no metodologia nueva/no recomendaciones/no broker. Decision: `PRODUCT_READINESS_PASS_WITH_LIMITATIONS`; usable como herramienta local de investigacion, no como producto predictivo ni asesor financiero. 2 pruebas offline nuevas. Detalle en `PRODUCT_READINESS_GATE_v2_38bz.md`.
