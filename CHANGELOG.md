@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38CB — Local startup/dependency validation (2026-09-14)
+
+Valida el arranque local de la release candidate: contrato CB, builder de diagnostico, parseo de app/loader, inspeccion de `run_local_ui_v2_37.bat`, importabilidad de dependencias criticas, carga real del ranking con 1.111 filas, outputs BV/BX/BY/BZ/CA y troubleshooting de errores comunes. Resultado: `LOCAL_STARTUP_VALIDATED_WITH_ENVIRONMENT_WARNINGS` con 0 fallos y warnings de entorno permitidos. Sin scoring nuevo, sin red, sin recomendaciones ni broker. 2 pruebas offline nuevas. Detalle en `LOCAL_STARTUP_VALIDATION_v2_38cb.md` y `LOCAL_STARTUP_TROUBLESHOOTING_v2_38cb.md`.
+
 ## v2.38CA — Release Candidate / local packaging / operator guide (2026-09-14)
 
 Prepara la app como candidata local de uso con limitaciones: contrato CA, builder de diagnostico, guia de operador Windows, checklist de arranque, summary y manifest. Verifica outputs BV/BX/BY/BZ, conteos reales del ranking (318/373/124/270/26; 1.111 total) y guardrails de no scoring nuevo/no metodologia nueva/no red/no recomendaciones/no broker. Resultado: `RELEASE_CANDIDATE_LOCAL_READY_WITH_LIMITATIONS`. 2 pruebas offline nuevas. Detalle en `RELEASE_CANDIDATE_LOCAL_v2_38ca.md` y `OPERATOR_GUIDE_LOCAL_v2_38ca.md`.

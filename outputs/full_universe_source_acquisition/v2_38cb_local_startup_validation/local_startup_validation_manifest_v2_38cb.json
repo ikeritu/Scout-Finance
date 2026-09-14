@@ -1,0 +1,93 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "financial_advice_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "ui_recomputes_scoring": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "app_v2_37.py": {
+      "bytes": 46342,
+      "sha256": "8875f1ae2696933c90806a1c897c1e6e20f3e16afdbb2b9ef90d41a50e1a53df"
+    },
+    "config/local_startup_validation_contract_v2_38cb.json": {
+      "bytes": 2253,
+      "sha256": "0bbda724237df0330b5a8748c89e9891ade415c6e36964978dce04f9d76e221f"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json": {
+      "bytes": 2264529,
+      "sha256": "965c5f02426cb0c2901dc497d6d9d67e21cd2fbc4dee27ca4e3cd4544a2f9817"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bx_phase9c_closure_audit/phase9c_closure_audit_summary_v2_38bx.json": {
+      "bytes": 958,
+      "sha256": "42c033a2acfe4090e4c777b7c3ac7dbbd4930197eef585e5d1d63d76701fdb39"
+    },
+    "outputs/full_universe_source_acquisition/v2_38by_ranking_ux_hardening/ranking_ux_hardening_summary_v2_38by.json": {
+      "bytes": 900,
+      "sha256": "a2f67a2f6252ece241841a9fd7196c787efc8ce5d93f3b483e7fbb43c1f904dd"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bz_product_readiness_gate/product_readiness_gate_summary_v2_38bz.json": {
+      "bytes": 1062,
+      "sha256": "4fb7106669927ec69f3e04adcc8b1e6c282bf06aa97ffecce7497f49015daeef"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ca_release_candidate_local/release_candidate_local_manifest_v2_38ca.json": {
+      "bytes": 4405,
+      "sha256": "3528f990f7a74825d3ca25b49752e70cfe3b391422aaa9777a01240f5c4fae86"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ca_release_candidate_local/release_candidate_local_summary_v2_38ca.json": {
+      "bytes": 1098,
+      "sha256": "a8d30cda2eea8b3cd24c645eb24c1351f294e85d7e9886c235a8c2a9c979544d"
+    },
+    "requirements-ui-v2_28.txt": {
+      "bytes": 155,
+      "sha256": "eaa1c0a0c173e7b34c7db3a685dd68853da31a703682c55a38ad4ceebf545b8c"
+    },
+    "requirements.txt": {
+      "bytes": 76,
+      "sha256": "d5902eb541d90664eaf20413e17d324b678992ea40d00b25bc4fdc49388763bd"
+    },
+    "run_local_ui_v2_37.bat": {
+      "bytes": 599,
+      "sha256": "22734509231f3afb696f57d57cde1db55009607649cf6f6a925c71366cd7560d"
+    },
+    "src/ui_v2_37/global_ranking.py": {
+      "bytes": 2212,
+      "sha256": "8fe11c587261bef398a2229e8117fea840a51c2b49b3284207cba09745daefe4"
+    }
+  },
+  "outputs": {
+    "LOCAL_STARTUP_TROUBLESHOOTING_v2_38cb.md": {
+      "bytes": 1219,
+      "sha256": "045e70c6e2e588879548f141539e5b12b5c1008d6666869bfbd0907e8b813986"
+    },
+    "LOCAL_STARTUP_VALIDATION_v2_38cb.md": {
+      "bytes": 1014,
+      "sha256": "71078395d8872ffb26c13d06ccc88826fe0a739508a55693cc42a4f7a1e42c94"
+    },
+    "README.md": {
+      "bytes": 309,
+      "sha256": "2aec0b38cafc28f3b72cd908e3c554cb65f2b0603062bf613f4e293b20f12365"
+    },
+    "local_startup_validation_checks_v2_38cb.csv": {
+      "bytes": 5770,
+      "sha256": "240360f23bf4e9168bfb84e13cbe9978a68e17c453b200ea6cc49e2e3470104c"
+    },
+    "local_startup_validation_summary_v2_38cb.json": {
+      "bytes": 807,
+      "sha256": "d06bc967a631fd0bc6d4921c2b4bda43df6fe1e9bb4cda558a135e7c3b3b5d01"
+    }
+  },
+  "phase": "v2.38CB-local-startup-validation",
+  "scripts": [
+    "scripts/build_local_startup_validation_v2_38cb.py"
+  ],
+  "status": "LOCAL_STARTUP_VALIDATED_WITH_ENVIRONMENT_WARNINGS",
+  "tests": [
+    "tests/qa_local_startup_validation_v2_38cb.py",
+    "tests/qa_local_startup_validation_full_suite_v2_38cb.py"
+  ]
+}

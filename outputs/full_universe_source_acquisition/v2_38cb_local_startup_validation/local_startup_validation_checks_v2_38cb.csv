@@ -1,0 +1,63 @@
+check_id,category,label,expected,actual,severity,status
+input_results,file,outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json,present,present,FAIL,PASS
+input_bx_summary,file,outputs/full_universe_source_acquisition/v2_38bx_phase9c_closure_audit/phase9c_closure_audit_summary_v2_38bx.json,present,present,FAIL,PASS
+input_by_summary,file,outputs/full_universe_source_acquisition/v2_38by_ranking_ux_hardening/ranking_ux_hardening_summary_v2_38by.json,present,present,FAIL,PASS
+input_bz_summary,file,outputs/full_universe_source_acquisition/v2_38bz_product_readiness_gate/product_readiness_gate_summary_v2_38bz.json,present,present,FAIL,PASS
+input_ca_summary,file,outputs/full_universe_source_acquisition/v2_38ca_release_candidate_local/release_candidate_local_summary_v2_38ca.json,present,present,FAIL,PASS
+input_ca_manifest,file,outputs/full_universe_source_acquisition/v2_38ca_release_candidate_local/release_candidate_local_manifest_v2_38ca.json,present,present,FAIL,PASS
+input_app,file,app_v2_37.py,present,present,FAIL,PASS
+input_ui_module,file,src/ui_v2_37/global_ranking.py,present,present,FAIL,PASS
+run_script_windows,file,run_local_ui_v2_37.bat,present,present,FAIL,PASS
+requirements_file,file,requirements.txt,present,present,FAIL,PASS
+ui_requirements_file,file,requirements-ui-v2_28.txt,present,present,WARN,PASS
+app_ast_parseable,python_ast,app_v2_37.py,parseable,parseable,FAIL,PASS
+ranking_loader_ast_parseable,python_ast,src/ui_v2_37/global_ranking.py,parseable,parseable,FAIL,PASS
+bat_uses_app_v2_37,windows_runner,run_local_ui_v2_37.bat,present,present,FAIL,PASS
+bat_uses_streamlit_run,windows_runner,run_local_ui_v2_37.bat,present,present,FAIL,PASS
+bat_uses_localhost,windows_runner,run_local_ui_v2_37.bat,present,present,FAIL,PASS
+bat_checks_dependencies,windows_runner,run_local_ui_v2_37.bat,present,present,FAIL,PASS
+bat_no_external_network,windows_runner,run_local_ui_v2_37.bat,absent,absent,FAIL,PASS
+python_module:pandas,dependency,pandas,available,available,WARN,PASS
+python_module:numpy,dependency,numpy,available,available,WARN,PASS
+python_module:streamlit,dependency,streamlit,available,missing_on_this_machine,WARN,WARN
+python_module:plotly,dependency,plotly,available,missing_on_this_machine,WARN,WARN
+python_module:matplotlib,dependency,matplotlib,available,available,WARN,PASS
+ranking_loader_real_json,loader,load_global_ranking(ROOT),available:True;rows:1111,available:True;rows:1111,FAIL,PASS
+population:ELIGIBLE_PARTIAL,population,ELIGIBLE_PARTIAL,318,318,FAIL,PASS
+population:PARTIAL_COMPARABILITY,population,PARTIAL_COMPARABILITY,373,373,FAIL,PASS
+population:REVIEW_REQUIRED,population,REVIEW_REQUIRED,124,124,FAIL,PASS
+population:BLOCKED,population,BLOCKED,270,270,FAIL,PASS
+population:NOT_YET_SCORED_NO_ADAPTER,population,NOT_YET_SCORED_NO_ADAPTER,26,26,FAIL,PASS
+population:TOTAL,population,total ranking rows,1111,1111,FAIL,PASS
+bz_status,upstream,v2.38BZ status,PRODUCT_READINESS_PASS_WITH_LIMITATIONS,PRODUCT_READINESS_PASS_WITH_LIMITATIONS,FAIL,PASS
+ca_status,upstream,v2.38CA status,RELEASE_CANDIDATE_LOCAL_READY_WITH_LIMITATIONS,RELEASE_CANDIDATE_LOCAL_READY_WITH_LIMITATIONS,FAIL,PASS
+bx_qa_status,upstream,bx qa_status,PASS,PASS,FAIL,PASS
+by_qa_status,upstream,by qa_status,PASS,PASS,FAIL,PASS
+bz_qa_status,upstream,bz qa_status,PASS,PASS,FAIL,PASS
+ca_qa_status,upstream,ca qa_status,PASS,PASS,FAIL,PASS
+guardrail:scoring_recomputed,guardrail,scoring_recomputed,False,False,FAIL,PASS
+guardrail:methodology_changed,guardrail,methodology_changed,False,False,FAIL,PASS
+guardrail:weights_changed,guardrail,weights_changed,False,False,FAIL,PASS
+guardrail:network_used,guardrail,network_used,False,False,FAIL,PASS
+guardrail:ui_recomputes_scoring,guardrail,ui_recomputes_scoring,False,False,FAIL,PASS
+guardrail:financial_advice_created,guardrail,financial_advice_created,False,False,FAIL,PASS
+guardrail:broker_actions_allowed,guardrail,broker_actions_allowed,False,False,FAIL,PASS
+guardrail:recommendations_created,guardrail,recommendations_created,False,False,FAIL,PASS
+app_forbidden_absent:score_assets(,guardrail,app_v2_37.py,absent,absent,FAIL,PASS
+app_forbidden_absent:percentile_scores(,guardrail,app_v2_37.py,absent,absent,FAIL,PASS
+app_forbidden_absent:build_raw_factors(,guardrail,app_v2_37.py,absent,absent,FAIL,PASS
+app_forbidden_absent:build_global_research_ranking_v2_38bv,guardrail,app_v2_37.py,absent,absent,FAIL,PASS
+app_forbidden_absent:requests.,guardrail,app_v2_37.py,absent,absent,FAIL,PASS
+app_forbidden_absent:httpx.,guardrail,app_v2_37.py,absent,absent,FAIL,PASS
+app_forbidden_absent:urlopen(,guardrail,app_v2_37.py,absent,absent,FAIL,PASS
+app_forbidden_absent:subprocess.,guardrail,app_v2_37.py,absent,absent,FAIL,PASS
+app_forbidden_absent:os.system(,guardrail,app_v2_37.py,absent,absent,FAIL,PASS
+loader_forbidden_absent:score_assets(,guardrail,src/ui_v2_37/global_ranking.py,absent,absent,FAIL,PASS
+loader_forbidden_absent:percentile_scores(,guardrail,src/ui_v2_37/global_ranking.py,absent,absent,FAIL,PASS
+loader_forbidden_absent:build_raw_factors(,guardrail,src/ui_v2_37/global_ranking.py,absent,absent,FAIL,PASS
+loader_no_recompute_import:build_global_research_ranking_v2_38bv,guardrail,src/ui_v2_37/global_ranking.py,absent,absent,FAIL,PASS
+loader_forbidden_absent:requests.,guardrail,src/ui_v2_37/global_ranking.py,absent,absent,FAIL,PASS
+loader_forbidden_absent:httpx.,guardrail,src/ui_v2_37/global_ranking.py,absent,absent,FAIL,PASS
+loader_forbidden_absent:urlopen(,guardrail,src/ui_v2_37/global_ranking.py,absent,absent,FAIL,PASS
+loader_forbidden_absent:subprocess.,guardrail,src/ui_v2_37/global_ranking.py,absent,absent,FAIL,PASS
+loader_forbidden_absent:os.system(,guardrail,src/ui_v2_37/global_ranking.py,absent,absent,FAIL,PASS
