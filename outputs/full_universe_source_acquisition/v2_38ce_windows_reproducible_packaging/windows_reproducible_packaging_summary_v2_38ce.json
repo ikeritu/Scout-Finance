@@ -1,0 +1,23 @@
+{
+  "broker_actions_allowed": false,
+  "check_count": 21,
+  "datasets_mutated": false,
+  "fail_count": 0,
+  "financial_advice_created": false,
+  "methodology_changed": false,
+  "network_used": false,
+  "next_recommended_phase": "v2.38CF-streamlit-visual-smoke-test",
+  "packaging_mode": "manifest_based_reproducible_packaging",
+  "phase": "v2.38CE-windows-reproducible-packaging",
+  "qa_status": "PASS",
+  "recommendations_created": false,
+  "reproducibility_status": "MANIFEST_REPRODUCIBLE_WITH_WARNINGS",
+  "scoring_recomputed": false,
+  "source_phase": "v2.38CD-required-outputs-diagnostics",
+  "status": "WINDOWS_PACKAGE_READY_WITH_WARNINGS",
+  "total_bytes": 3718092,
+  "total_files_in_package": 28,
+  "ui_changed": false,
+  "weights_changed": false,
+  "zip_created": false
+}

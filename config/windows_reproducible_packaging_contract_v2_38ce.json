@@ -1,0 +1,35 @@
+{
+  "expected_status": "WINDOWS_PACKAGE_READY_WITH_WARNINGS",
+  "source_phase": "v2.38CD-required-outputs-diagnostics",
+  "expected_cd_status": "LOCAL_APP_READY_WITH_WARNINGS",
+  "packaging_mode": "manifest_based_reproducible_packaging",
+  "excluded_patterns": [
+    ".git/",
+    ".env",
+    "*.pyc",
+    "__pycache__/",
+    "*.log",
+    ".pytest_cache/",
+    ".streamlit/secrets.toml",
+    "outputs/**/raw/**"
+  ],
+  "required_windows_paths": [
+    "app_v2_37.py",
+    "run_local_ui_v2_37.bat",
+    "requirements.txt",
+    "src/ui_v2_37/global_ranking.py",
+    "src/ui_v2_37/watchlists.py"
+  ],
+  "guardrails": {
+    "scoring_recomputed": false,
+    "methodology_changed": false,
+    "weights_changed": false,
+    "network_used": false,
+    "datasets_mutated": false,
+    "ui_changed": false,
+    "financial_advice_created": false,
+    "broker_actions_allowed": false,
+    "recommendations_created": false,
+    "zip_created": false
+  }
+}

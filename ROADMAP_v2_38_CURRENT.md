@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.38CD cerrada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.38CE cerrada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.38CD: add required outputs diagnostics`
+`LOCAL_COMMIT_PENDING_PUSH v2.38CE: add Windows reproducible packaging`
 
 Estado operativo del producto:
 
-`LOCAL_APP_READY_WITH_WARNINGS`
+`WINDOWS_PACKAGE_READY_WITH_WARNINGS`
 
 ## Checklist General
 
@@ -44,12 +44,12 @@ Estado operativo del producto:
 | Completada | v2.38CB | Validacion de dependencias de arranque local |
 | Completada | v2.38CC | Guia de usuario dummy-friendly |
 | Completada | v2.38CD | Required outputs checklist / missing data diagnostics |
+| Completada | v2.38CE | Windows reproducible local packaging |
 
 ## Pendiente Para Completar El Ciclo Local
 
 | Estado | Fase | Objetivo | Criterio de cierre |
 | --- | --- | --- | --- |
-| Pendiente | v2.38CE | Windows reproducible local packaging | Paquete local verificable en Windows con instrucciones minimas, rutas estables y dependencias controladas. |
 | Pendiente | v2.38CF | Streamlit visual smoke test | Prueba visual documentada de arranque, carga de datos, ranking y pantallas principales. |
 | Pendiente | v2.38CG | Limitations backlog / product risk register | Registro explicito de limitaciones, deuda tecnica, datos incompletos y riesgos de interpretacion. |
 | Pendiente | v2.38CH | Release candidate audit | Auditoria final de contratos, manifests, schemas, guardrails, documentacion y trazabilidad. |
@@ -72,6 +72,6 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.38CE: Windows reproducible local packaging`
+`v2.38CF: Streamlit visual smoke test`
 
-Objetivo recomendado: preparar un paquete local reproducible en Windows usando el diagnostico de outputs de v2.38CD como lista de control.
+Objetivo recomendado: arrancar la app y documentar visualmente que Streamlit carga las pantallas principales, el ranking real y los avisos de limitacion.

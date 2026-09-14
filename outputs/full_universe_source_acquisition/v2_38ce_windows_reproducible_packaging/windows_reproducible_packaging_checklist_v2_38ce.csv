@@ -1,0 +1,22 @@
+check_id,category,item,expected,actual,severity,status,remediation_hint
+cd_status,source,v2.38CD summary,LOCAL_APP_READY_WITH_WARNINGS,LOCAL_APP_READY_WITH_WARNINGS,FAIL,PASS,No action required.
+cd_blockers,source,v2.38CD blocking_missing_count,0,0,FAIL,PASS,No action required.
+packaging_mode,packaging,packaging strategy,manifest_based_reproducible_packaging,manifest_based_reproducible_packaging,FAIL,PASS,No action required.
+windows_path:app_v2_37.py,windows_preflight,app_v2_37.py,present,present,FAIL,PASS,No action required.
+windows_path:run_local_ui_v2_37.bat,windows_preflight,run_local_ui_v2_37.bat,present,present,FAIL,PASS,No action required.
+windows_path:requirements.txt,windows_preflight,requirements.txt,present,present,FAIL,PASS,No action required.
+windows_path:src/ui_v2_37/global_ranking.py,windows_preflight,src/ui_v2_37/global_ranking.py,present,present,FAIL,PASS,No action required.
+windows_path:src/ui_v2_37/watchlists.py,windows_preflight,src/ui_v2_37/watchlists.py,present,present,FAIL,PASS,No action required.
+launcher_targets_app,windows_preflight,run_local_ui_v2_37.bat,present,present,FAIL,PASS,No action required.
+launcher_uses_localhost,windows_preflight,run_local_ui_v2_37.bat,present,present,FAIL,PASS,No action required.
+no_secrets_in_manifest,security,included files,0,0,FAIL,PASS,No action required.
+guardrail:scoring_recomputed,guardrail,scoring_recomputed,false,false,FAIL,PASS,No action required.
+guardrail:methodology_changed,guardrail,methodology_changed,false,false,FAIL,PASS,No action required.
+guardrail:weights_changed,guardrail,weights_changed,false,false,FAIL,PASS,No action required.
+guardrail:network_used,guardrail,network_used,false,false,FAIL,PASS,No action required.
+guardrail:datasets_mutated,guardrail,datasets_mutated,false,false,FAIL,PASS,No action required.
+guardrail:ui_changed,guardrail,ui_changed,false,false,FAIL,PASS,No action required.
+guardrail:financial_advice_created,guardrail,financial_advice_created,false,false,FAIL,PASS,No action required.
+guardrail:broker_actions_allowed,guardrail,broker_actions_allowed,false,false,FAIL,PASS,No action required.
+guardrail:recommendations_created,guardrail,recommendations_created,false,false,FAIL,PASS,No action required.
+guardrail:zip_created,guardrail,zip_created,false,false,FAIL,PASS,No action required.

@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38CE — Windows reproducible local packaging (2026-09-14)
+
+Define un paquete local reproducible para Windows basado en manifiesto y alimentado por `v2.38CD`. Genera manifest, checklist CSV, guia Windows, preflight checklist, summary JSON y README de fase. Resultado: `WINDOWS_PACKAGE_READY_WITH_WARNINGS`; 28 archivos incluidos, 3.718.092 bytes, 21 checks, 0 fallos, ZIP no creado para evitar duplicar datasets. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones ni broker. 2 pruebas offline nuevas. Detalle en `WINDOWS_REPRODUCIBLE_PACKAGING_v2_38ce.md`.
+
 ## v2.38CD — Required outputs checklist / missing-data diagnostics (2026-09-14)
 
 Crea el diagnostico reproducible de outputs obligatorios y datos faltantes para uso local. Genera checklist CSV, diagnostico de missing/degraded data, summary JSON, informe Markdown, manifest y README de fase. Resultado: `LOCAL_APP_READY_WITH_WARNINGS`; 24 outputs comprobados, 24 presentes, 0 faltantes bloqueantes, 5 limitaciones documentadas. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones ni broker. 2 pruebas offline nuevas. Detalle en `REQUIRED_OUTPUTS_DIAGNOSTICS_v2_38cd.md`.
