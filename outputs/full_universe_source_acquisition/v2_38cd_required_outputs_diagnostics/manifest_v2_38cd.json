@@ -1,0 +1,146 @@
+{
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "datasets_mutated": false,
+    "financial_advice_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "recommendations_created": false,
+    "scoring_recomputed": false,
+    "ui_changed": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "app_v2_37.py": {
+      "bytes": 46342,
+      "sha256": "8875f1ae2696933c90806a1c897c1e6e20f3e16afdbb2b9ef90d41a50e1a53df"
+    },
+    "config/required_outputs_diagnostics_contract_v2_38cd.json": {
+      "bytes": 964,
+      "sha256": "d8a3576f7fb0ad475c9b77f003d508726e74685fc06cffd015f0215706891e95"
+    },
+    "outputs/full_universe_source_acquisition/country_breakdown_by_country.csv": {
+      "bytes": 633,
+      "sha256": "37acfebf2283684079694c558f478f3dccbf740032ce7ebb67c1a83471b883b2"
+    },
+    "outputs/full_universe_source_acquisition/country_breakdown_by_currency.csv": {
+      "bytes": 212,
+      "sha256": "65bc5be673ccd52b6fe56563c81b5a75b3f8c8307ca34f3032e156de98cdba4e"
+    },
+    "outputs/full_universe_source_acquisition/country_breakdown_by_source_provider.csv": {
+      "bytes": 584,
+      "sha256": "26ce8908dbfa4af60c128b98f6e919ee0ac45dc399e8e11753dfae332ec88198"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_main_v2_38bv.json": {
+      "bytes": 851852,
+      "sha256": "37ffa448e56ee567ad4f0f0a74afdce5be2e0f24569f7ec6727db513612dc3ef"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_manifest_v2_38bv.json": {
+      "bytes": 469,
+      "sha256": "7aa82d881f89f0e57015ea69296806a4d54a6193bd54cf45e36f4232ff178bda"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json": {
+      "bytes": 2264529,
+      "sha256": "965c5f02426cb0c2901dc497d6d9d67e21cd2fbc4dee27ca4e3cd4544a2f9817"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_v2_38bv.csv": {
+      "bytes": 135880,
+      "sha256": "2733786ad0ac20b96832af283efd29bfbd3b3ddea2c8ed0afd2e3ddee2d0e9a1"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bx_phase9c_closure_audit/phase9c_closure_audit_summary_v2_38bx.json": {
+      "bytes": 958,
+      "sha256": "42c033a2acfe4090e4c777b7c3ac7dbbd4930197eef585e5d1d63d76701fdb39"
+    },
+    "outputs/full_universe_source_acquisition/v2_38by_ranking_ux_hardening/ranking_ux_hardening_summary_v2_38by.json": {
+      "bytes": 900,
+      "sha256": "a2f67a2f6252ece241841a9fd7196c787efc8ce5d93f3b483e7fbb43c1f904dd"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bz_product_readiness_gate/product_readiness_gate_summary_v2_38bz.json": {
+      "bytes": 1062,
+      "sha256": "4fb7106669927ec69f3e04adcc8b1e6c282bf06aa97ffecce7497f49015daeef"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ca_release_candidate_local/OPERATOR_GUIDE_LOCAL_v2_38ca.md": {
+      "bytes": 1963,
+      "sha256": "5e026934cae73a3e8805ca6a9f4e46ae340e4e43b6af8311ff6fab6178f8e7d7"
+    },
+    "outputs/full_universe_source_acquisition/v2_38ca_release_candidate_local/release_candidate_local_summary_v2_38ca.json": {
+      "bytes": 1098,
+      "sha256": "a8d30cda2eea8b3cd24c645eb24c1351f294e85d7e9886c235a8c2a9c979544d"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cb_local_startup_validation/LOCAL_STARTUP_TROUBLESHOOTING_v2_38cb.md": {
+      "bytes": 1219,
+      "sha256": "045e70c6e2e588879548f141539e5b12b5c1008d6666869bfbd0907e8b813986"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cb_local_startup_validation/local_startup_validation_summary_v2_38cb.json": {
+      "bytes": 807,
+      "sha256": "d06bc967a631fd0bc6d4921c2b4bda43df6fe1e9bb4cda558a135e7c3b3b5d01"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cc_user_guide_dummy_friendly/USER_GUIDE_DUMMY_FRIENDLY_v2_38cc.md": {
+      "bytes": 3239,
+      "sha256": "dde2c2a298f4427b86913cd10936fa4e364a70524770a26cf2fedd317d7ac5fa"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cc_user_guide_dummy_friendly/USER_GUIDE_FAQ_v2_38cc.md": {
+      "bytes": 2061,
+      "sha256": "9bb40f8ae9417c19d04767415830f3c6ffc60946c2cfc1add9930ddf7b4d17eb"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cc_user_guide_dummy_friendly/USER_GUIDE_QUICK_START_v2_38cc.md": {
+      "bytes": 698,
+      "sha256": "b075e441c85dfee41981b59191b94373f90160f3dc0b70af727fab01e2bcc4e3"
+    },
+    "outputs/full_universe_source_acquisition/v2_38cc_user_guide_dummy_friendly/user_guide_dummy_friendly_summary_v2_38cc.json": {
+      "bytes": 713,
+      "sha256": "ddcdfe910ce5c872fd3de6638d25f77ef59a4abbbdfdc2e5752e26fbd84b9b38"
+    },
+    "requirements-ui-v2_28.txt": {
+      "bytes": 155,
+      "sha256": "eaa1c0a0c173e7b34c7db3a685dd68853da31a703682c55a38ad4ceebf545b8c"
+    },
+    "requirements.txt": {
+      "bytes": 76,
+      "sha256": "d5902eb541d90664eaf20413e17d324b678992ea40d00b25bc4fdc49388763bd"
+    },
+    "run_local_ui_v2_37.bat": {
+      "bytes": 599,
+      "sha256": "22734509231f3afb696f57d57cde1db55009607649cf6f6a925c71366cd7560d"
+    },
+    "src/ui_v2_37/global_ranking.py": {
+      "bytes": 2212,
+      "sha256": "8fe11c587261bef398a2229e8117fea840a51c2b49b3284207cba09745daefe4"
+    },
+    "src/ui_v2_37/watchlists.py": {
+      "bytes": 5206,
+      "sha256": "d990e34b0e676a10dd1d730a119f5e02ebcce01499f2417432cc227460708493"
+    }
+  },
+  "outputs": {
+    "README.md": {
+      "bytes": 194,
+      "sha256": "6fb044eaf52149a3027b1b530e6f87bfa6ba238874f045c8dcacb96f566ba52f"
+    },
+    "REQUIRED_OUTPUTS_DIAGNOSTICS_v2_38cd.md": {
+      "bytes": 1616,
+      "sha256": "7ca50bc3ee98a90b4b4eb83ec06f064e4b5717fd6c408f71b7408b31b903cf6b"
+    },
+    "missing_data_diagnostics_v2_38cd.csv": {
+      "bytes": 2025,
+      "sha256": "33d451ae3532af71ccd8ea1694ace10f1a8a0b283ef9d36e0b4a2ea56151e42f"
+    },
+    "required_outputs_checklist_v2_38cd.csv": {
+      "bytes": 5467,
+      "sha256": "8d4591df8743e97fda734b1b5fb9f53e2dbb73951f945012930ef3b4d4ae0a50"
+    },
+    "required_outputs_summary_v2_38cd.json": {
+      "bytes": 1493,
+      "sha256": "469bc10e897ca0a6924ff15b19a375c0792cb939111cc4a2934e295dea13dcbc"
+    }
+  },
+  "phase": "v2.38CD-required-outputs-diagnostics",
+  "scripts": [
+    "scripts/build_required_outputs_diagnostics_v2_38cd.py"
+  ],
+  "status": "LOCAL_APP_READY_WITH_WARNINGS",
+  "tests": [
+    "tests/qa_required_outputs_diagnostics_v2_38cd.py",
+    "tests/qa_required_outputs_diagnostics_full_suite_v2_38cd.py"
+  ]
+}

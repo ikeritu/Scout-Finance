@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.38CC cerrada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.38CD cerrada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`b7ce81e v2.38CC: add dummy-friendly user guide`
+`LOCAL_COMMIT_PENDING_PUSH v2.38CD: add required outputs diagnostics`
 
 Estado operativo del producto:
 
-`USER_GUIDE_DUMMY_FRIENDLY_READY`
+`LOCAL_APP_READY_WITH_WARNINGS`
 
 ## Checklist General
 
@@ -43,12 +43,12 @@ Estado operativo del producto:
 | Completada | v2.38CA | Guia de release candidate local |
 | Completada | v2.38CB | Validacion de dependencias de arranque local |
 | Completada | v2.38CC | Guia de usuario dummy-friendly |
+| Completada | v2.38CD | Required outputs checklist / missing data diagnostics |
 
 ## Pendiente Para Completar El Ciclo Local
 
 | Estado | Fase | Objetivo | Criterio de cierre |
 | --- | --- | --- | --- |
-| Pendiente | v2.38CD | Required outputs checklist / missing data diagnostics | Inventario reproducible de outputs requeridos, presentes, ausentes y degradados para ejecutar el producto localmente. |
 | Pendiente | v2.38CE | Windows reproducible local packaging | Paquete local verificable en Windows con instrucciones minimas, rutas estables y dependencias controladas. |
 | Pendiente | v2.38CF | Streamlit visual smoke test | Prueba visual documentada de arranque, carga de datos, ranking y pantallas principales. |
 | Pendiente | v2.38CG | Limitations backlog / product risk register | Registro explicito de limitaciones, deuda tecnica, datos incompletos y riesgos de interpretacion. |
@@ -72,6 +72,6 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.38CD: Required outputs checklist / missing data diagnostics`
+`v2.38CE: Windows reproducible local packaging`
 
-Objetivo recomendado: convertir el estado actual en una matriz clara de "necesario vs disponible" para saber exactamente que falta antes de empaquetar y validar el producto local en Windows.
+Objetivo recomendado: preparar un paquete local reproducible en Windows usando el diagnostico de outputs de v2.38CD como lista de control.

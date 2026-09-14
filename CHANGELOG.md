@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.38CD — Required outputs checklist / missing-data diagnostics (2026-09-14)
+
+Crea el diagnostico reproducible de outputs obligatorios y datos faltantes para uso local. Genera checklist CSV, diagnostico de missing/degraded data, summary JSON, informe Markdown, manifest y README de fase. Resultado: `LOCAL_APP_READY_WITH_WARNINGS`; 24 outputs comprobados, 24 presentes, 0 faltantes bloqueantes, 5 limitaciones documentadas. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin cambios UI, sin recomendaciones ni broker. 2 pruebas offline nuevas. Detalle en `REQUIRED_OUTPUTS_DIAGNOSTICS_v2_38cd.md`.
+
 ## v2.38CC — User guide / dummy-friendly guide (2026-09-14)
 
 Crea la guia final de usuario para Scout Finance en lenguaje no tecnico: guia completa, quick start y FAQ. Cubre arranque local, pantallas principales, ranking global experimental, score, confianza, cobertura, estados, filtros, exportacion CSV, Google Finance, watchlists, limitaciones y errores frecuentes heredados de CB. Verifica estados BZ/CA/CB, conteos reales (318/373/124/270/26; 1.111 total) y guardrails. Resultado: `USER_GUIDE_DUMMY_FRIENDLY_READY`. 2 pruebas offline nuevas. Detalle en `USER_GUIDE_DUMMY_FRIENDLY_v2_38cc.md`, `USER_GUIDE_QUICK_START_v2_38cc.md` y `USER_GUIDE_FAQ_v2_38cc.md`.

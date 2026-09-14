@@ -1,0 +1,48 @@
+{
+  "blocking_missing_count": 0,
+  "broker_actions_allowed": false,
+  "datasets_mutated": false,
+  "decision": "LOCAL_APP_READY_WITH_WARNINGS",
+  "degraded_data_count": 2,
+  "financial_advice_created": false,
+  "methodology_changed": false,
+  "missing_diagnostic_count": 5,
+  "network_used": false,
+  "next_recommended_phase": "v2.38CE-windows-reproducible-local-packaging",
+  "non_blocking_missing_data_count": 3,
+  "optional_count": 0,
+  "output_count": 24,
+  "phase": "v2.38CD-required-outputs-diagnostics",
+  "present_count": 24,
+  "previous_phase_checks": {
+    "v2.38BZ": {
+      "actual": "PRODUCT_READINESS_PASS_WITH_LIMITATIONS",
+      "expected": "PRODUCT_READINESS_PASS_WITH_LIMITATIONS",
+      "status": "PASS"
+    },
+    "v2.38CA": {
+      "actual": "RELEASE_CANDIDATE_LOCAL_READY_WITH_LIMITATIONS",
+      "expected": "RELEASE_CANDIDATE_LOCAL_READY_WITH_LIMITATIONS",
+      "status": "PASS"
+    },
+    "v2.38CB": {
+      "actual": "LOCAL_STARTUP_VALIDATED_WITH_ENVIRONMENT_WARNINGS",
+      "expected": [
+        "LOCAL_STARTUP_VALIDATED",
+        "LOCAL_STARTUP_VALIDATED_WITH_ENVIRONMENT_WARNINGS"
+      ],
+      "status": "PASS"
+    },
+    "v2.38CC": {
+      "actual": "USER_GUIDE_DUMMY_FRIENDLY_READY",
+      "expected": "USER_GUIDE_DUMMY_FRIENDLY_READY",
+      "status": "PASS"
+    }
+  },
+  "qa_status": "PASS",
+  "recommendations_created": false,
+  "scoring_recomputed": false,
+  "status": "LOCAL_APP_READY_WITH_WARNINGS",
+  "ui_changed": false,
+  "weights_changed": false
+}

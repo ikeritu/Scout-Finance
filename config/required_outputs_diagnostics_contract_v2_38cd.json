@@ -1,0 +1,36 @@
+{
+  "expected_status": "LOCAL_APP_READY_WITH_WARNINGS",
+  "allowed_output_statuses": [
+    "PRESENT",
+    "MISSING",
+    "DEGRADED",
+    "OPTIONAL",
+    "BLOCKING_MISSING",
+    "NON_BLOCKING_MISSING"
+  ],
+  "critical_required_for": [
+    "local_app_startup",
+    "experimental_ranking",
+    "release_candidate_docs"
+  ],
+  "expected_previous_statuses": {
+    "v2.38BZ": "PRODUCT_READINESS_PASS_WITH_LIMITATIONS",
+    "v2.38CA": "RELEASE_CANDIDATE_LOCAL_READY_WITH_LIMITATIONS",
+    "v2.38CB": [
+      "LOCAL_STARTUP_VALIDATED",
+      "LOCAL_STARTUP_VALIDATED_WITH_ENVIRONMENT_WARNINGS"
+    ],
+    "v2.38CC": "USER_GUIDE_DUMMY_FRIENDLY_READY"
+  },
+  "guardrails": {
+    "scoring_recomputed": false,
+    "methodology_changed": false,
+    "weights_changed": false,
+    "network_used": false,
+    "datasets_mutated": false,
+    "ui_changed": false,
+    "financial_advice_created": false,
+    "broker_actions_allowed": false,
+    "recommendations_created": false
+  }
+}

@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.38CD — Required outputs checklist / missing-data diagnostics** (`LOCAL_APP_READY_WITH_WARNINGS`): inventario reproducible de outputs necesarios para arranque local, ranking global experimental, watchlists/exportaciones y documentacion de release candidate. Comprueba 24 outputs, todos presentes, sin faltantes bloqueantes; documenta 5 limitaciones de datos faltantes/degradados. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI nueva, sin recomendaciones y sin broker. Siguiente fase sugerida: `v2.38CE`.
+
 **v2.38CC — User guide / dummy-friendly guide** (`USER_GUIDE_DUMMY_FRIENDLY_READY`): guia de usuario final creada en lenguaje no tecnico, con quick start y FAQ. Explica arranque local, ranking experimental, score/confianza/cobertura, estados, filtros, exportacion, Google Finance, watchlists, limitaciones y troubleshooting heredado de CB. Sin scoring nuevo, sin red, sin recomendaciones, sin broker. Siguiente fase sugerida: `v2.38CD`.
 
 **v2.38CB — Local startup/dependency validation** (`LOCAL_STARTUP_VALIDATED_WITH_ENVIRONMENT_WARNINGS`): validacion reproducible de arranque local. Comprueba `.bat`, dependencias importables, parseo de app/loader, carga real del ranking de 1.111 filas, outputs BV/BX/BY/BZ/CA y guardrails. Crea troubleshooting de errores frecuentes de Windows/PowerShell. Sin scoring nuevo, sin red, sin recomendaciones, sin broker. Siguiente fase sugerida: `v2.38CC` guia de usuario final.
