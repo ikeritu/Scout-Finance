@@ -1,0 +1,7 @@
+check_id,category,status,evidence,remediation
+SRC-001,source,PASS,REAL_POST_RELEASE_LOCAL_SMOKE_TEST_READY,Complete v2.39F.
+SEC-001,security warnings,PASS,67,Keep warnings visible before public demo.
+ASSET-001,release assets,PASS,FINAL_REPRODUCIBLE_PACKAGE_RELEASE_ASSETS_READY,Complete v2.39E.
+DECISION-001,publication decision,PASS,PUBLIC_DEMO_SAFE_MODE_REQUIRED_BEFORE_EXTERNAL_DEPLOYMENT,No action required.
+GATE-001,policy gates,PASS,v2.40B prep only; v2.40C required; v2.40D blocked,No action required.
+NO-DEPLOY-001,deployment,PASS,deployment_allowed=false,No action required.

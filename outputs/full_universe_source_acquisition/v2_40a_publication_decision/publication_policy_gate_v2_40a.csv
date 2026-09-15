@@ -1,0 +1,4 @@
+phase,gate,decision,notes
+v2.40B,ALLOWED_HOSTING_PREPARATION_ONLY,allowed,publication control recorded in v2.40A
+v2.40C,REQUIRED_BEFORE_PUBLIC_DEMO,required,publication control recorded in v2.40A
+v2.40D,BLOCKED_UNTIL_V2_40B_AND_V2_40C_PASS,blocked,publication control recorded in v2.40A

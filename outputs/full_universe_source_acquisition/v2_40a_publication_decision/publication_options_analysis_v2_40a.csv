@@ -1,0 +1,5 @@
+mode,data_exposure,financial_interpretation_risk,demo_mode_needed,credentials_needed,real_visual_qa_needed,no_advice_compatible,effort_remaining,recommended_decision
+LOCAL_ONLY,lowest,low,no,no,recommended,yes,low,safe fallback
+PRIVATE_REPO_ONLY,low,medium,optional,no,recommended,yes,low,acceptable for trusted users
+PUBLIC_DEMO_SAFE_MODE,controlled,medium,required,no real credentials,required,yes with guardrails,medium,selected path
+CONTROLLED_EXTERNAL_DEPLOYMENT,highest,high,required first,possibly,required,only after gates,high,blocked until v2.40B and v2.40C pass

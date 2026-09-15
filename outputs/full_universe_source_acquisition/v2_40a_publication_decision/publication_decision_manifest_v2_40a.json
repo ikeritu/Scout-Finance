@@ -1,0 +1,89 @@
+{
+  "branch": "phase9b-global-enrichment-v2-38b",
+  "created_at_utc": "2026-09-15T18:04:35Z",
+  "guardrails": {
+    "assets_uploaded": false,
+    "broker_actions_allowed": false,
+    "credential_preparation_done": false,
+    "datasets_mutated": false,
+    "deployment_allowed": false,
+    "financial_advice_created": false,
+    "github_release_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "ranking_changed": false,
+    "scoring_recomputed": false,
+    "tag_created": false,
+    "ui_changed": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "config/publication_decision_contract_v2_40a.json": {
+      "bytes": 1689,
+      "sha256": "e8bcc0f7a4284826bb1072403fe4e4bc57bbe39a8091a72a53ea9cf21bf21c37"
+    },
+    "outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/security_sensitive_files_summary_v2_39c.json": {
+      "bytes": 1069,
+      "sha256": "63e7105dd5ff868a0afb28b8a53f7080f3e1ee94fbe082e81895dddd1188aa83"
+    },
+    "outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/final_reproducible_package_release_assets_summary_v2_39e.json": {
+      "bytes": 1243,
+      "sha256": "368f0bc3e0420ec2e8b240d3e744a27aef10a7a464821afaa346df2e186f788b"
+    },
+    "outputs/full_universe_source_acquisition/v2_39f_real_post_release_local_smoke_test/real_post_release_local_smoke_summary_v2_39f.json": {
+      "bytes": 1484,
+      "sha256": "24082a30ffbf455b1d654633c77980067dcbaf4977d904281de5ccbb37b9cb6a"
+    }
+  },
+  "outputs": {
+    "outputs/full_universe_source_acquisition/v2_40a_publication_decision/PUBLICATION_DECISION_v2_40a.md": {
+      "bytes": 895,
+      "sha256": "1bd9e82860b883152e872b59eed22c57f57503763408eea7051fa13b11db1e98"
+    },
+    "outputs/full_universe_source_acquisition/v2_40a_publication_decision/README.md": {
+      "bytes": 95,
+      "sha256": "bf6be8e1bbce56e4d7452597499983e304a37535e3cf4cbb49973fde83255cb4"
+    },
+    "outputs/full_universe_source_acquisition/v2_40a_publication_decision/publication_decision_matrix_v2_40a.csv": {
+      "bytes": 584,
+      "sha256": "5a0486fa5dfb3c39d03b2b6ee43caa997e35519eef0b069e257f43c57bcc3bfa"
+    },
+    "outputs/full_universe_source_acquisition/v2_40a_publication_decision/publication_decision_summary_v2_40a.json": {
+      "bytes": 1479,
+      "sha256": "13deb44e221cec1dca6461713cfeb95c18aeb757032c20f3961133e058a87bea"
+    },
+    "outputs/full_universe_source_acquisition/v2_40a_publication_decision/publication_options_analysis_v2_40a.csv": {
+      "bytes": 573,
+      "sha256": "98455f201da3e66b79b9ab89faa508444457456fba520ff6b170c7c6892057de"
+    },
+    "outputs/full_universe_source_acquisition/v2_40a_publication_decision/publication_policy_gate_v2_40a.csv": {
+      "bytes": 287,
+      "sha256": "63733b27c78791553790e5ad82a42f2bb8d6b1550a2440946dd8b1709aecb36e"
+    }
+  },
+  "phase": "v2.40A-publication-decision",
+  "policy_gates": [
+    {
+      "decision": "allowed",
+      "gate": "ALLOWED_HOSTING_PREPARATION_ONLY",
+      "notes": "publication control recorded in v2.40A",
+      "phase": "v2.40B"
+    },
+    {
+      "decision": "required",
+      "gate": "REQUIRED_BEFORE_PUBLIC_DEMO",
+      "notes": "publication control recorded in v2.40A",
+      "phase": "v2.40C"
+    },
+    {
+      "decision": "blocked",
+      "gate": "BLOCKED_UNTIL_V2_40B_AND_V2_40C_PASS",
+      "notes": "publication control recorded in v2.40A",
+      "phase": "v2.40D"
+    }
+  ],
+  "selected_decision": "PUBLIC_DEMO_SAFE_MODE_REQUIRED_BEFORE_EXTERNAL_DEPLOYMENT",
+  "source_commit": "7ee1b35",
+  "stable_tag": "v2.38CJ-local-stable",
+  "status": "PUBLICATION_DECISION_RECORDED"
+}

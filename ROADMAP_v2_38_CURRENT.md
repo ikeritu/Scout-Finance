@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.39F preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.40A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.39F: add real post-release local smoke test`
+`LOCAL_COMMIT_PENDING_PUSH v2.40A: record publication decision`
 
 Estado operativo del producto:
 
-`REAL_POST_RELEASE_LOCAL_SMOKE_TEST_READY`
+`PUBLICATION_DECISION_RECORDED`
 
 Cycle status:
 
@@ -60,6 +60,7 @@ Cycle status:
 | Completada | v2.39D | Clean Windows install validation |
 | Completada | v2.39E | Final reproducible package + GitHub release assets |
 | Completada | v2.39F | Real post-release local smoke test |
+| Completada | v2.40A | Publication decision |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -83,9 +84,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.40A: Publication decision`
+`v2.40B: Streamlit Cloud / hosting prep`
 
-Objetivo recomendado: decidir el modo de publicacion del proyecto: local-only, privada, demo publica o despliegue controlado.
+Objetivo recomendado: preparar hosting externo de forma tecnica y segura, sin desplegar la app real completa ni preparar credenciales reales.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -97,7 +98,7 @@ Objetivo recomendado: decidir el modo de publicacion del proyecto: local-only, p
 | Completada | v2.39D | Validacion de instalacion desde cero en Windows |
 | Completada | v2.39E | Paquete reproducible final y GitHub release assets |
 | Completada | v2.39F | Smoke test real post-release local |
-| Pendiente | v2.40A | Decision de publicacion: local-only, privada, demo publica o despliegue controlado |
+| Completada | v2.40A | Decision de publicacion: demo segura obligatoria antes de despliegue externo |
 | Pendiente | v2.40B | Preparacion Streamlit Cloud / hosting externo seguro |
 | Pendiente | v2.40C | Modo demo seguro sin datos sensibles ni escritura peligrosa |
 | Pendiente | v2.40D | Publicacion externa controlada y QA post-publicacion |
