@@ -1,0 +1,6 @@
+decision_area,decision,reason,affected_population,next_phase
+United Kingdom,REQUIRES_USER_DECISION_OR_DOCUMENTED_LIMITATION,"Official access, safe automation, credentials and document routes remain conditioned.",1,v2.41D-final-coverage-limitations
+Cboe Europe,BLOCKED_STRUCTURAL_KEEP_DOCUMENTED,"Identity, fundamentals and prices remain structurally problematic or outside approved scope.",large_structural_scope,v2.41D-final-coverage-limitations
+Manual reviews,DEFER_POST_RELEASE_WITH_EXPLICIT_SEPARATION,Review-required rows must stay outside the main ranking unless reviewed by a human or separate contract.,124,v2.41D-final-coverage-limitations
+Financial institutions,REQUIRES_SEPARATE_FACTOR_CONTRACT,Banks and insurers are not comparable with the industrial factor contract.,25,v2.41D-final-coverage-limitations
+Extreme margin,KEEP_REVIEW_REQUIRED,"Extreme margins stay separated; no silent imputation, winsorization or normalization.",100,v2.41D-final-coverage-limitations

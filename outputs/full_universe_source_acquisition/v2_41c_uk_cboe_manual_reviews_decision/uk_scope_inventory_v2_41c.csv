@@ -1,0 +1,3 @@
+scope,count,decision,detail
+uk_or_gb_rows_in_ranking,1,REQUIRES_USER_DECISION_OR_DOCUMENTED_LIMITATION,UK remains a conditioned source/access decision; no state changes performed.
+no_adapter_rows_total,26,KEEP_SEPARATED,No-adapter rows remain not rankable; Luxembourg already closed in v2.41B.

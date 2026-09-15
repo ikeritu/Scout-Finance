@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "path": "config/uk_cboe_manual_reviews_decision_contract_v2_41c.json",
+      "sha256": "421178c061610973305074ddbb1a9f239d9923639751bb07dfe102ec9c3fbe37"
+    },
+    {
+      "path": "docs/UK_CBOE_MANUAL_REVIEWS_DECISION_v2_41c.md",
+      "sha256": "a6e97859d0bfd577ccfcbe8b8100f08a6bb68c26e3bcc47de865084c6343ed9b"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41c_uk_cboe_manual_reviews_decision/uk_cboe_manual_reviews_decision_matrix_v2_41c.csv",
+      "sha256": "428090d53b2ae6b7ae97001a2537e0668400ad332fbdfbe839b86c3c2d0dc5fb"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41c_uk_cboe_manual_reviews_decision/uk_scope_inventory_v2_41c.csv",
+      "sha256": "736f92e9eefbb899a9ad002305785ae4854a38295b592e8e0491a2c2c676e0cc"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41c_uk_cboe_manual_reviews_decision/cboe_europe_decision_register_v2_41c.csv",
+      "sha256": "5f41ef4db93ef81054ff1dba880e7746eca37809ae9c04edc8809dc7bb8b4183"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41c_uk_cboe_manual_reviews_decision/manual_reviews_inventory_v2_41c.csv",
+      "sha256": "33a79e0d5c88a4927aac114f3966b6391a6996ca30bf8a426d3be5303bc4c5ee"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41c_uk_cboe_manual_reviews_decision/financial_institutions_review_v2_41c.csv",
+      "sha256": "d01a5a4e0bde1473de714518377185ccd89d728be066166454782b929ab805bc"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41c_uk_cboe_manual_reviews_decision/extreme_margin_review_v2_41c.csv",
+      "sha256": "d47ea4990f7c65a650e3167b60cf77391fdbb494c71437335794625c63dbb5ce"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41c_uk_cboe_manual_reviews_decision/uk_cboe_manual_reviews_next_phase_v2_41c.csv",
+      "sha256": "53de76eaedab89c5198c50e4df599cf728c4f16d88742a62bf0d21fa085acb65"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41c_uk_cboe_manual_reviews_decision/uk_cboe_manual_reviews_decision_summary_v2_41c.json",
+      "sha256": "ae81a3d8f7d5d3c3a8aa322621efd2ebd65a4940c028144107ed3d35dcebe37b"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41c_uk_cboe_manual_reviews_decision/UK_CBOE_MANUAL_REVIEWS_DECISION_v2_41c.md",
+      "sha256": "a6e97859d0bfd577ccfcbe8b8100f08a6bb68c26e3bcc47de865084c6343ed9b"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41c_uk_cboe_manual_reviews_decision/README.md",
+      "sha256": "d0c379cbd0c32288da09d60a84e0c20bb6ad063b1a8b512de45281acbc832e1a"
+    }
+  ],
+  "phase": "v2.41C",
+  "status": "UK_CBOE_MANUAL_REVIEWS_DECISION_READY"
+}

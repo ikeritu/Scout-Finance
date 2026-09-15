@@ -1,0 +1,33 @@
+{
+  "phase": "v2.41C",
+  "name": "UK Cboe Europe manual reviews decision",
+  "status": "UK_CBOE_MANUAL_REVIEWS_DECISION_READY",
+  "source_phase": "v2.41B",
+  "source_status": "LUXEMBOURG_ADAPTER_OR_CLOSURE_READY",
+  "stable_tag": "v2.38CJ-local-stable",
+  "scope": "uk_cboe_manual_reviews_decision_only",
+  "network_allowed": false,
+  "new_data_acquisition_allowed": false,
+  "scoring_recompute_allowed": false,
+  "ranking_change_allowed": false,
+  "next_phase": "v2.41D-final-coverage-limitations",
+  "guardrails": {
+    "network_used": false,
+    "new_data_downloaded": false,
+    "external_provider_enabled": false,
+    "credentials_required": false,
+    "datasets_mutated": false,
+    "fundamentals_downloaded": false,
+    "prices_downloaded": false,
+    "scoring_recomputed": false,
+    "ranking_changed": false,
+    "weights_changed": false,
+    "methodology_changed": false,
+    "ui_changed": false,
+    "deployment_performed": false,
+    "public_url_created": false,
+    "financial_advice_created": false,
+    "recommendations_created": false,
+    "broker_actions_allowed": false
+  }
+}

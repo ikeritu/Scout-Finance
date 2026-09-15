@@ -1,0 +1,101 @@
+asset_id,ticker,company_name,country,decision
+U00013,ABAT,American Battery Technology Company - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00015,ABEO,Abeona Therapeutics Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00023,ABVC,"ABVC BioPharma, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00043,ACON,"Aclarion, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00044,ACRS,"Aclaris Therapeutics, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00073,AEI,Alset Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00080,AEVA,"Aeva Technologies, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00090,AGIO,"Agios Pharmaceuticals, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00104,AIFC,AI Financial Corporation - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00105,AIFF,"Firefly Neuroscience, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00106,AIFU,AIFU Inc. - Class A Ordinary Share,USA,KEEP_REVIEW_REQUIRED
+U00107,AIHS,Senmiao Technology Limited - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00108,AIIO,Robo.ai Inc. - Class B Ordinary Shares,USA,KEEP_REVIEW_REQUIRED
+U00110,AIMD,"Ainos, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00111,AIOS,AIOS Tech Inc. - Class A Common Shares,USA,KEEP_REVIEW_REQUIRED
+U00114,AIRE,reAlpha Tech Corp. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00128,ALCO,"Alico, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00131,ALEC,"Alector, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00135,ALGS,"Aligos Therapeutics, Inc. - Common stock",USA,KEEP_REVIEW_REQUIRED
+U00146,ALMS,Alumis Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00157,ALT,"Altimmune, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00167,AMCI,AMC Robotics Corporation - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00174,AMOD,"Alpha Modus Holdings, Inc. - Class A Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00182,AMST,Amesite Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00226,ARAI,Arrive AI Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00229,ARBE,Arbe Robotics Ltd. - Ordinary Shares,USA,KEEP_REVIEW_REQUIRED
+U00253,ASBP,"Aspire Biopharma Holdings, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00260,ASPI,ASP Isotopes Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00263,ASST,"Strive, Inc. - Class A Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00264,ASTC,Astrotech Corporation - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00267,ASTI,"Ascent Solar Technologies, Inc - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00272,ATAI,AtaiBeckley Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00273,ATCX,Atlas Critical Minerals Corporation - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00276,ATEX,Anterix Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00277,ATGL,Alpha Technology Group Limited - Class A Ordinary Shares,USA,KEEP_REVIEW_REQUIRED
+U00282,ATLX,Atlas Lithium Corporation - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00284,ATOM,Atomera Incorporated - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00291,ATYR,"aTyr Pharma, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00293,AUC,ATIF Holdings Limited - Ordinary Shares,USA,KEEP_REVIEW_REQUIRED
+U00296,AUID,authID Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00298,AUR,"Aurora Innovation, Inc. - Class A Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00300,AURE,Aurelion Inc. - Class A Ordinary Shares,USA,KEEP_REVIEW_REQUIRED
+U00313,AVR,Anteris Technologies Global Corp. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00315,AVTX,"Avalo Therapeutics, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00316,AVX,Avax One Technology Ltd. - Common Shares,USA,KEEP_REVIEW_REQUIRED
+U00338,BAOS,Baosheng Media Group Holdings Limited - Ordinary shares,USA,KEEP_REVIEW_REQUIRED
+U00376,BFRG,"Bullfrog AI Holdings, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00391,BIOA,"BioAge Labs, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00426,BNAI,Brand Engagement Network Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00428,BNC,CEA Industries Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00430,BNKK,"Bonk, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00438,BOLT,"Bolt Biotherapeutics, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00458,BRR,"ProCap Financial, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00459,BRTX,"BioRestorative Therapies, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00470,BTAI,"BioXcel Therapeutics, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00478,BTOG,Bit Origin Limited - Class A Ordinary Shares,USA,KEEP_REVIEW_REQUIRED
+U00489,BWFG,"Bankwell Financial Group, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00492,BYAH,"Park Ha Biological Technology Co., Ltd. - Class A Ordinary Shares",USA,KEEP_REVIEW_REQUIRED
+U00493,BYFC,Broadway Financial Corporation - Class A Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00498,BZAI,"Blaize Holdings, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00502,CABR,"Caring Brands, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00512,CAMP,CAMP4 Therapeutics Corporation - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00531,CBIO,"Crescent Biopharma, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00538,CBUS,"Cibus, Inc. - Class A Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00544,CCCC,"C4 Therapeutics, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00560,CDIO,Cardio Diagnostics Holdings Inc. - Common stock,USA,KEEP_REVIEW_REQUIRED
+U00575,CELU,Celularity Inc. - Class A Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00576,CELZ,"Creative Medical Technology Holdings, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00577,CENN,Cenntro Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00588,CETY,"Clean Energy Technologies, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00592,CFFN,"Capitol Federal Financial, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00626,CIFR,Cipher Digital Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U00639,CLDX,"Celldex Therapeutics, Inc. - Common Stock",USA,KEEP_REVIEW_REQUIRED
+U00641,CLGN,CollPlant Biotechnologies Ltd. - Ordinary Shares,USA,KEEP_REVIEW_REQUIRED
+U00647,CLNN,Clene Inc. - Common Stock,USA,KEEP_REVIEW_REQUIRED
+U09268,1WULFm,Terawulf Inc,US,KEEP_REVIEW_REQUIRED
+U14536,M44d,MARA Holdings Inc,US,KEEP_REVIEW_REQUIRED
+U18671,0IIRl,Essex Property Trust Inc,US,KEEP_REVIEW_REQUIRED
+U18676,0IJVl,Extra Space Storage Inc,US,KEEP_REVIEW_REQUIRED
+U18828,0KYZl,SBA Communications Corp,US,KEEP_REVIEW_REQUIRED
+U18954,0R1Dl,Sangamo Therapeutics Inc,US,KEEP_REVIEW_REQUIRED
+U19232,1AMTm,American Tower Corp,US,KEEP_REVIEW_REQUIRED
+U19396,1ENVXm,Enovix Corp,US,KEEP_REVIEW_REQUIRED
+U19672,1QBTSm,D-Wave Quantum Inc,US,KEEP_REVIEW_REQUIRED
+U19931,26CAd,ImmunityBio Inc,US,KEEP_REVIEW_REQUIRED
+U19979,2H51d,Ocugen Inc,US,KEEP_REVIEW_REQUIRED
+U19993,2RJAd,Phunware Inc,US,KEEP_REVIEW_REQUIRED
+U20087,38Id,Intellia Therapeutics Inc,US,KEEP_REVIEW_REQUIRED
+U20570,87Pd,SharonAI Holdings Inc,US,KEEP_REVIEW_REQUIRED
+U20585,8LL0d,374Water Inc,US,KEEP_REVIEW_REQUIRED
+U20896,AGIOn,Agios Pharmaceuticals Inc,US,KEEP_REVIEW_REQUIRED
+U21649,B72d,AtaiBeckley Inc,US,KEEP_REVIEW_REQUIRED
+U22435,CLDXn,Celldex Therapeutics Inc,US,KEEP_REVIEW_REQUIRED
+U22612,CPTn,Camden Property Trust,US,KEEP_REVIEW_REQUIRED
+U23854,F9Qd,Eos Energy Enterprises Inc,US,KEEP_REVIEW_REQUIRED
+U36865,XD4,STRABAG SE,AT,KEEP_REVIEW_REQUIRED
+U36870,OMV,OMV AKTIENGESELLSCHAFT,AT,KEEP_REVIEW_REQUIRED
+U36871,OEWA,VERBUND AG,AT,KEEP_REVIEW_REQUIRED
+U36876,SLL,SBO AG,AT,KEEP_REVIEW_REQUIRED
+U36879,GEPH,EPH Group AG,AT,KEEP_REVIEW_REQUIRED
