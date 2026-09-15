@@ -1,0 +1,11 @@
+check_id,area,status,detail
+40B-001,source_gate,PASS,v2.40A publication decision is recorded
+40B-002,streamlit_entrypoint,PASS,Python syntax compile passed
+40B-003,ranking_ui_module,PASS,Python syntax compile passed
+40B-004,requirements,PASS,requirements.txt declares Streamlit-compatible local dependencies
+40B-005,ranking_artifact,PASS,ranking artifact is present and reused without recomputation
+40B-006,secrets_template,PASS,placeholder-only secrets template created
+40B-007,streamlit_config,WARN,optional config is documented but not created in this phase
+40B-008,safe_demo_gate,PASS,v2.40C is required before public demo
+40B-009,deployment_block,PASS,no deployment was performed and v2.40D remains blocked
+40B-010,manual_checklist,PASS,operator checklist created for future manual hosting setup

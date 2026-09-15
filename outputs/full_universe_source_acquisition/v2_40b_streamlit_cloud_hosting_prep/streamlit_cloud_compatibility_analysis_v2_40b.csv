@@ -1,0 +1,6 @@
+component,status,finding
+entrypoint,PASS,Python syntax compile passed
+requirements,PASS,requirements.txt declares Streamlit-compatible local dependencies
+ranking_artifact,PASS,existing v2.38BV ranking output is present
+safe_demo_mode,BLOCKED_PENDING_40C,public demo requires v2.40C before external deployment
+deployment,NOT_DEPLOYED,technical preparation only

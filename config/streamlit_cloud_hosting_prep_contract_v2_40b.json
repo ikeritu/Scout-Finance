@@ -1,0 +1,46 @@
+{
+  "phase": "v2.40B",
+  "name": "Streamlit Cloud hosting prep",
+  "status": "STREAMLIT_CLOUD_HOSTING_PREP_READY",
+  "source_phase": "v2.40A",
+  "source_status": "PUBLICATION_DECISION_RECORDED",
+  "stable_tag": "v2.38CJ-local-stable",
+  "hosting_prep_scope": "technical_preparation_only",
+  "deployment_status": "NOT_DEPLOYED",
+  "selected_publication_decision": "PUBLIC_DEMO_SAFE_MODE_REQUIRED_BEFORE_EXTERNAL_DEPLOYMENT",
+  "required_safe_demo_phase": "v2.40C-safe-demo-mode",
+  "blocked_deployment_phase": "v2.40D-controlled-external-publication-qa",
+  "guardrails": {
+    "deployment_allowed": false,
+    "streamlit_cloud_app_created": false,
+    "real_secrets_written": false,
+    "github_release_created": false,
+    "assets_uploaded": false,
+    "tag_created": false,
+    "network_used": false,
+    "credential_preparation_done": false,
+    "dependency_install_executed": false,
+    "datasets_mutated": false,
+    "scoring_recomputed": false,
+    "ranking_changed": false,
+    "weights_changed": false,
+    "methodology_changed": false,
+    "ui_changed": false,
+    "financial_advice_created": false,
+    "broker_actions_allowed": false
+  },
+  "required_outputs": [
+    "streamlit_cloud_hosting_prep_matrix_v2_40b.csv",
+    "streamlit_cloud_required_files_inventory_v2_40b.csv",
+    "streamlit_cloud_manual_checklist_v2_40b.csv",
+    "streamlit_cloud_compatibility_analysis_v2_40b.csv",
+    "streamlit_cloud_hosting_prep_summary_v2_40b.json",
+    "streamlit_cloud_hosting_prep_manifest_v2_40b.json",
+    "STREAMLIT_CLOUD_HOSTING_PREP_v2_40b.md",
+    "README.md"
+  ],
+  "documentation_outputs": [
+    "docs/STREAMLIT_CLOUD_HOSTING_PREP_v2_40b.md",
+    "docs/STREAMLIT_SECRETS_TEMPLATE_v2_40b.toml.example"
+  ]
+}

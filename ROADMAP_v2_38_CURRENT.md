@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.40A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.40B preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.40A: record publication decision`
+`LOCAL_COMMIT_PENDING_PUSH v2.40B: prepare Streamlit Cloud hosting`
 
 Estado operativo del producto:
 
-`PUBLICATION_DECISION_RECORDED`
+`STREAMLIT_CLOUD_HOSTING_PREP_READY`
 
 Cycle status:
 
@@ -61,6 +61,7 @@ Cycle status:
 | Completada | v2.39E | Final reproducible package + GitHub release assets |
 | Completada | v2.39F | Real post-release local smoke test |
 | Completada | v2.40A | Publication decision |
+| Completada | v2.40B | Streamlit Cloud hosting prep |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -84,9 +85,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.40B: Streamlit Cloud / hosting prep`
+`v2.40C: Safe demo mode`
 
-Objetivo recomendado: preparar hosting externo de forma tecnica y segura, sin desplegar la app real completa ni preparar credenciales reales.
+Objetivo recomendado: crear un modo demo seguro antes de cualquier despliegue externo o URL publica.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -99,7 +100,7 @@ Objetivo recomendado: preparar hosting externo de forma tecnica y segura, sin de
 | Completada | v2.39E | Paquete reproducible final y GitHub release assets |
 | Completada | v2.39F | Smoke test real post-release local |
 | Completada | v2.40A | Decision de publicacion: demo segura obligatoria antes de despliegue externo |
-| Pendiente | v2.40B | Preparacion Streamlit Cloud / hosting externo seguro |
+| Completada | v2.40B | Preparacion Streamlit Cloud / hosting externo seguro, sin despliegue |
 | Pendiente | v2.40C | Modo demo seguro sin datos sensibles ni escritura peligrosa |
 | Pendiente | v2.40D | Publicacion externa controlada y QA post-publicacion |
 | Pendiente | v2.41A | Priorizacion final de gaps de datos: Europa, Reino Unido, Cboe, Luxemburgo y manual review |

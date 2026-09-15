@@ -1,0 +1,5 @@
+step,action,status
+1,Confirm branch phase9b-global-enrichment-v2-38b is selected in Streamlit Cloud,MANUAL_PENDING
+2,Use app_v2_37.py as the main file,MANUAL_PENDING
+3,Paste secrets only in Streamlit Cloud UI after v2.40C,BLOCKED_PENDING_40C
+4,Run v2.40D controlled external publication QA before sharing any URL,BLOCKED_PENDING_40D

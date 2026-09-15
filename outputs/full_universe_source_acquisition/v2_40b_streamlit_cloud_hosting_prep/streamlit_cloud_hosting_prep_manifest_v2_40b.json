@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "path": "config/streamlit_cloud_hosting_prep_contract_v2_40b.json",
+      "sha256": "be8c71d99ae3fb813903821521bfa36683ec258bf355efdb73ed813287ed15f6"
+    },
+    {
+      "path": "docs/STREAMLIT_CLOUD_HOSTING_PREP_v2_40b.md",
+      "sha256": "4cec86c7a9b2c3fd2087822789eae38bb8bd158977e534aa3b8fcfc6857f776f"
+    },
+    {
+      "path": "docs/STREAMLIT_SECRETS_TEMPLATE_v2_40b.toml.example",
+      "sha256": "944942567c8dd6d4a0c838c61e61a64393498d0bb1bbd136d7113ca3eda3b27a"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40b_streamlit_cloud_hosting_prep/streamlit_cloud_hosting_prep_matrix_v2_40b.csv",
+      "sha256": "ccc7ac305de0a8250a8ad14498fceda0792ff5efa53b6fd0cb2ce81d9f4dd562"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40b_streamlit_cloud_hosting_prep/streamlit_cloud_required_files_inventory_v2_40b.csv",
+      "sha256": "4bc4a1d93503e02ff9ec60eac74c733b6cd771ee56b294c5fb79a61f99a6d7fb"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40b_streamlit_cloud_hosting_prep/streamlit_cloud_manual_checklist_v2_40b.csv",
+      "sha256": "6530577e704e3cf2dfa33be0a19f6116c5d3ca6ad3b2ff3bb75679aef4387820"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40b_streamlit_cloud_hosting_prep/streamlit_cloud_compatibility_analysis_v2_40b.csv",
+      "sha256": "89e8c0a860852450ec503a77f0bbc7551aaf39d155a5b0f2a83d3d927cbd0f38"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40b_streamlit_cloud_hosting_prep/streamlit_cloud_hosting_prep_summary_v2_40b.json",
+      "sha256": "0d30154e36ff991ea5d703497eca305fbab8b7054f3e5f3501b14ae1037f40bc"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40b_streamlit_cloud_hosting_prep/STREAMLIT_CLOUD_HOSTING_PREP_v2_40b.md",
+      "sha256": "af7ef07f5b95c39918f68c406bf64f1f97584679f28a0266964b868da69e545b"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40b_streamlit_cloud_hosting_prep/README.md",
+      "sha256": "3beac3b39374bb1a047195f77930dc24aab7819a80669fa05af2c12b03ac32f9"
+    }
+  ],
+  "phase": "v2.40B",
+  "status": "STREAMLIT_CLOUD_HOSTING_PREP_READY"
+}

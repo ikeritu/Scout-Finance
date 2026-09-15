@@ -1,0 +1,9 @@
+role,path,status,required_for_streamlit_cloud
+streamlit_entrypoint,app_v2_37.py,PRESENT,true
+requirements,requirements.txt,PRESENT,true
+local_launcher,run_local_ui_v2_37.bat,PRESENT,true
+ranking_ui_module,src/ui_v2_37/global_ranking.py,PRESENT,true
+global_universe_ui_module,src/ui_v2_37/global_universe.py,PRESENT,true
+ranking_results,outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_v2_38bv.csv,PRESENT,true
+publication_decision_summary,outputs/full_universe_source_acquisition/v2_40a_publication_decision/publication_decision_summary_v2_40a.json,PRESENT,true
+publication_policy_gate,outputs/full_universe_source_acquisition/v2_40a_publication_decision/publication_policy_gate_v2_40a.csv,PRESENT,true
