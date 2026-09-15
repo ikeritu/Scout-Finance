@@ -1,0 +1,33 @@
+{
+  "phase": "v2.41B",
+  "name": "Luxembourg adapter or closure",
+  "status": "LUXEMBOURG_ADAPTER_OR_CLOSURE_READY",
+  "source_phase": "v2.41A",
+  "source_status": "DATA_GAP_PRIORITIZATION_READY",
+  "stable_tag": "v2.38CJ-local-stable",
+  "scope": "luxembourg_adapter_or_documented_closure",
+  "network_allowed": false,
+  "new_data_acquisition_allowed": false,
+  "scoring_recompute_allowed": false,
+  "ranking_change_allowed": false,
+  "next_phase": "v2.41C-uk-cboe-manual-review-decision",
+  "guardrails": {
+    "network_used": false,
+    "new_data_downloaded": false,
+    "external_provider_enabled": false,
+    "credentials_required": false,
+    "datasets_mutated": false,
+    "fundamentals_downloaded": false,
+    "prices_downloaded": false,
+    "scoring_recomputed": false,
+    "ranking_changed": false,
+    "weights_changed": false,
+    "methodology_changed": false,
+    "ui_changed": false,
+    "deployment_performed": false,
+    "public_url_created": false,
+    "financial_advice_created": false,
+    "recommendations_created": false,
+    "broker_actions_allowed": false
+  }
+}

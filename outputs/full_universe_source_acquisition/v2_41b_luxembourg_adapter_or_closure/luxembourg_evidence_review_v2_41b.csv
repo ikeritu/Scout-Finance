@@ -1,0 +1,4 @@
+evidence_check,status,detail
+local_luxembourg_candidate_count,PASS,26 Luxembourg rows found in v2.38BV with NOT_YET_SCORED_NO_ADAPTER.
+structured_raw_or_normalized_factors,NOT_AVAILABLE,No local structured fundamentals/growth evidence sufficient to build a real Luxembourg adapter without new acquisition.
+new_acquisition_policy,BLOCKED,"New data acquisition, network calls, credentials and scraping are outside v2.41B scope."

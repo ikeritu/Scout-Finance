@@ -1,0 +1,5 @@
+check_id,area,status,detail
+41B-001,source_gate,PASS,v2.41A data gap prioritization is ready.
+41B-002,luxembourg_inventory,PASS,26 Luxembourg candidates reviewed.
+41B-003,adapter_decision,PASS,DOCUMENTED_CLOSURE_READY
+41B-004,guardrails,PASS,"No network, acquisition, scoring, ranking, methodology, UI or deployment changes."

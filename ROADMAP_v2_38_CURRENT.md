@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.41A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.41B preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.41A: prioritize final data gaps`
+`LOCAL_COMMIT_PENDING_PUSH v2.41B: close Luxembourg adapter decision`
 
 Estado operativo del producto:
 
-`DATA_GAP_PRIORITIZATION_READY`
+`LUXEMBOURG_ADAPTER_OR_CLOSURE_READY`
 
 Cycle status:
 
@@ -65,6 +65,7 @@ Cycle status:
 | Completada | v2.40C | Safe demo mode |
 | Completada | v2.40D | Controlled external publication QA |
 | Completada | v2.41A | Data gap prioritization |
+| Completada | v2.41B | Luxembourg adapter or documented closure |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -88,9 +89,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.41B: Luxembourg adapter or closure`
+`v2.41C: UK / Cboe Europe / manual reviews decision`
 
-Objetivo recomendado: decidir si se construye un adaptador real acotado para Luxemburgo o si se cierra formalmente como limitacion documentada.
+Objetivo recomendado: decidir el cierre o tratamiento final de Reino Unido, Cboe Europe y revisiones manuales.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -107,7 +108,7 @@ Objetivo recomendado: decidir si se construye un adaptador real acotado para Lux
 | Completada | v2.40C | Modo demo seguro sin datos sensibles ni escritura peligrosa |
 | Completada | v2.40D | Publicacion externa controlada y QA pre-share, sin despliegue automatico |
 | Completada | v2.41A | Priorizacion final de gaps de datos: Europa, Reino Unido, Cboe, Luxemburgo y manual review |
-| Pendiente | v2.41B | Adaptador Luxemburgo para scoring o cierre documentado |
+| Completada | v2.41B | Luxemburgo cerrado como limitacion documentada: 26 candidatos sin evidencia local para adaptador real |
 | Pendiente | v2.41C | Decision Reino Unido / Cboe Europe / manual reviews |
 | Pendiente | v2.41D | Cobertura y limitaciones finales por pais, fuente y poblacion |
 | Pendiente | v2.42A | Hardening UX final: ranking, filtros, exportaciones, errores y estados vacios |

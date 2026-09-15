@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "path": "config/luxembourg_adapter_or_closure_contract_v2_41b.json",
+      "sha256": "599a23f860c68d7f8f01ed2780fc6703778ddf197dcc2992e571107a5a30e964"
+    },
+    {
+      "path": "docs/LUXEMBOURG_ADAPTER_OR_CLOSURE_v2_41b.md",
+      "sha256": "336554e8b00e32c7d2c56dae32428979d76baedd5c7d0ef0da0018f65d71daa1"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41b_luxembourg_adapter_or_closure/luxembourg_adapter_or_closure_matrix_v2_41b.csv",
+      "sha256": "0d1f7a4ea94ac602d57752f98215ea1448f9c1d5241450357de974f16b8f51f2"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41b_luxembourg_adapter_or_closure/luxembourg_candidate_inventory_v2_41b.csv",
+      "sha256": "d54490d7e85031c985c9bece16f2bdf72ff6f145a6f2f30d88d7440ff72a7470"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41b_luxembourg_adapter_or_closure/luxembourg_evidence_review_v2_41b.csv",
+      "sha256": "1a79166d5cdf8d7fd6712d6c8f5772264b00b2e1aace26607b87554c75e98c7d"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41b_luxembourg_adapter_or_closure/luxembourg_decision_register_v2_41b.csv",
+      "sha256": "bd1b4fe706e70157f3db730233ac69c566a8768b069e12214a1ba205839d6ee9"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41b_luxembourg_adapter_or_closure/luxembourg_next_phase_recommendation_v2_41b.csv",
+      "sha256": "71a037e5d3b7590473e4005004d29db48656e88559f5e8cc0794467156b3dba7"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41b_luxembourg_adapter_or_closure/luxembourg_adapter_or_closure_summary_v2_41b.json",
+      "sha256": "21402fc452812ddf71de12bbf57c71ea154c14bcea2998a3add2a9f503182b47"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41b_luxembourg_adapter_or_closure/LUXEMBOURG_ADAPTER_OR_CLOSURE_v2_41b.md",
+      "sha256": "336554e8b00e32c7d2c56dae32428979d76baedd5c7d0ef0da0018f65d71daa1"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41b_luxembourg_adapter_or_closure/README.md",
+      "sha256": "305854e228e4e491d5de242ed3fd64332f18d0dd9c12fdafd7881175248bd68b"
+    }
+  ],
+  "phase": "v2.41B",
+  "status": "LUXEMBOURG_ADAPTER_OR_CLOSURE_READY"
+}
