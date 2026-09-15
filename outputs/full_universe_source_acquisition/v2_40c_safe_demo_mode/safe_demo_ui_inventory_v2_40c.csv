@@ -1,0 +1,6 @@
+surface,safe_demo_behavior,status
+sidebar,shows Modo demo seguro label,PASS
+home,shows safe demo disclaimer,PASS
+global_universe,refresh disabled,PASS
+global_ranking,read-only ranking with disclaimer,PASS
+watchlist,blocked to avoid private writes,PASS

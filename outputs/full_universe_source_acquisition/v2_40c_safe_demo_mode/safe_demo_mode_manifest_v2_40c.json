@@ -1,0 +1,50 @@
+{
+  "files": [
+    {
+      "path": "config/safe_demo_mode_contract_v2_40c.json",
+      "sha256": "0f6f943f6a2609e3990a9e162bb79a4ca450c830eeda76edba77eeec70cc6c86"
+    },
+    {
+      "path": "src/ui_v2_37/safe_demo.py",
+      "sha256": "a573bb59c770920c11bb5808891890c8280588c14983c2dbf869244e61b3df2d"
+    },
+    {
+      "path": "docs/SAFE_DEMO_MODE_v2_40c.md",
+      "sha256": "89cbb9784196a3913ce89e10743ccc3d1d69ec771712043fad18d17271ff51e9"
+    },
+    {
+      "path": "docs/STREAMLIT_CLOUD_SAFE_DEMO_RUNBOOK_v2_40c.md",
+      "sha256": "1c43dc5ce047897f6538d03d1b6eb8da3dd59220cd1afd4d132f0846f1bf37a4"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40c_safe_demo_mode/safe_demo_mode_matrix_v2_40c.csv",
+      "sha256": "619cf3b6ce3b45a6a453a811005bd9b725ad08262a76e043ba55ab2f0a774af1"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40c_safe_demo_mode/safe_demo_controls_v2_40c.csv",
+      "sha256": "0fb021fa5c88515fd9a7b226398d11168af8010fd60f009ce994ec4c31608236"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40c_safe_demo_mode/safe_demo_ui_inventory_v2_40c.csv",
+      "sha256": "484bfa34a62f1d924ac1848a012796998d285214b1cfdd61d0576ac6c5116d5d"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40c_safe_demo_mode/safe_demo_blocked_actions_v2_40c.csv",
+      "sha256": "51ec3dc71914930276c097529b2eec409e2ab964d6a74bf4456250e2e7129f04"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40c_safe_demo_mode/safe_demo_mode_summary_v2_40c.json",
+      "sha256": "671d9c4ef2a916e4b84fea8e565f901defe2a0a95068270eadbb7e8ea177127c"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40c_safe_demo_mode/SAFE_DEMO_MODE_v2_40c.md",
+      "sha256": "1747b61f68a461ca1f32c621f5de3a0d5061813c90401558e12f7f2c13e15dd8"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40c_safe_demo_mode/README.md",
+      "sha256": "8b3ac0f32c0f32cf3af5bd449b18678433f51bd2ec76eb3043b84b278abe515a"
+    }
+  ],
+  "phase": "v2.40C",
+  "status": "SAFE_DEMO_MODE_READY"
+}

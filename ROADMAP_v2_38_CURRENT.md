@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.40B preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.40C preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.40B: prepare Streamlit Cloud hosting`
+`LOCAL_COMMIT_PENDING_PUSH v2.40C: add safe demo mode`
 
 Estado operativo del producto:
 
-`STREAMLIT_CLOUD_HOSTING_PREP_READY`
+`SAFE_DEMO_MODE_READY`
 
 Cycle status:
 
@@ -62,6 +62,7 @@ Cycle status:
 | Completada | v2.39F | Real post-release local smoke test |
 | Completada | v2.40A | Publication decision |
 | Completada | v2.40B | Streamlit Cloud hosting prep |
+| Completada | v2.40C | Safe demo mode |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -85,9 +86,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.40C: Safe demo mode`
+`v2.40D: Controlled external publication QA`
 
-Objetivo recomendado: crear un modo demo seguro antes de cualquier despliegue externo o URL publica.
+Objetivo recomendado: validar la publicacion externa controlada antes de compartir cualquier URL publica.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -101,7 +102,7 @@ Objetivo recomendado: crear un modo demo seguro antes de cualquier despliegue ex
 | Completada | v2.39F | Smoke test real post-release local |
 | Completada | v2.40A | Decision de publicacion: demo segura obligatoria antes de despliegue externo |
 | Completada | v2.40B | Preparacion Streamlit Cloud / hosting externo seguro, sin despliegue |
-| Pendiente | v2.40C | Modo demo seguro sin datos sensibles ni escritura peligrosa |
+| Completada | v2.40C | Modo demo seguro sin datos sensibles ni escritura peligrosa |
 | Pendiente | v2.40D | Publicacion externa controlada y QA post-publicacion |
 | Pendiente | v2.41A | Priorizacion final de gaps de datos: Europa, Reino Unido, Cboe, Luxemburgo y manual review |
 | Pendiente | v2.41B | Adaptador Luxemburgo para scoring o cierre documentado |

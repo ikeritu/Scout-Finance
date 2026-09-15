@@ -1,0 +1,8 @@
+action,status,reason
+deploy_public_app,BLOCKED,v2.40D QA required
+create_public_url,BLOCKED,v2.40D QA required
+write_real_secrets,BLOCKED,demo requires no real credentials
+refresh_global_universe,BLOCKED_IN_DEMO,static/offline demo only
+write_watchlist,BLOCKED_IN_DEMO,avoid private user data
+broker_action,BLOCKED,broker workflows not allowed
+scoring_recompute,BLOCKED,ranking remains read-only

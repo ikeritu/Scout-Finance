@@ -1,0 +1,7 @@
+check_id,area,status,detail
+40C-001,source_gate,PASS,v2.40B hosting prep is ready
+40C-002,activation,PASS,SCOUT_FINANCE_SAFE_DEMO_MODE opt-in only
+40C-003,ui_banner,PASS,safe demo label visible in app code
+40C-004,refresh_block,PASS,refresh disabled in safe demo
+40C-005,watchlist_block,PASS,private watchlist writes blocked
+40C-006,deployment,PASS,No deployment was performed

@@ -1,0 +1,10 @@
+control,status,evidence
+safe_demo_banner,PASS,Modo demo seguro label and warning banner in app
+no_advice_disclaimer,PASS,existing disclaimer preserved and safe demo copy added
+offline_static_data,PASS,safe demo mode does not add network providers
+broker_block,PASS,broker copy remains blocked; no broker code enabled
+refresh_block,PASS,global universe refresh disabled in safe demo
+export_safety,PASS,ranking export remains sanitized research columns only
+secrets_safety,PASS,mode uses opt-in env flag and no real credentials
+ranking_read_only,PASS,global ranking loader remains read-only
+methodology_lock,PASS,"no scoring, weights or methodology files changed by builder"

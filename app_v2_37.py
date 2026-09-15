@@ -12,12 +12,14 @@ from src.ui_v2_37.global_ranking import load_global_ranking
 from src.ui_v2_37.global_universe import load_global_matrix, rebuild_global_matrix
 from src.ui_v2_37.repository import DataMode, load_fundamentals, load_price_series, load_product_data
 from src.ui_v2_37.reports import DISCLAIMER, asset_markdown, manifest, ranking_markdown, to_html, watchlist_markdown
+from src.ui_v2_37.safe_demo import SAFE_DEMO_LABEL, blocked_message, is_safe_demo_mode, render_safe_demo_banner
 from src.ui_v2_37.ui import apply, banner, heading
 from src.ui_v2_37.watchlists import STATUSES, add, atomic_write, create, export_csv, read, remove, scan, update
 
 ROOT = Path(__file__).resolve().parent
 st.set_page_config(page_title="Scout Finance — Investigación local", page_icon="🔎", layout="wide")
 apply(st)
+SAFE_DEMO_MODE = is_safe_demo_mode()
 
 SCREENS = {
     "home": "🏠 Inicio", "global_universe": "🌍 Universo global (43.089)", "global_ranking": "🏆 Ranking global (experimental)", "universe": "🌐 Universo",
@@ -273,6 +275,7 @@ def global_ranking_display_frame(rows: list[dict], *, include_rank: bool = True,
 
 def render_home(data):
     heading(st, "Scout Finance", "Centro local de investigación financiera · v2.37")
+    render_safe_demo_banner(st, SAFE_DEMO_MODE)
     banner(st)
     cols = st.columns(4)
     cols[0].metric("Activos", len(data.assets))
@@ -298,8 +301,12 @@ def render_home(data):
 
 def render_global_universe(_data):
     heading(st, "Universo global", "Las 43.089 empresas del censo operativo completo, con el estado real de identidad, fundamentales, crecimiento y precio de cada una — lo que falta se marca, nunca se oculta.")
+    render_safe_demo_banner(st, SAFE_DEMO_MODE)
     action_col, info_col = st.columns([1, 3])
-    if action_col.button("🔄 Actualizar", type="primary", help="Recalcula la matriz a partir de los datos ya recolectados hasta ahora. No descarga ni consulta nada nuevo."):
+    if SAFE_DEMO_MODE:
+        action_col.button("🔄 Actualizar", disabled=True, help=blocked_message("Actualizar"))
+        info_col.info("Actualización bloqueada en Modo demo seguro: la demo usa datos estáticos/offline ya generados.")
+    elif action_col.button("🔄 Actualizar", type="primary", help="Recalcula la matriz a partir de los datos ya recolectados hasta ahora. No descarga ni consulta nada nuevo."):
         with st.spinner("Actualizando matriz de cobertura, contexto geopolítico, elegibilidad para scoring e icono unicornio (sin conexión de red)…"):
             result = rebuild_global_matrix(ROOT)
         global_matrix_snapshot.clear()
@@ -364,6 +371,7 @@ def render_global_universe(_data):
 
 def render_global_ranking(_data):
     heading(st, "Ranking global (experimental)", "Prioridad cuantitativa de investigacion sobre el universo elegible (v2.38BO), calculada en v2.38BV y auditada en v2.38BX. Esta pantalla solo lee resultados ya generados: no recalcula scores, no cambia pesos y no crea recomendaciones.")
+    render_safe_demo_banner(st, SAFE_DEMO_MODE)
     ranking = global_ranking_snapshot()
     if not ranking.available:
         st.info(ranking.error)
@@ -439,16 +447,19 @@ def render_global_ranking(_data):
         if explanation:
             st.caption(explanation.get("summary", ""))
         st.link_button("Ver en Google Finance", google_finance_search_url(selected["company_name"]))
-        wpath, wdata = select_watchlist()
-        if wdata is None:
-            st.info("Crea una watchlist en la pantalla ⭐ Watchlist antes de añadir empresas desde aquí.")
-        elif st.button(f'Añadir {selected["ticker"]} a "{wdata["name"]}"', key="global_ranking_add_watchlist", type="primary"):
-            try:
-                add(wdata, {"asset_id": selected["asset_id"], "ticker": selected["ticker"], "company_name": selected["company_name"], "market": selected.get("country", "")}, "WATCHLIST", "")
-                atomic_write(wpath, wdata)
-                st.success("Añadida a la watchlist.")
-            except ValueError as exc:
-                st.error(str(exc))
+        if SAFE_DEMO_MODE:
+            st.info(blocked_message("Añadir a watchlist"))
+        else:
+            wpath, wdata = select_watchlist()
+            if wdata is None:
+                st.info("Crea una watchlist en la pantalla ⭐ Watchlist antes de añadir empresas desde aquí.")
+            elif st.button(f'Añadir {selected["ticker"]} a "{wdata["name"]}"', key="global_ranking_add_watchlist", type="primary"):
+                try:
+                    add(wdata, {"asset_id": selected["asset_id"], "ticker": selected["ticker"], "company_name": selected["company_name"], "market": selected.get("country", "")}, "WATCHLIST", "")
+                    atomic_write(wpath, wdata)
+                    st.success("Añadida a la watchlist.")
+                except ValueError as exc:
+                    st.error(str(exc))
 
     status_tabs = st.tabs(["Comparabilidad parcial", "Revisión requerida", "Cobertura insuficiente", "Sin adaptador"])
     partial_rows = filter_global_ranking_rows(ranking.rows, status="PARTIAL_COMPARABILITY")
@@ -629,6 +640,10 @@ def select_watchlist():
 
 def render_watchlist(data):
     heading(st, "Watchlist privada", "Notas y decisiones de investigación guardadas solo en este equipo.")
+    render_safe_demo_banner(st, SAFE_DEMO_MODE)
+    if SAFE_DEMO_MODE:
+        st.info("Watchlists bloqueadas en Modo demo seguro para evitar escrituras o datos privados.")
+        return
     with st.expander("Crear watchlist"):
         name = st.text_input("Nombre"); description = st.text_input("Descripción")
         if st.button("Crear watchlist"):
@@ -706,6 +721,8 @@ def main():
     with st.sidebar:
         st.markdown("## Scout Finance")
         st.caption("Producto local · v2.37")
+        if SAFE_DEMO_MODE:
+            st.success(SAFE_DEMO_LABEL)
         selected = st.radio("Navegación", list(SCREENS), format_func=SCREENS.get, index=list(SCREENS).index(st.session_state.screen))
         st.session_state.screen = selected
         st.divider(); st.caption(f"Datos: {data.mode.value}"); st.caption("Fase 7: INSUFFICIENT_EVIDENCE"); st.caption("Sin conexión a broker")
