@@ -1,0 +1,27 @@
+check_id,category,severity,status,item,evidence,remediation
+SRC-001,source,BLOCKER,PASS,v2.39C status,SECURITY_SENSITIVE_FILES_AUDIT_READY,Run v2.39C first.
+FILE-CRITICAL,critical_files,BLOCKER,PASS,requirements.txt,present,Restore the critical file.
+FILE-CRITICAL,critical_files,BLOCKER,PASS,run_local_ui_v2_37.bat,present,Restore the critical file.
+FILE-CRITICAL,critical_files,BLOCKER,PASS,app_v2_37.py,present,Restore the critical file.
+FILE-CRITICAL,critical_files,BLOCKER,PASS,README.md,present,Restore the critical file.
+FILE-CRITICAL,critical_files,BLOCKER,PASS,VERSION.md,present,Restore the critical file.
+FILE-CRITICAL,critical_files,BLOCKER,PASS,CHANGELOG.md,present,Restore the critical file.
+FILE-CRITICAL,critical_files,BLOCKER,PASS,ROADMAP_v2_38_CURRENT.md,present,Restore the critical file.
+FILE-CRITICAL,critical_files,BLOCKER,PASS,src/ui_v2_37/global_ranking.py,present,Restore the critical file.
+OUTPUT-REQUIRED,required_outputs,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json,present,Restore or regenerate the required output before clean install.
+OUTPUT-REQUIRED,required_outputs,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_manifest_v2_38bv.json,present,Restore or regenerate the required output before clean install.
+OUTPUT-REQUIRED,required_outputs,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/security_sensitive_files_summary_v2_39c.json,present,Restore or regenerate the required output before clean install.
+BAT-001,Windows launcher,BLOCKER,PASS,run_local_ui_v2_37.bat,streamlit entrypoint checked,Keep launcher pointing to app_v2_37.py.
+REQ-001,dependency install command,BLOCKER,PASS,requirements.txt,streamlit dependency checked,Add Streamlit to requirements.
+DOC-001,local usage docs,BLOCKER,PASS,README.md,local scope checked,Document local research scope.
+DOC-002,local path safety,WARN,PASS,docs/LOCAL_USAGE_PUBLIC_GUIDE_v2_39b.md,quoted Windows path guidance checked,Use quotes for Windows paths with spaces or emoji.
+ENV-001,environment variables,WARN,PASS,run_local_ui_v2_37.bat,basic launcher does not require .env,Keep secrets optional for basic local launch.
+MANUAL-WINDOWS,manual_windows_steps,WARN,WARN,git clone,requires real Windows execution,Run this command on a clean Windows checkout.
+MANUAL-WINDOWS,manual_windows_steps,WARN,WARN,cd,requires real Windows execution,Run this command on a clean Windows checkout.
+MANUAL-WINDOWS,manual_windows_steps,WARN,WARN,py -m venv .venv,requires real Windows execution,Run this command on a clean Windows checkout.
+MANUAL-WINDOWS,manual_windows_steps,WARN,WARN,.venv\Scripts\Activate.ps1,requires real Windows execution,Run this command on a clean Windows checkout.
+MANUAL-WINDOWS,manual_windows_steps,WARN,WARN,python -m pip install --upgrade pip,requires real Windows execution,Run this command on a clean Windows checkout.
+MANUAL-WINDOWS,manual_windows_steps,WARN,WARN,pip install -r requirements.txt,requires real Windows execution,Run this command on a clean Windows checkout.
+MANUAL-WINDOWS,manual_windows_steps,WARN,WARN,python -m py_compile app_v2_37.py,requires real Windows execution,Run this command on a clean Windows checkout.
+MANUAL-WINDOWS,manual_windows_steps,WARN,WARN,run_local_ui_v2_37.bat,requires real Windows execution,Run this command on a clean Windows checkout.
+MANUAL-WINDOWS,manual_windows_steps,WARN,WARN,http://localhost:8501,requires real Windows execution,Run this command on a clean Windows checkout.

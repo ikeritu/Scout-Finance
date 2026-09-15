@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.39C preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.39D preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.39C: audit security sensitive files`
+`LOCAL_COMMIT_PENDING_PUSH v2.39D: validate clean Windows install`
 
 Estado operativo del producto:
 
-`SECURITY_SENSITIVE_FILES_AUDIT_READY`
+`CLEAN_WINDOWS_INSTALL_VALIDATION_READY`
 
 Cycle status:
 
@@ -57,6 +57,7 @@ Cycle status:
 | Completada | v2.39A | Stable release tag metadata |
 | Completada | v2.39B | Public documentation cleanup |
 | Completada | v2.39C | Security / sensitive files audit |
+| Completada | v2.39D | Clean Windows install validation |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -80,9 +81,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.39D: Clean Windows install validation`
+`v2.39E: Final reproducible package + GitHub release assets`
 
-Objetivo recomendado: validar instalacion limpia en Windows desde cero, dependencias, arranque local y reproduccion de outputs esenciales.
+Objetivo recomendado: preparar paquete reproducible final y artefactos de GitHub Release sin publicar release automaticamente.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -91,7 +92,7 @@ Objetivo recomendado: validar instalacion limpia en Windows desde cero, dependen
 | Completada | v2.39A | Stable release tag del cierre v2.38CJ |
 | Completada | v2.39B | Limpieza final publica: README, VERSION, CHANGELOG, roadmap y rutas locales |
 | Completada | v2.39C | Auditoria de seguridad: secretos, archivos sensibles, rutas personales y outputs accidentales |
-| Pendiente | v2.39D | Validacion de instalacion desde cero en Windows |
+| Completada | v2.39D | Validacion de instalacion desde cero en Windows |
 | Pendiente | v2.39E | Paquete reproducible final y GitHub release assets |
 | Pendiente | v2.39F | Smoke test real post-release local |
 | Pendiente | v2.40A | Decision de publicacion: local-only, privada, demo publica o despliegue controlado |

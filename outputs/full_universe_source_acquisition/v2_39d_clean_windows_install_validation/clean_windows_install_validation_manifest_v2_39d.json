@@ -1,0 +1,54 @@
+{
+  "branch": "phase9b-global-enrichment-v2-38b",
+  "created_at_utc": "2026-09-15T13:19:16Z",
+  "guardrails": {
+    "broker_actions_allowed": false,
+    "datasets_mutated": false,
+    "dependency_install_executed": false,
+    "financial_advice_created": false,
+    "github_release_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "ranking_changed": false,
+    "scoring_recomputed": false,
+    "tag_created": false,
+    "ui_changed": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "config/clean_windows_install_validation_contract_v2_39d.json": {
+      "bytes": 1194,
+      "sha256": "b3923cc484ff7559ab68750f35b64712a399f75a592153d5385a630e790f3ab8"
+    },
+    "outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/security_sensitive_files_summary_v2_39c.json": {
+      "bytes": 1070,
+      "sha256": "91b2b455fbd5aece0429bb7bce0873d865acefa29138e91ba637cae045613bc4"
+    }
+  },
+  "outputs": {
+    "outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/CLEAN_WINDOWS_INSTALL_VALIDATION_v2_39d.md": {
+      "bytes": 830,
+      "sha256": "048920918831b9f59b4b7fc5ce26a0c4dda30f2c2cbfdb91478b4b9065295f63"
+    },
+    "outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/README.md": {
+      "bytes": 131,
+      "sha256": "f0b3f24a9d4e92c1bcf8ad7d3dcf6aa02977bd2a6f6e5313a8ea854cad385ac3"
+    },
+    "outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_checklist_v2_39d.ps1": {
+      "bytes": 670,
+      "sha256": "5c9996470e54750dc6c52c16f94d2e4174c5264c6b8dbac2c1e984aaa060166a"
+    },
+    "outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_validation_matrix_v2_39d.csv": {
+      "bytes": 3615,
+      "sha256": "a7ff30c7dc1d53e73d27a22d6d0b322fdaf3521279cb131c9b2547ecd4785014"
+    },
+    "outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_validation_summary_v2_39d.json": {
+      "bytes": 1191,
+      "sha256": "97e320d7a418bc046e1520d1fcdaba245fcedae328a51fcdc8cffc0350f5b6b9"
+    }
+  },
+  "phase": "v2.39D-clean-windows-install-validation",
+  "source_commit": "7494ecf",
+  "stable_tag": "v2.38CJ-local-stable",
+  "status": "CLEAN_WINDOWS_INSTALL_VALIDATION_READY"
+}
