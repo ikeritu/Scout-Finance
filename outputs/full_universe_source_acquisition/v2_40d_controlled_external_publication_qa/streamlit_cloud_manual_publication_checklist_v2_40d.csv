@@ -1,0 +1,7 @@
+step,action,required_value,status
+1,Select repository ikeritu/Scout-Finance,ikeritu/Scout-Finance,MANUAL_PENDING
+2,Select branch,phase9b-global-enrichment-v2-38b,MANUAL_PENDING
+3,Set main file,app_v2_37.py,MANUAL_PENDING
+4,Set safe demo env,SCOUT_FINANCE_SAFE_DEMO_MODE=1,MANUAL_PENDING
+5,Do not add real provider credentials,NO_REAL_SECRETS,MANUAL_PENDING
+6,Create app only for controlled QA,MANUAL_USER_ACTION_ONLY,MANUAL_PENDING

@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "path": "config/controlled_external_publication_qa_contract_v2_40d.json",
+      "sha256": "dcad46b968a550f3fc7fa43231f5e0313f3877e7bd59f308b44cd1a5fd10d3bb"
+    },
+    {
+      "path": "docs/CONTROLLED_EXTERNAL_PUBLICATION_QA_v2_40d.md",
+      "sha256": "75b119857bec57431bd561f03acb1054ed3c8f5064a3db90634272c8ee060d76"
+    },
+    {
+      "path": "docs/STREAMLIT_CLOUD_PUBLICATION_MANUAL_STEPS_v2_40d.md",
+      "sha256": "541b27e8d2a9bc51594814368529fa7f4f2e0f729532a5ccba6ff9d0aa24b624"
+    },
+    {
+      "path": "docs/PUBLIC_URL_PRE_SHARE_CHECKLIST_v2_40d.md",
+      "sha256": "6bd648c6cbc215cedeb2a5d86d27e68ccf722b8f81baf949bdd8f54a346bb8e0"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40d_controlled_external_publication_qa/controlled_external_publication_qa_matrix_v2_40d.csv",
+      "sha256": "5d8da96d810a723d421a4aa79b3a3eaff010c17c3a1a74be58c81e92adeb1550"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40d_controlled_external_publication_qa/streamlit_cloud_manual_publication_checklist_v2_40d.csv",
+      "sha256": "896ca5d40a90594303f1e333563c31c3750cc45aa9a4342f0c261b070d0812e8"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40d_controlled_external_publication_qa/public_url_pre_share_qa_v2_40d.csv",
+      "sha256": "891eaed626f0c4eb0117a32a715cbdab06f88af77e6154460151f8f2ed6f32f2"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40d_controlled_external_publication_qa/safe_demo_runtime_validation_v2_40d.csv",
+      "sha256": "f2c1d64fac48f632a7bc537f87cd1804f4515ad734dd714a0489e0458dfdc038"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40d_controlled_external_publication_qa/controlled_external_publication_qa_summary_v2_40d.json",
+      "sha256": "76c5242e43b4f569dab56a9d771b5483965281dbd302399b7061c5f62c30eeed"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40d_controlled_external_publication_qa/controlled_external_publication_qa_manifest_v2_40d.json",
+      "sha256": "503f60021b9222438dccbd76cc0003d6634c9440c4d4510cfb397c36db471ff3"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40d_controlled_external_publication_qa/CONTROLLED_EXTERNAL_PUBLICATION_QA_v2_40d.md",
+      "sha256": "ca956cfc783fe86506049599be7e8ab27a0cd18fd707fe82d80b591a7a64491e"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_40d_controlled_external_publication_qa/README.md",
+      "sha256": "13f6eb777bd2306a25387bee3fe80af7306f84412a79795bb67cc06795a77635"
+    }
+  ],
+  "phase": "v2.40D",
+  "status": "CONTROLLED_EXTERNAL_PUBLICATION_QA_READY"
+}

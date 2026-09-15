@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.40C preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.40D preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.40C: add safe demo mode`
+`LOCAL_COMMIT_PENDING_PUSH v2.40D: add controlled external publication QA`
 
 Estado operativo del producto:
 
-`SAFE_DEMO_MODE_READY`
+`CONTROLLED_EXTERNAL_PUBLICATION_QA_READY`
 
 Cycle status:
 
@@ -63,6 +63,7 @@ Cycle status:
 | Completada | v2.40A | Publication decision |
 | Completada | v2.40B | Streamlit Cloud hosting prep |
 | Completada | v2.40C | Safe demo mode |
+| Completada | v2.40D | Controlled external publication QA |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -86,9 +87,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.40D: Controlled external publication QA`
+`v2.41A: Data gap prioritization` o `PROJECT_CLOSE_FINAL_REPORT`
 
-Objetivo recomendado: validar la publicacion externa controlada antes de compartir cualquier URL publica.
+Objetivo recomendado: decidir si seguir mejorando cobertura de datos o cerrar el proyecto como entregable estable.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -103,7 +104,7 @@ Objetivo recomendado: validar la publicacion externa controlada antes de compart
 | Completada | v2.40A | Decision de publicacion: demo segura obligatoria antes de despliegue externo |
 | Completada | v2.40B | Preparacion Streamlit Cloud / hosting externo seguro, sin despliegue |
 | Completada | v2.40C | Modo demo seguro sin datos sensibles ni escritura peligrosa |
-| Pendiente | v2.40D | Publicacion externa controlada y QA post-publicacion |
+| Completada | v2.40D | Publicacion externa controlada y QA pre-share, sin despliegue automatico |
 | Pendiente | v2.41A | Priorizacion final de gaps de datos: Europa, Reino Unido, Cboe, Luxemburgo y manual review |
 | Pendiente | v2.41B | Adaptador Luxemburgo para scoring o cierre documentado |
 | Pendiente | v2.41C | Decision Reino Unido / Cboe Europe / manual reviews |

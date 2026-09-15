@@ -1,0 +1,7 @@
+check_id,area,status,detail
+40D-001,source_gate,PASS,v2.40C safe demo mode is ready
+40D-002,manual_publication_only,PASS,Streamlit Cloud creation is manual user action only
+40D-003,safe_demo_required,PASS,SCOUT_FINANCE_SAFE_DEMO_MODE=1 required
+40D-004,pre_share_qa,PASS,public URL share blocked until manual QA passes
+40D-005,deployment_status,PASS,No deployment was performed
+40D-006,guardrails,PASS,"no secrets, network, scoring, recommendations, broker or dataset mutation"

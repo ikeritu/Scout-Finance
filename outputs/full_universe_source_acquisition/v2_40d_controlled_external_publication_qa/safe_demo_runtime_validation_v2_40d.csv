@@ -1,0 +1,6 @@
+surface,expected,status
+sidebar,Modo demo seguro,MANUAL_QA_REQUIRED
+global_universe,Actualizar disabled,MANUAL_QA_REQUIRED
+watchlist,blocked in safe demo,MANUAL_QA_REQUIRED
+global_ranking,read-only experimental ranking,MANUAL_QA_REQUIRED
+footer/copy,no broker and no advice,MANUAL_QA_REQUIRED

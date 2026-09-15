@@ -1,0 +1,12 @@
+check,expected,status
+branch_correct,phase9b-global-enrichment-v2-38b,REQUIRED_BEFORE_SHARE
+main_file_correct,app_v2_37.py,REQUIRED_BEFORE_SHARE
+safe_demo_env_active,SCOUT_FINANCE_SAFE_DEMO_MODE=1,REQUIRED_BEFORE_SHARE
+banner_visible,Modo demo seguro,REQUIRED_BEFORE_SHARE
+refresh_disabled,Actualizar disabled,REQUIRED_BEFORE_SHARE
+watchlists_blocked,Watchlists bloqueadas,REQUIRED_BEFORE_SHARE
+ranking_experimental,ranking experimental,REQUIRED_BEFORE_SHARE
+no_advice_visible,no asesoramiento financiero,REQUIRED_BEFORE_SHARE
+no_broker_visible,sin broker,REQUIRED_BEFORE_SHARE
+static_offline_visible,datos estaticos/offline,REQUIRED_BEFORE_SHARE
+exports_sanitized,research outputs only,REQUIRED_BEFORE_SHARE
