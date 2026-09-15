@@ -1,0 +1,67 @@
+{
+  "branch": "phase9b-global-enrichment-v2-38b",
+  "created_at_utc": "2026-09-15T14:01:35Z",
+  "guardrails": {
+    "assets_uploaded": false,
+    "broker_actions_allowed": false,
+    "datasets_mutated": false,
+    "dependency_install_executed": false,
+    "financial_advice_created": false,
+    "github_release_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "ranking_changed": false,
+    "scoring_recomputed": false,
+    "tag_created": false,
+    "ui_changed": false,
+    "weights_changed": false
+  },
+  "inputs": {
+    "config/real_post_release_local_smoke_test_contract_v2_39f.json": {
+      "bytes": 1285,
+      "sha256": "17191f3ee6dd120b391c31a248da9cb0418f56245b83774840c1de9cb262c57b"
+    },
+    "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json": {
+      "bytes": 2264529,
+      "sha256": "965c5f02426cb0c2901dc497d6d9d67e21cd2fbc4dee27ca4e3cd4544a2f9817"
+    },
+    "outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/final_reproducible_package_release_assets_summary_v2_39e.json": {
+      "bytes": 1243,
+      "sha256": "368f0bc3e0420ec2e8b240d3e744a27aef10a7a464821afaa346df2e186f788b"
+    }
+  },
+  "outputs": {
+    "outputs/full_universe_source_acquisition/v2_39f_real_post_release_local_smoke_test/README.md": {
+      "bytes": 104,
+      "sha256": "73d2e9f87e6ddaab420ed81f89b2f119fd9d7b02d11b6ce444199d6ed7b544a4"
+    },
+    "outputs/full_universe_source_acquisition/v2_39f_real_post_release_local_smoke_test/REAL_POST_RELEASE_LOCAL_SMOKE_TEST_v2_39f.md": {
+      "bytes": 881,
+      "sha256": "b7130c50e7e7fcc231a4dc7084f0fd2da8b288bb7735b4ca5fc1488c092a2eb7"
+    },
+    "outputs/full_universe_source_acquisition/v2_39f_real_post_release_local_smoke_test/real_post_release_local_manual_checklist_v2_39f.csv": {
+      "bytes": 593,
+      "sha256": "a70298df0c84964b89e7efea662f9cf58dcb8d305affcaa4a6d4155c84452008"
+    },
+    "outputs/full_universe_source_acquisition/v2_39f_real_post_release_local_smoke_test/real_post_release_local_smoke_matrix_v2_39f.csv": {
+      "bytes": 3162,
+      "sha256": "3d73f8540d796d38f70b429f98b4df7854bd057226d270c849df360a84865a35"
+    },
+    "outputs/full_universe_source_acquisition/v2_39f_real_post_release_local_smoke_test/real_post_release_local_smoke_summary_v2_39f.json": {
+      "bytes": 1484,
+      "sha256": "24082a30ffbf455b1d654633c77980067dcbaf4977d904281de5ccbb37b9cb6a"
+    }
+  },
+  "phase": "v2.39F-real-post-release-local-smoke-test",
+  "ranking_counts": {
+    "ranking_blocked_count": 270,
+    "ranking_main_count": 318,
+    "ranking_no_adapter_count": 26,
+    "ranking_partial_count": 373,
+    "ranking_review_required_count": 124,
+    "ranking_total": 1111
+  },
+  "source_commit": "fc4f935",
+  "stable_tag": "v2.38CJ-local-stable",
+  "status": "REAL_POST_RELEASE_LOCAL_SMOKE_TEST_READY"
+}

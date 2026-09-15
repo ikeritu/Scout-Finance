@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.39E preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.39F preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.39E: prepare final reproducible release assets`
+`LOCAL_COMMIT_PENDING_PUSH v2.39F: add real post-release local smoke test`
 
 Estado operativo del producto:
 
-`FINAL_REPRODUCIBLE_PACKAGE_RELEASE_ASSETS_READY`
+`REAL_POST_RELEASE_LOCAL_SMOKE_TEST_READY`
 
 Cycle status:
 
@@ -59,6 +59,7 @@ Cycle status:
 | Completada | v2.39C | Security / sensitive files audit |
 | Completada | v2.39D | Clean Windows install validation |
 | Completada | v2.39E | Final reproducible package + GitHub release assets |
+| Completada | v2.39F | Real post-release local smoke test |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -82,9 +83,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.39F: Real post-release local smoke test`
+`v2.40A: Publication decision`
 
-Objetivo recomendado: ejecutar un smoke test local real posterior a los assets de release, verificando arranque y pantalla de ranking.
+Objetivo recomendado: decidir el modo de publicacion del proyecto: local-only, privada, demo publica o despliegue controlado.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -95,7 +96,7 @@ Objetivo recomendado: ejecutar un smoke test local real posterior a los assets d
 | Completada | v2.39C | Auditoria de seguridad: secretos, archivos sensibles, rutas personales y outputs accidentales |
 | Completada | v2.39D | Validacion de instalacion desde cero en Windows |
 | Completada | v2.39E | Paquete reproducible final y GitHub release assets |
-| Pendiente | v2.39F | Smoke test real post-release local |
+| Completada | v2.39F | Smoke test real post-release local |
 | Pendiente | v2.40A | Decision de publicacion: local-only, privada, demo publica o despliegue controlado |
 | Pendiente | v2.40B | Preparacion Streamlit Cloud / hosting externo seguro |
 | Pendiente | v2.40C | Modo demo seguro sin datos sensibles ni escritura peligrosa |

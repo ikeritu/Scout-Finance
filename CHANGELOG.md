@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.39F — Real post-release local smoke test (2026-09-15)
+
+Ejecuta el smoke test local post-release en su parte reproducible offline. Genera contrato, builder, matriz de smoke, checklist manual, summary, manifest con hashes SHA256, reporte Markdown y README de outputs. Comprueba assets `v2.39E`, launcher, compile de app/modulo ranking, carga offline del ranking real y conteos intactos 318/373/124/270/26 sobre 1.111 filas. Streamlit/navegador real no se declaran como pasados si no se ejecutan realmente; quedan como validacion manual documentada. Resultado: `REAL_POST_RELEASE_LOCAL_SMOKE_TEST_READY`. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI funcional nueva, sin recomendaciones financieras, sin broker, sin tag nuevo, sin assets subidos y sin GitHub Release. 2 pruebas offline nuevas. Detalle en `REAL_POST_RELEASE_LOCAL_SMOKE_TEST_v2_39f.md`.
+
 ## v2.39E — Final reproducible package + GitHub release assets (2026-09-15)
 
 Prepara assets draft para una futura GitHub Release sin publicarla. Genera contrato, builder, matriz de assets, inventario reproducible, checklist manual de publicacion, release notes draft, summary, manifest con hashes SHA256, reporte Markdown y README de outputs. Resultado: `FINAL_REPRODUCIBLE_PACKAGE_RELEASE_ASSETS_READY`; no crea ZIP pesado, no sube assets, no crea tag y no publica GitHub Release. Mantiene `v2.38CJ-local-stable`, fuente `v2.39D`, ciclo v2.38 cerrado y scope `local_research_tool_only`. Sin scoring nuevo, sin red, sin cambios de metodologia/pesos, sin mutar datasets, sin UI funcional nueva, sin recomendaciones financieras y sin broker. 2 pruebas offline nuevas. Detalle en `FINAL_REPRODUCIBLE_PACKAGE_RELEASE_ASSETS_v2_39e.md`.

@@ -1,0 +1,29 @@
+check_id,category,severity,status,evidence,remediation
+SRC-001,source phase,BLOCKER,PASS,FINAL_REPRODUCIBLE_PACKAGE_RELEASE_ASSETS_READY,Run v2.39E first.
+FILE-001,release assets,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/RELEASE_NOTES_DRAFT_v2_39e.md,Restore missing release/smoke asset.
+FILE-001,release assets,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/final_reproducible_package_inventory_v2_39e.csv,Restore missing release/smoke asset.
+FILE-001,release assets,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_checklist_v2_39d.ps1,Restore missing release/smoke asset.
+FILE-001,release assets,BLOCKER,PASS,run_local_ui_v2_37.bat,Restore missing release/smoke asset.
+FILE-001,release assets,BLOCKER,PASS,app_v2_37.py,Restore missing release/smoke asset.
+FILE-001,release assets,BLOCKER,PASS,src/ui_v2_37/global_ranking.py,Restore missing release/smoke asset.
+FILE-001,release assets,BLOCKER,PASS,README.md,Restore missing release/smoke asset.
+FILE-001,release assets,BLOCKER,PASS,VERSION.md,Restore missing release/smoke asset.
+FILE-001,release assets,BLOCKER,PASS,CHANGELOG.md,Restore missing release/smoke asset.
+FILE-001,release assets,BLOCKER,PASS,ROADMAP_v2_38_CURRENT.md,Restore missing release/smoke asset.
+LAUNCHER-001,launcher,BLOCKER,PASS,streamlit run app_v2_37.py,Fix launcher entrypoint.
+COMPILE-001,app compile,BLOCKER,PASS,app_v2_37.py,No action required.
+COMPILE-001,app compile,BLOCKER,PASS,src/ui_v2_37/global_ranking.py,No action required.
+RANKING-LOADER,ranking loader,BLOCKER,PASS,"rows=1111 counts={'ELIGIBLE_PARTIAL': 318, 'PARTIAL_COMPARABILITY': 373, 'REVIEW_REQUIRED': 124, 'BLOCKED': 270, 'NOT_YET_SCORED_NO_ADAPTER': 26}",Investigate ranking artifact drift.
+DOC-001,public documentation,BLOCKER,PASS,docs mention current and next phase,Update public docs.
+GUARDRAIL-001,no-advice guardrails,BLOCKER,PASS,no-advice/no-broker copy checked,Restore guardrail language.
+STREAMLIT-001,Streamlit availability,WARN,WARN,STREAMLIT_NOT_AVAILABLE_IN_BUILDER_ENV,Run real Streamlit check on Windows.
+BROWSER-001,browser/manual validation,WARN,WARN,MANUAL_REQUIRED,Open browser manually; do not claim real browser pass here.
+MANUAL-001,post-release checklist,WARN,WARN,apply_patch,git am --3way succeeds
+MANUAL-001,post-release checklist,WARN,WARN,push_branch,git push succeeds
+MANUAL-001,post-release checklist,WARN,WARN,clean_checkout,fresh clone or clean folder available
+MANUAL-001,post-release checklist,WARN,WARN,install_dependencies,pip install -r requirements.txt succeeds
+MANUAL-001,post-release checklist,WARN,WARN,run_launcher,run_local_ui_v2_37.bat starts Streamlit
+MANUAL-001,post-release checklist,WARN,WARN,open_browser,http://localhost:8501 opens
+MANUAL-001,post-release checklist,WARN,WARN,verify_ranking_screen,Ranking global (experimental) visible
+MANUAL-001,post-release checklist,WARN,WARN,verify_counts,318/373/124/270/26 over 1111 rows
+MANUAL-001,post-release checklist,WARN,WARN,verify_guardrails,no-advice and no-broker copy visible

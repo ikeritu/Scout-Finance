@@ -1,0 +1,10 @@
+step,status,expected
+apply_patch,PENDING_MANUAL,git am --3way succeeds
+push_branch,PENDING_MANUAL,git push succeeds
+clean_checkout,PENDING_MANUAL,fresh clone or clean folder available
+install_dependencies,PENDING_MANUAL,pip install -r requirements.txt succeeds
+run_launcher,PENDING_MANUAL,run_local_ui_v2_37.bat starts Streamlit
+open_browser,PENDING_MANUAL,http://localhost:8501 opens
+verify_ranking_screen,PENDING_MANUAL,Ranking global (experimental) visible
+verify_counts,PENDING_MANUAL,318/373/124/270/26 over 1111 rows
+verify_guardrails,PENDING_MANUAL,no-advice and no-broker copy visible
