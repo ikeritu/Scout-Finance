@@ -1,0 +1,27 @@
+check_id,category,severity,status,evidence,remediation
+SRC-001,source,BLOCKER,PASS,CLEAN_WINDOWS_INSTALL_VALIDATION_READY,Run v2.39D before v2.39E.
+ASSET-001,release notes,BLOCKER,PASS,README.md::INCLUDED,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,release notes,BLOCKER,PASS,VERSION.md::INCLUDED,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,release notes,BLOCKER,PASS,CHANGELOG.md::INCLUDED,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,documentation index,BLOCKER,PASS,ROADMAP_v2_38_CURRENT.md::INCLUDED,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,install checklist,BLOCKER,PASS,requirements.txt::INCLUDED,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,install checklist,BLOCKER,PASS,run_local_ui_v2_37.bat::INCLUDED,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,package inventory,BLOCKER,PASS,app_v2_37.py::INCLUDED,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,documentation index,BLOCKER,PASS,docs/PUBLIC_DOCUMENTATION_INDEX_v2_39b.md::INCLUDED,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,install checklist,BLOCKER,PASS,docs/LOCAL_USAGE_PUBLIC_GUIDE_v2_39b.md::INCLUDED,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,stable tag reference,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_38cj_final_operational_publication/final_operational_publication_summary_v2_38cj.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,stable tag reference,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_38cj_final_operational_publication/final_operational_publication_manifest_v2_38cj.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,stable tag reference,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_summary_v2_39a.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,stable tag reference,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_manifest_v2_39a.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,documentation index,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/public_documentation_cleanup_summary_v2_39b.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,documentation index,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/public_documentation_cleanup_manifest_v2_39b.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,security audit reference,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/security_sensitive_files_summary_v2_39c.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,security audit reference,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/security_sensitive_files_manifest_v2_39c.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,clean Windows install reference,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_validation_summary_v2_39d.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,clean Windows install reference,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_validation_manifest_v2_39d.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,install checklist,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_checklist_v2_39d.ps1::INCLUDED,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,ranking artifact reference,BLOCKER,WARN,outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json::EXCLUDED_HEAVY,Restore missing critical asset or keep heavy assets reference-only.
+ASSET-001,ranking artifact reference,BLOCKER,PASS,outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_manifest_v2_38bv.json::REFERENCE_ONLY,Restore missing critical asset or keep heavy assets reference-only.
+REL-001,release notes,BLOCKER,PASS,draft release notes generated,No action required.
+REL-002,publication checklist,BLOCKER,PASS,manual GitHub checklist generated,No action required.
+GUARDRAIL-001,no-advice guardrails,BLOCKER,PASS,no advice/no broker/no release flags closed,No action required.

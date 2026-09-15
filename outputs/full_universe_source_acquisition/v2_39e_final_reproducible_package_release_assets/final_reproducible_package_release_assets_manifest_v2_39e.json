@@ -1,0 +1,264 @@
+{
+  "branch": "phase9b-global-enrichment-v2-38b",
+  "created_at_utc": "2026-09-15T13:33:59Z",
+  "guardrails": {
+    "assets_uploaded": false,
+    "broker_actions_allowed": false,
+    "datasets_mutated": false,
+    "dependency_install_executed": false,
+    "financial_advice_created": false,
+    "github_release_created": false,
+    "methodology_changed": false,
+    "network_used": false,
+    "ranking_changed": false,
+    "scoring_recomputed": false,
+    "tag_created": false,
+    "ui_changed": false,
+    "weights_changed": false,
+    "zip_created": false
+  },
+  "inputs": {
+    "config/final_reproducible_package_release_assets_contract_v2_39e.json": {
+      "bytes": 1236,
+      "sha256": "cb324562c114071fa9db834348d95576ee932cd23522bba0b9702c26fe732ad8"
+    },
+    "outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_validation_summary_v2_39d.json": {
+      "bytes": 1191,
+      "sha256": "97e320d7a418bc046e1520d1fcdaba245fcedae328a51fcdc8cffc0350f5b6b9"
+    }
+  },
+  "outputs": {
+    "outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/FINAL_REPRODUCIBLE_PACKAGE_RELEASE_ASSETS_v2_39e.md": {
+      "bytes": 715,
+      "sha256": "2d45025a605a30713ec333e68ae7e1e39cbe53b4381a2fa9f5169e85d7b04955"
+    },
+    "outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/README.md": {
+      "bytes": 118,
+      "sha256": "721c87046042c7a558021d8aec5a8061638647d2f41fd0a876b4ded9538fd72c"
+    },
+    "outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/RELEASE_NOTES_DRAFT_v2_39e.md": {
+      "bytes": 968,
+      "sha256": "626b75e485efca5bb76287e3f129200f93bed2813e9cb85ef860e849b283af8c"
+    },
+    "outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/final_reproducible_package_assets_matrix_v2_39e.csv": {
+      "bytes": 5000,
+      "sha256": "84e849a57fb317ffc5992f6a21623d48336f7da81971c53274df84101f68849c"
+    },
+    "outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/final_reproducible_package_inventory_v2_39e.csv": {
+      "bytes": 4423,
+      "sha256": "79712d2905f819823f297b5d15f09d640f3b6118cf897512359952d3dc9b87ed"
+    },
+    "outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/final_reproducible_package_release_assets_summary_v2_39e.json": {
+      "bytes": 1243,
+      "sha256": "368f0bc3e0420ec2e8b240d3e744a27aef10a7a464821afaa346df2e186f788b"
+    },
+    "outputs/full_universe_source_acquisition/v2_39e_final_reproducible_package_release_assets/github_release_publication_checklist_v2_39e.csv": {
+      "bytes": 546,
+      "sha256": "1fe42328bc69644dd43f2ee72958dc6f3a562630793bc34f4e7eaea636e996a2"
+    }
+  },
+  "phase": "v2.39E-final-reproducible-package-release-assets",
+  "release_asset_inventory": [
+    {
+      "asset_path": "README.md",
+      "bytes": 71545,
+      "category": "release notes",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "e5225ec506d7423f87c76644cda121c88e6744bcb01070d387ce47f9a535c748",
+      "status": "INCLUDED"
+    },
+    {
+      "asset_path": "VERSION.md",
+      "bytes": 150217,
+      "category": "release notes",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "c9131980bd9ba6dd37e42fb1fddb14a7d8fbf09ea760d4705733952972ffcf15",
+      "status": "INCLUDED"
+    },
+    {
+      "asset_path": "CHANGELOG.md",
+      "bytes": 171077,
+      "category": "release notes",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "10789100777f6affc8f8c7433a327ede6cc63b8dd5a4000898eb7080ae6a3dd7",
+      "status": "INCLUDED"
+    },
+    {
+      "asset_path": "ROADMAP_v2_38_CURRENT.md",
+      "bytes": 5790,
+      "category": "documentation index",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "36401ab88d5f82f889b4c933d3f9e1b14b836aa1f0c6620fa4eb05ea4eab6233",
+      "status": "INCLUDED"
+    },
+    {
+      "asset_path": "requirements.txt",
+      "bytes": 76,
+      "category": "install checklist",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "d5902eb541d90664eaf20413e17d324b678992ea40d00b25bc4fdc49388763bd",
+      "status": "INCLUDED"
+    },
+    {
+      "asset_path": "run_local_ui_v2_37.bat",
+      "bytes": 599,
+      "category": "install checklist",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "22734509231f3afb696f57d57cde1db55009607649cf6f6a925c71366cd7560d",
+      "status": "INCLUDED"
+    },
+    {
+      "asset_path": "app_v2_37.py",
+      "bytes": 46342,
+      "category": "package inventory",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "8875f1ae2696933c90806a1c897c1e6e20f3e16afdbb2b9ef90d41a50e1a53df",
+      "status": "INCLUDED"
+    },
+    {
+      "asset_path": "docs/PUBLIC_DOCUMENTATION_INDEX_v2_39b.md",
+      "bytes": 1263,
+      "category": "documentation index",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "8eb4373f125735304af23e5fd8c8cfa27dc816f4e80793e7e43ef39cad9db6fe",
+      "status": "INCLUDED"
+    },
+    {
+      "asset_path": "docs/LOCAL_USAGE_PUBLIC_GUIDE_v2_39b.md",
+      "bytes": 1555,
+      "category": "install checklist",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "48d6a0ee8895a20e04a17894c11d67e7a5298186da97b8e95f6123cbb32c68ee",
+      "status": "INCLUDED"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_38cj_final_operational_publication/final_operational_publication_summary_v2_38cj.json",
+      "bytes": 1219,
+      "category": "stable tag reference",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "7f4ede1e8994da4b6dbec4a0eedd7f0e8118410e39283df00dcdb5470e4663af",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_38cj_final_operational_publication/final_operational_publication_manifest_v2_38cj.json",
+      "bytes": 4605,
+      "category": "stable tag reference",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "75bd1e22bc236331cb651e2e71f40fc5c4d5d0b7183f7826a708df30fac2f24a",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_summary_v2_39a.json",
+      "bytes": 1296,
+      "category": "stable tag reference",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "1b0e876baa5da84314afcd5f2c7f7ab361c2df8950a1c0aa36d34e165bc522f6",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_39a_stable_release_tag/stable_release_tag_manifest_v2_39a.json",
+      "bytes": 2358,
+      "category": "stable tag reference",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "27672bd31a5c06df2f47f030eb9ca3a610cb79b3ab9ca00abe3f62e802a90eb2",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/public_documentation_cleanup_summary_v2_39b.json",
+      "bytes": 1227,
+      "category": "documentation index",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "5dc9bacecb718eba632eab459fe3c1a8698df219bd63f23bc41f48b79a38e721",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_39b_public_documentation_cleanup/public_documentation_cleanup_manifest_v2_39b.json",
+      "bytes": 3734,
+      "category": "documentation index",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "4b93abfa470a57148d2f4c47dbabce19fa3ec22f2ae2de43260cbe186411a002",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/security_sensitive_files_summary_v2_39c.json",
+      "bytes": 1069,
+      "category": "security audit reference",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "63e7105dd5ff868a0afb28b8a53f7080f3e1ee94fbe082e81895dddd1188aa83",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_39c_security_sensitive_files_audit/security_sensitive_files_manifest_v2_39c.json",
+      "bytes": 2406,
+      "category": "security audit reference",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "e09ef0ea4ea21453575a7d098f29cfe904c68bc3304a7130cc625757c06b70e5",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_validation_summary_v2_39d.json",
+      "bytes": 1191,
+      "category": "clean Windows install reference",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "97e320d7a418bc046e1520d1fcdaba245fcedae328a51fcdc8cffc0350f5b6b9",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_validation_manifest_v2_39d.json",
+      "bytes": 2350,
+      "category": "clean Windows install reference",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "3a01ed11598e440d92a01d513fe397157001181808917a8084d03d761dcee72f",
+      "status": "REFERENCE_ONLY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_39d_clean_windows_install_validation/clean_windows_install_checklist_v2_39d.ps1",
+      "bytes": 670,
+      "category": "install checklist",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "5c9996470e54750dc6c52c16f94d2e4174c5264c6b8dbac2c1e984aaa060166a",
+      "status": "INCLUDED"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json",
+      "bytes": 2264529,
+      "category": "ranking artifact reference",
+      "critical": "true",
+      "notes": "referenced by manifest, not packaged as heavy asset",
+      "sha256": "965c5f02426cb0c2901dc497d6d9d67e21cd2fbc4dee27ca4e3cd4544a2f9817",
+      "status": "EXCLUDED_HEAVY"
+    },
+    {
+      "asset_path": "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_manifest_v2_38bv.json",
+      "bytes": 469,
+      "category": "ranking artifact reference",
+      "critical": "true",
+      "notes": "ready",
+      "sha256": "7aa82d881f89f0e57015ea69296806a4d54a6193bd54cf45e36f4232ff178bda",
+      "status": "REFERENCE_ONLY"
+    }
+  ],
+  "source_commit": "6c6a4c9",
+  "stable_tag": "v2.38CJ-local-stable",
+  "status": "FINAL_REPRODUCIBLE_PACKAGE_RELEASE_ASSETS_READY"
+}

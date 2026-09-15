@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.39D preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.39E preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.39D: validate clean Windows install`
+`LOCAL_COMMIT_PENDING_PUSH v2.39E: prepare final reproducible release assets`
 
 Estado operativo del producto:
 
-`CLEAN_WINDOWS_INSTALL_VALIDATION_READY`
+`FINAL_REPRODUCIBLE_PACKAGE_RELEASE_ASSETS_READY`
 
 Cycle status:
 
@@ -58,6 +58,7 @@ Cycle status:
 | Completada | v2.39B | Public documentation cleanup |
 | Completada | v2.39C | Security / sensitive files audit |
 | Completada | v2.39D | Clean Windows install validation |
+| Completada | v2.39E | Final reproducible package + GitHub release assets |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -81,9 +82,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.39E: Final reproducible package + GitHub release assets`
+`v2.39F: Real post-release local smoke test`
 
-Objetivo recomendado: preparar paquete reproducible final y artefactos de GitHub Release sin publicar release automaticamente.
+Objetivo recomendado: ejecutar un smoke test local real posterior a los assets de release, verificando arranque y pantalla de ranking.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -93,7 +94,7 @@ Objetivo recomendado: preparar paquete reproducible final y artefactos de GitHub
 | Completada | v2.39B | Limpieza final publica: README, VERSION, CHANGELOG, roadmap y rutas locales |
 | Completada | v2.39C | Auditoria de seguridad: secretos, archivos sensibles, rutas personales y outputs accidentales |
 | Completada | v2.39D | Validacion de instalacion desde cero en Windows |
-| Pendiente | v2.39E | Paquete reproducible final y GitHub release assets |
+| Completada | v2.39E | Paquete reproducible final y GitHub release assets |
 | Pendiente | v2.39F | Smoke test real post-release local |
 | Pendiente | v2.40A | Decision de publicacion: local-only, privada, demo publica o despliegue controlado |
 | Pendiente | v2.40B | Preparacion Streamlit Cloud / hosting externo seguro |

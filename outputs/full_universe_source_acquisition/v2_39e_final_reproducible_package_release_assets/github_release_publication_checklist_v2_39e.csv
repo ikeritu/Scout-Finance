@@ -1,0 +1,7 @@
+step,status,notes
+confirm_clean_git_status,PENDING_MANUAL,Run git status before release.
+confirm_stable_tag,PENDING_MANUAL,Verify v2.38CJ-local-stable points to intended commit.
+review_security_audit,PENDING_MANUAL,Review v2.39C warnings before attaching assets.
+review_release_notes,PENDING_MANUAL,Confirm no-advice/no-broker language.
+create_github_release_if_authorized,PENDING_MANUAL,Do not automate without explicit user authorization.
+attach_allowed_assets_only,PENDING_MANUAL,"Do not attach secrets, raw caches or unreviewed heavy files."
