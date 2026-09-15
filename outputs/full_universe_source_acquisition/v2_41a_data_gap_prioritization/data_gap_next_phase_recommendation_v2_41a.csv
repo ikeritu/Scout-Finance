@@ -1,0 +1,2 @@
+rank,recommended_next_phase,reason,decision
+1,v2.41B-luxembourg-adapter-or-closure,Luxembourg is a bounded gap: decide whether a small real adapter exists or close it formally without changing global product behavior.,ATTACK_NEXT

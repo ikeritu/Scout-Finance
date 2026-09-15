@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "path": "config/data_gap_prioritization_contract_v2_41a.json",
+      "sha256": "78902442433b30c4725043ff449329ce2fde923eddfeaca54b0a17ad349c1e60"
+    },
+    {
+      "path": "docs/DATA_GAP_PRIORITIZATION_v2_41a.md",
+      "sha256": "525fd83aec38d47d3e175a66f51f3e93533c45af450884e94b45c4f51a0136d6"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41a_data_gap_prioritization/data_gap_prioritization_matrix_v2_41a.csv",
+      "sha256": "72fd22bb61dd3656013fe57effed7fec8d8df647a08918f04f69980aec9504be"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41a_data_gap_prioritization/data_gap_decision_register_v2_41a.csv",
+      "sha256": "95fb073151346000f799a853fde498553197652cc0710a2782b73a2b651a5787"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41a_data_gap_prioritization/data_gap_source_inventory_v2_41a.csv",
+      "sha256": "a7a2db715b670d46f07734086e78ec6bf983129950451a02aaf16b2fd464fad3"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41a_data_gap_prioritization/data_gap_impact_matrix_v2_41a.csv",
+      "sha256": "87ac7d4fcffbd56cb999561be46cef8b6f50ebec4b92f66c1046fc7219468a7b"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41a_data_gap_prioritization/data_gap_next_phase_recommendation_v2_41a.csv",
+      "sha256": "4bb48cada5c5410e0adfb0ae8499aec52aa2c4a02859f38acfc49bfdb45ed6e2"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41a_data_gap_prioritization/data_gap_prioritization_summary_v2_41a.json",
+      "sha256": "29c8f13db93d368e2d224e7e670205cbfa72ca77fbd41836f0904f08bd951d89"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41a_data_gap_prioritization/DATA_GAP_PRIORITIZATION_v2_41a.md",
+      "sha256": "525fd83aec38d47d3e175a66f51f3e93533c45af450884e94b45c4f51a0136d6"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41a_data_gap_prioritization/README.md",
+      "sha256": "6ef0c9e74c52e9b3d2bd10a9064da0e2ac33f0edcc49f8413dc1a11251bcefc7"
+    }
+  ],
+  "phase": "v2.41A",
+  "status": "DATA_GAP_PRIORITIZATION_READY"
+}

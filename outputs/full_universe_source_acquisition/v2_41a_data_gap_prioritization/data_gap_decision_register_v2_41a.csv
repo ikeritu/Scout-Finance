@@ -1,0 +1,11 @@
+gap_id,decision,recommended_next_phase,closure_condition
+GAP-LUX-ADAPTER,ATTACK_NEXT,v2.41B-luxembourg-adapter-or-closure,"Build a tiny real adapter if evidence exists, otherwise close Luxembourg as documented limitation."
+GAP-UK-OFFICIAL-ACCESS,REQUIRES_USER_DECISION,v2.41C-uk-cboe-manual-review-decision,User chooses between credential/manual route or documented closure.
+GAP-CBOE-EUROPE,BLOCKED_STRUCTURAL,v2.41C-uk-cboe-manual-review-decision,Close as structural unless an approved source or paid/user-action route is chosen.
+GAP-EUROPE-PRICES,BLOCKED_STRUCTURAL,v2.41D-final-coverage-limitations,Keep documented unless a user-approved paid provider/source exception is introduced.
+GAP-MANUAL-REVIEWS,DEFER_POST_RELEASE,v2.41C-uk-cboe-manual-review-decision,Manual review procedure exists or the population remains explicitly out of ranking.
+GAP-FINANCIAL-INSTITUTIONS,REQUIRES_USER_DECISION,v2.41C-uk-cboe-manual-review-decision,Create a financial-institution methodology project or keep excluded with explanation.
+GAP-COVERAGE-BELOW-THRESHOLD,KEEP_DOCUMENTED_LIMITATION,v2.41D-final-coverage-limitations,Keep fail-closed until real coverage improves without imputing missing factors.
+GAP-EXTERNAL-PUBLICATION-RISK,KEEP_DOCUMENTED_LIMITATION,PROJECT_CLOSE_FINAL_REPORT,Do not share a public URL until safe demo manual QA is complete.
+GAP-SECURITY-WARNINGS,KEEP_DOCUMENTED_LIMITATION,v2.43A-final-consolidated-audit,Re-run security audit before final release; current risk register rows: 14.
+GAP-PRODUCT-LEGAL-WORDING,KEEP_DOCUMENTED_LIMITATION,v2.42B-final-in-app-guide,Final app guide preserves no-advice/no-broker/no-recommendations language.

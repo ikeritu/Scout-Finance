@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.40D preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.41A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.40D: add controlled external publication QA`
+`LOCAL_COMMIT_PENDING_PUSH v2.41A: prioritize final data gaps`
 
 Estado operativo del producto:
 
-`CONTROLLED_EXTERNAL_PUBLICATION_QA_READY`
+`DATA_GAP_PRIORITIZATION_READY`
 
 Cycle status:
 
@@ -64,6 +64,7 @@ Cycle status:
 | Completada | v2.40B | Streamlit Cloud hosting prep |
 | Completada | v2.40C | Safe demo mode |
 | Completada | v2.40D | Controlled external publication QA |
+| Completada | v2.41A | Data gap prioritization |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -87,9 +88,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.41A: Data gap prioritization` o `PROJECT_CLOSE_FINAL_REPORT`
+`v2.41B: Luxembourg adapter or closure`
 
-Objetivo recomendado: decidir si seguir mejorando cobertura de datos o cerrar el proyecto como entregable estable.
+Objetivo recomendado: decidir si se construye un adaptador real acotado para Luxemburgo o si se cierra formalmente como limitacion documentada.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -105,7 +106,7 @@ Objetivo recomendado: decidir si seguir mejorando cobertura de datos o cerrar el
 | Completada | v2.40B | Preparacion Streamlit Cloud / hosting externo seguro, sin despliegue |
 | Completada | v2.40C | Modo demo seguro sin datos sensibles ni escritura peligrosa |
 | Completada | v2.40D | Publicacion externa controlada y QA pre-share, sin despliegue automatico |
-| Pendiente | v2.41A | Priorizacion final de gaps de datos: Europa, Reino Unido, Cboe, Luxemburgo y manual review |
+| Completada | v2.41A | Priorizacion final de gaps de datos: Europa, Reino Unido, Cboe, Luxemburgo y manual review |
 | Pendiente | v2.41B | Adaptador Luxemburgo para scoring o cierre documentado |
 | Pendiente | v2.41C | Decision Reino Unido / Cboe Europe / manual reviews |
 | Pendiente | v2.41D | Cobertura y limitaciones finales por pais, fuente y poblacion |

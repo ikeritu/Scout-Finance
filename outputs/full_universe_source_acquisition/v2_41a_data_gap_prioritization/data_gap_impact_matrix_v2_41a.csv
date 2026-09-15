@@ -1,0 +1,11 @@
+area,impact,effort,risk,priority
+Luxembourg,medium,bounded,low,1
+United Kingdom,medium,medium,medium,3
+Cboe Europe,high,high,high,6
+Europe prices,high,high,high,7
+Manual reviews,medium,medium,medium,4
+Financial institutions,medium,high,high,5
+Coverage below threshold,medium,high,medium,8
+External publication risk,high,low,medium,2
+Security warnings,high,low,medium,9
+Product/legal wording,high,low,low,10
