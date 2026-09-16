@@ -90,6 +90,13 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Export pack investigación" in source, "Unicorn cockpit must export a research pack")
     require("Comparador profesional" in source, "Unicorn cockpit must include professional comparison")
     require("IA opcional para análisis extendido" in source, "Unicorn cockpit must prepare optional AI analysis without enabling network calls")
+    require("Cockpit limpio" in source, "High-priority UX hardening must add a cleaner cockpit view")
+    require("Búsqueda avanzada" in source, "High-priority search hardening must expose advanced search controls")
+    require("Porcentaje mínimo" in source, "Advanced search must filter by minimum unicorn probability")
+    require("Solo con notas personales" in source, "Advanced search must filter by local notes")
+    require("def global_unicorn_executive_report(" in source, "Unicorns screen must generate a global executive report")
+    require("Informe ejecutivo global de unicornios" in source, "Unicorns screen must expose the global executive report")
+    require("Descargar informe ejecutivo global" in source, "Global executive report must be downloadable")
 
 
 def main() -> None:

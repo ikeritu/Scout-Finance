@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44J — Unicorn high-priority cockpit hardening (2026-09-16)
+
+Aplica las tres mejoras de prioridad alta pendientes sobre `🦄 Unicornios`: pulido visual con vista `Cockpit limpio`, buscador avanzado por porcentaje minimo/calidad de evidencia/notas, e informe ejecutivo global descargable en Markdown. No crea score nuevo ni cambia el ranking global; solo reorganiza y resume evidencia local ya calculada. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44I — Unicorn research cockpit (2026-09-16)
 
 Consolida las mejoras de investigacion de `🦄 Unicornios`: comparador profesional, semaforo de calidad de evidencia, ranking interno de unicornios, filtros rapidos, radar visual por empresa, notas personales locales, export pack de investigacion e IA opcional preparada pero desactivada sin llamadas externas. Todo reutiliza datos locales ya calculados y el informe profesional de `v2.44H`; no crea score nuevo ni cambia el ranking global. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
