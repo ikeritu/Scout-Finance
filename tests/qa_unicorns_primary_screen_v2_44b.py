@@ -138,11 +138,12 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Estado técnico" in source, "Visual analytics must expose technical state cards/table")
     require("Resumen visual" in source and "Informe completo personalizado" in source and "Datos técnicos" in source, "Visual analytics must organize each company into calm tabs")
     require("Descargar informe completo personalizado" in source, "Selected unicorn must expose the personalized full report directly")
-    require("Vista compacta y respirable" in source, "Visual analytics must explicitly favor a calmer layout")
-    require("selector superior" in source and "a ancho completo" in source, "Visual analytics must use a top selector and full-width detail")
-    require("Seleccionar empresa unicornio" in source, "Unicorn company selection must be a compact selector")
-    require("unicorn_visual_company_selector" in source, "Unicorn selector key must be stable")
-    require("unicorn_visual_select_" not in source, "Visual analytics must not use the old side button menu")
+    require("Vista más visual" in source, "Visual analytics must explicitly favor a more visual layout")
+    require("tarjetas nítidas de selección" in source, "Visual analytics must use crisp visual selection cards")
+    require("Ver ficha" in source, "Unicorn visual cards must open the selected company detail")
+    require("unicorn_visual_card_select_" in source, "Unicorn visual card selector keys must be stable")
+    require("dropdown borroso" in source, "Visual analytics must document replacing the blurry dropdown")
+    require("unicorn_visual_company_selector" not in source, "Visual analytics must not use the native selectbox selector")
 
 
 def main() -> None:

@@ -749,24 +749,36 @@ def render_unicorn_formula_panel(row: dict) -> None:
 
 def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], review_history: dict[str, dict], generated_at: str) -> None:
     st.markdown("### Analítica visual de unicornios")
-    st.caption("Vista compacta y respirable: selector superior y ficha a ancho completo para leer el informe sin quedar debajo de un menú lateral.")
+    st.caption("Vista más visual: tarjetas nítidas de selección y ficha a ancho completo para leer el informe sin dropdown borroso.")
     if not rows:
         st.info("No hay unicornios con los filtros actuales.")
         return
     if "selected_unicorn_asset_id" not in st.session_state or not any(row["asset_id"] == st.session_state.selected_unicorn_asset_id for row in rows):
         st.session_state.selected_unicorn_asset_id = rows[0]["asset_id"]
 
-    st.caption(f"{len(rows):,} unicornios filtrados")
-    selector_options = {row["asset_id"]: f"{row.get('company_name')} · {row.get('ticker') or row.get('asset_id')} · {unicorn_probability(row)}% · {unicorn_evidence_grade(row)[0]}" for row in rows}
-    selected_asset_id = st.selectbox(
-        "Seleccionar empresa unicornio",
-        options=list(selector_options),
-        index=list(selector_options).index(st.session_state.selected_unicorn_asset_id),
-        format_func=lambda asset_id: selector_options[asset_id],
-        key="unicorn_visual_company_selector",
-        help="Usa los filtros superiores para acotar la lista; la ficha se muestra debajo a ancho completo.",
-    )
-    st.session_state.selected_unicorn_asset_id = selected_asset_id
+    st.caption(f"{len(rows):,} unicornios filtrados · mostrando selección visual de hasta 12; usa búsqueda/filtros para acotar.")
+    visual_rows = rows[:12]
+    for chunk_start in range(0, len(visual_rows), 3):
+        cols = st.columns(3)
+        for col, row in zip(cols, visual_rows[chunk_start:chunk_start + 3]):
+            grade, grade_color, _ = unicorn_evidence_grade(row)
+            selected = row["asset_id"] == st.session_state.selected_unicorn_asset_id
+            with col:
+                st.markdown(
+                    f"""
+                    <div style="border:1px solid {'#0f766e' if selected else '#d8e2ef'};border-left:6px solid {escape(grade_color)};border-radius:8px;padding:10px 12px;background:{'#ecfeff' if selected else '#ffffff'};min-height:118px;margin-bottom:6px;">
+                      <div style="font-weight:800;color:#0f172a;font-size:14px;line-height:1.25;">{escape(row.get("company_name") or "")}</div>
+                      <div style="color:#64748b;font-size:12px;margin-top:4px;">{escape(row.get("ticker") or row.get("asset_id") or "")} · {escape(row.get("country") or "N/D")} · {escape(row.get("exchange") or "N/D")}</div>
+                      <div style="display:flex;gap:10px;align-items:baseline;margin-top:8px;">
+                        <span style="font-size:24px;font-weight:900;color:#0f766e;">{unicorn_probability(row)}%</span>
+                        <span style="font-size:12px;color:#334155;">{escape(grade)}</span>
+                      </div>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+                if st.button("Ver ficha", key=f"unicorn_visual_card_select_{row['asset_id']}", type="primary" if selected else "secondary", use_container_width=True):
+                    st.session_state.selected_unicorn_asset_id = row["asset_id"]
 
     selected = next((row for row in rows if row["asset_id"] == st.session_state.selected_unicorn_asset_id), rows[0])
     grade, _, grade_reason = unicorn_evidence_grade(selected)
