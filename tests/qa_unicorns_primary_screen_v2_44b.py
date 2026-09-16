@@ -69,6 +69,12 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Añadir este unicornio a watchlist" in source, "Unicorn detail must support adding to watchlist")
     require("blocked_message(\"Añadir unicornios a watchlist\")" in source, "Unicorn watchlist writes must respect safe demo mode")
     require("atomic_write(watchlist_path, watchlist_data)" in source, "Unicorn watchlist writes must be persisted atomically")
+    require("def unicorn_probability(" in source, "Unicorns screen must expose an explainable unicorn probability helper")
+    require('col.expander("Ver detalle")' in source, "Unicorn card detail must open inline instead of relying on hidden scroll state")
+    require("Posibilidad de unicornio" in source, "Unicorn cards/details must show unicorn probability")
+    require("confianza de clasificación" in source, "Unicorn probability must be framed as classification confidence")
+    require("no es probabilidad de rentabilidad" in source, "Unicorn probability must not imply expected return")
+    require("No es precio objetivo" in source or "no es precio objetivo" in source, "Unicorn probability must not imply a price target")
 
 
 def main() -> None:

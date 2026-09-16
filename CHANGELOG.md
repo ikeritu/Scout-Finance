@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44G — Unicorns probability detail UX (2026-09-16)
+
+Corrige la UX de `Ver detalle` en `🦄 Unicornios`: cada tarjeta abre una ficha desplegable local con explicacion y `% de posibilidad de unicornio`. El porcentaje es confianza de clasificacion con evidencia local, no probabilidad de rentabilidad, precio objetivo ni recomendacion. Tambien se muestra en la ficha inferior, export CSV y comparador. No crea score nuevo ni ranking nuevo; reutiliza el flag `EVALUATED_UNICORN` de `v2.38BT`. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44F — Unicorns watchlist workflow (2026-09-16)
 
 Añade guardado directo de unicornios a watchlist desde las cards visuales y desde la ficha de detalle. Reutiliza la infraestructura local de watchlists, con escritura atomica y bloqueo en modo demo seguro. No crea score nuevo ni ranking nuevo; solo permite pasar de descubrimiento a seguimiento local. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

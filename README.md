@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.44G — Unicorns probability detail UX** (`UNICORNS_PROBABILITY_DETAIL_READY`): corrige la experiencia de `Ver detalle` en la pantalla `🦄 Unicornios` usando una ficha desplegable dentro de cada tarjeta y añade `% de posibilidad de unicornio` como confianza de clasificacion basada solo en señales locales ya calculadas. No es probabilidad de rentabilidad, precio objetivo ni recomendacion. No cambia datos, scoring, ranking, metodologia, pesos ni proveedores. Mantiene no-advice, sin red, sin despliegue, sin URL publica y sin broker.
+
 **v2.44F — Unicorns watchlist workflow** (`UNICORNS_WATCHLIST_WORKFLOW_READY`): primera mejora media del flujo de unicornios. Añade guardado directo a watchlist desde cada card y desde la ficha de detalle, reutilizando la infraestructura local `v2.37` de watchlists, escritura atomica y bloqueo en modo demo seguro. No cambia datos, scoring, ranking, metodologia, pesos ni proveedores. Mantiene no-advice, sin red, sin despliegue, sin URL publica, sin recomendaciones financieras y sin broker.
 
 **v2.44E — Unicorns review workflow** (`UNICORNS_REVIEW_WORKFLOW_READY`): añade las mejoras de prioridad alta a la pantalla `🦄 Unicornios`: ordenacion por empresa/pais/bolsa/crecimiento/elegibilidad, resumen Top paises y Top bolsas, export CSV de unicornios filtrados y comparador de 2-3 empresas. Todo reutiliza la lista local filtrada y el flag `EVALUATED_UNICORN` ya calculado; no crea ranking nuevo, no cambia scoring, metodologia, pesos, datos ni proveedores. Mantiene no-advice, sin red, sin despliegue, sin URL publica, sin recomendaciones financieras y sin broker.

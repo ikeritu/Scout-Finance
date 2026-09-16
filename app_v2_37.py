@@ -126,6 +126,29 @@ def unicorn_criterion_badges(reason: str, country: str) -> list[str]:
     return badges
 
 
+def unicorn_probability(row: dict) -> int:
+    """Confidence that the local unicorn label is well supported, not return probability."""
+    reason = row.get("unicorn_reason", "").casefold()
+    score = 68
+    if "revenue_growth" in reason or "fundamental_momentum_flag_true" in reason:
+        score += 8
+    if "margin_expansion" in reason:
+        score += 8
+    if "positive_free_cash_flow" in reason:
+        score += 8
+    if "no_free_cash_flow_data_available_for_austria" in reason:
+        score += 5
+    if row.get("overall_coverage_status") == "GROWTH_READY":
+        score += 4
+    if row.get("eligibility_tier") == "SCORE_ELIGIBLE_FULL":
+        score += 3
+    if row.get("overall_coverage_status") == "GROWTH_PARTIAL":
+        score -= 4
+    if row.get("eligibility_tier") in {"REVIEW_REQUIRED", "PARTIAL_COMPARABILITY"}:
+        score -= 3
+    return max(55, min(score, 96))
+
+
 def unicorn_sort_key(row: dict, sort_mode: str) -> tuple:
     if sort_mode == "País":
         return (row.get("country", ""), row.get("company_name", ""))
@@ -454,6 +477,7 @@ def render_global_unicorns(_data):
     metric_cols[3].metric("Con crecimiento parcial", f"{counts.get('GROWTH_PARTIAL', 0):,}")
     metric_cols[4].metric("Censo total", f"{len(matrix.rows):,}")
     st.info("Esta pantalla es la vista principal de descubrimiento: muestra solo empresas que cumplen el criterio real de crecimiento combinado de v2.38BT. No ordena por rentabilidad esperada, no recalcula scores y no constituye asesoramiento financiero.")
+    st.caption("El porcentaje de posibilidad de unicornio mide confianza de clasificación con los datos locales disponibles; no es probabilidad de subida, precio objetivo ni consejo de compra.")
     st.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(unicorn_rows):,} unicornios · sin conexión de red")
 
     st.markdown("### Buscar unicornios")
@@ -508,19 +532,28 @@ def render_global_unicorns(_data):
                     for badge in unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))
                 )
                 status_label = GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"])
+                probability = unicorn_probability(row)
                 col.markdown(
                     f"""
                     <div style="border:1px solid #d8e2ef;border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#ffffff;">
                       <div style="font-size:18px;font-weight:700;color:#0f172a;">{GLOBAL_UNICORN_ICON} {escape(row["company_name"])}</div>
                       <div style="color:#64748b;font-size:13px;margin:3px 0 8px 0;">{escape(row["ticker"] or row["asset_id"])} · {escape(row["country"] or "N/D")} · {escape(row["exchange"] or "N/D")}</div>
+                      <div style="font-size:26px;font-weight:800;color:#0f766e;margin:4px 0;">{probability}%</div>
+                      <div style="color:#64748b;font-size:12px;margin-bottom:8px;">posibilidad de etiqueta unicornio</div>
                       <div style="margin-bottom:8px;">{badges}</div>
                       <div style="color:#334155;font-size:13px;">{escape(status_label)}</div>
                     </div>
                     """,
                     unsafe_allow_html=True,
                 )
-                if col.button("Ver detalle", key=f"unicorn_detail_{row['asset_id']}"):
-                    st.session_state.selected_unicorn_asset_id = row["asset_id"]
+                with col.expander("Ver detalle"):
+                    st.metric("Posibilidad de unicornio", f"{probability}%", help="Confianza de clasificación según señales locales ya calculadas. No mide rentabilidad esperada.")
+                    st.write("**Criterios cumplidos**")
+                    st.write(" · ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))))
+                    st.write("**Explicación**")
+                    for item in explain_unicorn_reason(row.get("unicorn_reason", ""), row.get("country", "")):
+                        st.write(f"- {item}")
+                    st.caption("No significa comprar, vender o mantener. No es precio objetivo ni probabilidad de rentabilidad.")
                 if watchlist_data is not None and col.button("Añadir a watchlist", key=f"unicorn_watchlist_{row['asset_id']}"):
                     try:
                         add(watchlist_data, unicorn_watchlist_asset(row), "WATCHLIST", "Unicornio v2.38BT revisado desde la pantalla Unicornios.")
@@ -537,6 +570,7 @@ def render_global_unicorns(_data):
         "País": row["country"],
         "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
         "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
+        "Posibilidad unicornio": f"{unicorn_probability(row)}%",
         "Motivo unicornio": row.get("unicorn_reason", ""),
         "Google Finance": google_finance_search_url(row["company_name"]),
     } for row in filtered]
@@ -563,6 +597,7 @@ def render_global_unicorns(_data):
                 "Bolsa": row["exchange"],
                 "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
                 "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
+                "Posibilidad unicornio": f"{unicorn_probability(row)}%",
                 "Criterios": " · ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))),
             })
         st.dataframe(pd.DataFrame(compare_rows), use_container_width=True, hide_index=True)
@@ -578,11 +613,13 @@ def render_global_unicorns(_data):
         selected_row = filtered[options.index(selected_label)]
         st.session_state.selected_unicorn_asset_id = selected_row["asset_id"]
         st.markdown("### Por qué es unicornio")
-        c1, c2, c3, c4 = st.columns(4)
+        c1, c2, c3, c4, c5 = st.columns(5)
         c1.metric("Empresa", selected_row["company_name"])
         c2.metric("Ticker", selected_row["ticker"] or "N/D")
         c3.metric("País", selected_row["country"] or "N/D")
         c4.metric("Estado", GLOBAL_STATUS_LABELS.get(selected_row["overall_coverage_status"], selected_row["overall_coverage_status"]))
+        c5.metric("Posibilidad unicornio", f"{unicorn_probability(selected_row)}%", help="Confianza de clasificación con los datos locales disponibles; no es probabilidad de rentabilidad.")
+        st.caption("Esta posibilidad es una lectura de evidencia local del flag unicornio: no significa comprar, vender o mantener, no es precio objetivo y no constituye asesoramiento financiero.")
         st.markdown("**Criterios cumplidos**")
         st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
         st.markdown("**Explicación detallada**")

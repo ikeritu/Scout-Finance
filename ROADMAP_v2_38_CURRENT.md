@@ -4,7 +4,7 @@ Estado actual: v2.44F preparada y lista en la rama `phase9b-global-enrichment-v2
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.44F: add unicorn watchlist workflow`
+`LOCAL_COMMIT_PENDING_PUSH v2.44G: add unicorn probability detail UX`
 
 Estado operativo del producto:
 
@@ -133,6 +133,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.44D | Explorador visual de unicornios con cards, badges y detalle |
 | Completada | v2.44E | Revision de unicornios: ordenar, top paises/bolsas, exportar y comparar |
 | Completada | v2.44F | Guardar unicornios en watchlist desde cards y detalle |
+| Completada | v2.44G | Ficha desplegable por unicornio y porcentaje de posibilidad de etiqueta |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |
