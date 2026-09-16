@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.44D preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.44E preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.44D: add unicorn visual explorer`
+`LOCAL_COMMIT_PENDING_PUSH v2.44E: add unicorn review workflow`
 
 Estado operativo del producto:
 
-`UNICORNS_VISUAL_EXPLORER_READY`
+`UNICORNS_REVIEW_WORKFLOW_READY`
 
 Cycle status:
 
@@ -75,6 +75,7 @@ Cycle status:
 | Completada | v2.44B | Unicorns primary screen |
 | Completada | v2.44C | Unicorns detail explorer |
 | Completada | v2.44D | Unicorns visual explorer |
+| Completada | v2.44E | Unicorns review workflow |
 
 ## Pendiente Para Completar El Proyecto
 
@@ -129,6 +130,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.44B | Unicornios como pantalla principal de descubrimiento |
 | Completada | v2.44C | Explorador de unicornios con scroll completo y explicacion por empresa |
 | Completada | v2.44D | Explorador visual de unicornios con cards, badges y detalle |
+| Completada | v2.44E | Revision de unicornios: ordenar, top paises/bolsas, exportar y comparar |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

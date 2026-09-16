@@ -58,6 +58,12 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Tabla completa" in source, "Unicorns screen must preserve complete table mode")
     require("Criterios cumplidos" in source, "Unicorns screen must show criterion badges/details")
     require("selected_unicorn_asset_id" in source, "Unicorns screen must keep selected card detail state")
+    require("def unicorn_sort_key(" in source, "Unicorns screen must provide deterministic sort modes")
+    require("Ordenar por" in source, "Unicorns screen must expose sorting")
+    require("Top países" in source and "Top bolsas" in source, "Unicorns screen must show top country/exchange summaries")
+    require("Exportar unicornios filtrados" in source, "Unicorns screen must export filtered unicorns")
+    require("Comparar 2-3" in source and "Comparador de unicornios" in source, "Unicorns screen must compare selected unicorns")
+    require("scout_finance_unicornios_filtrados_v2_44e.csv" in source, "Unicorns export filename must be versioned")
 
 
 def main() -> None:

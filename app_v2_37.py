@@ -126,6 +126,18 @@ def unicorn_criterion_badges(reason: str, country: str) -> list[str]:
     return badges
 
 
+def unicorn_sort_key(row: dict, sort_mode: str) -> tuple:
+    if sort_mode == "País":
+        return (row.get("country", ""), row.get("company_name", ""))
+    if sort_mode == "Bolsa":
+        return (row.get("exchange", ""), row.get("company_name", ""))
+    if sort_mode == "Crecimiento completo primero":
+        return (row.get("overall_coverage_status") != "GROWTH_READY", row.get("company_name", ""))
+    if sort_mode == "Elegibilidad":
+        return (row.get("eligibility_tier", ""), row.get("company_name", ""))
+    return (row.get("company_name", ""),)
+
+
 STATUS_LABELS = {
     "ELIGIBLE_PARTIAL": "Clasificable parcial", "PARTIAL_COMPARABILITY": "Comparabilidad parcial",
     "REVIEW_REQUIRED": "Revisión requerida", "BLOCKED": "Bloqueado",
@@ -451,10 +463,23 @@ def render_global_unicorns(_data):
         and (not status_filter or row["overall_coverage_status"] in status_filter)
         and (not eligibility_filter or row.get("eligibility_tier", "") in eligibility_filter)
     ]
+    controls = st.columns([1, 1, 1])
+    sort_mode = controls[0].selectbox("Ordenar por", ["Empresa", "País", "Bolsa", "Crecimiento completo primero", "Elegibilidad"], key="global_unicorn_sort")
+    filtered = sorted(filtered, key=lambda row: unicorn_sort_key(row, sort_mode))
     st.caption(f"{len(filtered):,} de {len(unicorn_rows):,} unicornios")
     view_mode = st.radio("Vista", ["Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
     if filtered and "selected_unicorn_asset_id" not in st.session_state:
         st.session_state.selected_unicorn_asset_id = filtered[0]["asset_id"]
+
+    top_country_rows = [{"País": country or "N/D", "Unicornios": count} for country, count in Counter(row.get("country", "") for row in filtered).most_common(8)]
+    top_exchange_rows = [{"Bolsa": exchange or "N/D", "Unicornios": count} for exchange, count in Counter(row.get("exchange", "") for row in filtered).most_common(8)]
+    summary_cols = st.columns(2)
+    with summary_cols[0]:
+        st.markdown("### Top países")
+        st.dataframe(pd.DataFrame(top_country_rows), use_container_width=True, hide_index=True)
+    with summary_cols[1]:
+        st.markdown("### Top bolsas")
+        st.dataframe(pd.DataFrame(top_exchange_rows), use_container_width=True, hide_index=True)
 
     if view_mode == "Tarjetas visuales":
         st.markdown("### Explorador visual")
@@ -493,6 +518,31 @@ def render_global_unicorns(_data):
         "Google Finance": google_finance_search_url(row["company_name"]),
     } for row in filtered]
     table = pd.DataFrame(table_rows)
+    csv_bytes = table.to_csv(index=False).encode("utf-8")
+    controls[1].download_button(
+        "Exportar unicornios filtrados",
+        data=csv_bytes,
+        file_name="scout_finance_unicornios_filtrados_v2_44e.csv",
+        mime="text/csv",
+        disabled=table.empty,
+    )
+    compare_options = [f'{row["company_name"]} · {row["ticker"] or row["asset_id"]}' for row in filtered]
+    compare_selection = controls[2].multiselect("Comparar 2-3", compare_options, max_selections=3, key="global_unicorn_compare")
+    if compare_selection:
+        st.markdown("### Comparador de unicornios")
+        compared = [filtered[compare_options.index(label)] for label in compare_selection]
+        compare_rows = []
+        for row in compared:
+            compare_rows.append({
+                "Empresa": row["company_name"],
+                "Ticker": row["ticker"] or row["asset_id"],
+                "País": row["country"],
+                "Bolsa": row["exchange"],
+                "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
+                "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
+                "Criterios": " · ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))),
+            })
+        st.dataframe(pd.DataFrame(compare_rows), use_container_width=True, hide_index=True)
     selected_index = None
     if filtered:
         options = [f'{row["company_name"]} · {row["ticker"] or row["asset_id"]}' for row in filtered]

@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44E — Unicorns review workflow (2026-09-16)
+
+Añade mejoras de prioridad alta al explorador `🦄 Unicornios`: ordenacion visual, resumen Top paises/bolsas, export CSV de unicornios filtrados y comparador de 2-3 empresas. No crea score nuevo ni ranking nuevo; solo reorganiza y exporta la misma poblacion `EVALUATED_UNICORN` ya calculada en `v2.38BT`. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44D — Unicorns visual explorer (2026-09-16)
 
 Rediseña la pantalla `🦄 Unicornios` como explorador visual. Añade vista de cards como modo principal, badges de criterios cumplidos, boton `Ver detalle`, seleccion persistente, ficha explicativa y modo `Tabla completa` con scroll como vista secundaria. No cambia datos, scoring, ranking, metodologia, pesos, proveedores ni outputs de fundamentales. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
