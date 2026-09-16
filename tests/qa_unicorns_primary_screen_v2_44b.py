@@ -117,6 +117,10 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Top 10 por evidencia local" in source, "Presentation mode must show top evidence-backed unicorns")
     require("Tres fichas destacadas" in source, "Presentation mode must show highlighted unicorn cards")
     require("Descargar resumen de presentación" in source, "Presentation mode must export a clean summary")
+    require("def render_unicorn_full_catalog(" in source, "Unicorns screen must provide a full catalog/detail renderer")
+    require("Fichas completas" in source, "Unicorns screen must expose full cards/detail mode")
+    require("Todos los campos técnicos disponibles" in source, "Full detail must expose all available raw fields")
+    require("Catálogo completo de unicornios filtrados" in source, "Full catalog must explain scrollable company selection")
 
 
 def main() -> None:

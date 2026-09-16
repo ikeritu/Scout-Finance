@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44O — Unicorn full catalog/detail view (2026-09-16)
+
+Añade la vista principal `Fichas completas` en `🦄 Unicornios`: catalogo completo de unicornios filtrados, seleccion por compania y ficha detallada con identidad, mercado, evidencia, radar, seguimiento local, todos los campos tecnicos disponibles, informe profesional y prompt IA opcional. No crea score nuevo ni cambia el ranking global; solo reorganiza y expone datos locales ya calculados. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44N — Unicorn presentation demo mode (2026-09-16)
 
 Añade una vista `Presentación/demo` en `🦄 Unicornios`, limpia y enseñable: KPIs, top 10 por evidencia local, distribuciones por evidencia y país, tres fichas destacadas y resumen descargable. No muestra formularios de edición ni tablas largas en esa vista. No crea score nuevo ni cambia el ranking global; solo reorganiza evidencia local ya calculada. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

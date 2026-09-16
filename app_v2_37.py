@@ -479,6 +479,95 @@ def render_unicorn_presentation_mode(rows: list[dict], all_rows: list[dict]) -> 
     )
 
 
+def render_unicorn_full_catalog(rows: list[dict], notes: dict[str, str], review_history: dict[str, dict]) -> None:
+    st.markdown("### Fichas completas")
+    st.caption("Catálogo completo de unicornios filtrados. Haz scroll por la lista y pulsa una compañía para abrir todos sus datos disponibles.")
+    if not rows:
+        st.info("No hay unicornios con los filtros actuales.")
+        return
+
+    left, right = st.columns([1.05, 1.95])
+    with left:
+        st.caption(f"{len(rows):,} compañías")
+        for row in rows:
+            grade, grade_color, _ = unicorn_evidence_grade(row)
+            selected = st.session_state.get("selected_unicorn_asset_id") == row["asset_id"]
+            label = f"{GLOBAL_UNICORN_ICON} {row['company_name']} · {row.get('ticker') or row['asset_id']} · {unicorn_probability(row)}%"
+            if st.button(label, key=f"unicorn_full_select_{row['asset_id']}", type="primary" if selected else "secondary", use_container_width=True):
+                st.session_state.selected_unicorn_asset_id = row["asset_id"]
+            st.markdown(
+                f"<div style='height:4px;background:{escape(grade_color)};border-radius:4px;margin:-8px 0 8px 0;' title='{escape(grade)}'></div>",
+                unsafe_allow_html=True,
+            )
+
+    with right:
+        selected_asset_id = st.session_state.get("selected_unicorn_asset_id")
+        selected_row = next((row for row in rows if row["asset_id"] == selected_asset_id), rows[0])
+        st.session_state.selected_unicorn_asset_id = selected_row["asset_id"]
+        grade, _, grade_reason = unicorn_evidence_grade(selected_row)
+        review_entry = unicorn_review_entry(review_history, selected_row["asset_id"])
+
+        st.markdown(f"### {selected_row['company_name']}")
+        k1, k2, k3, k4 = st.columns(4)
+        k1.metric("Posibilidad", f"{unicorn_probability(selected_row)}%")
+        k2.metric("Evidencia", grade)
+        k3.metric("Ticker", selected_row.get("ticker") or "N/D")
+        k4.metric("Revisión", UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected_row["asset_id"])])
+        st.info(grade_reason)
+
+        st.markdown("#### Identidad y mercado")
+        identity = {
+            "ID interno": selected_row.get("asset_id", ""),
+            "Empresa": selected_row.get("company_name", ""),
+            "Ticker": selected_row.get("ticker", ""),
+            "País": selected_row.get("country", ""),
+            "Bolsa": selected_row.get("exchange", ""),
+            "Estado cobertura": GLOBAL_STATUS_LABELS.get(selected_row.get("overall_coverage_status", ""), selected_row.get("overall_coverage_status", "")),
+            "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(selected_row.get("eligibility_tier", ""), selected_row.get("eligibility_tier", "")),
+        }
+        st.dataframe(pd.DataFrame([{"Campo": key, "Valor": value} for key, value in identity.items()]), use_container_width=True, hide_index=True)
+
+        st.markdown("#### Evidencia unicornio")
+        st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
+        st.bar_chart(pd.DataFrame({"Valor": unicorn_radar_values(selected_row)}).T)
+        for item in explain_unicorn_reason(selected_row.get("unicorn_reason", ""), selected_row.get("country", "")):
+            st.write(f"- {item}")
+
+        st.markdown("#### Seguimiento local")
+        follow_up = {
+            "Nota personal": notes.get(selected_row["asset_id"], ""),
+            "Estado revisión": UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected_row["asset_id"])],
+            "Última revisión": review_entry.get("reviewed_at", ""),
+            "Comentario revisión": review_entry.get("note", ""),
+        }
+        st.dataframe(pd.DataFrame([{"Campo": key, "Valor": value} for key, value in follow_up.items()]), use_container_width=True, hide_index=True)
+
+        with st.expander("Todos los campos técnicos disponibles"):
+            raw_rows = [{"Campo": key, "Valor": value} for key, value in sorted(selected_row.items())]
+            st.dataframe(pd.DataFrame(raw_rows), use_container_width=True, hide_index=True, height=420)
+        with st.expander("Informe profesional"):
+            report = professional_unicorn_report(selected_row)
+            st.markdown(report)
+            st.download_button(
+                "Descargar informe Markdown",
+                data=report.encode("utf-8"),
+                file_name=f"scout_finance_ficha_completa_unicornio_{selected_row['asset_id']}_v2_44o.md",
+                mime="text/markdown",
+                key="full_unicorn_report_download",
+            )
+        with st.expander("Prompt IA opcional"):
+            ai_prompt = unicorn_ai_prompt_template(selected_row)
+            st.code(ai_prompt, language="markdown")
+            st.download_button(
+                "Descargar prompt IA",
+                data=ai_prompt.encode("utf-8"),
+                file_name=f"scout_finance_prompt_ia_unicornio_{selected_row['asset_id']}_v2_44o.md",
+                mime="text/markdown",
+                key="full_unicorn_ai_prompt_download",
+            )
+        st.markdown(f"[Abrir búsqueda manual en Google Finance]({google_finance_search_url(selected_row['company_name'])})")
+
+
 def unicorn_sort_key(row: dict, sort_mode: str) -> tuple:
     if sort_mode == "País":
         return (row.get("country", ""), row.get("company_name", ""))
@@ -875,7 +964,7 @@ def render_global_unicorns(_data):
     for col, status in zip(review_cols, ["PENDING", "REVIEWED", "FOLLOW", "DISCARDED"]):
         col.metric(UNICORN_REVIEW_STATUS_LABELS[status], f"{review_counts.get(status, 0):,}")
     st.caption("Ranking interno y semáforo ordenan calidad de evidencia local, no rentabilidad esperada ni recomendación financiera.")
-    view_mode = st.radio("Vista", ["Presentación/demo", "Cockpit limpio", "Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
+    view_mode = st.radio("Vista", ["Fichas completas", "Presentación/demo", "Cockpit limpio", "Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
     if filtered and "selected_unicorn_asset_id" not in st.session_state:
         st.session_state.selected_unicorn_asset_id = filtered[0]["asset_id"]
     watchlist_path = watchlist_data = None
@@ -944,6 +1033,9 @@ def render_global_unicorns(_data):
             )
         else:
             st.info("Todavía no hay unicornios guardados en watchlist ni unicornios con notas personales.")
+
+    if view_mode == "Fichas completas":
+        render_unicorn_full_catalog(filtered, notes, review_history)
 
     if view_mode == "Presentación/demo":
         render_unicorn_presentation_mode(filtered, unicorn_rows)
