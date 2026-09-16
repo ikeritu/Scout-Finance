@@ -1,6 +1,7 @@
 """Scout Finance v2.37 — local research product."""
 from __future__ import annotations
 
+import json
 from collections import Counter
 from html import escape
 from pathlib import Path
@@ -18,6 +19,7 @@ from src.ui_v2_37.ui import apply, banner, heading
 from src.ui_v2_37.watchlists import STATUSES, add, atomic_write, create, export_csv, read, remove, scan, update
 
 ROOT = Path(__file__).resolve().parent
+UNICORN_NOTES_PATH = ROOT / "data" / "user_unicorn_notes_v2_44i.json"
 st.set_page_config(page_title="Scout Finance — Investigación local", page_icon="🔎", layout="wide")
 apply(st)
 SAFE_DEMO_MODE = is_safe_demo_mode()
@@ -147,6 +149,68 @@ def unicorn_probability(row: dict) -> int:
     if row.get("eligibility_tier") in {"REVIEW_REQUIRED", "PARTIAL_COMPARABILITY"}:
         score -= 3
     return max(55, min(score, 96))
+
+
+def unicorn_evidence_grade(row: dict) -> tuple[str, str, str]:
+    probability = unicorn_probability(row)
+    if probability >= 90 and row.get("overall_coverage_status") == "GROWTH_READY":
+        return "Muy respaldado", "green", "Criterios completos y cobertura de crecimiento completa."
+    if probability >= 78:
+        return "Respaldado", "blue", "Evidencia suficiente, con alguna limitacion menor de cobertura o comparabilidad."
+    if row.get("overall_coverage_status") == "GROWTH_PARTIAL":
+        return "Parcial", "orange", "Etiqueta valida, pero con cobertura de crecimiento parcial."
+    return "Requiere revision", "red", "Conviene revisar la evidencia manualmente antes de priorizar."
+
+
+def unicorn_internal_rank_key(row: dict) -> tuple:
+    grade, _, _ = unicorn_evidence_grade(row)
+    grade_order = {"Muy respaldado": 0, "Respaldado": 1, "Parcial": 2, "Requiere revision": 3}
+    return (grade_order.get(grade, 9), -unicorn_probability(row), row.get("company_name", ""))
+
+
+def unicorn_radar_values(row: dict) -> dict[str, int]:
+    reason = row.get("unicorn_reason", "").casefold()
+    return {
+        "Crecimiento": 100 if "revenue_growth" in reason or "fundamental_momentum_flag_true" in reason else 70,
+        "Margen": 100 if "margin_expansion" in reason else 65,
+        "Caja": 100 if "positive_free_cash_flow" in reason else 70 if row.get("country") == "Austria" else 55,
+        "Cobertura": 95 if row.get("overall_coverage_status") == "GROWTH_READY" else 72,
+        "Evidencia": unicorn_probability(row),
+    }
+
+
+def load_unicorn_notes() -> dict[str, str]:
+    if not UNICORN_NOTES_PATH.exists():
+        return {}
+    try:
+        data = json.loads(UNICORN_NOTES_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def save_unicorn_notes(notes: dict[str, str]) -> None:
+    UNICORN_NOTES_PATH.parent.mkdir(parents=True, exist_ok=True)
+    UNICORN_NOTES_PATH.write_text(json.dumps(notes, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def professional_unicorn_comparison(rows: list[dict]) -> str:
+    lines = ["# Comparador profesional de unicornios", ""]
+    for row in rows:
+        grade, _, grade_reason = unicorn_evidence_grade(row)
+        lines.extend([
+            f"## {row.get('company_name')} ({row.get('ticker') or row.get('asset_id')})",
+            f"- Posibilidad de unicornio: {unicorn_probability(row)}%",
+            f"- Calidad de evidencia: {grade}. {grade_reason}",
+            f"- Criterios: {', '.join(unicorn_criterion_badges(row.get('unicorn_reason', ''), row.get('country', '')))}",
+            f"- Estado: {GLOBAL_STATUS_LABELS.get(row.get('overall_coverage_status', ''), row.get('overall_coverage_status', 'N/D'))}",
+            "",
+        ])
+    lines.extend([
+        "## Lectura responsable",
+        "La comparacion ordena evidencia local, no atractivo financiero. No significa comprar, vender o mantener; no es precio objetivo ni probabilidad de rentabilidad.",
+    ])
+    return "\n".join(lines)
 
 
 def professional_unicorn_report(row: dict) -> str:
@@ -540,6 +604,12 @@ def render_global_unicorns(_data):
     status_filter = c2.multiselect("Estado", sorted(counts), format_func=lambda value: GLOBAL_STATUS_LABELS.get(value, value), placeholder="Todos", key="global_unicorn_status")
     eligibility_counts = Counter(row.get("eligibility_tier", "") for row in unicorn_rows)
     eligibility_filter = c3.multiselect("Elegibilidad para scoring", sorted(eligibility_counts), format_func=lambda value: GLOBAL_ELIGIBILITY_LABELS.get(value, value), placeholder="Todas", key="global_unicorn_eligibility")
+    quick_filter = st.radio(
+        "Filtros rápidos",
+        ["Todos", "Top confianza", "Muy respaldados", "Crecimiento completo", "Revisión requerida", "USA", "Europa"],
+        horizontal=True,
+        key="global_unicorn_quick_filter",
+    )
     needle = search.casefold().strip()
     filtered = [
         row for row in unicorn_rows
@@ -548,10 +618,27 @@ def render_global_unicorns(_data):
         and (not status_filter or row["overall_coverage_status"] in status_filter)
         and (not eligibility_filter or row.get("eligibility_tier", "") in eligibility_filter)
     ]
+    if quick_filter == "Top confianza":
+        filtered = [row for row in filtered if unicorn_probability(row) >= 90]
+    elif quick_filter == "Muy respaldados":
+        filtered = [row for row in filtered if unicorn_evidence_grade(row)[0] == "Muy respaldado"]
+    elif quick_filter == "Crecimiento completo":
+        filtered = [row for row in filtered if row.get("overall_coverage_status") == "GROWTH_READY"]
+    elif quick_filter == "Revisión requerida":
+        filtered = [row for row in filtered if row.get("eligibility_tier") == "REVIEW_REQUIRED"]
+    elif quick_filter == "USA":
+        filtered = [row for row in filtered if row.get("country") == "USA"]
+    elif quick_filter == "Europa":
+        filtered = [row for row in filtered if row.get("country") and row.get("country") != "USA"]
     controls = st.columns([1, 1, 1])
-    sort_mode = controls[0].selectbox("Ordenar por", ["Empresa", "País", "Bolsa", "Crecimiento completo primero", "Elegibilidad"], key="global_unicorn_sort")
-    filtered = sorted(filtered, key=lambda row: unicorn_sort_key(row, sort_mode))
+    sort_mode = controls[0].selectbox("Ordenar por", ["Ranking interno de unicornios", "Empresa", "País", "Bolsa", "Crecimiento completo primero", "Elegibilidad"], key="global_unicorn_sort")
+    filtered = sorted(filtered, key=unicorn_internal_rank_key if sort_mode == "Ranking interno de unicornios" else lambda row: unicorn_sort_key(row, sort_mode))
     st.caption(f"{len(filtered):,} de {len(unicorn_rows):,} unicornios")
+    grade_counts = Counter(unicorn_evidence_grade(row)[0] for row in filtered)
+    grade_cols = st.columns(4)
+    for col, label in zip(grade_cols, ["Muy respaldado", "Respaldado", "Parcial", "Requiere revision"]):
+        col.metric(label, f"{grade_counts.get(label, 0):,}")
+    st.caption("Ranking interno y semáforo ordenan calidad de evidencia local, no rentabilidad esperada ni recomendación financiera.")
     view_mode = st.radio("Vista", ["Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
     if filtered and "selected_unicorn_asset_id" not in st.session_state:
         st.session_state.selected_unicorn_asset_id = filtered[0]["asset_id"]
@@ -562,6 +649,7 @@ def render_global_unicorns(_data):
         watchlist_path, watchlist_data = select_watchlist()
         if watchlist_data is None:
             st.info("Crea una watchlist en la pantalla ⭐ Watchlist antes de guardar unicornios.")
+    notes = load_unicorn_notes()
 
     top_country_rows = [{"País": country or "N/D", "Unicornios": count} for country, count in Counter(row.get("country", "") for row in filtered).most_common(8)]
     top_exchange_rows = [{"Bolsa": exchange or "N/D", "Unicornios": count} for exchange, count in Counter(row.get("exchange", "") for row in filtered).most_common(8)]
@@ -585,6 +673,9 @@ def render_global_unicorns(_data):
                 )
                 status_label = GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"])
                 probability = unicorn_probability(row)
+                grade_label, grade_color, grade_reason = unicorn_evidence_grade(row)
+                radar = unicorn_radar_values(row)
+                radar_text = " · ".join(f"{key} {value}" for key, value in radar.items())
                 col.markdown(
                     f"""
                     <div style="border:1px solid #d8e2ef;border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#ffffff;">
@@ -592,6 +683,7 @@ def render_global_unicorns(_data):
                       <div style="color:#64748b;font-size:13px;margin:3px 0 8px 0;">{escape(row["ticker"] or row["asset_id"])} · {escape(row["country"] or "N/D")} · {escape(row["exchange"] or "N/D")}</div>
                       <div style="font-size:26px;font-weight:800;color:#0f766e;margin:4px 0;">{probability}%</div>
                       <div style="color:#64748b;font-size:12px;margin-bottom:8px;">posibilidad de etiqueta unicornio</div>
+                      <div style="display:inline-block;margin-bottom:8px;padding:4px 8px;border-radius:8px;background:#f8fafc;color:#334155;border-left:5px solid {escape(grade_color)};">{escape(grade_label)}</div>
                       <div style="margin-bottom:8px;">{badges}</div>
                       <div style="color:#334155;font-size:13px;">{escape(status_label)}</div>
                     </div>
@@ -605,6 +697,15 @@ def render_global_unicorns(_data):
                     st.write("**Explicación**")
                     for item in explain_unicorn_reason(row.get("unicorn_reason", ""), row.get("country", "")):
                         st.write(f"- {item}")
+                    st.write(f"**Calidad de evidencia:** {grade_label}. {grade_reason}")
+                    st.write(f"**Radar:** {radar_text}")
+                    note_value = st.text_area("Notas personales", value=notes.get(row["asset_id"], ""), key=f"unicorn_note_{row['asset_id']}", height=90)
+                    if SAFE_DEMO_MODE:
+                        st.caption(blocked_message("Guardar notas personales"))
+                    elif st.button("Guardar nota", key=f"unicorn_note_save_{row['asset_id']}"):
+                        notes[row["asset_id"]] = note_value.strip()
+                        save_unicorn_notes(notes)
+                        st.success("Nota guardada localmente.")
                     st.caption("No significa comprar, vender o mantener. No es precio objetivo ni probabilidad de rentabilidad.")
                     if st.checkbox("Generar informe profesional", key=f"unicorn_report_toggle_{row['asset_id']}"):
                         report = professional_unicorn_report(row)
@@ -634,6 +735,7 @@ def render_global_unicorns(_data):
         "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
         "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
         "Posibilidad unicornio": f"{unicorn_probability(row)}%",
+        "Calidad evidencia": unicorn_evidence_grade(row)[0],
         "Motivo unicornio": row.get("unicorn_reason", ""),
         "Google Finance": google_finance_search_url(row["company_name"]),
     } for row in filtered]
@@ -645,6 +747,15 @@ def render_global_unicorns(_data):
         file_name="scout_finance_unicornios_filtrados_v2_44e.csv",
         mime="text/csv",
         disabled=table.empty,
+    )
+    report_pack = "\n\n---\n\n".join(professional_unicorn_report(row) for row in filtered[:25])
+    controls[1].download_button(
+        "Export pack investigación",
+        data=report_pack.encode("utf-8"),
+        file_name="scout_finance_pack_investigacion_unicornios_v2_44i.md",
+        mime="text/markdown",
+        disabled=not report_pack,
+        help="Exporta hasta 25 informes profesionales combinados en Markdown.",
     )
     compare_options = [f'{row["company_name"]} · {row["ticker"] or row["asset_id"]}' for row in filtered]
     compare_selection = controls[2].multiselect("Comparar 2-3", compare_options, max_selections=3, key="global_unicorn_compare")
@@ -661,9 +772,19 @@ def render_global_unicorns(_data):
                 "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
                 "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
                 "Posibilidad unicornio": f"{unicorn_probability(row)}%",
+                "Calidad evidencia": unicorn_evidence_grade(row)[0],
                 "Criterios": " · ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))),
             })
         st.dataframe(pd.DataFrame(compare_rows), use_container_width=True, hide_index=True)
+        comparison_report = professional_unicorn_comparison(compared)
+        with st.expander("Comparador profesional"):
+            st.markdown(comparison_report)
+            st.download_button(
+                "Descargar comparador profesional",
+                data=comparison_report.encode("utf-8"),
+                file_name="scout_finance_comparador_profesional_unicornios_v2_44i.md",
+                mime="text/markdown",
+            )
     selected_index = None
     if filtered:
         options = [f'{row["company_name"]} · {row["ticker"] or row["asset_id"]}' for row in filtered]
@@ -683,11 +804,24 @@ def render_global_unicorns(_data):
         c4.metric("Estado", GLOBAL_STATUS_LABELS.get(selected_row["overall_coverage_status"], selected_row["overall_coverage_status"]))
         c5.metric("Posibilidad unicornio", f"{unicorn_probability(selected_row)}%", help="Confianza de clasificación con los datos locales disponibles; no es probabilidad de rentabilidad.")
         st.caption("Esta posibilidad es una lectura de evidencia local del flag unicornio: no significa comprar, vender o mantener, no es precio objetivo y no constituye asesoramiento financiero.")
+        grade_label, _, grade_reason = unicorn_evidence_grade(selected_row)
+        st.info(f"Semáforo de calidad de evidencia: {grade_label}. {grade_reason}")
         st.markdown("**Criterios cumplidos**")
         st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
+        st.markdown("**Radar de evidencia**")
+        radar = unicorn_radar_values(selected_row)
+        st.bar_chart(pd.DataFrame({"Valor": radar}).T)
         st.markdown("**Explicación detallada**")
         for item in explain_unicorn_reason(selected_row.get("unicorn_reason", ""), selected_row.get("country", "")):
             st.write(f"- {item}")
+        st.markdown("**Notas personales**")
+        detail_note = st.text_area("Nota local de investigación", value=notes.get(selected_row["asset_id"], ""), key="global_unicorn_detail_note", height=110)
+        if SAFE_DEMO_MODE:
+            st.caption(blocked_message("Guardar notas personales"))
+        elif st.button("Guardar nota de esta empresa", key="global_unicorn_detail_note_save"):
+            notes[selected_row["asset_id"]] = detail_note.strip()
+            save_unicorn_notes(notes)
+            st.success("Nota guardada localmente.")
         with st.expander("Ver motivo técnico original"):
             st.code(selected_row.get("unicorn_reason", "Sin motivo técnico disponible"), language="text")
         with st.expander("Generar informe profesional completo"):
@@ -701,6 +835,9 @@ def render_global_unicorns(_data):
                 mime="text/markdown",
                 key="global_unicorn_detail_report_download",
             )
+        with st.expander("IA opcional para análisis extendido"):
+            st.info("Preparado para una integración futura con API de IA, pero desactivado en esta fase: no hay API key, no hay llamadas externas y no se envían datos fuera de Scout Finance.")
+            st.code(professional_unicorn_report(selected_row), language="markdown")
         st.markdown(f"[Abrir búsqueda manual en Google Finance]({google_finance_search_url(selected_row['company_name'])})")
         if watchlist_data is not None and st.button("Añadir este unicornio a watchlist", key="global_unicorn_detail_add_watchlist", type="primary"):
             try:

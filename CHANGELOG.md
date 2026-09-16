@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44I — Unicorn research cockpit (2026-09-16)
+
+Consolida las mejoras de investigacion de `🦄 Unicornios`: comparador profesional, semaforo de calidad de evidencia, ranking interno de unicornios, filtros rapidos, radar visual por empresa, notas personales locales, export pack de investigacion e IA opcional preparada pero desactivada sin llamadas externas. Todo reutiliza datos locales ya calculados y el informe profesional de `v2.44H`; no crea score nuevo ni cambia el ranking global. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44H — Unicorns professional report generator (2026-09-16)
 
 Añade un informe profesional por unicornio, accionable desde la ficha y descargable en Markdown. El informe incluye resumen ejecutivo, identificacion, señales que justifican la etiqueta, lectura tecnica del porcentaje, limitaciones, checklist de revision manual, conclusion responsable y motivo tecnico original. Deja preparada la via de IA opcional futura, pero esta fase opera offline: sin API key, sin llamadas externas y sin enviar datos fuera de la app. No crea score nuevo ni ranking nuevo; reutiliza `EVALUATED_UNICORN` y el porcentaje de confianza local. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

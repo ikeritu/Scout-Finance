@@ -82,6 +82,14 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Descargar informe Markdown" in source, "Unicorn report must be downloadable")
     require("Preparado para IA opcional futura" in source or "integración con IA queda preparada" in source, "Unicorn report must document optional future AI integration")
     require("sin llamadas externas" in source, "Unicorn report generation must remain offline in this phase")
+    require("def unicorn_evidence_grade(" in source, "Unicorn cockpit must expose an evidence quality semaphore")
+    require("Ranking interno de unicornios" in source, "Unicorn cockpit must expose internal unicorn ordering")
+    require("Filtros rápidos" in source, "Unicorn cockpit must expose quick filters")
+    require("def unicorn_radar_values(" in source, "Unicorn cockpit must expose radar evidence values")
+    require("Notas personales" in source and "save_unicorn_notes" in source, "Unicorn cockpit must support local notes")
+    require("Export pack investigación" in source, "Unicorn cockpit must export a research pack")
+    require("Comparador profesional" in source, "Unicorn cockpit must include professional comparison")
+    require("IA opcional para análisis extendido" in source, "Unicorn cockpit must prepare optional AI analysis without enabling network calls")
 
 
 def main() -> None:
