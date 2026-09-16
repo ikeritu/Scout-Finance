@@ -144,6 +144,10 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("unicorn_visual_card_select_" in source, "Unicorn visual card selector keys must be stable")
     require("dropdown borroso" in source, "Visual analytics must document replacing the blurry dropdown")
     require("unicorn_visual_company_selector" not in source, "Visual analytics must not use the native selectbox selector")
+    require("← Anteriores" in source and "Siguientes →" in source, "Unicorn visual cards must provide previous/next navigation")
+    require("unicorn_visual_cards_page" in source, "Unicorn card pagination state must be stable")
+    require("page_size = 12" in source, "Unicorn visual card pagination must show 12 cards per page")
+    require("st.rerun()" in source, "Unicorn card navigation must rerender after page changes")
 
 
 def main() -> None:

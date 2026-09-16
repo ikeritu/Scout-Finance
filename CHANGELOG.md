@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44V — Unicorn card pagination controls (2026-09-16)
+
+Añade navegación `← Anteriores` / `Siguientes →` debajo de las cards de `Analítica visual`. Las empresas filtradas se recorren en páginas de 12, con contador de rango y ficha seleccionada a ancho completo. Así se puede avanzar por las fichas sin depender solo de búsqueda/filtros. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44U — Unicorn visual card selector (2026-09-16)
 
 Sustituye el selector nativo de empresas en `Analítica visual` por una galería de tarjetas nítidas. Cada card muestra empresa, ticker, país, bolsa, porcentaje y calidad de evidencia, y abre la ficha a ancho completo con `Ver ficha`. Evita el dropdown borroso y mejora el impacto visual sin añadir señales de trading ni recomendaciones. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

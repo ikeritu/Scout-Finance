@@ -756,8 +756,18 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
     if "selected_unicorn_asset_id" not in st.session_state or not any(row["asset_id"] == st.session_state.selected_unicorn_asset_id for row in rows):
         st.session_state.selected_unicorn_asset_id = rows[0]["asset_id"]
 
-    st.caption(f"{len(rows):,} unicornios filtrados · mostrando selección visual de hasta 12; usa búsqueda/filtros para acotar.")
-    visual_rows = rows[:12]
+    page_size = 12
+    total_pages = max(1, (len(rows) + page_size - 1) // page_size)
+    selected_index = next((idx for idx, row in enumerate(rows) if row["asset_id"] == st.session_state.selected_unicorn_asset_id), 0)
+    selected_page = selected_index // page_size
+    current_page = min(st.session_state.get("unicorn_visual_cards_page", selected_page), total_pages - 1)
+    if selected_page != current_page and st.session_state.get("unicorn_visual_sync_page", True):
+        current_page = selected_page
+    st.session_state.unicorn_visual_cards_page = current_page
+    page_start = current_page * page_size
+    page_end = min(page_start + page_size, len(rows))
+    visual_rows = rows[page_start:page_end]
+    st.caption(f"{len(rows):,} unicornios filtrados · mostrando {page_start + 1}-{page_end} · página {current_page + 1}/{total_pages}.")
     for chunk_start in range(0, len(visual_rows), 3):
         cols = st.columns(3)
         for col, row in zip(cols, visual_rows[chunk_start:chunk_start + 3]):
@@ -779,6 +789,18 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
                 )
                 if st.button("Ver ficha", key=f"unicorn_visual_card_select_{row['asset_id']}", type="primary" if selected else "secondary", use_container_width=True):
                     st.session_state.selected_unicorn_asset_id = row["asset_id"]
+                    st.session_state.unicorn_visual_sync_page = True
+
+    nav_prev, nav_info, nav_next = st.columns([1, 2, 1])
+    if nav_prev.button("← Anteriores", disabled=current_page == 0, use_container_width=True, key="unicorn_visual_prev_page"):
+        st.session_state.unicorn_visual_cards_page = max(0, current_page - 1)
+        st.session_state.unicorn_visual_sync_page = False
+        st.rerun()
+    nav_info.caption(f"Cards {page_start + 1}-{page_end} de {len(rows):,}")
+    if nav_next.button("Siguientes →", disabled=current_page >= total_pages - 1, use_container_width=True, key="unicorn_visual_next_page"):
+        st.session_state.unicorn_visual_cards_page = min(total_pages - 1, current_page + 1)
+        st.session_state.unicorn_visual_sync_page = False
+        st.rerun()
 
     selected = next((row for row in rows if row["asset_id"] == st.session_state.selected_unicorn_asset_id), rows[0])
     grade, _, grade_reason = unicorn_evidence_grade(selected)
