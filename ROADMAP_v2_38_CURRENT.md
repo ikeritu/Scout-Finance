@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.44K preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.44L preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.44K: add unicorn local review history`
+`LOCAL_COMMIT_PENDING_PUSH v2.44L: add unicorn portfolio watchlist view`
 
 Estado operativo del producto:
 
-`UNICORN_LOCAL_REVIEW_HISTORY_READY`
+`UNICORN_PORTFOLIO_WATCHLIST_READY`
 
 Cycle status:
 
@@ -138,6 +138,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.44I | Cabina de investigacion de unicornios: comparador, semaforo, filtros, radar, notas, export pack e IA opcional preparada |
 | Completada | v2.44J | Mejoras altas: cockpit limpio, busqueda avanzada e informe ejecutivo global de unicornios |
 | Completada | v2.44K | Historial local de revision de unicornios con estados, comentario, fecha y filtros |
+| Completada | v2.44L | Vista portfolio/watchlist de unicornios con composición, tabla y exportaciones |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

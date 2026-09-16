@@ -292,6 +292,31 @@ El conjunto de unicornios es una lista de investigacion priorizada. No significa
 """
 
 
+def unicorn_portfolio_report(rows: list[dict], title: str) -> str:
+    grade_counts = Counter(unicorn_evidence_grade(row)[0] for row in rows)
+    country_counts = Counter(row.get("country") or "N/D" for row in rows)
+    exchange_counts = Counter(row.get("exchange") or "N/D" for row in rows)
+    lines = [f"# {title}", "", f"Unicornios incluidos: {len(rows)}", ""]
+    lines.append("## Distribucion por calidad de evidencia")
+    lines.extend(f"- {label}: {count}" for label, count in grade_counts.most_common())
+    lines.append("")
+    lines.append("## Distribucion por pais")
+    lines.extend(f"- {label}: {count}" for label, count in country_counts.most_common(10))
+    lines.append("")
+    lines.append("## Distribucion por bolsa")
+    lines.extend(f"- {label}: {count}" for label, count in exchange_counts.most_common(10))
+    lines.append("")
+    lines.append("## Componentes")
+    for row in sorted(rows, key=unicorn_internal_rank_key):
+        lines.append(f"- {row.get('company_name')} ({row.get('ticker') or row.get('asset_id')}): {unicorn_probability(row)}%, {unicorn_evidence_grade(row)[0]}, {row.get('country') or 'N/D'}, {row.get('exchange') or 'N/D'}")
+    lines.extend([
+        "",
+        "## Lectura responsable",
+        "Esta vista agrupa seguimiento de investigacion. No es cartera recomendada, no implica asignacion, no es precio objetivo y no constituye asesoramiento financiero.",
+    ])
+    return "\n".join(lines)
+
+
 def professional_unicorn_report(row: dict) -> str:
     probability = unicorn_probability(row)
     badges = unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))
@@ -769,6 +794,46 @@ def render_global_unicorns(_data):
             file_name="scout_finance_informe_ejecutivo_global_unicornios_v2_44j.md",
             mime="text/markdown",
         )
+
+    watchlist_ids = {item.get("asset_id") for item in watchlist_data.get("items", [])} if watchlist_data else set()
+    portfolio_rows = [row for row in unicorn_rows if row["asset_id"] in watchlist_ids]
+    portfolio_title = "Portfolio/watchlist de unicornios"
+    if not portfolio_rows:
+        portfolio_rows = [row for row in unicorn_rows if notes.get(row["asset_id"], "").strip()]
+        portfolio_title = "Seguimiento local de unicornios con notas"
+    with st.expander("Portfolio/watchlist de unicornios"):
+        st.caption("Agrupa unicornios guardados en la watchlist seleccionada; si no hay watchlist con unicornios, usa los que tienen notas personales.")
+        if portfolio_rows:
+            p1, p2, p3, p4 = st.columns(4)
+            p1.metric("Incluidos", f"{len(portfolio_rows):,}")
+            p2.metric("Muy respaldados", f"{sum(unicorn_evidence_grade(row)[0] == 'Muy respaldado' for row in portfolio_rows):,}")
+            p3.metric("Países", f"{len({row.get('country') for row in portfolio_rows if row.get('country')}):,}")
+            p4.metric("Bolsas", f"{len({row.get('exchange') for row in portfolio_rows if row.get('exchange')}):,}")
+            portfolio_table = pd.DataFrame([{
+                "Empresa": row["company_name"],
+                "Ticker": row["ticker"] or row["asset_id"],
+                "País": row["country"],
+                "Bolsa": row["exchange"],
+                "Posibilidad": f"{unicorn_probability(row)}%",
+                "Evidencia": unicorn_evidence_grade(row)[0],
+                "Nota": notes.get(row["asset_id"], ""),
+            } for row in sorted(portfolio_rows, key=unicorn_internal_rank_key)])
+            st.dataframe(portfolio_table, use_container_width=True, hide_index=True)
+            portfolio_report = unicorn_portfolio_report(portfolio_rows, portfolio_title)
+            st.download_button(
+                "Descargar portfolio Markdown",
+                data=portfolio_report.encode("utf-8"),
+                file_name="scout_finance_portfolio_unicornios_v2_44l.md",
+                mime="text/markdown",
+            )
+            st.download_button(
+                "Exportar portfolio CSV",
+                data=portfolio_table.to_csv(index=False).encode("utf-8"),
+                file_name="scout_finance_portfolio_unicornios_v2_44l.csv",
+                mime="text/csv",
+            )
+        else:
+            st.info("Todavía no hay unicornios guardados en watchlist ni unicornios con notas personales.")
 
     if view_mode == "Cockpit limpio":
         st.markdown("### Cockpit limpio")

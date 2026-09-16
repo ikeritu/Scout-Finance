@@ -103,6 +103,10 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Estado de revisión" in source, "Unicorn review history must be editable in the UI")
     require("PENDING" in source and "REVIEWED" in source and "FOLLOW" in source and "DISCARDED" in source, "Unicorn review statuses must cover pending/reviewed/follow/discarded")
     require("Última revisión" in source, "Unicorn review history must export last review timestamp")
+    require("def unicorn_portfolio_report(" in source, "Unicorns screen must generate a portfolio/watchlist report")
+    require("Portfolio/watchlist de unicornios" in source, "Unicorns screen must expose portfolio/watchlist grouping")
+    require("Descargar portfolio Markdown" in source, "Unicorn portfolio must be downloadable as Markdown")
+    require("Exportar portfolio CSV" in source, "Unicorn portfolio must be exportable as CSV")
 
 
 def main() -> None:

@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44L — Unicorn portfolio/watchlist view (2026-09-16)
+
+Añade una vista `Portfolio/watchlist de unicornios` dentro de `🦄 Unicornios`. Agrupa los unicornios de la watchlist seleccionada o, si no hay, los que tienen notas personales. Muestra composición por evidencia, país y bolsa, tabla compacta, export CSV y reporte Markdown. No crea score nuevo ni cambia el ranking global; solo organiza seguimiento local de investigación. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44K — Unicorn local review history (2026-09-16)
 
 Añade historial local de revisión para `🦄 Unicornios`: estados Pendiente/Revisado/Seguir/Descartado, comentario de revisión, fecha local de última revisión, filtros por estado y export en CSV. La funcionalidad queda bloqueada en modo demo seguro y no toca datasets ni scoring. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
