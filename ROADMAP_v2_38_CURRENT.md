@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.44V preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.44W preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.44V: add unicorn card pagination controls`
+`LOCAL_COMMIT_PENDING_PUSH v2.44W: add unicorn motion working layer`
 
 Estado operativo del producto:
 
-`UNICORN_CARD_PAGINATION_READY`
+`UNICORN_MOTION_WORKING_LAYER_READY`
 
 Cycle status:
 
@@ -149,6 +149,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.44T | Selector superior de empresa unicornio y ficha a ancho completo para leer el informe |
 | Completada | v2.44U | Selector visual de unicornios con cards nitidas y ficha a ancho completo |
 | Completada | v2.44V | Flechas de paginacion para recorrer cards de unicornios filtrados |
+| Completada | v2.44W | Capa de animaciones suaves: ticker, pulse, scanline y barras de confianza |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

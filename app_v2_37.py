@@ -768,6 +768,25 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
     page_end = min(page_start + page_size, len(rows))
     visual_rows = rows[page_start:page_end]
     st.caption(f"{len(rows):,} unicornios filtrados · mostrando {page_start + 1}-{page_end} · página {current_page + 1}/{total_pages}.")
+    st.markdown(
+        f"""
+        <div class="sf-live-ticker" aria-label="Actividad local de analisis">
+          <div class="sf-live-ticker-track">
+            <span><span class="sf-live-dot"></span>Analizando evidencia local</span>
+            <span>Sin red · datos locales</span>
+            <span>{len(rows):,} unicornios filtrados</span>
+            <span>Página {current_page + 1}/{total_pages}</span>
+            <span>Informe personalizado listo al seleccionar ficha</span>
+            <span><span class="sf-live-dot"></span>Analizando evidencia local</span>
+            <span>Sin red · datos locales</span>
+            <span>{len(rows):,} unicornios filtrados</span>
+            <span>Página {current_page + 1}/{total_pages}</span>
+            <span>Informe personalizado listo al seleccionar ficha</span>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
     for chunk_start in range(0, len(visual_rows), 3):
         cols = st.columns(3)
         for col, row in zip(cols, visual_rows[chunk_start:chunk_start + 3]):
@@ -776,13 +795,14 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
             with col:
                 st.markdown(
                     f"""
-                    <div style="border:1px solid {'#0f766e' if selected else '#d8e2ef'};border-left:6px solid {escape(grade_color)};border-radius:8px;padding:10px 12px;background:{'#ecfeff' if selected else '#ffffff'};min-height:118px;margin-bottom:6px;">
+                    <div class="sf-motion-card {'is-selected' if selected else ''}" style="--sf-fill:{unicorn_probability(row)}%;border:1px solid {'#0f766e' if selected else '#d8e2ef'};border-left:6px solid {escape(grade_color)};border-radius:8px;padding:10px 12px;background:{'#ecfeff' if selected else '#ffffff'};min-height:128px;margin-bottom:6px;">
                       <div style="font-weight:800;color:#0f172a;font-size:14px;line-height:1.25;">{escape(row.get("company_name") or "")}</div>
                       <div style="color:#64748b;font-size:12px;margin-top:4px;">{escape(row.get("ticker") or row.get("asset_id") or "")} · {escape(row.get("country") or "N/D")} · {escape(row.get("exchange") or "N/D")}</div>
                       <div style="display:flex;gap:10px;align-items:baseline;margin-top:8px;">
                         <span style="font-size:24px;font-weight:900;color:#0f766e;">{unicorn_probability(row)}%</span>
                         <span style="font-size:12px;color:#334155;">{escape(grade)}</span>
                       </div>
+                      <div class="sf-confidence-track"><div class="sf-confidence-fill"></div></div>
                     </div>
                     """,
                     unsafe_allow_html=True,

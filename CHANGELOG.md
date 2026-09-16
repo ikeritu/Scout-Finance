@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44W — Unicorn motion working layer (2026-09-16)
+
+Añade animaciones suaves a `Analítica visual`: ticker de actividad local, cards con entrada/hover/glow, scanline y barras de confianza animadas. La intención es transmitir que Scout Finance esta analizando evidencia local, sin copiar lenguaje de trading, PnL, enter/exit operativo ni recomendaciones. Respeta preferencias de reducción de movimiento. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44V — Unicorn card pagination controls (2026-09-16)
 
 Añade navegación `← Anteriores` / `Siguientes →` debajo de las cards de `Analítica visual`. Las empresas filtradas se recorren en páginas de 12, con contador de rango y ficha seleccionada a ancho completo. Así se puede avanzar por las fichas sin depender solo de búsqueda/filtros. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

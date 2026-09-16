@@ -8,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / "app_v2_37.py"
+UI = ROOT / "src/ui_v2_37/ui.py"
 
 
 def require(condition: bool, message: str) -> None:
@@ -43,6 +44,7 @@ def test_unicorns_is_primary_navigation_screen() -> None:
 
 def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     source = APP.read_text(encoding="utf-8")
+    ui_source = UI.read_text(encoding="utf-8")
     require("def render_global_unicorns(" in source, "Dedicated Unicorns renderer missing")
     require("def explain_unicorn_reason(" in source, "Detailed Unicorns explanation helper missing")
     require("def unicorn_criterion_badges(" in source, "Unicorn criteria badges helper missing")
@@ -148,6 +150,11 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("unicorn_visual_cards_page" in source, "Unicorn card pagination state must be stable")
     require("page_size = 12" in source, "Unicorn visual card pagination must show 12 cards per page")
     require("st.rerun()" in source, "Unicorn card navigation must rerender after page changes")
+    require("sf-live-ticker" in source, "Unicorn visual analytics must include a live activity ticker")
+    require("sf-motion-card" in source, "Unicorn visual cards must use motion card styling")
+    require("sf-confidence-fill" in source, "Unicorn visual cards must include animated confidence bars")
+    require("@keyframes sfScan" in ui_source and "@keyframes sfPulseGlow" in ui_source, "Motion CSS must include scan and pulse animations")
+    require("prefers-reduced-motion" in ui_source, "Motion CSS must respect reduced motion preferences")
 
 
 def main() -> None:

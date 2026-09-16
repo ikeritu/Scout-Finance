@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.44W — Unicorn motion working layer** (`UNICORN_MOTION_WORKING_LAYER_READY`): añade una capa de animaciones suaves a `Analítica visual` para que la app parezca estar trabajando: cards con fade/hover/glow, scanline, barras de confianza animadas y ticker de actividad local. Respeta `prefers-reduced-motion` y no introduce señales de trading, PnL ni recomendaciones. No llama APIs, no descarga datos nuevos, no cambia scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin despliegue, sin URL publica y sin broker.
+
 **v2.44V — Unicorn card pagination controls** (`UNICORN_CARD_PAGINATION_READY`): añade navegación `← Anteriores` / `Siguientes →` debajo de las cards de `Analítica visual` para recorrer los unicornios filtrados por páginas de 12. Mantiene la ficha seleccionada a ancho completo, muestra contador de rango y evita depender solo del buscador. No llama APIs, no descarga datos nuevos, no cambia scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin despliegue, sin URL publica y sin broker.
 
 **v2.44U — Unicorn visual card selector** (`UNICORN_VISUAL_CARD_SELECTOR_READY`): sustituye el selector nativo de empresas en `Analítica visual` por tarjetas nítidas de selección. Muestra hasta 12 empresas filtradas como cards con nombre, ticker, mercado, porcentaje y calidad de evidencia; cada card abre la ficha a ancho completo. Evita el dropdown borroso y hace la pantalla más llamativa sin convertirla en trading. No llama APIs, no descarga datos nuevos, no cambia scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin despliegue, sin URL publica y sin broker.
