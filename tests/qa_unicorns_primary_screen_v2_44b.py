@@ -154,6 +154,10 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("sf-motion-card" in source, "Unicorn visual cards must use motion card styling")
     require("sf-confidence-fill" in source, "Unicorn visual cards must include animated confidence bars")
     require("@keyframes sfScan" in ui_source and "@keyframes sfPulseGlow" in ui_source, "Motion CSS must include scan and pulse animations")
+    require("@keyframes sfSweep" in ui_source and "@keyframes sfProgressLoop" in ui_source, "Motion CSS must include obvious working-panel animations")
+    require("sf-analysis-engine" in source, "Unicorn visual analytics must include an animated analysis engine panel")
+    require("Motor local analizando unicornios" in source, "Animated analysis panel must be visibly labeled")
+    require("sf-node-map" in source, "Animated analysis panel must include moving nodes")
     require("prefers-reduced-motion" in ui_source, "Motion CSS must respect reduced motion preferences")
 
 

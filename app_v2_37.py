@@ -770,6 +770,27 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
     st.caption(f"{len(rows):,} unicornios filtrados · mostrando {page_start + 1}-{page_end} · página {current_page + 1}/{total_pages}.")
     st.markdown(
         f"""
+        <div class="sf-analysis-engine" aria-label="Motor visual de analisis local">
+          <div class="sf-engine-grid">
+            <div>
+              <div class="sf-engine-title">Motor local analizando unicornios</div>
+              <div class="sf-engine-sub">Crecimiento · margen · caja/equivalente · cobertura · revisión</div>
+              <div class="sf-engine-progress"><span></span></div>
+            </div>
+            <div class="sf-node-map">
+              <div class="sf-node-line"></div>
+              <span class="sf-node" style="left:8%;top:36px;"></span>
+              <span class="sf-node"></span>
+              <span class="sf-node"></span>
+              <span class="sf-node"></span>
+            </div>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        f"""
         <div class="sf-live-ticker" aria-label="Actividad local de analisis">
           <div class="sf-live-ticker-track">
             <span><span class="sf-live-dot"></span>Analizando evidencia local</span>

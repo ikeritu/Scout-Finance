@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44X — Visible unicorn analysis engine animation (2026-09-16)
+
+Refuerza las animaciones de `Analítica visual` con un panel visible de motor local: barrido animado, barra de progreso continua y nodos en movimiento. La pantalla transmite mejor que Scout Finance esta trabajando sobre evidencia local, sin lenguaje de trading, PnL ni recomendaciones. Respeta reducción de movimiento. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44W — Unicorn motion working layer (2026-09-16)
 
 Añade animaciones suaves a `Analítica visual`: ticker de actividad local, cards con entrada/hover/glow, scanline y barras de confianza animadas. La intención es transmitir que Scout Finance esta analizando evidencia local, sin copiar lenguaje de trading, PnL, enter/exit operativo ni recomendaciones. Respeta preferencias de reducción de movimiento. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
