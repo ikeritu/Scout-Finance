@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "path": "config/final_in_app_guide_contract_v2_42b.json",
+      "sha256": "c19cff7a1cfb489bf3ade3e5cae8389ad04f5db6f0a5b5596e4a579356b27c09"
+    },
+    {
+      "path": "docs/FINAL_IN_APP_GUIDE_v2_42b.md",
+      "sha256": "5c2e91acfba23682f9af236f6f523e2018b572e197f066192f91319c51f01488"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42b_final_in_app_guide/final_in_app_guide_sections_v2_42b.csv",
+      "sha256": "7da3ba41cf90ef941eed46ac48c4f6c17a029b7f216dbfde3faa9ad2a6835e33"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42b_final_in_app_guide/final_in_app_guide_guardrails_v2_42b.csv",
+      "sha256": "93c1c3a7dfbc23c97dabe78e21ef18d171710fd2efbd9af7cfc0d5f7c0668c4e"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42b_final_in_app_guide/final_in_app_guide_document_links_v2_42b.csv",
+      "sha256": "b6e237217e6e384f9c887e19647e7e224b642ce572452da1db03e6316b2ee5e2"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42b_final_in_app_guide/final_in_app_guide_ui_checks_v2_42b.csv",
+      "sha256": "2dbcd22bb418890f7bd74d248a8afd36d3c3440aa7d7a75966a2c12ef7cf0a49"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42b_final_in_app_guide/final_in_app_guide_summary_v2_42b.json",
+      "sha256": "2ab271156c0d56640fc5423627179dea1cce83f59107dc7a9e5a13b9eea2e4cc"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42b_final_in_app_guide/FINAL_IN_APP_GUIDE_v2_42b.md",
+      "sha256": "5c2e91acfba23682f9af236f6f523e2018b572e197f066192f91319c51f01488"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42b_final_in_app_guide/README.md",
+      "sha256": "fcd9a53eae1fb5ab1e2182179ea650867e83520225581fe33b5b3dcb693abbd5"
+    },
+    {
+      "path": "app_v2_37.py",
+      "sha256": "f95efeb61dac4a658bec7615cca0a3fa3f1721e92c86bfca543d6611315d0652"
+    },
+    {
+      "path": "src/ui_v2_37/safe_demo.py",
+      "sha256": "a573bb59c770920c11bb5808891890c8280588c14983c2dbf869244e61b3df2d"
+    },
+    {
+      "path": "src/ui_v2_37/global_ranking.py",
+      "sha256": "65107149eb46e32d8c9bd1542fedf48c76ccaa859eed4c6ff75be65d9cae5937"
+    }
+  ],
+  "phase": "v2.42B",
+  "status": "FINAL_IN_APP_GUIDE_READY"
+}

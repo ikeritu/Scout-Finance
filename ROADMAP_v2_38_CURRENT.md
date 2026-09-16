@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.42A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.42B preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.42A: harden final ranking UX`
+`LOCAL_COMMIT_PENDING_PUSH v2.42B: add final in-app responsible-use guide`
 
 Estado operativo del producto:
 
-`FINAL_UX_HARDENING_READY`
+`FINAL_IN_APP_GUIDE_READY`
 
 Cycle status:
 
@@ -69,6 +69,7 @@ Cycle status:
 | Completada | v2.41C | UK / Cboe Europe / manual reviews decision |
 | Completada | v2.41D | Final coverage limitations |
 | Completada | v2.42A | Final UX hardening |
+| Completada | v2.42B | Final in-app guide / responsible-use page |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -92,9 +93,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.42B: Final in-app guide / responsible-use page`
+`v2.43A: Final consolidated audit`
 
-Objetivo recomendado: anadir dentro de la app una pagina final de guia, limitaciones, no-advice y uso responsable.
+Objetivo recomendado: auditoria final consolidada de tests, reproducibilidad, legal, seguridad y rendimiento.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -115,6 +116,6 @@ Objetivo recomendado: anadir dentro de la app una pagina final de guia, limitaci
 | Completada | v2.41C | Decision Reino Unido / Cboe Europe / manual reviews |
 | Completada | v2.41D | Cobertura y limitaciones finales por pais, fuente y poblacion |
 | Completada | v2.42A | Hardening UX final: ranking, filtros, exportaciones, errores y estados vacios |
-| Pendiente | v2.42B | Pagina final dentro de la app: guia, limitaciones, no-advice y uso responsable |
+| Completada | v2.42B | Pagina final dentro de la app: guia, limitaciones, no-advice y uso responsable |
 | Pendiente | v2.43A | Auditoria final consolidada: tests, reproducibilidad, legal, seguridad y rendimiento |
 | Pendiente | v2.44A | Release final estable y project closure report |

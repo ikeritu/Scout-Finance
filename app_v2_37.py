@@ -24,7 +24,7 @@ SAFE_DEMO_MODE = is_safe_demo_mode()
 SCREENS = {
     "home": "🏠 Inicio", "global_universe": "🌍 Universo global (43.089)", "global_ranking": "🏆 Ranking global (experimental)", "universe": "🌐 Universo",
     "ranking": "📊 Ranking experimental", "asset": "🔎 Ficha de empresa", "compare": "⚖️ Comparador",
-    "watchlist": "⭐ Watchlist", "reports": "📄 Informes", "help": "❓ Metodología y ayuda",
+    "watchlist": "⭐ Watchlist", "reports": "📄 Informes", "final_guide": "🧭 Guía final y uso responsable", "help": "❓ Metodología y ayuda",
 }
 GLOBAL_STATUS_LABELS = {
     "NO_DATA_YET": "Sin datos todavía",
@@ -743,6 +743,39 @@ def render_reports(data):
     st.download_button("Descargar manifiesto", manifest(report_kind, data.as_of_date), f"{stem}.manifest.json", "application/json")
 
 
+def render_final_guide(data):
+    heading(st, "Guía final y uso responsable", "Lectura práctica de Scout Finance como herramienta local de investigación, con límites visibles antes de cualquier uso externo.")
+    render_safe_demo_banner(st, SAFE_DEMO_MODE)
+    st.markdown("### Qué es Scout Finance")
+    st.write("Scout Finance es una herramienta local de investigación financiera que reúne datos ya generados, cobertura, ranking experimental, watchlists e informes trazables. Usa datos locales/offline y no descarga información nueva desde esta pantalla.")
+    st.markdown("### Qué puedes hacer")
+    st.write("Explorar el universo global, revisar el ranking experimental, filtrar poblaciones, exportar CSV de la vista filtrada, consultar fichas, mantener watchlists locales y abrir documentación de apoyo.")
+    st.markdown("### Qué no hace")
+    st.warning("No constituye asesoramiento financiero. No recomienda comprar, vender ni mantener. No predice rentabilidad. No ejecuta órdenes. No se conecta a broker. No habilita trading automático.")
+    st.markdown("### Cómo leer el ranking experimental")
+    st.write("El ranking experimental sirve para priorizar investigación, no para decidir operaciones. El score resume factores reales disponibles de calidad, crecimiento, valoración, momentum y riesgo, con cobertura y confianza visibles.")
+    st.markdown("### Estados del ranking")
+    st.write("Ranking principal: población con cobertura suficiente. Comparabilidad parcial: puntuable pero con menor confianza. Revisión requerida: casos que necesitan revisión manual o contrato específico. Cobertura insuficiente: no se estima ni se imputa. Sin adaptador: países o fuentes todavía sin adaptador real.")
+    st.markdown("### Cobertura y confianza")
+    st.write("La cobertura mide cuántos factores reales respaldan la lectura. La confianza alta no significa alta probabilidad de rentabilidad; solo indica mejor completitud/comparabilidad de los datos disponibles.")
+    st.markdown("### Limitaciones conocidas")
+    st.write("Las limitaciones finales están documentadas en v2.41D: Luxemburgo, Reino Unido, Cboe Europe, precios europeos, manual reviews, entidades financieras, margen extremo, cobertura bajo umbral, riesgo de publicación externa, seguridad y wording legal/producto.")
+    st.markdown("### Modo demo seguro")
+    st.write("El modo demo seguro se activa con SCOUT_FINANCE_SAFE_DEMO_MODE=1. Mantiene datos estáticos/offline, bloquea acciones de escritura peligrosas y conserva visible que el ranking es experimental, sin asesoramiento financiero y sin broker.")
+    st.markdown("### Antes de usar fuera del entorno local")
+    st.write("Revisa manualmente la fuente, cobertura, confianza, motivos de revisión, limitaciones documentadas, fecha de corte y cualquier evento posterior no reflejado en los datos locales. Cualquier decisión externa debe hacerse fuera de Scout Finance y bajo responsabilidad humana.")
+    st.markdown("### Documentación útil")
+    docs = [
+        ("FINAL_COVERAGE_LIMITATIONS_v2_41d.md", "Limitaciones finales de cobertura"),
+        ("FINAL_UX_HARDENING_v2_42a.md", "Hardening UX final del ranking"),
+        ("LOCAL_USAGE_PUBLIC_GUIDE_v2_39b.md", "Guía pública de uso local"),
+        ("USER_GUIDE.md", "Guía de usuario"),
+        ("QUICKSTART.md", "Arranque rápido"),
+    ]
+    st.dataframe(pd.DataFrame([{"Documento": name, "Uso": purpose} for name, purpose in docs]), use_container_width=True, hide_index=True)
+    st.caption(f"Fecha de corte local: {data.as_of_date or 'no disponible'} · Datos locales/offline · Ranking experimental · Sin recomendaciones · Sin broker")
+
+
 def render_help(data):
     heading(st, "Metodología y ayuda", "Guía breve para interpretar Scout Finance sin conocimientos técnicos.")
     banner(st)
@@ -771,7 +804,7 @@ def main():
         st.divider(); st.caption(f"Datos: {data.mode.value}"); st.caption("Fase 7: INSUFFICIENT_EVIDENCE"); st.caption("Sin conexión a broker")
     if data.mode in {DataMode.BLOCKED_MISSING_DATA, DataMode.INCOMPATIBLE_VERSION}:
         render_home(data); st.error("La aplicación queda bloqueada: " + "; ".join(data.errors)); return
-    {"home": render_home, "global_universe": render_global_universe, "global_ranking": render_global_ranking, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "help": render_help}[selected](data)
+    {"home": render_home, "global_universe": render_global_universe, "global_ranking": render_global_ranking, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "final_guide": render_final_guide, "help": render_help}[selected](data)
 
 
 if __name__ == "__main__":
