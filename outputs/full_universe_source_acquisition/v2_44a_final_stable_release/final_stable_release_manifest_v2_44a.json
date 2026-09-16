@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "path": "config/final_stable_release_contract_v2_44a.json",
+      "sha256": "89d759711e1ab2e83411634f84bb89ed75639a75c7e4ca89dcbd9ac80c47d92f"
+    },
+    {
+      "path": "docs/FINAL_STABLE_RELEASE_v2_44a.md",
+      "sha256": "88512145c08253cdd3ede3cfbdafffbff3aed9974922d7883537d3107259d930"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_44a_final_stable_release/final_project_closure_report_v2_44a.md",
+      "sha256": "88512145c08253cdd3ede3cfbdafffbff3aed9974922d7883537d3107259d930"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_44a_final_stable_release/README.md",
+      "sha256": "2fef56e27af459c4d1388e33c5b4b7c271497466226ffd600e2959ada7cfce0c"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_44a_final_stable_release/final_stable_release_summary_v2_44a.json",
+      "sha256": "967386e12f5c6acc485fb3fe825fa538842831f68a7858e6c1b21d142be1fea7"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_44a_final_stable_release/final_release_checklist_v2_44a.csv",
+      "sha256": "dd0d93b3947ecc2e1216ff420e49825e5e694e6fa01e6ea094465cb7c45c48ce"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_44a_final_stable_release/final_release_traceability_v2_44a.csv",
+      "sha256": "f469a08b34884902fb2de58a1fa45b6f340d3888810664580cb0121284cfde93"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_44a_final_stable_release/final_maintenance_recommendations_v2_44a.csv",
+      "sha256": "69160cde4e941207f96589d89f287ba6dc88f411a66419433548bb7e4c9abfb6"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_44a_final_stable_release/final_publication_readiness_v2_44a.csv",
+      "sha256": "2549d87b524710f30f4a924c2c1daba304350a63f46eecc3ac81abc7c9931447"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_44a_final_stable_release/final_guardrails_v2_44a.csv",
+      "sha256": "9b834e8bbf74f8b262bd6a9c862e82e27802c6218ac6e8cce326e190331c616f"
+    }
+  ],
+  "phase": "v2.44A",
+  "status": "FINAL_STABLE_RELEASE_READY"
+}

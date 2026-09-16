@@ -1,18 +1,18 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.43A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.44A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.43A: add final consolidated audit`
+`LOCAL_COMMIT_PENDING_PUSH v2.44A: close final stable release`
 
 Estado operativo del producto:
 
-`FINAL_CONSOLIDATED_AUDIT_READY`
+`FINAL_STABLE_RELEASE_READY`
 
 Cycle status:
 
-`V2_38_LOCAL_CYCLE_CLOSED`
+`CLOSED_FOR_STABLE_LOCAL_RELEASE`
 
 ## Checklist General
 
@@ -71,12 +71,13 @@ Cycle status:
 | Completada | v2.42A | Final UX hardening |
 | Completada | v2.42B | Final in-app guide / responsible-use page |
 | Completada | v2.43A | Final consolidated audit |
+| Completada | v2.44A | Final stable release and project closure |
 
-## Pendiente Para Completar El Ciclo Local
+## Pendiente Para Completar El Proyecto
 
 | Estado | Fase | Objetivo | Criterio de cierre |
 | --- | --- | --- | --- |
-| Cerrado | Ninguna | Ciclo local v2.38 completado | `V2_38_LOCAL_CYCLE_CLOSED`. |
+| Cerrado | Ninguna critica | Proyecto cerrado como release estable local | `CLOSED_FOR_STABLE_LOCAL_RELEASE`. |
 
 ## Pendientes Estructurales Conocidos
 
@@ -90,13 +91,15 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 | Cobertura europea | Persisten gaps de cobertura por pais, bolsa, MIC, proveedor y tipo de instrumento. |
 | Producto | El ranking sigue siendo experimental y debe conservar disclaimers/no-advice guardrails. |
 
-## Siguiente Fase Recomendada
+## Siguiente Estado Recomendado
 
-La siguiente fase es:
+No queda ninguna fase critica pendiente para cerrar el proyecto local.
 
-`v2.44A: Final stable release / project closure report`
+Siguiente estado operativo:
 
-Objetivo recomendado: cierre estable final, reporte de cierre de proyecto y handoff de release.
+`maintenance_or_controlled_publication`
+
+Opciones futuras no criticas: mantenimiento correctivo, publicacion externa controlada manual o nueva linea v2.45+ si se decide ampliar producto.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -119,4 +122,7 @@ Objetivo recomendado: cierre estable final, reporte de cierre de proyecto y hand
 | Completada | v2.42A | Hardening UX final: ranking, filtros, exportaciones, errores y estados vacios |
 | Completada | v2.42B | Pagina final dentro de la app: guia, limitaciones, no-advice y uso responsable |
 | Completada | v2.43A | Auditoria final consolidada: tests, reproducibilidad, legal, seguridad y rendimiento |
-| Pendiente | v2.44A | Release final estable y project closure report |
+| Completada | v2.44A | Release final estable y project closure report |
+| Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
+| Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
+| Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

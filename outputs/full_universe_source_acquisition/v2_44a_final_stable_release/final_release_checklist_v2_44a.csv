@@ -1,0 +1,8 @@
+item,status,blocking
+source_audit_ready,PASS,False
+required_files_present,PASS,False
+security_blockers,PASS,False
+release_blockers,PASS,False
+ranking_integrity_preserved,PASS,False
+responsible_use_disclaimer_present,PASS,False
+documented_limitations_accepted,PASS,False

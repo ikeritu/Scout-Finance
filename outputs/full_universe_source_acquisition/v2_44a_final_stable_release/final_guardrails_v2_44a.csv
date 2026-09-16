@@ -1,0 +1,11 @@
+guardrail,status
+no_network,True
+no_new_data,True
+no_dataset_mutation,True
+no_scoring_recompute,True
+no_ranking_change,True
+no_methodology_change,True
+no_deployment,True
+no_public_url,True
+no_financial_advice,True
+no_broker_actions,True

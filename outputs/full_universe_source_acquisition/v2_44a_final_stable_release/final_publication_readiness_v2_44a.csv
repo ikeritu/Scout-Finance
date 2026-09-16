@@ -1,0 +1,6 @@
+check,value,ready
+public_url_created,False,True
+deployment_performed,False,True
+safe_demo_required,True,True
+manual_control_required,True,True
+financial_advice_blocked,True,True

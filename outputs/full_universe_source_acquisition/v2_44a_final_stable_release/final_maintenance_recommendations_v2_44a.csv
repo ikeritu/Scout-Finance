@@ -1,0 +1,4 @@
+track,recommendation
+corrective_maintenance,"Fix only confirmed defects without changing scoring, ranking or methodology."
+controlled_publication,Publish manually only after preserving safe demo mode and documented limitations.
+future_product_line,Use a new v2.45+ track for any functional expansion.

@@ -1,0 +1,8 @@
+phase,artifact,status
+v2.38CJ,operational publication handoff,completed
+v2.39A-v2.39F,release packaging and smoke tests,completed
+v2.40A-v2.40D,controlled publication gate,completed
+v2.41A-v2.41D,final data gap closure,completed
+v2.42A-v2.42B,final UX and responsible-use guide,completed
+v2.43A,final consolidated audit,FINAL_CONSOLIDATED_AUDIT_READY
+v2.44A,final stable release closure,FINAL_STABLE_RELEASE_READY
