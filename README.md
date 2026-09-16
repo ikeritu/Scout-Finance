@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.44P — Unicorn recalculation control** (`UNICORN_RECALCULATION_CONTROL_READY`): añade en `🦄 Unicornios` un control visible para recalcular universo, elegibilidad y flag de unicornios desde los datos locales ya recolectados. Tras ejecutar, la app muestra cuantas empresas entran, cuantas salen y el nuevo total de unicornios. No descarga datos nuevos, no consulta APIs, no cambia scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin despliegue, sin URL publica y sin broker.
+
 **v2.44O — Unicorn full catalog/detail view** (`UNICORN_FULL_CATALOG_DETAIL_READY`): convierte `🦄 Unicornios` en un catalogo navegable de fichas completas. La vista `Fichas completas` permite recorrer todos los unicornios filtrados con scroll y, al seleccionar una compania, abre identidad, mercado, evidencia, radar, seguimiento local, todos los campos tecnicos disponibles, informe profesional y prompt IA opcional. No cambia datos, scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin red, sin despliegue, sin URL publica y sin broker.
 
 **v2.44N — Unicorn presentation demo mode** (`UNICORN_PRESENTATION_DEMO_READY`): añade vista `Presentación/demo` dentro de `🦄 Unicornios`, pensada para enseñar la app sin tablas largas, edición ni controles técnicos. Muestra KPIs, top 10 por evidencia local, distribución por evidencia/país, tres fichas destacadas y resumen descargable. No cambia datos, scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin red, sin despliegue, sin URL publica y sin broker.

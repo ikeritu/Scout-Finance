@@ -568,6 +568,54 @@ def render_unicorn_full_catalog(rows: list[dict], notes: dict[str, str], review_
         st.markdown(f"[Abrir búsqueda manual en Google Finance]({google_finance_search_url(selected_row['company_name'])})")
 
 
+def render_unicorn_recalculation_panel(matrix, unicorn_rows: list[dict]) -> None:
+    st.markdown("### Actualización de unicornios")
+    before_ids = {row["asset_id"] for row in unicorn_rows}
+    before_names = {row["asset_id"]: row["company_name"] for row in unicorn_rows}
+    current_cutoff = matrix.generated_at or "no disponible"
+    cols = st.columns([1, 3])
+    if SAFE_DEMO_MODE:
+        cols[0].button("Recalcular universo y unicornios", disabled=True, help=blocked_message("Recalcular universo y unicornios"))
+        cols[1].info("Recalculo bloqueado en Modo demo seguro: la demo muestra datos locales estaticos.")
+        return
+    cols[1].caption(
+        f"Último cálculo local: {current_cutoff} (UTC). El recálculo permite que entren y salgan empresas según los fundamentales y crecimiento locales disponibles."
+    )
+    if cols[0].button(
+        "Recalcular universo y unicornios",
+        type="primary",
+        help="Reconstruye matriz, elegibilidad y flag de unicornios desde datos locales ya recolectados. No descarga datos nuevos ni consulta APIs.",
+    ):
+        with st.spinner("Recalculando universo, elegibilidad y unicornios desde datos locales..."):
+            result = rebuild_global_matrix(ROOT)
+        global_matrix_snapshot.clear()
+        refreshed = global_matrix_snapshot()
+        after_rows = [row for row in refreshed.rows if row.get("unicorn_status") == "EVALUATED_UNICORN"] if refreshed.available else []
+        after_ids = {row["asset_id"] for row in after_rows}
+        after_names = {row["asset_id"]: row["company_name"] for row in after_rows}
+        entered = sorted(after_ids - before_ids, key=lambda asset_id: after_names.get(asset_id, asset_id))
+        exited = sorted(before_ids - after_ids, key=lambda asset_id: before_names.get(asset_id, asset_id))
+        (st.success if result.ok else st.error)(
+            "Unicornios recalculados correctamente." if result.ok else "El recálculo falló; revisa el detalle técnico."
+        )
+        d1, d2, d3 = st.columns(3)
+        d1.metric("Unicornios actuales", f"{len(after_ids):,}", delta=len(after_ids) - len(before_ids))
+        d2.metric("Entraron", f"{len(entered):,}")
+        d3.metric("Salieron", f"{len(exited):,}")
+        if entered or exited:
+            changes = []
+            changes.extend({"Cambio": "Entra", "Empresa": after_names.get(asset_id, asset_id), "ID": asset_id} for asset_id in entered)
+            changes.extend({"Cambio": "Sale", "Empresa": before_names.get(asset_id, asset_id), "ID": asset_id} for asset_id in exited)
+            st.dataframe(pd.DataFrame(changes), use_container_width=True, hide_index=True)
+        else:
+            st.info("No hubo cambios en la lista de unicornios con los datos locales actuales.")
+        with st.expander("Detalle técnico del recálculo", expanded=not result.ok):
+            for step in result.steps:
+                (st.success if step.ok else st.error)(f"{step.label} · {step.seconds:.1f} s")
+                if step.detail:
+                    st.code(step.detail, language="text")
+
+
 def unicorn_sort_key(row: dict, sort_mode: str) -> tuple:
     if sort_mode == "País":
         return (row.get("country", ""), row.get("company_name", ""))
@@ -904,6 +952,7 @@ def render_global_unicorns(_data):
     st.info("Esta pantalla es la vista principal de descubrimiento: muestra solo empresas que cumplen el criterio real de crecimiento combinado de v2.38BT. No ordena por rentabilidad esperada, no recalcula scores y no constituye asesoramiento financiero.")
     st.caption("El porcentaje de posibilidad de unicornio mide confianza de clasificación con los datos locales disponibles; no es probabilidad de subida, precio objetivo ni consejo de compra.")
     st.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(unicorn_rows):,} unicornios · sin conexión de red")
+    render_unicorn_recalculation_panel(matrix, unicorn_rows)
     notes = load_unicorn_notes()
     review_history = load_unicorn_review_history()
 

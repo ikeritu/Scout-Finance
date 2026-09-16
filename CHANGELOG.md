@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44P — Unicorn recalculation control (2026-09-16)
+
+Añade en `🦄 Unicornios` un botón propio `Recalcular universo y unicornios`. Ejecuta la cadena local existente de matriz, elegibilidad y flag de unicornios, limpia la cache y muestra diferencial de empresas que entran y salen de la lista. No descarga datos nuevos ni consulta APIs: recalcula solo sobre datos locales ya recolectados. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44O — Unicorn full catalog/detail view (2026-09-16)
 
 Añade la vista principal `Fichas completas` en `🦄 Unicornios`: catalogo completo de unicornios filtrados, seleccion por compania y ficha detallada con identidad, mercado, evidencia, radar, seguimiento local, todos los campos tecnicos disponibles, informe profesional y prompt IA opcional. No crea score nuevo ni cambia el ranking global; solo reorganiza y expone datos locales ya calculados. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

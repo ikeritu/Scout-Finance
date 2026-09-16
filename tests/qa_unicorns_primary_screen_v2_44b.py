@@ -121,6 +121,10 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Fichas completas" in source, "Unicorns screen must expose full cards/detail mode")
     require("Todos los campos técnicos disponibles" in source, "Full detail must expose all available raw fields")
     require("Catálogo completo de unicornios filtrados" in source, "Full catalog must explain scrollable company selection")
+    require("def render_unicorn_recalculation_panel(" in source, "Unicorns screen must expose a dedicated recalculation panel")
+    require("Recalcular universo y unicornios" in source, "Unicorns screen must allow recalculating the local unicorn universe")
+    require("Entraron" in source and "Salieron" in source, "Unicorn recalculation must show companies entering and leaving")
+    require("No descarga datos nuevos ni consulta APIs" in source, "Recalculation must keep explicit no-network guardrails")
 
 
 def main() -> None:
