@@ -22,7 +22,7 @@ apply(st)
 SAFE_DEMO_MODE = is_safe_demo_mode()
 
 SCREENS = {
-    "home": "🏠 Inicio", "global_universe": "🌍 Universo global (43.089)", "global_ranking": "🏆 Ranking global (experimental)", "universe": "🌐 Universo",
+    "home": "🏠 Inicio", "global_unicorns": "🦄 Unicornios", "global_universe": "🌍 Universo global (43.089)", "global_ranking": "🏆 Ranking global (experimental)", "universe": "🌐 Universo",
     "ranking": "📊 Ranking experimental", "asset": "🔎 Ficha de empresa", "compare": "⚖️ Comparador",
     "watchlist": "⭐ Watchlist", "reports": "📄 Informes", "final_guide": "🧭 Guía final y uso responsable", "help": "❓ Metodología y ayuda",
 }
@@ -378,6 +378,59 @@ def render_global_universe(_data):
     st.dataframe(
         pd.DataFrame(table_rows), use_container_width=True, hide_index=True,
         column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda real de Google para esta empresa — Scout Finance no descarga ni procesa ningún dato de Google, solo te lleva hasta allí para que lo consultes tú.")},
+    )
+
+
+def render_global_unicorns(_data):
+    heading(st, "Unicornios", "Empresas con la señal de crecimiento real más exigente ya calculada: crecimiento positivo, expansión de margen y, cuando existe, flujo de caja libre positivo. Es una clasificación de investigación, no una recomendación.")
+    render_safe_demo_banner(st, SAFE_DEMO_MODE)
+    matrix = global_matrix_snapshot()
+    if not matrix.available:
+        st.info(matrix.error)
+        return
+    unicorn_rows = [row for row in matrix.rows if row.get("unicorn_status") == "EVALUATED_UNICORN"]
+    evaluated_rows = [row for row in matrix.rows if row.get("unicorn_status") in {"EVALUATED_UNICORN", "EVALUATED_NOT_UNICORN", "INSUFFICIENT_DATA"}]
+    counts = Counter(row.get("overall_coverage_status", "") for row in unicorn_rows)
+    metric_cols = st.columns(5)
+    metric_cols[0].metric(f"{GLOBAL_UNICORN_ICON} Unicornios", f"{len(unicorn_rows):,}")
+    metric_cols[1].metric("Empresas evaluadas", f"{len(evaluated_rows):,}")
+    metric_cols[2].metric("Con crecimiento completo", f"{counts.get('GROWTH_READY', 0):,}")
+    metric_cols[3].metric("Con crecimiento parcial", f"{counts.get('GROWTH_PARTIAL', 0):,}")
+    metric_cols[4].metric("Censo total", f"{len(matrix.rows):,}")
+    st.info("Esta pantalla es la vista principal de descubrimiento: muestra solo empresas que cumplen el criterio real de crecimiento combinado de v2.38BT. No ordena por rentabilidad esperada, no recalcula scores y no constituye asesoramiento financiero.")
+    st.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(unicorn_rows):,} unicornios · sin conexión de red")
+
+    st.markdown("### Buscar unicornios")
+    search = st.text_input("Buscar", placeholder="Empresa, ticker o ID", key="global_unicorn_search")
+    c1, c2, c3 = st.columns(3)
+    countries = sorted({row["country"] for row in unicorn_rows if row["country"]})
+    country_filter = c1.multiselect("País", countries, placeholder="Todos", key="global_unicorn_country")
+    status_filter = c2.multiselect("Estado", sorted(counts), format_func=lambda value: GLOBAL_STATUS_LABELS.get(value, value), placeholder="Todos", key="global_unicorn_status")
+    eligibility_counts = Counter(row.get("eligibility_tier", "") for row in unicorn_rows)
+    eligibility_filter = c3.multiselect("Elegibilidad para scoring", sorted(eligibility_counts), format_func=lambda value: GLOBAL_ELIGIBILITY_LABELS.get(value, value), placeholder="Todas", key="global_unicorn_eligibility")
+    needle = search.casefold().strip()
+    filtered = [
+        row for row in unicorn_rows
+        if (not needle or any(needle in str(row.get(key, "")).casefold() for key in ("company_name", "ticker", "asset_id")))
+        and (not country_filter or row["country"] in country_filter)
+        and (not status_filter or row["overall_coverage_status"] in status_filter)
+        and (not eligibility_filter or row.get("eligibility_tier", "") in eligibility_filter)
+    ]
+    st.caption(f"{len(filtered):,} de {len(unicorn_rows):,} unicornios")
+    table_rows = [{
+        "ID": row["asset_id"],
+        "Ticker": row["ticker"],
+        "Empresa": row["company_name"],
+        "Bolsa": row["exchange"],
+        "País": row["country"],
+        "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
+        "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
+        "Motivo unicornio": row.get("unicorn_reason", ""),
+        "Google Finance": google_finance_search_url(row["company_name"]),
+    } for row in filtered]
+    st.dataframe(
+        pd.DataFrame(table_rows), use_container_width=True, hide_index=True,
+        column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda manual en Google. Scout Finance no descarga ni procesa datos de Google.")},
     )
 
 
@@ -804,7 +857,7 @@ def main():
         st.divider(); st.caption(f"Datos: {data.mode.value}"); st.caption("Fase 7: INSUFFICIENT_EVIDENCE"); st.caption("Sin conexión a broker")
     if data.mode in {DataMode.BLOCKED_MISSING_DATA, DataMode.INCOMPATIBLE_VERSION}:
         render_home(data); st.error("La aplicación queda bloqueada: " + "; ".join(data.errors)); return
-    {"home": render_home, "global_universe": render_global_universe, "global_ranking": render_global_ranking, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "final_guide": render_final_guide, "help": render_help}[selected](data)
+    {"home": render_home, "global_unicorns": render_global_unicorns, "global_universe": render_global_universe, "global_ranking": render_global_ranking, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "final_guide": render_final_guide, "help": render_help}[selected](data)
 
 
 if __name__ == "__main__":
