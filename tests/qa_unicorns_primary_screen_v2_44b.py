@@ -136,7 +136,10 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Fórmula de señal" in source, "Visual analytics must include an explanatory formula panel")
     require("Feed de recálculo y revisión" in source, "Visual analytics must include a recalculation/review feed")
     require("Estado técnico" in source, "Visual analytics must expose technical state cards/table")
-    require("no muestra PnL, señales de trading ni recomendaciones" in source, "Visual analytics must avoid trading-style claims")
+    require("Resumen visual" in source and "Informe completo personalizado" in source and "Datos técnicos" in source, "Visual analytics must organize each company into calm tabs")
+    require("Descargar informe completo personalizado" in source, "Selected unicorn must expose the personalized full report directly")
+    require("Vista compacta y respirable" in source, "Visual analytics must explicitly favor a calmer layout")
+    require("sin sensación de panel de trading" in source, "Visual analytics must avoid trading-style visual fatigue")
 
 
 def main() -> None:

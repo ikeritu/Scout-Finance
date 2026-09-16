@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44S — Calm unicorn detail UX (2026-09-16)
+
+Pulido de experiencia sobre `Analítica visual` en `🦄 Unicornios`: reduce densidad visual, compacta la lista lateral y organiza la ficha seleccionada en pestañas `Resumen visual`, `Informe completo personalizado` y `Datos técnicos`. El informe personalizado completo queda visible y descargable desde la propia empresa, sin tener que cambiar de vista. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44R — Unicorn visual analytics cockpit (2026-09-16)
 
 Añade en `🦄 Unicornios` la vista principal `Analítica visual`: selector lateral de empresas, hero de señal, formula explicativa, estado tecnico, timeline de señal, feed de recálculo/revision, radar local y salidas posibles de la lista. Toma ideas visuales de dashboards de bolsa, pero evita PnL, señales de trading, enter/exit operativo y lenguaje de recomendacion. No llama APIs ni descarga datos nuevos; usa datos locales ya cargados. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
