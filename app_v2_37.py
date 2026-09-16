@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from collections import Counter
+from datetime import datetime
 from html import escape
 from pathlib import Path
 from urllib.parse import quote
@@ -20,6 +21,7 @@ from src.ui_v2_37.watchlists import STATUSES, add, atomic_write, create, export_
 
 ROOT = Path(__file__).resolve().parent
 UNICORN_NOTES_PATH = ROOT / "data" / "user_unicorn_notes_v2_44i.json"
+UNICORN_REVIEW_HISTORY_PATH = ROOT / "data" / "user_unicorn_review_history_v2_44k.json"
 st.set_page_config(page_title="Scout Finance — Investigación local", page_icon="🔎", layout="wide")
 apply(st)
 SAFE_DEMO_MODE = is_safe_demo_mode()
@@ -194,6 +196,43 @@ def save_unicorn_notes(notes: dict[str, str]) -> None:
     UNICORN_NOTES_PATH.write_text(json.dumps(notes, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
 
 
+def load_unicorn_review_history() -> dict[str, dict]:
+    if not UNICORN_REVIEW_HISTORY_PATH.exists():
+        return {}
+    try:
+        data = json.loads(UNICORN_REVIEW_HISTORY_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def save_unicorn_review_history(history: dict[str, dict]) -> None:
+    UNICORN_REVIEW_HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    UNICORN_REVIEW_HISTORY_PATH.write_text(json.dumps(history, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def unicorn_review_entry(history: dict[str, dict], asset_id: str) -> dict:
+    entry = history.get(asset_id, {})
+    return entry if isinstance(entry, dict) else {}
+
+
+def unicorn_review_status(history: dict[str, dict], asset_id: str) -> str:
+    status = unicorn_review_entry(history, asset_id).get("status", "PENDING")
+    return status if status in UNICORN_REVIEW_STATUS_LABELS else "PENDING"
+
+
+def update_unicorn_review_history(history: dict[str, dict], row: dict, status: str, note: str = "") -> None:
+    history[row["asset_id"]] = {
+        "status": status,
+        "status_label": UNICORN_REVIEW_STATUS_LABELS[status],
+        "reviewed_at": datetime.now().isoformat(timespec="seconds"),
+        "asset_id": row["asset_id"],
+        "ticker": row.get("ticker", ""),
+        "company_name": row.get("company_name", ""),
+        "note": note.strip(),
+    }
+
+
 def professional_unicorn_comparison(rows: list[dict]) -> str:
     lines = ["# Comparador profesional de unicornios", ""]
     for row in rows:
@@ -334,6 +373,12 @@ CONFIDENCE_LABELS = {"HIGH": "Alta", "MEDIUM": "Media", "LOW": "Baja", "NOT_RANK
 RESEARCH_STATUS_LABELS = {
     "WATCHLIST": "En seguimiento", "REJECT": "Descartado",
     "NEEDS_MORE_DATA": "Necesita más datos", "REVIEW_LATER": "Revisar más adelante",
+}
+UNICORN_REVIEW_STATUS_LABELS = {
+    "PENDING": "Pendiente",
+    "REVIEWED": "Revisado",
+    "FOLLOW": "Seguir",
+    "DISCARDED": "Descartado",
 }
 PILLAR_LABELS = {"quality": "Calidad", "growth": "Crecimiento", "valuation": "Valoración", "momentum": "Tendencia", "risk": "Riesgo"}
 FACTOR_LABELS = {
@@ -636,6 +681,7 @@ def render_global_unicorns(_data):
     st.caption("El porcentaje de posibilidad de unicornio mide confianza de clasificación con los datos locales disponibles; no es probabilidad de subida, precio objetivo ni consejo de compra.")
     st.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(unicorn_rows):,} unicornios · sin conexión de red")
     notes = load_unicorn_notes()
+    review_history = load_unicorn_review_history()
 
     st.markdown("### Buscar unicornios")
     search = st.text_input("Buscar", placeholder="Empresa, ticker o ID", key="global_unicorn_search")
@@ -646,10 +692,11 @@ def render_global_unicorns(_data):
     eligibility_counts = Counter(row.get("eligibility_tier", "") for row in unicorn_rows)
     eligibility_filter = c3.multiselect("Elegibilidad para scoring", sorted(eligibility_counts), format_func=lambda value: GLOBAL_ELIGIBILITY_LABELS.get(value, value), placeholder="Todas", key="global_unicorn_eligibility")
     with st.expander("Búsqueda avanzada", expanded=False):
-        a1, a2, a3 = st.columns(3)
+        a1, a2, a3, a4 = st.columns(4)
         min_probability = a1.slider("Porcentaje mínimo", min_value=55, max_value=96, value=55, step=1, key="global_unicorn_min_probability")
         evidence_filter = a2.multiselect("Calidad de evidencia", ["Muy respaldado", "Respaldado", "Parcial", "Requiere revision"], placeholder="Todas", key="global_unicorn_evidence_filter")
-        notes_only = a3.checkbox("Solo con notas personales", key="global_unicorn_notes_only")
+        review_filter = a3.multiselect("Estado de revisión", list(UNICORN_REVIEW_STATUS_LABELS), format_func=lambda value: UNICORN_REVIEW_STATUS_LABELS[value], placeholder="Todos", key="global_unicorn_review_filter")
+        notes_only = a4.checkbox("Solo con notas personales", key="global_unicorn_notes_only")
     quick_filter = st.radio(
         "Filtros rápidos",
         ["Todos", "Top confianza", "Muy respaldados", "Crecimiento completo", "Revisión requerida", "USA", "Europa"],
@@ -665,6 +712,7 @@ def render_global_unicorns(_data):
         and (not eligibility_filter or row.get("eligibility_tier", "") in eligibility_filter)
         and unicorn_probability(row) >= min_probability
         and (not evidence_filter or unicorn_evidence_grade(row)[0] in evidence_filter)
+        and (not review_filter or unicorn_review_status(review_history, row["asset_id"]) in review_filter)
         and (not notes_only or bool(notes.get(row["asset_id"], "").strip()))
     ]
     if quick_filter == "Top confianza":
@@ -687,6 +735,10 @@ def render_global_unicorns(_data):
     grade_cols = st.columns(4)
     for col, label in zip(grade_cols, ["Muy respaldado", "Respaldado", "Parcial", "Requiere revision"]):
         col.metric(label, f"{grade_counts.get(label, 0):,}")
+    review_counts = Counter(unicorn_review_status(review_history, row["asset_id"]) for row in filtered)
+    review_cols = st.columns(4)
+    for col, status in zip(review_cols, ["PENDING", "REVIEWED", "FOLLOW", "DISCARDED"]):
+        col.metric(UNICORN_REVIEW_STATUS_LABELS[status], f"{review_counts.get(status, 0):,}")
     st.caption("Ranking interno y semáforo ordenan calidad de evidencia local, no rentabilidad esperada ni recomendación financiera.")
     view_mode = st.radio("Vista", ["Cockpit limpio", "Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
     if filtered and "selected_unicorn_asset_id" not in st.session_state:
@@ -725,8 +777,9 @@ def render_global_unicorns(_data):
             st.caption("Lista compacta ordenada por evidencia local.")
             for row in filtered[:40]:
                 grade_label, grade_color, _ = unicorn_evidence_grade(row)
+                review_label = UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, row["asset_id"])]
                 selected = st.session_state.get("selected_unicorn_asset_id") == row["asset_id"]
-                label = f"{GLOBAL_UNICORN_ICON} {row['company_name']} · {unicorn_probability(row)}% · {grade_label}"
+                label = f"{GLOBAL_UNICORN_ICON} {row['company_name']} · {unicorn_probability(row)}% · {grade_label} · {review_label}"
                 if st.button(label, key=f"unicorn_clean_select_{row['asset_id']}", type="primary" if selected else "secondary", use_container_width=True):
                     st.session_state.selected_unicorn_asset_id = row["asset_id"]
                 st.markdown(
@@ -744,7 +797,7 @@ def render_global_unicorns(_data):
                 k1, k2, k3 = st.columns(3)
                 k1.metric("Posibilidad", f"{unicorn_probability(selected_row)}%")
                 k2.metric("Evidencia", grade_label)
-                k3.metric("Ticker", selected_row["ticker"] or selected_row["asset_id"])
+                k3.metric("Revisión", UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected_row["asset_id"])])
                 st.info(grade_reason)
                 st.write("**Criterios**")
                 st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
@@ -762,12 +815,24 @@ def render_global_unicorns(_data):
                     )
                 st.markdown("**Notas personales**")
                 note_value = st.text_area("Nota local", value=notes.get(selected_row["asset_id"], ""), key="clean_unicorn_note", height=120)
+                st.markdown("**Historial de revisión**")
+                current_status = unicorn_review_status(review_history, selected_row["asset_id"])
+                status_choice = st.selectbox(
+                    "Estado de revisión",
+                    list(UNICORN_REVIEW_STATUS_LABELS),
+                    index=list(UNICORN_REVIEW_STATUS_LABELS).index(current_status),
+                    format_func=lambda value: UNICORN_REVIEW_STATUS_LABELS[value],
+                    key="clean_unicorn_review_status",
+                )
+                review_note = st.text_input("Comentario de revisión", value=unicorn_review_entry(review_history, selected_row["asset_id"]).get("note", ""), key="clean_unicorn_review_note")
                 if SAFE_DEMO_MODE:
-                    st.caption(blocked_message("Guardar notas personales"))
-                elif st.button("Guardar nota", key="clean_unicorn_note_save"):
+                    st.caption(blocked_message("Guardar notas e historial"))
+                elif st.button("Guardar nota e historial", key="clean_unicorn_note_save"):
                     notes[selected_row["asset_id"]] = note_value.strip()
                     save_unicorn_notes(notes)
-                    st.success("Nota guardada localmente.")
+                    update_unicorn_review_history(review_history, selected_row, status_choice, review_note)
+                    save_unicorn_review_history(review_history)
+                    st.success("Nota e historial guardados localmente.")
 
     if view_mode == "Tarjetas visuales":
         st.markdown("### Explorador visual")
@@ -808,12 +873,23 @@ def render_global_unicorns(_data):
                     st.write(f"**Calidad de evidencia:** {grade_label}. {grade_reason}")
                     st.write(f"**Radar:** {radar_text}")
                     note_value = st.text_area("Notas personales", value=notes.get(row["asset_id"], ""), key=f"unicorn_note_{row['asset_id']}", height=90)
+                    current_status = unicorn_review_status(review_history, row["asset_id"])
+                    status_choice = st.selectbox(
+                        "Estado de revisión",
+                        list(UNICORN_REVIEW_STATUS_LABELS),
+                        index=list(UNICORN_REVIEW_STATUS_LABELS).index(current_status),
+                        format_func=lambda value: UNICORN_REVIEW_STATUS_LABELS[value],
+                        key=f"unicorn_review_status_{row['asset_id']}",
+                    )
+                    review_note = st.text_input("Comentario de revisión", value=unicorn_review_entry(review_history, row["asset_id"]).get("note", ""), key=f"unicorn_review_note_{row['asset_id']}")
                     if SAFE_DEMO_MODE:
-                        st.caption(blocked_message("Guardar notas personales"))
-                    elif st.button("Guardar nota", key=f"unicorn_note_save_{row['asset_id']}"):
+                        st.caption(blocked_message("Guardar notas e historial"))
+                    elif st.button("Guardar nota e historial", key=f"unicorn_note_save_{row['asset_id']}"):
                         notes[row["asset_id"]] = note_value.strip()
                         save_unicorn_notes(notes)
-                        st.success("Nota guardada localmente.")
+                        update_unicorn_review_history(review_history, row, status_choice, review_note)
+                        save_unicorn_review_history(review_history)
+                        st.success("Nota e historial guardados localmente.")
                     st.caption("No significa comprar, vender o mantener. No es precio objetivo ni probabilidad de rentabilidad.")
                     if st.checkbox("Generar informe profesional", key=f"unicorn_report_toggle_{row['asset_id']}"):
                         report = professional_unicorn_report(row)
@@ -844,7 +920,10 @@ def render_global_unicorns(_data):
         "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
         "Posibilidad unicornio": f"{unicorn_probability(row)}%",
         "Calidad evidencia": unicorn_evidence_grade(row)[0],
+        "Estado revisión": UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, row["asset_id"])],
+        "Última revisión": unicorn_review_entry(review_history, row["asset_id"]).get("reviewed_at", ""),
         "Nota personal": notes.get(row["asset_id"], ""),
+        "Comentario revisión": unicorn_review_entry(review_history, row["asset_id"]).get("note", ""),
         "Motivo unicornio": row.get("unicorn_reason", ""),
         "Google Finance": google_finance_search_url(row["company_name"]),
     } for row in filtered]
@@ -882,6 +961,7 @@ def render_global_unicorns(_data):
                 "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
                 "Posibilidad unicornio": f"{unicorn_probability(row)}%",
                 "Calidad evidencia": unicorn_evidence_grade(row)[0],
+                "Estado revisión": UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, row["asset_id"])],
                 "Criterios": " · ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))),
             })
         st.dataframe(pd.DataFrame(compare_rows), use_container_width=True, hide_index=True)
@@ -910,7 +990,7 @@ def render_global_unicorns(_data):
         c1.metric("Empresa", selected_row["company_name"])
         c2.metric("Ticker", selected_row["ticker"] or "N/D")
         c3.metric("País", selected_row["country"] or "N/D")
-        c4.metric("Estado", GLOBAL_STATUS_LABELS.get(selected_row["overall_coverage_status"], selected_row["overall_coverage_status"]))
+        c4.metric("Revisión", UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected_row["asset_id"])])
         c5.metric("Posibilidad unicornio", f"{unicorn_probability(selected_row)}%", help="Confianza de clasificación con los datos locales disponibles; no es probabilidad de rentabilidad.")
         st.caption("Esta posibilidad es una lectura de evidencia local del flag unicornio: no significa comprar, vender o mantener, no es precio objetivo y no constituye asesoramiento financiero.")
         grade_label, _, grade_reason = unicorn_evidence_grade(selected_row)
@@ -925,12 +1005,24 @@ def render_global_unicorns(_data):
             st.write(f"- {item}")
         st.markdown("**Notas personales**")
         detail_note = st.text_area("Nota local de investigación", value=notes.get(selected_row["asset_id"], ""), key="global_unicorn_detail_note", height=110)
+        st.markdown("**Historial de revisión**")
+        current_status = unicorn_review_status(review_history, selected_row["asset_id"])
+        detail_status = st.selectbox(
+            "Estado de revisión",
+            list(UNICORN_REVIEW_STATUS_LABELS),
+            index=list(UNICORN_REVIEW_STATUS_LABELS).index(current_status),
+            format_func=lambda value: UNICORN_REVIEW_STATUS_LABELS[value],
+            key="global_unicorn_detail_review_status",
+        )
+        detail_review_note = st.text_input("Comentario de revisión", value=unicorn_review_entry(review_history, selected_row["asset_id"]).get("note", ""), key="global_unicorn_detail_review_note")
         if SAFE_DEMO_MODE:
-            st.caption(blocked_message("Guardar notas personales"))
-        elif st.button("Guardar nota de esta empresa", key="global_unicorn_detail_note_save"):
+            st.caption(blocked_message("Guardar notas e historial"))
+        elif st.button("Guardar nota e historial de esta empresa", key="global_unicorn_detail_note_save"):
             notes[selected_row["asset_id"]] = detail_note.strip()
             save_unicorn_notes(notes)
-            st.success("Nota guardada localmente.")
+            update_unicorn_review_history(review_history, selected_row, detail_status, detail_review_note)
+            save_unicorn_review_history(review_history)
+            st.success("Nota e historial guardados localmente.")
         with st.expander("Ver motivo técnico original"):
             st.code(selected_row.get("unicorn_reason", "Sin motivo técnico disponible"), language="text")
         with st.expander("Generar informe profesional completo"):

@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.44K — Unicorn local review history** (`UNICORN_LOCAL_REVIEW_HISTORY_READY`): añade historial local de revisión para unicornios con estados `Pendiente`, `Revisado`, `Seguir` y `Descartado`, comentario y fecha/hora local de última revisión. El estado se puede filtrar, ver en cockpit, editar desde fichas y exportar en CSV. No cambia datos, scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin red, sin despliegue, sin URL publica y sin broker.
+
 **v2.44J — Unicorn high-priority cockpit hardening** (`UNICORN_HIGH_PRIORITY_COCKPIT_READY`): aplica las mejoras de prioridad alta sobre `🦄 Unicornios`: vista `Cockpit limpio`, buscador avanzado con porcentaje minimo/calidad/notas, e informe ejecutivo global descargable. Reutiliza el cockpit `v2.44I` y los datos locales ya calculados; no cambia datos, scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin red, sin despliegue, sin URL publica y sin broker.
 
 **v2.44I — Unicorn research cockpit** (`UNICORN_RESEARCH_COCKPIT_READY`): consolida todas las mejoras pendientes de Unicornios en una cabina de investigacion: comparador profesional, semaforo de calidad de evidencia, ranking interno de unicornios, filtros rapidos, radar por empresa, notas personales locales, export pack de investigacion e IA opcional preparada pero desactivada sin llamadas externas. No cambia datos, scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin red, sin despliegue, sin URL publica y sin broker.

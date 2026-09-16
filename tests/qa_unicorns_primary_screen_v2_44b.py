@@ -97,6 +97,12 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("def global_unicorn_executive_report(" in source, "Unicorns screen must generate a global executive report")
     require("Informe ejecutivo global de unicornios" in source, "Unicorns screen must expose the global executive report")
     require("Descargar informe ejecutivo global" in source, "Global executive report must be downloadable")
+    require("UNICORN_REVIEW_STATUS_LABELS" in source, "Unicorn review history must define explicit local statuses")
+    require("def load_unicorn_review_history(" in source, "Unicorn review history must load local review state")
+    require("def save_unicorn_review_history(" in source, "Unicorn review history must persist local review state")
+    require("Estado de revisión" in source, "Unicorn review history must be editable in the UI")
+    require("PENDING" in source and "REVIEWED" in source and "FOLLOW" in source and "DISCARDED" in source, "Unicorn review statuses must cover pending/reviewed/follow/discarded")
+    require("Última revisión" in source, "Unicorn review history must export last review timestamp")
 
 
 def main() -> None:

@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44K — Unicorn local review history (2026-09-16)
+
+Añade historial local de revisión para `🦄 Unicornios`: estados Pendiente/Revisado/Seguir/Descartado, comentario de revisión, fecha local de última revisión, filtros por estado y export en CSV. La funcionalidad queda bloqueada en modo demo seguro y no toca datasets ni scoring. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44J — Unicorn high-priority cockpit hardening (2026-09-16)
 
 Aplica las tres mejoras de prioridad alta pendientes sobre `🦄 Unicornios`: pulido visual con vista `Cockpit limpio`, buscador avanzado por porcentaje minimo/calidad de evidencia/notas, e informe ejecutivo global descargable en Markdown. No crea score nuevo ni cambia el ranking global; solo reorganiza y resume evidencia local ya calculada. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
