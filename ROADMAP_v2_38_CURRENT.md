@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.44Q preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.44R preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.44Q: personalize unicorn analytical reports`
+`LOCAL_COMMIT_PENDING_PUSH v2.44R: add unicorn visual analytics cockpit`
 
 Estado operativo del producto:
 
-`UNICORN_PERSONALIZED_ANALYTICAL_REPORTS_READY`
+`UNICORN_VISUAL_ANALYTICS_COCKPIT_READY`
 
 Cycle status:
 
@@ -144,6 +144,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.44O | Catalogo completo de fichas de unicornios con detalle completo al seleccionar compania |
 | Completada | v2.44P | Control de recálculo local de universo/unicornios con entradas y salidas visibles |
 | Completada | v2.44Q | Informes profesionales personalizados por unicornio con tesis, matriz de senales y salida de lista |
+| Completada | v2.44R | Cockpit visual de unicornios con hero, formula, timeline, feed, radar y estados tecnicos |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

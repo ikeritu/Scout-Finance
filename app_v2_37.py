@@ -699,6 +699,123 @@ def render_unicorn_recalculation_panel(matrix, unicorn_rows: list[dict]) -> None
                     st.code(step.detail, language="text")
 
 
+def unicorn_signal_timeline(row: dict) -> pd.DataFrame:
+    radar = unicorn_radar_values(row)
+    grade, _, _ = unicorn_evidence_grade(row)
+    review_status = unicorn_review_status(load_unicorn_review_history(), row["asset_id"])
+    steps = [
+        ("Datos locales", max(55, radar["Cobertura"] - 8), "COVERAGE_READY" if radar["Cobertura"] >= 90 else "COVERAGE_PARTIAL"),
+        ("Crecimiento", radar["Crecimiento"], "GROWTH_SIGNAL_OK" if radar["Crecimiento"] >= 100 else "GROWTH_SIGNAL_LIMITED"),
+        ("Margen", radar["Margen"], "MARGIN_SIGNAL_OK" if radar["Margen"] >= 100 else "MARGIN_SIGNAL_LIMITED"),
+        ("Caja / equivalente", radar["Caja"], "CASH_SIGNAL_OK" if radar["Caja"] >= 100 else "CASH_SIGNAL_EQUIVALENT_OR_LIMITED"),
+        ("Etiqueta unicornio", radar["Evidencia"], row.get("unicorn_status", "EVALUATED_UNICORN")),
+        ("Revision local", radar["Evidencia"] if review_status != "DISCARDED" else 45, review_status),
+    ]
+    return pd.DataFrame([
+        {"Paso": label, "Confianza": value, "Estado": state, "Calidad": grade}
+        for label, value, state in steps
+    ])
+
+
+def unicorn_visual_event_feed(row: dict, review_history: dict[str, dict]) -> pd.DataFrame:
+    review_entry = unicorn_review_entry(review_history, row["asset_id"])
+    events = [
+        {"Evento": "Datos locales disponibles", "Detalle": GLOBAL_STATUS_LABELS.get(row.get("overall_coverage_status", ""), row.get("overall_coverage_status", "N/D"))},
+        {"Evento": "Criterio unicornio evaluado", "Detalle": row.get("unicorn_status", "EVALUATED_UNICORN")},
+        {"Evento": "Fuente del flag", "Detalle": row.get("unicorn_source") or "N/D"},
+        {"Evento": "Calidad de evidencia", "Detalle": unicorn_evidence_grade(row)[0]},
+    ]
+    if review_entry:
+        events.append({"Evento": "Revision local", "Detalle": f"{review_entry.get('status_label', 'N/D')} · {review_entry.get('reviewed_at', '')}"})
+    else:
+        events.append({"Evento": "Revision local", "Detalle": "Pendiente de revision manual"})
+    events.append({"Evento": "Proximo recálculo", "Detalle": "Puede mantener, entrar en revision o salir si cambian crecimiento, margen, caja o cobertura."})
+    return pd.DataFrame(events)
+
+
+def render_unicorn_formula_panel(row: dict) -> None:
+    country = row.get("country") or "N/D"
+    cash_leg = "FCF positivo" if country != "Austria" else "aceleracion de crecimiento (contrato Austria)"
+    st.code(
+        "\n".join([
+            "Etiqueta unicornio = crecimiento positivo + margen en expansion + caja/equivalente",
+            f"Para esta empresa: crecimiento + margen + {cash_leg}",
+            "Confianza visual = cobertura + calidad de senal + comparabilidad + revision local",
+            "Salida de lista = falla cualquier pata clave en un recálculo local posterior",
+        ]),
+        language="text",
+    )
+
+
+def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], review_history: dict[str, dict], generated_at: str) -> None:
+    st.markdown("### Analítica visual de unicornios")
+    st.caption("Vista inspirada en dashboards financieros, adaptada a investigacion: no muestra PnL, señales de trading ni recomendaciones.")
+    if not rows:
+        st.info("No hay unicornios con los filtros actuales.")
+        return
+    if "selected_unicorn_asset_id" not in st.session_state or not any(row["asset_id"] == st.session_state.selected_unicorn_asset_id for row in rows):
+        st.session_state.selected_unicorn_asset_id = rows[0]["asset_id"]
+
+    left, right = st.columns([1.0, 2.0])
+    with left:
+        st.caption(f"{len(rows):,} unicornios filtrados")
+        for row in rows[:120]:
+            grade, grade_color, _ = unicorn_evidence_grade(row)
+            selected = st.session_state.selected_unicorn_asset_id == row["asset_id"]
+            label = f"{row.get('company_name')} · {unicorn_probability(row)}% · {grade}"
+            if st.button(label, key=f"unicorn_visual_select_{row['asset_id']}", type="primary" if selected else "secondary", use_container_width=True):
+                st.session_state.selected_unicorn_asset_id = row["asset_id"]
+            st.markdown(
+                f"<div style='height:3px;background:{escape(grade_color)};border-radius:4px;margin:-7px 0 7px 0;'></div>",
+                unsafe_allow_html=True,
+            )
+        if len(rows) > 120:
+            st.caption("Mostrando 120 primeras empresas filtradas. Ajusta busqueda/filtros para afinar.")
+
+    selected = next((row for row in rows if row["asset_id"] == st.session_state.selected_unicorn_asset_id), rows[0])
+    with right:
+        grade, _, grade_reason = unicorn_evidence_grade(selected)
+        review_label = UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected["asset_id"])]
+        st.markdown(f"## {GLOBAL_UNICORN_ICON} {selected.get('company_name')}")
+        hero = st.columns(5)
+        hero[0].metric("Posibilidad", f"{unicorn_probability(selected)}%")
+        hero[1].metric("Evidencia", grade)
+        hero[2].metric("Estado", "Se mantiene")
+        hero[3].metric("Revision", review_label)
+        hero[4].metric("Corte", generated_at[:10] if generated_at else "N/D")
+        st.info(grade_reason)
+
+        formula_col, tech_col = st.columns([1.1, 1.4])
+        with formula_col:
+            st.markdown("#### Fórmula de señal")
+            render_unicorn_formula_panel(selected)
+        with tech_col:
+            st.markdown("#### Estado técnico")
+            tech_rows = analytical_unicorn_signal_rows(selected)
+            st.dataframe(pd.DataFrame(tech_rows), use_container_width=True, hide_index=True)
+
+        st.markdown("#### Timeline de señal")
+        timeline = unicorn_signal_timeline(selected)
+        st.line_chart(timeline.set_index("Paso")["Confianza"])
+        st.dataframe(timeline, use_container_width=True, hide_index=True)
+
+        feed_col, radar_col = st.columns([1.2, 1.0])
+        with feed_col:
+            st.markdown("#### Feed de recálculo y revisión")
+            st.dataframe(unicorn_visual_event_feed(selected, review_history), use_container_width=True, hide_index=True)
+        with radar_col:
+            st.markdown("#### Radar local")
+            st.bar_chart(pd.DataFrame({"Valor": unicorn_radar_values(selected)}).T)
+
+        note = notes.get(selected["asset_id"], "").strip()
+        if note:
+            st.markdown("#### Nota personal")
+            st.write(note)
+        st.markdown("#### Salidas posibles de la lista")
+        for trigger in analytical_unicorn_exit_triggers(selected):
+            st.write(f"- {trigger}")
+
+
 def unicorn_sort_key(row: dict, sort_mode: str) -> tuple:
     if sort_mode == "País":
         return (row.get("country", ""), row.get("company_name", ""))
@@ -1096,7 +1213,7 @@ def render_global_unicorns(_data):
     for col, status in zip(review_cols, ["PENDING", "REVIEWED", "FOLLOW", "DISCARDED"]):
         col.metric(UNICORN_REVIEW_STATUS_LABELS[status], f"{review_counts.get(status, 0):,}")
     st.caption("Ranking interno y semáforo ordenan calidad de evidencia local, no rentabilidad esperada ni recomendación financiera.")
-    view_mode = st.radio("Vista", ["Fichas completas", "Presentación/demo", "Cockpit limpio", "Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
+    view_mode = st.radio("Vista", ["Analítica visual", "Fichas completas", "Presentación/demo", "Cockpit limpio", "Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
     if filtered and "selected_unicorn_asset_id" not in st.session_state:
         st.session_state.selected_unicorn_asset_id = filtered[0]["asset_id"]
     watchlist_path = watchlist_data = None
@@ -1165,6 +1282,9 @@ def render_global_unicorns(_data):
             )
         else:
             st.info("Todavía no hay unicornios guardados en watchlist ni unicornios con notas personales.")
+
+    if view_mode == "Analítica visual":
+        render_unicorn_visual_analytics(filtered, notes, review_history, matrix.generated_at)
 
     if view_mode == "Fichas completas":
         render_unicorn_full_catalog(filtered, notes, review_history)

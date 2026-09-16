@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44R — Unicorn visual analytics cockpit (2026-09-16)
+
+Añade en `🦄 Unicornios` la vista principal `Analítica visual`: selector lateral de empresas, hero de señal, formula explicativa, estado tecnico, timeline de señal, feed de recálculo/revision, radar local y salidas posibles de la lista. Toma ideas visuales de dashboards de bolsa, pero evita PnL, señales de trading, enter/exit operativo y lenguaje de recomendacion. No llama APIs ni descarga datos nuevos; usa datos locales ya cargados. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44Q — Personalized unicorn analytical reports (2026-09-16)
 
 Mejora el informe profesional de `🦄 Unicornios` para que deje de ser una plantilla generica. Cada ficha genera un analisis especifico por empresa con tesis personalizada, matriz de senales, radar cuantitativo local, fuente del flag, condiciones de salida de la lista y revision manual adaptada a pais, bolsa, cobertura y elegibilidad. No llama IA ni APIs; usa solo datos locales ya cargados. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

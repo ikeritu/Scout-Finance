@@ -130,6 +130,13 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Recalcular universo y unicornios" in source, "Unicorns screen must allow recalculating the local unicorn universe")
     require("Entraron" in source and "Salieron" in source, "Unicorn recalculation must show companies entering and leaving")
     require("No descarga datos nuevos ni consulta APIs" in source, "Recalculation must keep explicit no-network guardrails")
+    require("def render_unicorn_visual_analytics(" in source, "Unicorns screen must expose visual analytics")
+    require("Analítica visual" in source, "Unicorns visual analytics must be a first-class view")
+    require("Timeline de señal" in source, "Visual analytics must include a signal timeline")
+    require("Fórmula de señal" in source, "Visual analytics must include an explanatory formula panel")
+    require("Feed de recálculo y revisión" in source, "Visual analytics must include a recalculation/review feed")
+    require("Estado técnico" in source, "Visual analytics must expose technical state cards/table")
+    require("no muestra PnL, señales de trading ni recomendaciones" in source, "Visual analytics must avoid trading-style claims")
 
 
 def main() -> None:
