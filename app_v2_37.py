@@ -369,6 +369,52 @@ La empresa merece revision prioritaria como caso de crecimiento dentro de Scout 
 """
 
 
+def unicorn_ai_prompt_template(row: dict) -> str:
+    report = professional_unicorn_report(row)
+    radar = unicorn_radar_values(row)
+    grade, _, grade_reason = unicorn_evidence_grade(row)
+    return f"""# Prompt IA opcional — analisis extendido de unicornio
+
+Actua como analista financiero tecnico y prudente. Tu tarea es redactar una explicacion profesional extensa usando EXCLUSIVAMENTE los datos locales estructurados incluidos abajo.
+
+## Reglas obligatorias
+- No recomiendes comprar, vender ni mantener.
+- No des precio objetivo.
+- No estimes rentabilidad futura.
+- No inventes datos, noticias, guidance, deuda, ratios o eventos no incluidos.
+- Si falta evidencia, dilo explicitamente.
+- Distingue entre senales positivas, limitaciones y revision manual pendiente.
+- Usa tono profesional, claro y no promocional.
+- Incluye siempre: "No constituye asesoramiento financiero".
+
+## Formato de salida requerido
+1. Resumen ejecutivo.
+2. Por que aparece como unicornio.
+3. Calidad de evidencia.
+4. Fortalezas observables.
+5. Limitaciones y riesgos de interpretacion.
+6. Preguntas para revision manual.
+7. Conclusion responsable.
+
+## Datos estructurados permitidos
+- Empresa: {row.get("company_name")}
+- ID interno: {row.get("asset_id")}
+- Ticker: {row.get("ticker") or "N/D"}
+- Pais: {row.get("country") or "N/D"}
+- Bolsa: {row.get("exchange") or "N/D"}
+- Posibilidad de unicornio: {unicorn_probability(row)}%
+- Calidad de evidencia: {grade}. {grade_reason}
+- Radar local: {radar}
+- Criterios: {", ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", "")))}
+
+## Informe local base
+{report}
+
+## Control final antes de responder
+Comprueba que no has anadido una recomendacion financiera, un precio objetivo, una rentabilidad esperada ni datos externos no incluidos.
+"""
+
+
 def unicorn_sort_key(row: dict, sort_mode: str) -> tuple:
     if sort_mode == "País":
         return (row.get("country", ""), row.get("company_name", ""))
@@ -878,6 +924,17 @@ def render_global_unicorns(_data):
                         mime="text/markdown",
                         key="clean_unicorn_report_download",
                     )
+                with st.expander("Prompt IA opcional"):
+                    ai_prompt = unicorn_ai_prompt_template(selected_row)
+                    st.caption("Plantilla para copiar/pegar en una IA o integrar con API en una fase futura. No ejecuta llamadas externas.")
+                    st.code(ai_prompt, language="markdown")
+                    st.download_button(
+                        "Descargar prompt IA",
+                        data=ai_prompt.encode("utf-8"),
+                        file_name=f"scout_finance_prompt_ia_unicornio_{selected_row['asset_id']}_v2_44m.md",
+                        mime="text/markdown",
+                        key="clean_unicorn_ai_prompt_download",
+                    )
                 st.markdown("**Notas personales**")
                 note_value = st.text_area("Nota local", value=notes.get(selected_row["asset_id"], ""), key="clean_unicorn_note", height=120)
                 st.markdown("**Historial de revisión**")
@@ -966,6 +1023,17 @@ def render_global_unicorns(_data):
                             file_name=f"scout_finance_informe_unicornio_{row['asset_id']}_v2_44h.md",
                             mime="text/markdown",
                             key=f"unicorn_report_download_{row['asset_id']}",
+                        )
+                    if st.checkbox("Preparar prompt IA", key=f"unicorn_ai_prompt_toggle_{row['asset_id']}"):
+                        ai_prompt = unicorn_ai_prompt_template(row)
+                        st.caption("Prompt estructurado para analisis IA opcional; no ejecuta llamadas externas.")
+                        st.code(ai_prompt, language="markdown")
+                        st.download_button(
+                            "Descargar prompt IA",
+                            data=ai_prompt.encode("utf-8"),
+                            file_name=f"scout_finance_prompt_ia_unicornio_{row['asset_id']}_v2_44m.md",
+                            mime="text/markdown",
+                            key=f"unicorn_ai_prompt_download_{row['asset_id']}",
                         )
                 if watchlist_data is not None and col.button("Añadir a watchlist", key=f"unicorn_watchlist_{row['asset_id']}"):
                     try:
@@ -1103,7 +1171,15 @@ def render_global_unicorns(_data):
             )
         with st.expander("IA opcional para análisis extendido"):
             st.info("Preparado para una integración futura con API de IA, pero desactivado en esta fase: no hay API key, no hay llamadas externas y no se envían datos fuera de Scout Finance.")
-            st.code(professional_unicorn_report(selected_row), language="markdown")
+            ai_prompt = unicorn_ai_prompt_template(selected_row)
+            st.code(ai_prompt, language="markdown")
+            st.download_button(
+                "Descargar prompt IA",
+                data=ai_prompt.encode("utf-8"),
+                file_name=f"scout_finance_prompt_ia_unicornio_{selected_row['asset_id']}_v2_44m.md",
+                mime="text/markdown",
+                key="global_unicorn_detail_ai_prompt_download",
+            )
         st.markdown(f"[Abrir búsqueda manual en Google Finance]({google_finance_search_url(selected_row['company_name'])})")
         if watchlist_data is not None and st.button("Añadir este unicornio a watchlist", key="global_unicorn_detail_add_watchlist", type="primary"):
             try:

@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.44M — Unicorn optional AI prompt template** (`UNICORN_OPTIONAL_AI_PROMPT_TEMPLATE_READY`): añade plantilla descargable de prompt IA por unicornio para analisis extendido opcional. El prompt incluye datos locales permitidos, formato profesional obligatorio y guardrails explicitos: sin comprar/vender/mantener, sin precio objetivo, sin rentabilidad esperada y sin datos externos inventados. No ejecuta API, no requiere claves y no envia datos fuera de la app. No cambia datos, scoring, ranking global, metodologia, pesos ni proveedores.
+
 **v2.44L — Unicorn portfolio/watchlist view** (`UNICORN_PORTFOLIO_WATCHLIST_READY`): añade vista portfolio/watchlist dentro de `🦄 Unicornios`, agrupando los unicornios de la watchlist seleccionada o, si no existe, los que tengan notas personales. Muestra métricas de composición por evidencia, país y bolsa, tabla compacta, export CSV y reporte Markdown. No cambia datos, scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin red, sin despliegue, sin URL publica y sin broker.
 
 **v2.44K — Unicorn local review history** (`UNICORN_LOCAL_REVIEW_HISTORY_READY`): añade historial local de revisión para unicornios con estados `Pendiente`, `Revisado`, `Seguir` y `Descartado`, comentario y fecha/hora local de última revisión. El estado se puede filtrar, ver en cockpit, editar desde fichas y exportar en CSV. No cambia datos, scoring, ranking global, metodologia, pesos ni proveedores. Mantiene no-advice, sin red, sin despliegue, sin URL publica y sin broker.

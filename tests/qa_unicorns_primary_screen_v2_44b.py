@@ -107,6 +107,11 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Portfolio/watchlist de unicornios" in source, "Unicorns screen must expose portfolio/watchlist grouping")
     require("Descargar portfolio Markdown" in source, "Unicorn portfolio must be downloadable as Markdown")
     require("Exportar portfolio CSV" in source, "Unicorn portfolio must be exportable as CSV")
+    require("def unicorn_ai_prompt_template(" in source, "Unicorns screen must provide an optional AI prompt template")
+    require("Prompt IA opcional" in source, "Unicorn AI template must be exposed in the UI")
+    require("Descargar prompt IA" in source, "Unicorn AI prompt must be downloadable")
+    require("No recomiendes comprar, vender ni mantener" in source, "Unicorn AI prompt must preserve no-advice guardrails")
+    require("No des precio objetivo" in source, "Unicorn AI prompt must forbid price targets")
 
 
 def main() -> None:

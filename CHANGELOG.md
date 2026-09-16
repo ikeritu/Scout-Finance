@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44M — Unicorn optional AI prompt template (2026-09-16)
+
+Añade una plantilla descargable de prompt IA por unicornio para analisis extendido opcional. La plantilla empaqueta datos locales permitidos, informe base, radar, evidencia y reglas estrictas de no asesoramiento: no comprar/vender/mantener, no precio objetivo, no rentabilidad esperada y no datos externos inventados. No llama a ninguna API ni requiere claves. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44L — Unicorn portfolio/watchlist view (2026-09-16)
 
 Añade una vista `Portfolio/watchlist de unicornios` dentro de `🦄 Unicornios`. Agrupa los unicornios de la watchlist seleccionada o, si no hay, los que tienen notas personales. Muestra composición por evidencia, país y bolsa, tabla compacta, export CSV y reporte Markdown. No crea score nuevo ni cambia el ranking global; solo organiza seguimiento local de investigación. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
