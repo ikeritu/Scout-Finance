@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.44X preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.44Y preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.44X: add visible unicorn analysis engine animation`
+`LOCAL_COMMIT_PENDING_PUSH v2.44Y: add unicorn company detail motion`
 
 Estado operativo del producto:
 
-`UNICORN_VISIBLE_ANALYSIS_ENGINE_READY`
+`UNICORN_COMPANY_DETAIL_MOTION_READY`
 
 Cycle status:
 
@@ -151,6 +151,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.44V | Flechas de paginacion para recorrer cards de unicornios filtrados |
 | Completada | v2.44W | Capa de animaciones suaves: ticker, pulse, scanline y barras de confianza |
 | Completada | v2.44X | Panel visible de motor local animado con barrido, progreso y nodos |
+| Completada | v2.44Y | Animaciones en ficha de empresa: gauge, checklist, flujo y barras de señal |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

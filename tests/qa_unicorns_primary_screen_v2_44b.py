@@ -158,6 +158,11 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("sf-analysis-engine" in source, "Unicorn visual analytics must include an animated analysis engine panel")
     require("Motor local analizando unicornios" in source, "Animated analysis panel must be visibly labeled")
     require("sf-node-map" in source, "Animated analysis panel must include moving nodes")
+    require("def render_unicorn_company_motion(" in source, "Selected company detail must include company-level motion")
+    require("sf-gauge" in source and "sf-company-motion" in source, "Company detail must include an animated confidence gauge")
+    require("sf-checklist" in source and "sf-verify-flow" in source, "Company detail must include animated checklist and verification flow")
+    require("sf-signal-bars" in source, "Company detail must include staggered signal bars")
+    require("@keyframes sfGaugePop" in ui_source and "@keyframes sfCheckIn" in ui_source, "Motion CSS must include company detail animations")
     require("prefers-reduced-motion" in ui_source, "Motion CSS must respect reduced motion preferences")
 
 

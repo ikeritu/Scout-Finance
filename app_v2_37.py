@@ -747,6 +747,56 @@ def render_unicorn_formula_panel(row: dict) -> None:
     )
 
 
+def render_unicorn_company_motion(row: dict, grade: str, review_label: str) -> None:
+    probability = unicorn_probability(row)
+    radar = unicorn_radar_values(row)
+    signal_rows = [
+        ("Crecimiento", radar["Crecimiento"]),
+        ("Margen", radar["Margen"]),
+        ("Caja", radar["Caja"]),
+        ("Cobertura", radar["Cobertura"]),
+        ("Evidencia", radar["Evidencia"]),
+    ]
+    signal_html = "".join(
+        f'<div class="sf-signal-row"><span>{escape(label)}</span><div class="sf-signal-bar" style="--sf-fill:{value}%"><span></span></div><strong>{value}</strong></div>'
+        for label, value in signal_rows
+    )
+    checks = [
+        "Crecimiento positivo validado",
+        "Margen en expansión detectado",
+        "Caja/equivalente revisado",
+        f"Evidencia: {grade}",
+    ]
+    checks_html = "".join(
+        f'<div class="sf-check"><span class="sf-check-dot">✓</span><span>{escape(item)}</span></div>'
+        for item in checks
+    )
+    flow = ["Datos", "Crecimiento", "Margen", "Caja", "Unicornio", "Revisión"]
+    flow_html = "".join(
+        f'<span class="sf-verify-step {"active" if item in {"Unicornio", "Revisión"} else ""}">{escape(item)}</span>{"" if idx == len(flow) - 1 else "<span class=\"sf-verify-arrow\">→</span>"}'
+        for idx, item in enumerate(flow)
+    )
+    st.markdown(
+        f"""
+        <div class="sf-company-motion">
+          <div class="sf-gauge" style="--p:{probability}">
+            <div class="sf-gauge-inner">
+              <div class="sf-gauge-value">{probability}%</div>
+              <div class="sf-gauge-label">confianza local</div>
+            </div>
+          </div>
+          <div>
+            <div class="sf-checklist">{checks_html}</div>
+            <div class="sf-verify-flow">{flow_html}</div>
+            <div class="sf-signal-bars">{signal_html}</div>
+            <div style="margin-top:8px;color:#64748b;font-size:13px;">Estado local: {escape(review_label)} · no constituye asesoramiento financiero.</div>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], review_history: dict[str, dict], generated_at: str) -> None:
     st.markdown("### Analítica visual de unicornios")
     st.caption("Vista más visual: tarjetas nítidas de selección y ficha a ancho completo para leer el informe sin dropdown borroso.")
@@ -854,6 +904,7 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
     hero[2].metric("Estado", "Se mantiene")
     hero[3].metric("Revision", review_label)
     st.info(grade_reason)
+    render_unicorn_company_motion(selected, grade, review_label)
 
     summary_tab, report_tab, technical_tab = st.tabs(["Resumen visual", "Informe completo personalizado", "Datos técnicos"])
     with summary_tab:

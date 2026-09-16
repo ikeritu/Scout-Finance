@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.44Y — Unicorn company detail motion** (`UNICORN_COMPANY_DETAIL_MOTION_READY`): añade motion a la ficha individual de cada unicornio con gauge circular, checklist, flujo de verificacion y barras de señal. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin red, datos nuevos, credenciales, mutaciones peligrosas externas, fundamentales/precios nuevos, scoring recomputado, ranking global/metodologia/pesos cambiados, despliegue, URL publica, recomendaciones financieras ni broker.
+
 **v2.44X — Visible unicorn analysis engine animation** (`UNICORN_VISIBLE_ANALYSIS_ENGINE_READY`): añade un panel animado visible de motor local en `Analítica visual`, con barrido, barra de progreso y nodos en movimiento. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin red, datos nuevos, credenciales, mutaciones peligrosas externas, fundamentales/precios nuevos, scoring recomputado, ranking global/metodologia/pesos cambiados, despliegue, URL publica, recomendaciones financieras ni broker.
 
 **v2.44W — Unicorn motion working layer** (`UNICORN_MOTION_WORKING_LAYER_READY`): añade microanimaciones CSS al cockpit visual de unicornios: ticker de actividad, pulse/glow, scanline y barras de confianza animadas, con soporte `prefers-reduced-motion`. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin red, datos nuevos, credenciales, mutaciones peligrosas externas, fundamentales/precios nuevos, scoring recomputado, ranking global/metodologia/pesos cambiados, despliegue, URL publica, recomendaciones financieras ni broker.

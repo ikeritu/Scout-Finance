@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44Y — Unicorn company detail motion (2026-09-16)
+
+Añade animaciones dentro de la ficha seleccionada de cada unicornio: gauge circular de confianza, checklist de verificación, flujo visual de etapas y barras de señal escalonadas. La ficha se acerca más al tipo de animación profesional del vídeo, pero mantiene lenguaje de investigación, sin PnL, sin señales de trading y sin recomendaciones. Respeta reducción de movimiento. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44X — Visible unicorn analysis engine animation (2026-09-16)
 
 Refuerza las animaciones de `Analítica visual` con un panel visible de motor local: barrido animado, barra de progreso continua y nodos en movimiento. La pantalla transmite mejor que Scout Finance esta trabajando sobre evidencia local, sin lenguaje de trading, PnL ni recomendaciones. Respeta reducción de movimiento. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
