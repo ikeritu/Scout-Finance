@@ -112,6 +112,11 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Descargar prompt IA" in source, "Unicorn AI prompt must be downloadable")
     require("No recomiendes comprar, vender ni mantener" in source, "Unicorn AI prompt must preserve no-advice guardrails")
     require("No des precio objetivo" in source, "Unicorn AI prompt must forbid price targets")
+    require("def render_unicorn_presentation_mode(" in source, "Unicorns screen must provide a presentation/demo renderer")
+    require("Presentación/demo" in source, "Unicorns screen must expose presentation/demo mode")
+    require("Top 10 por evidencia local" in source, "Presentation mode must show top evidence-backed unicorns")
+    require("Tres fichas destacadas" in source, "Presentation mode must show highlighted unicorn cards")
+    require("Descargar resumen de presentación" in source, "Presentation mode must export a clean summary")
 
 
 def main() -> None:

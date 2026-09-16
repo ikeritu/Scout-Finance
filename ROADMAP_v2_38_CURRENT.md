@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.44M preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.44N preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.44M: add optional unicorn AI prompt template`
+`LOCAL_COMMIT_PENDING_PUSH v2.44N: add unicorn presentation demo mode`
 
 Estado operativo del producto:
 
-`UNICORN_OPTIONAL_AI_PROMPT_TEMPLATE_READY`
+`UNICORN_PRESENTATION_DEMO_READY`
 
 Cycle status:
 
@@ -140,6 +140,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.44K | Historial local de revision de unicornios con estados, comentario, fecha y filtros |
 | Completada | v2.44L | Vista portfolio/watchlist de unicornios con composición, tabla y exportaciones |
 | Completada | v2.44M | Plantilla IA opcional descargable para analisis extendido con guardrails no-advice |
+| Completada | v2.44N | Modo presentacion/demo de Unicornios con KPIs, top 10, distribuciones y fichas destacadas |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

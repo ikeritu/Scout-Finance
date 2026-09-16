@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44N — Unicorn presentation demo mode (2026-09-16)
+
+Añade una vista `Presentación/demo` en `🦄 Unicornios`, limpia y enseñable: KPIs, top 10 por evidencia local, distribuciones por evidencia y país, tres fichas destacadas y resumen descargable. No muestra formularios de edición ni tablas largas en esa vista. No crea score nuevo ni cambia el ranking global; solo reorganiza evidencia local ya calculada. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44M — Unicorn optional AI prompt template (2026-09-16)
 
 Añade una plantilla descargable de prompt IA por unicornio para analisis extendido opcional. La plantilla empaqueta datos locales permitidos, informe base, radar, evidencia y reglas estrictas de no asesoramiento: no comprar/vender/mantener, no precio objetivo, no rentabilidad esperada y no datos externos inventados. No llama a ninguna API ni requiere claves. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
