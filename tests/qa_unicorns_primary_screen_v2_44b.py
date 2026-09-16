@@ -44,9 +44,15 @@ def test_unicorns_is_primary_navigation_screen() -> None:
 def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     source = APP.read_text(encoding="utf-8")
     require("def render_global_unicorns(" in source, "Dedicated Unicorns renderer missing")
+    require("def explain_unicorn_reason(" in source, "Detailed Unicorns explanation helper missing")
     require('"global_unicorns": render_global_unicorns' in source, "Unicorns renderer missing from dispatch")
     require('row.get("unicorn_status") == "EVALUATED_UNICORN"' in source, "Unicorns screen must filter evaluated unicorns")
     require("No constituye asesoramiento financiero" in source, "Unicorns screen must preserve no-advice language")
+    require('height=620' in source, "Unicorns table must be scrollable instead of visually capped")
+    require('on_select="rerun"' in source, "Unicorns table must support row selection when Streamlit allows it")
+    require("Detalle del unicornio" in source, "Unicorns screen must expose per-company detail")
+    require("Por qué es unicornio" in source, "Unicorns screen must explain why each company is a unicorn")
+    require("motivo técnico original" in source, "Unicorns screen must preserve original technical traceability")
 
 
 def main() -> None:

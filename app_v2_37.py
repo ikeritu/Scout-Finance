@@ -91,6 +91,28 @@ def google_finance_search_url(company_name: str) -> str:
     convenience link, Scout Finance never fetches or stores anything
     from it."""
     return f"https://www.google.com/search?q={quote(f'{company_name} stock')}"
+
+
+def explain_unicorn_reason(reason: str, country: str) -> list[str]:
+    details = []
+    lowered = reason.casefold()
+    if "revenue_growth" in lowered or "fundamental_momentum_flag_true" in lowered:
+        details.append("Crecimiento real de ingresos positivo en los datos fundamentales ya cargados.")
+    if "margin_expansion" in lowered:
+        details.append("Expansión real de margen: la empresa mejora rentabilidad operativa/negocio frente al periodo comparable.")
+    if "positive_free_cash_flow" in lowered:
+        details.append("Flujo de caja libre real positivo, cuando el origen de datos lo permite.")
+    if "no_free_cash_flow_data_available_for_austria" in lowered:
+        details.append("Para Austria no existe flujo de caja libre en este contrato local; se usa el criterio equivalente documentado: crecimiento positivo, aceleración de crecimiento y expansión de margen.")
+    if "cross_referenced_from_real_us_entity" in lowered:
+        details.append("Se conserva una referencia cruzada con la entidad estadounidense real equivalente ya identificada en fases anteriores.")
+    if not details:
+        details.append("Cumple el flag `EVALUATED_UNICORN` generado por v2.38BT usando señales reales ya existentes, sin estimaciones nuevas.")
+    details.append(f"País/origen revisado en esta fila: {country or 'no informado'}.")
+    details.append("No es una recomendación de compra: solo identifica empresas que cumplen el criterio interno de crecimiento combinado.")
+    return details
+
+
 STATUS_LABELS = {
     "ELIGIBLE_PARTIAL": "Clasificable parcial", "PARTIAL_COMPARABILITY": "Comparabilidad parcial",
     "REVIEW_REQUIRED": "Revisión requerida", "BLOCKED": "Bloqueado",
@@ -428,10 +450,38 @@ def render_global_unicorns(_data):
         "Motivo unicornio": row.get("unicorn_reason", ""),
         "Google Finance": google_finance_search_url(row["company_name"]),
     } for row in filtered]
-    st.dataframe(
-        pd.DataFrame(table_rows), use_container_width=True, hide_index=True,
-        column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda manual en Google. Scout Finance no descarga ni procesa datos de Google.")},
-    )
+    table = pd.DataFrame(table_rows)
+    selected_index = None
+    try:
+        event = st.dataframe(
+            table, use_container_width=True, hide_index=True, height=620, on_select="rerun", selection_mode="single-row",
+            column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda manual en Google. Scout Finance no descarga ni procesa datos de Google.")},
+        )
+        selected_rows = getattr(getattr(event, "selection", None), "rows", [])
+        if selected_rows:
+            selected_index = selected_rows[0]
+    except TypeError:
+        st.dataframe(
+            table, use_container_width=True, hide_index=True, height=620,
+            column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda manual en Google. Scout Finance no descarga ni procesa datos de Google.")},
+        )
+    if filtered:
+        options = [f'{row["company_name"]} · {row["ticker"] or row["asset_id"]}' for row in filtered]
+        fallback_index = selected_index if selected_index is not None else 0
+        selected_label = st.selectbox("Detalle del unicornio", options, index=fallback_index, help="Selecciona una fila de la tabla o elige aquí una empresa para ver por qué está marcada como unicornio.")
+        selected_row = filtered[options.index(selected_label)]
+        st.markdown("### Por qué es unicornio")
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Empresa", selected_row["company_name"])
+        c2.metric("Ticker", selected_row["ticker"] or "N/D")
+        c3.metric("País", selected_row["country"] or "N/D")
+        c4.metric("Estado", GLOBAL_STATUS_LABELS.get(selected_row["overall_coverage_status"], selected_row["overall_coverage_status"]))
+        st.markdown("**Explicación detallada**")
+        for item in explain_unicorn_reason(selected_row.get("unicorn_reason", ""), selected_row.get("country", "")):
+            st.write(f"- {item}")
+        with st.expander("Ver motivo técnico original"):
+            st.code(selected_row.get("unicorn_reason", "Sin motivo técnico disponible"), language="text")
+        st.markdown(f"[Abrir búsqueda manual en Google Finance]({google_finance_search_url(selected_row['company_name'])})")
 
 
 def render_global_ranking(_data):
