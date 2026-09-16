@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.42B preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.43A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.42B: add final in-app responsible-use guide`
+`LOCAL_COMMIT_PENDING_PUSH v2.43A: add final consolidated audit`
 
 Estado operativo del producto:
 
-`FINAL_IN_APP_GUIDE_READY`
+`FINAL_CONSOLIDATED_AUDIT_READY`
 
 Cycle status:
 
@@ -70,6 +70,7 @@ Cycle status:
 | Completada | v2.41D | Final coverage limitations |
 | Completada | v2.42A | Final UX hardening |
 | Completada | v2.42B | Final in-app guide / responsible-use page |
+| Completada | v2.43A | Final consolidated audit |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -93,9 +94,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.43A: Final consolidated audit`
+`v2.44A: Final stable release / project closure report`
 
-Objetivo recomendado: auditoria final consolidada de tests, reproducibilidad, legal, seguridad y rendimiento.
+Objetivo recomendado: cierre estable final, reporte de cierre de proyecto y handoff de release.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -117,5 +118,5 @@ Objetivo recomendado: auditoria final consolidada de tests, reproducibilidad, le
 | Completada | v2.41D | Cobertura y limitaciones finales por pais, fuente y poblacion |
 | Completada | v2.42A | Hardening UX final: ranking, filtros, exportaciones, errores y estados vacios |
 | Completada | v2.42B | Pagina final dentro de la app: guia, limitaciones, no-advice y uso responsable |
-| Pendiente | v2.43A | Auditoria final consolidada: tests, reproducibilidad, legal, seguridad y rendimiento |
+| Completada | v2.43A | Auditoria final consolidada: tests, reproducibilidad, legal, seguridad y rendimiento |
 | Pendiente | v2.44A | Release final estable y project closure report |

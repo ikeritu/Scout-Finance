@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "path": "config/final_consolidated_audit_contract_v2_43a.json",
+      "sha256": "801ce175a530626f2d3238f7ffcbcbb4e9fc3541bc06e0c6803feb63d57a4f13"
+    },
+    {
+      "path": "docs/FINAL_CONSOLIDATED_AUDIT_v2_43a.md",
+      "sha256": "773dbf4867c48397eebc7291f082cc1b1293f75835a028599572ee457aa183d1"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_43a_final_consolidated_audit/FINAL_CONSOLIDATED_AUDIT_v2_43a.md",
+      "sha256": "773dbf4867c48397eebc7291f082cc1b1293f75835a028599572ee457aa183d1"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_43a_final_consolidated_audit/README.md",
+      "sha256": "ab66137281cb53317ba2ce1f2c0e037cda8600a9d6e275174ef6a124a31f00ff"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_43a_final_consolidated_audit/final_consolidated_audit_summary_v2_43a.json",
+      "sha256": "cf459f439e56ce8ccb37b1a88e598e3e5dfe2e66ba2af97143356b93ec758a0e"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_43a_final_consolidated_audit/final_consolidated_audit_matrix_v2_43a.csv",
+      "sha256": "cc144dc39a4c61ba7d083770f04db9313f6e921f7ded2105b82ebd4a25cf9f97"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_43a_final_consolidated_audit/final_consolidated_required_files_v2_43a.csv",
+      "sha256": "e96ad49024ebf534e03a13a1cd0d3474ab3f5fa0d13e4a2d29047c46abcf176a"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_43a_final_consolidated_audit/final_consolidated_guardrails_v2_43a.csv",
+      "sha256": "b2ba4d3bd342dd51cb8be6bbbdde41a52fecf0e0304ef0599ccd4ae98d452c42"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_43a_final_consolidated_audit/final_consolidated_security_checks_v2_43a.csv",
+      "sha256": "800ad51f3ace89f063834bbe555141c61df36c0f27702c7c43dbfcf00a3cc7e0"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_43a_final_consolidated_audit/final_consolidated_documentation_checks_v2_43a.csv",
+      "sha256": "98da5db72bd8f50bc29589b1f26c7dfa03a2e2193d7a5bf233b7368428f4635d"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_43a_final_consolidated_audit/final_consolidated_ranking_integrity_v2_43a.csv",
+      "sha256": "7b00fc8fe3c0d5d1baceba52e145d86f5561b821dfa250fb4ec22617b9f292e5"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_43a_final_consolidated_audit/final_consolidated_release_readiness_v2_43a.csv",
+      "sha256": "43805cbe0238a9aee09ad0789583cda7e20a45303ada8d779fead0de948f90c4"
+    }
+  ],
+  "phase": "v2.43A",
+  "status": "FINAL_CONSOLIDATED_AUDIT_READY"
+}

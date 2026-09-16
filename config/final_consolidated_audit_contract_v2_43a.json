@@ -1,0 +1,21 @@
+{
+  "phase": "v2.43A",
+  "status": "FINAL_CONSOLIDATED_AUDIT_READY",
+  "source_phase": "v2.42B",
+  "source_status": "FINAL_IN_APP_GUIDE_READY",
+  "stable_tag": "v2.38CJ-local-stable",
+  "scope": "final_consolidated_audit_only",
+  "no_network": true,
+  "no_new_data": true,
+  "no_scoring_change": true,
+  "no_ranking_change": true,
+  "no_methodology_change": true,
+  "no_weight_change": true,
+  "no_dataset_mutation": true,
+  "no_deployment": true,
+  "no_public_url": true,
+  "no_financial_advice": true,
+  "no_recommendations": true,
+  "no_broker_actions": true,
+  "release_candidate_for": "v2.44A-final-stable-release"
+}

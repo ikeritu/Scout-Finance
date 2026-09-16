@@ -1,0 +1,10 @@
+check,status
+required_files_present,True
+app_structural_compile,True
+ranking_results_exist,True
+ranking_counts_match_expected,True
+v2_41d_limitations_exist,True
+v2_42a_ux_hardening_exist,True
+v2_42b_in_app_guide_exist,True
+safe_demo_mode_exists,True
+release_readiness,True
