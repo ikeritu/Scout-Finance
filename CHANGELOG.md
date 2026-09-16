@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44F — Unicorns watchlist workflow (2026-09-16)
+
+Añade guardado directo de unicornios a watchlist desde las cards visuales y desde la ficha de detalle. Reutiliza la infraestructura local de watchlists, con escritura atomica y bloqueo en modo demo seguro. No crea score nuevo ni ranking nuevo; solo permite pasar de descubrimiento a seguimiento local. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44E — Unicorns review workflow (2026-09-16)
 
 Añade mejoras de prioridad alta al explorador `🦄 Unicornios`: ordenacion visual, resumen Top paises/bolsas, export CSV de unicornios filtrados y comparador de 2-3 empresas. No crea score nuevo ni ranking nuevo; solo reorganiza y exporta la misma poblacion `EVALUATED_UNICORN` ya calculada en `v2.38BT`. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

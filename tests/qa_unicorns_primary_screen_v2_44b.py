@@ -64,6 +64,11 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Exportar unicornios filtrados" in source, "Unicorns screen must export filtered unicorns")
     require("Comparar 2-3" in source and "Comparador de unicornios" in source, "Unicorns screen must compare selected unicorns")
     require("scout_finance_unicornios_filtrados_v2_44e.csv" in source, "Unicorns export filename must be versioned")
+    require("def unicorn_watchlist_asset(" in source, "Unicorns screen must map rows into watchlist assets")
+    require("Añadir a watchlist" in source, "Unicorn cards must support adding to watchlist")
+    require("Añadir este unicornio a watchlist" in source, "Unicorn detail must support adding to watchlist")
+    require("blocked_message(\"Añadir unicornios a watchlist\")" in source, "Unicorn watchlist writes must respect safe demo mode")
+    require("atomic_write(watchlist_path, watchlist_data)" in source, "Unicorn watchlist writes must be persisted atomically")
 
 
 def main() -> None:

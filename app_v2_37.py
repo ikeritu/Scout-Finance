@@ -138,6 +138,15 @@ def unicorn_sort_key(row: dict, sort_mode: str) -> tuple:
     return (row.get("company_name", ""),)
 
 
+def unicorn_watchlist_asset(row: dict) -> dict:
+    return {
+        "asset_id": row["asset_id"],
+        "ticker": row["ticker"],
+        "company_name": row["company_name"],
+        "market": row.get("country") or row.get("exchange") or "",
+    }
+
+
 STATUS_LABELS = {
     "ELIGIBLE_PARTIAL": "Clasificable parcial", "PARTIAL_COMPARABILITY": "Comparabilidad parcial",
     "REVIEW_REQUIRED": "Revisión requerida", "BLOCKED": "Bloqueado",
@@ -470,6 +479,13 @@ def render_global_unicorns(_data):
     view_mode = st.radio("Vista", ["Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
     if filtered and "selected_unicorn_asset_id" not in st.session_state:
         st.session_state.selected_unicorn_asset_id = filtered[0]["asset_id"]
+    watchlist_path = watchlist_data = None
+    if SAFE_DEMO_MODE:
+        st.info(blocked_message("Añadir unicornios a watchlist"))
+    else:
+        watchlist_path, watchlist_data = select_watchlist()
+        if watchlist_data is None:
+            st.info("Crea una watchlist en la pantalla ⭐ Watchlist antes de guardar unicornios.")
 
     top_country_rows = [{"País": country or "N/D", "Unicornios": count} for country, count in Counter(row.get("country", "") for row in filtered).most_common(8)]
     top_exchange_rows = [{"Bolsa": exchange or "N/D", "Unicornios": count} for exchange, count in Counter(row.get("exchange", "") for row in filtered).most_common(8)]
@@ -505,6 +521,13 @@ def render_global_unicorns(_data):
                 )
                 if col.button("Ver detalle", key=f"unicorn_detail_{row['asset_id']}"):
                     st.session_state.selected_unicorn_asset_id = row["asset_id"]
+                if watchlist_data is not None and col.button("Añadir a watchlist", key=f"unicorn_watchlist_{row['asset_id']}"):
+                    try:
+                        add(watchlist_data, unicorn_watchlist_asset(row), "WATCHLIST", "Unicornio v2.38BT revisado desde la pantalla Unicornios.")
+                        atomic_write(watchlist_path, watchlist_data)
+                        st.success(f'{row["ticker"] or row["asset_id"]} añadido a "{watchlist_data["name"]}".')
+                    except ValueError as exc:
+                        st.error(str(exc))
 
     table_rows = [{
         "ID": row["asset_id"],
@@ -568,6 +591,13 @@ def render_global_unicorns(_data):
         with st.expander("Ver motivo técnico original"):
             st.code(selected_row.get("unicorn_reason", "Sin motivo técnico disponible"), language="text")
         st.markdown(f"[Abrir búsqueda manual en Google Finance]({google_finance_search_url(selected_row['company_name'])})")
+        if watchlist_data is not None and st.button("Añadir este unicornio a watchlist", key="global_unicorn_detail_add_watchlist", type="primary"):
+            try:
+                add(watchlist_data, unicorn_watchlist_asset(selected_row), "WATCHLIST", "Unicornio v2.38BT revisado desde la ficha de detalle.")
+                atomic_write(watchlist_path, watchlist_data)
+                st.success(f'{selected_row["ticker"] or selected_row["asset_id"]} añadido a "{watchlist_data["name"]}".')
+            except ValueError as exc:
+                st.error(str(exc))
 
     if view_mode == "Tabla completa":
         try:
