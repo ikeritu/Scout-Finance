@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.41C preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.41D preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.41C: close UK Cboe and manual reviews decision`
+`LOCAL_COMMIT_PENDING_PUSH v2.41D: consolidate final coverage limitations`
 
 Estado operativo del producto:
 
-`UK_CBOE_MANUAL_REVIEWS_DECISION_READY`
+`FINAL_COVERAGE_LIMITATIONS_READY`
 
 Cycle status:
 
@@ -67,6 +67,7 @@ Cycle status:
 | Completada | v2.41A | Data gap prioritization |
 | Completada | v2.41B | Luxembourg adapter or documented closure |
 | Completada | v2.41C | UK / Cboe Europe / manual reviews decision |
+| Completada | v2.41D | Final coverage limitations |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -90,9 +91,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.41D: Final coverage limitations`
+`v2.42A: Final UX hardening`
 
-Objetivo recomendado: consolidar cobertura y limitaciones finales por pais, fuente y poblacion.
+Objetivo recomendado: endurecer la experiencia final del ranking, filtros, exportaciones, errores y estados vacios.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -111,7 +112,7 @@ Objetivo recomendado: consolidar cobertura y limitaciones finales por pais, fuen
 | Completada | v2.41A | Priorizacion final de gaps de datos: Europa, Reino Unido, Cboe, Luxemburgo y manual review |
 | Completada | v2.41B | Luxemburgo cerrado como limitacion documentada: 26 candidatos sin evidencia local para adaptador real |
 | Completada | v2.41C | Decision Reino Unido / Cboe Europe / manual reviews |
-| Pendiente | v2.41D | Cobertura y limitaciones finales por pais, fuente y poblacion |
+| Completada | v2.41D | Cobertura y limitaciones finales por pais, fuente y poblacion |
 | Pendiente | v2.42A | Hardening UX final: ranking, filtros, exportaciones, errores y estados vacios |
 | Pendiente | v2.42B | Pagina final dentro de la app: guia, limitaciones, no-advice y uso responsable |
 | Pendiente | v2.43A | Auditoria final consolidada: tests, reproducibilidad, legal, seguridad y rendimiento |

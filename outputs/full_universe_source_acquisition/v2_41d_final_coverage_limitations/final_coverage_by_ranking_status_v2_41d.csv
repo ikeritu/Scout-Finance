@@ -1,0 +1,6 @@
+ranking_status,count,share_of_total,final_note
+ELIGIBLE_PARTIAL,318,0.286229,main experimental ranking
+PARTIAL_COMPARABILITY,373,0.335734,kept separated with explicit limitation
+REVIEW_REQUIRED,124,0.111611,kept separated with explicit limitation
+BLOCKED,270,0.243024,kept separated with explicit limitation
+NOT_YET_SCORED_NO_ADAPTER,26,0.023402,kept separated with explicit limitation

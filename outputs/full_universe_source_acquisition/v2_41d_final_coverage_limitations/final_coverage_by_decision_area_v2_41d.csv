@@ -1,0 +1,12 @@
+decision_area,final_status,decision_source_phase,affected_population,limitation_type,release_blocking,final_note
+Luxembourg,DOCUMENTED_LIMITATION,v2.41B,26,no_adapter_no_local_evidence,False,closed as documented limitation
+UK,USER_DECISION_OR_DOCUMENTED_LIMITATION,v2.41C,conditioned_scope,official_access_or_credentials,False,requires user decision or remains documented limitation
+Cboe Europe,STRUCTURAL_BLOCK_DOCUMENTED,v2.41C,large_structural_scope,identity_fundamentals_prices_structural,False,kept as structural limitation
+Europe prices,STRUCTURAL_BLOCK_DOCUMENTED,v2.41A,689,no_viable_free_source,False,no free automated source confirmed
+Manual reviews,DEFER_POST_RELEASE_WITH_EXPLICIT_SEPARATION,v2.41C,124,manual_review_required,False,kept outside main ranking
+Financial institutions,REQUIRES_SEPARATE_FACTOR_CONTRACT,v2.41C,25,methodology_contract_gap,False,not comparable with industrial ratios
+Extreme margin,KEEP_REVIEW_REQUIRED,v2.41C,100,outlier_review,False,no silent normalization or imputation
+Coverage below threshold,FAIL_CLOSED_BLOCKED,v2.38BV,270,insufficient_real_factor_coverage,False,blocked from scoring until coverage improves
+External publication risk,CONTROLLED_SAFE_DEMO_ONLY,v2.40D,product_surface,publication_guardrail,False,safe demo and manual QA required
+Security / sensitive files,MONITOR_CONTINUOUSLY,v2.39C-v2.40D,repository_surface,security_guardrail,False,keep secret/file checks visible
+Product/legal wording,LOCKED_GUARDRAIL,v2.38BZ-v2.41C,all_user_facing_surfaces,no_advice_no_broker_no_recommendations,False,must remain visible

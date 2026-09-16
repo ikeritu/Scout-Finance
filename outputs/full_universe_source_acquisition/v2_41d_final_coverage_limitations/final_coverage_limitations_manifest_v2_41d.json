@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "path": "config/final_coverage_limitations_contract_v2_41d.json",
+      "sha256": "9995d11fe46dc4afefc86e36e495e0a4d7152cd337d5ed43e21708b103927830"
+    },
+    {
+      "path": "docs/FINAL_COVERAGE_LIMITATIONS_v2_41d.md",
+      "sha256": "bd00909ef13cccf86c18d8eed8668f8ae93d9dd5a3e482942faffa7b4e492d24"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41d_final_coverage_limitations/final_coverage_by_ranking_status_v2_41d.csv",
+      "sha256": "38d20a2f84f9dc153a242403279022b6125b7e290b720968aefe758034fbc915"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41d_final_coverage_limitations/final_coverage_by_country_v2_41d.csv",
+      "sha256": "0e33e00ca33852f8aaabcb4a84b3447ae063a3eec89df53c21d8927dd568f90d"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41d_final_coverage_limitations/final_coverage_by_decision_area_v2_41d.csv",
+      "sha256": "a73083babb65fc9b004a04e4aee14b7110584addd4f91a531752dbb1e0821550"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41d_final_coverage_limitations/final_limitations_register_v2_41d.csv",
+      "sha256": "fd07c8584d87806b47d6b1b0b8e6363872e6a3e7126ebbf3b257af7c48c22806"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41d_final_coverage_limitations/final_population_reconciliation_v2_41d.csv",
+      "sha256": "037505f73f1c57684791d01f26102347a25da071aa563f6bbcee4f639d943673"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41d_final_coverage_limitations/final_coverage_limitations_summary_v2_41d.json",
+      "sha256": "2a16359c85efa145990f9b974c4802fd8cc08fdfab6045373130669bfb513c2c"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41d_final_coverage_limitations/FINAL_COVERAGE_LIMITATIONS_v2_41d.md",
+      "sha256": "bd00909ef13cccf86c18d8eed8668f8ae93d9dd5a3e482942faffa7b4e492d24"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_41d_final_coverage_limitations/README.md",
+      "sha256": "c63e4015c533c3b808dd3c8cdf26d132c44a956c9baf58eb47f99bdd581b91fa"
+    }
+  ],
+  "phase": "v2.41D",
+  "status": "FINAL_COVERAGE_LIMITATIONS_READY"
+}

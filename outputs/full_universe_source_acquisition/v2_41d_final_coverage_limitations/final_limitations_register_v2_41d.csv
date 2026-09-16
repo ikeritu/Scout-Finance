@@ -1,0 +1,12 @@
+limitation_id,decision_area,final_status,limitation_type,release_blocking,final_note
+LIM-01,Luxembourg,DOCUMENTED_LIMITATION,no_adapter_no_local_evidence,False,closed as documented limitation
+LIM-02,UK,USER_DECISION_OR_DOCUMENTED_LIMITATION,official_access_or_credentials,False,requires user decision or remains documented limitation
+LIM-03,Cboe Europe,STRUCTURAL_BLOCK_DOCUMENTED,identity_fundamentals_prices_structural,False,kept as structural limitation
+LIM-04,Europe prices,STRUCTURAL_BLOCK_DOCUMENTED,no_viable_free_source,False,no free automated source confirmed
+LIM-05,Manual reviews,DEFER_POST_RELEASE_WITH_EXPLICIT_SEPARATION,manual_review_required,False,kept outside main ranking
+LIM-06,Financial institutions,REQUIRES_SEPARATE_FACTOR_CONTRACT,methodology_contract_gap,False,not comparable with industrial ratios
+LIM-07,Extreme margin,KEEP_REVIEW_REQUIRED,outlier_review,False,no silent normalization or imputation
+LIM-08,Coverage below threshold,FAIL_CLOSED_BLOCKED,insufficient_real_factor_coverage,False,blocked from scoring until coverage improves
+LIM-09,External publication risk,CONTROLLED_SAFE_DEMO_ONLY,publication_guardrail,False,safe demo and manual QA required
+LIM-10,Security / sensitive files,MONITOR_CONTINUOUSLY,security_guardrail,False,keep secret/file checks visible
+LIM-11,Product/legal wording,LOCKED_GUARDRAIL,no_advice_no_broker_no_recommendations,False,must remain visible
