@@ -1,0 +1,58 @@
+{
+  "files": [
+    {
+      "path": "config/final_ux_hardening_contract_v2_42a.json",
+      "sha256": "fb46516675527e37614ef77d0d6b08cd27a3e7c925f98be31be1bd86265bd17c"
+    },
+    {
+      "path": "docs/FINAL_UX_HARDENING_v2_42a.md",
+      "sha256": "959eb1ed77de112a38dbea39b4835f869cc91e173ebfb280dc3069a6268f7ff2"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42a_final_ux_hardening/final_ux_hardening_matrix_v2_42a.csv",
+      "sha256": "45c8fd1c77be3a084185ee3c06859daf50c6bf88652304f7995c2792bece908b"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42a_final_ux_hardening/final_ux_empty_states_v2_42a.csv",
+      "sha256": "ee1e06f268d128fe3df7c2bdae516688374b820891179a7341b8dec2a67c2cc5"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42a_final_ux_hardening/final_ux_error_messages_v2_42a.csv",
+      "sha256": "816561f3d953fc9adb8ad0ab30e77fcf4120a9d3ac80ab129701a289deb4c21d"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42a_final_ux_hardening/final_ux_export_contract_v2_42a.csv",
+      "sha256": "cfadfc1f5816fdbc031b3a8e9b08f7ac05a20d82aaa70b62275fdf1aaea95018"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42a_final_ux_hardening/final_ux_guardrails_v2_42a.csv",
+      "sha256": "f2a76e3660d43c246651c67dca42ddff13bb4eb104e97dd74f2339fd742911fb"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42a_final_ux_hardening/final_ux_hardening_summary_v2_42a.json",
+      "sha256": "2a9371fd1dfe651c7bf9adf235e663fa0aba8890f0ff2d5a7c071f45eb3ba936"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42a_final_ux_hardening/FINAL_UX_HARDENING_v2_42a.md",
+      "sha256": "959eb1ed77de112a38dbea39b4835f869cc91e173ebfb280dc3069a6268f7ff2"
+    },
+    {
+      "path": "outputs/full_universe_source_acquisition/v2_42a_final_ux_hardening/README.md",
+      "sha256": "8df4c1529d7abbfe2342a115e6c1fd2200db7ccdbe5e0ae3a42cac65f2d747c7"
+    },
+    {
+      "path": "app_v2_37.py",
+      "sha256": "2d5362f94e0c3d8e838807d08e0450743fc8d85e39f7066e90a0ce822023e036"
+    },
+    {
+      "path": "src/ui_v2_37/global_ranking.py",
+      "sha256": "65107149eb46e32d8c9bd1542fedf48c76ccaa859eed4c6ff75be65d9cae5937"
+    },
+    {
+      "path": "src/ui_v2_37/safe_demo.py",
+      "sha256": "a573bb59c770920c11bb5808891890c8280588c14983c2dbf869244e61b3df2d"
+    }
+  ],
+  "phase": "v2.42A",
+  "status": "FINAL_UX_HARDENING_READY"
+}

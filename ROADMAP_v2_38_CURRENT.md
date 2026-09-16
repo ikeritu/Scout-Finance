@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.41D preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.42A preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.41D: consolidate final coverage limitations`
+`LOCAL_COMMIT_PENDING_PUSH v2.42A: harden final ranking UX`
 
 Estado operativo del producto:
 
-`FINAL_COVERAGE_LIMITATIONS_READY`
+`FINAL_UX_HARDENING_READY`
 
 Cycle status:
 
@@ -68,6 +68,7 @@ Cycle status:
 | Completada | v2.41B | Luxembourg adapter or documented closure |
 | Completada | v2.41C | UK / Cboe Europe / manual reviews decision |
 | Completada | v2.41D | Final coverage limitations |
+| Completada | v2.42A | Final UX hardening |
 
 ## Pendiente Para Completar El Ciclo Local
 
@@ -91,9 +92,9 @@ Estos puntos no bloquean necesariamente el cierre local del ciclo v2.38, pero de
 
 La siguiente fase es:
 
-`v2.42A: Final UX hardening`
+`v2.42B: Final in-app guide / responsible-use page`
 
-Objetivo recomendado: endurecer la experiencia final del ranking, filtros, exportaciones, errores y estados vacios.
+Objetivo recomendado: anadir dentro de la app una pagina final de guia, limitaciones, no-advice y uso responsable.
 
 ## Roadmap Reducido Post-v2.38
 
@@ -113,7 +114,7 @@ Objetivo recomendado: endurecer la experiencia final del ranking, filtros, expor
 | Completada | v2.41B | Luxemburgo cerrado como limitacion documentada: 26 candidatos sin evidencia local para adaptador real |
 | Completada | v2.41C | Decision Reino Unido / Cboe Europe / manual reviews |
 | Completada | v2.41D | Cobertura y limitaciones finales por pais, fuente y poblacion |
-| Pendiente | v2.42A | Hardening UX final: ranking, filtros, exportaciones, errores y estados vacios |
+| Completada | v2.42A | Hardening UX final: ranking, filtros, exportaciones, errores y estados vacios |
 | Pendiente | v2.42B | Pagina final dentro de la app: guia, limitaciones, no-advice y uso responsable |
 | Pendiente | v2.43A | Auditoria final consolidada: tests, reproducibilidad, legal, seguridad y rendimiento |
 | Pendiente | v2.44A | Release final estable y project closure report |

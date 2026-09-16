@@ -1,0 +1,9 @@
+state,implemented
+ranking_principal_empty,true
+comparabilidad_parcial_empty,true
+review_required_empty,true
+blocked_empty,true
+no_adapter_empty,true
+filter_no_results,true
+dataset_not_found,true
+dataset_corrupt,true

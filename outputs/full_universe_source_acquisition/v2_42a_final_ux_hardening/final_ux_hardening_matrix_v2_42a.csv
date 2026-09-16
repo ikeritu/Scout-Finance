@@ -1,0 +1,9 @@
+area,status,evidence
+dataset_missing,PASS,ranking error explains expected path and v2.38BV build command
+dataset_corrupt,PASS,corrupt JSON message blocks display and keeps read-only state
+dataset_empty,PASS,"empty ranking rows produce safe warning, no invented scores"
+filtered_empty,PASS,main ranking filters show explicit no-results copy
+status_tabs_empty,PASS,partial/review/blocked/no-adapter tabs have explicit empty messages
+export_contract,PASS,CSV export filename versioned as v2.42A and limited to safe columns
+guardrails_visible,PASS,"experimental ranking, no-advice, no-broker and offline copy visible"
+safe_demo_compatibility,PASS,safe demo banner and watchlist blocking retained

@@ -1,0 +1,5 @@
+property,value
+filename,scout_finance_ranking_experimental_filtered_v2_42a.csv
+private_watchlists_included,false
+broker_data_included,false
+scope,filtered_view_only

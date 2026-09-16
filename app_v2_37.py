@@ -68,6 +68,14 @@ GLOBAL_RANKING_REVIEW_REASON_LABELS = {
     "financial_institution_requires_separate_factor_contract": "Entidad financiera — necesita un contrato de factores distinto",
     "no_fundamentals_growth_ratio_adapter_built_yet_for_this_country": "Sin adaptador real de ratios/crecimiento todavía para este país",
 }
+GLOBAL_RANKING_EMPTY_MESSAGES = {
+    "ELIGIBLE_PARTIAL": "No hay empresas en el ranking principal para los filtros actuales. Ajusta busqueda, pais, confianza, score, cobertura o Top N; la app no relaja criterios ni recalcula puntuaciones.",
+    "PARTIAL_COMPARABILITY": "No hay empresas en comparabilidad parcial en esta vista. Si ocurre con datos reales, revisa que v2.38BV siga presente y que los filtros no hayan ocultado la poblacion.",
+    "REVIEW_REQUIRED": "No hay empresas pendientes de revision en esta vista. La ausencia de filas no convierte ningun activo en apto para ranking.",
+    "BLOCKED": "No hay empresas bloqueadas visibles en esta vista. La app nunca imputa datos para rellenar cobertura.",
+    "NOT_YET_SCORED_NO_ADAPTER": "No hay empresas sin adaptador visibles en esta vista. Las limitaciones finales siguen documentadas en v2.41D.",
+}
+GLOBAL_RANKING_EXPORT_FILENAME = "scout_finance_ranking_experimental_filtered_v2_42a.csv"
 
 
 def google_finance_search_url(company_name: str) -> str:
@@ -185,6 +193,10 @@ def global_ranking_percentage(value) -> str:
     if value is None or value == "":
         return "N/D"
     return f"{float(value) * 100:.0f}%"
+
+
+def global_ranking_empty_message(status: str) -> str:
+    return GLOBAL_RANKING_EMPTY_MESSAGES.get(status, "No hay filas para mostrar con los filtros actuales.")
 
 
 def global_ranking_search_match(row: dict, needle: str) -> bool:
@@ -374,7 +386,12 @@ def render_global_ranking(_data):
     render_safe_demo_banner(st, SAFE_DEMO_MODE)
     ranking = global_ranking_snapshot()
     if not ranking.available:
-        st.info(ranking.error)
+        st.error(ranking.error)
+        st.caption("Estado seguro: pantalla bloqueada en lectura, sin red, sin credenciales, sin scoring nuevo y sin recomendaciones.")
+        return
+    if not ranking.rows:
+        st.warning("El ranking global experimental esta disponible pero no contiene filas. Ejecuta la QA de v2.38BV antes de usar esta pantalla.")
+        st.caption("Estado seguro: no se muestran scores vacios ni se fabrican poblaciones.")
         return
     st.markdown(f'<div class="sf-banner"><strong>Fase 9C — ranking experimental de investigacion.</strong><br>{DISCLAIMER}</div>', unsafe_allow_html=True)
     st.info("Uso previsto: ordenar trabajo de investigacion. No es asesoramiento financiero, no estima precios objetivo, no promete rentabilidad, no ejecuta operaciones y no se conecta a brokers.")
@@ -392,14 +409,24 @@ def render_global_ranking(_data):
     main_ranking = [row for row in ranking.rows if row["eligibility_status"] == "ELIGIBLE_PARTIAL" and row.get("rank")]
     scores = [float(row["total_score"]) for row in main_ranking if row.get("total_score") is not None]
     coverages = [float(row["coverage_weight"]) for row in main_ranking if row.get("coverage_weight") is not None]
-    c1, c2, c3 = st.columns([2, 1, 1])
-    search = c1.text_input("Buscar", placeholder="Empresa, ticker, ID o país", key="global_ranking_search")
-    country_filter = c2.multiselect("País", countries, placeholder="Todos", key="global_ranking_country")
-    confidence_filter = c3.multiselect("Confianza", ["HIGH", "MEDIUM"], format_func=lambda value: CONFIDENCE_LABELS.get(value, value), placeholder="Todas", key="global_ranking_confidence")
-    f1, f2, f3 = st.columns([1, 1, 1])
-    score_range = f1.slider("Rango de score", min_value=float(int(min(scores))), max_value=float(int(max(scores)) + 1), value=(float(int(min(scores))), float(int(max(scores)) + 1)), step=1.0, key="global_ranking_score_range")
-    coverage_range = f2.slider("Rango de cobertura", min_value=float(int(min(coverages) * 100)), max_value=100.0, value=(float(int(min(coverages) * 100)), 100.0), step=1.0, key="global_ranking_coverage_range")
-    top_n_label = f3.selectbox("Top N", ["Todos", "10", "25", "50", "100"], index=0, key="global_ranking_top_n")
+    if not main_ranking or not scores or not coverages:
+        st.warning(global_ranking_empty_message("ELIGIBLE_PARTIAL"))
+        st.caption("Se mantienen visibles las poblaciones no principales abajo; no se recalcula ranking ni se rellenan scores.")
+        score_range = (0.0, 100.0)
+        coverage_range = (0.0, 100.0)
+        search = ""
+        country_filter = []
+        confidence_filter = []
+        top_n_label = "Todos"
+    else:
+        c1, c2, c3 = st.columns([2, 1, 1])
+        search = c1.text_input("Buscar", placeholder="Empresa, ticker, ID o país", key="global_ranking_search")
+        country_filter = c2.multiselect("País", countries, placeholder="Todos", key="global_ranking_country")
+        confidence_filter = c3.multiselect("Confianza", ["HIGH", "MEDIUM"], format_func=lambda value: CONFIDENCE_LABELS.get(value, value), placeholder="Todas", key="global_ranking_confidence")
+        f1, f2, f3 = st.columns([1, 1, 1])
+        score_range = f1.slider("Rango de score", min_value=float(int(min(scores))), max_value=float(int(max(scores)) + 1), value=(float(int(min(scores))), float(int(max(scores)) + 1)), step=1.0, key="global_ranking_score_range")
+        coverage_range = f2.slider("Rango de cobertura", min_value=float(int(min(coverages) * 100)), max_value=100.0, value=(float(int(min(coverages) * 100)), 100.0), step=1.0, key="global_ranking_coverage_range")
+        top_n_label = f3.selectbox("Top N", ["Todos", "10", "25", "50", "100"], index=0, key="global_ranking_top_n")
     filtered_main = filter_global_ranking_rows(
         main_ranking,
         status="ELIGIBLE_PARTIAL",
@@ -414,17 +441,21 @@ def render_global_ranking(_data):
     )
     st.caption(f"{len(filtered_main):,} de {len(main_ranking):,} empresas en el ranking principal")
     main_table = global_ranking_display_frame(filtered_main)
-    st.dataframe(
-        main_table,
-        use_container_width=True,
-        hide_index=True,
-        column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
-    )
+    if filtered_main:
+        st.dataframe(
+            main_table,
+            use_container_width=True,
+            hide_index=True,
+            column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
+        )
+    else:
+        st.info(global_ranking_empty_message("ELIGIBLE_PARTIAL"))
     export_frame = global_ranking_export_frame(filtered_main)
+    st.caption("El CSV exporta solo la vista filtrada y columnas seguras de investigacion: no incluye watchlists privadas, secretos ni datos de broker.")
     st.download_button(
         "Descargar CSV filtrado",
         export_frame.to_csv(index=False).encode("utf-8"),
-        "scout_finance_ranking_experimental_filtered_v2_38by.csv",
+        GLOBAL_RANKING_EXPORT_FILENAME,
         "text/csv",
         help="Exporta solo columnas de investigacion del ranking ya calculado. No incluye watchlists privadas ni recalcula ningun score.",
     )
@@ -465,42 +496,54 @@ def render_global_ranking(_data):
     partial_rows = filter_global_ranking_rows(ranking.rows, status="PARTIAL_COMPARABILITY")
     with status_tabs[0]:
         st.caption("Confianza LOW (50–65% de cobertura real) — puntuadas, pero fuera del ranking principal por baja comparabilidad, nunca excluidas silenciosamente.")
-        st.dataframe(
-            global_ranking_display_frame(partial_rows, include_rank=False),
-            use_container_width=True,
-            hide_index=True,
-            column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
-        )
+        if partial_rows:
+            st.dataframe(
+                global_ranking_display_frame(partial_rows, include_rank=False),
+                use_container_width=True,
+                hide_index=True,
+                column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
+            )
+        else:
+            st.info(global_ranking_empty_message("PARTIAL_COMPARABILITY"))
 
     review_rows = filter_global_ranking_rows(ranking.rows, status="REVIEW_REQUIRED")
     with status_tabs[1]:
         st.caption("Nunca puntuadas con el contrato industrial — margen real fuera de ±300%, o entidad financiera que necesita un modelo de factores distinto.")
-        st.dataframe(
-            global_ranking_display_frame(review_rows, include_rank=False, include_reason=True),
-            use_container_width=True,
-            hide_index=True,
-            column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
-        )
+        if review_rows:
+            st.dataframe(
+                global_ranking_display_frame(review_rows, include_rank=False, include_reason=True),
+                use_container_width=True,
+                hide_index=True,
+                column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
+            )
+        else:
+            st.info(global_ranking_empty_message("REVIEW_REQUIRED"))
 
     blocked_rows = filter_global_ranking_rows(ranking.rows, status="BLOCKED")
     with status_tabs[2]:
         st.caption("Menos del 50% de cobertura real de factores. No se estima, no se imputa y no entra en ranking principal.")
-        st.dataframe(
-            global_ranking_display_frame(blocked_rows, include_rank=False),
-            use_container_width=True,
-            hide_index=True,
-            column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
-        )
+        if blocked_rows:
+            st.dataframe(
+                global_ranking_display_frame(blocked_rows, include_rank=False),
+                use_container_width=True,
+                hide_index=True,
+                column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
+            )
+        else:
+            st.info(global_ranking_empty_message("BLOCKED"))
 
     pending_rows = filter_global_ranking_rows(ranking.rows, status="NOT_YET_SCORED_NO_ADAPTER")
     with status_tabs[3]:
         st.caption("Luxemburgo y Reino Unido — elegibles segun fases previas, pero sin adaptador real de ratios/crecimiento para esta fase. Nunca se les asigna un score inventado.")
-        st.dataframe(
-            global_ranking_display_frame(pending_rows, include_rank=False, include_reason=True),
-            use_container_width=True,
-            hide_index=True,
-            column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
-        )
+        if pending_rows:
+            st.dataframe(
+                global_ranking_display_frame(pending_rows, include_rank=False, include_reason=True),
+                use_container_width=True,
+                hide_index=True,
+                column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
+            )
+        else:
+            st.info(global_ranking_empty_message("NOT_YET_SCORED_NO_ADAPTER"))
 
     with st.expander(f"Comparabilidad parcial ({counts.get('PARTIAL_COMPARABILITY', 0):,})"):
         st.caption("Vista heredada mantenida por compatibilidad con v2.38BW.")
