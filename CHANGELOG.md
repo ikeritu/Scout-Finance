@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44T — Unicorn top selector detail layout (2026-09-16)
+
+Reemplaza el menú lateral de selección de empresas en `Analítica visual` por un selector superior compacto. La ficha queda a ancho completo debajo del selector, de modo que `Informe completo personalizado` se lee sin quedar debajo o comprimido por la lista de empresas. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44S — Calm unicorn detail UX (2026-09-16)
 
 Pulido de experiencia sobre `Analítica visual` en `🦄 Unicornios`: reduce densidad visual, compacta la lista lateral y organiza la ficha seleccionada en pestañas `Resumen visual`, `Informe completo personalizado` y `Datos técnicos`. El informe personalizado completo queda visible y descargable desde la propia empresa, sin tener que cambiar de vista. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
