@@ -50,7 +50,7 @@ ELIGIBILITY_SCRIPT_REL = "scripts/build_global_scoring_eligibility_v2_38bo.py"
 UNICORN_SCRIPT_REL = "scripts/build_global_unicorn_flag_v2_38bt.py"
 REBUILD_TIMEOUT_SECONDS = 600
 ELIGIBILITY_FIELDS_DEFAULT = {"eligibility_tier": "", "eligibility_reason": "", "is_financial_institution_heuristic": ""}
-UNICORN_FIELDS_DEFAULT = {"unicorn_status": "", "unicorn_reason": ""}
+UNICORN_FIELDS_DEFAULT = {"unicorn_status": "", "unicorn_reason": "", "unicorn_source": "", "unicorn_phase": ""}
 
 
 @dataclass(frozen=True)
@@ -125,6 +125,8 @@ def load_global_matrix(root: Path) -> GlobalMatrixData:
         "is_financial_institution_heuristic": eligibility_index.get(row["asset_id"], ELIGIBILITY_FIELDS_DEFAULT).get("is_financial_institution_heuristic", ""),
         "unicorn_status": unicorn_index.get(row["asset_id"], UNICORN_FIELDS_DEFAULT).get("unicorn_status", ""),
         "unicorn_reason": unicorn_index.get(row["asset_id"], UNICORN_FIELDS_DEFAULT).get("unicorn_reason", ""),
+        "unicorn_source": unicorn_index.get(row["asset_id"], UNICORN_FIELDS_DEFAULT).get("source", ""),
+        "unicorn_phase": unicorn_index.get(row["asset_id"], UNICORN_FIELDS_DEFAULT).get("phase", ""),
     } for row in rows)
     generated_at = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).isoformat(timespec="seconds")
     return GlobalMatrixData(True, merged_rows, generated_at)

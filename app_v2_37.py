@@ -317,6 +317,63 @@ def unicorn_portfolio_report(rows: list[dict], title: str) -> str:
     return "\n".join(lines)
 
 
+def analytical_unicorn_signal_rows(row: dict) -> list[dict[str, str]]:
+    reason = row.get("unicorn_reason", "")
+    radar = unicorn_radar_values(row)
+    grade, _, grade_reason = unicorn_evidence_grade(row)
+    return [
+        {"Bloque": "Crecimiento", "Lectura": "Cumple" if radar["Crecimiento"] >= 100 else "Parcial", "Evidencia": "Crecimiento real positivo detectado en la razon tecnica."},
+        {"Bloque": "Margen", "Lectura": "Cumple" if radar["Margen"] >= 100 else "Parcial", "Evidencia": "Expansion de margen presente en la razon tecnica."},
+        {"Bloque": "Caja", "Lectura": "Cumple" if radar["Caja"] >= 100 else "Equivalente/limitado", "Evidencia": "FCF positivo en EE. UU.; Austria usa criterio equivalente sin FCF."},
+        {"Bloque": "Cobertura", "Lectura": GLOBAL_STATUS_LABELS.get(row.get("overall_coverage_status", ""), row.get("overall_coverage_status", "N/D")), "Evidencia": f"{radar['Cobertura']}/100 en radar local."},
+        {"Bloque": "Calidad", "Lectura": grade, "Evidencia": grade_reason},
+        {"Bloque": "Motivo tecnico", "Lectura": row.get("unicorn_status", "N/D"), "Evidencia": reason or "Sin razon tecnica disponible."},
+    ]
+
+
+def analytical_unicorn_takeaways(row: dict) -> list[str]:
+    company = row.get("company_name") or "La empresa"
+    country = row.get("country") or "N/D"
+    coverage = row.get("overall_coverage_status", "")
+    eligibility = row.get("eligibility_tier", "")
+    reason = row.get("unicorn_reason", "").casefold()
+    takeaways = [
+        f"{company} entra en la lista porque la evidencia local combina varias senales de crecimiento, no por una unica metrica aislada.",
+    ]
+    if "positive_free_cash_flow" in reason:
+        takeaways.append("La lectura es mas robusta que un simple crecimiento de ventas: incorpora caja libre positiva, por lo que la expansion no aparece desligada de generacion de efectivo.")
+    if "no_free_cash_flow_data_available_for_austria" in reason or country == "Austria":
+        takeaways.append("El caso usa el contrato especifico de Austria: crecimiento positivo, aceleracion y expansion de margen, sin inventar FCF donde el dataset no lo contiene.")
+    if "cross_referenced_from_real_us_entity" in reason:
+        takeaways.append("La ficha exige especial cuidado operativo: existe una referencia cruzada con la entidad estadounidense real equivalente, asi que conviene revisar que ticker, mercado y entidad legal coincidan antes de cualquier analisis externo.")
+    if coverage == "GROWTH_READY":
+        takeaways.append("La cobertura de crecimiento esta completa dentro del contrato local, lo que mejora la confianza de clasificacion.")
+    elif coverage == "GROWTH_PARTIAL":
+        takeaways.append("La cobertura de crecimiento es parcial: la etiqueta puede ser valida, pero requiere mas revision manual que una ficha con crecimiento completo.")
+    if eligibility in {"REVIEW_REQUIRED_FINANCIAL_INSTITUTION", "REVIEW_REQUIRED"}:
+        takeaways.append("La elegibilidad requiere revision: la empresa no debe compararse mecanicamente con companias industriales sin revisar su contrato de factores.")
+    elif eligibility:
+        takeaways.append(f"La elegibilidad local figura como `{eligibility}`, dato util para entender comparabilidad, pero no convierte la etiqueta en recomendacion.")
+    return takeaways
+
+
+def analytical_unicorn_exit_triggers(row: dict) -> list[str]:
+    country = row.get("country") or ""
+    triggers = [
+        "Crecimiento de ingresos deja de ser positivo en el proximo recálculo local.",
+        "El margen deja de expandirse frente al periodo comparable.",
+    ]
+    if country == "Austria" or "no_free_cash_flow_data_available_for_austria" in row.get("unicorn_reason", ""):
+        triggers.append("La aceleracion de crecimiento deja de cumplirse en el contrato especifico de Austria.")
+    else:
+        triggers.append("El flujo de caja libre deja de ser positivo en los datos fundamentales locales.")
+    triggers.extend([
+        "La empresa pasa a cobertura parcial, datos insuficientes o revision manual no comparable.",
+        "Un recálculo local posterior con datos actualizados cambia el flag `EVALUATED_UNICORN`.",
+    ])
+    return triggers
+
+
 def professional_unicorn_report(row: dict) -> str:
     probability = unicorn_probability(row)
     badges = unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))
@@ -325,12 +382,21 @@ def professional_unicorn_report(row: dict) -> str:
     ticker = row.get("ticker") or row.get("asset_id") or "N/D"
     status = GLOBAL_STATUS_LABELS.get(row.get("overall_coverage_status", ""), row.get("overall_coverage_status", "N/D"))
     eligibility = GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "N/D"))
+    grade, _, grade_reason = unicorn_evidence_grade(row)
+    radar = unicorn_radar_values(row)
     badge_text = ", ".join(badges)
     detail_text = "\n".join(f"- {item}" for item in details)
+    signal_table = "\n".join(
+        f"| {item['Bloque']} | {item['Lectura']} | {item['Evidencia']} |"
+        for item in analytical_unicorn_signal_rows(row)
+    )
+    takeaways = "\n".join(f"- {item}" for item in analytical_unicorn_takeaways(row))
+    exit_triggers = "\n".join(f"- {item}" for item in analytical_unicorn_exit_triggers(row))
+    radar_text = "\n".join(f"- {key}: {value}/100" for key, value in radar.items())
     return f"""# Informe profesional de unicornio: {company}
 
 ## 1. Resumen ejecutivo
-{company} ({ticker}) aparece marcada como unicornio porque cumple el flag local `EVALUATED_UNICORN` calculado en `v2.38BT`. La posibilidad de unicornio es {probability}%, entendida como confianza de clasificacion con la evidencia local disponible, no como probabilidad de rentabilidad futura.
+{company} ({ticker}) aparece marcada como unicornio porque cumple el flag local `EVALUATED_UNICORN` calculado en `v2.38BT`. La posibilidad de unicornio es {probability}% y la calidad de evidencia se clasifica como **{grade}**. Esta lectura mide confianza de clasificacion con la evidencia local disponible; no mide rentabilidad esperada, precio objetivo ni probabilidad de subida.
 
 ## 2. Identificacion y cobertura
 - ID interno: {row.get("asset_id", "N/D")}
@@ -339,30 +405,47 @@ def professional_unicorn_report(row: dict) -> str:
 - Bolsa: {row.get("exchange") or "N/D"}
 - Estado de cobertura: {status}
 - Elegibilidad: {eligibility}
+- Fuente del flag unicornio: {row.get("unicorn_source") or "N/D"}
+- Fase de calculo: {row.get("unicorn_phase") or "v2.38BT"}
 
-## 3. Senales que justifican la etiqueta
+## 3. Tesis analitica personalizada
+{takeaways}
+
+## 4. Matriz de senales
+| Bloque | Lectura | Evidencia |
+|---|---|---|
+{signal_table}
+
+## 5. Radar cuantitativo local
+{radar_text}
+
+## 6. Senales que justifican la etiqueta
 {detail_text}
 
-## 4. Lectura tecnica de la posibilidad
-La puntuacion {probability}% resume cuanta evidencia local acompana a la etiqueta: criterios cumplidos ({badge_text}), estado de crecimiento y elegibilidad. Un porcentaje alto indica que la clasificacion esta mejor respaldada dentro del dataset local; no convierte la empresa en una recomendacion ni estima su rendimiento futuro.
+## 7. Lectura tecnica de la posibilidad
+La puntuacion {probability}% resume cuanta evidencia local acompana a la etiqueta: criterios cumplidos ({badge_text}), estado de crecimiento, calidad de cobertura y elegibilidad. En esta ficha, la lectura principal es: {grade_reason} Un porcentaje alto indica que la clasificacion esta mejor respaldada dentro del dataset local; no convierte la empresa en una recomendacion ni estima su rendimiento futuro.
 
-## 5. Limitaciones conocidas
+## 8. Que podria hacer que deje de ser unicornio
+{exit_triggers}
+
+## 9. Limitaciones conocidas
 - La etiqueta reutiliza datos locales ya calculados; no descarga informacion nueva.
 - No valida noticias, guidance, deuda reciente, riesgos regulatorios ni eventos posteriores a la fecha del dataset.
 - Si la cobertura es parcial o requiere revision, la lectura debe considerarse preliminar.
 - Los codigos de bolsa internos no se transforman en una recomendacion operativa ni en una orden ejecutable.
 
-## 6. Revision manual recomendada
-- Revisar ultimos estados financieros oficiales.
-- Contrastar crecimiento de ingresos, margen y caja con el contexto sectorial.
-- Revisar deuda, dilucion, liquidez y riesgos de negocio.
-- Confirmar que la empresa sigue siendo comparable con su universo de referencia.
-- Documentar cualquier decision fuera de Scout Finance antes de actuar.
+## 10. Revision manual recomendada para {company}
+- Revisar los ultimos estados financieros oficiales de {company}.
+- Contrastar si el crecimiento positivo se mantiene y si no depende de un evento extraordinario.
+- Verificar si la expansion de margen es operativa, contable o puntual.
+- Revisar deuda, dilucion, liquidez, guidance y riesgos especificos del mercado {row.get("country") or "N/D"} / {row.get("exchange") or "N/D"}.
+- Confirmar que la empresa sigue siendo comparable con su universo de referencia antes de usarla en cualquier analisis externo.
+- Recalcular la pestaña de unicornios cuando entren nuevos fundamentales locales.
 
-## 7. Conclusion responsable
-La empresa merece revision prioritaria como caso de crecimiento dentro de Scout Finance. Esta conclusion es investigacion estructurada, no asesoramiento financiero. No significa comprar, vender o mantener; no es precio objetivo y no es probabilidad de beneficio.
+## 11. Conclusion responsable
+{company} merece revision prioritaria como caso de crecimiento dentro de Scout Finance porque combina las senales locales exigidas por el criterio de unicornio. La lectura profesional es positiva para investigacion, pero sigue condicionada por frescura de datos, cobertura y revision manual. No constituye asesoramiento financiero. No significa comprar, vender o mantener; no es precio objetivo y no es probabilidad de beneficio.
 
-## 8. Motivo tecnico original
+## 12. Motivo tecnico original
 ```text
 {row.get("unicorn_reason", "Sin motivo tecnico disponible")}
 ```

@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44Q — Personalized unicorn analytical reports (2026-09-16)
+
+Mejora el informe profesional de `🦄 Unicornios` para que deje de ser una plantilla generica. Cada ficha genera un analisis especifico por empresa con tesis personalizada, matriz de senales, radar cuantitativo local, fuente del flag, condiciones de salida de la lista y revision manual adaptada a pais, bolsa, cobertura y elegibilidad. No llama IA ni APIs; usa solo datos locales ya cargados. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44P — Unicorn recalculation control (2026-09-16)
 
 Añade en `🦄 Unicornios` un botón propio `Recalcular universo y unicornios`. Ejecuta la cadena local existente de matriz, elegibilidad y flag de unicornios, limpia la cache y muestra diferencial de empresas que entran y salen de la lista. No descarga datos nuevos ni consulta APIs: recalcula solo sobre datos locales ya recolectados. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
