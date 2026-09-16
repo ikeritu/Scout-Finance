@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from collections import Counter
+from html import escape
 from pathlib import Path
 from urllib.parse import quote
 
@@ -111,6 +112,18 @@ def explain_unicorn_reason(reason: str, country: str) -> list[str]:
     details.append(f"País/origen revisado en esta fila: {country or 'no informado'}.")
     details.append("No es una recomendación de compra: solo identifica empresas que cumplen el criterio interno de crecimiento combinado.")
     return details
+
+
+def unicorn_criterion_badges(reason: str, country: str) -> list[str]:
+    lowered = reason.casefold()
+    badges = ["Crecimiento positivo", "Margen en expansión"]
+    if "positive_free_cash_flow" in lowered:
+        badges.append("FCF positivo")
+    if "no_free_cash_flow_data_available_for_austria" in lowered or country == "Austria":
+        badges.append("Criterio Austria")
+    if "cross_referenced_from_real_us_entity" in lowered:
+        badges.append("Referencia cruzada")
+    return badges
 
 
 STATUS_LABELS = {
@@ -439,6 +452,35 @@ def render_global_unicorns(_data):
         and (not eligibility_filter or row.get("eligibility_tier", "") in eligibility_filter)
     ]
     st.caption(f"{len(filtered):,} de {len(unicorn_rows):,} unicornios")
+    view_mode = st.radio("Vista", ["Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
+    if filtered and "selected_unicorn_asset_id" not in st.session_state:
+        st.session_state.selected_unicorn_asset_id = filtered[0]["asset_id"]
+
+    if view_mode == "Tarjetas visuales":
+        st.markdown("### Explorador visual")
+        st.caption("Todas las empresas filtradas aparecen como tarjetas. Usa scroll y pulsa Ver detalle para abrir la explicación completa.")
+        for start in range(0, len(filtered), 3):
+            cols = st.columns(3)
+            for col, row in zip(cols, filtered[start:start + 3]):
+                badges = "".join(
+                    f'<span style="display:inline-block;margin:2px 4px 2px 0;padding:3px 7px;border-radius:8px;background:#e8f5e9;color:#0b6b2b;font-size:12px;">{escape(badge)}</span>'
+                    for badge in unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))
+                )
+                status_label = GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"])
+                col.markdown(
+                    f"""
+                    <div style="border:1px solid #d8e2ef;border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#ffffff;">
+                      <div style="font-size:18px;font-weight:700;color:#0f172a;">{GLOBAL_UNICORN_ICON} {escape(row["company_name"])}</div>
+                      <div style="color:#64748b;font-size:13px;margin:3px 0 8px 0;">{escape(row["ticker"] or row["asset_id"])} · {escape(row["country"] or "N/D")} · {escape(row["exchange"] or "N/D")}</div>
+                      <div style="margin-bottom:8px;">{badges}</div>
+                      <div style="color:#334155;font-size:13px;">{escape(status_label)}</div>
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+                if col.button("Ver detalle", key=f"unicorn_detail_{row['asset_id']}"):
+                    st.session_state.selected_unicorn_asset_id = row["asset_id"]
+
     table_rows = [{
         "ID": row["asset_id"],
         "Ticker": row["ticker"],
@@ -452,36 +494,45 @@ def render_global_unicorns(_data):
     } for row in filtered]
     table = pd.DataFrame(table_rows)
     selected_index = None
-    try:
-        event = st.dataframe(
-            table, use_container_width=True, hide_index=True, height=620, on_select="rerun", selection_mode="single-row",
-            column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda manual en Google. Scout Finance no descarga ni procesa datos de Google.")},
-        )
-        selected_rows = getattr(getattr(event, "selection", None), "rows", [])
-        if selected_rows:
-            selected_index = selected_rows[0]
-    except TypeError:
-        st.dataframe(
-            table, use_container_width=True, hide_index=True, height=620,
-            column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda manual en Google. Scout Finance no descarga ni procesa datos de Google.")},
-        )
     if filtered:
         options = [f'{row["company_name"]} · {row["ticker"] or row["asset_id"]}' for row in filtered]
-        fallback_index = selected_index if selected_index is not None else 0
+        selected_asset_id = st.session_state.get("selected_unicorn_asset_id")
+        if selected_asset_id not in {row["asset_id"] for row in filtered}:
+            selected_asset_id = filtered[0]["asset_id"]
+            st.session_state.selected_unicorn_asset_id = selected_asset_id
+        fallback_index = selected_index if selected_index is not None else next((i for i, row in enumerate(filtered) if row["asset_id"] == selected_asset_id), 0)
         selected_label = st.selectbox("Detalle del unicornio", options, index=fallback_index, help="Selecciona una fila de la tabla o elige aquí una empresa para ver por qué está marcada como unicornio.")
         selected_row = filtered[options.index(selected_label)]
+        st.session_state.selected_unicorn_asset_id = selected_row["asset_id"]
         st.markdown("### Por qué es unicornio")
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("Empresa", selected_row["company_name"])
         c2.metric("Ticker", selected_row["ticker"] or "N/D")
         c3.metric("País", selected_row["country"] or "N/D")
         c4.metric("Estado", GLOBAL_STATUS_LABELS.get(selected_row["overall_coverage_status"], selected_row["overall_coverage_status"]))
+        st.markdown("**Criterios cumplidos**")
+        st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
         st.markdown("**Explicación detallada**")
         for item in explain_unicorn_reason(selected_row.get("unicorn_reason", ""), selected_row.get("country", "")):
             st.write(f"- {item}")
         with st.expander("Ver motivo técnico original"):
             st.code(selected_row.get("unicorn_reason", "Sin motivo técnico disponible"), language="text")
         st.markdown(f"[Abrir búsqueda manual en Google Finance]({google_finance_search_url(selected_row['company_name'])})")
+
+    if view_mode == "Tabla completa":
+        try:
+            event = st.dataframe(
+                table, use_container_width=True, hide_index=True, height=620, on_select="rerun", selection_mode="single-row",
+                column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda manual en Google. Scout Finance no descarga ni procesa datos de Google.")},
+            )
+            selected_rows = getattr(getattr(event, "selection", None), "rows", [])
+            if selected_rows:
+                st.session_state.selected_unicorn_asset_id = filtered[selected_rows[0]]["asset_id"]
+        except TypeError:
+            st.dataframe(
+                table, use_container_width=True, hide_index=True, height=620,
+                column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver 🔗", help="Abre una búsqueda manual en Google. Scout Finance no descarga ni procesa datos de Google.")},
+            )
 
 
 def render_global_ranking(_data):

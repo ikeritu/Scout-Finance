@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44D — Unicorns visual explorer (2026-09-16)
+
+Rediseña la pantalla `🦄 Unicornios` como explorador visual. Añade vista de cards como modo principal, badges de criterios cumplidos, boton `Ver detalle`, seleccion persistente, ficha explicativa y modo `Tabla completa` con scroll como vista secundaria. No cambia datos, scoring, ranking, metodologia, pesos, proveedores ni outputs de fundamentales. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44C — Unicorns detail explorer (2026-09-16)
 
 Amplia la pantalla `🦄 Unicornios` para que el usuario pueda ver todos los unicornios con scroll y seleccionar cada empresa para abrir una ficha explicativa. La ficha traduce el motivo tecnico de `v2.38BT` a lenguaje humano, conserva el motivo original en un desplegable de trazabilidad y ofrece enlace manual a Google Finance. No cambia datos, scoring, ranking, metodologia, pesos, proveedores ni outputs de fundamentales. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
