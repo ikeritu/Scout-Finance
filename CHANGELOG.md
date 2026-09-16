@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44H — Unicorns professional report generator (2026-09-16)
+
+Añade un informe profesional por unicornio, accionable desde la ficha y descargable en Markdown. El informe incluye resumen ejecutivo, identificacion, señales que justifican la etiqueta, lectura tecnica del porcentaje, limitaciones, checklist de revision manual, conclusion responsable y motivo tecnico original. Deja preparada la via de IA opcional futura, pero esta fase opera offline: sin API key, sin llamadas externas y sin enviar datos fuera de la app. No crea score nuevo ni ranking nuevo; reutiliza `EVALUATED_UNICORN` y el porcentaje de confianza local. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44G — Unicorns probability detail UX (2026-09-16)
 
 Corrige la UX de `Ver detalle` en `🦄 Unicornios`: cada tarjeta abre una ficha desplegable local con explicacion y `% de posibilidad de unicornio`. El porcentaje es confianza de clasificacion con evidencia local, no probabilidad de rentabilidad, precio objetivo ni recomendacion. Tambien se muestra en la ficha inferior, export CSV y comparador. No crea score nuevo ni ranking nuevo; reutiliza el flag `EVALUATED_UNICORN` de `v2.38BT`. Mantiene no-advice, sin broker, sin red, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

@@ -75,6 +75,13 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("confianza de clasificación" in source, "Unicorn probability must be framed as classification confidence")
     require("no es probabilidad de rentabilidad" in source, "Unicorn probability must not imply expected return")
     require("No es precio objetivo" in source or "no es precio objetivo" in source, "Unicorn probability must not imply a price target")
+    require("def professional_unicorn_report(" in source, "Unicorns screen must generate a professional report")
+    require("Generar informe profesional" in source, "Unicorns screen must expose a clickable professional report action")
+    require("Informe profesional de unicornio" in source, "Unicorn report must have a professional title")
+    require("Resumen ejecutivo" in source and "Revision manual recomendada" in source, "Unicorn report must include professional sections")
+    require("Descargar informe Markdown" in source, "Unicorn report must be downloadable")
+    require("Preparado para IA opcional futura" in source or "integración con IA queda preparada" in source, "Unicorn report must document optional future AI integration")
+    require("sin llamadas externas" in source, "Unicorn report generation must remain offline in this phase")
 
 
 def main() -> None:

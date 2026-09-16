@@ -149,6 +149,58 @@ def unicorn_probability(row: dict) -> int:
     return max(55, min(score, 96))
 
 
+def professional_unicorn_report(row: dict) -> str:
+    probability = unicorn_probability(row)
+    badges = unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))
+    details = explain_unicorn_reason(row.get("unicorn_reason", ""), row.get("country", ""))
+    company = row.get("company_name") or "Empresa sin nombre"
+    ticker = row.get("ticker") or row.get("asset_id") or "N/D"
+    status = GLOBAL_STATUS_LABELS.get(row.get("overall_coverage_status", ""), row.get("overall_coverage_status", "N/D"))
+    eligibility = GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "N/D"))
+    badge_text = ", ".join(badges)
+    detail_text = "\n".join(f"- {item}" for item in details)
+    return f"""# Informe profesional de unicornio: {company}
+
+## 1. Resumen ejecutivo
+{company} ({ticker}) aparece marcada como unicornio porque cumple el flag local `EVALUATED_UNICORN` calculado en `v2.38BT`. La posibilidad de unicornio es {probability}%, entendida como confianza de clasificacion con la evidencia local disponible, no como probabilidad de rentabilidad futura.
+
+## 2. Identificacion y cobertura
+- ID interno: {row.get("asset_id", "N/D")}
+- Ticker: {ticker}
+- Pais: {row.get("country") or "N/D"}
+- Bolsa: {row.get("exchange") or "N/D"}
+- Estado de cobertura: {status}
+- Elegibilidad: {eligibility}
+
+## 3. Senales que justifican la etiqueta
+{detail_text}
+
+## 4. Lectura tecnica de la posibilidad
+La puntuacion {probability}% resume cuanta evidencia local acompana a la etiqueta: criterios cumplidos ({badge_text}), estado de crecimiento y elegibilidad. Un porcentaje alto indica que la clasificacion esta mejor respaldada dentro del dataset local; no convierte la empresa en una recomendacion ni estima su rendimiento futuro.
+
+## 5. Limitaciones conocidas
+- La etiqueta reutiliza datos locales ya calculados; no descarga informacion nueva.
+- No valida noticias, guidance, deuda reciente, riesgos regulatorios ni eventos posteriores a la fecha del dataset.
+- Si la cobertura es parcial o requiere revision, la lectura debe considerarse preliminar.
+- Los codigos de bolsa internos no se transforman en una recomendacion operativa ni en una orden ejecutable.
+
+## 6. Revision manual recomendada
+- Revisar ultimos estados financieros oficiales.
+- Contrastar crecimiento de ingresos, margen y caja con el contexto sectorial.
+- Revisar deuda, dilucion, liquidez y riesgos de negocio.
+- Confirmar que la empresa sigue siendo comparable con su universo de referencia.
+- Documentar cualquier decision fuera de Scout Finance antes de actuar.
+
+## 7. Conclusion responsable
+La empresa merece revision prioritaria como caso de crecimiento dentro de Scout Finance. Esta conclusion es investigacion estructurada, no asesoramiento financiero. No significa comprar, vender o mantener; no es precio objetivo y no es probabilidad de beneficio.
+
+## 8. Motivo tecnico original
+```text
+{row.get("unicorn_reason", "Sin motivo tecnico disponible")}
+```
+"""
+
+
 def unicorn_sort_key(row: dict, sort_mode: str) -> tuple:
     if sort_mode == "País":
         return (row.get("country", ""), row.get("company_name", ""))
@@ -554,6 +606,17 @@ def render_global_unicorns(_data):
                     for item in explain_unicorn_reason(row.get("unicorn_reason", ""), row.get("country", "")):
                         st.write(f"- {item}")
                     st.caption("No significa comprar, vender o mantener. No es precio objetivo ni probabilidad de rentabilidad.")
+                    if st.checkbox("Generar informe profesional", key=f"unicorn_report_toggle_{row['asset_id']}"):
+                        report = professional_unicorn_report(row)
+                        st.markdown(report)
+                        st.caption("Informe offline generado con datos locales. Preparado para IA opcional futura, pero sin llamadas externas ni API keys en esta fase.")
+                        st.download_button(
+                            "Descargar informe Markdown",
+                            data=report.encode("utf-8"),
+                            file_name=f"scout_finance_informe_unicornio_{row['asset_id']}_v2_44h.md",
+                            mime="text/markdown",
+                            key=f"unicorn_report_download_{row['asset_id']}",
+                        )
                 if watchlist_data is not None and col.button("Añadir a watchlist", key=f"unicorn_watchlist_{row['asset_id']}"):
                     try:
                         add(watchlist_data, unicorn_watchlist_asset(row), "WATCHLIST", "Unicornio v2.38BT revisado desde la pantalla Unicornios.")
@@ -627,6 +690,17 @@ def render_global_unicorns(_data):
             st.write(f"- {item}")
         with st.expander("Ver motivo técnico original"):
             st.code(selected_row.get("unicorn_reason", "Sin motivo técnico disponible"), language="text")
+        with st.expander("Generar informe profesional completo"):
+            report = professional_unicorn_report(selected_row)
+            st.markdown(report)
+            st.caption("Informe offline generado con datos locales. La integración con IA queda preparada como mejora opcional futura, siempre con guardrails de no asesoramiento.")
+            st.download_button(
+                "Descargar informe Markdown",
+                data=report.encode("utf-8"),
+                file_name=f"scout_finance_informe_unicornio_{selected_row['asset_id']}_v2_44h.md",
+                mime="text/markdown",
+                key="global_unicorn_detail_report_download",
+            )
         st.markdown(f"[Abrir búsqueda manual en Google Finance]({google_finance_search_url(selected_row['company_name'])})")
         if watchlist_data is not None and st.button("Añadir este unicornio a watchlist", key="global_unicorn_detail_add_watchlist", type="primary"):
             try:
