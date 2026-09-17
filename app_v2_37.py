@@ -78,6 +78,64 @@ EXPLOSIVE_UNICORN_AVAILABLE_FIELDS = {
     "penny_stock_signal",
     "micro_cap_signal",
 }
+EXPLOSIVE_UNICORN_DATA_CONTRACT = [
+    {
+        "field": "market_cap_usd",
+        "label": "Capitalizacion bursatil USD",
+        "required_for": "Micro-cap / small-cap / multibagger",
+        "gate": "Bloquea etiqueta explosiva si falta",
+        "source_policy": "Proveedor de mercado verificado o dataset local versionado",
+    },
+    {
+        "field": "last_price",
+        "label": "Precio actual o ultimo cierre",
+        "required_for": "Penny stock / low-price runner",
+        "gate": "Bloquea penny-stock si falta",
+        "source_policy": "Precio real local; nunca estimado",
+    },
+    {
+        "field": "relative_volume",
+        "label": "Volumen relativo frente a media",
+        "required_for": "Breakout / meme runner",
+        "gate": "Bloquea breakout si falta",
+        "source_policy": "Historico de volumen local con ventana documentada",
+    },
+    {
+        "field": "float_shares",
+        "label": "Acciones flotantes",
+        "required_for": "Short squeeze / baja flotacion",
+        "gate": "Bloquea squeeze si falta junto a short interest",
+        "source_policy": "Dato corporativo/proveedor; sin inferencia manual",
+    },
+    {
+        "field": "short_float_pct",
+        "label": "Short interest sobre float",
+        "required_for": "Short squeeze",
+        "gate": "Bloquea squeeze si falta",
+        "source_policy": "Dato real de short interest; no proxy fundamental",
+    },
+    {
+        "field": "price_change_20d",
+        "label": "Momentum precio 20 sesiones",
+        "required_for": "Breakout / multibagger temprano",
+        "gate": "Bloquea momentum explosivo si falta",
+        "source_policy": "Calculado desde precios locales versionados",
+    },
+    {
+        "field": "breakout_signal",
+        "label": "Ruptura tecnica validada",
+        "required_for": "Breakout stock",
+        "gate": "Debe derivarse de precio/volumen, no de fundamentales",
+        "source_policy": "Regla local reproducible con ventana y umbral",
+    },
+    {
+        "field": "catalyst_note",
+        "label": "Catalizador verificable",
+        "required_for": "Meme/catalyst runner",
+        "gate": "Opcional pero visible; si falta, rebaja confianza",
+        "source_policy": "Solo texto trazable aportado por el usuario o fuente versionada",
+    },
+]
 GLOBAL_UNICORN_STATUS_LABELS = {
     "EVALUATED_UNICORN": "🦄 Sí — cumple los 3 criterios de crecimiento reales",
     "EVALUATED_NOT_UNICORN": "No — evaluado, no cumple los criterios",
@@ -231,6 +289,49 @@ def explosive_unicorn_score(row: dict) -> int:
     return 0
 
 
+def explosive_unicorn_contract_frame() -> pd.DataFrame:
+    return pd.DataFrame(EXPLOSIVE_UNICORN_DATA_CONTRACT)
+
+
+def explosive_unicorn_missing_fields(row: dict) -> list[str]:
+    return [
+        item["field"]
+        for item in EXPLOSIVE_UNICORN_DATA_CONTRACT
+        if row.get(item["field"]) in ("", None)
+    ]
+
+
+def explosive_unicorn_contract_report(rows: list[dict]) -> str:
+    missing_counts = Counter(field for row in rows for field in explosive_unicorn_missing_fields(row))
+    contract_lines = "\n".join(
+        f"| {item['field']} | {item['label']} | {item['required_for']} | {item['gate']} |"
+        for item in EXPLOSIVE_UNICORN_DATA_CONTRACT
+    )
+    missing_lines = "\n".join(
+        f"- {field}: falta en {missing_counts.get(field, 0):,} de {len(rows):,} filas de calidad fundamental"
+        for field in [item["field"] for item in EXPLOSIVE_UNICORN_DATA_CONTRACT]
+    )
+    return f"""# Contrato de datos para Unicornio explosivo — v2.45A
+
+## Objetivo
+Separar empresas de calidad fundamental de candidatos explosivos tipo breakout, multibagger, meme stock, short squeeze, penny stock o micro-cap.
+
+## Regla de seguridad
+Scout Finance no clasifica una accion como explosiva si faltan datos reales de mercado. Crecimiento, margen y caja ayudan a calidad fundamental, pero no bastan para squeeze, breakout o penny/micro-cap.
+
+## Campos obligatorios
+| Campo | Etiqueta | Uso | Gate |
+|---|---|---|---|
+{contract_lines}
+
+## Cobertura actual
+{missing_lines}
+
+## Estado v2.45A
+La capa queda preparada y cerrada: 0 candidatos explosivos evaluables si la matriz local no contiene los campos anteriores. No hay red, no hay API, no hay recomendacion, no hay precio objetivo y no hay trading.
+"""
+
+
 def unicorn_semantic_summary(rows: list[dict]) -> dict[str, int]:
     explosive_ready = [row for row in rows if explosive_unicorn_status(row)[0] == "EXPLOSIVE_CANDIDATE"]
     partial_market = [row for row in rows if explosive_unicorn_status(row)[0] == "DATOS_MERCADO_PARCIALES"]
@@ -265,6 +366,34 @@ def render_unicorn_semantic_split(rows: list[dict]) -> str:
         st.warning(
             "No hay candidatos explosivos listos con el dataset local actual. Para activarlos hay que incorporar capitalización, precio, volumen relativo, float, short interest y señales de breakout/catalizador. "
             "Esto evita confundir empresas rentables con posibles acciones explosivas."
+        )
+        st.markdown("#### Contrato v2.45A de datos explosivos")
+        contract_df = explosive_unicorn_contract_frame()
+        missing_counts = Counter(field for row in rows for field in explosive_unicorn_missing_fields(row))
+        coverage_df = pd.DataFrame([
+            {
+                "Campo": item["field"],
+                "Uso": item["required_for"],
+                "Filas con dato": len(rows) - missing_counts.get(item["field"], 0),
+                "Filas sin dato": missing_counts.get(item["field"], 0),
+                "Gate": item["gate"],
+            }
+            for item in EXPLOSIVE_UNICORN_DATA_CONTRACT
+        ])
+        st.dataframe(coverage_df, use_container_width=True, hide_index=True)
+        download_cols = st.columns(2)
+        download_cols[0].download_button(
+            "Descargar contrato CSV",
+            data=contract_df.to_csv(index=False).encode("utf-8"),
+            file_name="scout_finance_explosive_unicorn_data_contract_v2_45a.csv",
+            mime="text/csv",
+        )
+        contract_report = explosive_unicorn_contract_report(rows)
+        download_cols[1].download_button(
+            "Descargar contrato Markdown",
+            data=contract_report.encode("utf-8"),
+            file_name="scout_finance_explosive_unicorn_data_contract_v2_45a.md",
+            mime="text/markdown",
         )
         st.markdown("**Señales obligatorias para la próxima capa:**")
         for signal in EXPLOSIVE_UNICORN_REQUIRED_SIGNALS:

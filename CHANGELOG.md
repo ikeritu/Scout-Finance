@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45A — Explosive candidates data contract (2026-09-17)
+
+Prepara la base real de `Unicornio explosivo` sin activar proveedores ni inventar senales. Añade contrato de datos descargable CSV/Markdown para futuros breakout, multibagger, meme stock, short squeeze, penny stock y micro-cap: capitalizacion, precio, volumen relativo, float, short interest, momentum de precio, breakout y catalizador. La UI muestra cobertura y faltantes por campo, y mantiene 0 candidatos explosivos evaluables si la matriz local no contiene esos datos. Mantiene no-advice, sin broker, sin despliegue, sin URL publica, sin scoring nuevo, sin red y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44Z — Unicorn semantic split (2026-09-17)
 
 Separa los conceptos que estaban mezclados en la pantalla `🦄 Unicornios`: los 161 casos actuales pasan a leerse como `Calidad fundamental / momentum fundamental`, mientras que `Unicornio explosivo` queda reservado para breakout, multibagger, meme stock, short squeeze, penny stock o micro-cap. La capa explosiva exige señales de mercado reales: capitalización, precio, volumen relativo, float, short interest, breakout o catalizador. Si faltan, falla cerrada y lo explica en la UI. Mantiene no-advice, sin broker, sin despliegue, sin URL publica, sin scoring nuevo, sin red y sin cambios de metodología. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

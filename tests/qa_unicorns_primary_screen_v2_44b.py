@@ -173,6 +173,14 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("capitalización, precio, volumen relativo, float, short interest" in source, "Explosive mode must require market data instead of reusing profitability alone")
     require("no como acciones explosivas" in source, "Legacy 161 cases must be reframed as fundamental quality, not explosive stocks")
     require("Faltan señales de mercado necesarias" in source, "Explosive mode must fail closed when market signals are missing")
+    require("EXPLOSIVE_UNICORN_DATA_CONTRACT" in source, "Explosive candidates must define a formal data contract")
+    require("def explosive_unicorn_contract_frame(" in source, "Explosive data contract must be renderable as a dataframe")
+    require("def explosive_unicorn_missing_fields(" in source, "Explosive data contract must expose missing field diagnostics")
+    require("def explosive_unicorn_contract_report(" in source, "Explosive data contract must export a Markdown report")
+    require("market_cap_usd" in source and "relative_volume" in source and "short_float_pct" in source, "Explosive contract must include market cap, relative volume and short float")
+    require("scout_finance_explosive_unicorn_data_contract_v2_45a.csv" in source, "Explosive contract CSV export must be versioned")
+    require("scout_finance_explosive_unicorn_data_contract_v2_45a.md" in source, "Explosive contract Markdown export must be versioned")
+    require("0 candidatos explosivos evaluables" in source, "Explosive contract report must preserve fail-closed current state")
 
 
 def main() -> None:
