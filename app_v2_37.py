@@ -5,6 +5,7 @@ import json
 from collections import Counter
 from datetime import datetime
 from html import escape
+from io import StringIO
 from pathlib import Path
 from urllib.parse import quote
 
@@ -22,6 +23,7 @@ from src.ui_v2_37.watchlists import STATUSES, add, atomic_write, create, export_
 ROOT = Path(__file__).resolve().parent
 UNICORN_NOTES_PATH = ROOT / "data" / "user_unicorn_notes_v2_44i.json"
 UNICORN_REVIEW_HISTORY_PATH = ROOT / "data" / "user_unicorn_review_history_v2_44k.json"
+EXPLOSIVE_UNICORN_OVERLAY_PATH = ROOT / "data" / "user_explosive_unicorn_market_overlay_v2_45b.csv"
 st.set_page_config(page_title="Scout Finance — Investigación local", page_icon="🔎", layout="wide")
 apply(st)
 SAFE_DEMO_MODE = is_safe_demo_mode()
@@ -249,6 +251,19 @@ def explosive_unicorn_data_fields(row: dict) -> list[str]:
     return [field for field in EXPLOSIVE_UNICORN_AVAILABLE_FIELDS if row.get(field) not in ("", None)]
 
 
+def numeric_value(value) -> float | None:
+    try:
+        if value in ("", None):
+            return None
+        return float(str(value).replace(",", "."))
+    except (TypeError, ValueError):
+        return None
+
+
+def truthy_value(value) -> bool:
+    return str(value).strip().casefold() in {"1", "true", "yes", "si", "sí", "y"}
+
+
 def explosive_unicorn_status(row: dict) -> tuple[str, str, str]:
     fields = explosive_unicorn_data_fields(row)
     if not fields:
@@ -260,14 +275,20 @@ def explosive_unicorn_status(row: dict) -> tuple[str, str, str]:
     reason = row.get("unicorn_reason", "").casefold()
     ticker = (row.get("ticker") or "").casefold()
     company = (row.get("company_name") or "").casefold()
+    market_cap = numeric_value(row.get("market_cap_usd") or row.get("market_cap"))
+    last_price = numeric_value(row.get("last_price"))
+    relative_volume = numeric_value(row.get("relative_volume"))
+    price_change_20d = numeric_value(row.get("price_change_20d"))
+    float_shares = numeric_value(row.get("float_shares"))
+    short_float_pct = numeric_value(row.get("short_float_pct") or row.get("short_interest"))
     tags = []
-    if row.get("micro_cap_signal") or row.get("market_cap_usd") in {"MICRO_CAP", "SMALL_CAP"}:
+    if truthy_value(row.get("micro_cap_signal")) or (market_cap is not None and market_cap <= 300_000_000):
         tags.append("Micro-cap")
-    if row.get("penny_stock_signal") or row.get("last_price") in {"PENNY_STOCK", "LOW_PRICE"}:
+    if truthy_value(row.get("penny_stock_signal")) or (last_price is not None and last_price <= 5):
         tags.append("Penny stock")
-    if row.get("squeeze_signal") or row.get("short_interest") or row.get("short_float_pct"):
+    if truthy_value(row.get("squeeze_signal")) or (short_float_pct is not None and short_float_pct >= 15) or (float_shares is not None and float_shares <= 50_000_000 and short_float_pct is not None):
         tags.append("Short squeeze")
-    if row.get("breakout_signal") or row.get("relative_volume") or row.get("price_change_20d"):
+    if truthy_value(row.get("breakout_signal")) or (relative_volume is not None and relative_volume >= 2 and price_change_20d is not None and price_change_20d >= 20):
         tags.append("Breakout")
     if "growth" in reason and ("micro" in company or "micro" in ticker):
         tags.append("Multibagger investigable")
@@ -332,6 +353,114 @@ La capa queda preparada y cerrada: 0 candidatos explosivos evaluables si la matr
 """
 
 
+def explosive_unicorn_template_frame(rows: list[dict]) -> pd.DataFrame:
+    sample = sorted(rows, key=unicorn_internal_rank_key)[:25]
+    columns = [
+        "asset_id",
+        "ticker",
+        "company_name",
+        "market_cap_usd",
+        "last_price",
+        "relative_volume",
+        "float_shares",
+        "short_float_pct",
+        "price_change_20d",
+        "breakout_signal",
+        "catalyst_note",
+    ]
+    records = []
+    for row in sample:
+        records.append({
+            "asset_id": row.get("asset_id", ""),
+            "ticker": row.get("ticker", ""),
+            "company_name": row.get("company_name", ""),
+            "market_cap_usd": "",
+            "last_price": "",
+            "relative_volume": "",
+            "float_shares": "",
+            "short_float_pct": "",
+            "price_change_20d": "",
+            "breakout_signal": "",
+            "catalyst_note": "",
+        })
+    return pd.DataFrame(records, columns=columns)
+
+
+def normalize_explosive_overlay(df: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
+    required = {"asset_id", "ticker", "market_cap_usd", "last_price", "relative_volume", "float_shares", "short_float_pct", "price_change_20d", "breakout_signal", "catalyst_note"}
+    missing = sorted(required - set(df.columns))
+    if missing:
+        return pd.DataFrame(), [f"Faltan columnas obligatorias: {', '.join(missing)}"]
+    normalized = df.copy()
+    normalized["asset_id"] = normalized["asset_id"].fillna("").astype(str).str.strip()
+    normalized["ticker"] = normalized["ticker"].fillna("").astype(str).str.strip()
+    if not (normalized["asset_id"].astype(bool) | normalized["ticker"].astype(bool)).any():
+        return pd.DataFrame(), ["Cada fila debe incluir asset_id o ticker para poder cruzarse con la matriz local."]
+    return normalized, []
+
+
+def load_explosive_overlay() -> pd.DataFrame:
+    if not EXPLOSIVE_UNICORN_OVERLAY_PATH.exists():
+        return pd.DataFrame()
+    try:
+        return pd.read_csv(EXPLOSIVE_UNICORN_OVERLAY_PATH)
+    except (OSError, pd.errors.ParserError):
+        return pd.DataFrame()
+
+
+def save_explosive_overlay(df: pd.DataFrame) -> None:
+    EXPLOSIVE_UNICORN_OVERLAY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(EXPLOSIVE_UNICORN_OVERLAY_PATH, index=False)
+
+
+def apply_explosive_overlay(rows: list[dict], overlay: pd.DataFrame) -> list[dict]:
+    if overlay.empty:
+        return rows
+    by_asset = {str(item.get("asset_id", "")).strip(): item for item in overlay.to_dict("records") if str(item.get("asset_id", "")).strip()}
+    by_ticker = {str(item.get("ticker", "")).strip().casefold(): item for item in overlay.to_dict("records") if str(item.get("ticker", "")).strip()}
+    merged = []
+    for row in rows:
+        extra = by_asset.get(row.get("asset_id", "")) or by_ticker.get((row.get("ticker") or "").casefold()) or {}
+        merged.append(row | {key: value for key, value in extra.items() if key not in {"company_name"} and value not in ("", None)})
+    return merged
+
+
+def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
+    st.markdown("#### Plantilla local v2.45B")
+    st.caption("Puedes descargar una plantilla, rellenarla con datos reales de mercado y subirla para evaluar candidatos explosivos sin llamar a ninguna API.")
+    template = explosive_unicorn_template_frame(rows)
+    controls = st.columns(2)
+    controls[0].download_button(
+        "Descargar plantilla CSV",
+        data=template.to_csv(index=False).encode("utf-8"),
+        file_name="scout_finance_explosive_unicorn_overlay_template_v2_45b.csv",
+        mime="text/csv",
+    )
+    current_overlay = load_explosive_overlay()
+    uploaded = controls[1].file_uploader("Subir CSV de señales explosivas", type=["csv"], key="explosive_unicorn_overlay_upload")
+    if uploaded is not None:
+        try:
+            uploaded_df = pd.read_csv(StringIO(uploaded.getvalue().decode("utf-8-sig")))
+        except (UnicodeDecodeError, pd.errors.ParserError):
+            st.error("No se pudo leer el CSV. Usa UTF-8 y separador coma.")
+            uploaded_df = pd.DataFrame()
+        normalized, errors = normalize_explosive_overlay(uploaded_df)
+        if errors:
+            for error in errors:
+                st.error(error)
+        elif SAFE_DEMO_MODE:
+            st.info(blocked_message("Guardar overlay de candidatos explosivos"))
+            current_overlay = normalized
+        else:
+            save_explosive_overlay(normalized)
+            current_overlay = normalized
+            st.success(f"Overlay local guardado: {len(normalized):,} filas de señales explosivas.")
+    if not current_overlay.empty:
+        st.caption(f"Overlay local activo: {len(current_overlay):,} filas.")
+        st.dataframe(current_overlay.head(50), use_container_width=True, hide_index=True)
+    return apply_explosive_overlay(rows, current_overlay)
+
+
 def unicorn_semantic_summary(rows: list[dict]) -> dict[str, int]:
     explosive_ready = [row for row in rows if explosive_unicorn_status(row)[0] == "EXPLOSIVE_CANDIDATE"]
     partial_market = [row for row in rows if explosive_unicorn_status(row)[0] == "DATOS_MERCADO_PARCIALES"]
@@ -343,7 +472,7 @@ def unicorn_semantic_summary(rows: list[dict]) -> dict[str, int]:
     }
 
 
-def render_unicorn_semantic_split(rows: list[dict]) -> str:
+def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
     summary = unicorn_semantic_summary(rows)
     st.markdown("### Separación de conceptos")
     st.info(
@@ -363,8 +492,11 @@ def render_unicorn_semantic_split(rows: list[dict]) -> str:
         help="Calidad fundamental usa crecimiento/margen/caja. Unicornio explosivo exige señales de mercado como micro-cap, penny, short interest, float, volumen o breakout.",
     )
     if mode == "Unicornio explosivo":
+        rows = render_explosive_unicorn_overlay_import(rows)
+        summary = unicorn_semantic_summary(rows)
+        st.caption(f"Tras aplicar overlay local: {summary['explosive']:,} candidatos explosivos evaluables · {summary['partial_market']:,} con datos parciales.")
         st.warning(
-            "No hay candidatos explosivos listos con el dataset local actual. Para activarlos hay que incorporar capitalización, precio, volumen relativo, float, short interest y señales de breakout/catalizador. "
+            "Si no cargas datos reales de mercado, no hay candidatos explosivos listos con el dataset local actual. Para activarlos hay que incorporar capitalización, precio, volumen relativo, float, short interest y señales de breakout/catalizador. "
             "Esto evita confundir empresas rentables con posibles acciones explosivas."
         )
         st.markdown("#### Contrato v2.45A de datos explosivos")
@@ -398,7 +530,7 @@ def render_unicorn_semantic_split(rows: list[dict]) -> str:
         st.markdown("**Señales obligatorias para la próxima capa:**")
         for signal in EXPLOSIVE_UNICORN_REQUIRED_SIGNALS:
             st.write(f"- {signal}")
-    return mode
+    return mode, rows
 
 
 def unicorn_internal_rank_key(row: dict) -> tuple:
@@ -1524,9 +1656,9 @@ def render_global_unicorns(_data):
     st.info("Cambio v2.44Z: los 161 casos heredados pasan a leerse como `Calidad fundamental / momentum fundamental`, no como acciones explosivas. La categoría `Unicornio explosivo` queda separada y exige señales de mercado que hoy no están en la matriz local.")
     st.caption("El porcentaje actual mide confianza de clasificación fundamental; no es probabilidad de subida, short squeeze, multibagger, precio objetivo ni consejo de compra.")
     st.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(unicorn_rows):,} casos de calidad fundamental · sin conexión de red")
-    discovery_mode = render_unicorn_semantic_split(unicorn_rows)
+    discovery_mode, semantic_rows = render_unicorn_semantic_split(unicorn_rows)
     if discovery_mode == "Unicornio explosivo":
-        explosive_rows = [row for row in unicorn_rows if explosive_unicorn_status(row)[0] == "EXPLOSIVE_CANDIDATE"]
+        explosive_rows = [row for row in semantic_rows if explosive_unicorn_status(row)[0] == "EXPLOSIVE_CANDIDATE"]
         if explosive_rows:
             st.success(f"{len(explosive_rows):,} candidatos explosivos evaluables con señales locales de mercado.")
             unicorn_rows = explosive_rows

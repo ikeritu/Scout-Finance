@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45B — Local explosive candidates overlay template (2026-09-17)
+
+Añade plantilla CSV descargable e importador local para probar candidatos explosivos sin usar red ni APIs. La pantalla `Unicornios → Unicornio explosivo` permite subir un CSV con `market_cap_usd`, `last_price`, `relative_volume`, `float_shares`, `short_float_pct`, `price_change_20d`, `breakout_signal` y `catalyst_note`; valida columnas, cruza por `asset_id`/`ticker`, persiste el overlay local fuera de modo demo y reevalua la capa explosiva con esos datos. Mantiene no-advice, sin broker, sin despliegue, sin URL publica, sin scoring global nuevo y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45A — Explosive candidates data contract (2026-09-17)
 
 Prepara la base real de `Unicornio explosivo` sin activar proveedores ni inventar senales. Añade contrato de datos descargable CSV/Markdown para futuros breakout, multibagger, meme stock, short squeeze, penny stock y micro-cap: capitalizacion, precio, volumen relativo, float, short interest, momentum de precio, breakout y catalizador. La UI muestra cobertura y faltantes por campo, y mantiene 0 candidatos explosivos evaluables si la matriz local no contiene esos datos. Mantiene no-advice, sin broker, sin despliegue, sin URL publica, sin scoring nuevo, sin red y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

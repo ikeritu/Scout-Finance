@@ -181,6 +181,16 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("scout_finance_explosive_unicorn_data_contract_v2_45a.csv" in source, "Explosive contract CSV export must be versioned")
     require("scout_finance_explosive_unicorn_data_contract_v2_45a.md" in source, "Explosive contract Markdown export must be versioned")
     require("0 candidatos explosivos evaluables" in source, "Explosive contract report must preserve fail-closed current state")
+    require("EXPLOSIVE_UNICORN_OVERLAY_PATH" in source, "Explosive candidate overlay path must be explicit")
+    require("def explosive_unicorn_template_frame(" in source, "Explosive candidates must provide a local CSV template")
+    require("def normalize_explosive_overlay(" in source, "Explosive overlay uploads must be validated")
+    require("def load_explosive_overlay(" in source and "def save_explosive_overlay(" in source, "Explosive overlay must support local persistence")
+    require("def apply_explosive_overlay(" in source, "Explosive overlay must merge market signals into local rows")
+    require("def render_explosive_unicorn_overlay_import(" in source, "Explosive UI must expose template download and CSV upload")
+    require("file_uploader(\"Subir CSV de señales explosivas\"" in source, "Explosive UI must allow uploading local market signals")
+    require("scout_finance_explosive_unicorn_overlay_template_v2_45b.csv" in source, "Explosive template filename must be versioned")
+    require("blocked_message(\"Guardar overlay de candidatos explosivos\")" in source, "Explosive overlay writes must respect safe demo mode")
+    require("Overlay local guardado" in source, "Explosive overlay upload must confirm local persistence")
 
 
 def main() -> None:
