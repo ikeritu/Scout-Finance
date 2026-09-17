@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45C — Automatic explosive candidates market refresh (2026-09-17)
+
+Convierte la carga manual de señales explosivas en fallback y añade adquisición automática real usando `yfinance`, dependencia ya presente en el proyecto. La pantalla `Unicornios → Unicornio explosivo` permite actualizar datos reales para un número limitado de tickers compatibles, extraer market cap, precio, volumen relativo, float, short interest, momentum 20D y breakout, guardar cache local y re-evaluar candidatos explosivos. Tickers sin símbolo compatible o datos insuficientes fallan cerrados. Mantiene no-advice, sin broker, sin OpenAI, sin despliegue, sin URL publica, sin scoring global nuevo y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45B — Local explosive candidates overlay template (2026-09-17)
 
 Añade plantilla CSV descargable e importador local para probar candidatos explosivos sin usar red ni APIs. La pantalla `Unicornios → Unicornio explosivo` permite subir un CSV con `market_cap_usd`, `last_price`, `relative_volume`, `float_shares`, `short_float_pct`, `price_change_20d`, `breakout_signal` y `catalyst_note`; valida columnas, cruza por `asset_id`/`ticker`, persiste el overlay local fuera de modo demo y reevalua la capa explosiva con esos datos. Mantiene no-advice, sin broker, sin despliegue, sin URL publica, sin scoring global nuevo y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

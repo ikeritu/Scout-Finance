@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.45B preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.45C preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.45B: add local explosive candidates overlay template`
+`LOCAL_COMMIT_PENDING_PUSH v2.45C: add automatic explosive candidates market refresh`
 
 Estado operativo del producto:
 
-`EXPLOSIVE_CANDIDATES_LOCAL_OVERLAY_READY`
+`EXPLOSIVE_CANDIDATES_AUTOMATIC_MARKET_REFRESH_READY`
 
 Cycle status:
 
@@ -155,6 +155,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.44Z | Separación entre calidad fundamental y unicornios explosivos tipo breakout/multibagger/squeeze |
 | Completada | v2.45A | Contrato de datos para candidatos explosivos con diagnóstico fail-closed |
 | Completada | v2.45B | Plantilla CSV e importador local para señales de candidatos explosivos |
+| Completada | v2.45C | Actualización automática real de señales explosivas via yfinance con cache local |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

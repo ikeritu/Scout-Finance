@@ -425,9 +425,102 @@ def apply_explosive_overlay(rows: list[dict], overlay: pd.DataFrame) -> list[dic
     return merged
 
 
+def yfinance_symbol(row: dict) -> str:
+    ticker = (row.get("ticker") or "").strip()
+    exchange = (row.get("exchange") or "").strip().upper()
+    country = (row.get("country") or "").strip().upper()
+    if not ticker:
+        return ""
+    if country == "USA" or exchange in {"NASDAQ", "NYSE", "AMEX", "NYSEARCA"}:
+        return ticker.replace(".", "-")
+    return ""
+
+
+def pct_change_20d_from_history(history: pd.DataFrame) -> float | None:
+    if history is None or history.empty or "Close" not in history or len(history["Close"].dropna()) < 21:
+        return None
+    closes = history["Close"].dropna()
+    previous = float(closes.iloc[-21])
+    latest = float(closes.iloc[-1])
+    if previous == 0:
+        return None
+    return round(((latest / previous) - 1) * 100, 2)
+
+
+def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
+    try:
+        import yfinance as yf
+    except ImportError:
+        return pd.DataFrame(), {"status": "YFINANCE_NOT_INSTALLED", "processed": 0, "ok": 0, "failed": 0, "message": "yfinance no está instalado."}
+    candidates = [row for row in sorted(rows, key=unicorn_internal_rank_key) if yfinance_symbol(row)][:limit]
+    records = []
+    failures = []
+    for row in candidates:
+        symbol = yfinance_symbol(row)
+        try:
+            ticker = yf.Ticker(symbol)
+            fast = getattr(ticker, "fast_info", {}) or {}
+            info = ticker.info or {}
+            history = ticker.history(period="3mo", interval="1d", auto_adjust=False)
+            price = fast.get("last_price") or info.get("currentPrice") or info.get("regularMarketPrice")
+            market_cap = fast.get("market_cap") or info.get("marketCap")
+            volume = fast.get("last_volume") or info.get("volume")
+            avg_volume = info.get("averageVolume") or info.get("averageDailyVolume10Day")
+            relative_volume = round(float(volume) / float(avg_volume), 2) if volume and avg_volume else ""
+            short_float = info.get("shortPercentOfFloat")
+            if short_float not in ("", None) and float(short_float) <= 1:
+                short_float = round(float(short_float) * 100, 2)
+            float_shares = info.get("floatShares")
+            price_change_20d = pct_change_20d_from_history(history)
+            breakout = bool(relative_volume not in ("", None) and price_change_20d is not None and float(relative_volume) >= 2 and price_change_20d >= 20)
+            records.append({
+                "asset_id": row.get("asset_id", ""),
+                "ticker": row.get("ticker", ""),
+                "company_name": row.get("company_name", ""),
+                "market_cap_usd": market_cap or "",
+                "last_price": price or "",
+                "relative_volume": relative_volume,
+                "float_shares": float_shares or "",
+                "short_float_pct": short_float or "",
+                "price_change_20d": price_change_20d if price_change_20d is not None else "",
+                "breakout_signal": "true" if breakout else "",
+                "catalyst_note": "yfinance_real_market_snapshot_v2_45c",
+            })
+        except Exception as exc:
+            failures.append({"ticker": symbol, "error": str(exc)[:180]})
+    summary = {
+        "status": "OK" if records else "NO_ROWS",
+        "processed": len(candidates),
+        "ok": len(records),
+        "failed": len(failures),
+        "message": "Datos reales consultados via yfinance; sin broker, sin OpenAI y sin recomendacion.",
+    }
+    return pd.DataFrame(records), summary
+
+
 def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
-    st.markdown("#### Plantilla local v2.45B")
-    st.caption("Puedes descargar una plantilla, rellenarla con datos reales de mercado y subirla para evaluar candidatos explosivos sin llamar a ninguna API.")
+    st.markdown("#### Datos reales automáticos v2.45C")
+    st.caption("La fuente principal debe ser automática: Scout Finance puede consultar yfinance, guardar cache local y re-evaluar candidatos explosivos con datos reales de mercado.")
+    auto_cols = st.columns([1, 3])
+    max_rows = auto_cols[0].number_input("Máx. tickers", min_value=5, max_value=100, value=40, step=5, key="explosive_yfinance_limit")
+    if SAFE_DEMO_MODE:
+        auto_cols[1].button("Actualizar datos reales", disabled=True, help=blocked_message("Actualizar datos reales de candidatos explosivos"))
+    elif auto_cols[1].button("Actualizar datos reales", type="primary", help="Consulta yfinance para tickers compatibles, guarda cache local y no ejecuta broker ni recomendaciones."):
+        with st.spinner("Consultando datos reales de mercado via yfinance..."):
+            fetched, summary = fetch_yfinance_explosive_overlay(rows, int(max_rows))
+        if fetched.empty:
+            st.warning(f"No se pudo generar overlay automático. Estado: {summary['status']} · fallos: {summary['failed']}")
+        else:
+            normalized, errors = normalize_explosive_overlay(fetched)
+            if errors:
+                for error in errors:
+                    st.error(error)
+            else:
+                save_explosive_overlay(normalized)
+                st.success(f"Overlay automático guardado: {summary['ok']:,}/{summary['processed']:,} tickers OK · fallos {summary['failed']:,}.")
+
+    st.markdown("#### Fallback manual v2.45B")
+    st.caption("Si una acción no está cubierta por el proveedor automático, puedes cargar un CSV local como fallback trazable.")
     template = explosive_unicorn_template_frame(rows)
     controls = st.columns(2)
     controls[0].download_button(

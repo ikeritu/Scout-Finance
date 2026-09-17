@@ -191,6 +191,14 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("scout_finance_explosive_unicorn_overlay_template_v2_45b.csv" in source, "Explosive template filename must be versioned")
     require("blocked_message(\"Guardar overlay de candidatos explosivos\")" in source, "Explosive overlay writes must respect safe demo mode")
     require("Overlay local guardado" in source, "Explosive overlay upload must confirm local persistence")
+    require("def yfinance_symbol(" in source, "Explosive candidates must map compatible rows to provider symbols")
+    require("def fetch_yfinance_explosive_overlay(" in source, "Explosive candidates must support automatic real market data refresh")
+    require("import yfinance as yf" in source, "Automatic explosive refresh must use the existing yfinance dependency")
+    require("Actualizar datos reales" in source, "Explosive UI must expose automatic real-data refresh")
+    require("yfinance_real_market_snapshot_v2_45c" in source, "Automatic overlay rows must be source-tagged")
+    require("Overlay automático guardado" in source, "Automatic provider refresh must persist a local overlay")
+    require("Fallback manual v2.45B" in source, "Manual CSV must remain only as fallback after automatic provider support")
+    require("sin broker, sin OpenAI y sin recomendacion" in source, "Automatic provider refresh must preserve guardrails")
 
 
 def main() -> None:
