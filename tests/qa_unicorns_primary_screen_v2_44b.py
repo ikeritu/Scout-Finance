@@ -199,6 +199,11 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Overlay automático guardado" in source, "Automatic provider refresh must persist a local overlay")
     require("Fallback manual v2.45B" in source, "Manual CSV must remain only as fallback after automatic provider support")
     require("sin broker, sin OpenAI y sin recomendacion" in source, "Automatic provider refresh must preserve guardrails")
+    require("Motor explosivo" in source, "Explosive view must use a compact motor heading")
+    require("Cache de mercado activa" in source, "Explosive view must summarize cache without showing the full table by default")
+    require("Fallback manual y cache de mercado" in source, "Manual fallback/cache must be hidden in an expander")
+    require("Contrato técnico y señales requeridas" in source, "Explosive technical contract must be hidden in an expander")
+    require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 
 def main() -> None:

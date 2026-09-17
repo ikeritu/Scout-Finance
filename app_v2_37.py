@@ -499,10 +499,9 @@ def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple
 
 
 def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
-    st.markdown("#### Datos reales automáticos v2.45C")
-    st.caption("La fuente principal debe ser automática: Scout Finance puede consultar yfinance, guardar cache local y re-evaluar candidatos explosivos con datos reales de mercado.")
-    auto_cols = st.columns([1, 3])
-    max_rows = auto_cols[0].number_input("Máx. tickers", min_value=5, max_value=100, value=40, step=5, key="explosive_yfinance_limit")
+    st.markdown("#### Motor explosivo")
+    auto_cols = st.columns([1, 1, 3])
+    max_rows = auto_cols[0].number_input("Tickers", min_value=5, max_value=100, value=40, step=5, key="explosive_yfinance_limit")
     if SAFE_DEMO_MODE:
         auto_cols[1].button("Actualizar datos reales", disabled=True, help=blocked_message("Actualizar datos reales de candidatos explosivos"))
     elif auto_cols[1].button("Actualizar datos reales", type="primary", help="Consulta yfinance para tickers compatibles, guarda cache local y no ejecuta broker ni recomendaciones."):
@@ -518,39 +517,42 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
             else:
                 save_explosive_overlay(normalized)
                 st.success(f"Overlay automático guardado: {summary['ok']:,}/{summary['processed']:,} tickers OK · fallos {summary['failed']:,}.")
+    auto_cols[2].caption("Fuente principal: yfinance real + cache local. CSV manual solo como fallback.")
 
-    st.markdown("#### Fallback manual v2.45B")
-    st.caption("Si una acción no está cubierta por el proveedor automático, puedes cargar un CSV local como fallback trazable.")
     template = explosive_unicorn_template_frame(rows)
-    controls = st.columns(2)
-    controls[0].download_button(
-        "Descargar plantilla CSV",
-        data=template.to_csv(index=False).encode("utf-8"),
-        file_name="scout_finance_explosive_unicorn_overlay_template_v2_45b.csv",
-        mime="text/csv",
-    )
     current_overlay = load_explosive_overlay()
-    uploaded = controls[1].file_uploader("Subir CSV de señales explosivas", type=["csv"], key="explosive_unicorn_overlay_upload")
-    if uploaded is not None:
-        try:
-            uploaded_df = pd.read_csv(StringIO(uploaded.getvalue().decode("utf-8-sig")))
-        except (UnicodeDecodeError, pd.errors.ParserError):
-            st.error("No se pudo leer el CSV. Usa UTF-8 y separador coma.")
-            uploaded_df = pd.DataFrame()
-        normalized, errors = normalize_explosive_overlay(uploaded_df)
-        if errors:
-            for error in errors:
-                st.error(error)
-        elif SAFE_DEMO_MODE:
-            st.info(blocked_message("Guardar overlay de candidatos explosivos"))
-            current_overlay = normalized
-        else:
-            save_explosive_overlay(normalized)
-            current_overlay = normalized
-            st.success(f"Overlay local guardado: {len(normalized):,} filas de señales explosivas.")
     if not current_overlay.empty:
-        st.caption(f"Overlay local activo: {len(current_overlay):,} filas.")
-        st.dataframe(current_overlay.head(50), use_container_width=True, hide_index=True)
+        st.caption(f"Cache de mercado activa: {len(current_overlay):,} filas.")
+    with st.expander("Fallback manual y cache de mercado", expanded=False):
+        st.markdown("##### Fallback manual v2.45B")
+        st.caption("Usa esto solo si el proveedor automático no cubre una acción o quieres revisar el cache guardado.")
+        controls = st.columns(2)
+        controls[0].download_button(
+            "Descargar plantilla CSV",
+            data=template.to_csv(index=False).encode("utf-8"),
+            file_name="scout_finance_explosive_unicorn_overlay_template_v2_45b.csv",
+            mime="text/csv",
+        )
+        uploaded = controls[1].file_uploader("Subir CSV de señales explosivas", type=["csv"], key="explosive_unicorn_overlay_upload")
+        if uploaded is not None:
+            try:
+                uploaded_df = pd.read_csv(StringIO(uploaded.getvalue().decode("utf-8-sig")))
+            except (UnicodeDecodeError, pd.errors.ParserError):
+                st.error("No se pudo leer el CSV. Usa UTF-8 y separador coma.")
+                uploaded_df = pd.DataFrame()
+            normalized, errors = normalize_explosive_overlay(uploaded_df)
+            if errors:
+                for error in errors:
+                    st.error(error)
+            elif SAFE_DEMO_MODE:
+                st.info(blocked_message("Guardar overlay de candidatos explosivos"))
+                current_overlay = normalized
+            else:
+                save_explosive_overlay(normalized)
+                current_overlay = normalized
+                st.success(f"Overlay local guardado: {len(normalized):,} filas de señales explosivas.")
+        if not current_overlay.empty:
+            st.dataframe(current_overlay.head(50), use_container_width=True, hide_index=True, height=260)
     return apply_explosive_overlay(rows, current_overlay)
 
 
@@ -567,11 +569,6 @@ def unicorn_semantic_summary(rows: list[dict]) -> dict[str, int]:
 
 def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
     summary = unicorn_semantic_summary(rows)
-    st.markdown("### Separación de conceptos")
-    st.info(
-        "Los resultados actuales no son todavía `Breakout Stocks`, `Multibaggers`, `Meme Stocks`, `Short Squeeze`, `Penny Stocks` ni `Micro-Caps`. "
-        "La lista heredada identifica empresas con calidad/momentum fundamental local. La capa explosiva queda separada y bloqueada hasta tener señales de mercado reales."
-    )
     cols = st.columns(4)
     cols[0].metric("Calidad fundamental", f"{summary['quality']:,}")
     cols[1].metric("Explosivos evaluables", f"{summary['explosive']:,}")
@@ -587,42 +584,42 @@ def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
     if mode == "Unicornio explosivo":
         rows = render_explosive_unicorn_overlay_import(rows)
         summary = unicorn_semantic_summary(rows)
-        st.caption(f"Tras aplicar overlay local: {summary['explosive']:,} candidatos explosivos evaluables · {summary['partial_market']:,} con datos parciales.")
-        st.warning(
-            "Si no cargas datos reales de mercado, no hay candidatos explosivos listos con el dataset local actual. Para activarlos hay que incorporar capitalización, precio, volumen relativo, float, short interest y señales de breakout/catalizador. "
-            "Esto evita confundir empresas rentables con posibles acciones explosivas."
-        )
-        st.markdown("#### Contrato v2.45A de datos explosivos")
-        contract_df = explosive_unicorn_contract_frame()
-        missing_counts = Counter(field for row in rows for field in explosive_unicorn_missing_fields(row))
-        coverage_df = pd.DataFrame([
-            {
-                "Campo": item["field"],
-                "Uso": item["required_for"],
-                "Filas con dato": len(rows) - missing_counts.get(item["field"], 0),
-                "Filas sin dato": missing_counts.get(item["field"], 0),
-                "Gate": item["gate"],
-            }
-            for item in EXPLOSIVE_UNICORN_DATA_CONTRACT
-        ])
-        st.dataframe(coverage_df, use_container_width=True, hide_index=True)
-        download_cols = st.columns(2)
-        download_cols[0].download_button(
-            "Descargar contrato CSV",
-            data=contract_df.to_csv(index=False).encode("utf-8"),
-            file_name="scout_finance_explosive_unicorn_data_contract_v2_45a.csv",
-            mime="text/csv",
-        )
-        contract_report = explosive_unicorn_contract_report(rows)
-        download_cols[1].download_button(
-            "Descargar contrato Markdown",
-            data=contract_report.encode("utf-8"),
-            file_name="scout_finance_explosive_unicorn_data_contract_v2_45a.md",
-            mime="text/markdown",
-        )
-        st.markdown("**Señales obligatorias para la próxima capa:**")
-        for signal in EXPLOSIVE_UNICORN_REQUIRED_SIGNALS:
-            st.write(f"- {signal}")
+        st.caption("Busca Breakout Stocks, Multibaggers, Meme Stocks, Short Squeeze, Penny Stocks y Micro-Caps con datos reales de mercado.")
+        st.caption("Exige capitalización, precio, volumen relativo, float, short interest, momentum y breakout/catalizador; no usa rentabilidad fundamental como sustituto.")
+        st.caption(f"Resultado: {summary['explosive']:,} candidatos explosivos · {summary['partial_market']:,} con datos parciales · {summary['blocked']:,} bloqueados.")
+        if summary["explosive"] == 0:
+            st.warning("Sin candidatos explosivos evaluables todavía: faltan señales reales suficientes de mercado.")
+        with st.expander("Contrato técnico y señales requeridas", expanded=False):
+            contract_df = explosive_unicorn_contract_frame()
+            missing_counts = Counter(field for row in rows for field in explosive_unicorn_missing_fields(row))
+            coverage_df = pd.DataFrame([
+                {
+                    "Campo": item["field"],
+                    "Uso": item["required_for"],
+                    "Filas con dato": len(rows) - missing_counts.get(item["field"], 0),
+                    "Filas sin dato": missing_counts.get(item["field"], 0),
+                    "Gate": item["gate"],
+                }
+                for item in EXPLOSIVE_UNICORN_DATA_CONTRACT
+            ])
+            st.dataframe(coverage_df, use_container_width=True, hide_index=True, height=260)
+            download_cols = st.columns(2)
+            download_cols[0].download_button(
+                "Descargar contrato CSV",
+                data=contract_df.to_csv(index=False).encode("utf-8"),
+                file_name="scout_finance_explosive_unicorn_data_contract_v2_45a.csv",
+                mime="text/csv",
+            )
+            contract_report = explosive_unicorn_contract_report(rows)
+            download_cols[1].download_button(
+                "Descargar contrato Markdown",
+                data=contract_report.encode("utf-8"),
+                file_name="scout_finance_explosive_unicorn_data_contract_v2_45a.md",
+                mime="text/markdown",
+            )
+            st.markdown("**Señales obligatorias:**")
+            for signal in EXPLOSIVE_UNICORN_REQUIRED_SIGNALS:
+                st.write(f"- {signal}")
     return mode, rows
 
 
