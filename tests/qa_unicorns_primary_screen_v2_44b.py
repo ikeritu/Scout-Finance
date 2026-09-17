@@ -164,6 +164,15 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("sf-signal-bars" in source, "Company detail must include staggered signal bars")
     require("@keyframes sfGaugePop" in ui_source and "@keyframes sfCheckIn" in ui_source, "Motion CSS must include company detail animations")
     require("prefers-reduced-motion" in ui_source, "Motion CSS must respect reduced motion preferences")
+    require("EXPLOSIVE_UNICORN_REQUIRED_SIGNALS" in source, "Unicorns screen must define the required explosive-stock signals separately")
+    require("def explosive_unicorn_status(" in source, "Unicorns screen must separate explosive unicorn evaluation from fundamental quality")
+    require("def render_unicorn_semantic_split(" in source, "Unicorns screen must expose a conceptual split UI")
+    require("Calidad fundamental" in source and "Unicornio explosivo" in source, "Unicorns screen must separate fundamental quality from explosive candidates")
+    require("Breakout Stocks" in source and "Multibaggers" in source and "Short Squeeze" in source, "Explosive mode must name breakout/multibagger/squeeze explicitly")
+    require("Penny Stocks" in source and "Micro-Caps" in source, "Explosive mode must name penny/micro-cap explicitly")
+    require("capitalización, precio, volumen relativo, float, short interest" in source, "Explosive mode must require market data instead of reusing profitability alone")
+    require("no como acciones explosivas" in source, "Legacy 161 cases must be reframed as fundamental quality, not explosive stocks")
+    require("Faltan señales de mercado necesarias" in source, "Explosive mode must fail closed when market signals are missing")
 
 
 def main() -> None:

@@ -55,6 +55,29 @@ GLOBAL_ELIGIBILITY_LABELS = {
 }
 GLOBAL_ELIGIBLE_TIERS = {"ELIGIBLE_FULL", "ELIGIBLE_PARTIAL_NO_PRICE", "ELIGIBLE_PARTIAL_SINGLE_PERIOD"}
 GLOBAL_UNICORN_ICON = "🦄"
+EXPLOSIVE_UNICORN_REQUIRED_SIGNALS = [
+    "capitalizacion pequena o micro-cap real",
+    "precio actual bajo o penny-stock real",
+    "volumen anomalo / breakout real",
+    "float reducido o short interest real",
+    "catalizador verificable o momentum de precio reciente",
+]
+EXPLOSIVE_UNICORN_AVAILABLE_FIELDS = {
+    "market_cap",
+    "market_cap_usd",
+    "float_shares",
+    "short_interest",
+    "short_float_pct",
+    "avg_volume",
+    "relative_volume",
+    "last_price",
+    "price_change_5d",
+    "price_change_20d",
+    "breakout_signal",
+    "squeeze_signal",
+    "penny_stock_signal",
+    "micro_cap_signal",
+}
 GLOBAL_UNICORN_STATUS_LABELS = {
     "EVALUATED_UNICORN": "🦄 Sí — cumple los 3 criterios de crecimiento reales",
     "EVALUATED_NOT_UNICORN": "No — evaluado, no cumple los criterios",
@@ -162,6 +185,91 @@ def unicorn_evidence_grade(row: dict) -> tuple[str, str, str]:
     if row.get("overall_coverage_status") == "GROWTH_PARTIAL":
         return "Parcial", "orange", "Etiqueta valida, pero con cobertura de crecimiento parcial."
     return "Requiere revision", "red", "Conviene revisar la evidencia manualmente antes de priorizar."
+
+
+def explosive_unicorn_data_fields(row: dict) -> list[str]:
+    return [field for field in EXPLOSIVE_UNICORN_AVAILABLE_FIELDS if row.get(field) not in ("", None)]
+
+
+def explosive_unicorn_status(row: dict) -> tuple[str, str, str]:
+    fields = explosive_unicorn_data_fields(row)
+    if not fields:
+        return (
+            "DATOS_INSUFICIENTES",
+            "No evaluable como explosivo",
+            "Faltan señales de mercado necesarias: capitalización, precio actual, float/short interest, volumen relativo, breakout o catalizador.",
+        )
+    reason = row.get("unicorn_reason", "").casefold()
+    ticker = (row.get("ticker") or "").casefold()
+    company = (row.get("company_name") or "").casefold()
+    tags = []
+    if row.get("micro_cap_signal") or row.get("market_cap_usd") in {"MICRO_CAP", "SMALL_CAP"}:
+        tags.append("Micro-cap")
+    if row.get("penny_stock_signal") or row.get("last_price") in {"PENNY_STOCK", "LOW_PRICE"}:
+        tags.append("Penny stock")
+    if row.get("squeeze_signal") or row.get("short_interest") or row.get("short_float_pct"):
+        tags.append("Short squeeze")
+    if row.get("breakout_signal") or row.get("relative_volume") or row.get("price_change_20d"):
+        tags.append("Breakout")
+    if "growth" in reason and ("micro" in company or "micro" in ticker):
+        tags.append("Multibagger investigable")
+    if tags:
+        return ("EXPLOSIVE_CANDIDATE", " / ".join(dict.fromkeys(tags)), "Tiene señales locales de mercado compatibles con una hipótesis explosiva; requiere revisión manual estricta.")
+    return (
+        "DATOS_MERCADO_PARCIALES",
+        "Datos parciales, sin señal explosiva",
+        "Hay algún dato de mercado, pero no basta para clasificarla como breakout, multibagger, squeeze, penny o micro-cap.",
+    )
+
+
+def explosive_unicorn_score(row: dict) -> int:
+    status, _, _ = explosive_unicorn_status(row)
+    if status == "EXPLOSIVE_CANDIDATE":
+        return 72
+    if status == "DATOS_MERCADO_PARCIALES":
+        return 35
+    return 0
+
+
+def unicorn_semantic_summary(rows: list[dict]) -> dict[str, int]:
+    explosive_ready = [row for row in rows if explosive_unicorn_status(row)[0] == "EXPLOSIVE_CANDIDATE"]
+    partial_market = [row for row in rows if explosive_unicorn_status(row)[0] == "DATOS_MERCADO_PARCIALES"]
+    return {
+        "quality": len(rows),
+        "explosive": len(explosive_ready),
+        "partial_market": len(partial_market),
+        "blocked": len(rows) - len(explosive_ready) - len(partial_market),
+    }
+
+
+def render_unicorn_semantic_split(rows: list[dict]) -> str:
+    summary = unicorn_semantic_summary(rows)
+    st.markdown("### Separación de conceptos")
+    st.info(
+        "Los resultados actuales no son todavía `Breakout Stocks`, `Multibaggers`, `Meme Stocks`, `Short Squeeze`, `Penny Stocks` ni `Micro-Caps`. "
+        "La lista heredada identifica empresas con calidad/momentum fundamental local. La capa explosiva queda separada y bloqueada hasta tener señales de mercado reales."
+    )
+    cols = st.columns(4)
+    cols[0].metric("Calidad fundamental", f"{summary['quality']:,}")
+    cols[1].metric("Explosivos evaluables", f"{summary['explosive']:,}")
+    cols[2].metric("Datos mercado parciales", f"{summary['partial_market']:,}")
+    cols[3].metric("Bloqueados por datos", f"{summary['blocked']:,}")
+    mode = st.radio(
+        "Tipo de descubrimiento",
+        ["Calidad fundamental", "Unicornio explosivo"],
+        horizontal=True,
+        key="global_unicorn_semantic_mode",
+        help="Calidad fundamental usa crecimiento/margen/caja. Unicornio explosivo exige señales de mercado como micro-cap, penny, short interest, float, volumen o breakout.",
+    )
+    if mode == "Unicornio explosivo":
+        st.warning(
+            "No hay candidatos explosivos listos con el dataset local actual. Para activarlos hay que incorporar capitalización, precio, volumen relativo, float, short interest y señales de breakout/catalizador. "
+            "Esto evita confundir empresas rentables con posibles acciones explosivas."
+        )
+        st.markdown("**Señales obligatorias para la próxima capa:**")
+        for signal in EXPLOSIVE_UNICORN_REQUIRED_SIGNALS:
+            st.write(f"- {signal}")
+    return mode
 
 
 def unicorn_internal_rank_key(row: dict) -> tuple:
@@ -1268,7 +1376,7 @@ def render_global_universe(_data):
 
 
 def render_global_unicorns(_data):
-    heading(st, "Unicornios", "Empresas con la señal de crecimiento real más exigente ya calculada: crecimiento positivo, expansión de margen y, cuando existe, flujo de caja libre positivo. Es una clasificación de investigación, no una recomendación.")
+    heading(st, "Unicornios", "Centro de descubrimiento separado: calidad fundamental ya calculada frente a candidatos explosivos tipo breakout, multibagger, squeeze, penny stock o micro-cap.")
     render_safe_demo_banner(st, SAFE_DEMO_MODE)
     matrix = global_matrix_snapshot()
     if not matrix.available:
@@ -1278,19 +1386,29 @@ def render_global_unicorns(_data):
     evaluated_rows = [row for row in matrix.rows if row.get("unicorn_status") in {"EVALUATED_UNICORN", "EVALUATED_NOT_UNICORN", "INSUFFICIENT_DATA"}]
     counts = Counter(row.get("overall_coverage_status", "") for row in unicorn_rows)
     metric_cols = st.columns(5)
-    metric_cols[0].metric(f"{GLOBAL_UNICORN_ICON} Unicornios", f"{len(unicorn_rows):,}")
+    semantic_counts = unicorn_semantic_summary(unicorn_rows)
+    metric_cols[0].metric("Calidad fundamental", f"{semantic_counts['quality']:,}")
     metric_cols[1].metric("Empresas evaluadas", f"{len(evaluated_rows):,}")
     metric_cols[2].metric("Con crecimiento completo", f"{counts.get('GROWTH_READY', 0):,}")
-    metric_cols[3].metric("Con crecimiento parcial", f"{counts.get('GROWTH_PARTIAL', 0):,}")
+    metric_cols[3].metric("Explosivos evaluables", f"{semantic_counts['explosive']:,}")
     metric_cols[4].metric("Censo total", f"{len(matrix.rows):,}")
-    st.info("Esta pantalla es la vista principal de descubrimiento: muestra solo empresas que cumplen el criterio real de crecimiento combinado de v2.38BT. No ordena por rentabilidad esperada, no recalcula scores y no constituye asesoramiento financiero.")
-    st.caption("El porcentaje de posibilidad de unicornio mide confianza de clasificación con los datos locales disponibles; no es probabilidad de subida, precio objetivo ni consejo de compra.")
-    st.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(unicorn_rows):,} unicornios · sin conexión de red")
+    st.info("Cambio v2.44Z: los 161 casos heredados pasan a leerse como `Calidad fundamental / momentum fundamental`, no como acciones explosivas. La categoría `Unicornio explosivo` queda separada y exige señales de mercado que hoy no están en la matriz local.")
+    st.caption("El porcentaje actual mide confianza de clasificación fundamental; no es probabilidad de subida, short squeeze, multibagger, precio objetivo ni consejo de compra.")
+    st.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(unicorn_rows):,} casos de calidad fundamental · sin conexión de red")
+    discovery_mode = render_unicorn_semantic_split(unicorn_rows)
+    if discovery_mode == "Unicornio explosivo":
+        explosive_rows = [row for row in unicorn_rows if explosive_unicorn_status(row)[0] == "EXPLOSIVE_CANDIDATE"]
+        if explosive_rows:
+            st.success(f"{len(explosive_rows):,} candidatos explosivos evaluables con señales locales de mercado.")
+            unicorn_rows = explosive_rows
+            counts = Counter(row.get("overall_coverage_status", "") for row in unicorn_rows)
+        else:
+            st.stop()
     render_unicorn_recalculation_panel(matrix, unicorn_rows)
     notes = load_unicorn_notes()
     review_history = load_unicorn_review_history()
 
-    st.markdown("### Buscar unicornios")
+    st.markdown("### Buscar calidad fundamental")
     search = st.text_input("Buscar", placeholder="Empresa, ticker o ID", key="global_unicorn_search")
     c1, c2, c3 = st.columns(3)
     countries = sorted({row["country"] for row in unicorn_rows if row["country"]})

@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.44Z — Unicorn semantic split (2026-09-17)
+
+Separa los conceptos que estaban mezclados en la pantalla `🦄 Unicornios`: los 161 casos actuales pasan a leerse como `Calidad fundamental / momentum fundamental`, mientras que `Unicornio explosivo` queda reservado para breakout, multibagger, meme stock, short squeeze, penny stock o micro-cap. La capa explosiva exige señales de mercado reales: capitalización, precio, volumen relativo, float, short interest, breakout o catalizador. Si faltan, falla cerrada y lo explica en la UI. Mantiene no-advice, sin broker, sin despliegue, sin URL publica, sin scoring nuevo, sin red y sin cambios de metodología. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.44Y — Unicorn company detail motion (2026-09-16)
 
 Añade animaciones dentro de la ficha seleccionada de cada unicornio: gauge circular de confianza, checklist de verificación, flujo visual de etapas y barras de señal escalonadas. La ficha se acerca más al tipo de animación profesional del vídeo, pero mantiene lenguaje de investigación, sin PnL, sin señales de trading y sin recomendaciones. Respeta reducción de movimiento. Mantiene no-advice, sin broker, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
