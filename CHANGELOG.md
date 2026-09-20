@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45E — Diversified explosive provider sampling (2026-09-17)
+
+Corrige el sesgo de muestreo detectado en la actualizacion automatica de `Unicornio explosivo`: el proveedor dejaba de seleccionar las primeras `N` empresas ordenadas por ranking interno/nombre, lo que podia concentrar resultados en companias que empezaban por A. La seleccion ahora es determinista pero diversificada por grado de evidencia, pais y bolsa, y usa hash estable para evitar dependencia del orden alfabetico. Mantiene yfinance como proveedor automatico, CSV como fallback trazable, no-advice, sin broker, sin OpenAI, sin despliegue, sin URL publica, sin scoring global nuevo y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45D — Compact explosive candidates UX (2026-09-17)
 
 Compacta la vista `Unicornios → Unicornio explosivo` tras comprobar que mostraba demasiada maquinaria técnica antes del resultado. La pantalla pasa a enseñar un motor de actualización corto, resumen de resultado y cache activo; las tablas de overlay, fallback manual y contrato de datos quedan cerradas en expansores. Mantiene yfinance como fuente automática principal, CSV como fallback trazable, no-advice, sin broker, sin OpenAI, sin despliegue, sin URL publica y sin scoring global nuevo. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

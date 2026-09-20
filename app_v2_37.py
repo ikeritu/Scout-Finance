@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 from collections import Counter
 from datetime import datetime
+from hashlib import sha1
 from html import escape
 from io import StringIO
 from pathlib import Path
@@ -447,12 +448,51 @@ def pct_change_20d_from_history(history: pd.DataFrame) -> float | None:
     return round(((latest / previous) - 1) * 100, 2)
 
 
+def diversified_explosive_provider_sample(rows: list[dict], limit: int) -> list[dict]:
+    """Select provider candidates without alphabetical or first-page bias."""
+    compatible = [row for row in rows if yfinance_symbol(row)]
+    if limit <= 0 or not compatible:
+        return []
+    buckets: dict[tuple[str, str, str], list[dict]] = {}
+    for row in compatible:
+        grade = unicorn_evidence_grade(row)[0]
+        bucket = (grade, row.get("country") or "N/D", row.get("exchange") or "N/D")
+        buckets.setdefault(bucket, []).append(row)
+    for bucket_rows in buckets.values():
+        bucket_rows.sort(
+            key=lambda row: sha1(
+                (row.get("asset_id") or row.get("ticker") or row.get("company_name") or "").encode("utf-8")
+            ).hexdigest()
+        )
+    ordered_buckets = sorted(buckets, key=lambda key: sha1("|".join(key).encode("utf-8")).hexdigest())
+    selected = []
+    seen = set()
+    while len(selected) < limit:
+        progressed = False
+        for bucket in ordered_buckets:
+            bucket_rows = buckets[bucket]
+            if not bucket_rows:
+                continue
+            row = bucket_rows.pop(0)
+            row_id = row.get("asset_id") or row.get("ticker") or row.get("company_name")
+            if row_id in seen:
+                continue
+            selected.append(row)
+            seen.add(row_id)
+            progressed = True
+            if len(selected) >= limit:
+                break
+        if not progressed:
+            break
+    return selected
+
+
 def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
     try:
         import yfinance as yf
     except ImportError:
         return pd.DataFrame(), {"status": "YFINANCE_NOT_INSTALLED", "processed": 0, "ok": 0, "failed": 0, "message": "yfinance no está instalado."}
-    candidates = [row for row in sorted(rows, key=unicorn_internal_rank_key) if yfinance_symbol(row)][:limit]
+    candidates = diversified_explosive_provider_sample(rows, limit)
     records = []
     failures = []
     for row in candidates:

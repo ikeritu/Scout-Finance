@@ -203,6 +203,13 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Cache de mercado activa" in source, "Explosive view must summarize cache without showing the full table by default")
     require("Fallback manual y cache de mercado" in source, "Manual fallback/cache must be hidden in an expander")
     require("Contrato técnico y señales requeridas" in source, "Explosive technical contract must be hidden in an expander")
+    require("def diversified_explosive_provider_sample(" in source, "Automatic provider refresh must use a diversified sample")
+    require("sha1" in source, "Diversified provider sample must use stable hashing instead of alphabetical order")
+    require("diversified_explosive_provider_sample(rows, limit)" in source, "yfinance refresh must call the diversified sampler")
+    require(
+        "sorted(rows, key=unicorn_internal_rank_key) if yfinance_symbol(row)" not in source,
+        "yfinance refresh must not take the first alphabetic/internal-rank slice",
+    )
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 
