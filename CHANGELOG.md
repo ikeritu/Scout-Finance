@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45G — Explosive Candidate Scoring v1 (2026-09-21)
+
+Añade un score especifico para `Unicornio explosivo`, separado del scoring fundamental/global. La funcion `explosive_candidate_score()` calcula `explosive_score_0_100`, tier, drivers y señales faltantes usando solo datos de mercado del overlay: capitalizacion, precio, volumen relativo, float, short float, momentum 20D, breakout y catalizador. La UI muestra el score y el tier en las vistas de candidatos, con guardrail explicito: no es una recomendacion financiera ni predice rentabilidad. Mantiene yfinance como proveedor activo, CSV como fallback, MetaTrader/broker bloqueado, sin OpenAI, sin despliegue, sin URL publica, sin scoring global nuevo y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45F — Explosive market data provider policy (2026-09-21)
 
 Formaliza la decisión de proveedores para `Unicornio explosivo`: Yahoo Finance / yfinance queda como proveedor activo de solo lectura para datos de mercado; Polygon, Financial Modeling Prep y Twelve Data quedan como extensiones futuras; MetaTrader, APIs de broker y terminales de trading quedan bloqueados por estar demasiado cerca de ejecución. La UI muestra la política en un expansor y conserva CSV manual como fallback trazable. Mantiene no-advice, sin broker, sin OpenAI, sin despliegue, sin URL publica, sin scoring global nuevo y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

@@ -308,13 +308,99 @@ def explosive_unicorn_status(row: dict) -> tuple[str, str, str]:
     )
 
 
+def explosive_candidate_score(row: dict) -> dict:
+    critical_fields = ["market_cap_usd", "last_price", "relative_volume", "price_change_20d"]
+    market_cap = numeric_value(row.get("market_cap_usd") or row.get("market_cap"))
+    last_price = numeric_value(row.get("last_price"))
+    relative_volume = numeric_value(row.get("relative_volume"))
+    price_change_20d = numeric_value(row.get("price_change_20d"))
+    float_shares = numeric_value(row.get("float_shares"))
+    short_float_pct = numeric_value(row.get("short_float_pct") or row.get("short_interest"))
+    breakout = truthy_value(row.get("breakout_signal"))
+    catalyst = str(row.get("catalyst_note") or "").strip()
+    missing_signals = [field for field in critical_fields if row.get(field) in ("", None)]
+    drivers = []
+    score = 0
+
+    if market_cap is not None:
+        if market_cap <= 300_000_000:
+            score += 20
+            drivers.append("micro-cap real")
+        elif market_cap <= 2_000_000_000:
+            score += 12
+            drivers.append("small-cap real")
+    if last_price is not None:
+        if last_price <= 5:
+            score += 15
+            drivers.append("precio bajo/penny-stock")
+        elif last_price <= 15:
+            score += 7
+            drivers.append("precio bajo relativo")
+    if relative_volume is not None:
+        if relative_volume >= 3:
+            score += 20
+            drivers.append("volumen relativo muy elevado")
+        elif relative_volume >= 2:
+            score += 12
+            drivers.append("volumen relativo elevado")
+    if price_change_20d is not None:
+        if price_change_20d >= 40:
+            score += 15
+            drivers.append("momentum 20D fuerte")
+        elif price_change_20d >= 20:
+            score += 9
+            drivers.append("momentum 20D positivo")
+    if float_shares is not None:
+        if float_shares <= 25_000_000:
+            score += 10
+            drivers.append("float bajo")
+        elif float_shares <= 50_000_000:
+            score += 6
+            drivers.append("float moderadamente bajo")
+    if short_float_pct is not None:
+        if short_float_pct >= 20:
+            score += 10
+            drivers.append("short float alto")
+        elif short_float_pct >= 10:
+            score += 5
+            drivers.append("short float relevante")
+    if breakout:
+        score += 7
+        drivers.append("breakout detectado")
+    if catalyst and catalyst != "yfinance_real_market_snapshot_v2_45c":
+        score += 3
+        drivers.append("catalizador documentado")
+
+    score = min(100, score)
+    if not explosive_unicorn_data_fields(row):
+        tier = "NO_DATA"
+        score = 0
+    elif missing_signals:
+        tier = "WATCH_ONLY" if score < 55 else "EXPLOSIVE_CANDIDATE_LOW"
+        score = min(score, 64)
+    elif score >= 80:
+        tier = "EXPLOSIVE_CANDIDATE_HIGH"
+    elif score >= 65:
+        tier = "EXPLOSIVE_CANDIDATE_MEDIUM"
+    elif score >= 45:
+        tier = "EXPLOSIVE_CANDIDATE_LOW"
+    else:
+        tier = "WATCH_ONLY"
+    if tier == "EXPLOSIVE_CANDIDATE_HIGH" and missing_signals:
+        tier = "EXPLOSIVE_CANDIDATE_MEDIUM"
+
+    return {
+        "explosive_score_0_100": score,
+        "score": score,
+        "tier": tier,
+        "drivers": drivers or ["sin drivers explosivos suficientes"],
+        "missing_signals": missing_signals,
+        "guardrail_text": "No es una recomendación financiera ni predice rentabilidad.",
+    }
+
+
 def explosive_unicorn_score(row: dict) -> int:
-    status, _, _ = explosive_unicorn_status(row)
-    if status == "EXPLOSIVE_CANDIDATE":
-        return 72
-    if status == "DATOS_MERCADO_PARCIALES":
-        return 35
-    return 0
+    return int(explosive_candidate_score(row)["explosive_score_0_100"])
 
 
 def explosive_unicorn_contract_frame() -> pd.DataFrame:
@@ -642,10 +728,17 @@ def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
     )
     if mode == "Unicornio explosivo":
         rows = render_explosive_unicorn_overlay_import(rows)
+        rows = [row | explosive_candidate_score(row) for row in rows]
         summary = unicorn_semantic_summary(rows)
         st.caption("Busca Breakout Stocks, Multibaggers, Meme Stocks, Short Squeeze, Penny Stocks y Micro-Caps con datos reales de mercado.")
         st.caption("Exige capitalización, precio, volumen relativo, float, short interest, momentum y breakout/catalizador; no usa rentabilidad fundamental como sustituto.")
         st.caption(f"Resultado: {summary['explosive']:,} candidatos explosivos · {summary['partial_market']:,} con datos parciales · {summary['blocked']:,} bloqueados.")
+        st.caption("Score explosivo v1: heurística de investigación 0-100; no reemplaza scoring fundamental ni ranking global.")
+        st.caption("No es una recomendación financiera ni predice rentabilidad.")
+        tier_counts = Counter(row.get("tier", "NO_DATA") for row in rows)
+        tier_cols = st.columns(5)
+        for col, tier in zip(tier_cols, ["NO_DATA", "WATCH_ONLY", "EXPLOSIVE_CANDIDATE_LOW", "EXPLOSIVE_CANDIDATE_MEDIUM", "EXPLOSIVE_CANDIDATE_HIGH"]):
+            col.metric(tier.replace("_", " "), f"{tier_counts.get(tier, 0):,}")
         if summary["explosive"] == 0:
             st.warning("Sin candidatos explosivos evaluables todavía: faltan señales reales suficientes de mercado.")
         with st.expander("Contrato técnico y señales requeridas", expanded=False):
@@ -686,6 +779,12 @@ def unicorn_internal_rank_key(row: dict) -> tuple:
     grade, _, _ = unicorn_evidence_grade(row)
     grade_order = {"Muy respaldado": 0, "Respaldado": 1, "Parcial": 2, "Requiere revision": 3}
     return (grade_order.get(grade, 9), -unicorn_probability(row), row.get("company_name", ""))
+
+
+def unicorn_display_score(row: dict) -> tuple[str, str]:
+    if "explosive_score_0_100" in row:
+        return "Score explosivo v1", f"{row.get('explosive_score_0_100', 0)}"
+    return "Posibilidad", f"{unicorn_probability(row)}%"
 
 
 def unicorn_radar_values(row: dict) -> dict[str, int]:
@@ -1818,7 +1917,7 @@ def render_global_unicorns(_data):
     notes = load_unicorn_notes()
     review_history = load_unicorn_review_history()
 
-    st.markdown("### Buscar calidad fundamental")
+    st.markdown("### Buscar candidatos" if discovery_mode == "Unicornio explosivo" else "### Buscar calidad fundamental")
     search = st.text_input("Buscar", placeholder="Empresa, ticker o ID", key="global_unicorn_search")
     c1, c2, c3 = st.columns(3)
     countries = sorted({row["country"] for row in unicorn_rows if row["country"]})
@@ -1863,8 +1962,14 @@ def render_global_unicorns(_data):
     elif quick_filter == "Europa":
         filtered = [row for row in filtered if row.get("country") and row.get("country") != "USA"]
     controls = st.columns([1, 1, 1])
-    sort_mode = controls[0].selectbox("Ordenar por", ["Ranking interno de unicornios", "Empresa", "País", "Bolsa", "Crecimiento completo primero", "Elegibilidad"], key="global_unicorn_sort")
-    filtered = sorted(filtered, key=unicorn_internal_rank_key if sort_mode == "Ranking interno de unicornios" else lambda row: unicorn_sort_key(row, sort_mode))
+    sort_options = ["Ranking interno de unicornios", "Empresa", "País", "Bolsa", "Crecimiento completo primero", "Elegibilidad"]
+    if discovery_mode == "Unicornio explosivo":
+        sort_options = ["Score explosivo v1"] + sort_options
+    sort_mode = controls[0].selectbox("Ordenar por", sort_options, key="global_unicorn_sort")
+    if sort_mode == "Score explosivo v1":
+        filtered = sorted(filtered, key=lambda row: (-int(row.get("explosive_score_0_100", 0)), row.get("company_name", "")))
+    else:
+        filtered = sorted(filtered, key=unicorn_internal_rank_key if sort_mode == "Ranking interno de unicornios" else lambda row: unicorn_sort_key(row, sort_mode))
     st.caption(f"{len(filtered):,} de {len(unicorn_rows):,} unicornios")
     grade_counts = Counter(unicorn_evidence_grade(row)[0] for row in filtered)
     grade_cols = st.columns(4)
@@ -1875,6 +1980,13 @@ def render_global_unicorns(_data):
     for col, status in zip(review_cols, ["PENDING", "REVIEWED", "FOLLOW", "DISCARDED"]):
         col.metric(UNICORN_REVIEW_STATUS_LABELS[status], f"{review_counts.get(status, 0):,}")
     st.caption("Ranking interno y semáforo ordenan calidad de evidencia local, no rentabilidad esperada ni recomendación financiera.")
+    if discovery_mode == "Unicornio explosivo":
+        score_counts = Counter(row.get("tier", "NO_DATA") for row in filtered)
+        st.caption("Score explosivo v1 usa solo señales de mercado del overlay; no es una recomendación financiera ni predice rentabilidad.")
+        st.dataframe(pd.DataFrame([{
+            "Tier": tier,
+            "Empresas": score_counts.get(tier, 0),
+        } for tier in ["EXPLOSIVE_CANDIDATE_HIGH", "EXPLOSIVE_CANDIDATE_MEDIUM", "EXPLOSIVE_CANDIDATE_LOW", "WATCH_ONLY", "NO_DATA"]]), use_container_width=True, hide_index=True)
     view_mode = st.radio("Vista", ["Analítica visual", "Fichas completas", "Presentación/demo", "Cockpit limpio", "Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
     if filtered and "selected_unicorn_asset_id" not in st.session_state:
         st.session_state.selected_unicorn_asset_id = filtered[0]["asset_id"]
@@ -1963,7 +2075,9 @@ def render_global_unicorns(_data):
                 grade_label, grade_color, _ = unicorn_evidence_grade(row)
                 review_label = UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, row["asset_id"])]
                 selected = st.session_state.get("selected_unicorn_asset_id") == row["asset_id"]
-                label = f"{GLOBAL_UNICORN_ICON} {row['company_name']} · {unicorn_probability(row)}% · {grade_label} · {review_label}"
+                score_label, score_value = unicorn_display_score(row)
+                tier_suffix = f" · {row.get('tier')}" if row.get("tier") else ""
+                label = f"{GLOBAL_UNICORN_ICON} {row['company_name']} · {score_value} · {score_label}{tier_suffix} · {review_label}"
                 if st.button(label, key=f"unicorn_clean_select_{row['asset_id']}", type="primary" if selected else "secondary", use_container_width=True):
                     st.session_state.selected_unicorn_asset_id = row["asset_id"]
                 st.markdown(
@@ -1978,11 +2092,18 @@ def render_global_unicorns(_data):
             if selected_row:
                 grade_label, _, grade_reason = unicorn_evidence_grade(selected_row)
                 st.markdown(f"### {selected_row['company_name']}")
+                score_label, score_value = unicorn_display_score(selected_row)
                 k1, k2, k3 = st.columns(3)
-                k1.metric("Posibilidad", f"{unicorn_probability(selected_row)}%")
-                k2.metric("Evidencia", grade_label)
+                k1.metric(score_label, score_value)
+                k2.metric("Tier", selected_row.get("tier", grade_label))
                 k3.metric("Revisión", UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected_row["asset_id"])])
                 st.info(grade_reason)
+                if "explosive_score_0_100" in selected_row:
+                    st.write("**Drivers explosivos v1**")
+                    st.write(" · ".join(selected_row.get("drivers", [])))
+                    missing = selected_row.get("missing_signals", [])
+                    st.write(f"**Señales faltantes:** {' · '.join(missing) if missing else 'ninguna crítica'}")
+                    st.caption(selected_row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
                 st.write("**Criterios**")
                 st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
                 st.write("**Radar**")
@@ -2041,6 +2162,7 @@ def render_global_unicorns(_data):
                 )
                 status_label = GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"])
                 probability = unicorn_probability(row)
+                score_label, score_value = unicorn_display_score(row)
                 grade_label, grade_color, grade_reason = unicorn_evidence_grade(row)
                 radar = unicorn_radar_values(row)
                 radar_text = " · ".join(f"{key} {value}" for key, value in radar.items())
@@ -2049,8 +2171,8 @@ def render_global_unicorns(_data):
                     <div style="border:1px solid #d8e2ef;border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#ffffff;">
                       <div style="font-size:18px;font-weight:700;color:#0f172a;">{GLOBAL_UNICORN_ICON} {escape(row["company_name"])}</div>
                       <div style="color:#64748b;font-size:13px;margin:3px 0 8px 0;">{escape(row["ticker"] or row["asset_id"])} · {escape(row["country"] or "N/D")} · {escape(row["exchange"] or "N/D")}</div>
-                      <div style="font-size:26px;font-weight:800;color:#0f766e;margin:4px 0;">{probability}%</div>
-                      <div style="color:#64748b;font-size:12px;margin-bottom:8px;">posibilidad de etiqueta unicornio</div>
+                      <div style="font-size:26px;font-weight:800;color:#0f766e;margin:4px 0;">{escape(score_value)}</div>
+                      <div style="color:#64748b;font-size:12px;margin-bottom:8px;">{escape(score_label)}</div>
                       <div style="display:inline-block;margin-bottom:8px;padding:4px 8px;border-radius:8px;background:#f8fafc;color:#334155;border-left:5px solid {escape(grade_color)};">{escape(grade_label)}</div>
                       <div style="margin-bottom:8px;">{badges}</div>
                       <div style="color:#334155;font-size:13px;">{escape(status_label)}</div>
@@ -2059,7 +2181,13 @@ def render_global_unicorns(_data):
                     unsafe_allow_html=True,
                 )
                 with col.expander("Ver detalle"):
-                    st.metric("Posibilidad de unicornio", f"{probability}%", help="Confianza de clasificación según señales locales ya calculadas. No mide rentabilidad esperada.")
+                    st.metric(score_label, score_value, help="Investigación local; no mide rentabilidad esperada ni recomendación financiera.")
+                    if "explosive_score_0_100" in row:
+                        st.write(f"**Tier:** {row.get('tier', 'NO_DATA')}")
+                        st.write(f"**Drivers explosivos:** {' · '.join(row.get('drivers', []))}")
+                        missing = row.get("missing_signals", [])
+                        st.write(f"**Señales faltantes:** {' · '.join(missing) if missing else 'ninguna crítica'}")
+                        st.caption(row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
                     st.write("**Criterios cumplidos**")
                     st.write(" · ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))))
                     st.write("**Explicación**")

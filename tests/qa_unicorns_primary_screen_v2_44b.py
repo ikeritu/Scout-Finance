@@ -216,6 +216,15 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("def explosive_market_provider_status(" in source, "Explosive UI must expose provider status")
     require("Política de proveedores de mercado" in source, "Explosive UI must explain provider policy")
     require("sin broker · sin MetaTrader" in source, "Explosive UI must state that broker/MetaTrader are not active")
+    require("def explosive_candidate_score(" in source, "Explosive candidates must have a dedicated score function")
+    require("explosive_score_0_100" in source, "Explosive score must use an explicit 0-100 field")
+    for tier in ["NO_DATA", "WATCH_ONLY", "EXPLOSIVE_CANDIDATE_LOW", "EXPLOSIVE_CANDIDATE_MEDIUM", "EXPLOSIVE_CANDIDATE_HIGH"]:
+        require(tier in source, f"Explosive scoring tier {tier} must be present")
+    require("No es una recomendación financiera ni predice rentabilidad" in source, "Explosive scoring must keep no-advice guardrail text")
+    require("unicorn_internal_rank_key" in source, "Fundamental unicorn ranking must remain present")
+    require("Score explosivo v1" in source, "Explosive UI must expose the dedicated score label")
+    require("MetaTrader" in source and "broker_api" in source, "MetaTrader/broker must remain blocked after explosive scoring")
+    require("\"active_provider\": \"yfinance\"" in source, "yfinance must remain the active provider after explosive scoring")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 
