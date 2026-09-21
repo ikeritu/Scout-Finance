@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45K — Second Provider Research Gate (2026-09-21)
+
+Añade un research gate para elegir segundo proveedor futuro de datos de `Unicornio explosivo`, sin activar ninguna API. Compara Polygon, Financial Modeling Prep, Twelve Data y Alpha Vantage por cobertura de `market_cap`, `float_shares`, `short_float_pct`, `relative_volume` y `price_history_20d`, además de clave API, free tier, coste/licencia y riesgo técnico. La decisión queda cerrada como `PREFERRED_SECOND_PROVIDER`, `PILOT_CANDIDATE`, `WATCH` o `REJECT`; Polygon queda como candidato preferente y FMP como piloto comparador. No ejecuta red, no guarda credenciales, no añade dependencias, no cambia score, ranking global, scoring fundamental, metodologia ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45J — Provider Upgrade Decision Gate (2026-09-21)
 
 Añade un gate de decisión operativo para proveedores de `Unicornio explosivo`, alimentado por el diagnóstico de `v2.45I`. El gate devuelve `KEEP_YFINANCE`, `EVALUATE_SECOND_PROVIDER` o `BLOCK_EXPLOSIVE_EXPANSION_UNTIL_DATA_IMPROVES`, con motivo, acción y guardrail no-advice. No activa Polygon/FMP/Twelve Data, solo deja la decisión preparada; MetaTrader, broker y órdenes siguen bloqueados. No ejecuta red nueva, no cambia score, ranking global, scoring fundamental, metodología ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

@@ -246,6 +246,17 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Gate de decisión de proveedor" in source, "Provider decision gate must be visible in the UI")
     require("Decisión operativa de datos; no es recomendación financiera ni señal de compra" in source, "Provider gate must preserve no-advice wording")
     require("no activar MetaTrader ni broker" in source, "Provider gate must keep MetaTrader/broker blocked")
+    require("EXPLOSIVE_SECOND_PROVIDER_RESEARCH" in source, "Second-provider research matrix must be explicit and versioned in code")
+    require("def second_provider_research_matrix(" in source, "Second-provider research matrix must be renderable")
+    require("def second_provider_research_gate(" in source, "Second-provider research gate must expose a closed status")
+    require("Research gate de segundo proveedor" in source, "Second-provider research gate must be visible in the UI")
+    for provider in ["Polygon", "Financial Modeling Prep", "Twelve Data", "Alpha Vantage"]:
+        require(provider in source, f"Second-provider research must include {provider}")
+    for provider_decision in ["REJECT", "WATCH", "PILOT_CANDIDATE", "PREFERRED_SECOND_PROVIDER"]:
+        require(provider_decision in source, f"Second-provider research decision {provider_decision} must be present")
+    for field in ["market_cap", "float_shares", "short_float_pct", "relative_volume", "price_history_20d"]:
+        require(field in source, f"Second-provider research must evaluate {field}")
+    require("No activa APIs, no guarda credenciales y no ejecuta red" in source, "Second-provider research must remain documentation-only")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 

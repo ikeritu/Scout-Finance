@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.45J preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.45K preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.45J: add provider upgrade decision gate`
+`LOCAL_COMMIT_PENDING_PUSH v2.45K: add second provider research gate`
 
 Estado operativo del producto:
 
-`EXPLOSIVE_PROVIDER_DECISION_GATE_READY`
+`EXPLOSIVE_SECOND_PROVIDER_RESEARCH_GATE_READY`
 
 Cycle status:
 
@@ -163,6 +163,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.45H | Dashboard UX para candidatos explosivos con filtros, cards y explicación |
 | Completada | v2.45I | Diagnóstico de calidad del refresco real y cobertura de campos críticos |
 | Completada | v2.45J | Gate de decisión para mantener yfinance, evaluar segundo proveedor o bloquear expansión |
+| Completada | v2.45K | Research gate de segundo proveedor: Polygon preferente, FMP piloto, Twelve Data watch, Alpha Vantage reject |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

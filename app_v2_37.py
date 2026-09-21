@@ -87,6 +87,64 @@ EXPLOSIVE_MARKET_DATA_PROVIDER_POLICY = {
     "blocked_execution_providers": ["metatrader", "broker_api", "trading_terminal"],
     "guardrail": "market_data_only_no_broker_no_orders",
 }
+EXPLOSIVE_SECOND_PROVIDER_RESEARCH = [
+    {
+        "provider": "Polygon",
+        "decision": "PREFERRED_SECOND_PROVIDER",
+        "market_cap": "Buena cobertura de referencia bursatil",
+        "float_shares": "Cobertura esperada via datos de referencia",
+        "short_float_pct": "Requiere validar plan/dataset",
+        "relative_volume": "Derivable desde volumen e historico",
+        "price_history_20d": "Fuerte para historico intradia/diario",
+        "api_key": "Si",
+        "free_tier": "Limitado; probable coste si escala",
+        "license_risk": "Medio: revisar terminos antes de redistribuir",
+        "technical_risk": "Medio-bajo",
+        "notes": "Mejor candidato para piloto controlado si yfinance deja huecos de cobertura.",
+    },
+    {
+        "provider": "Financial Modeling Prep",
+        "decision": "PILOT_CANDIDATE",
+        "market_cap": "Buena cobertura declarada",
+        "float_shares": "Posible segun endpoint/plan",
+        "short_float_pct": "Cobertura a validar",
+        "relative_volume": "Derivable con precio/volumen historico",
+        "price_history_20d": "Disponible, sujeto a limites",
+        "api_key": "Si",
+        "free_tier": "Limitado",
+        "license_risk": "Medio",
+        "technical_risk": "Medio",
+        "notes": "Interesante como segundo piloto por amplitud de endpoints, no como fuente unica.",
+    },
+    {
+        "provider": "Twelve Data",
+        "decision": "WATCH",
+        "market_cap": "Parcial o dependiente de endpoint",
+        "float_shares": "Debil para squeeze sin complemento",
+        "short_float_pct": "Debil para squeeze sin complemento",
+        "relative_volume": "Buena base de precios/volumen",
+        "price_history_20d": "Fuerte para historico OHLCV",
+        "api_key": "Si",
+        "free_tier": "Limitado",
+        "license_risk": "Medio",
+        "technical_risk": "Medio",
+        "notes": "Buen complemento de precio/volumen, menos completo para float/short.",
+    },
+    {
+        "provider": "Alpha Vantage",
+        "decision": "REJECT",
+        "market_cap": "Disponible en algunos endpoints",
+        "float_shares": "Insuficiente para contrato explosivo",
+        "short_float_pct": "Insuficiente para contrato explosivo",
+        "relative_volume": "Derivable pero limitado por cuota",
+        "price_history_20d": "Disponible con limites estrictos",
+        "api_key": "Si",
+        "free_tier": "Muy limitado",
+        "license_risk": "Medio",
+        "technical_risk": "Alto por cuota/cobertura",
+        "notes": "Se mantiene como referencia/watchlist, no como segundo proveedor operativo.",
+    },
+]
 EXPLOSIVE_UNICORN_DATA_CONTRACT = [
     {
         "field": "market_cap_usd",
@@ -655,6 +713,33 @@ def explosive_provider_upgrade_decision(diagnostics: dict) -> dict[str, str]:
     }
 
 
+def second_provider_research_matrix() -> pd.DataFrame:
+    return pd.DataFrame(EXPLOSIVE_SECOND_PROVIDER_RESEARCH)
+
+
+def second_provider_research_gate(provider_decision: dict) -> dict[str, str]:
+    decision = provider_decision.get("decision", "")
+    matrix = second_provider_research_matrix()
+    preferred = matrix.loc[matrix["decision"] == "PREFERRED_SECOND_PROVIDER", "provider"].tolist()
+    pilot = matrix.loc[matrix["decision"] == "PILOT_CANDIDATE", "provider"].tolist()
+    if decision == "EVALUATE_SECOND_PROVIDER":
+        status = "SECOND_PROVIDER_RESEARCH_READY"
+        action = "Preparar piloto controlado con Polygon como candidato preferente y FMP como comparador, sin activar APIs todavia."
+    elif decision == "BLOCK_EXPLOSIVE_EXPANSION_UNTIL_DATA_IMPROVES":
+        status = "RESEARCH_ONLY_WAIT_FOR_LOCAL_CACHE"
+        action = "Mantener la investigacion documentada y mejorar primero el cache yfinance antes de pagar o activar proveedor."
+    else:
+        status = "KEEP_YFINANCE_RESEARCH_ONLY"
+        action = "Mantener yfinance activo; la matriz queda como referencia por si cae la cobertura."
+    return {
+        "status": status,
+        "preferred_provider": preferred[0] if preferred else "N/D",
+        "pilot_candidates": ", ".join(pilot) if pilot else "N/D",
+        "action": action,
+        "guardrail": "No activa APIs, no guarda credenciales y no ejecuta red; solo documenta proveedores de datos de mercado.",
+    }
+
+
 def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
     try:
         import yfinance as yf
@@ -752,6 +837,15 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
         st.write(f"**Motivo:** {provider_decision['reason']}")
         st.write(f"**Acción:** {provider_decision['action']}")
         st.caption(provider_decision["guardrail"])
+    research_gate = second_provider_research_gate(provider_decision)
+    with st.expander("Research gate de segundo proveedor", expanded=False):
+        gate_cols = st.columns(3)
+        gate_cols[0].metric("Estado research", research_gate["status"])
+        gate_cols[1].metric("Preferente", research_gate["preferred_provider"])
+        gate_cols[2].metric("Piloto comparador", research_gate["pilot_candidates"])
+        st.write(f"**Acción propuesta:** {research_gate['action']}")
+        st.dataframe(second_provider_research_matrix(), use_container_width=True, hide_index=True)
+        st.caption(research_gate["guardrail"])
     with st.expander("Fallback manual y cache de mercado", expanded=False):
         st.markdown("##### Fallback manual v2.45B")
         st.caption("Usa esto solo si el proveedor automático no cubre una acción o quieres revisar el cache guardado.")
