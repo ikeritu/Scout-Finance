@@ -589,6 +589,45 @@ def explosive_market_provider_status() -> dict[str, str]:
     }
 
 
+def explosive_refresh_quality_diagnostics(overlay: pd.DataFrame) -> dict:
+    critical_fields = ["market_cap_usd", "last_price", "relative_volume", "float_shares", "short_float_pct", "price_change_20d", "breakout_signal"]
+    if overlay.empty:
+        return {
+            "rows": 0,
+            "coverage": [],
+            "weak_fields": critical_fields,
+            "overall_status": "NO_CACHE",
+            "provider_next_step": "Ejecutar yfinance antes de evaluar proveedores alternativos.",
+        }
+    total = len(overlay)
+    coverage = []
+    weak_fields = []
+    for field in critical_fields:
+        present = 0
+        if field in overlay.columns:
+            present = int((overlay[field].fillna("").astype(str).str.strip() != "").sum())
+        ratio = round((present / total) * 100, 1) if total else 0
+        coverage.append({"Campo": field, "Filas con dato": present, "Cobertura %": ratio})
+        if ratio < 60:
+            weak_fields.append(field)
+    if len(weak_fields) >= 4:
+        status = "WEAK_PROVIDER_COVERAGE"
+        next_step = "Evaluar Polygon/FMP/Twelve Data como proveedor complementario antes de ampliar candidatos."
+    elif weak_fields:
+        status = "PARTIAL_PROVIDER_COVERAGE"
+        next_step = "Mantener yfinance y revisar campos débiles antes de activar otro proveedor."
+    else:
+        status = "PROVIDER_COVERAGE_OK"
+        next_step = "Mantener yfinance como proveedor activo; no hace falta MetaTrader ni broker."
+    return {
+        "rows": total,
+        "coverage": coverage,
+        "weak_fields": weak_fields,
+        "overall_status": status,
+        "provider_next_step": next_step,
+    }
+
+
 def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
     try:
         import yfinance as yf
@@ -668,6 +707,18 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
     current_overlay = load_explosive_overlay()
     if not current_overlay.empty:
         st.caption(f"Cache de mercado activa: {len(current_overlay):,} filas.")
+    diagnostics = explosive_refresh_quality_diagnostics(current_overlay)
+    with st.expander("Diagnóstico de calidad del refresco real", expanded=False):
+        dcols = st.columns(3)
+        dcols[0].metric("Filas cache", f"{diagnostics['rows']:,}")
+        dcols[1].metric("Estado proveedor", diagnostics["overall_status"])
+        dcols[2].metric("Campos débiles", f"{len(diagnostics['weak_fields']):,}")
+        st.caption(diagnostics["provider_next_step"])
+        if diagnostics["coverage"]:
+            st.dataframe(pd.DataFrame(diagnostics["coverage"]), use_container_width=True, hide_index=True)
+        if diagnostics["weak_fields"]:
+            st.warning("Campos débiles: " + ", ".join(diagnostics["weak_fields"]))
+        st.caption("Diagnóstico local del cache/overlay. No descarga datos, no cambia scoring, no activa MetaTrader ni broker.")
     with st.expander("Fallback manual y cache de mercado", expanded=False):
         st.markdown("##### Fallback manual v2.45B")
         st.caption("Usa esto solo si el proveedor automático no cubre una acción o quieres revisar el cache guardado.")

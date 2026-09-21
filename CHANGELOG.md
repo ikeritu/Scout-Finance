@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45I — Real Data Refresh Quality Diagnostics (2026-09-21)
+
+Añade diagnóstico local para el cache/overlay de `Unicornio explosivo`: cobertura por campo crítico, campos débiles, estado de cobertura del proveedor y siguiente paso sugerido. Permite saber si yfinance trae suficientes datos o si conviene evaluar Polygon/FMP/Twelve Data en una fase futura. No ejecuta red nueva, no añade proveedor, no cambia score, ranking global, scoring fundamental, metodología ni pesos. Mantiene yfinance activo, CSV fallback, MetaTrader/broker bloqueado, no-advice, sin OpenAI, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45H — Explosive Candidates UX Dashboard (2026-09-21)
 
 Añade un dashboard específico para `Unicornio explosivo` tras el score v1: distribución por tiers, filtros rápidos por prioridad y señal, cards compactas con score/tier/drivers/faltantes y un panel explicativo de por qué puntúa así, qué señales faltan y qué revisar manualmente. No cambia el cálculo del score, no modifica ranking global, scoring fundamental, proveedor, metodologia ni pesos. Mantiene yfinance activo, CSV fallback, MetaTrader/broker bloqueado, no-advice, sin OpenAI, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

@@ -233,6 +233,13 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
         require(label in source, f"Explosive dashboard filter {label} must be present")
     require("Por qué puntúa así" in source, "Explosive dashboard must explain score rationale")
     require("Qué revisar manualmente" in source, "Explosive dashboard must show manual review guidance")
+    require("def explosive_refresh_quality_diagnostics(" in source, "Explosive refresh must expose quality diagnostics")
+    require("Diagnóstico de calidad del refresco real" in source, "Explosive UI must show refresh quality diagnostics")
+    require("WEAK_PROVIDER_COVERAGE" in source, "Refresh diagnostics must flag weak provider coverage")
+    require("PARTIAL_PROVIDER_COVERAGE" in source, "Refresh diagnostics must flag partial provider coverage")
+    require("PROVIDER_COVERAGE_OK" in source, "Refresh diagnostics must flag sufficient provider coverage")
+    require("Polygon/FMP/Twelve Data" in source, "Diagnostics must mention future provider evaluation without activating it")
+    require("No descarga datos, no cambia scoring, no activa MetaTrader ni broker" in source, "Diagnostics must preserve no-network/no-broker guardrails")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 

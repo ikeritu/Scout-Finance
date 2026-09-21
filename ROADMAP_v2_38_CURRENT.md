@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.45H preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.45I preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.45H: add explosive candidates UX dashboard`
+`LOCAL_COMMIT_PENDING_PUSH v2.45I: add explosive refresh quality diagnostics`
 
 Estado operativo del producto:
 
-`EXPLOSIVE_CANDIDATES_UX_DASHBOARD_READY`
+`EXPLOSIVE_REFRESH_QUALITY_DIAGNOSTICS_READY`
 
 Cycle status:
 
@@ -161,6 +161,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.45F | Política explícita de proveedores: yfinance activo, MetaTrader/broker bloqueado |
 | Completada | v2.45G | Scoring explosivo v1 separado del scoring fundamental/global |
 | Completada | v2.45H | Dashboard UX para candidatos explosivos con filtros, cards y explicación |
+| Completada | v2.45I | Diagnóstico de calidad del refresco real y cobertura de campos críticos |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |
