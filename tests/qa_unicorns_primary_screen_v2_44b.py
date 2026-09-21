@@ -210,6 +210,12 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
         "sorted(rows, key=unicorn_internal_rank_key) if yfinance_symbol(row)" not in source,
         "yfinance refresh must not take the first alphabetic/internal-rank slice",
     )
+    require("EXPLOSIVE_MARKET_DATA_PROVIDER_POLICY" in source, "Explosive market data providers must have an explicit policy")
+    require("\"active_provider\": \"yfinance\"" in source, "yfinance must remain the active explosive market-data provider")
+    require("\"blocked_execution_providers\": [\"metatrader\", \"broker_api\", \"trading_terminal\"]" in source, "Execution-oriented providers must remain blocked")
+    require("def explosive_market_provider_status(" in source, "Explosive UI must expose provider status")
+    require("Política de proveedores de mercado" in source, "Explosive UI must explain provider policy")
+    require("sin broker · sin MetaTrader" in source, "Explosive UI must state that broker/MetaTrader are not active")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 

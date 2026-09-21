@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.45F — Explosive market data provider policy** (`EXPLOSIVE_PROVIDER_POLICY_READY`): añade una política explícita para proveedores de datos explosivos. Yahoo Finance / yfinance queda como proveedor activo de solo lectura; Polygon/FMP/Twelve Data quedan como candidatos futuros; MetaTrader, broker APIs y terminales de trading quedan bloqueados. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin broker, sin OpenAI, sin recomendaciones financieras, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
+
 **v2.45E — Diversified explosive provider sampling** (`EXPLOSIVE_PROVIDER_SAMPLING_DIVERSIFIED_READY`): corrige el sesgo de muestreo automatico en `Unicornio explosivo`. El refresco via yfinance deja de tomar las primeras `N` empresas por ranking interno/nombre y pasa a seleccionar candidatos compatibles con buckets por evidencia, pais y bolsa mas hash estable. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin broker, sin OpenAI, sin recomendaciones financieras, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
 
 **v2.45D — Compact explosive candidates UX** (`EXPLOSIVE_CANDIDATES_COMPACT_UX_READY`): compacta la vista `Unicornio explosivo`: motor de actualización arriba, resumen corto de resultados, cache/CSV fallback y contrato técnico ocultos en expansores. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin broker, sin OpenAI, sin recomendaciones financieras, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.

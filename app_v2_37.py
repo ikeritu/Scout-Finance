@@ -81,6 +81,12 @@ EXPLOSIVE_UNICORN_AVAILABLE_FIELDS = {
     "penny_stock_signal",
     "micro_cap_signal",
 }
+EXPLOSIVE_MARKET_DATA_PROVIDER_POLICY = {
+    "active_provider": "yfinance",
+    "allowed_read_only_providers": ["yfinance", "polygon_future", "financial_modeling_prep_future", "twelve_data_future"],
+    "blocked_execution_providers": ["metatrader", "broker_api", "trading_terminal"],
+    "guardrail": "market_data_only_no_broker_no_orders",
+}
 EXPLOSIVE_UNICORN_DATA_CONTRACT = [
     {
         "field": "market_cap_usd",
@@ -487,6 +493,16 @@ def diversified_explosive_provider_sample(rows: list[dict], limit: int) -> list[
     return selected
 
 
+def explosive_market_provider_status() -> dict[str, str]:
+    return {
+        "Proveedor activo": "Yahoo Finance / yfinance",
+        "Uso": "Solo lectura de datos de mercado",
+        "MetaTrader": "Bloqueado en esta fase: demasiado cercano a broker/ejecucion",
+        "Siguientes proveedores": "Polygon/FMP/Twelve Data quedan como extensiones futuras",
+        "Guardrail": EXPLOSIVE_MARKET_DATA_PROVIDER_POLICY["guardrail"],
+    }
+
+
 def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
     try:
         import yfinance as yf
@@ -540,6 +556,7 @@ def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple
 
 def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
     st.markdown("#### Motor explosivo")
+    provider_status = explosive_market_provider_status()
     auto_cols = st.columns([1, 1, 3])
     max_rows = auto_cols[0].number_input("Tickers", min_value=5, max_value=100, value=40, step=5, key="explosive_yfinance_limit")
     if SAFE_DEMO_MODE:
@@ -557,7 +574,9 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
             else:
                 save_explosive_overlay(normalized)
                 st.success(f"Overlay automático guardado: {summary['ok']:,}/{summary['processed']:,} tickers OK · fallos {summary['failed']:,}.")
-    auto_cols[2].caption("Fuente principal: yfinance real + cache local. CSV manual solo como fallback.")
+    auto_cols[2].caption("Proveedor activo: Yahoo Finance / yfinance · solo lectura · sin broker · sin MetaTrader · CSV manual solo como fallback.")
+    with st.expander("Política de proveedores de mercado", expanded=False):
+        st.table(pd.DataFrame([{"Campo": key, "Estado": value} for key, value in provider_status.items()]))
 
     template = explosive_unicorn_template_frame(rows)
     current_overlay = load_explosive_overlay()

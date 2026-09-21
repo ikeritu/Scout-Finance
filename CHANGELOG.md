@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45F — Explosive market data provider policy (2026-09-21)
+
+Formaliza la decisión de proveedores para `Unicornio explosivo`: Yahoo Finance / yfinance queda como proveedor activo de solo lectura para datos de mercado; Polygon, Financial Modeling Prep y Twelve Data quedan como extensiones futuras; MetaTrader, APIs de broker y terminales de trading quedan bloqueados por estar demasiado cerca de ejecución. La UI muestra la política en un expansor y conserva CSV manual como fallback trazable. Mantiene no-advice, sin broker, sin OpenAI, sin despliegue, sin URL publica, sin scoring global nuevo y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45E — Diversified explosive provider sampling (2026-09-17)
 
 Corrige el sesgo de muestreo detectado en la actualizacion automatica de `Unicornio explosivo`: el proveedor dejaba de seleccionar las primeras `N` empresas ordenadas por ranking interno/nombre, lo que podia concentrar resultados en companias que empezaban por A. La seleccion ahora es determinista pero diversificada por grado de evidencia, pais y bolsa, y usa hash estable para evitar dependencia del orden alfabetico. Mantiene yfinance como proveedor automatico, CSV como fallback trazable, no-advice, sin broker, sin OpenAI, sin despliegue, sin URL publica, sin scoring global nuevo y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
