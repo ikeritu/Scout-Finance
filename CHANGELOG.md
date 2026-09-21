@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45M — Polygon API Key Guardrail / Safe Config (2026-09-21)
+
+Añade el guardrail seguro de configuración para una futura API key de Polygon. La app lee solo la presencia de `POLYGON_API_KEY` desde variable de entorno, nunca imprime su valor, nunca lo guarda en archivos, nunca lo exporta y bloquea cualquier uso en safe demo. Expone estados cerrados (`POLYGON_API_KEY_MISSING`, `POLYGON_API_KEY_PRESENT_BUT_INVALID`, `POLYGON_API_KEY_PRESENT_READY_FOR_FUTURE_PILOT`, `POLYGON_DISABLED_SAFE_DEMO`) y mantiene yfinance como proveedor activo. No ejecuta llamadas Polygon, no añade dependencias, no cambia score, ranking global, scoring fundamental, metodologia ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45L — Polygon Pilot Contract (2026-09-21)
 
 Añade el contrato técnico del piloto Polygon para `Unicornio explosivo`, todavía no activo. Define campos, endpoints previstos, reglas fail-closed y políticas de cache para `market_cap_usd`, `float_shares`, `short_float_pct`, `relative_volume`, `price_change_20d` y `breakout_signal`. La UI muestra el contrato y exige `POLYGON_API_KEY` como futura variable explícita, pero no ejecuta llamadas HTTP, no usa `requests`, no guarda credenciales, no cambia proveedor activo y mantiene yfinance como fuente real actual. No cambia score, ranking global, scoring fundamental, metodologia ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

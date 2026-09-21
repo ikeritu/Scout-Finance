@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.45L preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.45M preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.45L: add Polygon pilot contract`
+`LOCAL_COMMIT_PENDING_PUSH v2.45M: add Polygon API key guardrail`
 
 Estado operativo del producto:
 
-`POLYGON_PILOT_CONTRACT_READY_NOT_ACTIVE`
+`POLYGON_API_KEY_GUARDRAIL_READY_NOT_ACTIVE`
 
 Cycle status:
 
@@ -165,6 +165,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.45J | Gate de decisión para mantener yfinance, evaluar segundo proveedor o bloquear expansión |
 | Completada | v2.45K | Research gate de segundo proveedor: Polygon preferente, FMP piloto, Twelve Data watch, Alpha Vantage reject |
 | Completada | v2.45L | Contrato piloto Polygon: endpoints, cache y fail-closed sin activar API |
+| Completada | v2.45M | Guardrail seguro de API key Polygon: variable de entorno, secreto oculto, safe-demo bloqueado |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

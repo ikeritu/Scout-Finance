@@ -269,6 +269,20 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
         require(cache_policy in source, f"Polygon pilot cache policy {cache_policy} must be present")
     require("Contrato preparado sin llamadas HTTP, sin requests, sin credenciales guardadas y sin activar Polygon" in source, "Polygon pilot must preserve no-network/no-credentials guardrail")
     require("\"active_provider\": \"yfinance\"" in source, "Polygon pilot must not replace yfinance as active provider")
+    require("import os" in source, "Polygon API key guardrail must read environment state only")
+    require("def polygon_api_key_guardrail(" in source, "Polygon API key guardrail must exist before provider activation")
+    require("Guardrail de API key Polygon v2.45M" in source, "Polygon API key guardrail must be visible in the UI")
+    for status in [
+        "POLYGON_DISABLED_SAFE_DEMO",
+        "POLYGON_API_KEY_MISSING",
+        "POLYGON_API_KEY_PRESENT_BUT_INVALID",
+        "POLYGON_API_KEY_PRESENT_READY_FOR_FUTURE_PILOT",
+    ]:
+        require(status in source, f"Polygon API key status {status} must be present")
+    require("environment_only_never_file_never_ui" in source, "Polygon key must be environment-only and never file/UI storage")
+    require("key_display\": \"hidden\"" in source, "Polygon key display must remain hidden")
+    require("La clave no se imprime, no se guarda, no se exporta" in source, "Polygon key guardrail must forbid secret disclosure")
+    require("no habilita llamadas Polygon en v2.45M" in source, "Polygon key guardrail must not activate Polygon calls")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 from collections import Counter
 from datetime import datetime
 from hashlib import sha1
@@ -806,6 +807,35 @@ def polygon_pilot_contract_gate() -> dict[str, str]:
     }
 
 
+def polygon_api_key_guardrail() -> dict[str, str]:
+    env_name = "POLYGON_API_KEY"
+    raw_value = os.environ.get(env_name, "")
+    has_key = bool(raw_value.strip())
+    safe_length = len(raw_value.strip()) if has_key else 0
+    if SAFE_DEMO_MODE:
+        status = "POLYGON_DISABLED_SAFE_DEMO"
+        action = "Safe demo bloquea cualquier uso futuro de Polygon aunque exista variable de entorno."
+    elif not has_key:
+        status = "POLYGON_API_KEY_MISSING"
+        action = "Mantener yfinance activo; Polygon no puede pasar a piloto real sin variable de entorno explicita."
+    elif safe_length < 16:
+        status = "POLYGON_API_KEY_PRESENT_BUT_INVALID"
+        action = "No activar Polygon: la variable existe, pero no cumple longitud minima de seguridad."
+    else:
+        status = "POLYGON_API_KEY_PRESENT_READY_FOR_FUTURE_PILOT"
+        action = "Polygon podria entrar en una fase futura de piloto read-only, manteniendo QA fail-closed."
+    return {
+        "status": status,
+        "env_name": env_name,
+        "key_present": "yes" if has_key else "no",
+        "key_display": "hidden",
+        "storage_policy": "environment_only_never_file_never_ui",
+        "active_provider": EXPLOSIVE_MARKET_DATA_PROVIDER_POLICY["active_provider"],
+        "action": action,
+        "guardrail": "La clave no se imprime, no se guarda, no se exporta y no habilita llamadas Polygon en v2.45M.",
+    }
+
+
 def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
     try:
         import yfinance as yf
@@ -913,6 +943,7 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
         st.dataframe(second_provider_research_matrix(), use_container_width=True, hide_index=True)
         st.caption(research_gate["guardrail"])
     polygon_gate = polygon_pilot_contract_gate()
+    polygon_key_gate = polygon_api_key_guardrail()
     with st.expander("Contrato piloto Polygon v2.45L", expanded=False):
         pcols = st.columns(3)
         pcols[0].metric("Estado", polygon_gate["status"])
@@ -923,6 +954,15 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
         st.dataframe(polygon_pilot_contract_frame(), use_container_width=True, hide_index=True)
         st.caption(polygon_gate["guardrail"])
         st.caption(polygon_gate["next_step"])
+    with st.expander("Guardrail de API key Polygon v2.45M", expanded=False):
+        key_cols = st.columns(3)
+        key_cols[0].metric("Estado", polygon_key_gate["status"])
+        key_cols[1].metric("Variable", polygon_key_gate["env_name"])
+        key_cols[2].metric("Valor", polygon_key_gate["key_display"])
+        st.write(f"**Presente:** {polygon_key_gate['key_present']}")
+        st.write(f"**Política:** `{polygon_key_gate['storage_policy']}`")
+        st.write(f"**Acción:** {polygon_key_gate['action']}")
+        st.caption(polygon_key_gate["guardrail"])
     with st.expander("Fallback manual y cache de mercado", expanded=False):
         st.markdown("##### Fallback manual v2.45B")
         st.caption("Usa esto solo si el proveedor automático no cubre una acción o quieres revisar el cache guardado.")
