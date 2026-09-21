@@ -145,6 +145,56 @@ EXPLOSIVE_SECOND_PROVIDER_RESEARCH = [
         "notes": "Se mantiene como referencia/watchlist, no como segundo proveedor operativo.",
     },
 ]
+POLYGON_PILOT_CONTRACT = [
+    {
+        "field": "market_cap_usd",
+        "polygon_endpoint": "reference/tickers/{ticker}",
+        "source_attribute": "market_cap",
+        "required": "yes",
+        "cache_policy": "polygon_market_snapshot_v2_45l",
+        "fail_closed_rule": "No etiqueta micro-cap/multibagger si falta market cap real.",
+    },
+    {
+        "field": "float_shares",
+        "polygon_endpoint": "reference/tickers/{ticker}",
+        "source_attribute": "share_class_shares_outstanding/free_float_candidate",
+        "required": "yes",
+        "cache_policy": "polygon_market_snapshot_v2_45l",
+        "fail_closed_rule": "No etiqueta baja flotacion ni squeeze si falta float trazable.",
+    },
+    {
+        "field": "short_float_pct",
+        "polygon_endpoint": "not_activated_short_interest_dataset",
+        "source_attribute": "short_interest / float_shares",
+        "required": "conditional",
+        "cache_policy": "polygon_short_interest_snapshot_v2_45l",
+        "fail_closed_rule": "No etiqueta short squeeze si no existe short interest verificable.",
+    },
+    {
+        "field": "relative_volume",
+        "polygon_endpoint": "aggs/ticker/{ticker}/range/1/day/{from}/{to}",
+        "source_attribute": "volume_vs_20d_average",
+        "required": "yes",
+        "cache_policy": "polygon_ohlcv_snapshot_v2_45l",
+        "fail_closed_rule": "No etiqueta breakout si falta volumen relativo reproducible.",
+    },
+    {
+        "field": "price_change_20d",
+        "polygon_endpoint": "aggs/ticker/{ticker}/range/1/day/{from}/{to}",
+        "source_attribute": "close_20d_pct_change",
+        "required": "yes",
+        "cache_policy": "polygon_ohlcv_snapshot_v2_45l",
+        "fail_closed_rule": "No etiqueta momentum explosivo si falta ventana 20D completa.",
+    },
+    {
+        "field": "breakout_signal",
+        "polygon_endpoint": "local_rule_from_polygon_ohlcv_cache",
+        "source_attribute": "relative_volume >= 2 and price_change_20d >= 20",
+        "required": "derived",
+        "cache_policy": "derived_local_only_v2_45l",
+        "fail_closed_rule": "No se acepta breakout manual si no sale de precio/volumen cacheado.",
+    },
+]
 EXPLOSIVE_UNICORN_DATA_CONTRACT = [
     {
         "field": "market_cap_usd",
@@ -740,6 +790,22 @@ def second_provider_research_gate(provider_decision: dict) -> dict[str, str]:
     }
 
 
+def polygon_pilot_contract_frame() -> pd.DataFrame:
+    return pd.DataFrame(POLYGON_PILOT_CONTRACT)
+
+
+def polygon_pilot_contract_gate() -> dict[str, str]:
+    return {
+        "status": "POLYGON_PILOT_CONTRACT_READY_NOT_ACTIVE",
+        "provider": "Polygon",
+        "api_key_env": "POLYGON_API_KEY",
+        "active_provider": EXPLOSIVE_MARKET_DATA_PROVIDER_POLICY["active_provider"],
+        "cache_target": "data/user_explosive_unicorn_market_overlay_v2_45b.csv",
+        "guardrail": "Contrato preparado sin llamadas HTTP, sin requests, sin credenciales guardadas y sin activar Polygon.",
+        "next_step": "Solo pasar a piloto real cuando exista API key explicita, limites documentados y QA fail-closed.",
+    }
+
+
 def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
     try:
         import yfinance as yf
@@ -846,6 +912,17 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
         st.write(f"**Acción propuesta:** {research_gate['action']}")
         st.dataframe(second_provider_research_matrix(), use_container_width=True, hide_index=True)
         st.caption(research_gate["guardrail"])
+    polygon_gate = polygon_pilot_contract_gate()
+    with st.expander("Contrato piloto Polygon v2.45L", expanded=False):
+        pcols = st.columns(3)
+        pcols[0].metric("Estado", polygon_gate["status"])
+        pcols[1].metric("Proveedor", polygon_gate["provider"])
+        pcols[2].metric("Proveedor activo", polygon_gate["active_provider"])
+        st.write(f"**API key requerida:** `{polygon_gate['api_key_env']}`")
+        st.write(f"**Cache objetivo:** `{polygon_gate['cache_target']}`")
+        st.dataframe(polygon_pilot_contract_frame(), use_container_width=True, hide_index=True)
+        st.caption(polygon_gate["guardrail"])
+        st.caption(polygon_gate["next_step"])
     with st.expander("Fallback manual y cache de mercado", expanded=False):
         st.markdown("##### Fallback manual v2.45B")
         st.caption("Usa esto solo si el proveedor automático no cubre una acción o quieres revisar el cache guardado.")

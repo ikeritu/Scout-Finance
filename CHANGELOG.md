@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45L — Polygon Pilot Contract (2026-09-21)
+
+Añade el contrato técnico del piloto Polygon para `Unicornio explosivo`, todavía no activo. Define campos, endpoints previstos, reglas fail-closed y políticas de cache para `market_cap_usd`, `float_shares`, `short_float_pct`, `relative_volume`, `price_change_20d` y `breakout_signal`. La UI muestra el contrato y exige `POLYGON_API_KEY` como futura variable explícita, pero no ejecuta llamadas HTTP, no usa `requests`, no guarda credenciales, no cambia proveedor activo y mantiene yfinance como fuente real actual. No cambia score, ranking global, scoring fundamental, metodologia ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45K — Second Provider Research Gate (2026-09-21)
 
 Añade un research gate para elegir segundo proveedor futuro de datos de `Unicornio explosivo`, sin activar ninguna API. Compara Polygon, Financial Modeling Prep, Twelve Data y Alpha Vantage por cobertura de `market_cap`, `float_shares`, `short_float_pct`, `relative_volume` y `price_history_20d`, además de clave API, free tier, coste/licencia y riesgo técnico. La decisión queda cerrada como `PREFERRED_SECOND_PROVIDER`, `PILOT_CANDIDATE`, `WATCH` o `REJECT`; Polygon queda como candidato preferente y FMP como piloto comparador. No ejecuta red, no guarda credenciales, no añade dependencias, no cambia score, ranking global, scoring fundamental, metodologia ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

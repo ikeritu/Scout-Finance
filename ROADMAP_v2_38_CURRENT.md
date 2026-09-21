@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.45K preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.45L preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.45K: add second provider research gate`
+`LOCAL_COMMIT_PENDING_PUSH v2.45L: add Polygon pilot contract`
 
 Estado operativo del producto:
 
-`EXPLOSIVE_SECOND_PROVIDER_RESEARCH_GATE_READY`
+`POLYGON_PILOT_CONTRACT_READY_NOT_ACTIVE`
 
 Cycle status:
 
@@ -164,6 +164,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.45I | Diagnóstico de calidad del refresco real y cobertura de campos críticos |
 | Completada | v2.45J | Gate de decisión para mantener yfinance, evaluar segundo proveedor o bloquear expansión |
 | Completada | v2.45K | Research gate de segundo proveedor: Polygon preferente, FMP piloto, Twelve Data watch, Alpha Vantage reject |
+| Completada | v2.45L | Contrato piloto Polygon: endpoints, cache y fail-closed sin activar API |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

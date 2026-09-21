@@ -257,6 +257,18 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     for field in ["market_cap", "float_shares", "short_float_pct", "relative_volume", "price_history_20d"]:
         require(field in source, f"Second-provider research must evaluate {field}")
     require("No activa APIs, no guarda credenciales y no ejecuta red" in source, "Second-provider research must remain documentation-only")
+    require("POLYGON_PILOT_CONTRACT" in source, "Polygon pilot contract must be explicit before any provider activation")
+    require("def polygon_pilot_contract_frame(" in source, "Polygon pilot contract must be renderable")
+    require("def polygon_pilot_contract_gate(" in source, "Polygon pilot gate must expose status and guardrails")
+    require("Contrato piloto Polygon v2.45L" in source, "Polygon pilot contract must be visible in the UI")
+    require("POLYGON_API_KEY" in source, "Polygon pilot must name the required explicit API key environment variable")
+    require("POLYGON_PILOT_CONTRACT_READY_NOT_ACTIVE" in source, "Polygon pilot must remain not active")
+    for endpoint in ["reference/tickers/{ticker}", "aggs/ticker/{ticker}/range/1/day/{from}/{to}", "not_activated_short_interest_dataset"]:
+        require(endpoint in source, f"Polygon pilot contract must document endpoint {endpoint}")
+    for cache_policy in ["polygon_market_snapshot_v2_45l", "polygon_ohlcv_snapshot_v2_45l", "derived_local_only_v2_45l"]:
+        require(cache_policy in source, f"Polygon pilot cache policy {cache_policy} must be present")
+    require("Contrato preparado sin llamadas HTTP, sin requests, sin credenciales guardadas y sin activar Polygon" in source, "Polygon pilot must preserve no-network/no-credentials guardrail")
+    require("\"active_provider\": \"yfinance\"" in source, "Polygon pilot must not replace yfinance as active provider")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 
