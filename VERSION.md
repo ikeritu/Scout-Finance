@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.45H — Explosive Candidates UX Dashboard** (`EXPLOSIVE_CANDIDATES_UX_DASHBOARD_READY`): añade dashboard compacto para candidatos explosivos con distribución por tiers, filtros rápidos de score/señal, cards explicativas y guía de revisión manual. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin broker, sin MetaTrader activo, sin OpenAI, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
+
 **v2.45G — Explosive Candidate Scoring v1** (`EXPLOSIVE_CANDIDATE_SCORING_V1_READY`): añade scoring heurístico de investigación para candidatos explosivos, con campo `explosive_score_0_100`, tiers cerrados, drivers y señales faltantes. No toca `unicorn_internal_rank_key`, ranking global, scoring fundamental ni pesos previos. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin broker, sin MetaTrader activo, sin OpenAI, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
 
 **v2.45F — Explosive market data provider policy** (`EXPLOSIVE_PROVIDER_POLICY_READY`): añade una política explícita para proveedores de datos explosivos. Yahoo Finance / yfinance queda como proveedor activo de solo lectura; Polygon/FMP/Twelve Data quedan como candidatos futuros; MetaTrader, broker APIs y terminales de trading quedan bloqueados. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin broker, sin OpenAI, sin recomendaciones financieras, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.

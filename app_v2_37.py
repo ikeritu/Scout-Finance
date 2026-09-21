@@ -712,6 +712,104 @@ def unicorn_semantic_summary(rows: list[dict]) -> dict[str, int]:
     }
 
 
+def row_has_explosive_driver(row: dict, driver: str) -> bool:
+    text = " ".join(str(item).casefold() for item in row.get("drivers", []))
+    if driver == "micro_cap":
+        return "micro-cap" in text or truthy_value(row.get("micro_cap_signal"))
+    if driver == "penny_stock":
+        return "penny" in text or truthy_value(row.get("penny_stock_signal"))
+    if driver == "short_squeeze":
+        return "short" in text or truthy_value(row.get("squeeze_signal"))
+    if driver == "breakout":
+        return "breakout" in text or truthy_value(row.get("breakout_signal"))
+    return False
+
+
+def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
+    st.markdown("### Dashboard de candidatos explosivos")
+    st.caption("Vista de investigación: prioriza revisión por score, tier, drivers y señales faltantes. No es recomendación financiera ni predice rentabilidad.")
+    tier_order = ["EXPLOSIVE_CANDIDATE_HIGH", "EXPLOSIVE_CANDIDATE_MEDIUM", "EXPLOSIVE_CANDIDATE_LOW", "WATCH_ONLY", "NO_DATA"]
+    tier_counts = Counter(row.get("tier", "NO_DATA") for row in rows)
+    metric_cols = st.columns(5)
+    for col, tier in zip(metric_cols, tier_order):
+        col.metric(tier.replace("_", " "), f"{tier_counts.get(tier, 0):,}")
+
+    filters = st.columns([1, 1, 1])
+    tier_filter = filters[0].selectbox(
+        "Filtro de tier explosivo",
+        ["Todos", "HIGH", "MEDIUM+", "LOW+", "WATCH_ONLY", "NO_DATA"],
+        key="explosive_dashboard_tier_filter",
+    )
+    signal_filter = filters[1].selectbox(
+        "Filtro de señal",
+        ["Todas", "Micro-cap", "Penny stock", "Short squeeze", "Breakout", "Faltan datos críticos"],
+        key="explosive_dashboard_signal_filter",
+    )
+    max_cards = filters[2].number_input("Cards", min_value=3, max_value=24, value=9, step=3, key="explosive_dashboard_cards")
+
+    dashboard_rows = list(rows)
+    if tier_filter == "HIGH":
+        dashboard_rows = [row for row in dashboard_rows if row.get("tier") == "EXPLOSIVE_CANDIDATE_HIGH"]
+    elif tier_filter == "MEDIUM+":
+        dashboard_rows = [row for row in dashboard_rows if row.get("tier") in {"EXPLOSIVE_CANDIDATE_HIGH", "EXPLOSIVE_CANDIDATE_MEDIUM"}]
+    elif tier_filter == "LOW+":
+        dashboard_rows = [row for row in dashboard_rows if row.get("tier") in {"EXPLOSIVE_CANDIDATE_HIGH", "EXPLOSIVE_CANDIDATE_MEDIUM", "EXPLOSIVE_CANDIDATE_LOW"}]
+    elif tier_filter in {"WATCH_ONLY", "NO_DATA"}:
+        dashboard_rows = [row for row in dashboard_rows if row.get("tier") == tier_filter]
+
+    signal_map = {
+        "Micro-cap": "micro_cap",
+        "Penny stock": "penny_stock",
+        "Short squeeze": "short_squeeze",
+        "Breakout": "breakout",
+    }
+    if signal_filter in signal_map:
+        dashboard_rows = [row for row in dashboard_rows if row_has_explosive_driver(row, signal_map[signal_filter])]
+    elif signal_filter == "Faltan datos críticos":
+        dashboard_rows = [row for row in dashboard_rows if row.get("missing_signals")]
+
+    dashboard_rows = sorted(dashboard_rows, key=lambda row: (-int(row.get("explosive_score_0_100", 0)), row.get("company_name", "")))
+    st.caption(f"{len(dashboard_rows):,} candidatos tras filtros del dashboard.")
+    for start in range(0, min(len(dashboard_rows), int(max_cards)), 3):
+        cols = st.columns(3)
+        for col, row in zip(cols, dashboard_rows[start:start + 3]):
+            score = int(row.get("explosive_score_0_100", 0))
+            drivers = row.get("drivers", [])[:3]
+            missing = row.get("missing_signals", [])[:3]
+            tier = row.get("tier", "NO_DATA")
+            color = "#0f766e" if tier.endswith("HIGH") else "#2563eb" if tier.endswith("MEDIUM") else "#d97706" if tier.endswith("LOW") else "#64748b"
+            col.markdown(
+                f"""
+                <div style="border:1px solid #d8e2ef;border-left:6px solid {color};border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#ffffff;">
+                  <div style="font-weight:800;color:#0f172a;">{escape(row.get("company_name", ""))}</div>
+                  <div style="color:#64748b;font-size:12px;">{escape(row.get("ticker") or row.get("asset_id") or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(row.get("exchange") or "N/D")}</div>
+                  <div style="font-size:30px;font-weight:900;color:{color};margin-top:8px;">{score}</div>
+                  <div style="color:#475569;font-size:12px;margin-bottom:8px;">{escape(tier)}</div>
+                  <div style="font-size:13px;color:#334155;"><b>Drivers:</b> {escape(" · ".join(drivers) if drivers else "sin drivers suficientes")}</div>
+                  <div style="font-size:13px;color:#64748b;"><b>Faltan:</b> {escape(" · ".join(missing) if missing else "ninguna señal crítica")}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+            with col.expander("Por qué puntúa así"):
+                st.write("**Drivers principales**")
+                for driver in row.get("drivers", []):
+                    st.write(f"- {driver}")
+                st.write("**Qué señales faltan**")
+                missing_all = row.get("missing_signals", [])
+                if missing_all:
+                    for signal in missing_all:
+                        st.write(f"- {signal}")
+                else:
+                    st.write("- Ninguna señal crítica del contrato v2.45G.")
+                st.write("**Qué revisar manualmente**")
+                st.write("- Confirmar que market cap, precio, volumen y float vienen de una fuente actual.")
+                st.write("- Revisar si el movimiento es liquidez real o ruido de datos.")
+                st.write("- Verificar si el catalizador existe y no es solo momentum técnico.")
+                st.caption(row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
+    return dashboard_rows
+
+
 def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
     summary = unicorn_semantic_summary(rows)
     cols = st.columns(4)
@@ -739,6 +837,7 @@ def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
         tier_cols = st.columns(5)
         for col, tier in zip(tier_cols, ["NO_DATA", "WATCH_ONLY", "EXPLOSIVE_CANDIDATE_LOW", "EXPLOSIVE_CANDIDATE_MEDIUM", "EXPLOSIVE_CANDIDATE_HIGH"]):
             col.metric(tier.replace("_", " "), f"{tier_counts.get(tier, 0):,}")
+        render_explosive_candidates_dashboard(rows)
         if summary["explosive"] == 0:
             st.warning("Sin candidatos explosivos evaluables todavía: faltan señales reales suficientes de mercado.")
         with st.expander("Contrato técnico y señales requeridas", expanded=False):

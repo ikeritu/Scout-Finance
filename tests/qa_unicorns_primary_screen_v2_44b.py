@@ -225,6 +225,14 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Score explosivo v1" in source, "Explosive UI must expose the dedicated score label")
     require("MetaTrader" in source and "broker_api" in source, "MetaTrader/broker must remain blocked after explosive scoring")
     require("\"active_provider\": \"yfinance\"" in source, "yfinance must remain the active provider after explosive scoring")
+    require("def render_explosive_candidates_dashboard(" in source, "Explosive candidates must have a dedicated dashboard")
+    require("Dashboard de candidatos explosivos" in source, "Explosive dashboard heading must be visible")
+    require("Filtro de tier explosivo" in source, "Explosive dashboard must expose tier filters")
+    require("Filtro de señal" in source, "Explosive dashboard must expose signal filters")
+    for label in ["Micro-cap", "Penny stock", "Short squeeze", "Breakout", "Faltan datos críticos"]:
+        require(label in source, f"Explosive dashboard filter {label} must be present")
+    require("Por qué puntúa así" in source, "Explosive dashboard must explain score rationale")
+    require("Qué revisar manualmente" in source, "Explosive dashboard must show manual review guidance")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 

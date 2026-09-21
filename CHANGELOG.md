@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45H — Explosive Candidates UX Dashboard (2026-09-21)
+
+Añade un dashboard específico para `Unicornio explosivo` tras el score v1: distribución por tiers, filtros rápidos por prioridad y señal, cards compactas con score/tier/drivers/faltantes y un panel explicativo de por qué puntúa así, qué señales faltan y qué revisar manualmente. No cambia el cálculo del score, no modifica ranking global, scoring fundamental, proveedor, metodologia ni pesos. Mantiene yfinance activo, CSV fallback, MetaTrader/broker bloqueado, no-advice, sin OpenAI, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45G — Explosive Candidate Scoring v1 (2026-09-21)
 
 Añade un score especifico para `Unicornio explosivo`, separado del scoring fundamental/global. La funcion `explosive_candidate_score()` calcula `explosive_score_0_100`, tier, drivers y señales faltantes usando solo datos de mercado del overlay: capitalizacion, precio, volumen relativo, float, short float, momentum 20D, breakout y catalizador. La UI muestra el score y el tier en las vistas de candidatos, con guardrail explicito: no es una recomendacion financiera ni predice rentabilidad. Mantiene yfinance como proveedor activo, CSV como fallback, MetaTrader/broker bloqueado, sin OpenAI, sin despliegue, sin URL publica, sin scoring global nuevo y sin cambios de metodologia. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
