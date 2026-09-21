@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.45J — Provider Upgrade Decision Gate** (`EXPLOSIVE_PROVIDER_DECISION_GATE_READY`): añade gate de decisión para proveedores explosivos con salidas cerradas `KEEP_YFINANCE`, `EVALUATE_SECOND_PROVIDER` y `BLOCK_EXPLOSIVE_EXPANSION_UNTIL_DATA_IMPROVES`. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin proveedor nuevo activado, sin red adicional, sin broker, sin MetaTrader activo, sin OpenAI, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
+
 **v2.45I — Real Data Refresh Quality Diagnostics** (`EXPLOSIVE_REFRESH_QUALITY_DIAGNOSTICS_READY`): añade diagnóstico de cobertura del refresco real/cache de candidatos explosivos. Mide cobertura por campo crítico, detecta campos débiles y documenta si conviene evaluar un proveedor complementario futuro. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin red adicional, sin broker, sin MetaTrader activo, sin OpenAI, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
 
 **v2.45H — Explosive Candidates UX Dashboard** (`EXPLOSIVE_CANDIDATES_UX_DASHBOARD_READY`): añade dashboard compacto para candidatos explosivos con distribución por tiers, filtros rápidos de score/señal, cards explicativas y guía de revisión manual. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin broker, sin MetaTrader activo, sin OpenAI, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.

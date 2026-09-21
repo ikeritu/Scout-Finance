@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45J — Provider Upgrade Decision Gate (2026-09-21)
+
+Añade un gate de decisión operativo para proveedores de `Unicornio explosivo`, alimentado por el diagnóstico de `v2.45I`. El gate devuelve `KEEP_YFINANCE`, `EVALUATE_SECOND_PROVIDER` o `BLOCK_EXPLOSIVE_EXPANSION_UNTIL_DATA_IMPROVES`, con motivo, acción y guardrail no-advice. No activa Polygon/FMP/Twelve Data, solo deja la decisión preparada; MetaTrader, broker y órdenes siguen bloqueados. No ejecuta red nueva, no cambia score, ranking global, scoring fundamental, metodología ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45I — Real Data Refresh Quality Diagnostics (2026-09-21)
 
 Añade diagnóstico local para el cache/overlay de `Unicornio explosivo`: cobertura por campo crítico, campos débiles, estado de cobertura del proveedor y siguiente paso sugerido. Permite saber si yfinance trae suficientes datos o si conviene evaluar Polygon/FMP/Twelve Data en una fase futura. No ejecuta red nueva, no añade proveedor, no cambia score, ranking global, scoring fundamental, metodología ni pesos. Mantiene yfinance activo, CSV fallback, MetaTrader/broker bloqueado, no-advice, sin OpenAI, sin despliegue y sin URL publica. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

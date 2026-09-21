@@ -628,6 +628,33 @@ def explosive_refresh_quality_diagnostics(overlay: pd.DataFrame) -> dict:
     }
 
 
+def explosive_provider_upgrade_decision(diagnostics: dict) -> dict[str, str]:
+    status = diagnostics.get("overall_status", "NO_CACHE")
+    weak_fields = diagnostics.get("weak_fields", [])
+    if status == "NO_CACHE":
+        decision = "BLOCK_EXPLOSIVE_EXPANSION_UNTIL_DATA_IMPROVES"
+        reason = "No hay cache de mercado suficiente para ampliar candidatos explosivos."
+        action = "Ejecutar yfinance y revisar cobertura antes de añadir proveedores."
+    elif status == "WEAK_PROVIDER_COVERAGE":
+        decision = "EVALUATE_SECOND_PROVIDER"
+        reason = "Faltan demasiados campos críticos: " + ", ".join(weak_fields)
+        action = "Comparar Polygon/FMP/Twelve Data en una fase futura sin activar broker."
+    elif status == "PARTIAL_PROVIDER_COVERAGE":
+        decision = "EVALUATE_SECOND_PROVIDER"
+        reason = "yfinance cubre parte del contrato, pero deja campos débiles: " + ", ".join(weak_fields)
+        action = "Mantener yfinance activo y estudiar proveedor complementario solo para campos débiles."
+    else:
+        decision = "KEEP_YFINANCE"
+        reason = "La cobertura del cache es suficiente para investigación local."
+        action = "Mantener yfinance como proveedor activo; no activar MetaTrader ni broker."
+    return {
+        "decision": decision,
+        "reason": reason,
+        "action": action,
+        "guardrail": "Decisión operativa de datos; no es recomendación financiera ni señal de compra.",
+    }
+
+
 def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
     try:
         import yfinance as yf
@@ -708,6 +735,7 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
     if not current_overlay.empty:
         st.caption(f"Cache de mercado activa: {len(current_overlay):,} filas.")
     diagnostics = explosive_refresh_quality_diagnostics(current_overlay)
+    provider_decision = explosive_provider_upgrade_decision(diagnostics)
     with st.expander("Diagnóstico de calidad del refresco real", expanded=False):
         dcols = st.columns(3)
         dcols[0].metric("Filas cache", f"{diagnostics['rows']:,}")
@@ -719,6 +747,11 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
         if diagnostics["weak_fields"]:
             st.warning("Campos débiles: " + ", ".join(diagnostics["weak_fields"]))
         st.caption("Diagnóstico local del cache/overlay. No descarga datos, no cambia scoring, no activa MetaTrader ni broker.")
+    with st.expander("Gate de decisión de proveedor", expanded=False):
+        st.metric("Decisión", provider_decision["decision"])
+        st.write(f"**Motivo:** {provider_decision['reason']}")
+        st.write(f"**Acción:** {provider_decision['action']}")
+        st.caption(provider_decision["guardrail"])
     with st.expander("Fallback manual y cache de mercado", expanded=False):
         st.markdown("##### Fallback manual v2.45B")
         st.caption("Usa esto solo si el proveedor automático no cubre una acción o quieres revisar el cache guardado.")

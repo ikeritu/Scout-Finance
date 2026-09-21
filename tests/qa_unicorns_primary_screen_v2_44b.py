@@ -240,6 +240,12 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("PROVIDER_COVERAGE_OK" in source, "Refresh diagnostics must flag sufficient provider coverage")
     require("Polygon/FMP/Twelve Data" in source, "Diagnostics must mention future provider evaluation without activating it")
     require("No descarga datos, no cambia scoring, no activa MetaTrader ni broker" in source, "Diagnostics must preserve no-network/no-broker guardrails")
+    require("def explosive_provider_upgrade_decision(" in source, "Explosive provider upgrade decision gate must exist")
+    for decision in ["KEEP_YFINANCE", "EVALUATE_SECOND_PROVIDER", "BLOCK_EXPLOSIVE_EXPANSION_UNTIL_DATA_IMPROVES"]:
+        require(decision in source, f"Provider decision {decision} must be present")
+    require("Gate de decisión de proveedor" in source, "Provider decision gate must be visible in the UI")
+    require("Decisión operativa de datos; no es recomendación financiera ni señal de compra" in source, "Provider gate must preserve no-advice wording")
+    require("no activar MetaTrader ni broker" in source, "Provider gate must keep MetaTrader/broker blocked")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 
