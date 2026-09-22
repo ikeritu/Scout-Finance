@@ -629,6 +629,48 @@ def apply_explosive_overlay(rows: list[dict], overlay: pd.DataFrame) -> list[dic
     return merged
 
 
+def polygon_cache_recalculation_summary(rows: list[dict], overlay: pd.DataFrame) -> dict:
+    if overlay.empty:
+        return {
+            "status": "POLYGON_RECALCULATION_NO_CACHE",
+            "provider": "none",
+            "overlay_rows": 0,
+            "entered": 0,
+            "exited": 0,
+            "improved": 0,
+            "blocked": len(rows),
+            "summary": "No hay overlay local para recalcular candidatos explosivos.",
+        }
+    source_text = " ".join(overlay.get("catalyst_note", pd.Series(dtype=str)).fillna("").astype(str).tolist()).casefold()
+    provider = "polygon" if "polygon_read_only_market_cache_v2_45n" in source_text else "non_polygon_overlay"
+    before = {row.get("asset_id") or row.get("ticker") or row.get("company_name"): row | explosive_candidate_score(row) for row in rows}
+    after_rows = apply_explosive_overlay(rows, overlay)
+    after = {row.get("asset_id") or row.get("ticker") or row.get("company_name"): row | explosive_candidate_score(row) for row in after_rows}
+
+    def is_explosive(row: dict) -> bool:
+        return str(row.get("tier", "")).startswith("EXPLOSIVE_CANDIDATE")
+
+    entered = [key for key, row in after.items() if is_explosive(row) and not is_explosive(before.get(key, {}))]
+    exited = [key for key, row in before.items() if is_explosive(row) and not is_explosive(after.get(key, {}))]
+    improved = [
+        key
+        for key, row in after.items()
+        if int(row.get("explosive_score_0_100", 0)) > int(before.get(key, {}).get("explosive_score_0_100", 0))
+    ]
+    blocked = [key for key, row in after.items() if row.get("tier") == "NO_DATA"]
+    status = "POLYGON_RECALCULATION_READY" if provider == "polygon" else "OVERLAY_RECALCULATION_READY_NON_POLYGON"
+    return {
+        "status": status,
+        "provider": provider,
+        "overlay_rows": len(overlay),
+        "entered": len(entered),
+        "exited": len(exited),
+        "improved": len(improved),
+        "blocked": len(blocked),
+        "summary": "Recalculo local en memoria: no cambia ranking global, no escribe fundamentales y no genera recomendación.",
+    }
+
+
 def yfinance_symbol(row: dict) -> str:
     ticker = (row.get("ticker") or "").strip()
     exchange = (row.get("exchange") or "").strip().upper()
@@ -1113,6 +1155,17 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
                 st.success(f"Overlay local guardado: {len(normalized):,} filas de señales explosivas.")
         if not current_overlay.empty:
             st.dataframe(current_overlay.head(50), use_container_width=True, hide_index=True, height=260)
+    recalculation_summary = polygon_cache_recalculation_summary(rows, current_overlay)
+    with st.expander("Recálculo local con cache Polygon v2.45O", expanded=False):
+        rcols = st.columns(5)
+        rcols[0].metric("Estado", recalculation_summary["status"])
+        rcols[1].metric("Overlay", f"{recalculation_summary['overlay_rows']:,}")
+        rcols[2].metric("Entradas", f"{recalculation_summary['entered']:,}")
+        rcols[3].metric("Mejoran score", f"{recalculation_summary['improved']:,}")
+        rcols[4].metric("Bloqueados", f"{recalculation_summary['blocked']:,}")
+        st.write(f"**Proveedor detectado:** {recalculation_summary['provider']}")
+        st.caption(recalculation_summary["summary"])
+        st.caption("v2.45O compara candidatos explosivos en memoria; no toca scoring global, ranking global, fundamentales ni precios base.")
     return apply_explosive_overlay(rows, current_overlay)
 
 

@@ -296,6 +296,14 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Cache Polygon guardado" in source, "Polygon cache must persist only through the local overlay path")
     require("sin broker, sin órdenes y sin exponer POLYGON_API_KEY" in source, "Polygon cache must preserve broker/order/secret guardrails")
     require("v2.45N no cambia scoring ni ranking global" in source, "Polygon cache must not change scoring or ranking global")
+    require("def polygon_cache_recalculation_summary(" in source, "Polygon cache must expose a local recalculation summary")
+    require("Recálculo local con cache Polygon v2.45O" in source, "Polygon recalculation summary must be visible in the UI")
+    for status in ["POLYGON_RECALCULATION_NO_CACHE", "POLYGON_RECALCULATION_READY", "OVERLAY_RECALCULATION_READY_NON_POLYGON"]:
+        require(status in source, f"Polygon recalculation status {status} must be present")
+    for label in ["Entradas", "Mejoran score", "Bloqueados", "Proveedor detectado"]:
+        require(label in source, f"Polygon recalculation UI must show {label}")
+    require("Recalculo local en memoria: no cambia ranking global" in source, "Polygon recalculation must stay in-memory/no-ranking")
+    require("no toca scoring global, ranking global, fundamentales ni precios base" in source, "Polygon recalculation must preserve core data guardrails")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 

@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.45N preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.45O preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.45N: add Polygon read-only market cache`
+`LOCAL_COMMIT_PENDING_PUSH v2.45O: recalculate explosive candidates with Polygon cache`
 
 Estado operativo del producto:
 
-`POLYGON_READ_ONLY_CACHE_READY_GUARDED`
+`POLYGON_CACHE_RECALCULATION_READY_LOCAL_ONLY`
 
 Cycle status:
 
@@ -167,6 +167,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.45L | Contrato piloto Polygon: endpoints, cache y fail-closed sin activar API |
 | Completada | v2.45M | Guardrail seguro de API key Polygon: variable de entorno, secreto oculto, safe-demo bloqueado |
 | Completada | v2.45N | Cache Polygon read-only con key guardrail, click explícito, límite de tickers y overlay local |
+| Completada | v2.45O | Recálculo local de candidatos explosivos con overlay/cache Polygon, entradas, mejoras y bloqueos |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45O — Explosive Candidate Recalculation With Polygon Cache (2026-09-22)
+
+Añade un resumen de recálculo local para candidatos explosivos cuando existe overlay/cache de mercado, especialmente el cache Polygon `polygon_read_only_market_cache_v2_45n`. La app compara en memoria la situación antes/después de aplicar el overlay y muestra proveedor detectado, filas de overlay, entradas, salidas implícitas por bloqueo, mejoras de score y bloqueados. No escribe datos fundamentales, no cambia precios base, no recalcula ranking global, no modifica metodología ni pesos y no genera recomendación financiera. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45N — Polygon Read-Only Market Cache (2026-09-22)
 
 Añade el primer esqueleto ejecutable de cache Polygon en modo solo lectura para `Unicornio explosivo`. La ejecución queda bloqueada salvo que `POLYGON_API_KEY` supere el guardrail, no esté activo safe demo, el usuario pulse explícitamente `Actualizar cache Polygon` y el límite sea de 25 tickers o menos. Usa `urllib` estándar, etiqueta filas como `polygon_read_only_market_cache_v2_45n`, normaliza con el overlay local existente y guarda cache local trazable. No expone secretos, no ejecuta órdenes, no se conecta a broker, no cambia score, ranking global, scoring fundamental, metodología ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

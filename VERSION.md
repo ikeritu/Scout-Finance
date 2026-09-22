@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.45O — Explosive Candidate Recalculation With Polygon Cache** (`POLYGON_CACHE_RECALCULATION_READY_LOCAL_ONLY`): añade recálculo local en memoria para candidatos explosivos usando overlay/cache, con métricas de entradas, mejoras y bloqueos. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin credenciales expuestas, sin broker, sin MetaTrader activo, sin órdenes, sin OpenAI, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
+
 **v2.45N — Polygon Read-Only Market Cache** (`POLYGON_READ_ONLY_CACHE_READY_GUARDED`): añade cache Polygon read-only con ejecución protegida por key, safe demo, click explícito y límite de tickers. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin credenciales expuestas, sin broker, sin MetaTrader activo, sin órdenes, sin OpenAI, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
 
 **v2.45M — Polygon API Key Guardrail / Safe Config** (`POLYGON_API_KEY_GUARDRAIL_READY_NOT_ACTIVE`): añade control seguro de configuración para `POLYGON_API_KEY` como variable de entorno, sin exponer ni almacenar el secreto y sin activar llamadas Polygon. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin API nueva ejecutada, sin credenciales guardadas, sin red adicional, sin broker, sin MetaTrader activo, sin OpenAI, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
