@@ -283,6 +283,19 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("key_display\": \"hidden\"" in source, "Polygon key display must remain hidden")
     require("La clave no se imprime, no se guarda, no se exporta" in source, "Polygon key guardrail must forbid secret disclosure")
     require("no habilita llamadas Polygon en v2.45M" in source, "Polygon key guardrail must not activate Polygon calls")
+    require("import urllib.request" in source and "import urllib.error" in source, "Polygon read-only cache must use stdlib networking only")
+    require("def polygon_cache_execution_gate(" in source, "Polygon cache execution must be guarded")
+    require("def polygon_json_get(" in source, "Polygon cache must isolate HTTP JSON access")
+    require("def fetch_polygon_read_only_overlay(" in source, "Polygon read-only cache fetcher must exist")
+    require("Cache read-only Polygon v2.45N" in source, "Polygon read-only cache UI must be visible")
+    for status in ["POLYGON_CACHE_BLOCKED_SAFE_DEMO", "POLYGON_CACHE_BLOCKED_KEY_NOT_READY", "POLYGON_CACHE_BLOCKED_LIMIT_TOO_HIGH", "POLYGON_CACHE_READY_READ_ONLY"]:
+        require(status in source, f"Polygon cache execution status {status} must be present")
+    require("max_value=25" in source and "polygon_read_only_limit" in source, "Polygon cache must enforce a small explicit ticker limit")
+    require("Actualizar cache Polygon" in source, "Polygon cache must require an explicit button")
+    require("polygon_read_only_market_cache_v2_45n" in source, "Polygon cache rows must be source-tagged")
+    require("Cache Polygon guardado" in source, "Polygon cache must persist only through the local overlay path")
+    require("sin broker, sin órdenes y sin exponer POLYGON_API_KEY" in source, "Polygon cache must preserve broker/order/secret guardrails")
+    require("v2.45N no cambia scoring ni ranking global" in source, "Polygon cache must not change scoring or ranking global")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 

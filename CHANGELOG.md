@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45N — Polygon Read-Only Market Cache (2026-09-22)
+
+Añade el primer esqueleto ejecutable de cache Polygon en modo solo lectura para `Unicornio explosivo`. La ejecución queda bloqueada salvo que `POLYGON_API_KEY` supere el guardrail, no esté activo safe demo, el usuario pulse explícitamente `Actualizar cache Polygon` y el límite sea de 25 tickers o menos. Usa `urllib` estándar, etiqueta filas como `polygon_read_only_market_cache_v2_45n`, normaliza con el overlay local existente y guarda cache local trazable. No expone secretos, no ejecuta órdenes, no se conecta a broker, no cambia score, ranking global, scoring fundamental, metodología ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45M — Polygon API Key Guardrail / Safe Config (2026-09-21)
 
 Añade el guardrail seguro de configuración para una futura API key de Polygon. La app lee solo la presencia de `POLYGON_API_KEY` desde variable de entorno, nunca imprime su valor, nunca lo guarda en archivos, nunca lo exporta y bloquea cualquier uso en safe demo. Expone estados cerrados (`POLYGON_API_KEY_MISSING`, `POLYGON_API_KEY_PRESENT_BUT_INVALID`, `POLYGON_API_KEY_PRESENT_READY_FOR_FUTURE_PILOT`, `POLYGON_DISABLED_SAFE_DEMO`) y mantiene yfinance como proveedor activo. No ejecuta llamadas Polygon, no añade dependencias, no cambia score, ranking global, scoring fundamental, metodologia ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

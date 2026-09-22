@@ -3,13 +3,15 @@ from __future__ import annotations
 
 import json
 import os
+import urllib.error
+import urllib.request
 from collections import Counter
 from datetime import datetime
 from hashlib import sha1
 from html import escape
 from io import StringIO
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlencode
 
 import pandas as pd
 import streamlit as st
@@ -836,6 +838,102 @@ def polygon_api_key_guardrail() -> dict[str, str]:
     }
 
 
+def polygon_cache_execution_gate(limit: int, key_gate: dict[str, str]) -> dict[str, str]:
+    if SAFE_DEMO_MODE:
+        status = "POLYGON_CACHE_BLOCKED_SAFE_DEMO"
+        allowed = "no"
+        reason = "Safe demo no permite escribir cache ni llamar proveedores externos."
+    elif key_gate.get("status") != "POLYGON_API_KEY_PRESENT_READY_FOR_FUTURE_PILOT":
+        status = "POLYGON_CACHE_BLOCKED_KEY_NOT_READY"
+        allowed = "no"
+        reason = "POLYGON_API_KEY no está lista o no supera el guardrail."
+    elif limit > 25:
+        status = "POLYGON_CACHE_BLOCKED_LIMIT_TOO_HIGH"
+        allowed = "no"
+        reason = "El piloto read-only exige limite máximo de 25 tickers por ejecución."
+    else:
+        status = "POLYGON_CACHE_READY_READ_ONLY"
+        allowed = "yes"
+        reason = "Ejecución permitida solo bajo click explícito y guardado local trazable."
+    return {
+        "status": status,
+        "allowed": allowed,
+        "limit": str(limit),
+        "reason": reason,
+        "guardrail": "Polygon read-only: sin órdenes, sin broker, sin trading, sin exponer secretos y con cache local versionado.",
+    }
+
+
+def polygon_json_get(path: str, params: dict[str, str], api_key: str) -> dict:
+    query = urlencode(params | {"apiKey": api_key})
+    url = f"https://api.polygon.io/{path}?{query}"
+    request = urllib.request.Request(url, headers={"User-Agent": "ScoutFinanceLocalResearch/2.45N"})
+    with urllib.request.urlopen(request, timeout=12) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def fetch_polygon_read_only_overlay(rows: list[dict], limit: int = 10) -> tuple[pd.DataFrame, dict]:
+    key_gate = polygon_api_key_guardrail()
+    execution_gate = polygon_cache_execution_gate(limit, key_gate)
+    if execution_gate["allowed"] != "yes":
+        return pd.DataFrame(), {
+            "status": execution_gate["status"],
+            "processed": 0,
+            "ok": 0,
+            "failed": 0,
+            "message": execution_gate["reason"],
+        }
+    api_key = os.environ.get("POLYGON_API_KEY", "").strip()
+    today = pd.Timestamp.utcnow().date()
+    start = today - pd.Timedelta(days=75)
+    candidates = diversified_explosive_provider_sample(rows, limit)
+    records = []
+    failures = []
+    for row in candidates:
+        symbol = yfinance_symbol(row)
+        try:
+            reference = polygon_json_get(f"v3/reference/tickers/{quote(symbol)}", {}, api_key).get("results", {})
+            aggs = polygon_json_get(
+                f"v2/aggs/ticker/{quote(symbol)}/range/1/day/{start}/{today}",
+                {"adjusted": "true", "sort": "asc", "limit": "120"},
+                api_key,
+            ).get("results", [])
+            closes = [bar.get("c") for bar in aggs if bar.get("c") not in ("", None)]
+            volumes = [bar.get("v") for bar in aggs if bar.get("v") not in ("", None)]
+            last_price = closes[-1] if closes else ""
+            price_change_20d = ""
+            if len(closes) >= 21 and closes[-21]:
+                price_change_20d = round(((float(closes[-1]) - float(closes[-21])) / float(closes[-21])) * 100, 2)
+            relative_volume = ""
+            if len(volumes) >= 21:
+                avg_volume = sum(float(value) for value in volumes[-21:-1]) / 20
+                relative_volume = round(float(volumes[-1]) / avg_volume, 2) if avg_volume else ""
+            breakout = bool(relative_volume not in ("", None) and price_change_20d not in ("", None) and float(relative_volume) >= 2 and float(price_change_20d) >= 20)
+            records.append({
+                "asset_id": row.get("asset_id", ""),
+                "ticker": row.get("ticker", ""),
+                "company_name": row.get("company_name", ""),
+                "market_cap_usd": reference.get("market_cap") or "",
+                "last_price": last_price,
+                "relative_volume": relative_volume,
+                "float_shares": reference.get("share_class_shares_outstanding") or "",
+                "short_float_pct": "",
+                "price_change_20d": price_change_20d,
+                "breakout_signal": "true" if breakout else "",
+                "catalyst_note": "polygon_read_only_market_cache_v2_45n",
+            })
+        except (urllib.error.URLError, TimeoutError, ValueError, KeyError) as exc:
+            failures.append({"ticker": symbol, "error": exc.__class__.__name__})
+    summary = {
+        "status": "OK" if records else "NO_ROWS",
+        "processed": len(candidates),
+        "ok": len(records),
+        "failed": len(failures),
+        "message": "Cache Polygon read-only generado sin broker, sin órdenes y sin exponer POLYGON_API_KEY.",
+    }
+    return pd.DataFrame(records), summary
+
+
 def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
     try:
         import yfinance as yf
@@ -963,6 +1061,28 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
         st.write(f"**Política:** `{polygon_key_gate['storage_policy']}`")
         st.write(f"**Acción:** {polygon_key_gate['action']}")
         st.caption(polygon_key_gate["guardrail"])
+    with st.expander("Cache read-only Polygon v2.45N", expanded=False):
+        polygon_cols = st.columns([1, 1, 3])
+        polygon_limit = polygon_cols[0].number_input("Tickers Polygon", min_value=1, max_value=25, value=10, step=1, key="polygon_read_only_limit")
+        polygon_execution_gate = polygon_cache_execution_gate(int(polygon_limit), polygon_key_gate)
+        polygon_cols[2].caption(polygon_execution_gate["guardrail"])
+        polygon_cols[2].write(f"**Estado:** {polygon_execution_gate['status']} · {polygon_execution_gate['reason']}")
+        if polygon_execution_gate["allowed"] != "yes":
+            polygon_cols[1].button("Actualizar cache Polygon", disabled=True, help=polygon_execution_gate["reason"])
+        elif polygon_cols[1].button("Actualizar cache Polygon", type="secondary", help="Consulta Polygon en modo solo lectura y guarda overlay local trazable."):
+            with st.spinner("Consultando Polygon en modo read-only..."):
+                polygon_fetched, polygon_summary = fetch_polygon_read_only_overlay(rows, int(polygon_limit))
+            if polygon_fetched.empty:
+                st.warning(f"No se pudo generar cache Polygon. Estado: {polygon_summary['status']} · fallos: {polygon_summary['failed']}")
+            else:
+                normalized, errors = normalize_explosive_overlay(polygon_fetched)
+                if errors:
+                    for error in errors:
+                        st.error(error)
+                else:
+                    save_explosive_overlay(normalized)
+                    st.success(f"Cache Polygon guardado: {polygon_summary['ok']:,}/{polygon_summary['processed']:,} tickers OK · fallos {polygon_summary['failed']:,}.")
+        st.caption("v2.45N no cambia scoring ni ranking global: solo prepara cache local de mercado para candidatos explosivos.")
     with st.expander("Fallback manual y cache de mercado", expanded=False):
         st.markdown("##### Fallback manual v2.45B")
         st.caption("Usa esto solo si el proveedor automático no cubre una acción o quieres revisar el cache guardado.")
