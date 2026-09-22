@@ -304,6 +304,15 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
         require(label in source, f"Polygon recalculation UI must show {label}")
     require("Recalculo local en memoria: no cambia ranking global" in source, "Polygon recalculation must stay in-memory/no-ranking")
     require("no toca scoring global, ranking global, fundamentales ni precios base" in source, "Polygon recalculation must preserve core data guardrails")
+    require("def provider_from_overlay_note(" in source, "Provider diagnostics must classify overlay source notes")
+    require("def provider_comparison_diagnostics(" in source, "Provider diagnostics must compare yfinance and Polygon coverage")
+    require("Diagnóstico yfinance vs Polygon v2.45P" in source, "Provider comparison diagnostics must be visible in the UI")
+    for status in ["PROVIDER_COMPARISON_NO_CACHE", "PROVIDER_COMPARISON_SINGLE_PROVIDER", "PROVIDER_COMPARISON_READY"]:
+        require(status in source, f"Provider comparison status {status} must be present")
+    for label in ["Filas comunes", "Mejor cobertura", "Discrepancias", "Falta contraparte yfinance/Polygon"]:
+        require(label in source, f"Provider comparison UI must show {label}")
+    require("Comparación disponible; revisar discrepancias antes de cambiar proveedor por defecto" in source, "Provider comparison must require review before provider switch")
+    require("Diagnóstico comparativo: no cambia proveedor activo ni scoring global" in source, "Provider comparison must not switch providers automatically")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 

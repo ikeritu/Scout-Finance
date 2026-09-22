@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.45P — Provider Comparison Diagnostics: yfinance vs Polygon** (`PROVIDER_COMPARISON_DIAGNOSTICS_READY`): añade diagnóstico comparativo de cobertura entre caches yfinance/Polygon cuando existan en el overlay. Clasifica la fuente, mide cobertura por campo crítico, cuenta filas comunes, detecta discrepancias numéricas y muestra qué proveedor cubre mejor sin cambiar el proveedor activo automáticamente. Si falta una contraparte, queda visible como limitación. No cambia scoring, ranking global, metodología ni pesos y no genera recomendación financiera.
+
 **v2.45O — Explosive Candidate Recalculation With Polygon Cache** (`POLYGON_CACHE_RECALCULATION_READY_LOCAL_ONLY`): añade resumen de recálculo local para candidatos explosivos usando el overlay/cache disponible. Detecta si el cache procede de Polygon, compara en memoria antes/después de aplicar señales de mercado y muestra entradas, mejoras de score y bloqueos. No escribe datos fundamentales, no cambia precios base, no recalcula ranking global, no cambia metodología ni pesos y no genera recomendación financiera.
 
 **v2.45N — Polygon Read-Only Market Cache** (`POLYGON_READ_ONLY_CACHE_READY_GUARDED`): añade cache Polygon en modo solo lectura para candidatos explosivos, protegido por `POLYGON_API_KEY`, safe demo, botón explícito y límite máximo de 25 tickers. El cache etiqueta filas como `polygon_read_only_market_cache_v2_45n`, normaliza contra el overlay local existente y no expone secretos. No hay broker, no hay órdenes, no hay trading, no cambia score, ranking global, metodología ni pesos. yfinance sigue disponible como proveedor activo/base.

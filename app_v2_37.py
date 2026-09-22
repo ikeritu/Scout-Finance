@@ -671,6 +671,77 @@ def polygon_cache_recalculation_summary(rows: list[dict], overlay: pd.DataFrame)
     }
 
 
+def provider_from_overlay_note(note: str) -> str:
+    text = str(note or "").casefold()
+    if "polygon_read_only_market_cache_v2_45n" in text:
+        return "polygon"
+    if "yfinance_real_market_snapshot_v2_45c" in text:
+        return "yfinance"
+    return "manual_or_unknown"
+
+
+def provider_comparison_diagnostics(overlay: pd.DataFrame) -> tuple[dict, pd.DataFrame]:
+    fields = ["market_cap_usd", "last_price", "relative_volume", "float_shares", "short_float_pct", "price_change_20d"]
+    if overlay.empty:
+        return {
+            "status": "PROVIDER_COMPARISON_NO_CACHE",
+            "providers": "none",
+            "matched_rows": 0,
+            "best_coverage": "N/D",
+            "discrepancies": 0,
+            "decision": "Mantener proveedor activo actual; no hay cache para comparar.",
+            "guardrail": "Diagnóstico comparativo: no cambia proveedor activo ni scoring global.",
+        }, pd.DataFrame()
+    frame = overlay.copy()
+    frame["provider"] = frame.get("catalyst_note", "").apply(provider_from_overlay_note)
+    coverage_rows = []
+    for provider, provider_df in frame.groupby("provider"):
+        for field in fields:
+            present = 0
+            if field in provider_df.columns:
+                present = int((provider_df[field].fillna("").astype(str).str.strip() != "").sum())
+            coverage_rows.append({
+                "Proveedor": provider,
+                "Campo": field,
+                "Filas con dato": present,
+                "Cobertura %": round((present / len(provider_df)) * 100, 1) if len(provider_df) else 0,
+            })
+    coverage = pd.DataFrame(coverage_rows)
+    providers = sorted(frame["provider"].dropna().unique().tolist())
+    best_coverage = "N/D"
+    if not coverage.empty:
+        provider_scores = coverage.groupby("Proveedor")["Cobertura %"].mean().sort_values(ascending=False)
+        best_coverage = str(provider_scores.index[0])
+    matched_rows = 0
+    discrepancies = 0
+    if {"polygon", "yfinance"}.issubset(set(providers)):
+        frame["_join_key"] = frame["asset_id"].fillna("").astype(str)
+        frame.loc[frame["_join_key"] == "", "_join_key"] = frame["ticker"].fillna("").astype(str).str.casefold()
+        pivot = {provider: data.set_index("_join_key") for provider, data in frame.groupby("provider") if provider in {"polygon", "yfinance"}}
+        matched = set(pivot["polygon"].index) & set(pivot["yfinance"].index)
+        matched_rows = len(matched)
+        for key in matched:
+            for field in ["market_cap_usd", "last_price", "relative_volume", "float_shares"]:
+                left = pd.to_numeric(pd.Series([pivot["polygon"].at[key, field] if field in pivot["polygon"] else ""]), errors="coerce").iloc[0]
+                right = pd.to_numeric(pd.Series([pivot["yfinance"].at[key, field] if field in pivot["yfinance"] else ""]), errors="coerce").iloc[0]
+                if pd.notna(left) and pd.notna(right) and max(abs(left), abs(right)) and abs(left - right) / max(abs(left), abs(right)) > 0.2:
+                    discrepancies += 1
+        decision = "Comparación disponible; revisar discrepancias antes de cambiar proveedor por defecto."
+        status = "PROVIDER_COMPARISON_READY"
+    else:
+        decision = "Falta contraparte yfinance/Polygon en el overlay activo; comparar cuando existan ambos caches."
+        status = "PROVIDER_COMPARISON_SINGLE_PROVIDER"
+    return {
+        "status": status,
+        "providers": ", ".join(providers),
+        "matched_rows": matched_rows,
+        "best_coverage": best_coverage,
+        "discrepancies": discrepancies,
+        "decision": decision,
+        "guardrail": "Diagnóstico comparativo: no cambia proveedor activo ni scoring global.",
+    }, coverage
+
+
 def yfinance_symbol(row: dict) -> str:
     ticker = (row.get("ticker") or "").strip()
     exchange = (row.get("exchange") or "").strip().upper()
@@ -1166,6 +1237,18 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
         st.write(f"**Proveedor detectado:** {recalculation_summary['provider']}")
         st.caption(recalculation_summary["summary"])
         st.caption("v2.45O compara candidatos explosivos en memoria; no toca scoring global, ranking global, fundamentales ni precios base.")
+    comparison_summary, comparison_coverage = provider_comparison_diagnostics(current_overlay)
+    with st.expander("Diagnóstico yfinance vs Polygon v2.45P", expanded=False):
+        ccols = st.columns(5)
+        ccols[0].metric("Estado", comparison_summary["status"])
+        ccols[1].metric("Proveedores", comparison_summary["providers"])
+        ccols[2].metric("Filas comunes", f"{comparison_summary['matched_rows']:,}")
+        ccols[3].metric("Mejor cobertura", comparison_summary["best_coverage"])
+        ccols[4].metric("Discrepancias", f"{comparison_summary['discrepancies']:,}")
+        st.write(f"**Decisión:** {comparison_summary['decision']}")
+        st.caption(comparison_summary["guardrail"])
+        if not comparison_coverage.empty:
+            st.dataframe(comparison_coverage, use_container_width=True, hide_index=True)
     return apply_explosive_overlay(rows, current_overlay)
 
 

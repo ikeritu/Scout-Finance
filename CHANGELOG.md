@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45P — Provider Comparison Diagnostics: yfinance vs Polygon (2026-09-22)
+
+Añade diagnóstico comparativo entre caches de proveedores para candidatos explosivos. La app clasifica el overlay por `catalyst_note`, detecta yfinance, Polygon o fuente manual, calcula cobertura por campo crítico (`market_cap_usd`, `last_price`, `relative_volume`, `float_shares`, `short_float_pct`, `price_change_20d`), muestra proveedores presentes, filas comunes, mejor cobertura media y discrepancias numéricas relevantes. Si solo existe un proveedor, informa que falta contraparte antes de decidir. No cambia proveedor activo, no recalcula ranking global, no modifica metodología/pesos y no genera recomendación financiera. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45O — Explosive Candidate Recalculation With Polygon Cache (2026-09-22)
 
 Añade un resumen de recálculo local para candidatos explosivos cuando existe overlay/cache de mercado, especialmente el cache Polygon `polygon_read_only_market_cache_v2_45n`. La app compara en memoria la situación antes/después de aplicar el overlay y muestra proveedor detectado, filas de overlay, entradas, salidas implícitas por bloqueo, mejoras de score y bloqueados. No escribe datos fundamentales, no cambia precios base, no recalcula ranking global, no modifica metodología ni pesos y no genera recomendación financiera. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
