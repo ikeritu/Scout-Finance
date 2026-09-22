@@ -1276,6 +1276,65 @@ def row_has_explosive_driver(row: dict, driver: str) -> bool:
     return False
 
 
+def explosive_candidate_detail_frame(row: dict) -> pd.DataFrame:
+    provider = provider_from_overlay_note(str(row.get("catalyst_note", "")))
+    rows = [
+        ("Capitalizacion", "Micro-cap / small-cap", "market_cap_usd", row.get("market_cap_usd")),
+        ("Precio", "Penny stock / low-price runner", "last_price", row.get("last_price")),
+        ("Volumen", "Breakout / meme runner", "relative_volume", row.get("relative_volume")),
+        ("Float", "Baja flotacion", "float_shares", row.get("float_shares")),
+        ("Short interest", "Short squeeze", "short_float_pct", row.get("short_float_pct")),
+        ("Momentum 20D", "Breakout temprano", "price_change_20d", row.get("price_change_20d")),
+        ("Breakout", "Ruptura precio/volumen", "breakout_signal", row.get("breakout_signal")),
+        ("Catalizador", "Evento o narrativa verificable", "catalyst_note", row.get("catalyst_note")),
+    ]
+    return pd.DataFrame([
+        {
+            "Bloque": block,
+            "Lectura": reading,
+            "Campo": field,
+            "Dato": "N/D" if value in (None, "") else value,
+            "Proveedor de señal": provider,
+        }
+        for block, reading, field, value in rows
+    ])
+
+
+def explosive_candidate_review_checklist(row: dict) -> list[str]:
+    provider = provider_from_overlay_note(str(row.get("catalyst_note", "")))
+    missing = row.get("missing_signals", [])
+    checklist = [
+        "Contrastar capitalizacion, precio y volumen actual antes de interpretar la senal.",
+        "Confirmar que float y short interest proceden de una fuente reciente y comparable.",
+        "Separar catalizador verificable de simple ruido de mercado o narrativa social.",
+    ]
+    if missing:
+        checklist.append("Resolver senales faltantes: " + ", ".join(str(item) for item in missing[:4]) + ".")
+    if provider != "polygon":
+        checklist.append("Revisar si Polygon aporta mejor cobertura antes de subir confianza operativa.")
+    return checklist
+
+
+def explosive_candidate_professional_explanation(row: dict) -> str:
+    score = int(row.get("explosive_score_0_100", 0))
+    tier = row.get("tier", "NO_DATA")
+    company = row.get("company_name") or row.get("ticker") or row.get("asset_id") or "La compania"
+    ticker = row.get("ticker") or "N/D"
+    provider = provider_from_overlay_note(str(row.get("catalyst_note", "")))
+    drivers = row.get("drivers", [])
+    missing = row.get("missing_signals", [])
+    present_text = ", ".join(str(item) for item in drivers) if drivers else "sin senales explosivas suficientes"
+    missing_text = ", ".join(str(item) for item in missing) if missing else "sin faltantes criticos segun el contrato actual"
+    return (
+        f"{company} ({ticker}) aparece en la capa de investigacion explosiva con score {score}/100 y tier {tier}. "
+        f"La lectura se basa en datos de mercado disponibles, no en rentabilidad fundamental: Senales presentes: {present_text}. "
+        f"Senales faltantes: {missing_text}. "
+        f"Proveedor de señal detectado: {provider}. "
+        "La tesis tecnica debe validarse contra liquidez, flotacion, short interest, volumen relativo, momentum reciente y catalizador real antes de cualquier conclusion. "
+        "No es recomendación financiera ni predice rentabilidad; no cambia score, ranking global ni proveedor activo."
+    )
+
+
 def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
     st.markdown("### Dashboard de candidatos explosivos")
     st.caption("Vista de investigación: prioriza revisión por score, tier, drivers y señales faltantes. No es recomendación financiera ni predice rentabilidad.")
@@ -1358,6 +1417,27 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
                 st.write("- Revisar si el movimiento es liquidez real o ruido de datos.")
                 st.write("- Verificar si el catalizador existe y no es solo momentum técnico.")
                 st.caption(row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
+            with col.expander("Ficha explosiva profesional"):
+                st.write(explosive_candidate_professional_explanation(row))
+                st.write("**Señales presentes**")
+                present = row.get("drivers", [])
+                if present:
+                    for driver in present:
+                        st.write(f"- {driver}")
+                else:
+                    st.write("- Sin señales suficientes para clasificar como explosivo.")
+                st.write("**Señales faltantes**")
+                missing_all = row.get("missing_signals", [])
+                if missing_all:
+                    for signal in missing_all:
+                        st.write(f"- {signal}")
+                else:
+                    st.write("- Sin faltantes críticos según el contrato actual.")
+                st.write("**Checklist de revisión profesional**")
+                for item in explosive_candidate_review_checklist(row):
+                    st.write(f"- {item}")
+                st.dataframe(explosive_candidate_detail_frame(row), use_container_width=True, hide_index=True)
+                st.caption("No es recomendación financiera ni predice rentabilidad; no cambia score, ranking global ni proveedor activo.")
     return dashboard_rows
 
 

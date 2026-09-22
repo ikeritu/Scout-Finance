@@ -313,6 +313,14 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
         require(label in source, f"Provider comparison UI must show {label}")
     require("Comparación disponible; revisar discrepancias antes de cambiar proveedor por defecto" in source, "Provider comparison must require review before provider switch")
     require("Diagnóstico comparativo: no cambia proveedor activo ni scoring global" in source, "Provider comparison must not switch providers automatically")
+    require("def explosive_candidate_detail_frame(" in source, "Explosive candidates must expose a per-company technical detail frame")
+    require("def explosive_candidate_professional_explanation(" in source, "Explosive candidates must expose a personalized professional explanation")
+    require("def explosive_candidate_review_checklist(" in source, "Explosive candidates must expose a professional review checklist")
+    require("Ficha explosiva profesional" in source, "Explosive candidate cards must include a professional detail expander")
+    for label in ["Proveedor de señal", "Señales presentes", "Señales faltantes", "Checklist de revisión profesional"]:
+        require(label in source, f"Explosive candidate detail must show {label}")
+    require("No es recomendación financiera ni predice rentabilidad" in source, "Explosive candidate detail must keep no-advice language")
+    require("no cambia score, ranking global ni proveedor activo" in source, "Explosive candidate detail must not alter scoring/provider behavior")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 

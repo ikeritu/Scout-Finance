@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45Q — Explosive Candidate Detail Upgrade (2026-09-22)
+
+Añade una ficha profesional personalizada por candidato explosivo dentro del dashboard. Cada card puede desplegar proveedor de señal, señales presentes, señales faltantes, matriz técnica por campo y checklist de revisión profesional. La explicación se genera localmente desde los datos reales disponibles del overlay/cache y no usa IA externa ni API nueva. No cambia score, ranking global, proveedor activo, metodología ni pesos y mantiene el guardrail: no es recomendación financiera ni predice rentabilidad. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45P — Provider Comparison Diagnostics: yfinance vs Polygon (2026-09-22)
 
 Añade diagnóstico comparativo entre caches de proveedores para candidatos explosivos. La app clasifica el overlay por `catalyst_note`, detecta yfinance, Polygon o fuente manual, calcula cobertura por campo crítico (`market_cap_usd`, `last_price`, `relative_volume`, `float_shares`, `short_float_pct`, `price_change_20d`), muestra proveedores presentes, filas comunes, mejor cobertura media y discrepancias numéricas relevantes. Si solo existe un proveedor, informa que falta contraparte antes de decidir. No cambia proveedor activo, no recalcula ranking global, no modifica metodología/pesos y no genera recomendación financiera. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

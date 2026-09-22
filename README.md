@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.45Q — Explosive Candidate Detail Upgrade** (`EXPLOSIVE_CANDIDATE_DETAIL_UPGRADE_READY`): añade ficha profesional personalizada por candidato explosivo. Cada card muestra una explicación local con proveedor de señal, señales presentes, señales faltantes, tabla técnica por campo y checklist de revisión profesional. No usa IA externa ni llama APIs nuevas; trabaja solo con el overlay/cache local disponible. No cambia score, ranking global, proveedor activo, metodología ni pesos y no genera recomendación financiera.
+
 **v2.45P — Provider Comparison Diagnostics: yfinance vs Polygon** (`PROVIDER_COMPARISON_DIAGNOSTICS_READY`): añade diagnóstico comparativo de cobertura entre caches yfinance/Polygon cuando existan en el overlay. Clasifica la fuente, mide cobertura por campo crítico, cuenta filas comunes, detecta discrepancias numéricas y muestra qué proveedor cubre mejor sin cambiar el proveedor activo automáticamente. Si falta una contraparte, queda visible como limitación. No cambia scoring, ranking global, metodología ni pesos y no genera recomendación financiera.
 
 **v2.45O — Explosive Candidate Recalculation With Polygon Cache** (`POLYGON_CACHE_RECALCULATION_READY_LOCAL_ONLY`): añade resumen de recálculo local para candidatos explosivos usando el overlay/cache disponible. Detecta si el cache procede de Polygon, compara en memoria antes/después de aplicar señales de mercado y muestra entradas, mejoras de score y bloqueos. No escribe datos fundamentales, no cambia precios base, no recalcula ranking global, no cambia metodología ni pesos y no genera recomendación financiera.

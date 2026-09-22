@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.45P preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.45Q preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.45P: add provider comparison diagnostics`
+`LOCAL_COMMIT_PENDING_PUSH v2.45Q: upgrade explosive candidate detail`
 
 Estado operativo del producto:
 
-`PROVIDER_COMPARISON_DIAGNOSTICS_READY`
+`EXPLOSIVE_CANDIDATE_DETAIL_UPGRADE_READY`
 
 Cycle status:
 
@@ -169,6 +169,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.45N | Cache Polygon read-only con key guardrail, click explícito, límite de tickers y overlay local |
 | Completada | v2.45O | Recálculo local de candidatos explosivos con overlay/cache Polygon, entradas, mejoras y bloqueos |
 | Completada | v2.45P | Diagnóstico comparativo yfinance vs Polygon: cobertura, filas comunes y discrepancias |
+| Completada | v2.45Q | Ficha profesional por candidato explosivo: proveedor, señales, faltantes y checklist |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |
