@@ -425,7 +425,7 @@ def explosive_unicorn_status(row: dict) -> tuple[str, str, str]:
 
 
 def explosive_candidate_score(row: dict) -> dict:
-    critical_fields = ["market_cap_usd", "last_price", "relative_volume", "price_change_20d"]
+    critical_fields = ["market_cap_usd", "last_price", "relative_volume", "price_change_20d", "float_shares", "short_float_pct"]
     market_cap = numeric_value(row.get("market_cap_usd") or row.get("market_cap"))
     last_price = numeric_value(row.get("last_price"))
     relative_volume = numeric_value(row.get("relative_volume"))
@@ -434,71 +434,93 @@ def explosive_candidate_score(row: dict) -> dict:
     short_float_pct = numeric_value(row.get("short_float_pct") or row.get("short_interest"))
     breakout = truthy_value(row.get("breakout_signal"))
     catalyst = str(row.get("catalyst_note") or "").strip()
-    missing_signals = [field for field in critical_fields if row.get(field) in ("", None)]
+    missing_signals = [
+        field for field in critical_fields
+        if (field == "short_float_pct" and row.get(field) in ("", None) and row.get("short_interest") in ("", None))
+        or (field != "short_float_pct" and row.get(field) in ("", None))
+    ]
     drivers = []
+    high_conviction_signals = 0
     score = 0
 
     if market_cap is not None:
         if market_cap <= 300_000_000:
-            score += 20
+            score += 16
+            high_conviction_signals += 1
             drivers.append("micro-cap real")
         elif market_cap <= 2_000_000_000:
-            score += 12
+            score += 8
             drivers.append("small-cap real")
     if last_price is not None:
         if last_price <= 5:
-            score += 15
+            score += 12
+            high_conviction_signals += 1
             drivers.append("precio bajo/penny-stock")
         elif last_price <= 15:
-            score += 7
+            score += 5
             drivers.append("precio bajo relativo")
     if relative_volume is not None:
         if relative_volume >= 3:
-            score += 20
+            score += 18
+            high_conviction_signals += 1
             drivers.append("volumen relativo muy elevado")
         elif relative_volume >= 2:
-            score += 12
+            score += 9
             drivers.append("volumen relativo elevado")
     if price_change_20d is not None:
         if price_change_20d >= 40:
-            score += 15
+            score += 14
+            high_conviction_signals += 1
             drivers.append("momentum 20D fuerte")
         elif price_change_20d >= 20:
-            score += 9
+            score += 7
             drivers.append("momentum 20D positivo")
     if float_shares is not None:
         if float_shares <= 25_000_000:
             score += 10
+            high_conviction_signals += 1
             drivers.append("float bajo")
         elif float_shares <= 50_000_000:
-            score += 6
+            score += 5
             drivers.append("float moderadamente bajo")
     if short_float_pct is not None:
         if short_float_pct >= 20:
-            score += 10
+            score += 12
+            high_conviction_signals += 1
             drivers.append("short float alto")
         elif short_float_pct >= 10:
-            score += 5
+            score += 6
             drivers.append("short float relevante")
     if breakout:
-        score += 7
+        score += 10
+        high_conviction_signals += 1
         drivers.append("breakout detectado")
     if catalyst and catalyst != "yfinance_real_market_snapshot_v2_45c":
-        score += 3
+        score += 4
         drivers.append("catalizador documentado")
 
+    if relative_volume is None or price_change_20d is None:
+        score = min(score, 44)
+    if float_shares is None and short_float_pct is None:
+        score = min(score, 54)
+    if high_conviction_signals < 3:
+        score = min(score, 59)
+    elif high_conviction_signals == 3:
+        score = min(score, 74)
+    elif high_conviction_signals == 4 and not breakout:
+        score = min(score, 84)
     score = min(100, score)
     if not explosive_unicorn_data_fields(row):
         tier = "NO_DATA"
         score = 0
     elif missing_signals:
         tier = "WATCH_ONLY" if score < 55 else "EXPLOSIVE_CANDIDATE_LOW"
-        score = min(score, 64)
-    elif score >= 80:
+        score = min(score, 59)
+    elif score >= 88 and high_conviction_signals >= 5 and breakout:
         tier = "EXPLOSIVE_CANDIDATE_HIGH"
-    elif score >= 65:
+    elif score >= 72 and high_conviction_signals >= 4:
         tier = "EXPLOSIVE_CANDIDATE_MEDIUM"
-    elif score >= 45:
+    elif score >= 55 and high_conviction_signals >= 3:
         tier = "EXPLOSIVE_CANDIDATE_LOW"
     else:
         tier = "WATCH_ONLY"
@@ -517,6 +539,27 @@ def explosive_candidate_score(row: dict) -> dict:
 
 def explosive_unicorn_score(row: dict) -> int:
     return int(explosive_candidate_score(row)["explosive_score_0_100"])
+
+
+def stable_explosive_diversity_key(row: dict) -> str:
+    raw_key = "|".join([
+        str(row.get("tier") or ""),
+        str(row.get("country") or ""),
+        str(row.get("exchange") or ""),
+        str(row.get("asset_id") or ""),
+        str(row.get("ticker") or ""),
+        str(row.get("company_name") or ""),
+    ])
+    return sha1(raw_key.encode("utf-8")).hexdigest()
+
+
+def explosive_dashboard_sort_key(row: dict) -> tuple:
+    """Sort by score first, then stable diversity instead of company alphabet."""
+    return (
+        -int(row.get("explosive_score_0_100", 0)),
+        row.get("tier", "NO_DATA"),
+        stable_explosive_diversity_key(row),
+    )
 
 
 def explosive_unicorn_contract_frame() -> pd.DataFrame:
@@ -1379,12 +1422,21 @@ def explosive_candidate_professional_explanation(row: dict) -> str:
 
 
 def load_explosive_candidate_ohlcv(row: dict, max_sessions: int = 90) -> pd.DataFrame:
-    asset_id = str(row.get("asset_id") or "").strip()
-    if not asset_id:
+    identifiers = [
+        str(row.get("asset_id") or "").strip(),
+        str(row.get("ticker") or "").strip(),
+    ]
+    identifiers = [identifier for identifier in dict.fromkeys(identifiers) if identifier]
+    if not identifiers:
         return pd.DataFrame()
     for root in EXPLOSIVE_OHLCV_LOCAL_ROOTS:
-        path = root / f"{asset_id}.csv"
-        if not path.is_file():
+        path = None
+        for identifier in identifiers:
+            candidate = root / f"{identifier}.csv"
+            if candidate.is_file():
+                path = candidate
+                break
+        if path is None:
             continue
         frame = pd.read_csv(path)
         lower_map = {str(col).strip().lower(): col for col in frame.columns}
@@ -1458,27 +1510,218 @@ def render_explosive_candidate_candlestick(row: dict) -> None:
     st.caption(f"Gráfico de velas OHLCV local: {len(ohlcv):,} sesiones · {first_date} a {last_date}. No muestra señales de compra/venta.")
 
 
+def render_featured_explosive_candlestick(rows: list[dict]) -> None:
+    if not rows:
+        return
+    featured = rows[0]
+    st.markdown("#### Velas del candidato destacado")
+    st.caption("Panel visible para que el gráfico OHLCV no quede escondido dentro de las cards. Usa histórico local y falla cerrado si no existe.")
+    render_explosive_candidate_candlestick(featured)
+
+
+def render_explosive_trading_desk_skin() -> None:
+    st.markdown(
+        """
+        <style>
+        @keyframes sfRadarSweep {
+          0% { transform: rotate(0deg); opacity: .75; }
+          50% { opacity: 1; }
+          100% { transform: rotate(360deg); opacity: .75; }
+        }
+        @keyframes sfHotPulse {
+          0%, 100% { box-shadow: 0 0 0 rgba(255,176,32,0); transform: translateY(0); }
+          50% { box-shadow: 0 14px 36px rgba(255,176,32,.16); transform: translateY(-2px); }
+        }
+        .sf-trading-hero {
+          background:
+            radial-gradient(circle at 18% 22%, rgba(0,184,217,.28), transparent 32%),
+            radial-gradient(circle at 82% 38%, rgba(255,176,32,.18), transparent 30%),
+            linear-gradient(135deg, #07111f 0%, #0b1220 56%, #102033 100%);
+          border: 1px solid rgba(255,255,255,.10);
+          border-radius: 18px;
+          color: #f8fbff;
+          padding: 22px;
+          margin: 12px 0 18px;
+          box-shadow: 0 20px 55px rgba(7,17,31,.24);
+        }
+        .sf-trading-grid {
+          display: grid;
+          grid-template-columns: minmax(260px, .85fr) minmax(320px, 1.15fr);
+          gap: 18px;
+          align-items: stretch;
+        }
+        .sf-radar {
+          min-height: 270px;
+          border-radius: 16px;
+          border: 1px solid rgba(255,255,255,.10);
+          background:
+            radial-gradient(circle, rgba(0,184,217,.18) 0 2px, transparent 3px),
+            repeating-radial-gradient(circle, rgba(255,255,255,.10) 0 1px, transparent 1px 48px),
+            linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+          position: relative;
+          overflow: hidden;
+        }
+        .sf-radar:before {
+          content: "";
+          position: absolute;
+          inset: -25%;
+          background: conic-gradient(from 0deg, rgba(0,184,217,.46), transparent 22%, transparent 100%);
+          animation: sfRadarSweep 5.8s linear infinite;
+        }
+        .sf-radar-core {
+          position: absolute;
+          inset: 26px;
+          border-radius: 999px;
+          border: 1px solid rgba(0,184,217,.25);
+          display: grid;
+          place-items: center;
+          text-align: center;
+          z-index: 1;
+        }
+        .sf-hot-list {
+          display: grid;
+          gap: 10px;
+        }
+        .sf-hot-row {
+          display: grid;
+          grid-template-columns: 54px 1fr auto;
+          gap: 12px;
+          align-items: center;
+          padding: 12px 14px;
+          border-radius: 14px;
+          background: rgba(255,255,255,.075);
+          border: 1px solid rgba(255,255,255,.12);
+          animation: sfHotPulse 4s ease-in-out infinite;
+        }
+        .sf-hot-score {
+          color: #ffb020;
+          font-size: 28px;
+          font-weight: 900;
+          letter-spacing: -.03em;
+        }
+        .sf-chip {
+          display: inline-block;
+          padding: 4px 8px;
+          border-radius: 999px;
+          background: rgba(0,184,217,.13);
+          color: #8be9ff;
+          font-size: 11px;
+          font-weight: 800;
+          letter-spacing: .04em;
+          text-transform: uppercase;
+        }
+        .sf-mini-metrics {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(92px, 1fr));
+          gap: 10px;
+          margin-top: 16px;
+        }
+        .sf-mini-metric {
+          border-radius: 12px;
+          padding: 10px 12px;
+          background: rgba(255,255,255,.08);
+          border: 1px solid rgba(255,255,255,.10);
+        }
+        .sf-mini-metric b {
+          display: block;
+          font-size: 24px;
+          color: #ffffff;
+        }
+        .sf-mini-metric span {
+          color: rgba(248,251,255,.70);
+          font-size: 12px;
+        }
+        @media (max-width: 900px) {
+          .sf-trading-grid { grid-template-columns: 1fr; }
+          .sf-mini-metrics { grid-template-columns: repeat(2, 1fr); }
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -> None:
+    top_rows = sorted(rows, key=explosive_dashboard_sort_key)[:3]
+    hot_rows = []
+    for index, row in enumerate(top_rows, start=1):
+        drivers = " · ".join(str(driver) for driver in row.get("drivers", [])[:2])
+        hot_rows.append(
+            f"""
+            <div class="sf-hot-row">
+              <div class="sf-hot-score">{int(row.get("explosive_score_0_100", 0))}</div>
+              <div>
+                <div style="font-weight:850;color:#fff;">{escape(row.get("company_name", "N/D"))}</div>
+                <div style="font-size:12px;color:rgba(248,251,255,.68);">{escape(row.get("ticker") or row.get("asset_id") or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(drivers or "sin drivers suficientes")}</div>
+              </div>
+              <div class="sf-chip">Top {index}</div>
+            </div>
+            """
+        )
+    st.markdown(
+        f"""
+        <div class="sf-trading-hero">
+          <div style="display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap;margin-bottom:16px;">
+            <div>
+              <div class="sf-chip">Scout Finance · modo radar</div>
+              <div style="font-size:34px;font-weight:950;letter-spacing:-.04em;margin-top:8px;">Unicornios explosivos</div>
+              <div style="color:rgba(248,251,255,.72);font-size:14px;margin-top:4px;">Trading desk visual para detectar señales calientes de mercado. Investigación local, no recomendación financiera.</div>
+            </div>
+            <div style="text-align:right;color:rgba(248,251,255,.70);font-size:12px;">Proveedor local<br><b style="color:#fff;font-size:15px;">Yahoo/yfinance + cache</b></div>
+          </div>
+          <div class="sf-trading-grid">
+            <div class="sf-radar">
+              <div class="sf-radar-core">
+                <div>
+                  <div style="font-size:54px;font-weight:950;color:#00b8d9;line-height:1;">{len(rows):,}</div>
+                  <div style="font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:rgba(248,251,255,.72);">candidatos rastreados</div>
+                  <div style="margin-top:16px;color:#ffb020;font-weight:800;">Radar de mercado activo</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+                <div style="font-size:16px;font-weight:900;">Top 3 candidatos calientes</div>
+                <div style="font-size:12px;color:rgba(248,251,255,.62);">score endurecido v2.45U</div>
+              </div>
+              <div class="sf-hot-list">{''.join(hot_rows) if hot_rows else '<div style="color:#fff;">Sin candidatos filtrados.</div>'}</div>
+              <div class="sf-mini-metrics">
+                <div class="sf-mini-metric"><b>{tier_counts.get("EXPLOSIVE_CANDIDATE_HIGH", 0):,}</b><span>High</span></div>
+                <div class="sf-mini-metric"><b>{tier_counts.get("EXPLOSIVE_CANDIDATE_MEDIUM", 0):,}</b><span>Medium</span></div>
+                <div class="sf-mini-metric"><b>{tier_counts.get("EXPLOSIVE_CANDIDATE_LOW", 0):,}</b><span>Low</span></div>
+                <div class="sf-mini-metric"><b>{tier_counts.get("WATCH_ONLY", 0):,}</b><span>Watch</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
+    render_explosive_trading_desk_skin()
     st.markdown("### Dashboard de candidatos explosivos")
     st.caption("Vista de investigación: prioriza revisión por score, tier, drivers y señales faltantes. No es recomendación financiera ni predice rentabilidad.")
     tier_order = ["EXPLOSIVE_CANDIDATE_HIGH", "EXPLOSIVE_CANDIDATE_MEDIUM", "EXPLOSIVE_CANDIDATE_LOW", "WATCH_ONLY", "NO_DATA"]
     tier_counts = Counter(row.get("tier", "NO_DATA") for row in rows)
-    metric_cols = st.columns(5)
-    for col, tier in zip(metric_cols, tier_order):
-        col.metric(tier.replace("_", " "), f"{tier_counts.get(tier, 0):,}")
-
-    filters = st.columns([1, 1, 1])
-    tier_filter = filters[0].selectbox(
-        "Filtro de tier explosivo",
-        ["Todos", "HIGH", "MEDIUM+", "LOW+", "WATCH_ONLY", "NO_DATA"],
-        key="explosive_dashboard_tier_filter",
-    )
-    signal_filter = filters[1].selectbox(
-        "Filtro de señal",
-        ["Todas", "Micro-cap", "Penny stock", "Short squeeze", "Breakout", "Faltan datos críticos"],
-        key="explosive_dashboard_signal_filter",
-    )
-    max_cards = filters[2].number_input("Cards", min_value=3, max_value=24, value=9, step=3, key="explosive_dashboard_cards")
+    render_explosive_trading_desk_hero(rows, tier_counts)
+    with st.expander("Filtros de exploración y métricas técnicas", expanded=False):
+        metric_cols = st.columns(5)
+        for col, tier in zip(metric_cols, tier_order):
+            col.metric(tier.replace("_", " "), f"{tier_counts.get(tier, 0):,}")
+        filters = st.columns([1, 1, 1])
+        tier_filter = filters[0].selectbox(
+            "Filtro de tier explosivo",
+            ["Todos", "HIGH", "MEDIUM+", "LOW+", "WATCH_ONLY", "NO_DATA"],
+            key="explosive_dashboard_tier_filter",
+        )
+        signal_filter = filters[1].selectbox(
+            "Filtro de señal",
+            ["Todas", "Micro-cap", "Penny stock", "Short squeeze", "Breakout", "Faltan datos críticos"],
+            key="explosive_dashboard_signal_filter",
+        )
+        max_cards = filters[2].number_input("Cards", min_value=3, max_value=24, value=9, step=3, key="explosive_dashboard_cards")
 
     dashboard_rows = list(rows)
     if tier_filter == "HIGH":
@@ -1501,8 +1744,9 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
     elif signal_filter == "Faltan datos críticos":
         dashboard_rows = [row for row in dashboard_rows if row.get("missing_signals")]
 
-    dashboard_rows = sorted(dashboard_rows, key=lambda row: (-int(row.get("explosive_score_0_100", 0)), row.get("company_name", "")))
-    st.caption(f"{len(dashboard_rows):,} candidatos tras filtros del dashboard.")
+    dashboard_rows = sorted(dashboard_rows, key=explosive_dashboard_sort_key)
+    st.caption(f"{len(dashboard_rows):,} candidatos tras filtros del dashboard · desempate diversificado estable, no alfabético.")
+    render_featured_explosive_candlestick(dashboard_rows)
     for start in range(0, min(len(dashboard_rows), int(max_cards)), 3):
         cols = st.columns(3)
         for col, row in zip(cols, dashboard_rows[start:start + 3]):
@@ -2820,7 +3064,7 @@ def render_global_unicorns(_data):
         sort_options = ["Score explosivo v1"] + sort_options
     sort_mode = controls[0].selectbox("Ordenar por", sort_options, key="global_unicorn_sort")
     if sort_mode == "Score explosivo v1":
-        filtered = sorted(filtered, key=lambda row: (-int(row.get("explosive_score_0_100", 0)), row.get("company_name", "")))
+        filtered = sorted(filtered, key=explosive_dashboard_sort_key)
     else:
         filtered = sorted(filtered, key=unicorn_internal_rank_key if sort_mode == "Ranking interno de unicornios" else lambda row: unicorn_sort_key(row, sort_mode))
     st.caption(f"{len(filtered):,} de {len(unicorn_rows):,} unicornios")
