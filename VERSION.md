@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.45S — Streamlined Explosive Unicorn Cockpit UX** (`EXPLOSIVE_UNICORN_COCKPIT_UX_READY`): compacta la experiencia inicial de `Unicornio explosivo` con cockpit visual, dashboard antes de la documentación larga y controles técnicos cerrados por defecto. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin datos nuevos, sin API nueva, sin red nueva, sin broker, sin MetaTrader activo, sin órdenes, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
+
 **v2.45R — Explosive Candidate Candlestick View** (`EXPLOSIVE_CANDIDATE_CANDLESTICK_VIEW_READY`): añade gráfico de velas OHLCV local para candidatos explosivos, con fallback fail-closed si faltan datos. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin API nueva, sin red nueva, sin broker, sin MetaTrader activo, sin órdenes, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.
 
 **v2.45Q — Explosive Candidate Detail Upgrade** (`EXPLOSIVE_CANDIDATE_DETAIL_UPGRADE_READY`): añade detalle profesional por candidato explosivo, con proveedor de señal, señales presentes/faltantes, matriz técnica y checklist de revisión. Conserva `CLOSED_FOR_STABLE_LOCAL_RELEASE`. Sin API nueva, sin IA externa, sin credenciales expuestas, sin broker, sin MetaTrader activo, sin órdenes, sin recomendaciones financieras, sin predicción de rentabilidad, sin scoring global recomputado, sin cambios de metodologia/pesos, sin despliegue ni URL publica.

@@ -1124,8 +1124,6 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
                 save_explosive_overlay(normalized)
                 st.success(f"Overlay automático guardado: {summary['ok']:,}/{summary['processed']:,} tickers OK · fallos {summary['failed']:,}.")
     auto_cols[2].caption("Proveedor activo: Yahoo Finance / yfinance · solo lectura · sin broker · sin MetaTrader · CSV manual solo como fallback.")
-    with st.expander("Política de proveedores de mercado", expanded=False):
-        st.table(pd.DataFrame([{"Campo": key, "Estado": value} for key, value in provider_status.items()]))
 
     template = explosive_unicorn_template_frame(rows)
     current_overlay = load_explosive_overlay()
@@ -1133,127 +1131,137 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
         st.caption(f"Cache de mercado activa: {len(current_overlay):,} filas.")
     diagnostics = explosive_refresh_quality_diagnostics(current_overlay)
     provider_decision = explosive_provider_upgrade_decision(diagnostics)
-    with st.expander("Diagnóstico de calidad del refresco real", expanded=False):
-        dcols = st.columns(3)
-        dcols[0].metric("Filas cache", f"{diagnostics['rows']:,}")
-        dcols[1].metric("Estado proveedor", diagnostics["overall_status"])
-        dcols[2].metric("Campos débiles", f"{len(diagnostics['weak_fields']):,}")
-        st.caption(diagnostics["provider_next_step"])
-        if diagnostics["coverage"]:
-            st.dataframe(pd.DataFrame(diagnostics["coverage"]), use_container_width=True, hide_index=True)
-        if diagnostics["weak_fields"]:
-            st.warning("Campos débiles: " + ", ".join(diagnostics["weak_fields"]))
-        st.caption("Diagnóstico local del cache/overlay. No descarga datos, no cambia scoring, no activa MetaTrader ni broker.")
-    with st.expander("Gate de decisión de proveedor", expanded=False):
-        st.metric("Decisión", provider_decision["decision"])
-        st.write(f"**Motivo:** {provider_decision['reason']}")
-        st.write(f"**Acción:** {provider_decision['action']}")
-        st.caption(provider_decision["guardrail"])
     research_gate = second_provider_research_gate(provider_decision)
-    with st.expander("Research gate de segundo proveedor", expanded=False):
-        gate_cols = st.columns(3)
-        gate_cols[0].metric("Estado research", research_gate["status"])
-        gate_cols[1].metric("Preferente", research_gate["preferred_provider"])
-        gate_cols[2].metric("Piloto comparador", research_gate["pilot_candidates"])
-        st.write(f"**Acción propuesta:** {research_gate['action']}")
-        st.dataframe(second_provider_research_matrix(), use_container_width=True, hide_index=True)
-        st.caption(research_gate["guardrail"])
     polygon_gate = polygon_pilot_contract_gate()
     polygon_key_gate = polygon_api_key_guardrail()
-    with st.expander("Contrato piloto Polygon v2.45L", expanded=False):
-        pcols = st.columns(3)
-        pcols[0].metric("Estado", polygon_gate["status"])
-        pcols[1].metric("Proveedor", polygon_gate["provider"])
-        pcols[2].metric("Proveedor activo", polygon_gate["active_provider"])
-        st.write(f"**API key requerida:** `{polygon_gate['api_key_env']}`")
-        st.write(f"**Cache objetivo:** `{polygon_gate['cache_target']}`")
-        st.dataframe(polygon_pilot_contract_frame(), use_container_width=True, hide_index=True)
-        st.caption(polygon_gate["guardrail"])
-        st.caption(polygon_gate["next_step"])
-    with st.expander("Guardrail de API key Polygon v2.45M", expanded=False):
-        key_cols = st.columns(3)
-        key_cols[0].metric("Estado", polygon_key_gate["status"])
-        key_cols[1].metric("Variable", polygon_key_gate["env_name"])
-        key_cols[2].metric("Valor", polygon_key_gate["key_display"])
-        st.write(f"**Presente:** {polygon_key_gate['key_present']}")
-        st.write(f"**Política:** `{polygon_key_gate['storage_policy']}`")
-        st.write(f"**Acción:** {polygon_key_gate['action']}")
-        st.caption(polygon_key_gate["guardrail"])
-    with st.expander("Cache read-only Polygon v2.45N", expanded=False):
-        polygon_cols = st.columns([1, 1, 3])
-        polygon_limit = polygon_cols[0].number_input("Tickers Polygon", min_value=1, max_value=25, value=10, step=1, key="polygon_read_only_limit")
-        polygon_execution_gate = polygon_cache_execution_gate(int(polygon_limit), polygon_key_gate)
-        polygon_cols[2].caption(polygon_execution_gate["guardrail"])
-        polygon_cols[2].write(f"**Estado:** {polygon_execution_gate['status']} · {polygon_execution_gate['reason']}")
-        if polygon_execution_gate["allowed"] != "yes":
-            polygon_cols[1].button("Actualizar cache Polygon", disabled=True, help=polygon_execution_gate["reason"])
-        elif polygon_cols[1].button("Actualizar cache Polygon", type="secondary", help="Consulta Polygon en modo solo lectura y guarda overlay local trazable."):
-            with st.spinner("Consultando Polygon en modo read-only..."):
-                polygon_fetched, polygon_summary = fetch_polygon_read_only_overlay(rows, int(polygon_limit))
-            if polygon_fetched.empty:
-                st.warning(f"No se pudo generar cache Polygon. Estado: {polygon_summary['status']} · fallos: {polygon_summary['failed']}")
-            else:
-                normalized, errors = normalize_explosive_overlay(polygon_fetched)
+    recalculation_summary = polygon_cache_recalculation_summary(rows, current_overlay)
+    comparison_summary, comparison_coverage = provider_comparison_diagnostics(current_overlay)
+    st.caption(f"Resultado compacto: {recalculation_summary['entered']:,} entradas/mejoras potenciales · {recalculation_summary['blocked']:,} bloqueados · proveedor {recalculation_summary['provider']}.")
+    show_technical_controls = st.toggle(
+        "Mostrar motor y diagnóstico técnico",
+        value=False,
+        key="explosive_show_technical_controls_v2_45s",
+        help="Abre proveedores, cache Polygon, fallback CSV, contrato técnico y diagnósticos. Cerrado por defecto para mantener el dashboard limpio.",
+    )
+    if show_technical_controls:
+        with st.expander("Política de proveedores de mercado", expanded=False):
+            st.table(pd.DataFrame([{"Campo": key, "Estado": value} for key, value in provider_status.items()]))
+        with st.expander("Diagnóstico de calidad del refresco real", expanded=False):
+            dcols = st.columns(3)
+            dcols[0].metric("Filas cache", f"{diagnostics['rows']:,}")
+            dcols[1].metric("Estado proveedor", diagnostics["overall_status"])
+            dcols[2].metric("Campos débiles", f"{len(diagnostics['weak_fields']):,}")
+            st.caption(diagnostics["provider_next_step"])
+            if diagnostics["coverage"]:
+                st.dataframe(pd.DataFrame(diagnostics["coverage"]), use_container_width=True, hide_index=True)
+            if diagnostics["weak_fields"]:
+                st.warning("Campos débiles: " + ", ".join(diagnostics["weak_fields"]))
+            st.caption("Diagnóstico local del cache/overlay. No descarga datos, no cambia scoring, no activa MetaTrader ni broker.")
+        with st.expander("Gate de decisión de proveedor", expanded=False):
+            st.metric("Decisión", provider_decision["decision"])
+            st.write(f"**Motivo:** {provider_decision['reason']}")
+            st.write(f"**Acción:** {provider_decision['action']}")
+            st.caption(provider_decision["guardrail"])
+        with st.expander("Research gate de segundo proveedor", expanded=False):
+            gate_cols = st.columns(3)
+            gate_cols[0].metric("Estado research", research_gate["status"])
+            gate_cols[1].metric("Preferente", research_gate["preferred_provider"])
+            gate_cols[2].metric("Piloto comparador", research_gate["pilot_candidates"])
+            st.write(f"**Acción propuesta:** {research_gate['action']}")
+            st.dataframe(second_provider_research_matrix(), use_container_width=True, hide_index=True)
+            st.caption(research_gate["guardrail"])
+        with st.expander("Contrato piloto Polygon v2.45L", expanded=False):
+            pcols = st.columns(3)
+            pcols[0].metric("Estado", polygon_gate["status"])
+            pcols[1].metric("Proveedor", polygon_gate["provider"])
+            pcols[2].metric("Proveedor activo", polygon_gate["active_provider"])
+            st.write(f"**API key requerida:** `{polygon_gate['api_key_env']}`")
+            st.write(f"**Cache objetivo:** `{polygon_gate['cache_target']}`")
+            st.dataframe(polygon_pilot_contract_frame(), use_container_width=True, hide_index=True)
+            st.caption(polygon_gate["guardrail"])
+            st.caption(polygon_gate["next_step"])
+        with st.expander("Guardrail de API key Polygon v2.45M", expanded=False):
+            key_cols = st.columns(3)
+            key_cols[0].metric("Estado", polygon_key_gate["status"])
+            key_cols[1].metric("Variable", polygon_key_gate["env_name"])
+            key_cols[2].metric("Valor", polygon_key_gate["key_display"])
+            st.write(f"**Presente:** {polygon_key_gate['key_present']}")
+            st.write(f"**Política:** `{polygon_key_gate['storage_policy']}`")
+            st.write(f"**Acción:** {polygon_key_gate['action']}")
+            st.caption(polygon_key_gate["guardrail"])
+        with st.expander("Cache read-only Polygon v2.45N", expanded=False):
+            polygon_cols = st.columns([1, 1, 3])
+            polygon_limit = polygon_cols[0].number_input("Tickers Polygon", min_value=1, max_value=25, value=10, step=1, key="polygon_read_only_limit")
+            polygon_execution_gate = polygon_cache_execution_gate(int(polygon_limit), polygon_key_gate)
+            polygon_cols[2].caption(polygon_execution_gate["guardrail"])
+            polygon_cols[2].write(f"**Estado:** {polygon_execution_gate['status']} · {polygon_execution_gate['reason']}")
+            if polygon_execution_gate["allowed"] != "yes":
+                polygon_cols[1].button("Actualizar cache Polygon", disabled=True, help=polygon_execution_gate["reason"])
+            elif polygon_cols[1].button("Actualizar cache Polygon", type="secondary", help="Consulta Polygon en modo solo lectura y guarda overlay local trazable."):
+                with st.spinner("Consultando Polygon en modo read-only..."):
+                    polygon_fetched, polygon_summary = fetch_polygon_read_only_overlay(rows, int(polygon_limit))
+                if polygon_fetched.empty:
+                    st.warning(f"No se pudo generar cache Polygon. Estado: {polygon_summary['status']} · fallos: {polygon_summary['failed']}")
+                else:
+                    normalized, errors = normalize_explosive_overlay(polygon_fetched)
+                    if errors:
+                        for error in errors:
+                            st.error(error)
+                    else:
+                        save_explosive_overlay(normalized)
+                        st.success(f"Cache Polygon guardado: {polygon_summary['ok']:,}/{polygon_summary['processed']:,} tickers OK · fallos {polygon_summary['failed']:,}.")
+            st.caption("v2.45N no cambia scoring ni ranking global: solo prepara cache local de mercado para candidatos explosivos.")
+        with st.expander("Fallback manual y cache de mercado", expanded=False):
+            st.markdown("##### Fallback manual v2.45B")
+            st.caption("Usa esto solo si el proveedor automático no cubre una acción o quieres revisar el cache guardado.")
+            controls = st.columns(2)
+            controls[0].download_button(
+                "Descargar plantilla CSV",
+                data=template.to_csv(index=False).encode("utf-8"),
+                file_name="scout_finance_explosive_unicorn_overlay_template_v2_45b.csv",
+                mime="text/csv",
+            )
+            uploaded = controls[1].file_uploader("Subir CSV de señales explosivas", type=["csv"], key="explosive_unicorn_overlay_upload")
+            if uploaded is not None:
+                try:
+                    uploaded_df = pd.read_csv(StringIO(uploaded.getvalue().decode("utf-8-sig")))
+                except (UnicodeDecodeError, pd.errors.ParserError):
+                    st.error("No se pudo leer el CSV. Usa UTF-8 y separador coma.")
+                    uploaded_df = pd.DataFrame()
+                normalized, errors = normalize_explosive_overlay(uploaded_df)
                 if errors:
                     for error in errors:
                         st.error(error)
+                elif SAFE_DEMO_MODE:
+                    st.info(blocked_message("Guardar overlay de candidatos explosivos"))
+                    current_overlay = normalized
                 else:
                     save_explosive_overlay(normalized)
-                    st.success(f"Cache Polygon guardado: {polygon_summary['ok']:,}/{polygon_summary['processed']:,} tickers OK · fallos {polygon_summary['failed']:,}.")
-        st.caption("v2.45N no cambia scoring ni ranking global: solo prepara cache local de mercado para candidatos explosivos.")
-    with st.expander("Fallback manual y cache de mercado", expanded=False):
-        st.markdown("##### Fallback manual v2.45B")
-        st.caption("Usa esto solo si el proveedor automático no cubre una acción o quieres revisar el cache guardado.")
-        controls = st.columns(2)
-        controls[0].download_button(
-            "Descargar plantilla CSV",
-            data=template.to_csv(index=False).encode("utf-8"),
-            file_name="scout_finance_explosive_unicorn_overlay_template_v2_45b.csv",
-            mime="text/csv",
-        )
-        uploaded = controls[1].file_uploader("Subir CSV de señales explosivas", type=["csv"], key="explosive_unicorn_overlay_upload")
-        if uploaded is not None:
-            try:
-                uploaded_df = pd.read_csv(StringIO(uploaded.getvalue().decode("utf-8-sig")))
-            except (UnicodeDecodeError, pd.errors.ParserError):
-                st.error("No se pudo leer el CSV. Usa UTF-8 y separador coma.")
-                uploaded_df = pd.DataFrame()
-            normalized, errors = normalize_explosive_overlay(uploaded_df)
-            if errors:
-                for error in errors:
-                    st.error(error)
-            elif SAFE_DEMO_MODE:
-                st.info(blocked_message("Guardar overlay de candidatos explosivos"))
-                current_overlay = normalized
-            else:
-                save_explosive_overlay(normalized)
-                current_overlay = normalized
-                st.success(f"Overlay local guardado: {len(normalized):,} filas de señales explosivas.")
-        if not current_overlay.empty:
-            st.dataframe(current_overlay.head(50), use_container_width=True, hide_index=True, height=260)
-    recalculation_summary = polygon_cache_recalculation_summary(rows, current_overlay)
-    with st.expander("Recálculo local con cache Polygon v2.45O", expanded=False):
-        rcols = st.columns(5)
-        rcols[0].metric("Estado", recalculation_summary["status"])
-        rcols[1].metric("Overlay", f"{recalculation_summary['overlay_rows']:,}")
-        rcols[2].metric("Entradas", f"{recalculation_summary['entered']:,}")
-        rcols[3].metric("Mejoran score", f"{recalculation_summary['improved']:,}")
-        rcols[4].metric("Bloqueados", f"{recalculation_summary['blocked']:,}")
-        st.write(f"**Proveedor detectado:** {recalculation_summary['provider']}")
-        st.caption(recalculation_summary["summary"])
-        st.caption("v2.45O compara candidatos explosivos en memoria; no toca scoring global, ranking global, fundamentales ni precios base.")
-    comparison_summary, comparison_coverage = provider_comparison_diagnostics(current_overlay)
-    with st.expander("Diagnóstico yfinance vs Polygon v2.45P", expanded=False):
-        ccols = st.columns(5)
-        ccols[0].metric("Estado", comparison_summary["status"])
-        ccols[1].metric("Proveedores", comparison_summary["providers"])
-        ccols[2].metric("Filas comunes", f"{comparison_summary['matched_rows']:,}")
-        ccols[3].metric("Mejor cobertura", comparison_summary["best_coverage"])
-        ccols[4].metric("Discrepancias", f"{comparison_summary['discrepancies']:,}")
-        st.write(f"**Decisión:** {comparison_summary['decision']}")
-        st.caption(comparison_summary["guardrail"])
-        if not comparison_coverage.empty:
-            st.dataframe(comparison_coverage, use_container_width=True, hide_index=True)
+                    current_overlay = normalized
+                    st.success(f"Overlay local guardado: {len(normalized):,} filas de señales explosivas.")
+            if not current_overlay.empty:
+                st.dataframe(current_overlay.head(50), use_container_width=True, hide_index=True, height=260)
+        with st.expander("Recálculo local con cache Polygon v2.45O", expanded=False):
+            rcols = st.columns(5)
+            rcols[0].metric("Estado", recalculation_summary["status"])
+            rcols[1].metric("Overlay", f"{recalculation_summary['overlay_rows']:,}")
+            rcols[2].metric("Entradas", f"{recalculation_summary['entered']:,}")
+            rcols[3].metric("Mejoran score", f"{recalculation_summary['improved']:,}")
+            rcols[4].metric("Bloqueados", f"{recalculation_summary['blocked']:,}")
+            st.write(f"**Proveedor detectado:** {recalculation_summary['provider']}")
+            st.caption(recalculation_summary["summary"])
+            st.caption("v2.45O compara candidatos explosivos en memoria; no toca scoring global, ranking global, fundamentales ni precios base.")
+        with st.expander("Diagnóstico yfinance vs Polygon v2.45P", expanded=False):
+            ccols = st.columns(5)
+            ccols[0].metric("Estado", comparison_summary["status"])
+            ccols[1].metric("Proveedores", comparison_summary["providers"])
+            ccols[2].metric("Filas comunes", f"{comparison_summary['matched_rows']:,}")
+            ccols[3].metric("Mejor cobertura", comparison_summary["best_coverage"])
+            ccols[4].metric("Discrepancias", f"{comparison_summary['discrepancies']:,}")
+            st.write(f"**Decisión:** {comparison_summary['decision']}")
+            st.caption(comparison_summary["guardrail"])
+            if not comparison_coverage.empty:
+                st.dataframe(comparison_coverage, use_container_width=True, hide_index=True)
     return apply_explosive_overlay(rows, current_overlay)
 
 
@@ -1266,6 +1274,36 @@ def unicorn_semantic_summary(rows: list[dict]) -> dict[str, int]:
         "partial_market": len(partial_market),
         "blocked": len(rows) - len(explosive_ready) - len(partial_market),
     }
+
+
+def render_explosive_cockpit_summary(summary: dict[str, int], tier_counts: Counter) -> None:
+    high = tier_counts.get("EXPLOSIVE_CANDIDATE_HIGH", 0)
+    medium = tier_counts.get("EXPLOSIVE_CANDIDATE_MEDIUM", 0)
+    low = tier_counts.get("EXPLOSIVE_CANDIDATE_LOW", 0)
+    watch = tier_counts.get("WATCH_ONLY", 0)
+    no_data = tier_counts.get("NO_DATA", 0)
+    st.markdown(
+        f"""
+        <div style="border:1px solid #b8dce8;border-radius:12px;padding:18px 20px;margin:14px 0 18px;background:linear-gradient(135deg,#effcff 0%,#ffffff 48%,#f8fbff 100%);box-shadow:0 10px 28px rgba(15,23,42,.05);">
+          <div style="display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap;">
+            <div>
+              <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#0f766e;font-weight:800;">Cockpit de candidatos explosivos</div>
+              <div style="font-size:28px;font-weight:900;color:#0f172a;margin-top:3px;">{summary['explosive']:,} evaluables ahora</div>
+              <div style="font-size:13px;color:#64748b;margin-top:4px;">Breakout, multibagger, squeeze, penny y micro-cap se separan de calidad fundamental.</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(5,minmax(92px,1fr));gap:10px;min-width:520px;">
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;"><b>{high:,}</b><br><span style="font-size:12px;color:#64748b;">High</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;"><b>{medium:,}</b><br><span style="font-size:12px;color:#64748b;">Medium</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;"><b>{low:,}</b><br><span style="font-size:12px;color:#64748b;">Low</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;"><b>{watch:,}</b><br><span style="font-size:12px;color:#64748b;">Watch</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;"><b>{no_data:,}</b><br><span style="font-size:12px;color:#64748b;">Sin datos</span></div>
+            </div>
+          </div>
+          <div style="margin-top:14px;color:#334155;font-size:13px;">Resultado: {summary['explosive']:,} candidatos explosivos · {summary['partial_market']:,} con datos parciales · {summary['blocked']:,} bloqueados. Score explosivo v1: heurística local de investigación 0-100; no reemplaza scoring fundamental ni ranking global.</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
 
 def row_has_explosive_driver(row: dict, driver: str) -> bool:
@@ -1547,18 +1585,15 @@ def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
         rows = render_explosive_unicorn_overlay_import(rows)
         rows = [row | explosive_candidate_score(row) for row in rows]
         summary = unicorn_semantic_summary(rows)
-        st.caption("Busca Breakout Stocks, Multibaggers, Meme Stocks, Short Squeeze, Penny Stocks y Micro-Caps con datos reales de mercado.")
-        st.caption("Exige capitalización, precio, volumen relativo, float, short interest, momentum y breakout/catalizador; no usa rentabilidad fundamental como sustituto.")
-        st.caption(f"Resultado: {summary['explosive']:,} candidatos explosivos · {summary['partial_market']:,} con datos parciales · {summary['blocked']:,} bloqueados.")
-        st.caption("Score explosivo v1: heurística de investigación 0-100; no reemplaza scoring fundamental ni ranking global.")
-        st.caption("No es una recomendación financiera ni predice rentabilidad.")
         tier_counts = Counter(row.get("tier", "NO_DATA") for row in rows)
-        tier_cols = st.columns(5)
-        for col, tier in zip(tier_cols, ["NO_DATA", "WATCH_ONLY", "EXPLOSIVE_CANDIDATE_LOW", "EXPLOSIVE_CANDIDATE_MEDIUM", "EXPLOSIVE_CANDIDATE_HIGH"]):
-            col.metric(tier.replace("_", " "), f"{tier_counts.get(tier, 0):,}")
+        render_explosive_cockpit_summary(summary, tier_counts)
         render_explosive_candidates_dashboard(rows)
         if summary["explosive"] == 0:
             st.warning("Sin candidatos explosivos evaluables todavía: faltan señales reales suficientes de mercado.")
+        with st.expander("Lectura rápida de metodología", expanded=False):
+            st.write("- Busca Breakout Stocks, Multibaggers, Meme Stocks, Short Squeeze, Penny Stocks y Micro-Caps con datos reales de mercado.")
+            st.write("- Exige capitalización, precio, volumen relativo, float, short interest, momentum y breakout/catalizador; no usa rentabilidad fundamental como sustituto.")
+            st.write("- No es una recomendación financiera ni predice rentabilidad.")
         with st.expander("Contrato técnico y señales requeridas", expanded=False):
             contract_df = explosive_unicorn_contract_frame()
             missing_counts = Counter(field for row in rows for field in explosive_unicorn_missing_fields(row))

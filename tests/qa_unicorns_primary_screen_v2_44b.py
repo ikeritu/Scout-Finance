@@ -330,6 +330,11 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("No hay histórico OHLCV local" in source, "Candlestick view must fail closed when OHLCV is unavailable")
     require("no ejecuta red, broker ni órdenes" in source, "Candlestick view must preserve no-network/no-broker guardrails")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
+    require("def render_explosive_cockpit_summary(" in source, "Explosive view must expose a compact visual cockpit summary")
+    require("Cockpit de candidatos explosivos" in source, "Explosive view must lead with a cockpit instead of long technical copy")
+    require("Mostrar motor y diagnóstico técnico" in source, "Technical provider controls must be hidden behind an explicit toggle")
+    require("value=False" in source and "explosive_show_technical_controls_v2_45s" in source, "Technical controls must be collapsed by default")
+    require("Lectura rápida de metodología" in source, "Long methodology text must move into a compact expandable section")
 
 
 def main() -> None:

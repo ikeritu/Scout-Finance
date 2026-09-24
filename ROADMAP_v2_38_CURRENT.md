@@ -1,14 +1,14 @@
 # Scout Finance v2.38 Roadmap Actualizado
 
-Estado actual: v2.45R preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
+Estado actual: v2.45S preparada y lista en la rama `phase9b-global-enrichment-v2-38b`.
 
 Ultimo commit publicado conocido:
 
-`LOCAL_COMMIT_PENDING_PUSH v2.45R: add explosive candidate candlestick view`
+`LOCAL_COMMIT_PENDING_PUSH v2.45S: streamline explosive unicorn cockpit UX`
 
 Estado operativo del producto:
 
-`EXPLOSIVE_CANDIDATE_CANDLESTICK_VIEW_READY`
+`EXPLOSIVE_UNICORN_COCKPIT_UX_READY`
 
 Cycle status:
 
@@ -171,6 +171,7 @@ Opciones futuras no criticas: mantenimiento correctivo, publicacion externa cont
 | Completada | v2.45P | Diagnóstico comparativo yfinance vs Polygon: cobertura, filas comunes y discrepancias |
 | Completada | v2.45Q | Ficha profesional por candidato explosivo: proveedor, señales, faltantes y checklist |
 | Completada | v2.45R | Velas OHLCV locales para candidatos explosivos con Plotly y fallback fail-closed |
+| Completada | v2.45S | UX compacta de cockpit explosivo con controles técnicos cerrados por defecto |
 | Opcional | Mantenimiento | Correcciones puntuales sin cambiar scoring, ranking, metodologia ni datasets |
 | Opcional | Publicacion controlada | Publicacion externa manual con modo demo seguro y QA previa |
 | Opcional | v2.45+ | Nueva linea futura solo si se decide ampliar producto |

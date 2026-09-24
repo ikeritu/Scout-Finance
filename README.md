@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.45S — Streamlined Explosive Unicorn Cockpit UX** (`EXPLOSIVE_UNICORN_COCKPIT_UX_READY`): reorganiza la pantalla de `Unicornio explosivo` para que el dashboard y las fichas aparezcan antes. El motor, proveedores, Polygon, fallback CSV y diagnósticos quedan bajo un toggle avanzado cerrado por defecto; la metodología larga pasa a un expander breve. No cambia datos, score, ranking global, proveedor activo, metodología ni pesos y no genera recomendación financiera.
+
 **v2.45R — Explosive Candidate Candlestick View** (`EXPLOSIVE_CANDIDATE_CANDLESTICK_VIEW_READY`): añade una vista `Precio y velas OHLCV` dentro de cada card de `Unicornio explosivo`. Usa históricos locales versionados cuando existen, muestra velas Plotly y volumen, y falla cerrado si faltan datos OHLCV. No llama red, no usa broker, no muestra señales de compra/venta, no cambia score, ranking global, proveedor activo, metodología ni pesos y no genera recomendación financiera.
 
 **v2.45Q — Explosive Candidate Detail Upgrade** (`EXPLOSIVE_CANDIDATE_DETAIL_UPGRADE_READY`): añade ficha profesional personalizada por candidato explosivo. Cada card muestra una explicación local con proveedor de señal, señales presentes, señales faltantes, tabla técnica por campo y checklist de revisión profesional. No usa IA externa ni llama APIs nuevas; trabaja solo con el overlay/cache local disponible. No cambia score, ranking global, proveedor activo, metodología ni pesos y no genera recomendación financiera.

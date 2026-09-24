@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45S — Streamlined Explosive Unicorn Cockpit UX (2026-09-24)
+
+Compacta la entrada visual de `Unicornio explosivo`: el motor, proveedores, Polygon, fallback CSV y diagnósticos avanzados quedan ocultos por defecto bajo `Mostrar motor y diagnóstico técnico`, mientras el usuario llega antes al cockpit y dashboard de candidatos. Añade una cabecera visual con tiers high/medium/low/watch/no data y mueve la explicación metodológica larga a `Lectura rápida de metodología`. No cambia score, ranking global, proveedor activo, metodología, pesos, datos fundamentales, cache, red, broker, órdenes ni recomendaciones financieras. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45R — Explosive Candidate Candlestick View (2026-09-24)
 
 Añade gráficos de vela OHLCV locales en las cards de `Unicornio explosivo`. Cada candidato puede desplegar `Precio y velas OHLCV`, que lee históricos locales versionados de USA/Europa cuando existen y falla cerrado cuando no hay apertura, máximo, mínimo y cierre suficientes. Usa Plotly `go.Candlestick`, añade volumen si está disponible y mantiene el panel como contexto visual de investigación, sin señales de compra/venta, sin red nueva, sin broker, sin órdenes, sin cambiar score, ranking global, proveedor activo, metodología ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
