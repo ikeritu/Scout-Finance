@@ -14,6 +14,7 @@ from pathlib import Path
 from urllib.parse import quote, urlencode
 
 import pandas as pd
+import plotly.graph_objects as go
 import streamlit as st
 
 from src.ui_v2_37.global_ranking import load_global_ranking
@@ -28,6 +29,10 @@ ROOT = Path(__file__).resolve().parent
 UNICORN_NOTES_PATH = ROOT / "data" / "user_unicorn_notes_v2_44i.json"
 UNICORN_REVIEW_HISTORY_PATH = ROOT / "data" / "user_unicorn_review_history_v2_44k.json"
 EXPLOSIVE_UNICORN_OVERLAY_PATH = ROOT / "data" / "user_explosive_unicorn_market_overlay_v2_45b.csv"
+EXPLOSIVE_OHLCV_LOCAL_ROOTS = [
+    ROOT / "outputs" / "full_universe_source_acquisition" / "v2_38i_us_price_history_acquisition" / "us_price_history_raw_v2_38i",
+    ROOT / "outputs" / "full_universe_source_acquisition" / "v2_38o_europe_price_history_acquisition" / "europe_price_history_raw_v2_38o",
+]
 st.set_page_config(page_title="Scout Finance — Investigación local", page_icon="🔎", layout="wide")
 apply(st)
 SAFE_DEMO_MODE = is_safe_demo_mode()
@@ -1335,6 +1340,86 @@ def explosive_candidate_professional_explanation(row: dict) -> str:
     )
 
 
+def load_explosive_candidate_ohlcv(row: dict, max_sessions: int = 90) -> pd.DataFrame:
+    asset_id = str(row.get("asset_id") or "").strip()
+    if not asset_id:
+        return pd.DataFrame()
+    for root in EXPLOSIVE_OHLCV_LOCAL_ROOTS:
+        path = root / f"{asset_id}.csv"
+        if not path.is_file():
+            continue
+        frame = pd.read_csv(path)
+        lower_map = {str(col).strip().lower(): col for col in frame.columns}
+        date_col = lower_map.get("date")
+        open_col = lower_map.get("open")
+        high_col = lower_map.get("high")
+        low_col = lower_map.get("low")
+        close_col = lower_map.get("close") or lower_map.get("adjusted_close") or lower_map.get("adj close")
+        volume_col = lower_map.get("volume")
+        required = [date_col, open_col, high_col, low_col, close_col]
+        if any(col is None for col in required):
+            continue
+        data = {
+            "Date": pd.to_datetime(frame[date_col], errors="coerce"),
+            "Open": pd.to_numeric(frame[open_col], errors="coerce"),
+            "High": pd.to_numeric(frame[high_col], errors="coerce"),
+            "Low": pd.to_numeric(frame[low_col], errors="coerce"),
+            "Close": pd.to_numeric(frame[close_col], errors="coerce"),
+        }
+        if volume_col:
+            data["Volume"] = pd.to_numeric(frame[volume_col], errors="coerce")
+        ohlcv = pd.DataFrame(data).dropna(subset=["Date", "Open", "High", "Low", "Close"])
+        ohlcv = ohlcv.sort_values("Date").tail(max_sessions).reset_index(drop=True)
+        return ohlcv
+    return pd.DataFrame()
+
+
+def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str) -> go.Figure:
+    fig = go.Figure()
+    fig.add_trace(go.Candlestick(
+        x=ohlcv["Date"],
+        open=ohlcv["Open"],
+        high=ohlcv["High"],
+        low=ohlcv["Low"],
+        close=ohlcv["Close"],
+        name="OHLC",
+        increasing_line_color="#0f766e",
+        decreasing_line_color="#dc2626",
+    ))
+    if "Volume" in ohlcv and ohlcv["Volume"].notna().any():
+        fig.add_trace(go.Bar(
+            x=ohlcv["Date"],
+            y=ohlcv["Volume"],
+            name="Volumen",
+            marker_color="rgba(37, 99, 235, 0.24)",
+            yaxis="y2",
+        ))
+        fig.update_layout(yaxis2={"overlaying": "y", "side": "right", "showgrid": False, "visible": False})
+    fig.update_layout(
+        title=title,
+        height=360,
+        margin={"l": 8, "r": 8, "t": 48, "b": 8},
+        xaxis_rangeslider_visible=False,
+        legend_orientation="h",
+        legend_y=1.02,
+        legend_x=0,
+    )
+    return fig
+
+
+def render_explosive_candidate_candlestick(row: dict) -> None:
+    ohlcv = load_explosive_candidate_ohlcv(row)
+    title = f"{row.get('ticker') or row.get('asset_id') or 'Activo'} · velas locales"
+    if ohlcv.empty:
+        st.info("No hay histórico OHLCV local para dibujar velas de este candidato explosivo.")
+        st.caption("El panel queda fail-closed: no inventa apertura, máximo, mínimo ni cierre. Carga/actualiza cache OHLCV para activar el gráfico.")
+        return
+    st.plotly_chart(explosive_candlestick_figure(ohlcv, title), use_container_width=True)
+    first_date = ohlcv["Date"].iloc[0].date()
+    last_date = ohlcv["Date"].iloc[-1].date()
+    st.caption(f"Gráfico de velas OHLCV local: {len(ohlcv):,} sesiones · {first_date} a {last_date}. No muestra señales de compra/venta.")
+
+
 def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
     st.markdown("### Dashboard de candidatos explosivos")
     st.caption("Vista de investigación: prioriza revisión por score, tier, drivers y señales faltantes. No es recomendación financiera ni predice rentabilidad.")
@@ -1438,6 +1523,9 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
                     st.write(f"- {item}")
                 st.dataframe(explosive_candidate_detail_frame(row), use_container_width=True, hide_index=True)
                 st.caption("No es recomendación financiera ni predice rentabilidad; no cambia score, ranking global ni proveedor activo.")
+            with col.expander("Precio y velas OHLCV"):
+                render_explosive_candidate_candlestick(row)
+                st.caption("Vista visual de investigación para breakout/squeeze; no ejecuta red, broker ni órdenes.")
     return dashboard_rows
 
 

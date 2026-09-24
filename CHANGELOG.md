@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.45R — Explosive Candidate Candlestick View (2026-09-24)
+
+Añade gráficos de vela OHLCV locales en las cards de `Unicornio explosivo`. Cada candidato puede desplegar `Precio y velas OHLCV`, que lee históricos locales versionados de USA/Europa cuando existen y falla cerrado cuando no hay apertura, máximo, mínimo y cierre suficientes. Usa Plotly `go.Candlestick`, añade volumen si está disponible y mantiene el panel como contexto visual de investigación, sin señales de compra/venta, sin red nueva, sin broker, sin órdenes, sin cambiar score, ranking global, proveedor activo, metodología ni pesos. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.
+
 ## v2.45Q — Explosive Candidate Detail Upgrade (2026-09-22)
 
 Añade una ficha profesional personalizada por candidato explosivo dentro del dashboard. Cada card puede desplegar proveedor de señal, señales presentes, señales faltantes, matriz técnica por campo y checklist de revisión profesional. La explicación se genera localmente desde los datos reales disponibles del overlay/cache y no usa IA externa ni API nueva. No cambia score, ranking global, proveedor activo, metodología ni pesos y mantiene el guardrail: no es recomendación financiera ni predice rentabilidad. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

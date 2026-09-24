@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.45R — Explosive Candidate Candlestick View** (`EXPLOSIVE_CANDIDATE_CANDLESTICK_VIEW_READY`): añade una vista `Precio y velas OHLCV` dentro de cada card de `Unicornio explosivo`. Usa históricos locales versionados cuando existen, muestra velas Plotly y volumen, y falla cerrado si faltan datos OHLCV. No llama red, no usa broker, no muestra señales de compra/venta, no cambia score, ranking global, proveedor activo, metodología ni pesos y no genera recomendación financiera.
+
 **v2.45Q — Explosive Candidate Detail Upgrade** (`EXPLOSIVE_CANDIDATE_DETAIL_UPGRADE_READY`): añade ficha profesional personalizada por candidato explosivo. Cada card muestra una explicación local con proveedor de señal, señales presentes, señales faltantes, tabla técnica por campo y checklist de revisión profesional. No usa IA externa ni llama APIs nuevas; trabaja solo con el overlay/cache local disponible. No cambia score, ranking global, proveedor activo, metodología ni pesos y no genera recomendación financiera.
 
 **v2.45P — Provider Comparison Diagnostics: yfinance vs Polygon** (`PROVIDER_COMPARISON_DIAGNOSTICS_READY`): añade diagnóstico comparativo de cobertura entre caches yfinance/Polygon cuando existan en el overlay. Clasifica la fuente, mide cobertura por campo crítico, cuenta filas comunes, detecta discrepancias numéricas y muestra qué proveedor cubre mejor sin cambiar el proveedor activo automáticamente. Si falta una contraparte, queda visible como limitación. No cambia scoring, ranking global, metodología ni pesos y no genera recomendación financiera.

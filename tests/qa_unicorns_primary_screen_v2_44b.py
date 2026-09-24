@@ -321,6 +321,14 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
         require(label in source, f"Explosive candidate detail must show {label}")
     require("No es recomendación financiera ni predice rentabilidad" in source, "Explosive candidate detail must keep no-advice language")
     require("no cambia score, ranking global ni proveedor activo" in source, "Explosive candidate detail must not alter scoring/provider behavior")
+    require("import plotly.graph_objects as go" in source, "Explosive candidates must use Plotly for candlestick charts")
+    require("def load_explosive_candidate_ohlcv(" in source, "Explosive candidates must load local OHLCV history fail-closed")
+    require("def explosive_candlestick_figure(" in source, "Explosive candidates must expose a candlestick figure builder")
+    require("def render_explosive_candidate_candlestick(" in source, "Explosive candidates must render a candlestick panel")
+    require("go.Candlestick(" in source, "Explosive candidates must render OHLC candlesticks")
+    require("Precio y velas OHLCV" in source, "Explosive candidate cards must include a price/candlestick expander")
+    require("No hay histórico OHLCV local" in source, "Candlestick view must fail closed when OHLCV is unavailable")
+    require("no ejecuta red, broker ni órdenes" in source, "Candlestick view must preserve no-network/no-broker guardrails")
     require("Resultado:" in source, "Explosive view must provide a compact result summary")
 
 
