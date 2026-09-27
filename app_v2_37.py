@@ -1476,6 +1476,24 @@ def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str) -> go.Figure:
         increasing_line_color="#0f766e",
         decreasing_line_color="#dc2626",
     ))
+    if len(ohlcv) >= 20:
+        x = pd.Series(range(len(ohlcv)), dtype="float64")
+        y = pd.to_numeric(ohlcv["Close"], errors="coerce")
+        valid = y.notna()
+        if int(valid.sum()) >= 20:
+            xv = x[valid].reset_index(drop=True)
+            yv = y[valid].reset_index(drop=True)
+            slope = float(((xv - xv.mean()) * (yv - yv.mean())).sum() / ((xv - xv.mean()) ** 2).sum())
+            intercept = float(yv.mean() - slope * xv.mean())
+            fitted = intercept + slope * x
+            residual = yv - (intercept + slope * xv)
+            ss_res = float((residual ** 2).sum())
+            ss_tot = float(((yv - yv.mean()) ** 2).sum())
+            r_squared = max(0.0, min(1.0, 1.0 - (ss_res / ss_tot))) if ss_tot else 0.0
+            sigma = float(residual.std(ddof=1)) if len(residual) > 1 else 0.0
+            fig.add_trace(go.Scatter(x=ohlcv["Date"], y=fitted, mode="lines", name=f"Regresión lineal · R² {r_squared:.2f}", line={"color": "#f59e0b", "width": 2}))
+            fig.add_trace(go.Scatter(x=ohlcv["Date"], y=fitted + 1.96 * sigma, mode="lines", name="Banda superior 95%", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}))
+            fig.add_trace(go.Scatter(x=ohlcv["Date"], y=fitted - 1.96 * sigma, mode="lines", name="Banda inferior 95%", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}, fill="tonexty", fillcolor="rgba(245,158,11,.08)"))
     if "Volume" in ohlcv and ohlcv["Volume"].notna().any():
         fig.add_trace(go.Bar(
             x=ohlcv["Date"],
@@ -1505,6 +1523,17 @@ def render_explosive_candidate_candlestick(row: dict) -> None:
         st.caption("El panel queda fail-closed: no inventa apertura, máximo, mínimo ni cierre. Carga/actualiza cache OHLCV para activar el gráfico.")
         return
     st.plotly_chart(explosive_candlestick_figure(ohlcv, title), use_container_width=True)
+    if len(ohlcv) >= 20:
+        x = pd.Series(range(len(ohlcv)), dtype="float64")
+        y = pd.to_numeric(ohlcv["Close"], errors="coerce")
+        valid = y.notna()
+        xv = x[valid].reset_index(drop=True)
+        yv = y[valid].reset_index(drop=True)
+        slope = float(((xv - xv.mean()) * (yv - yv.mean())).sum() / ((xv - xv.mean()) ** 2).sum())
+        fitted = yv.mean() + slope * (xv - xv.mean())
+        ss_tot = float(((yv - yv.mean()) ** 2).sum())
+        r_squared = max(0.0, min(1.0, 1.0 - float(((yv - fitted) ** 2).sum()) / ss_tot)) if ss_tot else 0.0
+        st.caption(f"Regresión lineal descriptiva · pendiente {slope:+.4f} por sesión · R² {r_squared:.2f} · no predice rentabilidad ni constituye señal de compra.")
     first_date = ohlcv["Date"].iloc[0].date()
     last_date = ohlcv["Date"].iloc[-1].date()
     st.caption(f"Gráfico de velas OHLCV local: {len(ohlcv):,} sesiones · {first_date} a {last_date}. No muestra señales de compra/venta.")
