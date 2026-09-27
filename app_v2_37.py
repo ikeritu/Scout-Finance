@@ -1647,18 +1647,17 @@ def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -
     for index, row in enumerate(top_rows, start=1):
         drivers = " · ".join(str(driver) for driver in row.get("drivers", [])[:2])
         hot_rows.append(
-            f"""
-            <div class="sf-hot-row">
-              <div class="sf-hot-score">{int(row.get("explosive_score_0_100", 0))}</div>
-              <div>
-                <div style="font-weight:850;color:#fff;">{escape(row.get("company_name", "N/D"))}</div>
-                <div style="font-size:12px;color:rgba(248,251,255,.68);">{escape(row.get("ticker") or row.get("asset_id") or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(drivers or "sin drivers suficientes")}</div>
-              </div>
-              <div class="sf-chip">Top {index}</div>
-            </div>
-            """
+            '<div class="sf-hot-row">'
+            f'<div class="sf-hot-score">{int(row.get("explosive_score_0_100", 0))}</div>'
+            '<div>'
+            f'<div style="font-weight:850;color:#fff;">{escape(row.get("company_name", "N/D"))}</div>'
+            f'<div style="font-size:12px;color:rgba(248,251,255,.68);">{escape(row.get("ticker") or row.get("asset_id") or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(drivers or "sin drivers suficientes")}</div>'
+            '</div>'
+            f'<div class="sf-chip">Top {index}</div>'
+            '</div>'
         )
-    st.markdown(
+    hot_rows_html = "".join(hot_rows) if hot_rows else '<div style="color:#fff;">Sin candidatos filtrados.</div>'
+    hero_html = (
         f"""
         <div class="sf-trading-hero">
           <div style="display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap;margin-bottom:16px;">
@@ -1684,7 +1683,7 @@ def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -
                 <div style="font-size:16px;font-weight:900;">Top 3 candidatos calientes</div>
                 <div style="font-size:12px;color:rgba(248,251,255,.62);">score endurecido v2.45U</div>
               </div>
-              <div class="sf-hot-list">{''.join(hot_rows) if hot_rows else '<div style="color:#fff;">Sin candidatos filtrados.</div>'}</div>
+              <div class="sf-hot-list">{hot_rows_html}</div>
               <div class="sf-mini-metrics">
                 <div class="sf-mini-metric"><b>{tier_counts.get("EXPLOSIVE_CANDIDATE_HIGH", 0):,}</b><span>High</span></div>
                 <div class="sf-mini-metric"><b>{tier_counts.get("EXPLOSIVE_CANDIDATE_MEDIUM", 0):,}</b><span>Medium</span></div>
@@ -1694,9 +1693,9 @@ def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -
             </div>
           </div>
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
+    st.markdown(hero_html, unsafe_allow_html=True)
 
 
 def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
@@ -3008,6 +3007,8 @@ def render_global_unicorns(_data):
             st.success(f"{len(explosive_rows):,} candidatos explosivos evaluables con señales locales de mercado.")
             unicorn_rows = explosive_rows
             counts = Counter(row.get("overall_coverage_status", "") for row in unicorn_rows)
+            st.caption("Vista explosiva aislada: se oculta el flujo legacy de calidad fundamental para no mezclar conceptos ni volver a mostrar cards de 96%.")
+            return
         else:
             st.stop()
     render_unicorn_recalculation_panel(matrix, unicorn_rows)
