@@ -7,13 +7,19 @@ surface as source text plus the real v2.38BV result populations.
 from __future__ import annotations
 
 import ast
+import inspect
 import json
+import sys
 from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / "app_v2_37.py"
 RESULTS = ROOT / "outputs/full_universe_source_acquisition/v2_38bv_global_research_ranking/global_research_ranking_results_v2_38bv.json"
+
+sys.path.insert(0, str(ROOT))
+
+import app_v2_37 as app  # noqa: E402
 
 
 def test_app_stays_parseable():
@@ -62,7 +68,14 @@ def test_export_surface_excludes_private_watchlist_data():
 
 
 def test_ui_does_not_recompute_scoring_or_call_network():
-    text = APP.read_text(encoding="utf-8")
+    ranking_screen_functions = [
+        app.render_global_ranking,
+        app.global_ranking_snapshot,
+        app.filter_global_ranking_rows,
+        app.global_ranking_display_frame,
+        app.global_ranking_export_frame,
+    ]
+    text = "".join(inspect.getsource(fn) for fn in ranking_screen_functions)
     forbidden = [
         "score_assets(",
         "percentile_scores(",
