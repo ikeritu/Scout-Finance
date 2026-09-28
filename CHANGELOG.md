@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.46E — deduplicar el ranking global por registrante SEC (2026-09-28)
+
+44 de las 1.111 empresas puntuadas por v2.38BV eran cotizaciones duplicadas del mismo registrante SEC (3 ocupaban directamente el ranking principal). `build_global_research_ranking_v2_38bv.py --dedupe-by-cik-from` escribe un ranking aparte (v2.46E: 1.067 puntuadas, 315 en el ranking principal, 44 marcadas `DUPLICATE_LISTING`) sin tocar los ficheros v2.38BV que citan las auditorías anteriores (siguen bit a bit idénticos). La app prefiere el fichero deduplicado cuando existe, con aviso, pestaña propia y el motivo de cada duplicado enlazado a la empresa primaria legible. Detalle en `GLOBAL_RANKING_DEDUPLICATION_v2_46e.md`.
+
 ## v2.46D — entidades financieras fuera de la lista de Unicornios por defecto (2026-09-28)
 
 los 12 unicornios financieros (SIC 6000-6499 o revisión de entidad financiera) se ocultan por defecto (141 en la lista; casilla «Incluir entidades financieras» y filtro «Revisión requerida» para verlos, 153 en total) porque la «caja libre positiva» no es comparable en banca y seguros; la búsqueda encuentra también el ticker estadounidense real. Solo presentación, sin cambiar datos. Detalle en `UNICORN_FINANCIALS_DEFAULT_v2_46d.md`.

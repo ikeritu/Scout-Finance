@@ -86,6 +86,13 @@ EUROPE_AUSTRIA_GROWTH = ROOT / "outputs/full_universe_source_acquisition/v2_38ak
 
 FINANCIAL_INSTITUTION_REASON = "financial_institution_requires_separate_factor_contract"
 
+# v2.46E: optional de-duplication of dual listings (same SEC CIK). Off by default so the v2.38BV outputs that the
+# v2.38BX..v2.44A audits cite stay byte-identical; on, it writes a separate v2.46E ranking.
+DEDUP_PHASE = "v2.46E-global-research-ranking-deduplicated"
+DEDUP_OUT = ROOT / "outputs/full_universe_source_acquisition/v2_46e_global_research_ranking_deduplicated"
+UNICORN_FLAG_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38bt_global_unicorn_flag/global_unicorn_flag_v2_38bt.csv"
+DUPLICATE_STATUS = "DUPLICATE_LISTING"
+
 # Same field-name vocabulary core.build_raw_factors()/score_assets() are
 # already contractually written for -- no engine code changes, only this
 # mapping.
@@ -139,6 +146,17 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: f.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def load_duplicate_listings(path: Path) -> dict[str, str]:
+    """asset_id -> primary asset_id, from the v2.38BT flag (one row per SEC registrant keeps the best-data listing)."""
+    duplicates: dict[str, str] = {}
+    for row in read_csv(path):
+        if row.get("unicorn_status") == DUPLICATE_STATUS:
+            reason = row.get("unicorn_reason", "")
+            primary = reason.removeprefix("duplicate_listing_of_").split("_same_sec_cik_")[0] if reason.startswith("duplicate_listing_of_") else ""
+            duplicates[row["asset_id"]] = primary
+    return duplicates
 
 
 def load_eligibility(path: Path) -> tuple[dict[str, dict], set[str], set[str]]:
@@ -223,14 +241,20 @@ def build(
     us_original_features: Path, us_cboe_secondary_features: Path, us_joby_features: Path, us_valuation_extension: Path, us_price_raw_dir: Path,
     europe_austria_ratios: Path, europe_austria_growth: Path,
     output_dir: Path,
+    duplicate_listings: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
+    dedup = duplicate_listings is not None
+    phase = DEDUP_PHASE if dedup else PHASE
+    tag = "v2_46e" if dedup else "v2_38bv"
     core = load_module("scoring_engine_core", ROOT / "scripts/scoring_engine/core.py")
     v38bo = load_module("build_global_scoring_eligibility_v2_38bo", ROOT / "scripts/build_global_scoring_eligibility_v2_38bo.py")
     contract = json.loads((ROOT / "config/scoring_factor_contract_v1.json").read_text(encoding="utf-8"))
 
     display, eligible_ids, financial_ids = load_eligibility(eligibility_path)
     universe = eligible_ids | financial_ids
+    excluded_duplicates = sorted(a for a in universe if dedup and a in duplicate_listings)
+    universe = universe - set(excluded_duplicates)
 
     us_fundamentals = build_us_fundamentals(universe, us_original_features, us_cboe_secondary_features, us_joby_features, valuation_path=us_valuation_extension)
     at_fundamentals, at_real_names = build_austria_fundamentals(universe, europe_austria_ratios, europe_austria_growth)
@@ -264,6 +288,15 @@ def build(
         explanation = core.explain_result(row, contract)
         rows.append({**row, "ticker": meta.get("ticker", ""), "company_name": company_name, "country": meta.get("country", ""), "explanation": explanation})
 
+    for asset_id in excluded_duplicates:
+        meta = display.get(asset_id, {})
+        rows.append({
+            "asset_id": asset_id, "ticker": meta.get("ticker", ""), "company_name": meta.get("company_name", ""), "country": meta.get("country", ""),
+            "eligibility_status": DUPLICATE_STATUS, "confidence": "NOT_RANKABLE", "coverage_weight": 0.0, "total_score": None,
+            "raw_factors": {}, "normalized_factors": {}, "contributions": {}, "pillar_scores": {},
+            "review_reasons": [f"duplicate_listing_of_{duplicate_listings[asset_id]}_same_sec_registrant"], "explanation": {},
+        })
+
     scored_ids = {r["asset_id"] for r in rows}
     not_yet_scored = sorted(universe - scored_ids)
     for asset_id in not_yet_scored:
@@ -276,15 +309,15 @@ def build(
         })
 
     results_fields = ["asset_id", "ticker", "company_name", "country", "eligibility_status", "confidence", "coverage_weight", "total_score", "rank", "review_reasons", "phase"]
-    csv_rows = [{**r, "rank": r.get("rank", ""), "review_reasons": "|".join(r.get("review_reasons", [])), "phase": PHASE} for r in rows]
-    write_csv(output_dir / "global_research_ranking_v2_38bv.csv", csv_rows, results_fields)
-    write_text(output_dir / "global_research_ranking_results_v2_38bv.json", core.canonical_json(rows))
+    csv_rows = [{**r, "rank": r.get("rank", ""), "review_reasons": "|".join(r.get("review_reasons", [])), "phase": phase} for r in rows]
+    write_csv(output_dir / f"global_research_ranking_{tag}.csv", csv_rows, results_fields)
+    write_text(output_dir / f"global_research_ranking_results_{tag}.json", core.canonical_json(rows))
     main_ranking = sorted((r for r in rows if r.get("eligibility_status") == "ELIGIBLE_PARTIAL" and r.get("rank")), key=lambda r: r["rank"])
-    write_text(output_dir / "global_research_ranking_main_v2_38bv.json", core.canonical_json(main_ranking))
+    write_text(output_dir / f"global_research_ranking_main_{tag}.json", core.canonical_json(main_ranking))
 
     status_counts = Counter(r["eligibility_status"] for r in rows)
     report = {
-        "phase": PHASE,
+        "phase": phase,
         "status": "COMPLETED_GLOBAL_RESEARCH_RANKING_EXPERIMENTAL",
         "universe_size": len(universe), "eligible_input": len(eligible_ids), "financial_institution_input": len(financial_ids),
         "financial_institutions_recovered_from_real_austria_names": sorted(recovered_financial_institutions),
@@ -295,9 +328,11 @@ def build(
         "note": "Applies the already-validated v2.35A3 scoring engine (scripts/scoring_engine/core.py) unchanged to the v2.38BO eligible universe -- same contract, same weights, same percentile-rank normalization, same renormalize-weights coverage floor, same confidence tiers. US-origin (v2.38G+BK+BA+BU) and Austria (v2.38X+AK) are scored; Luxembourg and GB have no ratio/growth adapter built yet and are reported explicitly as not_yet_scored_no_adapter, never silently dropped or fabricated. A real placeholder-company-name bug in v2.38AL/v2.38BO (literal 'AST0' for the whole new Austria population) meant two real financial institutions (Erste Group Bank AG, UNIQA Insurance Group AG) were not caught upstream -- recovered here by re-applying v2.38BO's own real heuristic against v2.38X's real company names, routed to REVIEW_REQUIRED via the engine's existing exclusions mechanism, same reason string the old product already uses for its own bank (P178). Experimental research prioritization only -- never investment advice, never a prediction, never a trade.",
         "guardrails": {"network_used": False, "recommendations_generated": False, "broker_actions_allowed": False, "financial_advice": False, "phase9c_authorized": True, "phase9c_block": "2_of_3_scoring_engine_applied"},
     }
-    write_text(output_dir / "global_research_ranking_aggregate_report_v2_38bv.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
-    manifest = {"phase": PHASE, "outputs": {"global_research_ranking_v2_38bv.csv": {"bytes": (output_dir / "global_research_ranking_v2_38bv.csv").stat().st_size, "sha256": sha256(output_dir / "global_research_ranking_v2_38bv.csv")}}, "guardrails": report["guardrails"]}
-    write_text(output_dir / "global_research_ranking_manifest_v2_38bv.json", json.dumps(manifest, indent=2, sort_keys=True) + "\n")
+    if dedup:  # keys only exist in v2.46E mode: the default v2.38BV report stays byte-identical
+        report.update({"deduplicated_by_sec_cik": True, "duplicate_listings_excluded": len(excluded_duplicates), "duplicate_listings_excluded_ids": excluded_duplicates})
+    write_text(output_dir / f"global_research_ranking_aggregate_report_{tag}.json", json.dumps(report, indent=2, sort_keys=True) + "\n")
+    manifest = {"phase": phase, "outputs": {f"global_research_ranking_{tag}.csv": {"bytes": (output_dir / f"global_research_ranking_{tag}.csv").stat().st_size, "sha256": sha256(output_dir / f"global_research_ranking_{tag}.csv")}}, "guardrails": report["guardrails"]}
+    write_text(output_dir / f"global_research_ranking_manifest_{tag}.json", json.dumps(manifest, indent=2, sort_keys=True) + "\n")
     return report
 
 
@@ -311,15 +346,20 @@ def main() -> int:
     parser.add_argument("--us-price-raw-dir", type=Path, default=US_PRICE_RAW_DIR)
     parser.add_argument("--europe-austria-ratios", type=Path, default=EUROPE_AUSTRIA_RATIOS)
     parser.add_argument("--europe-austria-growth", type=Path, default=EUROPE_AUSTRIA_GROWTH)
-    parser.add_argument("--output-dir", type=Path, default=OUT)
+    parser.add_argument("--output-dir", type=Path, default=None)
+    parser.add_argument("--dedupe-by-cik-from", type=Path, nargs="?", const=UNICORN_FLAG_INPUT, default=None,
+                        help="v2.46E: exclude dual listings (same SEC CIK, per the v2.38BT flag) and write a separate v2.46E ranking")
     args = parser.parse_args()
+    duplicates = load_duplicate_listings(args.dedupe_by_cik_from) if args.dedupe_by_cik_from else None
+    output_dir = args.output_dir or (DEDUP_OUT if duplicates is not None else OUT)
     report = build(
         args.eligibility_input,
         args.us_original_features, args.us_cboe_secondary_features, args.us_joby_features, args.us_valuation_extension, args.us_price_raw_dir,
         args.europe_austria_ratios, args.europe_austria_growth,
-        args.output_dir,
+        output_dir,
+        duplicate_listings=duplicates,
     )
-    print(json.dumps({k: report[k] for k in ("phase", "status", "universe_size", "eligibility_status_counts", "not_yet_scored_no_adapter")}, ensure_ascii=False, sort_keys=True))
+    print(json.dumps({k: report[k] for k in ("phase", "status", "universe_size", "eligibility_status_counts", "not_yet_scored_no_adapter") if k in report}, ensure_ascii=False, sort_keys=True))
     return 0
 
 

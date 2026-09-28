@@ -175,6 +175,66 @@ def test_run_twice_on_same_fixtures_is_byte_identical():
     assert first == second
 
 
+UNICORN_FLAG_FIELDS = ["asset_id", "unicorn_status", "unicorn_reason", "cik"]
+
+
+def unicorn_flag_row(asset_id, status, reason="", cik="") -> dict:
+    return {"asset_id": asset_id, "unicorn_status": status, "unicorn_reason": reason, "cik": cik}
+
+
+def test_load_duplicate_listings_reads_the_real_v2_38bt_flag_format():
+    """v2.38BT writes 'duplicate_listing_of_<primary>_same_sec_cik_<cik>' as the reason for every
+    non-primary listing of the same SEC registrant -- this must parse the primary id back out."""
+    mod = module()
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "flag.csv"
+        write_csv(path, UNICORN_FLAG_FIELDS, [
+            unicorn_flag_row("U10", "EVALUATED_UNICORN"),
+            unicorn_flag_row("U11", "DUPLICATE_LISTING", "duplicate_listing_of_U10_same_sec_cik_0001234567", "0001234567"),
+            unicorn_flag_row("U12", "EVALUATED_NOT_UNICORN"),
+        ])
+        duplicates = mod.load_duplicate_listings(path)
+    assert duplicates == {"U11": "U10"}
+
+
+def test_dedup_mode_excludes_duplicate_and_leaves_default_output_untouched():
+    """Passing duplicate_listings= must never change the default (non-deduplicated) files' byte content --
+    the v2.38BX..v2.44A audits already cite v2.38BV's exact numbers. Only a separate v2.46E tag is written."""
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        eligibility = [eligibility_row("U1", "Widget Inc", "US", "ELIGIBLE_PARTIAL_NO_PRICE"), eligibility_row("U5", "Widget Europe Inc", "US", "ELIGIBLE_PARTIAL_NO_PRICE")]
+        us_original = [us_row("U1"), us_row("U5")]
+        default_report, default_rows = build_with(root / "default", eligibility=eligibility, us_original=us_original)
+        mod = module()
+        eligibility_path, us_original_path, empty_us_path, valuation_path, at_ratios_path, at_growth_path = (
+            root / "dedup" / "eligibility.csv", root / "dedup" / "us_original.csv", root / "dedup" / "empty_us.csv",
+            root / "dedup" / "valuation.csv", root / "dedup" / "at_ratios.csv", root / "dedup" / "at_growth.csv",
+        )
+        write_csv(eligibility_path, ELIGIBILITY_FIELDS, eligibility)
+        write_csv(us_original_path, US_FIELDS, us_original)
+        write_csv(empty_us_path, US_FIELDS, [])
+        write_csv(valuation_path, VALUATION_FIELDS, [])
+        write_csv(at_ratios_path, AT_RATIO_FIELDS, [])
+        write_csv(at_growth_path, AT_GROWTH_FIELDS, [])
+        out_dir = root / "dedup" / "out"
+        dedup_report = mod.build(
+            eligibility_path, us_original_path, empty_us_path, empty_us_path, valuation_path, root / "dedup" / "prices",
+            at_ratios_path, at_growth_path, out_dir, duplicate_listings={"U5": "U1"},
+        )
+        assert (out_dir / "global_research_ranking_v2_46e.csv").is_file()
+        assert not (out_dir / "global_research_ranking_v2_38bv.csv").is_file()
+        dedup_rows = {r["asset_id"]: r for r in csv.DictReader((out_dir / "global_research_ranking_v2_46e.csv").open(encoding="utf-8"))}
+        assert dedup_rows["U5"]["eligibility_status"] == "DUPLICATE_LISTING"
+        assert dedup_rows["U5"]["total_score"] == ""
+        assert "duplicate_listing_of_U1_same_sec_registrant" in dedup_rows["U5"]["review_reasons"]
+        assert dedup_report["deduplicated_by_sec_cik"] is True
+        assert dedup_report["duplicate_listings_excluded"] == 1
+        assert dedup_report["duplicate_listings_excluded_ids"] == ["U5"]
+        # the default (non-dedup) run must not carry these keys at all, and U1/U5 keep being scored independently
+        assert "deduplicated_by_sec_cik" not in default_report
+        assert default_rows["U5"]["eligibility_status"] != "DUPLICATE_LISTING"
+
+
 CASES = [
     test_us_company_with_fundamentals_only_gets_scored_quality_and_growth,
     test_austria_company_scored_from_ratios_and_growth_files,
@@ -183,6 +243,8 @@ CASES = [
     test_company_in_universe_with_no_adapter_data_is_explicitly_not_yet_scored,
     test_us_company_with_real_price_gets_momentum_and_risk_factors,
     test_run_twice_on_same_fixtures_is_byte_identical,
+    test_load_duplicate_listings_reads_the_real_v2_38bt_flag_format,
+    test_dedup_mode_excludes_duplicate_and_leaves_default_output_untouched,
 ]
 
 

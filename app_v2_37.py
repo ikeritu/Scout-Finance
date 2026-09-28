@@ -20,7 +20,7 @@ import pandas as pd
 import plotly.graph_objects as plotly_go  # not `go`: the navigation helper go() below would shadow it
 import streamlit as st
 
-from src.ui_v2_37.global_ranking import load_global_ranking
+from src.ui_v2_37.global_ranking import DEDUPE_BUILD_COMMAND, load_global_ranking
 from src.ui_v2_37.global_universe import load_global_matrix, rebuild_global_matrix
 from src.ui_v2_37.repository import DataMode, load_fundamentals, load_price_series, load_product_data
 from src.ui_v2_37.reports import DISCLAIMER, asset_markdown, manifest, ranking_markdown, to_html, watchlist_markdown
@@ -278,11 +278,15 @@ GLOBAL_RANKING_STATUS_LABELS = {
     "REVIEW_REQUIRED": "Revisión requerida",
     "BLOCKED": "Cobertura real insuficiente",
     "NOT_YET_SCORED_NO_ADAPTER": "Sin adaptador de datos todavía",
+    "DUPLICATE_LISTING": "Cotización duplicada (mismo registrante SEC)",
 }
 GLOBAL_RANKING_REVIEW_REASON_LABELS = {
     "absolute_margin_outside_300pct": "Margen fuera de ±300 % — revisión manual",
     "financial_institution_requires_separate_factor_contract": "Entidad financiera — necesita un contrato de factores distinto",
     "no_fundamentals_growth_ratio_adapter_built_yet_for_this_country": "Sin adaptador real de ratios/crecimiento todavía para este país",
+}
+GLOBAL_RANKING_REVIEW_REASON_PREFIXES = {
+    "duplicate_listing_of_": "Cotización duplicada de {primary} (mismo registrante SEC)",
 }
 GLOBAL_RANKING_EMPTY_MESSAGES = {
     "ELIGIBLE_PARTIAL": "No hay empresas en el ranking principal para los filtros actuales. Ajusta busqueda, pais, confianza, score, cobertura o Top N; la app no relaja criterios ni recalcula puntuaciones.",
@@ -290,6 +294,7 @@ GLOBAL_RANKING_EMPTY_MESSAGES = {
     "REVIEW_REQUIRED": "No hay empresas pendientes de revision en esta vista. La ausencia de filas no convierte ningun activo en apto para ranking.",
     "BLOCKED": "No hay empresas bloqueadas visibles en esta vista. La app nunca imputa datos para rellenar cobertura.",
     "NOT_YET_SCORED_NO_ADAPTER": "No hay empresas sin adaptador visibles en esta vista. Las limitaciones finales siguen documentadas en v2.41D.",
+    "DUPLICATE_LISTING": "No hay cotizaciones duplicadas visibles en esta vista.",
 }
 GLOBAL_RANKING_EXPORT_FILENAME = "scout_finance_ranking_experimental_filtered_v2_42a.csv"
 
@@ -2981,8 +2986,20 @@ def global_ranking_status_label(value: str) -> str:
     return GLOBAL_RANKING_STATUS_LABELS.get(value, value)
 
 
-def global_ranking_review_reason_label(value: str) -> str:
-    return GLOBAL_RANKING_REVIEW_REASON_LABELS.get(value, value.replace("_", " "))
+def global_ranking_asset_lookup(rows: list[dict]) -> dict[str, str]:
+    """asset_id -> 'TICKER · Company Name' for every row in the ranking, used to make a duplicate-listing's
+    'primary' reference readable instead of showing the internal asset_id."""
+    return {row["asset_id"]: " · ".join(part for part in (row.get("ticker", ""), row.get("company_name", "")) if part) or row["asset_id"] for row in rows}
+
+
+def global_ranking_review_reason_label(value: str, asset_lookup: dict[str, str] | None = None) -> str:
+    if value in GLOBAL_RANKING_REVIEW_REASON_LABELS:
+        return GLOBAL_RANKING_REVIEW_REASON_LABELS[value]
+    for prefix, template in GLOBAL_RANKING_REVIEW_REASON_PREFIXES.items():
+        if value.startswith(prefix):
+            primary_id = value.removeprefix(prefix).removesuffix("_same_sec_registrant")
+            return template.format(primary=(asset_lookup or {}).get(primary_id, primary_id))
+    return value.replace("_", " ")
 
 
 def global_ranking_percentage(value) -> str:
@@ -3060,7 +3077,7 @@ def global_ranking_export_frame(rows: list[dict]) -> pd.DataFrame:
     } for row in rows])
 
 
-def global_ranking_display_frame(rows: list[dict], *, include_rank: bool = True, include_reason: bool = False) -> pd.DataFrame:
+def global_ranking_display_frame(rows: list[dict], *, include_rank: bool = True, include_reason: bool = False, asset_lookup: dict[str, str] | None = None) -> pd.DataFrame:
     output = []
     for row in rows:
         item = {
@@ -3076,7 +3093,7 @@ def global_ranking_display_frame(rows: list[dict], *, include_rank: bool = True,
         if include_rank:
             item = {"Posición": row.get("rank", "")} | item
         if include_reason:
-            item["Motivo"] = " · ".join(global_ranking_review_reason_label(reason) for reason in row.get("review_reasons", []) or [])
+            item["Motivo"] = " · ".join(global_ranking_review_reason_label(reason, asset_lookup) for reason in row.get("review_reasons", []) or [])
         output.append(item)
     return pd.DataFrame(output)
 
@@ -3749,12 +3766,19 @@ def render_global_ranking(_data):
     st.info("Uso previsto: ordenar trabajo de investigacion. No es asesoramiento financiero, no estima precios objetivo, no promete rentabilidad, no ejecuta operaciones y no se conecta a brokers.")
     st.caption(f"Última actualización: {ranking.generated_at} (UTC) · {len(ranking.rows):,} empresas evaluadas · sin conexión de red")
     counts = Counter(row["eligibility_status"] for row in ranking.rows)
+    asset_lookup = global_ranking_asset_lookup(ranking.rows)
+    if ranking.deduplicated:
+        st.caption(f"Deduplicado por registrante SEC (v2.46E): {counts.get('DUPLICATE_LISTING', 0):,} cotizaciones duplicadas excluidas del cálculo, una sola fila por empresa real.")
+    else:
+        st.caption("Fuente v2.38BV sin deduplicar: una empresa con cotización dual (misma matriz, dos bolsas) puede ocupar dos filas. Genera el ranking deduplicado con: " + DEDUPE_BUILD_COMMAND)
     metric_cols = st.columns(5)
     metric_cols[0].metric("Ranking principal", f"{counts.get('ELIGIBLE_PARTIAL', 0):,}", help="Confianza HIGH o MEDIUM — cobertura contractual real de al menos el 65% de los factores.")
     metric_cols[1].metric("Comparabilidad parcial", f"{counts.get('PARTIAL_COMPARABILITY', 0):,}", help="Confianza LOW (50–65% de cobertura real) — puntuado, pero fuera del ranking principal.")
     metric_cols[2].metric("Revisión requerida", f"{counts.get('REVIEW_REQUIRED', 0):,}", help="Margen real fuera de ±300%, o entidad financiera que necesita un contrato de factores distinto — nunca puntuado.")
     metric_cols[3].metric("Cobertura insuficiente", f"{counts.get('BLOCKED', 0):,}", help="Menos del 50% real de los factores disponibles — nunca se imputa ni se estima.")
     metric_cols[4].metric("Sin adaptador todavía", f"{counts.get('NOT_YET_SCORED_NO_ADAPTER', 0):,}", help="Luxemburgo y Reino Unido — sin un adaptador real de ratios/crecimiento construido todavía (v2.38BV).")
+    if ranking.deduplicated and counts.get("DUPLICATE_LISTING"):
+        st.caption(f"Cotizaciones duplicadas excluidas: {counts['DUPLICATE_LISTING']:,} (mismo registrante SEC que otra fila del ranking).")
 
     st.markdown("### Ranking principal")
     countries = sorted({row.get("country", "") for row in ranking.rows if row.get("country")})
@@ -3844,7 +3868,10 @@ def render_global_ranking(_data):
                 except ValueError as exc:
                     st.error(str(exc))
 
-    status_tabs = st.tabs(["Comparabilidad parcial", "Revisión requerida", "Cobertura insuficiente", "Sin adaptador"])
+    status_tab_labels = ["Comparabilidad parcial", "Revisión requerida", "Cobertura insuficiente", "Sin adaptador"]
+    if ranking.deduplicated and counts.get("DUPLICATE_LISTING"):
+        status_tab_labels.append("Cotizaciones duplicadas")
+    status_tabs = st.tabs(status_tab_labels)
     partial_rows = filter_global_ranking_rows(ranking.rows, status="PARTIAL_COMPARABILITY")
     with status_tabs[0]:
         st.caption("Confianza LOW (50–65% de cobertura real) — puntuadas, pero fuera del ranking principal por baja comparabilidad, nunca excluidas silenciosamente.")
@@ -3863,7 +3890,7 @@ def render_global_ranking(_data):
         st.caption("Nunca puntuadas con el contrato industrial — margen real fuera de ±300%, o entidad financiera que necesita un modelo de factores distinto.")
         if review_rows:
             st.dataframe(
-                global_ranking_display_frame(review_rows, include_rank=False, include_reason=True),
+                global_ranking_display_frame(review_rows, include_rank=False, include_reason=True, asset_lookup=asset_lookup),
                 use_container_width=True,
                 hide_index=True,
                 column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
@@ -3896,6 +3923,17 @@ def render_global_ranking(_data):
             )
         else:
             st.info(global_ranking_empty_message("NOT_YET_SCORED_NO_ADAPTER"))
+
+    if ranking.deduplicated and counts.get("DUPLICATE_LISTING"):
+        duplicate_rows = filter_global_ranking_rows(ranking.rows, status="DUPLICATE_LISTING")
+        with status_tabs[4]:
+            st.caption("Misma empresa (mismo registrante SEC) que otra fila ya presente en el ranking; se excluye del cálculo para no contarla dos veces. Consulta v2_46e_global_research_ranking_deduplicated para el detalle completo.")
+            st.dataframe(
+                global_ranking_display_frame(duplicate_rows, include_rank=False, include_reason=True, asset_lookup=asset_lookup),
+                use_container_width=True,
+                hide_index=True,
+                column_config={"Google Finance": st.column_config.LinkColumn("Google Finance", display_text="Ver")},
+            )
 
     with st.expander(f"Comparabilidad parcial ({counts.get('PARTIAL_COMPARABILITY', 0):,})"):
         st.caption("Vista heredada mantenida por compatibilidad con v2.38BW.")
