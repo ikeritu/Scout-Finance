@@ -399,7 +399,7 @@ def unicorn_probability(row: dict) -> int:
 def unicorn_evidence_grade(row: dict) -> tuple[str, str, str]:
     if unicorn_needs_financial_review(row):
         sector = f" ({row['sic_description']})" if row.get("sic_description") else ""
-        return "Requiere revision", "red", f"Entidad financiera{sector}: el criterio de flujo de caja libre no es comparable con el de una empresa industrial; revisar a mano."
+        return "Requiere revisión", "red", f"Entidad financiera{sector}: el criterio de flujo de caja libre no es comparable con el de una empresa industrial; revisar a mano."
     probability = unicorn_probability(row)
     if probability >= 90 and row.get("overall_coverage_status") == "GROWTH_READY":
         return "Muy respaldado", "green", "Criterios completos y cobertura de crecimiento completa."
@@ -407,7 +407,7 @@ def unicorn_evidence_grade(row: dict) -> tuple[str, str, str]:
         return "Respaldado", "blue", "Evidencia suficiente, con alguna limitacion menor de cobertura o comparabilidad."
     if row.get("overall_coverage_status") == "GROWTH_PARTIAL":
         return "Parcial", "orange", "Etiqueta valida, pero con cobertura de crecimiento parcial."
-    return "Requiere revision", "red", "Conviene revisar la evidencia manualmente antes de priorizar."
+    return "Requiere revisión", "red", "Conviene revisar la evidencia manualmente antes de priorizar."
 
 
 def is_blank(value) -> bool:
@@ -1759,7 +1759,6 @@ def render_explosive_trading_desk_skin() -> None:
           position: absolute;
           inset: -25%;
           background: conic-gradient(from 0deg, rgba(0,184,217,.46), transparent 22%, transparent 100%);
-          animation: sfRadarSweep 5.8s linear infinite;
         }
         .sf-radar-core {
           position: absolute;
@@ -1784,7 +1783,6 @@ def render_explosive_trading_desk_skin() -> None:
           border-radius: 14px;
           background: rgba(255,255,255,.075);
           border: 1px solid rgba(255,255,255,.12);
-          animation: sfHotPulse 4s ease-in-out infinite;
         }
         .sf-hot-score {
           color: #ffb020;
@@ -1842,10 +1840,10 @@ def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -
         drivers = " · ".join(str(driver) for driver in row.get("drivers", [])[:2])
         hot_rows.append(
             '<div class="sf-hot-row">'
-            f'<div class="sf-hot-score">{int(row.get("explosive_score_0_100", 0))}</div>'
+            f'<div class="sf-hot-score">{int(row.get("explosive_score_0_100", 0))}<span style="font-size:12px;color:rgba(248,251,255,.6);">/100</span></div>'
             '<div>'
             f'<div style="font-weight:850;color:#fff;">{escape(row.get("company_name", "N/D"))}</div>'
-            f'<div style="font-size:12px;color:rgba(248,251,255,.68);">{escape(row.get("ticker") or row.get("asset_id") or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(drivers or "sin drivers suficientes")}</div>'
+            f'<div style="font-size:12px;color:rgba(248,251,255,.68);">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(drivers or "sin drivers suficientes")}</div>'
             '</div>'
             f'<div class="sf-chip">Top {index}</div>'
             '</div>'
@@ -1858,7 +1856,7 @@ def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -
             <div>
               <div class="sf-chip">Scout Finance · modo radar</div>
               <div style="font-size:34px;font-weight:950;letter-spacing:-.04em;margin-top:8px;">Unicornios explosivos</div>
-              <div style="color:rgba(248,251,255,.72);font-size:14px;margin-top:4px;">Trading desk visual para detectar señales calientes de mercado. Investigación local, no recomendación financiera.</div>
+              <div style="color:rgba(248,251,255,.72);font-size:14px;margin-top:4px;">Vista de investigación de señales de mercado (micro-cap, penny stock, short interest, breakout). No es una recomendación financiera.</div>
             </div>
             <div style="text-align:right;color:rgba(248,251,255,.70);font-size:12px;">Proveedor local<br><b style="color:#fff;font-size:15px;">Yahoo/yfinance + cache</b></div>
           </div>
@@ -1867,14 +1865,14 @@ def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -
               <div class="sf-radar-core">
                 <div>
                   <div style="font-size:54px;font-weight:950;color:#00b8d9;line-height:1;">{len(visible_rows):,}</div>
-                  <div style="font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:rgba(248,251,255,.72);">candidatos con señales de mercado</div>
-                  <div style="margin-top:16px;color:#ffb020;font-weight:800;">Radar de mercado activo</div>
+                  <div style="font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:rgba(248,251,255,.72);">empresas con datos de mercado</div>
+                  <div style="margin-top:16px;color:#ffb020;font-weight:800;">Datos de mercado cargados</div>
                 </div>
               </div>
             </div>
             <div>
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-                <div style="font-size:16px;font-weight:900;">Top 3 candidatos calientes</div>
+                <div style="font-size:16px;font-weight:900;">Top 3 por score explosivo (sobre 100)</div>
                 <div style="font-size:12px;color:rgba(248,251,255,.62);">score endurecido v2.45U</div>
               </div>
               <div class="sf-hot-list">{hot_rows_html}</div>
@@ -1956,9 +1954,9 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
                 f"""
                 <div style="border:1px solid #d8e2ef;border-left:6px solid {color};border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#ffffff;">
                   <div style="font-weight:800;color:#0f172a;">{escape(row.get("company_name", ""))}</div>
-                  <div style="color:#64748b;font-size:12px;">{escape(row.get("ticker") or row.get("asset_id") or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(row.get("exchange") or "N/D")}</div>
+                  <div style="color:#64748b;font-size:12px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
                   <div style="font-size:30px;font-weight:900;color:{color};margin-top:8px;">{score}</div>
-                  <div style="color:#475569;font-size:12px;margin-bottom:8px;">{escape(tier)}</div>
+                  <div style="color:#475569;font-size:12px;margin-bottom:8px;">{escape(explosive_tier_label(tier))}</div>
                   <div style="font-size:13px;color:#334155;"><b>Drivers:</b> {escape(" · ".join(drivers) if drivers else "sin drivers suficientes")}</div>
                   <div style="font-size:13px;color:#64748b;"><b>Faltan:</b> {escape(" · ".join(missing) if missing else "ninguna señal crítica")}</div>
                 </div>
@@ -2009,12 +2007,6 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
 
 
 def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
-    summary = unicorn_semantic_summary(rows)
-    cols = st.columns(4)
-    cols[0].metric("Calidad fundamental", f"{summary['quality']:,}")
-    cols[1].metric("Explosivos evaluables", f"{summary['explosive']:,}")
-    cols[2].metric("Datos mercado parciales", f"{summary['partial_market']:,}")
-    cols[3].metric("Bloqueados por datos", f"{summary['blocked']:,}")
     mode = st.radio(
         "Tipo de descubrimiento",
         ["Calidad fundamental", "Unicornio explosivo"],
@@ -2088,6 +2080,63 @@ def unicorn_growth_summary(row: dict) -> str:
     return " · ".join(parts) if parts else "Sin cifras de crecimiento en la matriz local"
 
 
+EXCHANGE_LABELS = {"CBOE_EUROPE": "Cboe Europe", "XETR": "Xetra", "NASDAQ": "Nasdaq", "NYSE": "NYSE", "AMEX": "NYSE American"}
+EXPLOSIVE_TIER_LABELS = {
+    "EXPLOSIVE_CANDIDATE_HIGH": "Candidato explosivo · alto",
+    "EXPLOSIVE_CANDIDATE_MEDIUM": "Candidato explosivo · medio",
+    "EXPLOSIVE_CANDIDATE_LOW": "Candidato explosivo · bajo",
+    "WATCH_ONLY": "En vigilancia",
+    "NO_DATA": "Sin datos de mercado",
+}
+
+
+def explosive_tier_label(tier) -> str:
+    return EXPLOSIVE_TIER_LABELS.get(str(tier or ""), str(tier or "N/D"))
+
+
+def friendly_exchange(value) -> str:
+    text = str(value or "").strip()
+    return EXCHANGE_LABELS.get(text.upper(), text or "N/D")
+
+
+def unicorn_ticker(row: dict) -> str:
+    """The ticker a person can search for: the real SEC/US ticker when the census only has a local Cboe symbol."""
+    return str(row.get("us_ticker") or row.get("ticker") or row.get("asset_id") or "")
+
+
+def unicorn_headline_growth(row: dict) -> str:
+    return format_percent_fraction(row.get("revenue_yoy_growth"))
+
+
+def unicorn_population_medians(rows: list[dict]) -> dict[str, float]:
+    medians = {}
+    for field in ("revenue_yoy_growth", "net_income_yoy_growth", "net_margin"):
+        values = sorted(v for v in (numeric_value(row.get(field)) for row in rows) if v is not None)
+        if values:
+            middle = len(values) // 2
+            medians[field] = values[middle] if len(values) % 2 else (values[middle - 1] + values[middle]) / 2
+    return medians
+
+
+def render_unicorn_key_figures(row: dict) -> None:
+    """Real, already-computed figures next to the median of the whole unicorn list (history, never a forecast)."""
+    medians = st.session_state.get("unicorn_population_medians", {})
+    cols = st.columns(3)
+    for col, (label, field, signed) in zip(cols, (("Ingresos (interanual)", "revenue_yoy_growth", True), ("Beneficio (interanual)", "net_income_yoy_growth", True), ("Margen neto", "net_margin", False))):
+        value = numeric_value(row.get(field))
+        median = medians.get(field)
+        delta = f"{(value - median) * 100:+.1f} pts vs mediana".replace(".", ",") if value is not None and median is not None else None
+        col.metric(label, format_percent_fraction(value, signed), delta=delta, delta_color="off")
+    if medians:
+        st.caption(
+            "Mediana de la lista: ingresos " + format_percent_fraction(medians.get("revenue_yoy_growth"))
+            + " · beneficio " + format_percent_fraction(medians.get("net_income_yoy_growth"))
+            + " · margen neto " + format_percent_fraction(medians.get("net_margin"), signed=False)
+            + ". Cifras históricas ya calculadas, no una previsión."
+        )
+    st.caption("Criterios cumplidos: " + " · ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))))
+
+
 def unicorn_revenue_growth_desc_key(row: dict) -> float:
     growth = numeric_value(row.get("revenue_yoy_growth"))
     return -growth if growth is not None else float("inf")
@@ -2096,14 +2145,14 @@ def unicorn_revenue_growth_desc_key(row: dict) -> float:
 def unicorn_internal_rank_key(row: dict) -> tuple:
     """Evidence quality first; ties (most unicorns share the same grade) are broken by real revenue growth, not by name."""
     grade, _, _ = unicorn_evidence_grade(row)
-    grade_order = {"Muy respaldado": 0, "Respaldado": 1, "Parcial": 2, "Requiere revision": 3}
+    grade_order = {"Muy respaldado": 0, "Respaldado": 1, "Parcial": 2, "Requiere revisión": 3}
     return (grade_order.get(grade, 9), -unicorn_probability(row), unicorn_revenue_growth_desc_key(row), row.get("company_name", ""))
 
 
 def unicorn_display_score(row: dict) -> tuple[str, str]:
     if "explosive_score_0_100" in row:
         return "Score explosivo v1", f"{row.get('explosive_score_0_100', 0)}"
-    return "Posibilidad", f"{unicorn_probability(row)}%"
+    return "Ingresos interanual", unicorn_headline_growth(row)
 
 
 def unicorn_radar_values(row: dict) -> dict[str, int]:
@@ -2185,7 +2234,7 @@ def professional_unicorn_comparison(rows: list[dict]) -> str:
         grade, _, grade_reason = unicorn_evidence_grade(row)
         lines.extend([
             f"## {row.get('company_name')} ({row.get('ticker') or row.get('asset_id')})",
-            f"- Posibilidad de unicornio: {unicorn_probability(row)}%",
+            f"- Confianza de clasificación: {unicorn_probability(row)}%",
             f"- Calidad de evidencia: {grade}. {grade_reason}",
             f"- Criterios: {', '.join(unicorn_criterion_badges(row.get('unicorn_reason', ''), row.get('country', '')))}",
             f"- Estado: {GLOBAL_STATUS_LABELS.get(row.get('overall_coverage_status', ''), row.get('overall_coverage_status', 'N/D'))}",
@@ -2201,7 +2250,7 @@ def professional_unicorn_comparison(rows: list[dict]) -> str:
 def global_unicorn_executive_report(rows: list[dict], all_rows: list[dict]) -> str:
     grade_counts = Counter(unicorn_evidence_grade(row)[0] for row in rows)
     country_counts = Counter(row.get("country") or "N/D" for row in rows)
-    exchange_counts = Counter(row.get("exchange") or "N/D" for row in rows)
+    exchange_counts = Counter(friendly_exchange(row.get("exchange")) for row in rows)
     top_rows = sorted(rows, key=unicorn_internal_rank_key)[:10]
     top_lines = "\n".join(
         f"- {row.get('company_name')} ({row.get('ticker') or row.get('asset_id')}): {unicorn_probability(row)}%, {unicorn_evidence_grade(row)[0]}"
@@ -2241,7 +2290,7 @@ El conjunto de unicornios es una lista de investigacion priorizada. No significa
 def unicorn_portfolio_report(rows: list[dict], title: str) -> str:
     grade_counts = Counter(unicorn_evidence_grade(row)[0] for row in rows)
     country_counts = Counter(row.get("country") or "N/D" for row in rows)
-    exchange_counts = Counter(row.get("exchange") or "N/D" for row in rows)
+    exchange_counts = Counter(friendly_exchange(row.get("exchange")) for row in rows)
     lines = [f"# {title}", "", f"Unicornios incluidos: {len(rows)}", ""]
     lines.append("## Distribucion por calidad de evidencia")
     lines.extend(f"- {label}: {count}" for label, count in grade_counts.most_common())
@@ -2325,7 +2374,7 @@ def professional_unicorn_report(row: dict) -> str:
     badges = unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))
     details = explain_unicorn_reason(row.get("unicorn_reason", ""), row.get("country", ""))
     company = row.get("company_name") or "Empresa sin nombre"
-    ticker = row.get("ticker") or row.get("asset_id") or "N/D"
+    ticker = unicorn_ticker(row) or "N/D"
     status = GLOBAL_STATUS_LABELS.get(row.get("overall_coverage_status", ""), row.get("overall_coverage_status", "N/D"))
     eligibility = GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "N/D"))
     grade, _, grade_reason = unicorn_evidence_grade(row)
@@ -2342,13 +2391,13 @@ def professional_unicorn_report(row: dict) -> str:
     return f"""# Informe profesional de unicornio: {company}
 
 ## 1. Resumen ejecutivo
-{company} ({ticker}) aparece marcada como unicornio porque cumple el flag local `EVALUATED_UNICORN` calculado en `v2.38BT`. La posibilidad de unicornio es {probability}% y la calidad de evidencia se clasifica como **{grade}**. Esta lectura mide confianza de clasificacion con la evidencia local disponible; no mide rentabilidad esperada, precio objetivo ni probabilidad de subida.
+{company} ({ticker}) aparece marcada como unicornio porque cumple el flag local `EVALUATED_UNICORN` calculado en `v2.38BT`. La confianza de clasificación es {probability}% y la calidad de evidencia se clasifica como **{grade}**. Esta lectura mide confianza de clasificacion con la evidencia local disponible; no mide rentabilidad esperada, precio objetivo ni probabilidad de subida.
 
 ## 2. Identificacion y cobertura
 - ID interno: {row.get("asset_id", "N/D")}
 - Ticker: {ticker}
 - Pais: {row.get("country") or "N/D"}
-- Bolsa: {row.get("exchange") or "N/D"}
+- Bolsa: {friendly_exchange(row.get("exchange"))}
 - Estado de cobertura: {status}
 - Elegibilidad: {eligibility}
 - Fuente del flag unicornio: {row.get("unicorn_source") or "N/D"}
@@ -2368,7 +2417,7 @@ def professional_unicorn_report(row: dict) -> str:
 ## 6. Senales que justifican la etiqueta
 {detail_text}
 
-## 7. Lectura tecnica de la posibilidad
+## 7. Lectura técnica de la confianza de clasificación
 La puntuacion {probability}% resume cuanta evidencia local acompana a la etiqueta: criterios cumplidos ({badge_text}), estado de crecimiento, calidad de cobertura y elegibilidad. En esta ficha, la lectura principal es: {grade_reason} Un porcentaje alto indica que la clasificacion esta mejor respaldada dentro del dataset local; no convierte la empresa en una recomendacion ni estima su rendimiento futuro.
 
 ## 8. Que podria hacer que deje de ser unicornio
@@ -2384,7 +2433,7 @@ La puntuacion {probability}% resume cuanta evidencia local acompana a la etiquet
 - Revisar los ultimos estados financieros oficiales de {company}.
 - Contrastar si el crecimiento positivo se mantiene y si no depende de un evento extraordinario.
 - Verificar si la expansion de margen es operativa, contable o puntual.
-- Revisar deuda, dilucion, liquidez, guidance y riesgos especificos del mercado {row.get("country") or "N/D"} / {row.get("exchange") or "N/D"}.
+- Revisar deuda, dilucion, liquidez, guidance y riesgos especificos del mercado {row.get("country") or "N/D"} / {friendly_exchange(row.get("exchange"))}.
 - Confirmar que la empresa sigue siendo comparable con su universo de referencia antes de usarla en cualquier analisis externo.
 - Recalcular la pestaña de unicornios cuando entren nuevos fundamentales locales.
 
@@ -2430,8 +2479,8 @@ Actua como analista financiero tecnico y prudente. Tu tarea es redactar una expl
 - ID interno: {row.get("asset_id")}
 - Ticker: {row.get("ticker") or "N/D"}
 - Pais: {row.get("country") or "N/D"}
-- Bolsa: {row.get("exchange") or "N/D"}
-- Posibilidad de unicornio: {unicorn_probability(row)}%
+- Bolsa: {friendly_exchange(row.get("exchange"))}
+- Confianza de clasificación: {unicorn_probability(row)}%
 - Calidad de evidencia: {grade}. {grade_reason}
 - Radar local: {radar}
 - Criterios: {", ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", "")))}
@@ -2463,10 +2512,10 @@ def render_unicorn_presentation_mode(rows: list[dict], all_rows: list[dict]) -> 
     st.markdown("### Top 10 por evidencia local")
     top_table = pd.DataFrame([{
         "Empresa": row["company_name"],
-        "Ticker": row["ticker"] or row["asset_id"],
+        "Ticker": unicorn_ticker(row),
         "País": row["country"],
-        "Bolsa": row["exchange"],
-        "Posibilidad": f"{unicorn_probability(row)}%",
+        "Bolsa": friendly_exchange(row["exchange"]),
+        "Confianza": f"{unicorn_probability(row)}%",
         "Evidencia": unicorn_evidence_grade(row)[0],
     } for row in top_rows])
     st.dataframe(top_table, use_container_width=True, hide_index=True)
@@ -2488,9 +2537,9 @@ def render_unicorn_presentation_mode(rows: list[dict], all_rows: list[dict]) -> 
             f"""
             <div style="border:1px solid #d8e2ef;border-radius:8px;padding:14px;background:#ffffff;min-height:230px;">
               <div style="font-size:18px;font-weight:700;color:#0f172a;">{GLOBAL_UNICORN_ICON} {escape(row["company_name"])}</div>
-              <div style="color:#64748b;font-size:13px;margin:4px 0 10px 0;">{escape(row["ticker"] or row["asset_id"])} · {escape(row["country"] or "N/D")} · {escape(row["exchange"] or "N/D")}</div>
+              <div style="color:#64748b;font-size:13px;margin:4px 0 10px 0;">{escape(unicorn_ticker(row))} · {escape(row["country"] or "N/D")} · {escape(friendly_exchange(row["exchange"]))}</div>
               <div style="font-size:32px;font-weight:800;color:#0f766e;">{unicorn_probability(row)}%</div>
-              <div style="font-size:13px;color:#475569;margin-bottom:8px;">posibilidad de etiqueta unicornio</div>
+              <div style="font-size:13px;color:#475569;margin-bottom:8px;">confianza en la etiqueta unicornio</div>
               <div style="font-weight:700;color:#334155;">{escape(grade)}</div>
               <div style="font-size:13px;color:#475569;margin:8px 0;">{escape(reason)}</div>
               <div style="font-size:12px;color:#64748b;">{escape(badges)}</div>
@@ -2538,9 +2587,9 @@ def render_unicorn_full_catalog(rows: list[dict], notes: dict[str, str], review_
 
         st.markdown(f"### {selected_row['company_name']}")
         k1, k2, k3, k4 = st.columns(4)
-        k1.metric("Posibilidad", f"{unicorn_probability(selected_row)}%")
+        k1.metric(score_label, score_value)
         k2.metric("Evidencia", grade)
-        k3.metric("Ticker", selected_row.get("ticker") or "N/D")
+        k3.metric("Ticker", unicorn_ticker(selected_row) or "N/D")
         k4.metric("Revisión", UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected_row["asset_id"])])
         st.info(grade_reason)
 
@@ -2560,7 +2609,7 @@ def render_unicorn_full_catalog(rows: list[dict], notes: dict[str, str], review_
 
         st.markdown("#### Evidencia unicornio")
         st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
-        st.bar_chart(pd.DataFrame({"Valor": unicorn_radar_values(selected_row)}).T)
+        render_unicorn_key_figures(selected_row)
         for item in explain_unicorn_reason(selected_row.get("unicorn_reason", ""), selected_row.get("country", "")):
             st.write(f"- {item}")
 
@@ -2604,9 +2653,9 @@ def render_unicorn_recalculation_panel(matrix, unicorn_rows: list[dict]) -> None
     before_ids = {row["asset_id"] for row in unicorn_rows}
     before_names = {row["asset_id"]: row["company_name"] for row in unicorn_rows}
     current_cutoff = matrix.generated_at or "no disponible"
-    cols = st.columns([1, 3])
+    cols = st.columns([2, 3])
     if SAFE_DEMO_MODE:
-        cols[0].button("Recalcular universo y unicornios", disabled=True, help=blocked_message("Recalcular universo y unicornios"))
+        cols[0].button("Recalcular universo y unicornios", disabled=True, use_container_width=True, help=blocked_message("Recalcular universo y unicornios"))
         cols[1].info("Recalculo bloqueado en Modo demo seguro: la demo muestra datos locales estaticos.")
         return
     cols[1].caption(
@@ -2615,6 +2664,7 @@ def render_unicorn_recalculation_panel(matrix, unicorn_rows: list[dict]) -> None
     if cols[0].button(
         "Recalcular universo y unicornios",
         type="primary",
+        use_container_width=True,
         help="Reconstruye matriz, elegibilidad y flag de unicornios desde datos locales ya recolectados. No descarga datos nuevos ni consulta APIs.",
     ):
         with st.spinner("Recalculando universo, elegibilidad y unicornios desde datos locales..."):
@@ -2647,24 +2697,6 @@ def render_unicorn_recalculation_panel(matrix, unicorn_rows: list[dict]) -> None
                     st.code(step.detail, language="text")
 
 
-def unicorn_signal_timeline(row: dict) -> pd.DataFrame:
-    radar = unicorn_radar_values(row)
-    grade, _, _ = unicorn_evidence_grade(row)
-    review_status = unicorn_review_status(load_unicorn_review_history(), row["asset_id"])
-    steps = [
-        ("Datos locales", max(55, radar["Cobertura"] - 8), "COVERAGE_READY" if radar["Cobertura"] >= 90 else "COVERAGE_PARTIAL"),
-        ("Crecimiento", radar["Crecimiento"], "GROWTH_SIGNAL_OK" if radar["Crecimiento"] >= 100 else "GROWTH_SIGNAL_LIMITED"),
-        ("Margen", radar["Margen"], "MARGIN_SIGNAL_OK" if radar["Margen"] >= 100 else "MARGIN_SIGNAL_LIMITED"),
-        ("Caja / equivalente", radar["Caja"], "CASH_SIGNAL_OK" if radar["Caja"] >= 100 else "CASH_SIGNAL_EQUIVALENT_OR_LIMITED"),
-        ("Etiqueta unicornio", radar["Evidencia"], row.get("unicorn_status", "EVALUATED_UNICORN")),
-        ("Revision local", radar["Evidencia"] if review_status != "DISCARDED" else 45, review_status),
-    ]
-    return pd.DataFrame([
-        {"Paso": label, "Confianza": value, "Estado": state, "Calidad": grade}
-        for label, value, state in steps
-    ])
-
-
 def unicorn_visual_event_feed(row: dict, review_history: dict[str, dict]) -> pd.DataFrame:
     review_entry = unicorn_review_entry(review_history, row["asset_id"])
     events = [
@@ -2674,80 +2706,26 @@ def unicorn_visual_event_feed(row: dict, review_history: dict[str, dict]) -> pd.
         {"Evento": "Calidad de evidencia", "Detalle": unicorn_evidence_grade(row)[0]},
     ]
     if review_entry:
-        events.append({"Evento": "Revision local", "Detalle": f"{review_entry.get('status_label', 'N/D')} · {review_entry.get('reviewed_at', '')}"})
+        events.append({"Evento": "Revisión local", "Detalle": f"{review_entry.get('status_label', 'N/D')} · {review_entry.get('reviewed_at', '')}"})
     else:
-        events.append({"Evento": "Revision local", "Detalle": "Pendiente de revision manual"})
-    events.append({"Evento": "Proximo recálculo", "Detalle": "Puede mantener, entrar en revision o salir si cambian crecimiento, margen, caja o cobertura."})
+        events.append({"Evento": "Revisión local", "Detalle": "Pendiente de revisión manual"})
+    events.append({"Evento": "Próximo recálculo", "Detalle": "Puede mantener, entrar en revision o salir si cambian crecimiento, margen, caja o cobertura."})
     return pd.DataFrame(events)
 
 
 def render_unicorn_formula_panel(row: dict) -> None:
     country = row.get("country") or "N/D"
-    cash_leg = "FCF positivo" if not is_austria(country) else "aceleracion de crecimiento (contrato Austria)"
-    st.code(
-        "\n".join([
-            "Etiqueta unicornio = crecimiento positivo + margen en expansion + caja/equivalente",
-            f"Para esta empresa: crecimiento + margen + {cash_leg}",
-            "Confianza visual = cobertura + calidad de senal + comparabilidad + revision local",
-            "Salida de lista = falla cualquier pata clave en un recálculo local posterior",
-        ]),
-        language="text",
-    )
-
-
-def render_unicorn_company_motion(row: dict, grade: str, review_label: str) -> None:
-    probability = unicorn_probability(row)
-    radar = unicorn_radar_values(row)
-    signal_rows = [
-        ("Crecimiento", radar["Crecimiento"]),
-        ("Margen", radar["Margen"]),
-        ("Caja", radar["Caja"]),
-        ("Cobertura", radar["Cobertura"]),
-        ("Evidencia", radar["Evidencia"]),
-    ]
-    signal_html = "".join(
-        f'<div class="sf-signal-row"><span>{escape(label)}</span><div class="sf-signal-bar" style="--sf-fill:{value}%"><span></span></div><strong>{value}</strong></div>'
-        for label, value in signal_rows
-    )
-    checks = [
-        "Crecimiento positivo validado",
-        "Margen en expansión detectado",
-        "Caja/equivalente revisado",
-        f"Evidencia: {grade}",
-    ]
-    checks_html = "".join(
-        f'<div class="sf-check"><span class="sf-check-dot">✓</span><span>{escape(item)}</span></div>'
-        for item in checks
-    )
-    flow = ["Datos", "Crecimiento", "Margen", "Caja", "Unicornio", "Revisión"]
-    flow_html = "".join(
-        f'<span class="sf-verify-step {"active" if item in {"Unicornio", "Revisión"} else ""}">{escape(item)}</span>{"" if idx == len(flow) - 1 else "<span class=\"sf-verify-arrow\">→</span>"}'
-        for idx, item in enumerate(flow)
-    )
+    cash_leg = "flujo de caja libre positivo" if not is_austria(country) else "aceleración del crecimiento (contrato específico de Austria, sin flujo de caja)"
     st.markdown(
-        f"""
-        <div class="sf-company-motion">
-          <div class="sf-gauge" style="--p:{probability}">
-            <div class="sf-gauge-inner">
-              <div class="sf-gauge-value">{probability}%</div>
-              <div class="sf-gauge-label">confianza local</div>
-            </div>
-          </div>
-          <div>
-            <div class="sf-checklist">{checks_html}</div>
-            <div class="sf-verify-flow">{flow_html}</div>
-            <div class="sf-signal-bars">{signal_html}</div>
-            <div style="margin-top:8px;color:#64748b;font-size:13px;">Estado local: {escape(review_label)} · no constituye asesoramiento financiero.</div>
-          </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
+        "- **Etiqueta unicornio** = crecimiento de ingresos positivo + margen en expansión + " + cash_leg + ".\n"
+        "- **Confianza de clasificación** = cobertura de datos + comparabilidad + criterios completos.\n"
+        "- **Sale de la lista** si en un recálculo posterior falla cualquiera de las tres condiciones."
     )
 
 
 def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], review_history: dict[str, dict], generated_at: str) -> None:
     st.markdown("### Analítica visual de unicornios")
-    st.caption("Vista más visual: tarjetas nítidas de selección y ficha a ancho completo para leer el informe sin dropdown borroso.")
+    st.caption("Pulsa «Ver ficha» en una tarjeta para abrir su ficha completa debajo de la lista.")
     if not rows:
         st.info("No hay unicornios con los filtros actuales.")
         return
@@ -2766,63 +2744,25 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
     page_end = min(page_start + page_size, len(rows))
     visual_rows = rows[page_start:page_end]
     st.caption(f"{len(rows):,} unicornios filtrados · mostrando {page_start + 1}-{page_end} · página {current_page + 1}/{total_pages}.")
-    st.markdown(
-        f"""
-        <div class="sf-analysis-engine" aria-label="Motor visual de analisis local">
-          <div class="sf-engine-grid">
-            <div>
-              <div class="sf-engine-title">Motor local analizando unicornios</div>
-              <div class="sf-engine-sub">Crecimiento · margen · caja/equivalente · cobertura · revisión</div>
-              <div class="sf-engine-progress"><span></span></div>
-            </div>
-            <div class="sf-node-map">
-              <div class="sf-node-line"></div>
-              <span class="sf-node" style="left:8%;top:36px;"></span>
-              <span class="sf-node"></span>
-              <span class="sf-node"></span>
-              <span class="sf-node"></span>
-            </div>
-          </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-    st.markdown(
-        f"""
-        <div class="sf-live-ticker" aria-label="Actividad local de analisis">
-          <div class="sf-live-ticker-track">
-            <span><span class="sf-live-dot"></span>Analizando evidencia local</span>
-            <span>Sin red · datos locales</span>
-            <span>{len(rows):,} unicornios filtrados</span>
-            <span>Página {current_page + 1}/{total_pages}</span>
-            <span>Informe personalizado listo al seleccionar ficha</span>
-            <span><span class="sf-live-dot"></span>Analizando evidencia local</span>
-            <span>Sin red · datos locales</span>
-            <span>{len(rows):,} unicornios filtrados</span>
-            <span>Página {current_page + 1}/{total_pages}</span>
-            <span>Informe personalizado listo al seleccionar ficha</span>
-          </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+    st.caption(f"Datos calculados el {generated_at[:10] if generated_at else 'N/D'} · sin conexión de red.")
     for chunk_start in range(0, len(visual_rows), 3):
         cols = st.columns(3)
         for col, row in zip(cols, visual_rows[chunk_start:chunk_start + 3]):
             grade, grade_color, _ = unicorn_evidence_grade(row)
             selected = row["asset_id"] == st.session_state.selected_unicorn_asset_id
             with col:
+                country_label = "" if row.get("country") == "USA" else f" · {escape(row.get('country') or 'N/D')}"
                 st.markdown(
                     f"""
-                    <div class="sf-motion-card {'is-selected' if selected else ''}" style="--sf-fill:{unicorn_probability(row)}%;border:1px solid {'#0f766e' if selected else '#d8e2ef'};border-left:6px solid {escape(grade_color)};border-radius:8px;padding:10px 12px;background:{'#ecfeff' if selected else '#ffffff'};min-height:128px;margin-bottom:6px;">
+                    <div class="sf-motion-card {'is-selected' if selected else ''}" style="border:1px solid {'#0f766e' if selected else '#d8e2ef'};border-left:6px solid {escape(grade_color)};border-radius:8px;padding:10px 12px;background:{'#ecfeff' if selected else '#ffffff'};min-height:172px;margin-bottom:6px;">
                       <div style="font-weight:800;color:#0f172a;font-size:14px;line-height:1.25;">{escape(row.get("company_name") or "")}</div>
-                      <div style="color:#64748b;font-size:12px;margin-top:4px;">{escape(row.get("ticker") or row.get("asset_id") or "")} · {escape(row.get("country") or "N/D")} · {escape(row.get("exchange") or "N/D")}</div>
-                      <div style="display:flex;gap:10px;align-items:baseline;margin-top:8px;">
-                        <span style="font-size:24px;font-weight:900;color:#0f766e;">{unicorn_probability(row)}%</span>
-                        <span style="font-size:12px;color:#334155;">{escape(grade)}</span>
+                      <div style="color:#64748b;font-size:12px;margin-top:4px;">{escape(unicorn_ticker(row))} · {escape(friendly_exchange(row.get("exchange")))}{country_label}</div>
+                      <div style="display:flex;gap:8px;align-items:baseline;margin-top:8px;flex-wrap:wrap;">
+                        <span style="font-size:26px;font-weight:900;color:#0f766e;">{escape(unicorn_headline_growth(row))}</span>
+                        <span style="font-size:12px;color:#475569;">ingresos interanual</span>
                       </div>
-                      <div style="font-size:12px;color:#334155;margin-top:6px;">{escape(unicorn_growth_summary(row))}</div>
-                      <div class="sf-confidence-track"><div class="sf-confidence-fill"></div></div>
+                      <div style="font-size:12px;color:#334155;margin-top:4px;">Beneficio {escape(format_percent_fraction(row.get("net_income_yoy_growth")))} · Margen neto {escape(format_percent_fraction(row.get("net_margin"), signed=False))}</div>
+                      <div style="display:inline-block;margin-top:8px;padding:2px 8px;border-radius:999px;background:#f1f5f9;color:#334155;font-size:12px;">{escape(grade)} · confianza {unicorn_probability(row)}%</div>
                     </div>
                     """,
                     unsafe_allow_html=True,
@@ -2830,13 +2770,16 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
                 if st.button("Ver ficha", key=f"unicorn_visual_card_select_{row['asset_id']}", type="primary" if selected else "secondary", use_container_width=True):
                     st.session_state.selected_unicorn_asset_id = row["asset_id"]
                     st.session_state.unicorn_visual_sync_page = True
+                    st.toast(f"Ficha de {row.get('company_name')} abierta debajo de las tarjetas.")
 
     nav_prev, nav_info, nav_next = st.columns([1, 2, 1])
     if nav_prev.button("← Anteriores", disabled=current_page == 0, use_container_width=True, key="unicorn_visual_prev_page"):
         st.session_state.unicorn_visual_cards_page = max(0, current_page - 1)
         st.session_state.unicorn_visual_sync_page = False
         st.rerun()
-    nav_info.caption(f"Cards {page_start + 1}-{page_end} de {len(rows):,}")
+    selected_name = next((row.get("company_name") for row in rows if row["asset_id"] == st.session_state.selected_unicorn_asset_id), "")
+    nav_info.caption(f"Empresas {page_start + 1}-{page_end} de {len(rows):,}")
+    nav_info.markdown(f'<div style="text-align:center;font-size:13px;"><a href="#ficha-unicornio" target="_self">Ir a la ficha de {escape(selected_name)} ↓</a></div>', unsafe_allow_html=True)
     if nav_next.button("Siguientes →", disabled=current_page >= total_pages - 1, use_container_width=True, key="unicorn_visual_next_page"):
         st.session_state.unicorn_visual_cards_page = min(total_pages - 1, current_page + 1)
         st.session_state.unicorn_visual_sync_page = False
@@ -2845,30 +2788,23 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
     selected = next((row for row in rows if row["asset_id"] == st.session_state.selected_unicorn_asset_id), rows[0])
     grade, _, grade_reason = unicorn_evidence_grade(selected)
     review_label = UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected["asset_id"])]
+    st.markdown('<div id="ficha-unicornio"></div>', unsafe_allow_html=True)
     st.markdown(f"## {GLOBAL_UNICORN_ICON} {selected.get('company_name')}")
-    st.caption(f"{selected.get('ticker') or selected.get('asset_id')} · {selected.get('country') or 'N/D'} · {selected.get('exchange') or 'N/D'} · corte {generated_at[:10] if generated_at else 'N/D'}")
-    hero = st.columns(4)
-    hero[0].metric("Posibilidad", f"{unicorn_probability(selected)}%")
-    hero[1].metric("Evidencia", grade)
-    hero[2].metric("Crecimiento de ingresos", format_percent_fraction(selected.get("revenue_yoy_growth")), help=unicorn_growth_summary(selected))
-    hero[3].metric("Revision", review_label)
-    st.info(grade_reason)
-    render_unicorn_company_motion(selected, grade, review_label)
+    local_symbol = f" · símbolo local {selected.get('ticker')}" if selected.get("us_ticker") and selected.get("ticker") != selected.get("us_ticker") else ""
+    st.caption(f"{unicorn_ticker(selected)} · {friendly_exchange(selected.get('exchange'))} · {selected.get('country') or 'N/D'}{local_symbol} · corte {generated_at[:10] if generated_at else 'N/D'}")
+    hero = st.columns(2)
+    hero[0].metric("Confianza de clasificación", f"{unicorn_probability(selected)}%", help="Cuánta evidencia local respalda la etiqueta; no es probabilidad de subida ni de rentabilidad.")
+    hero[1].metric("Revisión", review_label)
+    if not is_blank(selected.get("sic_description")):
+        st.caption(f"Sector SEC (SIC {selected.get('sic') or 'N/D'}): {str(selected.get('sic_description')).title()}")
+    st.info(f"**{grade}.** {grade_reason}")
 
     summary_tab, report_tab, technical_tab = st.tabs(["Resumen visual", "Informe completo personalizado", "Datos técnicos"])
     with summary_tab:
-        formula_col, radar_col = st.columns([1.1, 1.0])
-        with formula_col:
-            st.markdown("#### Fórmula de señal")
-            render_unicorn_formula_panel(selected)
-        with radar_col:
-            st.markdown("#### Radar local")
-            st.bar_chart(pd.DataFrame({"Valor": unicorn_radar_values(selected)}).T)
-
-        st.markdown("#### Timeline de señal")
-        timeline = unicorn_signal_timeline(selected)
-        st.line_chart(timeline.set_index("Paso")["Confianza"])
-        st.dataframe(timeline, use_container_width=True, hide_index=True)
+        st.markdown("#### Cifras reales frente a la lista")
+        render_unicorn_key_figures(selected)
+        st.markdown("#### Cómo se cumple el criterio")
+        render_unicorn_formula_panel(selected)
 
         st.markdown("#### Feed de recálculo y revisión")
         st.dataframe(unicorn_visual_event_feed(selected, review_history), use_container_width=True, hide_index=True)
@@ -2916,7 +2852,7 @@ def unicorn_sort_key(row: dict, sort_mode: str) -> tuple:
 def unicorn_watchlist_asset(row: dict) -> dict:
     return {
         "asset_id": row["asset_id"],
-        "ticker": row["ticker"],
+        "ticker": unicorn_ticker(row),
         "company_name": row["company_name"],
         "market": row.get("country") or row.get("exchange") or "",
     }
@@ -3205,7 +3141,7 @@ def render_global_universe(_data):
         st.warning(f"Mostrando las primeras {GLOBAL_TABLE_LIMIT:,} filas de {len(filtered):,} — afina la búsqueda o los filtros para ver el resto.")
     table_rows = [{
         "ID": row["asset_id"], "Ticker": row["ticker"], "Empresa": row["company_name"],
-        "Bolsa": row["exchange"], "País": row["country"], "Identidad": row["identity_status"],
+        "Bolsa": friendly_exchange(row["exchange"]), "País": row["country"], "Identidad": row["identity_status"],
         "Fundamentales": row["fundamentals_status"], "Crecimiento": row["growth_status"], "Precio": row["price_status"],
         "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
         "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
@@ -3228,16 +3164,19 @@ def render_global_unicorns(_data):
     unicorn_rows = [row | {"country": normalized_country(row.get("country"))} for row in matrix.rows if row.get("unicorn_status") == "EVALUATED_UNICORN"]
     evaluated_rows = [row for row in matrix.rows if row.get("unicorn_status") in {"EVALUATED_UNICORN", "EVALUATED_NOT_UNICORN", "INSUFFICIENT_DATA"}]
     counts = Counter(row.get("overall_coverage_status", "") for row in unicorn_rows)
-    metric_cols = st.columns(5)
-    semantic_counts = unicorn_semantic_summary(unicorn_rows)
-    metric_cols[0].metric("Calidad fundamental", f"{semantic_counts['quality']:,}")
-    metric_cols[1].metric("Empresas evaluadas", f"{len(evaluated_rows):,}")
-    metric_cols[2].metric("Con crecimiento completo", f"{counts.get('GROWTH_READY', 0):,}")
-    metric_cols[3].metric("Explosivos evaluables", f"{semantic_counts['explosive']:,}")
-    metric_cols[4].metric("Censo total", f"{len(matrix.rows):,}")
-    st.info(f"Cambio v2.44Z: los {len(unicorn_rows):,} casos heredados (una fila por empresa real, sin cotizaciones duplicadas) pasan a leerse como `Calidad fundamental / momentum fundamental`, no como acciones explosivas. La categoría `Unicornio explosivo` queda separada y exige señales de mercado que hoy no están en la matriz local.")
-    st.caption("El porcentaje actual mide confianza de clasificación fundamental; no es probabilidad de subida, short squeeze, multibagger, precio objetivo ni consejo de compra.")
-    st.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(unicorn_rows):,} casos de calidad fundamental · sin conexión de red")
+    st.session_state["unicorn_population_medians"] = unicorn_population_medians(unicorn_rows)
+    metric_cols = st.columns(4)
+    metric_cols[0].metric("Unicornios", f"{len(unicorn_rows):,}", help="Empresas que cumplen el criterio de calidad fundamental combinado (una fila por empresa real, sin cotizaciones duplicadas).")
+    metric_cols[1].metric("Evaluadas", f"{len(evaluated_rows):,}", help="Empresas con datos de crecimiento suficientes para evaluar el criterio.")
+    metric_cols[2].metric("Crec. completo", f"{counts.get('GROWTH_READY', 0):,}", help="Unicornios con la escalera de crecimiento completa.")
+    metric_cols[3].metric("Censo", f"{len(matrix.rows):,}", help="Empresas del censo operativo completo.")
+    st.caption(f"Datos calculados el {matrix.generated_at[:10]} · sin conexión de red.")
+    with st.expander("Cómo leer esta pantalla"):
+        st.markdown(
+            "- **Calidad fundamental**: empresas con crecimiento de ingresos positivo, margen en expansión y caja libre positiva, ya calculados con datos reales. Se leen como calidad fundamental, no como acciones explosivas.\n"
+            "- **Unicornio explosivo**: exige señales de mercado (capitalización, float, short interest, volumen, breakout). Se activa con «Actualizar datos reales».\n"
+            "- La **confianza de clasificación** mide cuánta evidencia respalda la etiqueta; no es probabilidad de subida, precio objetivo ni consejo de compra."
+        )
     discovery_mode, semantic_rows = render_unicorn_semantic_split(unicorn_rows)
     if discovery_mode == "Unicornio explosivo":
         explosive_rows = [row for row in semantic_rows if explosive_unicorn_status(row)[0] == "EXPLOSIVE_CANDIDATE"]
@@ -3264,7 +3203,7 @@ def render_global_unicorns(_data):
     with st.expander("Búsqueda avanzada", expanded=False):
         a1, a2, a3, a4 = st.columns(4)
         min_probability = a1.slider("Porcentaje mínimo", min_value=55, max_value=96, value=55, step=1, key="global_unicorn_min_probability")
-        evidence_filter = a2.multiselect("Calidad de evidencia", ["Muy respaldado", "Respaldado", "Parcial", "Requiere revision"], placeholder="Todas", key="global_unicorn_evidence_filter")
+        evidence_filter = a2.multiselect("Calidad de evidencia", ["Muy respaldado", "Respaldado", "Parcial", "Requiere revisión"], placeholder="Todas", key="global_unicorn_evidence_filter")
         review_filter = a3.multiselect("Estado de revisión", list(UNICORN_REVIEW_STATUS_LABELS), format_func=lambda value: UNICORN_REVIEW_STATUS_LABELS[value], placeholder="Todos", key="global_unicorn_review_filter")
         notes_only = a4.checkbox("Solo con notas personales", key="global_unicorn_notes_only")
     quick_filter = st.radio(
@@ -3297,7 +3236,7 @@ def render_global_unicorns(_data):
         filtered = [row for row in filtered if normalized_country(row.get("country")) == "USA"]
     elif quick_filter == "Europa":
         filtered = [row for row in filtered if is_european_country(row.get("country"))]
-    controls = st.columns([1, 1, 1])
+    controls = st.columns([1.6, 1.1, 1.6])
     sort_options = ["Ranking interno de unicornios", "Crecimiento de ingresos", "Empresa", "País", "Bolsa", "Crecimiento completo primero", "Elegibilidad"]
     if discovery_mode == "Unicornio explosivo":
         sort_options = ["Score explosivo v1"] + sort_options
@@ -3308,40 +3247,39 @@ def render_global_unicorns(_data):
         filtered = sorted(filtered, key=unicorn_internal_rank_key if sort_mode == "Ranking interno de unicornios" else lambda row: unicorn_sort_key(row, sort_mode))
     st.caption(f"{len(filtered):,} de {len(unicorn_rows):,} unicornios")
     grade_counts = Counter(unicorn_evidence_grade(row)[0] for row in filtered)
-    grade_cols = st.columns(4)
-    for col, label in zip(grade_cols, ["Muy respaldado", "Respaldado", "Parcial", "Requiere revision"]):
-        col.metric(label, f"{grade_counts.get(label, 0):,}")
     review_counts = Counter(unicorn_review_status(review_history, row["asset_id"]) for row in filtered)
-    review_cols = st.columns(4)
-    for col, status in zip(review_cols, ["PENDING", "REVIEWED", "FOLLOW", "DISCARDED"]):
-        col.metric(UNICORN_REVIEW_STATUS_LABELS[status], f"{review_counts.get(status, 0):,}")
+    grade_line = " · ".join(f"{label} {grade_counts[label]:,}" for label in ["Muy respaldado", "Respaldado", "Parcial", "Requiere revisión"] if grade_counts.get(label))
+    review_line = " · ".join(f"{UNICORN_REVIEW_STATUS_LABELS[status]} {review_counts[status]:,}" for status in ["PENDING", "REVIEWED", "FOLLOW", "DISCARDED"] if review_counts.get(status))
+    st.caption(f"**Evidencia:** {grade_line or 'sin resultados'}  ·  **Revisión:** {review_line or 'sin resultados'}")
     st.caption("Ranking interno y semáforo ordenan calidad de evidencia local y, a igualdad, el crecimiento real de ingresos ya calculado (dato histórico, no previsión); no es rentabilidad esperada ni recomendación financiera.")
     if discovery_mode == "Unicornio explosivo":
         score_counts = Counter(row.get("tier", "NO_DATA") for row in filtered)
         st.caption("Score explosivo v1 usa solo señales de mercado del overlay; no es una recomendación financiera ni predice rentabilidad.")
         st.dataframe(pd.DataFrame([{
-            "Tier": tier,
+            "Tier": explosive_tier_label(tier),
             "Empresas": score_counts.get(tier, 0),
         } for tier in ["EXPLOSIVE_CANDIDATE_HIGH", "EXPLOSIVE_CANDIDATE_MEDIUM", "EXPLOSIVE_CANDIDATE_LOW", "WATCH_ONLY", "NO_DATA"]]), use_container_width=True, hide_index=True)
     view_mode = st.radio("Vista", ["Analítica visual", "Fichas completas", "Presentación/demo", "Cockpit limpio", "Tarjetas visuales", "Tabla completa"], horizontal=True, key="global_unicorn_view_mode")
     if filtered and "selected_unicorn_asset_id" not in st.session_state:
         st.session_state.selected_unicorn_asset_id = filtered[0]["asset_id"]
     watchlist_path = watchlist_data = None
-    if SAFE_DEMO_MODE:
-        st.info(blocked_message("Añadir unicornios a watchlist"))
-    else:
-        watchlist_path, watchlist_data = select_watchlist()
-        if watchlist_data is None:
-            st.info("Crea una watchlist en la pantalla ⭐ Watchlist antes de guardar unicornios.")
+    with st.expander("Watchlist de destino"):
+        if SAFE_DEMO_MODE:
+            st.info(blocked_message("Añadir unicornios a watchlist"))
+        else:
+            watchlist_path, watchlist_data = select_watchlist()
+            if watchlist_data is None:
+                st.info("Crea una watchlist en la pantalla ⭐ Watchlist antes de guardar unicornios.")
     top_country_rows = [{"País": country or "N/D", "Unicornios": count} for country, count in Counter(row.get("country", "") for row in filtered).most_common(8)]
-    top_exchange_rows = [{"Bolsa": exchange or "N/D", "Unicornios": count} for exchange, count in Counter(row.get("exchange", "") for row in filtered).most_common(8)]
-    summary_cols = st.columns(2)
-    with summary_cols[0]:
-        st.markdown("### Top países")
-        st.dataframe(pd.DataFrame(top_country_rows), use_container_width=True, hide_index=True)
-    with summary_cols[1]:
-        st.markdown("### Top bolsas")
-        st.dataframe(pd.DataFrame(top_exchange_rows), use_container_width=True, hide_index=True)
+    top_exchange_rows = [{"Bolsa": friendly_exchange(exchange), "Unicornios": count} for exchange, count in Counter(row.get("exchange", "") for row in filtered).most_common(8)]
+    with st.expander("Distribución por país y bolsa"):
+        summary_cols = st.columns(2)
+        with summary_cols[0]:
+            st.markdown("#### Top países")
+            st.dataframe(pd.DataFrame(top_country_rows), use_container_width=True, hide_index=True)
+        with summary_cols[1]:
+            st.markdown("#### Top bolsas")
+            st.dataframe(pd.DataFrame(top_exchange_rows), use_container_width=True, hide_index=True)
 
     executive_report = global_unicorn_executive_report(filtered, unicorn_rows)
     with st.expander("Informe ejecutivo global de unicornios"):
@@ -3369,10 +3307,10 @@ def render_global_unicorns(_data):
             p4.metric("Bolsas", f"{len({row.get('exchange') for row in portfolio_rows if row.get('exchange')}):,}")
             portfolio_table = pd.DataFrame([{
                 "Empresa": row["company_name"],
-                "Ticker": row["ticker"] or row["asset_id"],
+                "Ticker": unicorn_ticker(row),
                 "País": row["country"],
-                "Bolsa": row["exchange"],
-                "Posibilidad": f"{unicorn_probability(row)}%",
+                "Bolsa": friendly_exchange(row["exchange"]),
+                "Confianza": f"{unicorn_probability(row)}%",
                 "Evidencia": unicorn_evidence_grade(row)[0],
                 "Nota": notes.get(row["asset_id"], ""),
             } for row in sorted(portfolio_rows, key=unicorn_internal_rank_key)])
@@ -3431,7 +3369,7 @@ def render_global_unicorns(_data):
                 score_label, score_value = unicorn_display_score(selected_row)
                 k1, k2, k3 = st.columns(3)
                 k1.metric(score_label, score_value)
-                k2.metric("Tier", selected_row.get("tier", grade_label))
+                k2.metric("Categoría", explosive_tier_label(selected_row.get("tier")) if selected_row.get("tier") else grade_label)
                 k3.metric("Revisión", UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected_row["asset_id"])])
                 st.info(grade_reason)
                 st.write(f"**Cifras reales:** {unicorn_growth_summary(selected_row)}")
@@ -3443,8 +3381,7 @@ def render_global_unicorns(_data):
                     st.caption(selected_row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
                 st.write("**Criterios**")
                 st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
-                st.write("**Radar**")
-                st.bar_chart(pd.DataFrame({"Valor": unicorn_radar_values(selected_row)}).T)
+                render_unicorn_key_figures(selected_row)
                 with st.expander("Informe profesional"):
                     report = professional_unicorn_report(selected_row)
                     st.markdown(report)
@@ -3507,7 +3444,7 @@ def render_global_unicorns(_data):
                     f"""
                     <div style="border:1px solid #d8e2ef;border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#ffffff;">
                       <div style="font-size:18px;font-weight:700;color:#0f172a;">{GLOBAL_UNICORN_ICON} {escape(row["company_name"])}</div>
-                      <div style="color:#64748b;font-size:13px;margin:3px 0 8px 0;">{escape(row["ticker"] or row["asset_id"])} · {escape(row["country"] or "N/D")} · {escape(row["exchange"] or "N/D")}</div>
+                      <div style="color:#64748b;font-size:13px;margin:3px 0 8px 0;">{escape(unicorn_ticker(row))} · {escape(row["country"] or "N/D")} · {escape(friendly_exchange(row["exchange"]))}</div>
                       <div style="font-size:26px;font-weight:800;color:#0f766e;margin:4px 0;">{escape(score_value)}</div>
                       <div style="color:#64748b;font-size:12px;margin-bottom:8px;">{escape(score_label)}</div>
                       <div style="display:inline-block;margin-bottom:8px;padding:4px 8px;border-radius:8px;background:#f8fafc;color:#334155;border-left:5px solid {escape(grade_color)};">{escape(grade_label)}</div>
@@ -3578,7 +3515,7 @@ def render_global_unicorns(_data):
                     try:
                         add(watchlist_data, unicorn_watchlist_asset(row), "WATCHLIST", "Unicornio v2.38BT revisado desde la pantalla Unicornios.")
                         atomic_write(watchlist_path, watchlist_data)
-                        st.success(f'{row["ticker"] or row["asset_id"]} añadido a "{watchlist_data["name"]}".')
+                        st.success(f'{unicorn_ticker(row)} añadido a "{watchlist_data["name"]}".')
                     except ValueError as exc:
                         st.error(str(exc))
 
@@ -3586,11 +3523,11 @@ def render_global_unicorns(_data):
         "ID": row["asset_id"],
         "Ticker": row["ticker"],
         "Empresa": row["company_name"],
-        "Bolsa": row["exchange"],
+        "Bolsa": friendly_exchange(row["exchange"]),
         "País": row["country"],
         "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
         "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
-        "Posibilidad unicornio": f"{unicorn_probability(row)}%",
+        "Confianza clasificación": f"{unicorn_probability(row)}%",
         "Calidad evidencia": unicorn_evidence_grade(row)[0],
         "Crecimiento ingresos": format_percent_fraction(row.get("revenue_yoy_growth")),
         "Crecimiento beneficio": format_percent_fraction(row.get("net_income_yoy_growth")),
@@ -3621,8 +3558,8 @@ def render_global_unicorns(_data):
         disabled=not report_pack,
         help="Exporta hasta 25 informes profesionales combinados en Markdown.",
     )
-    compare_options = [f'{row["company_name"]} · {row["ticker"] or row["asset_id"]}' for row in filtered]
-    compare_selection = controls[2].multiselect("Comparar 2-3", compare_options, max_selections=3, key="global_unicorn_compare")
+    compare_options = [f'{row["company_name"]} · {unicorn_ticker(row)}' for row in filtered]
+    compare_selection = controls[2].multiselect("Comparar 2-3", compare_options, max_selections=3, placeholder="Elige 2 o 3 empresas", key="global_unicorn_compare")
     if compare_selection:
         st.markdown("### Comparador de unicornios")
         compared = [filtered[compare_options.index(label)] for label in compare_selection]
@@ -3630,12 +3567,12 @@ def render_global_unicorns(_data):
         for row in compared:
             compare_rows.append({
                 "Empresa": row["company_name"],
-                "Ticker": row["ticker"] or row["asset_id"],
+                "Ticker": unicorn_ticker(row),
                 "País": row["country"],
-                "Bolsa": row["exchange"],
+                "Bolsa": friendly_exchange(row["exchange"]),
                 "Estado": GLOBAL_STATUS_LABELS.get(row["overall_coverage_status"], row["overall_coverage_status"]),
                 "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
-                "Posibilidad unicornio": f"{unicorn_probability(row)}%",
+                "Confianza clasificación": f"{unicorn_probability(row)}%",
                 "Calidad evidencia": unicorn_evidence_grade(row)[0],
                 "Estado revisión": UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, row["asset_id"])],
                 "Criterios": " · ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))),
@@ -3652,7 +3589,7 @@ def render_global_unicorns(_data):
             )
     selected_index = None
     if filtered:
-        options = [f'{row["company_name"]} · {row["ticker"] or row["asset_id"]}' for row in filtered]
+        options = [f'{row["company_name"]} · {unicorn_ticker(row)}' for row in filtered]
         selected_asset_id = st.session_state.get("selected_unicorn_asset_id")
         if selected_asset_id not in {row["asset_id"] for row in filtered}:
             selected_asset_id = filtered[0]["asset_id"]
@@ -3664,19 +3601,18 @@ def render_global_unicorns(_data):
         st.markdown("### Por qué es unicornio")
         c1, c2, c3, c4, c5 = st.columns(5)
         c1.metric("Empresa", selected_row["company_name"])
-        c2.metric("Ticker", selected_row["ticker"] or "N/D")
+        c2.metric("Ticker", unicorn_ticker(selected_row) or "N/D")
         c3.metric("País", selected_row["country"] or "N/D")
         c4.metric("Revisión", UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected_row["asset_id"])])
-        c5.metric("Posibilidad unicornio", f"{unicorn_probability(selected_row)}%", help="Confianza de clasificación con los datos locales disponibles; no es probabilidad de rentabilidad.")
-        st.caption("Esta posibilidad es una lectura de evidencia local del flag unicornio: no significa comprar, vender o mantener, no es precio objetivo y no constituye asesoramiento financiero.")
+        c5.metric("Confianza de clasificación", f"{unicorn_probability(selected_row)}%", help="Confianza de clasificación con los datos locales disponibles; no es probabilidad de rentabilidad.")
+        st.caption("Esta confianza es una lectura de evidencia local del flag unicornio: no significa comprar, vender o mantener, no es precio objetivo y no constituye asesoramiento financiero.")
         grade_label, _, grade_reason = unicorn_evidence_grade(selected_row)
         st.info(f"Semáforo de calidad de evidencia: {grade_label}. {grade_reason}")
         st.write(f"**Cifras reales:** {unicorn_growth_summary(selected_row)}")
         st.markdown("**Criterios cumplidos**")
         st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
-        st.markdown("**Radar de evidencia**")
-        radar = unicorn_radar_values(selected_row)
-        st.bar_chart(pd.DataFrame({"Valor": radar}).T)
+        st.markdown("**Cifras reales frente a la lista**")
+        render_unicorn_key_figures(selected_row)
         st.markdown("**Explicación detallada**")
         for item in explain_unicorn_reason(selected_row.get("unicorn_reason", ""), selected_row.get("country", "")):
             st.write(f"- {item}")
@@ -3729,7 +3665,7 @@ def render_global_unicorns(_data):
             try:
                 add(watchlist_data, unicorn_watchlist_asset(selected_row), "WATCHLIST", "Unicornio v2.38BT revisado desde la ficha de detalle.")
                 atomic_write(watchlist_path, watchlist_data)
-                st.success(f'{selected_row["ticker"] or selected_row["asset_id"]} añadido a "{watchlist_data["name"]}".')
+                st.success(f'{unicorn_ticker(selected_row)} añadido a "{watchlist_data["name"]}".')
             except ValueError as exc:
                 st.error(str(exc))
 

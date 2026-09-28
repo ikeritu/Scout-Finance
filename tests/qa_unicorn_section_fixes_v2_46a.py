@@ -73,7 +73,7 @@ def test_eligibility_tier_names_match_v2_38bo() -> None:
     require(financial == partial - 3, "review-required tiers must be penalised")
     require(app.is_review_required_tier("REVIEW_REQUIRED_FINANCIAL_INSTITUTION") and not app.is_review_required_tier("ELIGIBLE_FULL"), "tier helper")
     grade = app.unicorn_evidence_grade(unicorn_row(eligibility_tier="REVIEW_REQUIRED_FINANCIAL_INSTITUTION"))[0]
-    require(grade == "Requiere revision", "a financial institution must never read as 'Muy respaldado'")
+    require(grade == "Requiere revisión", "a financial institution must never read as 'Muy respaldado'")
     require(app.unicorn_evidence_grade(unicorn_row())[0] == "Muy respaldado", "a clean full-coverage row keeps its grade")
 
 
@@ -149,7 +149,7 @@ def test_financial_companies_are_recognised_by_sec_sic_code() -> None:
     bank = unicorn_row(company_name="Carter Bankshares, Inc.", eligibility_tier="ELIGIBLE_PARTIAL_NO_PRICE", is_financial_sic="true", sic_description="National Commercial Banks")
     require(app.unicorn_needs_financial_review(bank), "SIC-financial company must need review")
     grade, _, reason = app.unicorn_evidence_grade(bank)
-    require(grade == "Requiere revision" and "National Commercial Banks" in reason, (grade, reason))
+    require(grade == "Requiere revisión" and "National Commercial Banks" in reason, (grade, reason))
     require(not app.unicorn_needs_financial_review(unicorn_row(is_financial_sic="false")), "industrial company is not flagged")
 
 
