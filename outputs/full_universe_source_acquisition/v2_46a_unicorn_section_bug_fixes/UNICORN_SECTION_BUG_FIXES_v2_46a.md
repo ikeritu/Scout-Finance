@@ -17,6 +17,18 @@ Fecha: 2026-09-28. El usuario pidió revisar el apartado de Unicornios en busca 
 | 9 | Las velas y la regresión no podían dibujarse nunca: los CSV de v2.38I solo guardan cierre y volumen. | «Actualizar datos reales» guarda ahora las barras OHLCV que yfinance ya devuelve (`data/explosive_ohlcv_cache_v2_46a/`); sin OHLC real no se inventa nada. |
 | 10 | Menores: texto «nan» en fichas; «Estado: Se mantiene» fijo; tracebacks de pyarrow en cada render; el caché de mercado se sobrescribía entero al cambiar de proveedor; `float_shares` de Polygon era en realidad acciones en circulación; escrituras no atómicas de notas con descarte silencioso de un JSON dañado; `Timestamp.utcnow` obsoleto. | Celdas vacías (NaN) tratadas como ausentes; métrica real de crecimiento en lugar del texto fijo; columna «Dato» como texto; fusión del caché por activo y proveedor; `float_shares` de Polygon vacío; escritura atómica y copia `.corrupt-<fecha>` del fichero dañado; `Timestamp.now(tz="UTC")`. |
 
+## Ejecución real de «Actualizar datos reales» y tres bugs más que solo aparecieron al ejecutarla
+
+Se lanzó la actualización real (40 tickers, mismas funciones que el botón; copia previa del caché). La primera vez fallaron los 40 y salieron tres bugs que el código nunca había ejercitado:
+
+| Bug | Causa | Arreglo |
+|---|---|---|
+| yfinance no podía hacer ninguna petición | `curl_cffi` codifica en cp1252 la ruta del certificado CA, que está dentro del `.venv` de una carpeta con emoji («💰 Scout Finance»). | `ensure_ascii_ca_bundle()` apunta `SSL_CERT_FILE` a una copia del certificado en una ruta ASCII antes de importar yfinance. |
+| Al haber por fin datos OHLCV, la pantalla explosiva lanzaba `AttributeError: 'function' object has no attribute 'Figure'` | La función de navegación `go()` de la app sobrescribía el alias `import plotly.graph_objects as go`. | Alias renombrado a `plotly_go`. |
+| `StreamlitDuplicateElementId` | El gráfico de velas destacado y el de la tarjeta de la misma empresa compartían ID. | `key` único por gráfico. |
+
+Resultado de la actualización real: 40/40 tickers correctos; caché de mercado de 40 a 57 filas (17 son unicornios solo-Cboe, ya con datos gracias al ticker real); 40 ficheros OHLCV en `data/explosive_ohlcv_cache_v2_46a/`; en la app se dibujan velas con regresión y volumen (7 gráficos verificados en vivo). Ningún candidato alcanza todavía el umbral explosivo del score (57 en `WATCH_ONLY`), coherente con que los unicornios son en su mayoría empresas de calidad y no micro-caps.
+
 ## Fuera de alcance (decisión pendiente)
 
 El ranking global v2.38BV sigue contando dos veces las 44 empresas con doble cotización (mismo CIK) y v2.38BO no se ha modificado: corregirlos cambiaría cifras ya citadas en las auditorías v2.43A/v2.44A. Queda como decisión explícita.

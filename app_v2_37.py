@@ -3,6 +3,9 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
+import sys
+import tempfile
 import urllib.error
 import urllib.request
 from collections import Counter
@@ -14,7 +17,7 @@ from pathlib import Path
 from urllib.parse import quote, urlencode
 
 import pandas as pd
-import plotly.graph_objects as go
+import plotly.graph_objects as plotly_go  # not `go`: the navigation helper go() below would shadow it
 import streamlit as st
 
 from src.ui_v2_37.global_ranking import load_global_ranking
@@ -1161,7 +1164,36 @@ def fetch_polygon_read_only_overlay(rows: list[dict], limit: int = 10) -> tuple[
     return pd.DataFrame(records), summary
 
 
+def ensure_ascii_ca_bundle() -> str:
+    """yfinance's HTTP client (curl_cffi) encodes the CA-bundle path as cp1252. If the project lives in a folder
+    with an emoji (e.g. "💰 Scout Finance") every request fails before leaving the machine. Point it to an ASCII copy."""
+    import certifi
+
+    source = certifi.where()
+    try:
+        source.encode("cp1252")
+        return source
+    except UnicodeEncodeError:
+        pass
+    target = Path(tempfile.gettempdir()) / "scout_finance_cacert.pem"
+    try:
+        str(target).encode("cp1252")
+    except UnicodeEncodeError:
+        return source  # no safe location available: leave the default (the request will report its own error)
+    if not target.exists() or target.stat().st_size != Path(source).stat().st_size:
+        shutil.copy2(source, target)
+    os.environ["SSL_CERT_FILE"] = str(target)
+    curl_module = sys.modules.get("curl_cffi.curl")
+    if curl_module is not None:
+        curl_module.DEFAULT_CACERT = str(target)
+    return str(target)
+
+
 def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
+    try:
+        ensure_ascii_ca_bundle()
+    except OSError:
+        pass
     try:
         import yfinance as yf
     except ImportError:
@@ -1596,9 +1628,9 @@ def load_explosive_candidate_ohlcv(row: dict, max_sessions: int = 90) -> pd.Data
     return pd.DataFrame()
 
 
-def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str) -> go.Figure:
-    fig = go.Figure()
-    fig.add_trace(go.Candlestick(
+def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str) -> plotly_go.Figure:
+    fig = plotly_go.Figure()
+    fig.add_trace(plotly_go.Candlestick(
         x=ohlcv["Date"],
         open=ohlcv["Open"],
         high=ohlcv["High"],
@@ -1623,11 +1655,11 @@ def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str) -> go.Figure:
             ss_tot = float(((yv - yv.mean()) ** 2).sum())
             r_squared = max(0.0, min(1.0, 1.0 - (ss_res / ss_tot))) if ss_tot else 0.0
             sigma = float(residual.std(ddof=1)) if len(residual) > 1 else 0.0
-            fig.add_trace(go.Scatter(x=ohlcv["Date"], y=fitted, mode="lines", name=f"Regresión lineal · R² {r_squared:.2f}", line={"color": "#f59e0b", "width": 2}))
-            fig.add_trace(go.Scatter(x=ohlcv["Date"], y=fitted + 1.96 * sigma, mode="lines", name="Banda superior 95%", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}))
-            fig.add_trace(go.Scatter(x=ohlcv["Date"], y=fitted - 1.96 * sigma, mode="lines", name="Banda inferior 95%", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}, fill="tonexty", fillcolor="rgba(245,158,11,.08)"))
+            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted, mode="lines", name=f"Regresión lineal · R² {r_squared:.2f}", line={"color": "#f59e0b", "width": 2}))
+            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted + 1.96 * sigma, mode="lines", name="Banda superior 95%", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}))
+            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted - 1.96 * sigma, mode="lines", name="Banda inferior 95%", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}, fill="tonexty", fillcolor="rgba(245,158,11,.08)"))
     if "Volume" in ohlcv and ohlcv["Volume"].notna().any():
-        fig.add_trace(go.Bar(
+        fig.add_trace(plotly_go.Bar(
             x=ohlcv["Date"],
             y=ohlcv["Volume"],
             name="Volumen",
@@ -1647,14 +1679,14 @@ def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str) -> go.Figure:
     return fig
 
 
-def render_explosive_candidate_candlestick(row: dict) -> None:
+def render_explosive_candidate_candlestick(row: dict, key_prefix: str = "explosive_candles_card") -> None:
     ohlcv = load_explosive_candidate_ohlcv(row)
     title = f"{row.get('ticker') or row.get('asset_id') or 'Activo'} · velas locales"
     if ohlcv.empty:
         st.info("No hay histórico OHLCV local para dibujar velas de este candidato explosivo.")
         st.caption("El panel queda fail-closed: no inventa apertura, máximo, mínimo ni cierre. Los precios históricos de v2.38I solo guardan cierre y volumen; pulsa «Actualizar datos reales» para guardar las velas OHLCV de este ticker.")
         return
-    st.plotly_chart(explosive_candlestick_figure(ohlcv, title), use_container_width=True)
+    st.plotly_chart(explosive_candlestick_figure(ohlcv, title), use_container_width=True, key=f"{key_prefix}_{row.get('asset_id') or row.get('ticker') or 'x'}")
     if len(ohlcv) >= 20:
         x = pd.Series(range(len(ohlcv)), dtype="float64")
         y = pd.to_numeric(ohlcv["Close"], errors="coerce")
@@ -1677,7 +1709,7 @@ def render_featured_explosive_candlestick(rows: list[dict]) -> None:
     featured = rows[0]
     st.markdown("#### Velas del candidato destacado")
     st.caption("Panel visible para que el gráfico OHLCV no quede escondido dentro de las cards. Usa histórico local y falla cerrado si no existe.")
-    render_explosive_candidate_candlestick(featured)
+    render_explosive_candidate_candlestick(featured, key_prefix="explosive_candles_featured")
 
 
 def render_explosive_trading_desk_skin() -> None:

@@ -202,6 +202,60 @@ def test_notes_are_written_atomically_and_a_damaged_file_is_set_aside() -> None:
         require(not path.exists() and list(Path(tmp).glob("notes.json.corrupt-*")), "the damaged file is kept for recovery, not overwritten")
 
 
+def test_ca_bundle_path_with_emoji_is_copied_to_an_ascii_path_for_yfinance() -> None:
+    """Live finding: curl_cffi encodes the CA path as cp1252, so a project folder with an emoji broke every yfinance request."""
+    import os
+    import tempfile
+
+    import certifi
+
+    original_where, original_env = certifi.where, os.environ.get("SSL_CERT_FILE")
+    with tempfile.TemporaryDirectory() as tmp:
+        emoji_dir = Path(tmp) / "\U0001f4b0 carpeta"
+        emoji_dir.mkdir()
+        fake_pem = emoji_dir / "cacert.pem"
+        fake_pem.write_text("-----BEGIN CERTIFICATE-----\nTEST\n-----END CERTIFICATE-----\n", encoding="utf-8")
+        certifi.where = lambda: str(fake_pem)
+        try:
+            result = app.ensure_ascii_ca_bundle()
+            result.encode("cp1252")  # must not raise
+            require(Path(result).read_text(encoding="utf-8") == fake_pem.read_text(encoding="utf-8"), "the copy must be identical")
+            require(os.environ.get("SSL_CERT_FILE") == result, "SSL_CERT_FILE must point to the ASCII copy")
+            certifi.where = original_where
+            plain = app.ensure_ascii_ca_bundle()
+            require(plain == original_where() or plain.encode("cp1252") is not None, "a normal path is returned untouched or safely copied")
+        finally:
+            certifi.where = original_where
+            if original_env is None:
+                os.environ.pop("SSL_CERT_FILE", None)
+            else:
+                os.environ["SSL_CERT_FILE"] = original_env
+
+
+def test_candlestick_figure_is_really_built_with_plotly() -> None:
+    """Live finding: once OHLCV data existed, `go.Figure` failed because the navigation helper go() shadowed plotly's `go`."""
+    dates = app.pd.date_range("2026-06-01", periods=40, freq="B")
+    closes = [10 + i * 0.5 + (i % 3) for i in range(40)]
+    ohlcv = app.pd.DataFrame({
+        "Date": dates, "Open": closes, "High": [c + 1 for c in closes], "Low": [c - 1 for c in closes],
+        "Close": closes, "Volume": [1000 + i for i in range(40)],
+    })
+    figure = app.explosive_candlestick_figure(ohlcv, "TST · velas locales")
+    kinds = [trace.type for trace in figure.data]
+    require("candlestick" in kinds and "bar" in kinds and kinds.count("scatter") == 3, f"unexpected traces {kinds}")
+    require(callable(app.go) and not hasattr(app.go, "Figure"), "go() must stay the navigation helper")
+
+
+def test_every_plotly_chart_has_a_unique_key() -> None:
+    """Live finding: the featured candlestick and the same company's card chart shared one auto-generated id."""
+    import inspect
+
+    source = inspect.getsource(app.render_explosive_candidate_candlestick)
+    require("key=f\"{key_prefix}_" in source, "candlestick chart must be keyed")
+    require("explosive_candles_featured" in inspect.getsource(app.render_featured_explosive_candlestick), "featured chart uses its own prefix")
+    require(inspect.signature(app.render_explosive_candidate_candlestick).parameters["key_prefix"].default == "explosive_candles_card", "cards use the default prefix")
+
+
 CASES = [
     test_note_and_review_widgets_have_a_key_per_company,
     test_us_and_usa_are_the_same_country_and_europe_means_europe,
@@ -217,6 +271,9 @@ CASES = [
     test_ohlcv_bars_from_yahoo_are_cached_and_drawn,
     test_refreshing_one_provider_keeps_the_rest_of_the_market_cache,
     test_notes_are_written_atomically_and_a_damaged_file_is_set_aside,
+    test_ca_bundle_path_with_emoji_is_copied_to_an_ascii_path_for_yfinance,
+    test_candlestick_figure_is_really_built_with_plotly,
+    test_every_plotly_chart_has_a_unique_key,
 ]
 
 
