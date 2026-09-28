@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.46D — entidades financieras fuera de la lista de Unicornios por defecto** (`UNICORN_FINANCIALS_DEFAULT_COMPLETED`): los 12 unicornios financieros (SIC 6000-6499 o revisión de entidad financiera) se ocultan por defecto (141 en la lista; casilla «Incluir entidades financieras» y filtro «Revisión requerida» para verlos, 153 en total) porque la «caja libre positiva» no es comparable en banca y seguros; la búsqueda encuentra también el ticker estadounidense real. Solo presentación, sin cambiar datos. Detalle en `UNICORN_FINANCIALS_DEFAULT_v2_46d.md`.
+
 **v2.46C — lista + ficha en dos columnas y filtros de crecimiento y sector en Unicornios** (`UNICORN_LAYOUT_AND_FILTERS_COMPLETED`): la ficha se abre a la derecha de la lista, sin desplazarse; nuevos filtros por crecimiento de ingresos (tramos fijos con tope abierto, porque un dato real llega a +23.258 %) y por sector SIC de la SEC. Solo presentación, sin cambiar datos ni criterios. Detalle en `UNICORN_LAYOUT_AND_FILTERS_v2_46c.md`.
 
 **v2.46B — mejoras rápidas de UI/UX en Unicornios** (`UNICORN_UI_QUICK_WINS_COMPLETED`): solo presentación, sin cambiar datos ni criterios. Las tarjetas muestran como cifra principal el crecimiento real de ingresos (con beneficio y margen), ticker estadounidense real y bolsa legible; se eliminaron el banner «Motor local analizando», el ticker en vivo, el «radar» de constantes y la línea de tiempo falsa; pantalla inicial más corta (8.243 → 5.568 px), ficha alcanzable con aviso y enlace, un único nombre («Confianza de clasificación»), acentos corregidos y la cabecera explosiva sin etiquetas engañosas. Detalle en `UNICORN_UI_QUICK_WINS_v2_46b.md`.

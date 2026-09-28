@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.46D — entidades financieras fuera de la lista de Unicornios por defecto (2026-09-28)
+
+los 12 unicornios financieros (SIC 6000-6499 o revisión de entidad financiera) se ocultan por defecto (141 en la lista; casilla «Incluir entidades financieras» y filtro «Revisión requerida» para verlos, 153 en total) porque la «caja libre positiva» no es comparable en banca y seguros; la búsqueda encuentra también el ticker estadounidense real. Solo presentación, sin cambiar datos. Detalle en `UNICORN_FINANCIALS_DEFAULT_v2_46d.md`.
+
 ## v2.46C — lista + ficha en dos columnas y filtros de crecimiento y sector (2026-09-28)
 
 la ficha se abre a la derecha de la lista, sin desplazarse; nuevos filtros por crecimiento de ingresos (tramos fijos con tope abierto, porque un dato real llega a +23.258 %) y por sector SIC de la SEC. Solo presentación, sin cambiar datos ni criterios. Detalle en `UNICORN_LAYOUT_AND_FILTERS_v2_46c.md`.

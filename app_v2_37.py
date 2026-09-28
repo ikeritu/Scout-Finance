@@ -3184,7 +3184,11 @@ def render_global_unicorns(_data):
     if not matrix.available:
         st.info(matrix.error)
         return
-    unicorn_rows = [row | {"country": normalized_country(row.get("country"))} for row in matrix.rows if row.get("unicorn_status") == "EVALUATED_UNICORN"]
+    all_unicorn_rows = [row | {"country": normalized_country(row.get("country"))} for row in matrix.rows if row.get("unicorn_status") == "EVALUATED_UNICORN"]
+    # Banks/insurers: "positive free cash flow" is not comparable for them, so they stay out of the default list (still reachable).
+    financial_unicorn_count = sum(unicorn_needs_financial_review(row) for row in all_unicorn_rows)
+    include_financials = bool(st.session_state.get("global_unicorn_include_financials", False))
+    unicorn_rows = all_unicorn_rows if include_financials else [row for row in all_unicorn_rows if not unicorn_needs_financial_review(row)]
     evaluated_rows = [row for row in matrix.rows if row.get("unicorn_status") in {"EVALUATED_UNICORN", "EVALUATED_NOT_UNICORN", "INSUFFICIENT_DATA"}]
     counts = Counter(row.get("overall_coverage_status", "") for row in unicorn_rows)
     st.session_state["unicorn_population_medians"] = unicorn_population_medians(unicorn_rows)
@@ -3193,7 +3197,8 @@ def render_global_unicorns(_data):
     metric_cols[1].metric("Evaluadas", f"{len(evaluated_rows):,}", help="Empresas con datos de crecimiento suficientes para evaluar el criterio.")
     metric_cols[2].metric("Crec. completo", f"{counts.get('GROWTH_READY', 0):,}", help="Unicornios con la escalera de crecimiento completa.")
     metric_cols[3].metric("Censo", f"{len(matrix.rows):,}", help="Empresas del censo operativo completo.")
-    st.caption(f"Datos calculados el {matrix.generated_at[:10]} · sin conexión de red.")
+    st.caption(f"Datos calculados el {matrix.generated_at[:10]} · sin conexión de red." + (
+        f" {financial_unicorn_count} entidades financieras ocultas: su criterio de caja libre no es comparable (marca «Incluir entidades financieras» o usa el filtro «Revisión requerida»)." if financial_unicorn_count and not include_financials else ""))
     with st.expander("Cómo leer esta pantalla"):
         st.markdown(
             "- **Calidad fundamental**: empresas con crecimiento de ingresos positivo, margen en expansión y caja libre positiva, ya calculados con datos reales. Se leen como calidad fundamental, no como acciones explosivas.\n"
@@ -3241,6 +3246,11 @@ def render_global_unicorns(_data):
         evidence_filter = a2.multiselect("Calidad de evidencia", ["Muy respaldado", "Respaldado", "Parcial", "Requiere revisión"], placeholder="Todas", key="global_unicorn_evidence_filter")
         review_filter = a3.multiselect("Estado de revisión", list(UNICORN_REVIEW_STATUS_LABELS), format_func=lambda value: UNICORN_REVIEW_STATUS_LABELS[value], placeholder="Todos", key="global_unicorn_review_filter")
         notes_only = a4.checkbox("Solo con notas personales", key="global_unicorn_notes_only")
+    if financial_unicorn_count:
+        st.checkbox(
+            f"Incluir entidades financieras ({financial_unicorn_count})", key="global_unicorn_include_financials",
+            help="Bancos, aseguradoras y similares (SIC 6000-6499 o revisión de entidad financiera). Su «caja libre positiva» no significa lo mismo que en una empresa industrial.",
+        )
     quick_filter = st.radio(
         "Filtros rápidos",
         ["Todos", "Top confianza", "Muy respaldados", "Crecimiento completo", "Revisión requerida", "USA", "Europa"],
@@ -3248,9 +3258,10 @@ def render_global_unicorns(_data):
         key="global_unicorn_quick_filter",
     )
     needle = search.casefold().strip()
+    base_rows = all_unicorn_rows if quick_filter == "Revisión requerida" else unicorn_rows
     filtered = [
-        row for row in unicorn_rows
-        if (not needle or any(needle in str(row.get(key, "")).casefold() for key in ("company_name", "ticker", "asset_id")))
+        row for row in base_rows
+        if (not needle or any(needle in str(row.get(key, "")).casefold() for key in ("company_name", "ticker", "asset_id", "us_ticker")))
         and (not country_filter or row["country"] in country_filter)
         and (not status_filter or row["overall_coverage_status"] in status_filter)
         and (not eligibility_filter or row.get("eligibility_tier", "") in eligibility_filter)
@@ -3282,7 +3293,7 @@ def render_global_unicorns(_data):
         filtered = sorted(filtered, key=explosive_dashboard_sort_key)
     else:
         filtered = sorted(filtered, key=unicorn_internal_rank_key if sort_mode == "Ranking interno de unicornios" else lambda row: unicorn_sort_key(row, sort_mode))
-    st.caption(f"{len(filtered):,} de {len(unicorn_rows):,} unicornios")
+    st.caption(f"{len(filtered):,} de {len(base_rows):,} unicornios")
     grade_counts = Counter(unicorn_evidence_grade(row)[0] for row in filtered)
     review_counts = Counter(unicorn_review_status(review_history, row["asset_id"]) for row in filtered)
     grade_line = " · ".join(f"{label} {grade_counts[label]:,}" for label in ["Muy respaldado", "Respaldado", "Parcial", "Requiere revisión"] if grade_counts.get(label))
