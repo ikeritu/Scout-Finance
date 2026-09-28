@@ -1671,6 +1671,7 @@ def render_explosive_trading_desk_skin() -> None:
 
 
 def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -> None:
+    visible_rows = [row for row in rows if row.get("tier") != "NO_DATA"]
     top_rows = sorted(rows, key=explosive_dashboard_sort_key)[:3]
     hot_rows = []
     for index, row in enumerate(top_rows, start=1):
@@ -1701,8 +1702,8 @@ def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -
             <div class="sf-radar">
               <div class="sf-radar-core">
                 <div>
-                  <div style="font-size:54px;font-weight:950;color:#00b8d9;line-height:1;">{len(rows):,}</div>
-                  <div style="font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:rgba(248,251,255,.72);">candidatos rastreados</div>
+                  <div style="font-size:54px;font-weight:950;color:#00b8d9;line-height:1;">{len(visible_rows):,}</div>
+                  <div style="font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:rgba(248,251,255,.72);">candidatos con señales de mercado</div>
                   <div style="margin-top:16px;color:#ffb020;font-weight:800;">Radar de mercado activo</div>
                 </div>
               </div>
@@ -1751,7 +1752,9 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
         )
         max_cards = filters[2].number_input("Cards", min_value=3, max_value=24, value=9, step=3, key="explosive_dashboard_cards")
 
-    dashboard_rows = list(rows)
+    # La vista principal prioriza filas accionables; los NO_DATA quedan disponibles
+    # solo si el usuario los solicita explícitamente mediante el filtro técnico.
+    dashboard_rows = list(rows) if tier_filter == "NO_DATA" else [row for row in rows if row.get("tier") != "NO_DATA"]
     if tier_filter == "HIGH":
         dashboard_rows = [row for row in dashboard_rows if row.get("tier") == "EXPLOSIVE_CANDIDATE_HIGH"]
     elif tier_filter == "MEDIUM+":
@@ -1773,7 +1776,9 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
         dashboard_rows = [row for row in dashboard_rows if row.get("missing_signals")]
 
     dashboard_rows = sorted(dashboard_rows, key=explosive_dashboard_sort_key)
-    st.caption(f"{len(dashboard_rows):,} candidatos tras filtros del dashboard · desempate diversificado estable, no alfabético.")
+    blocked_count = tier_counts.get("NO_DATA", 0)
+    blocked_note = f" · {blocked_count:,} bloqueados por falta de datos" if blocked_count else ""
+    st.caption(f"{len(dashboard_rows):,} candidatos visibles tras filtros{blocked_note} · desempate diversificado estable, no alfabético.")
     render_featured_explosive_candlestick(dashboard_rows)
     for start in range(0, min(len(dashboard_rows), int(max_cards)), 3):
         cols = st.columns(3)
