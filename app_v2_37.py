@@ -1409,16 +1409,50 @@ def explosive_candidate_professional_explanation(row: dict) -> str:
     provider = provider_from_overlay_note(str(row.get("catalyst_note", "")))
     drivers = row.get("drivers", [])
     missing = row.get("missing_signals", [])
-    present_text = ", ".join(str(item) for item in drivers) if drivers else "sin senales explosivas suficientes"
-    missing_text = ", ".join(str(item) for item in missing) if missing else "sin faltantes criticos segun el contrato actual"
-    return (
-        f"{company} ({ticker}) aparece en la capa de investigacion explosiva con score {score}/100 y tier {tier}. "
-        f"La lectura se basa en datos de mercado disponibles, no en rentabilidad fundamental: Senales presentes: {present_text}. "
-        f"Senales faltantes: {missing_text}. "
-        f"Proveedor de señal detectado: {provider}. "
-        "La tesis tecnica debe validarse contra liquidez, flotacion, short interest, volumen relativo, momentum reciente y catalizador real antes de cualquier conclusion. "
-        "No es recomendación financiera ni predice rentabilidad; no cambia score, ranking global ni proveedor activo."
-    )
+    present_text = ", ".join(str(item) for item in drivers) if drivers else "no hay señales explosivas suficientes"
+    missing_text = ", ".join(str(item) for item in missing) if missing else "no faltan campos críticos según el contrato actual"
+
+    def value(field: str, suffix: str = "") -> str:
+        raw = row.get(field)
+        if raw in (None, ""):
+            return "sin dato"
+        return f"{raw}{suffix}"
+
+    return f"""### ¿Por qué aparece {company} como candidato explosivo?
+
+Esta ficha no dice que la empresa vaya a subir ni que sea una buena inversión. Dice algo más concreto: con los datos de mercado disponibles, **{company} ({ticker}) presenta algunas características que suelen aparecer en acciones muy pequeñas o con movimientos bruscos**. Por eso entra en una capa de investigación separada de la calidad fundamental. Una empresa puede tener buenos beneficios y no ser explosiva; del mismo modo, una acción explosiva puede tener mucho riesgo y no ser una empresa sólida.
+
+### Lectura rápida del resultado
+
+- **Score explosivo:** {score}/100. Es una puntuación heurística de investigación, no una probabilidad de subida.
+- **Clasificación:** `{tier}`. Cuanto más alta, más señales compatibles aparecen, pero nunca sustituye la comprobación manual.
+- **Señales detectadas:** {present_text}.
+- **Señales que faltan o no se han podido confirmar:** {missing_text}.
+- **Fuente de la señal:** {provider}. Los datos pueden estar incompletos o tener retraso.
+
+### Qué significa cada señal
+
+**Tamaño de la empresa.** Una micro-cap o small-cap tiene una capitalización bursátil reducida. Al haber menos dinero negociándose, unas pocas órdenes pueden mover mucho el precio. Esto puede generar subidas rápidas, pero también caídas violentas, spreads amplios y dificultad para salir al precio esperado. En este caso, la lectura registrada es: **{value('market_cap_usd', ' USD de capitalización')}**.
+
+**Precio bajo o penny stock.** Un precio bajo no significa que la empresa sea barata: una acción de 1 euro puede representar una empresa cara si hay muchas acciones emitidas. El precio solo se utiliza aquí como señal de posible volatilidad o de perfil penny-stock; nunca como prueba de valor. El dato disponible es: **{value('last_price')}**.
+
+**Volumen relativo.** Compara cuánto se está negociando ahora con el volumen habitual. Un volumen elevado puede indicar que el mercado está prestando atención, pero también puede proceder de una noticia puntual, especulación o una salida masiva. El dato registrado es: **{value('relative_volume')}**.
+
+**Acciones en circulación y short interest.** El *float* indica, de forma aproximada, cuántas acciones están realmente disponibles para negociar. Si el float es pequeño, el precio puede moverse más con pocas órdenes. El *short interest* intenta medir cuántas posiciones apuestan por una caída. Si coinciden mucho interés corto, poco float y compras fuertes, puede producirse un *short squeeze*: quienes apostaban por la caída tienen que recomprar y esa demanda puede acelerar el movimiento. Esto no es automático ni garantiza que ocurra. Los datos disponibles son float **{value('float_shares')}** y short interest **{value('short_float_pct', '%')}**.
+
+**Momentum reciente.** Mide si el precio se ha movido con fuerza durante un periodo reciente. El momentum ayuda a detectar rupturas o aceleraciones, pero también puede señalar que la subida ya está avanzada. El cambio de 20 días disponible es: **{value('price_change_20d', '%')}**.
+
+**Breakout y catalizador.** Un breakout es una ruptura de una zona de precio acompañada idealmente por volumen. Un catalizador es un hecho que podría explicar el interés: resultados, contrato, aprobación, noticia corporativa o cualquier evento verificable. Una etiqueta técnica o una mención en redes no demuestra por sí sola que exista un catalizador real. La señal de breakout es **{value('breakout_signal')}** y la nota de catalizador es **{value('catalyst_note')}**.
+
+### Cómo debe interpretarse
+
+La lectura correcta es: **“esta empresa merece una revisión específica porque reúne algunas condiciones de volatilidad o aceleración”**. No significa “esta empresa es un unicornio seguro”, “va a multiplicarse” ni “hay que comprarla”. Para confirmar la hipótesis habría que contrastar los datos con una fuente reciente, revisar el gráfico OHLCV, comprobar liquidez y spread, verificar la noticia que actúa como catalizador y estudiar los riesgos de dilución, deuda, suspensión de cotización o pérdida rápida de volumen.
+
+### Qué podría invalidar esta clasificación
+
+La clasificación debería rebajarse si los datos están desactualizados, el volumen procede de una sola sesión, el breakout no se mantiene, el short interest no es reciente, el float está mal informado, el supuesto catalizador no se puede verificar o la acción no tiene liquidez suficiente. También debe rebajarse si el movimiento es únicamente ruido especulativo y no existe una explicación comprobable.
+
+**Conclusión:** {company} es ahora un candidato de investigación explosiva con score {score}/100, no una recomendación financiera. El score no predice rentabilidad, no es una probabilidad estadística y no sustituye el análisis fundamental ni la revisión humana."""
 
 
 def load_explosive_candidate_ohlcv(row: dict, max_sessions: int = 90) -> pd.DataFrame:
@@ -1818,7 +1852,7 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
                 st.write("- Verificar si el catalizador existe y no es solo momentum técnico.")
                 st.caption(row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
             with col.expander("Ficha explosiva profesional"):
-                st.write(explosive_candidate_professional_explanation(row))
+                st.markdown(explosive_candidate_professional_explanation(row))
                 st.write("**Señales presentes**")
                 present = row.get("drivers", [])
                 if present:
