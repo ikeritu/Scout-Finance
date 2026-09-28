@@ -2137,6 +2137,30 @@ def render_unicorn_key_figures(row: dict) -> None:
     st.caption("Criterios cumplidos: " + " · ".join(unicorn_criterion_badges(row.get("unicorn_reason", ""), row.get("country", ""))))
 
 
+NO_SECTOR_LABEL = "Sin sector SEC"
+
+
+def unicorn_sector(row: dict) -> str:
+    text = row.get("sic_description")
+    return NO_SECTOR_LABEL if is_blank(text) else str(text).strip().title()
+
+
+# One outlier (a tiny revenue base) grows >23,000 %, so a linear slider would be unusable: fixed steps, open-ended top.
+UNICORN_GROWTH_STEPS = (0, 10, 20, 30, 50, 100, 200, 500, float("inf"))
+
+
+def unicorn_growth_step_label(step) -> str:
+    return "Sin tope" if step == float("inf") else f"{int(step)} %"
+
+
+def unicorn_growth_in_range(row: dict, low: float, high: float, bounds: tuple = (UNICORN_GROWTH_STEPS[0], UNICORN_GROWTH_STEPS[-1])) -> bool:
+    """Rows without a growth figure are hidden only once the person narrows the range (never silently)."""
+    if (low, high) == tuple(bounds):
+        return True
+    value = numeric_value(row.get("revenue_yoy_growth"))
+    return value is not None and low <= value * 100 <= high
+
+
 def unicorn_revenue_growth_desc_key(row: dict) -> float:
     growth = numeric_value(row.get("revenue_yoy_growth"))
     return -growth if growth is not None else float("inf")
@@ -2725,7 +2749,7 @@ def render_unicorn_formula_panel(row: dict) -> None:
 
 def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], review_history: dict[str, dict], generated_at: str) -> None:
     st.markdown("### Analítica visual de unicornios")
-    st.caption("Pulsa «Ver ficha» en una tarjeta para abrir su ficha completa debajo de la lista.")
+    st.caption("Elige una empresa de la lista de la izquierda: su ficha se abre a la derecha.")
     if not rows:
         st.info("No hay unicornios con los filtros actuales.")
         return
@@ -2745,24 +2769,23 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
     visual_rows = rows[page_start:page_end]
     st.caption(f"{len(rows):,} unicornios filtrados · mostrando {page_start + 1}-{page_end} · página {current_page + 1}/{total_pages}.")
     st.caption(f"Datos calculados el {generated_at[:10] if generated_at else 'N/D'} · sin conexión de red.")
-    for chunk_start in range(0, len(visual_rows), 3):
-        cols = st.columns(3)
-        for col, row in zip(cols, visual_rows[chunk_start:chunk_start + 3]):
-            grade, grade_color, _ = unicorn_evidence_grade(row)
-            selected = row["asset_id"] == st.session_state.selected_unicorn_asset_id
-            with col:
+    list_col, detail_col = st.columns([1, 2], gap="large")
+    with list_col:
+        with st.container(height=760, border=False):
+            for row in visual_rows:
+                grade, grade_color, _ = unicorn_evidence_grade(row)
+                selected = row["asset_id"] == st.session_state.selected_unicorn_asset_id
                 country_label = "" if row.get("country") == "USA" else f" · {escape(row.get('country') or 'N/D')}"
                 st.markdown(
                     f"""
-                    <div class="sf-motion-card {'is-selected' if selected else ''}" style="border:1px solid {'#0f766e' if selected else '#d8e2ef'};border-left:6px solid {escape(grade_color)};border-radius:8px;padding:10px 12px;background:{'#ecfeff' if selected else '#ffffff'};min-height:172px;margin-bottom:6px;">
+                    <div class="sf-motion-card {'is-selected' if selected else ''}" style="border:1px solid {'#0f766e' if selected else '#d8e2ef'};border-left:6px solid {escape(grade_color)};border-radius:8px;padding:8px 12px;background:{'#ecfeff' if selected else '#ffffff'};min-height:108px;margin-bottom:4px;">
                       <div style="font-weight:800;color:#0f172a;font-size:14px;line-height:1.25;">{escape(row.get("company_name") or "")}</div>
-                      <div style="color:#64748b;font-size:12px;margin-top:4px;">{escape(unicorn_ticker(row))} · {escape(friendly_exchange(row.get("exchange")))}{country_label}</div>
-                      <div style="display:flex;gap:8px;align-items:baseline;margin-top:8px;flex-wrap:wrap;">
-                        <span style="font-size:26px;font-weight:900;color:#0f766e;">{escape(unicorn_headline_growth(row))}</span>
+                      <div style="color:#64748b;font-size:12px;margin-top:2px;">{escape(unicorn_ticker(row))} · {escape(friendly_exchange(row.get("exchange")))}{country_label}</div>
+                      <div style="display:flex;gap:8px;align-items:baseline;margin-top:6px;flex-wrap:wrap;">
+                        <span style="font-size:22px;font-weight:900;color:#0f766e;">{escape(unicorn_headline_growth(row))}</span>
                         <span style="font-size:12px;color:#475569;">ingresos interanual</span>
                       </div>
-                      <div style="font-size:12px;color:#334155;margin-top:4px;">Beneficio {escape(format_percent_fraction(row.get("net_income_yoy_growth")))} · Margen neto {escape(format_percent_fraction(row.get("net_margin"), signed=False))}</div>
-                      <div style="display:inline-block;margin-top:8px;padding:2px 8px;border-radius:999px;background:#f1f5f9;color:#334155;font-size:12px;">{escape(grade)} · confianza {unicorn_probability(row)}%</div>
+                      <div style="font-size:12px;color:#334155;margin-top:2px;">{escape(grade)} · confianza {unicorn_probability(row)}%</div>
                     </div>
                     """,
                     unsafe_allow_html=True,
@@ -2770,25 +2793,25 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
                 if st.button("Ver ficha", key=f"unicorn_visual_card_select_{row['asset_id']}", type="primary" if selected else "secondary", use_container_width=True):
                     st.session_state.selected_unicorn_asset_id = row["asset_id"]
                     st.session_state.unicorn_visual_sync_page = True
-                    st.toast(f"Ficha de {row.get('company_name')} abierta debajo de las tarjetas.")
-
-    nav_prev, nav_info, nav_next = st.columns([1, 2, 1])
-    if nav_prev.button("← Anteriores", disabled=current_page == 0, use_container_width=True, key="unicorn_visual_prev_page"):
-        st.session_state.unicorn_visual_cards_page = max(0, current_page - 1)
-        st.session_state.unicorn_visual_sync_page = False
-        st.rerun()
-    selected_name = next((row.get("company_name") for row in rows if row["asset_id"] == st.session_state.selected_unicorn_asset_id), "")
-    nav_info.caption(f"Empresas {page_start + 1}-{page_end} de {len(rows):,}")
-    nav_info.markdown(f'<div style="text-align:center;font-size:13px;"><a href="#ficha-unicornio" target="_self">Ir a la ficha de {escape(selected_name)} ↓</a></div>', unsafe_allow_html=True)
-    if nav_next.button("Siguientes →", disabled=current_page >= total_pages - 1, use_container_width=True, key="unicorn_visual_next_page"):
-        st.session_state.unicorn_visual_cards_page = min(total_pages - 1, current_page + 1)
-        st.session_state.unicorn_visual_sync_page = False
-        st.rerun()
+        nav_prev, nav_info, nav_next = st.columns([1, 1, 1])
+        if nav_prev.button("← Anteriores", disabled=current_page == 0, use_container_width=True, key="unicorn_visual_prev_page"):
+            st.session_state.unicorn_visual_cards_page = max(0, current_page - 1)
+            st.session_state.unicorn_visual_sync_page = False
+            st.rerun()
+        nav_info.caption(f"Empresas {page_start + 1}-{page_end} de {len(rows):,}")
+        if nav_next.button("Siguientes →", disabled=current_page >= total_pages - 1, use_container_width=True, key="unicorn_visual_next_page"):
+            st.session_state.unicorn_visual_cards_page = min(total_pages - 1, current_page + 1)
+            st.session_state.unicorn_visual_sync_page = False
+            st.rerun()
 
     selected = next((row for row in rows if row["asset_id"] == st.session_state.selected_unicorn_asset_id), rows[0])
+    with detail_col:
+        render_unicorn_ficha(selected, notes, review_history, generated_at)
+
+
+def render_unicorn_ficha(selected: dict, notes: dict[str, str], review_history: dict[str, dict], generated_at: str) -> None:
     grade, _, grade_reason = unicorn_evidence_grade(selected)
     review_label = UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected["asset_id"])]
-    st.markdown('<div id="ficha-unicornio"></div>', unsafe_allow_html=True)
     st.markdown(f"## {GLOBAL_UNICORN_ICON} {selected.get('company_name')}")
     local_symbol = f" · símbolo local {selected.get('ticker')}" if selected.get("us_ticker") and selected.get("ticker") != selected.get("us_ticker") else ""
     st.caption(f"{unicorn_ticker(selected)} · {friendly_exchange(selected.get('exchange'))} · {selected.get('country') or 'N/D'}{local_symbol} · corte {generated_at[:10] if generated_at else 'N/D'}")
@@ -3200,6 +3223,18 @@ def render_global_unicorns(_data):
     status_filter = c2.multiselect("Estado", sorted(counts), format_func=lambda value: GLOBAL_STATUS_LABELS.get(value, value), placeholder="Todos", key="global_unicorn_status")
     eligibility_counts = Counter(row.get("eligibility_tier", "") for row in unicorn_rows)
     eligibility_filter = c3.multiselect("Elegibilidad para scoring", sorted(eligibility_counts), format_func=lambda value: GLOBAL_ELIGIBILITY_LABELS.get(value, value), placeholder="Todas", key="global_unicorn_eligibility")
+    growth_bounds = (UNICORN_GROWTH_STEPS[0], UNICORN_GROWTH_STEPS[-1])
+    g1, g2 = st.columns(2)
+    growth_low, growth_high = g1.select_slider(
+        "Crecimiento de ingresos interanual", options=list(UNICORN_GROWTH_STEPS), value=growth_bounds,
+        format_func=unicorn_growth_step_label, key="global_unicorn_growth_range",
+        help="Dato histórico ya calculado. Al estrechar el rango se ocultan también las empresas sin cifra de crecimiento.",
+    )
+    sector_counts = Counter(unicorn_sector(row) for row in unicorn_rows)
+    sector_filter = g2.multiselect(
+        "Sector (SIC de la SEC)", sorted(sector_counts, key=lambda name: (-sector_counts[name], name)),
+        format_func=lambda name: f"{name} ({sector_counts[name]})", placeholder="Todos", key="global_unicorn_sector",
+    )
     with st.expander("Búsqueda avanzada", expanded=False):
         a1, a2, a3, a4 = st.columns(4)
         min_probability = a1.slider("Porcentaje mínimo", min_value=55, max_value=96, value=55, step=1, key="global_unicorn_min_probability")
@@ -3220,6 +3255,8 @@ def render_global_unicorns(_data):
         and (not status_filter or row["overall_coverage_status"] in status_filter)
         and (not eligibility_filter or row.get("eligibility_tier", "") in eligibility_filter)
         and unicorn_probability(row) >= min_probability
+        and unicorn_growth_in_range(row, growth_low, growth_high, growth_bounds)
+        and (not sector_filter or unicorn_sector(row) in sector_filter)
         and (not evidence_filter or unicorn_evidence_grade(row)[0] in evidence_filter)
         and (not review_filter or unicorn_review_status(review_history, row["asset_id"]) in review_filter)
         and (not notes_only or bool(notes.get(row["asset_id"], "").strip()))
