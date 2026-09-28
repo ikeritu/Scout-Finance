@@ -29,7 +29,9 @@ ROOT = Path(__file__).resolve().parent
 UNICORN_NOTES_PATH = ROOT / "data" / "user_unicorn_notes_v2_44i.json"
 UNICORN_REVIEW_HISTORY_PATH = ROOT / "data" / "user_unicorn_review_history_v2_44k.json"
 EXPLOSIVE_UNICORN_OVERLAY_PATH = ROOT / "data" / "user_explosive_unicorn_market_overlay_v2_45b.csv"
+EXPLOSIVE_OHLCV_CACHE_DIR = ROOT / "data" / "explosive_ohlcv_cache_v2_46a"
 EXPLOSIVE_OHLCV_LOCAL_ROOTS = [
+    EXPLOSIVE_OHLCV_CACHE_DIR,
     ROOT / "outputs" / "full_universe_source_acquisition" / "v2_38i_us_price_history_acquisition" / "us_price_history_raw_v2_38i",
     ROOT / "outputs" / "full_universe_source_acquisition" / "v2_38o_europe_price_history_acquisition" / "europe_price_history_raw_v2_38o",
 ]
@@ -304,6 +306,28 @@ def google_finance_search_url(company_name: str) -> str:
     return f"https://www.google.com/search?q={quote(f'{company_name} stock')}"
 
 
+US_COUNTRY_CODES = {"US", "USA"}
+AUSTRIA_COUNTRY_CODES = {"AT", "AUSTRIA"}
+EUROPE_COUNTRY_CODES = {
+    "AT", "BE", "BG", "CH", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GB", "UK", "GR", "HR", "HU", "IE", "IS",
+    "IT", "LI", "LT", "LU", "LV", "MT", "NL", "NO", "PL", "PT", "RO", "SE", "SI", "SK", "JE", "GG", "IM",
+}
+
+
+def normalized_country(country) -> str:
+    """The census mixes `US` (Cboe-secondary rows) and `USA` (original NASDAQ rows) for the same country."""
+    text = str(country or "").strip()
+    return "USA" if text.upper() in US_COUNTRY_CODES else text
+
+
+def is_austria(country) -> bool:
+    return str(country or "").strip().upper() in AUSTRIA_COUNTRY_CODES
+
+
+def is_european_country(country) -> bool:
+    return str(country or "").strip().upper() in EUROPE_COUNTRY_CODES
+
+
 def explain_unicorn_reason(reason: str, country: str) -> list[str]:
     details = []
     lowered = reason.casefold()
@@ -329,11 +353,21 @@ def unicorn_criterion_badges(reason: str, country: str) -> list[str]:
     badges = ["Crecimiento positivo", "Margen en expansión"]
     if "positive_free_cash_flow" in lowered:
         badges.append("FCF positivo")
-    if "no_free_cash_flow_data_available_for_austria" in lowered or country == "Austria":
+    if "no_free_cash_flow_data_available_for_austria" in lowered or is_austria(country):
         badges.append("Criterio Austria")
     if "cross_referenced_from_real_us_entity" in lowered:
         badges.append("Referencia cruzada")
     return badges
+
+
+def is_review_required_tier(tier) -> bool:
+    """v2.38BO tiers are `REVIEW_REQUIRED_FINANCIAL_INSTITUTION` (there is no plain `REVIEW_REQUIRED` tier)."""
+    return str(tier or "").startswith("REVIEW_REQUIRED")
+
+
+def unicorn_needs_financial_review(row: dict) -> bool:
+    """Financial institutions (v2.38BO tier, or SEC SIC 6000-6499 from v2.38BT) are not comparable on free cash flow."""
+    return is_review_required_tier(row.get("eligibility_tier")) or str(row.get("is_financial_sic") or "").casefold() == "true"
 
 
 def unicorn_probability(row: dict) -> int:
@@ -350,16 +384,19 @@ def unicorn_probability(row: dict) -> int:
         score += 5
     if row.get("overall_coverage_status") == "GROWTH_READY":
         score += 4
-    if row.get("eligibility_tier") == "SCORE_ELIGIBLE_FULL":
+    if row.get("eligibility_tier") == "ELIGIBLE_FULL":
         score += 3
     if row.get("overall_coverage_status") == "GROWTH_PARTIAL":
         score -= 4
-    if row.get("eligibility_tier") in {"REVIEW_REQUIRED", "PARTIAL_COMPARABILITY"}:
+    if unicorn_needs_financial_review(row):
         score -= 3
     return max(55, min(score, 96))
 
 
 def unicorn_evidence_grade(row: dict) -> tuple[str, str, str]:
+    if unicorn_needs_financial_review(row):
+        sector = f" ({row['sic_description']})" if row.get("sic_description") else ""
+        return "Requiere revision", "red", f"Entidad financiera{sector}: el criterio de flujo de caja libre no es comparable con el de una empresa industrial; revisar a mano."
     probability = unicorn_probability(row)
     if probability >= 90 and row.get("overall_coverage_status") == "GROWTH_READY":
         return "Muy respaldado", "green", "Criterios completos y cobertura de crecimiento completa."
@@ -370,13 +407,20 @@ def unicorn_evidence_grade(row: dict) -> tuple[str, str, str]:
     return "Requiere revision", "red", "Conviene revisar la evidencia manualmente antes de priorizar."
 
 
+def is_blank(value) -> bool:
+    """Empty cells come back from pandas.read_csv as NaN, which is neither "" nor None."""
+    if value is None or value == "":
+        return True
+    return isinstance(value, float) and value != value
+
+
 def explosive_unicorn_data_fields(row: dict) -> list[str]:
-    return [field for field in EXPLOSIVE_UNICORN_AVAILABLE_FIELDS if row.get(field) not in ("", None)]
+    return [field for field in EXPLOSIVE_UNICORN_AVAILABLE_FIELDS if not is_blank(row.get(field))]
 
 
 def numeric_value(value) -> float | None:
     try:
-        if value in ("", None):
+        if is_blank(value):
             return None
         return float(str(value).replace(",", "."))
     except (TypeError, ValueError):
@@ -388,6 +432,9 @@ def truthy_value(value) -> bool:
 
 
 def explosive_unicorn_status(row: dict) -> tuple[str, str, str]:
+    """Semantic status. A company is an explosive candidate only when the explosive score
+    (explosive_candidate_score) places it in an EXPLOSIVE_CANDIDATE_* tier; isolated signals
+    are described but stay in market-data-partial (WATCH_ONLY) so both views agree."""
     fields = explosive_unicorn_data_fields(row)
     if not fields:
         return (
@@ -396,27 +443,29 @@ def explosive_unicorn_status(row: dict) -> tuple[str, str, str]:
             "Faltan señales de mercado necesarias: capitalización, precio actual, float/short interest, volumen relativo, breakout o catalizador.",
         )
     reason = row.get("unicorn_reason", "").casefold()
-    ticker = (row.get("ticker") or "").casefold()
-    company = (row.get("company_name") or "").casefold()
     market_cap = numeric_value(row.get("market_cap_usd") or row.get("market_cap"))
     last_price = numeric_value(row.get("last_price"))
     relative_volume = numeric_value(row.get("relative_volume"))
     price_change_20d = numeric_value(row.get("price_change_20d"))
-    float_shares = numeric_value(row.get("float_shares"))
     short_float_pct = numeric_value(row.get("short_float_pct") or row.get("short_interest"))
     tags = []
-    if truthy_value(row.get("micro_cap_signal")) or (market_cap is not None and market_cap <= 300_000_000):
+    micro_cap = truthy_value(row.get("micro_cap_signal")) or (market_cap is not None and market_cap <= 300_000_000)
+    if micro_cap:
         tags.append("Micro-cap")
     if truthy_value(row.get("penny_stock_signal")) or (last_price is not None and last_price <= 5):
         tags.append("Penny stock")
-    if truthy_value(row.get("squeeze_signal")) or (short_float_pct is not None and short_float_pct >= 15) or (float_shares is not None and float_shares <= 50_000_000 and short_float_pct is not None):
+    if truthy_value(row.get("squeeze_signal")) or (short_float_pct is not None and short_float_pct >= 15):
         tags.append("Short squeeze")
     if truthy_value(row.get("breakout_signal")) or (relative_volume is not None and relative_volume >= 2 and price_change_20d is not None and price_change_20d >= 20):
         tags.append("Breakout")
-    if "growth" in reason and ("micro" in company or "micro" in ticker):
+    if "growth" in reason and micro_cap:
         tags.append("Multibagger investigable")
+    tier = explosive_candidate_score(row)["tier"]
+    label = " / ".join(dict.fromkeys(tags))
+    if str(tier).startswith("EXPLOSIVE_CANDIDATE"):
+        return ("EXPLOSIVE_CANDIDATE", label or "Señales explosivas combinadas", "Reúne suficientes señales locales de mercado para el score explosivo; requiere revisión manual estricta.")
     if tags:
-        return ("EXPLOSIVE_CANDIDATE", " / ".join(dict.fromkeys(tags)), "Tiene señales locales de mercado compatibles con una hipótesis explosiva; requiere revisión manual estricta.")
+        return ("DATOS_MERCADO_PARCIALES", f"En vigilancia: {label}", "Hay alguna señal aislada, pero el score explosivo no la clasifica como candidato (faltan señales fuertes o datos críticos).")
     return (
         "DATOS_MERCADO_PARCIALES",
         "Datos parciales, sin señal explosiva",
@@ -433,11 +482,11 @@ def explosive_candidate_score(row: dict) -> dict:
     float_shares = numeric_value(row.get("float_shares"))
     short_float_pct = numeric_value(row.get("short_float_pct") or row.get("short_interest"))
     breakout = truthy_value(row.get("breakout_signal"))
-    catalyst = str(row.get("catalyst_note") or "").strip()
+    catalyst = "" if is_blank(row.get("catalyst_note")) else str(row.get("catalyst_note")).strip()
     missing_signals = [
         field for field in critical_fields
-        if (field == "short_float_pct" and row.get(field) in ("", None) and row.get("short_interest") in ("", None))
-        or (field != "short_float_pct" and row.get(field) in ("", None))
+        if (field == "short_float_pct" and is_blank(row.get(field)) and is_blank(row.get("short_interest")))
+        or (field != "short_float_pct" and is_blank(row.get(field)))
     ]
     drivers = []
     high_conviction_signals = 0
@@ -495,7 +544,7 @@ def explosive_candidate_score(row: dict) -> dict:
         score += 10
         high_conviction_signals += 1
         drivers.append("breakout detectado")
-    if catalyst and catalyst != "yfinance_real_market_snapshot_v2_45c":
+    if catalyst and provider_from_overlay_note(catalyst) == "manual_or_unknown":
         score += 4
         drivers.append("catalizador documentado")
 
@@ -570,7 +619,7 @@ def explosive_unicorn_missing_fields(row: dict) -> list[str]:
     return [
         item["field"]
         for item in EXPLOSIVE_UNICORN_DATA_CONTRACT
-        if row.get(item["field"]) in ("", None)
+        if is_blank(row.get(item["field"]))
     ]
 
 
@@ -660,6 +709,21 @@ def load_explosive_overlay() -> pd.DataFrame:
         return pd.DataFrame()
 
 
+def overlay_row_key(item: dict) -> tuple[str, str]:
+    identifier = str(item.get("asset_id") or "").strip() or str(item.get("ticker") or "").strip().casefold()
+    return identifier, provider_from_overlay_note(item.get("catalyst_note"))
+
+
+def merge_explosive_overlay(existing: pd.DataFrame, fresh: pd.DataFrame) -> pd.DataFrame:
+    """A provider refresh replaces only its own rows for the same asset; rows of other assets/providers survive."""
+    if existing is None or existing.empty:
+        return fresh
+    combined = pd.concat([existing, fresh], ignore_index=True)
+    keys = [overlay_row_key(item) for item in combined.to_dict("records")]
+    keep = [not seen for seen in pd.Series(keys).duplicated(keep="last")]
+    return combined.loc[keep].reset_index(drop=True)
+
+
 def save_explosive_overlay(df: pd.DataFrame) -> None:
     EXPLOSIVE_UNICORN_OVERLAY_PATH.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(EXPLOSIVE_UNICORN_OVERLAY_PATH, index=False)
@@ -673,7 +737,7 @@ def apply_explosive_overlay(rows: list[dict], overlay: pd.DataFrame) -> list[dic
     merged = []
     for row in rows:
         extra = by_asset.get(row.get("asset_id", "")) or by_ticker.get((row.get("ticker") or "").casefold()) or {}
-        merged.append(row | {key: value for key, value in extra.items() if key not in {"company_name"} and value not in ("", None)})
+        merged.append(row | {key: value for key, value in extra.items() if key not in {"company_name"} and not is_blank(value)})
     return merged
 
 
@@ -791,12 +855,14 @@ def provider_comparison_diagnostics(overlay: pd.DataFrame) -> tuple[dict, pd.Dat
 
 
 def yfinance_symbol(row: dict) -> str:
-    ticker = (row.get("ticker") or "").strip()
+    us_ticker = (row.get("us_ticker") or "").strip()
     exchange = (row.get("exchange") or "").strip().upper()
     country = (row.get("country") or "").strip().upper()
+    # Cboe Europe tickers (AMDd, ADBd...) are local symbols: only the real SEC-registered US ticker can go to Yahoo.
+    ticker = us_ticker or ("" if exchange == "CBOE_EUROPE" else (row.get("ticker") or "").strip())
     if not ticker:
         return ""
-    if country == "USA" or exchange in {"NASDAQ", "NYSE", "AMEX", "NYSEARCA"}:
+    if country in US_COUNTRY_CODES or exchange in {"NASDAQ", "NYSE", "AMEX", "NYSEARCA"}:
         return ticker.replace(".", "-")
     return ""
 
@@ -1045,7 +1111,7 @@ def fetch_polygon_read_only_overlay(rows: list[dict], limit: int = 10) -> tuple[
             "message": execution_gate["reason"],
         }
     api_key = os.environ.get("POLYGON_API_KEY", "").strip()
-    today = pd.Timestamp.utcnow().date()
+    today = pd.Timestamp.now(tz="UTC").date()
     start = today - pd.Timedelta(days=75)
     candidates = diversified_explosive_provider_sample(rows, limit)
     records = []
@@ -1077,7 +1143,7 @@ def fetch_polygon_read_only_overlay(rows: list[dict], limit: int = 10) -> tuple[
                 "market_cap_usd": reference.get("market_cap") or "",
                 "last_price": last_price,
                 "relative_volume": relative_volume,
-                "float_shares": reference.get("share_class_shares_outstanding") or "",
+                "float_shares": "",  # Polygon's reference data has shares outstanding, not free float: leave it missing rather than mislabel it
                 "short_float_pct": "",
                 "price_change_20d": price_change_20d,
                 "breakout_signal": "true" if breakout else "",
@@ -1120,6 +1186,10 @@ def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple
                 short_float = round(float(short_float) * 100, 2)
             float_shares = info.get("floatShares")
             price_change_20d = pct_change_20d_from_history(history)
+            try:
+                save_explosive_ohlcv(row, history)
+            except OSError:
+                pass  # a cache write problem must never drop the market snapshot itself
             breakout = bool(relative_volume not in ("", None) and price_change_20d is not None and float(relative_volume) >= 2 and price_change_20d >= 20)
             records.append({
                 "asset_id": row.get("asset_id", ""),
@@ -1164,7 +1234,7 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
                 for error in errors:
                     st.error(error)
             else:
-                save_explosive_overlay(normalized)
+                save_explosive_overlay(merge_explosive_overlay(load_explosive_overlay(), normalized))
                 st.success(f"Overlay automático guardado: {summary['ok']:,}/{summary['processed']:,} tickers OK · fallos {summary['failed']:,}.")
     auto_cols[2].caption("Proveedor activo: Yahoo Finance / yfinance · solo lectura · sin broker · sin MetaTrader · CSV manual solo como fallback.")
 
@@ -1251,7 +1321,7 @@ def render_explosive_unicorn_overlay_import(rows: list[dict]) -> list[dict]:
                         for error in errors:
                             st.error(error)
                     else:
-                        save_explosive_overlay(normalized)
+                        save_explosive_overlay(merge_explosive_overlay(load_explosive_overlay(), normalized))
                         st.success(f"Cache Polygon guardado: {polygon_summary['ok']:,}/{polygon_summary['processed']:,} tickers OK · fallos {polygon_summary['failed']:,}.")
             st.caption("v2.45N no cambia scoring ni ranking global: solo prepara cache local de mercado para candidatos explosivos.")
         with st.expander("Fallback manual y cache de mercado", expanded=False):
@@ -1379,7 +1449,7 @@ def explosive_candidate_detail_frame(row: dict) -> pd.DataFrame:
             "Bloque": block,
             "Lectura": reading,
             "Campo": field,
-            "Dato": "N/D" if value in (None, "") else value,
+            "Dato": "N/D" if is_blank(value) else str(value),
             "Proveedor de señal": provider,
         }
         for block, reading, field, value in rows
@@ -1414,7 +1484,7 @@ def explosive_candidate_professional_explanation(row: dict) -> str:
 
     def value(field: str, suffix: str = "") -> str:
         raw = row.get(field)
-        if raw in (None, ""):
+        if is_blank(raw):
             return "sin dato"
         return f"{raw}{suffix}"
 
@@ -1453,6 +1523,34 @@ La lectura correcta es: **“esta empresa merece una revisión específica porqu
 La clasificación debería rebajarse si los datos están desactualizados, el volumen procede de una sola sesión, el breakout no se mantiene, el short interest no es reciente, el float está mal informado, el supuesto catalizador no se puede verificar o la acción no tiene liquidez suficiente. También debe rebajarse si el movimiento es únicamente ruido especulativo y no existe una explicación comprobable.
 
 **Conclusión:** {company} es ahora un candidato de investigación explosiva con score {score}/100, no una recomendación financiera. El score no predice rentabilidad, no es una probabilidad estadística y no sustituye el análisis fundamental ni la revisión humana."""
+
+
+def save_explosive_ohlcv(row: dict, history, directory: Path | None = None) -> bool:
+    """Persist the real OHLCV bars yfinance already returned: the v2.38I price files only hold close/volume,
+    so without this cache the candlestick view can never draw anything."""
+    identifier = str(row.get("asset_id") or row.get("ticker") or "").strip()
+    if history is None or getattr(history, "empty", True) or not identifier:
+        return False
+    if not {"Open", "High", "Low", "Close"} <= set(history.columns):
+        return False
+    frame = history.reset_index()
+    out = pd.DataFrame({
+        "date": pd.to_datetime(frame[frame.columns[0]], errors="coerce").dt.strftime("%Y-%m-%d"),
+        "open": pd.to_numeric(frame["Open"], errors="coerce"),
+        "high": pd.to_numeric(frame["High"], errors="coerce"),
+        "low": pd.to_numeric(frame["Low"], errors="coerce"),
+        "close": pd.to_numeric(frame["Close"], errors="coerce"),
+        "volume": pd.to_numeric(frame["Volume"], errors="coerce") if "Volume" in frame else float("nan"),
+    }).dropna(subset=["date", "open", "high", "low", "close"])
+    if out.empty:
+        return False
+    target = directory or EXPLOSIVE_OHLCV_CACHE_DIR
+    target.mkdir(parents=True, exist_ok=True)
+    path = target / f"{identifier}.csv"
+    tmp = path.with_suffix(".csv.tmp")
+    out.to_csv(tmp, index=False)
+    tmp.replace(path)
+    return True
 
 
 def load_explosive_candidate_ohlcv(row: dict, max_sessions: int = 90) -> pd.DataFrame:
@@ -1554,7 +1652,7 @@ def render_explosive_candidate_candlestick(row: dict) -> None:
     title = f"{row.get('ticker') or row.get('asset_id') or 'Activo'} · velas locales"
     if ohlcv.empty:
         st.info("No hay histórico OHLCV local para dibujar velas de este candidato explosivo.")
-        st.caption("El panel queda fail-closed: no inventa apertura, máximo, mínimo ni cierre. Carga/actualiza cache OHLCV para activar el gráfico.")
+        st.caption("El panel queda fail-closed: no inventa apertura, máximo, mínimo ni cierre. Los precios históricos de v2.38I solo guardan cierre y volumen; pulsa «Actualizar datos reales» para guardar las velas OHLCV de este ticker.")
         return
     st.plotly_chart(explosive_candlestick_figure(ohlcv, title), use_container_width=True)
     if len(ohlcv) >= 20:
@@ -1900,7 +1998,7 @@ def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
         render_explosive_cockpit_summary(summary, tier_counts)
         render_explosive_candidates_dashboard(rows)
         if summary["explosive"] == 0:
-            st.warning("Sin candidatos explosivos evaluables todavía: faltan señales reales suficientes de mercado.")
+            st.warning("Ningún candidato alcanza todavía el umbral explosivo del score (mínimo 55 puntos con al menos 3 señales fuertes y sin datos críticos ausentes). Las empresas con datos parciales aparecen como vigilancia (WATCH_ONLY).")
         with st.expander("Lectura rápida de metodología", expanded=False):
             st.write("- Busca Breakout Stocks, Multibaggers, Meme Stocks, Short Squeeze, Penny Stocks y Micro-Caps con datos reales de mercado.")
             st.write("- Exige capitalización, precio, volumen relativo, float, short interest, momentum y breakout/catalizador; no usa rentabilidad fundamental como sustituto.")
@@ -1939,10 +2037,35 @@ def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
     return mode, rows
 
 
+def format_percent_fraction(value, signed: bool = True) -> str:
+    number = numeric_value(value)
+    if number is None:
+        return "N/D"
+    return (f"{number * 100:+.1f} %" if signed else f"{number * 100:.1f} %").replace(".", ",")
+
+
+def unicorn_growth_summary(row: dict) -> str:
+    """Real figures already computed by v2.38G/AK: never an estimate, never a forecast."""
+    parts = []
+    if numeric_value(row.get("revenue_yoy_growth")) is not None:
+        parts.append(f"Ingresos {format_percent_fraction(row.get('revenue_yoy_growth'))}")
+    if numeric_value(row.get("net_income_yoy_growth")) is not None:
+        parts.append(f"Beneficio {format_percent_fraction(row.get('net_income_yoy_growth'))}")
+    if numeric_value(row.get("net_margin")) is not None:
+        parts.append(f"Margen neto {format_percent_fraction(row.get('net_margin'), signed=False)}")
+    return " · ".join(parts) if parts else "Sin cifras de crecimiento en la matriz local"
+
+
+def unicorn_revenue_growth_desc_key(row: dict) -> float:
+    growth = numeric_value(row.get("revenue_yoy_growth"))
+    return -growth if growth is not None else float("inf")
+
+
 def unicorn_internal_rank_key(row: dict) -> tuple:
+    """Evidence quality first; ties (most unicorns share the same grade) are broken by real revenue growth, not by name."""
     grade, _, _ = unicorn_evidence_grade(row)
     grade_order = {"Muy respaldado": 0, "Respaldado": 1, "Parcial": 2, "Requiere revision": 3}
-    return (grade_order.get(grade, 9), -unicorn_probability(row), row.get("company_name", ""))
+    return (grade_order.get(grade, 9), -unicorn_probability(row), unicorn_revenue_growth_desc_key(row), row.get("company_name", ""))
 
 
 def unicorn_display_score(row: dict) -> tuple[str, str]:
@@ -1956,40 +2079,50 @@ def unicorn_radar_values(row: dict) -> dict[str, int]:
     return {
         "Crecimiento": 100 if "revenue_growth" in reason or "fundamental_momentum_flag_true" in reason else 70,
         "Margen": 100 if "margin_expansion" in reason else 65,
-        "Caja": 100 if "positive_free_cash_flow" in reason else 70 if row.get("country") == "Austria" else 55,
+        "Caja": 100 if "positive_free_cash_flow" in reason else 70 if is_austria(row.get("country")) else 55,
         "Cobertura": 95 if row.get("overall_coverage_status") == "GROWTH_READY" else 72,
         "Evidencia": unicorn_probability(row),
     }
 
 
-def load_unicorn_notes() -> dict[str, str]:
-    if not UNICORN_NOTES_PATH.exists():
+def load_json_dict(path: Path) -> dict:
+    """Read a user JSON file. A damaged file is set aside (`.corrupt-<timestamp>`), never silently overwritten later."""
+    if not path.exists():
         return {}
     try:
-        data = json.loads(UNICORN_NOTES_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except OSError:
+        return {}
+    except json.JSONDecodeError:
+        try:
+            path.replace(path.with_name(f"{path.name}.corrupt-{datetime.now():%Y%m%d%H%M%S}"))
+        except OSError:
+            pass
         return {}
     return data if isinstance(data, dict) else {}
+
+
+def atomic_write_json(path: Path, data: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
+    tmp.replace(path)
+
+
+def load_unicorn_notes() -> dict[str, str]:
+    return load_json_dict(UNICORN_NOTES_PATH)
 
 
 def save_unicorn_notes(notes: dict[str, str]) -> None:
-    UNICORN_NOTES_PATH.parent.mkdir(parents=True, exist_ok=True)
-    UNICORN_NOTES_PATH.write_text(json.dumps(notes, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
+    atomic_write_json(UNICORN_NOTES_PATH, notes)
 
 
 def load_unicorn_review_history() -> dict[str, dict]:
-    if not UNICORN_REVIEW_HISTORY_PATH.exists():
-        return {}
-    try:
-        data = json.loads(UNICORN_REVIEW_HISTORY_PATH.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return {}
-    return data if isinstance(data, dict) else {}
+    return load_json_dict(UNICORN_REVIEW_HISTORY_PATH)
 
 
 def save_unicorn_review_history(history: dict[str, dict]) -> None:
-    UNICORN_REVIEW_HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
-    UNICORN_REVIEW_HISTORY_PATH.write_text(json.dumps(history, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
+    atomic_write_json(UNICORN_REVIEW_HISTORY_PATH, history)
 
 
 def unicorn_review_entry(history: dict[str, dict], asset_id: str) -> dict:
@@ -2123,7 +2256,7 @@ def analytical_unicorn_takeaways(row: dict) -> list[str]:
     ]
     if "positive_free_cash_flow" in reason:
         takeaways.append("La lectura es mas robusta que un simple crecimiento de ventas: incorpora caja libre positiva, por lo que la expansion no aparece desligada de generacion de efectivo.")
-    if "no_free_cash_flow_data_available_for_austria" in reason or country == "Austria":
+    if "no_free_cash_flow_data_available_for_austria" in reason or is_austria(country):
         takeaways.append("El caso usa el contrato especifico de Austria: crecimiento positivo, aceleracion y expansion de margen, sin inventar FCF donde el dataset no lo contiene.")
     if "cross_referenced_from_real_us_entity" in reason:
         takeaways.append("La ficha exige especial cuidado operativo: existe una referencia cruzada con la entidad estadounidense real equivalente, asi que conviene revisar que ticker, mercado y entidad legal coincidan antes de cualquier analisis externo.")
@@ -2144,7 +2277,7 @@ def analytical_unicorn_exit_triggers(row: dict) -> list[str]:
         "Crecimiento de ingresos deja de ser positivo en el proximo recálculo local.",
         "El margen deja de expandirse frente al periodo comparable.",
     ]
-    if country == "Austria" or "no_free_cash_flow_data_available_for_austria" in row.get("unicorn_reason", ""):
+    if is_austria(country) or "no_free_cash_flow_data_available_for_austria" in row.get("unicorn_reason", ""):
         triggers.append("La aceleracion de crecimiento deja de cumplirse en el contrato especifico de Austria.")
     else:
         triggers.append("El flujo de caja libre deja de ser positivo en los datos fundamentales locales.")
@@ -2388,6 +2521,8 @@ def render_unicorn_full_catalog(rows: list[dict], notes: dict[str, str], review_
             "Bolsa": selected_row.get("exchange", ""),
             "Estado cobertura": GLOBAL_STATUS_LABELS.get(selected_row.get("overall_coverage_status", ""), selected_row.get("overall_coverage_status", "")),
             "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(selected_row.get("eligibility_tier", ""), selected_row.get("eligibility_tier", "")),
+            "Sector (SIC)": selected_row.get("sic_description") or "N/D",
+            "Cifras reales": unicorn_growth_summary(selected_row),
         }
         st.dataframe(pd.DataFrame([{"Campo": key, "Valor": value} for key, value in identity.items()]), use_container_width=True, hide_index=True)
 
@@ -2516,7 +2651,7 @@ def unicorn_visual_event_feed(row: dict, review_history: dict[str, dict]) -> pd.
 
 def render_unicorn_formula_panel(row: dict) -> None:
     country = row.get("country") or "N/D"
-    cash_leg = "FCF positivo" if country != "Austria" else "aceleracion de crecimiento (contrato Austria)"
+    cash_leg = "FCF positivo" if not is_austria(country) else "aceleracion de crecimiento (contrato Austria)"
     st.code(
         "\n".join([
             "Etiqueta unicornio = crecimiento positivo + margen en expansion + caja/equivalente",
@@ -2654,6 +2789,7 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
                         <span style="font-size:24px;font-weight:900;color:#0f766e;">{unicorn_probability(row)}%</span>
                         <span style="font-size:12px;color:#334155;">{escape(grade)}</span>
                       </div>
+                      <div style="font-size:12px;color:#334155;margin-top:6px;">{escape(unicorn_growth_summary(row))}</div>
                       <div class="sf-confidence-track"><div class="sf-confidence-fill"></div></div>
                     </div>
                     """,
@@ -2682,7 +2818,7 @@ def render_unicorn_visual_analytics(rows: list[dict], notes: dict[str, str], rev
     hero = st.columns(4)
     hero[0].metric("Posibilidad", f"{unicorn_probability(selected)}%")
     hero[1].metric("Evidencia", grade)
-    hero[2].metric("Estado", "Se mantiene")
+    hero[2].metric("Crecimiento de ingresos", format_percent_fraction(selected.get("revenue_yoy_growth")), help=unicorn_growth_summary(selected))
     hero[3].metric("Revision", review_label)
     st.info(grade_reason)
     render_unicorn_company_motion(selected, grade, review_label)
@@ -2736,6 +2872,8 @@ def unicorn_sort_key(row: dict, sort_mode: str) -> tuple:
         return (row.get("country", ""), row.get("company_name", ""))
     if sort_mode == "Bolsa":
         return (row.get("exchange", ""), row.get("company_name", ""))
+    if sort_mode == "Crecimiento de ingresos":
+        return (unicorn_revenue_growth_desc_key(row), row.get("company_name", ""))
     if sort_mode == "Crecimiento completo primero":
         return (row.get("overall_coverage_status") != "GROWTH_READY", row.get("company_name", ""))
     if sort_mode == "Elegibilidad":
@@ -3055,7 +3193,7 @@ def render_global_unicorns(_data):
     if not matrix.available:
         st.info(matrix.error)
         return
-    unicorn_rows = [row for row in matrix.rows if row.get("unicorn_status") == "EVALUATED_UNICORN"]
+    unicorn_rows = [row | {"country": normalized_country(row.get("country"))} for row in matrix.rows if row.get("unicorn_status") == "EVALUATED_UNICORN"]
     evaluated_rows = [row for row in matrix.rows if row.get("unicorn_status") in {"EVALUATED_UNICORN", "EVALUATED_NOT_UNICORN", "INSUFFICIENT_DATA"}]
     counts = Counter(row.get("overall_coverage_status", "") for row in unicorn_rows)
     metric_cols = st.columns(5)
@@ -3065,7 +3203,7 @@ def render_global_unicorns(_data):
     metric_cols[2].metric("Con crecimiento completo", f"{counts.get('GROWTH_READY', 0):,}")
     metric_cols[3].metric("Explosivos evaluables", f"{semantic_counts['explosive']:,}")
     metric_cols[4].metric("Censo total", f"{len(matrix.rows):,}")
-    st.info("Cambio v2.44Z: los 161 casos heredados pasan a leerse como `Calidad fundamental / momentum fundamental`, no como acciones explosivas. La categoría `Unicornio explosivo` queda separada y exige señales de mercado que hoy no están en la matriz local.")
+    st.info(f"Cambio v2.44Z: los {len(unicorn_rows):,} casos heredados (una fila por empresa real, sin cotizaciones duplicadas) pasan a leerse como `Calidad fundamental / momentum fundamental`, no como acciones explosivas. La categoría `Unicornio explosivo` queda separada y exige señales de mercado que hoy no están en la matriz local.")
     st.caption("El porcentaje actual mide confianza de clasificación fundamental; no es probabilidad de subida, short squeeze, multibagger, precio objetivo ni consejo de compra.")
     st.caption(f"Última actualización: {matrix.generated_at} (UTC) · {len(unicorn_rows):,} casos de calidad fundamental · sin conexión de red")
     discovery_mode, semantic_rows = render_unicorn_semantic_split(unicorn_rows)
@@ -3122,13 +3260,13 @@ def render_global_unicorns(_data):
     elif quick_filter == "Crecimiento completo":
         filtered = [row for row in filtered if row.get("overall_coverage_status") == "GROWTH_READY"]
     elif quick_filter == "Revisión requerida":
-        filtered = [row for row in filtered if row.get("eligibility_tier") == "REVIEW_REQUIRED"]
+        filtered = [row for row in filtered if unicorn_needs_financial_review(row)]
     elif quick_filter == "USA":
-        filtered = [row for row in filtered if row.get("country") == "USA"]
+        filtered = [row for row in filtered if normalized_country(row.get("country")) == "USA"]
     elif quick_filter == "Europa":
-        filtered = [row for row in filtered if row.get("country") and row.get("country") != "USA"]
+        filtered = [row for row in filtered if is_european_country(row.get("country"))]
     controls = st.columns([1, 1, 1])
-    sort_options = ["Ranking interno de unicornios", "Empresa", "País", "Bolsa", "Crecimiento completo primero", "Elegibilidad"]
+    sort_options = ["Ranking interno de unicornios", "Crecimiento de ingresos", "Empresa", "País", "Bolsa", "Crecimiento completo primero", "Elegibilidad"]
     if discovery_mode == "Unicornio explosivo":
         sort_options = ["Score explosivo v1"] + sort_options
     sort_mode = controls[0].selectbox("Ordenar por", sort_options, key="global_unicorn_sort")
@@ -3145,7 +3283,7 @@ def render_global_unicorns(_data):
     review_cols = st.columns(4)
     for col, status in zip(review_cols, ["PENDING", "REVIEWED", "FOLLOW", "DISCARDED"]):
         col.metric(UNICORN_REVIEW_STATUS_LABELS[status], f"{review_counts.get(status, 0):,}")
-    st.caption("Ranking interno y semáforo ordenan calidad de evidencia local, no rentabilidad esperada ni recomendación financiera.")
+    st.caption("Ranking interno y semáforo ordenan calidad de evidencia local y, a igualdad, el crecimiento real de ingresos ya calculado (dato histórico, no previsión); no es rentabilidad esperada ni recomendación financiera.")
     if discovery_mode == "Unicornio explosivo":
         score_counts = Counter(row.get("tier", "NO_DATA") for row in filtered)
         st.caption("Score explosivo v1 usa solo señales de mercado del overlay; no es una recomendación financiera ni predice rentabilidad.")
@@ -3264,6 +3402,7 @@ def render_global_unicorns(_data):
                 k2.metric("Tier", selected_row.get("tier", grade_label))
                 k3.metric("Revisión", UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, selected_row["asset_id"])])
                 st.info(grade_reason)
+                st.write(f"**Cifras reales:** {unicorn_growth_summary(selected_row)}")
                 if "explosive_score_0_100" in selected_row:
                     st.write("**Drivers explosivos v1**")
                     st.write(" · ".join(selected_row.get("drivers", [])))
@@ -3296,7 +3435,7 @@ def render_global_unicorns(_data):
                         key="clean_unicorn_ai_prompt_download",
                     )
                 st.markdown("**Notas personales**")
-                note_value = st.text_area("Nota local", value=notes.get(selected_row["asset_id"], ""), key="clean_unicorn_note", height=120)
+                note_value = st.text_area("Nota local", value=notes.get(selected_row["asset_id"], ""), key=f"clean_unicorn_note_{selected_row['asset_id']}", height=120)
                 st.markdown("**Historial de revisión**")
                 current_status = unicorn_review_status(review_history, selected_row["asset_id"])
                 status_choice = st.selectbox(
@@ -3304,9 +3443,9 @@ def render_global_unicorns(_data):
                     list(UNICORN_REVIEW_STATUS_LABELS),
                     index=list(UNICORN_REVIEW_STATUS_LABELS).index(current_status),
                     format_func=lambda value: UNICORN_REVIEW_STATUS_LABELS[value],
-                    key="clean_unicorn_review_status",
+                    key=f"clean_unicorn_review_status_{selected_row['asset_id']}",
                 )
-                review_note = st.text_input("Comentario de revisión", value=unicorn_review_entry(review_history, selected_row["asset_id"]).get("note", ""), key="clean_unicorn_review_note")
+                review_note = st.text_input("Comentario de revisión", value=unicorn_review_entry(review_history, selected_row["asset_id"]).get("note", ""), key=f"clean_unicorn_review_note_{selected_row['asset_id']}")
                 if SAFE_DEMO_MODE:
                     st.caption(blocked_message("Guardar notas e historial"))
                 elif st.button("Guardar nota e historial", key="clean_unicorn_note_save"):
@@ -3342,6 +3481,7 @@ def render_global_unicorns(_data):
                       <div style="display:inline-block;margin-bottom:8px;padding:4px 8px;border-radius:8px;background:#f8fafc;color:#334155;border-left:5px solid {escape(grade_color)};">{escape(grade_label)}</div>
                       <div style="margin-bottom:8px;">{badges}</div>
                       <div style="color:#334155;font-size:13px;">{escape(status_label)}</div>
+                      <div style="color:#334155;font-size:12px;margin-top:4px;">{escape(unicorn_growth_summary(row))}</div>
                     </div>
                     """,
                     unsafe_allow_html=True,
@@ -3420,6 +3560,10 @@ def render_global_unicorns(_data):
         "Elegibilidad": GLOBAL_ELIGIBILITY_LABELS.get(row.get("eligibility_tier", ""), row.get("eligibility_tier", "")),
         "Posibilidad unicornio": f"{unicorn_probability(row)}%",
         "Calidad evidencia": unicorn_evidence_grade(row)[0],
+        "Crecimiento ingresos": format_percent_fraction(row.get("revenue_yoy_growth")),
+        "Crecimiento beneficio": format_percent_fraction(row.get("net_income_yoy_growth")),
+        "Margen neto": format_percent_fraction(row.get("net_margin"), signed=False),
+        "Sector (SIC)": row.get("sic_description", ""),
         "Estado revisión": UNICORN_REVIEW_STATUS_LABELS[unicorn_review_status(review_history, row["asset_id"])],
         "Última revisión": unicorn_review_entry(review_history, row["asset_id"]).get("reviewed_at", ""),
         "Nota personal": notes.get(row["asset_id"], ""),
@@ -3495,6 +3639,7 @@ def render_global_unicorns(_data):
         st.caption("Esta posibilidad es una lectura de evidencia local del flag unicornio: no significa comprar, vender o mantener, no es precio objetivo y no constituye asesoramiento financiero.")
         grade_label, _, grade_reason = unicorn_evidence_grade(selected_row)
         st.info(f"Semáforo de calidad de evidencia: {grade_label}. {grade_reason}")
+        st.write(f"**Cifras reales:** {unicorn_growth_summary(selected_row)}")
         st.markdown("**Criterios cumplidos**")
         st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
         st.markdown("**Radar de evidencia**")
@@ -3504,7 +3649,7 @@ def render_global_unicorns(_data):
         for item in explain_unicorn_reason(selected_row.get("unicorn_reason", ""), selected_row.get("country", "")):
             st.write(f"- {item}")
         st.markdown("**Notas personales**")
-        detail_note = st.text_area("Nota local de investigación", value=notes.get(selected_row["asset_id"], ""), key="global_unicorn_detail_note", height=110)
+        detail_note = st.text_area("Nota local de investigación", value=notes.get(selected_row["asset_id"], ""), key=f"global_unicorn_detail_note_{selected_row['asset_id']}", height=110)
         st.markdown("**Historial de revisión**")
         current_status = unicorn_review_status(review_history, selected_row["asset_id"])
         detail_status = st.selectbox(
@@ -3512,9 +3657,9 @@ def render_global_unicorns(_data):
             list(UNICORN_REVIEW_STATUS_LABELS),
             index=list(UNICORN_REVIEW_STATUS_LABELS).index(current_status),
             format_func=lambda value: UNICORN_REVIEW_STATUS_LABELS[value],
-            key="global_unicorn_detail_review_status",
+            key=f"global_unicorn_detail_review_status_{selected_row['asset_id']}",
         )
-        detail_review_note = st.text_input("Comentario de revisión", value=unicorn_review_entry(review_history, selected_row["asset_id"]).get("note", ""), key="global_unicorn_detail_review_note")
+        detail_review_note = st.text_input("Comentario de revisión", value=unicorn_review_entry(review_history, selected_row["asset_id"]).get("note", ""), key=f"global_unicorn_detail_review_note_{selected_row['asset_id']}")
         if SAFE_DEMO_MODE:
             st.caption(blocked_message("Guardar notas e historial"))
         elif st.button("Guardar nota e historial de esta empresa", key="global_unicorn_detail_note_save"):

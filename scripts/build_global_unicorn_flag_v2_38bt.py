@@ -46,7 +46,7 @@ import argparse
 import csv
 import hashlib
 import json
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -59,6 +59,11 @@ US_CBOE_SECONDARY_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38
 US_JOBY_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38ba_us_joby_aviation_fundamentals/us_joby_aviation_fundamental_features_v2_38ba.csv"
 EUROPE_AUSTRIA_GROWTH_INPUT = ROOT / "outputs/full_universe_source_acquisition/v2_38ak_europe_growth_features/europe_growth_features_v2_38ak.csv"
 
+# Already-downloaded SEC submissions (zero network): they carry each registrant's SIC code and its real
+# US ticker/exchange. The original 555 and Joby live in the v2.38E cache, the Cboe-secondary US rows in v2.38BJ.
+US_ORIGINAL_CACHE = ROOT / "outputs/full_universe_source_acquisition/v2_38e_us_sec_enrichment_expansion/sec_raw_cache_v2_38e"
+US_CBOE_SECONDARY_CACHE = ROOT / "outputs/full_universe_source_acquisition/v2_38bj_us_cboe_secondary_sec_enrichment/sec_raw_cache_v2_38bj"
+
 # Same real cross-reference v2.38AL already applies: this Xetra/Cboe
 # listing (8TQ) is the same real company as the original US asset, its
 # ISIN's KY prefix reflecting only a 2021 SPAC-era shell, not its current
@@ -66,7 +71,19 @@ EUROPE_AUSTRIA_GROWTH_INPUT = ROOT / "outputs/full_universe_source_acquisition/v
 JOBY_CAYMAN_ASSET_ID = "U37518"
 JOBY_REAL_US_ASSET_ID = "U04441"
 
-FIELDS = ["asset_id", "ticker", "company_name", "country", "source", "unicorn_status", "unicorn_reason", "phase"]
+FIELDS = [
+    "asset_id", "ticker", "company_name", "country", "cik", "source", "unicorn_status", "unicorn_reason",
+    "revenue_yoy_growth", "net_income_yoy_growth", "net_margin", "sic", "sic_description", "is_financial_sic", "us_ticker", "phase",
+]
+
+# SIC major groups 60-64: depository institutions, non-depository credit, brokers, insurance carriers and agents.
+FINANCIAL_SIC_RANGE = (6000, 6499)
+US_LISTING_EXCHANGES = {"nasdaq", "nyse", "nyse american", "nyse arca"}
+
+# When the same SEC registrant (same CIK) is listed more than once -- e.g. AMD on NASDAQ and "AMDd" on
+# Cboe Europe, or two share classes -- only one row counts as the company. Lower number = preferred
+# primary listing (the original NASDAQ population has real price history).
+SOURCE_PRIORITY = {"us_sec_v2_38g": 0, "us_cboe_secondary_sec_v2_38bk": 1, "us_joby_v2_38ba": 2, "europe_austria_v2_38ak": 3}
 
 TRUE_STRINGS = {"true", "1", "yes"}
 
@@ -126,15 +143,65 @@ def classify_europe_austria(row: dict[str, str]) -> tuple[str, str]:
     return "EVALUATED_NOT_UNICORN", "europe_austria_criteria_not_met:" + ",".join(missing)
 
 
-def build_rows(source_rows: list[dict[str, str]], source: str, country: str, classify) -> list[dict[str, Any]]:
+def read_submission(cache_dir: Path | None, cik: str) -> dict[str, Any]:
+    if cache_dir is None or not cik.isdigit():
+        return {}
+    try:
+        return json.loads((cache_dir / "submissions" / f"CIK{int(cik):010d}.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def submission_facts(submission: dict[str, Any]) -> dict[str, str]:
+    sic = str(submission.get("sic") or "").strip()
+    is_financial = ""
+    if sic.isdigit():
+        is_financial = "true" if FINANCIAL_SIC_RANGE[0] <= int(sic) <= FINANCIAL_SIC_RANGE[1] else "false"
+    tickers = submission.get("tickers") or []
+    exchanges = submission.get("exchanges") or []
+    us_ticker = ""
+    for index, ticker in enumerate(tickers):
+        exchange = str(exchanges[index]).strip().casefold() if index < len(exchanges) else ""
+        if exchange in US_LISTING_EXCHANGES:
+            us_ticker = str(ticker)
+            break
+    return {"sic": sic, "sic_description": str(submission.get("sicDescription") or ""), "is_financial_sic": is_financial, "us_ticker": us_ticker}
+
+
+def build_rows(source_rows: list[dict[str, str]], source: str, country: str, classify, cache_dir: Path | None = None, net_income_field: str = "net_income_yoy_growth") -> list[dict[str, Any]]:
     rows = []
     for row in source_rows:
         status, reason = classify(row)
+        cik = str(row.get("cik") or "").strip().lstrip("0")
         rows.append({
             "asset_id": row.get("asset_id", ""), "ticker": row.get("ticker", ""), "company_name": row.get("company_name", ""),
-            "country": country, "source": source, "unicorn_status": status, "unicorn_reason": reason, "phase": PHASE,
+            "country": country, "cik": cik, "source": source,
+            "unicorn_status": status, "unicorn_reason": reason,
+            "revenue_yoy_growth": row.get("revenue_yoy_growth", ""), "net_income_yoy_growth": row.get(net_income_field, ""),
+            "net_margin": row.get("net_margin", ""),
+            **submission_facts(read_submission(cache_dir, cik)),
+            "phase": PHASE,
         })
     return rows
+
+
+def mark_duplicate_listings(rows: dict[str, dict[str, Any]]) -> int:
+    """Keep one row per SEC registrant; every other listing becomes DUPLICATE_LISTING (never a second unicorn)."""
+    groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows.values():
+        if row.get("cik"):
+            groups[row["cik"]].append(row)
+    marked = 0
+    for cik, members in groups.items():
+        if len(members) < 2:
+            continue
+        members.sort(key=lambda r: (SOURCE_PRIORITY.get(r["source"], 9), r["asset_id"]))
+        primary = members[0]
+        for row in members[1:]:
+            row["unicorn_status"] = "DUPLICATE_LISTING"
+            row["unicorn_reason"] = f"duplicate_listing_of_{primary['asset_id']}_same_sec_cik_{cik}"
+            marked += 1
+    return marked
 
 
 def write_csv(path: Path, rows: list[dict[str, Any]], fields: list[str]) -> None:
@@ -165,24 +232,26 @@ def sha256(path: Path) -> str:
 
 def build(
     us_original_path: Path, us_cboe_secondary_path: Path, us_joby_path: Path, europe_austria_path: Path, output_dir: Path,
+    us_original_cache: Path | None = None, us_cboe_secondary_cache: Path | None = None,
 ) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     rows: dict[str, dict[str, Any]] = {}
-    for entry in build_rows(read_csv(us_original_path), "us_sec_v2_38g", "US", classify_us):
+    for entry in build_rows(read_csv(us_original_path), "us_sec_v2_38g", "US", classify_us, us_original_cache):
         rows[entry["asset_id"]] = entry
-    for entry in build_rows(read_csv(us_cboe_secondary_path), "us_cboe_secondary_sec_v2_38bk", "US", classify_us):
+    for entry in build_rows(read_csv(us_cboe_secondary_path), "us_cboe_secondary_sec_v2_38bk", "US", classify_us, us_cboe_secondary_cache):
         rows[entry["asset_id"]] = entry
-    for entry in build_rows(read_csv(us_joby_path), "us_joby_v2_38ba", "US", classify_us):
+    for entry in build_rows(read_csv(us_joby_path), "us_joby_v2_38ba", "US", classify_us, us_original_cache):
         rows[entry["asset_id"]] = entry
         if entry["asset_id"] == JOBY_REAL_US_ASSET_ID:
             cayman_entry = dict(entry)
             cayman_entry["asset_id"] = JOBY_CAYMAN_ASSET_ID
             cayman_entry["unicorn_reason"] = entry["unicorn_reason"] + ":cross_referenced_from_real_us_entity_u04441_same_real_company_per_v2_38az"
             rows[JOBY_CAYMAN_ASSET_ID] = cayman_entry
-    for entry in build_rows(read_csv(europe_austria_path), "europe_austria_v2_38ak", "AT", classify_europe_austria):
+    for entry in build_rows(read_csv(europe_austria_path), "europe_austria_v2_38ak", "AT", classify_europe_austria, None, "net_profit_yoy_growth"):
         rows[entry["asset_id"]] = entry
 
+    duplicates_marked = mark_duplicate_listings(rows)
     ordered_rows = list(rows.values())
     write_csv(output_dir / "global_unicorn_flag_v2_38bt.csv", ordered_rows, FIELDS)
 
@@ -193,6 +262,8 @@ def build(
         "phase": PHASE,
         "status": "COMPLETED_GLOBAL_UNICORN_FLAG_DEFINED_NOT_SCORED",
         "companies_with_growth_features_evaluated": len(ordered_rows),
+        "duplicate_listings_marked": duplicates_marked,
+        "financial_sic_unicorns": sum(1 for r in ordered_rows if r["unicorn_status"] == "EVALUATED_UNICORN" and r.get("is_financial_sic") == "true"),
         "unicorn_status_counts": dict(sorted(status_counts.items())),
         "unicorn_examples": sorted(unicorn_examples),
         "note": "Flags companies whose ALREADY-COMPUTED real growth features (never re-derived or estimated here) meet a real, pre-existing multi-signal combination -- v2.38G's own fundamental_momentum_flag for US-origin companies (real revenue growth>0 AND real margin expansion AND real positive free cash flow), and the closest same-spirit combination for Austria (v2.38AK, no free-cash-flow data available there) using only its real fields (real revenue growth>0 AND real growth acceleration AND real margin expansion). No new weighted score, no arbitrary percentage threshold invented -- a plain AND over pre-existing real booleans. Companies with no growth-feature row in any of the four source files simply do not appear here; the UI defaults them to blank, never to a silent 'not a unicorn'.",
@@ -212,7 +283,10 @@ def main() -> int:
     parser.add_argument("--europe-austria-input", type=Path, default=EUROPE_AUSTRIA_GROWTH_INPUT)
     parser.add_argument("--output-dir", type=Path, default=OUT)
     args = parser.parse_args()
-    report = build(args.us_original_input, args.us_cboe_secondary_input, args.us_joby_input, args.europe_austria_input, args.output_dir)
+    report = build(
+        args.us_original_input, args.us_cboe_secondary_input, args.us_joby_input, args.europe_austria_input, args.output_dir,
+        US_ORIGINAL_CACHE, US_CBOE_SECONDARY_CACHE,
+    )
     print(json.dumps({k: report[k] for k in ("phase", "status", "companies_with_growth_features_evaluated", "unicorn_status_counts")}, ensure_ascii=False, sort_keys=True))
     return 0
 

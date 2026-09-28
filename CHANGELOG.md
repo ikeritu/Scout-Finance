@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.46A — revisión y arreglo de bugs del apartado de Unicornios (2026-09-28)
+
+10 bugs reproducidos con datos reales o en vivo y corregidos con test de regresión: notas que se copiaban de una empresa a otra (claves de widget fijas), 8 empresas duplicadas por doble cotización (ahora 153 unicornios únicos por CIK), clasificación «explosivo» contradictoria con el score (y etiquetas «Short squeeze»/«Multibagger» erróneas), ranking alfabético (ahora desempata por crecimiento real de ingresos y muestra las cifras), filtros `US`/`USA`, nombres de tier inexistentes, entidades financieras detectadas por SIC de la SEC (12), ticker estadounidense real para los unicornios solo-Cboe, velas OHLCV guardadas al refrescar con yfinance, y varios fallos menores (texto «nan», caché de mercado sobrescrito, escrituras atómicas). Sin red ni datos del usuario tocados. Decisión pendiente: el ranking global v2.38BV sigue contando dos veces las empresas con doble cotización. Detalle en `UNICORN_SECTION_BUG_FIXES_v2_46a.md`.
+
 ## v2.45S — Streamlined Explosive Unicorn Cockpit UX (2026-09-24)
 
 Compacta la entrada visual de `Unicornio explosivo`: el motor, proveedores, Polygon, fallback CSV y diagnósticos avanzados quedan ocultos por defecto bajo `Mostrar motor y diagnóstico técnico`, mientras el usuario llega antes al cockpit y dashboard de candidatos. Añade una cabecera visual con tiers high/medium/low/watch/no data y mueve la explicación metodológica larga a `Lectura rápida de metodología`. No cambia score, ranking global, proveedor activo, metodología, pesos, datos fundamentales, cache, red, broker, órdenes ni recomendaciones financieras. QA actualizada en `tests/qa_unicorns_primary_screen_v2_44b.py`.

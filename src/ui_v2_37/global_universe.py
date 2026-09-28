@@ -51,6 +51,8 @@ UNICORN_SCRIPT_REL = "scripts/build_global_unicorn_flag_v2_38bt.py"
 REBUILD_TIMEOUT_SECONDS = 600
 ELIGIBILITY_FIELDS_DEFAULT = {"eligibility_tier": "", "eligibility_reason": "", "is_financial_institution_heuristic": ""}
 UNICORN_FIELDS_DEFAULT = {"unicorn_status": "", "unicorn_reason": "", "unicorn_source": "", "unicorn_phase": ""}
+# Real figures and SEC facts carried by v2.38BT: shown next to the label so a unicorn is never just a percentage.
+UNICORN_EXTRA_FIELDS = ("revenue_yoy_growth", "net_income_yoy_growth", "net_margin", "sic", "sic_description", "is_financial_sic", "us_ticker")
 
 
 @dataclass(frozen=True)
@@ -127,6 +129,7 @@ def load_global_matrix(root: Path) -> GlobalMatrixData:
         "unicorn_reason": unicorn_index.get(row["asset_id"], UNICORN_FIELDS_DEFAULT).get("unicorn_reason", ""),
         "unicorn_source": unicorn_index.get(row["asset_id"], UNICORN_FIELDS_DEFAULT).get("source", ""),
         "unicorn_phase": unicorn_index.get(row["asset_id"], UNICORN_FIELDS_DEFAULT).get("phase", ""),
+        **{field: unicorn_index.get(row["asset_id"], {}).get(field, "") for field in UNICORN_EXTRA_FIELDS},
     } for row in rows)
     generated_at = datetime.fromtimestamp(path.stat().st_mtime, tz=timezone.utc).isoformat(timespec="seconds")
     return GlobalMatrixData(True, merged_rows, generated_at)

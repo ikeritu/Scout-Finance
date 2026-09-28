@@ -1,5 +1,7 @@
 {
   "companies_with_growth_features_evaluated": 1110,
+  "duplicate_listings_marked": 45,
+  "financial_sic_unicorns": 12,
   "guardrails": {
     "network_used": false,
     "phase9c_authorized": false,
@@ -23,8 +25,9 @@
     "AudioEye, Inc. - Common Stock"
   ],
   "unicorn_status_counts": {
-    "EVALUATED_NOT_UNICORN": 690,
-    "EVALUATED_UNICORN": 161,
-    "INSUFFICIENT_DATA": 259
+    "DUPLICATE_LISTING": 45,
+    "EVALUATED_NOT_UNICORN": 658,
+    "EVALUATED_UNICORN": 153,
+    "INSUFFICIENT_DATA": 254
   }
 }
