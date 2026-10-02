@@ -2123,6 +2123,35 @@ def unicorn_population_medians(rows: list[dict]) -> dict[str, float]:
     return medians
 
 
+def unicorn_median_comparison_figure(row: dict, medians: dict) -> plotly_go.Figure | None:
+    """Grouped bars of the company's real figures against the filtered list's median (history, never a forecast)."""
+    fields = (("Ingresos", "revenue_yoy_growth"), ("Beneficio", "net_income_yoy_growth"), ("Margen neto", "net_margin"))
+    labels, company_values, median_values = [], [], []
+    for label, field in fields:
+        value = numeric_value(row.get(field))
+        median = medians.get(field)
+        if value is None or median is None:
+            continue
+        labels.append(label)
+        company_values.append(value * 100)
+        median_values.append(median * 100)
+    if not labels:
+        return None
+    fig = plotly_go.Figure()
+    fig.add_trace(plotly_go.Bar(name=row.get("company_name") or "Empresa", x=labels, y=company_values, marker_color="#0f766e"))
+    fig.add_trace(plotly_go.Bar(name="Mediana de la lista", x=labels, y=median_values, marker_color="#94a3b8"))
+    fig.update_layout(
+        barmode="group",
+        height=320,
+        margin={"l": 32, "r": 16, "t": 24, "b": 24},
+        yaxis_title="%",
+        legend_orientation="h",
+        legend_y=1.12,
+        legend_x=0,
+    )
+    return fig
+
+
 def render_unicorn_key_figures(row: dict) -> None:
     """Real, already-computed figures next to the median of the whole unicorn list (history, never a forecast)."""
     medians = st.session_state.get("unicorn_population_medians", {})
@@ -2132,6 +2161,9 @@ def render_unicorn_key_figures(row: dict) -> None:
         median = medians.get(field)
         delta = f"{(value - median) * 100:+.1f} pts vs mediana".replace(".", ",") if value is not None and median is not None else None
         col.metric(label, format_percent_fraction(value, signed), delta=delta, delta_color="off")
+    comparison_fig = unicorn_median_comparison_figure(row, medians)
+    if comparison_fig is not None:
+        st.plotly_chart(comparison_fig, use_container_width=True, key=f"unicorn_median_bars_{row['asset_id']}")
     if medians:
         st.caption(
             "Mediana de la lista: ingresos " + format_percent_fraction(medians.get("revenue_yoy_growth"))
@@ -2193,6 +2225,32 @@ def unicorn_radar_values(row: dict) -> dict[str, int]:
         "Cobertura": 95 if row.get("overall_coverage_status") == "GROWTH_READY" else 72,
         "Evidencia": unicorn_probability(row),
     }
+
+
+def unicorn_radar_figure(radar: dict[str, int]) -> plotly_go.Figure:
+    categories = list(radar.keys())
+    values = list(radar.values())
+    fig = plotly_go.Figure()
+    fig.add_trace(plotly_go.Scatterpolar(
+        r=values + values[:1],
+        theta=categories + categories[:1],
+        fill="toself",
+        fillcolor="rgba(15, 118, 110, 0.25)",
+        line={"color": "#0f766e", "width": 2},
+        name="Radar local",
+    ))
+    fig.update_layout(
+        polar={"radialaxis": {"visible": True, "range": [0, 100]}},
+        showlegend=False,
+        height=320,
+        margin={"l": 32, "r": 32, "t": 24, "b": 24},
+    )
+    return fig
+
+
+def render_unicorn_radar_chart(row: dict) -> None:
+    st.plotly_chart(unicorn_radar_figure(unicorn_radar_values(row)), use_container_width=True, key=f"unicorn_radar_{row['asset_id']}")
+    st.caption("Radar 0-100 de evidencia local ya calculada (crecimiento, margen, caja, cobertura, confianza de clasificación). No es una puntuación de rentabilidad ni un indicador técnico de trading.")
 
 
 def load_json_dict(path: Path) -> dict:
@@ -2824,6 +2882,8 @@ def render_unicorn_ficha(selected: dict, notes: dict[str, str], review_history: 
     with summary_tab:
         st.markdown("#### Cifras reales frente a la lista")
         render_unicorn_key_figures(selected)
+        st.markdown("#### Radar cuantitativo local")
+        render_unicorn_radar_chart(selected)
         st.markdown("#### Cómo se cumple el criterio")
         render_unicorn_formula_panel(selected)
 
