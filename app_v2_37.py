@@ -3247,6 +3247,23 @@ def render_global_universe(_data):
     )
 
 
+def simple_unicorn_mode_requested() -> bool:
+    """A shared link with ?modo=unicornios opens straight into the explosive-unicorn screen with the full
+    navigation hidden, for guests who only care about that view and don't know the rest of the app."""
+    return st.query_params.get("modo") == "unicornios"
+
+
+def render_simple_unicorn_onboarding() -> None:
+    st.info(
+        "**Qué estás viendo**: candidatos a «unicornio explosivo» — empresas pequeñas (micro-cap o penny "
+        "stock) con señales de mercado fuertes (subida de precio, volumen alto, poco flotante, posible short "
+        "squeeze). Es investigación histórica ya calculada, no un consejo de compra ni una predicción.\n\n"
+        "**Cómo usarlo**: usa los filtros de arriba para acotar la lista, haz clic en una tarjeta para abrir "
+        "su ficha completa, y fíjate en el semáforo de confianza — verde (\"Muy respaldado\") significa que "
+        "hay más evidencia local detrás de la clasificación, no que vaya a subir más."
+    )
+
+
 def render_global_unicorns(_data):
     heading(st, "Unicornios", "Centro de descubrimiento separado: calidad fundamental ya calculada frente a candidatos explosivos tipo breakout, multibagger, squeeze, penny stock o micro-cap.")
     render_safe_demo_banner(st, SAFE_DEMO_MODE)
@@ -4235,19 +4252,30 @@ def render_help(data):
 
 def main():
     data = product_snapshot()
+    simple_mode = simple_unicorn_mode_requested()
     if "screen" not in st.session_state: st.session_state.screen = "home"
     if "pending_screen" in st.session_state: st.session_state.screen = st.session_state.pop("pending_screen")
+    if simple_mode:
+        st.session_state.screen = "global_unicorns"
+        st.session_state.setdefault("global_unicorn_semantic_mode", "Unicornio explosivo")
     with st.sidebar:
         st.markdown("## Scout Finance")
         st.caption("Producto local · v2.37")
         if SAFE_DEMO_MODE:
             st.success(SAFE_DEMO_LABEL)
-        selected = st.radio("Navegación", list(SCREENS), format_func=SCREENS.get, index=list(SCREENS).index(st.session_state.screen))
-        st.session_state.screen = selected
+        if simple_mode:
+            st.caption("Vista simplificada: candidatos a unicornio explosivo.")
+        else:
+            selected = st.radio("Navegación", list(SCREENS), format_func=SCREENS.get, index=list(SCREENS).index(st.session_state.screen))
+            st.session_state.screen = selected
         st.divider(); st.caption(f"Datos: {data.mode.value}"); st.caption("Fase 7: INSUFFICIENT_EVIDENCE"); st.caption("Sin conexión a broker")
     if data.mode in {DataMode.BLOCKED_MISSING_DATA, DataMode.INCOMPATIBLE_VERSION}:
         render_home(data); st.error("La aplicación queda bloqueada: " + "; ".join(data.errors)); return
-    {"home": render_home, "global_unicorns": render_global_unicorns, "global_universe": render_global_universe, "global_ranking": render_global_ranking, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "final_guide": render_final_guide, "help": render_help}[selected](data)
+    if simple_mode:
+        render_simple_unicorn_onboarding()
+        render_global_unicorns(data)
+        return
+    {"home": render_home, "global_unicorns": render_global_unicorns, "global_universe": render_global_universe, "global_ranking": render_global_ranking, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "final_guide": render_final_guide, "help": render_help}[st.session_state.screen](data)
 
 
 if __name__ == "__main__":
