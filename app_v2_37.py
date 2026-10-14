@@ -1895,6 +1895,64 @@ def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -
     st.markdown(hero_html, unsafe_allow_html=True)
 
 
+def explosive_candidate_id(row: dict) -> str:
+    return str(row.get("asset_id") or row.get("ticker") or row.get("company_name") or "x")
+
+
+def render_explosive_candidate_fullpage(row: dict) -> None:
+    if st.button("← Volver al dashboard", key="explosive_fullpage_back"):
+        st.session_state.pop("explosive_fullpage_asset_id", None)
+        st.rerun()
+    score = int(row.get("explosive_score_0_100", 0))
+    tier = row.get("tier", "NO_DATA")
+    color = "#0f766e" if tier.endswith("HIGH") else "#2563eb" if tier.endswith("MEDIUM") else "#d97706" if tier.endswith("LOW") else "#64748b"
+    st.markdown(
+        f"""
+        <div style="border:1px solid #d8e2ef;border-left:6px solid {color};border-radius:10px;padding:18px 22px;margin:10px 0 18px;background:#ffffff;">
+          <div style="font-weight:900;color:#0f172a;font-size:22px;">{escape(row.get("company_name", ""))}</div>
+          <div style="color:#64748b;font-size:13px;margin-top:2px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
+          <div style="font-size:44px;font-weight:900;color:{color};margin-top:10px;">{score}<span style="font-size:16px;color:#64748b;">/100</span></div>
+          <div style="color:#475569;font-size:14px;">{escape(explosive_tier_label(tier))}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    c1, c2 = st.columns(2)
+    with c1:
+        st.markdown("#### Drivers principales")
+        drivers = row.get("drivers", [])
+        if drivers:
+            for driver in drivers:
+                st.write(f"- {driver}")
+        else:
+            st.write("- Sin drivers suficientes.")
+    with c2:
+        st.markdown("#### Qué señales faltan")
+        missing_all = row.get("missing_signals", [])
+        if missing_all:
+            for signal in missing_all:
+                st.write(f"- {signal}")
+        else:
+            st.write("- Ninguna señal crítica del contrato v2.45G.")
+    st.markdown("#### Qué revisar manualmente")
+    st.write("- Confirmar que market cap, precio, volumen y float vienen de una fuente actual.")
+    st.write("- Revisar si el movimiento es liquidez real o ruido de datos.")
+    st.write("- Verificar si el catalizador existe y no es solo momentum técnico.")
+    st.caption(row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
+
+    st.markdown("#### Ficha explosiva profesional")
+    st.markdown(explosive_candidate_professional_explanation(row))
+    st.write("**Checklist de revisión profesional**")
+    for item in explosive_candidate_review_checklist(row):
+        st.write(f"- {item}")
+    st.dataframe(explosive_candidate_detail_frame(row), use_container_width=True, hide_index=True)
+    st.caption("No es recomendación financiera ni predice rentabilidad; no cambia score, ranking global ni proveedor activo.")
+
+    st.markdown("#### Precio y velas OHLCV")
+    render_explosive_candidate_candlestick(row, key_prefix="explosive_candles_fullpage")
+    st.caption("Vista visual de investigación para breakout/squeeze; no ejecuta red, broker ni órdenes.")
+
+
 def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
     render_explosive_trading_desk_skin()
     st.markdown("### Dashboard de candidatos explosivos")
@@ -1947,6 +2005,13 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
     blocked_note = f" · {blocked_count:,} bloqueados por falta de datos" if blocked_count else ""
     st.caption(f"{len(dashboard_rows):,} candidatos visibles tras filtros{blocked_note} · desempate diversificado estable, no alfabético.")
     render_featured_explosive_candlestick(dashboard_rows)
+
+    selected_id = st.session_state.get("explosive_fullpage_asset_id")
+    selected_row = next((row for row in dashboard_rows if explosive_candidate_id(row) == selected_id), None) if selected_id else None
+    if selected_row is not None:
+        render_explosive_candidate_fullpage(selected_row)
+        return dashboard_rows
+
     for start in range(0, min(len(dashboard_rows), int(max_cards)), 3):
         cols = st.columns(3)
         for col, row in zip(cols, dashboard_rows[start:start + 3]):
@@ -1968,6 +2033,9 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
                 """,
                 unsafe_allow_html=True,
             )
+            if col.button("Ver a pantalla completa", key=f"explosive_fullpage_select_{explosive_candidate_id(row)}", use_container_width=True):
+                st.session_state["explosive_fullpage_asset_id"] = explosive_candidate_id(row)
+                st.rerun()
             with col.expander("Por qué puntúa así"):
                 st.write("**Drivers principales**")
                 for driver in row.get("drivers", []):
