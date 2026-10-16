@@ -1762,43 +1762,63 @@ def render_explosive_candidate_fullpage(row: dict) -> None:
         """,
         unsafe_allow_html=True,
     )
-    c1, c2 = st.columns(2)
-    with c1:
-        st.markdown("#### Drivers principales")
-        drivers = row.get("drivers", [])
-        if drivers:
-            for driver in drivers:
-                st.write(f"- {driver}")
-        else:
-            st.write("- Sin drivers suficientes.")
-    with c2:
-        st.markdown("#### Qué señales faltan")
-        missing_all = row.get("missing_signals", [])
-        if missing_all:
-            for signal in missing_all:
-                st.write(f"- {signal}")
-        else:
-            st.write("- Ninguna señal crítica del contrato v2.45G.")
-    st.markdown("#### Qué revisar manualmente")
-    st.write("- Confirmar que market cap, precio, volumen y float vienen de una fuente actual.")
-    st.write("- Revisar si el movimiento es liquidez real o ruido de datos.")
-    st.write("- Verificar si el catalizador existe y no es solo momentum técnico.")
-    st.caption(row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
+    why_tab, ficha_tab, price_tab = st.tabs(["Por qué puntúa así", "Ficha explosiva profesional", "Precio y velas OHLCV"])
+    with why_tab:
+        c1, c2 = st.columns(2)
+        with c1:
+            st.markdown("#### Drivers principales")
+            drivers = row.get("drivers", [])
+            if drivers:
+                for driver in drivers:
+                    st.write(f"- {driver}")
+            else:
+                st.write("- Sin drivers suficientes.")
+        with c2:
+            st.markdown("#### Qué señales faltan")
+            missing_all = row.get("missing_signals", [])
+            if missing_all:
+                for signal in missing_all:
+                    st.write(f"- {signal}")
+            else:
+                st.write("- Ninguna señal crítica del contrato v2.45G.")
+        st.markdown("#### Qué revisar manualmente")
+        st.write("- Confirmar que market cap, precio, volumen y float vienen de una fuente actual.")
+        st.write("- Revisar si el movimiento es liquidez real o ruido de datos.")
+        st.write("- Verificar si el catalizador existe y no es solo momentum técnico.")
+        st.caption(row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
+    with ficha_tab:
+        st.markdown(explosive_candidate_professional_explanation(row))
+        st.write("**Checklist de revisión profesional**")
+        for item in explosive_candidate_review_checklist(row):
+            st.write(f"- {item}")
+        st.dataframe(explosive_candidate_detail_frame(row), use_container_width=True, hide_index=True)
+        st.caption("No es recomendación financiera ni predice rentabilidad; no cambia score, ranking global ni proveedor activo.")
+    with price_tab:
+        render_explosive_candidate_candlestick(row, key_prefix="explosive_candles_fullpage")
+        st.caption("Vista visual de investigación para breakout/squeeze; no ejecuta red, broker ni órdenes.")
 
-    st.markdown("#### Ficha explosiva profesional")
-    st.markdown(explosive_candidate_professional_explanation(row))
-    st.write("**Checklist de revisión profesional**")
-    for item in explosive_candidate_review_checklist(row):
-        st.write(f"- {item}")
-    st.dataframe(explosive_candidate_detail_frame(row), use_container_width=True, hide_index=True)
-    st.caption("No es recomendación financiera ni predice rentabilidad; no cambia score, ranking global ni proveedor activo.")
 
-    st.markdown("#### Precio y velas OHLCV")
-    render_explosive_candidate_candlestick(row, key_prefix="explosive_candles_fullpage")
-    st.caption("Vista visual de investigación para breakout/squeeze; no ejecuta red, broker ni órdenes.")
+EXPLOSIVE_FILTER_KEYS = ("explosive_dashboard_tier_filter", "explosive_dashboard_signal_filter", "explosive_dashboard_cards")
+
+
+def explosive_fullpage_row(rows: list[dict]) -> dict | None:
+    """The candidate whose full page is open, if it is among the scored rows (filters never kick the person out of it)."""
+    selected_id = st.session_state.get("explosive_fullpage_asset_id")
+    if not selected_id:
+        return None
+    return next((row for row in rows if explosive_candidate_id(row) == selected_id), None)
 
 
 def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
+    fullpage_row = explosive_fullpage_row(rows)
+    if fullpage_row is not None:
+        # The filter widgets are not drawn on the full page; re-assigning their values keeps them alive so the
+        # dashboard comes back exactly as the person left it.
+        for key in EXPLOSIVE_FILTER_KEYS:
+            if key in st.session_state:
+                st.session_state[key] = st.session_state[key]
+        render_explosive_candidate_fullpage(fullpage_row)
+        return [fullpage_row]
     st.markdown("### Dashboard de candidatos explosivos")
     st.caption("Vista de investigación: prioriza revisión por score, tier, drivers y señales faltantes. No es recomendación financiera ni predice rentabilidad.")
     with st.expander("Filtros de exploración", expanded=False):
@@ -1844,12 +1864,6 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
     st.caption(f"{len(dashboard_rows):,} candidatos visibles tras filtros{blocked_note} · desempate diversificado estable, no alfabético.")
     render_featured_explosive_candlestick(dashboard_rows)
 
-    selected_id = st.session_state.get("explosive_fullpage_asset_id")
-    selected_row = next((row for row in dashboard_rows if explosive_candidate_id(row) == selected_id), None) if selected_id else None
-    if selected_row is not None:
-        render_explosive_candidate_fullpage(selected_row)
-        return dashboard_rows
-
     for start in range(0, min(len(dashboard_rows), int(max_cards)), 3):
         cols = st.columns(3)
         for col, row in zip(cols, dashboard_rows[start:start + 3]):
@@ -1871,49 +1885,9 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
                 """,
                 unsafe_allow_html=True,
             )
-            if col.button("Ver a pantalla completa", key=f"explosive_fullpage_select_{explosive_candidate_id(row)}", use_container_width=True):
+            if col.button("Ver ficha completa", key=f"explosive_fullpage_select_{explosive_candidate_id(row)}", use_container_width=True):
                 st.session_state["explosive_fullpage_asset_id"] = explosive_candidate_id(row)
                 st.rerun()
-            with col.expander("Por qué puntúa así"):
-                st.write("**Drivers principales**")
-                for driver in row.get("drivers", []):
-                    st.write(f"- {driver}")
-                st.write("**Qué señales faltan**")
-                missing_all = row.get("missing_signals", [])
-                if missing_all:
-                    for signal in missing_all:
-                        st.write(f"- {signal}")
-                else:
-                    st.write("- Ninguna señal crítica del contrato v2.45G.")
-                st.write("**Qué revisar manualmente**")
-                st.write("- Confirmar que market cap, precio, volumen y float vienen de una fuente actual.")
-                st.write("- Revisar si el movimiento es liquidez real o ruido de datos.")
-                st.write("- Verificar si el catalizador existe y no es solo momentum técnico.")
-                st.caption(row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
-            with col.expander("Ficha explosiva profesional"):
-                st.markdown(explosive_candidate_professional_explanation(row))
-                st.write("**Señales presentes**")
-                present = row.get("drivers", [])
-                if present:
-                    for driver in present:
-                        st.write(f"- {driver}")
-                else:
-                    st.write("- Sin señales suficientes para clasificar como explosivo.")
-                st.write("**Señales faltantes**")
-                missing_all = row.get("missing_signals", [])
-                if missing_all:
-                    for signal in missing_all:
-                        st.write(f"- {signal}")
-                else:
-                    st.write("- Sin faltantes críticos según el contrato actual.")
-                st.write("**Checklist de revisión profesional**")
-                for item in explosive_candidate_review_checklist(row):
-                    st.write(f"- {item}")
-                st.dataframe(explosive_candidate_detail_frame(row), use_container_width=True, hide_index=True)
-                st.caption("No es recomendación financiera ni predice rentabilidad; no cambia score, ranking global ni proveedor activo.")
-            with col.expander("Precio y velas OHLCV"):
-                render_explosive_candidate_candlestick(row)
-                st.caption("Vista visual de investigación para breakout/squeeze; no ejecuta red, broker ni órdenes.")
     return dashboard_rows
 
 
@@ -1930,9 +1904,11 @@ def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
         rows = [row | explosive_candidate_score(row) for row in rows]
         summary = unicorn_semantic_summary(rows)
         tier_counts = Counter(row.get("tier", "NO_DATA") for row in rows)
-        render_explosive_overview(rows, summary, tier_counts)
+        fullpage_open = explosive_fullpage_row(rows) is not None
+        if not fullpage_open:
+            render_explosive_overview(rows, summary, tier_counts)
         render_explosive_candidates_dashboard(rows)
-        if summary["explosive"] == 0:
+        if summary["explosive"] == 0 and not fullpage_open:
             st.warning("Ningún candidato alcanza todavía el umbral explosivo del score (mínimo 55 puntos con al menos 3 señales fuertes y sin datos críticos ausentes). Las empresas con datos parciales aparecen como vigilancia (WATCH_ONLY).")
         with st.expander("Lectura rápida de metodología", expanded=False):
             st.write("- Busca Breakout Stocks, Multibaggers, Meme Stocks, Short Squeeze, Penny Stocks y Micro-Caps con datos reales de mercado.")
