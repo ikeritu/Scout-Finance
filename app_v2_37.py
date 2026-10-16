@@ -3056,8 +3056,10 @@ def render_home(data):
     stocks_col, crypto_col = st.columns(2, gap="large")
     with stocks_col:
         if st.button("🦄 Unicornios en bolsa", key="home_stocks", type="primary", use_container_width=True):
+            # Opens straight on the explosive view; the mode radio on that screen still offers "Calidad fundamental".
+            st.session_state["global_unicorn_semantic_mode"] = "Unicornio explosivo"
             go("global_unicorns")
-        st.caption("Empresas cotizadas: calidad fundamental y candidatos explosivos.")
+        st.caption("Empresas cotizadas: candidatos explosivos y calidad fundamental.")
     with crypto_col:
         st.button("🪙 Unicornios Crypto", key="home_crypto", disabled=True, use_container_width=True)
         st.caption("Próximamente: todavía no está implementado.")
