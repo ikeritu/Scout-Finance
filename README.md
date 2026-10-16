@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.48B — el botón «Unicornios en bolsa» abre directamente Unicornio explosivo** (`HOME_OPENS_EXPLOSIVE_COMPLETED`): el botón del inicio fija el selector en «Unicornio explosivo» antes de navegar (calidad fundamental sigue a un clic y la barra lateral no cambia). Solo navegación. Detalle en `HOME_OPENS_EXPLOSIVE_v2_48b.md`.
+
 **v2.48A — inicio con dos botones grandes** (`HOME_TWO_BUTTONS_COMPLETED`): el inicio pasa a ser solo «🦄 Unicornios en bolsa» (abre Unicornios) y «🪙 Unicornios Crypto» (desactivado, «Próximamente»), con el aviso de no asesoramiento financiero en una línea; el antiguo inicio queda como vista de estado para cuando la app se bloquea por falta de datos. Solo presentación. Detalle en `HOME_TWO_BUTTONS_v2_48a.md`.
 
 **v2.47C — dos fallos que hacían caer la pantalla de Unicornios en «Calidad fundamental»** (`UNICORN_SCREEN_CRASH_FIXES_COMPLETED`): una clave de gráfico duplicada (PR #4: la misma empresa se dibujaba en la vista y en el detalle del final) y un `NameError` en «Fichas completas» (v2.46B). Nueva prueba que ejecuta la app de verdad con `AppTest` en las seis vistas y los dos modos, que sí habría detectado ambos. Detalle en `UNICORN_SCREEN_CRASH_FIXES_v2_47c.md`.

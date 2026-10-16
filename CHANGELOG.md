@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.48B — el botón de bolsa abre Unicornio explosivo (2026-10-16)
+
+el botón del inicio fija el selector en «Unicornio explosivo» antes de navegar (calidad fundamental sigue a un clic y la barra lateral no cambia). Solo navegación. Detalle en `HOME_OPENS_EXPLOSIVE_v2_48b.md`.
+
 ## v2.48A — inicio con dos botones grandes (2026-10-16)
 
 el inicio pasa a ser solo «🦄 Unicornios en bolsa» (abre Unicornios) y «🪙 Unicornios Crypto» (desactivado, «Próximamente»), con el aviso de no asesoramiento financiero en una línea; el antiguo inicio queda como vista de estado para cuando la app se bloquea por falta de datos. Solo presentación. Detalle en `HOME_TWO_BUTTONS_v2_48a.md`.
