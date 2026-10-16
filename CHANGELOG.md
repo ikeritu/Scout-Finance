@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.49C — redacción clara en los resultados explosivos y pestañas cortas (2026-10-16)
+
+el resumen dice con palabras cuántas cumplen el umbral, cuántas están en vigilancia y cuántas sin datos suficientes; separa la fecha del cálculo fundamental de la fecha y fuente de los datos de mercado; la tarjeta aclara «datos completos, pero la puntuación no llega al umbral»; desaparece el vocabulario interno («Drivers», «contrato v2.45G», «fail-closed», `WATCH_ONLY`); y las pestañas pasan a «Resumen / Datos / Gráfico». Cierra el informe de UX. Detalle en `EXPLOSIVE_PLAIN_WORDING_v2_49c.md`.
+
 ## v2.49B — paginación y búsqueda en los resultados explosivos (2026-10-16)
 
 filtros visibles (buscar por empresa o ticker, nivel, señal y tamaño de página) y paginación en vez del máximo de 24 tarjetas; el conteo dice «Mostrando 1–9 de 140»; estado vacío con «Restablecer filtros»; el Top 3 declara su población; y bajo el botón se explica que la búsqueda cubre las 141 empresas de calidad fundamental, no el censo. Página, búsqueda y filtros se conservan al abrir una ficha. Verificado en navegador real con Yahoo. Detalle en `EXPLOSIVE_RESULTS_NAVIGATION_v2_49b.md`.

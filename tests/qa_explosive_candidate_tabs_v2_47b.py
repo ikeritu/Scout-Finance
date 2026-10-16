@@ -32,7 +32,7 @@ def row(asset_id: str, **extra) -> dict:
 
 def test_candidate_page_uses_three_tabs_with_the_same_labels_the_expanders_had() -> None:
     source = inspect.getsource(app.render_explosive_candidate_fullpage)
-    require('st.tabs(["Por qué puntúa así", "Ficha explosiva profesional", "Precio y velas OHLCV"])' in source, "three tabs")
+    require('st.tabs(["Resumen", "Datos", "Gráfico"])' in source, "three short tabs")
     require("with why_tab:" in source and "with ficha_tab:" in source and "with price_tab:" in source, "each block lives in its tab")
     require('key_prefix="explosive_candles_fullpage"' in source, "page chart keeps its own unique key")
 
