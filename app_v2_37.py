@@ -1426,34 +1426,57 @@ def unicorn_semantic_summary(rows: list[dict]) -> dict[str, int]:
     }
 
 
-def render_explosive_cockpit_summary(summary: dict[str, int], tier_counts: Counter) -> None:
+def render_explosive_overview(rows: list[dict], summary: dict[str, int], tier_counts: Counter) -> None:
+    """One light, amber-accented panel -- replaces the old duplicated pair (a light 'cockpit' card
+    immediately followed by a dark 'trading desk' hero that repeated 4 of its own 5 numbers) with a
+    single visual language consistent with the rest of the screen. Amber is a semantic accent (this is
+    the explosive lens, not the quality one), not a second theme."""
     high = tier_counts.get("EXPLOSIVE_CANDIDATE_HIGH", 0)
     medium = tier_counts.get("EXPLOSIVE_CANDIDATE_MEDIUM", 0)
     low = tier_counts.get("EXPLOSIVE_CANDIDATE_LOW", 0)
     watch = tier_counts.get("WATCH_ONLY", 0)
     no_data = tier_counts.get("NO_DATA", 0)
-    st.markdown(
+    top_rows = sorted(rows, key=explosive_dashboard_sort_key)[:3]
+    top_items = []
+    for index, row in enumerate(top_rows, start=1):
+        drivers = " · ".join(str(driver) for driver in row.get("drivers", [])[:2])
+        top_items.append(
+            '<div style="display:flex;align-items:center;gap:12px;padding:8px 12px;border:1px solid #f2e2bb;border-radius:10px;background:#fffaf0;">'
+            f'<div style="font-size:22px;font-weight:900;color:#b45309;min-width:56px;">{int(row.get("explosive_score_0_100", 0))}<span style="font-size:11px;color:#94a3b8;">/100</span></div>'
+            '<div style="flex:1;min-width:0;">'
+            f'<div style="font-weight:800;color:#0f172a;font-size:13px;">{escape(row.get("company_name", "N/D"))}</div>'
+            f'<div style="font-size:12px;color:#64748b;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(drivers or "sin drivers suficientes")}</div>'
+            '</div>'
+            f'<div style="font-size:11px;font-weight:800;color:#b45309;background:#fef3c7;border-radius:999px;padding:3px 9px;white-space:nowrap;">Top {index}</div>'
+            '</div>'
+        )
+    top_rows_html = "".join(top_items) if top_items else '<div style="color:#64748b;font-size:13px;">Sin candidatos filtrados.</div>'
+    overview_html = (
         f"""
-        <div style="border:1px solid #b8dce8;border-radius:12px;padding:18px 20px;margin:14px 0 18px;background:linear-gradient(135deg,#effcff 0%,#ffffff 48%,#f8fbff 100%);box-shadow:0 10px 28px rgba(15,23,42,.05);">
+        <div class="sf-explosive-header" style="border:1px solid #f2e2bb;border-left:6px solid #d97706;border-radius:12px;padding:18px 20px;margin:14px 0 18px;background:linear-gradient(135deg,#fff8ec 0%,#ffffff 55%,#fffaf0 100%);box-shadow:0 10px 28px rgba(15,23,42,.05);">
           <div style="display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap;">
             <div>
-              <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#0f766e;font-weight:800;">Cockpit de candidatos explosivos</div>
-              <div style="font-size:28px;font-weight:900;color:#0f172a;margin-top:3px;">{summary['explosive']:,} evaluables ahora</div>
-              <div style="font-size:13px;color:#64748b;margin-top:4px;">Breakout, multibagger, squeeze, penny y micro-cap se separan de calidad fundamental.</div>
+              <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#b45309;font-weight:800;">Unicornios explosivos</div>
+              <div style="font-size:28px;font-weight:900;color:#0f172a;margin-top:3px;">{summary['explosive']:,} candidatos explosivos</div>
+              <div style="font-size:13px;color:#64748b;margin-top:4px;">{len(rows) - no_data:,} empresas con datos de mercado (Yahoo/yfinance) · {no_data:,} bloqueadas por falta de datos.</div>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(5,minmax(92px,1fr));gap:10px;min-width:520px;">
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;"><b>{high:,}</b><br><span style="font-size:12px;color:#64748b;">High</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;"><b>{medium:,}</b><br><span style="font-size:12px;color:#64748b;">Medium</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;"><b>{low:,}</b><br><span style="font-size:12px;color:#64748b;">Low</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;"><b>{watch:,}</b><br><span style="font-size:12px;color:#64748b;">Watch</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;"><b>{no_data:,}</b><br><span style="font-size:12px;color:#64748b;">Sin datos</span></div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(74px,1fr));gap:10px;flex:1;min-width:260px;">
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{high:,}</b><br><span style="font-size:12px;color:#64748b;">High</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{medium:,}</b><br><span style="font-size:12px;color:#64748b;">Medium</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{low:,}</b><br><span style="font-size:12px;color:#64748b;">Low</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{watch:,}</b><br><span style="font-size:12px;color:#64748b;">Watch</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{no_data:,}</b><br><span style="font-size:12px;color:#64748b;">Sin datos</span></div>
             </div>
           </div>
-          <div style="margin-top:14px;color:#334155;font-size:13px;">Resultado: {summary['explosive']:,} candidatos explosivos · {summary['partial_market']:,} con datos parciales · {summary['blocked']:,} bloqueados. Score explosivo v1: heurística local de investigación 0-100; no reemplaza scoring fundamental ni ranking global.</div>
+          <div style="margin-top:16px;">
+            <div style="font-size:13px;font-weight:800;color:#0f172a;margin-bottom:8px;">Top 3 por score explosivo (sobre 100)</div>
+            <div style="display:grid;gap:8px;">{top_rows_html}</div>
+          </div>
+          <div style="margin-top:14px;color:#94a3b8;font-size:12px;">Score explosivo v1: heurística local de investigación 0-100; no reemplaza scoring fundamental ni ranking global. No es una recomendación financiera ni predice rentabilidad.</div>
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
+    st.markdown(overview_html, unsafe_allow_html=True)
 
 
 def row_has_explosive_driver(row: dict, driver: str) -> bool:
@@ -1717,184 +1740,6 @@ def render_featured_explosive_candlestick(rows: list[dict]) -> None:
     render_explosive_candidate_candlestick(featured, key_prefix="explosive_candles_featured")
 
 
-def render_explosive_trading_desk_skin() -> None:
-    st.markdown(
-        """
-        <style>
-        @keyframes sfRadarSweep {
-          0% { transform: rotate(0deg); opacity: .75; }
-          50% { opacity: 1; }
-          100% { transform: rotate(360deg); opacity: .75; }
-        }
-        @keyframes sfHotPulse {
-          0%, 100% { box-shadow: 0 0 0 rgba(255,176,32,0); transform: translateY(0); }
-          50% { box-shadow: 0 14px 36px rgba(255,176,32,.16); transform: translateY(-2px); }
-        }
-        .sf-trading-hero {
-          background:
-            radial-gradient(circle at 18% 22%, rgba(0,184,217,.28), transparent 32%),
-            radial-gradient(circle at 82% 38%, rgba(255,176,32,.18), transparent 30%),
-            linear-gradient(135deg, #07111f 0%, #0b1220 56%, #102033 100%);
-          border: 1px solid rgba(255,255,255,.10);
-          border-radius: 18px;
-          color: #f8fbff;
-          padding: 22px;
-          margin: 12px 0 18px;
-          box-shadow: 0 20px 55px rgba(7,17,31,.24);
-        }
-        .sf-trading-grid {
-          display: grid;
-          grid-template-columns: minmax(260px, .85fr) minmax(320px, 1.15fr);
-          gap: 18px;
-          align-items: stretch;
-        }
-        .sf-radar {
-          min-height: 270px;
-          border-radius: 16px;
-          border: 1px solid rgba(255,255,255,.10);
-          background:
-            radial-gradient(circle, rgba(0,184,217,.18) 0 2px, transparent 3px),
-            repeating-radial-gradient(circle, rgba(255,255,255,.10) 0 1px, transparent 1px 48px),
-            linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-          position: relative;
-          overflow: hidden;
-        }
-        .sf-radar:before {
-          content: "";
-          position: absolute;
-          inset: -25%;
-          background: conic-gradient(from 0deg, rgba(0,184,217,.46), transparent 22%, transparent 100%);
-        }
-        .sf-radar-core {
-          position: absolute;
-          inset: 26px;
-          border-radius: 999px;
-          border: 1px solid rgba(0,184,217,.25);
-          display: grid;
-          place-items: center;
-          text-align: center;
-          z-index: 1;
-        }
-        .sf-hot-list {
-          display: grid;
-          gap: 10px;
-        }
-        .sf-hot-row {
-          display: grid;
-          grid-template-columns: 54px 1fr auto;
-          gap: 12px;
-          align-items: center;
-          padding: 12px 14px;
-          border-radius: 14px;
-          background: rgba(255,255,255,.075);
-          border: 1px solid rgba(255,255,255,.12);
-        }
-        .sf-hot-score {
-          color: #ffb020;
-          font-size: 28px;
-          font-weight: 900;
-          letter-spacing: -.03em;
-        }
-        .sf-chip {
-          display: inline-block;
-          padding: 4px 8px;
-          border-radius: 999px;
-          background: rgba(0,184,217,.13);
-          color: #8be9ff;
-          font-size: 11px;
-          font-weight: 800;
-          letter-spacing: .04em;
-          text-transform: uppercase;
-        }
-        .sf-mini-metrics {
-          display: grid;
-          grid-template-columns: repeat(4, minmax(92px, 1fr));
-          gap: 10px;
-          margin-top: 16px;
-        }
-        .sf-mini-metric {
-          border-radius: 12px;
-          padding: 10px 12px;
-          background: rgba(255,255,255,.08);
-          border: 1px solid rgba(255,255,255,.10);
-        }
-        .sf-mini-metric b {
-          display: block;
-          font-size: 24px;
-          color: #ffffff;
-        }
-        .sf-mini-metric span {
-          color: rgba(248,251,255,.70);
-          font-size: 12px;
-        }
-        @media (max-width: 900px) {
-          .sf-trading-grid { grid-template-columns: 1fr; }
-          .sf-mini-metrics { grid-template-columns: repeat(2, 1fr); }
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
-def render_explosive_trading_desk_hero(rows: list[dict], tier_counts: Counter) -> None:
-    visible_rows = [row for row in rows if row.get("tier") != "NO_DATA"]
-    top_rows = sorted(rows, key=explosive_dashboard_sort_key)[:3]
-    hot_rows = []
-    for index, row in enumerate(top_rows, start=1):
-        drivers = " · ".join(str(driver) for driver in row.get("drivers", [])[:2])
-        hot_rows.append(
-            '<div class="sf-hot-row">'
-            f'<div class="sf-hot-score">{int(row.get("explosive_score_0_100", 0))}<span style="font-size:12px;color:rgba(248,251,255,.6);">/100</span></div>'
-            '<div>'
-            f'<div style="font-weight:850;color:#fff;">{escape(row.get("company_name", "N/D"))}</div>'
-            f'<div style="font-size:12px;color:rgba(248,251,255,.68);">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(drivers or "sin drivers suficientes")}</div>'
-            '</div>'
-            f'<div class="sf-chip">Top {index}</div>'
-            '</div>'
-        )
-    hot_rows_html = "".join(hot_rows) if hot_rows else '<div style="color:#fff;">Sin candidatos filtrados.</div>'
-    hero_html = (
-        f"""
-        <div class="sf-trading-hero">
-          <div style="display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap;margin-bottom:16px;">
-            <div>
-              <div class="sf-chip">Scout Finance · modo radar</div>
-              <div style="font-size:34px;font-weight:950;letter-spacing:-.04em;margin-top:8px;">Unicornios explosivos</div>
-              <div style="color:rgba(248,251,255,.72);font-size:14px;margin-top:4px;">Vista de investigación de señales de mercado (micro-cap, penny stock, short interest, breakout). No es una recomendación financiera.</div>
-            </div>
-            <div style="text-align:right;color:rgba(248,251,255,.70);font-size:12px;">Proveedor local<br><b style="color:#fff;font-size:15px;">Yahoo/yfinance + cache</b></div>
-          </div>
-          <div class="sf-trading-grid">
-            <div class="sf-radar">
-              <div class="sf-radar-core">
-                <div>
-                  <div style="font-size:54px;font-weight:950;color:#00b8d9;line-height:1;">{len(visible_rows):,}</div>
-                  <div style="font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:rgba(248,251,255,.72);">empresas con datos de mercado</div>
-                  <div style="margin-top:16px;color:#ffb020;font-weight:800;">Datos de mercado cargados</div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-                <div style="font-size:16px;font-weight:900;">Top 3 por score explosivo (sobre 100)</div>
-                <div style="font-size:12px;color:rgba(248,251,255,.62);">score endurecido v2.45U</div>
-              </div>
-              <div class="sf-hot-list">{hot_rows_html}</div>
-              <div class="sf-mini-metrics">
-                <div class="sf-mini-metric"><b>{tier_counts.get("EXPLOSIVE_CANDIDATE_HIGH", 0):,}</b><span>High</span></div>
-                <div class="sf-mini-metric"><b>{tier_counts.get("EXPLOSIVE_CANDIDATE_MEDIUM", 0):,}</b><span>Medium</span></div>
-                <div class="sf-mini-metric"><b>{tier_counts.get("EXPLOSIVE_CANDIDATE_LOW", 0):,}</b><span>Low</span></div>
-                <div class="sf-mini-metric"><b>{tier_counts.get("WATCH_ONLY", 0):,}</b><span>Watch</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        """
-    )
-    st.markdown(hero_html, unsafe_allow_html=True)
-
-
 def explosive_candidate_id(row: dict) -> str:
     return str(row.get("asset_id") or row.get("ticker") or row.get("company_name") or "x")
 
@@ -1954,16 +1799,9 @@ def render_explosive_candidate_fullpage(row: dict) -> None:
 
 
 def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
-    render_explosive_trading_desk_skin()
     st.markdown("### Dashboard de candidatos explosivos")
     st.caption("Vista de investigación: prioriza revisión por score, tier, drivers y señales faltantes. No es recomendación financiera ni predice rentabilidad.")
-    tier_order = ["EXPLOSIVE_CANDIDATE_HIGH", "EXPLOSIVE_CANDIDATE_MEDIUM", "EXPLOSIVE_CANDIDATE_LOW", "WATCH_ONLY", "NO_DATA"]
-    tier_counts = Counter(row.get("tier", "NO_DATA") for row in rows)
-    render_explosive_trading_desk_hero(rows, tier_counts)
-    with st.expander("Filtros de exploración y métricas técnicas", expanded=False):
-        metric_cols = st.columns(5)
-        for col, tier in zip(metric_cols, tier_order):
-            col.metric(tier.replace("_", " "), f"{tier_counts.get(tier, 0):,}")
+    with st.expander("Filtros de exploración", expanded=False):
         filters = st.columns([1, 1, 1])
         tier_filter = filters[0].selectbox(
             "Filtro de tier explosivo",
@@ -1975,7 +1813,7 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
             ["Todas", "Micro-cap", "Penny stock", "Short squeeze", "Breakout", "Faltan datos críticos"],
             key="explosive_dashboard_signal_filter",
         )
-        max_cards = filters[2].number_input("Cards", min_value=3, max_value=24, value=9, step=3, key="explosive_dashboard_cards")
+        max_cards = filters[2].number_input("Empresas a mostrar", min_value=3, max_value=24, value=9, step=3, key="explosive_dashboard_cards")
 
     # La vista principal prioriza filas accionables; los NO_DATA quedan disponibles
     # solo si el usuario los solicita explícitamente mediante el filtro técnico.
@@ -2001,7 +1839,7 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
         dashboard_rows = [row for row in dashboard_rows if row.get("missing_signals")]
 
     dashboard_rows = sorted(dashboard_rows, key=explosive_dashboard_sort_key)
-    blocked_count = tier_counts.get("NO_DATA", 0)
+    blocked_count = sum(1 for row in rows if row.get("tier") == "NO_DATA")
     blocked_note = f" · {blocked_count:,} bloqueados por falta de datos" if blocked_count else ""
     st.caption(f"{len(dashboard_rows):,} candidatos visibles tras filtros{blocked_note} · desempate diversificado estable, no alfabético.")
     render_featured_explosive_candlestick(dashboard_rows)
@@ -2092,7 +1930,7 @@ def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
         rows = [row | explosive_candidate_score(row) for row in rows]
         summary = unicorn_semantic_summary(rows)
         tier_counts = Counter(row.get("tier", "NO_DATA") for row in rows)
-        render_explosive_cockpit_summary(summary, tier_counts)
+        render_explosive_overview(rows, summary, tier_counts)
         render_explosive_candidates_dashboard(rows)
         if summary["explosive"] == 0:
             st.warning("Ningún candidato alcanza todavía el umbral explosivo del score (mínimo 55 puntos con al menos 3 señales fuertes y sin datos críticos ausentes). Las empresas con datos parciales aparecen como vigilancia (WATCH_ONLY).")
