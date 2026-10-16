@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.49B — paginación y búsqueda en los resultados explosivos (2026-10-16)
+
+filtros visibles (buscar por empresa o ticker, nivel, señal y tamaño de página) y paginación en vez del máximo de 24 tarjetas; el conteo dice «Mostrando 1–9 de 140»; estado vacío con «Restablecer filtros»; el Top 3 declara su población; y bajo el botón se explica que la búsqueda cubre las 141 empresas de calidad fundamental, no el censo. Página, búsqueda y filtros se conservan al abrir una ficha. Verificado en navegador real con Yahoo. Detalle en `EXPLOSIVE_RESULTS_NAVIGATION_v2_49b.md`.
+
 ## v2.49A — página limpia de «Buscar Unicornios explosivos» (2026-10-16)
 
 la vista explosiva pasa a ser título, descripción breve y un botón grande; al buscar aparecen las fichas de los encontrados. La búsqueda consulta todos los unicornios con ticker (140 de 141) en vez de una muestra fija de 40; calidad fundamental queda a un clic y el proveedor, la caché y el CSV manual tras «Opciones avanzadas». Probado con Yahoo real y con un proveedor simulado. Detalle en `EXPLOSIVE_SEARCH_PAGE_v2_49a.md`.

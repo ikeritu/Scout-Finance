@@ -1456,6 +1456,7 @@ def render_explosive_overview(rows: list[dict], summary: dict[str, int], tier_co
             '</div>'
         )
     top_rows_html = "".join(top_items) if top_items else '<div style="color:#64748b;font-size:13px;">Sin candidatos filtrados.</div>'
+    top_note = '' if summary["explosive"] else '<div style="font-size:12px;color:#64748b;margin-bottom:8px;">Mayor puntuación disponible: ninguna supera el umbral explosivo.</div>'
     overview_html = (
         f"""
         <div class="sf-explosive-header" style="border:1px solid #f2e2bb;border-left:6px solid #d97706;border-radius:12px;padding:18px 20px;margin:14px 0 18px;background:linear-gradient(135deg,#fff8ec 0%,#ffffff 55%,#fffaf0 100%);box-shadow:0 10px 28px rgba(15,23,42,.05);">
@@ -1474,7 +1475,8 @@ def render_explosive_overview(rows: list[dict], summary: dict[str, int], tier_co
             </div>
           </div>
           <div style="margin-top:16px;">
-            <div style="font-size:13px;font-weight:800;color:#0f172a;margin-bottom:8px;">Top 3 por score explosivo (sobre 100)</div>
+            <div style="font-size:13px;font-weight:800;color:#0f172a;margin-bottom:{'4px' if top_note else '8px'};">Top 3 por score explosivo (sobre 100) · de todas las empresas con datos</div>
+            {top_note}
             <div style="display:grid;gap:8px;">{top_rows_html}</div>
           </div>
           <div style="margin-top:14px;color:#94a3b8;font-size:12px;">Score explosivo v1: heurística local de investigación 0-100; no reemplaza scoring fundamental ni ranking global. No es una recomendación financiera ni predice rentabilidad.</div>
@@ -1803,7 +1805,46 @@ def render_explosive_candidate_fullpage(row: dict) -> None:
         st.caption("Vista visual de investigación para breakout/squeeze; no ejecuta red, broker ni órdenes.")
 
 
-EXPLOSIVE_FILTER_KEYS = ("explosive_dashboard_tier_filter", "explosive_dashboard_signal_filter", "explosive_dashboard_cards")
+EXPLOSIVE_PAGE_SIZES = (9, 18, 24)
+EXPLOSIVE_TIER_FILTER_LABELS = {
+    "Todos": "Todos", "HIGH": "Alto", "MEDIUM+": "Medio o superior", "LOW+": "Bajo o superior",
+    "WATCH_ONLY": "En vigilancia", "NO_DATA": "Sin datos",
+}
+EXPLOSIVE_SIGNAL_FILTERS = ("Todas", "Micro-cap", "Penny stock", "Short squeeze", "Breakout", "Faltan datos críticos")
+EXPLOSIVE_FILTER_DEFAULTS = {
+    "explosive_dashboard_search": "",
+    "explosive_dashboard_tier_filter": "Todos",
+    "explosive_dashboard_signal_filter": "Todas",
+    "explosive_dashboard_cards": EXPLOSIVE_PAGE_SIZES[0],
+}
+EXPLOSIVE_FILTER_KEYS = tuple(EXPLOSIVE_FILTER_DEFAULTS)
+
+
+def restore_explosive_filters() -> None:
+    """Streamlit drops the state of widgets that are not drawn in a run, and the filters are not drawn on a
+    candidate's page. Their values are mirrored in plain keys; a filter that went missing is put back before its
+    widget is drawn again (re-assigning the widget keys instead proved unreliable when the run ends in st.rerun())."""
+    for key, default in EXPLOSIVE_FILTER_DEFAULTS.items():
+        if key not in st.session_state:
+            st.session_state[key] = st.session_state.get(f"saved_{key}", default)
+
+
+def save_explosive_filters() -> None:
+    for key in EXPLOSIVE_FILTER_DEFAULTS:
+        if key in st.session_state:
+            st.session_state[f"saved_{key}"] = st.session_state[key]
+
+
+def reset_explosive_filters() -> None:
+    """Button callback: runs before the next script run, so it may set widget keys."""
+    for key, value in EXPLOSIVE_FILTER_DEFAULTS.items():
+        st.session_state[key] = value
+    st.session_state["explosive_dashboard_page"] = 1
+    save_explosive_filters()
+
+
+def set_explosive_page(page: int) -> None:
+    st.session_state["explosive_dashboard_page"] = page
 
 
 def explosive_fullpage_row(rows: list[dict]) -> dict | None:
@@ -1815,10 +1856,10 @@ def explosive_fullpage_row(rows: list[dict]) -> dict | None:
 
 
 def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
+    restore_explosive_filters()
     fullpage_row = explosive_fullpage_row(rows)
     if fullpage_row is not None:
-        # The filter widgets are not drawn on the full page; re-assigning their values keeps them alive so the
-        # dashboard comes back exactly as the person left it.
+        # Not drawn here, but kept in the state while the page is open; the mirror above covers a run that still loses them.
         for key in EXPLOSIVE_FILTER_KEYS:
             if key in st.session_state:
                 st.session_state[key] = st.session_state[key]
@@ -1826,19 +1867,12 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
         return [fullpage_row]
     st.markdown("### Dashboard de candidatos explosivos")
     st.caption("Vista de investigación: prioriza revisión por score, tier, drivers y señales faltantes. No es recomendación financiera ni predice rentabilidad.")
-    with st.expander("Filtros de exploración", expanded=False):
-        filters = st.columns([1, 1, 1])
-        tier_filter = filters[0].selectbox(
-            "Filtro de tier explosivo",
-            ["Todos", "HIGH", "MEDIUM+", "LOW+", "WATCH_ONLY", "NO_DATA"],
-            key="explosive_dashboard_tier_filter",
-        )
-        signal_filter = filters[1].selectbox(
-            "Filtro de señal",
-            ["Todas", "Micro-cap", "Penny stock", "Short squeeze", "Breakout", "Faltan datos críticos"],
-            key="explosive_dashboard_signal_filter",
-        )
-        max_cards = filters[2].number_input("Empresas a mostrar", min_value=3, max_value=24, value=9, step=3, key="explosive_dashboard_cards")
+    search_col, tier_col, signal_col, page_col = st.columns([2, 1, 1, 1])
+    search = search_col.text_input("Buscar empresa o ticker", placeholder="Ej.: CCLD o CareCloud", key="explosive_dashboard_search")
+    tier_filter = tier_col.selectbox("Nivel", list(EXPLOSIVE_TIER_FILTER_LABELS), format_func=EXPLOSIVE_TIER_FILTER_LABELS.get, key="explosive_dashboard_tier_filter")
+    signal_filter = signal_col.selectbox("Señal", list(EXPLOSIVE_SIGNAL_FILTERS), key="explosive_dashboard_signal_filter")
+    per_page = int(page_col.selectbox("Por página", list(EXPLOSIVE_PAGE_SIZES), key="explosive_dashboard_cards"))
+    save_explosive_filters()
 
     # La vista principal prioriza filas accionables; los NO_DATA quedan disponibles
     # solo si el usuario los solicita explícitamente mediante el filtro técnico.
@@ -1863,15 +1897,36 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
     elif signal_filter == "Faltan datos críticos":
         dashboard_rows = [row for row in dashboard_rows if row.get("missing_signals")]
 
+    needle = search.casefold().strip()
+    if needle:
+        dashboard_rows = [row for row in dashboard_rows if any(needle in str(row.get(key, "")).casefold() for key in ("company_name", "ticker", "us_ticker", "asset_id"))]
     dashboard_rows = sorted(dashboard_rows, key=explosive_dashboard_sort_key)
     blocked_count = sum(1 for row in rows if row.get("tier") == "NO_DATA")
     blocked_note = f" · {blocked_count:,} bloqueados por falta de datos" if blocked_count else ""
-    st.caption(f"{len(dashboard_rows):,} candidatos visibles tras filtros{blocked_note} · desempate diversificado estable, no alfabético.")
+
+    # Any change of search/filters/page size goes back to page 1; the page number itself is plain state (it survives a candidate page).
+    signature = (needle, tier_filter, signal_filter, per_page)
+    if st.session_state.get("explosive_dashboard_signature") != signature:
+        st.session_state["explosive_dashboard_signature"] = signature
+        st.session_state["explosive_dashboard_page"] = 1
+    total = len(dashboard_rows)
+    pages = max(1, -(-total // per_page))
+    page = min(max(int(st.session_state.get("explosive_dashboard_page", 1)), 1), pages)
+    first = (page - 1) * per_page
+    shown_rows = dashboard_rows[first:first + per_page]
+    filters_active = bool(needle) or tier_filter != "Todos" or signal_filter != "Todas"
+    if total == 0:
+        st.info("No hay resultados para estos filtros.")
+        st.button("Restablecer filtros", key="explosive_reset_filters_empty", on_click=reset_explosive_filters)
+    else:
+        st.caption(f"Mostrando {first + 1:,}–{first + len(shown_rows):,} de {total:,} empresas{blocked_note} · desempate diversificado estable, no alfabético.")
+        if filters_active:
+            st.button("Restablecer filtros", key="explosive_reset_filters", on_click=reset_explosive_filters)
     render_featured_explosive_candlestick(dashboard_rows)
 
-    for start in range(0, min(len(dashboard_rows), int(max_cards)), 3):
+    for start in range(0, len(shown_rows), 3):
         cols = st.columns(3)
-        for col, row in zip(cols, dashboard_rows[start:start + 3]):
+        for col, row in zip(cols, shown_rows[start:start + 3]):
             score = int(row.get("explosive_score_0_100", 0))
             drivers = row.get("drivers", [])[:3]
             missing = row.get("missing_signals", [])[:3]
@@ -1893,6 +1948,11 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
             if col.button("Ver ficha completa", key=f"explosive_fullpage_select_{explosive_candidate_id(row)}", use_container_width=True):
                 st.session_state["explosive_fullpage_asset_id"] = explosive_candidate_id(row)
                 st.rerun()
+    if pages > 1:
+        prev_col, label_col, next_col = st.columns([1, 2, 1])
+        prev_col.button("← Anteriores", key="explosive_page_prev", disabled=page <= 1, on_click=set_explosive_page, args=(page - 1,), use_container_width=True)
+        label_col.markdown(f"<div style='text-align:center;padding-top:8px;'>Página {page} de {pages}</div>", unsafe_allow_html=True)
+        next_col.button("Siguientes →", key="explosive_page_next", disabled=page >= pages, on_click=set_explosive_page, args=(page + 1,), use_container_width=True)
     return dashboard_rows
 
 
@@ -2016,7 +2076,7 @@ def render_explosive_search_page() -> None:
         heading(st, "Unicornios explosivos", EXPLOSIVE_PAGE_DESCRIPTION)
         st.info(matrix.error)
         return
-    _, rows, _ = global_unicorn_population(matrix)
+    _, rows, hidden_financials = global_unicorn_population(matrix)
     if st.session_state.get("explosive_search_done"):
         scored = explosive_scored_rows(rows)
         if explosive_fullpage_row(scored) is not None:
@@ -2031,6 +2091,11 @@ def render_explosive_search_page() -> None:
     )
     if SAFE_DEMO_MODE:
         st.info(blocked_message("Buscar unicornios explosivos"))
+    st.caption(
+        f"Alcance: las {len(rows):,} empresas que ya cumplen el criterio de calidad fundamental"
+        + (f" (sin {hidden_financials:,} entidades financieras)" if hidden_financials else "")
+        + f". La búsqueda añade sus señales de mercado; no recorre las {len(matrix.rows):,} empresas del censo."
+    )
     if clicked and not SAFE_DEMO_MODE:
         bar = st.progress(0.0, text="Preparando la búsqueda…")
 

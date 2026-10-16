@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""QA for v2.49A: the explosive view is a clean page (title, short description, one big search button) and the
+"""QA for v2.49A/v2.49B: the explosive view is a clean page (title, short description, one big search button) and the
 candidates appear only after the search has run. Executes the real app headlessly with Streamlit's AppTest and a
 FAKE market provider (a stand-in `yfinance` module), so there is no network; the user's data folder is redirected to
 a temporary one with SCOUT_FINANCE_DATA_DIR, and the test checks the real cache was not touched."""
@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 import sys
 import tempfile
 import types
@@ -206,6 +207,110 @@ def test_simple_shared_link_mode_uses_the_same_page() -> None:
         require(any("Buscar Unicornios explosivos" in i.value for i in at.info), "the onboarding explains the new flow")
 
 
+def captions(at: AppTest) -> list[str]:
+    return [c.value for c in at.caption]
+
+
+def showing(at: AppTest) -> str:
+    return next((c for c in captions(at) if c.startswith("Mostrando ")), "")
+
+
+def widget(items, key: str):
+    return next(w for w in items if w.key == key)
+
+
+def searched_page() -> AppTest:
+    at = open_explosive_page()
+    button(at, "explosive_search").click().run()
+    require(not at.exception, f"the search crashed: {[e.value[:100] for e in at.exception]}")
+    return at
+
+
+def test_scope_is_stated_before_searching() -> None:
+    with Sandbox():
+        at = open_explosive_page()
+        scope = next((c for c in captions(at) if c.startswith("Alcance:")), "")
+        require("que ya cumplen el criterio de calidad fundamental" in scope and "no recorre las" in scope, scope or captions(at))
+        require("entidades financieras" in scope, "it says the financial institutions are left out: " + scope)
+
+
+def test_results_are_paginated_and_the_count_matches_the_cards() -> None:
+    with Sandbox():
+        at = searched_page()
+        first = showing(at)
+        require(first.startswith("Mostrando 1–9 de "), first)
+        total = int(first.split(" de ")[1].split(" ")[0].replace(",", ""))
+        require(total > 100 and len(card_buttons(at)) == 9, f"{total} found, {len(card_buttons(at))} cards")
+        require(any("Página 1 de" in m.value for m in at.markdown), "the page indicator")
+        button(at, "explosive_page_next").click().run()
+        require(showing(at).startswith("Mostrando 10–18 de ") and len(card_buttons(at)) == 9, showing(at))
+        button(at, "explosive_page_prev").click().run()
+        require(showing(at).startswith("Mostrando 1–9 de "), showing(at))
+        widget(at.selectbox, "explosive_dashboard_cards").set_value(24).run()
+        require(showing(at).startswith("Mostrando 1–24 de ") and len(card_buttons(at)) == 24, f"{showing(at)} / {len(card_buttons(at))} cards")
+        last_pages = (total + 23) // 24
+        for _ in range(last_pages - 1):
+            button(at, "explosive_page_next").click().run()
+        require(button(at, "explosive_page_next").disabled, "the last page has no next")
+        last_start = (last_pages - 1) * 24 + 1
+        require(showing(at).startswith(f"Mostrando {last_start}–{total} de "), showing(at))
+
+
+def test_any_company_can_be_found_by_name_or_ticker() -> None:
+    import app_v2_37 as app
+
+    with Sandbox():
+        at = searched_page()
+        _, visible, _ = app.global_unicorn_population(app.global_matrix_snapshot())
+        needle = "pltr"
+        expected = sum(1 for r in visible if any(needle in str(r.get(k, "")).casefold() for k in ("company_name", "ticker", "us_ticker", "asset_id")))
+        require(expected >= 1, "sanity: the fixture population has Palantir")
+        widget(at.text_input, "explosive_dashboard_search").set_value("PLTR").run()
+        require(not at.exception, f"search crashed: {[e.value[:100] for e in at.exception]}")
+        require(showing(at).startswith(f"Mostrando 1–{expected} de {expected} "), showing(at))
+        require(len(card_buttons(at)) == expected, f"{len(card_buttons(at))} cards for {expected} matches")
+        widget(at.button, "explosive_reset_filters").click().run()
+        require(widget(at.text_input, "explosive_dashboard_search").value == "" and showing(at).startswith("Mostrando 1–9 de "), "Restablecer clears the search")
+        widget(at.text_input, "explosive_dashboard_search").set_value("PLTR").run()
+        card_buttons(at)[0].click().run()
+        require([t.label for t in at.tabs][0] == "Por qué puntúa así", "a company found by ticker opens its own page")
+        require(at.session_state["saved_explosive_dashboard_search"] == "PLTR", "the search text is mirrored while its page is open")
+
+
+def test_empty_result_explains_itself_and_offers_a_reset() -> None:
+    with Sandbox():
+        at = searched_page()
+        widget(at.text_input, "explosive_dashboard_search").set_value("zzzzqqqq").run()
+        require(not at.exception, f"crashed: {[e.value[:100] for e in at.exception]}")
+        require(any("No hay resultados para estos filtros." in i.value for i in at.info), [i.value for i in at.info])
+        require(not card_buttons(at), "no cards for an empty result")
+        widget(at.button, "explosive_reset_filters_empty").click().run()
+        require(len(card_buttons(at)) == 9, "Restablecer brings the companies back")
+
+
+def test_page_and_filters_are_kept_while_a_candidate_page_is_open() -> None:
+    """AppTest keeps the widgets of the run that called st.rerun(), so it cannot judge the way BACK; that was verified in a
+    real browser (page 2, a typed search and a filter all came back). Here: what must be in the state while the page is open."""
+    with Sandbox():
+        at = searched_page()
+        widget(at.selectbox, "explosive_dashboard_tier_filter").set_value("LOW+").run()
+        button(at, "explosive_page_next").click().run()
+        require(showing(at).startswith("Mostrando 10–18 de "), showing(at))
+        card_buttons(at)[0].click().run()
+        require(not at.exception, f"the candidate page crashed: {[e.value[:100] for e in at.exception]}")
+        require(at.session_state["explosive_dashboard_page"] == 2, "the page number is kept")
+        require(at.session_state["explosive_dashboard_tier_filter"] == "LOW+" and at.session_state["saved_explosive_dashboard_tier_filter"] == "LOW+", "the level filter is kept and mirrored")
+
+
+def test_top3_says_what_it_is_over() -> None:
+    with Sandbox():
+        at = searched_page()
+        html = " ".join(m.value for m in at.markdown)
+        require("Top 3 por score explosivo (sobre 100) · de todas las empresas con datos" in html, "the Top 3 states its population")
+        if re.search(r"(?<![\d,])0 candidatos explosivos", html):
+            require("ninguna supera el umbral explosivo" in html, "with 0 candidates it says the top scores are below the threshold")
+
+
 CASES = [
     test_the_page_is_clean_until_the_search_runs,
     test_search_scans_every_searchable_unicorn_and_shows_the_candidates,
@@ -214,6 +319,12 @@ CASES = [
     test_a_failing_provider_is_reported_not_crashed,
     test_entering_from_the_home_always_starts_clean,
     test_simple_shared_link_mode_uses_the_same_page,
+    test_scope_is_stated_before_searching,
+    test_results_are_paginated_and_the_count_matches_the_cards,
+    test_any_company_can_be_found_by_name_or_ticker,
+    test_empty_result_explains_itself_and_offers_a_reset,
+    test_page_and_filters_are_kept_while_a_candidate_page_is_open,
+    test_top3_says_what_it_is_over,
 ]
 
 
