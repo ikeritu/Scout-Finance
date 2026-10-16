@@ -29,10 +29,13 @@ from src.ui_v2_37.ui import apply, banner, heading
 from src.ui_v2_37.watchlists import STATUSES, add, atomic_write, create, export_csv, read, remove, scan, update
 
 ROOT = Path(__file__).resolve().parent
-UNICORN_NOTES_PATH = ROOT / "data" / "user_unicorn_notes_v2_44i.json"
-UNICORN_REVIEW_HISTORY_PATH = ROOT / "data" / "user_unicorn_review_history_v2_44k.json"
-EXPLOSIVE_UNICORN_OVERLAY_PATH = ROOT / "data" / "user_explosive_unicorn_market_overlay_v2_45b.csv"
-EXPLOSIVE_OHLCV_CACHE_DIR = ROOT / "data" / "explosive_ohlcv_cache_v2_46a"
+# The user's own data (notes, review history, market cache). SCOUT_FINANCE_DATA_DIR redirects it, so the headless QA
+# that fakes a market provider writes to a temporary folder and never to the real cache.
+DATA_DIR = Path(os.environ.get("SCOUT_FINANCE_DATA_DIR") or ROOT / "data")
+UNICORN_NOTES_PATH = DATA_DIR / "user_unicorn_notes_v2_44i.json"
+UNICORN_REVIEW_HISTORY_PATH = DATA_DIR / "user_unicorn_review_history_v2_44k.json"
+EXPLOSIVE_UNICORN_OVERLAY_PATH = DATA_DIR / "user_explosive_unicorn_market_overlay_v2_45b.csv"
+EXPLOSIVE_OHLCV_CACHE_DIR = DATA_DIR / "explosive_ohlcv_cache_v2_46a"
 EXPLOSIVE_OHLCV_LOCAL_ROOTS = [
     EXPLOSIVE_OHLCV_CACHE_DIR,
     ROOT / "outputs" / "full_universe_source_acquisition" / "v2_38i_us_price_history_acquisition" / "us_price_history_raw_v2_38i",
@@ -1194,7 +1197,7 @@ def ensure_ascii_ca_bundle() -> str:
     return str(target)
 
 
-def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple[pd.DataFrame, dict]:
+def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40, progress=None) -> tuple[pd.DataFrame, dict]:
     try:
         ensure_ascii_ca_bundle()
     except OSError:
@@ -1243,6 +1246,8 @@ def fetch_yfinance_explosive_overlay(rows: list[dict], limit: int = 40) -> tuple
             })
         except Exception as exc:
             failures.append({"ticker": symbol, "error": str(exc)[:180]})
+        if progress is not None:
+            progress(len(records) + len(failures), len(candidates), symbol)
     summary = {
         "status": "OK" if records else "NO_ROWS",
         "processed": len(candidates),
@@ -1891,6 +1896,167 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
     return dashboard_rows
 
 
+EXPLOSIVE_PAGE_DESCRIPTION = (
+    "Empresas pequeñas (micro-cap o penny stock) con señales de mercado fuertes: subida de precio, volumen alto, "
+    "poco flotante o posible short squeeze. La búsqueda consulta datos reales de Yahoo Finance. "
+    "Es investigación, no una recomendación de compra ni una predicción."
+)
+EXPLOSIVE_SEARCH_CSS = """<style>
+.st-key-explosive_search button {min-height: 150px; border-radius: 18px; background: var(--sf-primary); color: #ffffff; border: 0; box-shadow: 0 14px 34px rgba(11,102,112,.22); white-space: normal;}
+.st-key-explosive_search button p {font-size: 28px; font-weight: 800; line-height: 1.2;}
+.st-key-explosive_search button:hover {background: var(--sf-primary); filter: brightness(1.1); color: #ffffff;}
+.st-key-explosive_search button:disabled {background: #eef2f5; color: #6b7785; box-shadow: none; cursor: not-allowed;}
+@media (max-width: 640px) {
+  .st-key-explosive_search button {min-height: 110px;}
+  .st-key-explosive_search button p {font-size: 22px;}
+}
+</style>"""
+
+
+def global_unicorn_population(matrix) -> tuple[list[dict], list[dict], int]:
+    """(all unicorns, the ones shown by default, how many financial institutions are hidden)."""
+    all_rows = [row | {"country": normalized_country(row.get("country"))} for row in matrix.rows if row.get("unicorn_status") == "EVALUATED_UNICORN"]
+    # Banks/insurers: "positive free cash flow" is not comparable for them, so they stay out of the default list (still reachable).
+    financial_count = sum(unicorn_needs_financial_review(row) for row in all_rows)
+    include_financials = bool(st.session_state.get("global_unicorn_include_financials", False))
+    visible = all_rows if include_financials else [row for row in all_rows if not unicorn_needs_financial_review(row)]
+    return all_rows, visible, financial_count
+
+
+def run_explosive_market_search(rows: list[dict], progress=None) -> dict:
+    """Asks Yahoo about EVERY unicorn with a usable ticker (not a sample), merges what came back into the local
+    market cache and returns the summary. A provider problem is reported in the summary, never raised."""
+    searchable = [row for row in rows if yfinance_symbol(row)]
+    fetched, summary = fetch_yfinance_explosive_overlay(rows, len(searchable), progress=progress)
+    summary = dict(summary) | {"searchable": len(searchable), "unsearchable": len(rows) - len(searchable), "errors": []}
+    if fetched.empty:
+        return summary
+    normalized, errors = normalize_explosive_overlay(fetched)
+    if errors:
+        summary["errors"] = list(errors)
+        return summary
+    try:
+        save_explosive_overlay(merge_explosive_overlay(load_explosive_overlay(), normalized))
+    except OSError as exc:
+        summary["errors"] = [f"No se pudo guardar la caché de mercado: {exc}"]
+    return summary
+
+
+def explosive_scored_rows(rows: list[dict]) -> list[dict]:
+    return [row | explosive_candidate_score(row) for row in apply_explosive_overlay(rows, load_explosive_overlay())]
+
+
+def render_explosive_search_summary(summary: dict, has_cache: bool) -> None:
+    for error in summary.get("errors", []):
+        st.error(error)
+    if summary.get("status") == "YFINANCE_NOT_INSTALLED":
+        st.error(summary.get("message", "yfinance no está instalado."))
+        return
+    if summary.get("ok"):
+        unsearchable = f" {summary['unsearchable']:,} no tienen un ticker consultable." if summary.get("unsearchable") else ""
+        st.success(f"Búsqueda terminada: {summary['processed']:,} empresas consultadas · {summary['ok']:,} con datos de mercado · {summary['failed']:,} sin respuesta de Yahoo.{unsearchable}")
+    else:
+        st.warning("La búsqueda no obtuvo datos de Yahoo Finance (¿sin conexión?)." + (" Se muestran los últimos datos guardados." if has_cache else ""))
+
+
+def render_explosive_results(scored: list[dict]) -> None:
+    summary = unicorn_semantic_summary(scored)
+    tier_counts = Counter(row.get("tier", "NO_DATA") for row in scored)
+    render_explosive_overview(scored, summary, tier_counts)
+    render_explosive_candidates_dashboard(scored)
+    if summary["explosive"] == 0:
+        st.warning("Ningún candidato alcanza todavía el umbral explosivo del score (mínimo 55 puntos con al menos 3 señales fuertes y sin datos críticos ausentes). Las empresas con datos parciales aparecen como vigilancia (WATCH_ONLY).")
+    with st.expander("Lectura rápida de metodología", expanded=False):
+        st.write("- Busca Breakout Stocks, Multibaggers, Meme Stocks, Short Squeeze, Penny Stocks y Micro-Caps con datos reales de mercado.")
+        st.write("- Exige capitalización, precio, volumen relativo, float, short interest, momentum y breakout/catalizador; no usa rentabilidad fundamental como sustituto.")
+        st.write("- No es una recomendación financiera ni predice rentabilidad.")
+
+
+def render_explosive_contract_panel(scored: list[dict]) -> None:
+    with st.expander("Contrato técnico y señales requeridas", expanded=False):
+        contract_df = explosive_unicorn_contract_frame()
+        missing_counts = Counter(field for row in scored for field in explosive_unicorn_missing_fields(row))
+        coverage_df = pd.DataFrame([
+            {
+                "Campo": item["field"],
+                "Uso": item["required_for"],
+                "Filas con dato": len(scored) - missing_counts.get(item["field"], 0),
+                "Filas sin dato": missing_counts.get(item["field"], 0),
+                "Gate": item["gate"],
+            }
+            for item in EXPLOSIVE_UNICORN_DATA_CONTRACT
+        ])
+        st.dataframe(coverage_df, use_container_width=True, hide_index=True, height=260)
+        download_cols = st.columns(2)
+        download_cols[0].download_button(
+            "Descargar contrato CSV",
+            data=contract_df.to_csv(index=False).encode("utf-8"),
+            file_name="scout_finance_explosive_unicorn_data_contract_v2_45a.csv",
+            mime="text/csv",
+        )
+        contract_report = explosive_unicorn_contract_report(scored)
+        download_cols[1].download_button(
+            "Descargar contrato Markdown",
+            data=contract_report.encode("utf-8"),
+            file_name="scout_finance_explosive_unicorn_data_contract_v2_45a.md",
+            mime="text/markdown",
+        )
+        st.markdown("**Señales obligatorias:**")
+        for signal in EXPLOSIVE_UNICORN_REQUIRED_SIGNALS:
+            st.write(f"- {signal}")
+
+
+def render_explosive_search_page() -> None:
+    """The explosive view as a clean page: title, a short description and one big search button. The candidates
+    appear only once the search has run (and stay across reruns, e.g. when a candidate's page is opened)."""
+    # The mode radio is not drawn on this page, and Streamlit drops the state of undrawn widgets: keep its value alive.
+    st.session_state["global_unicorn_semantic_mode"] = "Unicornio explosivo"
+    matrix = global_matrix_snapshot()
+    if not matrix.available:
+        heading(st, "Unicornios explosivos", EXPLOSIVE_PAGE_DESCRIPTION)
+        st.info(matrix.error)
+        return
+    _, rows, _ = global_unicorn_population(matrix)
+    if st.session_state.get("explosive_search_done"):
+        scored = explosive_scored_rows(rows)
+        if explosive_fullpage_row(scored) is not None:
+            render_explosive_candidates_dashboard(scored)  # the candidate's own page and nothing else
+            return
+    heading(st, "Unicornios explosivos", EXPLOSIVE_PAGE_DESCRIPTION)
+    render_safe_demo_banner(st, SAFE_DEMO_MODE)
+    st.markdown(EXPLOSIVE_SEARCH_CSS, unsafe_allow_html=True)
+    clicked = st.button(
+        "🔎 Buscar Unicornios explosivos", key="explosive_search", type="primary", use_container_width=True,
+        disabled=SAFE_DEMO_MODE, help="Consulta Yahoo Finance (solo lectura) para todos los unicornios con ticker y guarda la caché local.",
+    )
+    if SAFE_DEMO_MODE:
+        st.info(blocked_message("Buscar unicornios explosivos"))
+    if clicked and not SAFE_DEMO_MODE:
+        bar = st.progress(0.0, text="Preparando la búsqueda…")
+
+        def on_progress(done: int, total: int, symbol: str) -> None:
+            bar.progress(min(done / max(total, 1), 1.0), text=f"Analizando {symbol} · {done} de {total}")
+
+        summary = run_explosive_market_search(rows, progress=on_progress)
+        bar.empty()
+        st.session_state["explosive_search_summary"] = summary
+        st.session_state["explosive_search_done"] = not load_explosive_overlay().empty
+    has_results = bool(st.session_state.get("explosive_search_done"))
+    summary = st.session_state.get("explosive_search_summary")
+    if summary:
+        render_explosive_search_summary(summary, has_results)
+    scored = explosive_scored_rows(rows) if has_results else []
+    if has_results:
+        render_explosive_results(scored)
+    st.divider()
+    if st.button("Ver unicornios de calidad fundamental", key="explosive_to_quality"):
+        st.session_state["global_unicorn_semantic_mode"] = "Calidad fundamental"
+        st.rerun()
+    if st.toggle("Opciones avanzadas (proveedor, caché y CSV manual)", value=False, key="explosive_show_advanced"):
+        render_explosive_unicorn_overlay_import(rows)
+        render_explosive_contract_panel(scored or explosive_scored_rows(rows))
+
+
 def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
     mode = st.radio(
         "Tipo de descubrimiento",
@@ -1899,52 +2065,6 @@ def render_unicorn_semantic_split(rows: list[dict]) -> tuple[str, list[dict]]:
         key="global_unicorn_semantic_mode",
         help="Calidad fundamental usa crecimiento/margen/caja. Unicornio explosivo exige señales de mercado como micro-cap, penny, short interest, float, volumen o breakout.",
     )
-    if mode == "Unicornio explosivo":
-        rows = render_explosive_unicorn_overlay_import(rows)
-        rows = [row | explosive_candidate_score(row) for row in rows]
-        summary = unicorn_semantic_summary(rows)
-        tier_counts = Counter(row.get("tier", "NO_DATA") for row in rows)
-        fullpage_open = explosive_fullpage_row(rows) is not None
-        if not fullpage_open:
-            render_explosive_overview(rows, summary, tier_counts)
-        render_explosive_candidates_dashboard(rows)
-        if summary["explosive"] == 0 and not fullpage_open:
-            st.warning("Ningún candidato alcanza todavía el umbral explosivo del score (mínimo 55 puntos con al menos 3 señales fuertes y sin datos críticos ausentes). Las empresas con datos parciales aparecen como vigilancia (WATCH_ONLY).")
-        with st.expander("Lectura rápida de metodología", expanded=False):
-            st.write("- Busca Breakout Stocks, Multibaggers, Meme Stocks, Short Squeeze, Penny Stocks y Micro-Caps con datos reales de mercado.")
-            st.write("- Exige capitalización, precio, volumen relativo, float, short interest, momentum y breakout/catalizador; no usa rentabilidad fundamental como sustituto.")
-            st.write("- No es una recomendación financiera ni predice rentabilidad.")
-        with st.expander("Contrato técnico y señales requeridas", expanded=False):
-            contract_df = explosive_unicorn_contract_frame()
-            missing_counts = Counter(field for row in rows for field in explosive_unicorn_missing_fields(row))
-            coverage_df = pd.DataFrame([
-                {
-                    "Campo": item["field"],
-                    "Uso": item["required_for"],
-                    "Filas con dato": len(rows) - missing_counts.get(item["field"], 0),
-                    "Filas sin dato": missing_counts.get(item["field"], 0),
-                    "Gate": item["gate"],
-                }
-                for item in EXPLOSIVE_UNICORN_DATA_CONTRACT
-            ])
-            st.dataframe(coverage_df, use_container_width=True, hide_index=True, height=260)
-            download_cols = st.columns(2)
-            download_cols[0].download_button(
-                "Descargar contrato CSV",
-                data=contract_df.to_csv(index=False).encode("utf-8"),
-                file_name="scout_finance_explosive_unicorn_data_contract_v2_45a.csv",
-                mime="text/csv",
-            )
-            contract_report = explosive_unicorn_contract_report(rows)
-            download_cols[1].download_button(
-                "Descargar contrato Markdown",
-                data=contract_report.encode("utf-8"),
-                file_name="scout_finance_explosive_unicorn_data_contract_v2_45a.md",
-                mime="text/markdown",
-            )
-            st.markdown("**Señales obligatorias:**")
-            for signal in EXPLOSIVE_UNICORN_REQUIRED_SIGNALS:
-                st.write(f"- {signal}")
     return mode, rows
 
 
@@ -3058,6 +3178,9 @@ def render_home(data):
         if st.button("🦄 Unicornios en bolsa", key="home_stocks", type="primary", use_container_width=True):
             # Opens straight on the explosive view; the mode radio on that screen still offers "Calidad fundamental".
             st.session_state["global_unicorn_semantic_mode"] = "Unicornio explosivo"
+            st.session_state["explosive_search_done"] = False  # every entry from the home starts on the clean page
+            for stale in ("explosive_search_summary", "explosive_fullpage_asset_id"):
+                st.session_state.pop(stale, None)
             go("global_unicorns")
         st.caption("Empresas cotizadas: candidatos explosivos y calidad fundamental.")
     with crypto_col:
@@ -3174,24 +3297,25 @@ def render_simple_unicorn_onboarding() -> None:
         "**Qué estás viendo**: candidatos a «unicornio explosivo» — empresas pequeñas (micro-cap o penny "
         "stock) con señales de mercado fuertes (subida de precio, volumen alto, poco flotante, posible short "
         "squeeze). Es investigación histórica ya calculada, no un consejo de compra ni una predicción.\n\n"
-        "**Cómo usarlo**: usa los filtros de arriba para acotar la lista, haz clic en una tarjeta para abrir "
-        "su ficha completa, y fíjate en el semáforo de confianza — verde (\"Muy respaldado\") significa que "
-        "hay más evidencia local detrás de la clasificación, no que vaya a subir más."
+        "**Cómo usarlo**: pulsa «Buscar Unicornios explosivos»; al terminar verás las empresas encontradas con "
+        "su puntuación sobre 100. Haz clic en «Ver ficha completa» para abrir su detalle y fíjate en las señales "
+        "que cumple y las que le faltan. Una puntuación alta significa que hay más señales de mercado presentes, "
+        "no que vaya a subir más."
     )
 
 
 def render_global_unicorns(_data):
+    if st.session_state.get("global_unicorn_semantic_mode") == "Unicornio explosivo":
+        render_explosive_search_page()
+        return
     heading(st, "Unicornios", "Centro de descubrimiento separado: calidad fundamental ya calculada frente a candidatos explosivos tipo breakout, multibagger, squeeze, penny stock o micro-cap.")
     render_safe_demo_banner(st, SAFE_DEMO_MODE)
     matrix = global_matrix_snapshot()
     if not matrix.available:
         st.info(matrix.error)
         return
-    all_unicorn_rows = [row | {"country": normalized_country(row.get("country"))} for row in matrix.rows if row.get("unicorn_status") == "EVALUATED_UNICORN"]
-    # Banks/insurers: "positive free cash flow" is not comparable for them, so they stay out of the default list (still reachable).
-    financial_unicorn_count = sum(unicorn_needs_financial_review(row) for row in all_unicorn_rows)
+    all_unicorn_rows, unicorn_rows, financial_unicorn_count = global_unicorn_population(matrix)
     include_financials = bool(st.session_state.get("global_unicorn_include_financials", False))
-    unicorn_rows = all_unicorn_rows if include_financials else [row for row in all_unicorn_rows if not unicorn_needs_financial_review(row)]
     evaluated_rows = [row for row in matrix.rows if row.get("unicorn_status") in {"EVALUATED_UNICORN", "EVALUATED_NOT_UNICORN", "INSUFFICIENT_DATA"}]
     counts = Counter(row.get("overall_coverage_status", "") for row in unicorn_rows)
     st.session_state["unicorn_population_medians"] = unicorn_population_medians(unicorn_rows)
@@ -3209,16 +3333,6 @@ def render_global_unicorns(_data):
             "- La **confianza de clasificación** mide cuánta evidencia respalda la etiqueta; no es probabilidad de subida, precio objetivo ni consejo de compra."
         )
     discovery_mode, semantic_rows = render_unicorn_semantic_split(unicorn_rows)
-    if discovery_mode == "Unicornio explosivo":
-        explosive_rows = [row for row in semantic_rows if explosive_unicorn_status(row)[0] == "EXPLOSIVE_CANDIDATE"]
-        if explosive_rows:
-            st.success(f"{len(explosive_rows):,} candidatos explosivos evaluables con señales locales de mercado.")
-            unicorn_rows = explosive_rows
-            counts = Counter(row.get("overall_coverage_status", "") for row in unicorn_rows)
-            st.caption("Vista explosiva aislada: se oculta el flujo legacy de calidad fundamental para no mezclar conceptos ni volver a mostrar cards de 96%.")
-            return
-        else:
-            st.stop()
     render_unicorn_recalculation_panel(matrix, unicorn_rows)
     notes = load_unicorn_notes()
     review_history = load_unicorn_review_history()

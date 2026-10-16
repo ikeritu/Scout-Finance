@@ -360,9 +360,9 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require('dashboard_rows = list(rows) if tier_filter == "NO_DATA"' in source, "NO_DATA rows must be opt-in in the explosive dashboard")
     require("bloqueados por falta de datos" in source, "Explosive dashboard must disclose blocked rows without mixing them into the main view")
     require('top_rows_html = "".join(top_items)' in source, "Explosive overview must render its top-3 rows as HTML, not as a Markdown code block")
-    require("render_explosive_overview(rows, summary, tier_counts)" in source, "The unified overview must be called once, with the same rows the dashboard below it uses")
+    require("render_explosive_overview(scored, summary, tier_counts)" in source, "The unified overview must be called once, with the same scored rows the dashboard below it uses")
     require("overview_html = (" in source, "Explosive overview must build compact HTML before st.markdown")
-    require("Vista explosiva aislada" in source, "Explosive mode must hide the legacy fundamental-quality flow after the explosive dashboard")
+    require("def render_explosive_search_page(" in source and "render_explosive_search_page()" in source, "Explosive mode is its own page and never falls through to the fundamental-quality flow")
 
 
 def main() -> None:

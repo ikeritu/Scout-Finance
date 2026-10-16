@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.49A — página limpia de «Buscar Unicornios explosivos»** (`EXPLOSIVE_SEARCH_PAGE_COMPLETED`): la vista explosiva pasa a ser título, descripción breve y un botón grande; al buscar aparecen las fichas de los encontrados. La búsqueda consulta todos los unicornios con ticker (140 de 141) en vez de una muestra fija de 40; calidad fundamental queda a un clic y el proveedor, la caché y el CSV manual tras «Opciones avanzadas». Probado con Yahoo real y con un proveedor simulado. Detalle en `EXPLOSIVE_SEARCH_PAGE_v2_49a.md`.
+
 **v2.48B — el botón «Unicornios en bolsa» abre directamente Unicornio explosivo** (`HOME_OPENS_EXPLOSIVE_COMPLETED`): el botón del inicio fija el selector en «Unicornio explosivo» antes de navegar (calidad fundamental sigue a un clic y la barra lateral no cambia). Solo navegación. Detalle en `HOME_OPENS_EXPLOSIVE_v2_48b.md`.
 
 **v2.48A — inicio con dos botones grandes** (`HOME_TWO_BUTTONS_COMPLETED`): el inicio pasa a ser solo «🦄 Unicornios en bolsa» (abre Unicornios) y «🪙 Unicornios Crypto» (desactivado, «Próximamente»), con el aviso de no asesoramiento financiero en una línea; el antiguo inicio queda como vista de estado para cuando la app se bloquea por falta de datos. Solo presentación. Detalle en `HOME_TWO_BUTTONS_v2_48a.md`.
