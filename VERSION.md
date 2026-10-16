@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.48A — inicio con dos botones grandes** (`HOME_TWO_BUTTONS_COMPLETED`): el inicio pasa a ser solo «🦄 Unicornios en bolsa» (abre Unicornios) y «🪙 Unicornios Crypto» (desactivado, «Próximamente»), con el aviso de no asesoramiento financiero en una línea; el antiguo inicio queda como vista de estado para cuando la app se bloquea por falta de datos. Solo presentación. Detalle en `HOME_TWO_BUTTONS_v2_48a.md`.
+
 **v2.47C — dos fallos que hacían caer la pantalla de Unicornios en «Calidad fundamental»** (`UNICORN_SCREEN_CRASH_FIXES_COMPLETED`): una clave de gráfico duplicada (PR #4: la misma empresa se dibujaba en la vista y en el detalle del final) y un `NameError` en «Fichas completas» (v2.46B). Nueva prueba que ejecuta la app de verdad con `AppTest` en las seis vistas y los dos modos, que sí habría detectado ambos. Detalle en `UNICORN_SCREEN_CRASH_FIXES_v2_47c.md`.
 
 **v2.47B — pestañas en la ficha del candidato explosivo** (`EXPLOSIVE_CANDIDATE_TABS_COMPLETED`): los tres bloques que cada tarjeta escondía en desplegables (y que la página completa repetía apilados) pasan a pestañas en la ficha, como en «Calidad fundamental»; las tarjetas quedan sin desplegables (27 menos y 9 gráficos de velas menos por pantalla), una ficha abierta ya no muestra encima el panel resumen ni el dashboard, y los filtros se conservan al volver. Solo presentación, sin cambiar el score ni los datos. Detalle en `EXPLOSIVE_CANDIDATE_TABS_v2_47b.md`.
