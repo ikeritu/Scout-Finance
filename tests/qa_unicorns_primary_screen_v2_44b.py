@@ -234,7 +234,7 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("Filtro de señal" in source, "Explosive dashboard must expose signal filters")
     for label in ["Micro-cap", "Penny stock", "Short squeeze", "Breakout", "Faltan datos críticos"]:
         require(label in source, f"Explosive dashboard filter {label} must be present")
-    require("Por qué puntúa así" in source, "Explosive dashboard must explain score rationale")
+    require("Por qué puntúa así" in source and "st.tabs([\"Por qué puntúa así\", \"Ficha explosiva profesional\", \"Precio y velas OHLCV\"])" in source, "Explosive candidate page must explain the score rationale in its first tab")
     require("Qué revisar manualmente" in source, "Explosive dashboard must show manual review guidance")
     require("def explosive_refresh_quality_diagnostics(" in source, "Explosive refresh must expose quality diagnostics")
     require("Diagnóstico de calidad del refresco real" in source, "Explosive UI must show refresh quality diagnostics")
@@ -319,8 +319,8 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("def explosive_candidate_detail_frame(" in source, "Explosive candidates must expose a per-company technical detail frame")
     require("def explosive_candidate_professional_explanation(" in source, "Explosive candidates must expose a personalized professional explanation")
     require("def explosive_candidate_review_checklist(" in source, "Explosive candidates must expose a professional review checklist")
-    require("Ficha explosiva profesional" in source, "Explosive candidate cards must include a professional detail expander")
-    for label in ["Proveedor de señal", "Señales presentes", "Señales faltantes", "Checklist de revisión profesional"]:
+    require("Ficha explosiva profesional" in source, "Explosive candidate page must include a professional detail tab")
+    for label in ["Proveedor de señal", "Drivers principales", "Qué señales faltan", "Checklist de revisión profesional"]:
         require(label in source, f"Explosive candidate detail must show {label}")
     require("No es recomendación financiera ni predice rentabilidad" in source, "Explosive candidate detail must keep no-advice language")
     require("no cambia score, ranking global ni proveedor activo" in source, "Explosive candidate detail must not alter scoring/provider behavior")
@@ -330,7 +330,8 @@ def test_unicorns_has_dedicated_renderer_and_dispatch() -> None:
     require("def render_explosive_candidate_candlestick(" in source, "Explosive candidates must render a candlestick panel")
     require("def render_featured_explosive_candlestick(" in source, "Explosive dashboard must show a visible featured candlestick panel")
     require("plotly_go.Candlestick(" in source, "Explosive candidates must render OHLC candlesticks")
-    require("Precio y velas OHLCV" in source, "Explosive candidate cards must include a price/candlestick expander")
+    require("Precio y velas OHLCV" in source, "Explosive candidate page must include a price/candlestick tab")
+    require("with col.expander(" not in source[source.index("def render_explosive_candidates_dashboard("):source.index("def render_unicorn_semantic_split(")], "Cards must not hide the same three blocks in expanders any more: the page carries them as tabs")
     require("Velas del candidato destacado" in source, "Candlestick chart must be visible above cards, not only hidden in expanders")
     require("f\"{identifier}.csv\"" in source, "Candlestick loader must support both asset_id and ticker local files")
     require("No hay histórico OHLCV local" in source, "Candlestick view must fail closed when OHLCV is unavailable")
