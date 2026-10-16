@@ -56,22 +56,22 @@ def test_stocks_button_opens_the_unicornios_screen() -> None:
     button(at, "home_stocks").click().run()
     require(not at.exception, f"Unicornios crashed after the click: {[e.value[:100] for e in at.exception]}")
     require(at.session_state["screen"] == "global_unicorns", at.session_state["screen"])
-    require(any(h.value == "Unicornios" for h in at.title), "the Unicornios screen is showing")
-    mode = next(r for r in at.radio if r.label == "Tipo de descubrimiento")
-    require(mode.value == "Unicornio explosivo", f"the button must open straight on the explosive view, found {mode.value!r}")
-    require("Calidad fundamental" in mode.options, "the quality view must still be one click away on that screen")
+    require(at.session_state["global_unicorn_semantic_mode"] == "Unicornio explosivo", "the button must open straight on the explosive view")
+    require([t.value for t in at.title] == ["Unicornios explosivos"], "the clean explosive page is showing")
+    require(any(b.key == "explosive_search" for b in at.button), "with its big search button")
+    require(any(b.key == "explosive_to_quality" for b in at.button), "and the quality view one click away")
 
 
 def test_quality_view_is_still_reachable_and_a_second_visit_reopens_explosive() -> None:
     at = home()
     button(at, "home_stocks").click().run()
-    next(r for r in at.radio if r.label == "Tipo de descubrimiento").set_value("Calidad fundamental").run()
+    next(b for b in at.button if b.key == "explosive_to_quality").click().run()
     require(not at.exception, f"quality view crashed: {[e.value[:100] for e in at.exception]}")
     require(next(r for r in at.radio if r.label == "Tipo de descubrimiento").value == "Calidad fundamental", "the person can switch")
     at.session_state["screen"] = "home"
     at.run()
     button(at, "home_stocks").click().run()
-    require(next(r for r in at.radio if r.label == "Tipo de descubrimiento").value == "Unicornio explosivo", "from the home it always opens on the explosive view again")
+    require(at.session_state["global_unicorn_semantic_mode"] == "Unicornio explosivo" and any(b.key == "explosive_search" for b in at.button), "from the home it always opens on the explosive page again")
 
 
 def test_blocked_data_path_still_uses_the_status_view() -> None:

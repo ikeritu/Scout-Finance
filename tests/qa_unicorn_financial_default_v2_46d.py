@@ -25,7 +25,9 @@ def require(condition: bool, message: str) -> None:
 def test_financials_are_hidden_by_default_but_never_lost() -> None:
     screen = inspect.getsource(app.render_global_unicorns)
     require('st.session_state.get("global_unicorn_include_financials", False)' in screen, "hidden by default")
-    require("not unicorn_needs_financial_review(row)" in screen, "default list excludes financial institutions")
+    population = inspect.getsource(app.global_unicorn_population)
+    require("not unicorn_needs_financial_review(row)" in population, "default list excludes financial institutions")
+    require("global_unicorn_population(matrix)" in screen and "global_unicorn_population(matrix)" in inspect.getsource(app.render_explosive_search_page), "both the quality and the explosive pages use the same default population")
     require('key="global_unicorn_include_financials"' in screen, "opt-in checkbox with a stable key")
     require('base_rows = all_unicorn_rows if quick_filter == "Revisión requerida" else unicorn_rows' in screen, "the review filter still shows them")
     require("de {len(base_rows):,} unicornios" in screen, "count denominators match the base set")

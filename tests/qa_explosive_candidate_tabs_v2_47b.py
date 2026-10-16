@@ -64,10 +64,9 @@ def test_filters_stay_alive_while_the_page_is_open_and_overview_is_hidden() -> N
     require(set(app.EXPLOSIVE_FILTER_KEYS) == {"explosive_dashboard_tier_filter", "explosive_dashboard_signal_filter", "explosive_dashboard_cards"}, "all three filter widgets covered")
     for key in app.EXPLOSIVE_FILTER_KEYS:
         require(f'key="{key}"' in dashboard, f"{key} must be a real widget key of the dashboard")
-    split = inspect.getsource(app.render_unicorn_semantic_split)
-    require("fullpage_open = explosive_fullpage_row(rows) is not None" in split, "decided once")
-    require("if not fullpage_open:\n            render_explosive_overview(rows, summary, tier_counts)" in split, "overview hidden on an open page")
-    require('summary["explosive"] == 0 and not fullpage_open' in split, "threshold warning hidden on an open page")
+    page = inspect.getsource(app.render_explosive_search_page)
+    require("explosive_fullpage_row(scored) is not None" in page, "an open candidate page is detected before drawing anything else")
+    require("render_explosive_candidates_dashboard(scored)  # the candidate's own page and nothing else" in page, "header, search button, summary and warning are skipped on an open page")
 
 
 CASES = [
