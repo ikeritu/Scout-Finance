@@ -1431,6 +1431,16 @@ def unicorn_semantic_summary(rows: list[dict]) -> dict[str, int]:
     }
 
 
+def explosive_market_data_label() -> str:
+    """Source and time of the market data on screen: the market cache's own last-saved time, which is not the date of
+    the fundamental calculation shown elsewhere."""
+    try:
+        saved_at = datetime.fromtimestamp(EXPLOSIVE_UNICORN_OVERLAY_PATH.stat().st_mtime)
+    except OSError:
+        return "Datos de mercado: todavía no hay datos guardados"
+    return f"Datos de mercado: Yahoo Finance, guardados el {saved_at:%Y-%m-%d a las %H:%M}"
+
+
 def render_explosive_overview(rows: list[dict], summary: dict[str, int], tier_counts: Counter) -> None:
     """One light, amber-accented panel -- replaces the old duplicated pair (a light 'cockpit' card
     immediately followed by a dark 'trading desk' hero that repeated 4 of its own 5 numbers) with a
@@ -1464,13 +1474,13 @@ def render_explosive_overview(rows: list[dict], summary: dict[str, int], tier_co
             <div>
               <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#b45309;font-weight:800;">Unicornios explosivos</div>
               <div style="font-size:28px;font-weight:900;color:#0f172a;margin-top:3px;">{summary['explosive']:,} candidatos explosivos</div>
-              <div style="font-size:13px;color:#64748b;margin-top:4px;">{len(rows) - no_data:,} empresas con datos de mercado (Yahoo/yfinance) · {no_data:,} bloqueadas por falta de datos.</div>
+              <div style="font-size:13px;color:#64748b;margin-top:4px;">{len(rows) - no_data:,} empresas con datos de mercado: {summary['explosive']:,} cumplen el umbral · {watch:,} en vigilancia (con datos, sin llegar al umbral) · {no_data:,} sin datos suficientes.<br>{escape(explosive_market_data_label())}</div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(74px,1fr));gap:10px;flex:1;min-width:260px;">
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{high:,}</b><br><span style="font-size:12px;color:#64748b;">High</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{medium:,}</b><br><span style="font-size:12px;color:#64748b;">Medium</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{low:,}</b><br><span style="font-size:12px;color:#64748b;">Low</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{watch:,}</b><br><span style="font-size:12px;color:#64748b;">Watch</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{high:,}</b><br><span style="font-size:12px;color:#64748b;">Alto</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{medium:,}</b><br><span style="font-size:12px;color:#64748b;">Medio</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{low:,}</b><br><span style="font-size:12px;color:#64748b;">Bajo</span></div>
+              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{watch:,}</b><br><span style="font-size:12px;color:#64748b;">Vigilancia</span></div>
               <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{no_data:,}</b><br><span style="font-size:12px;color:#64748b;">Sin datos</span></div>
             </div>
           </div>
@@ -1718,8 +1728,8 @@ def render_explosive_candidate_candlestick(row: dict, key_prefix: str = "explosi
     ohlcv = load_explosive_candidate_ohlcv(row)
     title = f"{row.get('ticker') or row.get('asset_id') or 'Activo'} · velas locales"
     if ohlcv.empty:
-        st.info("No hay histórico OHLCV local para dibujar velas de este candidato explosivo.")
-        st.caption("El panel queda fail-closed: no inventa apertura, máximo, mínimo ni cierre. Los precios históricos de v2.38I solo guardan cierre y volumen; pulsa «Actualizar datos reales» para guardar las velas OHLCV de este ticker.")
+        st.info("No hay histórico OHLCV local guardado para dibujar velas de este candidato.")
+        st.caption("No se inventa ningún dato de apertura, máximo, mínimo ni cierre. Pulsa «Buscar Unicornios explosivos» para guardar las velas de este ticker.")
         return
     st.plotly_chart(explosive_candlestick_figure(ohlcv, title), use_container_width=True, key=f"{key_prefix}_{row.get('asset_id') or row.get('ticker') or 'x'}")
     if len(ohlcv) >= 20:
@@ -1769,11 +1779,11 @@ def render_explosive_candidate_fullpage(row: dict) -> None:
         """,
         unsafe_allow_html=True,
     )
-    why_tab, ficha_tab, price_tab = st.tabs(["Por qué puntúa así", "Ficha explosiva profesional", "Precio y velas OHLCV"])
+    why_tab, ficha_tab, price_tab = st.tabs(["Resumen", "Datos", "Gráfico"])
     with why_tab:
         c1, c2 = st.columns(2)
         with c1:
-            st.markdown("#### Drivers principales")
+            st.markdown("#### Señales detectadas")
             drivers = row.get("drivers", [])
             if drivers:
                 for driver in drivers:
@@ -1787,7 +1797,7 @@ def render_explosive_candidate_fullpage(row: dict) -> None:
                 for signal in missing_all:
                     st.write(f"- {signal}")
             else:
-                st.write("- Ninguna señal crítica del contrato v2.45G.")
+                st.write("- Ninguna señal crítica faltante.")
         st.markdown("#### Qué revisar manualmente")
         st.write("- Confirmar que market cap, precio, volumen y float vienen de una fuente actual.")
         st.write("- Revisar si el movimiento es liquidez real o ruido de datos.")
@@ -1865,8 +1875,8 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
                 st.session_state[key] = st.session_state[key]
         render_explosive_candidate_fullpage(fullpage_row)
         return [fullpage_row]
-    st.markdown("### Dashboard de candidatos explosivos")
-    st.caption("Vista de investigación: prioriza revisión por score, tier, drivers y señales faltantes. No es recomendación financiera ni predice rentabilidad.")
+    st.markdown("### Empresas por revisar")
+    st.caption("Vista de investigación: ordena las empresas por puntuación; abre una ficha para ver por qué puntúa así. No es recomendación financiera ni predice rentabilidad.")
     search_col, tier_col, signal_col, page_col = st.columns([2, 1, 1, 1])
     search = search_col.text_input("Buscar empresa o ticker", placeholder="Ej.: CCLD o CareCloud", key="explosive_dashboard_search")
     tier_filter = tier_col.selectbox("Nivel", list(EXPLOSIVE_TIER_FILTER_LABELS), format_func=EXPLOSIVE_TIER_FILTER_LABELS.get, key="explosive_dashboard_tier_filter")
@@ -1939,8 +1949,8 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
                   <div style="color:#64748b;font-size:12px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
                   <div style="font-size:30px;font-weight:900;color:{color};margin-top:8px;">{score}</div>
                   <div style="color:#475569;font-size:12px;margin-bottom:8px;">{escape(explosive_tier_label(tier))}</div>
-                  <div style="font-size:13px;color:#334155;"><b>Drivers:</b> {escape(" · ".join(drivers) if drivers else "sin drivers suficientes")}</div>
-                  <div style="font-size:13px;color:#64748b;"><b>Faltan:</b> {escape(" · ".join(missing) if missing else "ninguna señal crítica")}</div>
+                  <div style="font-size:13px;color:#334155;"><b>Señales detectadas:</b> {escape(" · ".join(drivers) if drivers else "ninguna todavía")}</div>
+                  <div style="font-size:13px;color:#64748b;"><b>{"Faltan" if missing else "Datos"}:</b> {escape(" · ".join(missing) if missing else ("completos, pero la puntuación no llega al umbral" if tier == "WATCH_ONLY" else "completos"))}</div>
                 </div>
                 """,
                 unsafe_allow_html=True,
@@ -2025,7 +2035,7 @@ def render_explosive_results(scored: list[dict]) -> None:
     render_explosive_overview(scored, summary, tier_counts)
     render_explosive_candidates_dashboard(scored)
     if summary["explosive"] == 0:
-        st.warning("Ningún candidato alcanza todavía el umbral explosivo del score (mínimo 55 puntos con al menos 3 señales fuertes y sin datos críticos ausentes). Las empresas con datos parciales aparecen como vigilancia (WATCH_ONLY).")
+        st.warning("Ningún candidato alcanza todavía el umbral explosivo del score (mínimo 55 puntos con al menos 3 señales fuertes y sin datos críticos ausentes). Las empresas con datos parciales aparecen en vigilancia.")
     with st.expander("Lectura rápida de metodología", expanded=False):
         st.write("- Busca Breakout Stocks, Multibaggers, Meme Stocks, Short Squeeze, Penny Stocks y Micro-Caps con datos reales de mercado.")
         st.write("- Exige capitalización, precio, volumen relativo, float, short interest, momentum y breakout/catalizador; no usa rentabilidad fundamental como sustituto.")
@@ -2095,6 +2105,7 @@ def render_explosive_search_page() -> None:
         f"Alcance: las {len(rows):,} empresas que ya cumplen el criterio de calidad fundamental"
         + (f" (sin {hidden_financials:,} entidades financieras)" if hidden_financials else "")
         + f". La búsqueda añade sus señales de mercado; no recorre las {len(matrix.rows):,} empresas del censo."
+        + f" Cálculo fundamental del {matrix.generated_at[:10]}."
     )
     if clicked and not SAFE_DEMO_MODE:
         bar = st.progress(0.0, text="Preparando la búsqueda…")

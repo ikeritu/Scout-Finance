@@ -154,7 +154,7 @@ def test_results_survive_opening_and_closing_a_candidate_page() -> None:
         fetched = len(FakeTicker.created)
         card_buttons(at)[0].click().run()
         require(not at.exception, f"the candidate page crashed: {[e.value[:100] for e in at.exception]}")
-        require([t.label for t in at.tabs] == ["Por qué puntúa así", "Ficha explosiva profesional", "Precio y velas OHLCV"], [t.label for t in at.tabs])
+        require([t.label for t in at.tabs] == ["Resumen", "Datos", "Gráfico"], [t.label for t in at.tabs])
         # AppTest keeps the buttons of the run that called st.rerun(), so the page is judged by its heading (checked in a real browser too).
         require(not at.title, "an open candidate page shows only the candidate, not the search page header")
         require(any(b.label == "← Volver al dashboard" for b in at.button), "there is a way back")
@@ -273,7 +273,7 @@ def test_any_company_can_be_found_by_name_or_ticker() -> None:
         require(widget(at.text_input, "explosive_dashboard_search").value == "" and showing(at).startswith("Mostrando 1–9 de "), "Restablecer clears the search")
         widget(at.text_input, "explosive_dashboard_search").set_value("PLTR").run()
         card_buttons(at)[0].click().run()
-        require([t.label for t in at.tabs][0] == "Por qué puntúa así", "a company found by ticker opens its own page")
+        require([t.label for t in at.tabs][0] == "Resumen", "a company found by ticker opens its own page")
         require(at.session_state["saved_explosive_dashboard_search"] == "PLTR", "the search text is mirrored while its page is open")
 
 
@@ -311,6 +311,41 @@ def test_top3_says_what_it_is_over() -> None:
             require("ninguna supera el umbral explosivo" in html, "with 0 candidates it says the top scores are below the threshold")
 
 
+def visible_text(at: AppTest) -> str:
+    parts = [m.value for m in at.markdown] + [c.value for c in at.caption] + [w.value for w in at.warning] + [i.value for i in at.info] + [x.value for x in at.success]
+    return "\n".join(parts)
+
+
+def test_the_numbers_say_what_they_mean_and_where_they_come_from() -> None:
+    with Sandbox():
+        at = open_explosive_page()
+        scope = next((c for c in captions(at) if c.startswith("Alcance:")), "")
+        require("Cálculo fundamental del 20" in scope, "the fundamental-calculation date is stated next to the scope: " + scope)
+        button(at, "explosive_search").click().run()
+        text = visible_text(at)
+        require("cumplen el umbral" in text and "en vigilancia" in text and "sin datos suficientes" in text, "the summary spells out the three groups in words")
+        require("Datos de mercado: Yahoo Finance, guardados el 20" in text, "the market data states its source and when it was saved, separately from the fundamental date")
+        for old in (">High<", ">Medium<", ">Low<", ">Watch<"):
+            require(old not in text, f"raw tier name {old} must not reach the screen")
+        require("### Empresas por revisar" in text and "Dashboard de candidatos" not in text, "the list is named for what it is")
+        require("Señales detectadas:" in text and "Drivers:" not in text, "cards use plain wording")
+
+
+def test_no_internal_vocabulary_reaches_the_results_or_the_candidate_page() -> None:
+    banned = ("fail-closed", "non_polygon_overlay", "v2.45G", "WATCH_ONLY", "contrato v2", "Drivers principales")
+    with Sandbox():
+        at = searched_page()
+        text = visible_text(at)
+        for word in banned:
+            require(word not in text, f"{word!r} is internal vocabulary and must not appear on the results page")
+        card_buttons(at)[0].click().run()
+        require(not at.exception, f"candidate page crashed: {[e.value[:100] for e in at.exception]}")
+        text = visible_text(at)
+        for word in banned:
+            require(word not in text, f"{word!r} must not appear on the candidate page")
+        require("Señales detectadas" in text, "the first tab uses the plain heading")
+
+
 CASES = [
     test_the_page_is_clean_until_the_search_runs,
     test_search_scans_every_searchable_unicorn_and_shows_the_candidates,
@@ -325,6 +360,8 @@ CASES = [
     test_empty_result_explains_itself_and_offers_a_reset,
     test_page_and_filters_are_kept_while_a_candidate_page_is_open,
     test_top3_says_what_it_is_over,
+    test_the_numbers_say_what_they_mean_and_where_they_come_from,
+    test_no_internal_vocabulary_reaches_the_results_or_the_candidate_page,
 ]
 
 
