@@ -93,7 +93,7 @@ def test_tier_count_grid_wraps_on_narrow_screens() -> None:
 
 def test_filters_expander_no_longer_repeats_tier_counts() -> None:
     source = inspect.getsource(app.render_explosive_candidates_dashboard)
-    require("Filtros de exploración" in source and "y métricas técnicas" not in source, "renamed: metrics moved to the overview above")
+    require("Buscar empresa o ticker" in source and "y métricas técnicas" not in source, "the filters are a visible row and no longer repeat the tier counts already shown once in the overview")
     require("tier.replace(\"_\", \" \")" not in source, "the duplicated tier metric loop must stay removed")
     require("render_explosive_trading_desk_skin()" not in source and "render_explosive_trading_desk_hero(" not in source, "dashboard must not call the removed dark-hero functions")
 

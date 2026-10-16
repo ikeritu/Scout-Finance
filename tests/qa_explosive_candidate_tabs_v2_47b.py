@@ -60,8 +60,9 @@ def test_open_page_is_found_among_all_scored_rows_and_unknown_ids_are_ignored() 
 
 def test_filters_stay_alive_while_the_page_is_open_and_overview_is_hidden() -> None:
     dashboard = inspect.getsource(app.render_explosive_candidates_dashboard)
-    require("for key in EXPLOSIVE_FILTER_KEYS" in dashboard and "st.session_state[key] = st.session_state[key]" in dashboard, "filter widget state kept alive")
-    require(set(app.EXPLOSIVE_FILTER_KEYS) == {"explosive_dashboard_tier_filter", "explosive_dashboard_signal_filter", "explosive_dashboard_cards"}, "all three filter widgets covered")
+    require("restore_explosive_filters()" in dashboard and "save_explosive_filters()" in dashboard, "filter values are mirrored and restored around the widgets Streamlit drops")
+    require("for key in EXPLOSIVE_FILTER_KEYS" in dashboard and "st.session_state[key] = st.session_state[key]" in dashboard, "and kept in the state while a candidate page is open")
+    require(set(app.EXPLOSIVE_FILTER_KEYS) == {"explosive_dashboard_search", "explosive_dashboard_tier_filter", "explosive_dashboard_signal_filter", "explosive_dashboard_cards"}, "every filter widget (search included) is kept alive while a candidate page is open")
     for key in app.EXPLOSIVE_FILTER_KEYS:
         require(f'key="{key}"' in dashboard, f"{key} must be a real widget key of the dashboard")
     page = inspect.getsource(app.render_explosive_search_page)
