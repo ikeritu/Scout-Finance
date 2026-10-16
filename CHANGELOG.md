@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.47C — dos fallos que hacían caer la pantalla de Unicornios (2026-10-16)
+
+una clave de gráfico duplicada (PR #4: la misma empresa se dibujaba en la vista y en el detalle del final) y un `NameError` en «Fichas completas» (v2.46B). Nueva prueba que ejecuta la app de verdad con `AppTest` en las seis vistas y los dos modos, que sí habría detectado ambos. Detalle en `UNICORN_SCREEN_CRASH_FIXES_v2_47c.md`.
+
 ## v2.46E — deduplicar el ranking global por registrante SEC (2026-09-28)
 
 44 de las 1.111 empresas puntuadas por v2.38BV eran cotizaciones duplicadas del mismo registrante SEC (3 ocupaban directamente el ranking principal). `build_global_research_ranking_v2_38bv.py --dedupe-by-cik-from` escribe un ranking aparte (v2.46E: 1.067 puntuadas, 315 en el ranking principal, 44 marcadas `DUPLICATE_LISTING`) sin tocar los ficheros v2.38BV que citan las auditorías anteriores (siguen bit a bit idénticos). La app prefiere el fichero deduplicado cuando existe, con aviso, pestaña propia y el motivo de cada duplicado enlazado a la empresa primaria legible. Detalle en `GLOBAL_RANKING_DEDUPLICATION_v2_46e.md`.

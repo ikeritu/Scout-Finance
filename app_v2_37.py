@@ -2220,7 +2220,7 @@ def unicorn_median_comparison_figure(row: dict, medians: dict) -> plotly_go.Figu
     return fig
 
 
-def render_unicorn_key_figures(row: dict) -> None:
+def render_unicorn_key_figures(row: dict, key_prefix: str = "unicorn_median_bars") -> None:
     """Real, already-computed figures next to the median of the whole unicorn list (history, never a forecast)."""
     medians = st.session_state.get("unicorn_population_medians", {})
     cols = st.columns(3)
@@ -2231,7 +2231,7 @@ def render_unicorn_key_figures(row: dict) -> None:
         col.metric(label, format_percent_fraction(value, signed), delta=delta, delta_color="off")
     comparison_fig = unicorn_median_comparison_figure(row, medians)
     if comparison_fig is not None:
-        st.plotly_chart(comparison_fig, use_container_width=True, key=f"unicorn_median_bars_{row['asset_id']}")
+        st.plotly_chart(comparison_fig, use_container_width=True, key=f"{key_prefix}_{row['asset_id']}")
     if medians:
         st.caption(
             "Mediana de la lista: ingresos " + format_percent_fraction(medians.get("revenue_yoy_growth"))
@@ -2734,6 +2734,7 @@ def render_unicorn_full_catalog(rows: list[dict], notes: dict[str, str], review_
         review_entry = unicorn_review_entry(review_history, selected_row["asset_id"])
 
         st.markdown(f"### {selected_row['company_name']}")
+        score_label, score_value = unicorn_display_score(selected_row)
         k1, k2, k3, k4 = st.columns(4)
         k1.metric(score_label, score_value)
         k2.metric("Evidencia", grade)
@@ -2757,7 +2758,7 @@ def render_unicorn_full_catalog(rows: list[dict], notes: dict[str, str], review_
 
         st.markdown("#### Evidencia unicornio")
         st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
-        render_unicorn_key_figures(selected_row)
+        render_unicorn_key_figures(selected_row, key_prefix="unicorn_median_bars_catalog")
         for item in explain_unicorn_reason(selected_row.get("unicorn_reason", ""), selected_row.get("country", "")):
             st.write(f"- {item}")
 
@@ -3584,7 +3585,7 @@ def render_global_unicorns(_data):
                     st.caption(selected_row.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
                 st.write("**Criterios**")
                 st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
-                render_unicorn_key_figures(selected_row)
+                render_unicorn_key_figures(selected_row, key_prefix="unicorn_median_bars_cockpit")
                 with st.expander("Informe profesional"):
                     report = professional_unicorn_report(selected_row)
                     st.markdown(report)
@@ -3815,7 +3816,7 @@ def render_global_unicorns(_data):
         st.markdown("**Criterios cumplidos**")
         st.write(" · ".join(unicorn_criterion_badges(selected_row.get("unicorn_reason", ""), selected_row.get("country", ""))))
         st.markdown("**Cifras reales frente a la lista**")
-        render_unicorn_key_figures(selected_row)
+        render_unicorn_key_figures(selected_row, key_prefix="unicorn_median_bars_detail")
         st.markdown("**Explicación detallada**")
         for item in explain_unicorn_reason(selected_row.get("unicorn_reason", ""), selected_row.get("country", "")):
             st.write(f"- {item}")
