@@ -3034,7 +3034,38 @@ def global_ranking_display_frame(rows: list[dict], *, include_rank: bool = True,
     return pd.DataFrame(output)
 
 
+HOME_BUTTONS_CSS = """<style>
+.st-key-home_stocks button, .st-key-home_crypto button {min-height: 220px; border-radius: 18px; white-space: normal;}
+.st-key-home_stocks button p, .st-key-home_crypto button p {font-size: 30px; font-weight: 800; line-height: 1.2;}
+.st-key-home_stocks button {background: var(--sf-primary); color: #ffffff; border: 0; box-shadow: 0 14px 34px rgba(11,102,112,.22);}
+.st-key-home_stocks button:hover {background: var(--sf-primary); filter: brightness(1.1); color: #ffffff;}
+.st-key-home_crypto button:disabled {background: #eef2f5; color: #6b7785; border: 2px dashed #b9c4cf; cursor: not-allowed; opacity: 1;}
+@media (max-width: 640px) {
+  .st-key-home_stocks button, .st-key-home_crypto button {min-height: 150px;}
+  .st-key-home_stocks button p, .st-key-home_crypto button p {font-size: 24px;}
+}
+</style>"""
+
+
 def render_home(data):
+    """The landing screen is only two big click targets; everything it used to list (KPIs, data status,
+    what the tool does) lives in the sidebar, the guide screens and render_home_status."""
+    heading(st, "Scout Finance", "Elige qué quieres explorar")
+    render_safe_demo_banner(st, SAFE_DEMO_MODE)
+    st.markdown(HOME_BUTTONS_CSS, unsafe_allow_html=True)
+    stocks_col, crypto_col = st.columns(2, gap="large")
+    with stocks_col:
+        if st.button("🦄 Unicornios en bolsa", key="home_stocks", type="primary", use_container_width=True):
+            go("global_unicorns")
+        st.caption("Empresas cotizadas: calidad fundamental y candidatos explosivos.")
+    with crypto_col:
+        st.button("🪙 Unicornios Crypto", key="home_crypto", disabled=True, use_container_width=True)
+        st.caption("Próximamente: todavía no está implementado.")
+    st.caption(DISCLAIMER)
+
+
+def render_home_status(data):
+    """The former home: data status for the product's 50 assets. Still shown when the app is blocked for missing data."""
     heading(st, "Scout Finance", "Centro local de investigación financiera · v2.37")
     render_safe_demo_banner(st, SAFE_DEMO_MODE)
     banner(st)
@@ -4153,7 +4184,7 @@ def main():
             st.session_state.screen = selected
         st.divider(); st.caption(f"Datos: {data.mode.value}"); st.caption("Fase 7: INSUFFICIENT_EVIDENCE"); st.caption("Sin conexión a broker")
     if data.mode in {DataMode.BLOCKED_MISSING_DATA, DataMode.INCOMPATIBLE_VERSION}:
-        render_home(data); st.error("La aplicación queda bloqueada: " + "; ".join(data.errors)); return
+        render_home_status(data); st.error("La aplicación queda bloqueada: " + "; ".join(data.errors)); return
     if simple_mode:
         render_simple_unicorn_onboarding()
         render_global_unicorns(data)
