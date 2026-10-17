@@ -9,7 +9,8 @@ import tempfile
 import urllib.error
 import urllib.request
 from collections import Counter
-from datetime import datetime
+from datetime import date, datetime, timedelta, timezone
+from datetime import time as dtime
 from hashlib import sha1
 from html import escape
 from io import StringIO
@@ -1445,14 +1446,56 @@ def unicorn_semantic_summary(rows: list[dict]) -> dict[str, int]:
     }
 
 
+def current_utc() -> datetime:
+    """Now, in UTC. SCOUT_FINANCE_FAKE_NOW_UTC (an aware ISO timestamp) overrides it so the QA does not depend on the clock."""
+    fake = os.environ.get("SCOUT_FINANCE_FAKE_NOW_UTC")
+    return datetime.fromisoformat(fake).astimezone(timezone.utc) if fake else datetime.now(timezone.utc)
+
+
+def _nth_sunday(year: int, month: int, n: int) -> date:
+    first = date(year, month, 1)
+    return first + timedelta(days=(6 - first.weekday()) % 7 + 7 * (n - 1))
+
+
+def us_eastern_offset_hours(moment_utc: datetime) -> int:
+    """New York's offset from UTC: -4 in US daylight time (second Sunday of March 2:00 to first Sunday of November 2:00 local), else -5."""
+    year = moment_utc.year
+    starts = datetime.combine(_nth_sunday(year, 3, 2), dtime(7, 0), tzinfo=timezone.utc)  # 2:00 EST
+    ends = datetime.combine(_nth_sunday(year, 11, 1), dtime(6, 0), tzinfo=timezone.utc)  # 2:00 EDT
+    return -4 if starts <= moment_utc < ends else -5
+
+
+def us_market_session_open(moment_utc: datetime | None = None) -> bool:
+    """True from 9:30 to 16:00 New York time on weekdays. Holidays are not known, so on those days it can say True while
+    the market is closed (the warning it drives is worded as a possibility)."""
+    moment = (moment_utc or current_utc()).astimezone(timezone.utc)
+    new_york = moment + timedelta(hours=us_eastern_offset_hours(moment))
+    return new_york.weekday() < 5 and dtime(9, 30) <= new_york.time() < dtime(16, 0)
+
+
+def us_session_warning(moment_utc: datetime | None = None) -> str:
+    moment = (moment_utc or current_utc()).astimezone(timezone.utc)
+    offset = us_eastern_offset_hours(moment)
+    new_york_day = (moment + timedelta(hours=offset)).date()
+    close_utc = datetime.combine(new_york_day, dtime(16, 0), tzinfo=timezone.utc) - timedelta(hours=offset)
+    return (
+        "El mercado de EE. UU. puede estar en sesión (9:30–16:00 en Nueva York). Si buscas ahora, el volumen de hoy es parcial y el volumen relativo, "
+        "que decide algunas señales y hasta el nivel de una empresa, puede salir más bajo de lo que será al cierre. "
+        f"Para datos finales, busca a partir de las {close_utc.astimezone():%H:%M} (hora de este equipo). No se tienen en cuenta los festivos."
+    )
+
+
 def explosive_market_data_label() -> str:
     """Source and time of the market data on screen: the market cache's own last-saved time, which is not the date of
-    the fundamental calculation shown elsewhere."""
+    the fundamental calculation shown elsewhere. Says so when that save happened during the US session."""
     try:
-        saved_at = datetime.fromtimestamp(EXPLOSIVE_UNICORN_OVERLAY_PATH.stat().st_mtime)
+        saved_utc = datetime.fromtimestamp(EXPLOSIVE_UNICORN_OVERLAY_PATH.stat().st_mtime, tz=timezone.utc)
     except OSError:
         return "Datos de mercado: todavía no hay datos guardados"
-    return f"Datos de mercado: Yahoo Finance, guardados el {saved_at:%Y-%m-%d a las %H:%M}"
+    label = f"Datos de mercado: Yahoo Finance, guardados el {saved_utc.astimezone():%Y-%m-%d a las %H:%M}"
+    if us_market_session_open(saved_utc):
+        label += " · con el mercado de EE. UU. en sesión: el volumen de ese día era parcial"
+    return label
 
 
 def render_explosive_overview(rows: list[dict], summary: dict[str, int], tier_counts: Counter) -> None:
@@ -2122,6 +2165,8 @@ def render_explosive_search_page() -> None:
         + f". La búsqueda añade sus señales de mercado; no recorre las {len(matrix.rows):,} empresas del censo."
         + f" Cálculo fundamental del {matrix.generated_at[:10]}."
     )
+    if us_market_session_open():
+        st.warning(us_session_warning())
     if clicked and not SAFE_DEMO_MODE:
         bar = st.progress(0.0, text="Preparando la búsqueda…")
 
