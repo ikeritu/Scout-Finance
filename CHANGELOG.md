@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.49D — robustez de la caché de mercado y leyenda honesta (2026-10-17)
+
+una caché de mercado vacía o corrupta ya no hace caer la búsqueda (se aparta como `.corrupt-<fecha>` y se reconstruye) y el guardado es atómico; la «Banda 95%» del gráfico pasa a «Recta ±1,96 desv. residuales» con una nota de que es descriptiva, no un intervalo de confianza; y cada botón «Ver ficha completa» lleva el ticker. Detalle en `EXPLOSIVE_HARDENING_v2_49d.md`.
+
 ## v2.49C — redacción clara en los resultados explosivos y pestañas cortas (2026-10-16)
 
 el resumen dice con palabras cuántas cumplen el umbral, cuántas están en vigilancia y cuántas sin datos suficientes; separa la fecha del cálculo fundamental de la fecha y fuente de los datos de mercado; la tarjeta aclara «datos completos, pero la puntuación no llega al umbral»; desaparece el vocabulario interno («Drivers», «contrato v2.45G», «fail-closed», `WATCH_ONLY`); y las pestañas pasan a «Resumen / Datos / Gráfico». Cierra el informe de UX. Detalle en `EXPLOSIVE_PLAIN_WORDING_v2_49c.md`.
