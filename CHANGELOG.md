@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.49E — sensibilidad horaria del volumen relativo (2026-10-17)
+
+la página de búsqueda avisa si la sesión de EE. UU. puede estar abierta (el volumen de hoy sería parcial) y la etiqueta de datos lo indica si la caché se guardó en sesión; un script de solo lectura compara el volumen relativo actual con uno calculado desde las barras diarias (60 sesiones lo reproduce; el estado de candidato de CBRL depende de la ventana). No cambia el score. Detalle en `RELATIVE_VOLUME_SENSITIVITY_v2_49e.md`.
+
 ## v2.49D — robustez de la caché de mercado y leyenda honesta (2026-10-17)
 
 una caché de mercado vacía o corrupta ya no hace caer la búsqueda (se aparta como `.corrupt-<fecha>` y se reconstruye) y el guardado es atómico; la «Banda 95%» del gráfico pasa a «Recta ±1,96 desv. residuales» con una nota de que es descriptiva, no un intervalo de confianza; y cada botón «Ver ficha completa» lleva el ticker. Detalle en `EXPLOSIVE_HARDENING_v2_49d.md`.

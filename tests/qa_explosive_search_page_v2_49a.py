@@ -60,9 +60,11 @@ class Sandbox:
     def __enter__(self) -> "Sandbox":
         self.tmp = tempfile.TemporaryDirectory()
         self.saved_env = os.environ.get("SCOUT_FINANCE_DATA_DIR")
+        self.saved_now = os.environ.get("SCOUT_FINANCE_FAKE_NOW_UTC")
         self.saved_module = sys.modules.get("yfinance")
         self.real_overlay_before = REAL_OVERLAY.stat().st_mtime_ns if REAL_OVERLAY.exists() else None
         os.environ["SCOUT_FINANCE_DATA_DIR"] = self.tmp.name
+        os.environ["SCOUT_FINANCE_FAKE_NOW_UTC"] = "2026-10-17T12:00:00+00:00"  # a Saturday: the market is closed whenever the QA runs
         module = types.ModuleType("yfinance")
         module.Ticker = FakeTicker
         sys.modules["yfinance"] = module
@@ -80,6 +82,10 @@ class Sandbox:
             os.environ.pop("SCOUT_FINANCE_DATA_DIR", None)
         else:
             os.environ["SCOUT_FINANCE_DATA_DIR"] = self.saved_env
+        if self.saved_now is None:
+            os.environ.pop("SCOUT_FINANCE_FAKE_NOW_UTC", None)
+        else:
+            os.environ["SCOUT_FINANCE_FAKE_NOW_UTC"] = self.saved_now
         real_overlay_after = REAL_OVERLAY.stat().st_mtime_ns if REAL_OVERLAY.exists() else None
         self.tmp.cleanup()
         FakeTicker.fail = False
