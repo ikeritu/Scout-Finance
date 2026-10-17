@@ -716,7 +716,15 @@ def load_explosive_overlay() -> pd.DataFrame:
         return pd.DataFrame()
     try:
         return pd.read_csv(EXPLOSIVE_UNICORN_OVERLAY_PATH)
-    except (OSError, pd.errors.ParserError):
+    except OSError:
+        return pd.DataFrame()
+    except ValueError:
+        # Empty file, bytes that are not UTF-8, a parser error: all ValueErrors. The cache is not recoverable, so it is set
+        # aside (never silently overwritten) and the next search rebuilds it.
+        try:
+            EXPLOSIVE_UNICORN_OVERLAY_PATH.replace(EXPLOSIVE_UNICORN_OVERLAY_PATH.with_name(f"{EXPLOSIVE_UNICORN_OVERLAY_PATH.name}.corrupt-{datetime.now():%Y%m%d%H%M%S}"))
+        except OSError:
+            pass
         return pd.DataFrame()
 
 
@@ -736,8 +744,14 @@ def merge_explosive_overlay(existing: pd.DataFrame, fresh: pd.DataFrame) -> pd.D
 
 
 def save_explosive_overlay(df: pd.DataFrame) -> None:
+    """Atomic: written next to the target and renamed over it, so an interrupted write can never leave a truncated cache."""
     EXPLOSIVE_UNICORN_OVERLAY_PATH.parent.mkdir(parents=True, exist_ok=True)
-    df.to_csv(EXPLOSIVE_UNICORN_OVERLAY_PATH, index=False)
+    tmp = EXPLOSIVE_UNICORN_OVERLAY_PATH.with_name(EXPLOSIVE_UNICORN_OVERLAY_PATH.name + ".tmp")
+    try:
+        df.to_csv(tmp, index=False)
+        tmp.replace(EXPLOSIVE_UNICORN_OVERLAY_PATH)
+    finally:
+        tmp.unlink(missing_ok=True)
 
 
 def apply_explosive_overlay(rows: list[dict], overlay: pd.DataFrame) -> list[dict]:
@@ -1701,8 +1715,8 @@ def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str) -> plotly_go.F
             r_squared = max(0.0, min(1.0, 1.0 - (ss_res / ss_tot))) if ss_tot else 0.0
             sigma = float(residual.std(ddof=1)) if len(residual) > 1 else 0.0
             fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted, mode="lines", name=f"Regresión lineal · R² {r_squared:.2f}", line={"color": "#f59e0b", "width": 2}))
-            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted + 1.96 * sigma, mode="lines", name="Banda superior 95%", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}))
-            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted - 1.96 * sigma, mode="lines", name="Banda inferior 95%", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}, fill="tonexty", fillcolor="rgba(245,158,11,.08)"))
+            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted + 1.96 * sigma, mode="lines", name="Recta +1,96 desv. residuales", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}))
+            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted - 1.96 * sigma, mode="lines", name="Recta −1,96 desv. residuales", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}, fill="tonexty", fillcolor="rgba(245,158,11,.08)"))
     if "Volume" in ohlcv and ohlcv["Volume"].notna().any():
         fig.add_trace(plotly_go.Bar(
             x=ohlcv["Date"],
@@ -1743,6 +1757,7 @@ def render_explosive_candidate_candlestick(row: dict, key_prefix: str = "explosi
         ss_tot = float(((yv - yv.mean()) ** 2).sum())
         r_squared = max(0.0, min(1.0, 1.0 - float(((yv - fitted) ** 2).sum()) / ss_tot)) if ss_tot else 0.0
         st.caption(f"Regresión lineal descriptiva · pendiente {slope:+.4f} por sesión · R² {r_squared:.2f} · no predice rentabilidad ni constituye señal de compra.")
+        st.caption("Las líneas punteadas son la recta ±1,96 desviaciones típicas de los residuos: una banda descriptiva de cuánto se alejan los cierres de la recta. No es un intervalo de confianza ni de predicción, y no garantiza una cobertura del 95 %.")
     first_date = ohlcv["Date"].iloc[0].date()
     last_date = ohlcv["Date"].iloc[-1].date()
     st.caption(f"Gráfico de velas OHLCV local: {len(ohlcv):,} sesiones · {first_date} a {last_date}. No muestra señales de compra/venta.")
@@ -1955,7 +1970,7 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
                 """,
                 unsafe_allow_html=True,
             )
-            if col.button("Ver ficha completa", key=f"explosive_fullpage_select_{explosive_candidate_id(row)}", use_container_width=True):
+            if col.button(f"Ver ficha completa · {unicorn_ticker(row) or explosive_candidate_id(row)}", key=f"explosive_fullpage_select_{explosive_candidate_id(row)}", use_container_width=True):
                 st.session_state["explosive_fullpage_asset_id"] = explosive_candidate_id(row)
                 st.rerun()
     if pages > 1:
