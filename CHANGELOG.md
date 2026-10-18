@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.49J — pulido a 375 px: título del gráfico y separación del pie de la ficha (2026-10-18)
+
+Solo presentación. El título del gráfico pasa a una línea de texto sobre él (la barra de herramientas lo tapaba en móvil) y el botón de cada ficha lleva una separación mínima del texto. Prueba nueva `qa_explosive_mobile_polish_v2_49j.py`; detalle en `outputs/full_universe_source_acquisition/v2_49j_explosive_mobile_polish/EXPLOSIVE_MOBILE_POLISH_v2_49j.md`.
+
 ## v2.49I — enlaces a Yahoo Finance y Google Finance, y leyenda bajo el gráfico (2026-10-18)
 
 Solo presentación. Enlaces a Yahoo Finance y Google Finance en cada ficha y en la página de candidato, solo con ticker verificado (sin ticker, sin enlace); la leyenda del gráfico pasa a texto bajo él. Prueba nueva `qa_explosive_links_and_legend_v2_49i.py`; detalle en `outputs/full_universe_source_acquisition/v2_49i_explosive_links_and_legend/EXPLOSIVE_LINKS_AND_LEGEND_v2_49i.md`.

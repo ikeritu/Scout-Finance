@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.49J — pulido a 375 px: título del gráfico y separación del pie de la ficha** (`EXPLOSIVE_MOBILE_POLISH_COMPLETED`): la barra de herramientas del gráfico tapaba su título en móvil, ahora el título es una línea de texto encima del gráfico; y el botón de cada ficha lleva una separación mínima respecto al texto. Solo presentación. Detalle en `EXPLOSIVE_MOBILE_POLISH_v2_49j.md`.
+
 **v2.49I — enlaces a Yahoo Finance y Google Finance, y leyenda bajo el gráfico** (`EXPLOSIVE_LINKS_AND_LEGEND_COMPLETED`): cada ficha y la página de candidato enlazan a Yahoo Finance y Google Finance (solo con ticker verificado; Google por búsqueda de ticker, con aviso de comprobar el nombre), y la leyenda del gráfico pasa a una línea de texto bajo él, sin el hueco superior. Solo presentación. Detalle en `EXPLOSIVE_LINKS_AND_LEGEND_v2_49i.md`.
 
 **v2.49H — un archivo de velas dañado ya no tumba la pantalla explosiva** (`EXPLOSIVE_OHLCV_HARDENING_COMPLETED`): un CSV de velas vacío, no UTF-8 o corrupto hacía caer el gráfico destacado y la ficha; ahora el de la caché propia se aparta como `.corrupt-<fecha>` (sin perder bytes), los de las carpetas de adquisición se saltan sin tocarlos, las fechas duplicadas se colapsan y un archivo sin filas utilizables pasa a la siguiente fuente. No cambia el score. Detalle en `EXPLOSIVE_OHLCV_HARDENING_v2_49h.md`.
