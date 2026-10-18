@@ -1797,10 +1797,10 @@ def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str, show_regressio
     fig.update_yaxes(title_text="Precio", row=1, col=1)
     fig.update_layout(
         height=490 if has_volume else 420,
-        margin={"l": 8, "r": 8, "t": 48, "b": 8},
+        margin={"l": 8, "r": 8, "t": 36, "b": 8},  # a strip for the chart's hover toolbar; the title is a line of text above the chart
         showlegend=False,
         xaxis_rangeslider_visible=False,
-        title={"text": title, "x": 0, "xanchor": "left", "y": 0.97, "yanchor": "top"},
+        meta=title,
     )
     return fig
 
@@ -1824,6 +1824,7 @@ def render_explosive_candidate_candlestick(row: dict, key_prefix: str = "explosi
         return
     row_id = row.get("asset_id") or row.get("ticker") or "x"
     show_regression = st.checkbox("Mostrar recta de regresión y banda", value=True, key=f"{key_prefix}_layers_{row_id}") if len(ohlcv) >= 20 else False
+    st.markdown(f'<div style="font-weight:700;color:{EXPLOSIVE_INK};font-size:15px;margin:8px 0 2px;">{escape(title)}</div>', unsafe_allow_html=True)
     st.plotly_chart(explosive_candlestick_figure(ohlcv, title, show_regression=show_regression), use_container_width=True, key=f"{key_prefix}_{row_id}")
     st.caption(explosive_chart_legend(has_volume="Volume" in ohlcv and bool(ohlcv["Volume"].notna().any()), show_regression=show_regression and len(ohlcv) >= 20))
     if show_regression and len(ohlcv) >= 20:
@@ -2109,7 +2110,7 @@ EXPLOSIVE_SEARCH_CSS = """<style>
 # One bordered container per card; the button is its footer and sits at the bottom of the row's tallest card, so no height is fixed.
 EXPLOSIVE_CARD_CSS = """<style>
 [class*="st-key-explosive_card_"] { display: flex; flex-direction: column; }
-[class*="st-key-explosive_card_"] > div:last-child { margin-top: auto; }
+[class*="st-key-explosive_card_"] > div:last-child { margin-top: auto; padding-top: 12px; }
 </style>"""
 
 EXPLOSIVE_SEARCH_COMPACT_CSS = """<style>
