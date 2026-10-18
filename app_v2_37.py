@@ -19,6 +19,7 @@ from urllib.parse import quote, urlencode
 
 import pandas as pd
 import plotly.graph_objects as plotly_go  # not `go`: the navigation helper go() below would shadow it
+from plotly.subplots import make_subplots
 import streamlit as st
 
 from src.ui_v2_37.global_ranking import DEDUPE_BUILD_COMMAND, load_global_ranking
@@ -1498,55 +1499,68 @@ def explosive_market_data_label() -> str:
     return label
 
 
+# Visual tokens of the explosive screen. Amber is the identity of the section (panel border and label), never a level;
+# levels are read from a text chip plus a soft teal/grey. Secondary text is #475569 (7.6:1 on white), never lighter.
+EXPLOSIVE_INK = "#0f172a"
+EXPLOSIVE_TEXT = "#334155"
+EXPLOSIVE_TEXT_SECONDARY = "#475569"
+EXPLOSIVE_BORDER = "#d8e2ef"
+EXPLOSIVE_ACCENT_TEXT = "#b45309"
+EXPLOSIVE_ACCENT_BORDER = "#d97706"
+EXPLOSIVE_SURFACE_AMBER = "#fffaf0"
+EXPLOSIVE_RADIUS = 12
+EXPLOSIVE_RADIUS_SMALL = 8
+EXPLOSIVE_TIER_STYLES = {
+    "EXPLOSIVE_CANDIDATE_HIGH": {"border": "#115e59", "chip_bg": "#ccfbf1", "chip_fg": "#115e59"},
+    "EXPLOSIVE_CANDIDATE_MEDIUM": {"border": "#0f766e", "chip_bg": "#d5f3ee", "chip_fg": "#115e59"},
+    "EXPLOSIVE_CANDIDATE_LOW": {"border": "#14b8a6", "chip_bg": "#f0fdfa", "chip_fg": "#115e59"},
+    "WATCH_ONLY": {"border": "#94a3b8", "chip_bg": "#f1f5f9", "chip_fg": "#475569"},
+    "NO_DATA": {"border": "#cbd5e1", "chip_bg": "#f8fafc", "chip_fg": "#475569"},
+}
+
+
+def explosive_tier_style(tier) -> dict[str, str]:
+    return EXPLOSIVE_TIER_STYLES.get(str(tier or ""), EXPLOSIVE_TIER_STYLES["NO_DATA"])
+
+
+def explosive_tier_chip(tier) -> str:
+    style = explosive_tier_style(tier)
+    return (
+        f'<span style="display:inline-block;padding:2px 10px;border-radius:999px;background:{style["chip_bg"]};color:{style["chip_fg"]};'
+        f'font-size:12px;font-weight:700;white-space:nowrap;">{escape(explosive_tier_label(tier))}</span>'
+    )
+
+
 def render_explosive_overview(rows: list[dict], summary: dict[str, int], tier_counts: Counter) -> None:
-    """One light, amber-accented panel -- replaces the old duplicated pair (a light 'cockpit' card
-    immediately followed by a dark 'trading desk' hero that repeated 4 of its own 5 numbers) with a
-    single visual language consistent with the rest of the screen. Amber is a semantic accent (this is
-    the explosive lens, not the quality one), not a second theme."""
+    """One compact panel: the count that matters, what the numbers mean and where they come from, and the five groups.
+    There is no podium: the list below is already ordered by score, so its first row shows the same companies."""
     high = tier_counts.get("EXPLOSIVE_CANDIDATE_HIGH", 0)
     medium = tier_counts.get("EXPLOSIVE_CANDIDATE_MEDIUM", 0)
     low = tier_counts.get("EXPLOSIVE_CANDIDATE_LOW", 0)
     watch = tier_counts.get("WATCH_ONLY", 0)
     no_data = tier_counts.get("NO_DATA", 0)
-    top_rows = sorted(rows, key=explosive_dashboard_sort_key)[:3]
-    top_items = []
-    for index, row in enumerate(top_rows, start=1):
-        drivers = " · ".join(str(driver) for driver in row.get("drivers", [])[:2])
-        top_items.append(
-            '<div style="display:flex;align-items:center;gap:12px;padding:8px 12px;border:1px solid #f2e2bb;border-radius:10px;background:#fffaf0;">'
-            f'<div style="font-size:22px;font-weight:900;color:#b45309;min-width:56px;">{int(row.get("explosive_score_0_100", 0))}<span style="font-size:11px;color:#94a3b8;">/100</span></div>'
-            '<div style="flex:1;min-width:0;">'
-            f'<div style="font-weight:800;color:#0f172a;font-size:13px;">{escape(row.get("company_name", "N/D"))}</div>'
-            f'<div style="font-size:12px;color:#64748b;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(drivers or "sin drivers suficientes")}</div>'
-            '</div>'
-            f'<div style="font-size:11px;font-weight:800;color:#b45309;background:#fef3c7;border-radius:999px;padding:3px 9px;white-space:nowrap;">Top {index}</div>'
-            '</div>'
-        )
-    top_rows_html = "".join(top_items) if top_items else '<div style="color:#64748b;font-size:13px;">Sin candidatos filtrados.</div>'
-    top_note = '' if summary["explosive"] else '<div style="font-size:12px;color:#64748b;margin-bottom:8px;">Mayor puntuación disponible: ninguna supera el umbral explosivo.</div>'
+    none_pass = " Ninguna supera el umbral explosivo." if not summary["explosive"] else ""
+    box = f"background:#fff;border:1px solid {EXPLOSIVE_BORDER};border-radius:{EXPLOSIVE_RADIUS_SMALL}px;padding:10px;text-align:center;"
+    number = f"font-size:20px;font-weight:700;color:{EXPLOSIVE_INK};"
+    label = f"font-size:12px;color:{EXPLOSIVE_TEXT_SECONDARY};"
     overview_html = (
         f"""
-        <div class="sf-explosive-header" style="border:1px solid #f2e2bb;border-left:6px solid #d97706;border-radius:12px;padding:18px 20px;margin:14px 0 18px;background:linear-gradient(135deg,#fff8ec 0%,#ffffff 55%,#fffaf0 100%);box-shadow:0 10px 28px rgba(15,23,42,.05);">
+        <div class="sf-explosive-header" style="border:1px solid #f2e2bb;border-left:6px solid {EXPLOSIVE_ACCENT_BORDER};border-radius:{EXPLOSIVE_RADIUS}px;padding:16px 20px;margin:12px 0 16px;background:{EXPLOSIVE_SURFACE_AMBER};">
           <div style="display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap;">
-            <div>
-              <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#b45309;font-weight:800;">Unicornios explosivos</div>
-              <div style="font-size:28px;font-weight:900;color:#0f172a;margin-top:3px;">{summary['explosive']:,} candidatos explosivos</div>
-              <div style="font-size:13px;color:#64748b;margin-top:4px;">{len(rows) - no_data:,} empresas con datos de mercado: {summary['explosive']:,} cumplen el umbral · {watch:,} en vigilancia (con datos, sin llegar al umbral) · {no_data:,} sin datos suficientes.<br>{escape(explosive_market_data_label())}</div>
+            <div style="flex:2;min-width:260px;">
+              <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:{EXPLOSIVE_ACCENT_TEXT};font-weight:700;">Unicornios explosivos</div>
+              <div style="font-size:28px;font-weight:800;color:{EXPLOSIVE_INK};margin-top:2px;">{summary['explosive']:,} candidatos explosivos</div>
+              <div style="font-size:13px;color:{EXPLOSIVE_TEXT_SECONDARY};margin-top:4px;">{len(rows) - no_data:,} empresas con datos de mercado: {summary['explosive']:,} cumplen el umbral · {watch:,} en vigilancia (con datos, sin llegar al umbral) · {no_data:,} sin datos suficientes.{none_pass}<br>{escape(explosive_market_data_label())}</div>
             </div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(74px,1fr));gap:10px;flex:1;min-width:260px;">
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{high:,}</b><br><span style="font-size:12px;color:#64748b;">Alto</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{medium:,}</b><br><span style="font-size:12px;color:#64748b;">Medio</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{low:,}</b><br><span style="font-size:12px;color:#64748b;">Bajo</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{watch:,}</b><br><span style="font-size:12px;color:#64748b;">Vigilancia</span></div>
-              <div style="background:#fff;border:1px solid #d8e2ef;border-radius:10px;padding:10px;text-align:center;"><b style="font-size:20px;color:#0f172a;">{no_data:,}</b><br><span style="font-size:12px;color:#64748b;">Sin datos</span></div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(74px,1fr));gap:10px;flex:3;min-width:260px;">
+              <div style="{box}"><b style="{number}">{high:,}</b><br><span style="{label}">Alto</span></div>
+              <div style="{box}"><b style="{number}">{medium:,}</b><br><span style="{label}">Medio</span></div>
+              <div style="{box}"><b style="{number}">{low:,}</b><br><span style="{label}">Bajo</span></div>
+              <div style="{box}"><b style="{number}">{watch:,}</b><br><span style="{label}">Vigilancia</span></div>
+              <div style="{box}"><b style="{number}">{no_data:,}</b><br><span style="{label}">Sin datos</span></div>
             </div>
           </div>
-          <div style="margin-top:16px;">
-            <div style="font-size:13px;font-weight:800;color:#0f172a;margin-bottom:{'4px' if top_note else '8px'};">Top 3 por score explosivo (sobre 100) · de todas las empresas con datos</div>
-            {top_note}
-            <div style="display:grid;gap:8px;">{top_rows_html}</div>
-          </div>
-          <div style="margin-top:14px;color:#94a3b8;font-size:12px;">Score explosivo v1: heurística local de investigación 0-100; no reemplaza scoring fundamental ni ranking global. No es una recomendación financiera ni predice rentabilidad.</div>
+          <div style="margin-top:12px;color:{EXPLOSIVE_TEXT_SECONDARY};font-size:12px;">Puntuación explosiva v1: heurística local de investigación de 0 a 100; no reemplaza el scoring fundamental ni el ranking global. No es una recomendación financiera ni predice rentabilidad.</div>
         </div>
         """
     )
@@ -1730,8 +1744,11 @@ def load_explosive_candidate_ohlcv(row: dict, max_sessions: int = 90) -> pd.Data
     return pd.DataFrame()
 
 
-def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str) -> plotly_go.Figure:
-    fig = plotly_go.Figure()
+def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str, show_regression: bool = True) -> plotly_go.Figure:
+    """Price on top, volume in its own panel with its own axis (so showing or hiding it never rescales the price).
+    The fitted line and its +/-1.96 residual-deviation lines are an optional descriptive layer."""
+    has_volume = "Volume" in ohlcv and ohlcv["Volume"].notna().any()
+    fig = make_subplots(rows=2 if has_volume else 1, cols=1, shared_xaxes=True, vertical_spacing=0.04, row_heights=[0.74, 0.26] if has_volume else [1.0])
     fig.add_trace(plotly_go.Candlestick(
         x=ohlcv["Date"],
         open=ohlcv["Open"],
@@ -1741,8 +1758,8 @@ def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str) -> plotly_go.F
         name="OHLC",
         increasing_line_color="#0f766e",
         decreasing_line_color="#dc2626",
-    ))
-    if len(ohlcv) >= 20:
+    ), row=1, col=1)
+    if show_regression and len(ohlcv) >= 20:
         x = pd.Series(range(len(ohlcv)), dtype="float64")
         y = pd.to_numeric(ohlcv["Close"], errors="coerce")
         valid = y.notna()
@@ -1757,26 +1774,20 @@ def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str) -> plotly_go.F
             ss_tot = float(((yv - yv.mean()) ** 2).sum())
             r_squared = max(0.0, min(1.0, 1.0 - (ss_res / ss_tot))) if ss_tot else 0.0
             sigma = float(residual.std(ddof=1)) if len(residual) > 1 else 0.0
-            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted, mode="lines", name=f"Regresión lineal · R² {r_squared:.2f}", line={"color": "#f59e0b", "width": 2}))
-            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted + 1.96 * sigma, mode="lines", name="Recta +1,96 desv. residuales", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}))
-            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted - 1.96 * sigma, mode="lines", name="Recta −1,96 desv. residuales", line={"color": "rgba(245,158,11,.35)", "dash": "dot", "width": 1}, fill="tonexty", fillcolor="rgba(245,158,11,.08)"))
-    if "Volume" in ohlcv and ohlcv["Volume"].notna().any():
-        fig.add_trace(plotly_go.Bar(
-            x=ohlcv["Date"],
-            y=ohlcv["Volume"],
-            name="Volumen",
-            marker_color="rgba(37, 99, 235, 0.24)",
-            yaxis="y2",
-        ))
-        fig.update_layout(yaxis2={"overlaying": "y", "side": "right", "showgrid": False, "visible": False})
+            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted, mode="lines", name=f"Regresión lineal · R² {r_squared:.2f}", line={"color": "#f59e0b", "width": 2}), row=1, col=1)
+            band = {"color": "rgba(245,158,11,.45)", "dash": "dot", "width": 1}
+            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted + 1.96 * sigma, mode="lines", name="Recta ±1,96 desv. residuales", legendgroup="band", line=band), row=1, col=1)
+            fig.add_trace(plotly_go.Scatter(x=ohlcv["Date"], y=fitted - 1.96 * sigma, mode="lines", name="Recta ±1,96 desv. residuales", legendgroup="band", showlegend=False, line=band), row=1, col=1)
+    if has_volume:
+        fig.add_trace(plotly_go.Bar(x=ohlcv["Date"], y=ohlcv["Volume"], name="Volumen", marker_color="rgba(37, 99, 235, 0.45)"), row=2, col=1)
+        fig.update_yaxes(title_text="Volumen", showgrid=False, tickformat="~s", row=2, col=1)
+    fig.update_yaxes(title_text="Precio", row=1, col=1)
     fig.update_layout(
         title=title,
-        height=360,
+        height=430 if has_volume else 360,
         margin={"l": 8, "r": 8, "t": 48, "b": 8},
         xaxis_rangeslider_visible=False,
-        legend_orientation="h",
-        legend_y=1.02,
-        legend_x=0,
+        legend={"orientation": "h", "y": 1.1, "x": 0, "font": {"size": 11}},
     )
     return fig
 
@@ -1788,8 +1799,10 @@ def render_explosive_candidate_candlestick(row: dict, key_prefix: str = "explosi
         st.info("No hay histórico OHLCV local guardado para dibujar velas de este candidato.")
         st.caption("No se inventa ningún dato de apertura, máximo, mínimo ni cierre. Pulsa «Buscar Unicornios explosivos» para guardar las velas de este ticker.")
         return
-    st.plotly_chart(explosive_candlestick_figure(ohlcv, title), use_container_width=True, key=f"{key_prefix}_{row.get('asset_id') or row.get('ticker') or 'x'}")
-    if len(ohlcv) >= 20:
+    row_id = row.get("asset_id") or row.get("ticker") or "x"
+    show_regression = st.checkbox("Mostrar recta de regresión y banda", value=True, key=f"{key_prefix}_layers_{row_id}") if len(ohlcv) >= 20 else False
+    st.plotly_chart(explosive_candlestick_figure(ohlcv, title, show_regression=show_regression), use_container_width=True, key=f"{key_prefix}_{row_id}")
+    if show_regression and len(ohlcv) >= 20:
         x = pd.Series(range(len(ohlcv)), dtype="float64")
         y = pd.to_numeric(ohlcv["Close"], errors="coerce")
         valid = y.notna()
@@ -1825,14 +1838,13 @@ def render_explosive_candidate_fullpage(row: dict) -> None:
         st.rerun()
     score = int(row.get("explosive_score_0_100", 0))
     tier = row.get("tier", "NO_DATA")
-    color = "#0f766e" if tier.endswith("HIGH") else "#2563eb" if tier.endswith("MEDIUM") else "#d97706" if tier.endswith("LOW") else "#64748b"
+    style = explosive_tier_style(tier)
     st.markdown(
         f"""
-        <div style="border:1px solid #d8e2ef;border-left:6px solid {color};border-radius:10px;padding:18px 22px;margin:10px 0 18px;background:#ffffff;">
-          <div style="font-weight:900;color:#0f172a;font-size:22px;">{escape(row.get("company_name", ""))}</div>
-          <div style="color:#64748b;font-size:13px;margin-top:2px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
-          <div style="font-size:44px;font-weight:900;color:{color};margin-top:10px;">{score}<span style="font-size:16px;color:#64748b;">/100</span></div>
-          <div style="color:#475569;font-size:14px;">{escape(explosive_tier_label(tier))}</div>
+        <div style="border:1px solid {EXPLOSIVE_BORDER};border-left:6px solid {style['border']};border-radius:{EXPLOSIVE_RADIUS}px;padding:18px 22px;margin:10px 0 18px;background:#ffffff;">
+          <div style="font-weight:700;color:{EXPLOSIVE_INK};font-size:22px;">{escape(row.get("company_name", ""))}</div>
+          <div style="color:{EXPLOSIVE_TEXT_SECONDARY};font-size:13px;margin-top:2px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
+          <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:10px;"><span style="font-size:44px;font-weight:800;color:{EXPLOSIVE_INK};">{score}<span style="font-size:16px;font-weight:600;color:{EXPLOSIVE_TEXT_SECONDARY};">/100</span></span>{explosive_tier_chip(tier)}</div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -1999,16 +2011,16 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
             drivers = row.get("drivers", [])[:3]
             missing = row.get("missing_signals", [])[:3]
             tier = row.get("tier", "NO_DATA")
-            color = "#0f766e" if tier.endswith("HIGH") else "#2563eb" if tier.endswith("MEDIUM") else "#d97706" if tier.endswith("LOW") else "#64748b"
+            style = explosive_tier_style(tier)
+            data_text = " · ".join(missing) if missing else ("completos, pero la puntuación no llega al umbral" if tier == "WATCH_ONLY" else "completos")
             col.markdown(
                 f"""
-                <div style="border:1px solid #d8e2ef;border-left:6px solid {color};border-radius:8px;padding:12px 14px;margin-bottom:8px;background:#ffffff;">
-                  <div style="font-weight:800;color:#0f172a;">{escape(row.get("company_name", ""))}</div>
-                  <div style="color:#64748b;font-size:12px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
-                  <div style="font-size:30px;font-weight:900;color:{color};margin-top:8px;">{score}</div>
-                  <div style="color:#475569;font-size:12px;margin-bottom:8px;">{escape(explosive_tier_label(tier))}</div>
-                  <div style="font-size:13px;color:#334155;"><b>Señales detectadas:</b> {escape(" · ".join(drivers) if drivers else "ninguna todavía")}</div>
-                  <div style="font-size:13px;color:#64748b;"><b>{"Faltan" if missing else "Datos"}:</b> {escape(" · ".join(missing) if missing else ("completos, pero la puntuación no llega al umbral" if tier == "WATCH_ONLY" else "completos"))}</div>
+                <div style="border:1px solid {EXPLOSIVE_BORDER};border-left:6px solid {style['border']};border-radius:{EXPLOSIVE_RADIUS}px;padding:14px 16px;margin-bottom:8px;background:#ffffff;">
+                  <div style="font-weight:700;color:{EXPLOSIVE_INK};font-size:15px;line-height:1.3;">{escape(row.get("company_name", ""))}</div>
+                  <div style="color:{EXPLOSIVE_TEXT_SECONDARY};font-size:12px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
+                  <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:10px;"><span style="font-size:32px;font-weight:800;color:{EXPLOSIVE_INK};">{score}<span style="font-size:14px;font-weight:600;color:{EXPLOSIVE_TEXT_SECONDARY};">/100</span></span>{explosive_tier_chip(tier)}</div>
+                  <div style="font-size:13px;color:{EXPLOSIVE_TEXT};margin-top:8px;"><b>Señales detectadas:</b> {escape(" · ".join(drivers) if drivers else "ninguna todavía")}</div>
+                  <div style="font-size:13px;color:{EXPLOSIVE_TEXT_SECONDARY};"><b>{"Faltan" if missing else "Datos"}:</b> {escape(data_text)}</div>
                 </div>
                 """,
                 unsafe_allow_html=True,
@@ -2038,6 +2050,12 @@ EXPLOSIVE_SEARCH_CSS = """<style>
   .st-key-explosive_search button {min-height: 110px;}
   .st-key-explosive_search button p {font-size: 22px;}
 }
+</style>"""
+EXPLOSIVE_SEARCH_COMPACT_CSS = """<style>
+.st-key-explosive_search button {min-height: 64px; border-radius: 12px; background: var(--sf-primary); color: #ffffff; border: 0; white-space: normal;}
+.st-key-explosive_search button p {font-size: 20px; font-weight: 700; line-height: 1.2;}
+.st-key-explosive_search button:hover {background: var(--sf-primary); filter: brightness(1.1); color: #ffffff;}
+.st-key-explosive_search button:disabled {background: #eef2f5; color: #6b7785; cursor: not-allowed;}
 </style>"""
 
 
@@ -2152,7 +2170,8 @@ def render_explosive_search_page() -> None:
             return
     heading(st, "Unicornios explosivos", EXPLOSIVE_PAGE_DESCRIPTION)
     render_safe_demo_banner(st, SAFE_DEMO_MODE)
-    st.markdown(EXPLOSIVE_SEARCH_CSS, unsafe_allow_html=True)
+    # Big while there is nothing else on the page; once there are results it shrinks so the first row of companies is in view.
+    st.markdown(EXPLOSIVE_SEARCH_COMPACT_CSS if st.session_state.get("explosive_search_done") else EXPLOSIVE_SEARCH_CSS, unsafe_allow_html=True)
     clicked = st.button(
         "🔎 Buscar Unicornios explosivos", key="explosive_search", type="primary", use_container_width=True,
         disabled=SAFE_DEMO_MODE, help="Consulta Yahoo Finance (solo lectura) para todos los unicornios con ticker y guarda la caché local.",
@@ -2177,6 +2196,7 @@ def render_explosive_search_page() -> None:
         bar.empty()
         st.session_state["explosive_search_summary"] = summary
         st.session_state["explosive_search_done"] = not load_explosive_overlay().empty
+        st.rerun()  # redraw with the compact button and the results in their final layout
     has_results = bool(st.session_state.get("explosive_search_done"))
     summary = st.session_state.get("explosive_search_summary")
     if summary:

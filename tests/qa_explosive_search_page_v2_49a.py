@@ -22,6 +22,27 @@ logging.disable(logging.CRITICAL)
 import pandas as pd  # noqa: E402
 from streamlit.testing.v1 import AppTest  # noqa: E402
 
+
+
+def _tolerate_stale_checkbox() -> None:
+    """AppTest keeps the chart switch of a page that is no longer drawn (the real app drops it), and reading its state raises
+    KeyError on the next run. Read such a switch as its default so the tests can move between pages."""
+    from streamlit.proto.WidgetStates_pb2 import WidgetState
+    from streamlit.testing.v1 import element_tree
+
+    def state(self):
+        ws = WidgetState()
+        ws.id = self.id
+        try:
+            ws.bool_value = self.value
+        except KeyError:
+            ws.bool_value = bool(getattr(self.proto, "default", False))
+        return ws
+
+    element_tree.Checkbox._widget_state = property(state)
+
+
+_tolerate_stale_checkbox()
 REAL_OVERLAY = ROOT / "data" / "user_explosive_unicorn_market_overlay_v2_45b.csv"
 
 
@@ -308,13 +329,13 @@ def test_page_and_filters_are_kept_while_a_candidate_page_is_open() -> None:
         require(at.session_state["explosive_dashboard_tier_filter"] == "LOW+" and at.session_state["saved_explosive_dashboard_tier_filter"] == "LOW+", "the level filter is kept and mirrored")
 
 
-def test_top3_says_what_it_is_over() -> None:
+def test_no_podium_and_the_threshold_is_stated_in_the_summary() -> None:
     with Sandbox():
         at = searched_page()
         html = " ".join(m.value for m in at.markdown)
-        require("Top 3 por score explosivo (sobre 100) · de todas las empresas con datos" in html, "the Top 3 states its population")
+        require("Top 3" not in html, "no podium on the results page")
         if re.search(r"(?<![\d,])0 candidatos explosivos", html):
-            require("ninguna supera el umbral explosivo" in html, "with 0 candidates it says the top scores are below the threshold")
+            require("Ninguna supera el umbral explosivo" in html, "with 0 candidates the summary line says none passes the threshold")
 
 
 def visible_text(at: AppTest) -> str:
@@ -365,7 +386,7 @@ CASES = [
     test_any_company_can_be_found_by_name_or_ticker,
     test_empty_result_explains_itself_and_offers_a_reset,
     test_page_and_filters_are_kept_while_a_candidate_page_is_open,
-    test_top3_says_what_it_is_over,
+    test_no_podium_and_the_threshold_is_stated_in_the_summary,
     test_the_numbers_say_what_they_mean_and_where_they_come_from,
     test_no_internal_vocabulary_reaches_the_results_or_the_candidate_page,
 ]

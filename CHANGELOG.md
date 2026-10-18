@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.49F — sistema visual coherente en Unicornios explosivos (2026-10-18)
+
+Solo presentación (no cambia score ni datos). Contraste AA en los textos, «n/100» en todas las puntuaciones, nivel como etiqueta de texto y ámbar solo como identidad, constantes de radios y pesos, botón de búsqueda compacto con resultados, gráfico con volumen en panel propio y regresión/banda opcionales, y sin podio «Top 3». Prueba nueva `qa_explosive_visual_system_v2_49f.py`; detalle en `outputs/full_universe_source_acquisition/v2_49f_explosive_visual_system/EXPLOSIVE_VISUAL_SYSTEM_v2_49f.md`.
+
 ## v2.49E — sensibilidad horaria del volumen relativo (2026-10-17)
 
 la página de búsqueda avisa si la sesión de EE. UU. puede estar abierta (el volumen de hoy sería parcial) y la etiqueta de datos lo indica si la caché se guardó en sesión; un script de solo lectura compara el volumen relativo actual con uno calculado desde las barras diarias (60 sesiones lo reproduce; el estado de candidato de CBRL depende de la ventana). No cambia el score. Detalle en `RELATIVE_VOLUME_SENSITIVITY_v2_49e.md`.
