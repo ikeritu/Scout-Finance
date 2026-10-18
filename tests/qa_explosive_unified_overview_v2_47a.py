@@ -46,15 +46,15 @@ def test_render_explosive_overview_shows_every_number_exactly_once() -> None:
     """The old pair showed High/Medium/Low/Watch in BOTH the cockpit and the hero -- the new
     single panel must build that HTML only once per call."""
     source = inspect.getsource(app.render_explosive_overview)
-    for label in ("High", "Medium", "Low", "Watch", "Sin datos"):
+    for label in ("Alto", "Medio", "Bajo", "Vigilancia", "Sin datos"):
         require(source.count(f"<span>{label}</span>") + source.count(f'>{label}</span>') <= 1, f"{label} must be rendered by a single markup site")
     require("st.markdown(overview_html" in source, "must build one HTML block and render it once")
 
 
 def test_overview_uses_a_light_amber_accent_not_a_dark_theme() -> None:
     source = inspect.getsource(app.render_explosive_overview)
-    require("#d97706" in source, "amber left-border accent distinguishes the explosive lens (semantic, not a full theme)")
-    require("#fff8ec" in source or "#fffaf0" in source, "background stays light, consistent with the rest of the screen")
+    require("EXPLOSIVE_ACCENT_BORDER" in source and app.EXPLOSIVE_ACCENT_BORDER == "#d97706", "amber left-border accent distinguishes the explosive lens (semantic, not a full theme)")
+    require("EXPLOSIVE_SURFACE_AMBER" in source and app.EXPLOSIVE_SURFACE_AMBER == "#fffaf0", "background stays light, consistent with the rest of the screen")
     require("#07111f" not in source and "rgba(255,255,255,.10)" not in source, "no dark-panel remnants")
 
 
@@ -80,7 +80,7 @@ def test_overview_reflects_real_counts_and_top3() -> None:
     html = html_calls[0]
     require("3 candidatos explosivos" in html, html[:200])
     require("4 empresas con datos de mercado" in html, "4 = 5 rows - 1 NO_DATA")
-    require("A Inc" in html and "Top 1" in html and "82" in html, "top-3 must include the highest scorer")
+    require("Top 1" not in html and "Top 3" not in html, "no podium: the ordered list below already starts with the same companies")
 
 
 def test_tier_count_grid_wraps_on_narrow_screens() -> None:
