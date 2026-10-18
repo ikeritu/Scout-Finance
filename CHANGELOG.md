@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.49G — fichas como contenedor íntegro y barra lateral coherente (2026-10-18)
+
+Solo presentación. Fichas explosivas como contenedor con borde y el botón como pie, alineado por fila sin altura fija (DG-05); barra lateral con iconos Material coherentes, sin contador en «Universo global» y con el estado técnico en un desplegable (DG-07). Prueba nueva `qa_explosive_cards_and_sidebar_v2_49g.py`; detalle en `outputs/full_universe_source_acquisition/v2_49g_explosive_cards_and_sidebar/EXPLOSIVE_CARDS_AND_SIDEBAR_v2_49g.md`.
+
 ## v2.49F — sistema visual coherente en Unicornios explosivos (2026-10-18)
 
 Solo presentación (no cambia score ni datos). Contraste AA en los textos, «n/100» en todas las puntuaciones, nivel como etiqueta de texto y ámbar solo como identidad, constantes de radios y pesos, botón de búsqueda compacto con resultados, gráfico con volumen en panel propio y regresión/banda opcionales, y sin podio «Top 3». Prueba nueva `qa_explosive_visual_system_v2_49f.py`; detalle en `outputs/full_universe_source_acquisition/v2_49f_explosive_visual_system/EXPLOSIVE_VISUAL_SYSTEM_v2_49f.md`.

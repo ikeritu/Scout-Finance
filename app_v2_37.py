@@ -48,9 +48,9 @@ apply(st)
 SAFE_DEMO_MODE = is_safe_demo_mode()
 
 SCREENS = {
-    "home": "🏠 Inicio", "global_unicorns": "🦄 Unicornios", "global_universe": "🌍 Universo global (43.089)", "global_ranking": "🏆 Ranking global (experimental)", "universe": "🌐 Universo",
-    "ranking": "📊 Ranking experimental", "asset": "🔎 Ficha de empresa", "compare": "⚖️ Comparador",
-    "watchlist": "⭐ Watchlist", "reports": "📄 Informes", "final_guide": "🧭 Guía final y uso responsable", "help": "❓ Metodología y ayuda",
+    "home": ":material/home: Inicio", "global_unicorns": "🦄 Unicornios", "global_universe": ":material/public: Universo global", "global_ranking": ":material/leaderboard: Ranking global (experimental)", "universe": ":material/grid_view: Universo",
+    "ranking": ":material/bar_chart: Ranking experimental", "asset": ":material/search: Ficha de empresa", "compare": ":material/compare_arrows: Comparador",
+    "watchlist": ":material/star: Watchlist", "reports": ":material/description: Informes", "final_guide": ":material/explore: Guía final y uso responsable", "help": ":material/help: Metodología y ayuda",
 }
 GLOBAL_STATUS_LABELS = {
     "NO_DATA_YET": "Sin datos todavía",
@@ -1549,8 +1549,8 @@ def render_explosive_overview(rows: list[dict], summary: dict[str, int], tier_co
           <div style="display:flex;justify-content:space-between;gap:18px;align-items:flex-start;flex-wrap:wrap;">
             <div style="flex:2;min-width:260px;">
               <div style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:{EXPLOSIVE_ACCENT_TEXT};font-weight:700;">Unicornios explosivos</div>
-              <div style="font-size:28px;font-weight:800;color:{EXPLOSIVE_INK};margin-top:2px;">{summary['explosive']:,} candidatos explosivos</div>
-              <div style="font-size:13px;color:{EXPLOSIVE_TEXT_SECONDARY};margin-top:4px;">{len(rows) - no_data:,} empresas con datos de mercado: {summary['explosive']:,} cumplen el umbral · {watch:,} en vigilancia (con datos, sin llegar al umbral) · {no_data:,} sin datos suficientes.{none_pass}<br>{escape(explosive_market_data_label())}</div>
+                    <div style="font-size:28px;font-weight:800;color:{EXPLOSIVE_INK};margin-top:2px;">{summary['explosive']:,} candidatos explosivos</div>
+                    <div style="font-size:13px;color:{EXPLOSIVE_TEXT_SECONDARY};margin-top:4px;">{len(rows) - no_data:,} empresas con datos de mercado: {summary['explosive']:,} cumplen el umbral · {watch:,} en vigilancia (con datos, sin llegar al umbral) · {no_data:,} sin datos suficientes.{none_pass}<br>{escape(explosive_market_data_label())}</div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(74px,1fr));gap:10px;flex:3;min-width:260px;">
               <div style="{box}"><b style="{number}">{high:,}</b><br><span style="{label}">Alto</span></div>
@@ -2004,6 +2004,7 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
             st.button("Restablecer filtros", key="explosive_reset_filters", on_click=reset_explosive_filters)
     render_featured_explosive_candlestick(dashboard_rows)
 
+    st.markdown(EXPLOSIVE_CARD_CSS, unsafe_allow_html=True)
     for start in range(0, len(shown_rows), 3):
         cols = st.columns(3)
         for col, row in zip(cols, shown_rows[start:start + 3]):
@@ -2013,21 +2014,23 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
             tier = row.get("tier", "NO_DATA")
             style = explosive_tier_style(tier)
             data_text = " · ".join(missing) if missing else ("completos, pero la puntuación no llega al umbral" if tier == "WATCH_ONLY" else "completos")
-            col.markdown(
-                f"""
-                <div style="border:1px solid {EXPLOSIVE_BORDER};border-left:6px solid {style['border']};border-radius:{EXPLOSIVE_RADIUS}px;padding:14px 16px;margin-bottom:8px;background:#ffffff;min-height:270px;box-sizing:border-box;">
-                  <div style="font-weight:700;color:{EXPLOSIVE_INK};font-size:15px;line-height:1.3;">{escape(row.get("company_name", ""))}</div>
-                  <div style="color:{EXPLOSIVE_TEXT_SECONDARY};font-size:12px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
-                  <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:10px;"><span style="font-size:32px;font-weight:800;color:{EXPLOSIVE_INK};">{score}<span style="font-size:14px;font-weight:600;color:{EXPLOSIVE_TEXT_SECONDARY};">/100</span></span>{explosive_tier_chip(tier)}</div>
-                  <div style="font-size:13px;color:{EXPLOSIVE_TEXT};margin-top:8px;"><b>Señales detectadas:</b> {escape(" · ".join(drivers) if drivers else "ninguna todavía")}</div>
-                  <div style="font-size:13px;color:{EXPLOSIVE_TEXT_SECONDARY};"><b>{"Faltan" if missing else "Datos"}:</b> {escape(data_text)}</div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-            if col.button(f"Ver ficha completa · {unicorn_ticker(row) or explosive_candidate_id(row)}", key=f"explosive_fullpage_select_{explosive_candidate_id(row)}", use_container_width=True):
-                st.session_state["explosive_fullpage_asset_id"] = explosive_candidate_id(row)
-                st.rerun()
+            card_id = explosive_candidate_id(row)
+            card_key = "explosive_card_" + "".join(ch if ch.isalnum() else "_" for ch in str(card_id))
+            with col.container(border=True, key=card_key, height="stretch"):
+                st.markdown(
+                    f"""
+                    <style>.st-key-{card_key} {{ border-left: 6px solid {style['border']}; }}</style>
+                    <div style="font-weight:700;color:{EXPLOSIVE_INK};font-size:15px;line-height:1.3;">{escape(row.get("company_name", ""))}</div>
+                    <div style="color:{EXPLOSIVE_TEXT_SECONDARY};font-size:12px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
+                    <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:10px;"><span style="font-size:32px;font-weight:800;color:{EXPLOSIVE_INK};">{score}<span style="font-size:14px;font-weight:600;color:{EXPLOSIVE_TEXT_SECONDARY};">/100</span></span>{explosive_tier_chip(tier)}</div>
+                    <div style="font-size:13px;color:{EXPLOSIVE_TEXT};margin-top:8px;"><b>Señales detectadas:</b> {escape(" · ".join(drivers) if drivers else "ninguna todavía")}</div>
+                    <div style="font-size:13px;color:{EXPLOSIVE_TEXT_SECONDARY};"><b>{"Faltan" if missing else "Datos"}:</b> {escape(data_text)}</div>
+                    """,
+                    unsafe_allow_html=True,
+                )
+                if st.button(f"Ver ficha completa · {unicorn_ticker(row) or card_id}", key=f"explosive_fullpage_select_{card_id}", use_container_width=True):
+                    st.session_state["explosive_fullpage_asset_id"] = card_id
+                    st.rerun()
     if pages > 1:
         prev_col, label_col, next_col = st.columns([1, 2, 1])
         prev_col.button("← Anteriores", key="explosive_page_prev", disabled=page <= 1, on_click=set_explosive_page, args=(page - 1,), use_container_width=True)
@@ -2051,6 +2054,12 @@ EXPLOSIVE_SEARCH_CSS = """<style>
   .st-key-explosive_search button p {font-size: 22px;}
 }
 </style>"""
+# One bordered container per card; the button is its footer and sits at the bottom of the row's tallest card, so no height is fixed.
+EXPLOSIVE_CARD_CSS = """<style>
+[class*="st-key-explosive_card_"] { display: flex; flex-direction: column; }
+[class*="st-key-explosive_card_"] > div:last-child { margin-top: auto; }
+</style>"""
+
 EXPLOSIVE_SEARCH_COMPACT_CSS = """<style>
 .st-key-explosive_search button {min-height: 64px; border-radius: 12px; background: var(--sf-primary); color: #ffffff; border: 0; white-space: normal;}
 .st-key-explosive_search button p {font-size: 20px; font-weight: 700; line-height: 1.2;}
@@ -4454,7 +4463,9 @@ def main():
         else:
             selected = st.radio("Navegación", list(SCREENS), format_func=SCREENS.get, index=list(SCREENS).index(st.session_state.screen))
             st.session_state.screen = selected
-        st.divider(); st.caption(f"Datos: {data.mode.value}"); st.caption("Fase 7: INSUFFICIENT_EVIDENCE"); st.caption("Sin conexión a broker")
+        st.divider(); st.caption("Sin conexión a broker")
+        with st.expander("Estado técnico"):
+            st.caption(f"Datos: {data.mode.value}"); st.caption("Fase 7: INSUFFICIENT_EVIDENCE")
     if data.mode in {DataMode.BLOCKED_MISSING_DATA, DataMode.INCOMPATIBLE_VERSION}:
         render_home_status(data); st.error("La aplicación queda bloqueada: " + "; ".join(data.errors)); return
     if simple_mode:
