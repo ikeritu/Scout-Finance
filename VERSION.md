@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.50A — unicornios explosivos en criptomonedas: análisis de opciones y roadmap** (`CRYPTO_ROADMAP_DOCUMENTED`): investigación de escritorio de las fuentes gratuitas (CoinGecko Demo como base, Binance/Yahoo como verificación, DEX como carril posterior de alto riesgo; CoinPaprika y CoinMarketCap descartadas por histórico), qué señales de bolsa se trasladan y cuáles no, filtros de seguridad y volumen falso, y un roadmap por fases con decisiones del usuario. Solo documento: sin código ni credenciales. Detalle en `CRYPTO_EXPLOSIVE_ROADMAP_v2_50a.md`.
+
 **v2.49J — pulido a 375 px: título del gráfico y separación del pie de la ficha** (`EXPLOSIVE_MOBILE_POLISH_COMPLETED`): la barra de herramientas del gráfico tapaba su título en móvil, ahora el título es una línea de texto encima del gráfico; y el botón de cada ficha lleva una separación mínima respecto al texto. Solo presentación. Detalle en `EXPLOSIVE_MOBILE_POLISH_v2_49j.md`.
 
 **v2.49I — enlaces a Yahoo Finance y Google Finance, y leyenda bajo el gráfico** (`EXPLOSIVE_LINKS_AND_LEGEND_COMPLETED`): cada ficha y la página de candidato enlazan a Yahoo Finance y Google Finance (solo con ticker verificado; Google por búsqueda de ticker, con aviso de comprobar el nombre), y la leyenda del gráfico pasa a una línea de texto bajo él, sin el hueco superior. Solo presentación. Detalle en `EXPLOSIVE_LINKS_AND_LEGEND_v2_49i.md`.
