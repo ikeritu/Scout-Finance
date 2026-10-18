@@ -1783,11 +1783,11 @@ def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str, show_regressio
         fig.update_yaxes(title_text="Volumen", showgrid=False, tickformat="~s", row=2, col=1)
     fig.update_yaxes(title_text="Precio", row=1, col=1)
     fig.update_layout(
-        title=title,
-        height=430 if has_volume else 360,
-        margin={"l": 8, "r": 8, "t": 48, "b": 8},
+        height=490 if has_volume else 420,
+        margin={"l": 8, "r": 8, "t": 112 if show_regression else 76, "b": 8},
         xaxis_rangeslider_visible=False,
-        legend={"orientation": "h", "y": 1.1, "x": 0, "font": {"size": 11}},
+        title={"text": title, "x": 0, "xanchor": "left", "y": 0.97, "yanchor": "top"},
+        legend={"orientation": "h", "x": 0, "y": 1.0, "yanchor": "bottom", "font": {"size": 12}, "tracegroupgap": 2},
     )
     return fig
 
@@ -2015,7 +2015,7 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
             data_text = " · ".join(missing) if missing else ("completos, pero la puntuación no llega al umbral" if tier == "WATCH_ONLY" else "completos")
             col.markdown(
                 f"""
-                <div style="border:1px solid {EXPLOSIVE_BORDER};border-left:6px solid {style['border']};border-radius:{EXPLOSIVE_RADIUS}px;padding:14px 16px;margin-bottom:8px;background:#ffffff;">
+                <div style="border:1px solid {EXPLOSIVE_BORDER};border-left:6px solid {style['border']};border-radius:{EXPLOSIVE_RADIUS}px;padding:14px 16px;margin-bottom:8px;background:#ffffff;min-height:270px;box-sizing:border-box;">
                   <div style="font-weight:700;color:{EXPLOSIVE_INK};font-size:15px;line-height:1.3;">{escape(row.get("company_name", ""))}</div>
                   <div style="color:{EXPLOSIVE_TEXT_SECONDARY};font-size:12px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
                   <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:10px;"><span style="font-size:32px;font-weight:800;color:{EXPLOSIVE_INK};">{score}<span style="font-size:14px;font-weight:600;color:{EXPLOSIVE_TEXT_SECONDARY};">/100</span></span>{explosive_tier_chip(tier)}</div>
