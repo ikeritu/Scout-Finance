@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.49H — archivo de velas dañado ya no tumba la pantalla explosiva (2026-10-18)
+
+Un CSV de velas vacío, no UTF-8 o corrupto hacía caer el gráfico destacado y la ficha. Ahora el de la caché propia se aparta como `.corrupt-<fecha>`, los de las carpetas de adquisición se saltan sin tocarlos, las fechas duplicadas se colapsan y un archivo sin filas utilizables pasa a la siguiente fuente. Prueba nueva `qa_explosive_ohlcv_hardening_v2_49h.py`; detalle en `outputs/full_universe_source_acquisition/v2_49h_explosive_ohlcv_hardening/EXPLOSIVE_OHLCV_HARDENING_v2_49h.md`.
+
 ## v2.49G — fichas como contenedor íntegro y barra lateral coherente (2026-10-18)
 
 Solo presentación. Fichas explosivas como contenedor con borde y el botón como pie, alineado por fila sin altura fija (DG-05); barra lateral con iconos Material coherentes, sin contador en «Universo global» y con el estado técnico en un desplegable (DG-07). Prueba nueva `qa_explosive_cards_and_sidebar_v2_49g.py`; detalle en `outputs/full_universe_source_acquisition/v2_49g_explosive_cards_and_sidebar/EXPLOSIVE_CARDS_AND_SIDEBAR_v2_49g.md`.

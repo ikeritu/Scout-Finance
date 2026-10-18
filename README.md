@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.49H — un archivo de velas dañado ya no tumba la pantalla explosiva** (`EXPLOSIVE_OHLCV_HARDENING_COMPLETED`): un CSV de velas vacío, no UTF-8 o corrupto hacía caer el gráfico destacado y la ficha; ahora el de la caché propia se aparta como `.corrupt-<fecha>` (sin perder bytes), los de las carpetas de adquisición se saltan sin tocarlos, las fechas duplicadas se colapsan y un archivo sin filas utilizables pasa a la siguiente fuente. No cambia el score. Detalle en `EXPLOSIVE_OHLCV_HARDENING_v2_49h.md`.
+
 **v2.49G — fichas como contenedor íntegro y barra lateral coherente** (`EXPLOSIVE_CARDS_AND_SIDEBAR_COMPLETED`): cada ficha explosiva es un contenedor con el botón como pie, alineado por fila sin altura fija; la barra lateral usa una sola familia de iconos (el unicornio queda como identidad), «Universo global» pierde su contador y los datos técnicos pasan a un desplegable «Estado técnico» (la línea «Sin conexión a broker» sigue visible). Solo presentación. Detalle en `EXPLOSIVE_CARDS_AND_SIDEBAR_v2_49g.md`.
 
 **v2.49F — sistema visual coherente en Unicornios explosivos** (`EXPLOSIVE_VISUAL_SYSTEM_COMPLETED`): contraste AA en todos los textos (ninguno por debajo de 12 px), puntuación siempre «n/100», nivel como etiqueta de texto (el ámbar queda solo como identidad de la sección), radios y pesos con constantes, botón de búsqueda compacto cuando ya hay resultados, gráfico con el volumen en su propio panel y la recta de regresión y la banda como capa opcional, y se elimina el podio «Top 3» (su nota pasa a la línea de resumen). Solo presentación: no cambia el score ni los datos. Detalle en `EXPLOSIVE_VISUAL_SYSTEM_v2_49f.md`.
