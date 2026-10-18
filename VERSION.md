@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado real actual del pipeline de datos / Current Data Pipeline Real State
 
+**v2.49I — enlaces a Yahoo Finance y Google Finance, y leyenda bajo el gráfico** (`EXPLOSIVE_LINKS_AND_LEGEND_COMPLETED`): cada ficha y la página de candidato enlazan a Yahoo Finance y Google Finance (solo con ticker verificado; Google por búsqueda de ticker, con aviso de comprobar el nombre), y la leyenda del gráfico pasa a una línea de texto bajo él, sin el hueco superior. Solo presentación. Detalle en `EXPLOSIVE_LINKS_AND_LEGEND_v2_49i.md`.
+
 **v2.49H — un archivo de velas dañado ya no tumba la pantalla explosiva** (`EXPLOSIVE_OHLCV_HARDENING_COMPLETED`): un CSV de velas vacío, no UTF-8 o corrupto hacía caer el gráfico destacado y la ficha; ahora el de la caché propia se aparta como `.corrupt-<fecha>` (sin perder bytes), los de las carpetas de adquisición se saltan sin tocarlos, las fechas duplicadas se colapsan y un archivo sin filas utilizables pasa a la siguiente fuente. No cambia el score. Detalle en `EXPLOSIVE_OHLCV_HARDENING_v2_49h.md`.
 
 **v2.49G — fichas como contenedor íntegro y barra lateral coherente** (`EXPLOSIVE_CARDS_AND_SIDEBAR_COMPLETED`): cada ficha explosiva es un contenedor con el botón como pie, alineado por fila sin altura fija; la barra lateral usa una sola familia de iconos (el unicornio queda como identidad), «Universo global» pierde su contador y los datos técnicos pasan a un desplegable «Estado técnico» (la línea «Sin conexión a broker» sigue visible). Solo presentación. Detalle en `EXPLOSIVE_CARDS_AND_SIDEBAR_v2_49g.md`.
