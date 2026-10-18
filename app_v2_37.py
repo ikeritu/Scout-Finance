@@ -1718,7 +1718,17 @@ def load_explosive_candidate_ohlcv(row: dict, max_sessions: int = 90) -> pd.Data
                 break
         if path is None:
             continue
-        frame = pd.read_csv(path)
+        try:
+            frame = pd.read_csv(path)
+        except (OSError, ValueError):
+            # Empty file, bytes that are not UTF-8, a parser error (all ValueErrors). A damaged file of the app's own cache is set
+            # aside, never silently overwritten, and the next search rebuilds it; files of the acquisition folders are left alone.
+            if root == EXPLOSIVE_OHLCV_CACHE_DIR:
+                try:
+                    path.replace(path.with_name(f"{path.name}.corrupt-{datetime.now():%Y%m%d%H%M%S}"))
+                except OSError:
+                    pass
+            continue
         lower_map = {str(col).strip().lower(): col for col in frame.columns}
         date_col = lower_map.get("date")
         open_col = lower_map.get("open")
@@ -1739,7 +1749,9 @@ def load_explosive_candidate_ohlcv(row: dict, max_sessions: int = 90) -> pd.Data
         if volume_col:
             data["Volume"] = pd.to_numeric(frame[volume_col], errors="coerce")
         ohlcv = pd.DataFrame(data).dropna(subset=["Date", "Open", "High", "Low", "Close"])
-        ohlcv = ohlcv.sort_values("Date").tail(max_sessions).reset_index(drop=True)
+        ohlcv = ohlcv.sort_values("Date").drop_duplicates(subset="Date", keep="last").tail(max_sessions).reset_index(drop=True)
+        if ohlcv.empty:
+            continue
         return ohlcv
     return pd.DataFrame()
 
