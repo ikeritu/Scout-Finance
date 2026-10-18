@@ -1506,6 +1506,7 @@ EXPLOSIVE_TEXT = "#334155"
 EXPLOSIVE_TEXT_SECONDARY = "#475569"
 EXPLOSIVE_BORDER = "#d8e2ef"
 EXPLOSIVE_ACCENT_TEXT = "#b45309"
+EXPLOSIVE_LINK = "#0f5f6b"
 EXPLOSIVE_ACCENT_BORDER = "#d97706"
 EXPLOSIVE_SURFACE_AMBER = "#fffaf0"
 EXPLOSIVE_RADIUS = 12
@@ -1796,12 +1797,22 @@ def explosive_candlestick_figure(ohlcv: pd.DataFrame, title: str, show_regressio
     fig.update_yaxes(title_text="Precio", row=1, col=1)
     fig.update_layout(
         height=490 if has_volume else 420,
-        margin={"l": 8, "r": 8, "t": 112 if show_regression else 76, "b": 8},
+        margin={"l": 8, "r": 8, "t": 48, "b": 8},
+        showlegend=False,
         xaxis_rangeslider_visible=False,
         title={"text": title, "x": 0, "xanchor": "left", "y": 0.97, "yanchor": "top"},
-        legend={"orientation": "h", "x": 0, "y": 1.0, "yanchor": "bottom", "font": {"size": 12}, "tracegroupgap": 2},
     )
     return fig
+
+
+def explosive_chart_legend(has_volume: bool, show_regression: bool) -> str:
+    """The key of the chart as text under it: unlike a legend inside the figure it wraps at any width and never covers the title."""
+    parts = ["Velas verdes: el cierre sube sobre la apertura · rojas: baja"]
+    if show_regression:
+        parts += ["línea naranja: recta de regresión lineal", "líneas punteadas: recta ±1,96 desviaciones residuales"]
+    if has_volume:
+        parts.append("barras azules: volumen")
+    return " · ".join(parts) + "."
 
 
 def render_explosive_candidate_candlestick(row: dict, key_prefix: str = "explosive_candles_card") -> None:
@@ -1814,6 +1825,7 @@ def render_explosive_candidate_candlestick(row: dict, key_prefix: str = "explosi
     row_id = row.get("asset_id") or row.get("ticker") or "x"
     show_regression = st.checkbox("Mostrar recta de regresión y banda", value=True, key=f"{key_prefix}_layers_{row_id}") if len(ohlcv) >= 20 else False
     st.plotly_chart(explosive_candlestick_figure(ohlcv, title, show_regression=show_regression), use_container_width=True, key=f"{key_prefix}_{row_id}")
+    st.caption(explosive_chart_legend(has_volume="Volume" in ohlcv and bool(ohlcv["Volume"].notna().any()), show_regression=show_regression and len(ohlcv) >= 20))
     if show_regression and len(ohlcv) >= 20:
         x = pd.Series(range(len(ohlcv)), dtype="float64")
         y = pd.to_numeric(ohlcv["Close"], errors="coerce")
@@ -1840,6 +1852,31 @@ def render_featured_explosive_candlestick(rows: list[dict]) -> None:
     render_explosive_candidate_candlestick(featured, key_prefix="explosive_candles_featured")
 
 
+def explosive_external_links(row: dict) -> list[tuple[str, str]]:
+    """Yahoo Finance and Google Finance pages for a company, only when the app has a verified US ticker for it (the same rule the
+    market search uses). No ticker, no link: a made-up address could open another company. Both links search by ticker, so the
+    person is asked to check the name that opens."""
+    symbol = yfinance_symbol(row)
+    if not symbol:
+        return []
+    raw = (row.get("us_ticker") or row.get("ticker") or "").strip()
+    return [
+        ("Yahoo Finance", f"https://finance.yahoo.com/quote/{quote(symbol, safe='-')}"),
+        ("Google Finance", f"https://www.google.com/finance/?q={quote(raw, safe='')}"),
+    ]
+
+
+def explosive_links_html(row: dict, size: int = 13) -> str:
+    links = explosive_external_links(row)
+    if not links:
+        return ""
+    anchors = "".join(
+        f'<a href="{escape(url, quote=True)}" target="_blank" rel="noopener noreferrer" style="color:{EXPLOSIVE_LINK};font-weight:600;text-decoration:underline;white-space:nowrap;">{escape(label)} ↗</a>'
+        for label, url in links
+    )
+    return f'<div style="display:flex;flex-wrap:wrap;gap:2px 14px;font-size:{size}px;margin-top:8px;">{anchors}</div>'
+
+
 def explosive_candidate_id(row: dict) -> str:
     return str(row.get("asset_id") or row.get("ticker") or row.get("company_name") or "x")
 
@@ -1856,6 +1893,7 @@ def render_explosive_candidate_fullpage(row: dict) -> None:
         <div style="border:1px solid {EXPLOSIVE_BORDER};border-left:6px solid {style['border']};border-radius:{EXPLOSIVE_RADIUS}px;padding:18px 22px;margin:10px 0 18px;background:#ffffff;">
           <div style="font-weight:700;color:{EXPLOSIVE_INK};font-size:22px;">{escape(row.get("company_name", ""))}</div>
           <div style="color:{EXPLOSIVE_TEXT_SECONDARY};font-size:13px;margin-top:2px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
+          {explosive_links_html(row)}
           <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:10px;"><span style="font-size:44px;font-weight:800;color:{EXPLOSIVE_INK};">{score}<span style="font-size:16px;font-weight:600;color:{EXPLOSIVE_TEXT_SECONDARY};">/100</span></span>{explosive_tier_chip(tier)}</div>
         </div>
         """,
@@ -2012,6 +2050,7 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
         st.button("Restablecer filtros", key="explosive_reset_filters_empty", on_click=reset_explosive_filters)
     else:
         st.caption(f"Mostrando {first + 1:,}–{first + len(shown_rows):,} de {total:,} empresas{blocked_note} · desempate diversificado estable, no alfabético.")
+        st.caption("Cada ficha enlaza a Yahoo Finance y Google Finance. Los enlaces buscan por ticker: comprueba que el nombre de la empresa que se abre coincide con el de la ficha.")
         if filters_active:
             st.button("Restablecer filtros", key="explosive_reset_filters", on_click=reset_explosive_filters)
     render_featured_explosive_candlestick(dashboard_rows)
@@ -2034,6 +2073,7 @@ def render_explosive_candidates_dashboard(rows: list[dict]) -> list[dict]:
                     <style>.st-key-{card_key} {{ border-left: 6px solid {style['border']}; }}</style>
                     <div style="font-weight:700;color:{EXPLOSIVE_INK};font-size:15px;line-height:1.3;">{escape(row.get("company_name", ""))}</div>
                     <div style="color:{EXPLOSIVE_TEXT_SECONDARY};font-size:12px;">{escape(unicorn_ticker(row) or "N/D")} · {escape(row.get("country") or "N/D")} · {escape(friendly_exchange(row.get("exchange")))}</div>
+                    {explosive_links_html(row, 12)}
                     <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:10px;"><span style="font-size:32px;font-weight:800;color:{EXPLOSIVE_INK};">{score}<span style="font-size:14px;font-weight:600;color:{EXPLOSIVE_TEXT_SECONDARY};">/100</span></span>{explosive_tier_chip(tier)}</div>
                     <div style="font-size:13px;color:{EXPLOSIVE_TEXT};margin-top:8px;"><b>Señales detectadas:</b> {escape(" · ".join(drivers) if drivers else "ninguna todavía")}</div>
                     <div style="font-size:13px;color:{EXPLOSIVE_TEXT_SECONDARY};"><b>{"Faltan" if missing else "Datos"}:</b> {escape(data_text)}</div>

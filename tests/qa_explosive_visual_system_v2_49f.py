@@ -132,7 +132,8 @@ def test_volume_has_its_own_panel_and_the_fitted_line_is_an_optional_layer() -> 
     require(volume_domain[1] <= price_domain[0], f"separate panels: {price_domain} vs {volume_domain}")
     require(figure.layout.yaxis.title.text == "Precio" and figure.layout.yaxis2.title.text == "Volumen", "both axes are titled")
     shown_band = [t for t in figure.data if t.type == "scatter" and "desv. residuales" in (t.name or "") and t.showlegend is not False]
-    require(len(shown_band) == 1, "the two band lines share one legend entry")
+    require(len(shown_band) == 1, "the two band lines share one legend entry (still the hover name)")
+    require(figure.layout.showlegend is False, "the key is a caption under the chart, not a legend inside it (v2.49I)")
     bare = app.explosive_candlestick_figure(demo_ohlcv(), "T", show_regression=False)
     require([t.type for t in bare.data].count("scatter") == 0, "without the layer there is no fitted line or band")
     price_only = app.explosive_candlestick_figure(demo_ohlcv().drop(columns=["Volume"]), "T")

@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.49I — enlaces a Yahoo Finance y Google Finance, y leyenda bajo el gráfico (2026-10-18)
+
+Solo presentación. Enlaces a Yahoo Finance y Google Finance en cada ficha y en la página de candidato, solo con ticker verificado (sin ticker, sin enlace); la leyenda del gráfico pasa a texto bajo él. Prueba nueva `qa_explosive_links_and_legend_v2_49i.py`; detalle en `outputs/full_universe_source_acquisition/v2_49i_explosive_links_and_legend/EXPLOSIVE_LINKS_AND_LEGEND_v2_49i.md`.
+
 ## v2.49H — archivo de velas dañado ya no tumba la pantalla explosiva (2026-10-18)
 
 Un CSV de velas vacío, no UTF-8 o corrupto hacía caer el gráfico destacado y la ficha. Ahora el de la caché propia se aparta como `.corrupt-<fecha>`, los de las carpetas de adquisición se saltan sin tocarlos, las fechas duplicadas se colapsan y un archivo sin filas utilizables pasa a la siguiente fuente. Prueba nueva `qa_explosive_ohlcv_hardening_v2_49h.py`; detalle en `outputs/full_universe_source_acquisition/v2_49h_explosive_ohlcv_hardening/EXPLOSIVE_OHLCV_HARDENING_v2_49h.md`.
