@@ -1,6 +1,6 @@
 # v2.50B — Piloto de CoinGecko (fase 1 del roadmap cripto): lectura oficial y estado
 
-Estado: `PILOT_DESK_RESEARCH_COMPLETED_LIVE_PROBE_BLOCKED_ON_API_KEY`. Fecha: 2026-10-19. La parte de escritorio está cerrada; la sonda con clave no se ha podido hacer porque la variable `SCOUT_FINANCE_COINGECKO_API_KEY` **no existe** en el usuario (comprobado sin imprimir nada). No hay código ni credenciales en este cambio.
+Estado: **`PASS_FOR_NEXT_CONTROLLED_PILOT`** (uso personal y local, ~2.000 monedas, sin promoción a producción). Fecha: 2026-10-19. Lectura oficial de la documentación **y** sonda con clave real (16 llamadas de las 10.000 mensuales). La clave está en la variable de usuario `SCOUT_FINANCE_COINGECKO_API_KEY` y no aparece en ningún archivo, salida ni mensaje. No hay código de la app en este cambio.
 
 ## Hechos observados (documentación oficial de CoinGecko leída hoy)
 **Límites**
@@ -40,7 +40,35 @@ No se ha hecho ninguna llamada con clave; no se conocen el tope mensual real apl
 | Interfaz | — | Mostrar «Powered by CoinGecko» (≥ 10) en la página cripto |
 | Contador | «Contador visible» | Contador propio **obligatorio** (la API no devuelve la cuota) y tope de seguridad |
 
-## Qué falta para cerrar la fase 1
-1. **Tú:** crear la clave Demo en coingecko.com/en/api (plan Demo) y guardarla en la variable de entorno de usuario `SCOUT_FINANCE_COINGECKO_API_KEY`. No pegarla en el chat.
-2. **Sonda mínima con clave** (una vez puesta): `/ping` o `/coins/markets` de una página; comprobar cabeceras y que la clave funciona sin imprimirla; medir `days=365` frente a `days=max` en una moneda; lista de categorías y las de stablecoins; cruce de capitalización y volumen con Yahoo en una muestra pequeña.
-3. **Cierre:** estado final del piloto (`PASS_FOR_NEXT_CONTROLLED_PILOT`, `PARTIAL_PASS_NO_PRODUCTION_PROMOTION` o `COMPLETED_NO_PROMOTION`) con la evidencia.
+## Resultado de la sonda con clave (hechos observados el 2026-10-19)
+Autenticación: cabecera `x-cg-demo-api-key` contra `https://api.coingecko.com/api/v3` (clave de 27 caracteres, prefijo `CG-`). Se hicieron 16 llamadas en total; ninguna superó el límite.
+
+| Comprobación | Resultado |
+|---|---|
+| `/ping` con clave | 200 |
+| `/key` (consumo de cuota) | **401, código 10005: solo para suscriptores PRO.** Confirma que la cuota restante no se puede consultar: el contador es de la app |
+| Cabeceras de cuota en las respuestas | **Ninguna** en ninguna llamada |
+| `/coins/markets`, 250 por página, con cambios 24 h/7 d/14 d/30 d | 200, 250 filas, 247 KB, ~0,5 s; los tres cambios a plazo presentes |
+| `/coins/categories/list` | 200, 1.050 categorías; existen `stablecoins` (y otras por divisa: `eur-stablecoin`, `algorithmic-stablecoin`…), `wrapped-tokens` y `liquid-staking` |
+| `/coins/markets?category=stablecoins` / `wrapped-tokens` / `liquid-staking` | 250 / 250 / 212 monedas en la primera página; las dos primeras vienen llenas, así que **hay más páginas** (cada una cuesta una llamada) |
+| `market_chart` de `bonk`, `days=365` | 200, **366 puntos diarios** (2025-10-20 a hoy) con 366 volúmenes; el último punto es de hoy a las 08:19 UTC (hueco de 8,3 h respecto al anterior: es una marca intradía parcial del día en curso) |
+| `market_chart` de `bonk`, `days=max` | **401, código 10012: «exceeds the allowed time range»**. Confirma el límite de **1 año** del plan Demo |
+| Exclusión de stablecoins en las monedas de rango 20–70 | 11 de 51 caen en las categorías (`BFUSD`, `DAI`, `PYUSD`, `RLUSD`, `U`, `USD1`, `USDD`, `USDE`, `USDF`, `USDG`, `USDGO`): todas son stablecoins |
+
+### Cruce con Yahoo (`SYMBOL-USD`, 51 monedas de rango 20–70)
+- **Cobertura de Yahoo: 27 de 51 (53 %)**: casi la mitad de las monedas medianas no tienen ese símbolo en Yahoo.
+- **Concordancia donde hay dato:** capitalización dentro de ±25 % en **26 de 27**; la única discrepante es `BFUSD` (cociente 1,39), una stablecoin. **Mediana, p10 y p90 del cociente de capitalización = 1,00:** las cifras son prácticamente idénticas, lo que sugiere que **no son una fuente independiente** para la capitalización (inferencia).
+- **Volumen 24 h:** cociente Yahoo/CoinGecko p10 / mediana / p90 = 0,62 / 0,98 / 1,29 (n = 27): coinciden en el orden de magnitud pero difieren hasta ~30 % por definición o ventana, así que sirven de comprobación de cordura, no de dato exacto.
+- Consecuencia: **Yahoo es una comprobación parcial** (mitad de las monedas, capitalización no independiente), no la verificación universal que sugería el roadmap.
+
+### Incidencia del entorno
+Con el Python del proyecto (`.venv`), `yfinance` falló con `UnicodeEncodeError` por el emoji `💰` de la carpeta en la ruta del certificado; es el problema que `ensure_ascii_ca_bundle` de la app ya resuelve para bolsa. Los scripts de sonda sueltos deben usar el Python del sistema o ese mismo ajuste.
+
+## Estado y evaluación frente a la barra del proyecto
+- **Identidad:** CoinGecko es la fuente de descubrimiento y su `id` es el identificador canónico; no hay emparejamiento por nombre que pueda fallar. Con Yahoo, 26/27 concuerdan y la excepción es una stablecoin (excluida de todos modos).
+- **Histórico:** 1 año diario con volumen, suficiente para volumen relativo a 30 días, ruptura a 30 días y tasas base descriptivas; no para backtests largos.
+- **Licencia:** utilizable con atribución, sin redistribuir el acceso y con datos brutos de vida ≤ 24 h o cifrados (ver arriba). Es compatible con **uso personal y local**.
+- **Decisión: `PASS_FOR_NEXT_CONTROLLED_PILOT`**, con estas condiciones de diseño ya fijadas: contador propio de llamadas con tope de seguridad; datos brutos de vida máxima de 24 h; atribución «Powered by CoinGecko» visible; línea de cierre con volumen (sin velas diarias inventadas); lente cripto personal; exclusión de stablecoins, envueltas y liquid staking por categorías (paginando).
+
+## Siguiente (fase 2 del roadmap)
+Capa de datos de la app: proveedor CoinGecko con clave leída del entorno (nunca impresa), contador y tope de llamadas, caché de vida máxima de 24 h con archivos dañados apartados, conjunto de exclusión por categorías, y pruebas con respuestas simuladas sin red.
