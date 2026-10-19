@@ -2,6 +2,14 @@
 
 Estado: `CRYPTO_ROADMAP_DOCUMENTED` (solo investigación de escritorio y dos sondas de una llamada; **no hay código ni credenciales**). Fecha de las comprobaciones: 2026-10-19.
 
+## Decisiones de la fase 0 (aprobadas por el usuario el 2026-10-19)
+1. **Definición:** unicornio cripto = señales explosivas de mercado más filtros de seguridad y de volumen falso. El eje de calidad (TVL, comisiones) queda para la fase 7.
+2. **Fuente base:** CoinGecko, plan Demo (gratuito, con clave).
+3. **Alcance inicial:** unas 2.000 monedas de exchanges; sin carril DEX por ahora.
+4. **Filtros de exclusión:** sin stablecoins ni versiones envueltas, liquidez y edad mínimas, y rotación sospechosa de volumen marcada (no oculta).
+
+**Siguiente paso (fase 1):** la clave Demo la crea el usuario y la guarda en la variable de entorno de usuario `SCOUT_FINANCE_COINGECKO_API_KEY`; nunca en el chat ni en el repositorio. Hasta entonces no se escribe código de proveedor.
+
 Restricciones que ya rigen el proyecto y se respetan aquí: sin fuentes de pago (v2.33D1 y siguientes), fallo cerrado, ningún dato inventado, ningún encuadre de asesoramiento financiero, y las cuentas y claves de API las crea la persona usuaria (nunca se escriben en el chat ni en el repositorio).
 
 ## 1. Qué hay que decidir primero: qué es un «unicornio explosivo» en cripto
