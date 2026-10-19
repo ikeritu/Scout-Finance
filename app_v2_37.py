@@ -22,6 +22,7 @@ import plotly.graph_objects as plotly_go  # not `go`: the navigation helper go()
 from plotly.subplots import make_subplots
 import streamlit as st
 
+from src.ui_v2_37.crypto_screen import CryptoHooks, render_crypto_page
 from src.ui_v2_37.global_ranking import DEDUPE_BUILD_COMMAND, load_global_ranking
 from src.ui_v2_37.global_universe import load_global_matrix, rebuild_global_matrix
 from src.ui_v2_37.repository import DataMode, load_fundamentals, load_price_series, load_product_data
@@ -48,7 +49,7 @@ apply(st)
 SAFE_DEMO_MODE = is_safe_demo_mode()
 
 SCREENS = {
-    "home": ":material/home: Inicio", "global_unicorns": "🦄 Unicornios", "global_universe": ":material/public: Universo global", "global_ranking": ":material/leaderboard: Ranking global (experimental)", "universe": ":material/grid_view: Universo",
+    "home": ":material/home: Inicio", "global_unicorns": "🦄 Unicornios", "crypto_unicorns": ":material/currency_bitcoin: Unicornios cripto", "global_universe": ":material/public: Universo global", "global_ranking": ":material/leaderboard: Ranking global (experimental)", "universe": ":material/grid_view: Universo",
     "ranking": ":material/bar_chart: Ranking experimental", "asset": ":material/search: Ficha de empresa", "compare": ":material/compare_arrows: Comparador",
     "watchlist": ":material/star: Watchlist", "reports": ":material/description: Informes", "final_guide": ":material/explore: Guía final y uso responsable", "help": ":material/help: Metodología y ayuda",
 }
@@ -3375,9 +3376,8 @@ def global_ranking_display_frame(rows: list[dict], *, include_rank: bool = True,
 HOME_BUTTONS_CSS = """<style>
 .st-key-home_stocks button, .st-key-home_crypto button {min-height: 220px; border-radius: 18px; white-space: normal;}
 .st-key-home_stocks button p, .st-key-home_crypto button p {font-size: 30px; font-weight: 800; line-height: 1.2;}
-.st-key-home_stocks button {background: var(--sf-primary); color: #ffffff; border: 0; box-shadow: 0 14px 34px rgba(11,102,112,.22);}
-.st-key-home_stocks button:hover {background: var(--sf-primary); filter: brightness(1.1); color: #ffffff;}
-.st-key-home_crypto button:disabled {background: #eef2f5; color: #6b7785; border: 2px dashed #b9c4cf; cursor: not-allowed; opacity: 1;}
+.st-key-home_stocks button, .st-key-home_crypto button {background: var(--sf-primary); color: #ffffff; border: 0; box-shadow: 0 14px 34px rgba(11,102,112,.22);}
+.st-key-home_stocks button:hover, .st-key-home_crypto button:hover {background: var(--sf-primary); filter: brightness(1.1); color: #ffffff;}
 @media (max-width: 640px) {
   .st-key-home_stocks button, .st-key-home_crypto button {min-height: 150px;}
   .st-key-home_stocks button p, .st-key-home_crypto button p {font-size: 24px;}
@@ -3402,8 +3402,11 @@ def render_home(data):
             go("global_unicorns")
         st.caption("Empresas cotizadas: candidatos explosivos y calidad fundamental.")
     with crypto_col:
-        st.button("🪙 Unicornios Crypto", key="home_crypto", disabled=True, use_container_width=True)
-        st.caption("Próximamente: todavía no está implementado.")
+        if st.button("🪙 Unicornios Crypto", key="home_crypto", type="primary", use_container_width=True):
+            for stale in ("crypto_search_done", "crypto_results", "crypto_summary", "crypto_filter_signature", "crypto_page"):
+                st.session_state.pop(stale, None)  # every entry from the home starts on the clean page
+            go("crypto_unicorns")
+        st.caption("Criptomonedas: candidatas explosivas con filtros de riesgo. Uso personal (necesita tu clave gratuita de CoinGecko).")
     st.caption(DISCLAIMER)
 
 
@@ -3520,6 +3523,32 @@ def render_simple_unicorn_onboarding() -> None:
         "que cumple y las que le faltan. Una puntuación alta significa que hay más señales de mercado presentes, "
         "no que vaya a subir más."
     )
+
+
+CRYPTO_TIER_STYLE_KEYS = {
+    "CRYPTO_CANDIDATE_HIGH": "EXPLOSIVE_CANDIDATE_HIGH", "CRYPTO_CANDIDATE_MEDIUM": "EXPLOSIVE_CANDIDATE_MEDIUM", "CRYPTO_CANDIDATE_LOW": "EXPLOSIVE_CANDIDATE_LOW",
+    "WATCH_ONLY": "WATCH_ONLY", "NO_LIQUIDITY": "NO_DATA", "NO_DATA": "NO_DATA",
+}
+
+
+def render_crypto_unicorns(_data):
+    """The crypto lens reuses the explosive screen's tokens, search-button and card styles; the search button and cards get their own keys."""
+    render_crypto_page(CryptoHooks(
+        data_dir=DATA_DIR,
+        safe_demo=SAFE_DEMO_MODE,
+        blocked_message=blocked_message,
+        heading=heading,
+        render_banner=lambda: render_safe_demo_banner(st, SAFE_DEMO_MODE),
+        tier_style=lambda tier: explosive_tier_style(CRYPTO_TIER_STYLE_KEYS.get(str(tier), "NO_DATA")),
+        css_big=EXPLOSIVE_SEARCH_CSS.replace("st-key-explosive_search", "st-key-crypto_search"),
+        css_compact=EXPLOSIVE_SEARCH_COMPACT_CSS.replace("st-key-explosive_search", "st-key-crypto_search"),
+        css_cards=EXPLOSIVE_CARD_CSS.replace("st-key-explosive_card_", "st-key-crypto_card_"),
+        tokens={
+            "ink": EXPLOSIVE_INK, "text": EXPLOSIVE_TEXT, "secondary": EXPLOSIVE_TEXT_SECONDARY, "border": EXPLOSIVE_BORDER, "link": EXPLOSIVE_LINK,
+            "radius": EXPLOSIVE_RADIUS, "radius_small": EXPLOSIVE_RADIUS_SMALL, "accent_text": EXPLOSIVE_ACCENT_TEXT,
+            "accent_border": EXPLOSIVE_ACCENT_BORDER, "surface": EXPLOSIVE_SURFACE_AMBER,
+        },
+    ))
 
 
 def render_global_unicorns(_data):
@@ -4525,7 +4554,7 @@ def main():
         render_simple_unicorn_onboarding()
         render_global_unicorns(data)
         return
-    {"home": render_home, "global_unicorns": render_global_unicorns, "global_universe": render_global_universe, "global_ranking": render_global_ranking, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "final_guide": render_final_guide, "help": render_help}[st.session_state.screen](data)
+    {"home": render_home, "global_unicorns": render_global_unicorns, "crypto_unicorns": render_crypto_unicorns, "global_universe": render_global_universe, "global_ranking": render_global_ranking, "universe": render_universe, "ranking": render_ranking, "asset": render_asset, "compare": render_compare, "watchlist": render_watchlist, "reports": render_reports, "final_guide": render_final_guide, "help": render_help}[st.session_state.screen](data)
 
 
 if __name__ == "__main__":

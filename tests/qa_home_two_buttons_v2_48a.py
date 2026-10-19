@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """QA for v2.48A: the landing screen is two big click targets -- "Unicornios en bolsa" (goes to the
-Unicornios screen) and "Unicornios Crypto" (visible but disabled, not implemented yet). Executes the real app
+Unicornios screen) and "Unicornios Crypto" (active since v2.50F: opens the crypto page). Executes the real app
 headlessly with Streamlit's AppTest. No network, no writes."""
 from __future__ import annotations
 
@@ -44,11 +44,14 @@ def test_home_is_exactly_two_big_buttons() -> None:
     require(button(at, "home_crypto").label == "🪙 Unicornios Crypto", button(at, "home_crypto").label)
 
 
-def test_crypto_is_visible_but_disabled() -> None:
+def test_crypto_button_is_active_and_opens_the_crypto_page() -> None:
     at = home()
-    require(button(at, "home_crypto").disabled is True, "not implemented yet: it must not be clickable")
-    require(button(at, "home_stocks").disabled is False, "the stocks button must be clickable")
-    require(any("Próximamente" in c.value for c in at.caption), "it must say it is coming soon")
+    require(button(at, "home_crypto").disabled is False and button(at, "home_stocks").disabled is False, "both big buttons are clickable (crypto since v2.50F)")
+    require(not any("Próximamente" in c.value for c in at.caption), "nothing says 'coming soon' any more")
+    button(at, "home_crypto").click().run()
+    require(not at.exception, f"the crypto page crashed after the click: {[e.value[:100] for e in at.exception]}")
+    require(at.session_state["screen"] == "crypto_unicorns", at.session_state["screen"])
+    require([t.value for t in at.title] == ["Unicornios cripto"], "the clean crypto page is showing")
 
 
 def test_stocks_button_opens_the_unicornios_screen() -> None:
@@ -84,7 +87,7 @@ def test_blocked_data_path_still_uses_the_status_view() -> None:
 
 CASES = [
     test_home_is_exactly_two_big_buttons,
-    test_crypto_is_visible_but_disabled,
+    test_crypto_button_is_active_and_opens_the_crypto_page,
     test_stocks_button_opens_the_unicornios_screen,
     test_quality_view_is_still_reachable_and_a_second_visit_reopens_explosive,
     test_blocked_data_path_still_uses_the_status_view,
