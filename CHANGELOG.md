@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50E — puntuación cripto v1 implementada (2026-10-19)
+
+Módulos puros `src/crypto_v2_50/scoring.py` y `signals.py` con los umbrales aprobados, preselección exacta de monedas para la serie diaria y prueba `qa_crypto_explosive_score_v2_50e.py` (8 casos sin red). La app no cambia. Detalle en `outputs/full_universe_source_acquisition/v2_50d_crypto_score_study/CRYPTO_SCORE_v2_50e.md`.
+
 ## v2.50D — puntuación cripto v1: estudio y umbrales propuestos (2026-10-19)
 
 Script reproducible `scripts/crypto_base_rate_study_v2_50d.py` (solo agregados), su prueba `qa_crypto_base_rate_study_v2_50d.py`, el informe de agregados y la propuesta de umbrales pendiente de aprobación. La app no cambia. Detalle en `outputs/full_universe_source_acquisition/v2_50d_crypto_score_study/CRYPTO_SCORE_PROPOSAL_v2_50d.md`.

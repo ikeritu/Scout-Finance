@@ -1,6 +1,6 @@
 # v2.50D — Puntuación cripto v1: estudio del universo real y umbrales propuestos
 
-Estado: `CRYPTO_SCORE_THRESHOLDS_PROPOSED_AWAITING_APPROVAL`. Fase 3 del roadmap cripto, primera mitad: **estudio descriptivo y propuesta**. Todavía no hay puntuación en la app; los umbrales se fijan cuando el usuario los apruebe. Todo es heurística local de investigación: **no predice rentabilidad ni es una recomendación**.
+Estado: `CRYPTO_SCORE_THRESHOLDS_APPROVED` (los seis puntos fueron aprobados por el usuario el 2026-10-19; la implementación está en `CRYPTO_SCORE_v2_50e.md`). Fase 3 del roadmap cripto, primera mitad: **estudio descriptivo y propuesta**. Todo es heurística local de investigación: **no predice rentabilidad ni es una recomendación**.
 
 Datos: universo real de CoinGecko del 2026-10-19 (2.000 monedas), leído con la capa de datos v2.50C; 133 llamadas (133 de 8.000 del tope de seguridad). Informe completo, solo con agregados: `universe_signal_study_v2_50d.md` (reproducible con `scripts/crypto_base_rate_study_v2_50d.py`).
 
@@ -32,7 +32,7 @@ Máximo: 90 puntos (como en bolsa, que no llega a 100). No hay punto por precio 
 
 **Topes (copiados de bolsa):** falta rotación, volumen relativo o momentum 30 d → máximo 44; menos de 3 señales fuertes → máximo 59; exactamente 3 → máximo 74; 4 sin ruptura → máximo 84.
 
-**Factores de riesgo, que no suman puntos:** *rotación ≥ 1,00* (volumen sospechoso) → sin puntos de rotación y máximo 44; *dilución alta* (circulante/total < 0,3 **o** FDV/capitalización ≥ 3) → máximo 69, de modo que nunca llegue a nivel alto. Ambos se muestran como etiqueta en la ficha.
+**Factores de riesgo, que no suman puntos:** *rotación ≥ 1,00* (volumen sospechoso) → sin puntos de rotación y máximo 44; *dilución alta* (circulante/total < 0,3 **o** FDV/capitalización ≥ 3) → máximo 69, que queda por debajo de los 72 puntos del nivel medio: **una moneda con dilución alta no puede pasar del nivel bajo**. Ambos se muestran como etiqueta en la ficha.
 
 **Niveles (mismas reglas que en bolsa):** alto: ≥ 88, ≥ 5 señales fuertes y ruptura; medio: ≥ 72 y ≥ 4 señales fuertes; bajo: ≥ 55 y ≥ 3 señales fuertes; el resto, vigilancia. Con un dato crítico ausente: máximo 59 y nunca alto.
 

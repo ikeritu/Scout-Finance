@@ -25,6 +25,7 @@ import pandas as pd  # noqa: E402
 
 from src.crypto_v2_50 import default_paths  # noqa: E402
 from src.crypto_v2_50.cache import ProtectedCache  # noqa: E402
+from src.crypto_v2_50.signals import daily_signals  # noqa: E402,F401  (the definitions live in the package since v2.50E)
 from src.crypto_v2_50.coingecko import CoinGeckoClient, apply_exclusions, load_daily_series, load_exclusion_sets, load_universe  # noqa: E402
 from src.crypto_v2_50.usage import UsageCounter  # noqa: E402
 
@@ -55,24 +56,6 @@ def stratified_sample(frame: pd.DataFrame, per_band: int) -> pd.DataFrame:
             step = len(band) / per_band
             parts.append(band.iloc[[int(i * step) for i in range(per_band)]])
     return pd.concat(parts) if parts else frame.iloc[0:0]
-
-
-def daily_signals(row: pd.Series, series: list[dict]) -> dict:
-    """Signals that need the daily series. Volume now = the 24 h rolling volume of the markets endpoint; baseline = mean of the last
-    30 completed days. A second reading (last completed day against the 30 before it) is the stable alternative learned on stocks."""
-    volumes = [p["volume_usd"] for p in series if p["volume_usd"] is not None]
-    closes = [p["price_usd"] for p in series if p["price_usd"] is not None]
-    out = {"rel_vol_rolling": None, "rel_vol_last_day": None, "breakout_30d": None}
-    if len(volumes) >= 31 and row["volume_24h_usd"] is not None:
-        base = sum(volumes[-30:]) / 30
-        if base > 0:
-            out["rel_vol_rolling"] = row["volume_24h_usd"] / base
-        prev = sum(volumes[-31:-1]) / 30
-        if prev > 0:
-            out["rel_vol_last_day"] = volumes[-1] / prev
-    if len(closes) >= 30 and row["price_usd"] is not None:
-        out["breakout_30d"] = bool(row["price_usd"] > max(closes[-30:]))
-    return out
 
 
 def study(sample_size: int) -> dict:
