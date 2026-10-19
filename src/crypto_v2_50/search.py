@@ -65,7 +65,8 @@ def run_search(client: CoinGeckoClient, cache: ProtectedCache, *, detail_limit: 
             continue
         details[row["coin_id"]] = daily_signals(row, series.data)
 
-    scored = sorted((row | score_row(row, details.get(row["coin_id"])) for row in kept), key=sort_key)
+    scored = sorted((row | details.get(row["coin_id"], {}) | {"has_series": row["coin_id"] in details} | score_row(row, details.get(row["coin_id"])) for row in kept),
+                    key=sort_key)  # the series-based signals travel with the coin so its page can show them
     counts = summarize(scored)
     excluded_by: dict[str, int] = {}
     for row in excluded:

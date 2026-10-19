@@ -1,4 +1,4 @@
-"""The crypto page (v2.50F): title, attribution, one big search button, and the results after the search.
+"""The crypto page (v2.50F/G): title, attribution, one big search button, the results after the search, and a coin's own page.
 
 Drawing only: the search itself is `src.crypto_v2_50.search.run_search`. The app passes its tokens and helpers in `CryptoHooks`
 (importing the app from here would run it twice). Results live in the session, in memory: nothing from CoinGecko is written to
@@ -6,17 +6,21 @@ disk here (the encrypted 24 h cache of the data layer is the only copy).
 """
 from __future__ import annotations
 
+import hashlib
 from dataclasses import dataclass, field
 from html import escape
 from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import quote
 
+import pandas as pd
 import streamlit as st
 
 from src.crypto_v2_50 import default_paths
 from src.crypto_v2_50.cache import ProtectedCache
-from src.crypto_v2_50.coingecko import ATTRIBUTION_TEXT, ATTRIBUTION_URL, KEY_ENV, BudgetExhausted, CoinGeckoClient, CoinGeckoError, MissingApiKey, RateLimited, read_api_key
+from src.crypto_v2_50.charts import chart_key_text, daily_series_figure, reference_high
+from src.crypto_v2_50.coingecko import (ATTRIBUTION_TEXT, ATTRIBUTION_URL, KEY_ENV, BudgetExhausted, CoinGeckoClient, CoinGeckoError, MissingApiKey, RateLimited,
+                                        load_daily_series, read_api_key)
 from src.crypto_v2_50.scoring import MAX_SCORE, TIER_HIGH, TIER_LOW, TIER_MEDIUM, TIER_NO_LIQUIDITY, TIER_WATCH, tier_label
 from src.crypto_v2_50.search import filter_results, paginate, run_search
 from src.crypto_v2_50.usage import UsageCounter
@@ -26,11 +30,25 @@ CLIENT_OPTIONS: dict[str, Any] = {}
 
 LEVELS = {"Puntuadas": "scored", "Solo candidatas": "candidates", "En vigilancia": "watch", "Sin liquidez suficiente": "no_liquidity"}
 PER_PAGE_OPTIONS = [9, 18, 27]
+FILTER_DEFAULTS = {"crypto_filter_text": "", "crypto_filter_level": "Puntuadas", "crypto_per_page": PER_PAGE_OPTIONS[0]}
 RISK_NOTE = ("Las criptomonedas pueden perder casi todo su valor, y las monedas pequeñas son especialmente volátiles y fáciles de manipular. "
              "Esta pantalla es investigación local: no es una recomendación de compra ni una predicción.")
 PAGE_DESCRIPTION = ("Monedas pequeñas con señales de mercado fuertes: mucha rotación de volumen, volumen por encima de su media, subida a 7 y 30 días "
                     "o ruptura de máximos. La búsqueda consulta CoinGecko, excluye stablecoins y versiones envueltas, y marca los riesgos de volumen "
                     "sospechoso y dilución.")
+RISK_EXPLANATIONS = {
+    "rotación sospechosa": "El volumen de un día iguala o supera la capitalización: puede ser volumen artificial o una falsa sensación de liquidez. "
+                           "Limita la puntuación a 44 y no suma puntos de rotación.",
+    "dilución alta": "Gran parte del suministro todavía no circula (circulante / total < 0,3) o la valoración totalmente diluida es al menos 3 veces la "
+                     "capitalización: pueden llegar desbloqueos que presionen el precio. Limita la puntuación a 69, es decir, como mucho nivel bajo.",
+}
+MANUAL_CHECKS = (
+    "Confirmar el precio y el volumen en un exchange o en una segunda fuente: el volumen agregado puede incluir mercados con poca liquidez real.",
+    "Revisar el contrato y la distribución de tenedores (concentración, liquidez bloqueada): esa comprobación todavía no está automatizada.",
+    "Mirar el calendario de desbloqueos del suministro y la antigüedad de la moneda.",
+    "Comprobar que no es una versión envuelta o derivada, ni un token duplicado con nombre parecido.",
+    "Verificar si hay un catalizador real (listado, producto, noticia) o solo momentum técnico.",
+)
 
 
 @dataclass
@@ -48,7 +66,7 @@ class CryptoHooks:
 
 
 def _num(value: Any) -> float | None:
-    return float(value) if isinstance(value, (int, float)) and not isinstance(value, bool) else None
+    return float(value) if isinstance(value, (int, float)) and not isinstance(value, bool) and value == value and abs(value) != float("inf") else None
 
 
 def fmt_usd(value: Any) -> str:
@@ -76,8 +94,27 @@ def fmt_ratio(value: Any) -> str:
     return "N/D" if number is None else f"{number:.2f}".replace(".", ",")
 
 
+def fmt_price(value: Any) -> str:
+    number = _num(value)
+    if number is None:
+        return "N/D"
+    text = f"{number:,.2f}" if number >= 1 else (f"{number:.8f}".rstrip("0").rstrip(".") if number >= 1e-8 else "< 0.00000001")
+    return text.replace(",", "_").replace(".", ",").replace("_", ".") + " $"
+
+
+def fmt_supply(value: Any) -> str:
+    number = _num(value)
+    return "no declarado" if number is None else f"{number:,.0f}".replace(",", ".")
+
+
 def coin_url(coin_id: Any) -> str:
     return f"https://www.coingecko.com/en/coins/{quote(str(coin_id), safe='')}"
+
+
+def card_key(coin_id: Any) -> str:
+    """A widget key that is unique per coin: the readable part is only cosmetic, the short hash is what keeps two ids apart."""
+    readable = "".join(ch if ch.isalnum() else "_" for ch in str(coin_id))[:40]
+    return f"{readable}_{hashlib.sha1(str(coin_id).encode('utf-8')).hexdigest()[:8]}"
 
 
 def _chip(hooks: CryptoHooks, tier: str) -> str:
@@ -166,7 +203,8 @@ def render_summary(hooks: CryptoHooks, summary: dict) -> None:
 def _card(hooks: CryptoHooks, item: dict) -> None:
     t = hooks.tokens
     style = hooks.tier_style(item["tier"])
-    key = "crypto_card_" + "".join(ch if ch.isalnum() else "_" for ch in str(item["coin_id"]))
+    suffix = card_key(item["coin_id"])
+    key = f"crypto_card_{suffix}"
     rank = f" · puesto {item['market_cap_rank']:,}" if item.get("market_cap_rank") else ""
     chips = "".join(_risk_chip(hooks, flag.capitalize()) for flag in item.get("risk_flags", []))
     drivers = " · ".join(item["drivers"]) if item["drivers"] else "ninguna todavía"
@@ -188,15 +226,34 @@ def _card(hooks: CryptoHooks, item: dict) -> None:
             """,
             unsafe_allow_html=True,
         )
+        if st.button(f"Ver ficha completa · {item['symbol']}", key=f"crypto_fullpage_select_{suffix}", use_container_width=True):
+            st.session_state["crypto_fullpage_coin_id"] = item["coin_id"]
+            st.rerun()
+
+
+def restore_filters() -> None:
+    """Streamlit drops the state of widgets that are not drawn in a run, and the filters are not drawn on a coin's page. Their values are
+    mirrored in plain keys and put back before the widgets are drawn again (the same approach as the stock screen)."""
+    for key, default in FILTER_DEFAULTS.items():
+        if key not in st.session_state:
+            st.session_state[key] = st.session_state.get(f"saved_{key}", default)
+
+
+def save_filters() -> None:
+    for key in FILTER_DEFAULTS:
+        if key in st.session_state:
+            st.session_state[f"saved_{key}"] = st.session_state[key]
 
 
 def render_results(hooks: CryptoHooks, scored: list[dict]) -> None:
+    restore_filters()
     st.markdown("## Monedas por revisar")
-    st.caption("Vista de investigación: ordena las monedas por puntuación. No es recomendación financiera ni predice rentabilidad.")
+    st.caption("Vista de investigación: ordena las monedas por puntuación; abre una ficha para ver por qué puntúa así. No es recomendación financiera ni predice rentabilidad.")
     c_text, c_level, c_per = st.columns([3, 2, 1])
     needle = c_text.text_input("Buscar moneda o símbolo", key="crypto_filter_text", placeholder="Ej.: pepe o bonk")
     level_label = c_level.selectbox("Nivel", list(LEVELS), key="crypto_filter_level")
     per_page = c_per.selectbox("Por página", PER_PAGE_OPTIONS, key="crypto_per_page")
+    save_filters()
     signature = (needle, level_label, per_page, len(scored))
     if st.session_state.get("crypto_filter_signature") != signature:
         st.session_state["crypto_filter_signature"] = signature
@@ -223,6 +280,130 @@ def render_results(hooks: CryptoHooks, scored: list[dict]) -> None:
         if next_col.button("Siguientes →", key="crypto_page_next", disabled=page >= pages, use_container_width=True):
             st.session_state["crypto_page"] = page + 1
             st.rerun()
+
+
+# ------------------------------------------------------------------------------------------------------------------- a coin's page
+
+def market_rows(item: dict) -> list[tuple[str, str]]:
+    circulating, total, cap, fdv = _num(item.get("circulating_supply")), _num(item.get("total_supply")), _num(item.get("market_cap_usd")), _num(item.get("fdv_usd"))
+    rel = _num(item.get("rel_vol_rolling"))
+    breakout = item.get("breakout_30d")
+    return [
+        ("Puesto por capitalización", f"{item['market_cap_rank']:,}".replace(",", ".") if item.get("market_cap_rank") else "N/D"),
+        ("Precio", fmt_price(item.get("price_usd"))),
+        ("Capitalización", fmt_usd(cap)), ("Volumen 24 h", fmt_usd(item.get("volume_24h_usd"))),
+        ("Rotación (volumen 24 h / capitalización)", fmt_ratio(item.get("turnover_24h"))),
+        ("Cambio 24 h", fmt_pct(item.get("change_24h_pct"))), ("Cambio 7 d", fmt_pct(item.get("change_7d_pct"))),
+        ("Cambio 14 d", fmt_pct(item.get("change_14d_pct"))), ("Cambio 30 d", fmt_pct(item.get("change_30d_pct"))),
+        ("Volumen relativo (24 h móvil / media de 30 días completos)", f"{fmt_ratio(rel)} ×" if rel is not None else "N/D (sin serie diaria)"),
+        ("Ruptura del máximo de cierre de 30 días", "sí" if breakout is True else ("no" if breakout is False else "N/D (sin serie diaria)")),
+        ("Suministro circulante", fmt_supply(circulating)), ("Suministro total", fmt_supply(total)), ("Suministro máximo", fmt_supply(item.get("max_supply"))),
+        ("Circulante / total", fmt_ratio(circulating / total) if circulating is not None and total else "N/D"),
+        ("Valoración totalmente diluida (FDV)", fmt_usd(fdv)), ("FDV / capitalización", fmt_ratio(fdv / cap) if fdv is not None and cap else "N/D"),
+        ("Última actualización de CoinGecko", str(item.get("last_updated") or "N/D").replace("T", " ")[:16] + " UTC" if item.get("last_updated") else "N/D"),
+    ]
+
+
+def breakdown_rows(item: dict) -> list[dict]:
+    def value_text(signal: str, value: Any) -> str:
+        if signal.startswith("rotación") or signal.startswith("volumen relativo"):
+            return f"{fmt_ratio(value)}" + (" ×" if signal.startswith("volumen") and _num(value) is not None else "")
+        if signal.startswith("momentum"):
+            return fmt_pct(value)
+        if signal.startswith("ruptura"):
+            return "sí" if value is True else ("no" if value is False else "N/D")
+        return fmt_usd(value)
+
+    return [{"Señal": b["signal"].capitalize(), "Valor": value_text(b["signal"], b["value"]), "Puntos": b["points"], "¿Señal fuerte?": "sí" if b["strong"] else "—"}
+            for b in item.get("breakdown", [])]
+
+
+def _load_series(client: CoinGeckoClient | None, cache: ProtectedCache, coin_id: str) -> tuple[Any, str | None]:
+    """The coin's daily series (from the 24 h cache, or one call). Returns (series or None, a reason when there is none)."""
+    if client is None:
+        return None, f"No hay clave de CoinGecko en este equipo (`{KEY_ENV}`): no se puede cargar la serie diaria."
+    try:
+        return load_daily_series(client, cache, coin_id).data, None
+    except BudgetExhausted:
+        return None, "No hay presupuesto de llamadas suficiente para cargar la serie diaria de esta moneda."
+    except RateLimited:
+        return None, "CoinGecko ha limitado el ritmo de peticiones; espera un minuto y vuelve a abrir la ficha."
+    except CoinGeckoError as error:
+        return None, f"No se pudo cargar la serie diaria. {error}"
+    except Exception as error:  # never show str(error): it could carry request details
+        return None, f"No se pudo cargar la serie diaria ({type(error).__name__})."
+
+
+def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | None, cache: ProtectedCache) -> None:
+    t = hooks.tokens
+    style = hooks.tier_style(item["tier"])
+    suffix = card_key(item["coin_id"])
+    if st.button("← Volver al listado", key="crypto_fullpage_back"):
+        st.session_state.pop("crypto_fullpage_coin_id", None)
+        st.rerun()
+    rank = f" · puesto {item['market_cap_rank']:,}" if item.get("market_cap_rank") else ""
+    chips = "".join(_risk_chip(hooks, flag.capitalize()) for flag in item.get("risk_flags", []))
+    st.markdown(
+        f"""
+        <div style="border:1px solid {t['border']};border-left:6px solid {style['border']};border-radius:{t['radius']}px;padding:18px 22px;margin:10px 0 18px;background:#ffffff;">
+          <div style="font-weight:700;color:{t['ink']};font-size:22px;">{escape(str(item.get('name') or item['symbol']))}</div>
+          <div style="color:{t['secondary']};font-size:13px;margin-top:2px;">{escape(str(item['symbol']))}{escape(rank)}</div>
+          <div style="font-size:13px;margin-top:8px;"><a href="{escape(coin_url(item['coin_id']), quote=True)}" target="_blank" rel="noopener noreferrer" style="color:{t['link']};font-weight:600;text-decoration:underline;white-space:nowrap;">CoinGecko ↗</a></div>
+          <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:10px;"><span style="font-size:44px;font-weight:800;color:{t['ink']};">{int(item['score'])}<span style="font-size:16px;font-weight:600;color:{t['secondary']};">/100</span></span>{_chip(hooks, item['tier'])}</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;">{chips}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    why_tab, data_tab, chart_tab = st.tabs(["Resumen", "Datos", "Gráfico"])
+    with why_tab:
+        c1, c2 = st.columns(2)
+        with c1:
+            st.markdown("#### Señales detectadas")
+            for driver in item["drivers"] or ["Sin señales explosivas suficientes."]:
+                st.write(f"- {driver}")
+        with c2:
+            st.markdown("#### Qué señales faltan")
+            missing = item.get("missing_signals") or []
+            for signal in missing or ["Ninguna señal crítica faltante."]:
+                st.write(f"- {signal}")
+        flags = item.get("risk_flags") or []
+        st.markdown("#### Riesgos marcados")
+        for flag in flags:
+            st.write(f"- **{flag.capitalize()}.** {RISK_EXPLANATIONS.get(flag, '')}")
+        if not flags:
+            st.write("- Ninguno de los dos riesgos automáticos (volumen sospechoso, dilución) salta en esta moneda. Eso no la hace segura: hay riesgos que aún no se comprueban.")
+        st.markdown("#### Qué revisar manualmente")
+        for check in MANUAL_CHECKS:
+            st.write(f"- {check}")
+        st.caption(item.get("guardrail_text", "No es una recomendación financiera ni predice rentabilidad."))
+    with data_tab:
+        st.markdown("#### Cifras de mercado")
+        st.dataframe(pd.DataFrame(market_rows(item), columns=["Dato", "Valor"]), use_container_width=True, hide_index=True)
+        st.markdown("#### Puntuación por señal")
+        if item.get("breakdown"):
+            st.dataframe(pd.DataFrame(breakdown_rows(item)), use_container_width=True, hide_index=True)
+            caps = item.get("caps_applied") or []
+            line = f"Puntos antes de los topes: {item['points_before_caps']}. Puntuación final: {int(item['score'])}."
+            st.caption(line + ("" if caps else " Ningún tope la reduce."))
+            for cap in caps:
+                st.write(f"- **Tope aplicado:** {cap['reason']} → máximo {cap['max']}.")
+        else:
+            st.write("Esta moneda no se puntúa: " + tier_label(item["tier"]).lower() + ".")
+        st.caption("No es recomendación financiera ni predice rentabilidad. Datos de CoinGecko.")
+    with chart_tab:
+        series, reason = _load_series(client, cache, item["coin_id"])
+        if series is None:
+            st.info(reason)
+        elif not any(p.get("price_usd") is not None for p in series):
+            st.info("CoinGecko no devolvió cierres diarios para esta moneda.")
+        else:
+            figure = daily_series_figure(series)
+            st.markdown(f'<div style="font-weight:700;color:{t["ink"]};font-size:15px;margin:8px 0 2px;">{escape(str(item["symbol"]))} · cierre diario y volumen</div>', unsafe_allow_html=True)
+            st.plotly_chart(figure, use_container_width=True, key=f"crypto_chart_{suffix}")
+            st.caption(chart_key_text(has_volume=any(p.get("volume_usd") is not None for p in series), has_reference=reference_high(series) is not None))
+            st.caption(f"{len(series):,} días completos · {series[0]['date']} a {series[-1]['date']} · sin velas: el plan gratuito de CoinGecko no da velas diarias, y no se inventan.")
+        st.caption("Vista visual de investigación; no ejecuta órdenes ni conecta con ningún broker.")
 
 
 def _search(hooks: CryptoHooks, client: CoinGeckoClient, cache: ProtectedCache) -> None:
@@ -257,16 +438,33 @@ def _search(hooks: CryptoHooks, client: CoinGeckoClient, cache: ProtectedCache) 
     st.session_state["crypto_results"] = result.scored
     st.session_state["crypto_summary"] = result.summary
     st.session_state["crypto_search_done"] = True
+    st.session_state.pop("crypto_fullpage_coin_id", None)  # new results: no stale coin page
     st.rerun()  # redraw with the compact button and the results in their final layout
 
 
+def selected_coin(results: list[dict]) -> dict | None:
+    """The coin whose own page is open, if it is among the results (a filter never kicks the person out of it)."""
+    selected = st.session_state.get("crypto_fullpage_coin_id")
+    return next((r for r in results if r["coin_id"] == selected), None) if selected else None
+
+
 def render_crypto_page(hooks: CryptoHooks) -> None:
+    done = bool(st.session_state.get("crypto_search_done"))
+    item = selected_coin(st.session_state.get("crypto_results", [])) if done else None
+    if item is not None:
+        client, cache, _ = _build_client(hooks)
+        for key in FILTER_DEFAULTS:  # not drawn here, but kept alive while the coin's page is open; the mirror covers a run that loses them
+            if key in st.session_state:
+                st.session_state[key] = st.session_state[key]
+        hooks.render_banner()
+        st.markdown(attribution_html(hooks), unsafe_allow_html=True)
+        render_coin_page(hooks, item, client, cache)
+        return
     hooks.heading(st, "Unicornios cripto", PAGE_DESCRIPTION)
     hooks.render_banner()
     st.markdown(attribution_html(hooks), unsafe_allow_html=True)
     st.warning(RISK_NOTE)
     client, cache, usage = _build_client(hooks)
-    done = bool(st.session_state.get("crypto_search_done"))
     st.markdown(hooks.css_compact if done else hooks.css_big, unsafe_allow_html=True)
     if client is None:
         render_missing_key()

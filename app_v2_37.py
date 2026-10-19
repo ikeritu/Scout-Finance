@@ -3403,7 +3403,8 @@ def render_home(data):
         st.caption("Empresas cotizadas: candidatos explosivos y calidad fundamental.")
     with crypto_col:
         if st.button("🪙 Unicornios Crypto", key="home_crypto", type="primary", use_container_width=True):
-            for stale in ("crypto_search_done", "crypto_results", "crypto_summary", "crypto_filter_signature", "crypto_page"):
+            for stale in ("crypto_search_done", "crypto_results", "crypto_summary", "crypto_filter_signature", "crypto_page", "crypto_fullpage_coin_id",
+                          "crypto_filter_text", "crypto_filter_level", "crypto_per_page", "saved_crypto_filter_text", "saved_crypto_filter_level", "saved_crypto_per_page"):
                 st.session_state.pop(stale, None)  # every entry from the home starts on the clean page
             go("crypto_unicorns")
         st.caption("Criptomonedas: candidatas explosivas con filtros de riesgo. Uso personal (necesita tu clave gratuita de CoinGecko).")
