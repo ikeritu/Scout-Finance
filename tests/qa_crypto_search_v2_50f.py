@@ -26,6 +26,7 @@ logging.disable(logging.CRITICAL)
 from streamlit.testing.v1 import AppTest  # noqa: E402
 
 from src.crypto_v2_50 import coingecko as cg  # noqa: E402
+from src.crypto_v2_50 import derivatives as dv  # noqa: E402
 from src.crypto_v2_50 import default_paths, scoring as sc  # noqa: E402
 from src.crypto_v2_50.cache import ProtectedCache  # noqa: E402
 from src.crypto_v2_50.search import filter_results, paginate, run_search  # noqa: E402
@@ -38,6 +39,12 @@ FAKE_KEY = "CG-FAKE-TEST-KEY-NOT-REAL-0000"
 def require(condition: bool, message: str) -> None:
     if not condition:
         raise AssertionError(message)
+
+
+def st_cache_clear() -> None:
+    import streamlit as st
+
+    st.cache_data.clear()  # the derivatives of a coin are cached in memory for five minutes: tests must not see each other's
 
 
 def forbid_network() -> None:
@@ -65,9 +72,14 @@ UNIVERSE = (
 BASELINE_VOLUME = {"pump-coin": 1e6, "low-coin": 12e6, "dilute-coin": 6e6}  # volume now / baseline = 8, 2.5, 4.2
 
 
-def daily_payload(baseline: float) -> dict:
+HISTORY_DAYS: dict[str, int] = {}  # coin id -> number of completed days its fake series has (default 120); tests set and clear it
+FRESH_PRICES: dict[str, float] = {}  # coin id -> the price /simple/price returns now (default: the universe's price); tests set and clear it
+FRESH_PRICE_STATUS = {"code": 200}  # tests set 500 to make /simple/price fail
+
+
+def daily_payload(baseline: float, days: int = 120) -> dict:
     today = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)
-    stamps = [int((today - timedelta(days=d)).timestamp() * 1000) for d in range(119, -1, -1)] + [int((today + timedelta(hours=8)).timestamp() * 1000)]
+    stamps = [int((today - timedelta(days=d)).timestamp() * 1000) for d in range(days, 0, -1)] + [int((today + timedelta(hours=8)).timestamp() * 1000)]
     return {"prices": [[s, 1.0] for s in stamps], "market_caps": [[s, 1e7] for s in stamps], "total_volumes": [[s, baseline] for s in stamps]}
 
 
@@ -90,25 +102,63 @@ class FakeCoinGecko:
             if category is not None:
                 return 200, {}, json.dumps([r for r in UNIVERSE if r["id"] in by_category[category]]).encode()
             return 200, {}, json.dumps(UNIVERSE if params["page"][0] == "1" else []).encode()
+        if path == "/simple/price":
+            if FRESH_PRICE_STATUS["code"] != 200:
+                return FRESH_PRICE_STATUS["code"], {}, b"{}"
+            prices = {r["id"]: r["current_price"] for r in UNIVERSE}
+            return 200, {}, json.dumps({i: {"usd": FRESH_PRICES.get(i, prices[i])} for i in params["ids"][0].split(",") if i in prices}).encode()
         match = re.match(r"/coins/([^/]+)/market_chart", path)
         if match:
             coin = match.group(1)
             if coin == "broken-coin":
                 return 404, {}, json.dumps({"error": "coin not found"}).encode()
-            return 200, {}, json.dumps(daily_payload(BASELINE_VOLUME.get(coin, 1e6))).encode()
+            return 200, {}, json.dumps(daily_payload(BASELINE_VOLUME.get(coin, 1e6), HISTORY_DAYS.get(coin, 120))).encode()
+        return 404, {}, b"{}"
+
+
+PERPS = [
+    {"symbol": "PUMPUSDT", "markPrice": "1.5", "lastFundingRate": "-0.00020000", "nextFundingTime": 1792454400000},  # verified; negative funding
+    {"symbol": "1000LOWCUSDT", "markPrice": "1000.0", "lastFundingRate": "0.00010000", "nextFundingTime": 1792454400000},  # x1000 contract, verified
+    {"symbol": "DILUSDT", "markPrice": "300.0", "lastFundingRate": "0.00010000", "nextFundingTime": 1792454400000},  # same symbol, another coin: rejected
+    {"symbol": "BTCUSDT_250627", "markPrice": "1.0", "lastFundingRate": "0"}, {"symbol": "ETHBTC", "markPrice": "1.0", "lastFundingRate": "0"},
+]
+
+
+class FakeBinance:
+    """Scripted public Binance futures: the list of perpetuals and the three small calls of a coin's page."""
+
+    def __init__(self, fail: bool = False, fail_detail: bool = False) -> None:
+        self.calls: list[str] = []
+        self.fail, self.fail_detail = fail, fail_detail
+
+    def __call__(self, url, timeout):
+        self.calls.append(url)
+        if self.fail or (self.fail_detail and "/premiumIndex" not in url):
+            return 500, {}, b"{}"
+        path, _, query = url[len(dv.BASE_URL):].partition("?")
+        if path == "/fapi/v1/premiumIndex":
+            return 200, {}, json.dumps(PERPS).encode()
+        symbol = parse_qs(query).get("symbol", ["?"])[0]
+        if path == "/fapi/v1/openInterest":
+            return 200, {}, json.dumps({"symbol": symbol, "openInterest": "1000000", "time": 1792440384996}).encode()
+        if path == "/futures/data/openInterestHist":
+            return 200, {}, json.dumps([{"symbol": symbol, "sumOpenInterestValue": str(1_000_000 + i * 10_000), "timestamp": 1789862400000 + i * 86_400_000} for i in range(30)]).encode()
+        if path == "/futures/data/globalLongShortAccountRatio":
+            return 200, {}, json.dumps([{"symbol": symbol, "longShortRatio": str(1.0 + i / 29), "longAccount": "0.6", "shortAccount": "0.4", "timestamp": 1789862400000 + i * 86_400_000} for i in range(30)]).encode()
         return 404, {}, b"{}"
 
 
 class Sandbox:
-    """Temporary data folder, fake key, patched transport and an instant client. Restores everything on exit."""
+    """Temporary data folder, fake key, patched transports and an instant client. Restores everything on exit."""
 
-    def __init__(self, key: str | None = FAKE_KEY, rate_limited: bool = False, usage_calls: int | None = None) -> None:
+    def __init__(self, key: str | None = FAKE_KEY, rate_limited: bool = False, usage_calls: int | None = None, binance_fails: bool = False, binance_detail_fails: bool = False) -> None:
         self.key, self.rate_limited, self.usage_calls = key, rate_limited, usage_calls
+        self.binance_fails, self.binance_detail_fails = binance_fails, binance_detail_fails
 
     def __enter__(self) -> "Sandbox":
         self.tmp = tempfile.TemporaryDirectory()
         self.data_dir = Path(self.tmp.name)
-        self.saved = (os.environ.get("SCOUT_FINANCE_DATA_DIR"), os.environ.get(cg.KEY_ENV), cg.default_transport, dict(crypto_screen.CLIENT_OPTIONS))
+        self.saved = (os.environ.get("SCOUT_FINANCE_DATA_DIR"), os.environ.get(cg.KEY_ENV), cg.default_transport, dict(crypto_screen.CLIENT_OPTIONS), dv.default_transport)
         os.environ["SCOUT_FINANCE_DATA_DIR"] = self.tmp.name
         if self.key is None:
             os.environ.pop(cg.KEY_ENV, None)
@@ -116,6 +166,12 @@ class Sandbox:
             os.environ[cg.KEY_ENV] = self.key
         self.fake = FakeCoinGecko(self.rate_limited)
         cg.default_transport = self.fake
+        self.binance = FakeBinance(self.binance_fails, self.binance_detail_fails)
+        dv.default_transport = self.binance  # the real Binance is never reached: a swallowed "no network" error would hide it
+        HISTORY_DAYS.clear()
+        FRESH_PRICES.clear()
+        FRESH_PRICE_STATUS["code"] = 200
+        st_cache_clear()
         crypto_screen.CLIENT_OPTIONS.clear()
         crypto_screen.CLIENT_OPTIONS.update({"sleep": lambda s: None, "min_interval": 0.0})
         if self.usage_calls is not None:
@@ -123,13 +179,18 @@ class Sandbox:
         return self
 
     def __exit__(self, *exc) -> None:
-        data, key, transport, options = self.saved
+        data, key, transport, options, binance = self.saved
         for name, value in (("SCOUT_FINANCE_DATA_DIR", data), (cg.KEY_ENV, key)):
             if value is None:
                 os.environ.pop(name, None)
             else:
                 os.environ[name] = value
         cg.default_transport = transport
+        dv.default_transport = binance
+        HISTORY_DAYS.clear()
+        FRESH_PRICES.clear()
+        FRESH_PRICE_STATUS["code"] = 200
+        st_cache_clear()
         crypto_screen.CLIENT_OPTIONS.clear()
         crypto_screen.CLIENT_OPTIONS.update(options)
         self.tmp.cleanup()
@@ -155,7 +216,7 @@ def test_the_search_flow_scores_and_reports_everything() -> None:
         s, by_id = result.summary, {r["coin_id"]: r for r in result.scored}
         require(s["universe"] == 17 and s["excluded"] == 2 and s["excluded_by"] == {"stablecoins": 1, "wrapped-tokens": 1} and s["kept"] == 15, str(s))
         require(s["gated"] == 13 and s["preselected"] == 4 and s["detail_loaded"] == 3 and s["detail_failed"] == 1 and s["detail_skipped"] == 0 and s["stopped"] is None, str(s))
-        require(s["calls_used"] == 8 == usage.calls_this_month() == len(box.fake.calls), f"1 universe + 3 category pages + 4 series: {s['calls_used']}")
+        require(s["calls_used"] == 9 == usage.calls_this_month() == len(box.fake.calls), f"1 universe + 3 category pages + 4 series + 1 fresh-price call for the perpetual candidates: {s['calls_used']}")
         require(s["tiers"][sc.TIER_HIGH] == 1 and s["tiers"][sc.TIER_LOW] == 2 and s["tiers"][sc.TIER_MEDIUM] == 0 and s["tiers"][sc.TIER_WATCH] == 10 and s["tiers"][sc.TIER_NO_LIQUIDITY] == 2 and s["candidates"] == 3, str(s["tiers"]))
         require(by_id["pump-coin"]["tier"] == sc.TIER_HIGH and by_id["pump-coin"]["score"] == 90, str(by_id["pump-coin"]))
         require(by_id["low-coin"]["tier"] == sc.TIER_LOW and by_id["low-coin"]["score"] == 66, str(by_id["low-coin"]))
@@ -170,8 +231,8 @@ def test_the_search_flow_scores_and_reports_everything() -> None:
         require(progress[0][2] == "lista de monedas" and progress[-1][0] == progress[-1][1] == 4, f"progress reports the start and every series: {progress}")
         calls = len(box.fake.calls)
         again = run_search(client, cache)
-        require(len(box.fake.calls) == calls + 1 and again.summary["calls_used"] == 1 and again.summary["from_cache"] is True and again.summary["detail_failed"] == 1,
-                "a repeated search is served from the 24 h cache; only the series that failed is asked for again (failures are never cached)")
+        require(len(box.fake.calls) == calls + 2 and again.summary["calls_used"] == 2 and again.summary["from_cache"] is True and again.summary["detail_failed"] == 1,
+                "a repeated search is served from the 24 h cache; only the series that failed and the fresh prices (never cached) are asked for again")
 
 
 def test_trouble_with_the_series_is_tolerated_but_a_missing_universe_is_not() -> None:
@@ -303,7 +364,7 @@ def test_a_search_shows_the_summary_and_the_cards() -> None:
         require(not at.exception, f"the search crashed: {[e.value[:120] for e in at.exception]}")
         text = page_text(at)
         require("3 candidatas explosivas" in text and "17 monedas leídas" in text and "2 excluidas" in text and "13 con liquidez suficiente" in text, f"summary line: {text[:600]}")
-        require("Esta búsqueda usó 8 llamadas" in text, "the search says how many calls it used")
+        require("Esta búsqueda usó 9 llamadas" in text, "the search says how many calls it used")
         require("de 8,000" in text.replace(".", ","), "and the month's counter")
         shown = cards(at)
         require(len(shown) == 9, f"nine cards on the first page: {len(shown)}")
@@ -313,9 +374,9 @@ def test_a_search_shows_the_summary_and_the_cards() -> None:
         require("min-height: 64px" in text, "the search button shrinks once there are results")
         require("coingecko.com/en/coins/pump-coin" in shown[0], "the link points at the verified CoinGecko id")
         require(FAKE_KEY not in text and FAKE_KEY not in json.dumps(dict(at.session_state.filtered_state), default=str), "the key is neither on the page nor in the session")
-        require(len(box.fake.calls) == 8 and box.usage.calls_this_month() == 8, "eight calls, all counted")
+        require(len(box.fake.calls) == 9 and box.usage.calls_this_month() == 9, "nine calls, all counted")
         button(at, "crypto_search").click().run()
-        require("Esta búsqueda usó 1 llamadas" in page_text(at) and len(box.fake.calls) == 9, "a second search the same day is served from the 24 h cache, except the series that failed")
+        require("Esta búsqueda usó 2 llamadas" in page_text(at) and len(box.fake.calls) == 11, "a second search the same day is served from the 24 h cache, except the series that failed and the fresh prices")
         require(not list(default_paths(box.data_dir)[0].glob("*.json")) and all(p.suffix == ".bin" for p in default_paths(box.data_dir)[0].glob("*")), "only encrypted files are on disk")
 
 

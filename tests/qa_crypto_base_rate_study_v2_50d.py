@@ -56,7 +56,8 @@ def test_daily_signals_use_completed_days_and_the_stated_definitions() -> None:
     flat = study.daily_signals(pd.Series({"volume_24h_usd": 250.0, "price_usd": 10.0}), series(volumes, closes))
     require(flat["breakout_30d"] is False, "equal to the max is not a breakout")
     short = study.daily_signals(row, series([1.0] * 10, [1.0] * 10))
-    require(short == {"rel_vol_rolling": None, "rel_vol_last_day": None, "breakout_30d": None}, f"too little history gives no signal, not a guess: {short}")
+    require({k: short[k] for k in ("rel_vol_rolling", "rel_vol_last_day", "breakout_30d")} == {"rel_vol_rolling": None, "rel_vol_last_day": None, "breakout_30d": None}
+            and short["history_days"] == 10 and short["history_capped"] is False, f"too little history gives no signal, not a guess (the history length is reported since v2.50I): {short}")
     zero = study.daily_signals(row, series([0.0] * 31, [1.0] * 31))
     require(zero["rel_vol_rolling"] is None and zero["rel_vol_last_day"] is None, "a zero baseline gives no ratio")
     missing = study.daily_signals(pd.Series({"volume_24h_usd": None, "price_usd": None}), series(volumes, closes))

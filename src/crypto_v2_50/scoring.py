@@ -31,6 +31,9 @@ SUSPICIOUS_TURNOVER = 1.0  # a day's volume at or above the market cap
 DILUTION_CIRCULATING_RATIO = 0.3  # circulating / total supply below this
 DILUTION_FDV_RATIO = 3.0  # FDV / market cap at or above this
 
+YOUNG_FLAG_DAYS = 90  # fewer days of history than this: "moneda reciente" (a tag)
+YOUNG_CAP_DAYS = 30  # fewer than this: capped as well (implied already by the missing 30-day volume baseline, but stated)
+CAP_YOUNG = 44
 CAP_MISSING = 44
 CAP_SUSPICIOUS = 44
 CAP_DILUTION = 69
@@ -68,7 +71,13 @@ def passes_gates(row: Mapping) -> bool:
     return cap is not None and volume is not None and cap >= MIN_MARKET_CAP_USD and volume >= MIN_VOLUME_24H_USD
 
 
-def _risk_flags(row: Mapping, turnover: float | None) -> list[str]:
+def is_young(history_days: Any, history_capped: Any, limit: int) -> bool:
+    """True only when the age is KNOWN to be under `limit` days: an unknown age, or a series as long as the plan allows, is never young."""
+    days = finite(history_days)
+    return days is not None and history_capped is not True and days < limit
+
+
+def _risk_flags(row: Mapping, turnover: float | None, detail: Mapping | None = None) -> list[str]:
     flags = []
     if turnover is not None and turnover >= SUSPICIOUS_TURNOVER:
         flags.append("rotación sospechosa")
@@ -78,6 +87,9 @@ def _risk_flags(row: Mapping, turnover: float | None) -> list[str]:
     fdv_high = fdv is not None and cap is not None and cap > 0 and fdv / cap >= DILUTION_FDV_RATIO
     if ratio_low or fdv_high:
         flags.append("dilución alta")
+    detail = detail or {}
+    if is_young(detail.get("history_days"), detail.get("history_capped"), YOUNG_FLAG_DAYS):
+        flags.append("moneda reciente")
     return flags
 
 
@@ -96,8 +108,9 @@ def score_row(row: Mapping, detail: Mapping | None = None) -> dict:
     turnover = volume / cap
     rel_volume, breakout_flag = finite(detail.get("rel_vol_rolling")), detail.get("breakout_30d")
     change_30d, change_7d = finite(row.get("change_30d_pct")), finite(row.get("change_7d_pct"))
-    flags = _risk_flags(row, turnover)
+    flags = _risk_flags(row, turnover, detail)
     suspicious, dilution = "rotación sospechosa" in flags, "dilución alta" in flags
+    young_capped = is_young(detail.get("history_days"), detail.get("history_capped"), YOUNG_CAP_DAYS)
     breakout = breakout_flag is True and rel_volume is not None and rel_volume >= BREAKOUT_MIN_REL_VOLUME
 
     points, strong, drivers, breakdown = 0, 0, [], []
@@ -135,6 +148,8 @@ def score_row(row: Mapping, detail: Mapping | None = None) -> dict:
             points = limit
 
     missing = [name for name, value in (("volumen relativo", rel_volume), ("momentum 30 d", change_30d)) if value is None]
+    if young_capped:
+        cap_to(CAP_YOUNG, f"moneda reciente (menos de {YOUNG_CAP_DAYS} días de historial)")
     if missing:
         cap_to(CAP_MISSING, "dato crítico ausente: " + ", ".join(missing))
     if strong < 3:

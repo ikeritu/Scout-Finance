@@ -34,7 +34,7 @@ ATTRIBUTION_TEXT = "Powered by CoinGecko"  # the API terms require it to be show
 ATTRIBUTION_URL = "https://www.coingecko.com/"
 PER_PAGE = 250
 UNIVERSE_PAGES = 8  # about 2,000 coins
-DAILY_DAYS = 120  # more than 90 days returns daily points; the Demo plan's history limit is 365
+DAILY_DAYS = 365  # more than 90 days returns daily points; 365 is the Demo plan's history limit and the same one call as a shorter range (v2.50I: age)
 MAX_DEMO_DAYS = 365
 EXCLUSION_CATEGORIES = ("stablecoins", "wrapped-tokens", "liquid-staking")
 EXCLUSION_MAX_PAGES = 4
@@ -294,6 +294,27 @@ def fetch_daily_series(client: CoinGeckoClient, coin_id: str, days: int = DAILY_
         raise CoinGeckoError(f"days must be between 91 (daily points) and {MAX_DEMO_DAYS} (the Demo plan's limit).")
     payload = client.get_json(f"/coins/{coin_id}/market_chart", {"vs_currency": "usd", "days": days})
     return normalize_market_chart(payload, now or datetime.now(timezone.utc))
+
+
+SIMPLE_PRICE_CHUNK = 100
+
+
+def fetch_fresh_prices(client: CoinGeckoClient, coin_ids: list[str]) -> dict[str, float]:
+    """Current USD prices (not cached) for the given coin ids, `SIMPLE_PRICE_CHUNK` per call. A coin CoinGecko does not answer for is absent,
+    never filled in. The budget for all the chunks is checked before the first call."""
+    ids = sorted(set(coin_ids))
+    chunks = [ids[i:i + SIMPLE_PRICE_CHUNK] for i in range(0, len(ids), SIMPLE_PRICE_CHUNK)]
+    client.require_budget(len(chunks))
+    prices: dict[str, float] = {}
+    for chunk in chunks:
+        raw = client.get_json("/simple/price", {"ids": ",".join(chunk), "vs_currencies": "usd"})
+        if not isinstance(raw, dict):
+            raise CoinGeckoError("/simple/price response has an unexpected shape.")
+        for coin_id, entry in raw.items():
+            price = _number(entry.get("usd")) if isinstance(entry, dict) else None
+            if price is not None and price > 0:
+                prices[coin_id] = price
+    return prices
 
 
 def apply_exclusions(rows: list[dict], exclusion_sets: dict[str, list[str]]) -> tuple[list[dict], list[dict]]:

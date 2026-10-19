@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50I — fase 5a del roadmap cripto: antigüedad y derivados (2026-10-19)
+
+Serie diaria de 365 días, antigüedad (etiqueta y tope), módulo `src/crypto_v2_50/derivatives.py` (Binance público: perpetuas, financiación, open interest, ratio largos/cortos), verificación de identidad con precios frescos (`fetch_fresh_prices`), pestaña Derivados y etiquetas en las tarjetas. Prueba `qa_crypto_safety_v2_50i.py` (12 casos sin red). Detalle en `outputs/full_universe_source_acquisition/v2_50h_crypto_safety_pilot/CRYPTO_SAFETY_5A_v2_50i.md`.
+
 ## v2.50H — piloto de las comprobaciones de seguridad cripto, fase 5 (2026-10-19)
 
 Solo documento. Sondas reales de GoPlus (contrato), CoinGecko (`/coins/{id}`: contratos y antigüedad) y Binance (derivados), con hechos, inferencias y límites separados, y un diseño en dos PRs pendiente de aprobación. Detalle en `outputs/full_universe_source_acquisition/v2_50h_crypto_safety_pilot/CRYPTO_SAFETY_PILOT_v2_50h.md`.
