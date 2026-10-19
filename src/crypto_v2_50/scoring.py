@@ -87,9 +87,11 @@ def score_row(row: Mapping, detail: Mapping | None = None) -> dict:
     cap, volume = finite(row.get("market_cap_usd")), finite(row.get("volume_24h_usd"))
     base = {"coin_id": row.get("coin_id"), "symbol": row.get("symbol"), "guardrail_text": GUARDRAIL_TEXT}
     if cap is None or cap <= 0 or volume is None or volume < 0:
-        return base | {"score": 0, "tier": TIER_NO_DATA, "strong_signals": 0, "drivers": [], "missing_signals": ["capitalización o volumen"], "risk_flags": []}
+        return base | {"score": 0, "tier": TIER_NO_DATA, "strong_signals": 0, "drivers": [], "missing_signals": ["capitalización o volumen"], "risk_flags": [],
+                           "breakdown": [], "points_before_caps": 0, "caps_applied": []}
     if cap < MIN_MARKET_CAP_USD or volume < MIN_VOLUME_24H_USD:
-        return base | {"score": 0, "tier": TIER_NO_LIQUIDITY, "strong_signals": 0, "drivers": [], "missing_signals": [], "risk_flags": []}
+        return base | {"score": 0, "tier": TIER_NO_LIQUIDITY, "strong_signals": 0, "drivers": [], "missing_signals": [], "risk_flags": [],
+                           "breakdown": [], "points_before_caps": 0, "caps_applied": []}
 
     turnover = volume / cap
     rel_volume, breakout_flag = finite(detail.get("rel_vol_rolling")), detail.get("breakout_30d")
@@ -98,7 +100,7 @@ def score_row(row: Mapping, detail: Mapping | None = None) -> dict:
     suspicious, dilution = "rotación sospechosa" in flags, "dilución alta" in flags
     breakout = breakout_flag is True and rel_volume is not None and rel_volume >= BREAKOUT_MIN_REL_VOLUME
 
-    points, strong, drivers = 0, 0, []
+    points, strong, drivers, breakdown = 0, 0, [], []
     for label, value, rule, excluded in (
         ("rotación de volumen", turnover, TURNOVER, suspicious),  # a suspicious turnover earns nothing
         ("volumen relativo", rel_volume, REL_VOLUME, False),
@@ -106,31 +108,45 @@ def score_row(row: Mapping, detail: Mapping | None = None) -> dict:
         ("momentum 7 d", change_7d, MOMENTUM_7D, False),
     ):
         gained, is_strong = (0, False) if excluded else _graded(value, rule)
+        breakdown.append({"signal": label, "value": value, "points": gained, "strong": is_strong})
         if gained:
             points += gained
             drivers.append(f"{label} {'muy elevado' if is_strong else 'elevado'}")
         strong += int(is_strong)
+    breakdown.append({"signal": "ruptura del máximo de 30 días con volumen", "value": breakout_flag if isinstance(breakout_flag, bool) else None,
+                      "points": BREAKOUT_POINTS if breakout else 0, "strong": breakout})
     if breakout:
         points += BREAKOUT_POINTS
         strong += 1
         drivers.append("ruptura del máximo de 30 días con volumen")
-    if cap <= SMALL_CAP_USD:
+    small = cap <= SMALL_CAP_USD
+    breakdown.append({"signal": "capitalización pequeña", "value": cap, "points": SMALL_CAP_POINTS if small else 0, "strong": False})
+    if small:
         points += SMALL_CAP_POINTS
         drivers.append("capitalización pequeña")
+    points_before_caps = points
+
+    caps: list[dict] = []
+
+    def cap_to(limit: int, reason: str) -> None:
+        nonlocal points
+        if points > limit:
+            caps.append({"reason": reason, "max": limit})
+            points = limit
 
     missing = [name for name, value in (("volumen relativo", rel_volume), ("momentum 30 d", change_30d)) if value is None]
     if missing:
-        points = min(points, CAP_MISSING)
+        cap_to(CAP_MISSING, "dato crítico ausente: " + ", ".join(missing))
     if strong < 3:
-        points = min(points, CAP_FEWER_THAN_3)
+        cap_to(CAP_FEWER_THAN_3, "menos de 3 señales fuertes")
     elif strong == 3:
-        points = min(points, CAP_EXACTLY_3)
+        cap_to(CAP_EXACTLY_3, "exactamente 3 señales fuertes")
     elif strong == 4 and not breakout:
-        points = min(points, CAP_4_WITHOUT_BREAKOUT)
+        cap_to(CAP_4_WITHOUT_BREAKOUT, "4 señales fuertes sin ruptura")
     if suspicious:
-        points = min(points, CAP_SUSPICIOUS)
+        cap_to(CAP_SUSPICIOUS, "rotación sospechosa")
     if dilution:
-        points = min(points, CAP_DILUTION)
+        cap_to(CAP_DILUTION, "dilución alta")
 
     if missing:
         tier = TIER_WATCH
@@ -143,7 +159,7 @@ def score_row(row: Mapping, detail: Mapping | None = None) -> dict:
     else:
         tier = TIER_WATCH
     return base | {"score": int(points), "tier": tier, "strong_signals": strong, "drivers": drivers or ["sin señales explosivas suficientes"],
-                   "missing_signals": missing, "risk_flags": flags}
+                   "missing_signals": missing, "risk_flags": flags, "breakdown": breakdown, "points_before_caps": int(points_before_caps), "caps_applied": caps}
 
 
 def _markets_only_points(row: Mapping) -> tuple[int, int]:

@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50G — ficha de moneda cripto (2026-10-19)
+
+Botón «Ver ficha completa» en las tarjetas, ficha con pestañas Resumen/Datos/Gráfico, gráfico de línea de cierre y volumen sin velas (`src/crypto_v2_50/charts.py`), desglose de la puntuación y topes aplicados en `score_row`, claves de widget únicas y filtros conservados al volver. Prueba `qa_crypto_coin_page_v2_50g.py` (11 casos sin red). Detalle en `outputs/full_universe_source_acquisition/v2_50g_crypto_coin_page/CRYPTO_COIN_PAGE_v2_50g.md`.
+
 ## v2.50F — página de Unicornios cripto: búsqueda y resultados (2026-10-19)
 
 Botón de Crypto activo, entrada «Unicornios cripto» en la navegación, módulo `src/ui_v2_37/crypto_screen.py`, búsqueda pura `src/crypto_v2_50/search.py` y prueba `qa_crypto_search_v2_50f.py` (9 casos sin red); la prueba del Inicio de v2.48A se actualiza. Detalle en `outputs/full_universe_source_acquisition/v2_50f_crypto_search_page/CRYPTO_SEARCH_PAGE_v2_50f.md`.
