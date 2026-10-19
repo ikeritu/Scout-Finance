@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50C — capa de datos cripto, fase 2 del roadmap (2026-10-19)
+
+Paquete nuevo `src/crypto_v2_50/` (cliente de CoinGecko, contador de llamadas, caché cifrada de 24 h) y prueba `qa_crypto_coingecko_data_layer_v2_50c.py` (19 casos sin red). La app no cambia. Detalle en `outputs/full_universe_source_acquisition/v2_50c_crypto_data_layer/CRYPTO_DATA_LAYER_v2_50c.md`.
+
 ## v2.50B — piloto de CoinGecko, fase 1 del roadmap cripto: `PASS_FOR_NEXT_CONTROLLED_PILOT` (2026-10-19)
 
 Solo documento. Lectura oficial de límites, endpoints y condiciones de uso, y sonda con la clave Demo del usuario (16 llamadas): autenticación, campos de `/coins/markets`, histórico de 365 días, límite de 1 año, categorías de exclusión, ausencia de consulta de cuota, y cruce parcial con Yahoo. Fija las condiciones de diseño de la fase 2. Detalle en `outputs/full_universe_source_acquisition/v2_50b_coingecko_pilot_desk_research/COINGECKO_PILOT_STATUS_v2_50b.md`.

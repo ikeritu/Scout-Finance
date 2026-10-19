@@ -135,3 +135,8 @@ outputs/full_universe_source_acquisition/v2_38ai_europe_austria_fundamentals/eur
 # 100-800MB and this project keeps every provider's raw bulk download out
 # of git for repo size, same as every other raw cache above
 outputs/full_universe_source_acquisition/v2_38ax_europe_luxembourg_fundamentals/raw_quarterly_xml_cache_v2_38ax/
+
+# Crypto data layer (v2.50C): encrypted short-lived CoinGecko cache and the call counter are the user's local data
+data/crypto_coingecko_cache_v2_50c/
+data/crypto_coingecko_usage_v2_50c.json
+data/crypto_coingecko_usage_v2_50c.json.*
