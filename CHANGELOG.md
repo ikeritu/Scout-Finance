@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50B — piloto de CoinGecko, fase 1 del roadmap cripto: `PASS_FOR_NEXT_CONTROLLED_PILOT` (2026-10-19)
+
+Solo documento. Lectura oficial de límites, endpoints y condiciones de uso, y sonda con la clave Demo del usuario (16 llamadas): autenticación, campos de `/coins/markets`, histórico de 365 días, límite de 1 año, categorías de exclusión, ausencia de consulta de cuota, y cruce parcial con Yahoo. Fija las condiciones de diseño de la fase 2. Detalle en `outputs/full_universe_source_acquisition/v2_50b_coingecko_pilot_desk_research/COINGECKO_PILOT_STATUS_v2_50b.md`.
+
 ## v2.50A — unicornios explosivos en criptomonedas: análisis y roadmap (2026-10-19)
 
 Solo documento. Análisis de fuentes gratuitas (hechos oficiales, sondas y lo no verificado por separado), traslado de las señales de bolsa a cripto, riesgos y roadmap por fases con las decisiones que corresponden al usuario. Detalle en `outputs/full_universe_source_acquisition/v2_50a_crypto_explosive_roadmap/CRYPTO_EXPLOSIVE_ROADMAP_v2_50a.md`.

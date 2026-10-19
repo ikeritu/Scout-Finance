@@ -1,6 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## Estado actual del pipeline de datos / Current Data Pipeline State
 
+**v2.50B — piloto de CoinGecko (fase 1 del roadmap cripto)** (`PASS_FOR_NEXT_CONTROLLED_PILOT`): con la clave Demo del usuario (16 llamadas) se confirman autenticación, 250 monedas por página con cambios a 7/14/30 días, 366 puntos diarios con volumen en 365 días, límite de 1 año (`days=max` → error 10012), exclusión por categorías de stablecoins/envueltas/liquid staking, y que la cuota restante no se puede consultar (`/key` es de pago); Yahoo cubre solo el 53 % de una muestra mediana y su capitalización no es independiente. Condiciones: atribución «Powered by CoinGecko», datos brutos de vida ≤ 24 h, uso personal. Solo documento. Detalle en `COINGECKO_PILOT_STATUS_v2_50b.md`.
+
 **v2.50A — unicornios explosivos en criptomonedas: análisis de opciones y roadmap** (`CRYPTO_ROADMAP_DOCUMENTED`): investigación de escritorio de las fuentes gratuitas (CoinGecko Demo como base, Binance/Yahoo como verificación, DEX como carril posterior de alto riesgo; CoinPaprika y CoinMarketCap descartadas por histórico), qué señales de bolsa se trasladan y cuáles no, filtros de seguridad y volumen falso, y un roadmap por fases con decisiones del usuario. Solo documento: sin código ni credenciales. Detalle en `CRYPTO_EXPLOSIVE_ROADMAP_v2_50a.md`.
 
 **v2.49J — pulido a 375 px: título del gráfico y separación del pie de la ficha** (`EXPLOSIVE_MOBILE_POLISH_COMPLETED`): la barra de herramientas del gráfico tapaba su título en móvil, ahora el título es una línea de texto encima del gráfico; y el botón de cada ficha lleva una separación mínima respecto al texto. Solo presentación. Detalle en `EXPLOSIVE_MOBILE_POLISH_v2_49j.md`.
