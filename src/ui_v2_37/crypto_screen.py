@@ -19,6 +19,7 @@ import streamlit as st
 from src.crypto_v2_50 import default_paths
 from src.crypto_v2_50.cache import ProtectedCache
 from src.crypto_v2_50.charts import chart_key_text, daily_series_figure, reference_high
+from src.crypto_v2_50.derivatives import DerivativesError, fetch_perp_detail, squeeze_hint
 from src.crypto_v2_50.coingecko import (ATTRIBUTION_TEXT, ATTRIBUTION_URL, KEY_ENV, BudgetExhausted, CoinGeckoClient, CoinGeckoError, MissingApiKey, RateLimited,
                                         load_daily_series, read_api_key)
 from src.crypto_v2_50.scoring import MAX_SCORE, TIER_HIGH, TIER_LOW, TIER_MEDIUM, TIER_NO_LIQUIDITY, TIER_WATCH, tier_label
@@ -39,6 +40,8 @@ PAGE_DESCRIPTION = ("Monedas pequeñas con señales de mercado fuertes: mucha ro
 RISK_EXPLANATIONS = {
     "rotación sospechosa": "El volumen de un día iguala o supera la capitalización: puede ser volumen artificial o una falsa sensación de liquidez. "
                            "Limita la puntuación a 44 y no suma puntos de rotación.",
+    "moneda reciente": "CoinGecko tiene menos de 90 días de historial de esta moneda: hay poco recorrido para juzgar su comportamiento. "
+                       "Con menos de 30 días la puntuación se limita a 44 (y sin 31 días de volumen no hay volumen relativo).",
     "dilución alta": "Gran parte del suministro todavía no circula (circulante / total < 0,3) o la valoración totalmente diluida es al menos 3 veces la "
                      "capitalización: pueden llegar desbloqueos que presionen el precio. Limita la puntuación a 69, es decir, como mucho nivel bajo.",
 }
@@ -107,6 +110,18 @@ def fmt_supply(value: Any) -> str:
     return "no declarado" if number is None else f"{number:,.0f}".replace(",", ".")
 
 
+def fmt_funding(value: Any) -> str:
+    number = _num(value)
+    return "N/D" if number is None else f"{number * 100:+.4f} %".replace(".", ",")
+
+
+def fmt_history(item: dict) -> str:
+    days = item.get("history_days")
+    if not days:
+        return "N/D (sin serie diaria)"
+    return "un año o más" if item.get("history_capped") else f"{int(days):,} días".replace(",", ".")
+
+
 def coin_url(coin_id: Any) -> str:
     return f"https://www.coingecko.com/en/coins/{quote(str(coin_id), safe='')}"
 
@@ -127,6 +142,12 @@ def _risk_chip(hooks: CryptoHooks, text: str) -> str:
     t = hooks.tokens
     return (f'<span style="display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid {t["accent_border"]};background:{t["surface"]};'
             f'color:{t["accent_text"]};font-size:12px;font-weight:700;white-space:nowrap;">{escape(text)}</span>')
+
+
+def _info_chip(hooks: CryptoHooks, text: str) -> str:
+    t = hooks.tokens
+    return (f'<span style="display:inline-block;padding:2px 10px;border-radius:999px;border:1px solid {t["border"]};background:#ffffff;'
+            f'color:{t["secondary"]};font-size:12px;font-weight:700;white-space:nowrap;">{escape(text)}</span>')
 
 
 def attribution_html(hooks: CryptoHooks) -> str:
@@ -192,6 +213,13 @@ def render_summary(hooks: CryptoHooks, summary: dict) -> None:
         unsafe_allow_html=True,
     )
     st.caption(f"Esta búsqueda usó {summary['calls_used']:,} llamadas a CoinGecko.")
+    if summary.get("perps_status") == "unavailable":
+        st.caption("No se pudo consultar la lista de perpetuas de Binance: las tarjetas no muestran derivados en esta búsqueda.")
+    elif summary.get("perps_status") == "unverified":
+        st.caption("No se pudieron obtener precios frescos de CoinGecko para verificar la identidad de las perpetuas: las tarjetas no muestran derivados en esta búsqueda.")
+    elif "with_perp" in summary:
+        conflicts = f" Se descartaron {summary['perp_conflicts']:,} coincidencias de símbolo cuyo precio fresco no encajaba (otra moneda con el mismo símbolo)." if summary.get("perp_conflicts") else ""
+        st.caption(f"Derivados (Binance, datos públicos): {summary['with_perp']:,} monedas tienen perpetuo con identidad verificada por precio fresco.{conflicts}")
     if summary["stopped"] == "budget":
         st.warning(f"Se agotó el presupuesto de llamadas del mes durante la búsqueda: {summary['detail_skipped']:,} monedas se puntuaron sin su serie diaria (con ese dato ausente su puntuación no pasa de 44).")
     elif summary["stopped"] == "rate_limited":
@@ -207,6 +235,11 @@ def _card(hooks: CryptoHooks, item: dict) -> None:
     key = f"crypto_card_{suffix}"
     rank = f" · puesto {item['market_cap_rank']:,}" if item.get("market_cap_rank") else ""
     chips = "".join(_risk_chip(hooks, flag.capitalize()) for flag in item.get("risk_flags", []))
+    perp = item.get("perp")
+    if perp:
+        chips += _info_chip(hooks, f"Con perpetuo · financiación {fmt_funding(perp.get('funding_rate'))}")
+        if squeeze_hint(perp.get("funding_rate"), item.get("change_7d_pct")):
+            chips += _info_chip(hooks, "Financiación negativa con subida")
     drivers = " · ".join(item["drivers"]) if item["drivers"] else "ninguna todavía"
     missing = item.get("missing_signals") or []
     figures = (f"Capitalización {fmt_usd(item.get('market_cap_usd'))} · volumen 24 h {fmt_usd(item.get('volume_24h_usd'))} · rotación {fmt_ratio(item.get('turnover_24h'))}<br>"
@@ -297,6 +330,7 @@ def market_rows(item: dict) -> list[tuple[str, str]]:
         ("Cambio 14 d", fmt_pct(item.get("change_14d_pct"))), ("Cambio 30 d", fmt_pct(item.get("change_30d_pct"))),
         ("Volumen relativo (24 h móvil / media de 30 días completos)", f"{fmt_ratio(rel)} ×" if rel is not None else "N/D (sin serie diaria)"),
         ("Ruptura del máximo de cierre de 30 días", "sí" if breakout is True else ("no" if breakout is False else "N/D (sin serie diaria)")),
+        ("Historial en CoinGecko", fmt_history(item)),
         ("Suministro circulante", fmt_supply(circulating)), ("Suministro total", fmt_supply(total)), ("Suministro máximo", fmt_supply(item.get("max_supply"))),
         ("Circulante / total", fmt_ratio(circulating / total) if circulating is not None and total else "N/D"),
         ("Valoración totalmente diluida (FDV)", fmt_usd(fdv)), ("FDV / capitalización", fmt_ratio(fdv / cap) if fdv is not None and cap else "N/D"),
@@ -334,6 +368,56 @@ def _load_series(client: CoinGeckoClient | None, cache: ProtectedCache, coin_id:
         return None, f"No se pudo cargar la serie diaria ({type(error).__name__})."
 
 
+@st.cache_data(ttl=300, show_spinner=False)
+def _load_perp_detail(symbol: str, mark_price: float) -> tuple[dict | None, str | None]:
+    """Open interest and long/short ratio of a verified perpetual, kept in memory for five minutes (a tab switch reruns the page)."""
+    try:
+        return fetch_perp_detail({"symbol": symbol, "mark_price": mark_price}), None
+    except DerivativesError as error:
+        return None, str(error)
+    except Exception as error:  # never show str(error): it could carry request details
+        return None, f"No se pudieron consultar los derivados ({type(error).__name__})."
+
+
+def render_derivatives_tab(item: dict) -> None:
+    perp = item.get("perp")
+    summary = st.session_state.get("crypto_summary") or {}
+    if not perp:
+        if summary.get("perps_status") == "unverified":
+            st.info("No se pudieron obtener precios frescos de CoinGecko para verificar la identidad de las perpetuas en esta búsqueda: no se muestran derivados.")
+        elif item.get("perp_conflict"):
+            st.info("Binance tiene un contrato con el mismo símbolo, pero su precio no coincide con el precio fresco de CoinGecko, así que se descarta: podría ser otra moneda. No se muestran derivados.")
+        elif summary.get("perps_status") == "unavailable":
+            st.info("No se pudo consultar la lista de perpetuas de Binance en esta búsqueda.")
+        else:
+            st.info("Esta moneda no tiene perpetuo USDT en Binance. Los derivados son la única señal con equivalente directo del «short squeeze», pero solo existen para una parte de las monedas.")
+        st.caption("Solo información: los derivados no suman puntos. Fuente: Binance (datos públicos).")
+        return
+    gap = f"{perp['price_gap'] * 100:.1f}".replace(".", ",")
+    st.caption(f"Perpetuo {perp['symbol']} en Binance. Identidad verificada: su precio de marca difiere un {gap} % del precio fresco de CoinGecko.")
+    detail, error = _load_perp_detail(perp["symbol"], float(perp["mark_price"]))
+    if detail is None:
+        st.info(error)
+        st.caption("Solo información: los derivados no suman puntos. Fuente: Binance (datos públicos).")
+        return
+    nxt = perp.get("next_funding_time")
+    when = pd.to_datetime(nxt, unit="ms", utc=True).strftime("%Y-%m-%d %H:%M UTC") if nxt else "N/D"
+    rows = [
+        ("Tasa de financiación actual (por periodo)", fmt_funding(perp.get("funding_rate"))), ("Próxima financiación", when),
+        ("Open interest (valor)", fmt_usd(detail.get("open_interest_usd"))),
+        ("Cambio del open interest a 7 d", fmt_pct(detail.get("oi_change_7d_pct"))), ("Cambio del open interest a 30 d", fmt_pct(detail.get("oi_change_30d_pct"))),
+        ("Ratio largos/cortos (cuentas, último día)", fmt_ratio(detail.get("long_short_ratio"))),
+        ("Ratio largos/cortos, mínimo y máximo de 30 d", f"{fmt_ratio(detail.get('long_short_min_30d'))} – {fmt_ratio(detail.get('long_short_max_30d'))}"),
+        ("Cuentas largas", f"{_num(detail.get('long_account_share')) * 100:.1f} %".replace(".", ",") if _num(detail.get("long_account_share")) is not None else "N/D"),
+    ]
+    st.dataframe(pd.DataFrame(rows, columns=["Dato", "Valor"]), use_container_width=True, hide_index=True)
+    if squeeze_hint(perp.get("funding_rate"), item.get("change_7d_pct")):
+        st.warning("Financiación negativa con subida a 7 días: los cortos pagan a los largos mientras el precio sube. Es el montaje que precede a un «short squeeze», pero es un indicio para mirar, no una señal.")
+    else:
+        st.write("La financiación negativa mientras el precio sube (indicio de «short squeeze») no se da ahora en esta moneda.")
+    st.caption("Solo información: los derivados no suman puntos. Fuente: Binance (datos públicos); el historial del ratio largos/cortos y del open interest se limita a 30 días.")
+
+
 def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | None, cache: ProtectedCache) -> None:
     t = hooks.tokens
     style = hooks.tier_style(item["tier"])
@@ -355,7 +439,7 @@ def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | N
         """,
         unsafe_allow_html=True,
     )
-    why_tab, data_tab, chart_tab = st.tabs(["Resumen", "Datos", "Gráfico"])
+    why_tab, data_tab, chart_tab, perp_tab = st.tabs(["Resumen", "Datos", "Gráfico", "Derivados"])
     with why_tab:
         c1, c2 = st.columns(2)
         with c1:
@@ -404,6 +488,8 @@ def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | N
             st.caption(chart_key_text(has_volume=any(p.get("volume_usd") is not None for p in series), has_reference=reference_high(series) is not None))
             st.caption(f"{len(series):,} días completos · {series[0]['date']} a {series[-1]['date']} · sin velas: el plan gratuito de CoinGecko no da velas diarias, y no se inventan.")
         st.caption("Vista visual de investigación; no ejecuta órdenes ni conecta con ningún broker.")
+    with perp_tab:
+        render_derivatives_tab(item)
 
 
 def _search(hooks: CryptoHooks, client: CoinGeckoClient, cache: ProtectedCache) -> None:

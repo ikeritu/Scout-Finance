@@ -1,4 +1,12 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50I — fase 5a del roadmap cripto: antigüedad y derivados (2026-10-19)
+
+Serie diaria de 365 días, antigüedad (etiqueta y tope), módulo `src/crypto_v2_50/derivatives.py` (Binance público: perpetuas, financiación, open interest, ratio largos/cortos), verificación de identidad con precios frescos (`fetch_fresh_prices`), pestaña Derivados y etiquetas en las tarjetas. Prueba `qa_crypto_safety_v2_50i.py` (12 casos sin red). Detalle en `outputs/full_universe_source_acquisition/v2_50h_crypto_safety_pilot/CRYPTO_SAFETY_5A_v2_50i.md`.
+
+## v2.50H — piloto de las comprobaciones de seguridad cripto, fase 5 (2026-10-19)
+
+Solo documento. Sondas reales de GoPlus (contrato), CoinGecko (`/coins/{id}`: contratos y antigüedad) y Binance (derivados), con hechos, inferencias y límites separados, y un diseño en dos PRs pendiente de aprobación. Detalle en `outputs/full_universe_source_acquisition/v2_50h_crypto_safety_pilot/CRYPTO_SAFETY_PILOT_v2_50h.md`.
+
 ## v2.50G — ficha de moneda cripto (2026-10-19)
 
 Botón «Ver ficha completa» en las tarjetas, ficha con pestañas Resumen/Datos/Gráfico, gráfico de línea de cierre y volumen sin velas (`src/crypto_v2_50/charts.py`), desglose de la puntuación y topes aplicados en `score_row`, claves de widget únicas y filtros conservados al volver. Prueba `qa_crypto_coin_page_v2_50g.py` (11 casos sin red). Detalle en `outputs/full_universe_source_acquisition/v2_50g_crypto_coin_page/CRYPTO_COIN_PAGE_v2_50g.md`.

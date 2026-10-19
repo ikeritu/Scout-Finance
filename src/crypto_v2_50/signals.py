@@ -6,12 +6,18 @@ Definitions (stated, because the stock screen taught that a vague "relative volu
     hidden. Crypto does not close, so there is no partial trading day to warn about.
   * rel_vol_last_day: the last completed day divided by the mean of the 30 days before it (the stable alternative).
   * breakout_30d: the current price is strictly above the highest close of the last 30 completed days.
+  * history_days / history_capped: how many days of data CoinGecko has for the coin, counted from its first daily point to the last completed
+    day; `history_capped` is True when the series is as long as the free plan allows (365 days), so the real age is "at least that". This is
+    the age of the coin on CoinGecko, not its genesis: `genesis_date` came back on only 2 of 60 coins in the v2.50H pilot.
 A signal that cannot be computed (too little history, a zero baseline, a missing current value) is None, never a guess.
 """
 from __future__ import annotations
 
 import math
 from typing import Any, Mapping
+
+
+HISTORY_CAP_DAYS = 364  # a 365-day request returns up to 365 completed days (today is dropped): 364 or more means "a year or more"
 
 
 def finite(value: Any) -> float | None:
@@ -28,7 +34,10 @@ def daily_signals(row: Mapping, series: list[dict]) -> dict:
     volumes = [v for v in (finite(p.get("volume_usd")) for p in series) if v is not None]
     closes = [c for c in (finite(p.get("price_usd")) for p in series) if c is not None]
     volume_now, price_now = finite(row.get("volume_24h_usd")), finite(row.get("price_usd"))
-    out: dict = {"rel_vol_rolling": None, "rel_vol_last_day": None, "breakout_30d": None}
+    out: dict = {"rel_vol_rolling": None, "rel_vol_last_day": None, "breakout_30d": None, "history_days": None, "history_capped": None}
+    if series:
+        out["history_days"] = len(series)  # one point per completed day, so the count is the number of days of history
+        out["history_capped"] = len(series) >= HISTORY_CAP_DAYS
     if len(volumes) >= 31:
         base = sum(volumes[-30:]) / 30
         if volume_now is not None and base > 0:

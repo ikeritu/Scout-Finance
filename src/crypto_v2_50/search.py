@@ -8,9 +8,10 @@ from dataclasses import dataclass
 from typing import Callable
 
 from .cache import ProtectedCache
-from .coingecko import (BudgetExhausted, CoinGeckoClient, CoinGeckoError, RateLimited, apply_exclusions, load_daily_series, load_exclusion_sets,
-                        load_universe)
+from .coingecko import (BudgetExhausted, CoinGeckoClient, CoinGeckoError, RateLimited, apply_exclusions, fetch_fresh_prices, load_daily_series,
+                        load_exclusion_sets, load_universe)
 from .scoring import (TIER_HIGH, TIER_LOW, TIER_MEDIUM, TIER_NO_DATA, TIER_NO_LIQUIDITY, TIER_WATCH, passes_gates, preselect, score_row, summarize)
+from .derivatives import DerivativesError, fetch_perpetuals, match_perpetual
 from .signals import daily_signals
 
 DETAIL_LIMIT = 200  # today 155 coins can still reach the lowest tier (v2.50E); the limit leaves room for a livelier market
@@ -31,7 +32,7 @@ def sort_key(item: dict) -> tuple:
 
 
 def run_search(client: CoinGeckoClient, cache: ProtectedCache, *, detail_limit: int = DETAIL_LIMIT, refresh: bool = False,
-               progress: Progress | None = None) -> SearchResult:
+               progress: Progress | None = None, perps_transport=None) -> SearchResult:
     """Raises CoinGeckoError (missing key, budget, rate limit, ...) only when there is no universe to show. Trouble loading the daily
     series of some coins is tolerated and reported: those coins are scored without it, so their missing signals cap them."""
     calls_before = client.usage.calls_this_month()
@@ -65,8 +66,23 @@ def run_search(client: CoinGeckoClient, cache: ProtectedCache, *, detail_limit: 
             continue
         details[row["coin_id"]] = daily_signals(row, series.data)
 
-    scored = sorted((row | details.get(row["coin_id"], {}) | {"has_series": row["coin_id"] in details} | score_row(row, details.get(row["coin_id"])) for row in kept),
-                    key=sort_key)  # the series-based signals travel with the coin so its page can show them
+    perps_status, perps = "ok", {}
+    try:  # one public call for every perpetual; trouble here never stops the search, it only leaves the derivatives out
+        perps = fetch_perpetuals(perps_transport)
+    except DerivativesError:
+        perps_status = "unavailable"
+    fresh: dict[str, float] = {}
+    if perps:  # the identity check compares live prices: the cached market data may be hours old
+        candidates = [row["coin_id"] for row in kept if str(row["symbol"]).upper() in perps]
+        try:
+            fresh = fetch_fresh_prices(client, candidates)
+        except CoinGeckoError:
+            perps_status = "unverified"  # no fresh prices (budget, rate limit, error): no link is made rather than a link on a stale price
+    links = {row["coin_id"]: (match_perpetual(row, perps, price=fresh.get(row["coin_id"])) if perps_status == "ok" and row["coin_id"] in fresh else
+                              (None, bool(perps) and str(row["symbol"]).upper() in perps)) for row in kept}
+    scored = sorted((row | details.get(row["coin_id"], {}) | {"has_series": row["coin_id"] in details} | {"perp": links[row["coin_id"]][0], "perp_conflict": links[row["coin_id"]][1]}
+                     | score_row(row, details.get(row["coin_id"])) for row in kept),
+                    key=sort_key)  # the series-based signals and the verified perpetual travel with the coin so its page can show them
     counts = summarize(scored)
     excluded_by: dict[str, int] = {}
     for row in excluded:
@@ -77,6 +93,7 @@ def run_search(client: CoinGeckoClient, cache: ProtectedCache, *, detail_limit: 
         "preselected": len(pool), "detail_loaded": len(details), "detail_failed": failed, "detail_skipped": skipped, "stopped": stopped,
         "tiers": counts, "candidates": sum(counts.get(t, 0) for t in CANDIDATE_TIERS), "fetched_at": universe.fetched_at.isoformat(),
         "from_cache": bool(universe.from_cache), "calls_used": client.usage.calls_this_month() - calls_before, "usage": client.usage.status(),
+        "perps_status": perps_status, "with_perp": sum(1 for perp, _ in links.values() if perp), "perp_conflicts": sum(1 for _, conflict in links.values() if conflict),
     }
     return SearchResult(scored, summary)
 
