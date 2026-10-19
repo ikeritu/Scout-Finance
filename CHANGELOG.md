@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50A — unicornios explosivos en criptomonedas: análisis y roadmap (2026-10-19)
+
+Solo documento. Análisis de fuentes gratuitas (hechos oficiales, sondas y lo no verificado por separado), traslado de las señales de bolsa a cripto, riesgos y roadmap por fases con las decisiones que corresponden al usuario. Detalle en `outputs/full_universe_source_acquisition/v2_50a_crypto_explosive_roadmap/CRYPTO_EXPLOSIVE_ROADMAP_v2_50a.md`.
+
 ## v2.49J — pulido a 375 px: título del gráfico y separación del pie de la ficha (2026-10-18)
 
 Solo presentación. El título del gráfico pasa a una línea de texto sobre él (la barra de herramientas lo tapaba en móvil) y el botón de cada ficha lleva una separación mínima del texto. Prueba nueva `qa_explosive_mobile_polish_v2_49j.py`; detalle en `outputs/full_universe_source_acquisition/v2_49j_explosive_mobile_polish/EXPLOSIVE_MOBILE_POLISH_v2_49j.md`.
