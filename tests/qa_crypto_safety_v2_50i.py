@@ -191,7 +191,7 @@ def test_cards_show_the_perpetual_and_the_squeeze_hint() -> None:
 def test_the_derivatives_tab_shows_the_data_once_and_explains_every_case() -> None:
     with Sandbox() as box:
         at = open_coin(searched(), "pump-coin")
-        require([t.label for t in at.tabs] == ["Resumen", "Datos", "Gráfico", "Derivados"], str([t.label for t in at.tabs]))
+        require([t.label for t in at.tabs] == ["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad"], str([t.label for t in at.tabs]))
         table = table_with(at, "Open interest (valor)")
         values = dict(zip(table["Dato"], table["Valor"]))
         require(values["Open interest (valor)"] == "1,5 M$" and values["Tasa de financiación actual (por periodo)"] == "-0,0200 %" and values["Cambio del open interest a 30 d"] == "+29,0 %", str(values))

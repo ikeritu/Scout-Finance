@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50J — fase 5b del roadmap cripto: seguridad de contratos con GoPlus (2026-10-20)
+
+Módulo `src/crypto_v2_50/contract_security.py`, pestaña «Seguridad» bajo demanda, tope 44 por señal grave, reordenación del listado con las comprobaciones de la sesión y prueba `qa_crypto_contract_v2_50j.py` (12 casos sin red). Cierra la fase 5. Detalle en `outputs/full_universe_source_acquisition/v2_50j_crypto_contract_security/CRYPTO_CONTRACT_SECURITY_v2_50j.md`.
+
 ## v2.50I — fase 5a del roadmap cripto: antigüedad y derivados (2026-10-19)
 
 Serie diaria de 365 días, antigüedad (etiqueta y tope), módulo `src/crypto_v2_50/derivatives.py` (Binance público: perpetuas, financiación, open interest, ratio largos/cortos), verificación de identidad con precios frescos (`fetch_fresh_prices`), pestaña Derivados y etiquetas en las tarjetas. Prueba `qa_crypto_safety_v2_50i.py` (12 casos sin red). Detalle en `outputs/full_universe_source_acquisition/v2_50h_crypto_safety_pilot/CRYPTO_SAFETY_5A_v2_50i.md`.

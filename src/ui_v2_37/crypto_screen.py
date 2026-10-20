@@ -20,10 +20,11 @@ from src.crypto_v2_50 import default_paths
 from src.crypto_v2_50.cache import ProtectedCache
 from src.crypto_v2_50.charts import chart_key_text, daily_series_figure, reference_high
 from src.crypto_v2_50.derivatives import DerivativesError, fetch_perp_detail, squeeze_hint
+from src.crypto_v2_50.contract_security import MAX_CHAINS, check_contract
 from src.crypto_v2_50.coingecko import (ATTRIBUTION_TEXT, ATTRIBUTION_URL, KEY_ENV, BudgetExhausted, CoinGeckoClient, CoinGeckoError, MissingApiKey, RateLimited,
                                         load_daily_series, read_api_key)
-from src.crypto_v2_50.scoring import MAX_SCORE, TIER_HIGH, TIER_LOW, TIER_MEDIUM, TIER_NO_LIQUIDITY, TIER_WATCH, tier_label
-from src.crypto_v2_50.search import filter_results, paginate, run_search
+from src.crypto_v2_50.scoring import MAX_SCORE, TIER_HIGH, TIER_LOW, TIER_MEDIUM, TIER_NO_LIQUIDITY, TIER_WATCH, summarize, tier_label
+from src.crypto_v2_50.search import CANDIDATE_TIERS, filter_results, overlay_checks, paginate, run_search
 from src.crypto_v2_50.usage import UsageCounter
 
 # Tests set this to inject a fast, offline client (e.g. {"sleep": lambda s: None, "min_interval": 0}); the app never touches it.
@@ -42,6 +43,7 @@ RISK_EXPLANATIONS = {
                            "Limita la puntuación a 44 y no suma puntos de rotación.",
     "moneda reciente": "CoinGecko tiene menos de 90 días de historial de esta moneda: hay poco recorrido para juzgar su comportamiento. "
                        "Con menos de 30 días la puntuación se limita a 44 (y sin 31 días de volumen no hay volumen relativo).",
+    "contrato con señales graves": "La comprobación de contrato (GoPlus) encontró una o más señales graves: véase la pestaña Seguridad. Limita la puntuación a 44.",
     "dilución alta": "Gran parte del suministro todavía no circula (circulante / total < 0,3) o la valoración totalmente diluida es al menos 3 veces la "
                      "capitalización: pueden llegar desbloqueos que presionen el precio. Limita la puntuación a 69, es decir, como mucho nivel bajo.",
 }
@@ -224,6 +226,8 @@ def render_summary(hooks: CryptoHooks, summary: dict) -> None:
         st.warning(f"Se agotó el presupuesto de llamadas del mes durante la búsqueda: {summary['detail_skipped']:,} monedas se puntuaron sin su serie diaria (con ese dato ausente su puntuación no pasa de 44).")
     elif summary["stopped"] == "rate_limited":
         st.warning(f"CoinGecko limitó el ritmo durante la búsqueda: {summary['detail_skipped']:,} monedas se puntuaron sin su serie diaria (con ese dato ausente su puntuación no pasa de 44). Espera un minuto y repite: lo ya cargado no vuelve a gastar llamadas.")
+    if summary.get("contract_flagged"):
+        st.caption(f"{summary['contract_flagged']:,} monedas tienen señales graves de contrato en las comprobaciones de esta sesión: su puntuación se limitó a 44.")
     if summary["detail_failed"]:
         st.warning(f"No se pudo cargar la serie diaria de {summary['detail_failed']:,} monedas: se puntuaron sin ella (máximo 44).")
 
@@ -368,6 +372,79 @@ def _load_series(client: CoinGeckoClient | None, cache: ProtectedCache, coin_id:
         return None, f"No se pudo cargar la serie diaria ({type(error).__name__})."
 
 
+def contract_checks() -> dict:
+    """The on-demand contract checks of this session, by coin id. In memory only: nothing from GoPlus is written to disk."""
+    return st.session_state.setdefault("crypto_contract_checks", {})
+
+
+def adjusted_summary(summary: dict, results: list[dict]) -> dict:
+    """The search summary with the tier counts of the results as they are now (after the contract checks of the session)."""
+    tiers = summarize(results)
+    flagged = sum(1 for r in results if "contrato con señales graves" in r.get("risk_flags", []))
+    return summary | {"tiers": tiers, "candidates": sum(tiers.get(t, 0) for t in CANDIDATE_TIERS), "contract_flagged": flagged}
+
+
+def _pct(value: Any) -> str:
+    number = _num(value)
+    return "N/D" if number is None else f"{number * 100:.1f} %".replace(".", ",")
+
+
+def render_check(check: dict) -> None:
+    when = str(check.get("checked_at", ""))[:16].replace("T", " ")
+    status = check.get("status")
+    if status == "no_contract":
+        st.info("Esta moneda no tiene contrato en CoinGecko (parece una cadena propia): no hay comprobación posible. Eso no la hace ni segura ni peligrosa: **no verificado**.")
+    elif status == "unsupported_chain":
+        st.info("Los contratos de esta moneda están en cadenas que GoPlus no cubre (" + ", ".join(check.get("platforms", [])) + "): **no verificado**.")
+    elif status == "no_data":
+        tried = "; ".join(f"{t['platform']}: {t['outcome']}" for t in check.get("tried", []))
+        st.info(f"GoPlus no tiene datos de este contrato en las cadenas probadas ({tried}). **No verificado**: la ausencia de datos no significa que el contrato sea seguro; en el piloto GoPlus respondió con datos solo para cerca del 40 % de los contratos consultados.")
+    elif status == "error":
+        st.warning(check.get("error") or "No se pudo completar la comprobación.")
+    elif status == "checked":
+        assessment = check["assessment"]
+        where = f"{check['platform']}, {check['address'][:6]}…{check['address'][-4:]}" if len(str(check.get("address"))) > 12 else str(check.get("platform"))
+        main = " (cadena principal según CoinGecko)" if check.get("primary") else ""
+        st.caption(f"Contrato en {where}{main}. Comprobado a las {when} UTC con GoPlus Security. Se evaluaron {assessment['evaluated']} de {assessment['of']} comprobaciones graves.")
+        if check.get("other_platforms"):
+            st.caption("La moneda también existe en " + ", ".join(check["other_platforms"]) + " (no comprobado).")
+        if assessment["severe"]:
+            st.error("**Señales graves:** " + "; ".join(assessment["severe"]) + ". La puntuación de la moneda se limita a 44.")
+        else:
+            st.info(f"**{check['verdict'].capitalize()}.** Eso no es una garantía: GoPlus omite los campos que no puede evaluar y puede equivocarse; hay riesgos que no comprueba.")
+        for note in assessment["notes"]:
+            st.warning(note)
+        if assessment["info"]:
+            st.markdown("#### Información del contrato")
+            for entry in assessment["info"]:
+                st.write(("⚠ " if entry["level"] == "alert" else "• ") + entry["label"])
+        holders = assessment["holders"]
+        st.markdown("#### Tenedores")
+        count = f"{holders['count']:,}".replace(",", ".") if holders["count"] is not None else "N/D"
+        st.caption(f"Número de tenedores según GoPlus: {count} · los 10 mayores concentran {_pct(holders['top10_share'])} (sin contratos, bloqueados ni cuentas etiquetadas: {_pct(holders['top10_share_free'])}). Indicio: incluye contratos de liquidez y exchanges, y GoPlus puede fallar.")
+        if holders["top"]:
+            st.dataframe(pd.DataFrame([{"Cuenta": h["address"], "Porcentaje": _pct(h["percent"]), "Etiqueta": h["tag"] or "—", "¿Contrato?": "sí" if h["contract"] else "no", "¿Bloqueada?": "sí" if h["locked"] else "no"}
+                                       for h in holders["top"]]), use_container_width=True, hide_index=True)
+    st.caption("GoPlus es un servicio de terceros: sus límites y condiciones no están documentados y sus datos a veces fallan. Esta comprobación no suma puntos; solo una señal grave limita la puntuación.")
+
+
+def render_security_tab(item: dict, client: CoinGeckoClient | None, cache: ProtectedCache) -> None:
+    st.markdown("Comprueba el contrato de la moneda con **GoPlus Security** (servicio gratuito de terceros): señales graves como honeypot, propietario oculto o imposibilidad de vender, y datos de tenedores. **No es automática**: se hace al pulsar el botón, para una moneda cada vez.")
+    checks = contract_checks()
+    check = checks.get(item["coin_id"])
+    suffix = card_key(item["coin_id"])
+    if client is None and check is None:
+        st.info(f"No hay clave de CoinGecko en este equipo (`{KEY_ENV}`): hace falta para obtener la dirección del contrato.")
+    if st.button("Comprobar contrato" if check is None else "Repetir la comprobación", key=f"crypto_contract_check_{suffix}", disabled=client is None):
+        with st.spinner("Consultando el contrato…"):
+            checks[item["coin_id"]] = check_contract(client, cache, item["coin_id"])
+        st.rerun()  # redraw the whole page: the score and the tier may have changed
+    if check is None:
+        st.caption(f"Coste: una llamada a CoinGecko (la lista de contratos, 24 h en caché cifrada) y hasta {MAX_CHAINS} consultas a GoPlus con una pausa entre ellas. Si GoPlus no tiene datos, el resultado es «no verificado» y no cambia nada.")
+        return
+    render_check(check)
+
+
 @st.cache_data(ttl=300, show_spinner=False)
 def _load_perp_detail(symbol: str, mark_price: float) -> tuple[dict | None, str | None]:
     """Open interest and long/short ratio of a verified perpetual, kept in memory for five minutes (a tab switch reruns the page)."""
@@ -439,7 +516,7 @@ def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | N
         """,
         unsafe_allow_html=True,
     )
-    why_tab, data_tab, chart_tab, perp_tab = st.tabs(["Resumen", "Datos", "Gráfico", "Derivados"])
+    why_tab, data_tab, chart_tab, perp_tab, security_tab = st.tabs(["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad"])
     with why_tab:
         c1, c2 = st.columns(2)
         with c1:
@@ -490,6 +567,8 @@ def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | N
         st.caption("Vista visual de investigación; no ejecuta órdenes ni conecta con ningún broker.")
     with perp_tab:
         render_derivatives_tab(item)
+    with security_tab:
+        render_security_tab(item, client, cache)
 
 
 def _search(hooks: CryptoHooks, client: CoinGeckoClient, cache: ProtectedCache) -> None:
@@ -536,7 +615,8 @@ def selected_coin(results: list[dict]) -> dict | None:
 
 def render_crypto_page(hooks: CryptoHooks) -> None:
     done = bool(st.session_state.get("crypto_search_done"))
-    item = selected_coin(st.session_state.get("crypto_results", [])) if done else None
+    results = overlay_checks(st.session_state.get("crypto_results", []), st.session_state.get("crypto_contract_checks", {})) if done else []
+    item = selected_coin(results) if done else None
     if item is not None:
         client, cache, _ = _build_client(hooks)
         for key in FILTER_DEFAULTS:  # not drawn here, but kept alive while the coin's page is open; the mirror covers a run that loses them
@@ -565,6 +645,6 @@ def render_crypto_page(hooks: CryptoHooks) -> None:
     if clicked and not hooks.safe_demo:
         _search(hooks, client, cache)
     if done:
-        render_summary(hooks, st.session_state["crypto_summary"])
-        render_results(hooks, st.session_state["crypto_results"])
+        render_summary(hooks, adjusted_summary(st.session_state["crypto_summary"], results))
+        render_results(hooks, results)
     st.caption("Datos de mercado de CoinGecko.")

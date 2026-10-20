@@ -35,6 +35,7 @@ YOUNG_FLAG_DAYS = 90  # fewer days of history than this: "moneda reciente" (a ta
 YOUNG_CAP_DAYS = 30  # fewer than this: capped as well (implied already by the missing 30-day volume baseline, but stated)
 CAP_YOUNG = 44
 CAP_MISSING = 44
+CAP_CONTRACT = 44  # a severe contract red flag found by GoPlus on demand (v2.50J); an unverified contract has NO effect
 CAP_SUSPICIOUS = 44
 CAP_DILUTION = 69
 CAP_FEWER_THAN_3 = 59
@@ -90,6 +91,8 @@ def _risk_flags(row: Mapping, turnover: float | None, detail: Mapping | None = N
     detail = detail or {}
     if is_young(detail.get("history_days"), detail.get("history_capped"), YOUNG_FLAG_DAYS):
         flags.append("moneda reciente")
+    if detail.get("contract_severe"):
+        flags.append("contrato con señales graves")
     return flags
 
 
@@ -162,6 +165,9 @@ def score_row(row: Mapping, detail: Mapping | None = None) -> dict:
         cap_to(CAP_SUSPICIOUS, "rotación sospechosa")
     if dilution:
         cap_to(CAP_DILUTION, "dilución alta")
+    contract_severe = [str(s) for s in (detail.get("contract_severe") or [])]
+    if contract_severe:
+        cap_to(CAP_CONTRACT, "señal grave de contrato (GoPlus): " + ", ".join(contract_severe))
 
     if missing:
         tier = TIER_WATCH
@@ -175,6 +181,12 @@ def score_row(row: Mapping, detail: Mapping | None = None) -> dict:
         tier = TIER_WATCH
     return base | {"score": int(points), "tier": tier, "strong_signals": strong, "drivers": drivers or ["sin señales explosivas suficientes"],
                    "missing_signals": missing, "risk_flags": flags, "breakdown": breakdown, "points_before_caps": int(points_before_caps), "caps_applied": caps}
+
+
+def rescore(item: Mapping, contract_severe: list[str]) -> dict:
+    """The coin's score again with the severe contract flags found on demand. `item` is a result of `search.run_search` (it carries the market row,
+    the series signals and the age); the rest of the score does not change."""
+    return dict(item) | score_row(item, dict(item) | {"contract_severe": contract_severe})
 
 
 def _markets_only_points(row: Mapping) -> tuple[int, int]:
