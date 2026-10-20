@@ -23,6 +23,7 @@ from src.crypto_v2_50.derivatives import DerivativesError, fetch_perp_detail, sq
 from src.crypto_v2_50.contract_security import MAX_CHAINS, check_contract
 from src.crypto_v2_50.coingecko import (ATTRIBUTION_TEXT, ATTRIBUTION_URL, KEY_ENV, BudgetExhausted, CoinGeckoClient, CoinGeckoError, MissingApiKey, RateLimited,
                                         load_daily_series, read_api_key)
+from src.crypto_v2_50.quality import has_protocol_data, valuation_ratios
 from src.crypto_v2_50.scoring import MAX_SCORE, TIER_HIGH, TIER_LOW, TIER_MEDIUM, TIER_NO_LIQUIDITY, TIER_WATCH, summarize, tier_label
 from src.crypto_v2_50.search import CANDIDATE_TIERS, filter_results, overlay_checks, paginate, run_search
 from src.crypto_v2_50.usage import UsageCounter
@@ -32,7 +33,8 @@ CLIENT_OPTIONS: dict[str, Any] = {}
 
 LEVELS = {"Puntuadas": "scored", "Solo candidatas": "candidates", "En vigilancia": "watch", "Sin liquidez suficiente": "no_liquidity"}
 PER_PAGE_OPTIONS = [9, 18, 27]
-FILTER_DEFAULTS = {"crypto_filter_text": "", "crypto_filter_level": "Puntuadas", "crypto_per_page": PER_PAGE_OPTIONS[0]}
+PROTOCOL_FILTERS = ["Todas", "Con datos de protocolo"]
+FILTER_DEFAULTS = {"crypto_filter_text": "", "crypto_filter_level": "Puntuadas", "crypto_filter_protocol": "Todas", "crypto_per_page": PER_PAGE_OPTIONS[0]}
 RISK_NOTE = ("Las criptomonedas pueden perder casi todo su valor, y las monedas pequeñas son especialmente volátiles y fáciles de manipular. "
              "Esta pantalla es investigación local: no es una recomendación de compra ni una predicción.")
 PAGE_DESCRIPTION = ("Monedas pequeñas con señales de mercado fuertes: mucha rotación de volumen, volumen por encima de su media, subida a 7 y 30 días "
@@ -215,6 +217,10 @@ def render_summary(hooks: CryptoHooks, summary: dict) -> None:
         unsafe_allow_html=True,
     )
     st.caption(f"Esta búsqueda usó {summary['calls_used']:,} llamadas a CoinGecko.")
+    if summary.get("quality_status") == "unavailable":
+        st.caption("No se pudieron consultar los datos de protocolo de DefiLlama: las tarjetas no muestran TVL ni comisiones en esta búsqueda.")
+    elif "with_quality" in summary:
+        st.caption(f"Calidad (DefiLlama, datos públicos): {summary['with_quality']:,} monedas tienen datos de protocolo (TVL o comisiones). Para las demás no hay datos, y eso no es una señal negativa: no son protocolos DeFi.")
     if summary.get("perps_status") == "unavailable":
         st.caption("No se pudo consultar la lista de perpetuas de Binance: las tarjetas no muestran derivados en esta búsqueda.")
     elif summary.get("perps_status") == "unverified":
@@ -244,6 +250,12 @@ def _card(hooks: CryptoHooks, item: dict) -> None:
         chips += _info_chip(hooks, f"Con perpetuo · financiación {fmt_funding(perp.get('funding_rate'))}")
         if squeeze_hint(perp.get("funding_rate"), item.get("change_7d_pct")):
             chips += _info_chip(hooks, "Financiación negativa con subida")
+    quality = item.get("quality")
+    if has_protocol_data(quality):
+        if _num(quality.get("tvl")) and quality["tvl"] > 0:
+            chips += _info_chip(hooks, f"Protocolo · TVL {fmt_usd(quality['tvl'])}")
+        if _num(quality.get("fees_30d")) and quality["fees_30d"] > 0:
+            chips += _info_chip(hooks, f"Comisiones 30 d {fmt_usd(quality['fees_30d'])}")
     drivers = " · ".join(item["drivers"]) if item["drivers"] else "ninguna todavía"
     missing = item.get("missing_signals") or []
     figures = (f"Capitalización {fmt_usd(item.get('market_cap_usd'))} · volumen 24 h {fmt_usd(item.get('volume_24h_usd'))} · rotación {fmt_ratio(item.get('turnover_24h'))}<br>"
@@ -286,18 +298,20 @@ def render_results(hooks: CryptoHooks, scored: list[dict]) -> None:
     restore_filters()
     st.markdown("## Monedas por revisar")
     st.caption("Vista de investigación: ordena las monedas por puntuación; abre una ficha para ver por qué puntúa así. No es recomendación financiera ni predice rentabilidad.")
-    c_text, c_level, c_per = st.columns([3, 2, 1])
+    c_text, c_level, c_protocol, c_per = st.columns([3, 2, 2, 1])
     needle = c_text.text_input("Buscar moneda o símbolo", key="crypto_filter_text", placeholder="Ej.: pepe o bonk")
     level_label = c_level.selectbox("Nivel", list(LEVELS), key="crypto_filter_level")
+    protocol_label = c_protocol.selectbox("Protocolo DeFi", PROTOCOL_FILTERS, key="crypto_filter_protocol",
+                                          help="«Con datos de protocolo»: monedas que DefiLlama sigue como protocolo con TVL o comisiones. La mayoría de las monedas no lo son, y eso no es una mala señal.")
     per_page = c_per.selectbox("Por página", PER_PAGE_OPTIONS, key="crypto_per_page")
     save_filters()
-    signature = (needle, level_label, per_page, len(scored))
+    signature = (needle, level_label, protocol_label, per_page, len(scored))
     if st.session_state.get("crypto_filter_signature") != signature:
         st.session_state["crypto_filter_signature"] = signature
         st.session_state["crypto_page"] = 1  # a new filter starts again from the first page
-    rows = filter_results(scored, needle, LEVELS[level_label])
+    rows = filter_results(scored, needle, LEVELS[level_label], protocol_only=protocol_label != PROTOCOL_FILTERS[0])
     if not rows:
-        st.info("No hay monedas para estos filtros." + (" Prueba con otro texto o con «Puntuadas»." if (needle or level_label != "Puntuadas") else ""))
+        st.info("No hay monedas para estos filtros." + (" Prueba con otro texto o con «Puntuadas»." if (needle or level_label != "Puntuadas" or protocol_label != PROTOCOL_FILTERS[0]) else ""))
         return
     shown, page, pages = paginate(rows, int(st.session_state.get("crypto_page", 1)), int(per_page))
     st.session_state["crypto_page"] = page
@@ -456,6 +470,38 @@ def _load_perp_detail(symbol: str, mark_price: float) -> tuple[dict | None, str 
         return None, f"No se pudieron consultar los derivados ({type(error).__name__})."
 
 
+def render_quality_tab(item: dict) -> None:
+    summary = st.session_state.get("crypto_summary") or {}
+    quality = item.get("quality")
+    note = "Solo información: no suma puntos. Fuente: DefiLlama (datos públicos)."
+    if summary.get("quality_status") == "unavailable":
+        st.info("No se pudieron consultar los datos de protocolo de DefiLlama en esta búsqueda.")
+        st.caption(note)
+        return
+    if quality is None:
+        st.info("Esta moneda no es un protocolo DeFi seguido por DefiLlama (la mayoría de las monedas explosivas no lo son): **sin datos de calidad**, y eso no es una señal negativa ni positiva.")
+        st.caption(note)
+        return
+    chains = ", ".join(quality.get("chains") or []) or "N/D"
+    link = f" · [{quality['url']}]({quality['url']})" if quality.get("url") else ""
+    st.caption(f"Protocolo **{quality['name']}** ({quality.get('category') or 'sin categoría'}) en {chains}{link}")
+    if not has_protocol_data(quality):
+        st.info("DefiLlama sigue esta moneda como protocolo pero **no registra TVL ni comisiones** (es habitual en juegos, NFT o cadenas propias): no hay datos de calidad que mostrar.")
+        st.caption(note)
+        return
+    ratios = valuation_ratios(quality, item.get("market_cap_usd"))
+    rows = [
+        ("TVL (valor depositado)", fmt_usd(quality.get("tvl"))), ("Cambio del TVL a 1 d", fmt_pct(quality.get("tvl_change_1d"))),
+        ("Cambio del TVL a 7 d", fmt_pct(quality.get("tvl_change_7d"))), ("Cambio del TVL a 1 mes", fmt_pct(quality.get("tvl_change_1m"))),
+        ("Comisiones 24 h", fmt_usd(quality.get("fees_24h"))), ("Comisiones 30 d", fmt_usd(quality.get("fees_30d"))), ("Comisiones 1 año", fmt_usd(quality.get("fees_1y"))),
+        ("Ingresos del protocolo 30 d", fmt_usd(quality.get("revenue_30d"))), ("Ingresos del protocolo 1 año", fmt_usd(quality.get("revenue_1y"))),
+        ("Capitalización / TVL", fmt_ratio(ratios["mcap_to_tvl"])), ("Capitalización / comisiones del último año", fmt_ratio(ratios["mcap_to_fees_1y"])),
+        ("Capitalización / ingresos del último año", fmt_ratio(ratios["mcap_to_revenue_1y"])),
+    ]
+    st.dataframe(pd.DataFrame(rows, columns=["Dato", "Valor"]), use_container_width=True, hide_index=True)
+    st.caption("Lectura con cautela: el TVL puede incluir doble recuento e incentivos que lo inflan, y las comisiones que paga la gente no son ingresos del token. Un cociente «N/D» significa que falta el dato o es cero. " + note)
+
+
 def render_derivatives_tab(item: dict) -> None:
     perp = item.get("perp")
     summary = st.session_state.get("crypto_summary") or {}
@@ -516,7 +562,7 @@ def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | N
         """,
         unsafe_allow_html=True,
     )
-    why_tab, data_tab, chart_tab, perp_tab, security_tab = st.tabs(["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad"])
+    why_tab, data_tab, chart_tab, perp_tab, security_tab, quality_tab = st.tabs(["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad", "Calidad"])
     with why_tab:
         c1, c2 = st.columns(2)
         with c1:
@@ -569,6 +615,8 @@ def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | N
         render_derivatives_tab(item)
     with security_tab:
         render_security_tab(item, client, cache)
+    with quality_tab:
+        render_quality_tab(item)
 
 
 def _search(hooks: CryptoHooks, client: CoinGeckoClient, cache: ProtectedCache) -> None:

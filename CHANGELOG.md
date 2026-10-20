@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50K — fase 7 del roadmap cripto: eje de calidad con DefiLlama (2026-10-20)
+
+Módulo `src/crypto_v2_50/quality.py` (TVL, comisiones e ingresos por `gecko_id`, caché de 1 h en memoria), filtro «Protocolo DeFi», etiquetas en las tarjetas, pestaña «Calidad» en la ficha y prueba `qa_crypto_quality_v2_50k.py` (11 casos sin red). Solo información: no suma puntos y «sin datos» es neutro. Detalle en `outputs/full_universe_source_acquisition/v2_50k_crypto_quality_pilot/CRYPTO_QUALITY_v2_50k.md` (piloto en `CRYPTO_QUALITY_PILOT_v2_50k.md`).
+
 ## v2.50J — fase 5b del roadmap cripto: seguridad de contratos con GoPlus (2026-10-20)
 
 Módulo `src/crypto_v2_50/contract_security.py`, pestaña «Seguridad» bajo demanda, tope 44 por señal grave, reordenación del listado con las comprobaciones de la sesión y prueba `qa_crypto_contract_v2_50j.py` (12 casos sin red). Cierra la fase 5. Detalle en `outputs/full_universe_source_acquisition/v2_50j_crypto_contract_security/CRYPTO_CONTRACT_SECURITY_v2_50j.md`.

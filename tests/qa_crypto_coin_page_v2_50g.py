@@ -136,7 +136,7 @@ def frames(at) -> list[pd.DataFrame]:
 def test_a_card_opens_the_coin_page_with_three_tabs() -> None:
     with Sandbox() as box:
         at = open_coin(searched(), "pump-coin")
-        require([t.label for t in at.tabs] == ["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad"], [t.label for t in at.tabs])
+        require([t.label for t in at.tabs] == ["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad", "Calidad"], [t.label for t in at.tabs])
         text = page_text(at)
         require("Pump Coin" in text and "/100" in text and "Candidato explosivo · alto" in text, "the header names the coin, its score and its level")
         require("coingecko.com/en/coins/pump-coin" in text and "Powered by CoinGecko" in text, "the CoinGecko link and the attribution")
@@ -180,7 +180,7 @@ def test_a_series_that_cannot_be_loaded_is_explained_not_a_crash() -> None:
     with Sandbox() as box:
         at = open_coin(searched(), "broken-coin")
         require(charts_drawn(at) == 0 and any("No se pudo cargar la serie diaria" in i.value for i in at.info), "no chart, a clear message")
-        require([t.label for t in at.tabs] == ["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad"] and "Broken Coin" in page_text(at), "the other tabs still work")
+        require([t.label for t in at.tabs] == ["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad", "Calidad"] and "Broken Coin" in page_text(at), "the other tabs still work")
     with Sandbox() as box:
         at = searched()
         box.usage.record(SAFETY_CAP - box.usage.calls_this_month())

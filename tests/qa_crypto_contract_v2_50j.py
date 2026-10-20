@@ -221,7 +221,7 @@ def run_check(at, coin_id: str):
 def test_the_security_tab_checks_on_demand_and_a_severe_flag_changes_the_page() -> None:
     with Sandbox() as box:
         at = open_coin(searched(), "pump-coin")
-        require([t.label for t in at.tabs] == ["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad"], "five tabs")
+        require([t.label for t in at.tabs] == ["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad", "Calidad"], "five tabs")
         require(len(box.goplus.calls) == 0, "opening the page asks GoPlus nothing: it is on demand")
         require(any("Coste: una llamada a CoinGecko" in c.value for c in at.caption) and "crypto_contract_check_" + screen.card_key("pump-coin") in [b.key for b in at.button], "the button and its cost")
         before = len(box.fake.calls)
