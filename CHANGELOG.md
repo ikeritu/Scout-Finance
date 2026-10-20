@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50K — piloto del eje de calidad cripto, fase 7 (2026-10-20)
+
+Solo documento. Sondas reales de DefiLlama (protocolos, comisiones, ingresos) mapeadas por `gecko_id` a las monedas de la app, con cobertura medida (≈ 13 % de la preselección) y un diseño informativo pendiente de aprobación. Detalle en `outputs/full_universe_source_acquisition/v2_50k_crypto_quality_pilot/CRYPTO_QUALITY_PILOT_v2_50k.md`.
+
 ## v2.50J — fase 5b del roadmap cripto: seguridad de contratos con GoPlus (2026-10-20)
 
 Módulo `src/crypto_v2_50/contract_security.py`, pestaña «Seguridad» bajo demanda, tope 44 por señal grave, reordenación del listado con las comprobaciones de la sesión y prueba `qa_crypto_contract_v2_50j.py` (12 casos sin red). Cierra la fase 5. Detalle en `outputs/full_universe_source_acquisition/v2_50j_crypto_contract_security/CRYPTO_CONTRACT_SECURITY_v2_50j.md`.
