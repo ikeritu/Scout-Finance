@@ -51,7 +51,7 @@ RISK_EXPLANATIONS = {
 }
 MANUAL_CHECKS = (
     "Confirmar el precio y el volumen en un exchange o en una segunda fuente: el volumen agregado puede incluir mercados con poca liquidez real.",
-    "Revisar el contrato y la distribución de tenedores (concentración, liquidez bloqueada): esa comprobación todavía no está automatizada.",
+    "Revisar el contrato y la distribución de tenedores (concentración, liquidez bloqueada): la pestaña Seguridad lo comprueba bajo demanda, pero solo con lo que GoPlus evalúa y no siempre hay datos.",
     "Mirar el calendario de desbloqueos del suministro y la antigüedad de la moneda.",
     "Comprobar que no es una versión envuelta o derivada, ni un token duplicado con nombre parecido.",
     "Verificar si hay un catalizador real (listado, producto, noticia) o solo momentum técnico.",
@@ -579,7 +579,7 @@ def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | N
         for flag in flags:
             st.write(f"- **{flag.capitalize()}.** {RISK_EXPLANATIONS.get(flag, '')}")
         if not flags:
-            st.write("- Ninguno de los dos riesgos automáticos (volumen sospechoso, dilución) salta en esta moneda. Eso no la hace segura: hay riesgos que aún no se comprueban.")
+            st.write("- Ninguno de los dos riesgos automáticos (volumen sospechoso, dilución) salta en esta moneda. Eso no la hace segura: hay riesgos que estas señales no cubren (el contrato se comprueba aparte, en la pestaña Seguridad).")
         st.markdown("#### Qué revisar manualmente")
         for check in MANUAL_CHECKS:
             st.write(f"- {check}")
