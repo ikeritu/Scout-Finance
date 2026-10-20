@@ -28,6 +28,7 @@ from streamlit.testing.v1 import AppTest  # noqa: E402
 from src.crypto_v2_50 import coingecko as cg  # noqa: E402
 from src.crypto_v2_50 import contract_security as cs  # noqa: E402
 from src.crypto_v2_50 import derivatives as dv  # noqa: E402
+from src.crypto_v2_50 import quality as qm  # noqa: E402
 from src.crypto_v2_50 import default_paths, scoring as sc  # noqa: E402
 from src.crypto_v2_50.cache import ProtectedCache  # noqa: E402
 from src.crypto_v2_50.search import filter_results, paginate, run_search  # noqa: E402
@@ -182,6 +183,36 @@ class FakeGoPlus:
         return 200, {}, json.dumps({"code": 1, "message": "OK", "result": ({address: entry} if entry else {})}).encode()
 
 
+PROTOCOLS = [
+    {"id": "101", "name": "Pump Protocol", "slug": "pump-protocol", "category": "Dexs", "chains": ["Ethereum", "Base"], "tvl": 14_600_000, "change_1d": 1.5, "change_7d": -3.2,
+     "change_1m": 20.0, "gecko_id": "pump-coin"},  # a protocol with TVL and fees
+    {"id": "102", "name": "Low Game", "slug": "low-game", "category": "Gaming", "chains": ["Solana"], "tvl": 0, "gecko_id": "low-coin"},  # tracked, but no TVL and no fees
+    {"id": "103", "name": "No Gecko Id", "slug": "no-gecko", "tvl": 5}, "junk", None,
+]
+FEES = [{"defillamaId": "101", "total24h": 1500, "total7d": 10_000, "total30d": 43_000, "total1y": 600_000}, {"defillamaId": "999", "total30d": 5}]
+REVENUE = [{"defillamaId": "101", "total24h": 500, "total7d": 3_000, "total30d": 14_000, "total1y": 200_000}]
+
+
+class FakeDefiLlama:
+    """Scripted DefiLlama: the protocol list and the fees / revenue overviews."""
+
+    def __init__(self, fail: bool = False) -> None:
+        self.calls: list[str] = []
+        self.fail = fail
+
+    def __call__(self, url, timeout):
+        self.calls.append(url)
+        if self.fail:
+            return 500, {}, b"{}"
+        path, _, query = url[len(qm.BASE_URL):].partition("?")
+        if path == "/protocols":
+            return 200, {}, json.dumps(PROTOCOLS).encode()
+        if path == "/overview/fees":
+            kind = parse_qs(query).get("dataType", ["dailyFees"])[0]
+            return 200, {}, json.dumps({"protocols": FEES if kind == "dailyFees" else REVENUE}).encode()
+        return 404, {}, b"{}"
+
+
 class FakeBinance:
     """Scripted public Binance futures: the list of perpetuals and the three small calls of a coin's page."""
 
@@ -209,14 +240,14 @@ class FakeBinance:
 class Sandbox:
     """Temporary data folder, fake key, patched transports and an instant client. Restores everything on exit."""
 
-    def __init__(self, key: str | None = FAKE_KEY, rate_limited: bool = False, usage_calls: int | None = None, binance_fails: bool = False, binance_detail_fails: bool = False) -> None:
+    def __init__(self, key: str | None = FAKE_KEY, rate_limited: bool = False, usage_calls: int | None = None, binance_fails: bool = False, binance_detail_fails: bool = False, defillama_fails: bool = False) -> None:
         self.key, self.rate_limited, self.usage_calls = key, rate_limited, usage_calls
-        self.binance_fails, self.binance_detail_fails = binance_fails, binance_detail_fails
+        self.binance_fails, self.binance_detail_fails, self.defillama_fails = binance_fails, binance_detail_fails, defillama_fails
 
     def __enter__(self) -> "Sandbox":
         self.tmp = tempfile.TemporaryDirectory()
         self.data_dir = Path(self.tmp.name)
-        self.saved = (os.environ.get("SCOUT_FINANCE_DATA_DIR"), os.environ.get(cg.KEY_ENV), cg.default_transport, dict(crypto_screen.CLIENT_OPTIONS), dv.default_transport, cs.default_transport)
+        self.saved = (os.environ.get("SCOUT_FINANCE_DATA_DIR"), os.environ.get(cg.KEY_ENV), cg.default_transport, dict(crypto_screen.CLIENT_OPTIONS), dv.default_transport, cs.default_transport, qm.default_transport)
         os.environ["SCOUT_FINANCE_DATA_DIR"] = self.tmp.name
         if self.key is None:
             os.environ.pop(cg.KEY_ENV, None)
@@ -228,6 +259,9 @@ class Sandbox:
         dv.default_transport = self.binance  # the real Binance is never reached: a swallowed "no network" error would hide it
         self.goplus = FakeGoPlus()
         cs.default_transport = self.goplus  # nor the real GoPlus
+        self.defillama = FakeDefiLlama(self.defillama_fails)
+        qm.default_transport = self.defillama  # nor the real DefiLlama
+        qm.clear_cache()
         PLATFORMS_STATUS["code"] = 200
         HISTORY_DAYS.clear()
         FRESH_PRICES.clear()
@@ -240,7 +274,7 @@ class Sandbox:
         return self
 
     def __exit__(self, *exc) -> None:
-        data, key, transport, options, binance, goplus = self.saved
+        data, key, transport, options, binance, goplus, defillama = self.saved
         for name, value in (("SCOUT_FINANCE_DATA_DIR", data), (cg.KEY_ENV, key)):
             if value is None:
                 os.environ.pop(name, None)
@@ -249,6 +283,8 @@ class Sandbox:
         cg.default_transport = transport
         dv.default_transport = binance
         cs.default_transport = goplus
+        qm.default_transport = defillama
+        qm.clear_cache()
         PLATFORMS_STATUS["code"] = 200
         HISTORY_DAYS.clear()
         FRESH_PRICES.clear()
