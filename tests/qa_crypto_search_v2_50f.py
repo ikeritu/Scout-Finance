@@ -26,6 +26,7 @@ logging.disable(logging.CRITICAL)
 from streamlit.testing.v1 import AppTest  # noqa: E402
 
 from src.crypto_v2_50 import coingecko as cg  # noqa: E402
+from src.crypto_v2_50 import contract_security as cs  # noqa: E402
 from src.crypto_v2_50 import derivatives as dv  # noqa: E402
 from src.crypto_v2_50 import default_paths, scoring as sc  # noqa: E402
 from src.crypto_v2_50.cache import ProtectedCache  # noqa: E402
@@ -107,6 +108,12 @@ class FakeCoinGecko:
                 return FRESH_PRICE_STATUS["code"], {}, b"{}"
             prices = {r["id"]: r["current_price"] for r in UNIVERSE}
             return 200, {}, json.dumps({i: {"usd": FRESH_PRICES.get(i, prices[i])} for i in params["ids"][0].split(",") if i in prices}).encode()
+        match_platforms = re.fullmatch(r"/coins/([^/]+)", path)
+        if match_platforms:
+            if PLATFORMS_STATUS["code"] != 200:
+                return PLATFORMS_STATUS["code"], {}, b"{}"
+            return 200, {}, json.dumps({"id": match_platforms.group(1), "platforms": PLATFORMS.get(match_platforms.group(1), {}), "genesis_date": None,
+                                        "asset_platform_id": PRIMARY_PLATFORM.get(match_platforms.group(1))}).encode()
         match = re.match(r"/coins/([^/]+)/market_chart", path)
         if match:
             coin = match.group(1)
@@ -122,6 +129,57 @@ PERPS = [
     {"symbol": "DILUSDT", "markPrice": "300.0", "lastFundingRate": "0.00010000", "nextFundingTime": 1792454400000},  # same symbol, another coin: rejected
     {"symbol": "BTCUSDT_250627", "markPrice": "1.0", "lastFundingRate": "0"}, {"symbol": "ETHBTC", "markPrice": "1.0", "lastFundingRate": "0"},
 ]
+
+
+ETH, BSC, SOL = "0x" + "a" * 40, "0x" + "b" * 40, "So11111111111111111111111111111111111111112"
+PLATFORMS: dict[str, dict] = {
+    "pump-coin": {"ethereum": ETH, "binance-smart-chain": BSC},  # GoPlus has nothing on Ethereum, a honeypot on BNB Chain
+    "low-coin": {"solana": SOL},  # clean Solana token (with a freezable authority: information)
+    "dilute-coin": {},  # no contract: a native coin
+    "sus-coin": {"osmosis": "osmo1abcdefghijklmnopqrstuvwxyz"},  # a chain GoPlus does not cover
+    "quiet-1": {"base": "0x" + "c" * 40},  # GoPlus answers HTTP 500
+    "quiet-2": {"ethereum": "0x" + "d" * 40},  # GoPlus has no data
+    "quiet-3": {"ethereum": "0x" + "e" * 40},  # clean EVM token with a doubtful holder count
+    "quiet-4": {"arbitrum-one": "0x" + "f" * 40},  # GoPlus rate-limits
+    "quiet-5": {"ethereum": "0x" + "1" * 40, "binance-smart-chain": "0x" + "2" * 40, "polygon-pos": "0x" + "3" * 40, "base": "0x" + "4" * 40,
+                "arbitrum-one": "0x" + "5" * 40, "avalanche": "0x" + "6" * 40},  # six chains, none with data: at most four are asked
+}
+PRIMARY_PLATFORM: dict[str, str] = {"quiet-5": "arbitrum-one"}  # CoinGecko's main platform of a coin (default: none declared)
+PLATFORMS_STATUS = {"code": 200}  # tests set 500 to make CoinGecko's /coins/{id} fail
+
+_HOLDERS = [{"address": "0x" + "9" * 40, "balance": "100", "percent": "0.30", "tag": "", "is_contract": 0, "is_locked": 0},
+            {"address": "0x" + "8" * 40, "balance": "100", "percent": "0.40", "tag": "Pool", "is_contract": 1, "is_locked": 0}]
+GOPLUS: dict[tuple[str, str], object] = {
+    ("56", BSC.lower()): {"is_open_source": "1", "is_proxy": "0", "is_mintable": "1", "is_honeypot": "1", "cannot_sell_all": "0", "hidden_owner": "0", "buy_tax": "0.02",
+                          "sell_tax": "0.6", "holder_count": "500", "holders": _HOLDERS, "is_in_dex": "1"},
+    ("solana", SOL): {"mintable": {"authority": [], "status": "0"}, "freezable": {"authority": ["x"], "status": "1"}, "closable": {"authority": [], "status": "0"},
+                      "balance_mutable_authority": {"authority": [], "status": "0"}, "transfer_fee": {}, "non_transferable": "0", "default_account_state": "1", "transfer_hook": [],
+                      "holder_count": "1020153", "holders": [{"account": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM", "percent": "0.0883", "tag": "", "is_locked": 0}]},
+    ("1", ("0x" + "e" * 40).lower()): {"is_open_source": "1", "is_proxy": "0", "is_mintable": "0", "is_honeypot": "0", "hidden_owner": "0", "buy_tax": "0", "sell_tax": "0",
+                                      "holder_count": "1", "holders": _HOLDERS, "is_in_dex": "1"},
+    ("1", ("0x" + "d" * 40).lower()): None,  # nothing for this contract
+    ("8453", ("0x" + "c" * 40).lower()): "error500",
+    ("42161", ("0x" + "f" * 40).lower()): "rate",
+}
+
+
+class FakeGoPlus:
+    """Scripted GoPlus token security: a table of (chain, address) -> record, None (no data), "error500" or "rate"."""
+
+    def __init__(self) -> None:
+        self.calls: list[str] = []
+
+    def __call__(self, url, timeout):
+        self.calls.append(url)
+        path, _, query = url[len(cs.BASE_URL):].partition("?")
+        address = parse_qs(query).get("contract_addresses", [""])[0]
+        chain = "solana" if path == "/api/v1/solana/token_security" else path.rsplit("/", 1)[-1]
+        entry = GOPLUS.get((chain, address if chain == "solana" else address.lower()))
+        if entry == "error500":
+            return 500, {}, b"{}"
+        if entry == "rate":
+            return 429, {}, b"{}"
+        return 200, {}, json.dumps({"code": 1, "message": "OK", "result": ({address: entry} if entry else {})}).encode()
 
 
 class FakeBinance:
@@ -158,7 +216,7 @@ class Sandbox:
     def __enter__(self) -> "Sandbox":
         self.tmp = tempfile.TemporaryDirectory()
         self.data_dir = Path(self.tmp.name)
-        self.saved = (os.environ.get("SCOUT_FINANCE_DATA_DIR"), os.environ.get(cg.KEY_ENV), cg.default_transport, dict(crypto_screen.CLIENT_OPTIONS), dv.default_transport)
+        self.saved = (os.environ.get("SCOUT_FINANCE_DATA_DIR"), os.environ.get(cg.KEY_ENV), cg.default_transport, dict(crypto_screen.CLIENT_OPTIONS), dv.default_transport, cs.default_transport)
         os.environ["SCOUT_FINANCE_DATA_DIR"] = self.tmp.name
         if self.key is None:
             os.environ.pop(cg.KEY_ENV, None)
@@ -168,6 +226,9 @@ class Sandbox:
         cg.default_transport = self.fake
         self.binance = FakeBinance(self.binance_fails, self.binance_detail_fails)
         dv.default_transport = self.binance  # the real Binance is never reached: a swallowed "no network" error would hide it
+        self.goplus = FakeGoPlus()
+        cs.default_transport = self.goplus  # nor the real GoPlus
+        PLATFORMS_STATUS["code"] = 200
         HISTORY_DAYS.clear()
         FRESH_PRICES.clear()
         FRESH_PRICE_STATUS["code"] = 200
@@ -179,7 +240,7 @@ class Sandbox:
         return self
 
     def __exit__(self, *exc) -> None:
-        data, key, transport, options, binance = self.saved
+        data, key, transport, options, binance, goplus = self.saved
         for name, value in (("SCOUT_FINANCE_DATA_DIR", data), (cg.KEY_ENV, key)):
             if value is None:
                 os.environ.pop(name, None)
@@ -187,6 +248,8 @@ class Sandbox:
                 os.environ[name] = value
         cg.default_transport = transport
         dv.default_transport = binance
+        cs.default_transport = goplus
+        PLATFORMS_STATUS["code"] = 200
         HISTORY_DAYS.clear()
         FRESH_PRICES.clear()
         FRESH_PRICE_STATUS["code"] = 200

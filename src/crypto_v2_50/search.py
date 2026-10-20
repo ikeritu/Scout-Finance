@@ -10,7 +10,7 @@ from typing import Callable
 from .cache import ProtectedCache
 from .coingecko import (BudgetExhausted, CoinGeckoClient, CoinGeckoError, RateLimited, apply_exclusions, fetch_fresh_prices, load_daily_series,
                         load_exclusion_sets, load_universe)
-from .scoring import (TIER_HIGH, TIER_LOW, TIER_MEDIUM, TIER_NO_DATA, TIER_NO_LIQUIDITY, TIER_WATCH, passes_gates, preselect, score_row, summarize)
+from .scoring import (TIER_HIGH, TIER_LOW, TIER_MEDIUM, TIER_NO_DATA, TIER_NO_LIQUIDITY, TIER_WATCH, passes_gates, preselect, rescore, score_row, summarize)
 from .derivatives import DerivativesError, fetch_perpetuals, match_perpetual
 from .signals import daily_signals
 
@@ -96,6 +96,19 @@ def run_search(client: CoinGeckoClient, cache: ProtectedCache, *, detail_limit: 
         "perps_status": perps_status, "with_perp": sum(1 for perp, _ in links.values() if perp), "perp_conflicts": sum(1 for _, conflict in links.values() if conflict),
     }
     return SearchResult(scored, summary)
+
+
+def overlay_checks(scored: list[dict], checks: dict[str, dict]) -> list[dict]:
+    """The results with the on-demand contract checks applied: a coin whose check found severe flags is scored again (capped, tagged) and the list
+    is ordered again. A coin with no check, or with a check that found nothing severe or could not verify, is untouched."""
+    if not checks:
+        return scored
+    out = []
+    for item in scored:
+        check = checks.get(item["coin_id"])
+        severe = check["assessment"]["severe"] if check and check.get("status") == "checked" and check.get("assessment") else []
+        out.append(rescore(item, severe) if severe else item)
+    return sorted(out, key=sort_key)
 
 
 def filter_results(scored: list[dict], needle: str = "", level: str = "scored") -> list[dict]:
