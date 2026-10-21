@@ -292,8 +292,8 @@ def test_nothing_from_goplus_reaches_the_disk_and_the_home_starts_clean() -> Non
     with Sandbox() as box:
         at = open_coin(searched(), "low-coin")
         run_check(at, "low-coin")
-        files = [p.name for p in box.data_dir.rglob("*") if p.is_file()]
-        blob = b"".join(p.read_bytes() for p in box.data_dir.rglob("*") if p.is_file())
+        files = [p.name for p in box.data_dir.rglob("*") if p.is_file() and p.name != "crypto_revolut_assets.txt"]  # the list is the person's own input
+        blob = b"".join(p.read_bytes() for p in box.data_dir.rglob("*") if p.is_file() and p.name != "crypto_revolut_assets.txt")
         require(all(n.endswith(".bin") or n.endswith(".json") for n in files) and b"1020153" not in blob and b"balance_mutable" not in blob and b"GoPlus" not in blob,
                 f"only the encrypted CoinGecko cache and the call counter are on disk, nothing from GoPlus: {files}")
         require("crypto_contract_checks" in at.session_state and len(at.session_state["crypto_contract_checks"]) == 1, "the check lives in the session")

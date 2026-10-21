@@ -205,7 +205,7 @@ def test_the_quality_data_changes_no_score_on_the_page_and_nothing_reaches_the_d
     with Sandbox(defillama_fails=True) as box2:
         at2 = searched()
         require({r["coin_id"]: r["score"] for r in at2.session_state["crypto_results"]} == with_data, "the same scores with and without DefiLlama")
-        require(all(p.suffix in (".bin", ".json") for p in box2.data_dir.rglob("*") if p.is_file()), "only the encrypted CoinGecko cache and the call counter are on disk")
+        require(all(p.suffix in (".bin", ".json") for p in box2.data_dir.rglob("*") if p.is_file() and p.name != "crypto_revolut_assets.txt"), "only the encrypted CoinGecko cache and the call counter are on disk")
     with Sandbox() as box3:
         searched()
         blob = b"".join(p.read_bytes() for p in box3.data_dir.rglob("*") if p.is_file())

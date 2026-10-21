@@ -5,6 +5,7 @@ from pathlib import Path
 
 CACHE_DIRNAME = "crypto_coingecko_cache_v2_50c"
 USAGE_FILENAME = "crypto_coingecko_usage_v2_50c.json"
+REVOLUT_FILENAME = "crypto_revolut_assets.txt"  # the person's own list of what Revolut offers (v2.50L); only read by the app
 
 
 def default_paths(data_dir: Path) -> tuple[Path, Path]:

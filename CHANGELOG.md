@@ -1,4 +1,8 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
+## v2.50L — fase 8 del roadmap cripto: dónde operar, Kraken y Revolut (2026-10-21)
+
+Módulo `src/crypto_v2_50/venues.py` (catálogo público de Kraken con identidad por precio fresco; lista propia de Revolut con símbolo y nombre), filtro «Dónde operar» activo por defecto, etiquetas en las tarjetas, sección en la ficha y prueba `qa_crypto_venues_v2_50l.py` (14 casos sin red). Solo información: no suma puntos. Detalle en `outputs/full_universe_source_acquisition/v2_50l_crypto_venues/CRYPTO_VENUES_v2_50l.md`.
+
 ## v2.50K — fase 7 del roadmap cripto: eje de calidad con DefiLlama (2026-10-20)
 
 Módulo `src/crypto_v2_50/quality.py` (TVL, comisiones e ingresos por `gecko_id`, caché de 1 h en memoria), filtro «Protocolo DeFi», etiquetas en las tarjetas, pestaña «Calidad» en la ficha y prueba `qa_crypto_quality_v2_50k.py` (11 casos sin red). Solo información: no suma puntos y «sin datos» es neutro. Detalle en `outputs/full_universe_source_acquisition/v2_50k_crypto_quality_pilot/CRYPTO_QUALITY_v2_50k.md` (piloto en `CRYPTO_QUALITY_PILOT_v2_50k.md`).

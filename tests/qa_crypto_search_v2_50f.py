@@ -29,7 +29,8 @@ from src.crypto_v2_50 import coingecko as cg  # noqa: E402
 from src.crypto_v2_50 import contract_security as cs  # noqa: E402
 from src.crypto_v2_50 import derivatives as dv  # noqa: E402
 from src.crypto_v2_50 import quality as qm  # noqa: E402
-from src.crypto_v2_50 import default_paths, scoring as sc  # noqa: E402
+from src.crypto_v2_50 import venues as vn  # noqa: E402
+from src.crypto_v2_50 import REVOLUT_FILENAME, default_paths, scoring as sc  # noqa: E402
 from src.crypto_v2_50.cache import ProtectedCache  # noqa: E402
 from src.crypto_v2_50.search import filter_results, paginate, run_search  # noqa: E402
 from src.crypto_v2_50.usage import SAFETY_CAP, UsageCounter  # noqa: E402
@@ -213,6 +214,44 @@ class FakeDefiLlama:
         return 404, {}, b"{}"
 
 
+KRAKEN_PAIRS = {
+    "PUMPUSD": {"wsname": "PUMP/USD", "status": "online"},  # verified (price 1.5)
+    "LOWCEUR": {"wsname": "LOWC/EUR", "status": "online"},  # only a EUR market: converted with the EUR/USD market
+    "DILUSD": {"wsname": "DIL/USD", "status": "online"},  # same symbol, another coin: rejected
+    "XXBTZUSD": {"wsname": "XBT/USD", "status": "online"}, "ZEURZUSD": {"wsname": "EUR/USD", "status": "online"},
+    "OLDUSD": {"wsname": "OLD/USD", "status": "cancel_only"}, "ETHBTC": {"wsname": "ETH/XBT", "status": "online"},  # not tradable / not USD or EUR
+    "ODDPAIR": {"status": "online"},  # no wsname
+}
+KRAKEN_TICKERS = {
+    "PUMPUSD": {"c": ["1.5", "10"]}, "LOWCEUR": {"c": ["0.9", "10"]}, "DILUSD": {"c": ["300.0", "1"]}, "XXBTZUSD": {"c": ["70000", "1"]},
+    "ZEURZUSD": {"c": ["1.1", "1"]}, "OLDUSD": {"c": ["5", "1"]}, "ETHBTC": {"c": ["0.05", "1"]},
+}
+
+
+class FakeKraken:
+    """Scripted public Kraken: the catalogue of pairs and every ticker."""
+
+    def __init__(self, fail: bool = False) -> None:
+        self.calls: list[str] = []
+        self.fail = fail
+
+    def __call__(self, url, timeout):
+        self.calls.append(url)
+        if self.fail:
+            return 500, {}, b"{}"
+        path = url[len(vn.KRAKEN_URL):].partition("?")[0]
+        if path == "/AssetPairs":
+            return 200, {}, json.dumps({"error": [], "result": KRAKEN_PAIRS}).encode()
+        if path == "/Ticker":
+            return 200, {}, json.dumps({"error": [], "result": KRAKEN_TICKERS}).encode()
+        return 404, {}, b"{}"
+
+
+def revolut_everything() -> str:
+    """A Revolut list with every coin of the fake universe (the name is the coin's own), so the default 'Revolut o Kraken' filter hides nothing."""
+    return "\n".join(f"{r['symbol']};{r['name']}" for r in UNIVERSE) + "\n"
+
+
 class FakeBinance:
     """Scripted public Binance futures: the list of perpetuals and the three small calls of a coin's page."""
 
@@ -240,14 +279,16 @@ class FakeBinance:
 class Sandbox:
     """Temporary data folder, fake key, patched transports and an instant client. Restores everything on exit."""
 
-    def __init__(self, key: str | None = FAKE_KEY, rate_limited: bool = False, usage_calls: int | None = None, binance_fails: bool = False, binance_detail_fails: bool = False, defillama_fails: bool = False) -> None:
+    def __init__(self, key: str | None = FAKE_KEY, rate_limited: bool = False, usage_calls: int | None = None, binance_fails: bool = False, binance_detail_fails: bool = False, defillama_fails: bool = False,
+                 kraken_fails: bool = False, revolut_text: str | None = "ALL") -> None:
         self.key, self.rate_limited, self.usage_calls = key, rate_limited, usage_calls
         self.binance_fails, self.binance_detail_fails, self.defillama_fails = binance_fails, binance_detail_fails, defillama_fails
+        self.kraken_fails, self.revolut_text = kraken_fails, revolut_text
 
     def __enter__(self) -> "Sandbox":
         self.tmp = tempfile.TemporaryDirectory()
         self.data_dir = Path(self.tmp.name)
-        self.saved = (os.environ.get("SCOUT_FINANCE_DATA_DIR"), os.environ.get(cg.KEY_ENV), cg.default_transport, dict(crypto_screen.CLIENT_OPTIONS), dv.default_transport, cs.default_transport, qm.default_transport)
+        self.saved = (os.environ.get("SCOUT_FINANCE_DATA_DIR"), os.environ.get(cg.KEY_ENV), cg.default_transport, dict(crypto_screen.CLIENT_OPTIONS), dv.default_transport, cs.default_transport, qm.default_transport, vn.default_transport)
         os.environ["SCOUT_FINANCE_DATA_DIR"] = self.tmp.name
         if self.key is None:
             os.environ.pop(cg.KEY_ENV, None)
@@ -262,6 +303,10 @@ class Sandbox:
         self.defillama = FakeDefiLlama(self.defillama_fails)
         qm.default_transport = self.defillama  # nor the real DefiLlama
         qm.clear_cache()
+        self.kraken = FakeKraken(self.kraken_fails)
+        vn.default_transport = self.kraken  # nor the real Kraken
+        if self.revolut_text is not None:  # the person's own list (None: no file at all)
+            (self.data_dir / REVOLUT_FILENAME).write_bytes((revolut_everything() if self.revolut_text == "ALL" else self.revolut_text).encode("utf-8"))
         PLATFORMS_STATUS["code"] = 200
         HISTORY_DAYS.clear()
         FRESH_PRICES.clear()
@@ -274,7 +319,7 @@ class Sandbox:
         return self
 
     def __exit__(self, *exc) -> None:
-        data, key, transport, options, binance, goplus, defillama = self.saved
+        data, key, transport, options, binance, goplus, defillama, kraken = self.saved
         for name, value in (("SCOUT_FINANCE_DATA_DIR", data), (cg.KEY_ENV, key)):
             if value is None:
                 os.environ.pop(name, None)
@@ -284,6 +329,7 @@ class Sandbox:
         dv.default_transport = binance
         cs.default_transport = goplus
         qm.default_transport = defillama
+        vn.default_transport = kraken
         qm.clear_cache()
         PLATFORMS_STATUS["code"] = 200
         HISTORY_DAYS.clear()

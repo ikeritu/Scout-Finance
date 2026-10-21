@@ -140,3 +140,6 @@ outputs/full_universe_source_acquisition/v2_38ax_europe_luxembourg_fundamentals/
 data/crypto_coingecko_cache_v2_50c/
 data/crypto_coingecko_usage_v2_50c.json
 data/crypto_coingecko_usage_v2_50c.json.*
+
+# v2.50L: the person's own Revolut list (never committed)
+data/crypto_revolut_assets.txt

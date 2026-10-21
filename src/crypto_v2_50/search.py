@@ -5,6 +5,7 @@ No Streamlit here, so the whole flow can be tested with a scripted transport. Th
 from __future__ import annotations
 
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Callable
 
 from .cache import ProtectedCache
@@ -14,6 +15,7 @@ from .scoring import (TIER_HIGH, TIER_LOW, TIER_MEDIUM, TIER_NO_DATA, TIER_NO_LI
 from .derivatives import DerivativesError, fetch_perpetuals, match_perpetual
 from .quality import QualityError, fetch_quality_index, has_protocol_data
 from .signals import daily_signals
+from .venues import VenueError, available, fetch_kraken_markets, load_revolut_list, match_kraken, match_revolut, venue_matches
 
 DETAIL_LIMIT = 200  # today 155 coins can still reach the lowest tier (v2.50E); the limit leaves room for a livelier market
 TIER_ORDER = {TIER_HIGH: 0, TIER_MEDIUM: 1, TIER_LOW: 2, TIER_WATCH: 3, TIER_NO_LIQUIDITY: 4, TIER_NO_DATA: 5}
@@ -33,7 +35,8 @@ def sort_key(item: dict) -> tuple:
 
 
 def run_search(client: CoinGeckoClient, cache: ProtectedCache, *, detail_limit: int = DETAIL_LIMIT, refresh: bool = False,
-               progress: Progress | None = None, perps_transport=None, quality_transport=None) -> SearchResult:
+               progress: Progress | None = None, perps_transport=None, quality_transport=None, venues_transport=None,
+               revolut_path: Path | None = None) -> SearchResult:
     """Raises CoinGeckoError (missing key, budget, rate limit, ...) only when there is no universe to show. Trouble loading the daily
     series of some coins is tolerated and reported: those coins are scored without it, so their missing signals cap them."""
     calls_before = client.usage.calls_this_month()
@@ -72,22 +75,34 @@ def run_search(client: CoinGeckoClient, cache: ProtectedCache, *, detail_limit: 
         perps = fetch_perpetuals(perps_transport)
     except DerivativesError:
         perps_status = "unavailable"
+    kraken_status, markets = "ok", {}
+    try:  # Kraken's public catalogue of spot markets: where the person can trade; trouble here never stops the search
+        markets = fetch_kraken_markets(venues_transport)
+    except VenueError:
+        kraken_status = "unavailable"
     fresh: dict[str, float] = {}
-    if perps:  # the identity check compares live prices: the cached market data may be hours old
-        candidates = [row["coin_id"] for row in kept if str(row["symbol"]).upper() in perps]
+    listed = set(perps) | set(markets)
+    if listed:  # the identity checks compare live prices: the cached market data may be hours old
+        candidates = [row["coin_id"] for row in kept if str(row["symbol"]).upper() in listed]
         try:
             fresh = fetch_fresh_prices(client, candidates)
-        except CoinGeckoError:
-            perps_status = "unverified"  # no fresh prices (budget, rate limit, error): no link is made rather than a link on a stale price
+        except CoinGeckoError:  # no fresh prices (budget, rate limit, error): no link is made rather than a link on a stale price
+            perps_status, kraken_status = ("unverified" if perps else perps_status), ("unverified" if markets else kraken_status)
     links = {row["coin_id"]: (match_perpetual(row, perps, price=fresh.get(row["coin_id"])) if perps_status == "ok" and row["coin_id"] in fresh else
                               (None, bool(perps) and str(row["symbol"]).upper() in perps)) for row in kept}
+    kraken_links = {row["coin_id"]: (match_kraken(row, markets, fresh.get(row["coin_id"])) if kraken_status == "ok" and row["coin_id"] in fresh else
+                                     (None, bool(markets) and str(row["symbol"]).upper() in markets)) for row in kept}
+    revolut_list = load_revolut_list(revolut_path) if revolut_path is not None else {"status": "missing", "entries": [], "skipped": 0, "path": ""}
+    revolut = match_revolut(kept, revolut_list["entries"])
     quality_status, quality = "ok", {}
     try:  # protocol data (TVL, fees) from DefiLlama: information only; trouble here never stops the search
         quality = fetch_quality_index(quality_transport)
     except QualityError:
         quality_status = "unavailable"
     scored = sorted((row | details.get(row["coin_id"], {}) | {"has_series": row["coin_id"] in details} | {"perp": links[row["coin_id"]][0], "perp_conflict": links[row["coin_id"]][1]}
-                     | {"quality": quality.get(row["coin_id"])} | score_row(row, details.get(row["coin_id"])) for row in kept),
+                     | {"quality": quality.get(row["coin_id"])}
+                     | {"venues": {"kraken": kraken_links[row["coin_id"]][0], "kraken_conflict": kraken_links[row["coin_id"]][1], "revolut": revolut.get(row["coin_id"])}}
+                     | score_row(row, details.get(row["coin_id"])) for row in kept),
                     key=sort_key)  # the series-based signals and the verified perpetual travel with the coin so its page can show them
     counts = summarize(scored)
     excluded_by: dict[str, int] = {}
@@ -101,6 +116,10 @@ def run_search(client: CoinGeckoClient, cache: ProtectedCache, *, detail_limit: 
         "from_cache": bool(universe.from_cache), "calls_used": client.usage.calls_this_month() - calls_before, "usage": client.usage.status(),
         "quality_status": quality_status, "with_quality": sum(1 for row in kept if has_protocol_data(quality.get(row["coin_id"]))),
         "protocol_matches": sum(1 for row in kept if quality.get(row["coin_id"]) is not None),
+        "kraken_status": kraken_status, "revolut_status": revolut_list["status"], "revolut_listed": len(revolut_list["entries"]), "revolut_skipped": revolut_list["skipped"],
+        "with_kraken": sum(1 for link, _ in kraken_links.values() if link), "kraken_conflicts": sum(1 for _, conflict in kraken_links.values() if conflict),
+        "with_revolut": sum(1 for v in revolut.values() if v["status"] == "confirmed"), "revolut_unverified": sum(1 for v in revolut.values() if v["status"] == "unverified"),
+        "with_both": sum(1 for row in kept if all(available({"kraken": kraken_links[row["coin_id"]][0], "revolut": revolut.get(row["coin_id"])}))),
         "perps_status": perps_status, "with_perp": sum(1 for perp, _ in links.values() if perp), "perp_conflicts": sum(1 for _, conflict in links.values() if conflict),
     }
     return SearchResult(scored, summary)
@@ -119,7 +138,7 @@ def overlay_checks(scored: list[dict], checks: dict[str, dict]) -> list[dict]:
     return sorted(out, key=sort_key)
 
 
-def filter_results(scored: list[dict], needle: str = "", level: str = "scored", protocol_only: bool = False) -> list[dict]:
+def filter_results(scored: list[dict], needle: str = "", level: str = "scored", protocol_only: bool = False, venue: str = "all") -> list[dict]:
     """`level`: scored (every coin that passed the gates) | candidates | watch | no_liquidity | all. The text matches name, symbol or id."""
     text = (needle or "").strip().casefold()
     allowed = {
@@ -129,6 +148,8 @@ def filter_results(scored: list[dict], needle: str = "", level: str = "scored", 
     rows = [r for r in scored if r["tier"] in allowed]
     if protocol_only:
         rows = [r for r in rows if has_protocol_data(r.get("quality"))]
+    if venue != "all":
+        rows = [r for r in rows if venue_matches(r.get("venues"), venue)]
     if text:
         rows = [r for r in rows if text in str(r.get("name", "")).casefold() or text in str(r.get("symbol", "")).casefold() or text in str(r.get("coin_id", "")).casefold()]
     return rows
