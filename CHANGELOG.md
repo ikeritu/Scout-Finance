@@ -1,7 +1,7 @@
 <!-- SCOUT_FINANCE_V2_33D1_STATE_START -->
 ## v2.50M — ejecutable de escritorio para Windows (2026-10-21)
 
-Carpeta `desktop/`: lanzador nativo `Scout Finance.exe` (se compila con el .NET que trae Windows; no se sube a git), `install_shortcut.ps1`, icono y guía. Abre la aplicación en una ventana propia y la apaga al cerrarla; una sola instancia; la clave no se muestra. Prueba `qa_desktop_launcher_v2_50m.py` (5 casos). Detalle en `outputs/full_universe_source_acquisition/v2_50m_desktop_launcher/DESKTOP_LAUNCHER_v2_50m.md`.
+Carpeta `desktop/`: lanzador nativo `Scout Finance.exe` (se compila con el .NET que trae Windows; no se sube a git), `install_shortcut.ps1`, icono y guía. Abre la aplicación en una ventana propia y la apaga al cerrarla; una sola instancia; la clave no se muestra. El acceso directo se escribe con la interfaz Unicode del shell (la ruta del proyecto lleva un emoji). Prueba `qa_desktop_launcher_v2_50m.py` (6 casos). Detalle en `outputs/full_universe_source_acquisition/v2_50m_desktop_launcher/DESKTOP_LAUNCHER_v2_50m.md`.
 
 ## v2.50L — fase 8 del roadmap cripto: dónde operar, Kraken y Revolut (2026-10-21)
 
