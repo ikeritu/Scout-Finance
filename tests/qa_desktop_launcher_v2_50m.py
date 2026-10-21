@@ -61,7 +61,9 @@ def test_the_source_is_csharp_5_and_the_scripts_are_safe_for_windows_powershell(
         require(data.startswith(b"\xef\xbb\xbf"), f"{name} has a BOM: Windows PowerShell 5 reads accents correctly")
     require("/codepage:65001" in (DESKTOP / "build_launcher.ps1").read_text(encoding="utf-8-sig"), "the source is compiled as UTF-8 (accents in the messages)")
     shortcut = (DESKTOP / "install_shortcut.ps1").read_text(encoding="utf-8-sig")
-    require("-Remove" in shortcut and "root.txt" in shortcut and "CreateShortcut" in shortcut and "Remove-Item $link" in shortcut, "installs and removes only its own shortcut")
+    require("-Remove" in shortcut and "root.txt" in shortcut and "IShellLinkW" in shortcut and "Remove-Item -LiteralPath $link" in shortcut, "installs and removes only its own shortcut")
+    require("WScript.Shell" not in shortcut.replace("not WScript.Shell", "").replace("WScript.Shell: that", ""), "the Unicode shell-link interface, not WScript.Shell (ANSI only: it failed on a project folder with an emoji)")
+    require(chr(0xFEFF) not in shortcut, "a single BOM at the start of the file (removed by utf-8-sig), none inside")
     require("SCOUT_FINANCE" not in shortcut.replace("SCOUT_FINANCE_ROOT", "") and "API_KEY" not in shortcut + (DESKTOP / "build_launcher.ps1").read_text(encoding="utf-8-sig"), "the scripts never touch a key")
     ignore = (ROOT / ".gitignore").read_text(encoding="utf-8")
     require("desktop/*.exe" in ignore, "the built program is not committed")
@@ -98,12 +100,36 @@ def test_a_real_build_reports_the_setup_and_never_the_key() -> None:
         require("root=NOT FOUND" in text or "root=" in text, "a wrong root does not crash it")
 
 
+def test_the_shortcut_is_created_even_when_the_project_path_has_an_emoji() -> None:
+    if sys.platform != "win32" or not CSC.exists():
+        print("SKIP: not Windows, the shortcut was not tested")
+        return
+    import shutil
+
+    with tempfile.TemporaryDirectory() as tmp:
+        project = Path(tmp) / "💰 Scout Finance test"  # the real folder is called like this
+        (project / "desktop").mkdir(parents=True)
+        for name in ("ScoutFinanceLauncher.cs", "build_launcher.ps1", "install_shortcut.ps1", "scout_finance.ico"):
+            shutil.copy(DESKTOP / name, project / "desktop" / name)
+        target = Path(tmp) / "shortcuts"
+        script = project / "desktop" / "install_shortcut.ps1"
+        done = subprocess.run(["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(script), "-Directory", str(target), "-NoRemember"], capture_output=True, text=True, encoding="utf-8", errors="replace")
+        link = target / "Scout Finance.lnk"
+        require(done.returncode == 0 and link.exists(), f"the shortcut exists: {done.stdout[-300:]} {done.stderr[-300:]}")
+        require((project / "desktop" / "Scout Finance.exe").exists(), "the launcher was built on the way")
+        data = link.read_bytes()
+        require("💰 Scout Finance test".encode("utf-16-le") in data and "Scout Finance.exe".encode("utf-16-le") in data, "the target keeps the emoji folder name")
+        removed = subprocess.run(["powershell", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", str(script), "-Directory", str(target), "-Remove"], capture_output=True, text=True, encoding="utf-8", errors="replace")
+        require(removed.returncode == 0 and not link.exists() and (project / "desktop" / "Scout Finance.exe").exists(), "-Remove deletes only the shortcut")
+
+
 CASES = [
     test_the_launcher_starts_the_current_app_on_loopback_only,
     test_the_key_is_never_printed_logged_or_written,
     test_the_source_is_csharp_5_and_the_scripts_are_safe_for_windows_powershell,
     test_the_icon_has_every_size_windows_asks_for,
     test_a_real_build_reports_the_setup_and_never_the_key,
+    test_the_shortcut_is_created_even_when_the_project_path_has_an_emoji,
 ]
 
 
