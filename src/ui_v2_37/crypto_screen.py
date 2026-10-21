@@ -16,7 +16,7 @@ from urllib.parse import quote
 import pandas as pd
 import streamlit as st
 
-from src.crypto_v2_50 import default_paths
+from src.crypto_v2_50 import REVOLUT_FILENAME, default_paths
 from src.crypto_v2_50.cache import ProtectedCache
 from src.crypto_v2_50.charts import chart_key_text, daily_series_figure, reference_high
 from src.crypto_v2_50.derivatives import DerivativesError, fetch_perp_detail, squeeze_hint
@@ -27,6 +27,7 @@ from src.crypto_v2_50.quality import has_protocol_data, valuation_ratios
 from src.crypto_v2_50.scoring import MAX_SCORE, TIER_HIGH, TIER_LOW, TIER_MEDIUM, TIER_NO_LIQUIDITY, TIER_WATCH, summarize, tier_label
 from src.crypto_v2_50.search import CANDIDATE_TIERS, filter_results, overlay_checks, paginate, run_search
 from src.crypto_v2_50.usage import UsageCounter
+from src.crypto_v2_50.venues import venue_label, venue_matches
 
 # Tests set this to inject a fast, offline client (e.g. {"sleep": lambda s: None, "min_interval": 0}); the app never touches it.
 CLIENT_OPTIONS: dict[str, Any] = {}
@@ -34,7 +35,9 @@ CLIENT_OPTIONS: dict[str, Any] = {}
 LEVELS = {"Puntuadas": "scored", "Solo candidatas": "candidates", "En vigilancia": "watch", "Sin liquidez suficiente": "no_liquidity"}
 PER_PAGE_OPTIONS = [9, 18, 27]
 PROTOCOL_FILTERS = ["Todas", "Con datos de protocolo"]
-FILTER_DEFAULTS = {"crypto_filter_text": "", "crypto_filter_level": "Puntuadas", "crypto_filter_protocol": "Todas", "crypto_per_page": PER_PAGE_OPTIONS[0]}
+VENUE_FILTERS = {"Revolut o Kraken": "any", "Kraken": "kraken", "Revolut": "revolut", "En las dos": "both", "Todas": "all"}
+FILTER_DEFAULTS = {"crypto_filter_text": "", "crypto_filter_level": "Puntuadas", "crypto_filter_venue": "Revolut o Kraken", "crypto_filter_protocol": "Todas",
+                   "crypto_per_page": PER_PAGE_OPTIONS[0]}
 RISK_NOTE = ("Las criptomonedas pueden perder casi todo su valor, y las monedas pequeñas son especialmente volátiles y fáciles de manipular. "
              "Esta pantalla es investigación local: no es una recomendación de compra ni una predicción.")
 PAGE_DESCRIPTION = ("Monedas pequeñas con señales de mercado fuertes: mucha rotación de volumen, volumen por encima de su media, subida a 7 y 30 días "
@@ -221,6 +224,7 @@ def render_summary(hooks: CryptoHooks, summary: dict) -> None:
         st.caption("No se pudieron consultar los datos de protocolo de DefiLlama: las tarjetas no muestran TVL ni comisiones en esta búsqueda.")
     elif "with_quality" in summary:
         st.caption(f"Calidad (DefiLlama, datos públicos): {summary['with_quality']:,} monedas tienen datos de protocolo (TVL o comisiones). Para las demás no hay datos, y eso no es una señal negativa: no son protocolos DeFi.")
+    render_venue_notes(summary)
     if summary.get("perps_status") == "unavailable":
         st.caption("No se pudo consultar la lista de perpetuas de Binance: las tarjetas no muestran derivados en esta búsqueda.")
     elif summary.get("perps_status") == "unverified":
@@ -238,6 +242,31 @@ def render_summary(hooks: CryptoHooks, summary: dict) -> None:
         st.warning(f"No se pudo cargar la serie diaria de {summary['detail_failed']:,} monedas: se puntuaron sin ella (máximo 44).")
 
 
+def render_venue_notes(summary: dict) -> None:
+    """Where the person can trade, one line per source, with what is missing said plainly (a missing source never reads as 'not available')."""
+    if "kraken_status" not in summary:
+        return
+    if summary["kraken_status"] == "unavailable":
+        st.caption("No se pudo consultar el catálogo de Kraken: esta búsqueda no sabe qué monedas se pueden operar allí.")
+    elif summary["kraken_status"] == "unverified":
+        st.caption("No se pudieron obtener precios frescos de CoinGecko para verificar las monedas de Kraken: esta búsqueda no marca ninguna como operable allí.")
+    else:
+        conflicts = f" Se descartaron {summary['kraken_conflicts']:,} coincidencias de símbolo cuyo precio fresco no encajaba (otra moneda con el mismo símbolo)." if summary.get("kraken_conflicts") else ""
+        st.caption(f"Kraken (catálogo público): {summary['with_kraken']:,} monedas tienen mercado en USD o EUR con identidad verificada por precio fresco.{conflicts}")
+    status = summary.get("revolut_status")
+    if status == "missing":
+        st.caption(f"No hay lista de Revolut: crea el archivo `data/{REVOLUT_FILENAME}` con un símbolo por línea (por ejemplo `AAVE;Aave`) y repite la búsqueda. Mientras tanto «Revolut» no marca ninguna moneda.")
+    elif status in ("empty", "unreadable"):
+        st.caption(f"La lista de Revolut (`data/{REVOLUT_FILENAME}`) está {'vacía' if status == 'empty' else 'ilegible'}: «Revolut» no marca ninguna moneda.")
+    elif status == "ok":
+        unverified = f" {summary['revolut_unverified']:,} comparten símbolo con otra moneda o tienen otro nombre: no verificadas, no cuentan." if summary.get("revolut_unverified") else ""
+        skipped = f" Se ignoraron {summary['revolut_skipped']:,} líneas que no se entendieron." if summary.get("revolut_skipped") else ""
+        st.caption(f"Revolut (tu lista de {summary['revolut_listed']:,} símbolos): {summary['with_revolut']:,} monedas confirmadas por símbolo y nombre.{unverified}{skipped} "
+                   f"En las dos plataformas: {summary['with_both']:,}.")
+    if "candidates_operable" in summary:
+        st.caption(f"De las {summary['candidates']:,} candidatas explosivas, {summary['candidates_operable']:,} se pueden operar en Revolut o Kraken.")
+
+
 def _card(hooks: CryptoHooks, item: dict) -> None:
     t = hooks.tokens
     style = hooks.tier_style(item["tier"])
@@ -245,6 +274,9 @@ def _card(hooks: CryptoHooks, item: dict) -> None:
     key = f"crypto_card_{suffix}"
     rank = f" · puesto {item['market_cap_rank']:,}" if item.get("market_cap_rank") else ""
     chips = "".join(_risk_chip(hooks, flag.capitalize()) for flag in item.get("risk_flags", []))
+    where = venue_label(item.get("venues"))
+    if where:
+        chips += _info_chip(hooks, f"Operable en {where}")
     perp = item.get("perp")
     if perp:
         chips += _info_chip(hooks, f"Con perpetuo · financiación {fmt_funding(perp.get('funding_rate'))}")
@@ -298,20 +330,26 @@ def render_results(hooks: CryptoHooks, scored: list[dict]) -> None:
     restore_filters()
     st.markdown("## Monedas por revisar")
     st.caption("Vista de investigación: ordena las monedas por puntuación; abre una ficha para ver por qué puntúa así. No es recomendación financiera ni predice rentabilidad.")
-    c_text, c_level, c_protocol, c_per = st.columns([3, 2, 2, 1])
+    c_text, c_level, c_venue, c_protocol, c_per = st.columns([3, 2, 2, 2, 1])
     needle = c_text.text_input("Buscar moneda o símbolo", key="crypto_filter_text", placeholder="Ej.: pepe o bonk")
     level_label = c_level.selectbox("Nivel", list(LEVELS), key="crypto_filter_level")
+    venue_text = c_venue.selectbox("Dónde operar", list(VENUE_FILTERS), key="crypto_filter_venue",
+                                   help="Monedas que puedes comprar en Kraken (su catálogo público) o en Revolut (tu lista). «Todas» quita el filtro. Solo es información: no suma puntos.")
     protocol_label = c_protocol.selectbox("Protocolo DeFi", PROTOCOL_FILTERS, key="crypto_filter_protocol",
                                           help="«Con datos de protocolo»: monedas que DefiLlama sigue como protocolo con TVL o comisiones. La mayoría de las monedas no lo son, y eso no es una mala señal.")
     per_page = c_per.selectbox("Por página", PER_PAGE_OPTIONS, key="crypto_per_page")
     save_filters()
-    signature = (needle, level_label, protocol_label, per_page, len(scored))
+    signature = (needle, level_label, venue_text, protocol_label, per_page, len(scored))
     if st.session_state.get("crypto_filter_signature") != signature:
         st.session_state["crypto_filter_signature"] = signature
         st.session_state["crypto_page"] = 1  # a new filter starts again from the first page
-    rows = filter_results(scored, needle, LEVELS[level_label], protocol_only=protocol_label != PROTOCOL_FILTERS[0])
+    venue = VENUE_FILTERS[venue_text]
+    rows = filter_results(scored, needle, LEVELS[level_label], protocol_only=protocol_label != PROTOCOL_FILTERS[0], venue=venue)
+    summary = st.session_state.get("crypto_summary") or {}
+    if venue != "all" and (summary.get("kraken_status", "ok") != "ok" or summary.get("revolut_status", "ok") != "ok"):
+        st.caption("El filtro «Dónde operar» solo usa las fuentes que han respondido en esta búsqueda (véase arriba): lo que falte no se da por no disponible, simplemente no se sabe.")
     if not rows:
-        st.info("No hay monedas para estos filtros." + (" Prueba con otro texto o con «Puntuadas»." if (needle or level_label != "Puntuadas" or protocol_label != PROTOCOL_FILTERS[0]) else ""))
+        st.info("No hay monedas para estos filtros." + (" Prueba con otro texto, con «Puntuadas» o con «Dónde operar: Todas»." if (needle or level_label != "Puntuadas" or venue != "all" or protocol_label != PROTOCOL_FILTERS[0]) else ""))
         return
     shown, page, pages = paginate(rows, int(st.session_state.get("crypto_page", 1)), int(per_page))
     st.session_state["crypto_page"] = page
@@ -395,7 +433,8 @@ def adjusted_summary(summary: dict, results: list[dict]) -> dict:
     """The search summary with the tier counts of the results as they are now (after the contract checks of the session)."""
     tiers = summarize(results)
     flagged = sum(1 for r in results if "contrato con señales graves" in r.get("risk_flags", []))
-    return summary | {"tiers": tiers, "candidates": sum(tiers.get(t, 0) for t in CANDIDATE_TIERS), "contract_flagged": flagged}
+    operable = sum(1 for r in results if r["tier"] in CANDIDATE_TIERS and venue_matches(r.get("venues"), "any"))
+    return summary | {"tiers": tiers, "candidates": sum(tiers.get(t, 0) for t in CANDIDATE_TIERS), "contract_flagged": flagged, "candidates_operable": operable}
 
 
 def _pct(value: Any) -> str:
@@ -541,6 +580,31 @@ def render_derivatives_tab(item: dict) -> None:
     st.caption("Solo información: los derivados no suman puntos. Fuente: Binance (datos públicos); el historial del ratio largos/cortos y del open interest se limita a 30 días.")
 
 
+def render_venues_section(item: dict) -> None:
+    summary = st.session_state.get("crypto_summary") or {}
+    venues = item.get("venues") or {}
+    kraken, revolut = venues.get("kraken"), venues.get("revolut")
+    st.markdown("#### Dónde operar")
+    if kraken:
+        gap = f"{kraken['price_gap'] * 100:.1f}".replace(".", ",")
+        st.write(f"- **Kraken:** mercado {kraken['pair']} (identidad verificada: su precio difiere un {gap} % del precio fresco de CoinGecko).")
+    elif summary.get("kraken_status") in ("unavailable", "unverified"):
+        st.write("- **Kraken:** no se pudo comprobar en esta búsqueda.")
+    elif venues.get("kraken_conflict"):
+        st.write("- **Kraken:** hay un mercado con el mismo símbolo, pero su precio no encaja con esta moneda (parece otra): no verificado.")
+    else:
+        st.write("- **Kraken:** sin mercado en USD ni EUR.")
+    if revolut and revolut.get("status") == "confirmed":
+        st.write(f"- **Revolut:** en tu lista como «{revolut['name']}» (símbolo y nombre coinciden).")
+    elif revolut:
+        st.write(f"- **Revolut:** tu lista tiene este símbolo como «{revolut['name']}», pero no se puede confirmar que sea esta moneda (otro nombre u otra moneda con el mismo símbolo): no verificado.")
+    elif summary.get("revolut_status") in ("missing", "empty", "unreadable"):
+        st.write("- **Revolut:** sin lista de Revolut que consultar.")
+    else:
+        st.write("- **Revolut:** no está en tu lista.")
+    st.caption("Disponibilidad según el catálogo público de Kraken y tu propia lista de Revolut, que puede estar desactualizada: confírmalo en la plataforma antes de operar. Solo información: no suma puntos.")
+
+
 def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | None, cache: ProtectedCache) -> None:
     t = hooks.tokens
     style = hooks.tier_style(item["tier"])
@@ -564,6 +628,7 @@ def render_coin_page(hooks: CryptoHooks, item: dict, client: CoinGeckoClient | N
     )
     why_tab, data_tab, chart_tab, perp_tab, security_tab, quality_tab = st.tabs(["Resumen", "Datos", "Gráfico", "Derivados", "Seguridad", "Calidad"])
     with why_tab:
+        render_venues_section(item)
         c1, c2 = st.columns(2)
         with c1:
             st.markdown("#### Señales detectadas")
@@ -626,7 +691,7 @@ def _search(hooks: CryptoHooks, client: CoinGeckoClient, cache: ProtectedCache) 
         bar.progress(min(done / max(total, 1), 1.0), text=f"Cargando {label} · {done} de {total}")
 
     try:
-        result = run_search(client, cache, progress=on_progress)
+        result = run_search(client, cache, progress=on_progress, revolut_path=Path(hooks.data_dir) / REVOLUT_FILENAME)
     except MissingApiKey:
         bar.empty()
         render_missing_key()

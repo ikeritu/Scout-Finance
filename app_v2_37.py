@@ -3405,7 +3405,7 @@ def render_home(data):
         if st.button("🪙 Unicornios Crypto", key="home_crypto", type="primary", use_container_width=True):
             for stale in ("crypto_search_done", "crypto_results", "crypto_summary", "crypto_filter_signature", "crypto_page", "crypto_fullpage_coin_id",
                           "crypto_filter_text", "crypto_filter_level", "crypto_per_page", "saved_crypto_filter_text", "saved_crypto_filter_level", "saved_crypto_per_page",
-                          "crypto_filter_protocol", "saved_crypto_filter_protocol",
+                          "crypto_filter_protocol", "saved_crypto_filter_protocol", "crypto_filter_venue", "saved_crypto_filter_venue",
                           "crypto_contract_checks"):
                 st.session_state.pop(stale, None)  # every entry from the home starts on the clean page
             go("crypto_unicorns")
