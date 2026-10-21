@@ -143,3 +143,7 @@ data/crypto_coingecko_usage_v2_50c.json.*
 
 # v2.50L: the person's own Revolut list (never committed)
 data/crypto_revolut_assets.txt
+
+# v2.50M: the desktop launcher is rebuilt from desktop/ScoutFinanceLauncher.cs
+desktop/*.exe
+desktop/obj/
